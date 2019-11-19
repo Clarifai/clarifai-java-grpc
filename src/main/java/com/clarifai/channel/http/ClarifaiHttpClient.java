@@ -7,9 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 public interface ClarifaiHttpClient {
-  String apiKey();
-  String executeRequest(String url, String method, String requestString);
-  void client(OkHttpClient client);
+  String executeRequest(String apiKey, String url, String method, String requestString);
 
   public class Default implements ClarifaiHttpClient {
 
@@ -17,30 +15,24 @@ public interface ClarifaiHttpClient {
             "application/json; charset=utf8"
     );
 
-    private final String apiKey;
     private final String baseUrl;
     private OkHttpClient okHttpClient;
 
-    public Default(@NotNull String apiKey) {
-        this(apiKey, "https://api.clarifai.com");
+    public Default() {
+        this("https://api.clarifai.com");
     }
 
-    public Default(@NotNull String apiKey, @NotNull String baseUrl) {
-      this.apiKey = apiKey;
+    public Default(@NotNull String baseUrl) {
+        this(baseUrl, new OkHttpClient());
+    }
+
+    public Default(@NotNull String baseUrl, @NotNull OkHttpClient okHttpClient) {
       this.baseUrl = baseUrl;
-      this.okHttpClient = new OkHttpClient();
-    }
-
-    @Override @NotNull public String apiKey() {
-      return this.apiKey;
-    }
-
-    @Override public void client(OkHttpClient client) {
-      this.okHttpClient = client;
+      this.okHttpClient = okHttpClient;
     }
 
     @Override @NotNull public String executeRequest(
-            String subUrl, String method, String requestString
+            String apiKey, String subUrl, String method, String requestString
     ) {
       RequestBody body = null;
       if (!method.toUpperCase().equals("GET")) {
@@ -49,7 +41,7 @@ public interface ClarifaiHttpClient {
 
       Request request = new Request.Builder()
           .url(baseUrl + subUrl)
-          .addHeader("Authorization", "Key " + this.apiKey)
+          .addHeader("Authorization", "Key " + apiKey)
           .method(method, body)
           .build();
 
@@ -63,6 +55,4 @@ public interface ClarifaiHttpClient {
       return responseString;
     }
   }
-
 }
-

@@ -20,6 +20,10 @@ public class ClarifaiCallCredentials implements CallCredentials {
         this.apiKey = apiKey;
     }
 
+    public String getApiKey() {
+        return apiKey;
+    }
+
     @Override
     public void applyRequestMetadata(MethodDescriptor<?, ?> method, Attributes attrs, Executor appExecutor, MetadataApplier applier) {
         appExecutor.execute(() -> {

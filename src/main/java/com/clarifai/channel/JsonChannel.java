@@ -1,6 +1,7 @@
 package com.clarifai.channel;
 
 import com.clarifai.channel.http.ClarifaiHttpClient;
+import com.clarifai.credentials.ClarifaiCallCredentials;
 import io.grpc.*;
 
 import javax.annotation.Nullable;
@@ -13,7 +14,7 @@ public class JsonChannel extends io.grpc.Channel {
   private final ClarifaiHttpClient clarifaiHttpClient;
 
   public JsonChannel() {
-    this(new ClarifaiHttpClient.Default(System.getenv("CLARIFAI_API_KEY")));
+    this(new ClarifaiHttpClient.Default());
   }
 
   public JsonChannel(ClarifaiHttpClient clarifaiHttpClient) {
@@ -24,7 +25,9 @@ public class JsonChannel extends io.grpc.Channel {
   public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
           MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions
   ) {
-    return new JsonClientCall<>(clarifaiHttpClient, methodDescriptor);
+    ClarifaiCallCredentials credentials = (ClarifaiCallCredentials) callOptions.getCredentials();
+
+    return new JsonClientCall<>(clarifaiHttpClient, methodDescriptor, credentials.getApiKey());
   }
 
   @Override
@@ -36,15 +39,18 @@ public class JsonChannel extends io.grpc.Channel {
 
     private final ClarifaiHttpClient clarifaiHttpClient;
     private final MethodDescriptor<RequestT, ResponseT> methodDescriptor;
+    private final String apiKey;
 
     private Listener<ResponseT> responseListener;
 
     JsonClientCall(
             ClarifaiHttpClient clarifaiHttpClient,
-            MethodDescriptor<RequestT, ResponseT> methodDescriptor
+            MethodDescriptor<RequestT, ResponseT> methodDescriptor,
+            String apiKey
     ) {
       this.clarifaiHttpClient = clarifaiHttpClient;
       this.methodDescriptor = methodDescriptor;
+      this.apiKey = apiKey;
     }
 
     @Override
@@ -79,6 +85,7 @@ public class JsonChannel extends io.grpc.Channel {
       ).pickProperEndpoint();
 
       String responseString = clarifaiHttpClient.executeRequest(
+              apiKey,
               endpoint.getUrl(),
               endpoint.getMethod(),
               requestString
