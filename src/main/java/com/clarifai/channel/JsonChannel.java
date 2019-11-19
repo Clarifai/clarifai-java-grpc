@@ -1,0 +1,102 @@
+package com.clarifai.channel;
+
+import com.clarifai.channel.http.ClarifaiHttpClient;
+import io.grpc.*;
+
+import javax.annotation.Nullable;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+
+public class JsonChannel extends io.grpc.Channel {
+
+  private final ClarifaiHttpClient clarifaiHttpClient;
+
+  public JsonChannel() {
+    this(new ClarifaiHttpClient.Default(System.getenv("CLARIFAI_API_KEY")));
+  }
+
+  public JsonChannel(ClarifaiHttpClient clarifaiHttpClient) {
+    this.clarifaiHttpClient = clarifaiHttpClient;
+  }
+
+  @Override
+  public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
+          MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions
+  ) {
+    return new JsonClientCall<>(clarifaiHttpClient, methodDescriptor);
+  }
+
+  @Override
+  public String authority() {
+    return null;
+  }
+
+  private class JsonClientCall<RequestT, ResponseT> extends ClientCall<RequestT, ResponseT> {
+
+    private final ClarifaiHttpClient clarifaiHttpClient;
+    private final MethodDescriptor<RequestT, ResponseT> methodDescriptor;
+
+    private Listener<ResponseT> responseListener;
+
+    JsonClientCall(
+            ClarifaiHttpClient clarifaiHttpClient,
+            MethodDescriptor<RequestT, ResponseT> methodDescriptor
+    ) {
+      this.clarifaiHttpClient = clarifaiHttpClient;
+      this.methodDescriptor = methodDescriptor;
+    }
+
+    @Override
+    public void start(Listener<ResponseT> responseListener, Metadata headers) {
+      responseListener.onReady();
+      this.responseListener = responseListener;
+    }
+
+    @Override
+    public void request(int numMessages) {
+      // This never gets called.
+    }
+
+    @Override
+    public void cancel(@Nullable String message, @Nullable Throwable cause) {
+      // This never gets called.
+    }
+
+    @Override
+    public void halfClose() {
+      // This never gets called.
+    }
+
+    @Override
+    public void sendMessage(Object message) {
+      InputStream stream = methodDescriptor.getRequestMarshaller().stream((RequestT) message);
+
+      String requestString = streamToString(stream);
+
+      JsonEndpoint<RequestT, ResponseT>.Endpoint endpoint = new JsonEndpoint<>(
+              methodDescriptor, requestString
+      ).pickProperEndpoint();
+
+      String responseString = clarifaiHttpClient.executeRequest(
+              endpoint.getUrl(),
+              endpoint.getMethod(),
+              requestString
+      );
+
+      ResponseT responseObject = methodDescriptor.getResponseMarshaller().parse(
+              new ByteArrayInputStream(responseString.getBytes(StandardCharsets.UTF_8))
+      );
+      responseListener.onMessage(responseObject);
+      responseListener.onClose(Status.OK, new Metadata());
+    }
+
+    private String streamToString(InputStream stream) {
+      java.util.Scanner s = new java.util.Scanner(stream, StandardCharsets.UTF_8)
+              .useDelimiter("\\A");
+      String requestString = s.hasNext() ? s.next() : "";
+      s.close();
+      return requestString;
+    }
+  }
+}
