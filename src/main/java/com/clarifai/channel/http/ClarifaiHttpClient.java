@@ -12,18 +12,18 @@ public interface ClarifaiHttpClient {
   public class Default implements ClarifaiHttpClient {
 
     public static final MediaType MEDIA_TYPE_JSON = MediaType.parse(
-            "application/json; charset=utf8"
+        "application/json; charset=utf8"
     );
 
     private final String baseUrl;
     private OkHttpClient okHttpClient;
 
     public Default() {
-        this("https://api.clarifai.com");
+      this("https://api.clarifai.com");
     }
 
     public Default(@NotNull String baseUrl) {
-        this(baseUrl, new OkHttpClient());
+      this(baseUrl, new OkHttpClient());
     }
 
     public Default(@NotNull String baseUrl, @NotNull OkHttpClient okHttpClient) {
@@ -31,8 +31,10 @@ public interface ClarifaiHttpClient {
       this.okHttpClient = okHttpClient;
     }
 
-    @Override @NotNull public String executeRequest(
-            String apiKey, String subUrl, String method, String requestString
+    @Override
+    @NotNull
+    public String executeRequest(
+        String apiKey, String subUrl, String method, String requestString
     ) {
       RequestBody body = null;
       if (!method.toUpperCase().equals("GET")) {

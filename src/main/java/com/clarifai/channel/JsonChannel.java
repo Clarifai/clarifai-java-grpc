@@ -23,7 +23,7 @@ public class JsonChannel extends io.grpc.Channel {
 
   @Override
   public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
-          MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions
+      MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions
   ) {
     ClarifaiCallCredentials credentials = (ClarifaiCallCredentials) callOptions.getCredentials();
 
@@ -44,9 +44,9 @@ public class JsonChannel extends io.grpc.Channel {
     private Listener<ResponseT> responseListener;
 
     JsonClientCall(
-            ClarifaiHttpClient clarifaiHttpClient,
-            MethodDescriptor<RequestT, ResponseT> methodDescriptor,
-            String apiKey
+        ClarifaiHttpClient clarifaiHttpClient,
+        MethodDescriptor<RequestT, ResponseT> methodDescriptor,
+        String apiKey
     ) {
       this.clarifaiHttpClient = clarifaiHttpClient;
       this.methodDescriptor = methodDescriptor;
@@ -81,18 +81,18 @@ public class JsonChannel extends io.grpc.Channel {
       String requestString = streamToString(stream);
 
       JsonEndpoint<RequestT, ResponseT>.Endpoint endpoint = new JsonEndpoint<>(
-              methodDescriptor, requestString
+          methodDescriptor, requestString
       ).pickProperEndpoint();
 
       String responseString = clarifaiHttpClient.executeRequest(
-              apiKey,
-              endpoint.getUrl(),
-              endpoint.getMethod(),
-              requestString
+          apiKey,
+          endpoint.getUrl(),
+          endpoint.getMethod(),
+          requestString
       );
 
       ResponseT responseObject = methodDescriptor.getResponseMarshaller().parse(
-              new ByteArrayInputStream(responseString.getBytes(StandardCharsets.UTF_8))
+          new ByteArrayInputStream(responseString.getBytes(StandardCharsets.UTF_8))
       );
       responseListener.onMessage(responseObject);
       responseListener.onClose(Status.OK, new Metadata());
@@ -100,7 +100,7 @@ public class JsonChannel extends io.grpc.Channel {
 
     private String streamToString(InputStream stream) {
       java.util.Scanner s = new java.util.Scanner(stream, StandardCharsets.UTF_8)
-              .useDelimiter("\\A");
+          .useDelimiter("\\A");
       String requestString = s.hasNext() ? s.next() : "";
       s.close();
       return requestString;
