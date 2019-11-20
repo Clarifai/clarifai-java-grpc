@@ -4,15 +4,33 @@ import com.clarifai.channel.ClarifaiChannel;
 import com.clarifai.credentials.ClarifaiCallCredentials;
 import com.clarifai.grpc.api.*;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class GrpcIntTest {
-  @Test
-  public void postModels() {
-    V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(
+
+  private V2Grpc.V2BlockingStub stub;
+
+  @Before
+  public void before() {
+    stub = V2Grpc.newBlockingStub(
         ClarifaiChannel.INSTANCE.getInsecureGrpcChannel()
     ).withCallCredentials(new ClarifaiCallCredentials());
+  }
 
+  @Test
+  public void getModel() {
+    SingleModelResponse response = stub.getModel(
+        GetModelRequest.newBuilder()
+            .setModelId("aaa03c23b3724a16a56b629203edc62c")
+            .build()
+    );
+
+    Assert.assertEquals("general", response.getModel().getName());
+  }
+
+  @Test
+  public void postModelOutputs() {
     MultiOutputResponse response = stub.postModelOutputs(
         PostModelOutputsRequest.newBuilder()
             .setModelId("aaa03c23b3724a16a56b629203edc62c")
