@@ -1,5 +1,6 @@
 package com.clarifai.channel;
 
+import com.clarifai.channel.http.ClarifaiHttpClient;
 import com.google.protobuf.Message;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
@@ -47,8 +48,12 @@ public enum ClarifaiChannel {
   }
 
   public JsonChannel getJsonChannel() {
+    return getJsonChannel(new ClarifaiHttpClient.Default());
+  }
+
+  public JsonChannel getJsonChannel(ClarifaiHttpClient clarifaiHttpClient) {
     marshallerType = MarshallerType.JSON;
-    return new JsonChannel();
+    return new JsonChannel(clarifaiHttpClient);
   }
 
   public static <T extends Message> MethodDescriptor.Marshaller<T> marshaller(
