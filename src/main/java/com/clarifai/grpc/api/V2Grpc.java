@@ -46,9 +46,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConceptCounts"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetConceptCountsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiConceptCountResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetConceptCounts"))
               .build();
@@ -77,9 +77,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConcept"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetConceptRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleConceptResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetConcept"))
               .build();
@@ -108,9 +108,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListConcepts"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListConceptsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiConceptResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListConcepts"))
               .build();
@@ -139,9 +139,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptsSearches"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostConceptsSearchesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiConceptResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptsSearches"))
               .build();
@@ -170,9 +170,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConcepts"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostConceptsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiConceptResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConcepts"))
               .build();
@@ -201,9 +201,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchConcepts"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PatchConceptsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiConceptResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchConcepts"))
               .build();
@@ -232,9 +232,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInputCount"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetInputCountRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleInputCountResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetInputCount"))
               .build();
@@ -263,9 +263,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInput"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetInputRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleInputResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetInput"))
               .build();
@@ -294,9 +294,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListInputs"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListInputsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiInputResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListInputs"))
               .build();
@@ -325,9 +325,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostInputs"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostInputsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiInputResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostInputs"))
               .build();
@@ -356,9 +356,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchInputs"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PatchInputsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiInputResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchInputs"))
               .build();
@@ -387,9 +387,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteInput"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteInputRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteInput"))
               .build();
@@ -418,9 +418,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteInputs"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteInputsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteInputs"))
               .build();
@@ -449,9 +449,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModelOutputs"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModelOutputs"))
               .build();
@@ -480,9 +480,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModel"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetModelRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModel"))
               .build();
@@ -511,9 +511,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModelOutputInfo"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetModelRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModelOutputInfo"))
               .build();
@@ -542,9 +542,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModels"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListModelsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListModels"))
               .build();
@@ -573,9 +573,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModelsSearches"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostModelsSearchesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModelsSearches"))
               .build();
@@ -604,9 +604,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModels"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostModelsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModels"))
               .build();
@@ -635,9 +635,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchModels"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PatchModelsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchModels"))
               .build();
@@ -666,9 +666,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModel"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteModelRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModel"))
               .build();
@@ -697,9 +697,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModels"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteModelsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModels"))
               .build();
@@ -728,9 +728,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModelInputs"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListModelInputsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiInputResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListModelInputs"))
               .build();
@@ -759,9 +759,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModelVersion"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetModelVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelVersionResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModelVersion"))
               .build();
@@ -790,9 +790,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModelVersions"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListModelVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiModelVersionResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListModelVersions"))
               .build();
@@ -821,9 +821,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModelVersions"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostModelVersionsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModelVersions"))
               .build();
@@ -852,9 +852,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModelVersion"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteModelVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModelVersion"))
               .build();
@@ -883,9 +883,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModelVersionMetrics"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetModelVersionMetricsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelVersionResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModelVersionMetrics"))
               .build();
@@ -914,9 +914,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModelVersionMetrics"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostModelVersionMetricsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleModelVersionResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModelVersionMetrics"))
               .build();
@@ -945,9 +945,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWorkflow"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetWorkflowRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleWorkflowResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetWorkflow"))
               .build();
@@ -976,9 +976,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkflows"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListWorkflowsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiWorkflowResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListWorkflows"))
               .build();
@@ -1007,9 +1007,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostWorkflows"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostWorkflowsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiWorkflowResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostWorkflows"))
               .build();
@@ -1038,9 +1038,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchWorkflows"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PatchWorkflowsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiWorkflowResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchWorkflows"))
               .build();
@@ -1069,9 +1069,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkflow"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteWorkflowRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteWorkflow"))
               .build();
@@ -1100,9 +1100,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkflows"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteWorkflowsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteWorkflows"))
               .build();
@@ -1131,9 +1131,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostWorkflowResults"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostWorkflowResultsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostWorkflowResultsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostWorkflowResults"))
               .build();
@@ -1162,9 +1162,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKey"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetKeyRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleKeyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetKey"))
               .build();
@@ -1193,9 +1193,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeys"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListKeysRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiKeyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListKeys"))
               .build();
@@ -1224,9 +1224,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAppKeys"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListAppKeysRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiKeyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListAppKeys"))
               .build();
@@ -1255,9 +1255,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteKey"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteKeyRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteKey"))
               .build();
@@ -1286,9 +1286,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostKeys"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostKeysRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiKeyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostKeys"))
               .build();
@@ -1317,9 +1317,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchKeys"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PatchKeysRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiKeyResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchKeys"))
               .build();
@@ -1348,9 +1348,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetApp"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetAppRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleAppResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetApp"))
               .build();
@@ -1379,9 +1379,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListApps"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListAppsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiAppResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListApps"))
               .build();
@@ -1410,9 +1410,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteApp"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.DeleteAppRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteApp"))
               .build();
@@ -1441,9 +1441,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostApps"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostAppsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiAppResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostApps"))
               .build();
@@ -1472,9 +1472,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchApps"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PatchAppsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiAppResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchApps"))
               .build();
@@ -1503,9 +1503,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostSearches"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostSearchesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiSearchResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostSearches"))
               .build();
@@ -1534,9 +1534,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListStatusCodes"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.ListStatusCodesRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.MultiStatusCodeResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListStatusCodes"))
               .build();
@@ -1565,9 +1565,9 @@ public final class V2Grpc {
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetStatusCode"))
               .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.GetStatusCodeRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiMarshaller.marshaller(
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.SingleStatusCodeResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetStatusCode"))
               .build();

@@ -3,7 +3,7 @@
  */
 package com.clarifai;
 
-import com.clarifai.channel.JsonChannel;
+import com.clarifai.channel.ClarifaiChannel;
 import com.clarifai.credentials.ClarifaiCallCredentials;
 import com.clarifai.grpc.api.*;
 import org.junit.Assert;
@@ -11,8 +11,9 @@ import org.junit.Test;
 
 public class JsonChannelIntTest {
     @Test public void postModels() {
-        V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(new JsonChannel())
-                .withCallCredentials(new ClarifaiCallCredentials());
+        V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(
+                ClarifaiChannel.INSTANCE.getJsonChannel()
+        ).withCallCredentials(new ClarifaiCallCredentials());
 
         MultiOutputResponse response = stub.postModelOutputs(
             PostModelOutputsRequest.newBuilder()
@@ -30,5 +31,9 @@ public class JsonChannelIntTest {
         );
 
         Assert.assertNotEquals(0, response.getOutputs(0).getData().getConceptsList().size());
+
+        for (Concept c : response.getOutputs(0).getData().getConceptsList()) {
+            System.out.println(c);
+        }
     }
 }
