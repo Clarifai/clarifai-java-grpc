@@ -13,11 +13,7 @@ public class JsonChannel extends io.grpc.Channel {
 
   private final ClarifaiHttpClient clarifaiHttpClient;
 
-  public JsonChannel() {
-    this(new ClarifaiHttpClient.Default());
-  }
-
-  public JsonChannel(ClarifaiHttpClient clarifaiHttpClient) {
+  JsonChannel(ClarifaiHttpClient clarifaiHttpClient) {
     this.clarifaiHttpClient = clarifaiHttpClient;
   }
 
