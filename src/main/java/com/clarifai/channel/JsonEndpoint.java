@@ -9,6 +9,7 @@ import io.grpc.MethodDescriptor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -20,10 +21,12 @@ class JsonEndpoint<RequestT, ResponseT> {
   class Endpoint {
     private final String method;
     private final String url;
+    private final ArrayList<String> urlFields;
 
-    Endpoint(String method, String url) {
+    Endpoint(String method, String url, ArrayList<String> urlFields) {
       this.method = method;
       this.url = url;
+      this.urlFields = urlFields;
     }
 
     public String getMethod() {
@@ -33,6 +36,10 @@ class JsonEndpoint<RequestT, ResponseT> {
     public String getUrl() {
       return url;
     }
+
+    public ArrayList<String> getUrlFields() {
+      return urlFields;
+    }
   }
 
   private final MethodDescriptor<RequestT, ResponseT> methodDescriptor;
@@ -41,12 +48,9 @@ class JsonEndpoint<RequestT, ResponseT> {
   private static final Pattern URL_FIELDS_PATTERN = Pattern.compile("\\{(.*?)\\}");
 
 
-  JsonEndpoint(
-      MethodDescriptor<RequestT, ResponseT> methodDescriptor, String requestString
-  ) {
+  JsonEndpoint(MethodDescriptor<RequestT, ResponseT> methodDescriptor, JsonObject request) {
     this.methodDescriptor = methodDescriptor;
 
-    JsonObject request = new Gson().fromJson(requestString, JsonObject.class);
     for (Map.Entry<String, JsonElement> entry : request.entrySet()) {
       topLevelFields.put(entry.getKey(), entry.getValue());
     }
@@ -87,6 +91,7 @@ class JsonEndpoint<RequestT, ResponseT> {
 
         String bestMatchUrl = null;
         String bestMatchMethod = null;
+        ArrayList<String> bestMatchUrlFields = null;
         int bestMatchCount = -1;
 
         for (HttpRule httpRule : rule.getAdditionalBindingsList()) {
@@ -101,6 +106,7 @@ class JsonEndpoint<RequestT, ResponseT> {
 
           String url = urlTemplate;
 
+          ArrayList<String> urlFields = new ArrayList<>();
           while (matcher.find()) {
             String field = matcher.group(1);
 
@@ -111,6 +117,7 @@ class JsonEndpoint<RequestT, ResponseT> {
             }
 
             url = url.replace("{" + field + "}", value.getAsString());
+            urlFields.add(field);
 
             count++;
           }
@@ -119,11 +126,12 @@ class JsonEndpoint<RequestT, ResponseT> {
             bestMatchUrl = url;
             bestMatchMethod = method;
             bestMatchCount = count;
+            bestMatchUrlFields = urlFields;
           }
         }
 
         if (bestMatchUrl != null) {
-          return new Endpoint(bestMatchMethod, bestMatchUrl);
+          return new Endpoint(bestMatchMethod, bestMatchUrl, bestMatchUrlFields);
         }
       }
     }

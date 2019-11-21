@@ -2,6 +2,8 @@ package com.clarifai.channel;
 
 import com.clarifai.channel.http.ClarifaiHttpClient;
 import com.clarifai.credentials.ClarifaiCallCredentials;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import io.grpc.*;
 
 import javax.annotation.Nullable;
@@ -74,17 +76,22 @@ public class JsonChannel extends io.grpc.Channel {
     public void sendMessage(Object message) {
       InputStream stream = methodDescriptor.getRequestMarshaller().stream((RequestT) message);
 
-      String requestString = streamToString(stream);
+      String fullRequestString = streamToString(stream);
 
+      JsonObject request = new Gson().fromJson(fullRequestString, JsonObject.class);
       JsonEndpoint<RequestT, ResponseT>.Endpoint endpoint = new JsonEndpoint<>(
-          methodDescriptor, requestString
+          methodDescriptor, request
       ).pickProperEndpoint();
+
+      for (String urlField : endpoint.getUrlFields()) {
+        request.remove(urlField);
+      }
 
       String responseString = clarifaiHttpClient.executeRequest(
           apiKey,
           endpoint.getUrl(),
           endpoint.getMethod(),
-          requestString
+          new Gson().toJson(request)
       );
 
       ResponseT responseObject = methodDescriptor.getResponseMarshaller().parse(
