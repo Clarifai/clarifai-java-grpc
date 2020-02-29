@@ -46,8 +46,9 @@ public enum S
    */
   Predict(2),
   /**
-   * <code>Predict_Feedback = 29 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Predict_Feedback = 29 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
    */
+  @java.lang.Deprecated
   Predict_Feedback(29),
   /**
    * <pre>
@@ -58,8 +59,9 @@ public enum S
    */
   Search(3),
   /**
-   * <code>Search_Feedback = 28 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Search_Feedback = 28 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
    */
+  @java.lang.Deprecated
   Search_Feedback(28),
   /**
    * <pre>
@@ -394,6 +396,30 @@ public enum S
    * <code>Keys_Delete = 49 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Keys_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Keys_Get];</code>
    */
   Keys_Delete(49),
+  /**
+   * <pre>
+   * Write to the app sharing DB table
+   * </pre>
+   *
+   * <code>Collaborators_Add = 51 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Get];</code>
+   */
+  Collaborators_Add(51),
+  /**
+   * <pre>
+   * Read from the app sharing DB table
+   * </pre>
+   *
+   * <code>Collaborators_Get = 50 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Collaborators_Get(50),
+  /**
+   * <pre>
+   * To delete we need read/write
+   * </pre>
+   *
+   * <code>Collaborators_Delete = 52 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Get];</code>
+   */
+  Collaborators_Delete(52),
   UNRECOGNIZED(-1),
   ;
 
@@ -420,7 +446,7 @@ public enum S
    */
   public static final int Predict_VALUE = 2;
   /**
-   * <code>Predict_Feedback = 29 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Predict_Feedback = 29 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
    */
   public static final int Predict_Feedback_VALUE = 29;
   /**
@@ -432,7 +458,7 @@ public enum S
    */
   public static final int Search_VALUE = 3;
   /**
-   * <code>Search_Feedback = 28 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   * <code>Search_Feedback = 28 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
    */
   public static final int Search_Feedback_VALUE = 28;
   /**
@@ -760,6 +786,30 @@ public enum S
    * <code>Keys_Delete = 49 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Keys_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Keys_Get];</code>
    */
   public static final int Keys_Delete_VALUE = 49;
+  /**
+   * <pre>
+   * Write to the app sharing DB table
+   * </pre>
+   *
+   * <code>Collaborators_Add = 51 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Get];</code>
+   */
+  public static final int Collaborators_Add_VALUE = 51;
+  /**
+   * <pre>
+   * Read from the app sharing DB table
+   * </pre>
+   *
+   * <code>Collaborators_Get = 50 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Collaborators_Get_VALUE = 50;
+  /**
+   * <pre>
+   * To delete we need read/write
+   * </pre>
+   *
+   * <code>Collaborators_Delete = 52 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Get];</code>
+   */
+  public static final int Collaborators_Delete_VALUE = 52;
 
 
   public final int getNumber() {
@@ -825,6 +875,9 @@ public enum S
       case 47: return Keys_Add;
       case 48: return Keys_Get;
       case 49: return Keys_Delete;
+      case 51: return Collaborators_Add;
+      case 50: return Collaborators_Get;
+      case 52: return Collaborators_Delete;
       default: return null;
     }
   }

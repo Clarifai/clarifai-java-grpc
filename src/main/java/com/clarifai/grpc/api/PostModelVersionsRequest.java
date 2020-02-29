@@ -96,6 +96,37 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.Search.Builder subBuilder = null;
+            if (trainQuery_ != null) {
+              subBuilder = trainQuery_.toBuilder();
+            }
+            trainQuery_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(trainQuery_);
+              trainQuery_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+            com.clarifai.grpc.api.Search.Builder subBuilder = null;
+            if (testQuery_ != null) {
+              subBuilder = testQuery_.toBuilder();
+            }
+            testQuery_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(testQuery_);
+              testQuery_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 56: {
+
+            evaluateAfterTraining_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -279,6 +310,73 @@ private static final long serialVersionUID = 0L;
     return getSearch();
   }
 
+  public static final int TRAIN_QUERY_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Search trainQuery_;
+  /**
+   * <pre>
+   * For deep training, these queries define what data goes into the test and train splits
+   * </pre>
+   *
+   * <code>.clarifai.api.Search train_query = 5;</code>
+   */
+  public boolean hasTrainQuery() {
+    return trainQuery_ != null;
+  }
+  /**
+   * <pre>
+   * For deep training, these queries define what data goes into the test and train splits
+   * </pre>
+   *
+   * <code>.clarifai.api.Search train_query = 5;</code>
+   */
+  public com.clarifai.grpc.api.Search getTrainQuery() {
+    return trainQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainQuery_;
+  }
+  /**
+   * <pre>
+   * For deep training, these queries define what data goes into the test and train splits
+   * </pre>
+   *
+   * <code>.clarifai.api.Search train_query = 5;</code>
+   */
+  public com.clarifai.grpc.api.SearchOrBuilder getTrainQueryOrBuilder() {
+    return getTrainQuery();
+  }
+
+  public static final int TEST_QUERY_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.Search testQuery_;
+  /**
+   * <code>.clarifai.api.Search test_query = 6;</code>
+   */
+  public boolean hasTestQuery() {
+    return testQuery_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Search test_query = 6;</code>
+   */
+  public com.clarifai.grpc.api.Search getTestQuery() {
+    return testQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testQuery_;
+  }
+  /**
+   * <code>.clarifai.api.Search test_query = 6;</code>
+   */
+  public com.clarifai.grpc.api.SearchOrBuilder getTestQueryOrBuilder() {
+    return getTestQuery();
+  }
+
+  public static final int EVALUATE_AFTER_TRAINING_FIELD_NUMBER = 7;
+  private boolean evaluateAfterTraining_;
+  /**
+   * <pre>
+   * Whether we should automatically queue evals after training
+   * </pre>
+   *
+   * <code>bool evaluate_after_training = 7;</code>
+   */
+  public boolean getEvaluateAfterTraining() {
+    return evaluateAfterTraining_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -305,6 +403,15 @@ private static final long serialVersionUID = 0L;
     if (search_ != null) {
       output.writeMessage(4, getSearch());
     }
+    if (trainQuery_ != null) {
+      output.writeMessage(5, getTrainQuery());
+    }
+    if (testQuery_ != null) {
+      output.writeMessage(6, getTestQuery());
+    }
+    if (evaluateAfterTraining_ != false) {
+      output.writeBool(7, evaluateAfterTraining_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -328,6 +435,18 @@ private static final long serialVersionUID = 0L;
     if (search_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getSearch());
+    }
+    if (trainQuery_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getTrainQuery());
+    }
+    if (testQuery_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getTestQuery());
+    }
+    if (evaluateAfterTraining_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, evaluateAfterTraining_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -358,6 +477,18 @@ private static final long serialVersionUID = 0L;
       if (!getSearch()
           .equals(other.getSearch())) return false;
     }
+    if (hasTrainQuery() != other.hasTrainQuery()) return false;
+    if (hasTrainQuery()) {
+      if (!getTrainQuery()
+          .equals(other.getTrainQuery())) return false;
+    }
+    if (hasTestQuery() != other.hasTestQuery()) return false;
+    if (hasTestQuery()) {
+      if (!getTestQuery()
+          .equals(other.getTestQuery())) return false;
+    }
+    if (getEvaluateAfterTraining()
+        != other.getEvaluateAfterTraining()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -383,6 +514,17 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getSearch().hashCode();
     }
+    if (hasTrainQuery()) {
+      hash = (37 * hash) + TRAIN_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getTrainQuery().hashCode();
+    }
+    if (hasTestQuery()) {
+      hash = (37 * hash) + TEST_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getTestQuery().hashCode();
+    }
+    hash = (37 * hash) + EVALUATE_AFTER_TRAINING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEvaluateAfterTraining());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -541,6 +683,20 @@ private static final long serialVersionUID = 0L;
         search_ = null;
         searchBuilder_ = null;
       }
+      if (trainQueryBuilder_ == null) {
+        trainQuery_ = null;
+      } else {
+        trainQuery_ = null;
+        trainQueryBuilder_ = null;
+      }
+      if (testQueryBuilder_ == null) {
+        testQuery_ = null;
+      } else {
+        testQuery_ = null;
+        testQueryBuilder_ = null;
+      }
+      evaluateAfterTraining_ = false;
+
       return this;
     }
 
@@ -588,6 +744,17 @@ private static final long serialVersionUID = 0L;
       } else {
         result.search_ = searchBuilder_.build();
       }
+      if (trainQueryBuilder_ == null) {
+        result.trainQuery_ = trainQuery_;
+      } else {
+        result.trainQuery_ = trainQueryBuilder_.build();
+      }
+      if (testQueryBuilder_ == null) {
+        result.testQuery_ = testQuery_;
+      } else {
+        result.testQuery_ = testQueryBuilder_.build();
+      }
+      result.evaluateAfterTraining_ = evaluateAfterTraining_;
       onBuilt();
       return result;
     }
@@ -671,6 +838,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSearch()) {
         mergeSearch(other.getSearch());
+      }
+      if (other.hasTrainQuery()) {
+        mergeTrainQuery(other.getTrainQuery());
+      }
+      if (other.hasTestQuery()) {
+        mergeTestQuery(other.getTestQuery());
+      }
+      if (other.getEvaluateAfterTraining() != false) {
+        setEvaluateAfterTraining(other.getEvaluateAfterTraining());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1369,6 +1545,314 @@ private static final long serialVersionUID = 0L;
         search_ = null;
       }
       return searchBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Search trainQuery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> trainQueryBuilder_;
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public boolean hasTrainQuery() {
+      return trainQueryBuilder_ != null || trainQuery_ != null;
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public com.clarifai.grpc.api.Search getTrainQuery() {
+      if (trainQueryBuilder_ == null) {
+        return trainQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainQuery_;
+      } else {
+        return trainQueryBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public Builder setTrainQuery(com.clarifai.grpc.api.Search value) {
+      if (trainQueryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trainQuery_ = value;
+        onChanged();
+      } else {
+        trainQueryBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public Builder setTrainQuery(
+        com.clarifai.grpc.api.Search.Builder builderForValue) {
+      if (trainQueryBuilder_ == null) {
+        trainQuery_ = builderForValue.build();
+        onChanged();
+      } else {
+        trainQueryBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public Builder mergeTrainQuery(com.clarifai.grpc.api.Search value) {
+      if (trainQueryBuilder_ == null) {
+        if (trainQuery_ != null) {
+          trainQuery_ =
+            com.clarifai.grpc.api.Search.newBuilder(trainQuery_).mergeFrom(value).buildPartial();
+        } else {
+          trainQuery_ = value;
+        }
+        onChanged();
+      } else {
+        trainQueryBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public Builder clearTrainQuery() {
+      if (trainQueryBuilder_ == null) {
+        trainQuery_ = null;
+        onChanged();
+      } else {
+        trainQuery_ = null;
+        trainQueryBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public com.clarifai.grpc.api.Search.Builder getTrainQueryBuilder() {
+      
+      onChanged();
+      return getTrainQueryFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    public com.clarifai.grpc.api.SearchOrBuilder getTrainQueryOrBuilder() {
+      if (trainQueryBuilder_ != null) {
+        return trainQueryBuilder_.getMessageOrBuilder();
+      } else {
+        return trainQuery_ == null ?
+            com.clarifai.grpc.api.Search.getDefaultInstance() : trainQuery_;
+      }
+    }
+    /**
+     * <pre>
+     * For deep training, these queries define what data goes into the test and train splits
+     * </pre>
+     *
+     * <code>.clarifai.api.Search train_query = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
+        getTrainQueryFieldBuilder() {
+      if (trainQueryBuilder_ == null) {
+        trainQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
+                getTrainQuery(),
+                getParentForChildren(),
+                isClean());
+        trainQuery_ = null;
+      }
+      return trainQueryBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Search testQuery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> testQueryBuilder_;
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public boolean hasTestQuery() {
+      return testQueryBuilder_ != null || testQuery_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public com.clarifai.grpc.api.Search getTestQuery() {
+      if (testQueryBuilder_ == null) {
+        return testQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testQuery_;
+      } else {
+        return testQueryBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public Builder setTestQuery(com.clarifai.grpc.api.Search value) {
+      if (testQueryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        testQuery_ = value;
+        onChanged();
+      } else {
+        testQueryBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public Builder setTestQuery(
+        com.clarifai.grpc.api.Search.Builder builderForValue) {
+      if (testQueryBuilder_ == null) {
+        testQuery_ = builderForValue.build();
+        onChanged();
+      } else {
+        testQueryBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public Builder mergeTestQuery(com.clarifai.grpc.api.Search value) {
+      if (testQueryBuilder_ == null) {
+        if (testQuery_ != null) {
+          testQuery_ =
+            com.clarifai.grpc.api.Search.newBuilder(testQuery_).mergeFrom(value).buildPartial();
+        } else {
+          testQuery_ = value;
+        }
+        onChanged();
+      } else {
+        testQueryBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public Builder clearTestQuery() {
+      if (testQueryBuilder_ == null) {
+        testQuery_ = null;
+        onChanged();
+      } else {
+        testQuery_ = null;
+        testQueryBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public com.clarifai.grpc.api.Search.Builder getTestQueryBuilder() {
+      
+      onChanged();
+      return getTestQueryFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    public com.clarifai.grpc.api.SearchOrBuilder getTestQueryOrBuilder() {
+      if (testQueryBuilder_ != null) {
+        return testQueryBuilder_.getMessageOrBuilder();
+      } else {
+        return testQuery_ == null ?
+            com.clarifai.grpc.api.Search.getDefaultInstance() : testQuery_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Search test_query = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
+        getTestQueryFieldBuilder() {
+      if (testQueryBuilder_ == null) {
+        testQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
+                getTestQuery(),
+                getParentForChildren(),
+                isClean());
+        testQuery_ = null;
+      }
+      return testQueryBuilder_;
+    }
+
+    private boolean evaluateAfterTraining_ ;
+    /**
+     * <pre>
+     * Whether we should automatically queue evals after training
+     * </pre>
+     *
+     * <code>bool evaluate_after_training = 7;</code>
+     */
+    public boolean getEvaluateAfterTraining() {
+      return evaluateAfterTraining_;
+    }
+    /**
+     * <pre>
+     * Whether we should automatically queue evals after training
+     * </pre>
+     *
+     * <code>bool evaluate_after_training = 7;</code>
+     */
+    public Builder setEvaluateAfterTraining(boolean value) {
+      
+      evaluateAfterTraining_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether we should automatically queue evals after training
+     * </pre>
+     *
+     * <code>bool evaluate_after_training = 7;</code>
+     */
+    public Builder clearEvaluateAfterTraining() {
+      
+      evaluateAfterTraining_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

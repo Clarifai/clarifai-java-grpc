@@ -29,14 +29,18 @@ public enum StatusCode
    */
   MIXED_STATUS(10010),
   /**
+   * <code>FAILURE = 10020;</code>
+   */
+  FAILURE(10020),
+  /**
    * <pre>
    *SUCCESS_WARNING_API_DEPRECATED = 10001;
    *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
    * </pre>
    *
-   * <code>FAILURE = 10020;</code>
+   * <code>TRY_AGAIN = 10030;</code>
    */
-  FAILURE(10020),
+  TRY_AGAIN(10030),
   /**
    * <pre>
    * Clarifai Connection Codes: 11xxx
@@ -246,13 +250,25 @@ public enum StatusCode
    */
   MODEL_TRAINING_MSG_REDELIVER(21116),
   /**
-   * <code>MODEL_TRAINING_INCONSISTENT_DATA = 21117;</code>
+   * <pre>
+   * Training got error due to insufficient labelled data
+   * </pre>
+   *
+   * <code>MODEL_TRAINING_INSUFFICIENT_DATA = 21117;</code>
    */
-  MODEL_TRAINING_INCONSISTENT_DATA(21117),
+  MODEL_TRAINING_INSUFFICIENT_DATA(21117),
   /**
    * <code>MODEL_TRAINING_INVALID_PARAMS = 21118;</code>
    */
   MODEL_TRAINING_INVALID_PARAMS(21118),
+  /**
+   * <pre>
+   * Training is stopped because too many data were dropped
+   * </pre>
+   *
+   * <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
+   */
+  MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED(21119),
   /**
    * <code>MODEL_MODIFY_SUCCESS = 21150;</code>
    */
@@ -375,7 +391,7 @@ public enum StatusCode
   MODEL_QUEUED_FOR_DEPLOYMENT(21352),
   /**
    * <pre>
-   * Used when taking down inactive spires
+   * Used when model spire deployment is manually taken down or due to inactivity
    * </pre>
    *
    * <code>MODEL_NOT_DEPLOYED = 21353;</code>
@@ -494,10 +510,6 @@ public enum StatusCode
    */
   ANNOTATION_FAILED(24152),
   /**
-   * <code>ANNOTATION_IN_PROGRESS = 24153;</code>
-   */
-  ANNOTATION_IN_PROGRESS(24153),
-  /**
    * <code>ANNOTATION_UNKNOWN_STATUS = 24154;</code>
    */
   ANNOTATION_UNKNOWN_STATUS(24154),
@@ -509,6 +521,14 @@ public enum StatusCode
    * <code>ANNOTATION_PERMISSION_DENIED = 24156;</code>
    */
   ANNOTATION_PERMISSION_DENIED(24156),
+  /**
+   * <code>ANNOTATION_AWAITING_REVIEW = 24157;</code>
+   */
+  ANNOTATION_AWAITING_REVIEW(24157),
+  /**
+   * <code>ANNOTATION_REVIEW_DENIED = 24158;</code>
+   */
+  ANNOTATION_REVIEW_DENIED(24158),
   /**
    * <code>ANNOTATION_MODIFY_SUCCESS = 24250;</code>
    */
@@ -606,120 +626,120 @@ public enum StatusCode
    * Input:Image related 30xxx
    * </pre>
    *
-   * <code>INPUT_IMAGE_DOWNLOAD_SUCCESS = 30000;</code>
+   * <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
    */
-  INPUT_IMAGE_DOWNLOAD_SUCCESS(30000),
+  INPUT_DOWNLOAD_SUCCESS(30000),
   /**
    * <pre>
    * when things are async, this is the default status.
    * </pre>
    *
-   * <code>INPUT_IMAGE_DOWNLOAD_PENDING = 30001;</code>
+   * <code>INPUT_DOWNLOAD_PENDING = 30001;</code>
    */
-  INPUT_IMAGE_DOWNLOAD_PENDING(30001),
+  INPUT_DOWNLOAD_PENDING(30001),
   /**
    * <pre>
    * any type of error downloading and processing
    * </pre>
    *
-   * <code>INPUT_IMAGE_DOWNLOAD_FAILED = 30002;</code>
+   * <code>INPUT_DOWNLOAD_FAILED = 30002;</code>
    */
-  INPUT_IMAGE_DOWNLOAD_FAILED(30002),
+  INPUT_DOWNLOAD_FAILED(30002),
   /**
-   * <code>INPUT_IMAGE_DOWNLOAD_IN_PROGRESS = 30003;</code>
+   * <code>INPUT_DOWNLOAD_IN_PROGRESS = 30003;</code>
    */
-  INPUT_IMAGE_DOWNLOAD_IN_PROGRESS(30003),
+  INPUT_DOWNLOAD_IN_PROGRESS(30003),
   /**
-   * <code>INPUT_IMAGE_STATUS_UPDATE_FAILED = 30004;</code>
+   * <code>INPUT_STATUS_UPDATE_FAILED = 30004;</code>
    */
-  INPUT_IMAGE_STATUS_UPDATE_FAILED(30004),
+  INPUT_STATUS_UPDATE_FAILED(30004),
   /**
-   * <code>INPUT_IMAGE_DELETE_FAILED = 30005;</code>
+   * <code>INPUT_DELETE_FAILED = 30005;</code>
    */
-  INPUT_IMAGE_DELETE_FAILED(30005),
+  INPUT_DELETE_FAILED(30005),
   /**
-   * <code>INPUT_IMAGE_DUPLICATE = 30100;</code>
+   * <code>INPUT_DUPLICATE = 30100;</code>
    */
-  INPUT_IMAGE_DUPLICATE(30100),
+  INPUT_DUPLICATE(30100),
   /**
-   * <code>INPUT_IMAGE_UNSUPPORTED_FORMAT = 30101;</code>
+   * <code>INPUT_UNSUPPORTED_FORMAT = 30101;</code>
    */
-  INPUT_IMAGE_UNSUPPORTED_FORMAT(30101),
+  INPUT_UNSUPPORTED_FORMAT(30101),
   /**
-   * <code>INPUT_IMAGE_DOES_NOT_EXIST = 30102;</code>
+   * <code>INPUT_DOES_NOT_EXIST = 30102;</code>
    */
-  INPUT_IMAGE_DOES_NOT_EXIST(30102),
+  INPUT_DOES_NOT_EXIST(30102),
   /**
-   * <code>INPUT_IMAGE_PERMISSION_DENIED = 30103;</code>
+   * <code>INPUT_PERMISSION_DENIED = 30103;</code>
    */
-  INPUT_IMAGE_PERMISSION_DENIED(30103),
+  INPUT_PERMISSION_DENIED(30103),
   /**
-   * <code>INPUT_IMAGE_INVALID_ARGUMENT = 30104;</code>
+   * <code>INPUT_INVALID_ARGUMENT = 30104;</code>
    */
-  INPUT_IMAGE_INVALID_ARGUMENT(30104),
+  INPUT_INVALID_ARGUMENT(30104),
   /**
-   * <code>INPUT_IMAGE_OVER_LIMIT = 30105;</code>
+   * <code>INPUT_OVER_LIMIT = 30105;</code>
    */
-  INPUT_IMAGE_OVER_LIMIT(30105),
+  INPUT_OVER_LIMIT(30105),
   /**
-   * <code>INPUT_IMAGE_INVALID_URL = 30106;</code>
+   * <code>INPUT_INVALID_URL = 30106;</code>
    */
-  INPUT_IMAGE_INVALID_URL(30106),
+  INPUT_INVALID_URL(30106),
   /**
-   * <code>INPUT_IMAGE_MODIFY_SUCCESS = 30200;</code>
+   * <code>INPUT_MODIFY_SUCCESS = 30200;</code>
    */
-  INPUT_IMAGE_MODIFY_SUCCESS(30200),
+  INPUT_MODIFY_SUCCESS(30200),
   /**
-   * <code>INPUT_IMAGE_MODIFY_PENDING = 30201;</code>
+   * <code>INPUT_MODIFY_PENDING = 30201;</code>
    */
-  INPUT_IMAGE_MODIFY_PENDING(30201),
+  INPUT_MODIFY_PENDING(30201),
   /**
-   * <code>INPUT_IMAGE_MODIFY_FAILED = 30203;</code>
+   * <code>INPUT_MODIFY_FAILED = 30203;</code>
    */
-  INPUT_IMAGE_MODIFY_FAILED(30203),
+  INPUT_MODIFY_FAILED(30203),
   /**
-   * <code>INPUT_IMAGE_STORAGE_HOST_FAILED = 30210;</code>
+   * <code>INPUT_STORAGE_HOST_FAILED = 30210;</code>
    */
-  INPUT_IMAGE_STORAGE_HOST_FAILED(30210),
+  INPUT_STORAGE_HOST_FAILED(30210),
   /**
-   * <code>ALL_INPUT_IMAGES_INVALID_BYTES = 30300;</code>
+   * <code>ALL_INPUT_INVALID_BYTES = 30300;</code>
    */
-  ALL_INPUT_IMAGES_INVALID_BYTES(30300),
+  ALL_INPUT_INVALID_BYTES(30300),
   /**
-   * <code>INPUT_IMAGE_CLUSTER_SUCCESS = 30400;</code>
+   * <code>INPUT_CLUSTER_SUCCESS = 30400;</code>
    */
-  INPUT_IMAGE_CLUSTER_SUCCESS(30400),
+  INPUT_CLUSTER_SUCCESS(30400),
   /**
-   * <code>INPUT_IMAGE_CLUSTER_PENDING = 30401;</code>
+   * <code>INPUT_CLUSTER_PENDING = 30401;</code>
    */
-  INPUT_IMAGE_CLUSTER_PENDING(30401),
+  INPUT_CLUSTER_PENDING(30401),
   /**
-   * <code>INPUT_IMAGE_CLUSTER_FAILED = 30402;</code>
+   * <code>INPUT_CLUSTER_FAILED = 30402;</code>
    */
-  INPUT_IMAGE_CLUSTER_FAILED(30402),
+  INPUT_CLUSTER_FAILED(30402),
   /**
-   * <code>INPUT_IMAGE_CLUSTER_IN_PROGRESS = 30403;</code>
+   * <code>INPUT_CLUSTER_IN_PROGRESS = 30403;</code>
    */
-  INPUT_IMAGE_CLUSTER_IN_PROGRESS(30403),
+  INPUT_CLUSTER_IN_PROGRESS(30403),
   /**
-   * <code>INPUT_IMAGE_REINDEX_SUCCESS = 30500;</code>
+   * <code>INPUT_REINDEX_SUCCESS = 30500;</code>
    */
-  INPUT_IMAGE_REINDEX_SUCCESS(30500),
+  INPUT_REINDEX_SUCCESS(30500),
   /**
-   * <code>INPUT_IMAGE_REINDEX_PENDING = 30501;</code>
+   * <code>INPUT_REINDEX_PENDING = 30501;</code>
    */
-  INPUT_IMAGE_REINDEX_PENDING(30501),
+  INPUT_REINDEX_PENDING(30501),
   /**
-   * <code>INPUT_IMAGE_REINDEX_FAILED = 30502;</code>
+   * <code>INPUT_REINDEX_FAILED = 30502;</code>
    */
-  INPUT_IMAGE_REINDEX_FAILED(30502),
+  INPUT_REINDEX_FAILED(30502),
   /**
-   * <code>INPUT_IMAGE_REINDEX_IN_PROGRESS = 30503;</code>
+   * <code>INPUT_REINDEX_IN_PROGRESS = 30503;</code>
    */
-  INPUT_IMAGE_REINDEX_IN_PROGRESS(30503),
+  INPUT_REINDEX_IN_PROGRESS(30503),
   /**
    * <pre>
-   * Input:Video related 31xxx
+   * Input:Video related 31xxx -- Deprecated
    * </pre>
    *
    * <code>INPUT_VIDEO_DOWNLOAD_SUCCESS = 31000;</code>
@@ -781,10 +801,6 @@ public enum StatusCode
    * <code>ALL_INPUT_VIDEOS_INVALID_BYTES = 31300;</code>
    */
   ALL_INPUT_VIDEOS_INVALID_BYTES(31300),
-  /**
-   * <code>INPUT_PERMISSION_DENIED = 39995;</code>
-   */
-  INPUT_PERMISSION_DENIED(39995),
   /**
    * <code>INPUT_CONNECTION_FAILED = 39996;</code>
    */
@@ -961,6 +977,30 @@ public enum StatusCode
    * <code>SQS_UNKNOWN = 41102;</code>
    */
   SQS_UNKNOWN(41102),
+  /**
+   * <pre>
+   * KAFKA related errros 412xx
+   * </pre>
+   *
+   * <code>KAFKA_UNKNOW = 41200;</code>
+   */
+  KAFKA_UNKNOW(41200),
+  /**
+   * <code>KAFKA_MISSING_TOPIC = 41201;</code>
+   */
+  KAFKA_MISSING_TOPIC(41201),
+  /**
+   * <code>KAFKA_ADMIN_ERR = 41202;</code>
+   */
+  KAFKA_ADMIN_ERR(41202),
+  /**
+   * <code>KAFKA_CONSUMER_ERR = 41203;</code>
+   */
+  KAFKA_CONSUMER_ERR(41203),
+  /**
+   * <code>KAFKA_PUBLISHER_ERR = 41204;</code>
+   */
+  KAFKA_PUBLISHER_ERR(41204),
   /**
    * <pre>
    *Search related errors 43xxxx
@@ -1257,14 +1297,18 @@ public enum StatusCode
    */
   public static final int MIXED_STATUS_VALUE = 10010;
   /**
+   * <code>FAILURE = 10020;</code>
+   */
+  public static final int FAILURE_VALUE = 10020;
+  /**
    * <pre>
    *SUCCESS_WARNING_API_DEPRECATED = 10001;
    *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
    * </pre>
    *
-   * <code>FAILURE = 10020;</code>
+   * <code>TRY_AGAIN = 10030;</code>
    */
-  public static final int FAILURE_VALUE = 10020;
+  public static final int TRY_AGAIN_VALUE = 10030;
   /**
    * <pre>
    * Clarifai Connection Codes: 11xxx
@@ -1474,13 +1518,25 @@ public enum StatusCode
    */
   public static final int MODEL_TRAINING_MSG_REDELIVER_VALUE = 21116;
   /**
-   * <code>MODEL_TRAINING_INCONSISTENT_DATA = 21117;</code>
+   * <pre>
+   * Training got error due to insufficient labelled data
+   * </pre>
+   *
+   * <code>MODEL_TRAINING_INSUFFICIENT_DATA = 21117;</code>
    */
-  public static final int MODEL_TRAINING_INCONSISTENT_DATA_VALUE = 21117;
+  public static final int MODEL_TRAINING_INSUFFICIENT_DATA_VALUE = 21117;
   /**
    * <code>MODEL_TRAINING_INVALID_PARAMS = 21118;</code>
    */
   public static final int MODEL_TRAINING_INVALID_PARAMS_VALUE = 21118;
+  /**
+   * <pre>
+   * Training is stopped because too many data were dropped
+   * </pre>
+   *
+   * <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
+   */
+  public static final int MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED_VALUE = 21119;
   /**
    * <code>MODEL_MODIFY_SUCCESS = 21150;</code>
    */
@@ -1603,7 +1659,7 @@ public enum StatusCode
   public static final int MODEL_QUEUED_FOR_DEPLOYMENT_VALUE = 21352;
   /**
    * <pre>
-   * Used when taking down inactive spires
+   * Used when model spire deployment is manually taken down or due to inactivity
    * </pre>
    *
    * <code>MODEL_NOT_DEPLOYED = 21353;</code>
@@ -1722,10 +1778,6 @@ public enum StatusCode
    */
   public static final int ANNOTATION_FAILED_VALUE = 24152;
   /**
-   * <code>ANNOTATION_IN_PROGRESS = 24153;</code>
-   */
-  public static final int ANNOTATION_IN_PROGRESS_VALUE = 24153;
-  /**
    * <code>ANNOTATION_UNKNOWN_STATUS = 24154;</code>
    */
   public static final int ANNOTATION_UNKNOWN_STATUS_VALUE = 24154;
@@ -1737,6 +1789,14 @@ public enum StatusCode
    * <code>ANNOTATION_PERMISSION_DENIED = 24156;</code>
    */
   public static final int ANNOTATION_PERMISSION_DENIED_VALUE = 24156;
+  /**
+   * <code>ANNOTATION_AWAITING_REVIEW = 24157;</code>
+   */
+  public static final int ANNOTATION_AWAITING_REVIEW_VALUE = 24157;
+  /**
+   * <code>ANNOTATION_REVIEW_DENIED = 24158;</code>
+   */
+  public static final int ANNOTATION_REVIEW_DENIED_VALUE = 24158;
   /**
    * <code>ANNOTATION_MODIFY_SUCCESS = 24250;</code>
    */
@@ -1834,120 +1894,120 @@ public enum StatusCode
    * Input:Image related 30xxx
    * </pre>
    *
-   * <code>INPUT_IMAGE_DOWNLOAD_SUCCESS = 30000;</code>
+   * <code>INPUT_DOWNLOAD_SUCCESS = 30000;</code>
    */
-  public static final int INPUT_IMAGE_DOWNLOAD_SUCCESS_VALUE = 30000;
+  public static final int INPUT_DOWNLOAD_SUCCESS_VALUE = 30000;
   /**
    * <pre>
    * when things are async, this is the default status.
    * </pre>
    *
-   * <code>INPUT_IMAGE_DOWNLOAD_PENDING = 30001;</code>
+   * <code>INPUT_DOWNLOAD_PENDING = 30001;</code>
    */
-  public static final int INPUT_IMAGE_DOWNLOAD_PENDING_VALUE = 30001;
+  public static final int INPUT_DOWNLOAD_PENDING_VALUE = 30001;
   /**
    * <pre>
    * any type of error downloading and processing
    * </pre>
    *
-   * <code>INPUT_IMAGE_DOWNLOAD_FAILED = 30002;</code>
+   * <code>INPUT_DOWNLOAD_FAILED = 30002;</code>
    */
-  public static final int INPUT_IMAGE_DOWNLOAD_FAILED_VALUE = 30002;
+  public static final int INPUT_DOWNLOAD_FAILED_VALUE = 30002;
   /**
-   * <code>INPUT_IMAGE_DOWNLOAD_IN_PROGRESS = 30003;</code>
+   * <code>INPUT_DOWNLOAD_IN_PROGRESS = 30003;</code>
    */
-  public static final int INPUT_IMAGE_DOWNLOAD_IN_PROGRESS_VALUE = 30003;
+  public static final int INPUT_DOWNLOAD_IN_PROGRESS_VALUE = 30003;
   /**
-   * <code>INPUT_IMAGE_STATUS_UPDATE_FAILED = 30004;</code>
+   * <code>INPUT_STATUS_UPDATE_FAILED = 30004;</code>
    */
-  public static final int INPUT_IMAGE_STATUS_UPDATE_FAILED_VALUE = 30004;
+  public static final int INPUT_STATUS_UPDATE_FAILED_VALUE = 30004;
   /**
-   * <code>INPUT_IMAGE_DELETE_FAILED = 30005;</code>
+   * <code>INPUT_DELETE_FAILED = 30005;</code>
    */
-  public static final int INPUT_IMAGE_DELETE_FAILED_VALUE = 30005;
+  public static final int INPUT_DELETE_FAILED_VALUE = 30005;
   /**
-   * <code>INPUT_IMAGE_DUPLICATE = 30100;</code>
+   * <code>INPUT_DUPLICATE = 30100;</code>
    */
-  public static final int INPUT_IMAGE_DUPLICATE_VALUE = 30100;
+  public static final int INPUT_DUPLICATE_VALUE = 30100;
   /**
-   * <code>INPUT_IMAGE_UNSUPPORTED_FORMAT = 30101;</code>
+   * <code>INPUT_UNSUPPORTED_FORMAT = 30101;</code>
    */
-  public static final int INPUT_IMAGE_UNSUPPORTED_FORMAT_VALUE = 30101;
+  public static final int INPUT_UNSUPPORTED_FORMAT_VALUE = 30101;
   /**
-   * <code>INPUT_IMAGE_DOES_NOT_EXIST = 30102;</code>
+   * <code>INPUT_DOES_NOT_EXIST = 30102;</code>
    */
-  public static final int INPUT_IMAGE_DOES_NOT_EXIST_VALUE = 30102;
+  public static final int INPUT_DOES_NOT_EXIST_VALUE = 30102;
   /**
-   * <code>INPUT_IMAGE_PERMISSION_DENIED = 30103;</code>
+   * <code>INPUT_PERMISSION_DENIED = 30103;</code>
    */
-  public static final int INPUT_IMAGE_PERMISSION_DENIED_VALUE = 30103;
+  public static final int INPUT_PERMISSION_DENIED_VALUE = 30103;
   /**
-   * <code>INPUT_IMAGE_INVALID_ARGUMENT = 30104;</code>
+   * <code>INPUT_INVALID_ARGUMENT = 30104;</code>
    */
-  public static final int INPUT_IMAGE_INVALID_ARGUMENT_VALUE = 30104;
+  public static final int INPUT_INVALID_ARGUMENT_VALUE = 30104;
   /**
-   * <code>INPUT_IMAGE_OVER_LIMIT = 30105;</code>
+   * <code>INPUT_OVER_LIMIT = 30105;</code>
    */
-  public static final int INPUT_IMAGE_OVER_LIMIT_VALUE = 30105;
+  public static final int INPUT_OVER_LIMIT_VALUE = 30105;
   /**
-   * <code>INPUT_IMAGE_INVALID_URL = 30106;</code>
+   * <code>INPUT_INVALID_URL = 30106;</code>
    */
-  public static final int INPUT_IMAGE_INVALID_URL_VALUE = 30106;
+  public static final int INPUT_INVALID_URL_VALUE = 30106;
   /**
-   * <code>INPUT_IMAGE_MODIFY_SUCCESS = 30200;</code>
+   * <code>INPUT_MODIFY_SUCCESS = 30200;</code>
    */
-  public static final int INPUT_IMAGE_MODIFY_SUCCESS_VALUE = 30200;
+  public static final int INPUT_MODIFY_SUCCESS_VALUE = 30200;
   /**
-   * <code>INPUT_IMAGE_MODIFY_PENDING = 30201;</code>
+   * <code>INPUT_MODIFY_PENDING = 30201;</code>
    */
-  public static final int INPUT_IMAGE_MODIFY_PENDING_VALUE = 30201;
+  public static final int INPUT_MODIFY_PENDING_VALUE = 30201;
   /**
-   * <code>INPUT_IMAGE_MODIFY_FAILED = 30203;</code>
+   * <code>INPUT_MODIFY_FAILED = 30203;</code>
    */
-  public static final int INPUT_IMAGE_MODIFY_FAILED_VALUE = 30203;
+  public static final int INPUT_MODIFY_FAILED_VALUE = 30203;
   /**
-   * <code>INPUT_IMAGE_STORAGE_HOST_FAILED = 30210;</code>
+   * <code>INPUT_STORAGE_HOST_FAILED = 30210;</code>
    */
-  public static final int INPUT_IMAGE_STORAGE_HOST_FAILED_VALUE = 30210;
+  public static final int INPUT_STORAGE_HOST_FAILED_VALUE = 30210;
   /**
-   * <code>ALL_INPUT_IMAGES_INVALID_BYTES = 30300;</code>
+   * <code>ALL_INPUT_INVALID_BYTES = 30300;</code>
    */
-  public static final int ALL_INPUT_IMAGES_INVALID_BYTES_VALUE = 30300;
+  public static final int ALL_INPUT_INVALID_BYTES_VALUE = 30300;
   /**
-   * <code>INPUT_IMAGE_CLUSTER_SUCCESS = 30400;</code>
+   * <code>INPUT_CLUSTER_SUCCESS = 30400;</code>
    */
-  public static final int INPUT_IMAGE_CLUSTER_SUCCESS_VALUE = 30400;
+  public static final int INPUT_CLUSTER_SUCCESS_VALUE = 30400;
   /**
-   * <code>INPUT_IMAGE_CLUSTER_PENDING = 30401;</code>
+   * <code>INPUT_CLUSTER_PENDING = 30401;</code>
    */
-  public static final int INPUT_IMAGE_CLUSTER_PENDING_VALUE = 30401;
+  public static final int INPUT_CLUSTER_PENDING_VALUE = 30401;
   /**
-   * <code>INPUT_IMAGE_CLUSTER_FAILED = 30402;</code>
+   * <code>INPUT_CLUSTER_FAILED = 30402;</code>
    */
-  public static final int INPUT_IMAGE_CLUSTER_FAILED_VALUE = 30402;
+  public static final int INPUT_CLUSTER_FAILED_VALUE = 30402;
   /**
-   * <code>INPUT_IMAGE_CLUSTER_IN_PROGRESS = 30403;</code>
+   * <code>INPUT_CLUSTER_IN_PROGRESS = 30403;</code>
    */
-  public static final int INPUT_IMAGE_CLUSTER_IN_PROGRESS_VALUE = 30403;
+  public static final int INPUT_CLUSTER_IN_PROGRESS_VALUE = 30403;
   /**
-   * <code>INPUT_IMAGE_REINDEX_SUCCESS = 30500;</code>
+   * <code>INPUT_REINDEX_SUCCESS = 30500;</code>
    */
-  public static final int INPUT_IMAGE_REINDEX_SUCCESS_VALUE = 30500;
+  public static final int INPUT_REINDEX_SUCCESS_VALUE = 30500;
   /**
-   * <code>INPUT_IMAGE_REINDEX_PENDING = 30501;</code>
+   * <code>INPUT_REINDEX_PENDING = 30501;</code>
    */
-  public static final int INPUT_IMAGE_REINDEX_PENDING_VALUE = 30501;
+  public static final int INPUT_REINDEX_PENDING_VALUE = 30501;
   /**
-   * <code>INPUT_IMAGE_REINDEX_FAILED = 30502;</code>
+   * <code>INPUT_REINDEX_FAILED = 30502;</code>
    */
-  public static final int INPUT_IMAGE_REINDEX_FAILED_VALUE = 30502;
+  public static final int INPUT_REINDEX_FAILED_VALUE = 30502;
   /**
-   * <code>INPUT_IMAGE_REINDEX_IN_PROGRESS = 30503;</code>
+   * <code>INPUT_REINDEX_IN_PROGRESS = 30503;</code>
    */
-  public static final int INPUT_IMAGE_REINDEX_IN_PROGRESS_VALUE = 30503;
+  public static final int INPUT_REINDEX_IN_PROGRESS_VALUE = 30503;
   /**
    * <pre>
-   * Input:Video related 31xxx
+   * Input:Video related 31xxx -- Deprecated
    * </pre>
    *
    * <code>INPUT_VIDEO_DOWNLOAD_SUCCESS = 31000;</code>
@@ -2009,10 +2069,6 @@ public enum StatusCode
    * <code>ALL_INPUT_VIDEOS_INVALID_BYTES = 31300;</code>
    */
   public static final int ALL_INPUT_VIDEOS_INVALID_BYTES_VALUE = 31300;
-  /**
-   * <code>INPUT_PERMISSION_DENIED = 39995;</code>
-   */
-  public static final int INPUT_PERMISSION_DENIED_VALUE = 39995;
   /**
    * <code>INPUT_CONNECTION_FAILED = 39996;</code>
    */
@@ -2189,6 +2245,30 @@ public enum StatusCode
    * <code>SQS_UNKNOWN = 41102;</code>
    */
   public static final int SQS_UNKNOWN_VALUE = 41102;
+  /**
+   * <pre>
+   * KAFKA related errros 412xx
+   * </pre>
+   *
+   * <code>KAFKA_UNKNOW = 41200;</code>
+   */
+  public static final int KAFKA_UNKNOW_VALUE = 41200;
+  /**
+   * <code>KAFKA_MISSING_TOPIC = 41201;</code>
+   */
+  public static final int KAFKA_MISSING_TOPIC_VALUE = 41201;
+  /**
+   * <code>KAFKA_ADMIN_ERR = 41202;</code>
+   */
+  public static final int KAFKA_ADMIN_ERR_VALUE = 41202;
+  /**
+   * <code>KAFKA_CONSUMER_ERR = 41203;</code>
+   */
+  public static final int KAFKA_CONSUMER_ERR_VALUE = 41203;
+  /**
+   * <code>KAFKA_PUBLISHER_ERR = 41204;</code>
+   */
+  public static final int KAFKA_PUBLISHER_ERR_VALUE = 41204;
   /**
    * <pre>
    *Search related errors 43xxxx
@@ -2485,6 +2565,7 @@ public enum StatusCode
       case 10000: return SUCCESS;
       case 10010: return MIXED_STATUS;
       case 10020: return FAILURE;
+      case 10030: return TRY_AGAIN;
       case 11000: return CONN_ACCOUNT_ISSUES;
       case 11001: return CONN_TOKEN_INVALID;
       case 11002: return CONN_CREDENTIALS_INVALID;
@@ -2511,8 +2592,9 @@ public enum StatusCode
       case 21114: return MODEL_TRAINING_WAITING_ERROR;
       case 21115: return MODEL_TRAINING_UNKNOWN_ERROR;
       case 21116: return MODEL_TRAINING_MSG_REDELIVER;
-      case 21117: return MODEL_TRAINING_INCONSISTENT_DATA;
+      case 21117: return MODEL_TRAINING_INSUFFICIENT_DATA;
       case 21118: return MODEL_TRAINING_INVALID_PARAMS;
+      case 21119: return MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED;
       case 21150: return MODEL_MODIFY_SUCCESS;
       case 21151: return MODEL_MODIFY_PENDING;
       case 21152: return MODEL_MODIFY_FAILED;
@@ -2557,10 +2639,11 @@ public enum StatusCode
       case 24150: return ANNOTATION_SUCCESS;
       case 24151: return ANNOTATION_PENDING;
       case 24152: return ANNOTATION_FAILED;
-      case 24153: return ANNOTATION_IN_PROGRESS;
       case 24154: return ANNOTATION_UNKNOWN_STATUS;
       case 24155: return ANNOTATION_INVALID_ARGUMENT;
       case 24156: return ANNOTATION_PERMISSION_DENIED;
+      case 24157: return ANNOTATION_AWAITING_REVIEW;
+      case 24158: return ANNOTATION_REVIEW_DENIED;
       case 24250: return ANNOTATION_MODIFY_SUCCESS;
       case 24251: return ANNOTATION_MODIFY_PENDING;
       case 24252: return ANNOTATION_MODIFY_FAILED;
@@ -2580,32 +2663,32 @@ public enum StatusCode
       case 25201: return APP_DUPLICATION_FAILED;
       case 25202: return APP_DUPLICATION_PENDING;
       case 25203: return APP_DUPLICATION_IN_PROGRESS;
-      case 30000: return INPUT_IMAGE_DOWNLOAD_SUCCESS;
-      case 30001: return INPUT_IMAGE_DOWNLOAD_PENDING;
-      case 30002: return INPUT_IMAGE_DOWNLOAD_FAILED;
-      case 30003: return INPUT_IMAGE_DOWNLOAD_IN_PROGRESS;
-      case 30004: return INPUT_IMAGE_STATUS_UPDATE_FAILED;
-      case 30005: return INPUT_IMAGE_DELETE_FAILED;
-      case 30100: return INPUT_IMAGE_DUPLICATE;
-      case 30101: return INPUT_IMAGE_UNSUPPORTED_FORMAT;
-      case 30102: return INPUT_IMAGE_DOES_NOT_EXIST;
-      case 30103: return INPUT_IMAGE_PERMISSION_DENIED;
-      case 30104: return INPUT_IMAGE_INVALID_ARGUMENT;
-      case 30105: return INPUT_IMAGE_OVER_LIMIT;
-      case 30106: return INPUT_IMAGE_INVALID_URL;
-      case 30200: return INPUT_IMAGE_MODIFY_SUCCESS;
-      case 30201: return INPUT_IMAGE_MODIFY_PENDING;
-      case 30203: return INPUT_IMAGE_MODIFY_FAILED;
-      case 30210: return INPUT_IMAGE_STORAGE_HOST_FAILED;
-      case 30300: return ALL_INPUT_IMAGES_INVALID_BYTES;
-      case 30400: return INPUT_IMAGE_CLUSTER_SUCCESS;
-      case 30401: return INPUT_IMAGE_CLUSTER_PENDING;
-      case 30402: return INPUT_IMAGE_CLUSTER_FAILED;
-      case 30403: return INPUT_IMAGE_CLUSTER_IN_PROGRESS;
-      case 30500: return INPUT_IMAGE_REINDEX_SUCCESS;
-      case 30501: return INPUT_IMAGE_REINDEX_PENDING;
-      case 30502: return INPUT_IMAGE_REINDEX_FAILED;
-      case 30503: return INPUT_IMAGE_REINDEX_IN_PROGRESS;
+      case 30000: return INPUT_DOWNLOAD_SUCCESS;
+      case 30001: return INPUT_DOWNLOAD_PENDING;
+      case 30002: return INPUT_DOWNLOAD_FAILED;
+      case 30003: return INPUT_DOWNLOAD_IN_PROGRESS;
+      case 30004: return INPUT_STATUS_UPDATE_FAILED;
+      case 30005: return INPUT_DELETE_FAILED;
+      case 30100: return INPUT_DUPLICATE;
+      case 30101: return INPUT_UNSUPPORTED_FORMAT;
+      case 30102: return INPUT_DOES_NOT_EXIST;
+      case 30103: return INPUT_PERMISSION_DENIED;
+      case 30104: return INPUT_INVALID_ARGUMENT;
+      case 30105: return INPUT_OVER_LIMIT;
+      case 30106: return INPUT_INVALID_URL;
+      case 30200: return INPUT_MODIFY_SUCCESS;
+      case 30201: return INPUT_MODIFY_PENDING;
+      case 30203: return INPUT_MODIFY_FAILED;
+      case 30210: return INPUT_STORAGE_HOST_FAILED;
+      case 30300: return ALL_INPUT_INVALID_BYTES;
+      case 30400: return INPUT_CLUSTER_SUCCESS;
+      case 30401: return INPUT_CLUSTER_PENDING;
+      case 30402: return INPUT_CLUSTER_FAILED;
+      case 30403: return INPUT_CLUSTER_IN_PROGRESS;
+      case 30500: return INPUT_REINDEX_SUCCESS;
+      case 30501: return INPUT_REINDEX_PENDING;
+      case 30502: return INPUT_REINDEX_FAILED;
+      case 30503: return INPUT_REINDEX_IN_PROGRESS;
       case 31000: return INPUT_VIDEO_DOWNLOAD_SUCCESS;
       case 31001: return INPUT_VIDEO_DOWNLOAD_PENDING;
       case 31002: return INPUT_VIDEO_DOWNLOAD_FAILED;
@@ -2621,7 +2704,6 @@ public enum StatusCode
       case 31203: return INPUT_VIDEO_MODIFY_FAILED;
       case 31210: return INPUT_VIDEO_STORAGE_HOST_FAILED;
       case 31300: return ALL_INPUT_VIDEOS_INVALID_BYTES;
-      case 39995: return INPUT_PERMISSION_DENIED;
       case 39996: return INPUT_CONNECTION_FAILED;
       case 39997: return REQUEST_DISABLED_FOR_MAINTENANCE;
       case 39998: return INPUT_WRITES_DISABLED_FOR_MAINTENANCE;
@@ -2661,6 +2743,11 @@ public enum StatusCode
       case 41100: return SQS_OVERLIMIT;
       case 41101: return SQS_INVALID_RECEIPT_HANDLE;
       case 41102: return SQS_UNKNOWN;
+      case 41200: return KAFKA_UNKNOW;
+      case 41201: return KAFKA_MISSING_TOPIC;
+      case 41202: return KAFKA_ADMIN_ERR;
+      case 41203: return KAFKA_CONSUMER_ERR;
+      case 41204: return KAFKA_PUBLISHER_ERR;
       case 43001: return SEARCH_INTERNAL_FAILURE;
       case 43002: return SEARCH_PROJECTION_FAILURE;
       case 43003: return SEARCH_PREDICTION_FAILURE;

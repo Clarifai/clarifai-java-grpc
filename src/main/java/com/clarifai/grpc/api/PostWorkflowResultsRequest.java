@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            favorUserWorkflows_ = input.readBool();
+            favorClarifaiWorkflows_ = input.readBool();
             break;
           }
           default: {
@@ -282,17 +282,17 @@ private static final long serialVersionUID = 0L;
     return getOutputConfig();
   }
 
-  public static final int FAVOR_USER_WORKFLOWS_FIELD_NUMBER = 5;
-  private boolean favorUserWorkflows_;
+  public static final int FAVOR_CLARIFAI_WORKFLOWS_FIELD_NUMBER = 5;
+  private boolean favorClarifaiWorkflows_;
   /**
    * <pre>
-   * Use this flag to look into user created workflows first for a Workflow ID
+   * Use this flag to look into clarifai published workflows first for a Workflow ID
    * </pre>
    *
-   * <code>bool favor_user_workflows = 5;</code>
+   * <code>bool favor_clarifai_workflows = 5;</code>
    */
-  public boolean getFavorUserWorkflows() {
-    return favorUserWorkflows_;
+  public boolean getFavorClarifaiWorkflows() {
+    return favorClarifaiWorkflows_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,8 +321,8 @@ private static final long serialVersionUID = 0L;
     if (outputConfig_ != null) {
       output.writeMessage(4, getOutputConfig());
     }
-    if (favorUserWorkflows_ != false) {
-      output.writeBool(5, favorUserWorkflows_);
+    if (favorClarifaiWorkflows_ != false) {
+      output.writeBool(5, favorClarifaiWorkflows_);
     }
     unknownFields.writeTo(output);
   }
@@ -348,9 +348,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getOutputConfig());
     }
-    if (favorUserWorkflows_ != false) {
+    if (favorClarifaiWorkflows_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, favorUserWorkflows_);
+        .computeBoolSize(5, favorClarifaiWorkflows_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -381,8 +381,8 @@ private static final long serialVersionUID = 0L;
       if (!getOutputConfig()
           .equals(other.getOutputConfig())) return false;
     }
-    if (getFavorUserWorkflows()
-        != other.getFavorUserWorkflows()) return false;
+    if (getFavorClarifaiWorkflows()
+        != other.getFavorClarifaiWorkflows()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -408,9 +408,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputConfig().hashCode();
     }
-    hash = (37 * hash) + FAVOR_USER_WORKFLOWS_FIELD_NUMBER;
+    hash = (37 * hash) + FAVOR_CLARIFAI_WORKFLOWS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFavorUserWorkflows());
+        getFavorClarifaiWorkflows());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
         outputConfig_ = null;
         outputConfigBuilder_ = null;
       }
-      favorUserWorkflows_ = false;
+      favorClarifaiWorkflows_ = false;
 
       return this;
     }
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
-      result.favorUserWorkflows_ = favorUserWorkflows_;
+      result.favorClarifaiWorkflows_ = favorClarifaiWorkflows_;
       onBuilt();
       return result;
     }
@@ -699,8 +699,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasOutputConfig()) {
         mergeOutputConfig(other.getOutputConfig());
       }
-      if (other.getFavorUserWorkflows() != false) {
-        setFavorUserWorkflows(other.getFavorUserWorkflows());
+      if (other.getFavorClarifaiWorkflows() != false) {
+        setFavorClarifaiWorkflows(other.getFavorClarifaiWorkflows());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1386,40 +1386,40 @@ private static final long serialVersionUID = 0L;
       return outputConfigBuilder_;
     }
 
-    private boolean favorUserWorkflows_ ;
+    private boolean favorClarifaiWorkflows_ ;
     /**
      * <pre>
-     * Use this flag to look into user created workflows first for a Workflow ID
+     * Use this flag to look into clarifai published workflows first for a Workflow ID
      * </pre>
      *
-     * <code>bool favor_user_workflows = 5;</code>
+     * <code>bool favor_clarifai_workflows = 5;</code>
      */
-    public boolean getFavorUserWorkflows() {
-      return favorUserWorkflows_;
+    public boolean getFavorClarifaiWorkflows() {
+      return favorClarifaiWorkflows_;
     }
     /**
      * <pre>
-     * Use this flag to look into user created workflows first for a Workflow ID
+     * Use this flag to look into clarifai published workflows first for a Workflow ID
      * </pre>
      *
-     * <code>bool favor_user_workflows = 5;</code>
+     * <code>bool favor_clarifai_workflows = 5;</code>
      */
-    public Builder setFavorUserWorkflows(boolean value) {
+    public Builder setFavorClarifaiWorkflows(boolean value) {
       
-      favorUserWorkflows_ = value;
+      favorClarifaiWorkflows_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Use this flag to look into user created workflows first for a Workflow ID
+     * Use this flag to look into clarifai published workflows first for a Workflow ID
      * </pre>
      *
-     * <code>bool favor_user_workflows = 5;</code>
+     * <code>bool favor_clarifai_workflows = 5;</code>
      */
-    public Builder clearFavorUserWorkflows() {
+    public Builder clearFavorClarifaiWorkflows() {
       
-      favorUserWorkflows_ = false;
+      favorClarifaiWorkflows_ = false;
       onChanged();
       return this;
     }

@@ -173,33 +173,4 @@ public interface AppOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 13;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
-
-  /**
-   * <pre>
-   * Deprecated fields soon to be removed.
-   * </pre>
-   *
-   * <code>uint32 v1_id = 100 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated int getV1Id();
-
-  /**
-   * <code>string client_id = 101 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated java.lang.String getClientId();
-  /**
-   * <code>string client_id = 101 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getClientIdBytes();
-
-  /**
-   * <code>string client_secret = 102 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated java.lang.String getClientSecret();
-  /**
-   * <code>string client_secret = 102 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getClientSecretBytes();
 }

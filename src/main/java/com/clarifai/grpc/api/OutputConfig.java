@@ -21,7 +21,6 @@ private static final long serialVersionUID = 0L;
     hyperParameters_ = "";
     selectConcepts_ = java.util.Collections.emptyList();
     embedModelVersionId_ = "";
-    conceptThresholdType_ = 0;
   }
 
   @java.lang.Override
@@ -141,12 +140,6 @@ private static final long serialVersionUID = 0L;
             failOnMissingPositiveExamples_ = input.readBool();
             break;
           }
-          case 128: {
-            int rawValue = input.readEnum();
-
-            conceptThresholdType_ = rawValue;
-            break;
-          }
           case 138: {
             com.google.protobuf.Struct.Builder subBuilder = null;
             if (modelMetadata_ != null) {
@@ -158,6 +151,11 @@ private static final long serialVersionUID = 0L;
               modelMetadata_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 149: {
+
+            invalidDataTolerancePercent_ = input.readFloat();
             break;
           }
           default: {
@@ -199,7 +197,7 @@ private static final long serialVersionUID = 0L;
   private boolean conceptsMutuallyExclusive_;
   /**
    * <pre>
-   * Whether the concept predictions must sum to 1.
+   * For custom concept model training: whether the concept predictions must sum to 1.
    * </pre>
    *
    * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -212,7 +210,8 @@ private static final long serialVersionUID = 0L;
   private boolean closedEnvironment_;
   /**
    * <pre>
-   * Whether negatives should only be sampled from within the app during training, for custom models.
+   * For custom concept model training: Whether negatives should only be sampled from within the app during
+   * training, for custom models.
    * </pre>
    *
    * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -269,7 +268,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object language_;
   /**
    * <pre>
-   * Overrides the default_language for the app in a predict call.
+   * For concept model predictions: Overrides the default_language for the app in a predict call.
    * </pre>
    *
    * <code>string language = 4;</code>
@@ -288,7 +287,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Overrides the default_language for the app in a predict call.
+   * For concept model predictions: Overrides the default_language for the app in a predict call.
    * </pre>
    *
    * <code>string language = 4;</code>
@@ -312,7 +311,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * DEPRECATED: Hyper-parameters for custom training.
-   * Use new type for hyper-parameters
+   * Use new hyper_params field instead.
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -332,7 +331,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * DEPRECATED: Hyper-parameters for custom training.
-   * Use new type for hyper-parameters
+   * Use new hyper_params field instead.
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -355,8 +354,9 @@ private static final long serialVersionUID = 0L;
   private int maxConcepts_;
   /**
    * <pre>
-   * Maximum number of concepts in result. Defaults to 0 which under the hood will return default of
-   * 20. We do a server side default in order to control this feature in the future.
+   * For concept model predictions:  Maximum number of concepts in result. Defaults to 0 which under
+   * the hood will return default of 20. We do a server side default in order to control this
+   * feature in the future.
    * </pre>
    *
    * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -369,8 +369,9 @@ private static final long serialVersionUID = 0L;
   private float minValue_;
   /**
    * <pre>
-   * Minimum value of concept's probability score in result. Defaults to 0.0 which means we won't do
-   * any thresholding as all probabilities will likely be &gt; 0.0.
+   * For concept model predictions: Minimum value of concept's probability score in result.
+   * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+   * likely be &gt; 0.0.
    * </pre>
    *
    * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -383,7 +384,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.clarifai.grpc.api.Concept> selectConcepts_;
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -393,7 +394,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -404,7 +405,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -414,7 +415,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -424,7 +425,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -438,7 +439,7 @@ private static final long serialVersionUID = 0L;
   private int trainingTimeout_;
   /**
    * <pre>
-   * Training timeout of the model (in seconds)
+   * For custom concept model training: Training timeout of the model (in seconds)
    * </pre>
    *
    * <code>uint32 training_timeout = 9;</code>
@@ -451,7 +452,7 @@ private static final long serialVersionUID = 0L;
   private int sampleMs_;
   /**
    * <pre>
-   * Sample delay for video predicting (1 frame per N milliseconds)
+   * For model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
    * </pre>
    *
    * <code>uint32 sample_ms = 10;</code>
@@ -464,7 +465,7 @@ private static final long serialVersionUID = 0L;
   private int testSplitPercent_;
   /**
    * <pre>
-   * For Training Coordinator: Override for template name and test split percentage
+   * For custom deep training: Override for template name and test split percentage
    * test_split_percent defaults to 10 in training_coordinator/client.go
    * </pre>
    *
@@ -478,7 +479,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct hyperParams_;
   /**
    * <pre>
-   * Hyperparameters for custom training
+   * For custom model training: Hyperparameters for custom training
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -488,7 +489,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Hyperparameters for custom training
+   * For custom model training: Hyperparameters for custom training
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -498,7 +499,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Hyperparameters for custom training
+   * For custom model training: Hyperparameters for custom training
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -511,7 +512,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object embedModelVersionId_;
   /**
    * <pre>
-   * For custom models, this is the base model version to use for image embeddings.
+   * For custom model training: this is the base model version to use for image embeddings.
    * This has to be one of the embed models in the app workflow.
    * </pre>
    *
@@ -531,7 +532,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For custom models, this is the base model version to use for image embeddings.
+   * For custom model training: this is the base model version to use for image embeddings.
    * This has to be one of the embed models in the app workflow.
    * </pre>
    *
@@ -555,7 +556,7 @@ private static final long serialVersionUID = 0L;
   private boolean failOnMissingPositiveExamples_;
   /**
    * <pre>
-   * Use this flag to fail on missing positive examples
+   * For custom model training: Use this flag to fail on missing positive examples
    * By default we fill in the missing with random examples
    * </pre>
    *
@@ -565,48 +566,15 @@ private static final long serialVersionUID = 0L;
     return failOnMissingPositiveExamples_;
   }
 
-  public static final int CONCEPT_THRESHOLD_TYPE_FIELD_NUMBER = 16;
-  private int conceptThresholdType_;
-  /**
-   * <pre>
-   * For concept-threshold type of model to determine how each concept's value will be stored.
-   * The json value can either be the integer field number:
-   *   {"concept_threshold_type": 3}
-   * Or the string field name:
-   *   {"concept_threshold_type": "LESS_THAN"}
-   * </pre>
-   *
-   * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-   */
-  public int getConceptThresholdTypeValue() {
-    return conceptThresholdType_;
-  }
-  /**
-   * <pre>
-   * For concept-threshold type of model to determine how each concept's value will be stored.
-   * The json value can either be the integer field number:
-   *   {"concept_threshold_type": 3}
-   * Or the string field name:
-   *   {"concept_threshold_type": "LESS_THAN"}
-   * </pre>
-   *
-   * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-   */
-  public com.clarifai.grpc.api.ValueComparator getConceptThresholdType() {
-    @SuppressWarnings("deprecation")
-    com.clarifai.grpc.api.ValueComparator result = com.clarifai.grpc.api.ValueComparator.valueOf(conceptThresholdType_);
-    return result == null ? com.clarifai.grpc.api.ValueComparator.UNRECOGNIZED : result;
-  }
-
   public static final int MODEL_METADATA_FIELD_NUMBER = 17;
   private com.google.protobuf.Struct modelMetadata_;
   /**
    * <pre>
-   * This is any additional metadata as a JSON object that we want want to persist in the model's
-   * output config. This is a useful quick way to set fields for introducing fields for new model
-   * types so we don't have to add a new proto field and DB field each time. Please refer to the
-   * documentation or model impelmentation internally for more details on what fields are
-   * supported for which models.
+   * For custom model training: This is any additional metadata as a JSON object that we want
+   * want to persist in the model's output config. This is a useful quick way to set fields for
+   * introducing fields for new model types so we don't have to add a new proto field and DB field
+   * each time. Please refer to the documentation or model implementation internally for more
+   * details on what fields are supported for which models.
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -616,11 +584,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is any additional metadata as a JSON object that we want want to persist in the model's
-   * output config. This is a useful quick way to set fields for introducing fields for new model
-   * types so we don't have to add a new proto field and DB field each time. Please refer to the
-   * documentation or model impelmentation internally for more details on what fields are
-   * supported for which models.
+   * For custom model training: This is any additional metadata as a JSON object that we want
+   * want to persist in the model's output config. This is a useful quick way to set fields for
+   * introducing fields for new model types so we don't have to add a new proto field and DB field
+   * each time. Please refer to the documentation or model implementation internally for more
+   * details on what fields are supported for which models.
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -630,17 +598,32 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is any additional metadata as a JSON object that we want want to persist in the model's
-   * output config. This is a useful quick way to set fields for introducing fields for new model
-   * types so we don't have to add a new proto field and DB field each time. Please refer to the
-   * documentation or model impelmentation internally for more details on what fields are
-   * supported for which models.
+   * For custom model training: This is any additional metadata as a JSON object that we want
+   * want to persist in the model's output config. This is a useful quick way to set fields for
+   * introducing fields for new model types so we don't have to add a new proto field and DB field
+   * each time. Please refer to the documentation or model implementation internally for more
+   * details on what fields are supported for which models.
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
    */
   public com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder() {
     return getModelMetadata();
+  }
+
+  public static final int INVALID_DATA_TOLERANCE_PERCENT_FIELD_NUMBER = 18;
+  private float invalidDataTolerancePercent_;
+  /**
+   * <pre>
+   * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+   * inputs among all training inputs. Training will be stopped with error thrown if actual
+   * percent of invalid inputs is higher than this.
+   * </pre>
+   *
+   * <code>float invalid_data_tolerance_percent = 18;</code>
+   */
+  public float getInvalidDataTolerancePercent() {
+    return invalidDataTolerancePercent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -699,11 +682,11 @@ private static final long serialVersionUID = 0L;
     if (failOnMissingPositiveExamples_ != false) {
       output.writeBool(15, failOnMissingPositiveExamples_);
     }
-    if (conceptThresholdType_ != com.clarifai.grpc.api.ValueComparator.CONCEPT_THRESHOLD_NOT_SET.getNumber()) {
-      output.writeEnum(16, conceptThresholdType_);
-    }
     if (modelMetadata_ != null) {
       output.writeMessage(17, getModelMetadata());
+    }
+    if (invalidDataTolerancePercent_ != 0F) {
+      output.writeFloat(18, invalidDataTolerancePercent_);
     }
     unknownFields.writeTo(output);
   }
@@ -766,13 +749,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(15, failOnMissingPositiveExamples_);
     }
-    if (conceptThresholdType_ != com.clarifai.grpc.api.ValueComparator.CONCEPT_THRESHOLD_NOT_SET.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(16, conceptThresholdType_);
-    }
     if (modelMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getModelMetadata());
+    }
+    if (invalidDataTolerancePercent_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(18, invalidDataTolerancePercent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -821,12 +804,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEmbedModelVersionId())) return false;
     if (getFailOnMissingPositiveExamples()
         != other.getFailOnMissingPositiveExamples()) return false;
-    if (conceptThresholdType_ != other.conceptThresholdType_) return false;
     if (hasModelMetadata() != other.hasModelMetadata()) return false;
     if (hasModelMetadata()) {
       if (!getModelMetadata()
           .equals(other.getModelMetadata())) return false;
     }
+    if (java.lang.Float.floatToIntBits(getInvalidDataTolerancePercent())
+        != java.lang.Float.floatToIntBits(
+            other.getInvalidDataTolerancePercent())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -874,12 +859,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FAIL_ON_MISSING_POSITIVE_EXAMPLES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFailOnMissingPositiveExamples());
-    hash = (37 * hash) + CONCEPT_THRESHOLD_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + conceptThresholdType_;
     if (hasModelMetadata()) {
       hash = (37 * hash) + MODEL_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getModelMetadata().hashCode();
     }
+    hash = (37 * hash) + INVALID_DATA_TOLERANCE_PERCENT_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getInvalidDataTolerancePercent());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1050,14 +1036,14 @@ private static final long serialVersionUID = 0L;
 
       failOnMissingPositiveExamples_ = false;
 
-      conceptThresholdType_ = 0;
-
       if (modelMetadataBuilder_ == null) {
         modelMetadata_ = null;
       } else {
         modelMetadata_ = null;
         modelMetadataBuilder_ = null;
       }
+      invalidDataTolerancePercent_ = 0F;
+
       return this;
     }
 
@@ -1111,12 +1097,12 @@ private static final long serialVersionUID = 0L;
       }
       result.embedModelVersionId_ = embedModelVersionId_;
       result.failOnMissingPositiveExamples_ = failOnMissingPositiveExamples_;
-      result.conceptThresholdType_ = conceptThresholdType_;
       if (modelMetadataBuilder_ == null) {
         result.modelMetadata_ = modelMetadata_;
       } else {
         result.modelMetadata_ = modelMetadataBuilder_.build();
       }
+      result.invalidDataTolerancePercent_ = invalidDataTolerancePercent_;
       onBuilt();
       return result;
     }
@@ -1234,11 +1220,11 @@ private static final long serialVersionUID = 0L;
       if (other.getFailOnMissingPositiveExamples() != false) {
         setFailOnMissingPositiveExamples(other.getFailOnMissingPositiveExamples());
       }
-      if (other.conceptThresholdType_ != 0) {
-        setConceptThresholdTypeValue(other.getConceptThresholdTypeValue());
-      }
       if (other.hasModelMetadata()) {
         mergeModelMetadata(other.getModelMetadata());
+      }
+      if (other.getInvalidDataTolerancePercent() != 0F) {
+        setInvalidDataTolerancePercent(other.getInvalidDataTolerancePercent());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1273,7 +1259,7 @@ private static final long serialVersionUID = 0L;
     private boolean conceptsMutuallyExclusive_ ;
     /**
      * <pre>
-     * Whether the concept predictions must sum to 1.
+     * For custom concept model training: whether the concept predictions must sum to 1.
      * </pre>
      *
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1283,7 +1269,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether the concept predictions must sum to 1.
+     * For custom concept model training: whether the concept predictions must sum to 1.
      * </pre>
      *
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1296,7 +1282,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether the concept predictions must sum to 1.
+     * For custom concept model training: whether the concept predictions must sum to 1.
      * </pre>
      *
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1311,7 +1297,8 @@ private static final long serialVersionUID = 0L;
     private boolean closedEnvironment_ ;
     /**
      * <pre>
-     * Whether negatives should only be sampled from within the app during training, for custom models.
+     * For custom concept model training: Whether negatives should only be sampled from within the app during
+     * training, for custom models.
      * </pre>
      *
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1321,7 +1308,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether negatives should only be sampled from within the app during training, for custom models.
+     * For custom concept model training: Whether negatives should only be sampled from within the app during
+     * training, for custom models.
      * </pre>
      *
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1334,7 +1322,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether negatives should only be sampled from within the app during training, for custom models.
+     * For custom concept model training: Whether negatives should only be sampled from within the app during
+     * training, for custom models.
      * </pre>
      *
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1443,7 +1432,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object language_ = "";
     /**
      * <pre>
-     * Overrides the default_language for the app in a predict call.
+     * For concept model predictions: Overrides the default_language for the app in a predict call.
      * </pre>
      *
      * <code>string language = 4;</code>
@@ -1462,7 +1451,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Overrides the default_language for the app in a predict call.
+     * For concept model predictions: Overrides the default_language for the app in a predict call.
      * </pre>
      *
      * <code>string language = 4;</code>
@@ -1482,7 +1471,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Overrides the default_language for the app in a predict call.
+     * For concept model predictions: Overrides the default_language for the app in a predict call.
      * </pre>
      *
      * <code>string language = 4;</code>
@@ -1499,7 +1488,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Overrides the default_language for the app in a predict call.
+     * For concept model predictions: Overrides the default_language for the app in a predict call.
      * </pre>
      *
      * <code>string language = 4;</code>
@@ -1512,7 +1501,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Overrides the default_language for the app in a predict call.
+     * For concept model predictions: Overrides the default_language for the app in a predict call.
      * </pre>
      *
      * <code>string language = 4;</code>
@@ -1533,7 +1522,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: Hyper-parameters for custom training.
-     * Use new type for hyper-parameters
+     * Use new hyper_params field instead.
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -1553,7 +1542,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: Hyper-parameters for custom training.
-     * Use new type for hyper-parameters
+     * Use new hyper_params field instead.
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -1574,7 +1563,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: Hyper-parameters for custom training.
-     * Use new type for hyper-parameters
+     * Use new hyper_params field instead.
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -1592,7 +1581,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: Hyper-parameters for custom training.
-     * Use new type for hyper-parameters
+     * Use new hyper_params field instead.
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -1606,7 +1595,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: Hyper-parameters for custom training.
-     * Use new type for hyper-parameters
+     * Use new hyper_params field instead.
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -1626,8 +1615,9 @@ private static final long serialVersionUID = 0L;
     private int maxConcepts_ ;
     /**
      * <pre>
-     * Maximum number of concepts in result. Defaults to 0 which under the hood will return default of
-     * 20. We do a server side default in order to control this feature in the future.
+     * For concept model predictions:  Maximum number of concepts in result. Defaults to 0 which under
+     * the hood will return default of 20. We do a server side default in order to control this
+     * feature in the future.
      * </pre>
      *
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1637,8 +1627,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maximum number of concepts in result. Defaults to 0 which under the hood will return default of
-     * 20. We do a server side default in order to control this feature in the future.
+     * For concept model predictions:  Maximum number of concepts in result. Defaults to 0 which under
+     * the hood will return default of 20. We do a server side default in order to control this
+     * feature in the future.
      * </pre>
      *
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1651,8 +1642,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maximum number of concepts in result. Defaults to 0 which under the hood will return default of
-     * 20. We do a server side default in order to control this feature in the future.
+     * For concept model predictions:  Maximum number of concepts in result. Defaults to 0 which under
+     * the hood will return default of 20. We do a server side default in order to control this
+     * feature in the future.
      * </pre>
      *
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1667,8 +1659,9 @@ private static final long serialVersionUID = 0L;
     private float minValue_ ;
     /**
      * <pre>
-     * Minimum value of concept's probability score in result. Defaults to 0.0 which means we won't do
-     * any thresholding as all probabilities will likely be &gt; 0.0.
+     * For concept model predictions: Minimum value of concept's probability score in result.
+     * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+     * likely be &gt; 0.0.
      * </pre>
      *
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1678,8 +1671,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum value of concept's probability score in result. Defaults to 0.0 which means we won't do
-     * any thresholding as all probabilities will likely be &gt; 0.0.
+     * For concept model predictions: Minimum value of concept's probability score in result.
+     * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+     * likely be &gt; 0.0.
      * </pre>
      *
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1692,8 +1686,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum value of concept's probability score in result. Defaults to 0.0 which means we won't do
-     * any thresholding as all probabilities will likely be &gt; 0.0.
+     * For concept model predictions: Minimum value of concept's probability score in result.
+     * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+     * likely be &gt; 0.0.
      * </pre>
      *
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1719,7 +1714,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1733,7 +1728,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1747,7 +1742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1761,7 +1756,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1782,7 +1777,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1800,7 +1795,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1820,7 +1815,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1841,7 +1836,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1859,7 +1854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1877,7 +1872,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1896,7 +1891,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1913,7 +1908,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1930,7 +1925,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1941,7 +1936,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1955,7 +1950,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1970,7 +1965,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1981,7 +1976,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -1993,7 +1988,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Select concepts in result by name or by id
+     * For concept model predictions: Select concepts in result by name or by id
      * </pre>
      *
      * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -2020,7 +2015,7 @@ private static final long serialVersionUID = 0L;
     private int trainingTimeout_ ;
     /**
      * <pre>
-     * Training timeout of the model (in seconds)
+     * For custom concept model training: Training timeout of the model (in seconds)
      * </pre>
      *
      * <code>uint32 training_timeout = 9;</code>
@@ -2030,7 +2025,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Training timeout of the model (in seconds)
+     * For custom concept model training: Training timeout of the model (in seconds)
      * </pre>
      *
      * <code>uint32 training_timeout = 9;</code>
@@ -2043,7 +2038,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Training timeout of the model (in seconds)
+     * For custom concept model training: Training timeout of the model (in seconds)
      * </pre>
      *
      * <code>uint32 training_timeout = 9;</code>
@@ -2058,7 +2053,7 @@ private static final long serialVersionUID = 0L;
     private int sampleMs_ ;
     /**
      * <pre>
-     * Sample delay for video predicting (1 frame per N milliseconds)
+     * For model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
      * </pre>
      *
      * <code>uint32 sample_ms = 10;</code>
@@ -2068,7 +2063,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Sample delay for video predicting (1 frame per N milliseconds)
+     * For model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
      * </pre>
      *
      * <code>uint32 sample_ms = 10;</code>
@@ -2081,7 +2076,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Sample delay for video predicting (1 frame per N milliseconds)
+     * For model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
      * </pre>
      *
      * <code>uint32 sample_ms = 10;</code>
@@ -2096,7 +2091,7 @@ private static final long serialVersionUID = 0L;
     private int testSplitPercent_ ;
     /**
      * <pre>
-     * For Training Coordinator: Override for template name and test split percentage
+     * For custom deep training: Override for template name and test split percentage
      * test_split_percent defaults to 10 in training_coordinator/client.go
      * </pre>
      *
@@ -2107,7 +2102,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For Training Coordinator: Override for template name and test split percentage
+     * For custom deep training: Override for template name and test split percentage
      * test_split_percent defaults to 10 in training_coordinator/client.go
      * </pre>
      *
@@ -2121,7 +2116,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For Training Coordinator: Override for template name and test split percentage
+     * For custom deep training: Override for template name and test split percentage
      * test_split_percent defaults to 10 in training_coordinator/client.go
      * </pre>
      *
@@ -2139,7 +2134,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> hyperParamsBuilder_;
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2149,7 +2144,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2163,7 +2158,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2183,7 +2178,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2201,7 +2196,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2223,7 +2218,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2241,7 +2236,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2253,7 +2248,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2268,7 +2263,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Hyperparameters for custom training
+     * For custom model training: Hyperparameters for custom training
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -2290,7 +2285,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object embedModelVersionId_ = "";
     /**
      * <pre>
-     * For custom models, this is the base model version to use for image embeddings.
+     * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      * </pre>
      *
@@ -2310,7 +2305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For custom models, this is the base model version to use for image embeddings.
+     * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      * </pre>
      *
@@ -2331,7 +2326,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For custom models, this is the base model version to use for image embeddings.
+     * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      * </pre>
      *
@@ -2349,7 +2344,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For custom models, this is the base model version to use for image embeddings.
+     * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      * </pre>
      *
@@ -2363,7 +2358,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For custom models, this is the base model version to use for image embeddings.
+     * For custom model training: this is the base model version to use for image embeddings.
      * This has to be one of the embed models in the app workflow.
      * </pre>
      *
@@ -2384,7 +2379,7 @@ private static final long serialVersionUID = 0L;
     private boolean failOnMissingPositiveExamples_ ;
     /**
      * <pre>
-     * Use this flag to fail on missing positive examples
+     * For custom model training: Use this flag to fail on missing positive examples
      * By default we fill in the missing with random examples
      * </pre>
      *
@@ -2395,7 +2390,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Use this flag to fail on missing positive examples
+     * For custom model training: Use this flag to fail on missing positive examples
      * By default we fill in the missing with random examples
      * </pre>
      *
@@ -2409,7 +2404,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Use this flag to fail on missing positive examples
+     * For custom model training: Use this flag to fail on missing positive examples
      * By default we fill in the missing with random examples
      * </pre>
      *
@@ -2422,101 +2417,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int conceptThresholdType_ = 0;
-    /**
-     * <pre>
-     * For concept-threshold type of model to determine how each concept's value will be stored.
-     * The json value can either be the integer field number:
-     *   {"concept_threshold_type": 3}
-     * Or the string field name:
-     *   {"concept_threshold_type": "LESS_THAN"}
-     * </pre>
-     *
-     * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-     */
-    public int getConceptThresholdTypeValue() {
-      return conceptThresholdType_;
-    }
-    /**
-     * <pre>
-     * For concept-threshold type of model to determine how each concept's value will be stored.
-     * The json value can either be the integer field number:
-     *   {"concept_threshold_type": 3}
-     * Or the string field name:
-     *   {"concept_threshold_type": "LESS_THAN"}
-     * </pre>
-     *
-     * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-     */
-    public Builder setConceptThresholdTypeValue(int value) {
-      conceptThresholdType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * For concept-threshold type of model to determine how each concept's value will be stored.
-     * The json value can either be the integer field number:
-     *   {"concept_threshold_type": 3}
-     * Or the string field name:
-     *   {"concept_threshold_type": "LESS_THAN"}
-     * </pre>
-     *
-     * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-     */
-    public com.clarifai.grpc.api.ValueComparator getConceptThresholdType() {
-      @SuppressWarnings("deprecation")
-      com.clarifai.grpc.api.ValueComparator result = com.clarifai.grpc.api.ValueComparator.valueOf(conceptThresholdType_);
-      return result == null ? com.clarifai.grpc.api.ValueComparator.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * For concept-threshold type of model to determine how each concept's value will be stored.
-     * The json value can either be the integer field number:
-     *   {"concept_threshold_type": 3}
-     * Or the string field name:
-     *   {"concept_threshold_type": "LESS_THAN"}
-     * </pre>
-     *
-     * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-     */
-    public Builder setConceptThresholdType(com.clarifai.grpc.api.ValueComparator value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      conceptThresholdType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * For concept-threshold type of model to determine how each concept's value will be stored.
-     * The json value can either be the integer field number:
-     *   {"concept_threshold_type": 3}
-     * Or the string field name:
-     *   {"concept_threshold_type": "LESS_THAN"}
-     * </pre>
-     *
-     * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-     */
-    public Builder clearConceptThresholdType() {
-      
-      conceptThresholdType_ = 0;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.Struct modelMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> modelMetadataBuilder_;
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2526,11 +2436,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2544,11 +2454,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2568,11 +2478,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2590,11 +2500,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2616,11 +2526,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2638,11 +2548,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2654,11 +2564,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2673,11 +2583,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This is any additional metadata as a JSON object that we want want to persist in the model's
-     * output config. This is a useful quick way to set fields for introducing fields for new model
-     * types so we don't have to add a new proto field and DB field each time. Please refer to the
-     * documentation or model impelmentation internally for more details on what fields are
-     * supported for which models.
+     * For custom model training: This is any additional metadata as a JSON object that we want
+     * want to persist in the model's output config. This is a useful quick way to set fields for
+     * introducing fields for new model types so we don't have to add a new proto field and DB field
+     * each time. Please refer to the documentation or model implementation internally for more
+     * details on what fields are supported for which models.
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -2694,6 +2604,50 @@ private static final long serialVersionUID = 0L;
         modelMetadata_ = null;
       }
       return modelMetadataBuilder_;
+    }
+
+    private float invalidDataTolerancePercent_ ;
+    /**
+     * <pre>
+     * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+     * inputs among all training inputs. Training will be stopped with error thrown if actual
+     * percent of invalid inputs is higher than this.
+     * </pre>
+     *
+     * <code>float invalid_data_tolerance_percent = 18;</code>
+     */
+    public float getInvalidDataTolerancePercent() {
+      return invalidDataTolerancePercent_;
+    }
+    /**
+     * <pre>
+     * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+     * inputs among all training inputs. Training will be stopped with error thrown if actual
+     * percent of invalid inputs is higher than this.
+     * </pre>
+     *
+     * <code>float invalid_data_tolerance_percent = 18;</code>
+     */
+    public Builder setInvalidDataTolerancePercent(float value) {
+      
+      invalidDataTolerancePercent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+     * inputs among all training inputs. Training will be stopped with error thrown if actual
+     * percent of invalid inputs is higher than this.
+     * </pre>
+     *
+     * <code>float invalid_data_tolerance_percent = 18;</code>
+     */
+    public Builder clearInvalidDataTolerancePercent() {
+      
+      invalidDataTolerancePercent_ = 0F;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

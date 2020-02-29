@@ -26,15 +26,6 @@ public interface RegionInfoOrBuilder extends
   float getValue();
 
   /**
-   * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-   */
-  int getFeedbackValue();
-  /**
-   * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-   */
-  com.clarifai.grpc.api.RegionInfoFeedback getFeedback();
-
-  /**
    * <code>.clarifai.api.Mask mask = 4;</code>
    */
   boolean hasMask();

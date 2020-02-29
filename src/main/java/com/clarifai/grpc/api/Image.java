@@ -24,7 +24,6 @@ private static final long serialVersionUID = 0L;
   private Image() {
     url_ = "";
     base64_ = com.google.protobuf.ByteString.EMPTY;
-    crop_ = emptyFloatList();
   }
 
   @java.lang.Override
@@ -47,7 +46,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -67,27 +65,6 @@ private static final long serialVersionUID = 0L;
           case 18: {
 
             base64_ = input.readBytes();
-            break;
-          }
-          case 29: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              crop_ = newFloatList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            crop_.addFloat(input.readFloat());
-            break;
-          }
-          case 26: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-              crop_ = newFloatList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            while (input.getBytesUntilLimit() > 0) {
-              crop_.addFloat(input.readFloat());
-            }
-            input.popLimit(limit);
             break;
           }
           case 32: {
@@ -123,9 +100,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        crop_.makeImmutable(); // C
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -205,29 +179,6 @@ private static final long serialVersionUID = 0L;
     return base64_;
   }
 
-  public static final int CROP_FIELD_NUMBER = 3;
-  private com.google.protobuf.Internal.FloatList crop_;
-  /**
-   * <code>repeated float crop = 3;</code>
-   */
-  public java.util.List<java.lang.Float>
-      getCropList() {
-    return crop_;
-  }
-  /**
-   * <code>repeated float crop = 3;</code>
-   */
-  public int getCropCount() {
-    return crop_.size();
-  }
-  /**
-   * <code>repeated float crop = 3;</code>
-   */
-  public float getCrop(int index) {
-    return crop_.getFloat(index);
-  }
-  private int cropMemoizedSerializedSize = -1;
-
   public static final int ALLOW_DUPLICATE_URL_FIELD_NUMBER = 4;
   private boolean allowDuplicateUrl_;
   /**
@@ -284,19 +235,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!getUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
     }
     if (!base64_.isEmpty()) {
       output.writeBytes(2, base64_);
-    }
-    if (getCropList().size() > 0) {
-      output.writeUInt32NoTag(26);
-      output.writeUInt32NoTag(cropMemoizedSerializedSize);
-    }
-    for (int i = 0; i < crop_.size(); i++) {
-      output.writeFloatNoTag(crop_.getFloat(i));
     }
     if (allowDuplicateUrl_ != false) {
       output.writeBool(4, allowDuplicateUrl_);
@@ -319,17 +262,6 @@ private static final long serialVersionUID = 0L;
     if (!base64_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(2, base64_);
-    }
-    {
-      int dataSize = 0;
-      dataSize = 4 * getCropList().size();
-      size += dataSize;
-      if (!getCropList().isEmpty()) {
-        size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
-      }
-      cropMemoizedSerializedSize = dataSize;
     }
     if (allowDuplicateUrl_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -358,8 +290,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUrl())) return false;
     if (!getBase64()
         .equals(other.getBase64())) return false;
-    if (!getCropList()
-        .equals(other.getCropList())) return false;
     if (getAllowDuplicateUrl()
         != other.getAllowDuplicateUrl()) return false;
     if (hasHosted() != other.hasHosted()) return false;
@@ -382,10 +312,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUrl().hashCode();
     hash = (37 * hash) + BASE64_FIELD_NUMBER;
     hash = (53 * hash) + getBase64().hashCode();
-    if (getCropCount() > 0) {
-      hash = (37 * hash) + CROP_FIELD_NUMBER;
-      hash = (53 * hash) + getCropList().hashCode();
-    }
     hash = (37 * hash) + ALLOW_DUPLICATE_URL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAllowDuplicateUrl());
@@ -536,8 +462,6 @@ private static final long serialVersionUID = 0L;
 
       base64_ = com.google.protobuf.ByteString.EMPTY;
 
-      crop_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       allowDuplicateUrl_ = false;
 
       if (hostedBuilder_ == null) {
@@ -572,14 +496,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.Image buildPartial() {
       com.clarifai.grpc.api.Image result = new com.clarifai.grpc.api.Image(this);
-      int from_bitField0_ = bitField0_;
       result.url_ = url_;
       result.base64_ = base64_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        crop_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.crop_ = crop_;
       result.allowDuplicateUrl_ = allowDuplicateUrl_;
       if (hostedBuilder_ == null) {
         result.hosted_ = hosted_;
@@ -641,16 +559,6 @@ private static final long serialVersionUID = 0L;
       if (other.getBase64() != com.google.protobuf.ByteString.EMPTY) {
         setBase64(other.getBase64());
       }
-      if (!other.crop_.isEmpty()) {
-        if (crop_.isEmpty()) {
-          crop_ = other.crop_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureCropIsMutable();
-          crop_.addAll(other.crop_);
-        }
-        onChanged();
-      }
       if (other.getAllowDuplicateUrl() != false) {
         setAllowDuplicateUrl(other.getAllowDuplicateUrl());
       }
@@ -685,7 +593,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -833,73 +740,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearBase64() {
       
       base64_ = getDefaultInstance().getBase64();
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.Internal.FloatList crop_ = emptyFloatList();
-    private void ensureCropIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        crop_ = mutableCopy(crop_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public java.util.List<java.lang.Float>
-        getCropList() {
-      return ((bitField0_ & 0x00000001) != 0) ?
-               java.util.Collections.unmodifiableList(crop_) : crop_;
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public int getCropCount() {
-      return crop_.size();
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public float getCrop(int index) {
-      return crop_.getFloat(index);
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public Builder setCrop(
-        int index, float value) {
-      ensureCropIsMutable();
-      crop_.setFloat(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public Builder addCrop(float value) {
-      ensureCropIsMutable();
-      crop_.addFloat(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public Builder addAllCrop(
-        java.lang.Iterable<? extends java.lang.Float> values) {
-      ensureCropIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, crop_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated float crop = 3;</code>
-     */
-    public Builder clearCrop() {
-      crop_ = emptyFloatList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }

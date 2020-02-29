@@ -162,19 +162,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Embedding.parser(), extensionRegistry));
             break;
           }
-          case 82: {
-            com.clarifai.grpc.api.Focus.Builder subBuilder = null;
-            if (focus_ != null) {
-              subBuilder = focus_.toBuilder();
-            }
-            focus_ = input.readMessage(com.clarifai.grpc.api.Focus.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(focus_);
-              focus_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 90: {
             if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               regions_ = new java.util.ArrayList<com.clarifai.grpc.api.Region>();
@@ -657,39 +644,6 @@ private static final long serialVersionUID = 0L;
     return embeddings_.get(index);
   }
 
-  public static final int FOCUS_FIELD_NUMBER = 10;
-  private com.clarifai.grpc.api.Focus focus_;
-  /**
-   * <pre>
-   * Locations of focus within an overall Image
-   * </pre>
-   *
-   * <code>.clarifai.api.Focus focus = 10;</code>
-   */
-  public boolean hasFocus() {
-    return focus_ != null;
-  }
-  /**
-   * <pre>
-   * Locations of focus within an overall Image
-   * </pre>
-   *
-   * <code>.clarifai.api.Focus focus = 10;</code>
-   */
-  public com.clarifai.grpc.api.Focus getFocus() {
-    return focus_ == null ? com.clarifai.grpc.api.Focus.getDefaultInstance() : focus_;
-  }
-  /**
-   * <pre>
-   * Locations of focus within an overall Image
-   * </pre>
-   *
-   * <code>.clarifai.api.Focus focus = 10;</code>
-   */
-  public com.clarifai.grpc.api.FocusOrBuilder getFocusOrBuilder() {
-    return getFocus();
-  }
-
   public static final int REGIONS_FIELD_NUMBER = 11;
   private java.util.List<com.clarifai.grpc.api.Region> regions_;
   /**
@@ -907,9 +861,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < embeddings_.size(); i++) {
       output.writeMessage(9, embeddings_.get(i));
     }
-    if (focus_ != null) {
-      output.writeMessage(10, getFocus());
-    }
     for (int i = 0; i < regions_.size(); i++) {
       output.writeMessage(11, regions_.get(i));
     }
@@ -966,10 +917,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < embeddings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, embeddings_.get(i));
-    }
-    if (focus_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getFocus());
     }
     for (int i = 0; i < regions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1035,11 +982,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getClustersList())) return false;
     if (!getEmbeddingsList()
         .equals(other.getEmbeddingsList())) return false;
-    if (hasFocus() != other.hasFocus()) return false;
-    if (hasFocus()) {
-      if (!getFocus()
-          .equals(other.getFocus())) return false;
-    }
     if (!getRegionsList()
         .equals(other.getRegionsList())) return false;
     if (!getFramesList()
@@ -1100,10 +1042,6 @@ private static final long serialVersionUID = 0L;
     if (getEmbeddingsCount() > 0) {
       hash = (37 * hash) + EMBEDDINGS_FIELD_NUMBER;
       hash = (53 * hash) + getEmbeddingsList().hashCode();
-    }
-    if (hasFocus()) {
-      hash = (37 * hash) + FOCUS_FIELD_NUMBER;
-      hash = (53 * hash) + getFocus().hashCode();
     }
     if (getRegionsCount() > 0) {
       hash = (37 * hash) + REGIONS_FIELD_NUMBER;
@@ -1320,12 +1258,6 @@ private static final long serialVersionUID = 0L;
       } else {
         embeddingsBuilder_.clear();
       }
-      if (focusBuilder_ == null) {
-        focus_ = null;
-      } else {
-        focus_ = null;
-        focusBuilder_ = null;
-      }
       if (regionsBuilder_ == null) {
         regions_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -1437,11 +1369,6 @@ private static final long serialVersionUID = 0L;
         result.embeddings_ = embeddings_;
       } else {
         result.embeddings_ = embeddingsBuilder_.build();
-      }
-      if (focusBuilder_ == null) {
-        result.focus_ = focus_;
-      } else {
-        result.focus_ = focusBuilder_.build();
       }
       if (regionsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
@@ -1637,9 +1564,6 @@ private static final long serialVersionUID = 0L;
             embeddingsBuilder_.addAllMessages(other.embeddings_);
           }
         }
-      }
-      if (other.hasFocus()) {
-        mergeFocus(other.getFocus());
       }
       if (regionsBuilder_ == null) {
         if (!other.regions_.isEmpty()) {
@@ -3749,159 +3673,6 @@ private static final long serialVersionUID = 0L;
         embeddings_ = null;
       }
       return embeddingsBuilder_;
-    }
-
-    private com.clarifai.grpc.api.Focus focus_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Focus, com.clarifai.grpc.api.Focus.Builder, com.clarifai.grpc.api.FocusOrBuilder> focusBuilder_;
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public boolean hasFocus() {
-      return focusBuilder_ != null || focus_ != null;
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public com.clarifai.grpc.api.Focus getFocus() {
-      if (focusBuilder_ == null) {
-        return focus_ == null ? com.clarifai.grpc.api.Focus.getDefaultInstance() : focus_;
-      } else {
-        return focusBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public Builder setFocus(com.clarifai.grpc.api.Focus value) {
-      if (focusBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        focus_ = value;
-        onChanged();
-      } else {
-        focusBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public Builder setFocus(
-        com.clarifai.grpc.api.Focus.Builder builderForValue) {
-      if (focusBuilder_ == null) {
-        focus_ = builderForValue.build();
-        onChanged();
-      } else {
-        focusBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public Builder mergeFocus(com.clarifai.grpc.api.Focus value) {
-      if (focusBuilder_ == null) {
-        if (focus_ != null) {
-          focus_ =
-            com.clarifai.grpc.api.Focus.newBuilder(focus_).mergeFrom(value).buildPartial();
-        } else {
-          focus_ = value;
-        }
-        onChanged();
-      } else {
-        focusBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public Builder clearFocus() {
-      if (focusBuilder_ == null) {
-        focus_ = null;
-        onChanged();
-      } else {
-        focus_ = null;
-        focusBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public com.clarifai.grpc.api.Focus.Builder getFocusBuilder() {
-      
-      onChanged();
-      return getFocusFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    public com.clarifai.grpc.api.FocusOrBuilder getFocusOrBuilder() {
-      if (focusBuilder_ != null) {
-        return focusBuilder_.getMessageOrBuilder();
-      } else {
-        return focus_ == null ?
-            com.clarifai.grpc.api.Focus.getDefaultInstance() : focus_;
-      }
-    }
-    /**
-     * <pre>
-     * Locations of focus within an overall Image
-     * </pre>
-     *
-     * <code>.clarifai.api.Focus focus = 10;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Focus, com.clarifai.grpc.api.Focus.Builder, com.clarifai.grpc.api.FocusOrBuilder> 
-        getFocusFieldBuilder() {
-      if (focusBuilder_ == null) {
-        focusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Focus, com.clarifai.grpc.api.Focus.Builder, com.clarifai.grpc.api.FocusOrBuilder>(
-                getFocus(),
-                getParentForChildren(),
-                isClean());
-        focus_ = null;
-      }
-      return focusBuilder_;
     }
 
     private java.util.List<com.clarifai.grpc.api.Region> regions_ =

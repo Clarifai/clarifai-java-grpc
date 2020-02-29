@@ -313,31 +313,6 @@ public interface DataOrBuilder extends
 
   /**
    * <pre>
-   * Locations of focus within an overall Image
-   * </pre>
-   *
-   * <code>.clarifai.api.Focus focus = 10;</code>
-   */
-  boolean hasFocus();
-  /**
-   * <pre>
-   * Locations of focus within an overall Image
-   * </pre>
-   *
-   * <code>.clarifai.api.Focus focus = 10;</code>
-   */
-  com.clarifai.grpc.api.Focus getFocus();
-  /**
-   * <pre>
-   * Locations of focus within an overall Image
-   * </pre>
-   *
-   * <code>.clarifai.api.Focus focus = 10;</code>
-   */
-  com.clarifai.grpc.api.FocusOrBuilder getFocusOrBuilder();
-
-  /**
-   * <pre>
    * For recursing into localized regions of an input.
    * </pre>
    *

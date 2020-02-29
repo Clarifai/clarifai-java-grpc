@@ -52,34 +52,6 @@ public interface InputOrBuilder extends
 
   /**
    * <pre>
-   * Feedback information for when the data sent back is related to a
-   * feedback event.
-   * </pre>
-   *
-   * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-   */
-  boolean hasFeedbackInfo();
-  /**
-   * <pre>
-   * Feedback information for when the data sent back is related to a
-   * feedback event.
-   * </pre>
-   *
-   * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-   */
-  com.clarifai.grpc.api.FeedbackInfo getFeedbackInfo();
-  /**
-   * <pre>
-   * Feedback information for when the data sent back is related to a
-   * feedback event.
-   * </pre>
-   *
-   * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-   */
-  com.clarifai.grpc.api.FeedbackInfoOrBuilder getFeedbackInfoOrBuilder();
-
-  /**
-   * <pre>
    * When the input was created. We follow the XXXX timestamp
    * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
    * "2006-01-02T15:04:05.999999Z" so you can expect results like

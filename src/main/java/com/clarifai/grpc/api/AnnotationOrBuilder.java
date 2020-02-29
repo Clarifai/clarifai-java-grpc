@@ -84,44 +84,82 @@ public interface AnnotationOrBuilder extends
   /**
    * <pre>
    * ID of the worker this annotation is tied to
+   * Deprecated: please use user id or model version id.
    * </pre>
    *
-   * <code>string worker_id = 4;</code>
+   * <code>string worker_id = 4 [deprecated = true];</code>
    */
-  java.lang.String getWorkerId();
+  @java.lang.Deprecated java.lang.String getWorkerId();
   /**
    * <pre>
    * ID of the worker this annotation is tied to
+   * Deprecated: please use user id or model version id.
    * </pre>
    *
-   * <code>string worker_id = 4;</code>
+   * <code>string worker_id = 4 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getWorkerIdBytes();
 
   /**
    * <pre>
-   * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_version_id' even if it is For human
-   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-   * "Dangling" are an exception. They do not have an embedding tied to them.
+   * ID of the user this annotation is created by
    * </pre>
    *
-   * <code>string embed_version_id = 5;</code>
+   * <code>string user_id = 15;</code>
    */
-  java.lang.String getEmbedVersionId();
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * ID of the user this annotation is created by
+   * </pre>
+   *
+   * <code>string user_id = 15;</code>
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
+  /**
+   * <pre>
+   * ID of the model version this annotation is created by
+   * </pre>
+   *
+   * <code>string model_version_id = 16;</code>
+   */
+  java.lang.String getModelVersionId();
+  /**
+   * <pre>
+   * ID of the model version this annotation is created by
+   * </pre>
+   *
+   * <code>string model_version_id = 16;</code>
+   */
+  com.google.protobuf.ByteString
+      getModelVersionIdBytes();
+
   /**
    * <pre>
    * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_version_id' even if it is For human
+   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
    * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
    * "Dangling" are an exception. They do not have an embedding tied to them.
    * </pre>
    *
-   * <code>string embed_version_id = 5;</code>
+   * <code>string embed_model_version_id = 14;</code>
+   */
+  java.lang.String getEmbedModelVersionId();
+  /**
+   * <pre>
+   * The embedding model version used make this annotation available for search and training
+   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
+   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+   * "Dangling" are an exception. They do not have an embedding tied to them.
+   * </pre>
+   *
+   * <code>string embed_model_version_id = 14;</code>
    */
   com.google.protobuf.ByteString
-      getEmbedVersionIdBytes();
+      getEmbedModelVersionIdBytes();
 
   /**
    * <pre>
@@ -209,7 +247,7 @@ public interface AnnotationOrBuilder extends
 
   /**
    * <pre>
-   * When the annotaion was modified.
+   * When the annotation was modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -217,7 +255,7 @@ public interface AnnotationOrBuilder extends
   boolean hasModifiedAt();
   /**
    * <pre>
-   * When the annotaion was modified.
+   * When the annotation was modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -225,7 +263,7 @@ public interface AnnotationOrBuilder extends
   com.google.protobuf.Timestamp getModifiedAt();
   /**
    * <pre>
-   * When the annotaion was modified.
+   * When the annotation was modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -240,15 +278,6 @@ public interface AnnotationOrBuilder extends
    * <code>bool trusted = 10;</code>
    */
   boolean getTrusted();
-
-  /**
-   * <pre>
-   * Is this annotation immutable - i.e. it cannot be changed or deleted
-   * </pre>
-   *
-   * <code>bool immutable = 11;</code>
-   */
-  boolean getImmutable();
 
   /**
    * <pre>

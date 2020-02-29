@@ -27,8 +27,6 @@ private static final long serialVersionUID = 0L;
     defaultLanguage_ = "";
     defaultWorkflowId_ = "";
     userId_ = "";
-    clientId_ = "";
-    clientSecret_ = "";
   }
 
   @java.lang.Override
@@ -151,23 +149,6 @@ private static final long serialVersionUID = 0L;
               metadata_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 800: {
-
-            v1Id_ = input.readUInt32();
-            break;
-          }
-          case 810: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clientId_ = s;
-            break;
-          }
-          case 818: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clientSecret_ = s;
             break;
           }
           default: {
@@ -529,87 +510,6 @@ private static final long serialVersionUID = 0L;
     return getMetadata();
   }
 
-  public static final int V1_ID_FIELD_NUMBER = 100;
-  private int v1Id_;
-  /**
-   * <pre>
-   * Deprecated fields soon to be removed.
-   * </pre>
-   *
-   * <code>uint32 v1_id = 100 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public int getV1Id() {
-    return v1Id_;
-  }
-
-  public static final int CLIENT_ID_FIELD_NUMBER = 101;
-  private volatile java.lang.Object clientId_;
-  /**
-   * <code>string client_id = 101 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public java.lang.String getClientId() {
-    java.lang.Object ref = clientId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      clientId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string client_id = 101 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getClientIdBytes() {
-    java.lang.Object ref = clientId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      clientId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CLIENT_SECRET_FIELD_NUMBER = 102;
-  private volatile java.lang.Object clientSecret_;
-  /**
-   * <code>string client_secret = 102 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public java.lang.String getClientSecret() {
-    java.lang.Object ref = clientSecret_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      clientSecret_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string client_secret = 102 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getClientSecretBytes() {
-    java.lang.Object ref = clientSecret_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      clientSecret_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -656,15 +556,6 @@ private static final long serialVersionUID = 0L;
     }
     if (metadata_ != null) {
       output.writeMessage(13, getMetadata());
-    }
-    if (v1Id_ != 0) {
-      output.writeUInt32(100, v1Id_);
-    }
-    if (!getClientIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 101, clientId_);
-    }
-    if (!getClientSecretBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 102, clientSecret_);
     }
     unknownFields.writeTo(output);
   }
@@ -713,16 +604,6 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getMetadata());
-    }
-    if (v1Id_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(100, v1Id_);
-    }
-    if (!getClientIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, clientId_);
-    }
-    if (!getClientSecretBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, clientSecret_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -773,12 +654,6 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
-    if (getV1Id()
-        != other.getV1Id()) return false;
-    if (!getClientId()
-        .equals(other.getClientId())) return false;
-    if (!getClientSecret()
-        .equals(other.getClientSecret())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -820,12 +695,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
-    hash = (37 * hash) + V1_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getV1Id();
-    hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getClientId().hashCode();
-    hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
-    hash = (53 * hash) + getClientSecret().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1003,12 +872,6 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
-      v1Id_ = 0;
-
-      clientId_ = "";
-
-      clientSecret_ = "";
-
       return this;
     }
 
@@ -1062,9 +925,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.v1Id_ = v1Id_;
-      result.clientId_ = clientId_;
-      result.clientSecret_ = clientSecret_;
       onBuilt();
       return result;
     }
@@ -1150,17 +1010,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
-      }
-      if (other.getV1Id() != 0) {
-        setV1Id(other.getV1Id());
-      }
-      if (!other.getClientId().isEmpty()) {
-        clientId_ = other.clientId_;
-        onChanged();
-      }
-      if (!other.getClientSecret().isEmpty()) {
-        clientSecret_ = other.clientSecret_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2219,182 +2068,6 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
       }
       return metadataBuilder_;
-    }
-
-    private int v1Id_ ;
-    /**
-     * <pre>
-     * Deprecated fields soon to be removed.
-     * </pre>
-     *
-     * <code>uint32 v1_id = 100 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public int getV1Id() {
-      return v1Id_;
-    }
-    /**
-     * <pre>
-     * Deprecated fields soon to be removed.
-     * </pre>
-     *
-     * <code>uint32 v1_id = 100 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setV1Id(int value) {
-      
-      v1Id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated fields soon to be removed.
-     * </pre>
-     *
-     * <code>uint32 v1_id = 100 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearV1Id() {
-      
-      v1Id_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object clientId_ = "";
-    /**
-     * <code>string client_id = 101 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public java.lang.String getClientId() {
-      java.lang.Object ref = clientId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string client_id = 101 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getClientIdBytes() {
-      java.lang.Object ref = clientId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string client_id = 101 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setClientId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      clientId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string client_id = 101 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearClientId() {
-      
-      clientId_ = getDefaultInstance().getClientId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string client_id = 101 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setClientIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      clientId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object clientSecret_ = "";
-    /**
-     * <code>string client_secret = 102 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public java.lang.String getClientSecret() {
-      java.lang.Object ref = clientSecret_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clientSecret_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string client_secret = 102 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getClientSecretBytes() {
-      java.lang.Object ref = clientSecret_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clientSecret_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string client_secret = 102 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setClientSecret(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      clientSecret_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string client_secret = 102 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearClientSecret() {
-      
-      clientSecret_ = getDefaultInstance().getClientSecret();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string client_secret = 102 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setClientSecretBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      clientSecret_ = value;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

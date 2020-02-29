@@ -145,10 +145,23 @@ public interface ConceptOrBuilder extends
 
   /**
    * <pre>
-   * A flag represented whether or not the concept is "virtual" (i.e. only used for knowledge graph traversal)
+   * The vocabulary that this concept belongs to. This is useful if you have different unique sets
+   * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+   * "gender_appearance" in a list of concept returned from the demographics model.
    * </pre>
    *
-   * <code>bool is_virtual = 8;</code>
+   * <code>string vocab_id = 8;</code>
    */
-  boolean getIsVirtual();
+  java.lang.String getVocabId();
+  /**
+   * <pre>
+   * The vocabulary that this concept belongs to. This is useful if you have different unique sets
+   * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+   * "gender_appearance" in a list of concept returned from the demographics model.
+   * </pre>
+   *
+   * <code>string vocab_id = 8;</code>
+   */
+  com.google.protobuf.ByteString
+      getVocabIdBytes();
 }

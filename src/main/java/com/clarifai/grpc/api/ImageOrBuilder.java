@@ -42,19 +42,6 @@ public interface ImageOrBuilder extends
   com.google.protobuf.ByteString getBase64();
 
   /**
-   * <code>repeated float crop = 3;</code>
-   */
-  java.util.List<java.lang.Float> getCropList();
-  /**
-   * <code>repeated float crop = 3;</code>
-   */
-  int getCropCount();
-  /**
-   * <code>repeated float crop = 3;</code>
-   */
-  float getCrop(int index);
-
-  /**
    * <code>bool allow_duplicate_url = 4;</code>
    */
   boolean getAllowDuplicateUrl();

@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RegionInfo() {
-    feedback_ = 0;
   }
 
   @java.lang.Override
@@ -65,12 +64,6 @@ private static final long serialVersionUID = 0L;
           case 21: {
 
             value_ = input.readFloat();
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            feedback_ = rawValue;
             break;
           }
           case 34: {
@@ -148,23 +141,6 @@ private static final long serialVersionUID = 0L;
     return value_;
   }
 
-  public static final int FEEDBACK_FIELD_NUMBER = 3;
-  private int feedback_;
-  /**
-   * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-   */
-  public int getFeedbackValue() {
-    return feedback_;
-  }
-  /**
-   * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-   */
-  public com.clarifai.grpc.api.RegionInfoFeedback getFeedback() {
-    @SuppressWarnings("deprecation")
-    com.clarifai.grpc.api.RegionInfoFeedback result = com.clarifai.grpc.api.RegionInfoFeedback.valueOf(feedback_);
-    return result == null ? com.clarifai.grpc.api.RegionInfoFeedback.UNRECOGNIZED : result;
-  }
-
   public static final int MASK_FIELD_NUMBER = 4;
   private com.clarifai.grpc.api.Mask mask_;
   /**
@@ -206,9 +182,6 @@ private static final long serialVersionUID = 0L;
     if (value_ != 0F) {
       output.writeFloat(2, value_);
     }
-    if (feedback_ != com.clarifai.grpc.api.RegionInfoFeedback.accurate.getNumber()) {
-      output.writeEnum(3, feedback_);
-    }
     if (mask_ != null) {
       output.writeMessage(4, getMask());
     }
@@ -228,10 +201,6 @@ private static final long serialVersionUID = 0L;
     if (value_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, value_);
-    }
-    if (feedback_ != com.clarifai.grpc.api.RegionInfoFeedback.accurate.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, feedback_);
     }
     if (mask_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -260,7 +229,6 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getValue())
         != java.lang.Float.floatToIntBits(
             other.getValue())) return false;
-    if (feedback_ != other.feedback_) return false;
     if (hasMask() != other.hasMask()) return false;
     if (hasMask()) {
       if (!getMask()
@@ -284,8 +252,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getValue());
-    hash = (37 * hash) + FEEDBACK_FIELD_NUMBER;
-    hash = (53 * hash) + feedback_;
     if (hasMask()) {
       hash = (37 * hash) + MASK_FIELD_NUMBER;
       hash = (53 * hash) + getMask().hashCode();
@@ -431,8 +397,6 @@ private static final long serialVersionUID = 0L;
       }
       value_ = 0F;
 
-      feedback_ = 0;
-
       if (maskBuilder_ == null) {
         mask_ = null;
       } else {
@@ -471,7 +435,6 @@ private static final long serialVersionUID = 0L;
         result.boundingBox_ = boundingBoxBuilder_.build();
       }
       result.value_ = value_;
-      result.feedback_ = feedback_;
       if (maskBuilder_ == null) {
         result.mask_ = mask_;
       } else {
@@ -530,9 +493,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getValue() != 0F) {
         setValue(other.getValue());
-      }
-      if (other.feedback_ != 0) {
-        setFeedbackValue(other.getFeedbackValue());
       }
       if (other.hasMask()) {
         mergeMask(other.getMask());
@@ -705,51 +665,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearValue() {
       
       value_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private int feedback_ = 0;
-    /**
-     * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-     */
-    public int getFeedbackValue() {
-      return feedback_;
-    }
-    /**
-     * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-     */
-    public Builder setFeedbackValue(int value) {
-      feedback_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-     */
-    public com.clarifai.grpc.api.RegionInfoFeedback getFeedback() {
-      @SuppressWarnings("deprecation")
-      com.clarifai.grpc.api.RegionInfoFeedback result = com.clarifai.grpc.api.RegionInfoFeedback.valueOf(feedback_);
-      return result == null ? com.clarifai.grpc.api.RegionInfoFeedback.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-     */
-    public Builder setFeedback(com.clarifai.grpc.api.RegionInfoFeedback value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      feedback_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.RegionInfoFeedback feedback = 3;</code>
-     */
-    public Builder clearFeedback() {
-      
-      feedback_ = 0;
       onChanged();
       return this;
     }

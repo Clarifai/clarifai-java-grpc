@@ -145,16 +145,6 @@ public final class Resources {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_clarifai_api_Face_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_clarifai_api_FeedbackInfo_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_clarifai_api_FeedbackInfo_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_clarifai_api_Focus_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_clarifai_api_Focus_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_clarifai_api_GeoPoint_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -388,156 +378,147 @@ public final class Resources {
       "atus.proto\032)proto/clarifai/api/utils/ext" +
       "ensions.proto\032(proto/clarifai/auth/util/" +
       "extension.proto\032\034google/protobuf/struct." +
-      "proto\032\037google/protobuf/timestamp.proto\"\214" +
+      "proto\032\037google/protobuf/timestamp.proto\"\272" +
       "\003\n\nAnnotation\022\n\n\002id\030\001 \001(\t\022\020\n\010input_id\030\002 " +
       "\001(\t\022 \n\004data\030\003 \001(\0132\022.clarifai.api.Data\0220\n" +
       "\017annotation_info\030\r \001(\0132\027.google.protobuf" +
-      ".Struct\022\021\n\tworker_id\030\004 \001(\t\022\030\n\020embed_vers" +
-      "ion_id\030\005 \001(\t\022\034\n\024parent_annotation_id\030\006 \001" +
-      "(\t\022+\n\006status\030\007 \001(\0132\033.clarifai.api.status" +
-      ".Status\022.\n\ncreated_at\030\010 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\022/\n\013modified_at\030\t \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022\017\n\007trusted\030\n \001(" +
-      "\010\022\021\n\timmutable\030\013 \001(\010\022\017\n\007default\030\014 \001(\010\"\247\003" +
-      "\n\003App\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\030\n\020defau" +
-      "lt_language\030\003 \001(\t\022\033\n\023default_workflow_id" +
-      "\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\t\022.\n\ncreated_at\030\006 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022\034\n\024legal" +
-      "_consent_status\030\007 \001(\r\022-\n\020last_input_adde" +
-      "d\030\n \001(\0132\023.clarifai.api.Input\022-\n\013input_co" +
-      "unt\030\013 \001(\0132\030.clarifai.api.InputCount\022\"\n\024a" +
-      "ctive_concept_count\030\014 \001(\rB\004\200\265\030\001\022)\n\010metad" +
-      "ata\030\r \001(\0132\027.google.protobuf.Struct\022\021\n\005v1" +
-      "_id\030d \001(\rB\002\030\001\022\025\n\tclient_id\030e \001(\tB\002\030\001\022\031\n\r" +
-      "client_secret\030f \001(\tB\002\030\001\"A\n\005Audio\022\013\n\003url\030" +
-      "\001 \001(\t\022\016\n\006base64\030\002 \001(\014\022\033\n\023allow_duplicate" +
-      "_url\030\004 \001(\010\"T\n\007Cluster\022\n\n\002id\030\001 \001(\t\022\r\n\005cou" +
-      "nt\030\002 \001(\r\022\r\n\005score\030\003 \001(\002\022\037\n\004hits\030\004 \003(\0132\021." +
-      "clarifai.api.Hit\"M\n\005Color\022\017\n\007raw_hex\030\001 \001" +
-      "(\t\022\036\n\003w3c\030\002 \001(\0132\021.clarifai.api.W3C\022\023\n\005va" +
-      "lue\030\003 \001(\002B\004\200\265\030\001\" \n\003W3C\022\013\n\003hex\030\001 \001(\t\022\014\n\004n" +
-      "ame\030\002 \001(\t\"/\n\014UserAppIDSet\022\017\n\007user_id\030\001 \001" +
-      "(\t\022\016\n\006app_id\030\002 \001(\t\"J\n\013PatchAction\022\n\n\002op\030" +
-      "\001 \001(\t\022!\n\031merge_conflict_resolution\030\002 \001(\t" +
-      "\022\014\n\004path\030\003 \001(\t\"\271\001\n\007Concept\022\n\n\002id\030\001 \001(\t\022\014" +
-      "\n\004name\030\002 \001(\t\022\032\n\005value\030\003 \001(\002B\013\325\265\030\000\000\200?\200\265\030\001" +
-      "\022.\n\ncreated_at\030\004 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022\020\n\010language\030\005 \001(\t\022\016\n\006app_id\030\006 \001" +
-      "(\t\022\022\n\ndefinition\030\007 \001(\t\022\022\n\nis_virtual\030\010 \001" +
-      "(\010\"\244\001\n\014ConceptCount\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030" +
-      "\002 \001(\t\022:\n\022concept_type_count\030\003 \001(\0132\036.clar" +
-      "ifai.api.ConceptTypeCount\022>\n\024detail_conc" +
-      "ept_count\030\004 \001(\0132 .clarifai.api.DetailCon" +
-      "ceptCount\"B\n\020ConceptTypeCount\022\026\n\010positiv" +
-      "e\030\001 \001(\rB\004\200\265\030\001\022\026\n\010negative\030\002 \001(\rB\004\200\265\030\001\"\337\001" +
-      "\n\022DetailConceptCount\0221\n\tprocessed\030\001 \001(\0132" +
-      "\036.clarifai.api.ConceptTypeCount\0222\n\nto_pr" +
-      "ocess\030\002 \001(\0132\036.clarifai.api.ConceptTypeCo" +
-      "unt\022.\n\006errors\030\003 \001(\0132\036.clarifai.api.Conce" +
-      "ptTypeCount\0222\n\nprocessing\030\004 \001(\0132\036.clarif" +
-      "ai.api.ConceptTypeCount\".\n\014ConceptQuery\022" +
-      "\014\n\004name\030\001 \001(\t\022\020\n\010language\030\002 \001(\t\"\225\004\n\004Data" +
-      "\022\"\n\005image\030\001 \001(\0132\023.clarifai.api.Image\022\"\n\005" +
-      "video\030\002 \001(\0132\023.clarifai.api.Video\022\'\n\010conc" +
-      "epts\030\003 \003(\0132\025.clarifai.api.Concept\022 \n\004fac" +
-      "e\030\004 \001(\0132\022.clarifai.api.Face\022)\n\010metadata\030" +
-      "\005 \001(\0132\027.google.protobuf.Struct\022\036\n\003geo\030\006 " +
-      "\001(\0132\021.clarifai.api.Geo\022#\n\006colors\030\007 \003(\0132\023" +
-      ".clarifai.api.Color\022\'\n\010clusters\030\010 \003(\0132\025." +
-      "clarifai.api.Cluster\022+\n\nembeddings\030\t \003(\013" +
-      "2\027.clarifai.api.Embedding\022\"\n\005focus\030\n \001(\013" +
-      "2\023.clarifai.api.Focus\022%\n\007regions\030\013 \003(\0132\024" +
-      ".clarifai.api.Region\022#\n\006frames\030\014 \003(\0132\023.c" +
-      "larifai.api.Frame\022 \n\004text\030\r \001(\0132\022.clarif" +
-      "ai.api.Text\022\"\n\005audio\030\016 \001(\0132\023.clarifai.ap" +
-      "i.Audio\"e\n\006Region\022\n\n\002id\030\001 \001(\t\022-\n\013region_" +
-      "info\030\002 \001(\0132\030.clarifai.api.RegionInfo\022 \n\004" +
-      "data\030\003 \001(\0132\022.clarifai.api.Data\"\242\001\n\nRegio" +
-      "nInfo\022/\n\014bounding_box\030\001 \001(\0132\031.clarifai.a" +
-      "pi.BoundingBox\022\r\n\005value\030\002 \001(\002\0222\n\010feedbac" +
-      "k\030\003 \001(\0162 .clarifai.api.RegionInfoFeedbac" +
-      "k\022 \n\004mask\030\004 \001(\0132\022.clarifai.api.Mask\"o\n\013B" +
-      "oundingBox\022\025\n\007top_row\030\001 \001(\002B\004\200\265\030\001\022\026\n\010lef" +
-      "t_col\030\002 \001(\002B\004\200\265\030\001\022\030\n\nbottom_row\030\003 \001(\002B\004\200" +
-      "\265\030\001\022\027\n\tright_col\030\004 \001(\002B\004\200\265\030\001\"4\n\tFrameInf" +
-      "o\022\023\n\005index\030\001 \001(\rB\004\200\265\030\001\022\022\n\004time\030\002 \001(\rB\004\200\265" +
-      "\030\001\"V\n\005Frame\022+\n\nframe_info\030\001 \001(\0132\027.clarif" +
-      "ai.api.FrameInfo\022 \n\004data\030\002 \001(\0132\022.clarifa" +
-      "i.api.Data\"N\n\004Mask\022\"\n\005color\030\001 \001(\0132\023.clar" +
-      "ifai.api.Color\022\"\n\005image\030\002 \001(\0132\023.clarifai" +
-      ".api.Image\"7\n\tEmbedding\022\022\n\006vector\030\001 \003(\002B" +
-      "\002\020\001\022\026\n\016num_dimensions\030\002 \001(\r\"7\n\014FaceIdent" +
-      "ity\022\'\n\010concepts\030\001 \003(\0132\025.clarifai.api.Con" +
-      "cept\"2\n\007FaceAge\022\'\n\010concepts\030\001 \003(\0132\025.clar" +
-      "ifai.api.Concept\"=\n\022FaceGenderIdentity\022\'" +
-      "\n\010concepts\030\001 \003(\0132\025.clarifai.api.Concept\"" +
-      "9\n\016FaceMCAffinity\022\'\n\010concepts\030\001 \003(\0132\025.cl" +
-      "arifai.api.Concept\"\340\001\n\004Face\022,\n\010identity\030" +
-      "\001 \001(\0132\032.clarifai.api.FaceIdentity\022-\n\016age" +
-      "_appearance\030\002 \001(\0132\025.clarifai.api.FaceAge" +
-      "\022;\n\021gender_appearance\030\003 \001(\0132 .clarifai.a" +
-      "pi.FaceGenderIdentity\022>\n\030multicultural_a" +
-      "ppearance\030\004 \001(\0132\034.clarifai.api.FaceMCAff" +
-      "inity\"\212\001\n\014FeedbackInfo\022\023\n\013end_user_id\030\001 " +
-      "\001(\t\022\022\n\nsession_id\030\002 \001(\t\022+\n\nevent_type\030\003 " +
-      "\001(\0162\027.clarifai.api.EventType\022\021\n\toutput_i" +
-      "d\030\004 \001(\t\022\021\n\tsearch_id\030\005 \001(\t\"3\n\005Focus\022\025\n\007d" +
-      "ensity\030\001 \001(\002B\004\200\265\030\001\022\023\n\005value\030\002 \001(\002B\004\200\265\030\001\"" +
-      ";\n\010GeoPoint\022\027\n\tlongitude\030\001 \001(\002B\004\200\265\030\001\022\026\n\010" +
-      "latitude\030\002 \001(\002B\004\200\265\030\001\"-\n\010GeoLimit\022\014\n\004type" +
-      "\030\001 \001(\t\022\023\n\005value\030\002 \001(\002B\004\200\265\030\001\":\n\rGeoBoxedP" +
-      "oint\022)\n\tgeo_point\030\001 \001(\0132\026.clarifai.api.G" +
-      "eoPoint\"\211\001\n\003Geo\022)\n\tgeo_point\030\001 \001(\0132\026.cla" +
-      "rifai.api.GeoPoint\022)\n\tgeo_limit\030\002 \001(\0132\026." +
-      "clarifai.api.GeoLimit\022,\n\007geo_box\030\003 \003(\0132\033" +
-      ".clarifai.api.GeoBoxedPoint\"x\n\005Image\022\013\n\003" +
-      "url\030\001 \001(\t\022\016\n\006base64\030\002 \001(\014\022\014\n\004crop\030\003 \003(\002\022" +
-      "\033\n\023allow_duplicate_url\030\004 \001(\010\022\'\n\006hosted\030\005" +
-      " \001(\0132\027.clarifai.api.HostedURL\":\n\tHostedU" +
-      "RL\022\016\n\006prefix\030\001 \001(\t\022\016\n\006suffix\030\002 \001(\t\022\r\n\005si" +
-      "zes\030\003 \003(\t\"\366\001\n\005Input\022\n\n\002id\030\001 \001(\t\022 \n\004data\030" +
-      "\002 \001(\0132\022.clarifai.api.Data\0221\n\rfeedback_in" +
-      "fo\030\003 \001(\0132\032.clarifai.api.FeedbackInfo\022.\n\n" +
-      "created_at\030\004 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022/\n\013modified_at\030\005 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022+\n\006status\030\006 \001(\0132\033.clarifai" +
-      ".api.status.Status\"\332\001\n\nInputCount\022\027\n\tpro" +
-      "cessed\030\001 \001(\rB\004\200\265\030\001\022\030\n\nto_process\030\002 \001(\rB\004" +
-      "\200\265\030\001\022\024\n\006errors\030\003 \001(\rB\004\200\265\030\001\022\030\n\nprocessing" +
-      "\030\004 \001(\rB\004\200\265\030\001\022\027\n\treindexed\030\005 \001(\rB\004\200\265\030\001\022\030\n" +
-      "\nto_reindex\030\006 \001(\rB\004\200\265\030\001\022\034\n\016reindex_error" +
-      "s\030\007 \001(\rB\004\200\265\030\001\022\030\n\nreindexing\030\010 \001(\rB\004\200\265\030\001\"" +
-      "\330\001\n\003Key\022\n\n\002id\030\001 \001(\t\022\014\n\004type\030\010 \001(\t\022\023\n\013des" +
-      "cription\030\002 \001(\t\022\016\n\006scopes\030\003 \003(\t\022\021\n\tendpoi" +
-      "nts\030\007 \003(\t\022\037\n\004apps\030\004 \003(\0132\021.clarifai.api.A" +
-      "pp\022.\n\ncreated_at\030\005 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022.\n\nexpires_at\030\006 \001(\0132\032.google." +
-      "protobuf.Timestamp\"\207\002\n\005Model\022\n\n\002id\030\001 \001(\t" +
-      "\022\014\n\004name\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022\024\n\006app_id\030\004 \001(\tB\004" +
-      "\200\265\030\001\022-\n\013output_info\030\005 \001(\0132\030.clarifai.api" +
-      ".OutputInfo\0221\n\rmodel_version\030\006 \001(\0132\032.cla" +
-      "rifai.api.ModelVersion\022\024\n\014display_name\030\007" +
-      " \001(\t\022\025\n\rtemplate_name\030\010 \001(\t\022\017\n\007user_id\030\t" +
-      " \001(\t\"\222\001\n\nOutputInfo\022 \n\004data\030\001 \001(\0132\022.clar" +
-      "ifai.api.Data\0221\n\routput_config\030\002 \001(\0132\032.c" +
-      "larifai.api.OutputConfig\022\017\n\007message\030\003 \001(" +
-      "\t\022\014\n\004type\030\004 \001(\t\022\020\n\010type_ext\030\005 \001(\t\"\302\004\n\014Ou" +
-      "tputConfig\022)\n\033concepts_mutually_exclusiv" +
-      "e\030\001 \001(\010B\004\200\265\030\001\022 \n\022closed_environment\030\002 \001(" +
-      "\010B\004\200\265\030\001\022\035\n\021existing_model_id\030\003 \001(\tB\002\030\001\022\020" +
-      "\n\010language\030\004 \001(\t\022\034\n\020hyper_parameters\030\005 \001" +
-      "(\tB\002\030\001\022\032\n\014max_concepts\030\006 \001(\rB\004\200\265\030\001\022\027\n\tmi" +
-      "n_value\030\007 \001(\002B\004\200\265\030\001\022.\n\017select_concepts\030\010" +
-      " \003(\0132\025.clarifai.api.Concept\022\030\n\020training_" +
-      "timeout\030\t \001(\r\022\021\n\tsample_ms\030\n \001(\r\022\032\n\022test" +
-      "_split_percent\030\013 \001(\r\022-\n\014hyper_params\030\r \001" +
-      "(\0132\027.google.protobuf.Struct\022\036\n\026embed_mod" +
-      "el_version_id\030\016 \001(\t\022)\n!fail_on_missing_p" +
-      "ositive_examples\030\017 \001(\010\022=\n\026concept_thresh" +
-      "old_type\030\020 \001(\0162\035.clarifai.api.ValueCompa" +
-      "rator\022/\n\016model_metadata\030\021 \001(\0132\027.google.p" +
-      "rotobuf.Struct\"(\n\nModelQuery\022\014\n\004name\030\001 \001" +
+      ".Struct\022\025\n\tworker_id\030\004 \001(\tB\002\030\001\022\017\n\007user_i" +
+      "d\030\017 \001(\t\022\030\n\020model_version_id\030\020 \001(\t\022\036\n\026emb" +
+      "ed_model_version_id\030\016 \001(\t\022\034\n\024parent_anno" +
+      "tation_id\030\006 \001(\t\022+\n\006status\030\007 \001(\0132\033.clarif" +
+      "ai.api.status.Status\022.\n\ncreated_at\030\010 \001(\013" +
+      "2\032.google.protobuf.Timestamp\022/\n\013modified" +
+      "_at\030\t \001(\0132\032.google.protobuf.Timestamp\022\017\n" +
+      "\007trusted\030\n \001(\010\022\017\n\007default\030\014 \001(\010J\004\010\005\020\006J\004\010" +
+      "\013\020\014\"\342\002\n\003App\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\030\n" +
+      "\020default_language\030\003 \001(\t\022\033\n\023default_workf" +
+      "low_id\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\t\022.\n\ncreated" +
+      "_at\030\006 \001(\0132\032.google.protobuf.Timestamp\022\034\n" +
+      "\024legal_consent_status\030\007 \001(\r\022-\n\020last_inpu" +
+      "t_added\030\n \001(\0132\023.clarifai.api.Input\022-\n\013in" +
+      "put_count\030\013 \001(\0132\030.clarifai.api.InputCoun" +
+      "t\022\"\n\024active_concept_count\030\014 \001(\rB\004\200\265\030\001\022)\n" +
+      "\010metadata\030\r \001(\0132\027.google.protobuf.Struct" +
+      "\"A\n\005Audio\022\013\n\003url\030\001 \001(\t\022\016\n\006base64\030\002 \001(\014\022\033" +
+      "\n\023allow_duplicate_url\030\004 \001(\010\"T\n\007Cluster\022\n" +
+      "\n\002id\030\001 \001(\t\022\r\n\005count\030\002 \001(\r\022\r\n\005score\030\003 \001(\002" +
+      "\022\037\n\004hits\030\004 \003(\0132\021.clarifai.api.Hit\"M\n\005Col" +
+      "or\022\017\n\007raw_hex\030\001 \001(\t\022\036\n\003w3c\030\002 \001(\0132\021.clari" +
+      "fai.api.W3C\022\023\n\005value\030\003 \001(\002B\004\200\265\030\001\" \n\003W3C\022" +
+      "\013\n\003hex\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"/\n\014UserAppIDS" +
+      "et\022\017\n\007user_id\030\001 \001(\t\022\016\n\006app_id\030\002 \001(\t\"J\n\013P" +
+      "atchAction\022\n\n\002op\030\001 \001(\t\022!\n\031merge_conflict" +
+      "_resolution\030\002 \001(\t\022\014\n\004path\030\003 \001(\t\"\267\001\n\007Conc" +
+      "ept\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\032\n\005value\030\003" +
+      " \001(\002B\013\325\265\030\000\000\200?\200\265\030\001\022.\n\ncreated_at\030\004 \001(\0132\032." +
+      "google.protobuf.Timestamp\022\020\n\010language\030\005 " +
+      "\001(\t\022\016\n\006app_id\030\006 \001(\t\022\022\n\ndefinition\030\007 \001(\t\022" +
+      "\020\n\010vocab_id\030\010 \001(\t\"\244\001\n\014ConceptCount\022\n\n\002id" +
+      "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022:\n\022concept_type_cou" +
+      "nt\030\003 \001(\0132\036.clarifai.api.ConceptTypeCount" +
+      "\022>\n\024detail_concept_count\030\004 \001(\0132 .clarifa" +
+      "i.api.DetailConceptCount\"B\n\020ConceptTypeC" +
+      "ount\022\026\n\010positive\030\001 \001(\rB\004\200\265\030\001\022\026\n\010negative" +
+      "\030\002 \001(\rB\004\200\265\030\001\"\337\001\n\022DetailConceptCount\0221\n\tp" +
+      "rocessed\030\001 \001(\0132\036.clarifai.api.ConceptTyp" +
+      "eCount\0222\n\nto_process\030\002 \001(\0132\036.clarifai.ap" +
+      "i.ConceptTypeCount\022.\n\006errors\030\003 \001(\0132\036.cla" +
+      "rifai.api.ConceptTypeCount\0222\n\nprocessing" +
+      "\030\004 \001(\0132\036.clarifai.api.ConceptTypeCount\"." +
+      "\n\014ConceptQuery\022\014\n\004name\030\001 \001(\t\022\020\n\010language" +
+      "\030\002 \001(\t\"\367\003\n\004Data\022\"\n\005image\030\001 \001(\0132\023.clarifa" +
+      "i.api.Image\022\"\n\005video\030\002 \001(\0132\023.clarifai.ap" +
+      "i.Video\022\'\n\010concepts\030\003 \003(\0132\025.clarifai.api" +
+      ".Concept\022 \n\004face\030\004 \001(\0132\022.clarifai.api.Fa" +
+      "ce\022)\n\010metadata\030\005 \001(\0132\027.google.protobuf.S" +
+      "truct\022\036\n\003geo\030\006 \001(\0132\021.clarifai.api.Geo\022#\n" +
+      "\006colors\030\007 \003(\0132\023.clarifai.api.Color\022\'\n\010cl" +
+      "usters\030\010 \003(\0132\025.clarifai.api.Cluster\022+\n\ne" +
+      "mbeddings\030\t \003(\0132\027.clarifai.api.Embedding" +
+      "\022%\n\007regions\030\013 \003(\0132\024.clarifai.api.Region\022" +
+      "#\n\006frames\030\014 \003(\0132\023.clarifai.api.Frame\022 \n\004" +
+      "text\030\r \001(\0132\022.clarifai.api.Text\022\"\n\005audio\030" +
+      "\016 \001(\0132\023.clarifai.api.AudioJ\004\010\n\020\013\"e\n\006Regi" +
+      "on\022\n\n\002id\030\001 \001(\t\022-\n\013region_info\030\002 \001(\0132\030.cl" +
+      "arifai.api.RegionInfo\022 \n\004data\030\003 \001(\0132\022.cl" +
+      "arifai.api.Data\"t\n\nRegionInfo\022/\n\014boundin" +
+      "g_box\030\001 \001(\0132\031.clarifai.api.BoundingBox\022\r" +
+      "\n\005value\030\002 \001(\002\022 \n\004mask\030\004 \001(\0132\022.clarifai.a" +
+      "pi.MaskJ\004\010\003\020\004\"o\n\013BoundingBox\022\025\n\007top_row\030" +
+      "\001 \001(\002B\004\200\265\030\001\022\026\n\010left_col\030\002 \001(\002B\004\200\265\030\001\022\030\n\nb" +
+      "ottom_row\030\003 \001(\002B\004\200\265\030\001\022\027\n\tright_col\030\004 \001(\002" +
+      "B\004\200\265\030\001\"4\n\tFrameInfo\022\023\n\005index\030\001 \001(\rB\004\200\265\030\001" +
+      "\022\022\n\004time\030\002 \001(\rB\004\200\265\030\001\"V\n\005Frame\022+\n\nframe_i" +
+      "nfo\030\001 \001(\0132\027.clarifai.api.FrameInfo\022 \n\004da" +
+      "ta\030\002 \001(\0132\022.clarifai.api.Data\"N\n\004Mask\022\"\n\005" +
+      "color\030\001 \001(\0132\023.clarifai.api.Color\022\"\n\005imag" +
+      "e\030\002 \001(\0132\023.clarifai.api.Image\"7\n\tEmbeddin" +
+      "g\022\022\n\006vector\030\001 \003(\002B\002\020\001\022\026\n\016num_dimensions\030" +
+      "\002 \001(\r\"7\n\014FaceIdentity\022\'\n\010concepts\030\001 \003(\0132" +
+      "\025.clarifai.api.Concept\"2\n\007FaceAge\022\'\n\010con" +
+      "cepts\030\001 \003(\0132\025.clarifai.api.Concept\"=\n\022Fa" +
+      "ceGenderIdentity\022\'\n\010concepts\030\001 \003(\0132\025.cla" +
+      "rifai.api.Concept\"9\n\016FaceMCAffinity\022\'\n\010c" +
+      "oncepts\030\001 \003(\0132\025.clarifai.api.Concept\"\340\001\n" +
+      "\004Face\022,\n\010identity\030\001 \001(\0132\032.clarifai.api.F" +
+      "aceIdentity\022-\n\016age_appearance\030\002 \001(\0132\025.cl" +
+      "arifai.api.FaceAge\022;\n\021gender_appearance\030" +
+      "\003 \001(\0132 .clarifai.api.FaceGenderIdentity\022" +
+      ">\n\030multicultural_appearance\030\004 \001(\0132\034.clar" +
+      "ifai.api.FaceMCAffinity\";\n\010GeoPoint\022\027\n\tl" +
+      "ongitude\030\001 \001(\002B\004\200\265\030\001\022\026\n\010latitude\030\002 \001(\002B\004" +
+      "\200\265\030\001\"-\n\010GeoLimit\022\014\n\004type\030\001 \001(\t\022\023\n\005value\030" +
+      "\002 \001(\002B\004\200\265\030\001\":\n\rGeoBoxedPoint\022)\n\tgeo_poin" +
+      "t\030\001 \001(\0132\026.clarifai.api.GeoPoint\"\211\001\n\003Geo\022" +
+      ")\n\tgeo_point\030\001 \001(\0132\026.clarifai.api.GeoPoi" +
+      "nt\022)\n\tgeo_limit\030\002 \001(\0132\026.clarifai.api.Geo" +
+      "Limit\022,\n\007geo_box\030\003 \003(\0132\033.clarifai.api.Ge" +
+      "oBoxedPoint\"p\n\005Image\022\013\n\003url\030\001 \001(\t\022\016\n\006bas" +
+      "e64\030\002 \001(\014\022\033\n\023allow_duplicate_url\030\004 \001(\010\022\'" +
+      "\n\006hosted\030\005 \001(\0132\027.clarifai.api.HostedURLJ" +
+      "\004\010\003\020\004\":\n\tHostedURL\022\016\n\006prefix\030\001 \001(\t\022\016\n\006su" +
+      "ffix\030\002 \001(\t\022\r\n\005sizes\030\003 \003(\t\"\311\001\n\005Input\022\n\n\002i" +
+      "d\030\001 \001(\t\022 \n\004data\030\002 \001(\0132\022.clarifai.api.Dat" +
+      "a\022.\n\ncreated_at\030\004 \001(\0132\032.google.protobuf." +
+      "Timestamp\022/\n\013modified_at\030\005 \001(\0132\032.google." +
+      "protobuf.Timestamp\022+\n\006status\030\006 \001(\0132\033.cla" +
+      "rifai.api.status.StatusJ\004\010\003\020\004\"\332\001\n\nInputC" +
+      "ount\022\027\n\tprocessed\030\001 \001(\rB\004\200\265\030\001\022\030\n\nto_proc" +
+      "ess\030\002 \001(\rB\004\200\265\030\001\022\024\n\006errors\030\003 \001(\rB\004\200\265\030\001\022\030\n" +
+      "\nprocessing\030\004 \001(\rB\004\200\265\030\001\022\027\n\treindexed\030\005 \001" +
+      "(\rB\004\200\265\030\001\022\030\n\nto_reindex\030\006 \001(\rB\004\200\265\030\001\022\034\n\016re" +
+      "index_errors\030\007 \001(\rB\004\200\265\030\001\022\030\n\nreindexing\030\010" +
+      " \001(\rB\004\200\265\030\001\"\330\001\n\003Key\022\n\n\002id\030\001 \001(\t\022\014\n\004type\030\010" +
+      " \001(\t\022\023\n\013description\030\002 \001(\t\022\016\n\006scopes\030\003 \003(" +
+      "\t\022\021\n\tendpoints\030\007 \003(\t\022\037\n\004apps\030\004 \003(\0132\021.cla" +
+      "rifai.api.App\022.\n\ncreated_at\030\005 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022.\n\nexpires_at\030\006 \001(" +
+      "\0132\032.google.protobuf.Timestamp\"\207\002\n\005Model\022" +
+      "\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022.\n\ncreated_at\030" +
+      "\003 \001(\0132\032.google.protobuf.Timestamp\022\024\n\006app" +
+      "_id\030\004 \001(\tB\004\200\265\030\001\022-\n\013output_info\030\005 \001(\0132\030.c" +
+      "larifai.api.OutputInfo\0221\n\rmodel_version\030" +
+      "\006 \001(\0132\032.clarifai.api.ModelVersion\022\024\n\014dis" +
+      "play_name\030\007 \001(\t\022\025\n\rtemplate_name\030\010 \001(\t\022\017" +
+      "\n\007user_id\030\t \001(\t\"\222\001\n\nOutputInfo\022 \n\004data\030\001" +
+      " \001(\0132\022.clarifai.api.Data\0221\n\routput_confi" +
+      "g\030\002 \001(\0132\032.clarifai.api.OutputConfig\022\017\n\007m" +
+      "essage\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\020\n\010type_ext\030\005" +
+      " \001(\t\"\267\004\n\014OutputConfig\022)\n\033concepts_mutual" +
+      "ly_exclusive\030\001 \001(\010B\004\200\265\030\001\022 \n\022closed_envir" +
+      "onment\030\002 \001(\010B\004\200\265\030\001\022\035\n\021existing_model_id\030" +
+      "\003 \001(\tB\002\030\001\022\020\n\010language\030\004 \001(\t\022\034\n\020hyper_par" +
+      "ameters\030\005 \001(\tB\002\030\001\022\032\n\014max_concepts\030\006 \001(\rB" +
+      "\004\200\265\030\001\022\027\n\tmin_value\030\007 \001(\002B\004\200\265\030\001\022.\n\017select" +
+      "_concepts\030\010 \003(\0132\025.clarifai.api.Concept\022\030" +
+      "\n\020training_timeout\030\t \001(\r\022\021\n\tsample_ms\030\n " +
+      "\001(\r\022\032\n\022test_split_percent\030\013 \001(\r\022-\n\014hyper" +
+      "_params\030\r \001(\0132\027.google.protobuf.Struct\022\036" +
+      "\n\026embed_model_version_id\030\016 \001(\t\022)\n!fail_o" +
+      "n_missing_positive_examples\030\017 \001(\010\022/\n\016mod" +
+      "el_metadata\030\021 \001(\0132\027.google.protobuf.Stru" +
+      "ct\022&\n\036invalid_data_tolerance_percent\030\022 \001" +
+      "(\002J\004\010\014\020\rJ\004\010\020\020\021\"(\n\nModelQuery\022\014\n\004name\030\001 \001" +
       "(\t\022\014\n\004type\030\002 \001(\t\"\241\002\n\014ModelVersion\022\n\n\002id\030" +
       "\001 \001(\t\022.\n\ncreated_at\030\002 \001(\0132\032.google.proto" +
       "buf.Timestamp\022+\n\006status\030\003 \001(\0132\033.clarifai" +
@@ -639,40 +620,38 @@ public final class Resources {
       "(\010\"F\n\006Filter\022\016\n\006negate\030\003 \001(\010\022,\n\nannotati" +
       "on\030\004 \001(\0132\030.clarifai.api.Annotation\"D\n\004Ra" +
       "nk\022\016\n\006negate\030\003 \001(\010\022,\n\nannotation\030\004 \001(\0132\030" +
-      ".clarifai.api.Annotation\"\023\n\004Text\022\013\n\003raw\030" +
-      "\001 \001(\t\"\201\001\n\005Video\022\013\n\003url\030\001 \001(\t\022\016\n\006base64\030\002" +
-      " \001(\014\022\033\n\023allow_duplicate_url\030\004 \001(\010\022\025\n\rthu" +
-      "mbnail_url\030\005 \001(\t\022\'\n\006hosted\030\006 \001(\0132\027.clari" +
-      "fai.api.HostedURL\"\201\001\n\010Workflow\022\n\n\002id\030\001 \001" +
-      "(\t\022\016\n\006app_id\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022)\n\005nodes\030\004 \003(" +
-      "\0132\032.clarifai.api.WorkflowNode\"l\n\014Workflo" +
-      "wNode\022\n\n\002id\030\001 \001(\t\022\"\n\005model\030\002 \001(\0132\023.clari" +
-      "fai.api.Model\022,\n\013node_inputs\030\003 \003(\0132\027.cla" +
-      "rifai.api.NodeInput\"\034\n\tNodeInput\022\017\n\007node" +
-      "_id\030\001 \001(\t\"\350\001\n\016WorkflowResult\022\n\n\002id\030\001 \001(\t" +
-      "\022+\n\006status\030\002 \001(\0132\033.clarifai.api.status.S" +
-      "tatus\022.\n\ncreated_at\030\003 \001(\0132\032.google.proto" +
-      "buf.Timestamp\022\"\n\005model\030\004 \001(\0132\023.clarifai." +
-      "api.Model\022\"\n\005input\030\005 \001(\0132\023.clarifai.api." +
-      "Input\022%\n\007outputs\030\006 \003(\0132\024.clarifai.api.Ou" +
-      "tput*W\n\022RegionInfoFeedback\022\014\n\010accurate\020\000" +
-      "\022\r\n\tmisplaced\020\001\022\020\n\014not_detected\020\002\022\022\n\016fal" +
-      "se_positive\020\003*<\n\tEventType\022\r\n\tundefined\020" +
-      "\000\022\020\n\014search_click\020\001\022\016\n\nannotation\020\002*H\n\020E" +
-      "xpirationAction\022\035\n\031EXPIRATION_ACTION_NOT" +
-      "_SET\020\000\022\t\n\005DELAY\020\001\022\n\n\006EXPIRY\020\002*M\n\014License" +
-      "Scope\022\031\n\025LICENSE_SCOPE_NOT_SET\020\000\022\013\n\007PRED" +
-      "ICT\020\001\022\t\n\005TRAIN\020\002\022\n\n\006SEARCH\020\003*\217\001\n\017ValueCo" +
-      "mparator\022\035\n\031CONCEPT_THRESHOLD_NOT_SET\020\000\022" +
-      "\020\n\014GREATER_THAN\020\001\022\031\n\025GREATER_THAN_OR_EQU" +
-      "AL\020\002\022\r\n\tLESS_THAN\020\003\022\026\n\022LESS_THAN_OR_EQUA" +
-      "L\020\004\022\t\n\005EQUAL\020\005*f\n\014APIEventType\022\032\n\026API_EV" +
-      "ENT_TYPE_NOT_SET\020\000\022\023\n\017ON_PREM_PREDICT\020\001\022" +
-      "\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_PREM_SEARCH\020\003*<" +
-      "\n\021UsageIntervalType\022\t\n\005undef\020\000\022\007\n\003day\020\001\022" +
-      "\t\n\005month\020\002\022\010\n\004year\020\003B%\n\025com.clarifai.grp" +
-      "c.apiP\001Z\003api\242\002\004CAIPb\006proto3"
+      ".clarifai.api.Annotation\"f\n\004Text\022\013\n\003raw\030" +
+      "\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\033\n\023allow_duplicate_ur" +
+      "l\030\003 \001(\010\022\'\n\006hosted\030\004 \001(\0132\027.clarifai.api.H" +
+      "ostedURL\"\201\001\n\005Video\022\013\n\003url\030\001 \001(\t\022\016\n\006base6" +
+      "4\030\002 \001(\014\022\033\n\023allow_duplicate_url\030\004 \001(\010\022\025\n\r" +
+      "thumbnail_url\030\005 \001(\t\022\'\n\006hosted\030\006 \001(\0132\027.cl" +
+      "arifai.api.HostedURL\"\201\001\n\010Workflow\022\n\n\002id\030" +
+      "\001 \001(\t\022\016\n\006app_id\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022)\n\005nodes\030\004" +
+      " \003(\0132\032.clarifai.api.WorkflowNode\"l\n\014Work" +
+      "flowNode\022\n\n\002id\030\001 \001(\t\022\"\n\005model\030\002 \001(\0132\023.cl" +
+      "arifai.api.Model\022,\n\013node_inputs\030\003 \003(\0132\027." +
+      "clarifai.api.NodeInput\"\034\n\tNodeInput\022\017\n\007n" +
+      "ode_id\030\001 \001(\t\"\350\001\n\016WorkflowResult\022\n\n\002id\030\001 " +
+      "\001(\t\022+\n\006status\030\002 \001(\0132\033.clarifai.api.statu" +
+      "s.Status\022.\n\ncreated_at\030\003 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022\"\n\005model\030\004 \001(\0132\023.clarif" +
+      "ai.api.Model\022\"\n\005input\030\005 \001(\0132\023.clarifai.a" +
+      "pi.Input\022%\n\007outputs\030\006 \003(\0132\024.clarifai.api" +
+      ".Output*H\n\020ExpirationAction\022\035\n\031EXPIRATIO" +
+      "N_ACTION_NOT_SET\020\000\022\t\n\005DELAY\020\001\022\n\n\006EXPIRY\020" +
+      "\002*M\n\014LicenseScope\022\031\n\025LICENSE_SCOPE_NOT_S" +
+      "ET\020\000\022\013\n\007PREDICT\020\001\022\t\n\005TRAIN\020\002\022\n\n\006SEARCH\020\003" +
+      "*\217\001\n\017ValueComparator\022\035\n\031CONCEPT_THRESHOL" +
+      "D_NOT_SET\020\000\022\020\n\014GREATER_THAN\020\001\022\031\n\025GREATER" +
+      "_THAN_OR_EQUAL\020\002\022\r\n\tLESS_THAN\020\003\022\026\n\022LESS_" +
+      "THAN_OR_EQUAL\020\004\022\t\n\005EQUAL\020\005*f\n\014APIEventTy" +
+      "pe\022\032\n\026API_EVENT_TYPE_NOT_SET\020\000\022\023\n\017ON_PRE" +
+      "M_PREDICT\020\001\022\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_PRE" +
+      "M_SEARCH\020\003*<\n\021UsageIntervalType\022\t\n\005undef" +
+      "\020\000\022\007\n\003day\020\001\022\t\n\005month\020\002\022\010\n\004year\020\003B%\n\025com." +
+      "clarifai.grpc.apiP\001Z\003api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -688,13 +667,13 @@ public final class Resources {
     internal_static_clarifai_api_Annotation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Annotation_descriptor,
-        new java.lang.String[] { "Id", "InputId", "Data", "AnnotationInfo", "WorkerId", "EmbedVersionId", "ParentAnnotationId", "Status", "CreatedAt", "ModifiedAt", "Trusted", "Immutable", "Default", });
+        new java.lang.String[] { "Id", "InputId", "Data", "AnnotationInfo", "WorkerId", "UserId", "ModelVersionId", "EmbedModelVersionId", "ParentAnnotationId", "Status", "CreatedAt", "ModifiedAt", "Trusted", "Default", });
     internal_static_clarifai_api_App_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_clarifai_api_App_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_App_descriptor,
-        new java.lang.String[] { "Id", "Name", "DefaultLanguage", "DefaultWorkflowId", "UserId", "CreatedAt", "LegalConsentStatus", "LastInputAdded", "InputCount", "ActiveConceptCount", "Metadata", "V1Id", "ClientId", "ClientSecret", });
+        new java.lang.String[] { "Id", "Name", "DefaultLanguage", "DefaultWorkflowId", "UserId", "CreatedAt", "LegalConsentStatus", "LastInputAdded", "InputCount", "ActiveConceptCount", "Metadata", });
     internal_static_clarifai_api_Audio_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_clarifai_api_Audio_fieldAccessorTable = new
@@ -736,7 +715,7 @@ public final class Resources {
     internal_static_clarifai_api_Concept_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Concept_descriptor,
-        new java.lang.String[] { "Id", "Name", "Value", "CreatedAt", "Language", "AppId", "Definition", "IsVirtual", });
+        new java.lang.String[] { "Id", "Name", "Value", "CreatedAt", "Language", "AppId", "Definition", "VocabId", });
     internal_static_clarifai_api_ConceptCount_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_clarifai_api_ConceptCount_fieldAccessorTable = new
@@ -766,7 +745,7 @@ public final class Resources {
     internal_static_clarifai_api_Data_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Data_descriptor,
-        new java.lang.String[] { "Image", "Video", "Concepts", "Face", "Metadata", "Geo", "Colors", "Clusters", "Embeddings", "Focus", "Regions", "Frames", "Text", "Audio", });
+        new java.lang.String[] { "Image", "Video", "Concepts", "Face", "Metadata", "Geo", "Colors", "Clusters", "Embeddings", "Regions", "Frames", "Text", "Audio", });
     internal_static_clarifai_api_Region_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_clarifai_api_Region_fieldAccessorTable = new
@@ -778,7 +757,7 @@ public final class Resources {
     internal_static_clarifai_api_RegionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_RegionInfo_descriptor,
-        new java.lang.String[] { "BoundingBox", "Value", "Feedback", "Mask", });
+        new java.lang.String[] { "BoundingBox", "Value", "Mask", });
     internal_static_clarifai_api_BoundingBox_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_clarifai_api_BoundingBox_fieldAccessorTable = new
@@ -839,278 +818,266 @@ public final class Resources {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Face_descriptor,
         new java.lang.String[] { "Identity", "AgeAppearance", "GenderAppearance", "MulticulturalAppearance", });
-    internal_static_clarifai_api_FeedbackInfo_descriptor =
-      getDescriptor().getMessageTypes().get(26);
-    internal_static_clarifai_api_FeedbackInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_clarifai_api_FeedbackInfo_descriptor,
-        new java.lang.String[] { "EndUserId", "SessionId", "EventType", "OutputId", "SearchId", });
-    internal_static_clarifai_api_Focus_descriptor =
-      getDescriptor().getMessageTypes().get(27);
-    internal_static_clarifai_api_Focus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_clarifai_api_Focus_descriptor,
-        new java.lang.String[] { "Density", "Value", });
     internal_static_clarifai_api_GeoPoint_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_clarifai_api_GeoPoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GeoPoint_descriptor,
         new java.lang.String[] { "Longitude", "Latitude", });
     internal_static_clarifai_api_GeoLimit_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_clarifai_api_GeoLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GeoLimit_descriptor,
         new java.lang.String[] { "Type", "Value", });
     internal_static_clarifai_api_GeoBoxedPoint_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_clarifai_api_GeoBoxedPoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GeoBoxedPoint_descriptor,
         new java.lang.String[] { "GeoPoint", });
     internal_static_clarifai_api_Geo_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_clarifai_api_Geo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Geo_descriptor,
         new java.lang.String[] { "GeoPoint", "GeoLimit", "GeoBox", });
     internal_static_clarifai_api_Image_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_clarifai_api_Image_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Image_descriptor,
-        new java.lang.String[] { "Url", "Base64", "Crop", "AllowDuplicateUrl", "Hosted", });
+        new java.lang.String[] { "Url", "Base64", "AllowDuplicateUrl", "Hosted", });
     internal_static_clarifai_api_HostedURL_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_clarifai_api_HostedURL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_HostedURL_descriptor,
         new java.lang.String[] { "Prefix", "Suffix", "Sizes", });
     internal_static_clarifai_api_Input_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_clarifai_api_Input_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Input_descriptor,
-        new java.lang.String[] { "Id", "Data", "FeedbackInfo", "CreatedAt", "ModifiedAt", "Status", });
+        new java.lang.String[] { "Id", "Data", "CreatedAt", "ModifiedAt", "Status", });
     internal_static_clarifai_api_InputCount_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_clarifai_api_InputCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_InputCount_descriptor,
         new java.lang.String[] { "Processed", "ToProcess", "Errors", "Processing", "Reindexed", "ToReindex", "ReindexErrors", "Reindexing", });
     internal_static_clarifai_api_Key_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_clarifai_api_Key_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Key_descriptor,
         new java.lang.String[] { "Id", "Type", "Description", "Scopes", "Endpoints", "Apps", "CreatedAt", "ExpiresAt", });
     internal_static_clarifai_api_Model_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_clarifai_api_Model_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Model_descriptor,
         new java.lang.String[] { "Id", "Name", "CreatedAt", "AppId", "OutputInfo", "ModelVersion", "DisplayName", "TemplateName", "UserId", });
     internal_static_clarifai_api_OutputInfo_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_clarifai_api_OutputInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_OutputInfo_descriptor,
         new java.lang.String[] { "Data", "OutputConfig", "Message", "Type", "TypeExt", });
     internal_static_clarifai_api_OutputConfig_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_clarifai_api_OutputConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_OutputConfig_descriptor,
-        new java.lang.String[] { "ConceptsMutuallyExclusive", "ClosedEnvironment", "ExistingModelId", "Language", "HyperParameters", "MaxConcepts", "MinValue", "SelectConcepts", "TrainingTimeout", "SampleMs", "TestSplitPercent", "HyperParams", "EmbedModelVersionId", "FailOnMissingPositiveExamples", "ConceptThresholdType", "ModelMetadata", });
+        new java.lang.String[] { "ConceptsMutuallyExclusive", "ClosedEnvironment", "ExistingModelId", "Language", "HyperParameters", "MaxConcepts", "MinValue", "SelectConcepts", "TrainingTimeout", "SampleMs", "TestSplitPercent", "HyperParams", "EmbedModelVersionId", "FailOnMissingPositiveExamples", "ModelMetadata", "InvalidDataTolerancePercent", });
     internal_static_clarifai_api_ModelQuery_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_clarifai_api_ModelQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ModelQuery_descriptor,
         new java.lang.String[] { "Name", "Type", });
     internal_static_clarifai_api_ModelVersion_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_clarifai_api_ModelVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ModelVersion_descriptor,
         new java.lang.String[] { "Id", "CreatedAt", "Status", "ActiveConceptCount", "Metrics", "TotalInputCount", "WorkerId", "CompletedAt", });
     internal_static_clarifai_api_PretrainedModelConfig_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_clarifai_api_PretrainedModelConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PretrainedModelConfig_descriptor,
         new java.lang.String[] { "Id", "Type", });
     internal_static_clarifai_api_TrainStats_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_clarifai_api_TrainStats_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_TrainStats_descriptor,
         new java.lang.String[] { "LossCurve", });
     internal_static_clarifai_api_LossCurveEntry_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_clarifai_api_LossCurveEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_LossCurveEntry_descriptor,
         new java.lang.String[] { "Epoch", "GlobalStep", "Cost", });
     internal_static_clarifai_api_LabelCount_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_clarifai_api_LabelCount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_LabelCount_descriptor,
         new java.lang.String[] { "ConceptName", "Count", });
     internal_static_clarifai_api_LabelDistribution_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_clarifai_api_LabelDistribution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_LabelDistribution_descriptor,
         new java.lang.String[] { "PositiveLabelCounts", });
     internal_static_clarifai_api_CooccurrenceMatrixEntry_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_clarifai_api_CooccurrenceMatrixEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_CooccurrenceMatrixEntry_descriptor,
         new java.lang.String[] { "Row", "Col", "Count", });
     internal_static_clarifai_api_CooccurrenceMatrix_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_clarifai_api_CooccurrenceMatrix_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_CooccurrenceMatrix_descriptor,
         new java.lang.String[] { "Matrix", "ConceptIds", });
     internal_static_clarifai_api_ConfusionMatrixEntry_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_clarifai_api_ConfusionMatrixEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ConfusionMatrixEntry_descriptor,
         new java.lang.String[] { "Predicted", "Actual", "Value", });
     internal_static_clarifai_api_ConfusionMatrix_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_clarifai_api_ConfusionMatrix_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ConfusionMatrix_descriptor,
         new java.lang.String[] { "Matrix", "ConceptIds", });
     internal_static_clarifai_api_ROC_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_clarifai_api_ROC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ROC_descriptor,
         new java.lang.String[] { "Fpr", "Tpr", "Thresholds", "FprPerImage", "FprPerObject", });
     internal_static_clarifai_api_PrecisionRecallCurve_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_clarifai_api_PrecisionRecallCurve_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PrecisionRecallCurve_descriptor,
         new java.lang.String[] { "Recall", "Precision", "Thresholds", });
     internal_static_clarifai_api_BinaryMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_clarifai_api_BinaryMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_BinaryMetrics_descriptor,
         new java.lang.String[] { "NumPos", "NumNeg", "NumTot", "RocAuc", "F1", "Concept", "RocCurve", "PrecisionRecallCurve", "AvgPrecision", "AreaName", "AreaMin", "AreaMax", "Iou", });
     internal_static_clarifai_api_EvalTestSetEntry_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_clarifai_api_EvalTestSetEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_EvalTestSetEntry_descriptor,
         new java.lang.String[] { "Id", "Url", "PredictedConcepts", "GroundTruthConcepts", "Annotation", });
     internal_static_clarifai_api_LOPQEvalResult_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_clarifai_api_LOPQEvalResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_LOPQEvalResult_descriptor,
         new java.lang.String[] { "K", "RecallVsBruteForce", "KendallTauVsBruteForce", "MostFrequentCodePercent", "LopqNdcg", "BruteForceNdcg", });
     internal_static_clarifai_api_MetricsSummary_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_clarifai_api_MetricsSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MetricsSummary_descriptor,
         new java.lang.String[] { "Top1Accuracy", "Top5Accuracy", "MacroAvgRocAuc", "MacroStdRocAuc", "MacroAvgF1Score", "MacroStdF1Score", "MacroAvgPrecision", "MacroAvgRecall", "MeanAvgPrecisionIou50", "MeanAvgPrecisionIouRange", "LopqMetrics", });
     internal_static_clarifai_api_EvalMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_clarifai_api_EvalMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_EvalMetrics_descriptor,
         new java.lang.String[] { "Status", "Summary", "ConfusionMatrix", "CooccurrenceMatrix", "LabelCounts", "BinaryMetrics", "TestSet", "MetricsByArea", "MetricsByClass", });
     internal_static_clarifai_api_FieldsValue_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_clarifai_api_FieldsValue_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_FieldsValue_descriptor,
         new java.lang.String[] { "ConfusionMatrix", "CooccurrenceMatrix", "LabelCounts", "BinaryMetrics", "TestSet", "MetricsByArea", "MetricsByClass", });
     internal_static_clarifai_api_Output_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_clarifai_api_Output_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Output_descriptor,
         new java.lang.String[] { "Id", "Status", "CreatedAt", "Model", "Input", "Data", });
     internal_static_clarifai_api_Hit_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_clarifai_api_Hit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Hit_descriptor,
         new java.lang.String[] { "Score", "Input", "Annotation", });
     internal_static_clarifai_api_And_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_clarifai_api_And_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_And_descriptor,
         new java.lang.String[] { "Input", "Output", "Negate", "Annotation", });
     internal_static_clarifai_api_Query_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_clarifai_api_Query_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Query_descriptor,
         new java.lang.String[] { "Ands", "Language", "Filters", "Ranks", });
     internal_static_clarifai_api_Search_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_clarifai_api_Search_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Search_descriptor,
         new java.lang.String[] { "Query", "Id", "ApplicationId", "Name", "AsOf", "GitHash", "CreatedAt", "ModifiedAt", "Algorithm", "Save", });
     internal_static_clarifai_api_Filter_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_clarifai_api_Filter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Filter_descriptor,
         new java.lang.String[] { "Negate", "Annotation", });
     internal_static_clarifai_api_Rank_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_clarifai_api_Rank_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Rank_descriptor,
         new java.lang.String[] { "Negate", "Annotation", });
     internal_static_clarifai_api_Text_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_clarifai_api_Text_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Text_descriptor,
-        new java.lang.String[] { "Raw", });
+        new java.lang.String[] { "Raw", "Url", "AllowDuplicateUrl", "Hosted", });
     internal_static_clarifai_api_Video_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_clarifai_api_Video_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Video_descriptor,
         new java.lang.String[] { "Url", "Base64", "AllowDuplicateUrl", "ThumbnailUrl", "Hosted", });
     internal_static_clarifai_api_Workflow_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_clarifai_api_Workflow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_Workflow_descriptor,
         new java.lang.String[] { "Id", "AppId", "CreatedAt", "Nodes", });
     internal_static_clarifai_api_WorkflowNode_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_clarifai_api_WorkflowNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowNode_descriptor,
         new java.lang.String[] { "Id", "Model", "NodeInputs", });
     internal_static_clarifai_api_NodeInput_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_clarifai_api_NodeInput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_NodeInput_descriptor,
         new java.lang.String[] { "NodeId", });
     internal_static_clarifai_api_WorkflowResult_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_clarifai_api_WorkflowResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowResult_descriptor,

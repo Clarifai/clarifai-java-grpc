@@ -24,4 +24,55 @@ public interface TextOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRawBytes();
+
+  /**
+   * <pre>
+   * Url to a text file
+   * </pre>
+   *
+   * <code>string url = 2;</code>
+   */
+  java.lang.String getUrl();
+  /**
+   * <pre>
+   * Url to a text file
+   * </pre>
+   *
+   * <code>string url = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getUrlBytes();
+
+  /**
+   * <code>bool allow_duplicate_url = 3;</code>
+   */
+  boolean getAllowDuplicateUrl();
+
+  /**
+   * <pre>
+   * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+   * only in response..
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 4;</code>
+   */
+  boolean hasHosted();
+  /**
+   * <pre>
+   * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+   * only in response..
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 4;</code>
+   */
+  com.clarifai.grpc.api.HostedURL getHosted();
+  /**
+   * <pre>
+   * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+   * only in response..
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 4;</code>
+   */
+  com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
 }

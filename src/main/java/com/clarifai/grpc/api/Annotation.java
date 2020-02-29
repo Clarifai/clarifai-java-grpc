@@ -25,7 +25,9 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     inputId_ = "";
     workerId_ = "";
-    embedVersionId_ = "";
+    userId_ = "";
+    modelVersionId_ = "";
+    embedModelVersionId_ = "";
     parentAnnotationId_ = "";
   }
 
@@ -90,12 +92,6 @@ private static final long serialVersionUID = 0L;
             workerId_ = s;
             break;
           }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            embedVersionId_ = s;
-            break;
-          }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -146,11 +142,6 @@ private static final long serialVersionUID = 0L;
             trusted_ = input.readBool();
             break;
           }
-          case 88: {
-
-            immutable_ = input.readBool();
-            break;
-          }
           case 96: {
 
             default_ = input.readBool();
@@ -167,6 +158,24 @@ private static final long serialVersionUID = 0L;
               annotationInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            embedModelVersionId_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId_ = s;
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            modelVersionId_ = s;
             break;
           }
           default: {
@@ -344,11 +353,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ID of the worker this annotation is tied to
+   * Deprecated: please use user id or model version id.
    * </pre>
    *
-   * <code>string worker_id = 4;</code>
+   * <code>string worker_id = 4 [deprecated = true];</code>
    */
-  public java.lang.String getWorkerId() {
+  @java.lang.Deprecated public java.lang.String getWorkerId() {
     java.lang.Object ref = workerId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -363,11 +373,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * ID of the worker this annotation is tied to
+   * Deprecated: please use user id or model version id.
    * </pre>
    *
-   * <code>string worker_id = 4;</code>
+   * <code>string worker_id = 4 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getWorkerIdBytes() {
     java.lang.Object ref = workerId_;
     if (ref instanceof java.lang.String) {
@@ -381,48 +392,132 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int EMBED_VERSION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object embedVersionId_;
+  public static final int USER_ID_FIELD_NUMBER = 15;
+  private volatile java.lang.Object userId_;
   /**
    * <pre>
-   * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_version_id' even if it is For human
-   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-   * "Dangling" are an exception. They do not have an embedding tied to them.
+   * ID of the user this annotation is created by
    * </pre>
    *
-   * <code>string embed_version_id = 5;</code>
+   * <code>string user_id = 15;</code>
    */
-  public java.lang.String getEmbedVersionId() {
-    java.lang.Object ref = embedVersionId_;
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      embedVersionId_ = s;
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * ID of the user this annotation is created by
+   * </pre>
+   *
+   * <code>string user_id = 15;</code>
+   */
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 16;
+  private volatile java.lang.Object modelVersionId_;
+  /**
+   * <pre>
+   * ID of the model version this annotation is created by
+   * </pre>
+   *
+   * <code>string model_version_id = 16;</code>
+   */
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * ID of the model version this annotation is created by
+   * </pre>
+   *
+   * <code>string model_version_id = 16;</code>
+   */
+  public com.google.protobuf.ByteString
+      getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      modelVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EMBED_MODEL_VERSION_ID_FIELD_NUMBER = 14;
+  private volatile java.lang.Object embedModelVersionId_;
+  /**
+   * <pre>
+   * The embedding model version used make this annotation available for search and training
+   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
+   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+   * "Dangling" are an exception. They do not have an embedding tied to them.
+   * </pre>
+   *
+   * <code>string embed_model_version_id = 14;</code>
+   */
+  public java.lang.String getEmbedModelVersionId() {
+    java.lang.Object ref = embedModelVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      embedModelVersionId_ = s;
       return s;
     }
   }
   /**
    * <pre>
    * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_version_id' even if it is For human
+   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
    * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
    * "Dangling" are an exception. They do not have an embedding tied to them.
    * </pre>
    *
-   * <code>string embed_version_id = 5;</code>
+   * <code>string embed_model_version_id = 14;</code>
    */
   public com.google.protobuf.ByteString
-      getEmbedVersionIdBytes() {
-    java.lang.Object ref = embedVersionId_;
+      getEmbedModelVersionIdBytes() {
+    java.lang.Object ref = embedModelVersionId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      embedVersionId_ = b;
+      embedModelVersionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -557,7 +652,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp modifiedAt_;
   /**
    * <pre>
-   * When the annotaion was modified.
+   * When the annotation was modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -567,7 +662,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the annotaion was modified.
+   * When the annotation was modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -577,7 +672,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the annotaion was modified.
+   * When the annotation was modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -597,19 +692,6 @@ private static final long serialVersionUID = 0L;
    */
   public boolean getTrusted() {
     return trusted_;
-  }
-
-  public static final int IMMUTABLE_FIELD_NUMBER = 11;
-  private boolean immutable_;
-  /**
-   * <pre>
-   * Is this annotation immutable - i.e. it cannot be changed or deleted
-   * </pre>
-   *
-   * <code>bool immutable = 11;</code>
-   */
-  public boolean getImmutable() {
-    return immutable_;
   }
 
   public static final int DEFAULT_FIELD_NUMBER = 12;
@@ -651,9 +733,6 @@ private static final long serialVersionUID = 0L;
     if (!getWorkerIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workerId_);
     }
-    if (!getEmbedVersionIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, embedVersionId_);
-    }
     if (!getParentAnnotationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, parentAnnotationId_);
     }
@@ -669,14 +748,20 @@ private static final long serialVersionUID = 0L;
     if (trusted_ != false) {
       output.writeBool(10, trusted_);
     }
-    if (immutable_ != false) {
-      output.writeBool(11, immutable_);
-    }
     if (default_ != false) {
       output.writeBool(12, default_);
     }
     if (annotationInfo_ != null) {
       output.writeMessage(13, getAnnotationInfo());
+    }
+    if (!getEmbedModelVersionIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, embedModelVersionId_);
+    }
+    if (!getUserIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userId_);
+    }
+    if (!getModelVersionIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, modelVersionId_);
     }
     unknownFields.writeTo(output);
   }
@@ -700,9 +785,6 @@ private static final long serialVersionUID = 0L;
     if (!getWorkerIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workerId_);
     }
-    if (!getEmbedVersionIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, embedVersionId_);
-    }
     if (!getParentAnnotationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, parentAnnotationId_);
     }
@@ -722,10 +804,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(10, trusted_);
     }
-    if (immutable_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, immutable_);
-    }
     if (default_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(12, default_);
@@ -733,6 +811,15 @@ private static final long serialVersionUID = 0L;
     if (annotationInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getAnnotationInfo());
+    }
+    if (!getEmbedModelVersionIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, embedModelVersionId_);
+    }
+    if (!getUserIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userId_);
+    }
+    if (!getModelVersionIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, modelVersionId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -765,8 +852,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getWorkerId()
         .equals(other.getWorkerId())) return false;
-    if (!getEmbedVersionId()
-        .equals(other.getEmbedVersionId())) return false;
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
+    if (!getModelVersionId()
+        .equals(other.getModelVersionId())) return false;
+    if (!getEmbedModelVersionId()
+        .equals(other.getEmbedModelVersionId())) return false;
     if (!getParentAnnotationId()
         .equals(other.getParentAnnotationId())) return false;
     if (hasStatus() != other.hasStatus()) return false;
@@ -786,8 +877,6 @@ private static final long serialVersionUID = 0L;
     }
     if (getTrusted()
         != other.getTrusted()) return false;
-    if (getImmutable()
-        != other.getImmutable()) return false;
     if (getDefault()
         != other.getDefault()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -815,8 +904,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkerId().hashCode();
-    hash = (37 * hash) + EMBED_VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEmbedVersionId().hashCode();
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
+    hash = (37 * hash) + EMBED_MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEmbedModelVersionId().hashCode();
     hash = (37 * hash) + PARENT_ANNOTATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getParentAnnotationId().hashCode();
     if (hasStatus()) {
@@ -834,9 +927,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRUSTED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTrusted());
-    hash = (37 * hash) + IMMUTABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getImmutable());
     hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDefault());
@@ -997,7 +1087,11 @@ private static final long serialVersionUID = 0L;
       }
       workerId_ = "";
 
-      embedVersionId_ = "";
+      userId_ = "";
+
+      modelVersionId_ = "";
+
+      embedModelVersionId_ = "";
 
       parentAnnotationId_ = "";
 
@@ -1020,8 +1114,6 @@ private static final long serialVersionUID = 0L;
         modifiedAtBuilder_ = null;
       }
       trusted_ = false;
-
-      immutable_ = false;
 
       default_ = false;
 
@@ -1064,7 +1156,9 @@ private static final long serialVersionUID = 0L;
         result.annotationInfo_ = annotationInfoBuilder_.build();
       }
       result.workerId_ = workerId_;
-      result.embedVersionId_ = embedVersionId_;
+      result.userId_ = userId_;
+      result.modelVersionId_ = modelVersionId_;
+      result.embedModelVersionId_ = embedModelVersionId_;
       result.parentAnnotationId_ = parentAnnotationId_;
       if (statusBuilder_ == null) {
         result.status_ = status_;
@@ -1082,7 +1176,6 @@ private static final long serialVersionUID = 0L;
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
       result.trusted_ = trusted_;
-      result.immutable_ = immutable_;
       result.default_ = default_;
       onBuilt();
       return result;
@@ -1150,8 +1243,16 @@ private static final long serialVersionUID = 0L;
         workerId_ = other.workerId_;
         onChanged();
       }
-      if (!other.getEmbedVersionId().isEmpty()) {
-        embedVersionId_ = other.embedVersionId_;
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
+        onChanged();
+      }
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
+        onChanged();
+      }
+      if (!other.getEmbedModelVersionId().isEmpty()) {
+        embedModelVersionId_ = other.embedModelVersionId_;
         onChanged();
       }
       if (!other.getParentAnnotationId().isEmpty()) {
@@ -1169,9 +1270,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTrusted() != false) {
         setTrusted(other.getTrusted());
-      }
-      if (other.getImmutable() != false) {
-        setImmutable(other.getImmutable());
       }
       if (other.getDefault() != false) {
         setDefault(other.getDefault());
@@ -1657,11 +1755,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ID of the worker this annotation is tied to
+     * Deprecated: please use user id or model version id.
      * </pre>
      *
-     * <code>string worker_id = 4;</code>
+     * <code>string worker_id = 4 [deprecated = true];</code>
      */
-    public java.lang.String getWorkerId() {
+    @java.lang.Deprecated public java.lang.String getWorkerId() {
       java.lang.Object ref = workerId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1676,11 +1775,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ID of the worker this annotation is tied to
+     * Deprecated: please use user id or model version id.
      * </pre>
      *
-     * <code>string worker_id = 4;</code>
+     * <code>string worker_id = 4 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getWorkerIdBytes() {
       java.lang.Object ref = workerId_;
       if (ref instanceof String) {
@@ -1696,11 +1796,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ID of the worker this annotation is tied to
+     * Deprecated: please use user id or model version id.
      * </pre>
      *
-     * <code>string worker_id = 4;</code>
+     * <code>string worker_id = 4 [deprecated = true];</code>
      */
-    public Builder setWorkerId(
+    @java.lang.Deprecated public Builder setWorkerId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1713,11 +1814,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ID of the worker this annotation is tied to
+     * Deprecated: please use user id or model version id.
      * </pre>
      *
-     * <code>string worker_id = 4;</code>
+     * <code>string worker_id = 4 [deprecated = true];</code>
      */
-    public Builder clearWorkerId() {
+    @java.lang.Deprecated public Builder clearWorkerId() {
       
       workerId_ = getDefaultInstance().getWorkerId();
       onChanged();
@@ -1726,11 +1828,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * ID of the worker this annotation is tied to
+     * Deprecated: please use user id or model version id.
      * </pre>
      *
-     * <code>string worker_id = 4;</code>
+     * <code>string worker_id = 4 [deprecated = true];</code>
      */
-    public Builder setWorkerIdBytes(
+    @java.lang.Deprecated public Builder setWorkerIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1742,24 +1845,202 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object embedVersionId_ = "";
+    private java.lang.Object userId_ = "";
     /**
      * <pre>
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-     * "Dangling" are an exception. They do not have an embedding tied to them.
+     * ID of the user this annotation is created by
      * </pre>
      *
-     * <code>string embed_version_id = 5;</code>
+     * <code>string user_id = 15;</code>
      */
-    public java.lang.String getEmbedVersionId() {
-      java.lang.Object ref = embedVersionId_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        embedVersionId_ = s;
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the user this annotation is created by
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the user this annotation is created by
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ID of the user this annotation is created by
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     */
+    public Builder clearUserId() {
+      
+      userId_ = getDefaultInstance().getUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ID of the user this annotation is created by
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelVersionId_ = "";
+    /**
+     * <pre>
+     * ID of the model version this annotation is created by
+     * </pre>
+     *
+     * <code>string model_version_id = 16;</code>
+     */
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the model version this annotation is created by
+     * </pre>
+     *
+     * <code>string model_version_id = 16;</code>
+     */
+    public com.google.protobuf.ByteString
+        getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the model version this annotation is created by
+     * </pre>
+     *
+     * <code>string model_version_id = 16;</code>
+     */
+    public Builder setModelVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ID of the model version this annotation is created by
+     * </pre>
+     *
+     * <code>string model_version_id = 16;</code>
+     */
+    public Builder clearModelVersionId() {
+      
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ID of the model version this annotation is created by
+     * </pre>
+     *
+     * <code>string model_version_id = 16;</code>
+     */
+    public Builder setModelVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object embedModelVersionId_ = "";
+    /**
+     * <pre>
+     * The embedding model version used make this annotation available for search and training
+     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
+     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * "Dangling" are an exception. They do not have an embedding tied to them.
+     * </pre>
+     *
+     * <code>string embed_model_version_id = 14;</code>
+     */
+    public java.lang.String getEmbedModelVersionId() {
+      java.lang.Object ref = embedModelVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        embedModelVersionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1768,21 +2049,21 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_version_id' even if it is For human
+     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
      * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
-     * <code>string embed_version_id = 5;</code>
+     * <code>string embed_model_version_id = 14;</code>
      */
     public com.google.protobuf.ByteString
-        getEmbedVersionIdBytes() {
-      java.lang.Object ref = embedVersionId_;
+        getEmbedModelVersionIdBytes() {
+      java.lang.Object ref = embedModelVersionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        embedVersionId_ = b;
+        embedModelVersionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1791,57 +2072,57 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_version_id' even if it is For human
+     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
      * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
-     * <code>string embed_version_id = 5;</code>
+     * <code>string embed_model_version_id = 14;</code>
      */
-    public Builder setEmbedVersionId(
+    public Builder setEmbedModelVersionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      embedVersionId_ = value;
+      embedModelVersionId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_version_id' even if it is For human
+     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
      * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
-     * <code>string embed_version_id = 5;</code>
+     * <code>string embed_model_version_id = 14;</code>
      */
-    public Builder clearEmbedVersionId() {
+    public Builder clearEmbedModelVersionId() {
       
-      embedVersionId_ = getDefaultInstance().getEmbedVersionId();
+      embedModelVersionId_ = getDefaultInstance().getEmbedModelVersionId();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_version_id' even if it is For human
+     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
      * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
-     * <code>string embed_version_id = 5;</code>
+     * <code>string embed_model_version_id = 14;</code>
      */
-    public Builder setEmbedVersionIdBytes(
+    public Builder setEmbedModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      embedVersionId_ = value;
+      embedModelVersionId_ = value;
       onChanged();
       return this;
     }
@@ -2292,7 +2573,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2302,7 +2583,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2316,7 +2597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2336,7 +2617,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2354,7 +2635,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2376,7 +2657,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2394,7 +2675,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2406,7 +2687,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2421,7 +2702,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the annotaion was modified.
+     * When the annotation was modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
@@ -2474,44 +2755,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearTrusted() {
       
       trusted_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean immutable_ ;
-    /**
-     * <pre>
-     * Is this annotation immutable - i.e. it cannot be changed or deleted
-     * </pre>
-     *
-     * <code>bool immutable = 11;</code>
-     */
-    public boolean getImmutable() {
-      return immutable_;
-    }
-    /**
-     * <pre>
-     * Is this annotation immutable - i.e. it cannot be changed or deleted
-     * </pre>
-     *
-     * <code>bool immutable = 11;</code>
-     */
-    public Builder setImmutable(boolean value) {
-      
-      immutable_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Is this annotation immutable - i.e. it cannot be changed or deleted
-     * </pre>
-     *
-     * <code>bool immutable = 11;</code>
-     */
-    public Builder clearImmutable() {
-      
-      immutable_ = false;
       onChanged();
       return this;
     }

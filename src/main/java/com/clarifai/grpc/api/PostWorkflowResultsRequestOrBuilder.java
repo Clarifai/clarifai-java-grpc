@@ -108,10 +108,10 @@ public interface PostWorkflowResultsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Use this flag to look into user created workflows first for a Workflow ID
+   * Use this flag to look into clarifai published workflows first for a Workflow ID
    * </pre>
    *
-   * <code>bool favor_user_workflows = 5;</code>
+   * <code>bool favor_clarifai_workflows = 5;</code>
    */
-  boolean getFavorUserWorkflows();
+  boolean getFavorClarifaiWorkflows();
 }

@@ -29,7 +29,7 @@ public interface PatchActionOrBuilder extends
 
   /**
    * <pre>
-   * If the action is 'merge' and there is a conflict, how to reslove it.
+   * If the action is 'merge' and there is a conflict, how to resolve it.
    * The options are
    * 'overwrite_by_id', 'remove_by_id', 'merge_by_id','overwrite', 'append' and 'do_nothing'
    * Note that for conflict resolutions '*_by_id' to work on a list, the list should contain
@@ -99,7 +99,7 @@ public interface PatchActionOrBuilder extends
   java.lang.String getMergeConflictResolution();
   /**
    * <pre>
-   * If the action is 'merge' and there is a conflict, how to reslove it.
+   * If the action is 'merge' and there is a conflict, how to resolve it.
    * The options are
    * 'overwrite_by_id', 'remove_by_id', 'merge_by_id','overwrite', 'append' and 'do_nothing'
    * Note that for conflict resolutions '*_by_id' to work on a list, the list should contain

@@ -74,19 +74,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
-            com.clarifai.grpc.api.FeedbackInfo.Builder subBuilder = null;
-            if (feedbackInfo_ != null) {
-              subBuilder = feedbackInfo_.toBuilder();
-            }
-            feedbackInfo_ = input.readMessage(com.clarifai.grpc.api.FeedbackInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(feedbackInfo_);
-              feedbackInfo_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 34: {
             com.google.protobuf.Timestamp.Builder subBuilder = null;
             if (createdAt_ != null) {
@@ -233,42 +220,6 @@ private static final long serialVersionUID = 0L;
     return getData();
   }
 
-  public static final int FEEDBACK_INFO_FIELD_NUMBER = 3;
-  private com.clarifai.grpc.api.FeedbackInfo feedbackInfo_;
-  /**
-   * <pre>
-   * Feedback information for when the data sent back is related to a
-   * feedback event.
-   * </pre>
-   *
-   * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-   */
-  public boolean hasFeedbackInfo() {
-    return feedbackInfo_ != null;
-  }
-  /**
-   * <pre>
-   * Feedback information for when the data sent back is related to a
-   * feedback event.
-   * </pre>
-   *
-   * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-   */
-  public com.clarifai.grpc.api.FeedbackInfo getFeedbackInfo() {
-    return feedbackInfo_ == null ? com.clarifai.grpc.api.FeedbackInfo.getDefaultInstance() : feedbackInfo_;
-  }
-  /**
-   * <pre>
-   * Feedback information for when the data sent back is related to a
-   * feedback event.
-   * </pre>
-   *
-   * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-   */
-  public com.clarifai.grpc.api.FeedbackInfoOrBuilder getFeedbackInfoOrBuilder() {
-    return getFeedbackInfo();
-  }
-
   public static final int CREATED_AT_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createdAt_;
   /**
@@ -403,9 +354,6 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(2, getData());
     }
-    if (feedbackInfo_ != null) {
-      output.writeMessage(3, getFeedbackInfo());
-    }
     if (createdAt_ != null) {
       output.writeMessage(4, getCreatedAt());
     }
@@ -430,10 +378,6 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getData());
-    }
-    if (feedbackInfo_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getFeedbackInfo());
     }
     if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -469,11 +413,6 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
-    if (hasFeedbackInfo() != other.hasFeedbackInfo()) return false;
-    if (hasFeedbackInfo()) {
-      if (!getFeedbackInfo()
-          .equals(other.getFeedbackInfo())) return false;
-    }
     if (hasCreatedAt() != other.hasCreatedAt()) return false;
     if (hasCreatedAt()) {
       if (!getCreatedAt()
@@ -505,10 +444,6 @@ private static final long serialVersionUID = 0L;
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
-    }
-    if (hasFeedbackInfo()) {
-      hash = (37 * hash) + FEEDBACK_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getFeedbackInfo().hashCode();
     }
     if (hasCreatedAt()) {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
@@ -669,12 +604,6 @@ private static final long serialVersionUID = 0L;
         data_ = null;
         dataBuilder_ = null;
       }
-      if (feedbackInfoBuilder_ == null) {
-        feedbackInfo_ = null;
-      } else {
-        feedbackInfo_ = null;
-        feedbackInfoBuilder_ = null;
-      }
       if (createdAtBuilder_ == null) {
         createdAt_ = null;
       } else {
@@ -724,11 +653,6 @@ private static final long serialVersionUID = 0L;
         result.data_ = data_;
       } else {
         result.data_ = dataBuilder_.build();
-      }
-      if (feedbackInfoBuilder_ == null) {
-        result.feedbackInfo_ = feedbackInfo_;
-      } else {
-        result.feedbackInfo_ = feedbackInfoBuilder_.build();
       }
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
@@ -799,9 +723,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasData()) {
         mergeData(other.getData());
-      }
-      if (other.hasFeedbackInfo()) {
-        mergeFeedbackInfo(other.getFeedbackInfo());
       }
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
@@ -1081,168 +1002,6 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
-    }
-
-    private com.clarifai.grpc.api.FeedbackInfo feedbackInfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.FeedbackInfo, com.clarifai.grpc.api.FeedbackInfo.Builder, com.clarifai.grpc.api.FeedbackInfoOrBuilder> feedbackInfoBuilder_;
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public boolean hasFeedbackInfo() {
-      return feedbackInfoBuilder_ != null || feedbackInfo_ != null;
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public com.clarifai.grpc.api.FeedbackInfo getFeedbackInfo() {
-      if (feedbackInfoBuilder_ == null) {
-        return feedbackInfo_ == null ? com.clarifai.grpc.api.FeedbackInfo.getDefaultInstance() : feedbackInfo_;
-      } else {
-        return feedbackInfoBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public Builder setFeedbackInfo(com.clarifai.grpc.api.FeedbackInfo value) {
-      if (feedbackInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        feedbackInfo_ = value;
-        onChanged();
-      } else {
-        feedbackInfoBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public Builder setFeedbackInfo(
-        com.clarifai.grpc.api.FeedbackInfo.Builder builderForValue) {
-      if (feedbackInfoBuilder_ == null) {
-        feedbackInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        feedbackInfoBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public Builder mergeFeedbackInfo(com.clarifai.grpc.api.FeedbackInfo value) {
-      if (feedbackInfoBuilder_ == null) {
-        if (feedbackInfo_ != null) {
-          feedbackInfo_ =
-            com.clarifai.grpc.api.FeedbackInfo.newBuilder(feedbackInfo_).mergeFrom(value).buildPartial();
-        } else {
-          feedbackInfo_ = value;
-        }
-        onChanged();
-      } else {
-        feedbackInfoBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public Builder clearFeedbackInfo() {
-      if (feedbackInfoBuilder_ == null) {
-        feedbackInfo_ = null;
-        onChanged();
-      } else {
-        feedbackInfo_ = null;
-        feedbackInfoBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public com.clarifai.grpc.api.FeedbackInfo.Builder getFeedbackInfoBuilder() {
-      
-      onChanged();
-      return getFeedbackInfoFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    public com.clarifai.grpc.api.FeedbackInfoOrBuilder getFeedbackInfoOrBuilder() {
-      if (feedbackInfoBuilder_ != null) {
-        return feedbackInfoBuilder_.getMessageOrBuilder();
-      } else {
-        return feedbackInfo_ == null ?
-            com.clarifai.grpc.api.FeedbackInfo.getDefaultInstance() : feedbackInfo_;
-      }
-    }
-    /**
-     * <pre>
-     * Feedback information for when the data sent back is related to a
-     * feedback event.
-     * </pre>
-     *
-     * <code>.clarifai.api.FeedbackInfo feedback_info = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.FeedbackInfo, com.clarifai.grpc.api.FeedbackInfo.Builder, com.clarifai.grpc.api.FeedbackInfoOrBuilder> 
-        getFeedbackInfoFieldBuilder() {
-      if (feedbackInfoBuilder_ == null) {
-        feedbackInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.FeedbackInfo, com.clarifai.grpc.api.FeedbackInfo.Builder, com.clarifai.grpc.api.FeedbackInfoOrBuilder>(
-                getFeedbackInfo(),
-                getParentForChildren(),
-                isClean());
-        feedbackInfo_ = null;
-      }
-      return feedbackInfoBuilder_;
     }
 
     private com.google.protobuf.Timestamp createdAt_;

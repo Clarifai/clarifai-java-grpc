@@ -9,7 +9,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Whether the concept predictions must sum to 1.
+   * For custom concept model training: whether the concept predictions must sum to 1.
    * </pre>
    *
    * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -18,7 +18,8 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Whether negatives should only be sampled from within the app during training, for custom models.
+   * For custom concept model training: Whether negatives should only be sampled from within the app during
+   * training, for custom models.
    * </pre>
    *
    * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -47,7 +48,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Overrides the default_language for the app in a predict call.
+   * For concept model predictions: Overrides the default_language for the app in a predict call.
    * </pre>
    *
    * <code>string language = 4;</code>
@@ -55,7 +56,7 @@ public interface OutputConfigOrBuilder extends
   java.lang.String getLanguage();
   /**
    * <pre>
-   * Overrides the default_language for the app in a predict call.
+   * For concept model predictions: Overrides the default_language for the app in a predict call.
    * </pre>
    *
    * <code>string language = 4;</code>
@@ -66,7 +67,7 @@ public interface OutputConfigOrBuilder extends
   /**
    * <pre>
    * DEPRECATED: Hyper-parameters for custom training.
-   * Use new type for hyper-parameters
+   * Use new hyper_params field instead.
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -75,7 +76,7 @@ public interface OutputConfigOrBuilder extends
   /**
    * <pre>
    * DEPRECATED: Hyper-parameters for custom training.
-   * Use new type for hyper-parameters
+   * Use new hyper_params field instead.
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
@@ -85,8 +86,9 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Maximum number of concepts in result. Defaults to 0 which under the hood will return default of
-   * 20. We do a server side default in order to control this feature in the future.
+   * For concept model predictions:  Maximum number of concepts in result. Defaults to 0 which under
+   * the hood will return default of 20. We do a server side default in order to control this
+   * feature in the future.
    * </pre>
    *
    * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -95,8 +97,9 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Minimum value of concept's probability score in result. Defaults to 0.0 which means we won't do
-   * any thresholding as all probabilities will likely be &gt; 0.0.
+   * For concept model predictions: Minimum value of concept's probability score in result.
+   * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+   * likely be &gt; 0.0.
    * </pre>
    *
    * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -105,7 +108,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -114,7 +117,7 @@ public interface OutputConfigOrBuilder extends
       getSelectConceptsList();
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -122,7 +125,7 @@ public interface OutputConfigOrBuilder extends
   com.clarifai.grpc.api.Concept getSelectConcepts(int index);
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -130,7 +133,7 @@ public interface OutputConfigOrBuilder extends
   int getSelectConceptsCount();
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -139,7 +142,7 @@ public interface OutputConfigOrBuilder extends
       getSelectConceptsOrBuilderList();
   /**
    * <pre>
-   * Select concepts in result by name or by id
+   * For concept model predictions: Select concepts in result by name or by id
    * </pre>
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
@@ -149,7 +152,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Training timeout of the model (in seconds)
+   * For custom concept model training: Training timeout of the model (in seconds)
    * </pre>
    *
    * <code>uint32 training_timeout = 9;</code>
@@ -158,7 +161,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Sample delay for video predicting (1 frame per N milliseconds)
+   * For model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
    * </pre>
    *
    * <code>uint32 sample_ms = 10;</code>
@@ -167,7 +170,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * For Training Coordinator: Override for template name and test split percentage
+   * For custom deep training: Override for template name and test split percentage
    * test_split_percent defaults to 10 in training_coordinator/client.go
    * </pre>
    *
@@ -177,7 +180,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Hyperparameters for custom training
+   * For custom model training: Hyperparameters for custom training
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -185,7 +188,7 @@ public interface OutputConfigOrBuilder extends
   boolean hasHyperParams();
   /**
    * <pre>
-   * Hyperparameters for custom training
+   * For custom model training: Hyperparameters for custom training
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -193,7 +196,7 @@ public interface OutputConfigOrBuilder extends
   com.google.protobuf.Struct getHyperParams();
   /**
    * <pre>
-   * Hyperparameters for custom training
+   * For custom model training: Hyperparameters for custom training
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
@@ -202,7 +205,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * For custom models, this is the base model version to use for image embeddings.
+   * For custom model training: this is the base model version to use for image embeddings.
    * This has to be one of the embed models in the app workflow.
    * </pre>
    *
@@ -211,7 +214,7 @@ public interface OutputConfigOrBuilder extends
   java.lang.String getEmbedModelVersionId();
   /**
    * <pre>
-   * For custom models, this is the base model version to use for image embeddings.
+   * For custom model training: this is the base model version to use for image embeddings.
    * This has to be one of the embed models in the app workflow.
    * </pre>
    *
@@ -222,7 +225,7 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * Use this flag to fail on missing positive examples
+   * For custom model training: Use this flag to fail on missing positive examples
    * By default we fill in the missing with random examples
    * </pre>
    *
@@ -232,36 +235,11 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * For concept-threshold type of model to determine how each concept's value will be stored.
-   * The json value can either be the integer field number:
-   *   {"concept_threshold_type": 3}
-   * Or the string field name:
-   *   {"concept_threshold_type": "LESS_THAN"}
-   * </pre>
-   *
-   * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-   */
-  int getConceptThresholdTypeValue();
-  /**
-   * <pre>
-   * For concept-threshold type of model to determine how each concept's value will be stored.
-   * The json value can either be the integer field number:
-   *   {"concept_threshold_type": 3}
-   * Or the string field name:
-   *   {"concept_threshold_type": "LESS_THAN"}
-   * </pre>
-   *
-   * <code>.clarifai.api.ValueComparator concept_threshold_type = 16;</code>
-   */
-  com.clarifai.grpc.api.ValueComparator getConceptThresholdType();
-
-  /**
-   * <pre>
-   * This is any additional metadata as a JSON object that we want want to persist in the model's
-   * output config. This is a useful quick way to set fields for introducing fields for new model
-   * types so we don't have to add a new proto field and DB field each time. Please refer to the
-   * documentation or model impelmentation internally for more details on what fields are
-   * supported for which models.
+   * For custom model training: This is any additional metadata as a JSON object that we want
+   * want to persist in the model's output config. This is a useful quick way to set fields for
+   * introducing fields for new model types so we don't have to add a new proto field and DB field
+   * each time. Please refer to the documentation or model implementation internally for more
+   * details on what fields are supported for which models.
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -269,11 +247,11 @@ public interface OutputConfigOrBuilder extends
   boolean hasModelMetadata();
   /**
    * <pre>
-   * This is any additional metadata as a JSON object that we want want to persist in the model's
-   * output config. This is a useful quick way to set fields for introducing fields for new model
-   * types so we don't have to add a new proto field and DB field each time. Please refer to the
-   * documentation or model impelmentation internally for more details on what fields are
-   * supported for which models.
+   * For custom model training: This is any additional metadata as a JSON object that we want
+   * want to persist in the model's output config. This is a useful quick way to set fields for
+   * introducing fields for new model types so we don't have to add a new proto field and DB field
+   * each time. Please refer to the documentation or model implementation internally for more
+   * details on what fields are supported for which models.
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
@@ -281,14 +259,25 @@ public interface OutputConfigOrBuilder extends
   com.google.protobuf.Struct getModelMetadata();
   /**
    * <pre>
-   * This is any additional metadata as a JSON object that we want want to persist in the model's
-   * output config. This is a useful quick way to set fields for introducing fields for new model
-   * types so we don't have to add a new proto field and DB field each time. Please refer to the
-   * documentation or model impelmentation internally for more details on what fields are
-   * supported for which models.
+   * For custom model training: This is any additional metadata as a JSON object that we want
+   * want to persist in the model's output config. This is a useful quick way to set fields for
+   * introducing fields for new model types so we don't have to add a new proto field and DB field
+   * each time. Please refer to the documentation or model implementation internally for more
+   * details on what fields are supported for which models.
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
    */
   com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+   * inputs among all training inputs. Training will be stopped with error thrown if actual
+   * percent of invalid inputs is higher than this.
+   * </pre>
+   *
+   * <code>float invalid_data_tolerance_percent = 18;</code>
+   */
+  float getInvalidDataTolerancePercent();
 }

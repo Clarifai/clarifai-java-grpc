@@ -103,4 +103,51 @@ public interface PostModelVersionsRequestOrBuilder extends
    * <code>.clarifai.api.Search search = 4;</code>
    */
   com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder();
+
+  /**
+   * <pre>
+   * For deep training, these queries define what data goes into the test and train splits
+   * </pre>
+   *
+   * <code>.clarifai.api.Search train_query = 5;</code>
+   */
+  boolean hasTrainQuery();
+  /**
+   * <pre>
+   * For deep training, these queries define what data goes into the test and train splits
+   * </pre>
+   *
+   * <code>.clarifai.api.Search train_query = 5;</code>
+   */
+  com.clarifai.grpc.api.Search getTrainQuery();
+  /**
+   * <pre>
+   * For deep training, these queries define what data goes into the test and train splits
+   * </pre>
+   *
+   * <code>.clarifai.api.Search train_query = 5;</code>
+   */
+  com.clarifai.grpc.api.SearchOrBuilder getTrainQueryOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Search test_query = 6;</code>
+   */
+  boolean hasTestQuery();
+  /**
+   * <code>.clarifai.api.Search test_query = 6;</code>
+   */
+  com.clarifai.grpc.api.Search getTestQuery();
+  /**
+   * <code>.clarifai.api.Search test_query = 6;</code>
+   */
+  com.clarifai.grpc.api.SearchOrBuilder getTestQueryOrBuilder();
+
+  /**
+   * <pre>
+   * Whether we should automatically queue evals after training
+   * </pre>
+   *
+   * <code>bool evaluate_after_training = 7;</code>
+   */
+  boolean getEvaluateAfterTraining();
 }

@@ -259,8 +259,8 @@ private static final long serialVersionUID = 0L;
    * Input information because in the general case each input can have several annotations.
    * Some example use cases for filtering by annotations:
    * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-   * 2) find all the annotations associated with embed_version_id = "123"
-   * 3) find all the annotations that are trusted, immutable, etc.
+   * 2) find all the annotations associated with embed_model_version_id = "123"
+   * 3) find all the annotations that are trusted, etc.
    * Since all the annotations under the hood are joined to the embedding model's annotation
    * using worker_id's of other models like cluster models or concept models should be
    * combinable with queries like visual search (a query with Output filled in).
@@ -277,8 +277,8 @@ private static final long serialVersionUID = 0L;
    * Input information because in the general case each input can have several annotations.
    * Some example use cases for filtering by annotations:
    * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-   * 2) find all the annotations associated with embed_version_id = "123"
-   * 3) find all the annotations that are trusted, immutable, etc.
+   * 2) find all the annotations associated with embed_model_version_id = "123"
+   * 3) find all the annotations that are trusted, etc.
    * Since all the annotations under the hood are joined to the embedding model's annotation
    * using worker_id's of other models like cluster models or concept models should be
    * combinable with queries like visual search (a query with Output filled in).
@@ -295,8 +295,8 @@ private static final long serialVersionUID = 0L;
    * Input information because in the general case each input can have several annotations.
    * Some example use cases for filtering by annotations:
    * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-   * 2) find all the annotations associated with embed_version_id = "123"
-   * 3) find all the annotations that are trusted, immutable, etc.
+   * 2) find all the annotations associated with embed_model_version_id = "123"
+   * 3) find all the annotations that are trusted, etc.
    * Since all the annotations under the hood are joined to the embedding model's annotation
    * using worker_id's of other models like cluster models or concept models should be
    * combinable with queries like visual search (a query with Output filled in).
@@ -1182,8 +1182,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1200,8 +1200,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1222,8 +1222,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1250,8 +1250,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1276,8 +1276,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1306,8 +1306,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1332,8 +1332,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1352,8 +1352,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
@@ -1375,8 +1375,8 @@ private static final long serialVersionUID = 0L;
      * Input information because in the general case each input can have several annotations.
      * Some example use cases for filtering by annotations:
      * 1) find all the inputs annotated "dog" by worker_id = "XYZ"
-     * 2) find all the annotations associated with embed_version_id = "123"
-     * 3) find all the annotations that are trusted, immutable, etc.
+     * 2) find all the annotations associated with embed_model_version_id = "123"
+     * 3) find all the annotations that are trusted, etc.
      * Since all the annotations under the hood are joined to the embedding model's annotation
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).

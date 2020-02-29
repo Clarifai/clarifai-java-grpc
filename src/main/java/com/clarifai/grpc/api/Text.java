@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   }
   private Text() {
     raw_ = "";
+    url_ = "";
   }
 
   @java.lang.Override
@@ -59,6 +60,30 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             raw_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            url_ = s;
+            break;
+          }
+          case 24: {
+
+            allowDuplicateUrl_ = input.readBool();
+            break;
+          }
+          case 34: {
+            com.clarifai.grpc.api.HostedURL.Builder subBuilder = null;
+            if (hosted_ != null) {
+              subBuilder = hosted_.toBuilder();
+            }
+            hosted_ = input.readMessage(com.clarifai.grpc.api.HostedURL.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(hosted_);
+              hosted_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -135,6 +160,93 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int URL_FIELD_NUMBER = 2;
+  private volatile java.lang.Object url_;
+  /**
+   * <pre>
+   * Url to a text file
+   * </pre>
+   *
+   * <code>string url = 2;</code>
+   */
+  public java.lang.String getUrl() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      url_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Url to a text file
+   * </pre>
+   *
+   * <code>string url = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getUrlBytes() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      url_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ALLOW_DUPLICATE_URL_FIELD_NUMBER = 3;
+  private boolean allowDuplicateUrl_;
+  /**
+   * <code>bool allow_duplicate_url = 3;</code>
+   */
+  public boolean getAllowDuplicateUrl() {
+    return allowDuplicateUrl_;
+  }
+
+  public static final int HOSTED_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.HostedURL hosted_;
+  /**
+   * <pre>
+   * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+   * only in response..
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 4;</code>
+   */
+  public boolean hasHosted() {
+    return hosted_ != null;
+  }
+  /**
+   * <pre>
+   * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+   * only in response..
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 4;</code>
+   */
+  public com.clarifai.grpc.api.HostedURL getHosted() {
+    return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
+  }
+  /**
+   * <pre>
+   * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+   * only in response..
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 4;</code>
+   */
+  public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
+    return getHosted();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -152,6 +264,15 @@ private static final long serialVersionUID = 0L;
     if (!getRawBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, raw_);
     }
+    if (!getUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
+    }
+    if (allowDuplicateUrl_ != false) {
+      output.writeBool(3, allowDuplicateUrl_);
+    }
+    if (hosted_ != null) {
+      output.writeMessage(4, getHosted());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -163,6 +284,17 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getRawBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, raw_);
+    }
+    if (!getUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
+    }
+    if (allowDuplicateUrl_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, allowDuplicateUrl_);
+    }
+    if (hosted_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getHosted());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -181,6 +313,15 @@ private static final long serialVersionUID = 0L;
 
     if (!getRaw()
         .equals(other.getRaw())) return false;
+    if (!getUrl()
+        .equals(other.getUrl())) return false;
+    if (getAllowDuplicateUrl()
+        != other.getAllowDuplicateUrl()) return false;
+    if (hasHosted() != other.hasHosted()) return false;
+    if (hasHosted()) {
+      if (!getHosted()
+          .equals(other.getHosted())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -194,6 +335,15 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + RAW_FIELD_NUMBER;
     hash = (53 * hash) + getRaw().hashCode();
+    hash = (37 * hash) + URL_FIELD_NUMBER;
+    hash = (53 * hash) + getUrl().hashCode();
+    hash = (37 * hash) + ALLOW_DUPLICATE_URL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowDuplicateUrl());
+    if (hasHosted()) {
+      hash = (37 * hash) + HOSTED_FIELD_NUMBER;
+      hash = (53 * hash) + getHosted().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,6 +485,16 @@ private static final long serialVersionUID = 0L;
       super.clear();
       raw_ = "";
 
+      url_ = "";
+
+      allowDuplicateUrl_ = false;
+
+      if (hostedBuilder_ == null) {
+        hosted_ = null;
+      } else {
+        hosted_ = null;
+        hostedBuilder_ = null;
+      }
       return this;
     }
 
@@ -362,6 +522,13 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.Text buildPartial() {
       com.clarifai.grpc.api.Text result = new com.clarifai.grpc.api.Text(this);
       result.raw_ = raw_;
+      result.url_ = url_;
+      result.allowDuplicateUrl_ = allowDuplicateUrl_;
+      if (hostedBuilder_ == null) {
+        result.hosted_ = hosted_;
+      } else {
+        result.hosted_ = hostedBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -413,6 +580,16 @@ private static final long serialVersionUID = 0L;
       if (!other.getRaw().isEmpty()) {
         raw_ = other.raw_;
         onChanged();
+      }
+      if (!other.getUrl().isEmpty()) {
+        url_ = other.url_;
+        onChanged();
+      }
+      if (other.getAllowDuplicateUrl() != false) {
+        setAllowDuplicateUrl(other.getAllowDuplicateUrl());
+      }
+      if (other.hasHosted()) {
+        mergeHosted(other.getHosted());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -530,6 +707,283 @@ private static final long serialVersionUID = 0L;
       raw_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object url_ = "";
+    /**
+     * <pre>
+     * Url to a text file
+     * </pre>
+     *
+     * <code>string url = 2;</code>
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Url to a text file
+     * </pre>
+     *
+     * <code>string url = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Url to a text file
+     * </pre>
+     *
+     * <code>string url = 2;</code>
+     */
+    public Builder setUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      url_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Url to a text file
+     * </pre>
+     *
+     * <code>string url = 2;</code>
+     */
+    public Builder clearUrl() {
+      
+      url_ = getDefaultInstance().getUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Url to a text file
+     * </pre>
+     *
+     * <code>string url = 2;</code>
+     */
+    public Builder setUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      url_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowDuplicateUrl_ ;
+    /**
+     * <code>bool allow_duplicate_url = 3;</code>
+     */
+    public boolean getAllowDuplicateUrl() {
+      return allowDuplicateUrl_;
+    }
+    /**
+     * <code>bool allow_duplicate_url = 3;</code>
+     */
+    public Builder setAllowDuplicateUrl(boolean value) {
+      
+      allowDuplicateUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool allow_duplicate_url = 3;</code>
+     */
+    public Builder clearAllowDuplicateUrl() {
+      
+      allowDuplicateUrl_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.HostedURL hosted_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder> hostedBuilder_;
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public boolean hasHosted() {
+      return hostedBuilder_ != null || hosted_ != null;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public com.clarifai.grpc.api.HostedURL getHosted() {
+      if (hostedBuilder_ == null) {
+        return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
+      } else {
+        return hostedBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public Builder setHosted(com.clarifai.grpc.api.HostedURL value) {
+      if (hostedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hosted_ = value;
+        onChanged();
+      } else {
+        hostedBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public Builder setHosted(
+        com.clarifai.grpc.api.HostedURL.Builder builderForValue) {
+      if (hostedBuilder_ == null) {
+        hosted_ = builderForValue.build();
+        onChanged();
+      } else {
+        hostedBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public Builder mergeHosted(com.clarifai.grpc.api.HostedURL value) {
+      if (hostedBuilder_ == null) {
+        if (hosted_ != null) {
+          hosted_ =
+            com.clarifai.grpc.api.HostedURL.newBuilder(hosted_).mergeFrom(value).buildPartial();
+        } else {
+          hosted_ = value;
+        }
+        onChanged();
+      } else {
+        hostedBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public Builder clearHosted() {
+      if (hostedBuilder_ == null) {
+        hosted_ = null;
+        onChanged();
+      } else {
+        hosted_ = null;
+        hostedBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public com.clarifai.grpc.api.HostedURL.Builder getHostedBuilder() {
+      
+      onChanged();
+      return getHostedFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
+      if (hostedBuilder_ != null) {
+        return hostedBuilder_.getMessageOrBuilder();
+      } else {
+        return hosted_ == null ?
+            com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
+      }
+    }
+    /**
+     * <pre>
+     * The hosted field lists original text hosted in Clarifai storage. This field is currently used
+     * only in response..
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder> 
+        getHostedFieldBuilder() {
+      if (hostedBuilder_ == null) {
+        hostedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder>(
+                getHosted(),
+                getParentForChildren(),
+                isClean());
+        hosted_ = null;
+      }
+      return hostedBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
