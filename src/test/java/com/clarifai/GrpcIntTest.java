@@ -81,12 +81,16 @@ public class GrpcIntTest {
 
     try {
       while (true) {
-        SingleInputCountResponse inputCount = stub.getInputCount(
-            GetInputCountRequest.newBuilder().build()
-        );
-        if (inputCount.getCounts().getToProcess() == 0 &&
-            inputCount.getCounts().getProcessing() == 0) {
+        SingleInputResponse inputResponse = stub.getInput(GetInputRequest.newBuilder().setInputId(inputId).build());
+
+        StatusCode code = inputResponse.getInput().getStatus().getCode();
+        if (code == StatusCode.INPUT_DOWNLOAD_SUCCESS) {
           break;
+        } else if (!(code == StatusCode.INPUT_DOWNLOAD_PENDING ||
+            code == StatusCode.INPUT_DOWNLOAD_IN_PROGRESS)) {
+          throw new RuntimeException(String.format(
+              "Input %s download was not successful: %s", inputId, code
+          ));
         }
 
         Thread.sleep(200);
@@ -105,6 +109,7 @@ public class GrpcIntTest {
                       ).build()
               ).build()
       );
+
       Assert.assertEquals(StatusCode.SUCCESS, patchResponse.getStatus().getCode());
 
       SingleInputResponse getResponse = stub.getInput(
