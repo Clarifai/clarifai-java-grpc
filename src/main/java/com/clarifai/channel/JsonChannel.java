@@ -102,7 +102,7 @@ public class JsonChannel extends io.grpc.Channel {
     }
 
     private String streamToString(InputStream stream) {
-      java.util.Scanner s = new java.util.Scanner(stream, StandardCharsets.UTF_8)
+      java.util.Scanner s = new java.util.Scanner(stream, "utf-8")
           .useDelimiter("\\A");
       String requestString = s.hasNext() ? s.next() : "";
       s.close();
