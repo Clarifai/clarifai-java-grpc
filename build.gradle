@@ -25,7 +25,7 @@ plugins {
 }
 
 group = 'com.clarifai'
-version = '0.0.0build7'
+version = '0.0.1'
 
 repositories {
     // Use jcenter for resolving dependencies.
