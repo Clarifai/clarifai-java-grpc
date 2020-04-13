@@ -7,7 +7,7 @@ This is the official Clarifai Java gRPC client.
 In addition to the actual gRPC channel, it is also possible to use a JSON channel, which uses 
 JSON & HTTP/REST, while using the same request / response handling code.
 
-![Build](https://github.com/Clarifai/clarifai-java-grpc/workflows/.github/workflows/run_tests.yml/badge.svg)
+![Build](https://github.com/Clarifai/clarifai-java-grpc/workflows/Run%20tests/badge.svg)
 [ ![Download](https://api.bintray.com/packages/clarifai/Clarifai/ClarifaiGrpc/images/download.svg) ](https://bintray.com/clarifai/Clarifai/ClarifaiGrpc)
 
 ## Installation
