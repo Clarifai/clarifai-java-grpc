@@ -91,7 +91,7 @@ public class JsonChannel extends io.grpc.Channel {
           apiKey,
           endpoint.getUrl(),
           endpoint.getMethod(),
-          new Gson().toJson(request)
+          request
       );
 
       ResponseT responseObject = methodDescriptor.getResponseMarshaller().parse(

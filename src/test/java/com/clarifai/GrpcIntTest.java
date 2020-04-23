@@ -32,6 +32,28 @@ public class GrpcIntTest {
   }
 
   @Test
+  public void listModelsWithPagination() {
+    MultiModelResponse twoModelsResponse = stub.listModels(
+        ListModelsRequest.newBuilder()
+            .setPerPage(2)
+            .build()
+    );
+
+    Assert.assertEquals(2, twoModelsResponse.getModelsList().size());
+
+    // We shouldn't have 1000*500 number of models, so the
+    // result should be empty.
+    MultiModelResponse emptyResponse = stub.listModels(
+        ListModelsRequest.newBuilder()
+            .setPage(1000)
+            .setPerPage(500)
+            .build()
+    );
+
+    Assert.assertEquals(0, emptyResponse.getModelsList().size());
+  }
+
+  @Test
   public void postModelOutputs() {
     MultiOutputResponse response = stub.postModelOutputs(
         PostModelOutputsRequest.newBuilder()
