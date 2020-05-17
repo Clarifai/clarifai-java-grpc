@@ -1,14 +1,12 @@
 package com.clarifai.credentials;
 
 
-import io.grpc.Attributes;
 import io.grpc.CallCredentials;
 import io.grpc.Metadata;
-import io.grpc.MethodDescriptor;
 
 import java.util.concurrent.Executor;
 
-public class ClarifaiCallCredentials implements CallCredentials {
+public class ClarifaiCallCredentials extends CallCredentials {
 
   private final String apiKey;
 
@@ -25,9 +23,7 @@ public class ClarifaiCallCredentials implements CallCredentials {
   }
 
   @Override
-  public void applyRequestMetadata(
-      MethodDescriptor<?, ?> method, Attributes attrs, Executor appExecutor, MetadataApplier applier
-  ) {
+  public void applyRequestMetadata(RequestInfo requestInfo, Executor appExecutor, MetadataApplier applier) {
     appExecutor.execute(() -> {
       Metadata headers = new Metadata();
       Metadata.Key<String> authorization = Metadata.Key.of(
