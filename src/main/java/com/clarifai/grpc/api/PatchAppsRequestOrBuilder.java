@@ -9,10 +9,12 @@ public interface PatchAppsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -51,6 +53,7 @@ public interface PatchAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>string action = 3;</code>
+   * @return The action.
    */
   java.lang.String getAction();
   /**
@@ -60,6 +63,7 @@ public interface PatchAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>string action = 3;</code>
+   * @return The bytes for action.
    */
   com.google.protobuf.ByteString
       getActionBytes();
@@ -70,6 +74,7 @@ public interface PatchAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.PatchAction metadata_action = 4;</code>
+   * @return Whether the metadataAction field is set.
    */
   boolean hasMetadataAction();
   /**
@@ -78,6 +83,7 @@ public interface PatchAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.PatchAction metadata_action = 4;</code>
+   * @return The metadataAction.
    */
   com.clarifai.grpc.api.PatchAction getMetadataAction();
   /**
@@ -95,6 +101,7 @@ public interface PatchAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>bool reindex = 5;</code>
+   * @return The reindex.
    */
   boolean getReindex();
 }

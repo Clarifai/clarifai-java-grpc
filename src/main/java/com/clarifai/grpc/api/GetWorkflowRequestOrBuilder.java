@@ -9,10 +9,12 @@ public interface GetWorkflowRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -28,6 +30,7 @@ public interface GetWorkflowRequestOrBuilder extends
    * </pre>
    *
    * <code>string workflow_id = 2;</code>
+   * @return The workflowId.
    */
   java.lang.String getWorkflowId();
   /**
@@ -38,6 +41,7 @@ public interface GetWorkflowRequestOrBuilder extends
    * </pre>
    *
    * <code>string workflow_id = 2;</code>
+   * @return The bytes for workflowId.
    */
   com.google.protobuf.ByteString
       getWorkflowIdBytes();
@@ -48,6 +52,7 @@ public interface GetWorkflowRequestOrBuilder extends
    * </pre>
    *
    * <code>bool favor_clarifai_workflows = 3;</code>
+   * @return The favorClarifaiWorkflows.
    */
   boolean getFavorClarifaiWorkflows();
 }

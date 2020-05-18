@@ -9,41 +9,49 @@ public interface InputCountOrBuilder extends
 
   /**
    * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The processed.
    */
   int getProcessed();
 
   /**
    * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The toProcess.
    */
   int getToProcess();
 
   /**
    * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The errors.
    */
   int getErrors();
 
   /**
    * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The processing.
    */
   int getProcessing();
 
   /**
    * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The reindexed.
    */
   int getReindexed();
 
   /**
    * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The toReindex.
    */
   int getToReindex();
 
   /**
    * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The reindexErrors.
    */
   int getReindexErrors();
 
   /**
    * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The reindexing.
    */
   int getReindexing();
 }

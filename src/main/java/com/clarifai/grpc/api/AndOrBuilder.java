@@ -16,6 +16,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Input input = 1;</code>
+   * @return Whether the input field is set.
    */
   boolean hasInput();
   /**
@@ -27,6 +28,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Input input = 1;</code>
+   * @return The input.
    */
   com.clarifai.grpc.api.Input getInput();
   /**
@@ -57,6 +59,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Output output = 2;</code>
+   * @return Whether the output field is set.
    */
   boolean hasOutput();
   /**
@@ -75,6 +78,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Output output = 2;</code>
+   * @return The output.
    */
   com.clarifai.grpc.api.Output getOutput();
   /**
@@ -103,6 +107,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>bool negate = 3;</code>
+   * @return The negate.
    */
   boolean getNegate();
 
@@ -120,6 +125,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
   /**
@@ -136,6 +142,7 @@ public interface AndOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return The annotation.
    */
   com.clarifai.grpc.api.Annotation getAnnotation();
   /**

@@ -97,12 +97,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.GeoPoint geoPoint_;
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return Whether the geoPoint field is set.
    */
   public boolean hasGeoPoint() {
     return geoPoint_ != null;
   }
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return The geoPoint.
    */
   public com.clarifai.grpc.api.GeoPoint getGeoPoint() {
     return geoPoint_ == null ? com.clarifai.grpc.api.GeoPoint.getDefaultInstance() : geoPoint_;
@@ -434,12 +436,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.GeoPoint, com.clarifai.grpc.api.GeoPoint.Builder, com.clarifai.grpc.api.GeoPointOrBuilder> geoPointBuilder_;
     /**
      * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+     * @return Whether the geoPoint field is set.
      */
     public boolean hasGeoPoint() {
       return geoPointBuilder_ != null || geoPoint_ != null;
     }
     /**
      * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+     * @return The geoPoint.
      */
     public com.clarifai.grpc.api.GeoPoint getGeoPoint() {
       if (geoPointBuilder_ == null) {

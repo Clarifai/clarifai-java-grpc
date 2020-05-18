@@ -181,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -200,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -223,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type = 8;</code>
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -242,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type = 8;</code>
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString
       getTypeBytes() {
@@ -265,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -284,6 +289,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -307,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @return A list containing the scopes.
    */
   public com.google.protobuf.ProtocolStringList
       getScopesList() {
@@ -318,6 +325,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @return The count of scopes.
    */
   public int getScopesCount() {
     return scopes_.size();
@@ -328,6 +336,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   public java.lang.String getScopes(int index) {
     return scopes_.get(index);
@@ -338,6 +348,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
    */
   public com.google.protobuf.ByteString
       getScopesBytes(int index) {
@@ -352,6 +364,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @return A list containing the endpoints.
    */
   public com.google.protobuf.ProtocolStringList
       getEndpointsList() {
@@ -363,6 +376,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @return The count of endpoints.
    */
   public int getEndpointsCount() {
     return endpoints_.size();
@@ -373,6 +387,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @param index The index of the element to return.
+   * @return The endpoints at the given index.
    */
   public java.lang.String getEndpoints(int index) {
     return endpoints_.get(index);
@@ -383,6 +399,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the endpoints at the given index.
    */
   public com.google.protobuf.ByteString
       getEndpointsBytes(int index) {
@@ -461,6 +479,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -475,6 +494,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -502,6 +522,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expires_at = 6;</code>
+   * @return Whether the expiresAt field is set.
    */
   public boolean hasExpiresAt() {
     return expiresAt_ != null;
@@ -512,6 +533,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expires_at = 6;</code>
+   * @return The expiresAt.
    */
   public com.google.protobuf.Timestamp getExpiresAt() {
     return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
@@ -1061,6 +1083,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1080,6 +1103,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1100,6 +1124,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1117,6 +1143,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1130,6 +1157,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1150,6 +1179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 8;</code>
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -1169,6 +1199,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 8;</code>
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -1189,6 +1220,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 8;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(
         java.lang.String value) {
@@ -1206,6 +1239,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1219,6 +1253,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 8;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -1239,6 +1275,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -1258,6 +1295,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -1278,6 +1316,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -1295,6 +1335,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -1308,6 +1349,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1334,6 +1377,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @return A list containing the scopes.
      */
     public com.google.protobuf.ProtocolStringList
         getScopesList() {
@@ -1345,6 +1389,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @return The count of scopes.
      */
     public int getScopesCount() {
       return scopes_.size();
@@ -1355,6 +1400,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
      */
     public java.lang.String getScopes(int index) {
       return scopes_.get(index);
@@ -1365,6 +1412,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
      */
     public com.google.protobuf.ByteString
         getScopesBytes(int index) {
@@ -1376,6 +1425,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
      */
     public Builder setScopes(
         int index, java.lang.String value) {
@@ -1393,6 +1445,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @param value The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopes(
         java.lang.String value) {
@@ -1410,6 +1464,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @param values The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllScopes(
         java.lang.Iterable<java.lang.String> values) {
@@ -1425,6 +1481,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearScopes() {
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1438,6 +1495,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopesBytes(
         com.google.protobuf.ByteString value) {
@@ -1464,6 +1523,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @return A list containing the endpoints.
      */
     public com.google.protobuf.ProtocolStringList
         getEndpointsList() {
@@ -1475,6 +1535,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @return The count of endpoints.
      */
     public int getEndpointsCount() {
       return endpoints_.size();
@@ -1485,6 +1546,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @param index The index of the element to return.
+     * @return The endpoints at the given index.
      */
     public java.lang.String getEndpoints(int index) {
       return endpoints_.get(index);
@@ -1495,6 +1558,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the endpoints at the given index.
      */
     public com.google.protobuf.ByteString
         getEndpointsBytes(int index) {
@@ -1506,6 +1571,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The endpoints to set.
+     * @return This builder for chaining.
      */
     public Builder setEndpoints(
         int index, java.lang.String value) {
@@ -1523,6 +1591,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @param value The endpoints to add.
+     * @return This builder for chaining.
      */
     public Builder addEndpoints(
         java.lang.String value) {
@@ -1540,6 +1610,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @param values The endpoints to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEndpoints(
         java.lang.Iterable<java.lang.String> values) {
@@ -1555,6 +1627,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEndpoints() {
       endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1568,6 +1641,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 7;</code>
+     * @param value The bytes of the endpoints to add.
+     * @return This builder for chaining.
      */
     public Builder addEndpointsBytes(
         com.google.protobuf.ByteString value) {
@@ -1924,6 +1999,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -1938,6 +2014,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -2109,6 +2186,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 6;</code>
+     * @return Whether the expiresAt field is set.
      */
     public boolean hasExpiresAt() {
       return expiresAtBuilder_ != null || expiresAt_ != null;
@@ -2119,6 +2197,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 6;</code>
+     * @return The expiresAt.
      */
     public com.google.protobuf.Timestamp getExpiresAt() {
       if (expiresAtBuilder_ == null) {

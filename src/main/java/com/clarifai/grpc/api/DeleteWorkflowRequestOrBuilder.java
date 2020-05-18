@@ -9,10 +9,12 @@ public interface DeleteWorkflowRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -22,10 +24,12 @@ public interface DeleteWorkflowRequestOrBuilder extends
 
   /**
    * <code>string workflow_id = 2;</code>
+   * @return The workflowId.
    */
   java.lang.String getWorkflowId();
   /**
    * <code>string workflow_id = 2;</code>
+   * @return The bytes for workflowId.
    */
   com.google.protobuf.ByteString
       getWorkflowIdBytes();

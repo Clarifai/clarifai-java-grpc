@@ -102,6 +102,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -121,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -144,6 +146,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 2;</code>
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -163,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 2;</code>
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString
       getLanguageBytes() {
@@ -504,6 +508,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -523,6 +528,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -543,6 +549,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -560,6 +568,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -573,6 +582,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -593,6 +604,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -612,6 +624,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString
         getLanguageBytes() {
@@ -632,6 +645,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(
         java.lang.String value) {
@@ -649,6 +664,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
       
@@ -662,6 +678,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(
         com.google.protobuf.ByteString value) {

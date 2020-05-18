@@ -13,6 +13,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The conceptsMutuallyExclusive.
    */
   boolean getConceptsMutuallyExclusive();
 
@@ -23,6 +24,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The closedEnvironment.
    */
   boolean getClosedEnvironment();
 
@@ -33,6 +35,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
+   * @return The existingModelId.
    */
   @java.lang.Deprecated java.lang.String getExistingModelId();
   /**
@@ -42,6 +45,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
+   * @return The bytes for existingModelId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
       getExistingModelIdBytes();
@@ -52,6 +56,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string language = 4;</code>
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -60,6 +65,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string language = 4;</code>
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString
       getLanguageBytes();
@@ -71,6 +77,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
+   * @return The hyperParameters.
    */
   @java.lang.Deprecated java.lang.String getHyperParameters();
   /**
@@ -80,6 +87,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
+   * @return The bytes for hyperParameters.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
       getHyperParametersBytes();
@@ -92,6 +100,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The maxConcepts.
    */
   int getMaxConcepts();
 
@@ -103,6 +112,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The minValue.
    */
   float getMinValue();
 
@@ -156,6 +166,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>uint32 training_timeout = 9;</code>
+   * @return The trainingTimeout.
    */
   int getTrainingTimeout();
 
@@ -165,6 +176,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>uint32 sample_ms = 10;</code>
+   * @return The sampleMs.
    */
   int getSampleMs();
 
@@ -175,6 +187,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>uint32 test_split_percent = 11;</code>
+   * @return The testSplitPercent.
    */
   int getTestSplitPercent();
 
@@ -184,6 +197,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
+   * @return Whether the hyperParams field is set.
    */
   boolean hasHyperParams();
   /**
@@ -192,6 +206,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
+   * @return The hyperParams.
    */
   com.google.protobuf.Struct getHyperParams();
   /**
@@ -210,6 +225,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The embedModelVersionId.
    */
   java.lang.String getEmbedModelVersionId();
   /**
@@ -219,6 +235,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The bytes for embedModelVersionId.
    */
   com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes();
@@ -230,6 +247,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>bool fail_on_missing_positive_examples = 15;</code>
+   * @return The failOnMissingPositiveExamples.
    */
   boolean getFailOnMissingPositiveExamples();
 
@@ -243,6 +261,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * @return Whether the modelMetadata field is set.
    */
   boolean hasModelMetadata();
   /**
@@ -255,6 +274,7 @@ public interface OutputConfigOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * @return The modelMetadata.
    */
   com.google.protobuf.Struct getModelMetadata();
   /**
@@ -272,12 +292,24 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+   * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
    * inputs among all training inputs. Training will be stopped with error thrown if actual
    * percent of invalid inputs is higher than this.
    * </pre>
    *
    * <code>float invalid_data_tolerance_percent = 18;</code>
+   * @return The invalidDataTolerancePercent.
    */
   float getInvalidDataTolerancePercent();
+
+  /**
+   * <pre>
+   * For custom deep training: Use this flag to set this model to use few shot K-NN classification
+   * instead of custom concept classification. Default is false.
+   * </pre>
+   *
+   * <code>bool use_knn_classifier = 19;</code>
+   * @return The useKnnClassifier.
+   */
+  boolean getUseKnnClassifier();
 }

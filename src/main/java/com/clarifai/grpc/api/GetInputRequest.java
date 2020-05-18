@@ -110,12 +110,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -131,6 +133,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object inputId_;
   /**
    * <code>string input_id = 2;</code>
+   * @return The inputId.
    */
   public java.lang.String getInputId() {
     java.lang.Object ref = inputId_;
@@ -146,6 +149,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string input_id = 2;</code>
+   * @return The bytes for inputId.
    */
   public com.google.protobuf.ByteString
       getInputIdBytes() {
@@ -504,12 +508,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -619,6 +625,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object inputId_ = "";
     /**
      * <code>string input_id = 2;</code>
+     * @return The inputId.
      */
     public java.lang.String getInputId() {
       java.lang.Object ref = inputId_;
@@ -634,6 +641,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string input_id = 2;</code>
+     * @return The bytes for inputId.
      */
     public com.google.protobuf.ByteString
         getInputIdBytes() {
@@ -650,6 +658,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string input_id = 2;</code>
+     * @param value The inputId to set.
+     * @return This builder for chaining.
      */
     public Builder setInputId(
         java.lang.String value) {
@@ -663,6 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string input_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInputId() {
       
@@ -672,6 +683,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string input_id = 2;</code>
+     * @param value The bytes for inputId to set.
+     * @return This builder for chaining.
      */
     public Builder setInputIdBytes(
         com.google.protobuf.ByteString value) {

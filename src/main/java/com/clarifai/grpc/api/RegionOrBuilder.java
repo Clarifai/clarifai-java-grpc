@@ -8,38 +8,109 @@ public interface RegionOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * A unique id for the region.
+   * </pre>
+   *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
+   * <pre>
+   * A unique id for the region.
+   * </pre>
+   *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
+   * <pre>
+   * The details about the location of the region.
+   * </pre>
+   *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
+   * @return Whether the regionInfo field is set.
    */
   boolean hasRegionInfo();
   /**
+   * <pre>
+   * The details about the location of the region.
+   * </pre>
+   *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
+   * @return The regionInfo.
    */
   com.clarifai.grpc.api.RegionInfo getRegionInfo();
   /**
+   * <pre>
+   * The details about the location of the region.
+   * </pre>
+   *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
    */
   com.clarifai.grpc.api.RegionInfoOrBuilder getRegionInfoOrBuilder();
 
   /**
+   * <pre>
+   * A recursive definition of the data within the Region. For example, this will contain
+   * data.concepts if the region also has annotations or predictions of concepts within it.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return Whether the data field is set.
    */
   boolean hasData();
   /**
+   * <pre>
+   * A recursive definition of the data within the Region. For example, this will contain
+   * data.concepts if the region also has annotations or predictions of concepts within it.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return The data.
    */
   com.clarifai.grpc.api.Data getData();
   /**
+   * <pre>
+   * A recursive definition of the data within the Region. For example, this will contain
+   * data.concepts if the region also has annotations or predictions of concepts within it.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 3;</code>
    */
   com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
+
+  /**
+   * <pre>
+   * This is the confidence score of the overall Region.
+   * </pre>
+   *
+   * <code>float value = 4;</code>
+   * @return The value.
+   */
+  float getValue();
+
+  /**
+   * <pre>
+   * For tracking algorithsm and annotations we tie regions together with this track id.
+   * </pre>
+   *
+   * <code>string track_id = 5;</code>
+   * @return The trackId.
+   */
+  java.lang.String getTrackId();
+  /**
+   * <pre>
+   * For tracking algorithsm and annotations we tie regions together with this track id.
+   * </pre>
+   *
+   * <code>string track_id = 5;</code>
+   * @return The bytes for trackId.
+   */
+  com.google.protobuf.ByteString
+      getTrackIdBytes();
 }

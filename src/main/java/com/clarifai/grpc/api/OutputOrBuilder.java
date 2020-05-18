@@ -13,6 +13,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,16 +22,19 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
    * <code>.clarifai.api.status.Status status = 2;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 2;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -48,6 +52,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -60,6 +65,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -81,6 +87,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Model model = 4;</code>
+   * @return Whether the model field is set.
    */
   boolean hasModel();
   /**
@@ -89,6 +96,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Model model = 4;</code>
+   * @return The model.
    */
   com.clarifai.grpc.api.Model getModel();
   /**
@@ -107,6 +115,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>
+   * @return Whether the input field is set.
    */
   boolean hasInput();
   /**
@@ -116,6 +125,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>
+   * @return The input.
    */
   com.clarifai.grpc.api.Input getInput();
   /**
@@ -135,6 +145,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 6;</code>
+   * @return Whether the data field is set.
    */
   boolean hasData();
   /**
@@ -144,6 +155,7 @@ public interface OutputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 6;</code>
+   * @return The data.
    */
   com.clarifai.grpc.api.Data getData();
   /**

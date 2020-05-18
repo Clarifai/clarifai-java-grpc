@@ -14,6 +14,7 @@ public interface AudioOrBuilder extends
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -23,6 +24,7 @@ public interface AudioOrBuilder extends
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString
       getUrlBytes();
@@ -38,6 +40,7 @@ public interface AudioOrBuilder extends
    * </pre>
    *
    * <code>bytes base64 = 2;</code>
+   * @return The base64.
    */
   com.google.protobuf.ByteString getBase64();
 
@@ -47,6 +50,7 @@ public interface AudioOrBuilder extends
    * </pre>
    *
    * <code>bool allow_duplicate_url = 4;</code>
+   * @return The allowDuplicateUrl.
    */
   boolean getAllowDuplicateUrl();
 }

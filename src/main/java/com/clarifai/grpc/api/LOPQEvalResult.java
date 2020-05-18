@@ -123,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 k = 1;</code>
+   * @return The k.
    */
   public int getK() {
     return k_;
@@ -136,6 +137,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The recallVsBruteForce.
    */
   public float getRecallVsBruteForce() {
     return recallVsBruteForce_;
@@ -149,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The kendallTauVsBruteForce.
    */
   public float getKendallTauVsBruteForce() {
     return kendallTauVsBruteForce_;
@@ -162,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The mostFrequentCodePercent.
    */
   public float getMostFrequentCodePercent() {
     return mostFrequentCodePercent_;
@@ -192,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The lopqNdcg.
    */
   public float getLopqNdcg() {
     return lopqNdcg_;
@@ -206,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The bruteForceNdcg.
    */
   public float getBruteForceNdcg() {
     return bruteForceNdcg_;
@@ -620,6 +626,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 k = 1;</code>
+     * @return The k.
      */
     public int getK() {
       return k_;
@@ -630,6 +637,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 k = 1;</code>
+     * @param value The k to set.
+     * @return This builder for chaining.
      */
     public Builder setK(int value) {
       
@@ -643,6 +652,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 k = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearK() {
       
@@ -658,6 +668,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The recallVsBruteForce.
      */
     public float getRecallVsBruteForce() {
       return recallVsBruteForce_;
@@ -668,6 +679,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The recallVsBruteForce to set.
+     * @return This builder for chaining.
      */
     public Builder setRecallVsBruteForce(float value) {
       
@@ -681,6 +694,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRecallVsBruteForce() {
       
@@ -696,6 +710,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The kendallTauVsBruteForce.
      */
     public float getKendallTauVsBruteForce() {
       return kendallTauVsBruteForce_;
@@ -706,6 +721,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The kendallTauVsBruteForce to set.
+     * @return This builder for chaining.
      */
     public Builder setKendallTauVsBruteForce(float value) {
       
@@ -719,6 +736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearKendallTauVsBruteForce() {
       
@@ -734,6 +752,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The mostFrequentCodePercent.
      */
     public float getMostFrequentCodePercent() {
       return mostFrequentCodePercent_;
@@ -744,6 +763,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The mostFrequentCodePercent to set.
+     * @return This builder for chaining.
      */
     public Builder setMostFrequentCodePercent(float value) {
       
@@ -757,6 +778,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMostFrequentCodePercent() {
       
@@ -789,6 +811,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The lopqNdcg.
      */
     public float getLopqNdcg() {
       return lopqNdcg_;
@@ -816,6 +839,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The lopqNdcg to set.
+     * @return This builder for chaining.
      */
     public Builder setLopqNdcg(float value) {
       
@@ -846,6 +871,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLopqNdcg() {
       
@@ -862,6 +888,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The bruteForceNdcg.
      */
     public float getBruteForceNdcg() {
       return bruteForceNdcg_;
@@ -873,6 +900,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bruteForceNdcg to set.
+     * @return This builder for chaining.
      */
     public Builder setBruteForceNdcg(float value) {
       
@@ -887,6 +916,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearBruteForceNdcg() {
       

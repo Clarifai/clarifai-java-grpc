@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Rectangular bounding box for a region.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.BoundingBox}
  */
 public  final class BoundingBox extends
@@ -103,7 +107,12 @@ private static final long serialVersionUID = 0L;
   public static final int TOP_ROW_FIELD_NUMBER = 1;
   private float topRow_;
   /**
+   * <pre>
+   * The top left of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The topRow.
    */
   public float getTopRow() {
     return topRow_;
@@ -112,7 +121,12 @@ private static final long serialVersionUID = 0L;
   public static final int LEFT_COL_FIELD_NUMBER = 2;
   private float leftCol_;
   /**
+   * <pre>
+   * The left column of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The leftCol.
    */
   public float getLeftCol() {
     return leftCol_;
@@ -121,7 +135,12 @@ private static final long serialVersionUID = 0L;
   public static final int BOTTOM_ROW_FIELD_NUMBER = 3;
   private float bottomRow_;
   /**
+   * <pre>
+   * The bottom row of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The bottomRow.
    */
   public float getBottomRow() {
     return bottomRow_;
@@ -130,7 +149,12 @@ private static final long serialVersionUID = 0L;
   public static final int RIGHT_COL_FIELD_NUMBER = 4;
   private float rightCol_;
   /**
+   * <pre>
+   * The right col of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The rightCol.
    */
   public float getRightCol() {
     return rightCol_;
@@ -333,6 +357,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Rectangular bounding box for a region.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.BoundingBox}
    */
   public static final class Builder extends
@@ -499,13 +527,24 @@ private static final long serialVersionUID = 0L;
 
     private float topRow_ ;
     /**
+     * <pre>
+     * The top left of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The topRow.
      */
     public float getTopRow() {
       return topRow_;
     }
     /**
+     * <pre>
+     * The top left of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The topRow to set.
+     * @return This builder for chaining.
      */
     public Builder setTopRow(float value) {
       
@@ -514,7 +553,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The top left of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTopRow() {
       
@@ -525,13 +569,24 @@ private static final long serialVersionUID = 0L;
 
     private float leftCol_ ;
     /**
+     * <pre>
+     * The left column of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The leftCol.
      */
     public float getLeftCol() {
       return leftCol_;
     }
     /**
+     * <pre>
+     * The left column of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The leftCol to set.
+     * @return This builder for chaining.
      */
     public Builder setLeftCol(float value) {
       
@@ -540,7 +595,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The left column of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLeftCol() {
       
@@ -551,13 +611,24 @@ private static final long serialVersionUID = 0L;
 
     private float bottomRow_ ;
     /**
+     * <pre>
+     * The bottom row of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The bottomRow.
      */
     public float getBottomRow() {
       return bottomRow_;
     }
     /**
+     * <pre>
+     * The bottom row of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bottomRow to set.
+     * @return This builder for chaining.
      */
     public Builder setBottomRow(float value) {
       
@@ -566,7 +637,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The bottom row of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearBottomRow() {
       
@@ -577,13 +653,24 @@ private static final long serialVersionUID = 0L;
 
     private float rightCol_ ;
     /**
+     * <pre>
+     * The right col of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The rightCol.
      */
     public float getRightCol() {
       return rightCol_;
     }
     /**
+     * <pre>
+     * The right col of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The rightCol to set.
+     * @return This builder for chaining.
      */
     public Builder setRightCol(float value) {
       
@@ -592,7 +679,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The right col of the bounding box normalized to the data dimension to be within [0-1.0]
+     * </pre>
+     *
      * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRightCol() {
       

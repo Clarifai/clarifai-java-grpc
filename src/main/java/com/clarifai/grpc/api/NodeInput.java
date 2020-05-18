@@ -99,6 +99,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string node_id = 1;</code>
+   * @return The nodeId.
    */
   public java.lang.String getNodeId() {
     java.lang.Object ref = nodeId_;
@@ -118,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string node_id = 1;</code>
+   * @return The bytes for nodeId.
    */
   public com.google.protobuf.ByteString
       getNodeIdBytes() {
@@ -446,6 +448,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string node_id = 1;</code>
+     * @return The nodeId.
      */
     public java.lang.String getNodeId() {
       java.lang.Object ref = nodeId_;
@@ -465,6 +468,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string node_id = 1;</code>
+     * @return The bytes for nodeId.
      */
     public com.google.protobuf.ByteString
         getNodeIdBytes() {
@@ -485,6 +489,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string node_id = 1;</code>
+     * @param value The nodeId to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeId(
         java.lang.String value) {
@@ -502,6 +508,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string node_id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNodeId() {
       
@@ -515,6 +522,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string node_id = 1;</code>
+     * @param value The bytes for nodeId to set.
+     * @return This builder for chaining.
      */
     public Builder setNodeIdBytes(
         com.google.protobuf.ByteString value) {

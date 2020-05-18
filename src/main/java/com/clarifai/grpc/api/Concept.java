@@ -154,6 +154,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -173,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -196,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -215,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -241,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
+   * @return The value.
    */
   public float getValue() {
     return value_;
@@ -255,6 +260,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -266,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -293,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 5;</code>
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -315,6 +323,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 5;</code>
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString
       getLanguageBytes() {
@@ -338,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 6;</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -357,6 +367,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 6;</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -380,6 +391,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string definition = 7;</code>
+   * @return The definition.
    */
   public java.lang.String getDefinition() {
     java.lang.Object ref = definition_;
@@ -399,6 +411,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string definition = 7;</code>
+   * @return The bytes for definition.
    */
   public com.google.protobuf.ByteString
       getDefinitionBytes() {
@@ -419,11 +432,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-   * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+   * of concepts that you can separate out based on this field. For example "age_appearance" vs
    * "gender_appearance" in a list of concept returned from the demographics model.
    * </pre>
    *
    * <code>string vocab_id = 8;</code>
+   * @return The vocabId.
    */
   public java.lang.String getVocabId() {
     java.lang.Object ref = vocabId_;
@@ -440,11 +454,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-   * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+   * of concepts that you can separate out based on this field. For example "age_appearance" vs
    * "gender_appearance" in a list of concept returned from the demographics model.
    * </pre>
    *
    * <code>string vocab_id = 8;</code>
+   * @return The bytes for vocabId.
    */
   public com.google.protobuf.ByteString
       getVocabIdBytes() {
@@ -909,6 +924,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -928,6 +944,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -948,6 +965,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -965,6 +984,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -978,6 +998,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -998,6 +1020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1017,6 +1040,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1037,6 +1061,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1054,6 +1080,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1067,6 +1094,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1090,6 +1119,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
+     * @return The value.
      */
     public float getValue() {
       return value_;
@@ -1103,6 +1133,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(float value) {
       
@@ -1119,6 +1151,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       
@@ -1137,6 +1170,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 4;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -1148,6 +1182,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 4;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -1299,6 +1334,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 5;</code>
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -1321,6 +1357,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 5;</code>
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString
         getLanguageBytes() {
@@ -1344,6 +1381,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 5;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(
         java.lang.String value) {
@@ -1364,6 +1403,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
       
@@ -1380,6 +1420,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 5;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(
         com.google.protobuf.ByteString value) {
@@ -1400,6 +1442,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 6;</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -1419,6 +1462,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 6;</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -1439,6 +1483,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 6;</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -1456,6 +1502,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -1469,6 +1516,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 6;</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1489,6 +1538,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string definition = 7;</code>
+     * @return The definition.
      */
     public java.lang.String getDefinition() {
       java.lang.Object ref = definition_;
@@ -1508,6 +1558,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string definition = 7;</code>
+     * @return The bytes for definition.
      */
     public com.google.protobuf.ByteString
         getDefinitionBytes() {
@@ -1528,6 +1579,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string definition = 7;</code>
+     * @param value The definition to set.
+     * @return This builder for chaining.
      */
     public Builder setDefinition(
         java.lang.String value) {
@@ -1545,6 +1598,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string definition = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDefinition() {
       
@@ -1558,6 +1612,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string definition = 7;</code>
+     * @param value The bytes for definition to set.
+     * @return This builder for chaining.
      */
     public Builder setDefinitionBytes(
         com.google.protobuf.ByteString value) {
@@ -1575,11 +1631,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-     * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+     * of concepts that you can separate out based on this field. For example "age_appearance" vs
      * "gender_appearance" in a list of concept returned from the demographics model.
      * </pre>
      *
      * <code>string vocab_id = 8;</code>
+     * @return The vocabId.
      */
     public java.lang.String getVocabId() {
       java.lang.Object ref = vocabId_;
@@ -1596,11 +1653,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-     * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+     * of concepts that you can separate out based on this field. For example "age_appearance" vs
      * "gender_appearance" in a list of concept returned from the demographics model.
      * </pre>
      *
      * <code>string vocab_id = 8;</code>
+     * @return The bytes for vocabId.
      */
     public com.google.protobuf.ByteString
         getVocabIdBytes() {
@@ -1618,11 +1676,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-     * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+     * of concepts that you can separate out based on this field. For example "age_appearance" vs
      * "gender_appearance" in a list of concept returned from the demographics model.
      * </pre>
      *
      * <code>string vocab_id = 8;</code>
+     * @param value The vocabId to set.
+     * @return This builder for chaining.
      */
     public Builder setVocabId(
         java.lang.String value) {
@@ -1637,11 +1697,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-     * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+     * of concepts that you can separate out based on this field. For example "age_appearance" vs
      * "gender_appearance" in a list of concept returned from the demographics model.
      * </pre>
      *
      * <code>string vocab_id = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearVocabId() {
       
@@ -1652,11 +1713,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-     * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+     * of concepts that you can separate out based on this field. For example "age_appearance" vs
      * "gender_appearance" in a list of concept returned from the demographics model.
      * </pre>
      *
      * <code>string vocab_id = 8;</code>
+     * @param value The bytes for vocabId to set.
+     * @return This builder for chaining.
      */
     public Builder setVocabIdBytes(
         com.google.protobuf.ByteString value) {

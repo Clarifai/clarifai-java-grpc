@@ -148,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -158,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -181,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -200,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -219,7 +223,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.clarifai.grpc.api.Hit> hits_;
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -229,7 +233,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -240,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -250,7 +254,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -260,7 +264,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -278,6 +282,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Query query = 4;</code>
+   * @return Whether the query field is set.
    */
   public boolean hasQuery() {
     return query_ != null;
@@ -288,6 +293,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Query query = 4;</code>
+   * @return The query.
    */
   public com.clarifai.grpc.api.Query getQuery() {
     return query_ == null ? com.clarifai.grpc.api.Query.getDefaultInstance() : query_;
@@ -841,6 +847,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -851,6 +858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -992,6 +1000,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1011,6 +1020,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1031,6 +1041,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1048,6 +1060,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1061,6 +1074,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1088,7 +1103,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1102,7 +1117,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1116,7 +1131,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1130,7 +1145,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1151,7 +1166,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1169,7 +1184,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1189,7 +1204,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1210,7 +1225,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1228,7 +1243,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1246,7 +1261,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1265,7 +1280,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1282,7 +1297,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1299,7 +1314,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1310,7 +1325,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1324,7 +1339,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1339,7 +1354,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1350,7 +1365,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1362,7 +1377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of serach result Hits.
+     * The list of search result Hits.
      * </pre>
      *
      * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -1395,6 +1410,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Query query = 4;</code>
+     * @return Whether the query field is set.
      */
     public boolean hasQuery() {
       return queryBuilder_ != null || query_ != null;
@@ -1405,6 +1421,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Query query = 4;</code>
+     * @return The query.
      */
     public com.clarifai.grpc.api.Query getQuery() {
       if (queryBuilder_ == null) {

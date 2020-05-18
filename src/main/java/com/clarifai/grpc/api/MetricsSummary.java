@@ -152,6 +152,7 @@ private static final long serialVersionUID = 0L;
   private float top1Accuracy_;
   /**
    * <code>float top1_accuracy = 1 [deprecated = true];</code>
+   * @return The top1Accuracy.
    */
   @java.lang.Deprecated public float getTop1Accuracy() {
     return top1Accuracy_;
@@ -161,6 +162,7 @@ private static final long serialVersionUID = 0L;
   private float top5Accuracy_;
   /**
    * <code>float top5_accuracy = 2 [deprecated = true];</code>
+   * @return The top5Accuracy.
    */
   @java.lang.Deprecated public float getTop5Accuracy() {
     return top5Accuracy_;
@@ -170,6 +172,7 @@ private static final long serialVersionUID = 0L;
   private float macroAvgRocAuc_;
   /**
    * <code>float macro_avg_roc_auc = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The macroAvgRocAuc.
    */
   public float getMacroAvgRocAuc() {
     return macroAvgRocAuc_;
@@ -179,6 +182,7 @@ private static final long serialVersionUID = 0L;
   private float macroStdRocAuc_;
   /**
    * <code>float macro_std_roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The macroStdRocAuc.
    */
   public float getMacroStdRocAuc() {
     return macroStdRocAuc_;
@@ -188,6 +192,7 @@ private static final long serialVersionUID = 0L;
   private float macroAvgF1Score_;
   /**
    * <code>float macro_avg_f1_score = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The macroAvgF1Score.
    */
   public float getMacroAvgF1Score() {
     return macroAvgF1Score_;
@@ -197,6 +202,7 @@ private static final long serialVersionUID = 0L;
   private float macroStdF1Score_;
   /**
    * <code>float macro_std_f1_score = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The macroStdF1Score.
    */
   public float getMacroStdF1Score() {
     return macroStdF1Score_;
@@ -206,6 +212,7 @@ private static final long serialVersionUID = 0L;
   private float macroAvgPrecision_;
   /**
    * <code>float macro_avg_precision = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The macroAvgPrecision.
    */
   public float getMacroAvgPrecision() {
     return macroAvgPrecision_;
@@ -215,6 +222,7 @@ private static final long serialVersionUID = 0L;
   private float macroAvgRecall_;
   /**
    * <code>float macro_avg_recall = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The macroAvgRecall.
    */
   public float getMacroAvgRecall() {
     return macroAvgRecall_;
@@ -224,6 +232,7 @@ private static final long serialVersionUID = 0L;
   private float meanAvgPrecisionIou50_;
   /**
    * <code>float mean_avg_precision_iou_50 = 10;</code>
+   * @return The meanAvgPrecisionIou50.
    */
   public float getMeanAvgPrecisionIou50() {
     return meanAvgPrecisionIou50_;
@@ -233,6 +242,7 @@ private static final long serialVersionUID = 0L;
   private float meanAvgPrecisionIouRange_;
   /**
    * <code>float mean_avg_precision_iou_range = 11;</code>
+   * @return The meanAvgPrecisionIouRange.
    */
   public float getMeanAvgPrecisionIouRange() {
     return meanAvgPrecisionIouRange_;
@@ -812,12 +822,15 @@ private static final long serialVersionUID = 0L;
     private float top1Accuracy_ ;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @return The top1Accuracy.
      */
     @java.lang.Deprecated public float getTop1Accuracy() {
       return top1Accuracy_;
     }
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @param value The top1Accuracy to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setTop1Accuracy(float value) {
       
@@ -827,6 +840,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop1Accuracy() {
       
@@ -838,12 +852,15 @@ private static final long serialVersionUID = 0L;
     private float top5Accuracy_ ;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @return The top5Accuracy.
      */
     @java.lang.Deprecated public float getTop5Accuracy() {
       return top5Accuracy_;
     }
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @param value The top5Accuracy to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setTop5Accuracy(float value) {
       
@@ -853,6 +870,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop5Accuracy() {
       
@@ -864,12 +882,15 @@ private static final long serialVersionUID = 0L;
     private float macroAvgRocAuc_ ;
     /**
      * <code>float macro_avg_roc_auc = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The macroAvgRocAuc.
      */
     public float getMacroAvgRocAuc() {
       return macroAvgRocAuc_;
     }
     /**
      * <code>float macro_avg_roc_auc = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The macroAvgRocAuc to set.
+     * @return This builder for chaining.
      */
     public Builder setMacroAvgRocAuc(float value) {
       
@@ -879,6 +900,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float macro_avg_roc_auc = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMacroAvgRocAuc() {
       
@@ -890,12 +912,15 @@ private static final long serialVersionUID = 0L;
     private float macroStdRocAuc_ ;
     /**
      * <code>float macro_std_roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The macroStdRocAuc.
      */
     public float getMacroStdRocAuc() {
       return macroStdRocAuc_;
     }
     /**
      * <code>float macro_std_roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The macroStdRocAuc to set.
+     * @return This builder for chaining.
      */
     public Builder setMacroStdRocAuc(float value) {
       
@@ -905,6 +930,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float macro_std_roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMacroStdRocAuc() {
       
@@ -916,12 +942,15 @@ private static final long serialVersionUID = 0L;
     private float macroAvgF1Score_ ;
     /**
      * <code>float macro_avg_f1_score = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The macroAvgF1Score.
      */
     public float getMacroAvgF1Score() {
       return macroAvgF1Score_;
     }
     /**
      * <code>float macro_avg_f1_score = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The macroAvgF1Score to set.
+     * @return This builder for chaining.
      */
     public Builder setMacroAvgF1Score(float value) {
       
@@ -931,6 +960,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float macro_avg_f1_score = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMacroAvgF1Score() {
       
@@ -942,12 +972,15 @@ private static final long serialVersionUID = 0L;
     private float macroStdF1Score_ ;
     /**
      * <code>float macro_std_f1_score = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The macroStdF1Score.
      */
     public float getMacroStdF1Score() {
       return macroStdF1Score_;
     }
     /**
      * <code>float macro_std_f1_score = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The macroStdF1Score to set.
+     * @return This builder for chaining.
      */
     public Builder setMacroStdF1Score(float value) {
       
@@ -957,6 +990,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float macro_std_f1_score = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMacroStdF1Score() {
       
@@ -968,12 +1002,15 @@ private static final long serialVersionUID = 0L;
     private float macroAvgPrecision_ ;
     /**
      * <code>float macro_avg_precision = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The macroAvgPrecision.
      */
     public float getMacroAvgPrecision() {
       return macroAvgPrecision_;
     }
     /**
      * <code>float macro_avg_precision = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The macroAvgPrecision to set.
+     * @return This builder for chaining.
      */
     public Builder setMacroAvgPrecision(float value) {
       
@@ -983,6 +1020,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float macro_avg_precision = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMacroAvgPrecision() {
       
@@ -994,12 +1032,15 @@ private static final long serialVersionUID = 0L;
     private float macroAvgRecall_ ;
     /**
      * <code>float macro_avg_recall = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The macroAvgRecall.
      */
     public float getMacroAvgRecall() {
       return macroAvgRecall_;
     }
     /**
      * <code>float macro_avg_recall = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The macroAvgRecall to set.
+     * @return This builder for chaining.
      */
     public Builder setMacroAvgRecall(float value) {
       
@@ -1009,6 +1050,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float macro_avg_recall = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMacroAvgRecall() {
       
@@ -1020,12 +1062,15 @@ private static final long serialVersionUID = 0L;
     private float meanAvgPrecisionIou50_ ;
     /**
      * <code>float mean_avg_precision_iou_50 = 10;</code>
+     * @return The meanAvgPrecisionIou50.
      */
     public float getMeanAvgPrecisionIou50() {
       return meanAvgPrecisionIou50_;
     }
     /**
      * <code>float mean_avg_precision_iou_50 = 10;</code>
+     * @param value The meanAvgPrecisionIou50 to set.
+     * @return This builder for chaining.
      */
     public Builder setMeanAvgPrecisionIou50(float value) {
       
@@ -1035,6 +1080,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float mean_avg_precision_iou_50 = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMeanAvgPrecisionIou50() {
       
@@ -1046,12 +1092,15 @@ private static final long serialVersionUID = 0L;
     private float meanAvgPrecisionIouRange_ ;
     /**
      * <code>float mean_avg_precision_iou_range = 11;</code>
+     * @return The meanAvgPrecisionIouRange.
      */
     public float getMeanAvgPrecisionIouRange() {
       return meanAvgPrecisionIouRange_;
     }
     /**
      * <code>float mean_avg_precision_iou_range = 11;</code>
+     * @param value The meanAvgPrecisionIouRange to set.
+     * @return This builder for chaining.
      */
     public Builder setMeanAvgPrecisionIouRange(float value) {
       
@@ -1061,6 +1110,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float mean_avg_precision_iou_range = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMeanAvgPrecisionIouRange() {
       

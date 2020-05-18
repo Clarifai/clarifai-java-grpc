@@ -9,10 +9,12 @@ public interface SingleInputResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -22,10 +24,12 @@ public interface SingleInputResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return Whether the input field is set.
    */
   boolean hasInput();
   /**
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return The input.
    */
   com.clarifai.grpc.api.Input getInput();
   /**

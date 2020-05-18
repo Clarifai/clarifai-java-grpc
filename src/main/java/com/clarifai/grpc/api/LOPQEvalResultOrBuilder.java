@@ -13,6 +13,7 @@ public interface LOPQEvalResultOrBuilder extends
    * </pre>
    *
    * <code>int32 k = 1;</code>
+   * @return The k.
    */
   int getK();
 
@@ -22,6 +23,7 @@ public interface LOPQEvalResultOrBuilder extends
    * </pre>
    *
    * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The recallVsBruteForce.
    */
   float getRecallVsBruteForce();
 
@@ -31,6 +33,7 @@ public interface LOPQEvalResultOrBuilder extends
    * </pre>
    *
    * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The kendallTauVsBruteForce.
    */
   float getKendallTauVsBruteForce();
 
@@ -40,6 +43,7 @@ public interface LOPQEvalResultOrBuilder extends
    * </pre>
    *
    * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The mostFrequentCodePercent.
    */
   float getMostFrequentCodePercent();
 
@@ -66,6 +70,7 @@ public interface LOPQEvalResultOrBuilder extends
    * </pre>
    *
    * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The lopqNdcg.
    */
   float getLopqNdcg();
 
@@ -76,6 +81,7 @@ public interface LOPQEvalResultOrBuilder extends
    * </pre>
    *
    * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The bruteForceNdcg.
    */
   float getBruteForceNdcg();
 }

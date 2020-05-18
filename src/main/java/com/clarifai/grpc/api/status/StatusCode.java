@@ -18,7 +18,7 @@ public enum StatusCode
   ZERO(0),
   /**
    * <pre>
-   * success
+   * Generic
    * </pre>
    *
    * <code>SUCCESS = 10000;</code>
@@ -33,14 +33,18 @@ public enum StatusCode
    */
   FAILURE(10020),
   /**
+   * <code>TRY_AGAIN = 10030;</code>
+   */
+  TRY_AGAIN(10030),
+  /**
    * <pre>
    *SUCCESS_WARNING_API_DEPRECATED = 10001;
    *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
    * </pre>
    *
-   * <code>TRY_AGAIN = 10030;</code>
+   * <code>NOT_IMPLEMENTED = 10040;</code>
    */
-  TRY_AGAIN(10030),
+  NOT_IMPLEMENTED(10040),
   /**
    * <pre>
    * Clarifai Connection Codes: 11xxx
@@ -163,6 +167,14 @@ public enum StatusCode
   CONN_NO_GDPR_CONSENT(11104),
   /**
    * <pre>
+   * authentication method is disabled
+   * </pre>
+   *
+   * <code>CONN_AUTH_METHOD_DISABLED = 11200;</code>
+   */
+  CONN_AUTH_METHOD_DISABLED(11200),
+  /**
+   * <pre>
    * Model/Custom Training related 20xxx
    * </pre>
    *
@@ -193,6 +205,10 @@ public enum StatusCode
    * <code>MODEL_QUEUED_FOR_TRAINING = 21103;</code>
    */
   MODEL_QUEUED_FOR_TRAINING(21103),
+  /**
+   * <code>MODEL_UPLOADING = 21104;</code>
+   */
+  MODEL_UPLOADING(21104),
   /**
    * <pre>
    * Custom model training had no data.
@@ -263,7 +279,7 @@ public enum StatusCode
   MODEL_TRAINING_INVALID_PARAMS(21118),
   /**
    * <pre>
-   * Training is stopped because too many data were dropped
+   * Training is stopped because too much data was dropped
    * </pre>
    *
    * <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
@@ -622,6 +638,10 @@ public enum StatusCode
    */
   APP_DUPLICATION_IN_PROGRESS(25203),
   /**
+   * <code>APP_DUPLICATION_INVALID_REQUEST = 25204;</code>
+   */
+  APP_DUPLICATION_INVALID_REQUEST(25204),
+  /**
    * <pre>
    * Input:Image related 30xxx
    * </pre>
@@ -834,6 +854,10 @@ public enum StatusCode
    */
   CONCEPTS_INVALID_REQUEST(40003),
   /**
+   * <code>STATS_INVALID_REQUEST = 40004;</code>
+   */
+  STATS_INVALID_REQUEST(40004),
+  /**
    * <pre>
    * Other related 400xx
    * </pre>
@@ -1026,6 +1050,30 @@ public enum StatusCode
    */
   SAVED_SEARCH_MODIFY_FAILED(43005),
   /**
+   * <code>ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION = 43100;</code>
+   */
+  ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION(43100),
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_EVALUATING = 43101;</code>
+   */
+  ANNOTATION_SEARCH_METRICS_EVALUATING(43101),
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_EVALUATED = 43102;</code>
+   */
+  ANNOTATION_SEARCH_METRICS_EVALUATED(43102),
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA = 43103;</code>
+   */
+  ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA(43103),
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT = 43104;</code>
+   */
+  ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT(43104),
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_FAILED = 43105;</code>
+   */
+  ANNOTATION_SEARCH_METRICS_FAILED(43105),
+  /**
    * <pre>
    * Stripe 44xxx
    * </pre>
@@ -1151,6 +1199,38 @@ public enum StatusCode
   COLLECTOR_INACTIVE(52002),
   /**
    * <pre>
+   * SSO 53xxx
+   * </pre>
+   *
+   * <code>SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST = 53001;</code>
+   */
+  SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST(53001),
+  /**
+   * <pre>
+   * The task was created.
+   * </pre>
+   *
+   * <code>TASK_IN_PROGRESS = 54001;</code>
+   */
+  TASK_IN_PROGRESS(54001),
+  /**
+   * <pre>
+   * The task is closed.
+   * </pre>
+   *
+   * <code>TASK_DONE = 54002;</code>
+   */
+  TASK_DONE(54002),
+  /**
+   * <pre>
+   * The task was requested to be closed (with status DONE), but validation failed.
+   * </pre>
+   *
+   * <code>TASK_NOT_VALID_TO_CLOSE = 541000;</code>
+   */
+  TASK_NOT_VALID_TO_CLOSE(541000),
+  /**
+   * <pre>
    * License Related Status Code 600xx
    * </pre>
    *
@@ -1185,6 +1265,22 @@ public enum StatusCode
    * <code>LICENSE_VOLUME_EXCEEDED = 60006;</code>
    */
   LICENSE_VOLUME_EXCEEDED(60006),
+  /**
+   * <pre>
+   * Password Related Status Code
+   * </pre>
+   *
+   * <code>PASSWORD_VALIDATION_SUCCESS = 61000;</code>
+   */
+  PASSWORD_VALIDATION_SUCCESS(61000),
+  /**
+   * <code>PASSWORD_VALIDATION_FAILED = 61001;</code>
+   */
+  PASSWORD_VALIDATION_FAILED(61001),
+  /**
+   * <code>PASSWORDPOLICY_INVALID_ARGUMENT = 61002;</code>
+   */
+  PASSWORDPOLICY_INVALID_ARGUMENT(61002),
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -1258,6 +1354,10 @@ public enum StatusCode
    */
   ANNOTATION_UNCATEGORIZED(99004),
   /**
+   * <code>BILLING_UNCATEGORIZED = 99005;</code>
+   */
+  BILLING_UNCATEGORIZED(99005),
+  /**
    * <code>INTERNAL_UNCATEGORIZED = 99009;</code>
    */
   INTERNAL_UNCATEGORIZED(99009),
@@ -1286,7 +1386,7 @@ public enum StatusCode
   public static final int ZERO_VALUE = 0;
   /**
    * <pre>
-   * success
+   * Generic
    * </pre>
    *
    * <code>SUCCESS = 10000;</code>
@@ -1301,14 +1401,18 @@ public enum StatusCode
    */
   public static final int FAILURE_VALUE = 10020;
   /**
+   * <code>TRY_AGAIN = 10030;</code>
+   */
+  public static final int TRY_AGAIN_VALUE = 10030;
+  /**
    * <pre>
    *SUCCESS_WARNING_API_DEPRECATED = 10001;
    *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
    * </pre>
    *
-   * <code>TRY_AGAIN = 10030;</code>
+   * <code>NOT_IMPLEMENTED = 10040;</code>
    */
-  public static final int TRY_AGAIN_VALUE = 10030;
+  public static final int NOT_IMPLEMENTED_VALUE = 10040;
   /**
    * <pre>
    * Clarifai Connection Codes: 11xxx
@@ -1431,6 +1535,14 @@ public enum StatusCode
   public static final int CONN_NO_GDPR_CONSENT_VALUE = 11104;
   /**
    * <pre>
+   * authentication method is disabled
+   * </pre>
+   *
+   * <code>CONN_AUTH_METHOD_DISABLED = 11200;</code>
+   */
+  public static final int CONN_AUTH_METHOD_DISABLED_VALUE = 11200;
+  /**
+   * <pre>
    * Model/Custom Training related 20xxx
    * </pre>
    *
@@ -1461,6 +1573,10 @@ public enum StatusCode
    * <code>MODEL_QUEUED_FOR_TRAINING = 21103;</code>
    */
   public static final int MODEL_QUEUED_FOR_TRAINING_VALUE = 21103;
+  /**
+   * <code>MODEL_UPLOADING = 21104;</code>
+   */
+  public static final int MODEL_UPLOADING_VALUE = 21104;
   /**
    * <pre>
    * Custom model training had no data.
@@ -1531,7 +1647,7 @@ public enum StatusCode
   public static final int MODEL_TRAINING_INVALID_PARAMS_VALUE = 21118;
   /**
    * <pre>
-   * Training is stopped because too many data were dropped
+   * Training is stopped because too much data was dropped
    * </pre>
    *
    * <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
@@ -1890,6 +2006,10 @@ public enum StatusCode
    */
   public static final int APP_DUPLICATION_IN_PROGRESS_VALUE = 25203;
   /**
+   * <code>APP_DUPLICATION_INVALID_REQUEST = 25204;</code>
+   */
+  public static final int APP_DUPLICATION_INVALID_REQUEST_VALUE = 25204;
+  /**
    * <pre>
    * Input:Image related 30xxx
    * </pre>
@@ -2102,6 +2222,10 @@ public enum StatusCode
    */
   public static final int CONCEPTS_INVALID_REQUEST_VALUE = 40003;
   /**
+   * <code>STATS_INVALID_REQUEST = 40004;</code>
+   */
+  public static final int STATS_INVALID_REQUEST_VALUE = 40004;
+  /**
    * <pre>
    * Other related 400xx
    * </pre>
@@ -2294,6 +2418,30 @@ public enum StatusCode
    */
   public static final int SAVED_SEARCH_MODIFY_FAILED_VALUE = 43005;
   /**
+   * <code>ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION = 43100;</code>
+   */
+  public static final int ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION_VALUE = 43100;
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_EVALUATING = 43101;</code>
+   */
+  public static final int ANNOTATION_SEARCH_METRICS_EVALUATING_VALUE = 43101;
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_EVALUATED = 43102;</code>
+   */
+  public static final int ANNOTATION_SEARCH_METRICS_EVALUATED_VALUE = 43102;
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA = 43103;</code>
+   */
+  public static final int ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA_VALUE = 43103;
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT = 43104;</code>
+   */
+  public static final int ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT_VALUE = 43104;
+  /**
+   * <code>ANNOTATION_SEARCH_METRICS_FAILED = 43105;</code>
+   */
+  public static final int ANNOTATION_SEARCH_METRICS_FAILED_VALUE = 43105;
+  /**
    * <pre>
    * Stripe 44xxx
    * </pre>
@@ -2419,6 +2567,38 @@ public enum StatusCode
   public static final int COLLECTOR_INACTIVE_VALUE = 52002;
   /**
    * <pre>
+   * SSO 53xxx
+   * </pre>
+   *
+   * <code>SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST = 53001;</code>
+   */
+  public static final int SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST_VALUE = 53001;
+  /**
+   * <pre>
+   * The task was created.
+   * </pre>
+   *
+   * <code>TASK_IN_PROGRESS = 54001;</code>
+   */
+  public static final int TASK_IN_PROGRESS_VALUE = 54001;
+  /**
+   * <pre>
+   * The task is closed.
+   * </pre>
+   *
+   * <code>TASK_DONE = 54002;</code>
+   */
+  public static final int TASK_DONE_VALUE = 54002;
+  /**
+   * <pre>
+   * The task was requested to be closed (with status DONE), but validation failed.
+   * </pre>
+   *
+   * <code>TASK_NOT_VALID_TO_CLOSE = 541000;</code>
+   */
+  public static final int TASK_NOT_VALID_TO_CLOSE_VALUE = 541000;
+  /**
+   * <pre>
    * License Related Status Code 600xx
    * </pre>
    *
@@ -2453,6 +2633,22 @@ public enum StatusCode
    * <code>LICENSE_VOLUME_EXCEEDED = 60006;</code>
    */
   public static final int LICENSE_VOLUME_EXCEEDED_VALUE = 60006;
+  /**
+   * <pre>
+   * Password Related Status Code
+   * </pre>
+   *
+   * <code>PASSWORD_VALIDATION_SUCCESS = 61000;</code>
+   */
+  public static final int PASSWORD_VALIDATION_SUCCESS_VALUE = 61000;
+  /**
+   * <code>PASSWORD_VALIDATION_FAILED = 61001;</code>
+   */
+  public static final int PASSWORD_VALIDATION_FAILED_VALUE = 61001;
+  /**
+   * <code>PASSWORDPOLICY_INVALID_ARGUMENT = 61002;</code>
+   */
+  public static final int PASSWORDPOLICY_INVALID_ARGUMENT_VALUE = 61002;
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -2526,6 +2722,10 @@ public enum StatusCode
    */
   public static final int ANNOTATION_UNCATEGORIZED_VALUE = 99004;
   /**
+   * <code>BILLING_UNCATEGORIZED = 99005;</code>
+   */
+  public static final int BILLING_UNCATEGORIZED_VALUE = 99005;
+  /**
    * <code>INTERNAL_UNCATEGORIZED = 99009;</code>
    */
   public static final int INTERNAL_UNCATEGORIZED_VALUE = 99009;
@@ -2552,6 +2752,8 @@ public enum StatusCode
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -2559,6 +2761,10 @@ public enum StatusCode
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static StatusCode forNumber(int value) {
     switch (value) {
       case 0: return ZERO;
@@ -2566,6 +2772,7 @@ public enum StatusCode
       case 10010: return MIXED_STATUS;
       case 10020: return FAILURE;
       case 10030: return TRY_AGAIN;
+      case 10040: return NOT_IMPLEMENTED;
       case 11000: return CONN_ACCOUNT_ISSUES;
       case 11001: return CONN_TOKEN_INVALID;
       case 11002: return CONN_CREDENTIALS_INVALID;
@@ -2581,10 +2788,12 @@ public enum StatusCode
       case 11102: return CONN_INVALID_REQUEST;
       case 11103: return CONN_METHOD_NOT_ALLOWED;
       case 11104: return CONN_NO_GDPR_CONSENT;
+      case 11200: return CONN_AUTH_METHOD_DISABLED;
       case 21100: return MODEL_TRAINED;
       case 21101: return MODEL_TRAINING;
       case 21102: return MODEL_UNTRAINED;
       case 21103: return MODEL_QUEUED_FOR_TRAINING;
+      case 21104: return MODEL_UPLOADING;
       case 21110: return MODEL_TRAINING_NO_DATA;
       case 21111: return MODEL_TRAINING_NO_POSITIVES;
       case 21112: return MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS;
@@ -2663,6 +2872,7 @@ public enum StatusCode
       case 25201: return APP_DUPLICATION_FAILED;
       case 25202: return APP_DUPLICATION_PENDING;
       case 25203: return APP_DUPLICATION_IN_PROGRESS;
+      case 25204: return APP_DUPLICATION_INVALID_REQUEST;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;
@@ -2711,6 +2921,7 @@ public enum StatusCode
       case 40001: return PREDICT_INVALID_REQUEST;
       case 40002: return SEARCH_INVALID_REQUEST;
       case 40003: return CONCEPTS_INVALID_REQUEST;
+      case 40004: return STATS_INVALID_REQUEST;
       case 40010: return DATABASE_DUPLICATE_KEY;
       case 40011: return DATABASE_STATEMENT_TIMEOUT;
       case 40012: return DATABASE_INVALID_ROWS_AFFECTED;
@@ -2753,6 +2964,12 @@ public enum StatusCode
       case 43003: return SEARCH_PREDICTION_FAILURE;
       case 43004: return SEARCH_BY_NOT_FULLY_INDEXED_INPUT;
       case 43005: return SAVED_SEARCH_MODIFY_FAILED;
+      case 43100: return ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION;
+      case 43101: return ANNOTATION_SEARCH_METRICS_EVALUATING;
+      case 43102: return ANNOTATION_SEARCH_METRICS_EVALUATED;
+      case 43103: return ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA;
+      case 43104: return ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT;
+      case 43105: return ANNOTATION_SEARCH_METRICS_FAILED;
       case 44001: return STRIPE_EVENT_ERROR;
       case 45001: return CACHE_MISS;
       case 45002: return REDIS_SCRIPT_EXITED_WITH_FAILURE;
@@ -2776,6 +2993,10 @@ public enum StatusCode
       case 52000: return COLLECTOR_MISSING;
       case 52001: return COLLECTOR_ACTIVE;
       case 52002: return COLLECTOR_INACTIVE;
+      case 53001: return SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST;
+      case 54001: return TASK_IN_PROGRESS;
+      case 54002: return TASK_DONE;
+      case 541000: return TASK_NOT_VALID_TO_CLOSE;
       case 60000: return LICENSE_ACTIVE;
       case 60001: return LICENSE_DOES_NOT_EXIST;
       case 60002: return LICENSE_NEED_UPDATE;
@@ -2783,6 +3004,9 @@ public enum StatusCode
       case 60004: return LICENSE_REVOKED;
       case 60005: return LICENSE_DELETED;
       case 60006: return LICENSE_VOLUME_EXCEEDED;
+      case 61000: return PASSWORD_VALIDATION_SUCCESS;
+      case 61001: return PASSWORD_VALIDATION_FAILED;
+      case 61002: return PASSWORDPOLICY_INVALID_ARGUMENT;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;
@@ -2799,6 +3023,7 @@ public enum StatusCode
       case 99002: return MODEL_UNCATEGORIZED;
       case 99003: return INPUT_UNCATEGORIZED;
       case 99004: return ANNOTATION_UNCATEGORIZED;
+      case 99005: return BILLING_UNCATEGORIZED;
       case 99009: return INTERNAL_UNCATEGORIZED;
       case 90400: return BAD_REQUEST;
       case 90500: return SERVER_ERROR;

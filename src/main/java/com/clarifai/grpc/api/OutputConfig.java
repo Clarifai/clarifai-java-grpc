@@ -158,6 +158,11 @@ private static final long serialVersionUID = 0L;
             invalidDataTolerancePercent_ = input.readFloat();
             break;
           }
+          case 152: {
+
+            useKnnClassifier_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -201,6 +206,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The conceptsMutuallyExclusive.
    */
   public boolean getConceptsMutuallyExclusive() {
     return conceptsMutuallyExclusive_;
@@ -215,6 +221,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The closedEnvironment.
    */
   public boolean getClosedEnvironment() {
     return closedEnvironment_;
@@ -229,6 +236,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
+   * @return The existingModelId.
    */
   @java.lang.Deprecated public java.lang.String getExistingModelId() {
     java.lang.Object ref = existingModelId_;
@@ -249,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
+   * @return The bytes for existingModelId.
    */
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getExistingModelIdBytes() {
@@ -272,6 +281,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 4;</code>
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -291,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 4;</code>
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString
       getLanguageBytes() {
@@ -315,6 +326,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
+   * @return The hyperParameters.
    */
   @java.lang.Deprecated public java.lang.String getHyperParameters() {
     java.lang.Object ref = hyperParameters_;
@@ -335,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
+   * @return The bytes for hyperParameters.
    */
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getHyperParametersBytes() {
@@ -360,6 +373,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The maxConcepts.
    */
   public int getMaxConcepts() {
     return maxConcepts_;
@@ -375,6 +389,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The minValue.
    */
   public float getMinValue() {
     return minValue_;
@@ -443,6 +458,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 training_timeout = 9;</code>
+   * @return The trainingTimeout.
    */
   public int getTrainingTimeout() {
     return trainingTimeout_;
@@ -456,6 +472,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 sample_ms = 10;</code>
+   * @return The sampleMs.
    */
   public int getSampleMs() {
     return sampleMs_;
@@ -470,6 +487,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 test_split_percent = 11;</code>
+   * @return The testSplitPercent.
    */
   public int getTestSplitPercent() {
     return testSplitPercent_;
@@ -483,6 +501,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
+   * @return Whether the hyperParams field is set.
    */
   public boolean hasHyperParams() {
     return hyperParams_ != null;
@@ -493,6 +512,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
+   * @return The hyperParams.
    */
   public com.google.protobuf.Struct getHyperParams() {
     return hyperParams_ == null ? com.google.protobuf.Struct.getDefaultInstance() : hyperParams_;
@@ -517,6 +537,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The embedModelVersionId.
    */
   public java.lang.String getEmbedModelVersionId() {
     java.lang.Object ref = embedModelVersionId_;
@@ -537,6 +558,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The bytes for embedModelVersionId.
    */
   public com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes() {
@@ -561,6 +583,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool fail_on_missing_positive_examples = 15;</code>
+   * @return The failOnMissingPositiveExamples.
    */
   public boolean getFailOnMissingPositiveExamples() {
     return failOnMissingPositiveExamples_;
@@ -578,6 +601,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * @return Whether the modelMetadata field is set.
    */
   public boolean hasModelMetadata() {
     return modelMetadata_ != null;
@@ -592,6 +616,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * @return The modelMetadata.
    */
   public com.google.protobuf.Struct getModelMetadata() {
     return modelMetadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : modelMetadata_;
@@ -615,15 +640,31 @@ private static final long serialVersionUID = 0L;
   private float invalidDataTolerancePercent_;
   /**
    * <pre>
-   * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+   * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
    * inputs among all training inputs. Training will be stopped with error thrown if actual
    * percent of invalid inputs is higher than this.
    * </pre>
    *
    * <code>float invalid_data_tolerance_percent = 18;</code>
+   * @return The invalidDataTolerancePercent.
    */
   public float getInvalidDataTolerancePercent() {
     return invalidDataTolerancePercent_;
+  }
+
+  public static final int USE_KNN_CLASSIFIER_FIELD_NUMBER = 19;
+  private boolean useKnnClassifier_;
+  /**
+   * <pre>
+   * For custom deep training: Use this flag to set this model to use few shot K-NN classification
+   * instead of custom concept classification. Default is false.
+   * </pre>
+   *
+   * <code>bool use_knn_classifier = 19;</code>
+   * @return The useKnnClassifier.
+   */
+  public boolean getUseKnnClassifier() {
+    return useKnnClassifier_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -687,6 +728,9 @@ private static final long serialVersionUID = 0L;
     }
     if (invalidDataTolerancePercent_ != 0F) {
       output.writeFloat(18, invalidDataTolerancePercent_);
+    }
+    if (useKnnClassifier_ != false) {
+      output.writeBool(19, useKnnClassifier_);
     }
     unknownFields.writeTo(output);
   }
@@ -757,6 +801,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(18, invalidDataTolerancePercent_);
     }
+    if (useKnnClassifier_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(19, useKnnClassifier_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -812,6 +860,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getInvalidDataTolerancePercent())
         != java.lang.Float.floatToIntBits(
             other.getInvalidDataTolerancePercent())) return false;
+    if (getUseKnnClassifier()
+        != other.getUseKnnClassifier()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -866,6 +916,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INVALID_DATA_TOLERANCE_PERCENT_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getInvalidDataTolerancePercent());
+    hash = (37 * hash) + USE_KNN_CLASSIFIER_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUseKnnClassifier());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1044,6 +1097,8 @@ private static final long serialVersionUID = 0L;
       }
       invalidDataTolerancePercent_ = 0F;
 
+      useKnnClassifier_ = false;
+
       return this;
     }
 
@@ -1103,6 +1158,7 @@ private static final long serialVersionUID = 0L;
         result.modelMetadata_ = modelMetadataBuilder_.build();
       }
       result.invalidDataTolerancePercent_ = invalidDataTolerancePercent_;
+      result.useKnnClassifier_ = useKnnClassifier_;
       onBuilt();
       return result;
     }
@@ -1226,6 +1282,9 @@ private static final long serialVersionUID = 0L;
       if (other.getInvalidDataTolerancePercent() != 0F) {
         setInvalidDataTolerancePercent(other.getInvalidDataTolerancePercent());
       }
+      if (other.getUseKnnClassifier() != false) {
+        setUseKnnClassifier(other.getUseKnnClassifier());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1263,6 +1322,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The conceptsMutuallyExclusive.
      */
     public boolean getConceptsMutuallyExclusive() {
       return conceptsMutuallyExclusive_;
@@ -1273,6 +1333,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The conceptsMutuallyExclusive to set.
+     * @return This builder for chaining.
      */
     public Builder setConceptsMutuallyExclusive(boolean value) {
       
@@ -1286,6 +1348,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearConceptsMutuallyExclusive() {
       
@@ -1302,6 +1365,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The closedEnvironment.
      */
     public boolean getClosedEnvironment() {
       return closedEnvironment_;
@@ -1313,6 +1377,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The closedEnvironment to set.
+     * @return This builder for chaining.
      */
     public Builder setClosedEnvironment(boolean value) {
       
@@ -1327,6 +1393,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearClosedEnvironment() {
       
@@ -1343,6 +1410,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @return The existingModelId.
      */
     @java.lang.Deprecated public java.lang.String getExistingModelId() {
       java.lang.Object ref = existingModelId_;
@@ -1363,6 +1431,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @return The bytes for existingModelId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
         getExistingModelIdBytes() {
@@ -1384,6 +1453,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @param value The existingModelId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setExistingModelId(
         java.lang.String value) {
@@ -1402,6 +1473,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearExistingModelId() {
       
@@ -1416,6 +1488,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @param value The bytes for existingModelId to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setExistingModelIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1436,6 +1510,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 4;</code>
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -1455,6 +1530,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 4;</code>
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString
         getLanguageBytes() {
@@ -1475,6 +1551,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 4;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(
         java.lang.String value) {
@@ -1492,6 +1570,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
       
@@ -1505,6 +1584,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 4;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(
         com.google.protobuf.ByteString value) {
@@ -1526,6 +1607,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @return The hyperParameters.
      */
     @java.lang.Deprecated public java.lang.String getHyperParameters() {
       java.lang.Object ref = hyperParameters_;
@@ -1546,6 +1628,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @return The bytes for hyperParameters.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
         getHyperParametersBytes() {
@@ -1567,6 +1650,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @param value The hyperParameters to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setHyperParameters(
         java.lang.String value) {
@@ -1585,6 +1670,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearHyperParameters() {
       
@@ -1599,6 +1685,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @param value The bytes for hyperParameters to set.
+     * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder setHyperParametersBytes(
         com.google.protobuf.ByteString value) {
@@ -1621,6 +1709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The maxConcepts.
      */
     public int getMaxConcepts() {
       return maxConcepts_;
@@ -1633,6 +1722,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The maxConcepts to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxConcepts(int value) {
       
@@ -1648,6 +1739,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMaxConcepts() {
       
@@ -1665,6 +1757,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The minValue.
      */
     public float getMinValue() {
       return minValue_;
@@ -1677,6 +1770,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The minValue to set.
+     * @return This builder for chaining.
      */
     public Builder setMinValue(float value) {
       
@@ -1692,6 +1787,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMinValue() {
       
@@ -2019,6 +2115,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 training_timeout = 9;</code>
+     * @return The trainingTimeout.
      */
     public int getTrainingTimeout() {
       return trainingTimeout_;
@@ -2029,6 +2126,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 training_timeout = 9;</code>
+     * @param value The trainingTimeout to set.
+     * @return This builder for chaining.
      */
     public Builder setTrainingTimeout(int value) {
       
@@ -2042,6 +2141,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 training_timeout = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTrainingTimeout() {
       
@@ -2057,6 +2157,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 sample_ms = 10;</code>
+     * @return The sampleMs.
      */
     public int getSampleMs() {
       return sampleMs_;
@@ -2067,6 +2168,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 sample_ms = 10;</code>
+     * @param value The sampleMs to set.
+     * @return This builder for chaining.
      */
     public Builder setSampleMs(int value) {
       
@@ -2080,6 +2183,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 sample_ms = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSampleMs() {
       
@@ -2096,6 +2200,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 test_split_percent = 11;</code>
+     * @return The testSplitPercent.
      */
     public int getTestSplitPercent() {
       return testSplitPercent_;
@@ -2107,6 +2212,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 test_split_percent = 11;</code>
+     * @param value The testSplitPercent to set.
+     * @return This builder for chaining.
      */
     public Builder setTestSplitPercent(int value) {
       
@@ -2121,6 +2228,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 test_split_percent = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTestSplitPercent() {
       
@@ -2138,6 +2246,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
+     * @return Whether the hyperParams field is set.
      */
     public boolean hasHyperParams() {
       return hyperParamsBuilder_ != null || hyperParams_ != null;
@@ -2148,6 +2257,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct hyper_params = 13;</code>
+     * @return The hyperParams.
      */
     public com.google.protobuf.Struct getHyperParams() {
       if (hyperParamsBuilder_ == null) {
@@ -2290,6 +2400,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @return The embedModelVersionId.
      */
     public java.lang.String getEmbedModelVersionId() {
       java.lang.Object ref = embedModelVersionId_;
@@ -2310,6 +2421,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @return The bytes for embedModelVersionId.
      */
     public com.google.protobuf.ByteString
         getEmbedModelVersionIdBytes() {
@@ -2331,6 +2443,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @param value The embedModelVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setEmbedModelVersionId(
         java.lang.String value) {
@@ -2349,6 +2463,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEmbedModelVersionId() {
       
@@ -2363,6 +2478,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @param value The bytes for embedModelVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setEmbedModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2384,6 +2501,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool fail_on_missing_positive_examples = 15;</code>
+     * @return The failOnMissingPositiveExamples.
      */
     public boolean getFailOnMissingPositiveExamples() {
       return failOnMissingPositiveExamples_;
@@ -2395,6 +2513,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool fail_on_missing_positive_examples = 15;</code>
+     * @param value The failOnMissingPositiveExamples to set.
+     * @return This builder for chaining.
      */
     public Builder setFailOnMissingPositiveExamples(boolean value) {
       
@@ -2409,6 +2529,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool fail_on_missing_positive_examples = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFailOnMissingPositiveExamples() {
       
@@ -2430,6 +2551,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * @return Whether the modelMetadata field is set.
      */
     public boolean hasModelMetadata() {
       return modelMetadataBuilder_ != null || modelMetadata_ != null;
@@ -2444,6 +2566,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * @return The modelMetadata.
      */
     public com.google.protobuf.Struct getModelMetadata() {
       if (modelMetadataBuilder_ == null) {
@@ -2609,24 +2732,27 @@ private static final long serialVersionUID = 0L;
     private float invalidDataTolerancePercent_ ;
     /**
      * <pre>
-     * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+     * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
      * inputs among all training inputs. Training will be stopped with error thrown if actual
      * percent of invalid inputs is higher than this.
      * </pre>
      *
      * <code>float invalid_data_tolerance_percent = 18;</code>
+     * @return The invalidDataTolerancePercent.
      */
     public float getInvalidDataTolerancePercent() {
       return invalidDataTolerancePercent_;
     }
     /**
      * <pre>
-     * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+     * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
      * inputs among all training inputs. Training will be stopped with error thrown if actual
      * percent of invalid inputs is higher than this.
      * </pre>
      *
      * <code>float invalid_data_tolerance_percent = 18;</code>
+     * @param value The invalidDataTolerancePercent to set.
+     * @return This builder for chaining.
      */
     public Builder setInvalidDataTolerancePercent(float value) {
       
@@ -2636,16 +2762,62 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For custom deep trining: Percentage value (0 to 100) of user's tolerance level to invalid
+     * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
      * inputs among all training inputs. Training will be stopped with error thrown if actual
      * percent of invalid inputs is higher than this.
      * </pre>
      *
      * <code>float invalid_data_tolerance_percent = 18;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInvalidDataTolerancePercent() {
       
       invalidDataTolerancePercent_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private boolean useKnnClassifier_ ;
+    /**
+     * <pre>
+     * For custom deep training: Use this flag to set this model to use few shot K-NN classification
+     * instead of custom concept classification. Default is false.
+     * </pre>
+     *
+     * <code>bool use_knn_classifier = 19;</code>
+     * @return The useKnnClassifier.
+     */
+    public boolean getUseKnnClassifier() {
+      return useKnnClassifier_;
+    }
+    /**
+     * <pre>
+     * For custom deep training: Use this flag to set this model to use few shot K-NN classification
+     * instead of custom concept classification. Default is false.
+     * </pre>
+     *
+     * <code>bool use_knn_classifier = 19;</code>
+     * @param value The useKnnClassifier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseKnnClassifier(boolean value) {
+      
+      useKnnClassifier_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For custom deep training: Use this flag to set this model to use few shot K-NN classification
+     * instead of custom concept classification. Default is false.
+     * </pre>
+     *
+     * <code>bool use_knn_classifier = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUseKnnClassifier() {
+      
+      useKnnClassifier_ = false;
       onChanged();
       return this;
     }

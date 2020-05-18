@@ -9,10 +9,12 @@ public interface PostWorkflowResultsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -28,6 +30,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * </pre>
    *
    * <code>string workflow_id = 2;</code>
+   * @return The workflowId.
    */
   java.lang.String getWorkflowId();
   /**
@@ -38,6 +41,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * </pre>
    *
    * <code>string workflow_id = 2;</code>
+   * @return The bytes for workflowId.
    */
   com.google.protobuf.ByteString
       getWorkflowIdBytes();
@@ -77,6 +81,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 4;</code>
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -90,6 +95,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 4;</code>
+   * @return The outputConfig.
    */
   com.clarifai.grpc.api.OutputConfig getOutputConfig();
   /**
@@ -112,6 +118,7 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * </pre>
    *
    * <code>bool favor_clarifai_workflows = 5;</code>
+   * @return The favorClarifaiWorkflows.
    */
   boolean getFavorClarifaiWorkflows();
 }

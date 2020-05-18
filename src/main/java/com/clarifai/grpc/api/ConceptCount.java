@@ -128,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -147,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -170,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -189,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -212,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
+   * @return Whether the conceptTypeCount field is set.
    */
   public boolean hasConceptTypeCount() {
     return conceptTypeCount_ != null;
@@ -222,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
+   * @return The conceptTypeCount.
    */
   public com.clarifai.grpc.api.ConceptTypeCount getConceptTypeCount() {
     return conceptTypeCount_ == null ? com.clarifai.grpc.api.ConceptTypeCount.getDefaultInstance() : conceptTypeCount_;
@@ -245,6 +251,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
+   * @return Whether the detailConceptCount field is set.
    */
   public boolean hasDetailConceptCount() {
     return detailConceptCount_ != null;
@@ -255,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
+   * @return The detailConceptCount.
    */
   public com.clarifai.grpc.api.DetailConceptCount getDetailConceptCount() {
     return detailConceptCount_ == null ? com.clarifai.grpc.api.DetailConceptCount.getDefaultInstance() : detailConceptCount_;
@@ -656,6 +664,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -675,6 +684,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -695,6 +705,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -712,6 +724,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -725,6 +738,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -745,6 +760,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -764,6 +780,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -784,6 +801,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -801,6 +820,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -814,6 +834,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -836,6 +858,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
+     * @return Whether the conceptTypeCount field is set.
      */
     public boolean hasConceptTypeCount() {
       return conceptTypeCountBuilder_ != null || conceptTypeCount_ != null;
@@ -846,6 +869,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
+     * @return The conceptTypeCount.
      */
     public com.clarifai.grpc.api.ConceptTypeCount getConceptTypeCount() {
       if (conceptTypeCountBuilder_ == null) {
@@ -989,6 +1013,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
+     * @return Whether the detailConceptCount field is set.
      */
     public boolean hasDetailConceptCount() {
       return detailConceptCountBuilder_ != null || detailConceptCount_ != null;
@@ -999,6 +1024,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
+     * @return The detailConceptCount.
      */
     public com.clarifai.grpc.api.DetailConceptCount getDetailConceptCount() {
       if (detailConceptCountBuilder_ == null) {

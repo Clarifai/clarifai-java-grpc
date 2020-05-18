@@ -96,19 +96,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Concept.parser(), extensionRegistry));
             break;
           }
-          case 34: {
-            com.clarifai.grpc.api.Face.Builder subBuilder = null;
-            if (face_ != null) {
-              subBuilder = face_.toBuilder();
-            }
-            face_ = input.readMessage(com.clarifai.grpc.api.Face.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(face_);
-              face_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 42: {
             com.google.protobuf.Struct.Builder subBuilder = null;
             if (metadata_ != null) {
@@ -264,6 +251,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Image image = 1;</code>
+   * @return Whether the image field is set.
    */
   public boolean hasImage() {
     return image_ != null;
@@ -274,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Image image = 1;</code>
+   * @return The image.
    */
   public com.clarifai.grpc.api.Image getImage() {
     return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
@@ -297,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Video video = 2;</code>
+   * @return Whether the video field is set.
    */
   public boolean hasVideo() {
     return video_ != null;
@@ -307,6 +297,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Video video = 2;</code>
+   * @return The video.
    */
   public com.clarifai.grpc.api.Video getVideo() {
     return video_ == null ? com.clarifai.grpc.api.Video.getDefaultInstance() : video_;
@@ -377,39 +368,6 @@ private static final long serialVersionUID = 0L;
     return concepts_.get(index);
   }
 
-  public static final int FACE_FIELD_NUMBER = 4;
-  private com.clarifai.grpc.api.Face face_;
-  /**
-   * <pre>
-   * A special Face object to hold identity, age, and other fields.
-   * </pre>
-   *
-   * <code>.clarifai.api.Face face = 4;</code>
-   */
-  public boolean hasFace() {
-    return face_ != null;
-  }
-  /**
-   * <pre>
-   * A special Face object to hold identity, age, and other fields.
-   * </pre>
-   *
-   * <code>.clarifai.api.Face face = 4;</code>
-   */
-  public com.clarifai.grpc.api.Face getFace() {
-    return face_ == null ? com.clarifai.grpc.api.Face.getDefaultInstance() : face_;
-  }
-  /**
-   * <pre>
-   * A special Face object to hold identity, age, and other fields.
-   * </pre>
-   *
-   * <code>.clarifai.api.Face face = 4;</code>
-   */
-  public com.clarifai.grpc.api.FaceOrBuilder getFaceOrBuilder() {
-    return getFace();
-  }
-
   public static final int METADATA_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct metadata_;
   /**
@@ -419,6 +377,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -430,6 +389,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return The metadata.
    */
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
@@ -454,6 +414,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Geo geo = 6;</code>
+   * @return Whether the geo field is set.
    */
   public boolean hasGeo() {
     return geo_ != null;
@@ -464,6 +425,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Geo geo = 6;</code>
+   * @return The geo.
    */
   public com.clarifai.grpc.api.Geo getGeo() {
     return geo_ == null ? com.clarifai.grpc.api.Geo.getDefaultInstance() : geo_;
@@ -762,6 +724,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
+   * @return Whether the text field is set.
    */
   public boolean hasText() {
     return text_ != null;
@@ -772,6 +735,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
+   * @return The text.
    */
   public com.clarifai.grpc.api.Text getText() {
     return text_ == null ? com.clarifai.grpc.api.Text.getDefaultInstance() : text_;
@@ -795,6 +759,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Audio audio = 14;</code>
+   * @return Whether the audio field is set.
    */
   public boolean hasAudio() {
     return audio_ != null;
@@ -805,6 +770,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Audio audio = 14;</code>
+   * @return The audio.
    */
   public com.clarifai.grpc.api.Audio getAudio() {
     return audio_ == null ? com.clarifai.grpc.api.Audio.getDefaultInstance() : audio_;
@@ -842,9 +808,6 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < concepts_.size(); i++) {
       output.writeMessage(3, concepts_.get(i));
-    }
-    if (face_ != null) {
-      output.writeMessage(4, getFace());
     }
     if (metadata_ != null) {
       output.writeMessage(5, getMetadata());
@@ -893,10 +856,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < concepts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, concepts_.get(i));
-    }
-    if (face_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getFace());
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -961,11 +920,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getConceptsList()
         .equals(other.getConceptsList())) return false;
-    if (hasFace() != other.hasFace()) return false;
-    if (hasFace()) {
-      if (!getFace()
-          .equals(other.getFace())) return false;
-    }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -1018,10 +972,6 @@ private static final long serialVersionUID = 0L;
     if (getConceptsCount() > 0) {
       hash = (37 * hash) + CONCEPTS_FIELD_NUMBER;
       hash = (53 * hash) + getConceptsList().hashCode();
-    }
-    if (hasFace()) {
-      hash = (37 * hash) + FACE_FIELD_NUMBER;
-      hash = (53 * hash) + getFace().hashCode();
     }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
@@ -1222,12 +1172,6 @@ private static final long serialVersionUID = 0L;
       } else {
         conceptsBuilder_.clear();
       }
-      if (faceBuilder_ == null) {
-        face_ = null;
-      } else {
-        face_ = null;
-        faceBuilder_ = null;
-      }
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -1327,11 +1271,6 @@ private static final long serialVersionUID = 0L;
         result.concepts_ = concepts_;
       } else {
         result.concepts_ = conceptsBuilder_.build();
-      }
-      if (faceBuilder_ == null) {
-        result.face_ = face_;
-      } else {
-        result.face_ = faceBuilder_.build();
       }
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
@@ -1477,9 +1416,6 @@ private static final long serialVersionUID = 0L;
             conceptsBuilder_.addAllMessages(other.concepts_);
           }
         }
-      }
-      if (other.hasFace()) {
-        mergeFace(other.getFace());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
@@ -1662,6 +1598,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Image image = 1;</code>
+     * @return Whether the image field is set.
      */
     public boolean hasImage() {
       return imageBuilder_ != null || image_ != null;
@@ -1672,6 +1609,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Image image = 1;</code>
+     * @return The image.
      */
     public com.clarifai.grpc.api.Image getImage() {
       if (imageBuilder_ == null) {
@@ -1815,6 +1753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Video video = 2;</code>
+     * @return Whether the video field is set.
      */
     public boolean hasVideo() {
       return videoBuilder_ != null || video_ != null;
@@ -1825,6 +1764,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Video video = 2;</code>
+     * @return The video.
      */
     public com.clarifai.grpc.api.Video getVideo() {
       if (videoBuilder_ == null) {
@@ -2271,159 +2211,6 @@ private static final long serialVersionUID = 0L;
       return conceptsBuilder_;
     }
 
-    private com.clarifai.grpc.api.Face face_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Face, com.clarifai.grpc.api.Face.Builder, com.clarifai.grpc.api.FaceOrBuilder> faceBuilder_;
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public boolean hasFace() {
-      return faceBuilder_ != null || face_ != null;
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public com.clarifai.grpc.api.Face getFace() {
-      if (faceBuilder_ == null) {
-        return face_ == null ? com.clarifai.grpc.api.Face.getDefaultInstance() : face_;
-      } else {
-        return faceBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public Builder setFace(com.clarifai.grpc.api.Face value) {
-      if (faceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        face_ = value;
-        onChanged();
-      } else {
-        faceBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public Builder setFace(
-        com.clarifai.grpc.api.Face.Builder builderForValue) {
-      if (faceBuilder_ == null) {
-        face_ = builderForValue.build();
-        onChanged();
-      } else {
-        faceBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public Builder mergeFace(com.clarifai.grpc.api.Face value) {
-      if (faceBuilder_ == null) {
-        if (face_ != null) {
-          face_ =
-            com.clarifai.grpc.api.Face.newBuilder(face_).mergeFrom(value).buildPartial();
-        } else {
-          face_ = value;
-        }
-        onChanged();
-      } else {
-        faceBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public Builder clearFace() {
-      if (faceBuilder_ == null) {
-        face_ = null;
-        onChanged();
-      } else {
-        face_ = null;
-        faceBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public com.clarifai.grpc.api.Face.Builder getFaceBuilder() {
-      
-      onChanged();
-      return getFaceFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    public com.clarifai.grpc.api.FaceOrBuilder getFaceOrBuilder() {
-      if (faceBuilder_ != null) {
-        return faceBuilder_.getMessageOrBuilder();
-      } else {
-        return face_ == null ?
-            com.clarifai.grpc.api.Face.getDefaultInstance() : face_;
-      }
-    }
-    /**
-     * <pre>
-     * A special Face object to hold identity, age, and other fields.
-     * </pre>
-     *
-     * <code>.clarifai.api.Face face = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Face, com.clarifai.grpc.api.Face.Builder, com.clarifai.grpc.api.FaceOrBuilder> 
-        getFaceFieldBuilder() {
-      if (faceBuilder_ == null) {
-        faceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Face, com.clarifai.grpc.api.Face.Builder, com.clarifai.grpc.api.FaceOrBuilder>(
-                getFace(),
-                getParentForChildren(),
-                isClean());
-        face_ = null;
-      }
-      return faceBuilder_;
-    }
-
     private com.google.protobuf.Struct metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
@@ -2434,6 +2221,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 5;</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -2445,6 +2233,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 5;</code>
+     * @return The metadata.
      */
     public com.google.protobuf.Struct getMetadata() {
       if (metadataBuilder_ == null) {
@@ -2595,6 +2384,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Geo geo = 6;</code>
+     * @return Whether the geo field is set.
      */
     public boolean hasGeo() {
       return geoBuilder_ != null || geo_ != null;
@@ -2605,6 +2395,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Geo geo = 6;</code>
+     * @return The geo.
      */
     public com.clarifai.grpc.api.Geo getGeo() {
       if (geoBuilder_ == null) {
@@ -4308,6 +4099,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
+     * @return Whether the text field is set.
      */
     public boolean hasText() {
       return textBuilder_ != null || text_ != null;
@@ -4318,6 +4110,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
+     * @return The text.
      */
     public com.clarifai.grpc.api.Text getText() {
       if (textBuilder_ == null) {
@@ -4461,6 +4254,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Audio audio = 14;</code>
+     * @return Whether the audio field is set.
      */
     public boolean hasAudio() {
       return audioBuilder_ != null || audio_ != null;
@@ -4471,6 +4265,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Audio audio = 14;</code>
+     * @return The audio.
      */
     public com.clarifai.grpc.api.Audio getAudio() {
       if (audioBuilder_ == null) {

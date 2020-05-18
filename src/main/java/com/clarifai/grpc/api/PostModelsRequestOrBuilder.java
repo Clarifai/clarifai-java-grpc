@@ -9,10 +9,12 @@ public interface PostModelsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -29,6 +31,7 @@ public interface PostModelsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+   * @return Whether the model field is set.
    */
   @java.lang.Deprecated boolean hasModel();
   /**
@@ -40,6 +43,7 @@ public interface PostModelsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+   * @return The model.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Model getModel();
   /**

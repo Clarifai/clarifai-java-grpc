@@ -13,6 +13,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 1;</code>
+   * @return Whether the data field is set.
    */
   boolean hasData();
   /**
@@ -21,6 +22,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 1;</code>
+   * @return The data.
    */
   com.clarifai.grpc.api.Data getData();
   /**
@@ -38,6 +40,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
+   * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
   /**
@@ -46,6 +49,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
+   * @return The outputConfig.
    */
   com.clarifai.grpc.api.OutputConfig getOutputConfig();
   /**
@@ -63,6 +67,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The message.
    */
   java.lang.String getMessage();
   /**
@@ -71,6 +76,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();
@@ -81,6 +87,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>string type = 4;</code>
+   * @return The type.
    */
   java.lang.String getType();
   /**
@@ -89,6 +96,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>string type = 4;</code>
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString
       getTypeBytes();
@@ -99,6 +107,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>string type_ext = 5;</code>
+   * @return The typeExt.
    */
   java.lang.String getTypeExt();
   /**
@@ -107,6 +116,7 @@ public interface OutputInfoOrBuilder extends
    * </pre>
    *
    * <code>string type_ext = 5;</code>
+   * @return The bytes for typeExt.
    */
   com.google.protobuf.ByteString
       getTypeExtBytes();

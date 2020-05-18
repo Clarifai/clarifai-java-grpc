@@ -128,6 +128,7 @@ private static final long serialVersionUID = 0L;
   private int processed_;
   /**
    * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The processed.
    */
   public int getProcessed() {
     return processed_;
@@ -137,6 +138,7 @@ private static final long serialVersionUID = 0L;
   private int toProcess_;
   /**
    * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The toProcess.
    */
   public int getToProcess() {
     return toProcess_;
@@ -146,6 +148,7 @@ private static final long serialVersionUID = 0L;
   private int errors_;
   /**
    * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The errors.
    */
   public int getErrors() {
     return errors_;
@@ -155,6 +158,7 @@ private static final long serialVersionUID = 0L;
   private int processing_;
   /**
    * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The processing.
    */
   public int getProcessing() {
     return processing_;
@@ -164,6 +168,7 @@ private static final long serialVersionUID = 0L;
   private int reindexed_;
   /**
    * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The reindexed.
    */
   public int getReindexed() {
     return reindexed_;
@@ -173,6 +178,7 @@ private static final long serialVersionUID = 0L;
   private int toReindex_;
   /**
    * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The toReindex.
    */
   public int getToReindex() {
     return toReindex_;
@@ -182,6 +188,7 @@ private static final long serialVersionUID = 0L;
   private int reindexErrors_;
   /**
    * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The reindexErrors.
    */
   public int getReindexErrors() {
     return reindexErrors_;
@@ -191,6 +198,7 @@ private static final long serialVersionUID = 0L;
   private int reindexing_;
   /**
    * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The reindexing.
    */
   public int getReindexing() {
     return reindexing_;
@@ -624,12 +632,15 @@ private static final long serialVersionUID = 0L;
     private int processed_ ;
     /**
      * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The processed.
      */
     public int getProcessed() {
       return processed_;
     }
     /**
      * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The processed to set.
+     * @return This builder for chaining.
      */
     public Builder setProcessed(int value) {
       
@@ -639,6 +650,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProcessed() {
       
@@ -650,12 +662,15 @@ private static final long serialVersionUID = 0L;
     private int toProcess_ ;
     /**
      * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The toProcess.
      */
     public int getToProcess() {
       return toProcess_;
     }
     /**
      * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The toProcess to set.
+     * @return This builder for chaining.
      */
     public Builder setToProcess(int value) {
       
@@ -665,6 +680,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearToProcess() {
       
@@ -676,12 +692,15 @@ private static final long serialVersionUID = 0L;
     private int errors_ ;
     /**
      * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The errors.
      */
     public int getErrors() {
       return errors_;
     }
     /**
      * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The errors to set.
+     * @return This builder for chaining.
      */
     public Builder setErrors(int value) {
       
@@ -691,6 +710,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearErrors() {
       
@@ -702,12 +722,15 @@ private static final long serialVersionUID = 0L;
     private int processing_ ;
     /**
      * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The processing.
      */
     public int getProcessing() {
       return processing_;
     }
     /**
      * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The processing to set.
+     * @return This builder for chaining.
      */
     public Builder setProcessing(int value) {
       
@@ -717,6 +740,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearProcessing() {
       
@@ -728,12 +752,15 @@ private static final long serialVersionUID = 0L;
     private int reindexed_ ;
     /**
      * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The reindexed.
      */
     public int getReindexed() {
       return reindexed_;
     }
     /**
      * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The reindexed to set.
+     * @return This builder for chaining.
      */
     public Builder setReindexed(int value) {
       
@@ -743,6 +770,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearReindexed() {
       
@@ -754,12 +782,15 @@ private static final long serialVersionUID = 0L;
     private int toReindex_ ;
     /**
      * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The toReindex.
      */
     public int getToReindex() {
       return toReindex_;
     }
     /**
      * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The toReindex to set.
+     * @return This builder for chaining.
      */
     public Builder setToReindex(int value) {
       
@@ -769,6 +800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearToReindex() {
       
@@ -780,12 +812,15 @@ private static final long serialVersionUID = 0L;
     private int reindexErrors_ ;
     /**
      * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The reindexErrors.
      */
     public int getReindexErrors() {
       return reindexErrors_;
     }
     /**
      * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The reindexErrors to set.
+     * @return This builder for chaining.
      */
     public Builder setReindexErrors(int value) {
       
@@ -795,6 +830,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearReindexErrors() {
       
@@ -806,12 +842,15 @@ private static final long serialVersionUID = 0L;
     private int reindexing_ ;
     /**
      * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The reindexing.
      */
     public int getReindexing() {
       return reindexing_;
     }
     /**
      * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The reindexing to set.
+     * @return This builder for chaining.
      */
     public Builder setReindexing(int value) {
       
@@ -821,6 +860,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearReindexing() {
       

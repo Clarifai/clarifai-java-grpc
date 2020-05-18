@@ -9,10 +9,12 @@ public interface ListModelVersionsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -22,10 +24,12 @@ public interface ListModelVersionsRequestOrBuilder extends
 
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   java.lang.String getModelId();
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   com.google.protobuf.ByteString
       getModelIdBytes();
@@ -37,6 +41,7 @@ public interface ListModelVersionsRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 page = 3;</code>
+   * @return The page.
    */
   int getPage();
 
@@ -47,6 +52,7 @@ public interface ListModelVersionsRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 per_page = 4;</code>
+   * @return The perPage.
    */
   int getPerPage();
 
@@ -56,6 +62,7 @@ public interface ListModelVersionsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @return A list containing the conceptIds.
    */
   java.util.List<java.lang.String>
       getConceptIdsList();
@@ -65,6 +72,7 @@ public interface ListModelVersionsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @return The count of conceptIds.
    */
   int getConceptIdsCount();
   /**
@@ -73,6 +81,8 @@ public interface ListModelVersionsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The conceptIds at the given index.
    */
   java.lang.String getConceptIds(int index);
   /**
@@ -81,6 +91,8 @@ public interface ListModelVersionsRequestOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the conceptIds at the given index.
    */
   com.google.protobuf.ByteString
       getConceptIdsBytes(int index);

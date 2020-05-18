@@ -135,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -154,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -177,6 +179,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 2;</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -196,6 +199,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 2;</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -223,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -237,6 +242,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -710,6 +716,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -729,6 +736,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -749,6 +757,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -766,6 +776,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -779,6 +790,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -799,6 +812,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 2;</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -818,6 +832,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 2;</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -838,6 +853,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 2;</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -855,6 +872,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -868,6 +886,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 2;</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -894,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -908,6 +929,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {

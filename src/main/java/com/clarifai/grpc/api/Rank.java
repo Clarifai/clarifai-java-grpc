@@ -107,6 +107,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool negate = 3;</code>
+   * @return The negate.
    */
   public boolean getNegate() {
     return negate_;
@@ -120,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return Whether the annotation field is set.
    */
   public boolean hasAnnotation() {
     return annotation_ != null;
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return The annotation.
    */
   public com.clarifai.grpc.api.Annotation getAnnotation() {
     return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
@@ -486,6 +489,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negate = 3;</code>
+     * @return The negate.
      */
     public boolean getNegate() {
       return negate_;
@@ -497,6 +501,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negate = 3;</code>
+     * @param value The negate to set.
+     * @return This builder for chaining.
      */
     public Builder setNegate(boolean value) {
       
@@ -511,6 +517,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negate = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegate() {
       
@@ -528,6 +535,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 4;</code>
+     * @return Whether the annotation field is set.
      */
     public boolean hasAnnotation() {
       return annotationBuilder_ != null || annotation_ != null;
@@ -538,6 +546,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 4;</code>
+     * @return The annotation.
      */
     public com.clarifai.grpc.api.Annotation getAnnotation() {
       if (annotationBuilder_ == null) {

@@ -119,6 +119,7 @@ private static final long serialVersionUID = 0L;
   private boolean confusionMatrix_;
   /**
    * <code>bool confusion_matrix = 1;</code>
+   * @return The confusionMatrix.
    */
   public boolean getConfusionMatrix() {
     return confusionMatrix_;
@@ -128,6 +129,7 @@ private static final long serialVersionUID = 0L;
   private boolean cooccurrenceMatrix_;
   /**
    * <code>bool cooccurrence_matrix = 2;</code>
+   * @return The cooccurrenceMatrix.
    */
   public boolean getCooccurrenceMatrix() {
     return cooccurrenceMatrix_;
@@ -137,6 +139,7 @@ private static final long serialVersionUID = 0L;
   private boolean labelCounts_;
   /**
    * <code>bool label_counts = 3;</code>
+   * @return The labelCounts.
    */
   public boolean getLabelCounts() {
     return labelCounts_;
@@ -146,6 +149,7 @@ private static final long serialVersionUID = 0L;
   private boolean binaryMetrics_;
   /**
    * <code>bool binary_metrics = 4;</code>
+   * @return The binaryMetrics.
    */
   public boolean getBinaryMetrics() {
     return binaryMetrics_;
@@ -155,6 +159,7 @@ private static final long serialVersionUID = 0L;
   private boolean testSet_;
   /**
    * <code>bool test_set = 5;</code>
+   * @return The testSet.
    */
   public boolean getTestSet() {
     return testSet_;
@@ -164,6 +169,7 @@ private static final long serialVersionUID = 0L;
   private boolean metricsByArea_;
   /**
    * <code>bool metrics_by_area = 6;</code>
+   * @return The metricsByArea.
    */
   public boolean getMetricsByArea() {
     return metricsByArea_;
@@ -173,6 +179,7 @@ private static final long serialVersionUID = 0L;
   private boolean metricsByClass_;
   /**
    * <code>bool metrics_by_class = 7;</code>
+   * @return The metricsByClass.
    */
   public boolean getMetricsByClass() {
     return metricsByClass_;
@@ -592,12 +599,15 @@ private static final long serialVersionUID = 0L;
     private boolean confusionMatrix_ ;
     /**
      * <code>bool confusion_matrix = 1;</code>
+     * @return The confusionMatrix.
      */
     public boolean getConfusionMatrix() {
       return confusionMatrix_;
     }
     /**
      * <code>bool confusion_matrix = 1;</code>
+     * @param value The confusionMatrix to set.
+     * @return This builder for chaining.
      */
     public Builder setConfusionMatrix(boolean value) {
       
@@ -607,6 +617,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool confusion_matrix = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConfusionMatrix() {
       
@@ -618,12 +629,15 @@ private static final long serialVersionUID = 0L;
     private boolean cooccurrenceMatrix_ ;
     /**
      * <code>bool cooccurrence_matrix = 2;</code>
+     * @return The cooccurrenceMatrix.
      */
     public boolean getCooccurrenceMatrix() {
       return cooccurrenceMatrix_;
     }
     /**
      * <code>bool cooccurrence_matrix = 2;</code>
+     * @param value The cooccurrenceMatrix to set.
+     * @return This builder for chaining.
      */
     public Builder setCooccurrenceMatrix(boolean value) {
       
@@ -633,6 +647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool cooccurrence_matrix = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCooccurrenceMatrix() {
       
@@ -644,12 +659,15 @@ private static final long serialVersionUID = 0L;
     private boolean labelCounts_ ;
     /**
      * <code>bool label_counts = 3;</code>
+     * @return The labelCounts.
      */
     public boolean getLabelCounts() {
       return labelCounts_;
     }
     /**
      * <code>bool label_counts = 3;</code>
+     * @param value The labelCounts to set.
+     * @return This builder for chaining.
      */
     public Builder setLabelCounts(boolean value) {
       
@@ -659,6 +677,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool label_counts = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLabelCounts() {
       
@@ -670,12 +689,15 @@ private static final long serialVersionUID = 0L;
     private boolean binaryMetrics_ ;
     /**
      * <code>bool binary_metrics = 4;</code>
+     * @return The binaryMetrics.
      */
     public boolean getBinaryMetrics() {
       return binaryMetrics_;
     }
     /**
      * <code>bool binary_metrics = 4;</code>
+     * @param value The binaryMetrics to set.
+     * @return This builder for chaining.
      */
     public Builder setBinaryMetrics(boolean value) {
       
@@ -685,6 +707,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool binary_metrics = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBinaryMetrics() {
       
@@ -696,12 +719,15 @@ private static final long serialVersionUID = 0L;
     private boolean testSet_ ;
     /**
      * <code>bool test_set = 5;</code>
+     * @return The testSet.
      */
     public boolean getTestSet() {
       return testSet_;
     }
     /**
      * <code>bool test_set = 5;</code>
+     * @param value The testSet to set.
+     * @return This builder for chaining.
      */
     public Builder setTestSet(boolean value) {
       
@@ -711,6 +737,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool test_set = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTestSet() {
       
@@ -722,12 +749,15 @@ private static final long serialVersionUID = 0L;
     private boolean metricsByArea_ ;
     /**
      * <code>bool metrics_by_area = 6;</code>
+     * @return The metricsByArea.
      */
     public boolean getMetricsByArea() {
       return metricsByArea_;
     }
     /**
      * <code>bool metrics_by_area = 6;</code>
+     * @param value The metricsByArea to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricsByArea(boolean value) {
       
@@ -737,6 +767,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool metrics_by_area = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMetricsByArea() {
       
@@ -748,12 +779,15 @@ private static final long serialVersionUID = 0L;
     private boolean metricsByClass_ ;
     /**
      * <code>bool metrics_by_class = 7;</code>
+     * @return The metricsByClass.
      */
     public boolean getMetricsByClass() {
       return metricsByClass_;
     }
     /**
      * <code>bool metrics_by_class = 7;</code>
+     * @param value The metricsByClass to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricsByClass(boolean value) {
       
@@ -763,6 +797,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool metrics_by_class = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMetricsByClass() {
       

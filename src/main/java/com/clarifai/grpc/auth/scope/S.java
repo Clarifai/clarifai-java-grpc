@@ -260,30 +260,6 @@ public enum S
   TSNEVisualizations_Get(25),
   /**
    * <pre>
-   * Write to the workers DB table.
-   * </pre>
-   *
-   * <code>Workers_Add = 30 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workers_Get];</code>
-   */
-  Workers_Add(30),
-  /**
-   * <pre>
-   * Read from the workers DB table.
-   * </pre>
-   *
-   * <code>Workers_Get = 31 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  Workers_Get(31),
-  /**
-   * <pre>
-   * To delete we need read/write.
-   * </pre>
-   *
-   * <code>Workers_Delete = 32 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workers_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Workers_Get];</code>
-   */
-  Workers_Delete(32),
-  /**
-   * <pre>
    * Read from the templates DB table.
    * </pre>
    *
@@ -329,7 +305,7 @@ public enum S
    * Write to the collectors DB table.
    * </pre>
    *
-   * <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
   Collectors_Add(41),
   /**
@@ -337,7 +313,7 @@ public enum S
    * Read from the collectors DB table.
    * </pre>
    *
-   * <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+   * <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   Collectors_Get(42),
   /**
@@ -345,7 +321,7 @@ public enum S
    * To delete we need read/write.
    * </pre>
    *
-   * <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
   Collectors_Delete(43),
   /**
@@ -420,6 +396,86 @@ public enum S
    * <code>Collaborators_Delete = 52 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Get];</code>
    */
   Collaborators_Delete(52),
+  /**
+   * <pre>
+   * Write to the metrics table
+   * </pre>
+   *
+   * <code>Metrics_Add = 54 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Metrics_Get];</code>
+   */
+  Metrics_Add(54),
+  /**
+   * <pre>
+   * Read from metrics table
+   * </pre>
+   *
+   * <code>Metrics_Get = 53 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Metrics_Get(53),
+  /**
+   * <pre>
+   * Write to tasks DB table.
+   * </pre>
+   *
+   * <code>Tasks_Add = 55 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Tasks_Get];</code>
+   */
+  Tasks_Add(55),
+  /**
+   * <pre>
+   * Read from the tasks DB table.
+   * </pre>
+   *
+   * <code>Tasks_Get = 56 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Tasks_Get(56),
+  /**
+   * <pre>
+   * Write to the password_policies DB table
+   * </pre>
+   *
+   * <code>PasswordPolicies_Add = 57 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordPolicies_Get];</code>
+   */
+  PasswordPolicies_Add(57),
+  /**
+   * <pre>
+   * Read from the password_policies DB table
+   * </pre>
+   *
+   * <code>PasswordPolicies_Get = 58 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  PasswordPolicies_Get(58),
+  /**
+   * <pre>
+   * To delete password_policies we need read/write
+   * </pre>
+   *
+   * <code>PasswordPolicies_Delete = 59 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordPolicies_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordPolicies_Get];</code>
+   */
+  PasswordPolicies_Delete(59),
+  /**
+   * <pre>
+   * Write to password_history table
+   * </pre>
+   *
+   * <code>PasswordHistory_Add = 60 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
+   */
+  PasswordHistory_Add(60),
+  /**
+   * <pre>
+   * Read from password_history table
+   * </pre>
+   *
+   * <code>PasswordHistory_Get = 61 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+   */
+  PasswordHistory_Get(61),
+  /**
+   * <pre>
+   * To delete password history we need read/write
+   * </pre>
+   *
+   * <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
+   */
+  PasswordHistory_Delete(62),
   UNRECOGNIZED(-1),
   ;
 
@@ -651,30 +707,6 @@ public enum S
   public static final int TSNEVisualizations_Get_VALUE = 25;
   /**
    * <pre>
-   * Write to the workers DB table.
-   * </pre>
-   *
-   * <code>Workers_Add = 30 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workers_Get];</code>
-   */
-  public static final int Workers_Add_VALUE = 30;
-  /**
-   * <pre>
-   * Read from the workers DB table.
-   * </pre>
-   *
-   * <code>Workers_Get = 31 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  public static final int Workers_Get_VALUE = 31;
-  /**
-   * <pre>
-   * To delete we need read/write.
-   * </pre>
-   *
-   * <code>Workers_Delete = 32 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workers_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Workers_Get];</code>
-   */
-  public static final int Workers_Delete_VALUE = 32;
-  /**
-   * <pre>
    * Read from the templates DB table.
    * </pre>
    *
@@ -719,7 +751,7 @@ public enum S
    * Write to the collectors DB table.
    * </pre>
    *
-   * <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Add = 41 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
   public static final int Collectors_Add_VALUE = 41;
   /**
@@ -727,7 +759,7 @@ public enum S
    * Read from the collectors DB table.
    * </pre>
    *
-   * <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+   * <code>Collectors_Get = 42 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int Collectors_Get_VALUE = 42;
   /**
@@ -735,7 +767,7 @@ public enum S
    * To delete we need read/write.
    * </pre>
    *
-   * <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
+   * <code>Collectors_Delete = 43 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collectors_Get];</code>
    */
   public static final int Collectors_Delete_VALUE = 43;
   /**
@@ -810,6 +842,86 @@ public enum S
    * <code>Collaborators_Delete = 52 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Collaborators_Get];</code>
    */
   public static final int Collaborators_Delete_VALUE = 52;
+  /**
+   * <pre>
+   * Write to the metrics table
+   * </pre>
+   *
+   * <code>Metrics_Add = 54 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Metrics_Get];</code>
+   */
+  public static final int Metrics_Add_VALUE = 54;
+  /**
+   * <pre>
+   * Read from metrics table
+   * </pre>
+   *
+   * <code>Metrics_Get = 53 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Metrics_Get_VALUE = 53;
+  /**
+   * <pre>
+   * Write to tasks DB table.
+   * </pre>
+   *
+   * <code>Tasks_Add = 55 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Tasks_Get];</code>
+   */
+  public static final int Tasks_Add_VALUE = 55;
+  /**
+   * <pre>
+   * Read from the tasks DB table.
+   * </pre>
+   *
+   * <code>Tasks_Get = 56 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Tasks_Get_VALUE = 56;
+  /**
+   * <pre>
+   * Write to the password_policies DB table
+   * </pre>
+   *
+   * <code>PasswordPolicies_Add = 57 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordPolicies_Get];</code>
+   */
+  public static final int PasswordPolicies_Add_VALUE = 57;
+  /**
+   * <pre>
+   * Read from the password_policies DB table
+   * </pre>
+   *
+   * <code>PasswordPolicies_Get = 58 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int PasswordPolicies_Get_VALUE = 58;
+  /**
+   * <pre>
+   * To delete password_policies we need read/write
+   * </pre>
+   *
+   * <code>PasswordPolicies_Delete = 59 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordPolicies_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordPolicies_Get];</code>
+   */
+  public static final int PasswordPolicies_Delete_VALUE = 59;
+  /**
+   * <pre>
+   * Write to password_history table
+   * </pre>
+   *
+   * <code>PasswordHistory_Add = 60 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
+   */
+  public static final int PasswordHistory_Add_VALUE = 60;
+  /**
+   * <pre>
+   * Read from password_history table
+   * </pre>
+   *
+   * <code>PasswordHistory_Get = 61 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+   */
+  public static final int PasswordHistory_Get_VALUE = 61;
+  /**
+   * <pre>
+   * To delete password history we need read/write
+   * </pre>
+   *
+   * <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
+   */
+  public static final int PasswordHistory_Delete_VALUE = 62;
 
 
   public final int getNumber() {
@@ -821,6 +933,8 @@ public enum S
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -828,6 +942,10 @@ public enum S
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static S forNumber(int value) {
     switch (value) {
       case 0: return undef;
@@ -858,9 +976,6 @@ public enum S
       case 21: return Workflows_Delete;
       case 24: return TSNEVisualizations_Add;
       case 25: return TSNEVisualizations_Get;
-      case 30: return Workers_Add;
-      case 31: return Workers_Get;
-      case 32: return Workers_Delete;
       case 33: return Templates_Get;
       case 37: return Annotations_Add;
       case 38: return Annotations_Get;
@@ -878,6 +993,16 @@ public enum S
       case 51: return Collaborators_Add;
       case 50: return Collaborators_Get;
       case 52: return Collaborators_Delete;
+      case 54: return Metrics_Add;
+      case 53: return Metrics_Get;
+      case 55: return Tasks_Add;
+      case 56: return Tasks_Get;
+      case 57: return PasswordPolicies_Add;
+      case 58: return PasswordPolicies_Get;
+      case 59: return PasswordPolicies_Delete;
+      case 60: return PasswordHistory_Add;
+      case 61: return PasswordHistory_Get;
+      case 62: return PasswordHistory_Delete;
       default: return null;
     }
   }

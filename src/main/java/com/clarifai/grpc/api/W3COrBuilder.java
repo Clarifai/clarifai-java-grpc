@@ -9,20 +9,24 @@ public interface W3COrBuilder extends
 
   /**
    * <code>string hex = 1;</code>
+   * @return The hex.
    */
   java.lang.String getHex();
   /**
    * <code>string hex = 1;</code>
+   * @return The bytes for hex.
    */
   com.google.protobuf.ByteString
       getHexBytes();
 
   /**
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();

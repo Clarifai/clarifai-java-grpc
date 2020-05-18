@@ -9,10 +9,12 @@ public interface SingleModelVersionResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -22,10 +24,12 @@ public interface SingleModelVersionResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.ModelVersion model_version = 2;</code>
+   * @return Whether the modelVersion field is set.
    */
   boolean hasModelVersion();
   /**
    * <code>.clarifai.api.ModelVersion model_version = 2;</code>
+   * @return The modelVersion.
    */
   com.clarifai.grpc.api.ModelVersion getModelVersion();
   /**

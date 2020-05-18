@@ -150,6 +150,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @return A list containing the conceptIds.
    */
   public com.google.protobuf.ProtocolStringList
       getConceptIdsList() {
@@ -161,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @return The count of conceptIds.
    */
   public int getConceptIdsCount() {
     return conceptIds_.size();
@@ -171,6 +173,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @param index The index of the element to return.
+   * @return The conceptIds at the given index.
    */
   public java.lang.String getConceptIds(int index) {
     return conceptIds_.get(index);
@@ -181,6 +185,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the conceptIds at the given index.
    */
   public com.google.protobuf.ByteString
       getConceptIdsBytes(int index) {
@@ -816,6 +822,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @return A list containing the conceptIds.
      */
     public com.google.protobuf.ProtocolStringList
         getConceptIdsList() {
@@ -827,6 +834,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @return The count of conceptIds.
      */
     public int getConceptIdsCount() {
       return conceptIds_.size();
@@ -837,6 +845,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @param index The index of the element to return.
+     * @return The conceptIds at the given index.
      */
     public java.lang.String getConceptIds(int index) {
       return conceptIds_.get(index);
@@ -847,6 +857,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the conceptIds at the given index.
      */
     public com.google.protobuf.ByteString
         getConceptIdsBytes(int index) {
@@ -858,6 +870,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The conceptIds to set.
+     * @return This builder for chaining.
      */
     public Builder setConceptIds(
         int index, java.lang.String value) {
@@ -875,6 +890,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @param value The conceptIds to add.
+     * @return This builder for chaining.
      */
     public Builder addConceptIds(
         java.lang.String value) {
@@ -892,6 +909,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @param values The conceptIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllConceptIds(
         java.lang.Iterable<java.lang.String> values) {
@@ -907,6 +926,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConceptIds() {
       conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -920,6 +940,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 2;</code>
+     * @param value The bytes of the conceptIds to add.
+     * @return This builder for chaining.
      */
     public Builder addConceptIdsBytes(
         com.google.protobuf.ByteString value) {

@@ -9,10 +9,12 @@ public interface DeleteInputRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -22,10 +24,12 @@ public interface DeleteInputRequestOrBuilder extends
 
   /**
    * <code>string input_id = 2;</code>
+   * @return The inputId.
    */
   java.lang.String getInputId();
   /**
    * <code>string input_id = 2;</code>
+   * @return The bytes for inputId.
    */
   com.google.protobuf.ByteString
       getInputIdBytes();

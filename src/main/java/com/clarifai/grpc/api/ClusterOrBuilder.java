@@ -9,10 +9,12 @@ public interface ClusterOrBuilder extends
 
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -23,6 +25,7 @@ public interface ClusterOrBuilder extends
    * </pre>
    *
    * <code>uint32 count = 2;</code>
+   * @return The count.
    */
   int getCount();
 
@@ -32,6 +35,7 @@ public interface ClusterOrBuilder extends
    * </pre>
    *
    * <code>float score = 3;</code>
+   * @return The score.
    */
   float getScore();
 

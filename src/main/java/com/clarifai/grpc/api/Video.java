@@ -133,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -153,6 +154,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString
       getUrlBytes() {
@@ -181,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bytes base64 = 2;</code>
+   * @return The base64.
    */
   public com.google.protobuf.ByteString getBase64() {
     return base64_;
@@ -190,6 +193,7 @@ private static final long serialVersionUID = 0L;
   private boolean allowDuplicateUrl_;
   /**
    * <code>bool allow_duplicate_url = 4;</code>
+   * @return The allowDuplicateUrl.
    */
   public boolean getAllowDuplicateUrl() {
     return allowDuplicateUrl_;
@@ -204,6 +208,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string thumbnail_url = 5;</code>
+   * @return The thumbnailUrl.
    */
   public java.lang.String getThumbnailUrl() {
     java.lang.Object ref = thumbnailUrl_;
@@ -224,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string thumbnail_url = 5;</code>
+   * @return The bytes for thumbnailUrl.
    */
   public com.google.protobuf.ByteString
       getThumbnailUrlBytes() {
@@ -248,6 +254,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
+   * @return Whether the hosted field is set.
    */
   public boolean hasHosted() {
     return hosted_ != null;
@@ -259,6 +266,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
+   * @return The hosted.
    */
   public com.clarifai.grpc.api.HostedURL getHosted() {
     return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
@@ -673,6 +681,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -693,6 +702,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString
         getUrlBytes() {
@@ -714,6 +724,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(
         java.lang.String value) {
@@ -732,6 +744,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
       
@@ -746,6 +759,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string url = 1;</code>
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -771,6 +786,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes base64 = 2;</code>
+     * @return The base64.
      */
     public com.google.protobuf.ByteString getBase64() {
       return base64_;
@@ -786,6 +802,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes base64 = 2;</code>
+     * @param value The base64 to set.
+     * @return This builder for chaining.
      */
     public Builder setBase64(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -807,6 +825,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bytes base64 = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBase64() {
       
@@ -818,12 +837,15 @@ private static final long serialVersionUID = 0L;
     private boolean allowDuplicateUrl_ ;
     /**
      * <code>bool allow_duplicate_url = 4;</code>
+     * @return The allowDuplicateUrl.
      */
     public boolean getAllowDuplicateUrl() {
       return allowDuplicateUrl_;
     }
     /**
      * <code>bool allow_duplicate_url = 4;</code>
+     * @param value The allowDuplicateUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setAllowDuplicateUrl(boolean value) {
       
@@ -833,6 +855,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool allow_duplicate_url = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAllowDuplicateUrl() {
       
@@ -849,6 +872,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string thumbnail_url = 5;</code>
+     * @return The thumbnailUrl.
      */
     public java.lang.String getThumbnailUrl() {
       java.lang.Object ref = thumbnailUrl_;
@@ -869,6 +893,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string thumbnail_url = 5;</code>
+     * @return The bytes for thumbnailUrl.
      */
     public com.google.protobuf.ByteString
         getThumbnailUrlBytes() {
@@ -890,6 +915,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string thumbnail_url = 5;</code>
+     * @param value The thumbnailUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setThumbnailUrl(
         java.lang.String value) {
@@ -908,6 +935,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string thumbnail_url = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearThumbnailUrl() {
       
@@ -922,6 +950,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string thumbnail_url = 5;</code>
+     * @param value The bytes for thumbnailUrl to set.
+     * @return This builder for chaining.
      */
     public Builder setThumbnailUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -945,6 +975,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 6;</code>
+     * @return Whether the hosted field is set.
      */
     public boolean hasHosted() {
       return hostedBuilder_ != null || hosted_ != null;
@@ -956,6 +987,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 6;</code>
+     * @return The hosted.
      */
     public com.clarifai.grpc.api.HostedURL getHosted() {
       if (hostedBuilder_ == null) {

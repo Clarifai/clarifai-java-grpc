@@ -9,20 +9,24 @@ public interface ColorOrBuilder extends
 
   /**
    * <code>string raw_hex = 1;</code>
+   * @return The rawHex.
    */
   java.lang.String getRawHex();
   /**
    * <code>string raw_hex = 1;</code>
+   * @return The bytes for rawHex.
    */
   com.google.protobuf.ByteString
       getRawHexBytes();
 
   /**
    * <code>.clarifai.api.W3C w3c = 2;</code>
+   * @return Whether the w3c field is set.
    */
   boolean hasW3C();
   /**
    * <code>.clarifai.api.W3C w3c = 2;</code>
+   * @return The w3c.
    */
   com.clarifai.grpc.api.W3C getW3C();
   /**
@@ -32,6 +36,7 @@ public interface ColorOrBuilder extends
 
   /**
    * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The value.
    */
   float getValue();
 }

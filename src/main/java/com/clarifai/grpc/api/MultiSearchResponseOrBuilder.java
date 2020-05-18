@@ -13,6 +13,7 @@ public interface MultiSearchResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -21,6 +22,7 @@ public interface MultiSearchResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -38,6 +40,7 @@ public interface MultiSearchResponseOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -46,13 +49,14 @@ public interface MultiSearchResponseOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -61,7 +65,7 @@ public interface MultiSearchResponseOrBuilder extends
       getHitsList();
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -69,7 +73,7 @@ public interface MultiSearchResponseOrBuilder extends
   com.clarifai.grpc.api.Hit getHits(int index);
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -77,7 +81,7 @@ public interface MultiSearchResponseOrBuilder extends
   int getHitsCount();
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -86,7 +90,7 @@ public interface MultiSearchResponseOrBuilder extends
       getHitsOrBuilderList();
   /**
    * <pre>
-   * The list of serach result Hits.
+   * The list of search result Hits.
    * </pre>
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -100,6 +104,7 @@ public interface MultiSearchResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Query query = 4;</code>
+   * @return Whether the query field is set.
    */
   boolean hasQuery();
   /**
@@ -108,6 +113,7 @@ public interface MultiSearchResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Query query = 4;</code>
+   * @return The query.
    */
   com.clarifai.grpc.api.Query getQuery();
   /**

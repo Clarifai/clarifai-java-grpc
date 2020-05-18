@@ -13,6 +13,7 @@ public interface PaginationOrBuilder extends
    * </pre>
    *
    * <code>uint32 page = 1;</code>
+   * @return The page.
    */
   int getPage();
 
@@ -22,6 +23,7 @@ public interface PaginationOrBuilder extends
    * </pre>
    *
    * <code>uint32 per_page = 2;</code>
+   * @return The perPage.
    */
   int getPerPage();
 }

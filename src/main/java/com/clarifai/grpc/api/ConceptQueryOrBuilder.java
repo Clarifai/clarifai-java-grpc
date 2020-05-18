@@ -13,6 +13,7 @@ public interface ConceptQueryOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -21,6 +22,7 @@ public interface ConceptQueryOrBuilder extends
    * </pre>
    *
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -31,6 +33,7 @@ public interface ConceptQueryOrBuilder extends
    * </pre>
    *
    * <code>string language = 2;</code>
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -39,6 +42,7 @@ public interface ConceptQueryOrBuilder extends
    * </pre>
    *
    * <code>string language = 2;</code>
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString
       getLanguageBytes();

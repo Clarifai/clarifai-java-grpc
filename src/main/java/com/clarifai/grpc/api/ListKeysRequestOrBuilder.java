@@ -9,10 +9,12 @@ public interface ListKeysRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -27,6 +29,7 @@ public interface ListKeysRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 page = 2;</code>
+   * @return The page.
    */
   int getPage();
 
@@ -37,6 +40,7 @@ public interface ListKeysRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 per_page = 3;</code>
+   * @return The perPage.
    */
   int getPerPage();
 }

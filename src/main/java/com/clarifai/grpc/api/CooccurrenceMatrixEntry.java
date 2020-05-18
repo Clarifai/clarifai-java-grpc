@@ -111,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string row = 1;</code>
+   * @return The row.
    */
   public java.lang.String getRow() {
     java.lang.Object ref = row_;
@@ -130,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string row = 1;</code>
+   * @return The bytes for row.
    */
   public com.google.protobuf.ByteString
       getRowBytes() {
@@ -153,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string col = 2;</code>
+   * @return The col.
    */
   public java.lang.String getCol() {
     java.lang.Object ref = col_;
@@ -172,6 +175,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string col = 2;</code>
+   * @return The bytes for col.
    */
   public com.google.protobuf.ByteString
       getColBytes() {
@@ -191,6 +195,7 @@ private static final long serialVersionUID = 0L;
   private int count_;
   /**
    * <code>uint32 count = 3;</code>
+   * @return The count.
    */
   public int getCount() {
     return count_;
@@ -543,6 +548,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string row = 1;</code>
+     * @return The row.
      */
     public java.lang.String getRow() {
       java.lang.Object ref = row_;
@@ -562,6 +568,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string row = 1;</code>
+     * @return The bytes for row.
      */
     public com.google.protobuf.ByteString
         getRowBytes() {
@@ -582,6 +589,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string row = 1;</code>
+     * @param value The row to set.
+     * @return This builder for chaining.
      */
     public Builder setRow(
         java.lang.String value) {
@@ -599,6 +608,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string row = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRow() {
       
@@ -612,6 +622,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string row = 1;</code>
+     * @param value The bytes for row to set.
+     * @return This builder for chaining.
      */
     public Builder setRowBytes(
         com.google.protobuf.ByteString value) {
@@ -632,6 +644,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string col = 2;</code>
+     * @return The col.
      */
     public java.lang.String getCol() {
       java.lang.Object ref = col_;
@@ -651,6 +664,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string col = 2;</code>
+     * @return The bytes for col.
      */
     public com.google.protobuf.ByteString
         getColBytes() {
@@ -671,6 +685,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string col = 2;</code>
+     * @param value The col to set.
+     * @return This builder for chaining.
      */
     public Builder setCol(
         java.lang.String value) {
@@ -688,6 +704,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string col = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCol() {
       
@@ -701,6 +718,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string col = 2;</code>
+     * @param value The bytes for col to set.
+     * @return This builder for chaining.
      */
     public Builder setColBytes(
         com.google.protobuf.ByteString value) {
@@ -717,12 +736,15 @@ private static final long serialVersionUID = 0L;
     private int count_ ;
     /**
      * <code>uint32 count = 3;</code>
+     * @return The count.
      */
     public int getCount() {
       return count_;
     }
     /**
      * <code>uint32 count = 3;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(int value) {
       
@@ -732,6 +754,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 count = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
       

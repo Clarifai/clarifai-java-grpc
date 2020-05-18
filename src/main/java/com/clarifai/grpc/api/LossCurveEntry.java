@@ -103,6 +103,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 epoch = 1;</code>
+   * @return The epoch.
    */
   public int getEpoch() {
     return epoch_;
@@ -116,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 global_step = 2;</code>
+   * @return The globalStep.
    */
   public int getGlobalStep() {
     return globalStep_;
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float cost = 3;</code>
+   * @return The cost.
    */
   public float getCost() {
     return cost_;
@@ -480,6 +483,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 epoch = 1;</code>
+     * @return The epoch.
      */
     public int getEpoch() {
       return epoch_;
@@ -490,6 +494,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 epoch = 1;</code>
+     * @param value The epoch to set.
+     * @return This builder for chaining.
      */
     public Builder setEpoch(int value) {
       
@@ -503,6 +509,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 epoch = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEpoch() {
       
@@ -518,6 +525,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 global_step = 2;</code>
+     * @return The globalStep.
      */
     public int getGlobalStep() {
       return globalStep_;
@@ -528,6 +536,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 global_step = 2;</code>
+     * @param value The globalStep to set.
+     * @return This builder for chaining.
      */
     public Builder setGlobalStep(int value) {
       
@@ -541,6 +551,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 global_step = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGlobalStep() {
       
@@ -557,6 +568,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float cost = 3;</code>
+     * @return The cost.
      */
     public float getCost() {
       return cost_;
@@ -568,6 +580,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float cost = 3;</code>
+     * @param value The cost to set.
+     * @return This builder for chaining.
      */
     public Builder setCost(float value) {
       
@@ -582,6 +596,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float cost = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCost() {
       

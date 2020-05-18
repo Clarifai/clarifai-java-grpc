@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * The information of the location of the Region.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.RegionInfo}
  */
 public  final class RegionInfo extends
@@ -61,11 +65,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 21: {
-
-            value_ = input.readFloat();
-            break;
-          }
           case 34: {
             com.clarifai.grpc.api.Mask.Builder subBuilder = null;
             if (mask_ != null) {
@@ -75,6 +74,32 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(mask_);
               mask_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 42: {
+            com.clarifai.grpc.api.Polygon.Builder subBuilder = null;
+            if (polygon_ != null) {
+              subBuilder = polygon_.toBuilder();
+            }
+            polygon_ = input.readMessage(com.clarifai.grpc.api.Polygon.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(polygon_);
+              polygon_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+            com.clarifai.grpc.api.Point.Builder subBuilder = null;
+            if (point_ != null) {
+              subBuilder = point_.toBuilder();
+            }
+            point_ = input.readMessage(com.clarifai.grpc.api.Point.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(point_);
+              point_ = subBuilder.buildPartial();
             }
 
             break;
@@ -114,52 +139,141 @@ private static final long serialVersionUID = 0L;
   public static final int BOUNDING_BOX_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.BoundingBox boundingBox_;
   /**
+   * <pre>
+   * Details of the region's rectangular bounding box.
+   * </pre>
+   *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
+   * @return Whether the boundingBox field is set.
    */
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
   /**
+   * <pre>
+   * Details of the region's rectangular bounding box.
+   * </pre>
+   *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
+   * @return The boundingBox.
    */
   public com.clarifai.grpc.api.BoundingBox getBoundingBox() {
     return boundingBox_ == null ? com.clarifai.grpc.api.BoundingBox.getDefaultInstance() : boundingBox_;
   }
   /**
+   * <pre>
+   * Details of the region's rectangular bounding box.
+   * </pre>
+   *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
    */
   public com.clarifai.grpc.api.BoundingBoxOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
 
-  public static final int VALUE_FIELD_NUMBER = 2;
-  private float value_;
-  /**
-   * <code>float value = 2;</code>
-   */
-  public float getValue() {
-    return value_;
-  }
-
   public static final int MASK_FIELD_NUMBER = 4;
   private com.clarifai.grpc.api.Mask mask_;
   /**
+   * <pre>
+   * Details of the region's segmentation mask.
+   * </pre>
+   *
    * <code>.clarifai.api.Mask mask = 4;</code>
+   * @return Whether the mask field is set.
    */
   public boolean hasMask() {
     return mask_ != null;
   }
   /**
+   * <pre>
+   * Details of the region's segmentation mask.
+   * </pre>
+   *
    * <code>.clarifai.api.Mask mask = 4;</code>
+   * @return The mask.
    */
   public com.clarifai.grpc.api.Mask getMask() {
     return mask_ == null ? com.clarifai.grpc.api.Mask.getDefaultInstance() : mask_;
   }
   /**
+   * <pre>
+   * Details of the region's segmentation mask.
+   * </pre>
+   *
    * <code>.clarifai.api.Mask mask = 4;</code>
    */
   public com.clarifai.grpc.api.MaskOrBuilder getMaskOrBuilder() {
     return getMask();
+  }
+
+  public static final int POLYGON_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Polygon polygon_;
+  /**
+   * <pre>
+   * A polygon of points.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return Whether the polygon field is set.
+   */
+  public boolean hasPolygon() {
+    return polygon_ != null;
+  }
+  /**
+   * <pre>
+   * A polygon of points.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return The polygon.
+   */
+  public com.clarifai.grpc.api.Polygon getPolygon() {
+    return polygon_ == null ? com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
+  }
+  /**
+   * <pre>
+   * A polygon of points.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   */
+  public com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder() {
+    return getPolygon();
+  }
+
+  public static final int POINT_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.Point point_;
+  /**
+   * <pre>
+   * A landmark point location.
+   * </pre>
+   *
+   * <code>.clarifai.api.Point point = 6;</code>
+   * @return Whether the point field is set.
+   */
+  public boolean hasPoint() {
+    return point_ != null;
+  }
+  /**
+   * <pre>
+   * A landmark point location.
+   * </pre>
+   *
+   * <code>.clarifai.api.Point point = 6;</code>
+   * @return The point.
+   */
+  public com.clarifai.grpc.api.Point getPoint() {
+    return point_ == null ? com.clarifai.grpc.api.Point.getDefaultInstance() : point_;
+  }
+  /**
+   * <pre>
+   * A landmark point location.
+   * </pre>
+   *
+   * <code>.clarifai.api.Point point = 6;</code>
+   */
+  public com.clarifai.grpc.api.PointOrBuilder getPointOrBuilder() {
+    return getPoint();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -179,11 +293,14 @@ private static final long serialVersionUID = 0L;
     if (boundingBox_ != null) {
       output.writeMessage(1, getBoundingBox());
     }
-    if (value_ != 0F) {
-      output.writeFloat(2, value_);
-    }
     if (mask_ != null) {
       output.writeMessage(4, getMask());
+    }
+    if (polygon_ != null) {
+      output.writeMessage(5, getPolygon());
+    }
+    if (point_ != null) {
+      output.writeMessage(6, getPoint());
     }
     unknownFields.writeTo(output);
   }
@@ -198,13 +315,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getBoundingBox());
     }
-    if (value_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, value_);
-    }
     if (mask_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getMask());
+    }
+    if (polygon_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getPolygon());
+    }
+    if (point_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getPoint());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,13 +347,20 @@ private static final long serialVersionUID = 0L;
       if (!getBoundingBox()
           .equals(other.getBoundingBox())) return false;
     }
-    if (java.lang.Float.floatToIntBits(getValue())
-        != java.lang.Float.floatToIntBits(
-            other.getValue())) return false;
     if (hasMask() != other.hasMask()) return false;
     if (hasMask()) {
       if (!getMask()
           .equals(other.getMask())) return false;
+    }
+    if (hasPolygon() != other.hasPolygon()) return false;
+    if (hasPolygon()) {
+      if (!getPolygon()
+          .equals(other.getPolygon())) return false;
+    }
+    if (hasPoint() != other.hasPoint()) return false;
+    if (hasPoint()) {
+      if (!getPoint()
+          .equals(other.getPoint())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -249,12 +377,17 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BOUNDING_BOX_FIELD_NUMBER;
       hash = (53 * hash) + getBoundingBox().hashCode();
     }
-    hash = (37 * hash) + VALUE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getValue());
     if (hasMask()) {
       hash = (37 * hash) + MASK_FIELD_NUMBER;
       hash = (53 * hash) + getMask().hashCode();
+    }
+    if (hasPolygon()) {
+      hash = (37 * hash) + POLYGON_FIELD_NUMBER;
+      hash = (53 * hash) + getPolygon().hashCode();
+    }
+    if (hasPoint()) {
+      hash = (37 * hash) + POINT_FIELD_NUMBER;
+      hash = (53 * hash) + getPoint().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -352,6 +485,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * The information of the location of the Region.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.RegionInfo}
    */
   public static final class Builder extends
@@ -395,13 +532,23 @@ private static final long serialVersionUID = 0L;
         boundingBox_ = null;
         boundingBoxBuilder_ = null;
       }
-      value_ = 0F;
-
       if (maskBuilder_ == null) {
         mask_ = null;
       } else {
         mask_ = null;
         maskBuilder_ = null;
+      }
+      if (polygonBuilder_ == null) {
+        polygon_ = null;
+      } else {
+        polygon_ = null;
+        polygonBuilder_ = null;
+      }
+      if (pointBuilder_ == null) {
+        point_ = null;
+      } else {
+        point_ = null;
+        pointBuilder_ = null;
       }
       return this;
     }
@@ -434,11 +581,20 @@ private static final long serialVersionUID = 0L;
       } else {
         result.boundingBox_ = boundingBoxBuilder_.build();
       }
-      result.value_ = value_;
       if (maskBuilder_ == null) {
         result.mask_ = mask_;
       } else {
         result.mask_ = maskBuilder_.build();
+      }
+      if (polygonBuilder_ == null) {
+        result.polygon_ = polygon_;
+      } else {
+        result.polygon_ = polygonBuilder_.build();
+      }
+      if (pointBuilder_ == null) {
+        result.point_ = point_;
+      } else {
+        result.point_ = pointBuilder_.build();
       }
       onBuilt();
       return result;
@@ -491,11 +647,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasBoundingBox()) {
         mergeBoundingBox(other.getBoundingBox());
       }
-      if (other.getValue() != 0F) {
-        setValue(other.getValue());
-      }
       if (other.hasMask()) {
         mergeMask(other.getMask());
+      }
+      if (other.hasPolygon()) {
+        mergePolygon(other.getPolygon());
+      }
+      if (other.hasPoint()) {
+        mergePoint(other.getPoint());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -530,13 +689,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.BoundingBox, com.clarifai.grpc.api.BoundingBox.Builder, com.clarifai.grpc.api.BoundingBoxOrBuilder> boundingBoxBuilder_;
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
+     * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
       return boundingBoxBuilder_ != null || boundingBox_ != null;
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
+     * @return The boundingBox.
      */
     public com.clarifai.grpc.api.BoundingBox getBoundingBox() {
       if (boundingBoxBuilder_ == null) {
@@ -546,6 +715,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     public Builder setBoundingBox(com.clarifai.grpc.api.BoundingBox value) {
@@ -562,6 +735,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     public Builder setBoundingBox(
@@ -576,6 +753,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     public Builder mergeBoundingBox(com.clarifai.grpc.api.BoundingBox value) {
@@ -594,6 +775,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     public Builder clearBoundingBox() {
@@ -608,6 +793,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     public com.clarifai.grpc.api.BoundingBox.Builder getBoundingBoxBuilder() {
@@ -616,6 +805,10 @@ private static final long serialVersionUID = 0L;
       return getBoundingBoxFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     public com.clarifai.grpc.api.BoundingBoxOrBuilder getBoundingBoxOrBuilder() {
@@ -627,6 +820,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Details of the region's rectangular bounding box.
+     * </pre>
+     *
      * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -643,43 +840,27 @@ private static final long serialVersionUID = 0L;
       return boundingBoxBuilder_;
     }
 
-    private float value_ ;
-    /**
-     * <code>float value = 2;</code>
-     */
-    public float getValue() {
-      return value_;
-    }
-    /**
-     * <code>float value = 2;</code>
-     */
-    public Builder setValue(float value) {
-      
-      value_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>float value = 2;</code>
-     */
-    public Builder clearValue() {
-      
-      value_ = 0F;
-      onChanged();
-      return this;
-    }
-
     private com.clarifai.grpc.api.Mask mask_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Mask, com.clarifai.grpc.api.Mask.Builder, com.clarifai.grpc.api.MaskOrBuilder> maskBuilder_;
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
+     * @return Whether the mask field is set.
      */
     public boolean hasMask() {
       return maskBuilder_ != null || mask_ != null;
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
+     * @return The mask.
      */
     public com.clarifai.grpc.api.Mask getMask() {
       if (maskBuilder_ == null) {
@@ -689,6 +870,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     public Builder setMask(com.clarifai.grpc.api.Mask value) {
@@ -705,6 +890,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     public Builder setMask(
@@ -719,6 +908,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     public Builder mergeMask(com.clarifai.grpc.api.Mask value) {
@@ -737,6 +930,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     public Builder clearMask() {
@@ -751,6 +948,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     public com.clarifai.grpc.api.Mask.Builder getMaskBuilder() {
@@ -759,6 +960,10 @@ private static final long serialVersionUID = 0L;
       return getMaskFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     public com.clarifai.grpc.api.MaskOrBuilder getMaskOrBuilder() {
@@ -770,6 +975,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Details of the region's segmentation mask.
+     * </pre>
+     *
      * <code>.clarifai.api.Mask mask = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -784,6 +993,316 @@ private static final long serialVersionUID = 0L;
         mask_ = null;
       }
       return maskBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Polygon polygon_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Polygon, com.clarifai.grpc.api.Polygon.Builder, com.clarifai.grpc.api.PolygonOrBuilder> polygonBuilder_;
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     * @return Whether the polygon field is set.
+     */
+    public boolean hasPolygon() {
+      return polygonBuilder_ != null || polygon_ != null;
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     * @return The polygon.
+     */
+    public com.clarifai.grpc.api.Polygon getPolygon() {
+      if (polygonBuilder_ == null) {
+        return polygon_ == null ? com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
+      } else {
+        return polygonBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder setPolygon(com.clarifai.grpc.api.Polygon value) {
+      if (polygonBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        polygon_ = value;
+        onChanged();
+      } else {
+        polygonBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder setPolygon(
+        com.clarifai.grpc.api.Polygon.Builder builderForValue) {
+      if (polygonBuilder_ == null) {
+        polygon_ = builderForValue.build();
+        onChanged();
+      } else {
+        polygonBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder mergePolygon(com.clarifai.grpc.api.Polygon value) {
+      if (polygonBuilder_ == null) {
+        if (polygon_ != null) {
+          polygon_ =
+            com.clarifai.grpc.api.Polygon.newBuilder(polygon_).mergeFrom(value).buildPartial();
+        } else {
+          polygon_ = value;
+        }
+        onChanged();
+      } else {
+        polygonBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public Builder clearPolygon() {
+      if (polygonBuilder_ == null) {
+        polygon_ = null;
+        onChanged();
+      } else {
+        polygon_ = null;
+        polygonBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public com.clarifai.grpc.api.Polygon.Builder getPolygonBuilder() {
+      
+      onChanged();
+      return getPolygonFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    public com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder() {
+      if (polygonBuilder_ != null) {
+        return polygonBuilder_.getMessageOrBuilder();
+      } else {
+        return polygon_ == null ?
+            com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
+      }
+    }
+    /**
+     * <pre>
+     * A polygon of points.
+     * </pre>
+     *
+     * <code>.clarifai.api.Polygon polygon = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Polygon, com.clarifai.grpc.api.Polygon.Builder, com.clarifai.grpc.api.PolygonOrBuilder> 
+        getPolygonFieldBuilder() {
+      if (polygonBuilder_ == null) {
+        polygonBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Polygon, com.clarifai.grpc.api.Polygon.Builder, com.clarifai.grpc.api.PolygonOrBuilder>(
+                getPolygon(),
+                getParentForChildren(),
+                isClean());
+        polygon_ = null;
+      }
+      return polygonBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Point point_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Point, com.clarifai.grpc.api.Point.Builder, com.clarifai.grpc.api.PointOrBuilder> pointBuilder_;
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     * @return Whether the point field is set.
+     */
+    public boolean hasPoint() {
+      return pointBuilder_ != null || point_ != null;
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     * @return The point.
+     */
+    public com.clarifai.grpc.api.Point getPoint() {
+      if (pointBuilder_ == null) {
+        return point_ == null ? com.clarifai.grpc.api.Point.getDefaultInstance() : point_;
+      } else {
+        return pointBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    public Builder setPoint(com.clarifai.grpc.api.Point value) {
+      if (pointBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        point_ = value;
+        onChanged();
+      } else {
+        pointBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    public Builder setPoint(
+        com.clarifai.grpc.api.Point.Builder builderForValue) {
+      if (pointBuilder_ == null) {
+        point_ = builderForValue.build();
+        onChanged();
+      } else {
+        pointBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    public Builder mergePoint(com.clarifai.grpc.api.Point value) {
+      if (pointBuilder_ == null) {
+        if (point_ != null) {
+          point_ =
+            com.clarifai.grpc.api.Point.newBuilder(point_).mergeFrom(value).buildPartial();
+        } else {
+          point_ = value;
+        }
+        onChanged();
+      } else {
+        pointBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    public Builder clearPoint() {
+      if (pointBuilder_ == null) {
+        point_ = null;
+        onChanged();
+      } else {
+        point_ = null;
+        pointBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    public com.clarifai.grpc.api.Point.Builder getPointBuilder() {
+      
+      onChanged();
+      return getPointFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    public com.clarifai.grpc.api.PointOrBuilder getPointOrBuilder() {
+      if (pointBuilder_ != null) {
+        return pointBuilder_.getMessageOrBuilder();
+      } else {
+        return point_ == null ?
+            com.clarifai.grpc.api.Point.getDefaultInstance() : point_;
+      }
+    }
+    /**
+     * <pre>
+     * A landmark point location.
+     * </pre>
+     *
+     * <code>.clarifai.api.Point point = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Point, com.clarifai.grpc.api.Point.Builder, com.clarifai.grpc.api.PointOrBuilder> 
+        getPointFieldBuilder() {
+      if (pointBuilder_ == null) {
+        pointBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Point, com.clarifai.grpc.api.Point.Builder, com.clarifai.grpc.api.PointOrBuilder>(
+                getPoint(),
+                getParentForChildren(),
+                isClean());
+        point_ = null;
+      }
+      return pointBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -118,12 +118,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -199,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string action = 3;</code>
+   * @return The action.
    */
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
@@ -219,6 +222,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string action = 3;</code>
+   * @return The bytes for action.
    */
   public com.google.protobuf.ByteString
       getActionBytes() {
@@ -628,12 +632,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -1060,6 +1066,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string action = 3;</code>
+     * @return The action.
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -1080,6 +1087,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string action = 3;</code>
+     * @return The bytes for action.
      */
     public com.google.protobuf.ByteString
         getActionBytes() {
@@ -1101,6 +1109,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string action = 3;</code>
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
     public Builder setAction(
         java.lang.String value) {
@@ -1119,6 +1129,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string action = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAction() {
       
@@ -1133,6 +1144,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string action = 3;</code>
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
      */
     public Builder setActionBytes(
         com.google.protobuf.ByteString value) {

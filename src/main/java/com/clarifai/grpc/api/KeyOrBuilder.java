@@ -13,6 +13,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>string type = 8;</code>
+   * @return The type.
    */
   java.lang.String getType();
   /**
@@ -39,6 +42,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>string type = 8;</code>
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString
       getTypeBytes();
@@ -49,6 +53,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -57,6 +62,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -67,6 +73,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @return A list containing the scopes.
    */
   java.util.List<java.lang.String>
       getScopesList();
@@ -76,6 +83,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @return The count of scopes.
    */
   int getScopesCount();
   /**
@@ -84,6 +92,8 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   java.lang.String getScopes(int index);
   /**
@@ -92,6 +102,8 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
    */
   com.google.protobuf.ByteString
       getScopesBytes(int index);
@@ -102,6 +114,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @return A list containing the endpoints.
    */
   java.util.List<java.lang.String>
       getEndpointsList();
@@ -111,6 +124,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @return The count of endpoints.
    */
   int getEndpointsCount();
   /**
@@ -119,6 +133,8 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @param index The index of the element to return.
+   * @return The endpoints at the given index.
    */
   java.lang.String getEndpoints(int index);
   /**
@@ -127,6 +143,8 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the endpoints at the given index.
    */
   com.google.protobuf.ByteString
       getEndpointsBytes(int index);
@@ -190,6 +208,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -202,6 +221,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -223,6 +243,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expires_at = 6;</code>
+   * @return Whether the expiresAt field is set.
    */
   boolean hasExpiresAt();
   /**
@@ -231,6 +252,7 @@ public interface KeyOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expires_at = 6;</code>
+   * @return The expiresAt.
    */
   com.google.protobuf.Timestamp getExpiresAt();
   /**

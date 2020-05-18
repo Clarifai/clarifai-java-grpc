@@ -115,6 +115,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object rawHex_;
   /**
    * <code>string raw_hex = 1;</code>
+   * @return The rawHex.
    */
   public java.lang.String getRawHex() {
     java.lang.Object ref = rawHex_;
@@ -130,6 +131,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string raw_hex = 1;</code>
+   * @return The bytes for rawHex.
    */
   public com.google.protobuf.ByteString
       getRawHexBytes() {
@@ -149,12 +151,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.W3C w3C_;
   /**
    * <code>.clarifai.api.W3C w3c = 2;</code>
+   * @return Whether the w3c field is set.
    */
   public boolean hasW3C() {
     return w3C_ != null;
   }
   /**
    * <code>.clarifai.api.W3C w3c = 2;</code>
+   * @return The w3c.
    */
   public com.clarifai.grpc.api.W3C getW3C() {
     return w3C_ == null ? com.clarifai.grpc.api.W3C.getDefaultInstance() : w3C_;
@@ -170,6 +174,7 @@ private static final long serialVersionUID = 0L;
   private float value_;
   /**
    * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The value.
    */
   public float getValue() {
     return value_;
@@ -535,6 +540,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object rawHex_ = "";
     /**
      * <code>string raw_hex = 1;</code>
+     * @return The rawHex.
      */
     public java.lang.String getRawHex() {
       java.lang.Object ref = rawHex_;
@@ -550,6 +556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string raw_hex = 1;</code>
+     * @return The bytes for rawHex.
      */
     public com.google.protobuf.ByteString
         getRawHexBytes() {
@@ -566,6 +573,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string raw_hex = 1;</code>
+     * @param value The rawHex to set.
+     * @return This builder for chaining.
      */
     public Builder setRawHex(
         java.lang.String value) {
@@ -579,6 +588,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string raw_hex = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRawHex() {
       
@@ -588,6 +598,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string raw_hex = 1;</code>
+     * @param value The bytes for rawHex to set.
+     * @return This builder for chaining.
      */
     public Builder setRawHexBytes(
         com.google.protobuf.ByteString value) {
@@ -606,12 +618,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.W3C, com.clarifai.grpc.api.W3C.Builder, com.clarifai.grpc.api.W3COrBuilder> w3CBuilder_;
     /**
      * <code>.clarifai.api.W3C w3c = 2;</code>
+     * @return Whether the w3c field is set.
      */
     public boolean hasW3C() {
       return w3CBuilder_ != null || w3C_ != null;
     }
     /**
      * <code>.clarifai.api.W3C w3c = 2;</code>
+     * @return The w3c.
      */
     public com.clarifai.grpc.api.W3C getW3C() {
       if (w3CBuilder_ == null) {
@@ -721,12 +735,15 @@ private static final long serialVersionUID = 0L;
     private float value_ ;
     /**
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The value.
      */
     public float getValue() {
       return value_;
     }
     /**
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(float value) {
       
@@ -736,6 +753,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       

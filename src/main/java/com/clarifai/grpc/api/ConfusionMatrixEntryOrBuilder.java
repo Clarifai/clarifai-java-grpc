@@ -9,26 +9,31 @@ public interface ConfusionMatrixEntryOrBuilder extends
 
   /**
    * <code>string predicted = 1;</code>
+   * @return The predicted.
    */
   java.lang.String getPredicted();
   /**
    * <code>string predicted = 1;</code>
+   * @return The bytes for predicted.
    */
   com.google.protobuf.ByteString
       getPredictedBytes();
 
   /**
    * <code>string actual = 2;</code>
+   * @return The actual.
    */
   java.lang.String getActual();
   /**
    * <code>string actual = 2;</code>
+   * @return The bytes for actual.
    */
   com.google.protobuf.ByteString
       getActualBytes();
 
   /**
    * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The value.
    */
   float getValue();
 }

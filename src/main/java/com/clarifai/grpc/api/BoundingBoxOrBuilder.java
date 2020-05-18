@@ -8,22 +8,42 @@ public interface BoundingBoxOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The top left of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The topRow.
    */
   float getTopRow();
 
   /**
+   * <pre>
+   * The left column of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The leftCol.
    */
   float getLeftCol();
 
   /**
+   * <pre>
+   * The bottom row of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The bottomRow.
    */
   float getBottomRow();
 
   /**
+   * <pre>
+   * The right col of the bounding box normalized to the data dimension to be within [0-1.0]
+   * </pre>
+   *
    * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The rightCol.
    */
   float getRightCol();
 }

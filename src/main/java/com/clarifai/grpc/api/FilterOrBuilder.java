@@ -14,6 +14,7 @@ public interface FilterOrBuilder extends
    * </pre>
    *
    * <code>bool negate = 3;</code>
+   * @return The negate.
    */
   boolean getNegate();
 
@@ -23,6 +24,7 @@ public interface FilterOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
   /**
@@ -31,6 +33,7 @@ public interface FilterOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return The annotation.
    */
   com.clarifai.grpc.api.Annotation getAnnotation();
   /**

@@ -13,6 +13,7 @@ public interface EvalTestSetEntryOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,16 +22,19 @@ public interface EvalTestSetEntryOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
    * <code>string url = 2;</code>
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
    * <code>string url = 2;</code>
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString
       getUrlBytes();
@@ -111,6 +115,7 @@ public interface EvalTestSetEntryOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
   /**
@@ -121,6 +126,7 @@ public interface EvalTestSetEntryOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * @return The annotation.
    */
   com.clarifai.grpc.api.Annotation getAnnotation();
   /**

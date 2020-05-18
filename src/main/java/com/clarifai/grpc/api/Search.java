@@ -144,6 +144,11 @@ private static final long serialVersionUID = 0L;
             save_ = input.readBool();
             break;
           }
+          case 93: {
+
+            minValue_ = input.readFloat();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -184,6 +189,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Query query = 1;</code>
+   * @return Whether the query field is set.
    */
   public boolean hasQuery() {
     return query_ != null;
@@ -194,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Query query = 1;</code>
+   * @return The query.
    */
   public com.clarifai.grpc.api.Query getQuery() {
     return query_ == null ? com.clarifai.grpc.api.Query.getDefaultInstance() : query_;
@@ -218,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -238,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -261,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string application_id = 3;</code>
+   * @return The applicationId.
    */
   public java.lang.String getApplicationId() {
     java.lang.Object ref = applicationId_;
@@ -280,6 +290,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string application_id = 3;</code>
+   * @return The bytes for applicationId.
    */
   public com.google.protobuf.ByteString
       getApplicationIdBytes() {
@@ -303,6 +314,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 4;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -322,6 +334,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 4;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -346,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp as_of = 5;</code>
+   * @return Whether the asOf field is set.
    */
   public boolean hasAsOf() {
     return asOf_ != null;
@@ -357,6 +371,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp as_of = 5;</code>
+   * @return The asOf.
    */
   public com.google.protobuf.Timestamp getAsOf() {
     return asOf_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : asOf_;
@@ -381,6 +396,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string git_hash = 6;</code>
+   * @return The gitHash.
    */
   public java.lang.String getGitHash() {
     java.lang.Object ref = gitHash_;
@@ -400,6 +416,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string git_hash = 6;</code>
+   * @return The bytes for gitHash.
    */
   public com.google.protobuf.ByteString
       getGitHashBytes() {
@@ -423,6 +440,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -433,6 +451,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -456,6 +475,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
    */
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
@@ -466,6 +486,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
    */
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
@@ -485,14 +506,15 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object algorithm_;
   /**
    * <pre>
-   * The search algorith to be used.
+   * The search algorithm to be used.
    * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-   * The last two perfom a brute force search visual search instead of a more scalable distributed
+   * The last two perform a brute force search visual search instead of a more scalable distributed
    * nearest neighbor search and should be used by advanced users only.
    * If not specified we default to nearest neighbor
    * </pre>
    *
    * <code>string algorithm = 9;</code>
+   * @return The algorithm.
    */
   public java.lang.String getAlgorithm() {
     java.lang.Object ref = algorithm_;
@@ -508,14 +530,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The search algorith to be used.
+   * The search algorithm to be used.
    * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-   * The last two perfom a brute force search visual search instead of a more scalable distributed
+   * The last two perform a brute force search visual search instead of a more scalable distributed
    * nearest neighbor search and should be used by advanced users only.
    * If not specified we default to nearest neighbor
    * </pre>
    *
    * <code>string algorithm = 9;</code>
+   * @return The bytes for algorithm.
    */
   public com.google.protobuf.ByteString
       getAlgorithmBytes() {
@@ -540,9 +563,26 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool save = 10;</code>
+   * @return The save.
    */
   public boolean getSave() {
     return save_;
+  }
+
+  public static final int MIN_VALUE_FIELD_NUMBER = 11;
+  private float minValue_;
+  /**
+   * <pre>
+   * Minimum value of confidence threshold score in result.
+   * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+   * likely be &gt; 0.0.
+   * </pre>
+   *
+   * <code>float min_value = 11;</code>
+   * @return The minValue.
+   */
+  public float getMinValue() {
+    return minValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -589,6 +629,9 @@ private static final long serialVersionUID = 0L;
     if (save_ != false) {
       output.writeBool(10, save_);
     }
+    if (minValue_ != 0F) {
+      output.writeFloat(11, minValue_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -632,6 +675,10 @@ private static final long serialVersionUID = 0L;
     if (save_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(10, save_);
+    }
+    if (minValue_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(11, minValue_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -680,6 +727,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAlgorithm())) return false;
     if (getSave()
         != other.getSave()) return false;
+    if (java.lang.Float.floatToIntBits(getMinValue())
+        != java.lang.Float.floatToIntBits(
+            other.getMinValue())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -720,6 +770,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SAVE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSave());
+    hash = (37 * hash) + MIN_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getMinValue());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -893,6 +946,8 @@ private static final long serialVersionUID = 0L;
 
       save_ = false;
 
+      minValue_ = 0F;
+
       return this;
     }
 
@@ -945,6 +1000,7 @@ private static final long serialVersionUID = 0L;
       }
       result.algorithm_ = algorithm_;
       result.save_ = save_;
+      result.minValue_ = minValue_;
       onBuilt();
       return result;
     }
@@ -1028,6 +1084,9 @@ private static final long serialVersionUID = 0L;
       if (other.getSave() != false) {
         setSave(other.getSave());
       }
+      if (other.getMinValue() != 0F) {
+        setMinValue(other.getMinValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1066,6 +1125,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Query query = 1;</code>
+     * @return Whether the query field is set.
      */
     public boolean hasQuery() {
       return queryBuilder_ != null || query_ != null;
@@ -1076,6 +1136,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Query query = 1;</code>
+     * @return The query.
      */
     public com.clarifai.grpc.api.Query getQuery() {
       if (queryBuilder_ == null) {
@@ -1218,6 +1279,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1238,6 +1300,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1259,6 +1322,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1277,6 +1342,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1291,6 +1357,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 2;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1311,6 +1379,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string application_id = 3;</code>
+     * @return The applicationId.
      */
     public java.lang.String getApplicationId() {
       java.lang.Object ref = applicationId_;
@@ -1330,6 +1399,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string application_id = 3;</code>
+     * @return The bytes for applicationId.
      */
     public com.google.protobuf.ByteString
         getApplicationIdBytes() {
@@ -1350,6 +1420,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string application_id = 3;</code>
+     * @param value The applicationId to set.
+     * @return This builder for chaining.
      */
     public Builder setApplicationId(
         java.lang.String value) {
@@ -1367,6 +1439,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string application_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearApplicationId() {
       
@@ -1380,6 +1453,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string application_id = 3;</code>
+     * @param value The bytes for applicationId to set.
+     * @return This builder for chaining.
      */
     public Builder setApplicationIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1400,6 +1475,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1419,6 +1495,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1439,6 +1516,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1456,6 +1535,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1469,6 +1549,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1492,6 +1574,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp as_of = 5;</code>
+     * @return Whether the asOf field is set.
      */
     public boolean hasAsOf() {
       return asOfBuilder_ != null || asOf_ != null;
@@ -1503,6 +1586,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp as_of = 5;</code>
+     * @return The asOf.
      */
     public com.google.protobuf.Timestamp getAsOf() {
       if (asOfBuilder_ == null) {
@@ -1651,6 +1735,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string git_hash = 6;</code>
+     * @return The gitHash.
      */
     public java.lang.String getGitHash() {
       java.lang.Object ref = gitHash_;
@@ -1670,6 +1755,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string git_hash = 6;</code>
+     * @return The bytes for gitHash.
      */
     public com.google.protobuf.ByteString
         getGitHashBytes() {
@@ -1690,6 +1776,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string git_hash = 6;</code>
+     * @param value The gitHash to set.
+     * @return This builder for chaining.
      */
     public Builder setGitHash(
         java.lang.String value) {
@@ -1707,6 +1795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string git_hash = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearGitHash() {
       
@@ -1720,6 +1809,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string git_hash = 6;</code>
+     * @param value The bytes for gitHash to set.
+     * @return This builder for chaining.
      */
     public Builder setGitHashBytes(
         com.google.protobuf.ByteString value) {
@@ -1742,6 +1833,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -1752,6 +1844,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 7;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -1895,6 +1988,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return Whether the modifiedAt field is set.
      */
     public boolean hasModifiedAt() {
       return modifiedAtBuilder_ != null || modifiedAt_ != null;
@@ -1905,6 +1999,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return The modifiedAt.
      */
     public com.google.protobuf.Timestamp getModifiedAt() {
       if (modifiedAtBuilder_ == null) {
@@ -2042,14 +2137,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object algorithm_ = "";
     /**
      * <pre>
-     * The search algorith to be used.
+     * The search algorithm to be used.
      * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-     * The last two perfom a brute force search visual search instead of a more scalable distributed
+     * The last two perform a brute force search visual search instead of a more scalable distributed
      * nearest neighbor search and should be used by advanced users only.
      * If not specified we default to nearest neighbor
      * </pre>
      *
      * <code>string algorithm = 9;</code>
+     * @return The algorithm.
      */
     public java.lang.String getAlgorithm() {
       java.lang.Object ref = algorithm_;
@@ -2065,14 +2161,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The search algorith to be used.
+     * The search algorithm to be used.
      * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-     * The last two perfom a brute force search visual search instead of a more scalable distributed
+     * The last two perform a brute force search visual search instead of a more scalable distributed
      * nearest neighbor search and should be used by advanced users only.
      * If not specified we default to nearest neighbor
      * </pre>
      *
      * <code>string algorithm = 9;</code>
+     * @return The bytes for algorithm.
      */
     public com.google.protobuf.ByteString
         getAlgorithmBytes() {
@@ -2089,14 +2186,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The search algorith to be used.
+     * The search algorithm to be used.
      * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-     * The last two perfom a brute force search visual search instead of a more scalable distributed
+     * The last two perform a brute force search visual search instead of a more scalable distributed
      * nearest neighbor search and should be used by advanced users only.
      * If not specified we default to nearest neighbor
      * </pre>
      *
      * <code>string algorithm = 9;</code>
+     * @param value The algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithm(
         java.lang.String value) {
@@ -2110,14 +2209,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The search algorith to be used.
+     * The search algorithm to be used.
      * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-     * The last two perfom a brute force search visual search instead of a more scalable distributed
+     * The last two perform a brute force search visual search instead of a more scalable distributed
      * nearest neighbor search and should be used by advanced users only.
      * If not specified we default to nearest neighbor
      * </pre>
      *
      * <code>string algorithm = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
       
@@ -2127,14 +2227,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The search algorith to be used.
+     * The search algorithm to be used.
      * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-     * The last two perfom a brute force search visual search instead of a more scalable distributed
+     * The last two perform a brute force search visual search instead of a more scalable distributed
      * nearest neighbor search and should be used by advanced users only.
      * If not specified we default to nearest neighbor
      * </pre>
      *
      * <code>string algorithm = 9;</code>
+     * @param value The bytes for algorithm to set.
+     * @return This builder for chaining.
      */
     public Builder setAlgorithmBytes(
         com.google.protobuf.ByteString value) {
@@ -2156,6 +2258,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool save = 10;</code>
+     * @return The save.
      */
     public boolean getSave() {
       return save_;
@@ -2167,6 +2270,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool save = 10;</code>
+     * @param value The save to set.
+     * @return This builder for chaining.
      */
     public Builder setSave(boolean value) {
       
@@ -2181,10 +2286,59 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool save = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSave() {
       
       save_ = false;
+      onChanged();
+      return this;
+    }
+
+    private float minValue_ ;
+    /**
+     * <pre>
+     * Minimum value of confidence threshold score in result.
+     * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+     * likely be &gt; 0.0.
+     * </pre>
+     *
+     * <code>float min_value = 11;</code>
+     * @return The minValue.
+     */
+    public float getMinValue() {
+      return minValue_;
+    }
+    /**
+     * <pre>
+     * Minimum value of confidence threshold score in result.
+     * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+     * likely be &gt; 0.0.
+     * </pre>
+     *
+     * <code>float min_value = 11;</code>
+     * @param value The minValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinValue(float value) {
+      
+      minValue_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Minimum value of confidence threshold score in result.
+     * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+     * likely be &gt; 0.0.
+     * </pre>
+     *
+     * <code>float min_value = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMinValue() {
+      
+      minValue_ = 0F;
       onChanged();
       return this;
     }

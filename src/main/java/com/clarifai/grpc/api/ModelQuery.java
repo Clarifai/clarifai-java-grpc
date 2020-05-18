@@ -98,6 +98,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <code>string name = 1;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -113,6 +114,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string name = 1;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -132,6 +134,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object type_;
   /**
    * <code>string type = 2;</code>
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -147,6 +150,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string type = 2;</code>
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString
       getTypeBytes() {
@@ -484,6 +488,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -499,6 +504,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -515,6 +521,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 1;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -528,6 +536,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -537,6 +546,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 1;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -553,6 +564,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object type_ = "";
     /**
      * <code>string type = 2;</code>
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -568,6 +580,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 2;</code>
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -584,6 +597,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 2;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(
         java.lang.String value) {
@@ -597,6 +612,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -606,6 +622,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 2;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {

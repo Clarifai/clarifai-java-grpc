@@ -13,6 +13,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -39,6 +42,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -49,6 +53,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -57,6 +62,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -74,6 +80,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
@@ -82,6 +89,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -92,6 +100,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * @return Whether the outputInfo field is set.
    */
   boolean hasOutputInfo();
   /**
@@ -100,6 +109,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * @return The outputInfo.
    */
   com.clarifai.grpc.api.OutputInfo getOutputInfo();
   /**
@@ -117,6 +127,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
+   * @return Whether the modelVersion field is set.
    */
   boolean hasModelVersion();
   /**
@@ -125,6 +136,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
+   * @return The modelVersion.
    */
   com.clarifai.grpc.api.ModelVersion getModelVersion();
   /**
@@ -143,6 +155,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 7;</code>
+   * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
@@ -152,6 +165,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 7;</code>
+   * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
@@ -162,6 +176,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string template_name = 8;</code>
+   * @return The templateName.
    */
   java.lang.String getTemplateName();
   /**
@@ -170,6 +185,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string template_name = 8;</code>
+   * @return The bytes for templateName.
    */
   com.google.protobuf.ByteString
       getTemplateNameBytes();
@@ -180,6 +196,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 9;</code>
+   * @return The userId.
    */
   java.lang.String getUserId();
   /**
@@ -188,7 +205,62 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 9;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   * @return Whether the inputFieldsMap field is set.
+   */
+  boolean hasInputFieldsMap();
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   * @return The inputFieldsMap.
+   */
+  com.google.protobuf.Struct getInputFieldsMap();
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   */
+  com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder();
+
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   * @return Whether the outputFieldsMap field is set.
+   */
+  boolean hasOutputFieldsMap();
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   * @return The outputFieldsMap.
+   */
+  com.google.protobuf.Struct getOutputFieldsMap();
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   */
+  com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder();
 }

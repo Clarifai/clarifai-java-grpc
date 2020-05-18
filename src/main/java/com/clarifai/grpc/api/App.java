@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     defaultLanguage_ = "";
     defaultWorkflowId_ = "";
     userId_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -107,37 +108,6 @@ private static final long serialVersionUID = 0L;
             legalConsentStatus_ = input.readUInt32();
             break;
           }
-          case 82: {
-            com.clarifai.grpc.api.Input.Builder subBuilder = null;
-            if (lastInputAdded_ != null) {
-              subBuilder = lastInputAdded_.toBuilder();
-            }
-            lastInputAdded_ = input.readMessage(com.clarifai.grpc.api.Input.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastInputAdded_);
-              lastInputAdded_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 90: {
-            com.clarifai.grpc.api.InputCount.Builder subBuilder = null;
-            if (inputCount_ != null) {
-              subBuilder = inputCount_.toBuilder();
-            }
-            inputCount_ = input.readMessage(com.clarifai.grpc.api.InputCount.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(inputCount_);
-              inputCount_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 96: {
-
-            activeConceptCount_ = input.readUInt32();
-            break;
-          }
           case 106: {
             com.google.protobuf.Struct.Builder subBuilder = null;
             if (metadata_ != null) {
@@ -149,6 +119,12 @@ private static final long serialVersionUID = 0L;
               metadata_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
             break;
           }
           default: {
@@ -187,6 +163,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -202,6 +179,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -221,6 +199,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -236,6 +215,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -255,6 +235,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object defaultLanguage_;
   /**
    * <code>string default_language = 3;</code>
+   * @return The defaultLanguage.
    */
   public java.lang.String getDefaultLanguage() {
     java.lang.Object ref = defaultLanguage_;
@@ -270,6 +251,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string default_language = 3;</code>
+   * @return The bytes for defaultLanguage.
    */
   public com.google.protobuf.ByteString
       getDefaultLanguageBytes() {
@@ -289,6 +271,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object defaultWorkflowId_;
   /**
    * <code>string default_workflow_id = 4;</code>
+   * @return The defaultWorkflowId.
    */
   public java.lang.String getDefaultWorkflowId() {
     java.lang.Object ref = defaultWorkflowId_;
@@ -304,6 +287,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string default_workflow_id = 4;</code>
+   * @return The bytes for defaultWorkflowId.
    */
   public com.google.protobuf.ByteString
       getDefaultWorkflowIdBytes() {
@@ -323,6 +307,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object userId_;
   /**
    * <code>string user_id = 5;</code>
+   * @return The userId.
    */
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
@@ -338,6 +323,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string user_id = 5;</code>
+   * @return The bytes for userId.
    */
   public com.google.protobuf.ByteString
       getUserIdBytes() {
@@ -365,6 +351,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -379,6 +366,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -406,72 +394,10 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 legal_consent_status = 7;</code>
+   * @return The legalConsentStatus.
    */
   public int getLegalConsentStatus() {
     return legalConsentStatus_;
-  }
-
-  public static final int LAST_INPUT_ADDED_FIELD_NUMBER = 10;
-  private com.clarifai.grpc.api.Input lastInputAdded_;
-  /**
-   * <pre>
-   * Other fields controlled by url params.
-   * </pre>
-   *
-   * <code>.clarifai.api.Input last_input_added = 10;</code>
-   */
-  public boolean hasLastInputAdded() {
-    return lastInputAdded_ != null;
-  }
-  /**
-   * <pre>
-   * Other fields controlled by url params.
-   * </pre>
-   *
-   * <code>.clarifai.api.Input last_input_added = 10;</code>
-   */
-  public com.clarifai.grpc.api.Input getLastInputAdded() {
-    return lastInputAdded_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : lastInputAdded_;
-  }
-  /**
-   * <pre>
-   * Other fields controlled by url params.
-   * </pre>
-   *
-   * <code>.clarifai.api.Input last_input_added = 10;</code>
-   */
-  public com.clarifai.grpc.api.InputOrBuilder getLastInputAddedOrBuilder() {
-    return getLastInputAdded();
-  }
-
-  public static final int INPUT_COUNT_FIELD_NUMBER = 11;
-  private com.clarifai.grpc.api.InputCount inputCount_;
-  /**
-   * <code>.clarifai.api.InputCount input_count = 11;</code>
-   */
-  public boolean hasInputCount() {
-    return inputCount_ != null;
-  }
-  /**
-   * <code>.clarifai.api.InputCount input_count = 11;</code>
-   */
-  public com.clarifai.grpc.api.InputCount getInputCount() {
-    return inputCount_ == null ? com.clarifai.grpc.api.InputCount.getDefaultInstance() : inputCount_;
-  }
-  /**
-   * <code>.clarifai.api.InputCount input_count = 11;</code>
-   */
-  public com.clarifai.grpc.api.InputCountOrBuilder getInputCountOrBuilder() {
-    return getInputCount();
-  }
-
-  public static final int ACTIVE_CONCEPT_COUNT_FIELD_NUMBER = 12;
-  private int activeConceptCount_;
-  /**
-   * <code>uint32 active_concept_count = 12 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   */
-  public int getActiveConceptCount() {
-    return activeConceptCount_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 13;
@@ -483,6 +409,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 13;</code>
+   * @return Whether the metadata field is set.
    */
   public boolean hasMetadata() {
     return metadata_ != null;
@@ -494,6 +421,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 13;</code>
+   * @return The metadata.
    */
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
@@ -508,6 +436,50 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 14;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * short description about the app.
+   * </pre>
+   *
+   * <code>string description = 14;</code>
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * short description about the app.
+   * </pre>
+   *
+   * <code>string description = 14;</code>
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -545,17 +517,11 @@ private static final long serialVersionUID = 0L;
     if (legalConsentStatus_ != 0) {
       output.writeUInt32(7, legalConsentStatus_);
     }
-    if (lastInputAdded_ != null) {
-      output.writeMessage(10, getLastInputAdded());
-    }
-    if (inputCount_ != null) {
-      output.writeMessage(11, getInputCount());
-    }
-    if (activeConceptCount_ != 0) {
-      output.writeUInt32(12, activeConceptCount_);
-    }
     if (metadata_ != null) {
       output.writeMessage(13, getMetadata());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -589,21 +555,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(7, legalConsentStatus_);
     }
-    if (lastInputAdded_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getLastInputAdded());
-    }
-    if (inputCount_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getInputCount());
-    }
-    if (activeConceptCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(12, activeConceptCount_);
-    }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getMetadata());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -637,23 +594,13 @@ private static final long serialVersionUID = 0L;
     }
     if (getLegalConsentStatus()
         != other.getLegalConsentStatus()) return false;
-    if (hasLastInputAdded() != other.hasLastInputAdded()) return false;
-    if (hasLastInputAdded()) {
-      if (!getLastInputAdded()
-          .equals(other.getLastInputAdded())) return false;
-    }
-    if (hasInputCount() != other.hasInputCount()) return false;
-    if (hasInputCount()) {
-      if (!getInputCount()
-          .equals(other.getInputCount())) return false;
-    }
-    if (getActiveConceptCount()
-        != other.getActiveConceptCount()) return false;
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -681,20 +628,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + LEGAL_CONSENT_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + getLegalConsentStatus();
-    if (hasLastInputAdded()) {
-      hash = (37 * hash) + LAST_INPUT_ADDED_FIELD_NUMBER;
-      hash = (53 * hash) + getLastInputAdded().hashCode();
-    }
-    if (hasInputCount()) {
-      hash = (37 * hash) + INPUT_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getInputCount().hashCode();
-    }
-    hash = (37 * hash) + ACTIVE_CONCEPT_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getActiveConceptCount();
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -852,26 +791,14 @@ private static final long serialVersionUID = 0L;
       }
       legalConsentStatus_ = 0;
 
-      if (lastInputAddedBuilder_ == null) {
-        lastInputAdded_ = null;
-      } else {
-        lastInputAdded_ = null;
-        lastInputAddedBuilder_ = null;
-      }
-      if (inputCountBuilder_ == null) {
-        inputCount_ = null;
-      } else {
-        inputCount_ = null;
-        inputCountBuilder_ = null;
-      }
-      activeConceptCount_ = 0;
-
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
         metadata_ = null;
         metadataBuilder_ = null;
       }
+      description_ = "";
+
       return this;
     }
 
@@ -909,22 +836,12 @@ private static final long serialVersionUID = 0L;
         result.createdAt_ = createdAtBuilder_.build();
       }
       result.legalConsentStatus_ = legalConsentStatus_;
-      if (lastInputAddedBuilder_ == null) {
-        result.lastInputAdded_ = lastInputAdded_;
-      } else {
-        result.lastInputAdded_ = lastInputAddedBuilder_.build();
-      }
-      if (inputCountBuilder_ == null) {
-        result.inputCount_ = inputCount_;
-      } else {
-        result.inputCount_ = inputCountBuilder_.build();
-      }
-      result.activeConceptCount_ = activeConceptCount_;
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -999,17 +916,12 @@ private static final long serialVersionUID = 0L;
       if (other.getLegalConsentStatus() != 0) {
         setLegalConsentStatus(other.getLegalConsentStatus());
       }
-      if (other.hasLastInputAdded()) {
-        mergeLastInputAdded(other.getLastInputAdded());
-      }
-      if (other.hasInputCount()) {
-        mergeInputCount(other.getInputCount());
-      }
-      if (other.getActiveConceptCount() != 0) {
-        setActiveConceptCount(other.getActiveConceptCount());
-      }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1043,6 +955,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1058,6 +971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1074,6 +988,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1087,6 +1003,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1096,6 +1013,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1112,6 +1031,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1127,6 +1047,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1143,6 +1064,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1156,6 +1079,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1165,6 +1089,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1181,6 +1107,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object defaultLanguage_ = "";
     /**
      * <code>string default_language = 3;</code>
+     * @return The defaultLanguage.
      */
     public java.lang.String getDefaultLanguage() {
       java.lang.Object ref = defaultLanguage_;
@@ -1196,6 +1123,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_language = 3;</code>
+     * @return The bytes for defaultLanguage.
      */
     public com.google.protobuf.ByteString
         getDefaultLanguageBytes() {
@@ -1212,6 +1140,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_language = 3;</code>
+     * @param value The defaultLanguage to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultLanguage(
         java.lang.String value) {
@@ -1225,6 +1155,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_language = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDefaultLanguage() {
       
@@ -1234,6 +1165,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_language = 3;</code>
+     * @param value The bytes for defaultLanguage to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultLanguageBytes(
         com.google.protobuf.ByteString value) {
@@ -1250,6 +1183,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object defaultWorkflowId_ = "";
     /**
      * <code>string default_workflow_id = 4;</code>
+     * @return The defaultWorkflowId.
      */
     public java.lang.String getDefaultWorkflowId() {
       java.lang.Object ref = defaultWorkflowId_;
@@ -1265,6 +1199,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_workflow_id = 4;</code>
+     * @return The bytes for defaultWorkflowId.
      */
     public com.google.protobuf.ByteString
         getDefaultWorkflowIdBytes() {
@@ -1281,6 +1216,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_workflow_id = 4;</code>
+     * @param value The defaultWorkflowId to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultWorkflowId(
         java.lang.String value) {
@@ -1294,6 +1231,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_workflow_id = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDefaultWorkflowId() {
       
@@ -1303,6 +1241,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string default_workflow_id = 4;</code>
+     * @param value The bytes for defaultWorkflowId to set.
+     * @return This builder for chaining.
      */
     public Builder setDefaultWorkflowIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1319,6 +1259,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object userId_ = "";
     /**
      * <code>string user_id = 5;</code>
+     * @return The userId.
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -1334,6 +1275,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string user_id = 5;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
@@ -1350,6 +1292,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string user_id = 5;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(
         java.lang.String value) {
@@ -1363,6 +1307,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string user_id = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
       
@@ -1372,6 +1317,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string user_id = 5;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1398,6 +1345,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 6;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -1412,6 +1360,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 6;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -1581,6 +1530,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 legal_consent_status = 7;</code>
+     * @return The legalConsentStatus.
      */
     public int getLegalConsentStatus() {
       return legalConsentStatus_;
@@ -1591,6 +1541,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 legal_consent_status = 7;</code>
+     * @param value The legalConsentStatus to set.
+     * @return This builder for chaining.
      */
     public Builder setLegalConsentStatus(int value) {
       
@@ -1604,306 +1556,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 legal_consent_status = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLegalConsentStatus() {
       
       legalConsentStatus_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private com.clarifai.grpc.api.Input lastInputAdded_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> lastInputAddedBuilder_;
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public boolean hasLastInputAdded() {
-      return lastInputAddedBuilder_ != null || lastInputAdded_ != null;
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public com.clarifai.grpc.api.Input getLastInputAdded() {
-      if (lastInputAddedBuilder_ == null) {
-        return lastInputAdded_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : lastInputAdded_;
-      } else {
-        return lastInputAddedBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public Builder setLastInputAdded(com.clarifai.grpc.api.Input value) {
-      if (lastInputAddedBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        lastInputAdded_ = value;
-        onChanged();
-      } else {
-        lastInputAddedBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public Builder setLastInputAdded(
-        com.clarifai.grpc.api.Input.Builder builderForValue) {
-      if (lastInputAddedBuilder_ == null) {
-        lastInputAdded_ = builderForValue.build();
-        onChanged();
-      } else {
-        lastInputAddedBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public Builder mergeLastInputAdded(com.clarifai.grpc.api.Input value) {
-      if (lastInputAddedBuilder_ == null) {
-        if (lastInputAdded_ != null) {
-          lastInputAdded_ =
-            com.clarifai.grpc.api.Input.newBuilder(lastInputAdded_).mergeFrom(value).buildPartial();
-        } else {
-          lastInputAdded_ = value;
-        }
-        onChanged();
-      } else {
-        lastInputAddedBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public Builder clearLastInputAdded() {
-      if (lastInputAddedBuilder_ == null) {
-        lastInputAdded_ = null;
-        onChanged();
-      } else {
-        lastInputAdded_ = null;
-        lastInputAddedBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public com.clarifai.grpc.api.Input.Builder getLastInputAddedBuilder() {
-      
-      onChanged();
-      return getLastInputAddedFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    public com.clarifai.grpc.api.InputOrBuilder getLastInputAddedOrBuilder() {
-      if (lastInputAddedBuilder_ != null) {
-        return lastInputAddedBuilder_.getMessageOrBuilder();
-      } else {
-        return lastInputAdded_ == null ?
-            com.clarifai.grpc.api.Input.getDefaultInstance() : lastInputAdded_;
-      }
-    }
-    /**
-     * <pre>
-     * Other fields controlled by url params.
-     * </pre>
-     *
-     * <code>.clarifai.api.Input last_input_added = 10;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> 
-        getLastInputAddedFieldBuilder() {
-      if (lastInputAddedBuilder_ == null) {
-        lastInputAddedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder>(
-                getLastInputAdded(),
-                getParentForChildren(),
-                isClean());
-        lastInputAdded_ = null;
-      }
-      return lastInputAddedBuilder_;
-    }
-
-    private com.clarifai.grpc.api.InputCount inputCount_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.InputCount, com.clarifai.grpc.api.InputCount.Builder, com.clarifai.grpc.api.InputCountOrBuilder> inputCountBuilder_;
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public boolean hasInputCount() {
-      return inputCountBuilder_ != null || inputCount_ != null;
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public com.clarifai.grpc.api.InputCount getInputCount() {
-      if (inputCountBuilder_ == null) {
-        return inputCount_ == null ? com.clarifai.grpc.api.InputCount.getDefaultInstance() : inputCount_;
-      } else {
-        return inputCountBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public Builder setInputCount(com.clarifai.grpc.api.InputCount value) {
-      if (inputCountBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        inputCount_ = value;
-        onChanged();
-      } else {
-        inputCountBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public Builder setInputCount(
-        com.clarifai.grpc.api.InputCount.Builder builderForValue) {
-      if (inputCountBuilder_ == null) {
-        inputCount_ = builderForValue.build();
-        onChanged();
-      } else {
-        inputCountBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public Builder mergeInputCount(com.clarifai.grpc.api.InputCount value) {
-      if (inputCountBuilder_ == null) {
-        if (inputCount_ != null) {
-          inputCount_ =
-            com.clarifai.grpc.api.InputCount.newBuilder(inputCount_).mergeFrom(value).buildPartial();
-        } else {
-          inputCount_ = value;
-        }
-        onChanged();
-      } else {
-        inputCountBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public Builder clearInputCount() {
-      if (inputCountBuilder_ == null) {
-        inputCount_ = null;
-        onChanged();
-      } else {
-        inputCount_ = null;
-        inputCountBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public com.clarifai.grpc.api.InputCount.Builder getInputCountBuilder() {
-      
-      onChanged();
-      return getInputCountFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    public com.clarifai.grpc.api.InputCountOrBuilder getInputCountOrBuilder() {
-      if (inputCountBuilder_ != null) {
-        return inputCountBuilder_.getMessageOrBuilder();
-      } else {
-        return inputCount_ == null ?
-            com.clarifai.grpc.api.InputCount.getDefaultInstance() : inputCount_;
-      }
-    }
-    /**
-     * <code>.clarifai.api.InputCount input_count = 11;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.InputCount, com.clarifai.grpc.api.InputCount.Builder, com.clarifai.grpc.api.InputCountOrBuilder> 
-        getInputCountFieldBuilder() {
-      if (inputCountBuilder_ == null) {
-        inputCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.InputCount, com.clarifai.grpc.api.InputCount.Builder, com.clarifai.grpc.api.InputCountOrBuilder>(
-                getInputCount(),
-                getParentForChildren(),
-                isClean());
-        inputCount_ = null;
-      }
-      return inputCountBuilder_;
-    }
-
-    private int activeConceptCount_ ;
-    /**
-     * <code>uint32 active_concept_count = 12 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public int getActiveConceptCount() {
-      return activeConceptCount_;
-    }
-    /**
-     * <code>uint32 active_concept_count = 12 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder setActiveConceptCount(int value) {
-      
-      activeConceptCount_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint32 active_concept_count = 12 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder clearActiveConceptCount() {
-      
-      activeConceptCount_ = 0;
       onChanged();
       return this;
     }
@@ -1918,6 +1575,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 13;</code>
+     * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
@@ -1929,6 +1587,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 13;</code>
+     * @return The metadata.
      */
     public com.google.protobuf.Struct getMetadata() {
       if (metadataBuilder_ == null) {
@@ -2068,6 +1727,102 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * short description about the app.
+     * </pre>
+     *
+     * <code>string description = 14;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * short description about the app.
+     * </pre>
+     *
+     * <code>string description = 14;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * short description about the app.
+     * </pre>
+     *
+     * <code>string description = 14;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * short description about the app.
+     * </pre>
+     *
+     * <code>string description = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * short description about the app.
+     * </pre>
+     *
+     * <code>string description = 14;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

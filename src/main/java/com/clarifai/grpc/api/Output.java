@@ -166,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -185,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -204,12 +206,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 2;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 2;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -233,6 +237,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -247,6 +252,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -274,6 +280,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 4;</code>
+   * @return Whether the model field is set.
    */
   public boolean hasModel() {
     return model_ != null;
@@ -284,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 4;</code>
+   * @return The model.
    */
   public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
@@ -308,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>
+   * @return Whether the input field is set.
    */
   public boolean hasInput() {
     return input_ != null;
@@ -319,6 +328,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>
+   * @return The input.
    */
   public com.clarifai.grpc.api.Input getInput() {
     return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
@@ -344,6 +354,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Data data = 6;</code>
+   * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
@@ -355,6 +366,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Data data = 6;</code>
+   * @return The data.
    */
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
@@ -836,6 +848,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -855,6 +868,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -875,6 +889,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -892,6 +908,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -905,6 +922,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -923,12 +942,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 2;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 2;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -1048,6 +1069,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -1062,6 +1084,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -1233,6 +1256,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 4;</code>
+     * @return Whether the model field is set.
      */
     public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
@@ -1243,6 +1267,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 4;</code>
+     * @return The model.
      */
     public com.clarifai.grpc.api.Model getModel() {
       if (modelBuilder_ == null) {
@@ -1387,6 +1412,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Input input = 5;</code>
+     * @return Whether the input field is set.
      */
     public boolean hasInput() {
       return inputBuilder_ != null || input_ != null;
@@ -1398,6 +1424,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Input input = 5;</code>
+     * @return The input.
      */
     public com.clarifai.grpc.api.Input getInput() {
       if (inputBuilder_ == null) {
@@ -1549,6 +1576,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Data data = 6;</code>
+     * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
@@ -1560,6 +1588,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Data data = 6;</code>
+     * @return The data.
      */
     public com.clarifai.grpc.api.Data getData() {
       if (dataBuilder_ == null) {

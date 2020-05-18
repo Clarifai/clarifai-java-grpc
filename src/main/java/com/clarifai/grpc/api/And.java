@@ -143,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Input input = 1;</code>
+   * @return Whether the input field is set.
    */
   public boolean hasInput() {
     return input_ != null;
@@ -156,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Input input = 1;</code>
+   * @return The input.
    */
   public com.clarifai.grpc.api.Input getInput() {
     return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
@@ -192,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Output output = 2;</code>
+   * @return Whether the output field is set.
    */
   public boolean hasOutput() {
     return output_ != null;
@@ -212,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Output output = 2;</code>
+   * @return The output.
    */
   public com.clarifai.grpc.api.Output getOutput() {
     return output_ == null ? com.clarifai.grpc.api.Output.getDefaultInstance() : output_;
@@ -246,6 +250,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool negate = 3;</code>
+   * @return The negate.
    */
   public boolean getNegate() {
     return negate_;
@@ -267,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return Whether the annotation field is set.
    */
   public boolean hasAnnotation() {
     return annotation_ != null;
@@ -285,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
+   * @return The annotation.
    */
   public com.clarifai.grpc.api.Annotation getAnnotation() {
     return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
@@ -721,6 +728,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Input input = 1;</code>
+     * @return Whether the input field is set.
      */
     public boolean hasInput() {
       return inputBuilder_ != null || input_ != null;
@@ -734,6 +742,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Input input = 1;</code>
+     * @return The input.
      */
     public com.clarifai.grpc.api.Input getInput() {
       if (inputBuilder_ == null) {
@@ -908,6 +917,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Output output = 2;</code>
+     * @return Whether the output field is set.
      */
     public boolean hasOutput() {
       return outputBuilder_ != null || output_ != null;
@@ -928,6 +938,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Output output = 2;</code>
+     * @return The output.
      */
     public com.clarifai.grpc.api.Output getOutput() {
       if (outputBuilder_ == null) {
@@ -1140,6 +1151,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negate = 3;</code>
+     * @return The negate.
      */
     public boolean getNegate() {
       return negate_;
@@ -1151,6 +1163,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negate = 3;</code>
+     * @param value The negate to set.
+     * @return This builder for chaining.
      */
     public Builder setNegate(boolean value) {
       
@@ -1165,6 +1179,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool negate = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegate() {
       
@@ -1190,6 +1205,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 4;</code>
+     * @return Whether the annotation field is set.
      */
     public boolean hasAnnotation() {
       return annotationBuilder_ != null || annotation_ != null;
@@ -1208,6 +1224,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 4;</code>
+     * @return The annotation.
      */
     public com.clarifai.grpc.api.Annotation getAnnotation() {
       if (annotationBuilder_ == null) {

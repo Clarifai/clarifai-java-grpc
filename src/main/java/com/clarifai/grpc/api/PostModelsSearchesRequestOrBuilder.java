@@ -13,6 +13,7 @@ public interface PostModelsSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
@@ -21,6 +22,7 @@ public interface PostModelsSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -38,6 +40,7 @@ public interface PostModelsSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ModelQuery model_query = 2;</code>
+   * @return Whether the modelQuery field is set.
    */
   boolean hasModelQuery();
   /**
@@ -46,6 +49,7 @@ public interface PostModelsSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ModelQuery model_query = 2;</code>
+   * @return The modelQuery.
    */
   com.clarifai.grpc.api.ModelQuery getModelQuery();
   /**
@@ -64,6 +68,7 @@ public interface PostModelsSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 3;</code>
+   * @return Whether the pagination field is set.
    */
   boolean hasPagination();
   /**
@@ -73,6 +78,7 @@ public interface PostModelsSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 3;</code>
+   * @return The pagination.
    */
   com.clarifai.grpc.api.Pagination getPagination();
   /**

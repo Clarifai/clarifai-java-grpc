@@ -110,12 +110,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -131,12 +133,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Key key_;
   /**
    * <code>.clarifai.api.Key key = 2;</code>
+   * @return Whether the key field is set.
    */
   public boolean hasKey() {
     return key_ != null;
   }
   /**
    * <code>.clarifai.api.Key key = 2;</code>
+   * @return The key.
    */
   public com.clarifai.grpc.api.Key getKey() {
     return key_ == null ? com.clarifai.grpc.api.Key.getDefaultInstance() : key_;
@@ -498,12 +502,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -615,12 +621,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Key, com.clarifai.grpc.api.Key.Builder, com.clarifai.grpc.api.KeyOrBuilder> keyBuilder_;
     /**
      * <code>.clarifai.api.Key key = 2;</code>
+     * @return Whether the key field is set.
      */
     public boolean hasKey() {
       return keyBuilder_ != null || key_ != null;
     }
     /**
      * <code>.clarifai.api.Key key = 2;</code>
+     * @return The key.
      */
     public com.clarifai.grpc.api.Key getKey() {
       if (keyBuilder_ == null) {

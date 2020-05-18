@@ -8,33 +8,110 @@ public interface RegionInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * Details of the region's rectangular bounding box.
+   * </pre>
+   *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
+   * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
   /**
+   * <pre>
+   * Details of the region's rectangular bounding box.
+   * </pre>
+   *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
+   * @return The boundingBox.
    */
   com.clarifai.grpc.api.BoundingBox getBoundingBox();
   /**
+   * <pre>
+   * Details of the region's rectangular bounding box.
+   * </pre>
+   *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
    */
   com.clarifai.grpc.api.BoundingBoxOrBuilder getBoundingBoxOrBuilder();
 
   /**
-   * <code>float value = 2;</code>
-   */
-  float getValue();
-
-  /**
+   * <pre>
+   * Details of the region's segmentation mask.
+   * </pre>
+   *
    * <code>.clarifai.api.Mask mask = 4;</code>
+   * @return Whether the mask field is set.
    */
   boolean hasMask();
   /**
+   * <pre>
+   * Details of the region's segmentation mask.
+   * </pre>
+   *
    * <code>.clarifai.api.Mask mask = 4;</code>
+   * @return The mask.
    */
   com.clarifai.grpc.api.Mask getMask();
   /**
+   * <pre>
+   * Details of the region's segmentation mask.
+   * </pre>
+   *
    * <code>.clarifai.api.Mask mask = 4;</code>
    */
   com.clarifai.grpc.api.MaskOrBuilder getMaskOrBuilder();
+
+  /**
+   * <pre>
+   * A polygon of points.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return Whether the polygon field is set.
+   */
+  boolean hasPolygon();
+  /**
+   * <pre>
+   * A polygon of points.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   * @return The polygon.
+   */
+  com.clarifai.grpc.api.Polygon getPolygon();
+  /**
+   * <pre>
+   * A polygon of points.
+   * </pre>
+   *
+   * <code>.clarifai.api.Polygon polygon = 5;</code>
+   */
+  com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder();
+
+  /**
+   * <pre>
+   * A landmark point location.
+   * </pre>
+   *
+   * <code>.clarifai.api.Point point = 6;</code>
+   * @return Whether the point field is set.
+   */
+  boolean hasPoint();
+  /**
+   * <pre>
+   * A landmark point location.
+   * </pre>
+   *
+   * <code>.clarifai.api.Point point = 6;</code>
+   * @return The point.
+   */
+  com.clarifai.grpc.api.Point getPoint();
+  /**
+   * <pre>
+   * A landmark point location.
+   * </pre>
+   *
+   * <code>.clarifai.api.Point point = 6;</code>
+   */
+  com.clarifai.grpc.api.PointOrBuilder getPointOrBuilder();
 }

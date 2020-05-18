@@ -135,6 +135,32 @@ private static final long serialVersionUID = 0L;
             userId_ = s;
             break;
           }
+          case 82: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (inputFieldsMap_ != null) {
+              subBuilder = inputFieldsMap_.toBuilder();
+            }
+            inputFieldsMap_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputFieldsMap_);
+              inputFieldsMap_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 90: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (outputFieldsMap_ != null) {
+              subBuilder = outputFieldsMap_.toBuilder();
+            }
+            outputFieldsMap_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(outputFieldsMap_);
+              outputFieldsMap_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -175,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -194,6 +221,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -217,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -236,6 +265,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -259,6 +289,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -269,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -292,6 +324,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -311,6 +344,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -334,6 +368,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * @return Whether the outputInfo field is set.
    */
   public boolean hasOutputInfo() {
     return outputInfo_ != null;
@@ -344,6 +379,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * @return The outputInfo.
    */
   public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
     return outputInfo_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfo_;
@@ -367,6 +403,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
+   * @return Whether the modelVersion field is set.
    */
   public boolean hasModelVersion() {
     return modelVersion_ != null;
@@ -377,6 +414,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
+   * @return The modelVersion.
    */
   public com.clarifai.grpc.api.ModelVersion getModelVersion() {
     return modelVersion_ == null ? com.clarifai.grpc.api.ModelVersion.getDefaultInstance() : modelVersion_;
@@ -401,6 +439,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 7;</code>
+   * @return The displayName.
    */
   public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
@@ -421,6 +460,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 7;</code>
+   * @return The bytes for displayName.
    */
   public com.google.protobuf.ByteString
       getDisplayNameBytes() {
@@ -444,6 +484,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string template_name = 8;</code>
+   * @return The templateName.
    */
   public java.lang.String getTemplateName() {
     java.lang.Object ref = templateName_;
@@ -463,6 +504,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string template_name = 8;</code>
+   * @return The bytes for templateName.
    */
   public com.google.protobuf.ByteString
       getTemplateNameBytes() {
@@ -486,6 +528,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 9;</code>
+   * @return The userId.
    */
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
@@ -505,6 +548,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 9;</code>
+   * @return The bytes for userId.
    */
   public com.google.protobuf.ByteString
       getUserIdBytes() {
@@ -518,6 +562,76 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int INPUT_FIELDS_MAP_FIELD_NUMBER = 10;
+  private com.google.protobuf.Struct inputFieldsMap_;
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   * @return Whether the inputFieldsMap field is set.
+   */
+  public boolean hasInputFieldsMap() {
+    return inputFieldsMap_ != null;
+  }
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   * @return The inputFieldsMap.
+   */
+  public com.google.protobuf.Struct getInputFieldsMap() {
+    return inputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
+  }
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder() {
+    return getInputFieldsMap();
+  }
+
+  public static final int OUTPUT_FIELDS_MAP_FIELD_NUMBER = 11;
+  private com.google.protobuf.Struct outputFieldsMap_;
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   * @return Whether the outputFieldsMap field is set.
+   */
+  public boolean hasOutputFieldsMap() {
+    return outputFieldsMap_ != null;
+  }
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   * @return The outputFieldsMap.
+   */
+  public com.google.protobuf.Struct getOutputFieldsMap() {
+    return outputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
+  }
+  /**
+   * <pre>
+   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder() {
+    return getOutputFieldsMap();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -561,6 +675,12 @@ private static final long serialVersionUID = 0L;
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
     }
+    if (inputFieldsMap_ != null) {
+      output.writeMessage(10, getInputFieldsMap());
+    }
+    if (outputFieldsMap_ != null) {
+      output.writeMessage(11, getOutputFieldsMap());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -599,6 +719,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
+    }
+    if (inputFieldsMap_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getInputFieldsMap());
+    }
+    if (outputFieldsMap_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getOutputFieldsMap());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -642,6 +770,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTemplateName())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (hasInputFieldsMap() != other.hasInputFieldsMap()) return false;
+    if (hasInputFieldsMap()) {
+      if (!getInputFieldsMap()
+          .equals(other.getInputFieldsMap())) return false;
+    }
+    if (hasOutputFieldsMap() != other.hasOutputFieldsMap()) return false;
+    if (hasOutputFieldsMap()) {
+      if (!getOutputFieldsMap()
+          .equals(other.getOutputFieldsMap())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -677,6 +815,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTemplateName().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    if (hasInputFieldsMap()) {
+      hash = (37 * hash) + INPUT_FIELDS_MAP_FIELD_NUMBER;
+      hash = (53 * hash) + getInputFieldsMap().hashCode();
+    }
+    if (hasOutputFieldsMap()) {
+      hash = (37 * hash) + OUTPUT_FIELDS_MAP_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputFieldsMap().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -846,6 +992,18 @@ private static final long serialVersionUID = 0L;
 
       userId_ = "";
 
+      if (inputFieldsMapBuilder_ == null) {
+        inputFieldsMap_ = null;
+      } else {
+        inputFieldsMap_ = null;
+        inputFieldsMapBuilder_ = null;
+      }
+      if (outputFieldsMapBuilder_ == null) {
+        outputFieldsMap_ = null;
+      } else {
+        outputFieldsMap_ = null;
+        outputFieldsMapBuilder_ = null;
+      }
       return this;
     }
 
@@ -893,6 +1051,16 @@ private static final long serialVersionUID = 0L;
       result.displayName_ = displayName_;
       result.templateName_ = templateName_;
       result.userId_ = userId_;
+      if (inputFieldsMapBuilder_ == null) {
+        result.inputFieldsMap_ = inputFieldsMap_;
+      } else {
+        result.inputFieldsMap_ = inputFieldsMapBuilder_.build();
+      }
+      if (outputFieldsMapBuilder_ == null) {
+        result.outputFieldsMap_ = outputFieldsMap_;
+      } else {
+        result.outputFieldsMap_ = outputFieldsMapBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -974,6 +1142,12 @@ private static final long serialVersionUID = 0L;
         userId_ = other.userId_;
         onChanged();
       }
+      if (other.hasInputFieldsMap()) {
+        mergeInputFieldsMap(other.getInputFieldsMap());
+      }
+      if (other.hasOutputFieldsMap()) {
+        mergeOutputFieldsMap(other.getOutputFieldsMap());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1010,6 +1184,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1029,6 +1204,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1049,6 +1225,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1066,6 +1244,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1079,6 +1258,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1099,6 +1280,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1118,6 +1300,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1138,6 +1321,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1155,6 +1340,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1168,6 +1354,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1190,6 +1378,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -1200,6 +1389,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -1341,6 +1531,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -1360,6 +1551,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -1380,6 +1572,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -1397,6 +1591,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -1410,6 +1605,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1432,6 +1629,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
       return outputInfoBuilder_ != null || outputInfo_ != null;
@@ -1442,6 +1640,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * @return The outputInfo.
      */
     public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
       if (outputInfoBuilder_ == null) {
@@ -1585,6 +1784,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
+     * @return Whether the modelVersion field is set.
      */
     public boolean hasModelVersion() {
       return modelVersionBuilder_ != null || modelVersion_ != null;
@@ -1595,6 +1795,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
+     * @return The modelVersion.
      */
     public com.clarifai.grpc.api.ModelVersion getModelVersion() {
       if (modelVersionBuilder_ == null) {
@@ -1737,6 +1938,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7;</code>
+     * @return The displayName.
      */
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
@@ -1757,6 +1959,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7;</code>
+     * @return The bytes for displayName.
      */
     public com.google.protobuf.ByteString
         getDisplayNameBytes() {
@@ -1778,6 +1981,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7;</code>
+     * @param value The displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayName(
         java.lang.String value) {
@@ -1796,6 +2001,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
       
@@ -1810,6 +2016,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7;</code>
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1830,6 +2038,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_name = 8;</code>
+     * @return The templateName.
      */
     public java.lang.String getTemplateName() {
       java.lang.Object ref = templateName_;
@@ -1849,6 +2058,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_name = 8;</code>
+     * @return The bytes for templateName.
      */
     public com.google.protobuf.ByteString
         getTemplateNameBytes() {
@@ -1869,6 +2079,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_name = 8;</code>
+     * @param value The templateName to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateName(
         java.lang.String value) {
@@ -1886,6 +2098,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_name = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTemplateName() {
       
@@ -1899,6 +2112,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string template_name = 8;</code>
+     * @param value The bytes for templateName to set.
+     * @return This builder for chaining.
      */
     public Builder setTemplateNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1919,6 +2134,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 9;</code>
+     * @return The userId.
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -1938,6 +2154,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 9;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
@@ -1958,6 +2175,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 9;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(
         java.lang.String value) {
@@ -1975,6 +2194,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
       
@@ -1988,6 +2208,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 9;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1999,6 +2221,316 @@ private static final long serialVersionUID = 0L;
       userId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct inputFieldsMap_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> inputFieldsMapBuilder_;
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * @return Whether the inputFieldsMap field is set.
+     */
+    public boolean hasInputFieldsMap() {
+      return inputFieldsMapBuilder_ != null || inputFieldsMap_ != null;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * @return The inputFieldsMap.
+     */
+    public com.google.protobuf.Struct getInputFieldsMap() {
+      if (inputFieldsMapBuilder_ == null) {
+        return inputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
+      } else {
+        return inputFieldsMapBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    public Builder setInputFieldsMap(com.google.protobuf.Struct value) {
+      if (inputFieldsMapBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputFieldsMap_ = value;
+        onChanged();
+      } else {
+        inputFieldsMapBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    public Builder setInputFieldsMap(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (inputFieldsMapBuilder_ == null) {
+        inputFieldsMap_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputFieldsMapBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    public Builder mergeInputFieldsMap(com.google.protobuf.Struct value) {
+      if (inputFieldsMapBuilder_ == null) {
+        if (inputFieldsMap_ != null) {
+          inputFieldsMap_ =
+            com.google.protobuf.Struct.newBuilder(inputFieldsMap_).mergeFrom(value).buildPartial();
+        } else {
+          inputFieldsMap_ = value;
+        }
+        onChanged();
+      } else {
+        inputFieldsMapBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    public Builder clearInputFieldsMap() {
+      if (inputFieldsMapBuilder_ == null) {
+        inputFieldsMap_ = null;
+        onChanged();
+      } else {
+        inputFieldsMap_ = null;
+        inputFieldsMapBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    public com.google.protobuf.Struct.Builder getInputFieldsMapBuilder() {
+      
+      onChanged();
+      return getInputFieldsMapFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder() {
+      if (inputFieldsMapBuilder_ != null) {
+        return inputFieldsMapBuilder_.getMessageOrBuilder();
+      } else {
+        return inputFieldsMap_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
+      }
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getInputFieldsMapFieldBuilder() {
+      if (inputFieldsMapBuilder_ == null) {
+        inputFieldsMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getInputFieldsMap(),
+                getParentForChildren(),
+                isClean());
+        inputFieldsMap_ = null;
+      }
+      return inputFieldsMapBuilder_;
+    }
+
+    private com.google.protobuf.Struct outputFieldsMap_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> outputFieldsMapBuilder_;
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * @return Whether the outputFieldsMap field is set.
+     */
+    public boolean hasOutputFieldsMap() {
+      return outputFieldsMapBuilder_ != null || outputFieldsMap_ != null;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * @return The outputFieldsMap.
+     */
+    public com.google.protobuf.Struct getOutputFieldsMap() {
+      if (outputFieldsMapBuilder_ == null) {
+        return outputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
+      } else {
+        return outputFieldsMapBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    public Builder setOutputFieldsMap(com.google.protobuf.Struct value) {
+      if (outputFieldsMapBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputFieldsMap_ = value;
+        onChanged();
+      } else {
+        outputFieldsMapBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    public Builder setOutputFieldsMap(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (outputFieldsMapBuilder_ == null) {
+        outputFieldsMap_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputFieldsMapBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    public Builder mergeOutputFieldsMap(com.google.protobuf.Struct value) {
+      if (outputFieldsMapBuilder_ == null) {
+        if (outputFieldsMap_ != null) {
+          outputFieldsMap_ =
+            com.google.protobuf.Struct.newBuilder(outputFieldsMap_).mergeFrom(value).buildPartial();
+        } else {
+          outputFieldsMap_ = value;
+        }
+        onChanged();
+      } else {
+        outputFieldsMapBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    public Builder clearOutputFieldsMap() {
+      if (outputFieldsMapBuilder_ == null) {
+        outputFieldsMap_ = null;
+        onChanged();
+      } else {
+        outputFieldsMap_ = null;
+        outputFieldsMapBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    public com.google.protobuf.Struct.Builder getOutputFieldsMapBuilder() {
+      
+      onChanged();
+      return getOutputFieldsMapFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder() {
+      if (outputFieldsMapBuilder_ != null) {
+        return outputFieldsMapBuilder_.getMessageOrBuilder();
+      } else {
+        return outputFieldsMap_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
+      }
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getOutputFieldsMapFieldBuilder() {
+      if (outputFieldsMapBuilder_ == null) {
+        outputFieldsMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getOutputFieldsMap(),
+                getParentForChildren(),
+                isClean());
+        outputFieldsMap_ = null;
+      }
+      return outputFieldsMapBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

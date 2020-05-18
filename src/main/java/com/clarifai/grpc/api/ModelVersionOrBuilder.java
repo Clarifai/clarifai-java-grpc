@@ -9,10 +9,12 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -23,6 +25,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -31,6 +34,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -48,6 +52,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 3;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -56,6 +61,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 3;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -69,15 +75,18 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <code>uint32 active_concept_count = 4;</code>
+   * @return The activeConceptCount.
    */
   int getActiveConceptCount();
 
   /**
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
+   * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
   /**
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
+   * @return The metrics.
    */
   com.clarifai.grpc.api.EvalMetrics getMetrics();
   /**
@@ -91,6 +100,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>uint32 total_input_count = 6;</code>
+   * @return The totalInputCount.
    */
   int getTotalInputCount();
 
@@ -101,6 +111,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>string worker_id = 9;</code>
+   * @return The workerId.
    */
   java.lang.String getWorkerId();
   /**
@@ -110,6 +121,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>string worker_id = 9;</code>
+   * @return The bytes for workerId.
    */
   com.google.protobuf.ByteString
       getWorkerIdBytes();
@@ -120,6 +132,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
+   * @return Whether the completedAt field is set.
    */
   boolean hasCompletedAt();
   /**
@@ -128,6 +141,7 @@ public interface ModelVersionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
+   * @return The completedAt.
    */
   com.google.protobuf.Timestamp getCompletedAt();
   /**

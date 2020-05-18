@@ -13,6 +13,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -39,6 +42,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -49,6 +53,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
+   * @return Whether the conceptTypeCount field is set.
    */
   boolean hasConceptTypeCount();
   /**
@@ -57,6 +62,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
+   * @return The conceptTypeCount.
    */
   com.clarifai.grpc.api.ConceptTypeCount getConceptTypeCount();
   /**
@@ -74,6 +80,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
+   * @return Whether the detailConceptCount field is set.
    */
   boolean hasDetailConceptCount();
   /**
@@ -82,6 +89,7 @@ public interface ConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
+   * @return The detailConceptCount.
    */
   com.clarifai.grpc.api.DetailConceptCount getDetailConceptCount();
   /**

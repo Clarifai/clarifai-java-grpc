@@ -9,10 +9,12 @@ public interface SingleAppResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -22,10 +24,12 @@ public interface SingleAppResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.App app = 2;</code>
+   * @return Whether the app field is set.
    */
   boolean hasApp();
   /**
    * <code>.clarifai.api.App app = 2;</code>
+   * @return The app.
    */
   com.clarifai.grpc.api.App getApp();
   /**

@@ -62,6 +62,8 @@ public enum ExpirationAction
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -69,6 +71,10 @@ public enum ExpirationAction
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static ExpirationAction forNumber(int value) {
     switch (value) {
       case 0: return EXPIRATION_ACTION_NOT_SET;

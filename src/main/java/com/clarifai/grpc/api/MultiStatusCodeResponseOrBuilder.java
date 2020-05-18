@@ -9,10 +9,12 @@ public interface MultiStatusCodeResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**

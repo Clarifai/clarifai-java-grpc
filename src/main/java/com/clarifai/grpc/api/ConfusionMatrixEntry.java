@@ -103,6 +103,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object predicted_;
   /**
    * <code>string predicted = 1;</code>
+   * @return The predicted.
    */
   public java.lang.String getPredicted() {
     java.lang.Object ref = predicted_;
@@ -118,6 +119,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string predicted = 1;</code>
+   * @return The bytes for predicted.
    */
   public com.google.protobuf.ByteString
       getPredictedBytes() {
@@ -137,6 +139,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object actual_;
   /**
    * <code>string actual = 2;</code>
+   * @return The actual.
    */
   public java.lang.String getActual() {
     java.lang.Object ref = actual_;
@@ -152,6 +155,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string actual = 2;</code>
+   * @return The bytes for actual.
    */
   public com.google.protobuf.ByteString
       getActualBytes() {
@@ -171,6 +175,7 @@ private static final long serialVersionUID = 0L;
   private float value_;
   /**
    * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The value.
    */
   public float getValue() {
     return value_;
@@ -517,6 +522,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object predicted_ = "";
     /**
      * <code>string predicted = 1;</code>
+     * @return The predicted.
      */
     public java.lang.String getPredicted() {
       java.lang.Object ref = predicted_;
@@ -532,6 +538,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string predicted = 1;</code>
+     * @return The bytes for predicted.
      */
     public com.google.protobuf.ByteString
         getPredictedBytes() {
@@ -548,6 +555,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string predicted = 1;</code>
+     * @param value The predicted to set.
+     * @return This builder for chaining.
      */
     public Builder setPredicted(
         java.lang.String value) {
@@ -561,6 +570,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string predicted = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPredicted() {
       
@@ -570,6 +580,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string predicted = 1;</code>
+     * @param value The bytes for predicted to set.
+     * @return This builder for chaining.
      */
     public Builder setPredictedBytes(
         com.google.protobuf.ByteString value) {
@@ -586,6 +598,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object actual_ = "";
     /**
      * <code>string actual = 2;</code>
+     * @return The actual.
      */
     public java.lang.String getActual() {
       java.lang.Object ref = actual_;
@@ -601,6 +614,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string actual = 2;</code>
+     * @return The bytes for actual.
      */
     public com.google.protobuf.ByteString
         getActualBytes() {
@@ -617,6 +631,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string actual = 2;</code>
+     * @param value The actual to set.
+     * @return This builder for chaining.
      */
     public Builder setActual(
         java.lang.String value) {
@@ -630,6 +646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string actual = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearActual() {
       
@@ -639,6 +656,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string actual = 2;</code>
+     * @param value The bytes for actual to set.
+     * @return This builder for chaining.
      */
     public Builder setActualBytes(
         com.google.protobuf.ByteString value) {
@@ -655,12 +674,15 @@ private static final long serialVersionUID = 0L;
     private float value_ ;
     /**
      * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The value.
      */
     public float getValue() {
       return value_;
     }
     /**
      * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(float value) {
       
@@ -670,6 +692,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       

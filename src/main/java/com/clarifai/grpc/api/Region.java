@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * A region within the data.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Region}
  */
 public  final class Region extends
@@ -17,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private Region() {
     id_ = "";
+    trackId_ = "";
   }
 
   @java.lang.Override
@@ -81,6 +86,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 37: {
+
+            value_ = input.readFloat();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            trackId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -116,7 +132,12 @@ private static final long serialVersionUID = 0L;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
+   * <pre>
+   * A unique id for the region.
+   * </pre>
+   *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -131,7 +152,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * A unique id for the region.
+   * </pre>
+   *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -150,18 +176,32 @@ private static final long serialVersionUID = 0L;
   public static final int REGION_INFO_FIELD_NUMBER = 2;
   private com.clarifai.grpc.api.RegionInfo regionInfo_;
   /**
+   * <pre>
+   * The details about the location of the region.
+   * </pre>
+   *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
+   * @return Whether the regionInfo field is set.
    */
   public boolean hasRegionInfo() {
     return regionInfo_ != null;
   }
   /**
+   * <pre>
+   * The details about the location of the region.
+   * </pre>
+   *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
+   * @return The regionInfo.
    */
   public com.clarifai.grpc.api.RegionInfo getRegionInfo() {
     return regionInfo_ == null ? com.clarifai.grpc.api.RegionInfo.getDefaultInstance() : regionInfo_;
   }
   /**
+   * <pre>
+   * The details about the location of the region.
+   * </pre>
+   *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
    */
   public com.clarifai.grpc.api.RegionInfoOrBuilder getRegionInfoOrBuilder() {
@@ -171,22 +211,97 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_FIELD_NUMBER = 3;
   private com.clarifai.grpc.api.Data data_;
   /**
+   * <pre>
+   * A recursive definition of the data within the Region. For example, this will contain
+   * data.concepts if the region also has annotations or predictions of concepts within it.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
   }
   /**
+   * <pre>
+   * A recursive definition of the data within the Region. For example, this will contain
+   * data.concepts if the region also has annotations or predictions of concepts within it.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return The data.
    */
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
   /**
+   * <pre>
+   * A recursive definition of the data within the Region. For example, this will contain
+   * data.concepts if the region also has annotations or predictions of concepts within it.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 3;</code>
    */
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
+  }
+
+  public static final int VALUE_FIELD_NUMBER = 4;
+  private float value_;
+  /**
+   * <pre>
+   * This is the confidence score of the overall Region.
+   * </pre>
+   *
+   * <code>float value = 4;</code>
+   * @return The value.
+   */
+  public float getValue() {
+    return value_;
+  }
+
+  public static final int TRACK_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object trackId_;
+  /**
+   * <pre>
+   * For tracking algorithsm and annotations we tie regions together with this track id.
+   * </pre>
+   *
+   * <code>string track_id = 5;</code>
+   * @return The trackId.
+   */
+  public java.lang.String getTrackId() {
+    java.lang.Object ref = trackId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      trackId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * For tracking algorithsm and annotations we tie regions together with this track id.
+   * </pre>
+   *
+   * <code>string track_id = 5;</code>
+   * @return The bytes for trackId.
+   */
+  public com.google.protobuf.ByteString
+      getTrackIdBytes() {
+    java.lang.Object ref = trackId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      trackId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -212,6 +327,12 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(3, getData());
     }
+    if (value_ != 0F) {
+      output.writeFloat(4, value_);
+    }
+    if (!getTrackIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, trackId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -231,6 +352,13 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getData());
+    }
+    if (value_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(4, value_);
+    }
+    if (!getTrackIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, trackId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -259,6 +387,11 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (java.lang.Float.floatToIntBits(getValue())
+        != java.lang.Float.floatToIntBits(
+            other.getValue())) return false;
+    if (!getTrackId()
+        .equals(other.getTrackId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -280,6 +413,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
+    hash = (37 * hash) + VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getValue());
+    hash = (37 * hash) + TRACK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTrackId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -376,6 +514,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * A region within the data.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Region}
    */
   public static final class Builder extends
@@ -427,6 +569,10 @@ private static final long serialVersionUID = 0L;
         data_ = null;
         dataBuilder_ = null;
       }
+      value_ = 0F;
+
+      trackId_ = "";
+
       return this;
     }
 
@@ -464,6 +610,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data_ = dataBuilder_.build();
       }
+      result.value_ = value_;
+      result.trackId_ = trackId_;
       onBuilt();
       return result;
     }
@@ -522,6 +670,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
+      if (other.getValue() != 0F) {
+        setValue(other.getValue());
+      }
+      if (!other.getTrackId().isEmpty()) {
+        trackId_ = other.trackId_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -553,7 +708,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
+     * <pre>
+     * A unique id for the region.
+     * </pre>
+     *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -568,7 +728,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A unique id for the region.
+     * </pre>
+     *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -584,7 +749,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A unique id for the region.
+     * </pre>
+     *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -597,7 +768,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A unique id for the region.
+     * </pre>
+     *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -606,7 +782,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A unique id for the region.
+     * </pre>
+     *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -624,13 +806,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.RegionInfo, com.clarifai.grpc.api.RegionInfo.Builder, com.clarifai.grpc.api.RegionInfoOrBuilder> regionInfoBuilder_;
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
+     * @return Whether the regionInfo field is set.
      */
     public boolean hasRegionInfo() {
       return regionInfoBuilder_ != null || regionInfo_ != null;
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
+     * @return The regionInfo.
      */
     public com.clarifai.grpc.api.RegionInfo getRegionInfo() {
       if (regionInfoBuilder_ == null) {
@@ -640,6 +832,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     public Builder setRegionInfo(com.clarifai.grpc.api.RegionInfo value) {
@@ -656,6 +852,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     public Builder setRegionInfo(
@@ -670,6 +870,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     public Builder mergeRegionInfo(com.clarifai.grpc.api.RegionInfo value) {
@@ -688,6 +892,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     public Builder clearRegionInfo() {
@@ -702,6 +910,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     public com.clarifai.grpc.api.RegionInfo.Builder getRegionInfoBuilder() {
@@ -710,6 +922,10 @@ private static final long serialVersionUID = 0L;
       return getRegionInfoFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     public com.clarifai.grpc.api.RegionInfoOrBuilder getRegionInfoOrBuilder() {
@@ -721,6 +937,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The details about the location of the region.
+     * </pre>
+     *
      * <code>.clarifai.api.RegionInfo region_info = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -741,13 +961,25 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> dataBuilder_;
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
+     * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
+     * @return The data.
      */
     public com.clarifai.grpc.api.Data getData() {
       if (dataBuilder_ == null) {
@@ -757,6 +989,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     public Builder setData(com.clarifai.grpc.api.Data value) {
@@ -773,6 +1010,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     public Builder setData(
@@ -787,6 +1029,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     public Builder mergeData(com.clarifai.grpc.api.Data value) {
@@ -805,6 +1052,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     public Builder clearData() {
@@ -819,6 +1071,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     public com.clarifai.grpc.api.Data.Builder getDataBuilder() {
@@ -827,6 +1084,11 @@ private static final long serialVersionUID = 0L;
       return getDataFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
@@ -838,6 +1100,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Region. For example, this will contain
+     * data.concepts if the region also has annotations or predictions of concepts within it.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -852,6 +1119,144 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    private float value_ ;
+    /**
+     * <pre>
+     * This is the confidence score of the overall Region.
+     * </pre>
+     *
+     * <code>float value = 4;</code>
+     * @return The value.
+     */
+    public float getValue() {
+      return value_;
+    }
+    /**
+     * <pre>
+     * This is the confidence score of the overall Region.
+     * </pre>
+     *
+     * <code>float value = 4;</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValue(float value) {
+      
+      value_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This is the confidence score of the overall Region.
+     * </pre>
+     *
+     * <code>float value = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearValue() {
+      
+      value_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object trackId_ = "";
+    /**
+     * <pre>
+     * For tracking algorithsm and annotations we tie regions together with this track id.
+     * </pre>
+     *
+     * <code>string track_id = 5;</code>
+     * @return The trackId.
+     */
+    public java.lang.String getTrackId() {
+      java.lang.Object ref = trackId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trackId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * For tracking algorithsm and annotations we tie regions together with this track id.
+     * </pre>
+     *
+     * <code>string track_id = 5;</code>
+     * @return The bytes for trackId.
+     */
+    public com.google.protobuf.ByteString
+        getTrackIdBytes() {
+      java.lang.Object ref = trackId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trackId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * For tracking algorithsm and annotations we tie regions together with this track id.
+     * </pre>
+     *
+     * <code>string track_id = 5;</code>
+     * @param value The trackId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrackId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      trackId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For tracking algorithsm and annotations we tie regions together with this track id.
+     * </pre>
+     *
+     * <code>string track_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrackId() {
+      
+      trackId_ = getDefaultInstance().getTrackId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For tracking algorithsm and annotations we tie regions together with this track id.
+     * </pre>
+     *
+     * <code>string track_id = 5;</code>
+     * @param value The bytes for trackId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrackIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      trackId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

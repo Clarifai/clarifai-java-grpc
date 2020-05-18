@@ -110,12 +110,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -131,12 +133,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Workflow workflow_;
   /**
    * <code>.clarifai.api.Workflow workflow = 2;</code>
+   * @return Whether the workflow field is set.
    */
   public boolean hasWorkflow() {
     return workflow_ != null;
   }
   /**
    * <code>.clarifai.api.Workflow workflow = 2;</code>
+   * @return The workflow.
    */
   public com.clarifai.grpc.api.Workflow getWorkflow() {
     return workflow_ == null ? com.clarifai.grpc.api.Workflow.getDefaultInstance() : workflow_;
@@ -498,12 +502,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -615,12 +621,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
     /**
      * <code>.clarifai.api.Workflow workflow = 2;</code>
+     * @return Whether the workflow field is set.
      */
     public boolean hasWorkflow() {
       return workflowBuilder_ != null || workflow_ != null;
     }
     /**
      * <code>.clarifai.api.Workflow workflow = 2;</code>
+     * @return The workflow.
      */
     public com.clarifai.grpc.api.Workflow getWorkflow() {
       if (workflowBuilder_ == null) {

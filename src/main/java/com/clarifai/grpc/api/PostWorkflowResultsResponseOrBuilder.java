@@ -9,10 +9,12 @@ public interface PostWorkflowResultsResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -22,10 +24,12 @@ public interface PostWorkflowResultsResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.Workflow workflow = 2;</code>
+   * @return Whether the workflow field is set.
    */
   boolean hasWorkflow();
   /**
    * <code>.clarifai.api.Workflow workflow = 2;</code>
+   * @return The workflow.
    */
   com.clarifai.grpc.api.Workflow getWorkflow();
   /**

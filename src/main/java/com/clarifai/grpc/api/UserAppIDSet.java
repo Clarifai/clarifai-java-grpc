@@ -109,6 +109,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 1;</code>
+   * @return The userId.
    */
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
@@ -128,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 1;</code>
+   * @return The bytes for userId.
    */
   public com.google.protobuf.ByteString
       getUserIdBytes() {
@@ -147,6 +149,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object appId_;
   /**
    * <code>string app_id = 2;</code>
+   * @return The appId.
    */
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
@@ -162,6 +165,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string app_id = 2;</code>
+   * @return The bytes for appId.
    */
   public com.google.protobuf.ByteString
       getAppIdBytes() {
@@ -510,6 +514,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 1;</code>
+     * @return The userId.
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -529,6 +534,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
@@ -549,6 +555,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 1;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(
         java.lang.String value) {
@@ -566,6 +574,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
       
@@ -579,6 +588,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 1;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
@@ -595,6 +606,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object appId_ = "";
     /**
      * <code>string app_id = 2;</code>
+     * @return The appId.
      */
     public java.lang.String getAppId() {
       java.lang.Object ref = appId_;
@@ -610,6 +622,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 2;</code>
+     * @return The bytes for appId.
      */
     public com.google.protobuf.ByteString
         getAppIdBytes() {
@@ -626,6 +639,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 2;</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppId(
         java.lang.String value) {
@@ -639,6 +654,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAppId() {
       
@@ -648,6 +664,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string app_id = 2;</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
      */
     public Builder setAppIdBytes(
         com.google.protobuf.ByteString value) {

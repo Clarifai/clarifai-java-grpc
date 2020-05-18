@@ -18,7 +18,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.23.0)",
+    value = "by gRPC proto compiler (version 1.27.2)",
     comments = "Source: proto/clarifai/api/service.proto")
 public final class V2Grpc {
 
@@ -213,6 +213,533 @@ public final class V2Grpc {
     return getPatchConceptsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetConceptLanguageRequest,
+      com.clarifai.grpc.api.SingleConceptLanguageResponse> getGetConceptLanguageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConceptLanguage",
+      requestType = com.clarifai.grpc.api.GetConceptLanguageRequest.class,
+      responseType = com.clarifai.grpc.api.SingleConceptLanguageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetConceptLanguageRequest,
+      com.clarifai.grpc.api.SingleConceptLanguageResponse> getGetConceptLanguageMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetConceptLanguageRequest, com.clarifai.grpc.api.SingleConceptLanguageResponse> getGetConceptLanguageMethod;
+    if ((getGetConceptLanguageMethod = V2Grpc.getGetConceptLanguageMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetConceptLanguageMethod = V2Grpc.getGetConceptLanguageMethod) == null) {
+          V2Grpc.getGetConceptLanguageMethod = getGetConceptLanguageMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetConceptLanguageRequest, com.clarifai.grpc.api.SingleConceptLanguageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConceptLanguage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetConceptLanguageRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleConceptLanguageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetConceptLanguage"))
+              .build();
+        }
+      }
+    }
+    return getGetConceptLanguageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptLanguagesRequest,
+      com.clarifai.grpc.api.MultiConceptLanguageResponse> getListConceptLanguagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListConceptLanguages",
+      requestType = com.clarifai.grpc.api.ListConceptLanguagesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptLanguageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptLanguagesRequest,
+      com.clarifai.grpc.api.MultiConceptLanguageResponse> getListConceptLanguagesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptLanguagesRequest, com.clarifai.grpc.api.MultiConceptLanguageResponse> getListConceptLanguagesMethod;
+    if ((getListConceptLanguagesMethod = V2Grpc.getListConceptLanguagesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListConceptLanguagesMethod = V2Grpc.getListConceptLanguagesMethod) == null) {
+          V2Grpc.getListConceptLanguagesMethod = getListConceptLanguagesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListConceptLanguagesRequest, com.clarifai.grpc.api.MultiConceptLanguageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListConceptLanguages"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListConceptLanguagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptLanguageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListConceptLanguages"))
+              .build();
+        }
+      }
+    }
+    return getListConceptLanguagesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptLanguagesRequest,
+      com.clarifai.grpc.api.MultiConceptLanguageResponse> getPostConceptLanguagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostConceptLanguages",
+      requestType = com.clarifai.grpc.api.PostConceptLanguagesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptLanguageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptLanguagesRequest,
+      com.clarifai.grpc.api.MultiConceptLanguageResponse> getPostConceptLanguagesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptLanguagesRequest, com.clarifai.grpc.api.MultiConceptLanguageResponse> getPostConceptLanguagesMethod;
+    if ((getPostConceptLanguagesMethod = V2Grpc.getPostConceptLanguagesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostConceptLanguagesMethod = V2Grpc.getPostConceptLanguagesMethod) == null) {
+          V2Grpc.getPostConceptLanguagesMethod = getPostConceptLanguagesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostConceptLanguagesRequest, com.clarifai.grpc.api.MultiConceptLanguageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptLanguages"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostConceptLanguagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptLanguageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptLanguages"))
+              .build();
+        }
+      }
+    }
+    return getPostConceptLanguagesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchConceptLanguagesRequest,
+      com.clarifai.grpc.api.MultiConceptLanguageResponse> getPatchConceptLanguagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchConceptLanguages",
+      requestType = com.clarifai.grpc.api.PatchConceptLanguagesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptLanguageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchConceptLanguagesRequest,
+      com.clarifai.grpc.api.MultiConceptLanguageResponse> getPatchConceptLanguagesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchConceptLanguagesRequest, com.clarifai.grpc.api.MultiConceptLanguageResponse> getPatchConceptLanguagesMethod;
+    if ((getPatchConceptLanguagesMethod = V2Grpc.getPatchConceptLanguagesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchConceptLanguagesMethod = V2Grpc.getPatchConceptLanguagesMethod) == null) {
+          V2Grpc.getPatchConceptLanguagesMethod = getPatchConceptLanguagesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchConceptLanguagesRequest, com.clarifai.grpc.api.MultiConceptLanguageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchConceptLanguages"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchConceptLanguagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptLanguageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchConceptLanguages"))
+              .build();
+        }
+      }
+    }
+    return getPatchConceptLanguagesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListConceptRelations",
+      requestType = com.clarifai.grpc.api.ListConceptRelationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptRelationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod;
+    if ((getListConceptRelationsMethod = V2Grpc.getListConceptRelationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListConceptRelationsMethod = V2Grpc.getListConceptRelationsMethod) == null) {
+          V2Grpc.getListConceptRelationsMethod = getListConceptRelationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListConceptRelations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListConceptRelationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptRelationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListConceptRelations"))
+              .build();
+        }
+      }
+    }
+    return getListConceptRelationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostConceptRelations",
+      requestType = com.clarifai.grpc.api.PostConceptRelationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptRelationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod;
+    if ((getPostConceptRelationsMethod = V2Grpc.getPostConceptRelationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostConceptRelationsMethod = V2Grpc.getPostConceptRelationsMethod) == null) {
+          V2Grpc.getPostConceptRelationsMethod = getPostConceptRelationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptRelations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostConceptRelationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptRelationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptRelations"))
+              .build();
+        }
+      }
+    }
+    return getPostConceptRelationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteConceptRelations",
+      requestType = com.clarifai.grpc.api.DeleteConceptRelationsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod;
+    if ((getDeleteConceptRelationsMethod = V2Grpc.getDeleteConceptRelationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteConceptRelationsMethod = V2Grpc.getDeleteConceptRelationsMethod) == null) {
+          V2Grpc.getDeleteConceptRelationsMethod = getDeleteConceptRelationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteConceptRelationsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteConceptRelations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteConceptRelationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteConceptRelations"))
+              .build();
+        }
+      }
+    }
+    return getDeleteConceptRelationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListKnowledgeGraphsRequest,
+      com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getListKnowledgeGraphsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListKnowledgeGraphs",
+      requestType = com.clarifai.grpc.api.ListKnowledgeGraphsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiKnowledgeGraphResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListKnowledgeGraphsRequest,
+      com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getListKnowledgeGraphsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListKnowledgeGraphsRequest, com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getListKnowledgeGraphsMethod;
+    if ((getListKnowledgeGraphsMethod = V2Grpc.getListKnowledgeGraphsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListKnowledgeGraphsMethod = V2Grpc.getListKnowledgeGraphsMethod) == null) {
+          V2Grpc.getListKnowledgeGraphsMethod = getListKnowledgeGraphsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListKnowledgeGraphsRequest, com.clarifai.grpc.api.MultiKnowledgeGraphResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKnowledgeGraphs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListKnowledgeGraphsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiKnowledgeGraphResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListKnowledgeGraphs"))
+              .build();
+        }
+      }
+    }
+    return getListKnowledgeGraphsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostKnowledgeGraphsRequest,
+      com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getPostKnowledgeGraphsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostKnowledgeGraphs",
+      requestType = com.clarifai.grpc.api.PostKnowledgeGraphsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiKnowledgeGraphResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostKnowledgeGraphsRequest,
+      com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getPostKnowledgeGraphsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostKnowledgeGraphsRequest, com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getPostKnowledgeGraphsMethod;
+    if ((getPostKnowledgeGraphsMethod = V2Grpc.getPostKnowledgeGraphsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostKnowledgeGraphsMethod = V2Grpc.getPostKnowledgeGraphsMethod) == null) {
+          V2Grpc.getPostKnowledgeGraphsMethod = getPostKnowledgeGraphsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostKnowledgeGraphsRequest, com.clarifai.grpc.api.MultiKnowledgeGraphResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostKnowledgeGraphs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostKnowledgeGraphsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiKnowledgeGraphResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostKnowledgeGraphs"))
+              .build();
+        }
+      }
+    }
+    return getPostKnowledgeGraphsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptMappingJobsRequest,
+      com.clarifai.grpc.api.MultiConceptMappingJobResponse> getPostConceptMappingJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostConceptMappingJobs",
+      requestType = com.clarifai.grpc.api.PostConceptMappingJobsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptMappingJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptMappingJobsRequest,
+      com.clarifai.grpc.api.MultiConceptMappingJobResponse> getPostConceptMappingJobsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptMappingJobsRequest, com.clarifai.grpc.api.MultiConceptMappingJobResponse> getPostConceptMappingJobsMethod;
+    if ((getPostConceptMappingJobsMethod = V2Grpc.getPostConceptMappingJobsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostConceptMappingJobsMethod = V2Grpc.getPostConceptMappingJobsMethod) == null) {
+          V2Grpc.getPostConceptMappingJobsMethod = getPostConceptMappingJobsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostConceptMappingJobsRequest, com.clarifai.grpc.api.MultiConceptMappingJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptMappingJobs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostConceptMappingJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptMappingJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptMappingJobs"))
+              .build();
+        }
+      }
+    }
+    return getPostConceptMappingJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationRequest,
+      com.clarifai.grpc.api.SingleAnnotationResponse> getGetAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAnnotation",
+      requestType = com.clarifai.grpc.api.GetAnnotationRequest.class,
+      responseType = com.clarifai.grpc.api.SingleAnnotationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationRequest,
+      com.clarifai.grpc.api.SingleAnnotationResponse> getGetAnnotationMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationRequest, com.clarifai.grpc.api.SingleAnnotationResponse> getGetAnnotationMethod;
+    if ((getGetAnnotationMethod = V2Grpc.getGetAnnotationMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetAnnotationMethod = V2Grpc.getGetAnnotationMethod) == null) {
+          V2Grpc.getGetAnnotationMethod = getGetAnnotationMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetAnnotationRequest, com.clarifai.grpc.api.SingleAnnotationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAnnotation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleAnnotationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetAnnotation"))
+              .build();
+        }
+      }
+    }
+    return getGetAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAnnotationsRequest,
+      com.clarifai.grpc.api.MultiAnnotationResponse> getListAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAnnotations",
+      requestType = com.clarifai.grpc.api.ListAnnotationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAnnotationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAnnotationsRequest,
+      com.clarifai.grpc.api.MultiAnnotationResponse> getListAnnotationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAnnotationsRequest, com.clarifai.grpc.api.MultiAnnotationResponse> getListAnnotationsMethod;
+    if ((getListAnnotationsMethod = V2Grpc.getListAnnotationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListAnnotationsMethod = V2Grpc.getListAnnotationsMethod) == null) {
+          V2Grpc.getListAnnotationsMethod = getListAnnotationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListAnnotationsRequest, com.clarifai.grpc.api.MultiAnnotationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAnnotations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAnnotationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListAnnotations"))
+              .build();
+        }
+      }
+    }
+    return getListAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationsRequest,
+      com.clarifai.grpc.api.MultiAnnotationResponse> getPostAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostAnnotations",
+      requestType = com.clarifai.grpc.api.PostAnnotationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAnnotationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationsRequest,
+      com.clarifai.grpc.api.MultiAnnotationResponse> getPostAnnotationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationsRequest, com.clarifai.grpc.api.MultiAnnotationResponse> getPostAnnotationsMethod;
+    if ((getPostAnnotationsMethod = V2Grpc.getPostAnnotationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostAnnotationsMethod = V2Grpc.getPostAnnotationsMethod) == null) {
+          V2Grpc.getPostAnnotationsMethod = getPostAnnotationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAnnotationsRequest, com.clarifai.grpc.api.MultiAnnotationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAnnotations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAnnotationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAnnotations"))
+              .build();
+        }
+      }
+    }
+    return getPostAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchAnnotationsRequest,
+      com.clarifai.grpc.api.MultiAnnotationResponse> getPatchAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchAnnotations",
+      requestType = com.clarifai.grpc.api.PatchAnnotationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAnnotationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchAnnotationsRequest,
+      com.clarifai.grpc.api.MultiAnnotationResponse> getPatchAnnotationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchAnnotationsRequest, com.clarifai.grpc.api.MultiAnnotationResponse> getPatchAnnotationsMethod;
+    if ((getPatchAnnotationsMethod = V2Grpc.getPatchAnnotationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchAnnotationsMethod = V2Grpc.getPatchAnnotationsMethod) == null) {
+          V2Grpc.getPatchAnnotationsMethod = getPatchAnnotationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchAnnotationsRequest, com.clarifai.grpc.api.MultiAnnotationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchAnnotations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAnnotationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchAnnotations"))
+              .build();
+        }
+      }
+    }
+    return getPatchAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAnnotation",
+      requestType = com.clarifai.grpc.api.DeleteAnnotationRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationMethod;
+    if ((getDeleteAnnotationMethod = V2Grpc.getDeleteAnnotationMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteAnnotationMethod = V2Grpc.getDeleteAnnotationMethod) == null) {
+          V2Grpc.getDeleteAnnotationMethod = getDeleteAnnotationMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteAnnotationRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAnnotation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteAnnotation"))
+              .build();
+        }
+      }
+    }
+    return getDeleteAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAnnotations",
+      requestType = com.clarifai.grpc.api.DeleteAnnotationsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationsMethod;
+    if ((getDeleteAnnotationsMethod = V2Grpc.getDeleteAnnotationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteAnnotationsMethod = V2Grpc.getDeleteAnnotationsMethod) == null) {
+          V2Grpc.getDeleteAnnotationsMethod = getDeleteAnnotationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteAnnotationsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAnnotations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteAnnotations"))
+              .build();
+        }
+      }
+    }
+    return getDeleteAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationsSearchesRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getPostAnnotationsSearchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostAnnotationsSearches",
+      requestType = com.clarifai.grpc.api.PostAnnotationsSearchesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationsSearchesRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getPostAnnotationsSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationsSearchesRequest, com.clarifai.grpc.api.MultiSearchResponse> getPostAnnotationsSearchesMethod;
+    if ((getPostAnnotationsSearchesMethod = V2Grpc.getPostAnnotationsSearchesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostAnnotationsSearchesMethod = V2Grpc.getPostAnnotationsSearchesMethod) == null) {
+          V2Grpc.getPostAnnotationsSearchesMethod = getPostAnnotationsSearchesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAnnotationsSearchesRequest, com.clarifai.grpc.api.MultiSearchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAnnotationsSearches"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostAnnotationsSearchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSearchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAnnotationsSearches"))
+              .build();
+        }
+      }
+    }
+    return getPostAnnotationsSearchesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInputCountRequest,
       com.clarifai.grpc.api.SingleInputCountResponse> getGetInputCountMethod;
 
@@ -242,6 +769,37 @@ public final class V2Grpc {
       }
     }
     return getGetInputCountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamInputsRequest,
+      com.clarifai.grpc.api.MultiInputResponse> getStreamInputsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamInputs",
+      requestType = com.clarifai.grpc.api.StreamInputsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiInputResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamInputsRequest,
+      com.clarifai.grpc.api.MultiInputResponse> getStreamInputsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.StreamInputsRequest, com.clarifai.grpc.api.MultiInputResponse> getStreamInputsMethod;
+    if ((getStreamInputsMethod = V2Grpc.getStreamInputsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getStreamInputsMethod = V2Grpc.getStreamInputsMethod) == null) {
+          V2Grpc.getStreamInputsMethod = getStreamInputsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.StreamInputsRequest, com.clarifai.grpc.api.MultiInputResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StreamInputs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.StreamInputsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiInputResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("StreamInputs"))
+              .build();
+        }
+      }
+    }
+    return getStreamInputsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInputRequest,
@@ -428,6 +986,37 @@ public final class V2Grpc {
       }
     }
     return getDeleteInputsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInputsSearchesRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getPostInputsSearchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostInputsSearches",
+      requestType = com.clarifai.grpc.api.PostInputsSearchesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInputsSearchesRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getPostInputsSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInputsSearchesRequest, com.clarifai.grpc.api.MultiSearchResponse> getPostInputsSearchesMethod;
+    if ((getPostInputsSearchesMethod = V2Grpc.getPostInputsSearchesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostInputsSearchesMethod = V2Grpc.getPostInputsSearchesMethod) == null) {
+          V2Grpc.getPostInputsSearchesMethod = getPostInputsSearchesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostInputsSearchesRequest, com.clarifai.grpc.api.MultiSearchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostInputsSearches"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostInputsSearchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSearchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostInputsSearches"))
+              .build();
+        }
+      }
+    }
+    return getPostInputsSearchesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelOutputsRequest,
@@ -1143,6 +1732,37 @@ public final class V2Grpc {
     return getPostWorkflowResultsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
+      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> getPostWorkflowResultsSimilarityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostWorkflowResultsSimilarity",
+      requestType = com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest.class,
+      responseType = com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
+      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> getPostWorkflowResultsSimilarityMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest, com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> getPostWorkflowResultsSimilarityMethod;
+    if ((getPostWorkflowResultsSimilarityMethod = V2Grpc.getPostWorkflowResultsSimilarityMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostWorkflowResultsSimilarityMethod = V2Grpc.getPostWorkflowResultsSimilarityMethod) == null) {
+          V2Grpc.getPostWorkflowResultsSimilarityMethod = getPostWorkflowResultsSimilarityMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest, com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostWorkflowResultsSimilarity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostWorkflowResultsSimilarity"))
+              .build();
+        }
+      }
+    }
+    return getPostWorkflowResultsSimilarityMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetKeyRequest,
       com.clarifai.grpc.api.SingleKeyResponse> getGetKeyMethod;
 
@@ -1329,6 +1949,68 @@ public final class V2Grpc {
     return getPatchKeysMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesRequest,
+      com.clarifai.grpc.api.MultiScopeResponse> getMyScopesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MyScopes",
+      requestType = com.clarifai.grpc.api.MyScopesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiScopeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesRequest,
+      com.clarifai.grpc.api.MultiScopeResponse> getMyScopesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesRequest, com.clarifai.grpc.api.MultiScopeResponse> getMyScopesMethod;
+    if ((getMyScopesMethod = V2Grpc.getMyScopesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getMyScopesMethod = V2Grpc.getMyScopesMethod) == null) {
+          V2Grpc.getMyScopesMethod = getMyScopesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.MyScopesRequest, com.clarifai.grpc.api.MultiScopeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MyScopes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MyScopesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiScopeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("MyScopes"))
+              .build();
+        }
+      }
+    }
+    return getMyScopesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListScopesRequest,
+      com.clarifai.grpc.api.MultiScopeDepsResponse> getListScopesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListScopes",
+      requestType = com.clarifai.grpc.api.ListScopesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiScopeDepsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListScopesRequest,
+      com.clarifai.grpc.api.MultiScopeDepsResponse> getListScopesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListScopesRequest, com.clarifai.grpc.api.MultiScopeDepsResponse> getListScopesMethod;
+    if ((getListScopesMethod = V2Grpc.getListScopesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListScopesMethod = V2Grpc.getListScopesMethod) == null) {
+          V2Grpc.getListScopesMethod = getListScopesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListScopesRequest, com.clarifai.grpc.api.MultiScopeDepsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListScopes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListScopesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiScopeDepsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListScopes"))
+              .build();
+        }
+      }
+    }
+    return getListScopesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAppRequest,
       com.clarifai.grpc.api.SingleAppResponse> getGetAppMethod;
 
@@ -1484,6 +2166,99 @@ public final class V2Grpc {
     return getPatchAppsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostValidatePasswordRequest,
+      com.clarifai.grpc.api.SinglePasswordValidationResponse> getPostValidatePasswordMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostValidatePassword",
+      requestType = com.clarifai.grpc.api.PostValidatePasswordRequest.class,
+      responseType = com.clarifai.grpc.api.SinglePasswordValidationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostValidatePasswordRequest,
+      com.clarifai.grpc.api.SinglePasswordValidationResponse> getPostValidatePasswordMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostValidatePasswordRequest, com.clarifai.grpc.api.SinglePasswordValidationResponse> getPostValidatePasswordMethod;
+    if ((getPostValidatePasswordMethod = V2Grpc.getPostValidatePasswordMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostValidatePasswordMethod = V2Grpc.getPostValidatePasswordMethod) == null) {
+          V2Grpc.getPostValidatePasswordMethod = getPostValidatePasswordMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostValidatePasswordRequest, com.clarifai.grpc.api.SinglePasswordValidationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostValidatePassword"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostValidatePasswordRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SinglePasswordValidationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostValidatePassword"))
+              .build();
+        }
+      }
+    }
+    return getPostValidatePasswordMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetSearchRequest,
+      com.clarifai.grpc.api.SingleSearchResponse> getGetSearchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSearch",
+      requestType = com.clarifai.grpc.api.GetSearchRequest.class,
+      responseType = com.clarifai.grpc.api.SingleSearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetSearchRequest,
+      com.clarifai.grpc.api.SingleSearchResponse> getGetSearchMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetSearchRequest, com.clarifai.grpc.api.SingleSearchResponse> getGetSearchMethod;
+    if ((getGetSearchMethod = V2Grpc.getGetSearchMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetSearchMethod = V2Grpc.getGetSearchMethod) == null) {
+          V2Grpc.getGetSearchMethod = getGetSearchMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetSearchRequest, com.clarifai.grpc.api.SingleSearchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSearch"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetSearchRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleSearchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetSearch"))
+              .build();
+        }
+      }
+    }
+    return getGetSearchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListSearchesRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getListSearchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSearches",
+      requestType = com.clarifai.grpc.api.ListSearchesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListSearchesRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getListSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListSearchesRequest, com.clarifai.grpc.api.MultiSearchResponse> getListSearchesMethod;
+    if ((getListSearchesMethod = V2Grpc.getListSearchesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListSearchesMethod = V2Grpc.getListSearchesMethod) == null) {
+          V2Grpc.getListSearchesMethod = getListSearchesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListSearchesRequest, com.clarifai.grpc.api.MultiSearchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSearches"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListSearchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSearchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListSearches"))
+              .build();
+        }
+      }
+    }
+    return getListSearchesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSearchesRequest,
       com.clarifai.grpc.api.MultiSearchResponse> getPostSearchesMethod;
 
@@ -1513,6 +2288,161 @@ public final class V2Grpc {
       }
     }
     return getPostSearchesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSearchesByIDRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getPostSearchesByIDMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostSearchesByID",
+      requestType = com.clarifai.grpc.api.PostSearchesByIDRequest.class,
+      responseType = com.clarifai.grpc.api.MultiSearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSearchesByIDRequest,
+      com.clarifai.grpc.api.MultiSearchResponse> getPostSearchesByIDMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostSearchesByIDRequest, com.clarifai.grpc.api.MultiSearchResponse> getPostSearchesByIDMethod;
+    if ((getPostSearchesByIDMethod = V2Grpc.getPostSearchesByIDMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostSearchesByIDMethod = V2Grpc.getPostSearchesByIDMethod) == null) {
+          V2Grpc.getPostSearchesByIDMethod = getPostSearchesByIDMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostSearchesByIDRequest, com.clarifai.grpc.api.MultiSearchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostSearchesByID"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostSearchesByIDRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiSearchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostSearchesByID"))
+              .build();
+        }
+      }
+    }
+    return getPostSearchesByIDMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest,
+      com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getPostAnnotationSearchMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostAnnotationSearchMetrics",
+      requestType = com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest,
+      com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getPostAnnotationSearchMetricsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest, com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getPostAnnotationSearchMetricsMethod;
+    if ((getPostAnnotationSearchMetricsMethod = V2Grpc.getPostAnnotationSearchMetricsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostAnnotationSearchMetricsMethod = V2Grpc.getPostAnnotationSearchMetricsMethod) == null) {
+          V2Grpc.getPostAnnotationSearchMetricsMethod = getPostAnnotationSearchMetricsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest, com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAnnotationSearchMetrics"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAnnotationSearchMetrics"))
+              .build();
+        }
+      }
+    }
+    return getPostAnnotationSearchMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest,
+      com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getGetAnnotationSearchMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAnnotationSearchMetrics",
+      requestType = com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest,
+      com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getGetAnnotationSearchMetricsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest, com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getGetAnnotationSearchMetricsMethod;
+    if ((getGetAnnotationSearchMetricsMethod = V2Grpc.getGetAnnotationSearchMetricsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetAnnotationSearchMetricsMethod = V2Grpc.getGetAnnotationSearchMetricsMethod) == null) {
+          V2Grpc.getGetAnnotationSearchMetricsMethod = getGetAnnotationSearchMetricsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest, com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAnnotationSearchMetrics"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetAnnotationSearchMetrics"))
+              .build();
+        }
+      }
+    }
+    return getGetAnnotationSearchMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest,
+      com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getListAnnotationSearchMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAnnotationSearchMetrics",
+      requestType = com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest,
+      com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getListAnnotationSearchMetricsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest, com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getListAnnotationSearchMetricsMethod;
+    if ((getListAnnotationSearchMetricsMethod = V2Grpc.getListAnnotationSearchMetricsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListAnnotationSearchMetricsMethod = V2Grpc.getListAnnotationSearchMetricsMethod) == null) {
+          V2Grpc.getListAnnotationSearchMetricsMethod = getListAnnotationSearchMetricsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest, com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAnnotationSearchMetrics"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListAnnotationSearchMetrics"))
+              .build();
+        }
+      }
+    }
+    return getListAnnotationSearchMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteSearchRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteSearchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSearch",
+      requestType = com.clarifai.grpc.api.DeleteSearchRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteSearchRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteSearchMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteSearchRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteSearchMethod;
+    if ((getDeleteSearchMethod = V2Grpc.getDeleteSearchMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteSearchMethod = V2Grpc.getDeleteSearchMethod) == null) {
+          V2Grpc.getDeleteSearchMethod = getDeleteSearchMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteSearchRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSearch"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteSearchRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteSearch"))
+              .build();
+        }
+      }
+    }
+    return getDeleteSearchMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListStatusCodesRequest,
@@ -1577,11 +2507,638 @@ public final class V2Grpc {
     return getGetStatusCodeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaboratorsRequest,
+      com.clarifai.grpc.api.MultiCollaboratorsResponse> getListCollaboratorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCollaborators",
+      requestType = com.clarifai.grpc.api.ListCollaboratorsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollaboratorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaboratorsRequest,
+      com.clarifai.grpc.api.MultiCollaboratorsResponse> getListCollaboratorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaboratorsRequest, com.clarifai.grpc.api.MultiCollaboratorsResponse> getListCollaboratorsMethod;
+    if ((getListCollaboratorsMethod = V2Grpc.getListCollaboratorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListCollaboratorsMethod = V2Grpc.getListCollaboratorsMethod) == null) {
+          V2Grpc.getListCollaboratorsMethod = getListCollaboratorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListCollaboratorsRequest, com.clarifai.grpc.api.MultiCollaboratorsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCollaborators"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListCollaboratorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollaboratorsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListCollaborators"))
+              .build();
+        }
+      }
+    }
+    return getListCollaboratorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollaboratorsRequest,
+      com.clarifai.grpc.api.MultiCollaboratorsResponse> getPostCollaboratorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostCollaborators",
+      requestType = com.clarifai.grpc.api.PostCollaboratorsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollaboratorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollaboratorsRequest,
+      com.clarifai.grpc.api.MultiCollaboratorsResponse> getPostCollaboratorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollaboratorsRequest, com.clarifai.grpc.api.MultiCollaboratorsResponse> getPostCollaboratorsMethod;
+    if ((getPostCollaboratorsMethod = V2Grpc.getPostCollaboratorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostCollaboratorsMethod = V2Grpc.getPostCollaboratorsMethod) == null) {
+          V2Grpc.getPostCollaboratorsMethod = getPostCollaboratorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostCollaboratorsRequest, com.clarifai.grpc.api.MultiCollaboratorsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostCollaborators"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostCollaboratorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollaboratorsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostCollaborators"))
+              .build();
+        }
+      }
+    }
+    return getPostCollaboratorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollaboratorsRequest,
+      com.clarifai.grpc.api.MultiCollaboratorsResponse> getPatchCollaboratorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchCollaborators",
+      requestType = com.clarifai.grpc.api.PatchCollaboratorsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollaboratorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollaboratorsRequest,
+      com.clarifai.grpc.api.MultiCollaboratorsResponse> getPatchCollaboratorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollaboratorsRequest, com.clarifai.grpc.api.MultiCollaboratorsResponse> getPatchCollaboratorsMethod;
+    if ((getPatchCollaboratorsMethod = V2Grpc.getPatchCollaboratorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchCollaboratorsMethod = V2Grpc.getPatchCollaboratorsMethod) == null) {
+          V2Grpc.getPatchCollaboratorsMethod = getPatchCollaboratorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchCollaboratorsRequest, com.clarifai.grpc.api.MultiCollaboratorsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchCollaborators"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchCollaboratorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollaboratorsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchCollaborators"))
+              .build();
+        }
+      }
+    }
+    return getPatchCollaboratorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollaboratorsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteCollaboratorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCollaborators",
+      requestType = com.clarifai.grpc.api.DeleteCollaboratorsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollaboratorsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteCollaboratorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollaboratorsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteCollaboratorsMethod;
+    if ((getDeleteCollaboratorsMethod = V2Grpc.getDeleteCollaboratorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteCollaboratorsMethod = V2Grpc.getDeleteCollaboratorsMethod) == null) {
+          V2Grpc.getDeleteCollaboratorsMethod = getDeleteCollaboratorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteCollaboratorsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCollaborators"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteCollaboratorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteCollaborators"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCollaboratorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaborationsRequest,
+      com.clarifai.grpc.api.MultiCollaborationsResponse> getListCollaborationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCollaborations",
+      requestType = com.clarifai.grpc.api.ListCollaborationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollaborationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaborationsRequest,
+      com.clarifai.grpc.api.MultiCollaborationsResponse> getListCollaborationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaborationsRequest, com.clarifai.grpc.api.MultiCollaborationsResponse> getListCollaborationsMethod;
+    if ((getListCollaborationsMethod = V2Grpc.getListCollaborationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListCollaborationsMethod = V2Grpc.getListCollaborationsMethod) == null) {
+          V2Grpc.getListCollaborationsMethod = getListCollaborationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListCollaborationsRequest, com.clarifai.grpc.api.MultiCollaborationsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCollaborations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListCollaborationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollaborationsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListCollaborations"))
+              .build();
+        }
+      }
+    }
+    return getListCollaborationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAppDuplicationsRequest,
+      com.clarifai.grpc.api.MultiAppDuplicationsResponse> getPostAppDuplicationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostAppDuplications",
+      requestType = com.clarifai.grpc.api.PostAppDuplicationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAppDuplicationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAppDuplicationsRequest,
+      com.clarifai.grpc.api.MultiAppDuplicationsResponse> getPostAppDuplicationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAppDuplicationsRequest, com.clarifai.grpc.api.MultiAppDuplicationsResponse> getPostAppDuplicationsMethod;
+    if ((getPostAppDuplicationsMethod = V2Grpc.getPostAppDuplicationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostAppDuplicationsMethod = V2Grpc.getPostAppDuplicationsMethod) == null) {
+          V2Grpc.getPostAppDuplicationsMethod = getPostAppDuplicationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAppDuplicationsRequest, com.clarifai.grpc.api.MultiAppDuplicationsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAppDuplications"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostAppDuplicationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAppDuplicationsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAppDuplications"))
+              .build();
+        }
+      }
+    }
+    return getPostAppDuplicationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAppDuplicationsRequest,
+      com.clarifai.grpc.api.MultiAppDuplicationsResponse> getListAppDuplicationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAppDuplications",
+      requestType = com.clarifai.grpc.api.ListAppDuplicationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAppDuplicationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAppDuplicationsRequest,
+      com.clarifai.grpc.api.MultiAppDuplicationsResponse> getListAppDuplicationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListAppDuplicationsRequest, com.clarifai.grpc.api.MultiAppDuplicationsResponse> getListAppDuplicationsMethod;
+    if ((getListAppDuplicationsMethod = V2Grpc.getListAppDuplicationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListAppDuplicationsMethod = V2Grpc.getListAppDuplicationsMethod) == null) {
+          V2Grpc.getListAppDuplicationsMethod = getListAppDuplicationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListAppDuplicationsRequest, com.clarifai.grpc.api.MultiAppDuplicationsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAppDuplications"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListAppDuplicationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAppDuplicationsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListAppDuplications"))
+              .build();
+        }
+      }
+    }
+    return getListAppDuplicationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAppDuplicationRequest,
+      com.clarifai.grpc.api.SingleAppDuplicationResponse> getGetAppDuplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAppDuplication",
+      requestType = com.clarifai.grpc.api.GetAppDuplicationRequest.class,
+      responseType = com.clarifai.grpc.api.SingleAppDuplicationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAppDuplicationRequest,
+      com.clarifai.grpc.api.SingleAppDuplicationResponse> getGetAppDuplicationMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAppDuplicationRequest, com.clarifai.grpc.api.SingleAppDuplicationResponse> getGetAppDuplicationMethod;
+    if ((getGetAppDuplicationMethod = V2Grpc.getGetAppDuplicationMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetAppDuplicationMethod = V2Grpc.getGetAppDuplicationMethod) == null) {
+          V2Grpc.getGetAppDuplicationMethod = getGetAppDuplicationMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetAppDuplicationRequest, com.clarifai.grpc.api.SingleAppDuplicationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAppDuplication"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetAppDuplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleAppDuplicationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetAppDuplication"))
+              .build();
+        }
+      }
+    }
+    return getGetAppDuplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTasksRequest,
+      com.clarifai.grpc.api.MultiTaskResponse> getPostTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostTasks",
+      requestType = com.clarifai.grpc.api.PostTasksRequest.class,
+      responseType = com.clarifai.grpc.api.MultiTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTasksRequest,
+      com.clarifai.grpc.api.MultiTaskResponse> getPostTasksMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTasksRequest, com.clarifai.grpc.api.MultiTaskResponse> getPostTasksMethod;
+    if ((getPostTasksMethod = V2Grpc.getPostTasksMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostTasksMethod = V2Grpc.getPostTasksMethod) == null) {
+          V2Grpc.getPostTasksMethod = getPostTasksMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostTasksRequest, com.clarifai.grpc.api.MultiTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostTasks"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostTasks"))
+              .build();
+        }
+      }
+    }
+    return getPostTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskRequest,
+      com.clarifai.grpc.api.SingleTaskResponse> getGetTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTask",
+      requestType = com.clarifai.grpc.api.GetTaskRequest.class,
+      responseType = com.clarifai.grpc.api.SingleTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskRequest,
+      com.clarifai.grpc.api.SingleTaskResponse> getGetTaskMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskRequest, com.clarifai.grpc.api.SingleTaskResponse> getGetTaskMethod;
+    if ((getGetTaskMethod = V2Grpc.getGetTaskMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetTaskMethod = V2Grpc.getGetTaskMethod) == null) {
+          V2Grpc.getGetTaskMethod = getGetTaskMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetTaskRequest, com.clarifai.grpc.api.SingleTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTask"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetTaskRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetTask"))
+              .build();
+        }
+      }
+    }
+    return getGetTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTasksRequest,
+      com.clarifai.grpc.api.MultiTaskResponse> getListTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTasks",
+      requestType = com.clarifai.grpc.api.ListTasksRequest.class,
+      responseType = com.clarifai.grpc.api.MultiTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTasksRequest,
+      com.clarifai.grpc.api.MultiTaskResponse> getListTasksMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTasksRequest, com.clarifai.grpc.api.MultiTaskResponse> getListTasksMethod;
+    if ((getListTasksMethod = V2Grpc.getListTasksMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListTasksMethod = V2Grpc.getListTasksMethod) == null) {
+          V2Grpc.getListTasksMethod = getListTasksMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListTasksRequest, com.clarifai.grpc.api.MultiTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTasks"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListTasks"))
+              .build();
+        }
+      }
+    }
+    return getListTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchTasksRequest,
+      com.clarifai.grpc.api.MultiTaskResponse> getPatchTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchTasks",
+      requestType = com.clarifai.grpc.api.PatchTasksRequest.class,
+      responseType = com.clarifai.grpc.api.MultiTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchTasksRequest,
+      com.clarifai.grpc.api.MultiTaskResponse> getPatchTasksMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchTasksRequest, com.clarifai.grpc.api.MultiTaskResponse> getPatchTasksMethod;
+    if ((getPatchTasksMethod = V2Grpc.getPatchTasksMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchTasksMethod = V2Grpc.getPatchTasksMethod) == null) {
+          V2Grpc.getPatchTasksMethod = getPatchTasksMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchTasksRequest, com.clarifai.grpc.api.MultiTaskResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchTasks"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiTaskResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchTasks"))
+              .build();
+        }
+      }
+    }
+    return getPatchTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteTasksRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTasks",
+      requestType = com.clarifai.grpc.api.DeleteTasksRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteTasksRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteTasksMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteTasksRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteTasksMethod;
+    if ((getDeleteTasksMethod = V2Grpc.getDeleteTasksMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteTasksMethod = V2Grpc.getDeleteTasksMethod) == null) {
+          V2Grpc.getDeleteTasksMethod = getDeleteTasksMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteTasksRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTasks"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteTasks"))
+              .build();
+        }
+      }
+    }
+    return getDeleteTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest,
+      com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostCollectors",
+      requestType = com.clarifai.grpc.api.PostCollectorsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollectorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest,
+      com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod;
+    if ((getPostCollectorsMethod = V2Grpc.getPostCollectorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostCollectorsMethod = V2Grpc.getPostCollectorsMethod) == null) {
+          V2Grpc.getPostCollectorsMethod = getPostCollectorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostCollectors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostCollectorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollectorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostCollectors"))
+              .build();
+        }
+      }
+    }
+    return getPostCollectorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetCollectorRequest,
+      com.clarifai.grpc.api.SingleCollectorResponse> getGetCollectorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCollector",
+      requestType = com.clarifai.grpc.api.GetCollectorRequest.class,
+      responseType = com.clarifai.grpc.api.SingleCollectorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetCollectorRequest,
+      com.clarifai.grpc.api.SingleCollectorResponse> getGetCollectorMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetCollectorRequest, com.clarifai.grpc.api.SingleCollectorResponse> getGetCollectorMethod;
+    if ((getGetCollectorMethod = V2Grpc.getGetCollectorMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetCollectorMethod = V2Grpc.getGetCollectorMethod) == null) {
+          V2Grpc.getGetCollectorMethod = getGetCollectorMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetCollectorRequest, com.clarifai.grpc.api.SingleCollectorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCollector"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetCollectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleCollectorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetCollector"))
+              .build();
+        }
+      }
+    }
+    return getGetCollectorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollectorsRequest,
+      com.clarifai.grpc.api.MultiCollectorResponse> getListCollectorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCollectors",
+      requestType = com.clarifai.grpc.api.ListCollectorsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollectorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollectorsRequest,
+      com.clarifai.grpc.api.MultiCollectorResponse> getListCollectorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse> getListCollectorsMethod;
+    if ((getListCollectorsMethod = V2Grpc.getListCollectorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListCollectorsMethod = V2Grpc.getListCollectorsMethod) == null) {
+          V2Grpc.getListCollectorsMethod = getListCollectorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCollectors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListCollectorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollectorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListCollectors"))
+              .build();
+        }
+      }
+    }
+    return getListCollectorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollectorsRequest,
+      com.clarifai.grpc.api.MultiCollectorResponse> getPatchCollectorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchCollectors",
+      requestType = com.clarifai.grpc.api.PatchCollectorsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiCollectorResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollectorsRequest,
+      com.clarifai.grpc.api.MultiCollectorResponse> getPatchCollectorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse> getPatchCollectorsMethod;
+    if ((getPatchCollectorsMethod = V2Grpc.getPatchCollectorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchCollectorsMethod = V2Grpc.getPatchCollectorsMethod) == null) {
+          V2Grpc.getPatchCollectorsMethod = getPatchCollectorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchCollectorsRequest, com.clarifai.grpc.api.MultiCollectorResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchCollectors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchCollectorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiCollectorResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchCollectors"))
+              .build();
+        }
+      }
+    }
+    return getPatchCollectorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollectorsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteCollectorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCollectors",
+      requestType = com.clarifai.grpc.api.DeleteCollectorsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollectorsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteCollectorsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteCollectorsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteCollectorsMethod;
+    if ((getDeleteCollectorsMethod = V2Grpc.getDeleteCollectorsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteCollectorsMethod = V2Grpc.getDeleteCollectorsMethod) == null) {
+          V2Grpc.getDeleteCollectorsMethod = getDeleteCollectorsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteCollectorsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCollectors"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteCollectorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteCollectors"))
+              .build();
+        }
+      }
+    }
+    return getDeleteCollectorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesRequest,
+      com.clarifai.grpc.api.MultiStatValueResponse> getPostStatValuesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostStatValues",
+      requestType = com.clarifai.grpc.api.PostStatValuesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiStatValueResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesRequest,
+      com.clarifai.grpc.api.MultiStatValueResponse> getPostStatValuesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesRequest, com.clarifai.grpc.api.MultiStatValueResponse> getPostStatValuesMethod;
+    if ((getPostStatValuesMethod = V2Grpc.getPostStatValuesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostStatValuesMethod = V2Grpc.getPostStatValuesMethod) == null) {
+          V2Grpc.getPostStatValuesMethod = getPostStatValuesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostStatValuesRequest, com.clarifai.grpc.api.MultiStatValueResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostStatValues"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostStatValuesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiStatValueResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostStatValues"))
+              .build();
+        }
+      }
+    }
+    return getPostStatValuesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesAggregateRequest,
+      com.clarifai.grpc.api.MultiStatValueAggregateResponse> getPostStatValuesAggregateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostStatValuesAggregate",
+      requestType = com.clarifai.grpc.api.PostStatValuesAggregateRequest.class,
+      responseType = com.clarifai.grpc.api.MultiStatValueAggregateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesAggregateRequest,
+      com.clarifai.grpc.api.MultiStatValueAggregateResponse> getPostStatValuesAggregateMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostStatValuesAggregateRequest, com.clarifai.grpc.api.MultiStatValueAggregateResponse> getPostStatValuesAggregateMethod;
+    if ((getPostStatValuesAggregateMethod = V2Grpc.getPostStatValuesAggregateMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostStatValuesAggregateMethod = V2Grpc.getPostStatValuesAggregateMethod) == null) {
+          V2Grpc.getPostStatValuesAggregateMethod = getPostStatValuesAggregateMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostStatValuesAggregateRequest, com.clarifai.grpc.api.MultiStatValueAggregateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostStatValuesAggregate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostStatValuesAggregateRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiStatValueAggregateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostStatValuesAggregate"))
+              .build();
+        }
+      }
+    }
+    return getPostStatValuesAggregateMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static V2Stub newStub(io.grpc.Channel channel) {
-    return new V2Stub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<V2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<V2Stub>() {
+        @java.lang.Override
+        public V2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new V2Stub(channel, callOptions);
+        }
+      };
+    return V2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1589,7 +3146,14 @@ public final class V2Grpc {
    */
   public static V2BlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new V2BlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<V2BlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<V2BlockingStub>() {
+        @java.lang.Override
+        public V2BlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new V2BlockingStub(channel, callOptions);
+        }
+      };
+    return V2BlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -1597,7 +3161,14 @@ public final class V2Grpc {
    */
   public static V2FutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new V2FutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<V2FutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<V2FutureStub>() {
+        @java.lang.Override
+        public V2FutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new V2FutureStub(channel, callOptions);
+        }
+      };
+    return V2FutureStub.newStub(factory, channel);
   }
 
   /**
@@ -1668,12 +3239,193 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get a specific concept from an app.
+     * </pre>
+     */
+    public void getConceptLanguage(com.clarifai.grpc.api.GetConceptLanguageRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleConceptLanguageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetConceptLanguageMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List the concept in all the translated languages.
+     * </pre>
+     */
+    public void listConceptLanguages(com.clarifai.grpc.api.ListConceptLanguagesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListConceptLanguagesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add a new tranlsation for this concept.
+     * </pre>
+     */
+    public void postConceptLanguages(com.clarifai.grpc.api.PostConceptLanguagesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostConceptLanguagesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch the name for a given language names by passing in a list of concepts with the new names
+     * for the languages.
+     * </pre>
+     */
+    public void patchConceptLanguages(com.clarifai.grpc.api.PatchConceptLanguagesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchConceptLanguagesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List concept relations between concepts in the platform.
+     * </pre>
+     */
+    public void listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListConceptRelationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostConceptRelationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteConceptRelationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all domain graphs.
+     * </pre>
+     */
+    public void listKnowledgeGraphs(com.clarifai.grpc.api.ListKnowledgeGraphsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListKnowledgeGraphsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post domain graphs.
+     * </pre>
+     */
+    public void postKnowledgeGraphs(com.clarifai.grpc.api.PostKnowledgeGraphsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostKnowledgeGraphsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Start concept mapping jobs.
+     * </pre>
+     */
+    public void postConceptMappingJobs(com.clarifai.grpc.api.PostConceptMappingJobsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptMappingJobResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostConceptMappingJobsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific annotation from an app.
+     * </pre>
+     */
+    public void getAnnotation(com.clarifai.grpc.api.GetAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAnnotationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the annotation.
+     * </pre>
+     */
+    public void listAnnotations(com.clarifai.grpc.api.ListAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post annotations.
+     * </pre>
+     */
+    public void postAnnotations(com.clarifai.grpc.api.PostAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more annotations.
+     * </pre>
+     */
+    public void patchAnnotations(com.clarifai.grpc.api.PatchAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a single annotation.
+     * </pre>
+     */
+    public void deleteAnnotation(com.clarifai.grpc.api.DeleteAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple annotations in one request.
+     * </pre>
+     */
+    public void deleteAnnotations(com.clarifai.grpc.api.DeleteAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over annotation
+     * </pre>
+     */
+    public void postAnnotationsSearches(com.clarifai.grpc.api.PostAnnotationsSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostAnnotationsSearchesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Patch one or more inputs.
      * </pre>
      */
     public void getInputCount(com.clarifai.grpc.api.GetInputCountRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInputCountResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetInputCountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Streams all the inputs starting from oldest assets.
+     * </pre>
+     */
+    public void streamInputs(com.clarifai.grpc.api.StreamInputsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getStreamInputsMethod(), responseObserver);
     }
 
     /**
@@ -1737,6 +3489,16 @@ public final class V2Grpc {
     public void deleteInputs(com.clarifai.grpc.api.DeleteInputsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteInputsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over input
+     * </pre>
+     */
+    public void postInputsSearches(com.clarifai.grpc.api.PostInputsSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostInputsSearchesMethod(), responseObserver);
     }
 
     /**
@@ -1975,6 +3737,13 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostWorkflowResultsSimilarityMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * Get a specific key from an app.
      * </pre>
@@ -2038,6 +3807,28 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * API Keys in the public API -- request is itself Key authorized, and will tell
+     * the user the scopes/access of the key/credential they're providing, as computed by
+     * our authorizer:
+     * </pre>
+     */
+    public void myScopes(com.clarifai.grpc.api.MyScopesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getMyScopesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all auth scopes available.
+     * </pre>
+     */
+    public void listScopes(com.clarifai.grpc.api.ListScopesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeDepsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListScopesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get a specific app from an app.
      * </pre>
      */
@@ -2092,12 +3883,92 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Validate new password in real-time for a user
+     * </pre>
+     */
+    public void postValidatePassword(com.clarifai.grpc.api.PostValidatePasswordRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePasswordValidationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostValidatePasswordMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a saved search.
+     * </pre>
+     */
+    public void getSearch(com.clarifai.grpc.api.GetSearchRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleSearchResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetSearchMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all saved searches.
+     * </pre>
+     */
+    public void listSearches(com.clarifai.grpc.api.ListSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListSearchesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Execute a new search and optionally save it.
      * </pre>
      */
     public void postSearches(com.clarifai.grpc.api.PostSearchesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPostSearchesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Execute a previously saved search.
+     * </pre>
+     */
+    public void postSearchesByID(com.clarifai.grpc.api.PostSearchesByIDRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostSearchesByIDMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Evaluate the results of two search requests
+     * </pre>
+     */
+    public void postAnnotationSearchMetrics(com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostAnnotationSearchMetricsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get the evaluation results between two search requests
+     * </pre>
+     */
+    public void getAnnotationSearchMetrics(com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAnnotationSearchMetricsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List the evaluation results between two search requests
+     * </pre>
+     */
+    public void listAnnotationSearchMetrics(com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListAnnotationSearchMetricsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a saved search.
+     * </pre>
+     */
+    public void deleteSearch(com.clarifai.grpc.api.DeleteSearchRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteSearchMethod(), responseObserver);
     }
 
     /**
@@ -2118,6 +3989,207 @@ public final class V2Grpc {
     public void getStatusCode(com.clarifai.grpc.api.GetStatusCodeRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleStatusCodeResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetStatusCodeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * owner list users who the app is shared with
+     * </pre>
+     */
+    public void listCollaborators(com.clarifai.grpc.api.ListCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListCollaboratorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * add collaborators to an app.
+     * </pre>
+     */
+    public void postCollaborators(com.clarifai.grpc.api.PostCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostCollaboratorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch existing collaborators.
+     * </pre>
+     */
+    public void patchCollaborators(com.clarifai.grpc.api.PatchCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchCollaboratorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete existing collaborators.
+     * </pre>
+     */
+    public void deleteCollaborators(com.clarifai.grpc.api.DeleteCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteCollaboratorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Collaboration includes the app user are invitied to work on
+     * </pre>
+     */
+    public void listCollaborations(com.clarifai.grpc.api.ListCollaborationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaborationsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListCollaborationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
+     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * </pre>
+     */
+    public void postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostAppDuplicationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * list all the app duplications user triggers
+     * </pre>
+     */
+    public void listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListAppDuplicationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * get the app duplication status
+     * </pre>
+     */
+    public void getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAppDuplicationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAppDuplicationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add tasks to an app.
+     * </pre>
+     */
+    public void postTasks(com.clarifai.grpc.api.PostTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostTasksMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific task from an app.
+     * </pre>
+     */
+    public void getTask(com.clarifai.grpc.api.GetTaskRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List tasks from an app.
+     * </pre>
+     */
+    public void listTasks(com.clarifai.grpc.api.ListTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListTasksMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more tasks.
+     * </pre>
+     */
+    public void patchTasks(com.clarifai.grpc.api.PatchTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchTasksMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple tasks in one request.
+     * </pre>
+     */
+    public void deleteTasks(com.clarifai.grpc.api.DeleteTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteTasksMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add a list of Collectors to an app.
+     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
+     * endpoint.
+     * Those current scopes are listed here as a hard requirement.
+     * They are needed when adding the collectors just so we now that you have permission with
+     * that key at least to do the writing to this app with POST /inputs.
+     * </pre>
+     */
+    public void postCollectors(com.clarifai.grpc.api.PostCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostCollectorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific collector from an app.
+     * </pre>
+     */
+    public void getCollector(com.clarifai.grpc.api.GetCollectorRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleCollectorResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetCollectorMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the collectors.
+     * </pre>
+     */
+    public void listCollectors(com.clarifai.grpc.api.ListCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListCollectorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more collectors.
+     * </pre>
+     */
+    public void patchCollectors(com.clarifai.grpc.api.PatchCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchCollectorsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple collectors in one request.
+     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
+     * </pre>
+     */
+    public void deleteCollectors(com.clarifai.grpc.api.DeleteCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteCollectorsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postStatValues(com.clarifai.grpc.api.PostStatValuesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostStatValuesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostStatValuesAggregateMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -2165,12 +4237,138 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiConceptResponse>(
                   this, METHODID_PATCH_CONCEPTS)))
           .addMethod(
+            getGetConceptLanguageMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetConceptLanguageRequest,
+                com.clarifai.grpc.api.SingleConceptLanguageResponse>(
+                  this, METHODID_GET_CONCEPT_LANGUAGE)))
+          .addMethod(
+            getListConceptLanguagesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListConceptLanguagesRequest,
+                com.clarifai.grpc.api.MultiConceptLanguageResponse>(
+                  this, METHODID_LIST_CONCEPT_LANGUAGES)))
+          .addMethod(
+            getPostConceptLanguagesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostConceptLanguagesRequest,
+                com.clarifai.grpc.api.MultiConceptLanguageResponse>(
+                  this, METHODID_POST_CONCEPT_LANGUAGES)))
+          .addMethod(
+            getPatchConceptLanguagesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchConceptLanguagesRequest,
+                com.clarifai.grpc.api.MultiConceptLanguageResponse>(
+                  this, METHODID_PATCH_CONCEPT_LANGUAGES)))
+          .addMethod(
+            getListConceptRelationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListConceptRelationsRequest,
+                com.clarifai.grpc.api.MultiConceptRelationResponse>(
+                  this, METHODID_LIST_CONCEPT_RELATIONS)))
+          .addMethod(
+            getPostConceptRelationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostConceptRelationsRequest,
+                com.clarifai.grpc.api.MultiConceptRelationResponse>(
+                  this, METHODID_POST_CONCEPT_RELATIONS)))
+          .addMethod(
+            getDeleteConceptRelationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteConceptRelationsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_CONCEPT_RELATIONS)))
+          .addMethod(
+            getListKnowledgeGraphsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListKnowledgeGraphsRequest,
+                com.clarifai.grpc.api.MultiKnowledgeGraphResponse>(
+                  this, METHODID_LIST_KNOWLEDGE_GRAPHS)))
+          .addMethod(
+            getPostKnowledgeGraphsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostKnowledgeGraphsRequest,
+                com.clarifai.grpc.api.MultiKnowledgeGraphResponse>(
+                  this, METHODID_POST_KNOWLEDGE_GRAPHS)))
+          .addMethod(
+            getPostConceptMappingJobsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostConceptMappingJobsRequest,
+                com.clarifai.grpc.api.MultiConceptMappingJobResponse>(
+                  this, METHODID_POST_CONCEPT_MAPPING_JOBS)))
+          .addMethod(
+            getGetAnnotationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetAnnotationRequest,
+                com.clarifai.grpc.api.SingleAnnotationResponse>(
+                  this, METHODID_GET_ANNOTATION)))
+          .addMethod(
+            getListAnnotationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListAnnotationsRequest,
+                com.clarifai.grpc.api.MultiAnnotationResponse>(
+                  this, METHODID_LIST_ANNOTATIONS)))
+          .addMethod(
+            getPostAnnotationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostAnnotationsRequest,
+                com.clarifai.grpc.api.MultiAnnotationResponse>(
+                  this, METHODID_POST_ANNOTATIONS)))
+          .addMethod(
+            getPatchAnnotationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchAnnotationsRequest,
+                com.clarifai.grpc.api.MultiAnnotationResponse>(
+                  this, METHODID_PATCH_ANNOTATIONS)))
+          .addMethod(
+            getDeleteAnnotationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteAnnotationRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_ANNOTATION)))
+          .addMethod(
+            getDeleteAnnotationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteAnnotationsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_ANNOTATIONS)))
+          .addMethod(
+            getPostAnnotationsSearchesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostAnnotationsSearchesRequest,
+                com.clarifai.grpc.api.MultiSearchResponse>(
+                  this, METHODID_POST_ANNOTATIONS_SEARCHES)))
+          .addMethod(
             getGetInputCountMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.clarifai.grpc.api.GetInputCountRequest,
                 com.clarifai.grpc.api.SingleInputCountResponse>(
                   this, METHODID_GET_INPUT_COUNT)))
+          .addMethod(
+            getStreamInputsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.StreamInputsRequest,
+                com.clarifai.grpc.api.MultiInputResponse>(
+                  this, METHODID_STREAM_INPUTS)))
           .addMethod(
             getGetInputMethod(),
             asyncUnaryCall(
@@ -2213,6 +4411,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteInputsRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_INPUTS)))
+          .addMethod(
+            getPostInputsSearchesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostInputsSearchesRequest,
+                com.clarifai.grpc.api.MultiSearchResponse>(
+                  this, METHODID_POST_INPUTS_SEARCHES)))
           .addMethod(
             getPostModelOutputsMethod(),
             asyncUnaryCall(
@@ -2375,6 +4580,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostWorkflowResultsResponse>(
                   this, METHODID_POST_WORKFLOW_RESULTS)))
           .addMethod(
+            getPostWorkflowResultsSimilarityMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
+                com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>(
+                  this, METHODID_POST_WORKFLOW_RESULTS_SIMILARITY)))
+          .addMethod(
             getGetKeyMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -2417,6 +4629,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiKeyResponse>(
                   this, METHODID_PATCH_KEYS)))
           .addMethod(
+            getMyScopesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.MyScopesRequest,
+                com.clarifai.grpc.api.MultiScopeResponse>(
+                  this, METHODID_MY_SCOPES)))
+          .addMethod(
+            getListScopesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListScopesRequest,
+                com.clarifai.grpc.api.MultiScopeDepsResponse>(
+                  this, METHODID_LIST_SCOPES)))
+          .addMethod(
             getGetAppMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -2452,12 +4678,68 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiAppResponse>(
                   this, METHODID_PATCH_APPS)))
           .addMethod(
+            getPostValidatePasswordMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostValidatePasswordRequest,
+                com.clarifai.grpc.api.SinglePasswordValidationResponse>(
+                  this, METHODID_POST_VALIDATE_PASSWORD)))
+          .addMethod(
+            getGetSearchMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetSearchRequest,
+                com.clarifai.grpc.api.SingleSearchResponse>(
+                  this, METHODID_GET_SEARCH)))
+          .addMethod(
+            getListSearchesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListSearchesRequest,
+                com.clarifai.grpc.api.MultiSearchResponse>(
+                  this, METHODID_LIST_SEARCHES)))
+          .addMethod(
             getPostSearchesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.clarifai.grpc.api.PostSearchesRequest,
                 com.clarifai.grpc.api.MultiSearchResponse>(
                   this, METHODID_POST_SEARCHES)))
+          .addMethod(
+            getPostSearchesByIDMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostSearchesByIDRequest,
+                com.clarifai.grpc.api.MultiSearchResponse>(
+                  this, METHODID_POST_SEARCHES_BY_ID)))
+          .addMethod(
+            getPostAnnotationSearchMetricsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest,
+                com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>(
+                  this, METHODID_POST_ANNOTATION_SEARCH_METRICS)))
+          .addMethod(
+            getGetAnnotationSearchMetricsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest,
+                com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>(
+                  this, METHODID_GET_ANNOTATION_SEARCH_METRICS)))
+          .addMethod(
+            getListAnnotationSearchMetricsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest,
+                com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>(
+                  this, METHODID_LIST_ANNOTATION_SEARCH_METRICS)))
+          .addMethod(
+            getDeleteSearchMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteSearchRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_SEARCH)))
           .addMethod(
             getListStatusCodesMethod(),
             asyncUnaryCall(
@@ -2472,25 +4754,161 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.GetStatusCodeRequest,
                 com.clarifai.grpc.api.SingleStatusCodeResponse>(
                   this, METHODID_GET_STATUS_CODE)))
+          .addMethod(
+            getListCollaboratorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListCollaboratorsRequest,
+                com.clarifai.grpc.api.MultiCollaboratorsResponse>(
+                  this, METHODID_LIST_COLLABORATORS)))
+          .addMethod(
+            getPostCollaboratorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostCollaboratorsRequest,
+                com.clarifai.grpc.api.MultiCollaboratorsResponse>(
+                  this, METHODID_POST_COLLABORATORS)))
+          .addMethod(
+            getPatchCollaboratorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchCollaboratorsRequest,
+                com.clarifai.grpc.api.MultiCollaboratorsResponse>(
+                  this, METHODID_PATCH_COLLABORATORS)))
+          .addMethod(
+            getDeleteCollaboratorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteCollaboratorsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_COLLABORATORS)))
+          .addMethod(
+            getListCollaborationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListCollaborationsRequest,
+                com.clarifai.grpc.api.MultiCollaborationsResponse>(
+                  this, METHODID_LIST_COLLABORATIONS)))
+          .addMethod(
+            getPostAppDuplicationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostAppDuplicationsRequest,
+                com.clarifai.grpc.api.MultiAppDuplicationsResponse>(
+                  this, METHODID_POST_APP_DUPLICATIONS)))
+          .addMethod(
+            getListAppDuplicationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListAppDuplicationsRequest,
+                com.clarifai.grpc.api.MultiAppDuplicationsResponse>(
+                  this, METHODID_LIST_APP_DUPLICATIONS)))
+          .addMethod(
+            getGetAppDuplicationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetAppDuplicationRequest,
+                com.clarifai.grpc.api.SingleAppDuplicationResponse>(
+                  this, METHODID_GET_APP_DUPLICATION)))
+          .addMethod(
+            getPostTasksMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostTasksRequest,
+                com.clarifai.grpc.api.MultiTaskResponse>(
+                  this, METHODID_POST_TASKS)))
+          .addMethod(
+            getGetTaskMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetTaskRequest,
+                com.clarifai.grpc.api.SingleTaskResponse>(
+                  this, METHODID_GET_TASK)))
+          .addMethod(
+            getListTasksMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListTasksRequest,
+                com.clarifai.grpc.api.MultiTaskResponse>(
+                  this, METHODID_LIST_TASKS)))
+          .addMethod(
+            getPatchTasksMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchTasksRequest,
+                com.clarifai.grpc.api.MultiTaskResponse>(
+                  this, METHODID_PATCH_TASKS)))
+          .addMethod(
+            getDeleteTasksMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteTasksRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_TASKS)))
+          .addMethod(
+            getPostCollectorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostCollectorsRequest,
+                com.clarifai.grpc.api.MultiCollectorResponse>(
+                  this, METHODID_POST_COLLECTORS)))
+          .addMethod(
+            getGetCollectorMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetCollectorRequest,
+                com.clarifai.grpc.api.SingleCollectorResponse>(
+                  this, METHODID_GET_COLLECTOR)))
+          .addMethod(
+            getListCollectorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListCollectorsRequest,
+                com.clarifai.grpc.api.MultiCollectorResponse>(
+                  this, METHODID_LIST_COLLECTORS)))
+          .addMethod(
+            getPatchCollectorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchCollectorsRequest,
+                com.clarifai.grpc.api.MultiCollectorResponse>(
+                  this, METHODID_PATCH_COLLECTORS)))
+          .addMethod(
+            getDeleteCollectorsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteCollectorsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_COLLECTORS)))
+          .addMethod(
+            getPostStatValuesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostStatValuesRequest,
+                com.clarifai.grpc.api.MultiStatValueResponse>(
+                  this, METHODID_POST_STAT_VALUES)))
+          .addMethod(
+            getPostStatValuesAggregateMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostStatValuesAggregateRequest,
+                com.clarifai.grpc.api.MultiStatValueAggregateResponse>(
+                  this, METHODID_POST_STAT_VALUES_AGGREGATE)))
           .build();
     }
   }
 
   /**
    */
-  public static final class V2Stub extends io.grpc.stub.AbstractStub<V2Stub> {
-    private V2Stub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private V2Stub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class V2Stub extends io.grpc.stub.AbstractAsyncStub<V2Stub> {
+    private V2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected V2Stub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected V2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new V2Stub(channel, callOptions);
     }
 
@@ -2564,6 +4982,194 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get a specific concept from an app.
+     * </pre>
+     */
+    public void getConceptLanguage(com.clarifai.grpc.api.GetConceptLanguageRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleConceptLanguageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetConceptLanguageMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List the concept in all the translated languages.
+     * </pre>
+     */
+    public void listConceptLanguages(com.clarifai.grpc.api.ListConceptLanguagesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListConceptLanguagesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add a new tranlsation for this concept.
+     * </pre>
+     */
+    public void postConceptLanguages(com.clarifai.grpc.api.PostConceptLanguagesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostConceptLanguagesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch the name for a given language names by passing in a list of concepts with the new names
+     * for the languages.
+     * </pre>
+     */
+    public void patchConceptLanguages(com.clarifai.grpc.api.PatchConceptLanguagesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchConceptLanguagesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List concept relations between concepts in the platform.
+     * </pre>
+     */
+    public void listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListConceptRelationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostConceptRelationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteConceptRelationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all domain graphs.
+     * </pre>
+     */
+    public void listKnowledgeGraphs(com.clarifai.grpc.api.ListKnowledgeGraphsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListKnowledgeGraphsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post domain graphs.
+     * </pre>
+     */
+    public void postKnowledgeGraphs(com.clarifai.grpc.api.PostKnowledgeGraphsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostKnowledgeGraphsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Start concept mapping jobs.
+     * </pre>
+     */
+    public void postConceptMappingJobs(com.clarifai.grpc.api.PostConceptMappingJobsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptMappingJobResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostConceptMappingJobsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific annotation from an app.
+     * </pre>
+     */
+    public void getAnnotation(com.clarifai.grpc.api.GetAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAnnotationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAnnotationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the annotation.
+     * </pre>
+     */
+    public void listAnnotations(com.clarifai.grpc.api.ListAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListAnnotationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post annotations.
+     * </pre>
+     */
+    public void postAnnotations(com.clarifai.grpc.api.PostAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostAnnotationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more annotations.
+     * </pre>
+     */
+    public void patchAnnotations(com.clarifai.grpc.api.PatchAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchAnnotationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a single annotation.
+     * </pre>
+     */
+    public void deleteAnnotation(com.clarifai.grpc.api.DeleteAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteAnnotationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple annotations in one request.
+     * </pre>
+     */
+    public void deleteAnnotations(com.clarifai.grpc.api.DeleteAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteAnnotationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over annotation
+     * </pre>
+     */
+    public void postAnnotationsSearches(com.clarifai.grpc.api.PostAnnotationsSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostAnnotationsSearchesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Patch one or more inputs.
      * </pre>
      */
@@ -2571,6 +5177,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInputCountResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetInputCountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Streams all the inputs starting from oldest assets.
+     * </pre>
+     */
+    public void streamInputs(com.clarifai.grpc.api.StreamInputsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getStreamInputsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2640,6 +5257,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteInputsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over input
+     * </pre>
+     */
+    public void postInputsSearches(com.clarifai.grpc.api.PostInputsSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostInputsSearchesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2901,6 +5529,14 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostWorkflowResultsSimilarityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * Get a specific key from an app.
      * </pre>
@@ -2970,6 +5606,30 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * API Keys in the public API -- request is itself Key authorized, and will tell
+     * the user the scopes/access of the key/credential they're providing, as computed by
+     * our authorizer:
+     * </pre>
+     */
+    public void myScopes(com.clarifai.grpc.api.MyScopesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getMyScopesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all auth scopes available.
+     * </pre>
+     */
+    public void listScopes(com.clarifai.grpc.api.ListScopesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeDepsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListScopesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get a specific app from an app.
      * </pre>
      */
@@ -3029,6 +5689,39 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Validate new password in real-time for a user
+     * </pre>
+     */
+    public void postValidatePassword(com.clarifai.grpc.api.PostValidatePasswordRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePasswordValidationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostValidatePasswordMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a saved search.
+     * </pre>
+     */
+    public void getSearch(com.clarifai.grpc.api.GetSearchRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleSearchResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetSearchMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all saved searches.
+     * </pre>
+     */
+    public void listSearches(com.clarifai.grpc.api.ListSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListSearchesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Execute a new search and optionally save it.
      * </pre>
      */
@@ -3036,6 +5729,61 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPostSearchesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Execute a previously saved search.
+     * </pre>
+     */
+    public void postSearchesByID(com.clarifai.grpc.api.PostSearchesByIDRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostSearchesByIDMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Evaluate the results of two search requests
+     * </pre>
+     */
+    public void postAnnotationSearchMetrics(com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostAnnotationSearchMetricsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get the evaluation results between two search requests
+     * </pre>
+     */
+    public void getAnnotationSearchMetrics(com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAnnotationSearchMetricsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List the evaluation results between two search requests
+     * </pre>
+     */
+    public void listAnnotationSearchMetrics(com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListAnnotationSearchMetricsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a saved search.
+     * </pre>
+     */
+    public void deleteSearch(com.clarifai.grpc.api.DeleteSearchRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteSearchMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -3059,23 +5807,240 @@ public final class V2Grpc {
       asyncUnaryCall(
           getChannel().newCall(getGetStatusCodeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * owner list users who the app is shared with
+     * </pre>
+     */
+    public void listCollaborators(com.clarifai.grpc.api.ListCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListCollaboratorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * add collaborators to an app.
+     * </pre>
+     */
+    public void postCollaborators(com.clarifai.grpc.api.PostCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostCollaboratorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch existing collaborators.
+     * </pre>
+     */
+    public void patchCollaborators(com.clarifai.grpc.api.PatchCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchCollaboratorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete existing collaborators.
+     * </pre>
+     */
+    public void deleteCollaborators(com.clarifai.grpc.api.DeleteCollaboratorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteCollaboratorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Collaboration includes the app user are invitied to work on
+     * </pre>
+     */
+    public void listCollaborations(com.clarifai.grpc.api.ListCollaborationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaborationsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListCollaborationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
+     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * </pre>
+     */
+    public void postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostAppDuplicationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * list all the app duplications user triggers
+     * </pre>
+     */
+    public void listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListAppDuplicationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * get the app duplication status
+     * </pre>
+     */
+    public void getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAppDuplicationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAppDuplicationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add tasks to an app.
+     * </pre>
+     */
+    public void postTasks(com.clarifai.grpc.api.PostTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostTasksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific task from an app.
+     * </pre>
+     */
+    public void getTask(com.clarifai.grpc.api.GetTaskRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List tasks from an app.
+     * </pre>
+     */
+    public void listTasks(com.clarifai.grpc.api.ListTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListTasksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more tasks.
+     * </pre>
+     */
+    public void patchTasks(com.clarifai.grpc.api.PatchTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchTasksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple tasks in one request.
+     * </pre>
+     */
+    public void deleteTasks(com.clarifai.grpc.api.DeleteTasksRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteTasksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add a list of Collectors to an app.
+     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
+     * endpoint.
+     * Those current scopes are listed here as a hard requirement.
+     * They are needed when adding the collectors just so we now that you have permission with
+     * that key at least to do the writing to this app with POST /inputs.
+     * </pre>
+     */
+    public void postCollectors(com.clarifai.grpc.api.PostCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostCollectorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific collector from an app.
+     * </pre>
+     */
+    public void getCollector(com.clarifai.grpc.api.GetCollectorRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleCollectorResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetCollectorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the collectors.
+     * </pre>
+     */
+    public void listCollectors(com.clarifai.grpc.api.ListCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListCollectorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more collectors.
+     * </pre>
+     */
+    public void patchCollectors(com.clarifai.grpc.api.PatchCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchCollectorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple collectors in one request.
+     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
+     * </pre>
+     */
+    public void deleteCollectors(com.clarifai.grpc.api.DeleteCollectorsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteCollectorsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postStatValues(com.clarifai.grpc.api.PostStatValuesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostStatValuesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostStatValuesAggregateMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    */
-  public static final class V2BlockingStub extends io.grpc.stub.AbstractStub<V2BlockingStub> {
-    private V2BlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private V2BlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class V2BlockingStub extends io.grpc.stub.AbstractBlockingStub<V2BlockingStub> {
+    private V2BlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected V2BlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected V2BlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new V2BlockingStub(channel, callOptions);
     }
 
@@ -3143,12 +6108,193 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get a specific concept from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleConceptLanguageResponse getConceptLanguage(com.clarifai.grpc.api.GetConceptLanguageRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetConceptLanguageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List the concept in all the translated languages.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptLanguageResponse listConceptLanguages(com.clarifai.grpc.api.ListConceptLanguagesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListConceptLanguagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Add a new tranlsation for this concept.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptLanguageResponse postConceptLanguages(com.clarifai.grpc.api.PostConceptLanguagesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostConceptLanguagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch the name for a given language names by passing in a list of concepts with the new names
+     * for the languages.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptLanguageResponse patchConceptLanguages(com.clarifai.grpc.api.PatchConceptLanguagesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchConceptLanguagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List concept relations between concepts in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptRelationResponse listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListConceptRelationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptRelationResponse postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostConceptRelationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteConceptRelationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all domain graphs.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiKnowledgeGraphResponse listKnowledgeGraphs(com.clarifai.grpc.api.ListKnowledgeGraphsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListKnowledgeGraphsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post domain graphs.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiKnowledgeGraphResponse postKnowledgeGraphs(com.clarifai.grpc.api.PostKnowledgeGraphsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostKnowledgeGraphsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Start concept mapping jobs.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptMappingJobResponse postConceptMappingJobs(com.clarifai.grpc.api.PostConceptMappingJobsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostConceptMappingJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific annotation from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleAnnotationResponse getAnnotation(com.clarifai.grpc.api.GetAnnotationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all the annotation.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAnnotationResponse listAnnotations(com.clarifai.grpc.api.ListAnnotationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post annotations.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAnnotationResponse postAnnotations(com.clarifai.grpc.api.PostAnnotationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more annotations.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAnnotationResponse patchAnnotations(com.clarifai.grpc.api.PatchAnnotationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a single annotation.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteAnnotation(com.clarifai.grpc.api.DeleteAnnotationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple annotations in one request.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteAnnotations(com.clarifai.grpc.api.DeleteAnnotationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over annotation
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiSearchResponse postAnnotationsSearches(com.clarifai.grpc.api.PostAnnotationsSearchesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostAnnotationsSearchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Patch one or more inputs.
      * </pre>
      */
     public com.clarifai.grpc.api.SingleInputCountResponse getInputCount(com.clarifai.grpc.api.GetInputCountRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetInputCountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Streams all the inputs starting from oldest assets.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiInputResponse streamInputs(com.clarifai.grpc.api.StreamInputsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getStreamInputsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3212,6 +6358,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteInputs(com.clarifai.grpc.api.DeleteInputsRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteInputsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over input
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiSearchResponse postInputsSearches(com.clarifai.grpc.api.PostInputsSearchesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostInputsSearchesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3450,6 +6606,13 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostWorkflowResultsSimilarityMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * Get a specific key from an app.
      * </pre>
@@ -3513,6 +6676,28 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * API Keys in the public API -- request is itself Key authorized, and will tell
+     * the user the scopes/access of the key/credential they're providing, as computed by
+     * our authorizer:
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiScopeResponse myScopes(com.clarifai.grpc.api.MyScopesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getMyScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all auth scopes available.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiScopeDepsResponse listScopes(com.clarifai.grpc.api.ListScopesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get a specific app from an app.
      * </pre>
      */
@@ -3567,12 +6752,92 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Validate new password in real-time for a user
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SinglePasswordValidationResponse postValidatePassword(com.clarifai.grpc.api.PostValidatePasswordRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostValidatePasswordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a saved search.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleSearchResponse getSearch(com.clarifai.grpc.api.GetSearchRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all saved searches.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiSearchResponse listSearches(com.clarifai.grpc.api.ListSearchesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListSearchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Execute a new search and optionally save it.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiSearchResponse postSearches(com.clarifai.grpc.api.PostSearchesRequest request) {
       return blockingUnaryCall(
           getChannel(), getPostSearchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Execute a previously saved search.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiSearchResponse postSearchesByID(com.clarifai.grpc.api.PostSearchesByIDRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostSearchesByIDMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Evaluate the results of two search requests
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse postAnnotationSearchMetrics(com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostAnnotationSearchMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get the evaluation results between two search requests
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse getAnnotationSearchMetrics(com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAnnotationSearchMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List the evaluation results between two search requests
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse listAnnotationSearchMetrics(com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListAnnotationSearchMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a saved search.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteSearch(com.clarifai.grpc.api.DeleteSearchRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteSearchMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3594,23 +6859,220 @@ public final class V2Grpc {
       return blockingUnaryCall(
           getChannel(), getGetStatusCodeMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * owner list users who the app is shared with
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollaboratorsResponse listCollaborators(com.clarifai.grpc.api.ListCollaboratorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListCollaboratorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * add collaborators to an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollaboratorsResponse postCollaborators(com.clarifai.grpc.api.PostCollaboratorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostCollaboratorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch existing collaborators.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollaboratorsResponse patchCollaborators(com.clarifai.grpc.api.PatchCollaboratorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchCollaboratorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete existing collaborators.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteCollaborators(com.clarifai.grpc.api.DeleteCollaboratorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteCollaboratorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Collaboration includes the app user are invitied to work on
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollaborationsResponse listCollaborations(com.clarifai.grpc.api.ListCollaborationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListCollaborationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
+     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAppDuplicationsResponse postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostAppDuplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * list all the app duplications user triggers
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAppDuplicationsResponse listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListAppDuplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * get the app duplication status
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleAppDuplicationResponse getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAppDuplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Add tasks to an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiTaskResponse postTasks(com.clarifai.grpc.api.PostTasksRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific task from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleTaskResponse getTask(com.clarifai.grpc.api.GetTaskRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List tasks from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiTaskResponse listTasks(com.clarifai.grpc.api.ListTasksRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more tasks.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiTaskResponse patchTasks(com.clarifai.grpc.api.PatchTasksRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple tasks in one request.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteTasks(com.clarifai.grpc.api.DeleteTasksRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Add a list of Collectors to an app.
+     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
+     * endpoint.
+     * Those current scopes are listed here as a hard requirement.
+     * They are needed when adding the collectors just so we now that you have permission with
+     * that key at least to do the writing to this app with POST /inputs.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollectorResponse postCollectors(com.clarifai.grpc.api.PostCollectorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostCollectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific collector from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleCollectorResponse getCollector(com.clarifai.grpc.api.GetCollectorRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetCollectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all the collectors.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollectorResponse listCollectors(com.clarifai.grpc.api.ListCollectorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListCollectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more collectors.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiCollectorResponse patchCollectors(com.clarifai.grpc.api.PatchCollectorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchCollectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple collectors in one request.
+     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteCollectors(com.clarifai.grpc.api.DeleteCollectorsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteCollectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiStatValueResponse postStatValues(com.clarifai.grpc.api.PostStatValuesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostStatValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiStatValueAggregateResponse postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostStatValuesAggregateMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    */
-  public static final class V2FutureStub extends io.grpc.stub.AbstractStub<V2FutureStub> {
-    private V2FutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private V2FutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class V2FutureStub extends io.grpc.stub.AbstractFutureStub<V2FutureStub> {
+    private V2FutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected V2FutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected V2FutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new V2FutureStub(channel, callOptions);
     }
 
@@ -3684,6 +7146,194 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get a specific concept from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleConceptLanguageResponse> getConceptLanguage(
+        com.clarifai.grpc.api.GetConceptLanguageRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetConceptLanguageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List the concept in all the translated languages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptLanguageResponse> listConceptLanguages(
+        com.clarifai.grpc.api.ListConceptLanguagesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListConceptLanguagesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Add a new tranlsation for this concept.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptLanguageResponse> postConceptLanguages(
+        com.clarifai.grpc.api.PostConceptLanguagesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostConceptLanguagesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch the name for a given language names by passing in a list of concepts with the new names
+     * for the languages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptLanguageResponse> patchConceptLanguages(
+        com.clarifai.grpc.api.PatchConceptLanguagesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchConceptLanguagesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List concept relations between concepts in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptRelationResponse> listConceptRelations(
+        com.clarifai.grpc.api.ListConceptRelationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListConceptRelationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptRelationResponse> postConceptRelations(
+        com.clarifai.grpc.api.PostConceptRelationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostConceptRelationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteConceptRelations(
+        com.clarifai.grpc.api.DeleteConceptRelationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteConceptRelationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all domain graphs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> listKnowledgeGraphs(
+        com.clarifai.grpc.api.ListKnowledgeGraphsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListKnowledgeGraphsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post domain graphs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> postKnowledgeGraphs(
+        com.clarifai.grpc.api.PostKnowledgeGraphsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostKnowledgeGraphsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Start concept mapping jobs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptMappingJobResponse> postConceptMappingJobs(
+        com.clarifai.grpc.api.PostConceptMappingJobsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostConceptMappingJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific annotation from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleAnnotationResponse> getAnnotation(
+        com.clarifai.grpc.api.GetAnnotationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAnnotationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all the annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAnnotationResponse> listAnnotations(
+        com.clarifai.grpc.api.ListAnnotationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post annotations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAnnotationResponse> postAnnotations(
+        com.clarifai.grpc.api.PostAnnotationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more annotations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAnnotationResponse> patchAnnotations(
+        com.clarifai.grpc.api.PatchAnnotationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a single annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteAnnotation(
+        com.clarifai.grpc.api.DeleteAnnotationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteAnnotationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple annotations in one request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteAnnotations(
+        com.clarifai.grpc.api.DeleteAnnotationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over annotation
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSearchResponse> postAnnotationsSearches(
+        com.clarifai.grpc.api.PostAnnotationsSearchesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostAnnotationsSearchesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Patch one or more inputs.
      * </pre>
      */
@@ -3691,6 +7341,17 @@ public final class V2Grpc {
         com.clarifai.grpc.api.GetInputCountRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetInputCountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Streams all the inputs starting from oldest assets.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputResponse> streamInputs(
+        com.clarifai.grpc.api.StreamInputsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getStreamInputsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3760,6 +7421,17 @@ public final class V2Grpc {
         com.clarifai.grpc.api.DeleteInputsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteInputsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Execute a search over input
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSearchResponse> postInputsSearches(
+        com.clarifai.grpc.api.PostInputsSearchesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostInputsSearchesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4021,6 +7693,14 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> postWorkflowResultsSimilarity(
+        com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostWorkflowResultsSimilarityMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * Get a specific key from an app.
      * </pre>
@@ -4090,6 +7770,30 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * API Keys in the public API -- request is itself Key authorized, and will tell
+     * the user the scopes/access of the key/credential they're providing, as computed by
+     * our authorizer:
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiScopeResponse> myScopes(
+        com.clarifai.grpc.api.MyScopesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getMyScopesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all auth scopes available.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiScopeDepsResponse> listScopes(
+        com.clarifai.grpc.api.ListScopesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListScopesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get a specific app from an app.
      * </pre>
      */
@@ -4149,6 +7853,39 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Validate new password in real-time for a user
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SinglePasswordValidationResponse> postValidatePassword(
+        com.clarifai.grpc.api.PostValidatePasswordRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostValidatePasswordMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a saved search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleSearchResponse> getSearch(
+        com.clarifai.grpc.api.GetSearchRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetSearchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all saved searches.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSearchResponse> listSearches(
+        com.clarifai.grpc.api.ListSearchesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListSearchesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Execute a new search and optionally save it.
      * </pre>
      */
@@ -4156,6 +7893,61 @@ public final class V2Grpc {
         com.clarifai.grpc.api.PostSearchesRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getPostSearchesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Execute a previously saved search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiSearchResponse> postSearchesByID(
+        com.clarifai.grpc.api.PostSearchesByIDRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostSearchesByIDMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Evaluate the results of two search requests
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> postAnnotationSearchMetrics(
+        com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostAnnotationSearchMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get the evaluation results between two search requests
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> getAnnotationSearchMetrics(
+        com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAnnotationSearchMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List the evaluation results between two search requests
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse> listAnnotationSearchMetrics(
+        com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListAnnotationSearchMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a saved search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteSearch(
+        com.clarifai.grpc.api.DeleteSearchRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteSearchMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4179,6 +7971,227 @@ public final class V2Grpc {
       return futureUnaryCall(
           getChannel().newCall(getGetStatusCodeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * owner list users who the app is shared with
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollaboratorsResponse> listCollaborators(
+        com.clarifai.grpc.api.ListCollaboratorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListCollaboratorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * add collaborators to an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollaboratorsResponse> postCollaborators(
+        com.clarifai.grpc.api.PostCollaboratorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostCollaboratorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch existing collaborators.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollaboratorsResponse> patchCollaborators(
+        com.clarifai.grpc.api.PatchCollaboratorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchCollaboratorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete existing collaborators.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteCollaborators(
+        com.clarifai.grpc.api.DeleteCollaboratorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteCollaboratorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Collaboration includes the app user are invitied to work on
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollaborationsResponse> listCollaborations(
+        com.clarifai.grpc.api.ListCollaborationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListCollaborationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
+     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppDuplicationsResponse> postAppDuplications(
+        com.clarifai.grpc.api.PostAppDuplicationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostAppDuplicationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * list all the app duplications user triggers
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppDuplicationsResponse> listAppDuplications(
+        com.clarifai.grpc.api.ListAppDuplicationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListAppDuplicationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * get the app duplication status
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleAppDuplicationResponse> getAppDuplication(
+        com.clarifai.grpc.api.GetAppDuplicationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAppDuplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Add tasks to an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTaskResponse> postTasks(
+        com.clarifai.grpc.api.PostTasksRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific task from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleTaskResponse> getTask(
+        com.clarifai.grpc.api.GetTaskRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List tasks from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTaskResponse> listTasks(
+        com.clarifai.grpc.api.ListTasksRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more tasks.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTaskResponse> patchTasks(
+        com.clarifai.grpc.api.PatchTasksRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple tasks in one request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteTasks(
+        com.clarifai.grpc.api.DeleteTasksRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Add a list of Collectors to an app.
+     * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
+     * endpoint.
+     * Those current scopes are listed here as a hard requirement.
+     * They are needed when adding the collectors just so we now that you have permission with
+     * that key at least to do the writing to this app with POST /inputs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollectorResponse> postCollectors(
+        com.clarifai.grpc.api.PostCollectorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostCollectorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific collector from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleCollectorResponse> getCollector(
+        com.clarifai.grpc.api.GetCollectorRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetCollectorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all the collectors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollectorResponse> listCollectors(
+        com.clarifai.grpc.api.ListCollectorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListCollectorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more collectors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiCollectorResponse> patchCollectors(
+        com.clarifai.grpc.api.PatchCollectorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchCollectorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple collectors in one request.
+     * This call is asynchronous. Use DeleteCollector if you want a synchronous version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteCollectors(
+        com.clarifai.grpc.api.DeleteCollectorsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteCollectorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiStatValueResponse> postStatValues(
+        com.clarifai.grpc.api.PostStatValuesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostStatValuesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiStatValueAggregateResponse> postStatValuesAggregate(
+        com.clarifai.grpc.api.PostStatValuesAggregateRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostStatValuesAggregateMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_CONCEPT_COUNTS = 0;
@@ -4187,50 +8200,100 @@ public final class V2Grpc {
   private static final int METHODID_POST_CONCEPTS_SEARCHES = 3;
   private static final int METHODID_POST_CONCEPTS = 4;
   private static final int METHODID_PATCH_CONCEPTS = 5;
-  private static final int METHODID_GET_INPUT_COUNT = 6;
-  private static final int METHODID_GET_INPUT = 7;
-  private static final int METHODID_LIST_INPUTS = 8;
-  private static final int METHODID_POST_INPUTS = 9;
-  private static final int METHODID_PATCH_INPUTS = 10;
-  private static final int METHODID_DELETE_INPUT = 11;
-  private static final int METHODID_DELETE_INPUTS = 12;
-  private static final int METHODID_POST_MODEL_OUTPUTS = 13;
-  private static final int METHODID_GET_MODEL = 14;
-  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 15;
-  private static final int METHODID_LIST_MODELS = 16;
-  private static final int METHODID_POST_MODELS_SEARCHES = 17;
-  private static final int METHODID_POST_MODELS = 18;
-  private static final int METHODID_PATCH_MODELS = 19;
-  private static final int METHODID_DELETE_MODEL = 20;
-  private static final int METHODID_DELETE_MODELS = 21;
-  private static final int METHODID_LIST_MODEL_INPUTS = 22;
-  private static final int METHODID_GET_MODEL_VERSION = 23;
-  private static final int METHODID_LIST_MODEL_VERSIONS = 24;
-  private static final int METHODID_POST_MODEL_VERSIONS = 25;
-  private static final int METHODID_DELETE_MODEL_VERSION = 26;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 27;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 28;
-  private static final int METHODID_GET_WORKFLOW = 29;
-  private static final int METHODID_LIST_WORKFLOWS = 30;
-  private static final int METHODID_POST_WORKFLOWS = 31;
-  private static final int METHODID_PATCH_WORKFLOWS = 32;
-  private static final int METHODID_DELETE_WORKFLOW = 33;
-  private static final int METHODID_DELETE_WORKFLOWS = 34;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 35;
-  private static final int METHODID_GET_KEY = 36;
-  private static final int METHODID_LIST_KEYS = 37;
-  private static final int METHODID_LIST_APP_KEYS = 38;
-  private static final int METHODID_DELETE_KEY = 39;
-  private static final int METHODID_POST_KEYS = 40;
-  private static final int METHODID_PATCH_KEYS = 41;
-  private static final int METHODID_GET_APP = 42;
-  private static final int METHODID_LIST_APPS = 43;
-  private static final int METHODID_DELETE_APP = 44;
-  private static final int METHODID_POST_APPS = 45;
-  private static final int METHODID_PATCH_APPS = 46;
-  private static final int METHODID_POST_SEARCHES = 47;
-  private static final int METHODID_LIST_STATUS_CODES = 48;
-  private static final int METHODID_GET_STATUS_CODE = 49;
+  private static final int METHODID_GET_CONCEPT_LANGUAGE = 6;
+  private static final int METHODID_LIST_CONCEPT_LANGUAGES = 7;
+  private static final int METHODID_POST_CONCEPT_LANGUAGES = 8;
+  private static final int METHODID_PATCH_CONCEPT_LANGUAGES = 9;
+  private static final int METHODID_LIST_CONCEPT_RELATIONS = 10;
+  private static final int METHODID_POST_CONCEPT_RELATIONS = 11;
+  private static final int METHODID_DELETE_CONCEPT_RELATIONS = 12;
+  private static final int METHODID_LIST_KNOWLEDGE_GRAPHS = 13;
+  private static final int METHODID_POST_KNOWLEDGE_GRAPHS = 14;
+  private static final int METHODID_POST_CONCEPT_MAPPING_JOBS = 15;
+  private static final int METHODID_GET_ANNOTATION = 16;
+  private static final int METHODID_LIST_ANNOTATIONS = 17;
+  private static final int METHODID_POST_ANNOTATIONS = 18;
+  private static final int METHODID_PATCH_ANNOTATIONS = 19;
+  private static final int METHODID_DELETE_ANNOTATION = 20;
+  private static final int METHODID_DELETE_ANNOTATIONS = 21;
+  private static final int METHODID_POST_ANNOTATIONS_SEARCHES = 22;
+  private static final int METHODID_GET_INPUT_COUNT = 23;
+  private static final int METHODID_STREAM_INPUTS = 24;
+  private static final int METHODID_GET_INPUT = 25;
+  private static final int METHODID_LIST_INPUTS = 26;
+  private static final int METHODID_POST_INPUTS = 27;
+  private static final int METHODID_PATCH_INPUTS = 28;
+  private static final int METHODID_DELETE_INPUT = 29;
+  private static final int METHODID_DELETE_INPUTS = 30;
+  private static final int METHODID_POST_INPUTS_SEARCHES = 31;
+  private static final int METHODID_POST_MODEL_OUTPUTS = 32;
+  private static final int METHODID_GET_MODEL = 33;
+  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 34;
+  private static final int METHODID_LIST_MODELS = 35;
+  private static final int METHODID_POST_MODELS_SEARCHES = 36;
+  private static final int METHODID_POST_MODELS = 37;
+  private static final int METHODID_PATCH_MODELS = 38;
+  private static final int METHODID_DELETE_MODEL = 39;
+  private static final int METHODID_DELETE_MODELS = 40;
+  private static final int METHODID_LIST_MODEL_INPUTS = 41;
+  private static final int METHODID_GET_MODEL_VERSION = 42;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 43;
+  private static final int METHODID_POST_MODEL_VERSIONS = 44;
+  private static final int METHODID_DELETE_MODEL_VERSION = 45;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 46;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 47;
+  private static final int METHODID_GET_WORKFLOW = 48;
+  private static final int METHODID_LIST_WORKFLOWS = 49;
+  private static final int METHODID_POST_WORKFLOWS = 50;
+  private static final int METHODID_PATCH_WORKFLOWS = 51;
+  private static final int METHODID_DELETE_WORKFLOW = 52;
+  private static final int METHODID_DELETE_WORKFLOWS = 53;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 54;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 55;
+  private static final int METHODID_GET_KEY = 56;
+  private static final int METHODID_LIST_KEYS = 57;
+  private static final int METHODID_LIST_APP_KEYS = 58;
+  private static final int METHODID_DELETE_KEY = 59;
+  private static final int METHODID_POST_KEYS = 60;
+  private static final int METHODID_PATCH_KEYS = 61;
+  private static final int METHODID_MY_SCOPES = 62;
+  private static final int METHODID_LIST_SCOPES = 63;
+  private static final int METHODID_GET_APP = 64;
+  private static final int METHODID_LIST_APPS = 65;
+  private static final int METHODID_DELETE_APP = 66;
+  private static final int METHODID_POST_APPS = 67;
+  private static final int METHODID_PATCH_APPS = 68;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 69;
+  private static final int METHODID_GET_SEARCH = 70;
+  private static final int METHODID_LIST_SEARCHES = 71;
+  private static final int METHODID_POST_SEARCHES = 72;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 73;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 74;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 75;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 76;
+  private static final int METHODID_DELETE_SEARCH = 77;
+  private static final int METHODID_LIST_STATUS_CODES = 78;
+  private static final int METHODID_GET_STATUS_CODE = 79;
+  private static final int METHODID_LIST_COLLABORATORS = 80;
+  private static final int METHODID_POST_COLLABORATORS = 81;
+  private static final int METHODID_PATCH_COLLABORATORS = 82;
+  private static final int METHODID_DELETE_COLLABORATORS = 83;
+  private static final int METHODID_LIST_COLLABORATIONS = 84;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 85;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 86;
+  private static final int METHODID_GET_APP_DUPLICATION = 87;
+  private static final int METHODID_POST_TASKS = 88;
+  private static final int METHODID_GET_TASK = 89;
+  private static final int METHODID_LIST_TASKS = 90;
+  private static final int METHODID_PATCH_TASKS = 91;
+  private static final int METHODID_DELETE_TASKS = 92;
+  private static final int METHODID_POST_COLLECTORS = 93;
+  private static final int METHODID_GET_COLLECTOR = 94;
+  private static final int METHODID_LIST_COLLECTORS = 95;
+  private static final int METHODID_PATCH_COLLECTORS = 96;
+  private static final int METHODID_DELETE_COLLECTORS = 97;
+  private static final int METHODID_POST_STAT_VALUES = 98;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 99;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4273,9 +8336,81 @@ public final class V2Grpc {
           serviceImpl.patchConcepts((com.clarifai.grpc.api.PatchConceptsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptResponse>) responseObserver);
           break;
+        case METHODID_GET_CONCEPT_LANGUAGE:
+          serviceImpl.getConceptLanguage((com.clarifai.grpc.api.GetConceptLanguageRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleConceptLanguageResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CONCEPT_LANGUAGES:
+          serviceImpl.listConceptLanguages((com.clarifai.grpc.api.ListConceptLanguagesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse>) responseObserver);
+          break;
+        case METHODID_POST_CONCEPT_LANGUAGES:
+          serviceImpl.postConceptLanguages((com.clarifai.grpc.api.PostConceptLanguagesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_CONCEPT_LANGUAGES:
+          serviceImpl.patchConceptLanguages((com.clarifai.grpc.api.PatchConceptLanguagesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse>) responseObserver);
+          break;
+        case METHODID_LIST_CONCEPT_RELATIONS:
+          serviceImpl.listConceptRelations((com.clarifai.grpc.api.ListConceptRelationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse>) responseObserver);
+          break;
+        case METHODID_POST_CONCEPT_RELATIONS:
+          serviceImpl.postConceptRelations((com.clarifai.grpc.api.PostConceptRelationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_CONCEPT_RELATIONS:
+          serviceImpl.deleteConceptRelations((com.clarifai.grpc.api.DeleteConceptRelationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_KNOWLEDGE_GRAPHS:
+          serviceImpl.listKnowledgeGraphs((com.clarifai.grpc.api.ListKnowledgeGraphsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse>) responseObserver);
+          break;
+        case METHODID_POST_KNOWLEDGE_GRAPHS:
+          serviceImpl.postKnowledgeGraphs((com.clarifai.grpc.api.PostKnowledgeGraphsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse>) responseObserver);
+          break;
+        case METHODID_POST_CONCEPT_MAPPING_JOBS:
+          serviceImpl.postConceptMappingJobs((com.clarifai.grpc.api.PostConceptMappingJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptMappingJobResponse>) responseObserver);
+          break;
+        case METHODID_GET_ANNOTATION:
+          serviceImpl.getAnnotation((com.clarifai.grpc.api.GetAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAnnotationResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ANNOTATIONS:
+          serviceImpl.listAnnotations((com.clarifai.grpc.api.ListAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse>) responseObserver);
+          break;
+        case METHODID_POST_ANNOTATIONS:
+          serviceImpl.postAnnotations((com.clarifai.grpc.api.PostAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_ANNOTATIONS:
+          serviceImpl.patchAnnotations((com.clarifai.grpc.api.PatchAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_ANNOTATION:
+          serviceImpl.deleteAnnotation((com.clarifai.grpc.api.DeleteAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_ANNOTATIONS:
+          serviceImpl.deleteAnnotations((com.clarifai.grpc.api.DeleteAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_POST_ANNOTATIONS_SEARCHES:
+          serviceImpl.postAnnotationsSearches((com.clarifai.grpc.api.PostAnnotationsSearchesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse>) responseObserver);
+          break;
         case METHODID_GET_INPUT_COUNT:
           serviceImpl.getInputCount((com.clarifai.grpc.api.GetInputCountRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInputCountResponse>) responseObserver);
+          break;
+        case METHODID_STREAM_INPUTS:
+          serviceImpl.streamInputs((com.clarifai.grpc.api.StreamInputsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse>) responseObserver);
           break;
         case METHODID_GET_INPUT:
           serviceImpl.getInput((com.clarifai.grpc.api.GetInputRequest) request,
@@ -4300,6 +8435,10 @@ public final class V2Grpc {
         case METHODID_DELETE_INPUTS:
           serviceImpl.deleteInputs((com.clarifai.grpc.api.DeleteInputsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_POST_INPUTS_SEARCHES:
+          serviceImpl.postInputsSearches((com.clarifai.grpc.api.PostInputsSearchesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse>) responseObserver);
           break;
         case METHODID_POST_MODEL_OUTPUTS:
           serviceImpl.postModelOutputs((com.clarifai.grpc.api.PostModelOutputsRequest) request,
@@ -4393,6 +8532,10 @@ public final class V2Grpc {
           serviceImpl.postWorkflowResults((com.clarifai.grpc.api.PostWorkflowResultsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsResponse>) responseObserver);
           break;
+        case METHODID_POST_WORKFLOW_RESULTS_SIMILARITY:
+          serviceImpl.postWorkflowResultsSimilarity((com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>) responseObserver);
+          break;
         case METHODID_GET_KEY:
           serviceImpl.getKey((com.clarifai.grpc.api.GetKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleKeyResponse>) responseObserver);
@@ -4417,6 +8560,14 @@ public final class V2Grpc {
           serviceImpl.patchKeys((com.clarifai.grpc.api.PatchKeysRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKeyResponse>) responseObserver);
           break;
+        case METHODID_MY_SCOPES:
+          serviceImpl.myScopes((com.clarifai.grpc.api.MyScopesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SCOPES:
+          serviceImpl.listScopes((com.clarifai.grpc.api.ListScopesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeDepsResponse>) responseObserver);
+          break;
         case METHODID_GET_APP:
           serviceImpl.getApp((com.clarifai.grpc.api.GetAppRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAppResponse>) responseObserver);
@@ -4437,9 +8588,41 @@ public final class V2Grpc {
           serviceImpl.patchApps((com.clarifai.grpc.api.PatchAppsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse>) responseObserver);
           break;
+        case METHODID_POST_VALIDATE_PASSWORD:
+          serviceImpl.postValidatePassword((com.clarifai.grpc.api.PostValidatePasswordRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePasswordValidationResponse>) responseObserver);
+          break;
+        case METHODID_GET_SEARCH:
+          serviceImpl.getSearch((com.clarifai.grpc.api.GetSearchRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleSearchResponse>) responseObserver);
+          break;
+        case METHODID_LIST_SEARCHES:
+          serviceImpl.listSearches((com.clarifai.grpc.api.ListSearchesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse>) responseObserver);
+          break;
         case METHODID_POST_SEARCHES:
           serviceImpl.postSearches((com.clarifai.grpc.api.PostSearchesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse>) responseObserver);
+          break;
+        case METHODID_POST_SEARCHES_BY_ID:
+          serviceImpl.postSearchesByID((com.clarifai.grpc.api.PostSearchesByIDRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiSearchResponse>) responseObserver);
+          break;
+        case METHODID_POST_ANNOTATION_SEARCH_METRICS:
+          serviceImpl.postAnnotationSearchMetrics((com.clarifai.grpc.api.PostAnnotationSearchMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>) responseObserver);
+          break;
+        case METHODID_GET_ANNOTATION_SEARCH_METRICS:
+          serviceImpl.getAnnotationSearchMetrics((com.clarifai.grpc.api.GetAnnotationSearchMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ANNOTATION_SEARCH_METRICS:
+          serviceImpl.listAnnotationSearchMetrics((com.clarifai.grpc.api.ListAnnotationSearchMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationSearchMetricsResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_SEARCH:
+          serviceImpl.deleteSearch((com.clarifai.grpc.api.DeleteSearchRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
         case METHODID_LIST_STATUS_CODES:
           serviceImpl.listStatusCodes((com.clarifai.grpc.api.ListStatusCodesRequest) request,
@@ -4448,6 +8631,86 @@ public final class V2Grpc {
         case METHODID_GET_STATUS_CODE:
           serviceImpl.getStatusCode((com.clarifai.grpc.api.GetStatusCodeRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleStatusCodeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COLLABORATORS:
+          serviceImpl.listCollaborators((com.clarifai.grpc.api.ListCollaboratorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse>) responseObserver);
+          break;
+        case METHODID_POST_COLLABORATORS:
+          serviceImpl.postCollaborators((com.clarifai.grpc.api.PostCollaboratorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_COLLABORATORS:
+          serviceImpl.patchCollaborators((com.clarifai.grpc.api.PatchCollaboratorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_COLLABORATORS:
+          serviceImpl.deleteCollaborators((com.clarifai.grpc.api.DeleteCollaboratorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COLLABORATIONS:
+          serviceImpl.listCollaborations((com.clarifai.grpc.api.ListCollaborationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaborationsResponse>) responseObserver);
+          break;
+        case METHODID_POST_APP_DUPLICATIONS:
+          serviceImpl.postAppDuplications((com.clarifai.grpc.api.PostAppDuplicationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_APP_DUPLICATIONS:
+          serviceImpl.listAppDuplications((com.clarifai.grpc.api.ListAppDuplicationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppDuplicationsResponse>) responseObserver);
+          break;
+        case METHODID_GET_APP_DUPLICATION:
+          serviceImpl.getAppDuplication((com.clarifai.grpc.api.GetAppDuplicationRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleAppDuplicationResponse>) responseObserver);
+          break;
+        case METHODID_POST_TASKS:
+          serviceImpl.postTasks((com.clarifai.grpc.api.PostTasksRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse>) responseObserver);
+          break;
+        case METHODID_GET_TASK:
+          serviceImpl.getTask((com.clarifai.grpc.api.GetTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TASKS:
+          serviceImpl.listTasks((com.clarifai.grpc.api.ListTasksRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_TASKS:
+          serviceImpl.patchTasks((com.clarifai.grpc.api.PatchTasksRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_TASKS:
+          serviceImpl.deleteTasks((com.clarifai.grpc.api.DeleteTasksRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_POST_COLLECTORS:
+          serviceImpl.postCollectors((com.clarifai.grpc.api.PostCollectorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
+          break;
+        case METHODID_GET_COLLECTOR:
+          serviceImpl.getCollector((com.clarifai.grpc.api.GetCollectorRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleCollectorResponse>) responseObserver);
+          break;
+        case METHODID_LIST_COLLECTORS:
+          serviceImpl.listCollectors((com.clarifai.grpc.api.ListCollectorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_COLLECTORS:
+          serviceImpl.patchCollectors((com.clarifai.grpc.api.PatchCollectorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_COLLECTORS:
+          serviceImpl.deleteCollectors((com.clarifai.grpc.api.DeleteCollectorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_POST_STAT_VALUES:
+          serviceImpl.postStatValues((com.clarifai.grpc.api.PostStatValuesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueResponse>) responseObserver);
+          break;
+        case METHODID_POST_STAT_VALUES_AGGREGATE:
+          serviceImpl.postStatValuesAggregate((com.clarifai.grpc.api.PostStatValuesAggregateRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4516,13 +8779,32 @@ public final class V2Grpc {
               .addMethod(getPostConceptsSearchesMethod())
               .addMethod(getPostConceptsMethod())
               .addMethod(getPatchConceptsMethod())
+              .addMethod(getGetConceptLanguageMethod())
+              .addMethod(getListConceptLanguagesMethod())
+              .addMethod(getPostConceptLanguagesMethod())
+              .addMethod(getPatchConceptLanguagesMethod())
+              .addMethod(getListConceptRelationsMethod())
+              .addMethod(getPostConceptRelationsMethod())
+              .addMethod(getDeleteConceptRelationsMethod())
+              .addMethod(getListKnowledgeGraphsMethod())
+              .addMethod(getPostKnowledgeGraphsMethod())
+              .addMethod(getPostConceptMappingJobsMethod())
+              .addMethod(getGetAnnotationMethod())
+              .addMethod(getListAnnotationsMethod())
+              .addMethod(getPostAnnotationsMethod())
+              .addMethod(getPatchAnnotationsMethod())
+              .addMethod(getDeleteAnnotationMethod())
+              .addMethod(getDeleteAnnotationsMethod())
+              .addMethod(getPostAnnotationsSearchesMethod())
               .addMethod(getGetInputCountMethod())
+              .addMethod(getStreamInputsMethod())
               .addMethod(getGetInputMethod())
               .addMethod(getListInputsMethod())
               .addMethod(getPostInputsMethod())
               .addMethod(getPatchInputsMethod())
               .addMethod(getDeleteInputMethod())
               .addMethod(getDeleteInputsMethod())
+              .addMethod(getPostInputsSearchesMethod())
               .addMethod(getPostModelOutputsMethod())
               .addMethod(getGetModelMethod())
               .addMethod(getGetModelOutputInfoMethod())
@@ -4546,20 +8828,51 @@ public final class V2Grpc {
               .addMethod(getDeleteWorkflowMethod())
               .addMethod(getDeleteWorkflowsMethod())
               .addMethod(getPostWorkflowResultsMethod())
+              .addMethod(getPostWorkflowResultsSimilarityMethod())
               .addMethod(getGetKeyMethod())
               .addMethod(getListKeysMethod())
               .addMethod(getListAppKeysMethod())
               .addMethod(getDeleteKeyMethod())
               .addMethod(getPostKeysMethod())
               .addMethod(getPatchKeysMethod())
+              .addMethod(getMyScopesMethod())
+              .addMethod(getListScopesMethod())
               .addMethod(getGetAppMethod())
               .addMethod(getListAppsMethod())
               .addMethod(getDeleteAppMethod())
               .addMethod(getPostAppsMethod())
               .addMethod(getPatchAppsMethod())
+              .addMethod(getPostValidatePasswordMethod())
+              .addMethod(getGetSearchMethod())
+              .addMethod(getListSearchesMethod())
               .addMethod(getPostSearchesMethod())
+              .addMethod(getPostSearchesByIDMethod())
+              .addMethod(getPostAnnotationSearchMetricsMethod())
+              .addMethod(getGetAnnotationSearchMetricsMethod())
+              .addMethod(getListAnnotationSearchMetricsMethod())
+              .addMethod(getDeleteSearchMethod())
               .addMethod(getListStatusCodesMethod())
               .addMethod(getGetStatusCodeMethod())
+              .addMethod(getListCollaboratorsMethod())
+              .addMethod(getPostCollaboratorsMethod())
+              .addMethod(getPatchCollaboratorsMethod())
+              .addMethod(getDeleteCollaboratorsMethod())
+              .addMethod(getListCollaborationsMethod())
+              .addMethod(getPostAppDuplicationsMethod())
+              .addMethod(getListAppDuplicationsMethod())
+              .addMethod(getGetAppDuplicationMethod())
+              .addMethod(getPostTasksMethod())
+              .addMethod(getGetTaskMethod())
+              .addMethod(getListTasksMethod())
+              .addMethod(getPatchTasksMethod())
+              .addMethod(getDeleteTasksMethod())
+              .addMethod(getPostCollectorsMethod())
+              .addMethod(getGetCollectorMethod())
+              .addMethod(getListCollectorsMethod())
+              .addMethod(getPatchCollectorsMethod())
+              .addMethod(getDeleteCollectorsMethod())
+              .addMethod(getPostStatValuesMethod())
+              .addMethod(getPostStatValuesAggregateMethod())
               .build();
         }
       }

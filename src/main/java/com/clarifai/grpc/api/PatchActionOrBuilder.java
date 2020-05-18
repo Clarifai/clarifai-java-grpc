@@ -14,6 +14,7 @@ public interface PatchActionOrBuilder extends
    * </pre>
    *
    * <code>string op = 1;</code>
+   * @return The op.
    */
   java.lang.String getOp();
   /**
@@ -23,6 +24,7 @@ public interface PatchActionOrBuilder extends
    * </pre>
    *
    * <code>string op = 1;</code>
+   * @return The bytes for op.
    */
   com.google.protobuf.ByteString
       getOpBytes();
@@ -95,6 +97,7 @@ public interface PatchActionOrBuilder extends
    * </pre>
    *
    * <code>string merge_conflict_resolution = 2;</code>
+   * @return The mergeConflictResolution.
    */
   java.lang.String getMergeConflictResolution();
   /**
@@ -165,6 +168,7 @@ public interface PatchActionOrBuilder extends
    * </pre>
    *
    * <code>string merge_conflict_resolution = 2;</code>
+   * @return The bytes for mergeConflictResolution.
    */
   com.google.protobuf.ByteString
       getMergeConflictResolutionBytes();
@@ -176,6 +180,7 @@ public interface PatchActionOrBuilder extends
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The path.
    */
   java.lang.String getPath();
   /**
@@ -185,6 +190,7 @@ public interface PatchActionOrBuilder extends
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The bytes for path.
    */
   com.google.protobuf.ByteString
       getPathBytes();

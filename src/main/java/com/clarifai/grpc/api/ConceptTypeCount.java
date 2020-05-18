@@ -99,6 +99,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The positive.
    */
   public int getPositive() {
     return positive_;
@@ -113,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The negative.
    */
   public int getNegative() {
     return negative_;
@@ -445,6 +447,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The positive.
      */
     public int getPositive() {
       return positive_;
@@ -456,6 +459,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The positive to set.
+     * @return This builder for chaining.
      */
     public Builder setPositive(int value) {
       
@@ -470,6 +475,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPositive() {
       
@@ -486,6 +492,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The negative.
      */
     public int getNegative() {
       return negative_;
@@ -497,6 +504,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The negative to set.
+     * @return This builder for chaining.
      */
     public Builder setNegative(int value) {
       
@@ -511,6 +520,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNegative() {
       

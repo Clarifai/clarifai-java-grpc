@@ -9,40 +9,52 @@ public interface PrecisionRecallCurveOrBuilder extends
 
   /**
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the recall.
    */
   java.util.List<java.lang.Float> getRecallList();
   /**
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of recall.
    */
   int getRecallCount();
   /**
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The recall at the given index.
    */
   float getRecall(int index);
 
   /**
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the precision.
    */
   java.util.List<java.lang.Float> getPrecisionList();
   /**
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of precision.
    */
   int getPrecisionCount();
   /**
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The precision at the given index.
    */
   float getPrecision(int index);
 
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the thresholds.
    */
   java.util.List<java.lang.Float> getThresholdsList();
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of thresholds.
    */
   int getThresholdsCount();
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The thresholds at the given index.
    */
   float getThresholds(int index);
 }

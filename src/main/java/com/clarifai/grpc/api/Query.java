@@ -201,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 2;</code>
+   * @return The language.
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -222,6 +223,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string language = 2;</code>
+   * @return The bytes for language.
    */
   public com.google.protobuf.ByteString
       getLanguageBytes() {
@@ -1169,6 +1171,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @return The language.
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -1190,6 +1193,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @return The bytes for language.
      */
     public com.google.protobuf.ByteString
         getLanguageBytes() {
@@ -1212,6 +1216,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @param value The language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguage(
         java.lang.String value) {
@@ -1231,6 +1237,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearLanguage() {
       
@@ -1246,6 +1253,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string language = 2;</code>
+     * @param value The bytes for language to set.
+     * @return This builder for chaining.
      */
     public Builder setLanguageBytes(
         com.google.protobuf.ByteString value) {

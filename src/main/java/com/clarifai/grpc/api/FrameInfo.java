@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * The information of the location of the Frame.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.FrameInfo}
  */
 public  final class FrameInfo extends
@@ -93,7 +97,13 @@ private static final long serialVersionUID = 0L;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_;
   /**
+   * <pre>
+   * The index of the frame. Keep in mind that this depends on the sampling rate used during
+   * processing.
+   * </pre>
+   *
    * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The index.
    */
   public int getIndex() {
     return index_;
@@ -103,10 +113,12 @@ private static final long serialVersionUID = 0L;
   private int time_;
   /**
    * <pre>
-   * time in the video in milliseconds
+   * time in the video in milliseconds. This is independent of the sampling rates used during
+   * processing.
    * </pre>
    *
    * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The time.
    */
   public int getTime() {
     return time_;
@@ -279,6 +291,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * The information of the location of the Frame.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.FrameInfo}
    */
   public static final class Builder extends
@@ -433,13 +449,26 @@ private static final long serialVersionUID = 0L;
 
     private int index_ ;
     /**
+     * <pre>
+     * The index of the frame. Keep in mind that this depends on the sampling rate used during
+     * processing.
+     * </pre>
+     *
      * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The index.
      */
     public int getIndex() {
       return index_;
     }
     /**
+     * <pre>
+     * The index of the frame. Keep in mind that this depends on the sampling rate used during
+     * processing.
+     * </pre>
+     *
      * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The index to set.
+     * @return This builder for chaining.
      */
     public Builder setIndex(int value) {
       
@@ -448,7 +477,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The index of the frame. Keep in mind that this depends on the sampling rate used during
+     * processing.
+     * </pre>
+     *
      * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearIndex() {
       
@@ -460,20 +495,25 @@ private static final long serialVersionUID = 0L;
     private int time_ ;
     /**
      * <pre>
-     * time in the video in milliseconds
+     * time in the video in milliseconds. This is independent of the sampling rates used during
+     * processing.
      * </pre>
      *
      * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The time.
      */
     public int getTime() {
       return time_;
     }
     /**
      * <pre>
-     * time in the video in milliseconds
+     * time in the video in milliseconds. This is independent of the sampling rates used during
+     * processing.
      * </pre>
      *
      * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The time to set.
+     * @return This builder for chaining.
      */
     public Builder setTime(int value) {
       
@@ -483,10 +523,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * time in the video in milliseconds
+     * time in the video in milliseconds. This is independent of the sampling rates used during
+     * processing.
      * </pre>
      *
      * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTime() {
       

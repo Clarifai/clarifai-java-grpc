@@ -24,11 +24,9 @@ private static final long serialVersionUID = 0L;
   private Annotation() {
     id_ = "";
     inputId_ = "";
-    workerId_ = "";
     userId_ = "";
     modelVersionId_ = "";
     embedModelVersionId_ = "";
-    parentAnnotationId_ = "";
   }
 
   @java.lang.Override
@@ -84,18 +82,6 @@ private static final long serialVersionUID = 0L;
               data_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            workerId_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            parentAnnotationId_ = s;
             break;
           }
           case 58: {
@@ -218,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -237,6 +224,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -260,6 +248,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string input_id = 2;</code>
+   * @return The inputId.
    */
   public java.lang.String getInputId() {
     java.lang.Object ref = inputId_;
@@ -279,6 +268,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string input_id = 2;</code>
+   * @return The bytes for inputId.
    */
   public com.google.protobuf.ByteString
       getInputIdBytes() {
@@ -302,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
@@ -312,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return The data.
    */
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
@@ -331,12 +323,14 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct annotationInfo_;
   /**
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
+   * @return Whether the annotationInfo field is set.
    */
   public boolean hasAnnotationInfo() {
     return annotationInfo_ != null;
   }
   /**
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
+   * @return The annotationInfo.
    */
   public com.google.protobuf.Struct getAnnotationInfo() {
     return annotationInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotationInfo_;
@@ -348,50 +342,6 @@ private static final long serialVersionUID = 0L;
     return getAnnotationInfo();
   }
 
-  public static final int WORKER_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object workerId_;
-  /**
-   * <pre>
-   * ID of the worker this annotation is tied to
-   * Deprecated: please use user id or model version id.
-   * </pre>
-   *
-   * <code>string worker_id = 4 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public java.lang.String getWorkerId() {
-    java.lang.Object ref = workerId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      workerId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * ID of the worker this annotation is tied to
-   * Deprecated: please use user id or model version id.
-   * </pre>
-   *
-   * <code>string worker_id = 4 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getWorkerIdBytes() {
-    java.lang.Object ref = workerId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      workerId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int USER_ID_FIELD_NUMBER = 15;
   private volatile java.lang.Object userId_;
   /**
@@ -400,6 +350,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 15;</code>
+   * @return The userId.
    */
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
@@ -419,6 +370,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string user_id = 15;</code>
+   * @return The bytes for userId.
    */
   public com.google.protobuf.ByteString
       getUserIdBytes() {
@@ -442,6 +394,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string model_version_id = 16;</code>
+   * @return The modelVersionId.
    */
   public java.lang.String getModelVersionId() {
     java.lang.Object ref = modelVersionId_;
@@ -461,6 +414,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string model_version_id = 16;</code>
+   * @return The bytes for modelVersionId.
    */
   public com.google.protobuf.ByteString
       getModelVersionIdBytes() {
@@ -483,10 +437,10 @@ private static final long serialVersionUID = 0L;
    * The embedding model version used make this annotation available for search and training
    * Note that an annotation always have an 'embed_model_version_id' even if it is For human
    * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-   * "Dangling" are an exception. They do not have an embedding tied to them.
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The embedModelVersionId.
    */
   public java.lang.String getEmbedModelVersionId() {
     java.lang.Object ref = embedModelVersionId_;
@@ -505,10 +459,10 @@ private static final long serialVersionUID = 0L;
    * The embedding model version used make this annotation available for search and training
    * Note that an annotation always have an 'embed_model_version_id' even if it is For human
    * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-   * "Dangling" are an exception. They do not have an embedding tied to them.
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The bytes for embedModelVersionId.
    */
   public com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes() {
@@ -524,52 +478,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PARENT_ANNOTATION_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object parentAnnotationId_;
-  /**
-   * <pre>
-   * ID of a related "parent" annotation to tie this annotation to.
-   * For example a model produced annotation can be parent to the annotation a human
-   * creates after correcting and verifying it.
-   * </pre>
-   *
-   * <code>string parent_annotation_id = 6;</code>
-   */
-  public java.lang.String getParentAnnotationId() {
-    java.lang.Object ref = parentAnnotationId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parentAnnotationId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * ID of a related "parent" annotation to tie this annotation to.
-   * For example a model produced annotation can be parent to the annotation a human
-   * creates after correcting and verifying it.
-   * </pre>
-   *
-   * <code>string parent_annotation_id = 6;</code>
-   */
-  public com.google.protobuf.ByteString
-      getParentAnnotationIdBytes() {
-    java.lang.Object ref = parentAnnotationId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      parentAnnotationId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int STATUS_FIELD_NUMBER = 7;
   private com.clarifai.grpc.api.status.Status status_;
   /**
@@ -578,6 +486,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 7;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -588,6 +497,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 7;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -615,6 +525,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -629,6 +540,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -656,6 +568,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+   * @return Whether the modifiedAt field is set.
    */
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
@@ -666,6 +579,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+   * @return The modifiedAt.
    */
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
@@ -689,6 +603,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool trusted = 10;</code>
+   * @return The trusted.
    */
   public boolean getTrusted() {
     return trusted_;
@@ -702,6 +617,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool default = 12;</code>
+   * @return The default.
    */
   public boolean getDefault() {
     return default_;
@@ -729,12 +645,6 @@ private static final long serialVersionUID = 0L;
     }
     if (data_ != null) {
       output.writeMessage(3, getData());
-    }
-    if (!getWorkerIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, workerId_);
-    }
-    if (!getParentAnnotationIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, parentAnnotationId_);
     }
     if (status_ != null) {
       output.writeMessage(7, getStatus());
@@ -781,12 +691,6 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getData());
-    }
-    if (!getWorkerIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, workerId_);
-    }
-    if (!getParentAnnotationIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, parentAnnotationId_);
     }
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -850,16 +754,12 @@ private static final long serialVersionUID = 0L;
       if (!getAnnotationInfo()
           .equals(other.getAnnotationInfo())) return false;
     }
-    if (!getWorkerId()
-        .equals(other.getWorkerId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
     if (!getModelVersionId()
         .equals(other.getModelVersionId())) return false;
     if (!getEmbedModelVersionId()
         .equals(other.getEmbedModelVersionId())) return false;
-    if (!getParentAnnotationId()
-        .equals(other.getParentAnnotationId())) return false;
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus()
@@ -902,16 +802,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ANNOTATION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotationInfo().hashCode();
     }
-    hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkerId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (37 * hash) + EMBED_MODEL_VERSION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getEmbedModelVersionId().hashCode();
-    hash = (37 * hash) + PARENT_ANNOTATION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getParentAnnotationId().hashCode();
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
@@ -1085,15 +981,11 @@ private static final long serialVersionUID = 0L;
         annotationInfo_ = null;
         annotationInfoBuilder_ = null;
       }
-      workerId_ = "";
-
       userId_ = "";
 
       modelVersionId_ = "";
 
       embedModelVersionId_ = "";
-
-      parentAnnotationId_ = "";
 
       if (statusBuilder_ == null) {
         status_ = null;
@@ -1155,11 +1047,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.annotationInfo_ = annotationInfoBuilder_.build();
       }
-      result.workerId_ = workerId_;
       result.userId_ = userId_;
       result.modelVersionId_ = modelVersionId_;
       result.embedModelVersionId_ = embedModelVersionId_;
-      result.parentAnnotationId_ = parentAnnotationId_;
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
@@ -1239,10 +1129,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasAnnotationInfo()) {
         mergeAnnotationInfo(other.getAnnotationInfo());
       }
-      if (!other.getWorkerId().isEmpty()) {
-        workerId_ = other.workerId_;
-        onChanged();
-      }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
@@ -1253,10 +1139,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getEmbedModelVersionId().isEmpty()) {
         embedModelVersionId_ = other.embedModelVersionId_;
-        onChanged();
-      }
-      if (!other.getParentAnnotationId().isEmpty()) {
-        parentAnnotationId_ = other.parentAnnotationId_;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -1310,6 +1192,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1329,6 +1212,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1349,6 +1233,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -1366,6 +1252,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -1379,6 +1266,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1399,6 +1288,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string input_id = 2;</code>
+     * @return The inputId.
      */
     public java.lang.String getInputId() {
       java.lang.Object ref = inputId_;
@@ -1418,6 +1308,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string input_id = 2;</code>
+     * @return The bytes for inputId.
      */
     public com.google.protobuf.ByteString
         getInputIdBytes() {
@@ -1438,6 +1329,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string input_id = 2;</code>
+     * @param value The inputId to set.
+     * @return This builder for chaining.
      */
     public Builder setInputId(
         java.lang.String value) {
@@ -1455,6 +1348,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string input_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearInputId() {
       
@@ -1468,6 +1362,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string input_id = 2;</code>
+     * @param value The bytes for inputId to set.
+     * @return This builder for chaining.
      */
     public Builder setInputIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1490,6 +1386,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Data data = 3;</code>
+     * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
@@ -1500,6 +1397,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Data data = 3;</code>
+     * @return The data.
      */
     public com.clarifai.grpc.api.Data getData() {
       if (dataBuilder_ == null) {
@@ -1639,12 +1537,14 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> annotationInfoBuilder_;
     /**
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
+     * @return Whether the annotationInfo field is set.
      */
     public boolean hasAnnotationInfo() {
       return annotationInfoBuilder_ != null || annotationInfo_ != null;
     }
     /**
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
+     * @return The annotationInfo.
      */
     public com.google.protobuf.Struct getAnnotationInfo() {
       if (annotationInfoBuilder_ == null) {
@@ -1751,100 +1651,6 @@ private static final long serialVersionUID = 0L;
       return annotationInfoBuilder_;
     }
 
-    private java.lang.Object workerId_ = "";
-    /**
-     * <pre>
-     * ID of the worker this annotation is tied to
-     * Deprecated: please use user id or model version id.
-     * </pre>
-     *
-     * <code>string worker_id = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public java.lang.String getWorkerId() {
-      java.lang.Object ref = workerId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        workerId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * ID of the worker this annotation is tied to
-     * Deprecated: please use user id or model version id.
-     * </pre>
-     *
-     * <code>string worker_id = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getWorkerIdBytes() {
-      java.lang.Object ref = workerId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        workerId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * ID of the worker this annotation is tied to
-     * Deprecated: please use user id or model version id.
-     * </pre>
-     *
-     * <code>string worker_id = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setWorkerId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      workerId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of the worker this annotation is tied to
-     * Deprecated: please use user id or model version id.
-     * </pre>
-     *
-     * <code>string worker_id = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearWorkerId() {
-      
-      workerId_ = getDefaultInstance().getWorkerId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of the worker this annotation is tied to
-     * Deprecated: please use user id or model version id.
-     * </pre>
-     *
-     * <code>string worker_id = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setWorkerIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      workerId_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object userId_ = "";
     /**
      * <pre>
@@ -1852,6 +1658,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 15;</code>
+     * @return The userId.
      */
     public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
@@ -1871,6 +1678,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 15;</code>
+     * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
@@ -1891,6 +1699,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 15;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserId(
         java.lang.String value) {
@@ -1908,6 +1718,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 15;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUserId() {
       
@@ -1921,6 +1732,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string user_id = 15;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
      */
     public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1941,6 +1754,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string model_version_id = 16;</code>
+     * @return The modelVersionId.
      */
     public java.lang.String getModelVersionId() {
       java.lang.Object ref = modelVersionId_;
@@ -1960,6 +1774,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string model_version_id = 16;</code>
+     * @return The bytes for modelVersionId.
      */
     public com.google.protobuf.ByteString
         getModelVersionIdBytes() {
@@ -1980,6 +1795,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string model_version_id = 16;</code>
+     * @param value The modelVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelVersionId(
         java.lang.String value) {
@@ -1997,6 +1814,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string model_version_id = 16;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModelVersionId() {
       
@@ -2010,6 +1828,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string model_version_id = 16;</code>
+     * @param value The bytes for modelVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2029,10 +1849,10 @@ private static final long serialVersionUID = 0L;
      * The embedding model version used make this annotation available for search and training
      * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-     * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @return The embedModelVersionId.
      */
     public java.lang.String getEmbedModelVersionId() {
       java.lang.Object ref = embedModelVersionId_;
@@ -2051,10 +1871,10 @@ private static final long serialVersionUID = 0L;
      * The embedding model version used make this annotation available for search and training
      * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-     * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @return The bytes for embedModelVersionId.
      */
     public com.google.protobuf.ByteString
         getEmbedModelVersionIdBytes() {
@@ -2074,10 +1894,11 @@ private static final long serialVersionUID = 0L;
      * The embedding model version used make this annotation available for search and training
      * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-     * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @param value The embedModelVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setEmbedModelVersionId(
         java.lang.String value) {
@@ -2094,10 +1915,10 @@ private static final long serialVersionUID = 0L;
      * The embedding model version used make this annotation available for search and training
      * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-     * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEmbedModelVersionId() {
       
@@ -2110,10 +1931,11 @@ private static final long serialVersionUID = 0L;
      * The embedding model version used make this annotation available for search and training
      * Note that an annotation always have an 'embed_model_version_id' even if it is For human
      * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-     * "Dangling" are an exception. They do not have an embedding tied to them.
      * </pre>
      *
      * <code>string embed_model_version_id = 14;</code>
+     * @param value The bytes for embedModelVersionId to set.
+     * @return This builder for chaining.
      */
     public Builder setEmbedModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -2127,105 +1949,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object parentAnnotationId_ = "";
-    /**
-     * <pre>
-     * ID of a related "parent" annotation to tie this annotation to.
-     * For example a model produced annotation can be parent to the annotation a human
-     * creates after correcting and verifying it.
-     * </pre>
-     *
-     * <code>string parent_annotation_id = 6;</code>
-     */
-    public java.lang.String getParentAnnotationId() {
-      java.lang.Object ref = parentAnnotationId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parentAnnotationId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * ID of a related "parent" annotation to tie this annotation to.
-     * For example a model produced annotation can be parent to the annotation a human
-     * creates after correcting and verifying it.
-     * </pre>
-     *
-     * <code>string parent_annotation_id = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getParentAnnotationIdBytes() {
-      java.lang.Object ref = parentAnnotationId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        parentAnnotationId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * ID of a related "parent" annotation to tie this annotation to.
-     * For example a model produced annotation can be parent to the annotation a human
-     * creates after correcting and verifying it.
-     * </pre>
-     *
-     * <code>string parent_annotation_id = 6;</code>
-     */
-    public Builder setParentAnnotationId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      parentAnnotationId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of a related "parent" annotation to tie this annotation to.
-     * For example a model produced annotation can be parent to the annotation a human
-     * creates after correcting and verifying it.
-     * </pre>
-     *
-     * <code>string parent_annotation_id = 6;</code>
-     */
-    public Builder clearParentAnnotationId() {
-      
-      parentAnnotationId_ = getDefaultInstance().getParentAnnotationId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of a related "parent" annotation to tie this annotation to.
-     * For example a model produced annotation can be parent to the annotation a human
-     * creates after correcting and verifying it.
-     * </pre>
-     *
-     * <code>string parent_annotation_id = 6;</code>
-     */
-    public Builder setParentAnnotationIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      parentAnnotationId_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.clarifai.grpc.api.status.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
@@ -2235,6 +1958,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 7;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -2245,6 +1969,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 7;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -2392,6 +2117,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 8;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -2406,6 +2132,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 8;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -2577,6 +2304,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     * @return Whether the modifiedAt field is set.
      */
     public boolean hasModifiedAt() {
       return modifiedAtBuilder_ != null || modifiedAt_ != null;
@@ -2587,6 +2315,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+     * @return The modifiedAt.
      */
     public com.google.protobuf.Timestamp getModifiedAt() {
       if (modifiedAtBuilder_ == null) {
@@ -2728,6 +2457,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool trusted = 10;</code>
+     * @return The trusted.
      */
     public boolean getTrusted() {
       return trusted_;
@@ -2738,6 +2468,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool trusted = 10;</code>
+     * @param value The trusted to set.
+     * @return This builder for chaining.
      */
     public Builder setTrusted(boolean value) {
       
@@ -2751,6 +2483,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool trusted = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTrusted() {
       
@@ -2766,6 +2499,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool default = 12;</code>
+     * @return The default.
      */
     public boolean getDefault() {
       return default_;
@@ -2776,6 +2510,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool default = 12;</code>
+     * @param value The default to set.
+     * @return This builder for chaining.
      */
     public Builder setDefault(boolean value) {
       
@@ -2789,6 +2525,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool default = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDefault() {
       

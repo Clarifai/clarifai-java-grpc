@@ -9,10 +9,12 @@ public interface SingleKeyResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -22,10 +24,12 @@ public interface SingleKeyResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.Key key = 2;</code>
+   * @return Whether the key field is set.
    */
   boolean hasKey();
   /**
    * <code>.clarifai.api.Key key = 2;</code>
+   * @return The key.
    */
   com.clarifai.grpc.api.Key getKey();
   /**

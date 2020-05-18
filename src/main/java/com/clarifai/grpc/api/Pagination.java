@@ -102,6 +102,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 page = 1;</code>
+   * @return The page.
    */
   public int getPage() {
     return page_;
@@ -115,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 per_page = 2;</code>
+   * @return The perPage.
    */
   public int getPerPage() {
     return perPage_;
@@ -450,6 +452,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 1;</code>
+     * @return The page.
      */
     public int getPage() {
       return page_;
@@ -460,6 +463,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 1;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
      */
     public Builder setPage(int value) {
       
@@ -473,6 +478,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPage() {
       
@@ -488,6 +494,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 2;</code>
+     * @return The perPage.
      */
     public int getPerPage() {
       return perPage_;
@@ -498,6 +505,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 2;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
      */
     public Builder setPerPage(int value) {
       
@@ -511,6 +520,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPerPage() {
       

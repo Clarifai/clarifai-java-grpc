@@ -13,6 +13,7 @@ public interface NodeInputOrBuilder extends
    * </pre>
    *
    * <code>string node_id = 1;</code>
+   * @return The nodeId.
    */
   java.lang.String getNodeId();
   /**
@@ -21,6 +22,7 @@ public interface NodeInputOrBuilder extends
    * </pre>
    *
    * <code>string node_id = 1;</code>
+   * @return The bytes for nodeId.
    */
   com.google.protobuf.ByteString
       getNodeIdBytes();

@@ -160,6 +160,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList recall_;
   /**
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the recall.
    */
   public java.util.List<java.lang.Float>
       getRecallList() {
@@ -167,12 +168,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of recall.
    */
   public int getRecallCount() {
     return recall_.size();
   }
   /**
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The recall at the given index.
    */
   public float getRecall(int index) {
     return recall_.getFloat(index);
@@ -183,6 +187,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList precision_;
   /**
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the precision.
    */
   public java.util.List<java.lang.Float>
       getPrecisionList() {
@@ -190,12 +195,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of precision.
    */
   public int getPrecisionCount() {
     return precision_.size();
   }
   /**
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The precision at the given index.
    */
   public float getPrecision(int index) {
     return precision_.getFloat(index);
@@ -206,6 +214,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList thresholds_;
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the thresholds.
    */
   public java.util.List<java.lang.Float>
       getThresholdsList() {
@@ -213,12 +222,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of thresholds.
    */
   public int getThresholdsCount() {
     return thresholds_.size();
   }
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The thresholds at the given index.
    */
   public float getThresholds(int index) {
     return thresholds_.getFloat(index);
@@ -645,6 +657,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the recall.
      */
     public java.util.List<java.lang.Float>
         getRecallList() {
@@ -653,18 +666,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of recall.
      */
     public int getRecallCount() {
       return recall_.size();
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The recall at the given index.
      */
     public float getRecall(int index) {
       return recall_.getFloat(index);
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The recall to set.
+     * @return This builder for chaining.
      */
     public Builder setRecall(
         int index, float value) {
@@ -675,6 +694,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The recall to add.
+     * @return This builder for chaining.
      */
     public Builder addRecall(float value) {
       ensureRecallIsMutable();
@@ -684,6 +705,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The recall to add.
+     * @return This builder for chaining.
      */
     public Builder addAllRecall(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -695,6 +718,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRecall() {
       recall_ = emptyFloatList();
@@ -712,6 +736,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the precision.
      */
     public java.util.List<java.lang.Float>
         getPrecisionList() {
@@ -720,18 +745,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of precision.
      */
     public int getPrecisionCount() {
       return precision_.size();
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The precision at the given index.
      */
     public float getPrecision(int index) {
       return precision_.getFloat(index);
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The precision to set.
+     * @return This builder for chaining.
      */
     public Builder setPrecision(
         int index, float value) {
@@ -742,6 +773,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The precision to add.
+     * @return This builder for chaining.
      */
     public Builder addPrecision(float value) {
       ensurePrecisionIsMutable();
@@ -751,6 +784,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The precision to add.
+     * @return This builder for chaining.
      */
     public Builder addAllPrecision(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -762,6 +797,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearPrecision() {
       precision_ = emptyFloatList();
@@ -779,6 +815,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the thresholds.
      */
     public java.util.List<java.lang.Float>
         getThresholdsList() {
@@ -787,18 +824,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of thresholds.
      */
     public int getThresholdsCount() {
       return thresholds_.size();
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The thresholds at the given index.
      */
     public float getThresholds(int index) {
       return thresholds_.getFloat(index);
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The thresholds to set.
+     * @return This builder for chaining.
      */
     public Builder setThresholds(
         int index, float value) {
@@ -809,6 +852,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The thresholds to add.
+     * @return This builder for chaining.
      */
     public Builder addThresholds(float value) {
       ensureThresholdsIsMutable();
@@ -818,6 +863,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The thresholds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllThresholds(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -829,6 +876,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearThresholds() {
       thresholds_ = emptyFloatList();

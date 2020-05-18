@@ -8,16 +8,24 @@ public interface FrameInfoOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The index of the frame. Keep in mind that this depends on the sampling rate used during
+   * processing.
+   * </pre>
+   *
    * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The index.
    */
   int getIndex();
 
   /**
    * <pre>
-   * time in the video in milliseconds
+   * time in the video in milliseconds. This is independent of the sampling rates used during
+   * processing.
    * </pre>
    *
    * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The time.
    */
   int getTime();
 }

@@ -13,6 +13,7 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>string prefix = 1;</code>
+   * @return The prefix.
    */
   java.lang.String getPrefix();
   /**
@@ -21,6 +22,7 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>string prefix = 1;</code>
+   * @return The bytes for prefix.
    */
   com.google.protobuf.ByteString
       getPrefixBytes();
@@ -31,6 +33,7 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>string suffix = 2;</code>
+   * @return The suffix.
    */
   java.lang.String getSuffix();
   /**
@@ -39,6 +42,7 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>string suffix = 2;</code>
+   * @return The bytes for suffix.
    */
   com.google.protobuf.ByteString
       getSuffixBytes();
@@ -50,6 +54,7 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @return A list containing the sizes.
    */
   java.util.List<java.lang.String>
       getSizesList();
@@ -60,6 +65,7 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @return The count of sizes.
    */
   int getSizesCount();
   /**
@@ -69,6 +75,8 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @param index The index of the element to return.
+   * @return The sizes at the given index.
    */
   java.lang.String getSizes(int index);
   /**
@@ -78,6 +86,8 @@ public interface HostedURLOrBuilder extends
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the sizes at the given index.
    */
   com.google.protobuf.ByteString
       getSizesBytes(int index);

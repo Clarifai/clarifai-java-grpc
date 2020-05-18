@@ -141,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
@@ -151,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -171,31 +173,36 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The query; this specifies how the data to be searched
+   * this will be replaced by "Searches"
    * </pre>
    *
-   * <code>.clarifai.api.Query query = 2;</code>
+   * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+   * @return Whether the query field is set.
    */
-  public boolean hasQuery() {
+  @java.lang.Deprecated public boolean hasQuery() {
     return query_ != null;
   }
   /**
    * <pre>
    * The query; this specifies how the data to be searched
+   * this will be replaced by "Searches"
    * </pre>
    *
-   * <code>.clarifai.api.Query query = 2;</code>
+   * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+   * @return The query.
    */
-  public com.clarifai.grpc.api.Query getQuery() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.Query getQuery() {
     return query_ == null ? com.clarifai.grpc.api.Query.getDefaultInstance() : query_;
   }
   /**
    * <pre>
    * The query; this specifies how the data to be searched
+   * this will be replaced by "Searches"
    * </pre>
    *
-   * <code>.clarifai.api.Query query = 2;</code>
+   * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder() {
     return getQuery();
   }
 
@@ -267,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 4;</code>
+   * @return Whether the pagination field is set.
    */
   public boolean hasPagination() {
     return pagination_ != null;
@@ -277,6 +285,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 4;</code>
+   * @return The pagination.
    */
   public com.clarifai.grpc.api.Pagination getPagination() {
     return pagination_ == null ? com.clarifai.grpc.api.Pagination.getDefaultInstance() : pagination_;
@@ -733,6 +742,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
@@ -743,6 +753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -883,21 +894,25 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+     * @return Whether the query field is set.
      */
-    public boolean hasQuery() {
+    @java.lang.Deprecated public boolean hasQuery() {
       return queryBuilder_ != null || query_ != null;
     }
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+     * @return The query.
      */
-    public com.clarifai.grpc.api.Query getQuery() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Query getQuery() {
       if (queryBuilder_ == null) {
         return query_ == null ? com.clarifai.grpc.api.Query.getDefaultInstance() : query_;
       } else {
@@ -907,11 +922,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
-    public Builder setQuery(com.clarifai.grpc.api.Query value) {
+    @java.lang.Deprecated public Builder setQuery(com.clarifai.grpc.api.Query value) {
       if (queryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -927,11 +943,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
-    public Builder setQuery(
+    @java.lang.Deprecated public Builder setQuery(
         com.clarifai.grpc.api.Query.Builder builderForValue) {
       if (queryBuilder_ == null) {
         query_ = builderForValue.build();
@@ -945,11 +962,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
-    public Builder mergeQuery(com.clarifai.grpc.api.Query value) {
+    @java.lang.Deprecated public Builder mergeQuery(com.clarifai.grpc.api.Query value) {
       if (queryBuilder_ == null) {
         if (query_ != null) {
           query_ =
@@ -967,11 +985,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
-    public Builder clearQuery() {
+    @java.lang.Deprecated public Builder clearQuery() {
       if (queryBuilder_ == null) {
         query_ = null;
         onChanged();
@@ -985,11 +1004,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Query.Builder getQueryBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Query.Builder getQueryBuilder() {
       
       onChanged();
       return getQueryFieldBuilder().getBuilder();
@@ -997,11 +1017,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder() {
       if (queryBuilder_ != null) {
         return queryBuilder_.getMessageOrBuilder();
       } else {
@@ -1012,9 +1033,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The query; this specifies how the data to be searched
+     * this will be replaced by "Searches"
      * </pre>
      *
-     * <code>.clarifai.api.Query query = 2;</code>
+     * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Query, com.clarifai.grpc.api.Query.Builder, com.clarifai.grpc.api.QueryOrBuilder> 
@@ -1369,6 +1391,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Pagination pagination = 4;</code>
+     * @return Whether the pagination field is set.
      */
     public boolean hasPagination() {
       return paginationBuilder_ != null || pagination_ != null;
@@ -1379,6 +1402,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Pagination pagination = 4;</code>
+     * @return The pagination.
      */
     public com.clarifai.grpc.api.Pagination getPagination() {
       if (paginationBuilder_ == null) {

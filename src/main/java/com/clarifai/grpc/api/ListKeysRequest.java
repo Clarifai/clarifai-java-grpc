@@ -107,12 +107,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -133,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 page = 2;</code>
+   * @return The page.
    */
   public int getPage() {
     return page_;
@@ -147,6 +150,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 per_page = 3;</code>
+   * @return The perPage.
    */
   public int getPerPage() {
     return perPage_;
@@ -506,12 +510,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -626,6 +632,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 2;</code>
+     * @return The page.
      */
     public int getPage() {
       return page_;
@@ -637,6 +644,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 2;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
      */
     public Builder setPage(int value) {
       
@@ -651,6 +660,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPage() {
       
@@ -667,6 +677,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 3;</code>
+     * @return The perPage.
      */
     public int getPerPage() {
       return perPage_;
@@ -678,6 +689,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 3;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
      */
     public Builder setPerPage(int value) {
       
@@ -692,6 +705,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPerPage() {
       

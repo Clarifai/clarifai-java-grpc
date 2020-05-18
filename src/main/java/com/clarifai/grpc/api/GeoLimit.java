@@ -96,6 +96,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object type_;
   /**
    * <code>string type = 1;</code>
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -111,6 +112,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string type = 1;</code>
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString
       getTypeBytes() {
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
   private float value_;
   /**
    * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The value.
    */
   public float getValue() {
     return value_;
@@ -459,6 +462,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object type_ = "";
     /**
      * <code>string type = 1;</code>
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -474,6 +478,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 1;</code>
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -490,6 +495,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 1;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(
         java.lang.String value) {
@@ -503,6 +510,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -512,6 +520,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string type = 1;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -528,12 +538,15 @@ private static final long serialVersionUID = 0L;
     private float value_ ;
     /**
      * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The value.
      */
     public float getValue() {
       return value_;
     }
     /**
      * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(float value) {
       
@@ -543,6 +556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       

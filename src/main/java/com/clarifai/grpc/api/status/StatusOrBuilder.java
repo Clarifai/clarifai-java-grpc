@@ -13,6 +13,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.StatusCode code = 1;</code>
+   * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
   /**
@@ -21,6 +22,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.StatusCode code = 1;</code>
+   * @return The code.
    */
   com.clarifai.grpc.api.status.StatusCode getCode();
 
@@ -30,6 +32,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   java.lang.String getDescription();
   /**
@@ -38,6 +41,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
@@ -48,6 +52,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string details = 3;</code>
+   * @return The details.
    */
   java.lang.String getDetails();
   /**
@@ -56,6 +61,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string details = 3;</code>
+   * @return The bytes for details.
    */
   com.google.protobuf.ByteString
       getDetailsBytes();
@@ -67,6 +73,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return A list containing the stackTrace.
    */
   java.util.List<java.lang.String>
       getStackTraceList();
@@ -77,6 +84,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The count of stackTrace.
    */
   int getStackTraceCount();
   /**
@@ -86,6 +94,8 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @param index The index of the element to return.
+   * @return The stackTrace at the given index.
    */
   java.lang.String getStackTrace(int index);
   /**
@@ -95,6 +105,8 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the stackTrace at the given index.
    */
   com.google.protobuf.ByteString
       getStackTraceBytes(int index);
@@ -105,6 +117,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 percent_completed = 5;</code>
+   * @return The percentCompleted.
    */
   int getPercentCompleted();
 
@@ -114,6 +127,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>uint32 time_remaining = 6;</code>
+   * @return The timeRemaining.
    */
   int getTimeRemaining();
 
@@ -123,6 +137,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string req_id = 7;</code>
+   * @return The reqId.
    */
   java.lang.String getReqId();
   /**
@@ -131,6 +146,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string req_id = 7;</code>
+   * @return The bytes for reqId.
    */
   com.google.protobuf.ByteString
       getReqIdBytes();
@@ -141,6 +157,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The internalDetails.
    */
   java.lang.String getInternalDetails();
   /**
@@ -149,6 +166,7 @@ public interface StatusOrBuilder extends
    * </pre>
    *
    * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The bytes for internalDetails.
    */
   com.google.protobuf.ByteString
       getInternalDetailsBytes();

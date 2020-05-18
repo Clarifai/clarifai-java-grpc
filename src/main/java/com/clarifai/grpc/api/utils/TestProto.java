@@ -133,7 +133,8 @@ private static final long serialVersionUID = 0L;
   private int oneOfFieldCase_ = 0;
   private java.lang.Object oneOfField_;
   public enum OneOfFieldCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STRING_ONEOF(5),
     BOOL_ONEOF(6),
     MESSAGE_ONEOF(7),
@@ -143,6 +144,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -174,6 +177,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -189,6 +193,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -208,6 +213,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object message_;
   /**
    * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+   * @return The message.
    */
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
@@ -223,6 +229,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+   * @return The bytes for message.
    */
   public com.google.protobuf.ByteString
       getMessageBytes() {
@@ -242,6 +249,7 @@ private static final long serialVersionUID = 0L;
   private double value_;
   /**
    * <code>double value = 3 [(.clarifai.api.utils.cl_default_float) = 1];</code>
+   * @return The value.
    */
   public double getValue() {
     return value_;
@@ -251,6 +259,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.ByteString imageBytes_;
   /**
    * <code>bytes image_bytes = 4;</code>
+   * @return The imageBytes.
    */
   public com.google.protobuf.ByteString getImageBytes() {
     return imageBytes_;
@@ -259,6 +268,7 @@ private static final long serialVersionUID = 0L;
   public static final int STRING_ONEOF_FIELD_NUMBER = 5;
   /**
    * <code>string string_oneof = 5;</code>
+   * @return The stringOneof.
    */
   public java.lang.String getStringOneof() {
     java.lang.Object ref = "";
@@ -279,6 +289,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string string_oneof = 5;</code>
+   * @return The bytes for stringOneof.
    */
   public com.google.protobuf.ByteString
       getStringOneofBytes() {
@@ -302,6 +313,7 @@ private static final long serialVersionUID = 0L;
   public static final int BOOL_ONEOF_FIELD_NUMBER = 6;
   /**
    * <code>bool bool_oneof = 6;</code>
+   * @return The boolOneof.
    */
   public boolean getBoolOneof() {
     if (oneOfFieldCase_ == 6) {
@@ -313,12 +325,14 @@ private static final long serialVersionUID = 0L;
   public static final int MESSAGE_ONEOF_FIELD_NUMBER = 7;
   /**
    * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
+   * @return Whether the messageOneof field is set.
    */
   public boolean hasMessageOneof() {
     return oneOfFieldCase_ == 7;
   }
   /**
    * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
+   * @return The messageOneof.
    */
   public com.clarifai.grpc.api.utils.TestProto2 getMessageOneof() {
     if (oneOfFieldCase_ == 7) {
@@ -800,6 +814,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -815,6 +830,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -831,6 +847,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -844,6 +862,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -853,6 +872,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -869,6 +890,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object message_ = "";
     /**
      * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+     * @return The message.
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -884,6 +906,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+     * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -900,6 +923,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessage(
         java.lang.String value) {
@@ -913,6 +938,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+     * @return This builder for chaining.
      */
     public Builder clearMessage() {
       
@@ -922,6 +948,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
@@ -938,12 +966,15 @@ private static final long serialVersionUID = 0L;
     private double value_ ;
     /**
      * <code>double value = 3 [(.clarifai.api.utils.cl_default_float) = 1];</code>
+     * @return The value.
      */
     public double getValue() {
       return value_;
     }
     /**
      * <code>double value = 3 [(.clarifai.api.utils.cl_default_float) = 1];</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(double value) {
       
@@ -953,6 +984,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>double value = 3 [(.clarifai.api.utils.cl_default_float) = 1];</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       
@@ -964,12 +996,15 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.ByteString imageBytes_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes image_bytes = 4;</code>
+     * @return The imageBytes.
      */
     public com.google.protobuf.ByteString getImageBytes() {
       return imageBytes_;
     }
     /**
      * <code>bytes image_bytes = 4;</code>
+     * @param value The imageBytes to set.
+     * @return This builder for chaining.
      */
     public Builder setImageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -982,6 +1017,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bytes image_bytes = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearImageBytes() {
       
@@ -992,6 +1028,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>string string_oneof = 5;</code>
+     * @return The stringOneof.
      */
     public java.lang.String getStringOneof() {
       java.lang.Object ref = "";
@@ -1012,6 +1049,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string string_oneof = 5;</code>
+     * @return The bytes for stringOneof.
      */
     public com.google.protobuf.ByteString
         getStringOneofBytes() {
@@ -1033,6 +1071,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string string_oneof = 5;</code>
+     * @param value The stringOneof to set.
+     * @return This builder for chaining.
      */
     public Builder setStringOneof(
         java.lang.String value) {
@@ -1046,6 +1086,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string string_oneof = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStringOneof() {
       if (oneOfFieldCase_ == 5) {
@@ -1057,6 +1098,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string string_oneof = 5;</code>
+     * @param value The bytes for stringOneof to set.
+     * @return This builder for chaining.
      */
     public Builder setStringOneofBytes(
         com.google.protobuf.ByteString value) {
@@ -1072,6 +1115,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>bool bool_oneof = 6;</code>
+     * @return The boolOneof.
      */
     public boolean getBoolOneof() {
       if (oneOfFieldCase_ == 6) {
@@ -1081,6 +1125,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool bool_oneof = 6;</code>
+     * @param value The boolOneof to set.
+     * @return This builder for chaining.
      */
     public Builder setBoolOneof(boolean value) {
       oneOfFieldCase_ = 6;
@@ -1090,6 +1136,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool bool_oneof = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBoolOneof() {
       if (oneOfFieldCase_ == 6) {
@@ -1104,12 +1151,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.utils.TestProto2, com.clarifai.grpc.api.utils.TestProto2.Builder, com.clarifai.grpc.api.utils.TestProto2OrBuilder> messageOneofBuilder_;
     /**
      * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
+     * @return Whether the messageOneof field is set.
      */
     public boolean hasMessageOneof() {
       return oneOfFieldCase_ == 7;
     }
     /**
      * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
+     * @return The messageOneof.
      */
     public com.clarifai.grpc.api.utils.TestProto2 getMessageOneof() {
       if (messageOneofBuilder_ == null) {

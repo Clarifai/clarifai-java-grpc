@@ -147,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.StatusCode code = 1;</code>
+   * @return The enum numeric value on the wire for code.
    */
   public int getCodeValue() {
     return code_;
@@ -157,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.StatusCode code = 1;</code>
+   * @return The code.
    */
   public com.clarifai.grpc.api.status.StatusCode getCode() {
     @SuppressWarnings("deprecation")
@@ -172,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The description.
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -191,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string description = 2;</code>
+   * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -214,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string details = 3;</code>
+   * @return The details.
    */
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
@@ -233,6 +238,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string details = 3;</code>
+   * @return The bytes for details.
    */
   public com.google.protobuf.ByteString
       getDetailsBytes() {
@@ -257,6 +263,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return A list containing the stackTrace.
    */
   public com.google.protobuf.ProtocolStringList
       getStackTraceList() {
@@ -269,6 +276,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The count of stackTrace.
    */
   public int getStackTraceCount() {
     return stackTrace_.size();
@@ -280,6 +288,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @param index The index of the element to return.
+   * @return The stackTrace at the given index.
    */
   public java.lang.String getStackTrace(int index) {
     return stackTrace_.get(index);
@@ -291,6 +301,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the stackTrace at the given index.
    */
   public com.google.protobuf.ByteString
       getStackTraceBytes(int index) {
@@ -305,6 +317,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 percent_completed = 5;</code>
+   * @return The percentCompleted.
    */
   public int getPercentCompleted() {
     return percentCompleted_;
@@ -318,6 +331,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 time_remaining = 6;</code>
+   * @return The timeRemaining.
    */
   public int getTimeRemaining() {
     return timeRemaining_;
@@ -331,6 +345,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string req_id = 7;</code>
+   * @return The reqId.
    */
   public java.lang.String getReqId() {
     java.lang.Object ref = reqId_;
@@ -350,6 +365,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string req_id = 7;</code>
+   * @return The bytes for reqId.
    */
   public com.google.protobuf.ByteString
       getReqIdBytes() {
@@ -373,6 +389,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The internalDetails.
    */
   public java.lang.String getInternalDetails() {
     java.lang.Object ref = internalDetails_;
@@ -392,6 +409,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The bytes for internalDetails.
    */
   public com.google.protobuf.ByteString
       getInternalDetailsBytes() {
@@ -853,6 +871,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
+     * @return The enum numeric value on the wire for code.
      */
     public int getCodeValue() {
       return code_;
@@ -863,6 +882,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
+     * @param value The enum numeric value on the wire for code to set.
+     * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
       code_ = value;
@@ -875,6 +896,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
+     * @return The code.
      */
     public com.clarifai.grpc.api.status.StatusCode getCode() {
       @SuppressWarnings("deprecation")
@@ -887,6 +909,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
+     * @param value The code to set.
+     * @return This builder for chaining.
      */
     public Builder setCode(com.clarifai.grpc.api.status.StatusCode value) {
       if (value == null) {
@@ -903,6 +927,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCode() {
       
@@ -918,6 +943,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -937,6 +963,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -957,6 +984,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -974,6 +1003,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDescription() {
       
@@ -987,6 +1017,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string description = 2;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -1007,6 +1039,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3;</code>
+     * @return The details.
      */
     public java.lang.String getDetails() {
       java.lang.Object ref = details_;
@@ -1026,6 +1059,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3;</code>
+     * @return The bytes for details.
      */
     public com.google.protobuf.ByteString
         getDetailsBytes() {
@@ -1046,6 +1080,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3;</code>
+     * @param value The details to set.
+     * @return This builder for chaining.
      */
     public Builder setDetails(
         java.lang.String value) {
@@ -1063,6 +1099,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDetails() {
       
@@ -1076,6 +1113,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string details = 3;</code>
+     * @param value The bytes for details to set.
+     * @return This builder for chaining.
      */
     public Builder setDetailsBytes(
         com.google.protobuf.ByteString value) {
@@ -1103,6 +1142,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return A list containing the stackTrace.
      */
     public com.google.protobuf.ProtocolStringList
         getStackTraceList() {
@@ -1115,6 +1155,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return The count of stackTrace.
      */
     public int getStackTraceCount() {
       return stackTrace_.size();
@@ -1126,6 +1167,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param index The index of the element to return.
+     * @return The stackTrace at the given index.
      */
     public java.lang.String getStackTrace(int index) {
       return stackTrace_.get(index);
@@ -1137,6 +1180,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the stackTrace at the given index.
      */
     public com.google.protobuf.ByteString
         getStackTraceBytes(int index) {
@@ -1149,6 +1194,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The stackTrace to set.
+     * @return This builder for chaining.
      */
     public Builder setStackTrace(
         int index, java.lang.String value) {
@@ -1167,6 +1215,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param value The stackTrace to add.
+     * @return This builder for chaining.
      */
     public Builder addStackTrace(
         java.lang.String value) {
@@ -1185,6 +1235,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param values The stackTrace to add.
+     * @return This builder for chaining.
      */
     public Builder addAllStackTrace(
         java.lang.Iterable<java.lang.String> values) {
@@ -1201,6 +1253,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearStackTrace() {
       stackTrace_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1215,6 +1268,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string stack_trace = 4 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param value The bytes of the stackTrace to add.
+     * @return This builder for chaining.
      */
     public Builder addStackTraceBytes(
         com.google.protobuf.ByteString value) {
@@ -1235,6 +1290,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 percent_completed = 5;</code>
+     * @return The percentCompleted.
      */
     public int getPercentCompleted() {
       return percentCompleted_;
@@ -1245,6 +1301,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 percent_completed = 5;</code>
+     * @param value The percentCompleted to set.
+     * @return This builder for chaining.
      */
     public Builder setPercentCompleted(int value) {
       
@@ -1258,6 +1316,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 percent_completed = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPercentCompleted() {
       
@@ -1273,6 +1332,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 time_remaining = 6;</code>
+     * @return The timeRemaining.
      */
     public int getTimeRemaining() {
       return timeRemaining_;
@@ -1283,6 +1343,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 time_remaining = 6;</code>
+     * @param value The timeRemaining to set.
+     * @return This builder for chaining.
      */
     public Builder setTimeRemaining(int value) {
       
@@ -1296,6 +1358,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 time_remaining = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimeRemaining() {
       
@@ -1311,6 +1374,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string req_id = 7;</code>
+     * @return The reqId.
      */
     public java.lang.String getReqId() {
       java.lang.Object ref = reqId_;
@@ -1330,6 +1394,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string req_id = 7;</code>
+     * @return The bytes for reqId.
      */
     public com.google.protobuf.ByteString
         getReqIdBytes() {
@@ -1350,6 +1415,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string req_id = 7;</code>
+     * @param value The reqId to set.
+     * @return This builder for chaining.
      */
     public Builder setReqId(
         java.lang.String value) {
@@ -1367,6 +1434,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string req_id = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearReqId() {
       
@@ -1380,6 +1448,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string req_id = 7;</code>
+     * @param value The bytes for reqId to set.
+     * @return This builder for chaining.
      */
     public Builder setReqIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1400,6 +1470,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return The internalDetails.
      */
     public java.lang.String getInternalDetails() {
       java.lang.Object ref = internalDetails_;
@@ -1419,6 +1490,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return The bytes for internalDetails.
      */
     public com.google.protobuf.ByteString
         getInternalDetailsBytes() {
@@ -1439,6 +1511,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param value The internalDetails to set.
+     * @return This builder for chaining.
      */
     public Builder setInternalDetails(
         java.lang.String value) {
@@ -1456,6 +1530,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearInternalDetails() {
       
@@ -1469,6 +1544,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @param value The bytes for internalDetails to set.
+     * @return This builder for chaining.
      */
     public Builder setInternalDetailsBytes(
         com.google.protobuf.ByteString value) {

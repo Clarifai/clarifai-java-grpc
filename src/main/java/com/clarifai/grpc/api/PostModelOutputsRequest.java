@@ -145,12 +145,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -166,6 +168,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelId_;
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
@@ -181,6 +184,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   public com.google.protobuf.ByteString
       getModelIdBytes() {
@@ -200,6 +204,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object versionId_;
   /**
    * <code>string version_id = 3;</code>
+   * @return The versionId.
    */
   public java.lang.String getVersionId() {
     java.lang.Object ref = versionId_;
@@ -215,6 +220,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string version_id = 3;</code>
+   * @return The bytes for versionId.
    */
   public com.google.protobuf.ByteString
       getVersionIdBytes() {
@@ -274,6 +280,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 5;</code>
+   * @return Whether the model field is set.
    */
   public boolean hasModel() {
     return model_ != null;
@@ -285,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 5;</code>
+   * @return The model.
    */
   public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
@@ -749,12 +757,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -864,6 +874,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelId_ = "";
     /**
      * <code>string model_id = 2;</code>
+     * @return The modelId.
      */
     public java.lang.String getModelId() {
       java.lang.Object ref = modelId_;
@@ -879,6 +890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return The bytes for modelId.
      */
     public com.google.protobuf.ByteString
         getModelIdBytes() {
@@ -895,6 +907,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelId(
         java.lang.String value) {
@@ -908,6 +922,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModelId() {
       
@@ -917,6 +932,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelIdBytes(
         com.google.protobuf.ByteString value) {
@@ -933,6 +950,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object versionId_ = "";
     /**
      * <code>string version_id = 3;</code>
+     * @return The versionId.
      */
     public java.lang.String getVersionId() {
       java.lang.Object ref = versionId_;
@@ -948,6 +966,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @return The bytes for versionId.
      */
     public com.google.protobuf.ByteString
         getVersionIdBytes() {
@@ -964,6 +983,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @param value The versionId to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionId(
         java.lang.String value) {
@@ -977,6 +998,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearVersionId() {
       
@@ -986,6 +1008,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @param value The bytes for versionId to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1249,6 +1273,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 5;</code>
+     * @return Whether the model field is set.
      */
     public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
@@ -1260,6 +1285,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 5;</code>
+     * @return The model.
      */
     public com.clarifai.grpc.api.Model getModel() {
       if (modelBuilder_ == null) {

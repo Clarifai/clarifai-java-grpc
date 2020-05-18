@@ -9,35 +9,42 @@ public interface BinaryMetricsOrBuilder extends
 
   /**
    * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The numPos.
    */
   int getNumPos();
 
   /**
    * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The numNeg.
    */
   int getNumNeg();
 
   /**
    * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The numTot.
    */
   int getNumTot();
 
   /**
    * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The rocAuc.
    */
   float getRocAuc();
 
   /**
    * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The f1.
    */
   float getF1();
 
   /**
    * <code>.clarifai.api.Concept concept = 6;</code>
+   * @return Whether the concept field is set.
    */
   boolean hasConcept();
   /**
    * <code>.clarifai.api.Concept concept = 6;</code>
+   * @return The concept.
    */
   com.clarifai.grpc.api.Concept getConcept();
   /**
@@ -47,10 +54,12 @@ public interface BinaryMetricsOrBuilder extends
 
   /**
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
+   * @return Whether the rocCurve field is set.
    */
   boolean hasRocCurve();
   /**
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
+   * @return The rocCurve.
    */
   com.clarifai.grpc.api.ROC getRocCurve();
   /**
@@ -60,10 +69,12 @@ public interface BinaryMetricsOrBuilder extends
 
   /**
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
+   * @return Whether the precisionRecallCurve field is set.
    */
   boolean hasPrecisionRecallCurve();
   /**
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
+   * @return The precisionRecallCurve.
    */
   com.clarifai.grpc.api.PrecisionRecallCurve getPrecisionRecallCurve();
   /**
@@ -73,31 +84,37 @@ public interface BinaryMetricsOrBuilder extends
 
   /**
    * <code>float avg_precision = 9;</code>
+   * @return The avgPrecision.
    */
   float getAvgPrecision();
 
   /**
    * <code>string area_name = 10;</code>
+   * @return The areaName.
    */
   java.lang.String getAreaName();
   /**
    * <code>string area_name = 10;</code>
+   * @return The bytes for areaName.
    */
   com.google.protobuf.ByteString
       getAreaNameBytes();
 
   /**
    * <code>double area_min = 11;</code>
+   * @return The areaMin.
    */
   double getAreaMin();
 
   /**
    * <code>double area_max = 12;</code>
+   * @return The areaMax.
    */
   double getAreaMax();
 
   /**
    * <code>float iou = 13;</code>
+   * @return The iou.
    */
   float getIou();
 }

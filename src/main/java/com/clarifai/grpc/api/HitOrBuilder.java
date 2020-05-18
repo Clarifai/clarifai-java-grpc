@@ -21,6 +21,7 @@ public interface HitOrBuilder extends
    * </pre>
    *
    * <code>float score = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The score.
    */
   float getScore();
 
@@ -32,6 +33,7 @@ public interface HitOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return Whether the input field is set.
    */
   boolean hasInput();
   /**
@@ -42,6 +44,7 @@ public interface HitOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return The input.
    */
   com.clarifai.grpc.api.Input getInput();
   /**
@@ -65,6 +68,7 @@ public interface HitOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 3;</code>
+   * @return Whether the annotation field is set.
    */
   boolean hasAnnotation();
   /**
@@ -77,6 +81,7 @@ public interface HitOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 3;</code>
+   * @return The annotation.
    */
   com.clarifai.grpc.api.Annotation getAnnotation();
   /**

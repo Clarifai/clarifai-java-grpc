@@ -110,6 +110,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string op = 1;</code>
+   * @return The op.
    */
   public java.lang.String getOp() {
     java.lang.Object ref = op_;
@@ -130,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string op = 1;</code>
+   * @return The bytes for op.
    */
   public com.google.protobuf.ByteString
       getOpBytes() {
@@ -215,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string merge_conflict_resolution = 2;</code>
+   * @return The mergeConflictResolution.
    */
   public java.lang.String getMergeConflictResolution() {
     java.lang.Object ref = mergeConflictResolution_;
@@ -296,6 +299,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string merge_conflict_resolution = 2;</code>
+   * @return The bytes for mergeConflictResolution.
    */
   public com.google.protobuf.ByteString
       getMergeConflictResolutionBytes() {
@@ -320,6 +324,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The path.
    */
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
@@ -340,6 +345,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string path = 3;</code>
+   * @return The bytes for path.
    */
   public com.google.protobuf.ByteString
       getPathBytes() {
@@ -699,6 +705,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string op = 1;</code>
+     * @return The op.
      */
     public java.lang.String getOp() {
       java.lang.Object ref = op_;
@@ -719,6 +726,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string op = 1;</code>
+     * @return The bytes for op.
      */
     public com.google.protobuf.ByteString
         getOpBytes() {
@@ -740,6 +748,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string op = 1;</code>
+     * @param value The op to set.
+     * @return This builder for chaining.
      */
     public Builder setOp(
         java.lang.String value) {
@@ -758,6 +768,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string op = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearOp() {
       
@@ -772,6 +783,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string op = 1;</code>
+     * @param value The bytes for op to set.
+     * @return This builder for chaining.
      */
     public Builder setOpBytes(
         com.google.protobuf.ByteString value) {
@@ -854,6 +867,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string merge_conflict_resolution = 2;</code>
+     * @return The mergeConflictResolution.
      */
     public java.lang.String getMergeConflictResolution() {
       java.lang.Object ref = mergeConflictResolution_;
@@ -935,6 +949,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string merge_conflict_resolution = 2;</code>
+     * @return The bytes for mergeConflictResolution.
      */
     public com.google.protobuf.ByteString
         getMergeConflictResolutionBytes() {
@@ -1017,6 +1032,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string merge_conflict_resolution = 2;</code>
+     * @param value The mergeConflictResolution to set.
+     * @return This builder for chaining.
      */
     public Builder setMergeConflictResolution(
         java.lang.String value) {
@@ -1096,6 +1113,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string merge_conflict_resolution = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMergeConflictResolution() {
       
@@ -1171,6 +1189,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string merge_conflict_resolution = 2;</code>
+     * @param value The bytes for mergeConflictResolution to set.
+     * @return This builder for chaining.
      */
     public Builder setMergeConflictResolutionBytes(
         com.google.protobuf.ByteString value) {
@@ -1192,6 +1212,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
@@ -1212,6 +1233,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @return The bytes for path.
      */
     public com.google.protobuf.ByteString
         getPathBytes() {
@@ -1233,6 +1255,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @param value The path to set.
+     * @return This builder for chaining.
      */
     public Builder setPath(
         java.lang.String value) {
@@ -1251,6 +1275,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPath() {
       
@@ -1265,6 +1290,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string path = 3;</code>
+     * @param value The bytes for path to set.
+     * @return This builder for chaining.
      */
     public Builder setPathBytes(
         com.google.protobuf.ByteString value) {

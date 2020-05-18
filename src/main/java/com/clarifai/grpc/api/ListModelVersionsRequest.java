@@ -128,12 +128,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -149,6 +151,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelId_;
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
@@ -164,6 +167,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   public com.google.protobuf.ByteString
       getModelIdBytes() {
@@ -188,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 page = 3;</code>
+   * @return The page.
    */
   public int getPage() {
     return page_;
@@ -202,6 +207,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 per_page = 4;</code>
+   * @return The perPage.
    */
   public int getPerPage() {
     return perPage_;
@@ -215,6 +221,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @return A list containing the conceptIds.
    */
   public com.google.protobuf.ProtocolStringList
       getConceptIdsList() {
@@ -226,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @return The count of conceptIds.
    */
   public int getConceptIdsCount() {
     return conceptIds_.size();
@@ -236,6 +244,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The conceptIds at the given index.
    */
   public java.lang.String getConceptIds(int index) {
     return conceptIds_.get(index);
@@ -246,6 +256,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string concept_ids = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the conceptIds at the given index.
    */
   public com.google.protobuf.ByteString
       getConceptIdsBytes(int index) {
@@ -659,12 +671,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -774,6 +788,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelId_ = "";
     /**
      * <code>string model_id = 2;</code>
+     * @return The modelId.
      */
     public java.lang.String getModelId() {
       java.lang.Object ref = modelId_;
@@ -789,6 +804,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return The bytes for modelId.
      */
     public com.google.protobuf.ByteString
         getModelIdBytes() {
@@ -805,6 +821,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelId(
         java.lang.String value) {
@@ -818,6 +836,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModelId() {
       
@@ -827,6 +846,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelIdBytes(
         com.google.protobuf.ByteString value) {
@@ -848,6 +869,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 3;</code>
+     * @return The page.
      */
     public int getPage() {
       return page_;
@@ -859,6 +881,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 3;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
      */
     public Builder setPage(int value) {
       
@@ -873,6 +897,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPage() {
       
@@ -889,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 4;</code>
+     * @return The perPage.
      */
     public int getPerPage() {
       return perPage_;
@@ -900,6 +926,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 4;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
      */
     public Builder setPerPage(int value) {
       
@@ -914,6 +942,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPerPage() {
       
@@ -935,6 +964,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @return A list containing the conceptIds.
      */
     public com.google.protobuf.ProtocolStringList
         getConceptIdsList() {
@@ -946,6 +976,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @return The count of conceptIds.
      */
     public int getConceptIdsCount() {
       return conceptIds_.size();
@@ -956,6 +987,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @param index The index of the element to return.
+     * @return The conceptIds at the given index.
      */
     public java.lang.String getConceptIds(int index) {
       return conceptIds_.get(index);
@@ -966,6 +999,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the conceptIds at the given index.
      */
     public com.google.protobuf.ByteString
         getConceptIdsBytes(int index) {
@@ -977,6 +1012,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The conceptIds to set.
+     * @return This builder for chaining.
      */
     public Builder setConceptIds(
         int index, java.lang.String value) {
@@ -994,6 +1032,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @param value The conceptIds to add.
+     * @return This builder for chaining.
      */
     public Builder addConceptIds(
         java.lang.String value) {
@@ -1011,6 +1051,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @param values The conceptIds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllConceptIds(
         java.lang.Iterable<java.lang.String> values) {
@@ -1026,6 +1068,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConceptIds() {
       conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1039,6 +1082,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string concept_ids = 5;</code>
+     * @param value The bytes of the conceptIds to add.
+     * @return This builder for chaining.
      */
     public Builder addConceptIdsBytes(
         com.google.protobuf.ByteString value) {

@@ -135,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Data data = 1;</code>
+   * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
@@ -145,6 +146,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Data data = 1;</code>
+   * @return The data.
    */
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
@@ -168,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
+   * @return Whether the outputConfig field is set.
    */
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
@@ -178,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
+   * @return The outputConfig.
    */
   public com.clarifai.grpc.api.OutputConfig getOutputConfig() {
     return outputConfig_ == null ? com.clarifai.grpc.api.OutputConfig.getDefaultInstance() : outputConfig_;
@@ -201,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The message.
    */
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
@@ -220,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The bytes for message.
    */
   public com.google.protobuf.ByteString
       getMessageBytes() {
@@ -243,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type = 4;</code>
+   * @return The type.
    */
   public java.lang.String getType() {
     java.lang.Object ref = type_;
@@ -262,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type = 4;</code>
+   * @return The bytes for type.
    */
   public com.google.protobuf.ByteString
       getTypeBytes() {
@@ -285,6 +293,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type_ext = 5;</code>
+   * @return The typeExt.
    */
   public java.lang.String getTypeExt() {
     java.lang.Object ref = typeExt_;
@@ -304,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type_ext = 5;</code>
+   * @return The bytes for typeExt.
    */
   public com.google.protobuf.ByteString
       getTypeExtBytes() {
@@ -724,6 +734,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Data data = 1;</code>
+     * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
@@ -734,6 +745,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Data data = 1;</code>
+     * @return The data.
      */
     public com.clarifai.grpc.api.Data getData() {
       if (dataBuilder_ == null) {
@@ -877,6 +889,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
+     * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
@@ -887,6 +900,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
+     * @return The outputConfig.
      */
     public com.clarifai.grpc.api.OutputConfig getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -1028,6 +1042,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @return The message.
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -1047,6 +1062,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -1067,6 +1083,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessage(
         java.lang.String value) {
@@ -1084,6 +1102,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMessage() {
       
@@ -1097,6 +1116,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
@@ -1117,6 +1138,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 4;</code>
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -1136,6 +1158,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 4;</code>
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -1156,6 +1179,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 4;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(
         java.lang.String value) {
@@ -1173,6 +1198,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1186,6 +1212,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 4;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -1206,6 +1234,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_ext = 5;</code>
+     * @return The typeExt.
      */
     public java.lang.String getTypeExt() {
       java.lang.Object ref = typeExt_;
@@ -1225,6 +1254,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_ext = 5;</code>
+     * @return The bytes for typeExt.
      */
     public com.google.protobuf.ByteString
         getTypeExtBytes() {
@@ -1245,6 +1275,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_ext = 5;</code>
+     * @param value The typeExt to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeExt(
         java.lang.String value) {
@@ -1262,6 +1294,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_ext = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTypeExt() {
       
@@ -1275,6 +1308,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type_ext = 5;</code>
+     * @param value The bytes for typeExt to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeExtBytes(
         com.google.protobuf.ByteString value) {

@@ -133,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float score = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -148,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return Whether the input field is set.
    */
   public boolean hasInput() {
     return input_ != null;
@@ -160,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return The input.
    */
   public com.clarifai.grpc.api.Input getInput() {
     return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
@@ -189,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 3;</code>
+   * @return Whether the annotation field is set.
    */
   public boolean hasAnnotation() {
     return annotation_ != null;
@@ -203,6 +207,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 3;</code>
+   * @return The annotation.
    */
   public com.clarifai.grpc.api.Annotation getAnnotation() {
     return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
@@ -607,6 +612,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float score = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -625,6 +631,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float score = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
       
@@ -646,6 +654,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float score = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
       
@@ -665,6 +674,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Input input = 2;</code>
+     * @return Whether the input field is set.
      */
     public boolean hasInput() {
       return inputBuilder_ != null || input_ != null;
@@ -677,6 +687,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Input input = 2;</code>
+     * @return The input.
      */
     public com.clarifai.grpc.api.Input getInput() {
       if (inputBuilder_ == null) {
@@ -838,6 +849,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 3;</code>
+     * @return Whether the annotation field is set.
      */
     public boolean hasAnnotation() {
       return annotationBuilder_ != null || annotation_ != null;
@@ -852,6 +864,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 3;</code>
+     * @return The annotation.
      */
     public com.clarifai.grpc.api.Annotation getAnnotation() {
       if (annotationBuilder_ == null) {

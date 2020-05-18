@@ -9,10 +9,12 @@ public interface GeoOrBuilder extends
 
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return Whether the geoPoint field is set.
    */
   boolean hasGeoPoint();
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return The geoPoint.
    */
   com.clarifai.grpc.api.GeoPoint getGeoPoint();
   /**
@@ -22,10 +24,12 @@ public interface GeoOrBuilder extends
 
   /**
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
+   * @return Whether the geoLimit field is set.
    */
   boolean hasGeoLimit();
   /**
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
+   * @return The geoLimit.
    */
   com.clarifai.grpc.api.GeoLimit getGeoLimit();
   /**

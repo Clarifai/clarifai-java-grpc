@@ -116,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string prefix = 1;</code>
+   * @return The prefix.
    */
   public java.lang.String getPrefix() {
     java.lang.Object ref = prefix_;
@@ -135,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string prefix = 1;</code>
+   * @return The bytes for prefix.
    */
   public com.google.protobuf.ByteString
       getPrefixBytes() {
@@ -158,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string suffix = 2;</code>
+   * @return The suffix.
    */
   public java.lang.String getSuffix() {
     java.lang.Object ref = suffix_;
@@ -177,6 +180,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string suffix = 2;</code>
+   * @return The bytes for suffix.
    */
   public com.google.protobuf.ByteString
       getSuffixBytes() {
@@ -201,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @return A list containing the sizes.
    */
   public com.google.protobuf.ProtocolStringList
       getSizesList() {
@@ -213,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @return The count of sizes.
    */
   public int getSizesCount() {
     return sizes_.size();
@@ -224,6 +230,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @param index The index of the element to return.
+   * @return The sizes at the given index.
    */
   public java.lang.String getSizes(int index) {
     return sizes_.get(index);
@@ -235,6 +243,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string sizes = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the sizes at the given index.
    */
   public com.google.protobuf.ByteString
       getSizesBytes(int index) {
@@ -603,6 +613,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string prefix = 1;</code>
+     * @return The prefix.
      */
     public java.lang.String getPrefix() {
       java.lang.Object ref = prefix_;
@@ -622,6 +633,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string prefix = 1;</code>
+     * @return The bytes for prefix.
      */
     public com.google.protobuf.ByteString
         getPrefixBytes() {
@@ -642,6 +654,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string prefix = 1;</code>
+     * @param value The prefix to set.
+     * @return This builder for chaining.
      */
     public Builder setPrefix(
         java.lang.String value) {
@@ -659,6 +673,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string prefix = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPrefix() {
       
@@ -672,6 +687,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string prefix = 1;</code>
+     * @param value The bytes for prefix to set.
+     * @return This builder for chaining.
      */
     public Builder setPrefixBytes(
         com.google.protobuf.ByteString value) {
@@ -692,6 +709,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suffix = 2;</code>
+     * @return The suffix.
      */
     public java.lang.String getSuffix() {
       java.lang.Object ref = suffix_;
@@ -711,6 +729,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suffix = 2;</code>
+     * @return The bytes for suffix.
      */
     public com.google.protobuf.ByteString
         getSuffixBytes() {
@@ -731,6 +750,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suffix = 2;</code>
+     * @param value The suffix to set.
+     * @return This builder for chaining.
      */
     public Builder setSuffix(
         java.lang.String value) {
@@ -748,6 +769,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suffix = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSuffix() {
       
@@ -761,6 +783,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string suffix = 2;</code>
+     * @param value The bytes for suffix to set.
+     * @return This builder for chaining.
      */
     public Builder setSuffixBytes(
         com.google.protobuf.ByteString value) {
@@ -788,6 +812,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @return A list containing the sizes.
      */
     public com.google.protobuf.ProtocolStringList
         getSizesList() {
@@ -800,6 +825,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @return The count of sizes.
      */
     public int getSizesCount() {
       return sizes_.size();
@@ -811,6 +837,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @param index The index of the element to return.
+     * @return The sizes at the given index.
      */
     public java.lang.String getSizes(int index) {
       return sizes_.get(index);
@@ -822,6 +850,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the sizes at the given index.
      */
     public com.google.protobuf.ByteString
         getSizesBytes(int index) {
@@ -834,6 +864,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The sizes to set.
+     * @return This builder for chaining.
      */
     public Builder setSizes(
         int index, java.lang.String value) {
@@ -852,6 +885,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @param value The sizes to add.
+     * @return This builder for chaining.
      */
     public Builder addSizes(
         java.lang.String value) {
@@ -870,6 +905,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @param values The sizes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllSizes(
         java.lang.Iterable<java.lang.String> values) {
@@ -886,6 +923,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSizes() {
       sizes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -900,6 +938,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string sizes = 3;</code>
+     * @param value The bytes of the sizes to add.
+     * @return This builder for chaining.
      */
     public Builder addSizesBytes(
         com.google.protobuf.ByteString value) {

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * A Frame of time-series Data such as a Video.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Frame}
  */
 public  final class Frame extends
@@ -16,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Frame() {
+    id_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +79,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            id_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -109,18 +120,32 @@ private static final long serialVersionUID = 0L;
   public static final int FRAME_INFO_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.FrameInfo frameInfo_;
   /**
+   * <pre>
+   * Information aboue frame such as number and time.
+   * </pre>
+   *
    * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
+   * @return Whether the frameInfo field is set.
    */
   public boolean hasFrameInfo() {
     return frameInfo_ != null;
   }
   /**
+   * <pre>
+   * Information aboue frame such as number and time.
+   * </pre>
+   *
    * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
+   * @return The frameInfo.
    */
   public com.clarifai.grpc.api.FrameInfo getFrameInfo() {
     return frameInfo_ == null ? com.clarifai.grpc.api.FrameInfo.getDefaultInstance() : frameInfo_;
   }
   /**
+   * <pre>
+   * Information aboue frame such as number and time.
+   * </pre>
+   *
    * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
    */
   public com.clarifai.grpc.api.FrameInfoOrBuilder getFrameInfoOrBuilder() {
@@ -130,22 +155,89 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_FIELD_NUMBER = 2;
   private com.clarifai.grpc.api.Data data_;
   /**
+   * <pre>
+   * A recursive definition of the data within the Frame. For example, this will contain
+   * data.concepts if the Frame also has annotations or predictions of concepts within it.
+   * This can also have data.regions for annotation or predictions of detection regions, which can
+   * then recursively have their data field filled in as well.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 2;</code>
+   * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
   }
   /**
+   * <pre>
+   * A recursive definition of the data within the Frame. For example, this will contain
+   * data.concepts if the Frame also has annotations or predictions of concepts within it.
+   * This can also have data.regions for annotation or predictions of detection regions, which can
+   * then recursively have their data field filled in as well.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 2;</code>
+   * @return The data.
    */
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
   /**
+   * <pre>
+   * A recursive definition of the data within the Frame. For example, this will contain
+   * data.concepts if the Frame also has annotations or predictions of concepts within it.
+   * This can also have data.regions for annotation or predictions of detection regions, which can
+   * then recursively have their data field filled in as well.
+   * </pre>
+   *
    * <code>.clarifai.api.Data data = 2;</code>
    */
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
+  }
+
+  public static final int ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object id_;
+  /**
+   * <pre>
+   * An ID for the frame.
+   * </pre>
+   *
+   * <code>string id = 3;</code>
+   * @return The id.
+   */
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * An ID for the frame.
+   * </pre>
+   *
+   * <code>string id = 3;</code>
+   * @return The bytes for id.
+   */
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -168,6 +260,9 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(2, getData());
     }
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -184,6 +279,9 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getData());
+    }
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -210,6 +308,8 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -229,6 +329,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -325,6 +427,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * A Frame of time-series Data such as a Video.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Frame}
    */
   public static final class Builder extends
@@ -374,6 +480,8 @@ private static final long serialVersionUID = 0L;
         data_ = null;
         dataBuilder_ = null;
       }
+      id_ = "";
+
       return this;
     }
 
@@ -410,6 +518,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data_ = dataBuilder_.build();
       }
+      result.id_ = id_;
       onBuilt();
       return result;
     }
@@ -464,6 +573,10 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -497,13 +610,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.FrameInfo, com.clarifai.grpc.api.FrameInfo.Builder, com.clarifai.grpc.api.FrameInfoOrBuilder> frameInfoBuilder_;
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
+     * @return Whether the frameInfo field is set.
      */
     public boolean hasFrameInfo() {
       return frameInfoBuilder_ != null || frameInfo_ != null;
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
+     * @return The frameInfo.
      */
     public com.clarifai.grpc.api.FrameInfo getFrameInfo() {
       if (frameInfoBuilder_ == null) {
@@ -513,6 +636,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     public Builder setFrameInfo(com.clarifai.grpc.api.FrameInfo value) {
@@ -529,6 +656,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     public Builder setFrameInfo(
@@ -543,6 +674,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     public Builder mergeFrameInfo(com.clarifai.grpc.api.FrameInfo value) {
@@ -561,6 +696,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     public Builder clearFrameInfo() {
@@ -575,6 +714,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     public com.clarifai.grpc.api.FrameInfo.Builder getFrameInfoBuilder() {
@@ -583,6 +726,10 @@ private static final long serialVersionUID = 0L;
       return getFrameInfoFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     public com.clarifai.grpc.api.FrameInfoOrBuilder getFrameInfoOrBuilder() {
@@ -594,6 +741,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Information aboue frame such as number and time.
+     * </pre>
+     *
      * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -614,13 +765,29 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> dataBuilder_;
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
+     * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
+     * @return The data.
      */
     public com.clarifai.grpc.api.Data getData() {
       if (dataBuilder_ == null) {
@@ -630,6 +797,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder setData(com.clarifai.grpc.api.Data value) {
@@ -646,6 +820,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder setData(
@@ -660,6 +841,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder mergeData(com.clarifai.grpc.api.Data value) {
@@ -678,6 +866,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder clearData() {
@@ -692,6 +887,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     public com.clarifai.grpc.api.Data.Builder getDataBuilder() {
@@ -700,6 +902,13 @@ private static final long serialVersionUID = 0L;
       return getDataFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
@@ -711,6 +920,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * A recursive definition of the data within the Frame. For example, this will contain
+     * data.concepts if the Frame also has annotations or predictions of concepts within it.
+     * This can also have data.regions for annotation or predictions of detection regions, which can
+     * then recursively have their data field filled in as well.
+     * </pre>
+     *
      * <code>.clarifai.api.Data data = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -725,6 +941,102 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    private java.lang.Object id_ = "";
+    /**
+     * <pre>
+     * An ID for the frame.
+     * </pre>
+     *
+     * <code>string id = 3;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An ID for the frame.
+     * </pre>
+     *
+     * <code>string id = 3;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An ID for the frame.
+     * </pre>
+     *
+     * <code>string id = 3;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An ID for the frame.
+     * </pre>
+     *
+     * <code>string id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An ID for the frame.
+     * </pre>
+     *
+     * <code>string id = 3;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

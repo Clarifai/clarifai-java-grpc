@@ -9,10 +9,12 @@ public interface SingleInputCountResponseOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -26,6 +28,7 @@ public interface SingleInputCountResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.InputCount counts = 2;</code>
+   * @return Whether the counts field is set.
    */
   boolean hasCounts();
   /**
@@ -34,6 +37,7 @@ public interface SingleInputCountResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.InputCount counts = 2;</code>
+   * @return The counts.
    */
   com.clarifai.grpc.api.InputCount getCounts();
   /**

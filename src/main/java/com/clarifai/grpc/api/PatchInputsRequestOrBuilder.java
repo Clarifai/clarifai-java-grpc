@@ -9,10 +9,12 @@ public interface PatchInputsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -51,6 +53,7 @@ public interface PatchInputsRequestOrBuilder extends
    * </pre>
    *
    * <code>string action = 3;</code>
+   * @return The action.
    */
   java.lang.String getAction();
   /**
@@ -60,6 +63,7 @@ public interface PatchInputsRequestOrBuilder extends
    * </pre>
    *
    * <code>string action = 3;</code>
+   * @return The bytes for action.
    */
   com.google.protobuf.ByteString
       getActionBytes();

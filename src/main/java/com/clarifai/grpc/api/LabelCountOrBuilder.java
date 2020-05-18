@@ -14,6 +14,7 @@ public interface LabelCountOrBuilder extends
    * </pre>
    *
    * <code>string concept_name = 1;</code>
+   * @return The conceptName.
    */
   java.lang.String getConceptName();
   /**
@@ -23,12 +24,14 @@ public interface LabelCountOrBuilder extends
    * </pre>
    *
    * <code>string concept_name = 1;</code>
+   * @return The bytes for conceptName.
    */
   com.google.protobuf.ByteString
       getConceptNameBytes();
 
   /**
    * <code>uint32 count = 2;</code>
+   * @return The count.
    */
   int getCount();
 }

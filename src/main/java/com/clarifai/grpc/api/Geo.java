@@ -124,12 +124,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.GeoPoint geoPoint_;
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return Whether the geoPoint field is set.
    */
   public boolean hasGeoPoint() {
     return geoPoint_ != null;
   }
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return The geoPoint.
    */
   public com.clarifai.grpc.api.GeoPoint getGeoPoint() {
     return geoPoint_ == null ? com.clarifai.grpc.api.GeoPoint.getDefaultInstance() : geoPoint_;
@@ -145,12 +147,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.GeoLimit geoLimit_;
   /**
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
+   * @return Whether the geoLimit field is set.
    */
   public boolean hasGeoLimit() {
     return geoLimit_ != null;
   }
   /**
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
+   * @return The geoLimit.
    */
   public com.clarifai.grpc.api.GeoLimit getGeoLimit() {
     return geoLimit_ == null ? com.clarifai.grpc.api.GeoLimit.getDefaultInstance() : geoLimit_;
@@ -624,12 +628,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.GeoPoint, com.clarifai.grpc.api.GeoPoint.Builder, com.clarifai.grpc.api.GeoPointOrBuilder> geoPointBuilder_;
     /**
      * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+     * @return Whether the geoPoint field is set.
      */
     public boolean hasGeoPoint() {
       return geoPointBuilder_ != null || geoPoint_ != null;
     }
     /**
      * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+     * @return The geoPoint.
      */
     public com.clarifai.grpc.api.GeoPoint getGeoPoint() {
       if (geoPointBuilder_ == null) {
@@ -741,12 +747,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.GeoLimit, com.clarifai.grpc.api.GeoLimit.Builder, com.clarifai.grpc.api.GeoLimitOrBuilder> geoLimitBuilder_;
     /**
      * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
+     * @return Whether the geoLimit field is set.
      */
     public boolean hasGeoLimit() {
       return geoLimitBuilder_ != null || geoLimit_ != null;
     }
     /**
      * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
+     * @return The geoLimit.
      */
     public com.clarifai.grpc.api.GeoLimit getGeoLimit() {
       if (geoLimitBuilder_ == null) {

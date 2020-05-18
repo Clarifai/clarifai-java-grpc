@@ -110,12 +110,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -131,12 +133,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Model model_;
   /**
    * <code>.clarifai.api.Model model = 2;</code>
+   * @return Whether the model field is set.
    */
   public boolean hasModel() {
     return model_ != null;
   }
   /**
    * <code>.clarifai.api.Model model = 2;</code>
+   * @return The model.
    */
   public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
@@ -498,12 +502,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -615,12 +621,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
     /**
      * <code>.clarifai.api.Model model = 2;</code>
+     * @return Whether the model field is set.
      */
     public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
     }
     /**
      * <code>.clarifai.api.Model model = 2;</code>
+     * @return The model.
      */
     public com.clarifai.grpc.api.Model getModel() {
       if (modelBuilder_ == null) {

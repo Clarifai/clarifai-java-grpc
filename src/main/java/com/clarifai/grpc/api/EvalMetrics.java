@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EvalMetrics() {
+    id_ = "";
     binaryMetrics_ = java.util.Collections.emptyList();
     testSet_ = java.util.Collections.emptyList();
     metricsByArea_ = java.util.Collections.emptyList();
@@ -154,6 +155,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.BinaryMetrics.parser(), extensionRegistry));
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            id_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -202,12 +209,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -219,16 +228,54 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
+  public static final int ID_FIELD_NUMBER = 10;
+  private volatile java.lang.Object id_;
+  /**
+   * <code>string id = 10;</code>
+   * @return The id.
+   */
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 10;</code>
+   * @return The bytes for id.
+   */
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SUMMARY_FIELD_NUMBER = 2;
   private com.clarifai.grpc.api.MetricsSummary summary_;
   /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
+   * @return Whether the summary field is set.
    */
   public boolean hasSummary() {
     return summary_ != null;
   }
   /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
+   * @return The summary.
    */
   public com.clarifai.grpc.api.MetricsSummary getSummary() {
     return summary_ == null ? com.clarifai.grpc.api.MetricsSummary.getDefaultInstance() : summary_;
@@ -244,12 +291,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.ConfusionMatrix confusionMatrix_;
   /**
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
+   * @return Whether the confusionMatrix field is set.
    */
   public boolean hasConfusionMatrix() {
     return confusionMatrix_ != null;
   }
   /**
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
+   * @return The confusionMatrix.
    */
   public com.clarifai.grpc.api.ConfusionMatrix getConfusionMatrix() {
     return confusionMatrix_ == null ? com.clarifai.grpc.api.ConfusionMatrix.getDefaultInstance() : confusionMatrix_;
@@ -265,12 +314,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.CooccurrenceMatrix cooccurrenceMatrix_;
   /**
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
+   * @return Whether the cooccurrenceMatrix field is set.
    */
   public boolean hasCooccurrenceMatrix() {
     return cooccurrenceMatrix_ != null;
   }
   /**
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
+   * @return The cooccurrenceMatrix.
    */
   public com.clarifai.grpc.api.CooccurrenceMatrix getCooccurrenceMatrix() {
     return cooccurrenceMatrix_ == null ? com.clarifai.grpc.api.CooccurrenceMatrix.getDefaultInstance() : cooccurrenceMatrix_;
@@ -286,12 +337,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.LabelDistribution labelCounts_;
   /**
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
+   * @return Whether the labelCounts field is set.
    */
   public boolean hasLabelCounts() {
     return labelCounts_ != null;
   }
   /**
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
+   * @return The labelCounts.
    */
   public com.clarifai.grpc.api.LabelDistribution getLabelCounts() {
     return labelCounts_ == null ? com.clarifai.grpc.api.LabelDistribution.getDefaultInstance() : labelCounts_;
@@ -484,6 +537,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < metricsByClass_.size(); i++) {
       output.writeMessage(9, metricsByClass_.get(i));
     }
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -529,6 +585,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, metricsByClass_.get(i));
     }
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -549,6 +608,8 @@ private static final long serialVersionUID = 0L;
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
+    if (!getId()
+        .equals(other.getId())) return false;
     if (hasSummary() != other.hasSummary()) return false;
     if (hasSummary()) {
       if (!getSummary()
@@ -592,6 +653,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     if (hasSummary()) {
       hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getSummary().hashCode();
@@ -767,6 +830,8 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
+      id_ = "";
+
       if (summaryBuilder_ == null) {
         summary_ = null;
       } else {
@@ -847,6 +912,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.status_ = statusBuilder_.build();
       }
+      result.id_ = id_;
       if (summaryBuilder_ == null) {
         result.summary_ = summary_;
       } else {
@@ -953,6 +1019,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.EvalMetrics.getDefaultInstance()) return this;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
+      }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
       }
       if (other.hasSummary()) {
         mergeSummary(other.getSummary());
@@ -1105,12 +1175,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -1217,17 +1289,95 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_;
     }
 
+    private java.lang.Object id_ = "";
+    /**
+     * <code>string id = 10;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string id = 10;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 10;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 10;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.clarifai.grpc.api.MetricsSummary summary_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.MetricsSummary, com.clarifai.grpc.api.MetricsSummary.Builder, com.clarifai.grpc.api.MetricsSummaryOrBuilder> summaryBuilder_;
     /**
      * <code>.clarifai.api.MetricsSummary summary = 2;</code>
+     * @return Whether the summary field is set.
      */
     public boolean hasSummary() {
       return summaryBuilder_ != null || summary_ != null;
     }
     /**
      * <code>.clarifai.api.MetricsSummary summary = 2;</code>
+     * @return The summary.
      */
     public com.clarifai.grpc.api.MetricsSummary getSummary() {
       if (summaryBuilder_ == null) {
@@ -1339,12 +1489,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ConfusionMatrix, com.clarifai.grpc.api.ConfusionMatrix.Builder, com.clarifai.grpc.api.ConfusionMatrixOrBuilder> confusionMatrixBuilder_;
     /**
      * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
+     * @return Whether the confusionMatrix field is set.
      */
     public boolean hasConfusionMatrix() {
       return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
     }
     /**
      * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
+     * @return The confusionMatrix.
      */
     public com.clarifai.grpc.api.ConfusionMatrix getConfusionMatrix() {
       if (confusionMatrixBuilder_ == null) {
@@ -1456,12 +1608,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.CooccurrenceMatrix, com.clarifai.grpc.api.CooccurrenceMatrix.Builder, com.clarifai.grpc.api.CooccurrenceMatrixOrBuilder> cooccurrenceMatrixBuilder_;
     /**
      * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
+     * @return Whether the cooccurrenceMatrix field is set.
      */
     public boolean hasCooccurrenceMatrix() {
       return cooccurrenceMatrixBuilder_ != null || cooccurrenceMatrix_ != null;
     }
     /**
      * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
+     * @return The cooccurrenceMatrix.
      */
     public com.clarifai.grpc.api.CooccurrenceMatrix getCooccurrenceMatrix() {
       if (cooccurrenceMatrixBuilder_ == null) {
@@ -1573,12 +1727,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.LabelDistribution, com.clarifai.grpc.api.LabelDistribution.Builder, com.clarifai.grpc.api.LabelDistributionOrBuilder> labelCountsBuilder_;
     /**
      * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
+     * @return Whether the labelCounts field is set.
      */
     public boolean hasLabelCounts() {
       return labelCountsBuilder_ != null || labelCounts_ != null;
     }
     /**
      * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
+     * @return The labelCounts.
      */
     public com.clarifai.grpc.api.LabelDistribution getLabelCounts() {
       if (labelCountsBuilder_ == null) {

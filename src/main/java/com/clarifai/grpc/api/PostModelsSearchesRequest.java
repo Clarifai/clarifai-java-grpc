@@ -131,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
@@ -141,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -164,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ModelQuery model_query = 2;</code>
+   * @return Whether the modelQuery field is set.
    */
   public boolean hasModelQuery() {
     return modelQuery_ != null;
@@ -174,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ModelQuery model_query = 2;</code>
+   * @return The modelQuery.
    */
   public com.clarifai.grpc.api.ModelQuery getModelQuery() {
     return modelQuery_ == null ? com.clarifai.grpc.api.ModelQuery.getDefaultInstance() : modelQuery_;
@@ -198,6 +202,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 3;</code>
+   * @return Whether the pagination field is set.
    */
   public boolean hasPagination() {
     return pagination_ != null;
@@ -209,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 3;</code>
+   * @return The pagination.
    */
   public com.clarifai.grpc.api.Pagination getPagination() {
     return pagination_ == null ? com.clarifai.grpc.api.Pagination.getDefaultInstance() : pagination_;
@@ -613,6 +619,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
@@ -623,6 +630,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -766,6 +774,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ModelQuery model_query = 2;</code>
+     * @return Whether the modelQuery field is set.
      */
     public boolean hasModelQuery() {
       return modelQueryBuilder_ != null || modelQuery_ != null;
@@ -776,6 +785,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ModelQuery model_query = 2;</code>
+     * @return The modelQuery.
      */
     public com.clarifai.grpc.api.ModelQuery getModelQuery() {
       if (modelQueryBuilder_ == null) {
@@ -920,6 +930,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Pagination pagination = 3;</code>
+     * @return Whether the pagination field is set.
      */
     public boolean hasPagination() {
       return paginationBuilder_ != null || pagination_ != null;
@@ -931,6 +942,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Pagination pagination = 3;</code>
+     * @return The pagination.
      */
     public com.clarifai.grpc.api.Pagination getPagination() {
       if (paginationBuilder_ == null) {

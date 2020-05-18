@@ -9,10 +9,12 @@ public interface PostModelVersionMetricsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -22,26 +24,31 @@ public interface PostModelVersionMetricsRequestOrBuilder extends
 
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   java.lang.String getModelId();
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   com.google.protobuf.ByteString
       getModelIdBytes();
 
   /**
    * <code>string version_id = 3;</code>
+   * @return The versionId.
    */
   java.lang.String getVersionId();
   /**
    * <code>string version_id = 3;</code>
+   * @return The bytes for versionId.
    */
   com.google.protobuf.ByteString
       getVersionIdBytes();
 
   /**
    * <code>uint32 max_examples = 4;</code>
+   * @return The maxExamples.
    */
   int getMaxExamples();
 
@@ -50,23 +57,25 @@ public interface PostModelVersionMetricsRequestOrBuilder extends
    * Use this to filter inputs that are used in evaluation
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 5;</code>
+   * <code>.clarifai.api.Search test_search = 5;</code>
+   * @return Whether the testSearch field is set.
    */
-  boolean hasSearch();
+  boolean hasTestSearch();
   /**
    * <pre>
    * Use this to filter inputs that are used in evaluation
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 5;</code>
+   * <code>.clarifai.api.Search test_search = 5;</code>
+   * @return The testSearch.
    */
-  com.clarifai.grpc.api.Search getSearch();
+  com.clarifai.grpc.api.Search getTestSearch();
   /**
    * <pre>
    * Use this to filter inputs that are used in evaluation
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 5;</code>
+   * <code>.clarifai.api.Search test_search = 5;</code>
    */
-  com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder();
+  com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder();
 }

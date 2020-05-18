@@ -9,10 +9,12 @@ public interface GetConceptRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -26,6 +28,7 @@ public interface GetConceptRequestOrBuilder extends
    * </pre>
    *
    * <code>string concept_id = 2;</code>
+   * @return The conceptId.
    */
   java.lang.String getConceptId();
   /**
@@ -34,6 +37,7 @@ public interface GetConceptRequestOrBuilder extends
    * </pre>
    *
    * <code>string concept_id = 2;</code>
+   * @return The bytes for conceptId.
    */
   com.google.protobuf.ByteString
       getConceptIdBytes();

@@ -98,6 +98,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object hex_;
   /**
    * <code>string hex = 1;</code>
+   * @return The hex.
    */
   public java.lang.String getHex() {
     java.lang.Object ref = hex_;
@@ -113,6 +114,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string hex = 1;</code>
+   * @return The bytes for hex.
    */
   public com.google.protobuf.ByteString
       getHexBytes() {
@@ -132,6 +134,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <code>string name = 2;</code>
+   * @return The name.
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -147,6 +150,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -484,6 +488,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object hex_ = "";
     /**
      * <code>string hex = 1;</code>
+     * @return The hex.
      */
     public java.lang.String getHex() {
       java.lang.Object ref = hex_;
@@ -499,6 +504,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string hex = 1;</code>
+     * @return The bytes for hex.
      */
     public com.google.protobuf.ByteString
         getHexBytes() {
@@ -515,6 +521,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string hex = 1;</code>
+     * @param value The hex to set.
+     * @return This builder for chaining.
      */
     public Builder setHex(
         java.lang.String value) {
@@ -528,6 +536,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string hex = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearHex() {
       
@@ -537,6 +546,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string hex = 1;</code>
+     * @param value The bytes for hex to set.
+     * @return This builder for chaining.
      */
     public Builder setHexBytes(
         com.google.protobuf.ByteString value) {
@@ -553,6 +564,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -568,6 +580,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -584,6 +597,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -597,6 +612,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -606,6 +622,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {

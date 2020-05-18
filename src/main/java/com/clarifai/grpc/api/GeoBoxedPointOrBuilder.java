@@ -9,10 +9,12 @@ public interface GeoBoxedPointOrBuilder extends
 
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return Whether the geoPoint field is set.
    */
   boolean hasGeoPoint();
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
+   * @return The geoPoint.
    */
   com.clarifai.grpc.api.GeoPoint getGeoPoint();
   /**

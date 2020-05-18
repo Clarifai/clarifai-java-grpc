@@ -210,6 +210,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList fpr_;
   /**
    * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the fpr.
    */
   public java.util.List<java.lang.Float>
       getFprList() {
@@ -217,12 +218,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of fpr.
    */
   public int getFprCount() {
     return fpr_.size();
   }
   /**
    * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The fpr at the given index.
    */
   public float getFpr(int index) {
     return fpr_.getFloat(index);
@@ -233,6 +237,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList tpr_;
   /**
    * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the tpr.
    */
   public java.util.List<java.lang.Float>
       getTprList() {
@@ -240,12 +245,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of tpr.
    */
   public int getTprCount() {
     return tpr_.size();
   }
   /**
    * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The tpr at the given index.
    */
   public float getTpr(int index) {
     return tpr_.getFloat(index);
@@ -256,6 +264,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList thresholds_;
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the thresholds.
    */
   public java.util.List<java.lang.Float>
       getThresholdsList() {
@@ -263,12 +272,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of thresholds.
    */
   public int getThresholdsCount() {
     return thresholds_.size();
   }
   /**
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The thresholds at the given index.
    */
   public float getThresholds(int index) {
     return thresholds_.getFloat(index);
@@ -279,6 +291,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList fprPerImage_;
   /**
    * <code>repeated float fpr_per_image = 4;</code>
+   * @return A list containing the fprPerImage.
    */
   public java.util.List<java.lang.Float>
       getFprPerImageList() {
@@ -286,12 +299,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float fpr_per_image = 4;</code>
+   * @return The count of fprPerImage.
    */
   public int getFprPerImageCount() {
     return fprPerImage_.size();
   }
   /**
    * <code>repeated float fpr_per_image = 4;</code>
+   * @param index The index of the element to return.
+   * @return The fprPerImage at the given index.
    */
   public float getFprPerImage(int index) {
     return fprPerImage_.getFloat(index);
@@ -302,6 +318,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList fprPerObject_;
   /**
    * <code>repeated float fpr_per_object = 5;</code>
+   * @return A list containing the fprPerObject.
    */
   public java.util.List<java.lang.Float>
       getFprPerObjectList() {
@@ -309,12 +326,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float fpr_per_object = 5;</code>
+   * @return The count of fprPerObject.
    */
   public int getFprPerObjectCount() {
     return fprPerObject_.size();
   }
   /**
    * <code>repeated float fpr_per_object = 5;</code>
+   * @param index The index of the element to return.
+   * @return The fprPerObject at the given index.
    */
   public float getFprPerObject(int index) {
     return fprPerObject_.getFloat(index);
@@ -823,6 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the fpr.
      */
     public java.util.List<java.lang.Float>
         getFprList() {
@@ -831,18 +852,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of fpr.
      */
     public int getFprCount() {
       return fpr_.size();
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The fpr at the given index.
      */
     public float getFpr(int index) {
       return fpr_.getFloat(index);
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The fpr to set.
+     * @return This builder for chaining.
      */
     public Builder setFpr(
         int index, float value) {
@@ -853,6 +880,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The fpr to add.
+     * @return This builder for chaining.
      */
     public Builder addFpr(float value) {
       ensureFprIsMutable();
@@ -862,6 +891,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The fpr to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFpr(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -873,6 +904,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearFpr() {
       fpr_ = emptyFloatList();
@@ -890,6 +922,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the tpr.
      */
     public java.util.List<java.lang.Float>
         getTprList() {
@@ -898,18 +931,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of tpr.
      */
     public int getTprCount() {
       return tpr_.size();
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The tpr at the given index.
      */
     public float getTpr(int index) {
       return tpr_.getFloat(index);
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The tpr to set.
+     * @return This builder for chaining.
      */
     public Builder setTpr(
         int index, float value) {
@@ -920,6 +959,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The tpr to add.
+     * @return This builder for chaining.
      */
     public Builder addTpr(float value) {
       ensureTprIsMutable();
@@ -929,6 +970,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The tpr to add.
+     * @return This builder for chaining.
      */
     public Builder addAllTpr(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -940,6 +983,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearTpr() {
       tpr_ = emptyFloatList();
@@ -957,6 +1001,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the thresholds.
      */
     public java.util.List<java.lang.Float>
         getThresholdsList() {
@@ -965,18 +1010,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of thresholds.
      */
     public int getThresholdsCount() {
       return thresholds_.size();
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The thresholds at the given index.
      */
     public float getThresholds(int index) {
       return thresholds_.getFloat(index);
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The thresholds to set.
+     * @return This builder for chaining.
      */
     public Builder setThresholds(
         int index, float value) {
@@ -987,6 +1038,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The thresholds to add.
+     * @return This builder for chaining.
      */
     public Builder addThresholds(float value) {
       ensureThresholdsIsMutable();
@@ -996,6 +1049,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The thresholds to add.
+     * @return This builder for chaining.
      */
     public Builder addAllThresholds(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -1007,6 +1062,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearThresholds() {
       thresholds_ = emptyFloatList();
@@ -1024,6 +1080,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @return A list containing the fprPerImage.
      */
     public java.util.List<java.lang.Float>
         getFprPerImageList() {
@@ -1032,18 +1089,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @return The count of fprPerImage.
      */
     public int getFprPerImageCount() {
       return fprPerImage_.size();
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @param index The index of the element to return.
+     * @return The fprPerImage at the given index.
      */
     public float getFprPerImage(int index) {
       return fprPerImage_.getFloat(index);
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The fprPerImage to set.
+     * @return This builder for chaining.
      */
     public Builder setFprPerImage(
         int index, float value) {
@@ -1054,6 +1117,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @param value The fprPerImage to add.
+     * @return This builder for chaining.
      */
     public Builder addFprPerImage(float value) {
       ensureFprPerImageIsMutable();
@@ -1063,6 +1128,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @param values The fprPerImage to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFprPerImage(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -1074,6 +1141,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_image = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFprPerImage() {
       fprPerImage_ = emptyFloatList();
@@ -1091,6 +1159,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @return A list containing the fprPerObject.
      */
     public java.util.List<java.lang.Float>
         getFprPerObjectList() {
@@ -1099,18 +1168,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @return The count of fprPerObject.
      */
     public int getFprPerObjectCount() {
       return fprPerObject_.size();
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @param index The index of the element to return.
+     * @return The fprPerObject at the given index.
      */
     public float getFprPerObject(int index) {
       return fprPerObject_.getFloat(index);
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The fprPerObject to set.
+     * @return This builder for chaining.
      */
     public Builder setFprPerObject(
         int index, float value) {
@@ -1121,6 +1196,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @param value The fprPerObject to add.
+     * @return This builder for chaining.
      */
     public Builder addFprPerObject(float value) {
       ensureFprPerObjectIsMutable();
@@ -1130,6 +1207,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @param values The fprPerObject to add.
+     * @return This builder for chaining.
      */
     public Builder addAllFprPerObject(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -1141,6 +1220,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float fpr_per_object = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFprPerObject() {
       fprPerObject_ = emptyFloatList();

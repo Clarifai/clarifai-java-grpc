@@ -9,10 +9,12 @@ public interface GetStatusCodeRequestOrBuilder extends
 
   /**
    * <code>string status_code_id = 1;</code>
+   * @return The statusCodeId.
    */
   java.lang.String getStatusCodeId();
   /**
    * <code>string status_code_id = 1;</code>
+   * @return The bytes for statusCodeId.
    */
   com.google.protobuf.ByteString
       getStatusCodeIdBytes();

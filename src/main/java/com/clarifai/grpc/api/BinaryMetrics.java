@@ -175,6 +175,7 @@ private static final long serialVersionUID = 0L;
   private int numPos_;
   /**
    * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The numPos.
    */
   public int getNumPos() {
     return numPos_;
@@ -184,6 +185,7 @@ private static final long serialVersionUID = 0L;
   private int numNeg_;
   /**
    * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The numNeg.
    */
   public int getNumNeg() {
     return numNeg_;
@@ -193,6 +195,7 @@ private static final long serialVersionUID = 0L;
   private int numTot_;
   /**
    * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The numTot.
    */
   public int getNumTot() {
     return numTot_;
@@ -202,6 +205,7 @@ private static final long serialVersionUID = 0L;
   private float rocAuc_;
   /**
    * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The rocAuc.
    */
   public float getRocAuc() {
     return rocAuc_;
@@ -211,6 +215,7 @@ private static final long serialVersionUID = 0L;
   private float f1_;
   /**
    * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The f1.
    */
   public float getF1() {
     return f1_;
@@ -220,12 +225,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Concept concept_;
   /**
    * <code>.clarifai.api.Concept concept = 6;</code>
+   * @return Whether the concept field is set.
    */
   public boolean hasConcept() {
     return concept_ != null;
   }
   /**
    * <code>.clarifai.api.Concept concept = 6;</code>
+   * @return The concept.
    */
   public com.clarifai.grpc.api.Concept getConcept() {
     return concept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : concept_;
@@ -241,12 +248,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.ROC rocCurve_;
   /**
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
+   * @return Whether the rocCurve field is set.
    */
   public boolean hasRocCurve() {
     return rocCurve_ != null;
   }
   /**
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
+   * @return The rocCurve.
    */
   public com.clarifai.grpc.api.ROC getRocCurve() {
     return rocCurve_ == null ? com.clarifai.grpc.api.ROC.getDefaultInstance() : rocCurve_;
@@ -262,12 +271,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.PrecisionRecallCurve precisionRecallCurve_;
   /**
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
+   * @return Whether the precisionRecallCurve field is set.
    */
   public boolean hasPrecisionRecallCurve() {
     return precisionRecallCurve_ != null;
   }
   /**
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
+   * @return The precisionRecallCurve.
    */
   public com.clarifai.grpc.api.PrecisionRecallCurve getPrecisionRecallCurve() {
     return precisionRecallCurve_ == null ? com.clarifai.grpc.api.PrecisionRecallCurve.getDefaultInstance() : precisionRecallCurve_;
@@ -283,6 +294,7 @@ private static final long serialVersionUID = 0L;
   private float avgPrecision_;
   /**
    * <code>float avg_precision = 9;</code>
+   * @return The avgPrecision.
    */
   public float getAvgPrecision() {
     return avgPrecision_;
@@ -292,6 +304,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object areaName_;
   /**
    * <code>string area_name = 10;</code>
+   * @return The areaName.
    */
   public java.lang.String getAreaName() {
     java.lang.Object ref = areaName_;
@@ -307,6 +320,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string area_name = 10;</code>
+   * @return The bytes for areaName.
    */
   public com.google.protobuf.ByteString
       getAreaNameBytes() {
@@ -326,6 +340,7 @@ private static final long serialVersionUID = 0L;
   private double areaMin_;
   /**
    * <code>double area_min = 11;</code>
+   * @return The areaMin.
    */
   public double getAreaMin() {
     return areaMin_;
@@ -335,6 +350,7 @@ private static final long serialVersionUID = 0L;
   private double areaMax_;
   /**
    * <code>double area_max = 12;</code>
+   * @return The areaMax.
    */
   public double getAreaMax() {
     return areaMax_;
@@ -344,6 +360,7 @@ private static final long serialVersionUID = 0L;
   private float iou_;
   /**
    * <code>float iou = 13;</code>
+   * @return The iou.
    */
   public float getIou() {
     return iou_;
@@ -909,12 +926,15 @@ private static final long serialVersionUID = 0L;
     private int numPos_ ;
     /**
      * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The numPos.
      */
     public int getNumPos() {
       return numPos_;
     }
     /**
      * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The numPos to set.
+     * @return This builder for chaining.
      */
     public Builder setNumPos(int value) {
       
@@ -924,6 +944,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNumPos() {
       
@@ -935,12 +956,15 @@ private static final long serialVersionUID = 0L;
     private int numNeg_ ;
     /**
      * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The numNeg.
      */
     public int getNumNeg() {
       return numNeg_;
     }
     /**
      * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The numNeg to set.
+     * @return This builder for chaining.
      */
     public Builder setNumNeg(int value) {
       
@@ -950,6 +974,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNumNeg() {
       
@@ -961,12 +986,15 @@ private static final long serialVersionUID = 0L;
     private int numTot_ ;
     /**
      * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The numTot.
      */
     public int getNumTot() {
       return numTot_;
     }
     /**
      * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The numTot to set.
+     * @return This builder for chaining.
      */
     public Builder setNumTot(int value) {
       
@@ -976,6 +1004,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearNumTot() {
       
@@ -987,12 +1016,15 @@ private static final long serialVersionUID = 0L;
     private float rocAuc_ ;
     /**
      * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The rocAuc.
      */
     public float getRocAuc() {
       return rocAuc_;
     }
     /**
      * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The rocAuc to set.
+     * @return This builder for chaining.
      */
     public Builder setRocAuc(float value) {
       
@@ -1002,6 +1034,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearRocAuc() {
       
@@ -1013,12 +1046,15 @@ private static final long serialVersionUID = 0L;
     private float f1_ ;
     /**
      * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The f1.
      */
     public float getF1() {
       return f1_;
     }
     /**
      * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The f1 to set.
+     * @return This builder for chaining.
      */
     public Builder setF1(float value) {
       
@@ -1028,6 +1064,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearF1() {
       
@@ -1041,12 +1078,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> conceptBuilder_;
     /**
      * <code>.clarifai.api.Concept concept = 6;</code>
+     * @return Whether the concept field is set.
      */
     public boolean hasConcept() {
       return conceptBuilder_ != null || concept_ != null;
     }
     /**
      * <code>.clarifai.api.Concept concept = 6;</code>
+     * @return The concept.
      */
     public com.clarifai.grpc.api.Concept getConcept() {
       if (conceptBuilder_ == null) {
@@ -1158,12 +1197,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ROC, com.clarifai.grpc.api.ROC.Builder, com.clarifai.grpc.api.ROCOrBuilder> rocCurveBuilder_;
     /**
      * <code>.clarifai.api.ROC roc_curve = 7;</code>
+     * @return Whether the rocCurve field is set.
      */
     public boolean hasRocCurve() {
       return rocCurveBuilder_ != null || rocCurve_ != null;
     }
     /**
      * <code>.clarifai.api.ROC roc_curve = 7;</code>
+     * @return The rocCurve.
      */
     public com.clarifai.grpc.api.ROC getRocCurve() {
       if (rocCurveBuilder_ == null) {
@@ -1275,12 +1316,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.PrecisionRecallCurve, com.clarifai.grpc.api.PrecisionRecallCurve.Builder, com.clarifai.grpc.api.PrecisionRecallCurveOrBuilder> precisionRecallCurveBuilder_;
     /**
      * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
+     * @return Whether the precisionRecallCurve field is set.
      */
     public boolean hasPrecisionRecallCurve() {
       return precisionRecallCurveBuilder_ != null || precisionRecallCurve_ != null;
     }
     /**
      * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
+     * @return The precisionRecallCurve.
      */
     public com.clarifai.grpc.api.PrecisionRecallCurve getPrecisionRecallCurve() {
       if (precisionRecallCurveBuilder_ == null) {
@@ -1390,12 +1433,15 @@ private static final long serialVersionUID = 0L;
     private float avgPrecision_ ;
     /**
      * <code>float avg_precision = 9;</code>
+     * @return The avgPrecision.
      */
     public float getAvgPrecision() {
       return avgPrecision_;
     }
     /**
      * <code>float avg_precision = 9;</code>
+     * @param value The avgPrecision to set.
+     * @return This builder for chaining.
      */
     public Builder setAvgPrecision(float value) {
       
@@ -1405,6 +1451,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float avg_precision = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAvgPrecision() {
       
@@ -1416,6 +1463,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object areaName_ = "";
     /**
      * <code>string area_name = 10;</code>
+     * @return The areaName.
      */
     public java.lang.String getAreaName() {
       java.lang.Object ref = areaName_;
@@ -1431,6 +1479,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string area_name = 10;</code>
+     * @return The bytes for areaName.
      */
     public com.google.protobuf.ByteString
         getAreaNameBytes() {
@@ -1447,6 +1496,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string area_name = 10;</code>
+     * @param value The areaName to set.
+     * @return This builder for chaining.
      */
     public Builder setAreaName(
         java.lang.String value) {
@@ -1460,6 +1511,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string area_name = 10;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAreaName() {
       
@@ -1469,6 +1521,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string area_name = 10;</code>
+     * @param value The bytes for areaName to set.
+     * @return This builder for chaining.
      */
     public Builder setAreaNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1485,12 +1539,15 @@ private static final long serialVersionUID = 0L;
     private double areaMin_ ;
     /**
      * <code>double area_min = 11;</code>
+     * @return The areaMin.
      */
     public double getAreaMin() {
       return areaMin_;
     }
     /**
      * <code>double area_min = 11;</code>
+     * @param value The areaMin to set.
+     * @return This builder for chaining.
      */
     public Builder setAreaMin(double value) {
       
@@ -1500,6 +1557,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>double area_min = 11;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAreaMin() {
       
@@ -1511,12 +1569,15 @@ private static final long serialVersionUID = 0L;
     private double areaMax_ ;
     /**
      * <code>double area_max = 12;</code>
+     * @return The areaMax.
      */
     public double getAreaMax() {
       return areaMax_;
     }
     /**
      * <code>double area_max = 12;</code>
+     * @param value The areaMax to set.
+     * @return This builder for chaining.
      */
     public Builder setAreaMax(double value) {
       
@@ -1526,6 +1587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>double area_max = 12;</code>
+     * @return This builder for chaining.
      */
     public Builder clearAreaMax() {
       
@@ -1537,12 +1599,15 @@ private static final long serialVersionUID = 0L;
     private float iou_ ;
     /**
      * <code>float iou = 13;</code>
+     * @return The iou.
      */
     public float getIou() {
       return iou_;
     }
     /**
      * <code>float iou = 13;</code>
+     * @param value The iou to set.
+     * @return This builder for chaining.
      */
     public Builder setIou(float value) {
       
@@ -1552,6 +1617,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float iou = 13;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIou() {
       

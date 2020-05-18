@@ -9,10 +9,12 @@ public interface GetModelVersionMetricsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -22,20 +24,24 @@ public interface GetModelVersionMetricsRequestOrBuilder extends
 
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   java.lang.String getModelId();
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   com.google.protobuf.ByteString
       getModelIdBytes();
 
   /**
    * <code>string version_id = 3;</code>
+   * @return The versionId.
    */
   java.lang.String getVersionId();
   /**
    * <code>string version_id = 3;</code>
+   * @return The bytes for versionId.
    */
   com.google.protobuf.ByteString
       getVersionIdBytes();
@@ -46,6 +52,7 @@ public interface GetModelVersionMetricsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * @return Whether the fields field is set.
    */
   boolean hasFields();
   /**
@@ -54,6 +61,7 @@ public interface GetModelVersionMetricsRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * @return The fields.
    */
   com.clarifai.grpc.api.FieldsValue getFields();
   /**

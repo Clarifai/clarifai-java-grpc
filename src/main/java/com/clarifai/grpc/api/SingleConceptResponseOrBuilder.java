@@ -13,6 +13,7 @@ public interface SingleConceptResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -21,6 +22,7 @@ public interface SingleConceptResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -38,6 +40,7 @@ public interface SingleConceptResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 2;</code>
+   * @return Whether the concept field is set.
    */
   boolean hasConcept();
   /**
@@ -46,6 +49,7 @@ public interface SingleConceptResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 2;</code>
+   * @return The concept.
    */
   com.clarifai.grpc.api.Concept getConcept();
   /**

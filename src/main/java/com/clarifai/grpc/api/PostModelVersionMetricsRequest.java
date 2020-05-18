@@ -86,13 +86,13 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             com.clarifai.grpc.api.Search.Builder subBuilder = null;
-            if (search_ != null) {
-              subBuilder = search_.toBuilder();
+            if (testSearch_ != null) {
+              subBuilder = testSearch_.toBuilder();
             }
-            search_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            testSearch_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(search_);
-              search_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(testSearch_);
+              testSearch_ = subBuilder.buildPartial();
             }
 
             break;
@@ -133,12 +133,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -154,6 +156,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelId_;
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
@@ -169,6 +172,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   public com.google.protobuf.ByteString
       getModelIdBytes() {
@@ -188,6 +192,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object versionId_;
   /**
    * <code>string version_id = 3;</code>
+   * @return The versionId.
    */
   public java.lang.String getVersionId() {
     java.lang.Object ref = versionId_;
@@ -203,6 +208,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string version_id = 3;</code>
+   * @return The bytes for versionId.
    */
   public com.google.protobuf.ByteString
       getVersionIdBytes() {
@@ -222,42 +228,45 @@ private static final long serialVersionUID = 0L;
   private int maxExamples_;
   /**
    * <code>uint32 max_examples = 4;</code>
+   * @return The maxExamples.
    */
   public int getMaxExamples() {
     return maxExamples_;
   }
 
-  public static final int SEARCH_FIELD_NUMBER = 5;
-  private com.clarifai.grpc.api.Search search_;
+  public static final int TEST_SEARCH_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Search testSearch_;
   /**
    * <pre>
    * Use this to filter inputs that are used in evaluation
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 5;</code>
+   * <code>.clarifai.api.Search test_search = 5;</code>
+   * @return Whether the testSearch field is set.
    */
-  public boolean hasSearch() {
-    return search_ != null;
+  public boolean hasTestSearch() {
+    return testSearch_ != null;
   }
   /**
    * <pre>
    * Use this to filter inputs that are used in evaluation
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 5;</code>
+   * <code>.clarifai.api.Search test_search = 5;</code>
+   * @return The testSearch.
    */
-  public com.clarifai.grpc.api.Search getSearch() {
-    return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
+  public com.clarifai.grpc.api.Search getTestSearch() {
+    return testSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
   }
   /**
    * <pre>
    * Use this to filter inputs that are used in evaluation
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 5;</code>
+   * <code>.clarifai.api.Search test_search = 5;</code>
    */
-  public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
-    return getSearch();
+  public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
+    return getTestSearch();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -286,8 +295,8 @@ private static final long serialVersionUID = 0L;
     if (maxExamples_ != 0) {
       output.writeUInt32(4, maxExamples_);
     }
-    if (search_ != null) {
-      output.writeMessage(5, getSearch());
+    if (testSearch_ != null) {
+      output.writeMessage(5, getTestSearch());
     }
     unknownFields.writeTo(output);
   }
@@ -312,9 +321,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(4, maxExamples_);
     }
-    if (search_ != null) {
+    if (testSearch_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getSearch());
+        .computeMessageSize(5, getTestSearch());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -342,10 +351,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getVersionId())) return false;
     if (getMaxExamples()
         != other.getMaxExamples()) return false;
-    if (hasSearch() != other.hasSearch()) return false;
-    if (hasSearch()) {
-      if (!getSearch()
-          .equals(other.getSearch())) return false;
+    if (hasTestSearch() != other.hasTestSearch()) return false;
+    if (hasTestSearch()) {
+      if (!getTestSearch()
+          .equals(other.getTestSearch())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -368,9 +377,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVersionId().hashCode();
     hash = (37 * hash) + MAX_EXAMPLES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxExamples();
-    if (hasSearch()) {
-      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
-      hash = (53 * hash) + getSearch().hashCode();
+    if (hasTestSearch()) {
+      hash = (37 * hash) + TEST_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getTestSearch().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -521,11 +530,11 @@ private static final long serialVersionUID = 0L;
 
       maxExamples_ = 0;
 
-      if (searchBuilder_ == null) {
-        search_ = null;
+      if (testSearchBuilder_ == null) {
+        testSearch_ = null;
       } else {
-        search_ = null;
-        searchBuilder_ = null;
+        testSearch_ = null;
+        testSearchBuilder_ = null;
       }
       return this;
     }
@@ -561,10 +570,10 @@ private static final long serialVersionUID = 0L;
       result.modelId_ = modelId_;
       result.versionId_ = versionId_;
       result.maxExamples_ = maxExamples_;
-      if (searchBuilder_ == null) {
-        result.search_ = search_;
+      if (testSearchBuilder_ == null) {
+        result.testSearch_ = testSearch_;
       } else {
-        result.search_ = searchBuilder_.build();
+        result.testSearch_ = testSearchBuilder_.build();
       }
       onBuilt();
       return result;
@@ -628,8 +637,8 @@ private static final long serialVersionUID = 0L;
       if (other.getMaxExamples() != 0) {
         setMaxExamples(other.getMaxExamples());
       }
-      if (other.hasSearch()) {
-        mergeSearch(other.getSearch());
+      if (other.hasTestSearch()) {
+        mergeTestSearch(other.getTestSearch());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -665,12 +674,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -780,6 +791,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelId_ = "";
     /**
      * <code>string model_id = 2;</code>
+     * @return The modelId.
      */
     public java.lang.String getModelId() {
       java.lang.Object ref = modelId_;
@@ -795,6 +807,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return The bytes for modelId.
      */
     public com.google.protobuf.ByteString
         getModelIdBytes() {
@@ -811,6 +824,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelId(
         java.lang.String value) {
@@ -824,6 +839,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModelId() {
       
@@ -833,6 +849,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelIdBytes(
         com.google.protobuf.ByteString value) {
@@ -849,6 +867,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object versionId_ = "";
     /**
      * <code>string version_id = 3;</code>
+     * @return The versionId.
      */
     public java.lang.String getVersionId() {
       java.lang.Object ref = versionId_;
@@ -864,6 +883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @return The bytes for versionId.
      */
     public com.google.protobuf.ByteString
         getVersionIdBytes() {
@@ -880,6 +900,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @param value The versionId to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionId(
         java.lang.String value) {
@@ -893,6 +915,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearVersionId() {
       
@@ -902,6 +925,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string version_id = 3;</code>
+     * @param value The bytes for versionId to set.
+     * @return This builder for chaining.
      */
     public Builder setVersionIdBytes(
         com.google.protobuf.ByteString value) {
@@ -918,12 +943,15 @@ private static final long serialVersionUID = 0L;
     private int maxExamples_ ;
     /**
      * <code>uint32 max_examples = 4;</code>
+     * @return The maxExamples.
      */
     public int getMaxExamples() {
       return maxExamples_;
     }
     /**
      * <code>uint32 max_examples = 4;</code>
+     * @param value The maxExamples to set.
+     * @return This builder for chaining.
      */
     public Builder setMaxExamples(int value) {
       
@@ -933,6 +961,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 max_examples = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMaxExamples() {
       
@@ -941,31 +970,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.Search search_;
+    private com.clarifai.grpc.api.Search testSearch_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> searchBuilder_;
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> testSearchBuilder_;
     /**
      * <pre>
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
+     * @return Whether the testSearch field is set.
      */
-    public boolean hasSearch() {
-      return searchBuilder_ != null || search_ != null;
+    public boolean hasTestSearch() {
+      return testSearchBuilder_ != null || testSearch_ != null;
     }
     /**
      * <pre>
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
+     * @return The testSearch.
      */
-    public com.clarifai.grpc.api.Search getSearch() {
-      if (searchBuilder_ == null) {
-        return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
+    public com.clarifai.grpc.api.Search getTestSearch() {
+      if (testSearchBuilder_ == null) {
+        return testSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
       } else {
-        return searchBuilder_.getMessage();
+        return testSearchBuilder_.getMessage();
       }
     }
     /**
@@ -973,17 +1004,17 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
-    public Builder setSearch(com.clarifai.grpc.api.Search value) {
-      if (searchBuilder_ == null) {
+    public Builder setTestSearch(com.clarifai.grpc.api.Search value) {
+      if (testSearchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        search_ = value;
+        testSearch_ = value;
         onChanged();
       } else {
-        searchBuilder_.setMessage(value);
+        testSearchBuilder_.setMessage(value);
       }
 
       return this;
@@ -993,15 +1024,15 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
-    public Builder setSearch(
+    public Builder setTestSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
-      if (searchBuilder_ == null) {
-        search_ = builderForValue.build();
+      if (testSearchBuilder_ == null) {
+        testSearch_ = builderForValue.build();
         onChanged();
       } else {
-        searchBuilder_.setMessage(builderForValue.build());
+        testSearchBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1011,19 +1042,19 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
-    public Builder mergeSearch(com.clarifai.grpc.api.Search value) {
-      if (searchBuilder_ == null) {
-        if (search_ != null) {
-          search_ =
-            com.clarifai.grpc.api.Search.newBuilder(search_).mergeFrom(value).buildPartial();
+    public Builder mergeTestSearch(com.clarifai.grpc.api.Search value) {
+      if (testSearchBuilder_ == null) {
+        if (testSearch_ != null) {
+          testSearch_ =
+            com.clarifai.grpc.api.Search.newBuilder(testSearch_).mergeFrom(value).buildPartial();
         } else {
-          search_ = value;
+          testSearch_ = value;
         }
         onChanged();
       } else {
-        searchBuilder_.mergeFrom(value);
+        testSearchBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -1033,15 +1064,15 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
-    public Builder clearSearch() {
-      if (searchBuilder_ == null) {
-        search_ = null;
+    public Builder clearTestSearch() {
+      if (testSearchBuilder_ == null) {
+        testSearch_ = null;
         onChanged();
       } else {
-        search_ = null;
-        searchBuilder_ = null;
+        testSearch_ = null;
+        testSearchBuilder_ = null;
       }
 
       return this;
@@ -1051,26 +1082,26 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getSearchBuilder() {
+    public com.clarifai.grpc.api.Search.Builder getTestSearchBuilder() {
       
       onChanged();
-      return getSearchFieldBuilder().getBuilder();
+      return getTestSearchFieldBuilder().getBuilder();
     }
     /**
      * <pre>
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
-      if (searchBuilder_ != null) {
-        return searchBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
+      if (testSearchBuilder_ != null) {
+        return testSearchBuilder_.getMessageOrBuilder();
       } else {
-        return search_ == null ?
-            com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
+        return testSearch_ == null ?
+            com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
       }
     }
     /**
@@ -1078,20 +1109,20 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in evaluation
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 5;</code>
+     * <code>.clarifai.api.Search test_search = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
-        getSearchFieldBuilder() {
-      if (searchBuilder_ == null) {
-        searchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getTestSearchFieldBuilder() {
+      if (testSearchBuilder_ == null) {
+        testSearchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
-                getSearch(),
+                getTestSearch(),
                 getParentForChildren(),
                 isClean());
-        search_ = null;
+        testSearch_ = null;
       }
-      return searchBuilder_;
+      return testSearchBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

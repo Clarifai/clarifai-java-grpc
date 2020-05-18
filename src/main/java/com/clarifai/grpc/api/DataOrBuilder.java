@@ -13,6 +13,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Image image = 1;</code>
+   * @return Whether the image field is set.
    */
   boolean hasImage();
   /**
@@ -21,6 +22,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Image image = 1;</code>
+   * @return The image.
    */
   com.clarifai.grpc.api.Image getImage();
   /**
@@ -38,6 +40,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Video video = 2;</code>
+   * @return Whether the video field is set.
    */
   boolean hasVideo();
   /**
@@ -46,6 +49,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Video video = 2;</code>
+   * @return The video.
    */
   com.clarifai.grpc.api.Video getVideo();
   /**
@@ -103,36 +107,12 @@ public interface DataOrBuilder extends
 
   /**
    * <pre>
-   * A special Face object to hold identity, age, and other fields.
-   * </pre>
-   *
-   * <code>.clarifai.api.Face face = 4;</code>
-   */
-  boolean hasFace();
-  /**
-   * <pre>
-   * A special Face object to hold identity, age, and other fields.
-   * </pre>
-   *
-   * <code>.clarifai.api.Face face = 4;</code>
-   */
-  com.clarifai.grpc.api.Face getFace();
-  /**
-   * <pre>
-   * A special Face object to hold identity, age, and other fields.
-   * </pre>
-   *
-   * <code>.clarifai.api.Face face = 4;</code>
-   */
-  com.clarifai.grpc.api.FaceOrBuilder getFaceOrBuilder();
-
-  /**
-   * <pre>
    * To handle arbitrary json metadata you can use a struct field:
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -142,6 +122,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
   /**
@@ -160,6 +141,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Geo geo = 6;</code>
+   * @return Whether the geo field is set.
    */
   boolean hasGeo();
   /**
@@ -168,6 +150,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Geo geo = 6;</code>
+   * @return The geo.
    */
   com.clarifai.grpc.api.Geo getGeo();
   /**
@@ -405,6 +388,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
+   * @return Whether the text field is set.
    */
   boolean hasText();
   /**
@@ -413,6 +397,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
+   * @return The text.
    */
   com.clarifai.grpc.api.Text getText();
   /**
@@ -430,6 +415,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Audio audio = 14;</code>
+   * @return Whether the audio field is set.
    */
   boolean hasAudio();
   /**
@@ -438,6 +424,7 @@ public interface DataOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Audio audio = 14;</code>
+   * @return The audio.
    */
   com.clarifai.grpc.api.Audio getAudio();
   /**

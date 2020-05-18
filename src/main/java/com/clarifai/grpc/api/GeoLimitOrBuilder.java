@@ -9,16 +9,19 @@ public interface GeoLimitOrBuilder extends
 
   /**
    * <code>string type = 1;</code>
+   * @return The type.
    */
   java.lang.String getType();
   /**
    * <code>string type = 1;</code>
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString
       getTypeBytes();
 
   /**
    * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The value.
    */
   float getValue();
 }

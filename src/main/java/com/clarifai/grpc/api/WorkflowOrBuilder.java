@@ -13,6 +13,7 @@ public interface WorkflowOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface WorkflowOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface WorkflowOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 2;</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
@@ -39,6 +42,7 @@ public interface WorkflowOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 2;</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -53,6 +57,7 @@ public interface WorkflowOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -65,6 +70,7 @@ public interface WorkflowOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**

@@ -13,6 +13,7 @@ public interface CooccurrenceMatrixEntryOrBuilder extends
    * </pre>
    *
    * <code>string row = 1;</code>
+   * @return The row.
    */
   java.lang.String getRow();
   /**
@@ -21,6 +22,7 @@ public interface CooccurrenceMatrixEntryOrBuilder extends
    * </pre>
    *
    * <code>string row = 1;</code>
+   * @return The bytes for row.
    */
   com.google.protobuf.ByteString
       getRowBytes();
@@ -31,6 +33,7 @@ public interface CooccurrenceMatrixEntryOrBuilder extends
    * </pre>
    *
    * <code>string col = 2;</code>
+   * @return The col.
    */
   java.lang.String getCol();
   /**
@@ -39,12 +42,14 @@ public interface CooccurrenceMatrixEntryOrBuilder extends
    * </pre>
    *
    * <code>string col = 2;</code>
+   * @return The bytes for col.
    */
   com.google.protobuf.ByteString
       getColBytes();
 
   /**
    * <code>uint32 count = 3;</code>
+   * @return The count.
    */
   int getCount();
 }

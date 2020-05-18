@@ -110,12 +110,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -131,12 +133,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.App app_;
   /**
    * <code>.clarifai.api.App app = 2;</code>
+   * @return Whether the app field is set.
    */
   public boolean hasApp() {
     return app_ != null;
   }
   /**
    * <code>.clarifai.api.App app = 2;</code>
+   * @return The app.
    */
   public com.clarifai.grpc.api.App getApp() {
     return app_ == null ? com.clarifai.grpc.api.App.getDefaultInstance() : app_;
@@ -498,12 +502,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -615,12 +621,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> appBuilder_;
     /**
      * <code>.clarifai.api.App app = 2;</code>
+     * @return Whether the app field is set.
      */
     public boolean hasApp() {
       return appBuilder_ != null || app_ != null;
     }
     /**
      * <code>.clarifai.api.App app = 2;</code>
+     * @return The app.
      */
     public com.clarifai.grpc.api.App getApp() {
       if (appBuilder_ == null) {

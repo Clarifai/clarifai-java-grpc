@@ -8,27 +8,58 @@ public interface MaskOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The color of the segmentation mask that was created. This is used in visualizing masks next to
+   * each other.
+   * </pre>
+   *
    * <code>.clarifai.api.Color color = 1;</code>
+   * @return Whether the color field is set.
    */
   boolean hasColor();
   /**
+   * <pre>
+   * The color of the segmentation mask that was created. This is used in visualizing masks next to
+   * each other.
+   * </pre>
+   *
    * <code>.clarifai.api.Color color = 1;</code>
+   * @return The color.
    */
   com.clarifai.grpc.api.Color getColor();
   /**
+   * <pre>
+   * The color of the segmentation mask that was created. This is used in visualizing masks next to
+   * each other.
+   * </pre>
+   *
    * <code>.clarifai.api.Color color = 1;</code>
    */
   com.clarifai.grpc.api.ColorOrBuilder getColorOrBuilder();
 
   /**
+   * <pre>
+   * The image of the mask in a non-raster format.
+   * </pre>
+   *
    * <code>.clarifai.api.Image image = 2;</code>
+   * @return Whether the image field is set.
    */
   boolean hasImage();
   /**
+   * <pre>
+   * The image of the mask in a non-raster format.
+   * </pre>
+   *
    * <code>.clarifai.api.Image image = 2;</code>
+   * @return The image.
    */
   com.clarifai.grpc.api.Image getImage();
   /**
+   * <pre>
+   * The image of the mask in a non-raster format.
+   * </pre>
+   *
    * <code>.clarifai.api.Image image = 2;</code>
    */
   com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder();

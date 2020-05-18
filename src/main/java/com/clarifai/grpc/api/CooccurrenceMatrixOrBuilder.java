@@ -37,6 +37,7 @@ public interface CooccurrenceMatrixOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @return A list containing the conceptIds.
    */
   java.util.List<java.lang.String>
       getConceptIdsList();
@@ -46,6 +47,7 @@ public interface CooccurrenceMatrixOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @return The count of conceptIds.
    */
   int getConceptIdsCount();
   /**
@@ -54,6 +56,8 @@ public interface CooccurrenceMatrixOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @param index The index of the element to return.
+   * @return The conceptIds at the given index.
    */
   java.lang.String getConceptIds(int index);
   /**
@@ -62,6 +66,8 @@ public interface CooccurrenceMatrixOrBuilder extends
    * </pre>
    *
    * <code>repeated string concept_ids = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the conceptIds at the given index.
    */
   com.google.protobuf.ByteString
       getConceptIdsBytes(int index);

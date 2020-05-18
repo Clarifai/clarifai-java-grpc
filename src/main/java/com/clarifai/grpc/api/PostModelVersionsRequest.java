@@ -98,26 +98,26 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             com.clarifai.grpc.api.Search.Builder subBuilder = null;
-            if (trainQuery_ != null) {
-              subBuilder = trainQuery_.toBuilder();
+            if (trainSearch_ != null) {
+              subBuilder = trainSearch_.toBuilder();
             }
-            trainQuery_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            trainSearch_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(trainQuery_);
-              trainQuery_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(trainSearch_);
+              trainSearch_ = subBuilder.buildPartial();
             }
 
             break;
           }
           case 50: {
             com.clarifai.grpc.api.Search.Builder subBuilder = null;
-            if (testQuery_ != null) {
-              subBuilder = testQuery_.toBuilder();
+            if (testSearch_ != null) {
+              subBuilder = testSearch_.toBuilder();
             }
-            testQuery_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            testSearch_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(testQuery_);
-              testQuery_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(testSearch_);
+              testSearch_ = subBuilder.buildPartial();
             }
 
             break;
@@ -166,12 +166,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -187,6 +189,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelId_;
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
@@ -202,6 +205,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   public com.google.protobuf.ByteString
       getModelIdBytes() {
@@ -284,9 +288,10 @@ private static final long serialVersionUID = 0L;
    * Use this to filter inputs that are used in training
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 4;</code>
+   * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @return Whether the search field is set.
    */
-  public boolean hasSearch() {
+  @java.lang.Deprecated public boolean hasSearch() {
     return search_ != null;
   }
   /**
@@ -294,9 +299,10 @@ private static final long serialVersionUID = 0L;
    * Use this to filter inputs that are used in training
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 4;</code>
+   * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @return The search.
    */
-  public com.clarifai.grpc.api.Search getSearch() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.Search getSearch() {
     return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
   }
   /**
@@ -304,74 +310,91 @@ private static final long serialVersionUID = 0L;
    * Use this to filter inputs that are used in training
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 4;</code>
+   * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
     return getSearch();
   }
 
-  public static final int TRAIN_QUERY_FIELD_NUMBER = 5;
-  private com.clarifai.grpc.api.Search trainQuery_;
+  public static final int TRAIN_SEARCH_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Search trainSearch_;
   /**
    * <pre>
-   * For deep training, these queries define what data goes into the test and train splits
+   *train_search is used to specify what data to train on.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_query = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5;</code>
+   * @return Whether the trainSearch field is set.
    */
-  public boolean hasTrainQuery() {
-    return trainQuery_ != null;
+  public boolean hasTrainSearch() {
+    return trainSearch_ != null;
   }
   /**
    * <pre>
-   * For deep training, these queries define what data goes into the test and train splits
+   *train_search is used to specify what data to train on.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_query = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5;</code>
+   * @return The trainSearch.
    */
-  public com.clarifai.grpc.api.Search getTrainQuery() {
-    return trainQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainQuery_;
+  public com.clarifai.grpc.api.Search getTrainSearch() {
+    return trainSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainSearch_;
   }
   /**
    * <pre>
-   * For deep training, these queries define what data goes into the test and train splits
+   *train_search is used to specify what data to train on.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_query = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5;</code>
    */
-  public com.clarifai.grpc.api.SearchOrBuilder getTrainQueryOrBuilder() {
-    return getTrainQuery();
+  public com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder() {
+    return getTrainSearch();
   }
 
-  public static final int TEST_QUERY_FIELD_NUMBER = 6;
-  private com.clarifai.grpc.api.Search testQuery_;
+  public static final int TEST_SEARCH_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.Search testSearch_;
   /**
-   * <code>.clarifai.api.Search test_query = 6;</code>
+   * <pre>
+   *test_search is used to specify what data to test on.
+   * </pre>
+   *
+   * <code>.clarifai.api.Search test_search = 6;</code>
+   * @return Whether the testSearch field is set.
    */
-  public boolean hasTestQuery() {
-    return testQuery_ != null;
+  public boolean hasTestSearch() {
+    return testSearch_ != null;
   }
   /**
-   * <code>.clarifai.api.Search test_query = 6;</code>
+   * <pre>
+   *test_search is used to specify what data to test on.
+   * </pre>
+   *
+   * <code>.clarifai.api.Search test_search = 6;</code>
+   * @return The testSearch.
    */
-  public com.clarifai.grpc.api.Search getTestQuery() {
-    return testQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testQuery_;
+  public com.clarifai.grpc.api.Search getTestSearch() {
+    return testSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
   }
   /**
-   * <code>.clarifai.api.Search test_query = 6;</code>
+   * <pre>
+   *test_search is used to specify what data to test on.
+   * </pre>
+   *
+   * <code>.clarifai.api.Search test_search = 6;</code>
    */
-  public com.clarifai.grpc.api.SearchOrBuilder getTestQueryOrBuilder() {
-    return getTestQuery();
+  public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
+    return getTestSearch();
   }
 
   public static final int EVALUATE_AFTER_TRAINING_FIELD_NUMBER = 7;
   private boolean evaluateAfterTraining_;
   /**
    * <pre>
-   * Whether we should automatically queue evals after training
+   * whether to evaluate the transfer trained model after training
    * </pre>
    *
    * <code>bool evaluate_after_training = 7;</code>
+   * @return The evaluateAfterTraining.
    */
   public boolean getEvaluateAfterTraining() {
     return evaluateAfterTraining_;
@@ -403,11 +426,11 @@ private static final long serialVersionUID = 0L;
     if (search_ != null) {
       output.writeMessage(4, getSearch());
     }
-    if (trainQuery_ != null) {
-      output.writeMessage(5, getTrainQuery());
+    if (trainSearch_ != null) {
+      output.writeMessage(5, getTrainSearch());
     }
-    if (testQuery_ != null) {
-      output.writeMessage(6, getTestQuery());
+    if (testSearch_ != null) {
+      output.writeMessage(6, getTestSearch());
     }
     if (evaluateAfterTraining_ != false) {
       output.writeBool(7, evaluateAfterTraining_);
@@ -436,13 +459,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getSearch());
     }
-    if (trainQuery_ != null) {
+    if (trainSearch_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getTrainQuery());
+        .computeMessageSize(5, getTrainSearch());
     }
-    if (testQuery_ != null) {
+    if (testSearch_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getTestQuery());
+        .computeMessageSize(6, getTestSearch());
     }
     if (evaluateAfterTraining_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -477,15 +500,15 @@ private static final long serialVersionUID = 0L;
       if (!getSearch()
           .equals(other.getSearch())) return false;
     }
-    if (hasTrainQuery() != other.hasTrainQuery()) return false;
-    if (hasTrainQuery()) {
-      if (!getTrainQuery()
-          .equals(other.getTrainQuery())) return false;
+    if (hasTrainSearch() != other.hasTrainSearch()) return false;
+    if (hasTrainSearch()) {
+      if (!getTrainSearch()
+          .equals(other.getTrainSearch())) return false;
     }
-    if (hasTestQuery() != other.hasTestQuery()) return false;
-    if (hasTestQuery()) {
-      if (!getTestQuery()
-          .equals(other.getTestQuery())) return false;
+    if (hasTestSearch() != other.hasTestSearch()) return false;
+    if (hasTestSearch()) {
+      if (!getTestSearch()
+          .equals(other.getTestSearch())) return false;
     }
     if (getEvaluateAfterTraining()
         != other.getEvaluateAfterTraining()) return false;
@@ -514,13 +537,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getSearch().hashCode();
     }
-    if (hasTrainQuery()) {
-      hash = (37 * hash) + TRAIN_QUERY_FIELD_NUMBER;
-      hash = (53 * hash) + getTrainQuery().hashCode();
+    if (hasTrainSearch()) {
+      hash = (37 * hash) + TRAIN_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getTrainSearch().hashCode();
     }
-    if (hasTestQuery()) {
-      hash = (37 * hash) + TEST_QUERY_FIELD_NUMBER;
-      hash = (53 * hash) + getTestQuery().hashCode();
+    if (hasTestSearch()) {
+      hash = (37 * hash) + TEST_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getTestSearch().hashCode();
     }
     hash = (37 * hash) + EVALUATE_AFTER_TRAINING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -683,17 +706,17 @@ private static final long serialVersionUID = 0L;
         search_ = null;
         searchBuilder_ = null;
       }
-      if (trainQueryBuilder_ == null) {
-        trainQuery_ = null;
+      if (trainSearchBuilder_ == null) {
+        trainSearch_ = null;
       } else {
-        trainQuery_ = null;
-        trainQueryBuilder_ = null;
+        trainSearch_ = null;
+        trainSearchBuilder_ = null;
       }
-      if (testQueryBuilder_ == null) {
-        testQuery_ = null;
+      if (testSearchBuilder_ == null) {
+        testSearch_ = null;
       } else {
-        testQuery_ = null;
-        testQueryBuilder_ = null;
+        testSearch_ = null;
+        testSearchBuilder_ = null;
       }
       evaluateAfterTraining_ = false;
 
@@ -744,15 +767,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.search_ = searchBuilder_.build();
       }
-      if (trainQueryBuilder_ == null) {
-        result.trainQuery_ = trainQuery_;
+      if (trainSearchBuilder_ == null) {
+        result.trainSearch_ = trainSearch_;
       } else {
-        result.trainQuery_ = trainQueryBuilder_.build();
+        result.trainSearch_ = trainSearchBuilder_.build();
       }
-      if (testQueryBuilder_ == null) {
-        result.testQuery_ = testQuery_;
+      if (testSearchBuilder_ == null) {
+        result.testSearch_ = testSearch_;
       } else {
-        result.testQuery_ = testQueryBuilder_.build();
+        result.testSearch_ = testSearchBuilder_.build();
       }
       result.evaluateAfterTraining_ = evaluateAfterTraining_;
       onBuilt();
@@ -839,11 +862,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasSearch()) {
         mergeSearch(other.getSearch());
       }
-      if (other.hasTrainQuery()) {
-        mergeTrainQuery(other.getTrainQuery());
+      if (other.hasTrainSearch()) {
+        mergeTrainSearch(other.getTrainSearch());
       }
-      if (other.hasTestQuery()) {
-        mergeTestQuery(other.getTestQuery());
+      if (other.hasTestSearch()) {
+        mergeTestSearch(other.getTestSearch());
       }
       if (other.getEvaluateAfterTraining() != false) {
         setEvaluateAfterTraining(other.getEvaluateAfterTraining());
@@ -883,12 +906,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -998,6 +1023,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelId_ = "";
     /**
      * <code>string model_id = 2;</code>
+     * @return The modelId.
      */
     public java.lang.String getModelId() {
       java.lang.Object ref = modelId_;
@@ -1013,6 +1039,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return The bytes for modelId.
      */
     public com.google.protobuf.ByteString
         getModelIdBytes() {
@@ -1029,6 +1056,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelId(
         java.lang.String value) {
@@ -1042,6 +1071,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModelId() {
       
@@ -1051,6 +1081,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1402,9 +1434,10 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+     * @return Whether the search field is set.
      */
-    public boolean hasSearch() {
+    @java.lang.Deprecated public boolean hasSearch() {
       return searchBuilder_ != null || search_ != null;
     }
     /**
@@ -1412,9 +1445,10 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+     * @return The search.
      */
-    public com.clarifai.grpc.api.Search getSearch() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Search getSearch() {
       if (searchBuilder_ == null) {
         return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
       } else {
@@ -1426,9 +1460,9 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
-    public Builder setSearch(com.clarifai.grpc.api.Search value) {
+    @java.lang.Deprecated public Builder setSearch(com.clarifai.grpc.api.Search value) {
       if (searchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1446,9 +1480,9 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
-    public Builder setSearch(
+    @java.lang.Deprecated public Builder setSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
       if (searchBuilder_ == null) {
         search_ = builderForValue.build();
@@ -1464,9 +1498,9 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
-    public Builder mergeSearch(com.clarifai.grpc.api.Search value) {
+    @java.lang.Deprecated public Builder mergeSearch(com.clarifai.grpc.api.Search value) {
       if (searchBuilder_ == null) {
         if (search_ != null) {
           search_ =
@@ -1486,9 +1520,9 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
-    public Builder clearSearch() {
+    @java.lang.Deprecated public Builder clearSearch() {
       if (searchBuilder_ == null) {
         search_ = null;
         onChanged();
@@ -1504,9 +1538,9 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getSearchBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Search.Builder getSearchBuilder() {
       
       onChanged();
       return getSearchFieldBuilder().getBuilder();
@@ -1516,9 +1550,9 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
       if (searchBuilder_ != null) {
         return searchBuilder_.getMessageOrBuilder();
       } else {
@@ -1531,7 +1565,7 @@ private static final long serialVersionUID = 0L;
      * Use this to filter inputs that are used in training
      * </pre>
      *
-     * <code>.clarifai.api.Search search = 4;</code>
+     * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
@@ -1547,293 +1581,336 @@ private static final long serialVersionUID = 0L;
       return searchBuilder_;
     }
 
-    private com.clarifai.grpc.api.Search trainQuery_;
+    private com.clarifai.grpc.api.Search trainSearch_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> trainQueryBuilder_;
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> trainSearchBuilder_;
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
+     * @return Whether the trainSearch field is set.
      */
-    public boolean hasTrainQuery() {
-      return trainQueryBuilder_ != null || trainQuery_ != null;
+    public boolean hasTrainSearch() {
+      return trainSearchBuilder_ != null || trainSearch_ != null;
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
+     * @return The trainSearch.
      */
-    public com.clarifai.grpc.api.Search getTrainQuery() {
-      if (trainQueryBuilder_ == null) {
-        return trainQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainQuery_;
+    public com.clarifai.grpc.api.Search getTrainSearch() {
+      if (trainSearchBuilder_ == null) {
+        return trainSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainSearch_;
       } else {
-        return trainQueryBuilder_.getMessage();
+        return trainSearchBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
-    public Builder setTrainQuery(com.clarifai.grpc.api.Search value) {
-      if (trainQueryBuilder_ == null) {
+    public Builder setTrainSearch(com.clarifai.grpc.api.Search value) {
+      if (trainSearchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        trainQuery_ = value;
+        trainSearch_ = value;
         onChanged();
       } else {
-        trainQueryBuilder_.setMessage(value);
+        trainSearchBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
-    public Builder setTrainQuery(
+    public Builder setTrainSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
-      if (trainQueryBuilder_ == null) {
-        trainQuery_ = builderForValue.build();
+      if (trainSearchBuilder_ == null) {
+        trainSearch_ = builderForValue.build();
         onChanged();
       } else {
-        trainQueryBuilder_.setMessage(builderForValue.build());
+        trainSearchBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
-    public Builder mergeTrainQuery(com.clarifai.grpc.api.Search value) {
-      if (trainQueryBuilder_ == null) {
-        if (trainQuery_ != null) {
-          trainQuery_ =
-            com.clarifai.grpc.api.Search.newBuilder(trainQuery_).mergeFrom(value).buildPartial();
+    public Builder mergeTrainSearch(com.clarifai.grpc.api.Search value) {
+      if (trainSearchBuilder_ == null) {
+        if (trainSearch_ != null) {
+          trainSearch_ =
+            com.clarifai.grpc.api.Search.newBuilder(trainSearch_).mergeFrom(value).buildPartial();
         } else {
-          trainQuery_ = value;
+          trainSearch_ = value;
         }
         onChanged();
       } else {
-        trainQueryBuilder_.mergeFrom(value);
+        trainSearchBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
-    public Builder clearTrainQuery() {
-      if (trainQueryBuilder_ == null) {
-        trainQuery_ = null;
+    public Builder clearTrainSearch() {
+      if (trainSearchBuilder_ == null) {
+        trainSearch_ = null;
         onChanged();
       } else {
-        trainQuery_ = null;
-        trainQueryBuilder_ = null;
+        trainSearch_ = null;
+        trainSearchBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getTrainQueryBuilder() {
+    public com.clarifai.grpc.api.Search.Builder getTrainSearchBuilder() {
       
       onChanged();
-      return getTrainQueryFieldBuilder().getBuilder();
+      return getTrainSearchFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getTrainQueryOrBuilder() {
-      if (trainQueryBuilder_ != null) {
-        return trainQueryBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder() {
+      if (trainSearchBuilder_ != null) {
+        return trainSearchBuilder_.getMessageOrBuilder();
       } else {
-        return trainQuery_ == null ?
-            com.clarifai.grpc.api.Search.getDefaultInstance() : trainQuery_;
+        return trainSearch_ == null ?
+            com.clarifai.grpc.api.Search.getDefaultInstance() : trainSearch_;
       }
     }
     /**
      * <pre>
-     * For deep training, these queries define what data goes into the test and train splits
+     *train_search is used to specify what data to train on.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_query = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
-        getTrainQueryFieldBuilder() {
-      if (trainQueryBuilder_ == null) {
-        trainQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getTrainSearchFieldBuilder() {
+      if (trainSearchBuilder_ == null) {
+        trainSearchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
-                getTrainQuery(),
+                getTrainSearch(),
                 getParentForChildren(),
                 isClean());
-        trainQuery_ = null;
+        trainSearch_ = null;
       }
-      return trainQueryBuilder_;
+      return trainSearchBuilder_;
     }
 
-    private com.clarifai.grpc.api.Search testQuery_;
+    private com.clarifai.grpc.api.Search testSearch_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> testQueryBuilder_;
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> testSearchBuilder_;
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
+     * @return Whether the testSearch field is set.
      */
-    public boolean hasTestQuery() {
-      return testQueryBuilder_ != null || testQuery_ != null;
+    public boolean hasTestSearch() {
+      return testSearchBuilder_ != null || testSearch_ != null;
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
+     * @return The testSearch.
      */
-    public com.clarifai.grpc.api.Search getTestQuery() {
-      if (testQueryBuilder_ == null) {
-        return testQuery_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testQuery_;
+    public com.clarifai.grpc.api.Search getTestSearch() {
+      if (testSearchBuilder_ == null) {
+        return testSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
       } else {
-        return testQueryBuilder_.getMessage();
+        return testSearchBuilder_.getMessage();
       }
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
-    public Builder setTestQuery(com.clarifai.grpc.api.Search value) {
-      if (testQueryBuilder_ == null) {
+    public Builder setTestSearch(com.clarifai.grpc.api.Search value) {
+      if (testSearchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        testQuery_ = value;
+        testSearch_ = value;
         onChanged();
       } else {
-        testQueryBuilder_.setMessage(value);
+        testSearchBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
-    public Builder setTestQuery(
+    public Builder setTestSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
-      if (testQueryBuilder_ == null) {
-        testQuery_ = builderForValue.build();
+      if (testSearchBuilder_ == null) {
+        testSearch_ = builderForValue.build();
         onChanged();
       } else {
-        testQueryBuilder_.setMessage(builderForValue.build());
+        testSearchBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
-    public Builder mergeTestQuery(com.clarifai.grpc.api.Search value) {
-      if (testQueryBuilder_ == null) {
-        if (testQuery_ != null) {
-          testQuery_ =
-            com.clarifai.grpc.api.Search.newBuilder(testQuery_).mergeFrom(value).buildPartial();
+    public Builder mergeTestSearch(com.clarifai.grpc.api.Search value) {
+      if (testSearchBuilder_ == null) {
+        if (testSearch_ != null) {
+          testSearch_ =
+            com.clarifai.grpc.api.Search.newBuilder(testSearch_).mergeFrom(value).buildPartial();
         } else {
-          testQuery_ = value;
+          testSearch_ = value;
         }
         onChanged();
       } else {
-        testQueryBuilder_.mergeFrom(value);
+        testSearchBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
-    public Builder clearTestQuery() {
-      if (testQueryBuilder_ == null) {
-        testQuery_ = null;
+    public Builder clearTestSearch() {
+      if (testSearchBuilder_ == null) {
+        testSearch_ = null;
         onChanged();
       } else {
-        testQuery_ = null;
-        testQueryBuilder_ = null;
+        testSearch_ = null;
+        testSearchBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getTestQueryBuilder() {
+    public com.clarifai.grpc.api.Search.Builder getTestSearchBuilder() {
       
       onChanged();
-      return getTestQueryFieldBuilder().getBuilder();
+      return getTestSearchFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getTestQueryOrBuilder() {
-      if (testQueryBuilder_ != null) {
-        return testQueryBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
+      if (testSearchBuilder_ != null) {
+        return testSearchBuilder_.getMessageOrBuilder();
       } else {
-        return testQuery_ == null ?
-            com.clarifai.grpc.api.Search.getDefaultInstance() : testQuery_;
+        return testSearch_ == null ?
+            com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
       }
     }
     /**
-     * <code>.clarifai.api.Search test_query = 6;</code>
+     * <pre>
+     *test_search is used to specify what data to test on.
+     * </pre>
+     *
+     * <code>.clarifai.api.Search test_search = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
-        getTestQueryFieldBuilder() {
-      if (testQueryBuilder_ == null) {
-        testQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getTestSearchFieldBuilder() {
+      if (testSearchBuilder_ == null) {
+        testSearchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
-                getTestQuery(),
+                getTestSearch(),
                 getParentForChildren(),
                 isClean());
-        testQuery_ = null;
+        testSearch_ = null;
       }
-      return testQueryBuilder_;
+      return testSearchBuilder_;
     }
 
     private boolean evaluateAfterTraining_ ;
     /**
      * <pre>
-     * Whether we should automatically queue evals after training
+     * whether to evaluate the transfer trained model after training
      * </pre>
      *
      * <code>bool evaluate_after_training = 7;</code>
+     * @return The evaluateAfterTraining.
      */
     public boolean getEvaluateAfterTraining() {
       return evaluateAfterTraining_;
     }
     /**
      * <pre>
-     * Whether we should automatically queue evals after training
+     * whether to evaluate the transfer trained model after training
      * </pre>
      *
      * <code>bool evaluate_after_training = 7;</code>
+     * @param value The evaluateAfterTraining to set.
+     * @return This builder for chaining.
      */
     public Builder setEvaluateAfterTraining(boolean value) {
       
@@ -1843,10 +1920,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether we should automatically queue evals after training
+     * whether to evaluate the transfer trained model after training
      * </pre>
      *
      * <code>bool evaluate_after_training = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEvaluateAfterTraining() {
       

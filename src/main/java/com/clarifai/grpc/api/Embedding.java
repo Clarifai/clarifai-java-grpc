@@ -121,6 +121,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Internal.FloatList vector_;
   /**
    * <code>repeated float vector = 1 [packed = true];</code>
+   * @return A list containing the vector.
    */
   public java.util.List<java.lang.Float>
       getVectorList() {
@@ -128,12 +129,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated float vector = 1 [packed = true];</code>
+   * @return The count of vector.
    */
   public int getVectorCount() {
     return vector_.size();
   }
   /**
    * <code>repeated float vector = 1 [packed = true];</code>
+   * @param index The index of the element to return.
+   * @return The vector at the given index.
    */
   public float getVector(int index) {
     return vector_.getFloat(index);
@@ -144,6 +148,7 @@ private static final long serialVersionUID = 0L;
   private int numDimensions_;
   /**
    * <code>uint32 num_dimensions = 2;</code>
+   * @return The numDimensions.
    */
   public int getNumDimensions() {
     return numDimensions_;
@@ -510,6 +515,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @return A list containing the vector.
      */
     public java.util.List<java.lang.Float>
         getVectorList() {
@@ -518,18 +524,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @return The count of vector.
      */
     public int getVectorCount() {
       return vector_.size();
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @param index The index of the element to return.
+     * @return The vector at the given index.
      */
     public float getVector(int index) {
       return vector_.getFloat(index);
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @param index The index to set the value at.
+     * @param value The vector to set.
+     * @return This builder for chaining.
      */
     public Builder setVector(
         int index, float value) {
@@ -540,6 +552,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @param value The vector to add.
+     * @return This builder for chaining.
      */
     public Builder addVector(float value) {
       ensureVectorIsMutable();
@@ -549,6 +563,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @param values The vector to add.
+     * @return This builder for chaining.
      */
     public Builder addAllVector(
         java.lang.Iterable<? extends java.lang.Float> values) {
@@ -560,6 +576,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated float vector = 1 [packed = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearVector() {
       vector_ = emptyFloatList();
@@ -571,12 +588,15 @@ private static final long serialVersionUID = 0L;
     private int numDimensions_ ;
     /**
      * <code>uint32 num_dimensions = 2;</code>
+     * @return The numDimensions.
      */
     public int getNumDimensions() {
       return numDimensions_;
     }
     /**
      * <code>uint32 num_dimensions = 2;</code>
+     * @param value The numDimensions to set.
+     * @return This builder for chaining.
      */
     public Builder setNumDimensions(int value) {
       
@@ -586,6 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 num_dimensions = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearNumDimensions() {
       

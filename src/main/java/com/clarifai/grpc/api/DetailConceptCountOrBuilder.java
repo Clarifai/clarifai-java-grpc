@@ -13,6 +13,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
+   * @return Whether the processed field is set.
    */
   boolean hasProcessed();
   /**
@@ -21,6 +22,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
+   * @return The processed.
    */
   com.clarifai.grpc.api.ConceptTypeCount getProcessed();
   /**
@@ -38,6 +40,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
+   * @return Whether the toProcess field is set.
    */
   boolean hasToProcess();
   /**
@@ -46,6 +49,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
+   * @return The toProcess.
    */
   com.clarifai.grpc.api.ConceptTypeCount getToProcess();
   /**
@@ -63,6 +67,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
+   * @return Whether the errors field is set.
    */
   boolean hasErrors();
   /**
@@ -71,6 +76,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
+   * @return The errors.
    */
   com.clarifai.grpc.api.ConceptTypeCount getErrors();
   /**
@@ -88,6 +94,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
+   * @return Whether the processing field is set.
    */
   boolean hasProcessing();
   /**
@@ -96,6 +103,7 @@ public interface DetailConceptCountOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
+   * @return The processing.
    */
   com.clarifai.grpc.api.ConceptTypeCount getProcessing();
   /**

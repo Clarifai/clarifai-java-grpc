@@ -9,50 +9,60 @@ public interface AppOrBuilder extends
 
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <code>string default_language = 3;</code>
+   * @return The defaultLanguage.
    */
   java.lang.String getDefaultLanguage();
   /**
    * <code>string default_language = 3;</code>
+   * @return The bytes for defaultLanguage.
    */
   com.google.protobuf.ByteString
       getDefaultLanguageBytes();
 
   /**
    * <code>string default_workflow_id = 4;</code>
+   * @return The defaultWorkflowId.
    */
   java.lang.String getDefaultWorkflowId();
   /**
    * <code>string default_workflow_id = 4;</code>
+   * @return The bytes for defaultWorkflowId.
    */
   com.google.protobuf.ByteString
       getDefaultWorkflowIdBytes();
 
   /**
    * <code>string user_id = 5;</code>
+   * @return The userId.
    */
   java.lang.String getUserId();
   /**
    * <code>string user_id = 5;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
@@ -67,6 +77,7 @@ public interface AppOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -79,6 +90,7 @@ public interface AppOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -100,51 +112,9 @@ public interface AppOrBuilder extends
    * </pre>
    *
    * <code>uint32 legal_consent_status = 7;</code>
+   * @return The legalConsentStatus.
    */
   int getLegalConsentStatus();
-
-  /**
-   * <pre>
-   * Other fields controlled by url params.
-   * </pre>
-   *
-   * <code>.clarifai.api.Input last_input_added = 10;</code>
-   */
-  boolean hasLastInputAdded();
-  /**
-   * <pre>
-   * Other fields controlled by url params.
-   * </pre>
-   *
-   * <code>.clarifai.api.Input last_input_added = 10;</code>
-   */
-  com.clarifai.grpc.api.Input getLastInputAdded();
-  /**
-   * <pre>
-   * Other fields controlled by url params.
-   * </pre>
-   *
-   * <code>.clarifai.api.Input last_input_added = 10;</code>
-   */
-  com.clarifai.grpc.api.InputOrBuilder getLastInputAddedOrBuilder();
-
-  /**
-   * <code>.clarifai.api.InputCount input_count = 11;</code>
-   */
-  boolean hasInputCount();
-  /**
-   * <code>.clarifai.api.InputCount input_count = 11;</code>
-   */
-  com.clarifai.grpc.api.InputCount getInputCount();
-  /**
-   * <code>.clarifai.api.InputCount input_count = 11;</code>
-   */
-  com.clarifai.grpc.api.InputCountOrBuilder getInputCountOrBuilder();
-
-  /**
-   * <code>uint32 active_concept_count = 12 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   */
-  int getActiveConceptCount();
 
   /**
    * <pre>
@@ -153,6 +123,7 @@ public interface AppOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 13;</code>
+   * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
@@ -162,6 +133,7 @@ public interface AppOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 13;</code>
+   * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
   /**
@@ -173,4 +145,24 @@ public interface AppOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 13;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * short description about the app.
+   * </pre>
+   *
+   * <code>string description = 14;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * short description about the app.
+   * </pre>
+   *
+   * <code>string description = 14;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
 }

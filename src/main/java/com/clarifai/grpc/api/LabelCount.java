@@ -101,6 +101,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string concept_name = 1;</code>
+   * @return The conceptName.
    */
   public java.lang.String getConceptName() {
     java.lang.Object ref = conceptName_;
@@ -121,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string concept_name = 1;</code>
+   * @return The bytes for conceptName.
    */
   public com.google.protobuf.ByteString
       getConceptNameBytes() {
@@ -140,6 +142,7 @@ private static final long serialVersionUID = 0L;
   private int count_;
   /**
    * <code>uint32 count = 2;</code>
+   * @return The count.
    */
   public int getCount() {
     return count_;
@@ -472,6 +475,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string concept_name = 1;</code>
+     * @return The conceptName.
      */
     public java.lang.String getConceptName() {
       java.lang.Object ref = conceptName_;
@@ -492,6 +496,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string concept_name = 1;</code>
+     * @return The bytes for conceptName.
      */
     public com.google.protobuf.ByteString
         getConceptNameBytes() {
@@ -513,6 +518,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string concept_name = 1;</code>
+     * @param value The conceptName to set.
+     * @return This builder for chaining.
      */
     public Builder setConceptName(
         java.lang.String value) {
@@ -531,6 +538,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string concept_name = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearConceptName() {
       
@@ -545,6 +553,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string concept_name = 1;</code>
+     * @param value The bytes for conceptName to set.
+     * @return This builder for chaining.
      */
     public Builder setConceptNameBytes(
         com.google.protobuf.ByteString value) {
@@ -561,12 +571,15 @@ private static final long serialVersionUID = 0L;
     private int count_ ;
     /**
      * <code>uint32 count = 2;</code>
+     * @return The count.
      */
     public int getCount() {
       return count_;
     }
     /**
      * <code>uint32 count = 2;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(int value) {
       
@@ -576,6 +589,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 count = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
       

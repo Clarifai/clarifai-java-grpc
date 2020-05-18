@@ -9,10 +9,12 @@ public interface PostModelVersionsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -22,10 +24,12 @@ public interface PostModelVersionsRequestOrBuilder extends
 
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   java.lang.String getModelId();
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   com.google.protobuf.ByteString
       getModelIdBytes();
@@ -84,70 +88,89 @@ public interface PostModelVersionsRequestOrBuilder extends
    * Use this to filter inputs that are used in training
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 4;</code>
+   * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @return Whether the search field is set.
    */
-  boolean hasSearch();
+  @java.lang.Deprecated boolean hasSearch();
   /**
    * <pre>
    * Use this to filter inputs that are used in training
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 4;</code>
+   * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @return The search.
    */
-  com.clarifai.grpc.api.Search getSearch();
+  @java.lang.Deprecated com.clarifai.grpc.api.Search getSearch();
   /**
    * <pre>
    * Use this to filter inputs that are used in training
    * </pre>
    *
-   * <code>.clarifai.api.Search search = 4;</code>
+   * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder();
 
   /**
    * <pre>
-   * For deep training, these queries define what data goes into the test and train splits
+   *train_search is used to specify what data to train on.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_query = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5;</code>
+   * @return Whether the trainSearch field is set.
    */
-  boolean hasTrainQuery();
+  boolean hasTrainSearch();
   /**
    * <pre>
-   * For deep training, these queries define what data goes into the test and train splits
+   *train_search is used to specify what data to train on.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_query = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5;</code>
+   * @return The trainSearch.
    */
-  com.clarifai.grpc.api.Search getTrainQuery();
+  com.clarifai.grpc.api.Search getTrainSearch();
   /**
    * <pre>
-   * For deep training, these queries define what data goes into the test and train splits
+   *train_search is used to specify what data to train on.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_query = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5;</code>
    */
-  com.clarifai.grpc.api.SearchOrBuilder getTrainQueryOrBuilder();
-
-  /**
-   * <code>.clarifai.api.Search test_query = 6;</code>
-   */
-  boolean hasTestQuery();
-  /**
-   * <code>.clarifai.api.Search test_query = 6;</code>
-   */
-  com.clarifai.grpc.api.Search getTestQuery();
-  /**
-   * <code>.clarifai.api.Search test_query = 6;</code>
-   */
-  com.clarifai.grpc.api.SearchOrBuilder getTestQueryOrBuilder();
+  com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder();
 
   /**
    * <pre>
-   * Whether we should automatically queue evals after training
+   *test_search is used to specify what data to test on.
+   * </pre>
+   *
+   * <code>.clarifai.api.Search test_search = 6;</code>
+   * @return Whether the testSearch field is set.
+   */
+  boolean hasTestSearch();
+  /**
+   * <pre>
+   *test_search is used to specify what data to test on.
+   * </pre>
+   *
+   * <code>.clarifai.api.Search test_search = 6;</code>
+   * @return The testSearch.
+   */
+  com.clarifai.grpc.api.Search getTestSearch();
+  /**
+   * <pre>
+   *test_search is used to specify what data to test on.
+   * </pre>
+   *
+   * <code>.clarifai.api.Search test_search = 6;</code>
+   */
+  com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder();
+
+  /**
+   * <pre>
+   * whether to evaluate the transfer trained model after training
    * </pre>
    *
    * <code>bool evaluate_after_training = 7;</code>
+   * @return The evaluateAfterTraining.
    */
   boolean getEvaluateAfterTraining();
 }

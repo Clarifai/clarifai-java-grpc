@@ -62,6 +62,8 @@ public enum APIEventType
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -69,6 +71,10 @@ public enum APIEventType
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static APIEventType forNumber(int value) {
     switch (value) {
       case 0: return API_EVENT_TYPE_NOT_SET;
@@ -101,7 +107,7 @@ public enum APIEventType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(3);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final APIEventType[] VALUES = values();

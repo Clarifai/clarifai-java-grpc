@@ -124,12 +124,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -152,6 +154,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+   * @return Whether the model field is set.
    */
   @java.lang.Deprecated public boolean hasModel() {
     return model_ != null;
@@ -165,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+   * @return The model.
    */
   @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
@@ -645,12 +649,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -769,6 +775,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+     * @return Whether the model field is set.
      */
     @java.lang.Deprecated public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
@@ -782,6 +789,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+     * @return The model.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
       if (modelBuilder_ == null) {

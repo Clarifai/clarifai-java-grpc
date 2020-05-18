@@ -121,12 +121,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -147,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 page = 2;</code>
+   * @return The page.
    */
   public int getPage() {
     return page_;
@@ -161,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 per_page = 3;</code>
+   * @return The perPage.
    */
   public int getPerPage() {
     return perPage_;
@@ -170,6 +174,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList ids_;
   /**
    * <code>repeated string ids = 4;</code>
+   * @return A list containing the ids.
    */
   public com.google.protobuf.ProtocolStringList
       getIdsList() {
@@ -177,18 +182,23 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>repeated string ids = 4;</code>
+   * @return The count of ids.
    */
   public int getIdsCount() {
     return ids_.size();
   }
   /**
    * <code>repeated string ids = 4;</code>
+   * @param index The index of the element to return.
+   * @return The ids at the given index.
    */
   public java.lang.String getIds(int index) {
     return ids_.get(index);
   }
   /**
    * <code>repeated string ids = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ids at the given index.
    */
   public com.google.protobuf.ByteString
       getIdsBytes(int index) {
@@ -585,12 +595,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -705,6 +717,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 2;</code>
+     * @return The page.
      */
     public int getPage() {
       return page_;
@@ -716,6 +729,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 2;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
      */
     public Builder setPage(int value) {
       
@@ -730,6 +745,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 page = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPage() {
       
@@ -746,6 +762,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 3;</code>
+     * @return The perPage.
      */
     public int getPerPage() {
       return perPage_;
@@ -757,6 +774,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 3;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
      */
     public Builder setPerPage(int value) {
       
@@ -771,6 +790,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 per_page = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearPerPage() {
       
@@ -788,6 +808,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList
         getIdsList() {
@@ -795,18 +816,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @return The count of ids.
      */
     public int getIdsCount() {
       return ids_.size();
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @param index The index of the element to return.
+     * @return The ids at the given index.
      */
     public java.lang.String getIds(int index) {
       return ids_.get(index);
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ids at the given index.
      */
     public com.google.protobuf.ByteString
         getIdsBytes(int index) {
@@ -814,6 +840,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The ids to set.
+     * @return This builder for chaining.
      */
     public Builder setIds(
         int index, java.lang.String value) {
@@ -827,6 +856,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @param value The ids to add.
+     * @return This builder for chaining.
      */
     public Builder addIds(
         java.lang.String value) {
@@ -840,6 +871,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @param values The ids to add.
+     * @return This builder for chaining.
      */
     public Builder addAllIds(
         java.lang.Iterable<java.lang.String> values) {
@@ -851,6 +884,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearIds() {
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -860,6 +894,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>repeated string ids = 4;</code>
+     * @param value The bytes of the ids to add.
+     * @return This builder for chaining.
      */
     public Builder addIdsBytes(
         com.google.protobuf.ByteString value) {

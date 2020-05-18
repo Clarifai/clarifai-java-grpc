@@ -13,6 +13,7 @@ public interface UserAppIDSetOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 1;</code>
+   * @return The userId.
    */
   java.lang.String getUserId();
   /**
@@ -21,16 +22,19 @@ public interface UserAppIDSetOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 1;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
 
   /**
    * <code>string app_id = 2;</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
    * <code>string app_id = 2;</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();

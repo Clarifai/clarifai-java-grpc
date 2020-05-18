@@ -13,6 +13,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Query query = 1;</code>
+   * @return Whether the query field is set.
    */
   boolean hasQuery();
   /**
@@ -21,6 +22,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Query query = 1;</code>
+   * @return The query.
    */
   com.clarifai.grpc.api.Query getQuery();
   /**
@@ -39,6 +41,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -48,6 +51,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string id = 2;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -58,6 +62,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string application_id = 3;</code>
+   * @return The applicationId.
    */
   java.lang.String getApplicationId();
   /**
@@ -66,6 +71,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string application_id = 3;</code>
+   * @return The bytes for applicationId.
    */
   com.google.protobuf.ByteString
       getApplicationIdBytes();
@@ -76,6 +82,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string name = 4;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -84,6 +91,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string name = 4;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -95,6 +103,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp as_of = 5;</code>
+   * @return Whether the asOf field is set.
    */
   boolean hasAsOf();
   /**
@@ -104,6 +113,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp as_of = 5;</code>
+   * @return The asOf.
    */
   com.google.protobuf.Timestamp getAsOf();
   /**
@@ -122,6 +132,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string git_hash = 6;</code>
+   * @return The gitHash.
    */
   java.lang.String getGitHash();
   /**
@@ -130,6 +141,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>string git_hash = 6;</code>
+   * @return The bytes for gitHash.
    */
   com.google.protobuf.ByteString
       getGitHashBytes();
@@ -140,6 +152,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -148,6 +161,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 7;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -165,6 +179,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
    */
   boolean hasModifiedAt();
   /**
@@ -173,6 +188,7 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
    */
   com.google.protobuf.Timestamp getModifiedAt();
   /**
@@ -186,26 +202,28 @@ public interface SearchOrBuilder extends
 
   /**
    * <pre>
-   * The search algorith to be used.
+   * The search algorithm to be used.
    * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-   * The last two perfom a brute force search visual search instead of a more scalable distributed
+   * The last two perform a brute force search visual search instead of a more scalable distributed
    * nearest neighbor search and should be used by advanced users only.
    * If not specified we default to nearest neighbor
    * </pre>
    *
    * <code>string algorithm = 9;</code>
+   * @return The algorithm.
    */
   java.lang.String getAlgorithm();
   /**
    * <pre>
-   * The search algorith to be used.
+   * The search algorithm to be used.
    * Options are are 'nearest_neighbor', 'brute_force', and 'avg_concept_brute_force'
-   * The last two perfom a brute force search visual search instead of a more scalable distributed
+   * The last two perform a brute force search visual search instead of a more scalable distributed
    * nearest neighbor search and should be used by advanced users only.
    * If not specified we default to nearest neighbor
    * </pre>
    *
    * <code>string algorithm = 9;</code>
+   * @return The bytes for algorithm.
    */
   com.google.protobuf.ByteString
       getAlgorithmBytes();
@@ -217,6 +235,19 @@ public interface SearchOrBuilder extends
    * </pre>
    *
    * <code>bool save = 10;</code>
+   * @return The save.
    */
   boolean getSave();
+
+  /**
+   * <pre>
+   * Minimum value of confidence threshold score in result.
+   * Defaults to 0.0 which means we won't do any thresholding as all probabilities will
+   * likely be &gt; 0.0.
+   * </pre>
+   *
+   * <code>float min_value = 11;</code>
+   * @return The minValue.
+   */
+  float getMinValue();
 }

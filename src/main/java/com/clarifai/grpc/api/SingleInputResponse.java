@@ -110,12 +110,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -131,12 +133,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Input input_;
   /**
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return Whether the input field is set.
    */
   public boolean hasInput() {
     return input_ != null;
   }
   /**
    * <code>.clarifai.api.Input input = 2;</code>
+   * @return The input.
    */
   public com.clarifai.grpc.api.Input getInput() {
     return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
@@ -498,12 +502,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
     }
     /**
      * <code>.clarifai.api.status.Status status = 1;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -615,12 +621,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> inputBuilder_;
     /**
      * <code>.clarifai.api.Input input = 2;</code>
+     * @return Whether the input field is set.
      */
     public boolean hasInput() {
       return inputBuilder_ != null || input_ != null;
     }
     /**
      * <code>.clarifai.api.Input input = 2;</code>
+     * @return The input.
      */
     public com.clarifai.grpc.api.Input getInput() {
       if (inputBuilder_ == null) {

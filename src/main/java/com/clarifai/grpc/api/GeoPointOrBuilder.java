@@ -9,11 +9,13 @@ public interface GeoPointOrBuilder extends
 
   /**
    * <code>float longitude = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The longitude.
    */
   float getLongitude();
 
   /**
    * <code>float latitude = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The latitude.
    */
   float getLatitude();
 }

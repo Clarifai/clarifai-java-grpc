@@ -96,6 +96,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -111,6 +112,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
   private boolean flip_;
   /**
    * <code>bool flip = 2;</code>
+   * @return The flip.
    */
   public boolean getFlip() {
     return flip_;
@@ -458,6 +461,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -473,6 +477,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -489,6 +494,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -502,6 +509,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -511,6 +519,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -527,12 +537,15 @@ private static final long serialVersionUID = 0L;
     private boolean flip_ ;
     /**
      * <code>bool flip = 2;</code>
+     * @return The flip.
      */
     public boolean getFlip() {
       return flip_;
     }
     /**
      * <code>bool flip = 2;</code>
+     * @param value The flip to set.
+     * @return This builder for chaining.
      */
     public Builder setFlip(boolean value) {
       
@@ -542,6 +555,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool flip = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFlip() {
       

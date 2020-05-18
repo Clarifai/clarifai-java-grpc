@@ -13,6 +13,7 @@ public interface PostSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
@@ -21,6 +22,7 @@ public interface PostSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -35,27 +37,32 @@ public interface PostSearchesRequestOrBuilder extends
   /**
    * <pre>
    * The query; this specifies how the data to be searched
+   * this will be replaced by "Searches"
    * </pre>
    *
-   * <code>.clarifai.api.Query query = 2;</code>
+   * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+   * @return Whether the query field is set.
    */
-  boolean hasQuery();
+  @java.lang.Deprecated boolean hasQuery();
   /**
    * <pre>
    * The query; this specifies how the data to be searched
+   * this will be replaced by "Searches"
    * </pre>
    *
-   * <code>.clarifai.api.Query query = 2;</code>
+   * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
+   * @return The query.
    */
-  com.clarifai.grpc.api.Query getQuery();
+  @java.lang.Deprecated com.clarifai.grpc.api.Query getQuery();
   /**
    * <pre>
    * The query; this specifies how the data to be searched
+   * this will be replaced by "Searches"
    * </pre>
    *
-   * <code>.clarifai.api.Query query = 2;</code>
+   * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder();
 
   /**
    * <pre>
@@ -112,6 +119,7 @@ public interface PostSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 4;</code>
+   * @return Whether the pagination field is set.
    */
   boolean hasPagination();
   /**
@@ -120,6 +128,7 @@ public interface PostSearchesRequestOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Pagination pagination = 4;</code>
+   * @return The pagination.
    */
   com.clarifai.grpc.api.Pagination getPagination();
   /**

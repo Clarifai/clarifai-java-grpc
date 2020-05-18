@@ -139,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @return A list containing the scopes.
    */
   public java.util.List<com.clarifai.grpc.auth.scope.S> getScopesList() {
     return new com.google.protobuf.Internal.ListAdapter<
@@ -150,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @return The count of scopes.
    */
   public int getScopesCount() {
     return scopes_.size();
@@ -160,6 +162,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   public com.clarifai.grpc.auth.scope.S getScopes(int index) {
     return scopes_converter_.convert(scopes_.get(index));
@@ -170,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @return A list containing the enum numeric values on the wire for scopes.
    */
   public java.util.List<java.lang.Integer>
   getScopesValueList() {
@@ -181,6 +186,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of scopes at the given index.
    */
   public int getScopesValue(int index) {
     return scopes_.get(index);
@@ -195,6 +202,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @return A list containing the endpoints.
    */
   public com.google.protobuf.ProtocolStringList
       getEndpointsList() {
@@ -206,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @return The count of endpoints.
    */
   public int getEndpointsCount() {
     return endpoints_.size();
@@ -216,6 +225,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @param index The index of the element to return.
+   * @return The endpoints at the given index.
    */
   public java.lang.String getEndpoints(int index) {
     return endpoints_.get(index);
@@ -226,6 +237,8 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the endpoints at the given index.
    */
   public com.google.protobuf.ByteString
       getEndpointsBytes(int index) {
@@ -609,6 +622,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @return A list containing the scopes.
      */
     public java.util.List<com.clarifai.grpc.auth.scope.S> getScopesList() {
       return new com.google.protobuf.Internal.ListAdapter<
@@ -620,6 +634,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @return The count of scopes.
      */
     public int getScopesCount() {
       return scopes_.size();
@@ -630,6 +645,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
      */
     public com.clarifai.grpc.auth.scope.S getScopes(int index) {
       return scopes_converter_.convert(scopes_.get(index));
@@ -640,6 +657,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
      */
     public Builder setScopes(
         int index, com.clarifai.grpc.auth.scope.S value) {
@@ -657,6 +677,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param value The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopes(com.clarifai.grpc.auth.scope.S value) {
       if (value == null) {
@@ -673,6 +695,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param values The scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllScopes(
         java.lang.Iterable<? extends com.clarifai.grpc.auth.scope.S> values) {
@@ -689,6 +713,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearScopes() {
       scopes_ = java.util.Collections.emptyList();
@@ -702,6 +727,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @return A list containing the enum numeric values on the wire for scopes.
      */
     public java.util.List<java.lang.Integer>
     getScopesValueList() {
@@ -713,6 +739,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of scopes at the given index.
      */
     public int getScopesValue(int index) {
       return scopes_.get(index);
@@ -723,6 +751,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of scopes at the given index.
+     * @return This builder for chaining.
      */
     public Builder setScopesValue(
         int index, int value) {
@@ -737,6 +768,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param value The enum numeric value on the wire for scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addScopesValue(int value) {
       ensureScopesIsMutable();
@@ -750,6 +783,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+     * @param values The enum numeric values on the wire for scopes to add.
+     * @return This builder for chaining.
      */
     public Builder addAllScopesValue(
         java.lang.Iterable<java.lang.Integer> values) {
@@ -774,6 +809,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @return A list containing the endpoints.
      */
     public com.google.protobuf.ProtocolStringList
         getEndpointsList() {
@@ -785,6 +821,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @return The count of endpoints.
      */
     public int getEndpointsCount() {
       return endpoints_.size();
@@ -795,6 +832,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @param index The index of the element to return.
+     * @return The endpoints at the given index.
      */
     public java.lang.String getEndpoints(int index) {
       return endpoints_.get(index);
@@ -805,6 +844,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the endpoints at the given index.
      */
     public com.google.protobuf.ByteString
         getEndpointsBytes(int index) {
@@ -816,6 +857,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The endpoints to set.
+     * @return This builder for chaining.
      */
     public Builder setEndpoints(
         int index, java.lang.String value) {
@@ -833,6 +877,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @param value The endpoints to add.
+     * @return This builder for chaining.
      */
     public Builder addEndpoints(
         java.lang.String value) {
@@ -850,6 +896,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @param values The endpoints to add.
+     * @return This builder for chaining.
      */
     public Builder addAllEndpoints(
         java.lang.Iterable<java.lang.String> values) {
@@ -865,6 +913,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearEndpoints() {
       endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -878,6 +927,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string endpoints = 2;</code>
+     * @param value The bytes of the endpoints to add.
+     * @return This builder for chaining.
      */
     public Builder addEndpointsBytes(
         com.google.protobuf.ByteString value) {

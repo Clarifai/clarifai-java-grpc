@@ -9,10 +9,12 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
@@ -27,6 +29,7 @@ public interface ListModelsRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 page = 2;</code>
+   * @return The page.
    */
   int getPage();
 
@@ -37,24 +40,31 @@ public interface ListModelsRequestOrBuilder extends
    * </pre>
    *
    * <code>uint32 per_page = 3;</code>
+   * @return The perPage.
    */
   int getPerPage();
 
   /**
    * <code>repeated string ids = 4;</code>
+   * @return A list containing the ids.
    */
   java.util.List<java.lang.String>
       getIdsList();
   /**
    * <code>repeated string ids = 4;</code>
+   * @return The count of ids.
    */
   int getIdsCount();
   /**
    * <code>repeated string ids = 4;</code>
+   * @param index The index of the element to return.
+   * @return The ids at the given index.
    */
   java.lang.String getIds(int index);
   /**
    * <code>repeated string ids = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ids at the given index.
    */
   com.google.protobuf.ByteString
       getIdsBytes(int index);

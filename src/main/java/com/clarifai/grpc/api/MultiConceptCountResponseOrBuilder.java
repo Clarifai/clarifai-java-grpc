@@ -13,6 +13,7 @@ public interface MultiConceptCountResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -21,6 +22,7 @@ public interface MultiConceptCountResponseOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**

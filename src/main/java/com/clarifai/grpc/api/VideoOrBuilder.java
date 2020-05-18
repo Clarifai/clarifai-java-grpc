@@ -14,6 +14,7 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The url.
    */
   java.lang.String getUrl();
   /**
@@ -23,6 +24,7 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>string url = 1;</code>
+   * @return The bytes for url.
    */
   com.google.protobuf.ByteString
       getUrlBytes();
@@ -38,11 +40,13 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>bytes base64 = 2;</code>
+   * @return The base64.
    */
   com.google.protobuf.ByteString getBase64();
 
   /**
    * <code>bool allow_duplicate_url = 4;</code>
+   * @return The allowDuplicateUrl.
    */
   boolean getAllowDuplicateUrl();
 
@@ -53,6 +57,7 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>string thumbnail_url = 5;</code>
+   * @return The thumbnailUrl.
    */
   java.lang.String getThumbnailUrl();
   /**
@@ -62,6 +67,7 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>string thumbnail_url = 5;</code>
+   * @return The bytes for thumbnailUrl.
    */
   com.google.protobuf.ByteString
       getThumbnailUrlBytes();
@@ -73,6 +79,7 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
+   * @return Whether the hosted field is set.
    */
   boolean hasHosted();
   /**
@@ -82,6 +89,7 @@ public interface VideoOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
+   * @return The hosted.
    */
   com.clarifai.grpc.api.HostedURL getHosted();
   /**

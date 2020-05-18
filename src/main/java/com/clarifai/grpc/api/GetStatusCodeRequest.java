@@ -97,6 +97,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object statusCodeId_;
   /**
    * <code>string status_code_id = 1;</code>
+   * @return The statusCodeId.
    */
   public java.lang.String getStatusCodeId() {
     java.lang.Object ref = statusCodeId_;
@@ -112,6 +113,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string status_code_id = 1;</code>
+   * @return The bytes for statusCodeId.
    */
   public com.google.protobuf.ByteString
       getStatusCodeIdBytes() {
@@ -438,6 +440,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object statusCodeId_ = "";
     /**
      * <code>string status_code_id = 1;</code>
+     * @return The statusCodeId.
      */
     public java.lang.String getStatusCodeId() {
       java.lang.Object ref = statusCodeId_;
@@ -453,6 +456,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string status_code_id = 1;</code>
+     * @return The bytes for statusCodeId.
      */
     public com.google.protobuf.ByteString
         getStatusCodeIdBytes() {
@@ -469,6 +473,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string status_code_id = 1;</code>
+     * @param value The statusCodeId to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusCodeId(
         java.lang.String value) {
@@ -482,6 +488,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string status_code_id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStatusCodeId() {
       
@@ -491,6 +498,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string status_code_id = 1;</code>
+     * @param value The bytes for statusCodeId to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusCodeIdBytes(
         com.google.protobuf.ByteString value) {

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Segmentation mask.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Mask}
  */
 public  final class Mask extends
@@ -109,18 +113,35 @@ private static final long serialVersionUID = 0L;
   public static final int COLOR_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.Color color_;
   /**
+   * <pre>
+   * The color of the segmentation mask that was created. This is used in visualizing masks next to
+   * each other.
+   * </pre>
+   *
    * <code>.clarifai.api.Color color = 1;</code>
+   * @return Whether the color field is set.
    */
   public boolean hasColor() {
     return color_ != null;
   }
   /**
+   * <pre>
+   * The color of the segmentation mask that was created. This is used in visualizing masks next to
+   * each other.
+   * </pre>
+   *
    * <code>.clarifai.api.Color color = 1;</code>
+   * @return The color.
    */
   public com.clarifai.grpc.api.Color getColor() {
     return color_ == null ? com.clarifai.grpc.api.Color.getDefaultInstance() : color_;
   }
   /**
+   * <pre>
+   * The color of the segmentation mask that was created. This is used in visualizing masks next to
+   * each other.
+   * </pre>
+   *
    * <code>.clarifai.api.Color color = 1;</code>
    */
   public com.clarifai.grpc.api.ColorOrBuilder getColorOrBuilder() {
@@ -130,18 +151,32 @@ private static final long serialVersionUID = 0L;
   public static final int IMAGE_FIELD_NUMBER = 2;
   private com.clarifai.grpc.api.Image image_;
   /**
+   * <pre>
+   * The image of the mask in a non-raster format.
+   * </pre>
+   *
    * <code>.clarifai.api.Image image = 2;</code>
+   * @return Whether the image field is set.
    */
   public boolean hasImage() {
     return image_ != null;
   }
   /**
+   * <pre>
+   * The image of the mask in a non-raster format.
+   * </pre>
+   *
    * <code>.clarifai.api.Image image = 2;</code>
+   * @return The image.
    */
   public com.clarifai.grpc.api.Image getImage() {
     return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
   }
   /**
+   * <pre>
+   * The image of the mask in a non-raster format.
+   * </pre>
+   *
    * <code>.clarifai.api.Image image = 2;</code>
    */
   public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
@@ -325,6 +360,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Segmentation mask.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Mask}
    */
   public static final class Builder extends
@@ -497,13 +536,25 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Color, com.clarifai.grpc.api.Color.Builder, com.clarifai.grpc.api.ColorOrBuilder> colorBuilder_;
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
+     * @return Whether the color field is set.
      */
     public boolean hasColor() {
       return colorBuilder_ != null || color_ != null;
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
+     * @return The color.
      */
     public com.clarifai.grpc.api.Color getColor() {
       if (colorBuilder_ == null) {
@@ -513,6 +564,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     public Builder setColor(com.clarifai.grpc.api.Color value) {
@@ -529,6 +585,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     public Builder setColor(
@@ -543,6 +604,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     public Builder mergeColor(com.clarifai.grpc.api.Color value) {
@@ -561,6 +627,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     public Builder clearColor() {
@@ -575,6 +646,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     public com.clarifai.grpc.api.Color.Builder getColorBuilder() {
@@ -583,6 +659,11 @@ private static final long serialVersionUID = 0L;
       return getColorFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     public com.clarifai.grpc.api.ColorOrBuilder getColorOrBuilder() {
@@ -594,6 +675,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The color of the segmentation mask that was created. This is used in visualizing masks next to
+     * each other.
+     * </pre>
+     *
      * <code>.clarifai.api.Color color = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -614,13 +700,23 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> imageBuilder_;
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
+     * @return Whether the image field is set.
      */
     public boolean hasImage() {
       return imageBuilder_ != null || image_ != null;
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
+     * @return The image.
      */
     public com.clarifai.grpc.api.Image getImage() {
       if (imageBuilder_ == null) {
@@ -630,6 +726,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     public Builder setImage(com.clarifai.grpc.api.Image value) {
@@ -646,6 +746,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     public Builder setImage(
@@ -660,6 +764,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     public Builder mergeImage(com.clarifai.grpc.api.Image value) {
@@ -678,6 +786,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     public Builder clearImage() {
@@ -692,6 +804,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     public com.clarifai.grpc.api.Image.Builder getImageBuilder() {
@@ -700,6 +816,10 @@ private static final long serialVersionUID = 0L;
       return getImageFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
@@ -711,6 +831,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The image of the mask in a non-raster format.
+     * </pre>
+     *
      * <code>.clarifai.api.Image image = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

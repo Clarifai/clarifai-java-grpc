@@ -100,6 +100,7 @@ private static final long serialVersionUID = 0L;
   private float longitude_;
   /**
    * <code>float longitude = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The longitude.
    */
   public float getLongitude() {
     return longitude_;
@@ -109,6 +110,7 @@ private static final long serialVersionUID = 0L;
   private float latitude_;
   /**
    * <code>float latitude = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The latitude.
    */
   public float getLatitude() {
     return latitude_;
@@ -446,12 +448,15 @@ private static final long serialVersionUID = 0L;
     private float longitude_ ;
     /**
      * <code>float longitude = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The longitude.
      */
     public float getLongitude() {
       return longitude_;
     }
     /**
      * <code>float longitude = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The longitude to set.
+     * @return This builder for chaining.
      */
     public Builder setLongitude(float value) {
       
@@ -461,6 +466,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float longitude = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLongitude() {
       
@@ -472,12 +478,15 @@ private static final long serialVersionUID = 0L;
     private float latitude_ ;
     /**
      * <code>float latitude = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The latitude.
      */
     public float getLatitude() {
       return latitude_;
     }
     /**
      * <code>float latitude = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The latitude to set.
+     * @return This builder for chaining.
      */
     public Builder setLatitude(float value) {
       
@@ -487,6 +496,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float latitude = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
      */
     public Builder clearLatitude() {
       

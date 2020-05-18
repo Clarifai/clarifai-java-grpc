@@ -9,19 +9,24 @@ public interface EmbeddingOrBuilder extends
 
   /**
    * <code>repeated float vector = 1 [packed = true];</code>
+   * @return A list containing the vector.
    */
   java.util.List<java.lang.Float> getVectorList();
   /**
    * <code>repeated float vector = 1 [packed = true];</code>
+   * @return The count of vector.
    */
   int getVectorCount();
   /**
    * <code>repeated float vector = 1 [packed = true];</code>
+   * @param index The index of the element to return.
+   * @return The vector at the given index.
    */
   float getVector(int index);
 
   /**
    * <code>uint32 num_dimensions = 2;</code>
+   * @return The numDimensions.
    */
   int getNumDimensions();
 }

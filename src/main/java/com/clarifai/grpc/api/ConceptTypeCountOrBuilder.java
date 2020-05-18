@@ -14,6 +14,7 @@ public interface ConceptTypeCountOrBuilder extends
    * </pre>
    *
    * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The positive.
    */
   int getPositive();
 
@@ -24,6 +25,7 @@ public interface ConceptTypeCountOrBuilder extends
    * </pre>
    *
    * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The negative.
    */
   int getNegative();
 }

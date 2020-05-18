@@ -104,12 +104,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -125,6 +127,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelId_;
   /**
    * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
@@ -140,6 +143,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   public com.google.protobuf.ByteString
       getModelIdBytes() {
@@ -492,12 +496,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -607,6 +613,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelId_ = "";
     /**
      * <code>string model_id = 2;</code>
+     * @return The modelId.
      */
     public java.lang.String getModelId() {
       java.lang.Object ref = modelId_;
@@ -622,6 +629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return The bytes for modelId.
      */
     public com.google.protobuf.ByteString
         getModelIdBytes() {
@@ -638,6 +646,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelId(
         java.lang.String value) {
@@ -651,6 +661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearModelId() {
       
@@ -660,6 +671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string model_id = 2;</code>
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
      */
     public Builder setModelIdBytes(
         com.google.protobuf.ByteString value) {

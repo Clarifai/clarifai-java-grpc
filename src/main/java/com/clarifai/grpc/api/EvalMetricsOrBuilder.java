@@ -9,10 +9,12 @@ public interface EvalMetricsOrBuilder extends
 
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -21,11 +23,25 @@ public interface EvalMetricsOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   * <code>string id = 10;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 10;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
+   * @return Whether the summary field is set.
    */
   boolean hasSummary();
   /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
+   * @return The summary.
    */
   com.clarifai.grpc.api.MetricsSummary getSummary();
   /**
@@ -35,10 +51,12 @@ public interface EvalMetricsOrBuilder extends
 
   /**
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
+   * @return Whether the confusionMatrix field is set.
    */
   boolean hasConfusionMatrix();
   /**
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
+   * @return The confusionMatrix.
    */
   com.clarifai.grpc.api.ConfusionMatrix getConfusionMatrix();
   /**
@@ -48,10 +66,12 @@ public interface EvalMetricsOrBuilder extends
 
   /**
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
+   * @return Whether the cooccurrenceMatrix field is set.
    */
   boolean hasCooccurrenceMatrix();
   /**
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
+   * @return The cooccurrenceMatrix.
    */
   com.clarifai.grpc.api.CooccurrenceMatrix getCooccurrenceMatrix();
   /**
@@ -61,10 +81,12 @@ public interface EvalMetricsOrBuilder extends
 
   /**
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
+   * @return Whether the labelCounts field is set.
    */
   boolean hasLabelCounts();
   /**
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
+   * @return The labelCounts.
    */
   com.clarifai.grpc.api.LabelDistribution getLabelCounts();
   /**

@@ -62,6 +62,8 @@ public enum UsageIntervalType
   }
 
   /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
@@ -69,6 +71,10 @@ public enum UsageIntervalType
     return forNumber(value);
   }
 
+  /**
+   * @param value The numeric wire value of the corresponding enum entry.
+   * @return The enum associated with the given numeric wire value.
+   */
   public static UsageIntervalType forNumber(int value) {
     switch (value) {
       case 0: return undef;
@@ -101,7 +107,7 @@ public enum UsageIntervalType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(4);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final UsageIntervalType[] VALUES = values();

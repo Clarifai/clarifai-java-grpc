@@ -13,6 +13,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string input_id = 2;</code>
+   * @return The inputId.
    */
   java.lang.String getInputId();
   /**
@@ -39,6 +42,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string input_id = 2;</code>
+   * @return The bytes for inputId.
    */
   com.google.protobuf.ByteString
       getInputIdBytes();
@@ -49,6 +53,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return Whether the data field is set.
    */
   boolean hasData();
   /**
@@ -57,6 +62,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 3;</code>
+   * @return The data.
    */
   com.clarifai.grpc.api.Data getData();
   /**
@@ -70,10 +76,12 @@ public interface AnnotationOrBuilder extends
 
   /**
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
+   * @return Whether the annotationInfo field is set.
    */
   boolean hasAnnotationInfo();
   /**
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
+   * @return The annotationInfo.
    */
   com.google.protobuf.Struct getAnnotationInfo();
   /**
@@ -83,30 +91,11 @@ public interface AnnotationOrBuilder extends
 
   /**
    * <pre>
-   * ID of the worker this annotation is tied to
-   * Deprecated: please use user id or model version id.
-   * </pre>
-   *
-   * <code>string worker_id = 4 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated java.lang.String getWorkerId();
-  /**
-   * <pre>
-   * ID of the worker this annotation is tied to
-   * Deprecated: please use user id or model version id.
-   * </pre>
-   *
-   * <code>string worker_id = 4 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getWorkerIdBytes();
-
-  /**
-   * <pre>
    * ID of the user this annotation is created by
    * </pre>
    *
    * <code>string user_id = 15;</code>
+   * @return The userId.
    */
   java.lang.String getUserId();
   /**
@@ -115,6 +104,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string user_id = 15;</code>
+   * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
@@ -125,6 +115,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string model_version_id = 16;</code>
+   * @return The modelVersionId.
    */
   java.lang.String getModelVersionId();
   /**
@@ -133,6 +124,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>string model_version_id = 16;</code>
+   * @return The bytes for modelVersionId.
    */
   com.google.protobuf.ByteString
       getModelVersionIdBytes();
@@ -142,10 +134,10 @@ public interface AnnotationOrBuilder extends
    * The embedding model version used make this annotation available for search and training
    * Note that an annotation always have an 'embed_model_version_id' even if it is For human
    * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-   * "Dangling" are an exception. They do not have an embedding tied to them.
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The embedModelVersionId.
    */
   java.lang.String getEmbedModelVersionId();
   /**
@@ -153,35 +145,13 @@ public interface AnnotationOrBuilder extends
    * The embedding model version used make this annotation available for search and training
    * Note that an annotation always have an 'embed_model_version_id' even if it is For human
    * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
-   * "Dangling" are an exception. They do not have an embedding tied to them.
    * </pre>
    *
    * <code>string embed_model_version_id = 14;</code>
+   * @return The bytes for embedModelVersionId.
    */
   com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes();
-
-  /**
-   * <pre>
-   * ID of a related "parent" annotation to tie this annotation to.
-   * For example a model produced annotation can be parent to the annotation a human
-   * creates after correcting and verifying it.
-   * </pre>
-   *
-   * <code>string parent_annotation_id = 6;</code>
-   */
-  java.lang.String getParentAnnotationId();
-  /**
-   * <pre>
-   * ID of a related "parent" annotation to tie this annotation to.
-   * For example a model produced annotation can be parent to the annotation a human
-   * creates after correcting and verifying it.
-   * </pre>
-   *
-   * <code>string parent_annotation_id = 6;</code>
-   */
-  com.google.protobuf.ByteString
-      getParentAnnotationIdBytes();
 
   /**
    * <pre>
@@ -189,6 +159,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 7;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -197,6 +168,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 7;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
@@ -218,6 +190,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -230,6 +203,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -251,6 +225,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+   * @return Whether the modifiedAt field is set.
    */
   boolean hasModifiedAt();
   /**
@@ -259,6 +234,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
+   * @return The modifiedAt.
    */
   com.google.protobuf.Timestamp getModifiedAt();
   /**
@@ -276,6 +252,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>bool trusted = 10;</code>
+   * @return The trusted.
    */
   boolean getTrusted();
 
@@ -285,6 +262,7 @@ public interface AnnotationOrBuilder extends
    * </pre>
    *
    * <code>bool default = 12;</code>
+   * @return The default.
    */
   boolean getDefault();
 }

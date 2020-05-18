@@ -142,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -161,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -180,6 +182,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object url_;
   /**
    * <code>string url = 2;</code>
+   * @return The url.
    */
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
@@ -195,6 +198,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string url = 2;</code>
+   * @return The bytes for url.
    */
   public com.google.protobuf.ByteString
       getUrlBytes() {
@@ -310,6 +314,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * @return Whether the annotation field is set.
    */
   public boolean hasAnnotation() {
     return annotation_ != null;
@@ -322,6 +327,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * @return The annotation.
    */
   public com.clarifai.grpc.api.Annotation getAnnotation() {
     return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
@@ -807,6 +813,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -826,6 +833,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -846,6 +854,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -863,6 +873,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -876,6 +887,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -892,6 +905,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object url_ = "";
     /**
      * <code>string url = 2;</code>
+     * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
@@ -907,6 +921,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2;</code>
+     * @return The bytes for url.
      */
     public com.google.protobuf.ByteString
         getUrlBytes() {
@@ -923,6 +938,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2;</code>
+     * @param value The url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrl(
         java.lang.String value) {
@@ -936,6 +953,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearUrl() {
       
@@ -945,6 +963,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2;</code>
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
      */
     public Builder setUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -1521,6 +1541,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * @return Whether the annotation field is set.
      */
     public boolean hasAnnotation() {
       return annotationBuilder_ != null || annotation_ != null;
@@ -1533,6 +1554,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * @return The annotation.
      */
     public com.clarifai.grpc.api.Annotation getAnnotation() {
       if (annotationBuilder_ == null) {

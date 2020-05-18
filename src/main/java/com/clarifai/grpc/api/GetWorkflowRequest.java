@@ -115,12 +115,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
@@ -142,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string workflow_id = 2;</code>
+   * @return The workflowId.
    */
   public java.lang.String getWorkflowId() {
     java.lang.Object ref = workflowId_;
@@ -163,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string workflow_id = 2;</code>
+   * @return The bytes for workflowId.
    */
   public com.google.protobuf.ByteString
       getWorkflowIdBytes() {
@@ -186,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool favor_clarifai_workflows = 3;</code>
+   * @return The favorClarifaiWorkflows.
    */
   public boolean getFavorClarifaiWorkflows() {
     return favorClarifaiWorkflows_;
@@ -552,12 +557,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return Whether the userAppId field is set.
      */
     public boolean hasUserAppId() {
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+     * @return The userAppId.
      */
     public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
       if (userAppIdBuilder_ == null) {
@@ -673,6 +680,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string workflow_id = 2;</code>
+     * @return The workflowId.
      */
     public java.lang.String getWorkflowId() {
       java.lang.Object ref = workflowId_;
@@ -694,6 +702,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string workflow_id = 2;</code>
+     * @return The bytes for workflowId.
      */
     public com.google.protobuf.ByteString
         getWorkflowIdBytes() {
@@ -716,6 +725,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string workflow_id = 2;</code>
+     * @param value The workflowId to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkflowId(
         java.lang.String value) {
@@ -735,6 +746,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string workflow_id = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearWorkflowId() {
       
@@ -750,6 +762,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string workflow_id = 2;</code>
+     * @param value The bytes for workflowId to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkflowIdBytes(
         com.google.protobuf.ByteString value) {
@@ -770,6 +784,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool favor_clarifai_workflows = 3;</code>
+     * @return The favorClarifaiWorkflows.
      */
     public boolean getFavorClarifaiWorkflows() {
       return favorClarifaiWorkflows_;
@@ -780,6 +795,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool favor_clarifai_workflows = 3;</code>
+     * @param value The favorClarifaiWorkflows to set.
+     * @return This builder for chaining.
      */
     public Builder setFavorClarifaiWorkflows(boolean value) {
       
@@ -793,6 +810,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool favor_clarifai_workflows = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFavorClarifaiWorkflows() {
       

@@ -13,6 +13,7 @@ public interface LossCurveEntryOrBuilder extends
    * </pre>
    *
    * <code>uint32 epoch = 1;</code>
+   * @return The epoch.
    */
   int getEpoch();
 
@@ -22,6 +23,7 @@ public interface LossCurveEntryOrBuilder extends
    * </pre>
    *
    * <code>uint32 global_step = 2;</code>
+   * @return The globalStep.
    */
   int getGlobalStep();
 
@@ -32,6 +34,7 @@ public interface LossCurveEntryOrBuilder extends
    * </pre>
    *
    * <code>float cost = 3;</code>
+   * @return The cost.
    */
   float getCost();
 }

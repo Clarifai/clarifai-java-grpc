@@ -166,6 +166,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -181,6 +182,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -204,6 +206,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
+   * @return Whether the createdAt field is set.
    */
   public boolean hasCreatedAt() {
     return createdAt_ != null;
@@ -214,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
+   * @return The createdAt.
    */
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
@@ -237,6 +241,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 3;</code>
+   * @return Whether the status field is set.
    */
   public boolean hasStatus() {
     return status_ != null;
@@ -247,6 +252,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 3;</code>
+   * @return The status.
    */
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
@@ -266,6 +272,7 @@ private static final long serialVersionUID = 0L;
   private int activeConceptCount_;
   /**
    * <code>uint32 active_concept_count = 4;</code>
+   * @return The activeConceptCount.
    */
   public int getActiveConceptCount() {
     return activeConceptCount_;
@@ -275,12 +282,14 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.EvalMetrics metrics_;
   /**
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
+   * @return Whether the metrics field is set.
    */
   public boolean hasMetrics() {
     return metrics_ != null;
   }
   /**
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
+   * @return The metrics.
    */
   public com.clarifai.grpc.api.EvalMetrics getMetrics() {
     return metrics_ == null ? com.clarifai.grpc.api.EvalMetrics.getDefaultInstance() : metrics_;
@@ -300,6 +309,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 total_input_count = 6;</code>
+   * @return The totalInputCount.
    */
   public int getTotalInputCount() {
     return totalInputCount_;
@@ -314,6 +324,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string worker_id = 9;</code>
+   * @return The workerId.
    */
   public java.lang.String getWorkerId() {
     java.lang.Object ref = workerId_;
@@ -334,6 +345,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string worker_id = 9;</code>
+   * @return The bytes for workerId.
    */
   public com.google.protobuf.ByteString
       getWorkerIdBytes() {
@@ -357,6 +369,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
+   * @return Whether the completedAt field is set.
    */
   public boolean hasCompletedAt() {
     return completedAt_ != null;
@@ -367,6 +380,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
+   * @return The completedAt.
    */
   public com.google.protobuf.Timestamp getCompletedAt() {
     return completedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completedAt_;
@@ -864,6 +878,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -879,6 +894,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -895,6 +911,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -908,6 +926,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -917,6 +936,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -939,6 +960,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 2;</code>
+     * @return Whether the createdAt field is set.
      */
     public boolean hasCreatedAt() {
       return createdAtBuilder_ != null || createdAt_ != null;
@@ -949,6 +971,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 2;</code>
+     * @return The createdAt.
      */
     public com.google.protobuf.Timestamp getCreatedAt() {
       if (createdAtBuilder_ == null) {
@@ -1092,6 +1115,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 3;</code>
+     * @return Whether the status field is set.
      */
     public boolean hasStatus() {
       return statusBuilder_ != null || status_ != null;
@@ -1102,6 +1126,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 3;</code>
+     * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
       if (statusBuilder_ == null) {
@@ -1239,12 +1264,15 @@ private static final long serialVersionUID = 0L;
     private int activeConceptCount_ ;
     /**
      * <code>uint32 active_concept_count = 4;</code>
+     * @return The activeConceptCount.
      */
     public int getActiveConceptCount() {
       return activeConceptCount_;
     }
     /**
      * <code>uint32 active_concept_count = 4;</code>
+     * @param value The activeConceptCount to set.
+     * @return This builder for chaining.
      */
     public Builder setActiveConceptCount(int value) {
       
@@ -1254,6 +1282,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 active_concept_count = 4;</code>
+     * @return This builder for chaining.
      */
     public Builder clearActiveConceptCount() {
       
@@ -1267,12 +1296,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder> metricsBuilder_;
     /**
      * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
+     * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
       return metricsBuilder_ != null || metrics_ != null;
     }
     /**
      * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
+     * @return The metrics.
      */
     public com.clarifai.grpc.api.EvalMetrics getMetrics() {
       if (metricsBuilder_ == null) {
@@ -1386,6 +1417,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 total_input_count = 6;</code>
+     * @return The totalInputCount.
      */
     public int getTotalInputCount() {
       return totalInputCount_;
@@ -1396,6 +1428,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 total_input_count = 6;</code>
+     * @param value The totalInputCount to set.
+     * @return This builder for chaining.
      */
     public Builder setTotalInputCount(int value) {
       
@@ -1409,6 +1443,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 total_input_count = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTotalInputCount() {
       
@@ -1425,6 +1460,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string worker_id = 9;</code>
+     * @return The workerId.
      */
     public java.lang.String getWorkerId() {
       java.lang.Object ref = workerId_;
@@ -1445,6 +1481,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string worker_id = 9;</code>
+     * @return The bytes for workerId.
      */
     public com.google.protobuf.ByteString
         getWorkerIdBytes() {
@@ -1466,6 +1503,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string worker_id = 9;</code>
+     * @param value The workerId to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkerId(
         java.lang.String value) {
@@ -1484,6 +1523,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string worker_id = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearWorkerId() {
       
@@ -1498,6 +1538,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string worker_id = 9;</code>
+     * @param value The bytes for workerId to set.
+     * @return This builder for chaining.
      */
     public Builder setWorkerIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1520,6 +1562,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp completed_at = 10;</code>
+     * @return Whether the completedAt field is set.
      */
     public boolean hasCompletedAt() {
       return completedAtBuilder_ != null || completedAt_ != null;
@@ -1530,6 +1573,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Timestamp completed_at = 10;</code>
+     * @return The completedAt.
      */
     public com.google.protobuf.Timestamp getCompletedAt() {
       if (completedAtBuilder_ == null) {

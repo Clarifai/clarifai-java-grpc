@@ -140,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
+   * @return Whether the processed field is set.
    */
   public boolean hasProcessed() {
     return processed_ != null;
@@ -150,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
+   * @return The processed.
    */
   public com.clarifai.grpc.api.ConceptTypeCount getProcessed() {
     return processed_ == null ? com.clarifai.grpc.api.ConceptTypeCount.getDefaultInstance() : processed_;
@@ -173,6 +175,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
+   * @return Whether the toProcess field is set.
    */
   public boolean hasToProcess() {
     return toProcess_ != null;
@@ -183,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
+   * @return The toProcess.
    */
   public com.clarifai.grpc.api.ConceptTypeCount getToProcess() {
     return toProcess_ == null ? com.clarifai.grpc.api.ConceptTypeCount.getDefaultInstance() : toProcess_;
@@ -206,6 +210,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
+   * @return Whether the errors field is set.
    */
   public boolean hasErrors() {
     return errors_ != null;
@@ -216,6 +221,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
+   * @return The errors.
    */
   public com.clarifai.grpc.api.ConceptTypeCount getErrors() {
     return errors_ == null ? com.clarifai.grpc.api.ConceptTypeCount.getDefaultInstance() : errors_;
@@ -239,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
+   * @return Whether the processing field is set.
    */
   public boolean hasProcessing() {
     return processing_ != null;
@@ -249,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
+   * @return The processing.
    */
   public com.clarifai.grpc.api.ConceptTypeCount getProcessing() {
     return processing_ == null ? com.clarifai.grpc.api.ConceptTypeCount.getDefaultInstance() : processing_;
@@ -678,6 +686,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
+     * @return Whether the processed field is set.
      */
     public boolean hasProcessed() {
       return processedBuilder_ != null || processed_ != null;
@@ -688,6 +697,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount processed = 1;</code>
+     * @return The processed.
      */
     public com.clarifai.grpc.api.ConceptTypeCount getProcessed() {
       if (processedBuilder_ == null) {
@@ -831,6 +841,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
+     * @return Whether the toProcess field is set.
      */
     public boolean hasToProcess() {
       return toProcessBuilder_ != null || toProcess_ != null;
@@ -841,6 +852,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount to_process = 2;</code>
+     * @return The toProcess.
      */
     public com.clarifai.grpc.api.ConceptTypeCount getToProcess() {
       if (toProcessBuilder_ == null) {
@@ -984,6 +996,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
+     * @return Whether the errors field is set.
      */
     public boolean hasErrors() {
       return errorsBuilder_ != null || errors_ != null;
@@ -994,6 +1007,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount errors = 3;</code>
+     * @return The errors.
      */
     public com.clarifai.grpc.api.ConceptTypeCount getErrors() {
       if (errorsBuilder_ == null) {
@@ -1137,6 +1151,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
+     * @return Whether the processing field is set.
      */
     public boolean hasProcessing() {
       return processingBuilder_ != null || processing_ != null;
@@ -1147,6 +1162,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.ConceptTypeCount processing = 4;</code>
+     * @return The processing.
      */
     public com.clarifai.grpc.api.ConceptTypeCount getProcessing() {
       if (processingBuilder_ == null) {

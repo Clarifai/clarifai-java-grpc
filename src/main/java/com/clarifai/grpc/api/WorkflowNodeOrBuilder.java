@@ -14,6 +14,7 @@ public interface WorkflowNodeOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -23,6 +24,7 @@ public interface WorkflowNodeOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -34,6 +36,7 @@ public interface WorkflowNodeOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2;</code>
+   * @return Whether the model field is set.
    */
   boolean hasModel();
   /**
@@ -43,6 +46,7 @@ public interface WorkflowNodeOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2;</code>
+   * @return The model.
    */
   com.clarifai.grpc.api.Model getModel();
   /**

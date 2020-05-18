@@ -121,6 +121,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <code>string id = 1;</code>
+   * @return The id.
    */
   public java.lang.String getId() {
     java.lang.Object ref = id_;
@@ -136,6 +137,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
@@ -159,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>uint32 count = 2;</code>
+   * @return The count.
    */
   public int getCount() {
     return count_;
@@ -172,6 +175,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>float score = 3;</code>
+   * @return The score.
    */
   public float getScore() {
     return score_;
@@ -636,6 +640,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -651,6 +656,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -667,6 +673,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -680,6 +688,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -689,6 +698,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -709,6 +720,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 count = 2;</code>
+     * @return The count.
      */
     public int getCount() {
       return count_;
@@ -719,6 +731,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 count = 2;</code>
+     * @param value The count to set.
+     * @return This builder for chaining.
      */
     public Builder setCount(int value) {
       
@@ -732,6 +746,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>uint32 count = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearCount() {
       
@@ -747,6 +762,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float score = 3;</code>
+     * @return The score.
      */
     public float getScore() {
       return score_;
@@ -757,6 +773,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float score = 3;</code>
+     * @param value The score to set.
+     * @return This builder for chaining.
      */
     public Builder setScore(float value) {
       
@@ -770,6 +788,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>float score = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearScore() {
       

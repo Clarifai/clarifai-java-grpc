@@ -13,6 +13,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -39,6 +42,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -52,6 +56,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
+   * @return The value.
    */
   float getValue();
 
@@ -62,6 +67,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -71,6 +77,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -92,6 +99,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string language = 5;</code>
+   * @return The language.
    */
   java.lang.String getLanguage();
   /**
@@ -103,6 +111,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string language = 5;</code>
+   * @return The bytes for language.
    */
   com.google.protobuf.ByteString
       getLanguageBytes();
@@ -113,6 +122,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 6;</code>
+   * @return The appId.
    */
   java.lang.String getAppId();
   /**
@@ -121,6 +131,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string app_id = 6;</code>
+   * @return The bytes for appId.
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
@@ -131,6 +142,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string definition = 7;</code>
+   * @return The definition.
    */
   java.lang.String getDefinition();
   /**
@@ -139,6 +151,7 @@ public interface ConceptOrBuilder extends
    * </pre>
    *
    * <code>string definition = 7;</code>
+   * @return The bytes for definition.
    */
   com.google.protobuf.ByteString
       getDefinitionBytes();
@@ -146,21 +159,23 @@ public interface ConceptOrBuilder extends
   /**
    * <pre>
    * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-   * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+   * of concepts that you can separate out based on this field. For example "age_appearance" vs
    * "gender_appearance" in a list of concept returned from the demographics model.
    * </pre>
    *
    * <code>string vocab_id = 8;</code>
+   * @return The vocabId.
    */
   java.lang.String getVocabId();
   /**
    * <pre>
    * The vocabulary that this concept belongs to. This is useful if you have different unique sets
-   * of concepts that you can seperate out based on this field. For example "age_appearance" vs
+   * of concepts that you can separate out based on this field. For example "age_appearance" vs
    * "gender_appearance" in a list of concept returned from the demographics model.
    * </pre>
    *
    * <code>string vocab_id = 8;</code>
+   * @return The bytes for vocabId.
    */
   com.google.protobuf.ByteString
       getVocabIdBytes();

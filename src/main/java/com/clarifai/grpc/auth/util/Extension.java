@@ -39,7 +39,7 @@ public final class Extension {
   /**
    * <pre>
    * indicates if this rpc should be private. If true, then internal use only. If False,
-   * then publicly avaliable to world.
+   * then publicly available to world.
    * </pre>
    *
    * <code>extend .google.protobuf.MethodOptions { ... }</code>

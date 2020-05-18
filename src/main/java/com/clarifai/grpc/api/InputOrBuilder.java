@@ -13,6 +13,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 2;</code>
+   * @return Whether the data field is set.
    */
   boolean hasData();
   /**
@@ -39,6 +42,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.Data data = 2;</code>
+   * @return The data.
    */
   com.clarifai.grpc.api.Data getData();
   /**
@@ -60,6 +64,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
+   * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
@@ -72,6 +77,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
+   * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
@@ -93,6 +99,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 5;</code>
+   * @return Whether the modifiedAt field is set.
    */
   boolean hasModifiedAt();
   /**
@@ -101,6 +108,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 5;</code>
+   * @return The modifiedAt.
    */
   com.google.protobuf.Timestamp getModifiedAt();
   /**
@@ -119,6 +127,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
+   * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
@@ -128,6 +137,7 @@ public interface InputOrBuilder extends
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
+   * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**

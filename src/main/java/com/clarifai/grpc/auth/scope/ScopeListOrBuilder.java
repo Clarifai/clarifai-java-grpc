@@ -13,6 +13,7 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @return A list containing the scopes.
    */
   java.util.List<com.clarifai.grpc.auth.scope.S> getScopesList();
   /**
@@ -21,6 +22,7 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @return The count of scopes.
    */
   int getScopesCount();
   /**
@@ -29,6 +31,8 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
    */
   com.clarifai.grpc.auth.scope.S getScopes(int index);
   /**
@@ -37,6 +41,7 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @return A list containing the enum numeric values on the wire for scopes.
    */
   java.util.List<java.lang.Integer>
   getScopesValueList();
@@ -46,6 +51,8 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of scopes at the given index.
    */
   int getScopesValue(int index);
 
@@ -55,6 +62,7 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @return A list containing the endpoints.
    */
   java.util.List<java.lang.String>
       getEndpointsList();
@@ -64,6 +72,7 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @return The count of endpoints.
    */
   int getEndpointsCount();
   /**
@@ -72,6 +81,8 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @param index The index of the element to return.
+   * @return The endpoints at the given index.
    */
   java.lang.String getEndpoints(int index);
   /**
@@ -80,6 +91,8 @@ public interface ScopeListOrBuilder extends
    * </pre>
    *
    * <code>repeated string endpoints = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the endpoints at the given index.
    */
   com.google.protobuf.ByteString
       getEndpointsBytes(int index);
