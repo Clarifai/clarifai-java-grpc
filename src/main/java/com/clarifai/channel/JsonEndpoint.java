@@ -1,7 +1,7 @@
 package com.clarifai.channel;
 
 import com.google.api.HttpRule;
-import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Descriptors;
@@ -43,16 +43,26 @@ class JsonEndpoint<RequestT, ResponseT> {
   }
 
   private final MethodDescriptor<RequestT, ResponseT> methodDescriptor;
-  private final HashMap<String, JsonElement> topLevelFields = new HashMap<>();
+
+  /**
+   * The request JSON object.
+   */
+  private final JsonObject request;
+
+  /**
+   * The request object as a hash map.
+   */
+  private final HashMap<String, JsonElement> requestMap = new HashMap<>();
 
   private static final Pattern URL_FIELDS_PATTERN = Pattern.compile("\\{(.*?)\\}");
 
 
   JsonEndpoint(MethodDescriptor<RequestT, ResponseT> methodDescriptor, JsonObject request) {
     this.methodDescriptor = methodDescriptor;
+    this.request = request;
 
     for (Map.Entry<String, JsonElement> entry : request.entrySet()) {
-      topLevelFields.put(entry.getKey(), entry.getValue());
+      requestMap.put(entry.getKey(), entry.getValue());
     }
   }
 
@@ -94,7 +104,24 @@ class JsonEndpoint<RequestT, ResponseT> {
         ArrayList<String> bestMatchUrlFields = null;
         int bestMatchCount = -1;
 
-        for (HttpRule httpRule : rule.getAdditionalBindingsList()) {
+        String appId;
+        String userId;
+
+        String[] ids = readAppIdAndUserId(request);
+        if (ids.length == 2) {
+          appId = ids[0];
+          userId = ids[1];
+        } else {
+          appId = null;
+          userId = null;
+        }
+
+        ArrayList<HttpRule> allRules = new ArrayList<>() {{
+          add(rule);
+          addAll(rule.getAdditionalBindingsList());
+        }};
+
+        for (HttpRule httpRule : allRules) {
           String method = httpRule.getPatternCase().name();
 
           String urlTemplate = url(httpRule, method);
@@ -110,13 +137,33 @@ class JsonEndpoint<RequestT, ResponseT> {
           while (matcher.find()) {
             String field = matcher.group(1);
 
-            JsonElement value = topLevelFields.get(field);
-            if (value == null) {
-              allArgumentsTranslated = false;
-              break;
+            String[] parts = field.split("\\.");
+            String fieldName = parts[parts.length - 1];
+
+            String value;
+            if (fieldName.equals("app_id")) {
+              if (appId == null) {
+                allArgumentsTranslated = false;
+                break;
+              }
+
+              value = appId;
+            } else if (fieldName.equals("user_id")) {
+              if (userId != null) {
+                value = userId;
+              } else {
+                // "me" is the alias for the ID of the authorized user.
+                value = "me";
+              }
+            } else {
+              if (!requestMap.containsKey(fieldName)) {
+                allArgumentsTranslated = false;
+                break;
+              }
+              value = requestMap.get(fieldName).getAsString();
             }
 
-            url = url.replace("{" + field + "}", value.getAsString());
+            url = url.replace("{" + field + "}", value);
             urlFields.add(field);
 
             count++;
@@ -137,6 +184,47 @@ class JsonEndpoint<RequestT, ResponseT> {
     }
 
     throw new RuntimeException("Unable to find an appropriate HTTP endpoint");
+  }
+
+  /**
+   * Extracts the app_id and user_id values from the request object, or returns an empty array.
+   * @return ["app_id", "user_id"] values if they are present, or empty array.
+   */
+  private String[] readAppIdAndUserId(JsonElement element) {
+      if (element.isJsonArray()) {
+        for (JsonElement e : element.getAsJsonArray()) {
+          String[] vals = readAppIdAndUserId(e);
+          if (vals.length == 2) {
+            return vals;
+          }
+        }
+      } else if (element.isJsonObject()) {
+        for (Map.Entry<String, JsonElement> entry : element.getAsJsonObject().entrySet()) {
+          String key = entry.getKey();
+          JsonElement value = entry.getValue();
+          if (key.equals("apps")) {
+            JsonArray apps = value.getAsJsonArray();
+            if (apps.size() == 1) {
+              String[] result = new String[2];
+              JsonObject app = apps.get(0).getAsJsonObject();
+              result[0] = app.get("id").getAsString();
+              result[1] = app.get("user_id").getAsString();
+              return result;
+            } else if (apps.size() == 0) {
+              return new String[0];
+            } else {
+              throw new ClarifaiException("Only one app is supported at this time.");
+            }
+          } else if (key.equals("metadata")) {
+            continue;
+          }
+          String[] vals = readAppIdAndUserId(value);
+          if (vals.length == 2) {
+            return vals;
+          }
+        }
+      }
+      return new String[0];
   }
 
   private String url(HttpRule httpRule, String method) {
