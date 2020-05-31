@@ -116,7 +116,7 @@ class JsonEndpoint<RequestT, ResponseT> {
           userId = null;
         }
 
-        ArrayList<HttpRule> allRules = new ArrayList<>() {{
+        ArrayList<HttpRule> allRules = new ArrayList<HttpRule>() {{
           add(rule);
           addAll(rule.getAdditionalBindingsList());
         }};
