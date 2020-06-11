@@ -216,26 +216,4 @@ public interface UserOrBuilder extends
    */
   com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index);
-
-  /**
-   * <pre>
-   * The worker id for this model; a worker is an object that is assigned to a model or
-   * a human to track changes to different entities in our platfrom
-   * </pre>
-   *
-   * <code>string worker_id = 13;</code>
-   * @return The workerId.
-   */
-  java.lang.String getWorkerId();
-  /**
-   * <pre>
-   * The worker id for this model; a worker is an object that is assigned to a model or
-   * a human to track changes to different entities in our platfrom
-   * </pre>
-   *
-   * <code>string worker_id = 13;</code>
-   * @return The bytes for workerId.
-   */
-  com.google.protobuf.ByteString
-      getWorkerIdBytes();
 }

@@ -36,7 +36,8 @@ public interface OutputInfoOrBuilder extends
 
   /**
    * <pre>
-   * Model configuration.
+   * Model configuration...going away in favor of infer_params and train_params over time.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -45,7 +46,8 @@ public interface OutputInfoOrBuilder extends
   boolean hasOutputConfig();
   /**
    * <pre>
-   * Model configuration.
+   * Model configuration...going away in favor of infer_params and train_params over time.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -54,7 +56,8 @@ public interface OutputInfoOrBuilder extends
   com.clarifai.grpc.api.OutputConfig getOutputConfig();
   /**
    * <pre>
-   * Model configuration.
+   * Model configuration...going away in favor of infer_params and train_params over time.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -84,6 +87,7 @@ public interface OutputInfoOrBuilder extends
   /**
    * <pre>
    * To help clients know what type of Data to expect out of the model.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type = 4;</code>
@@ -93,6 +97,7 @@ public interface OutputInfoOrBuilder extends
   /**
    * <pre>
    * To help clients know what type of Data to expect out of the model.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type = 4;</code>
@@ -104,6 +109,7 @@ public interface OutputInfoOrBuilder extends
   /**
    * <pre>
    * Extra metadata about the Type data.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type_ext = 5;</code>
@@ -113,6 +119,7 @@ public interface OutputInfoOrBuilder extends
   /**
    * <pre>
    * Extra metadata about the Type data.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type_ext = 5;</code>
@@ -120,4 +127,67 @@ public interface OutputInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTypeExtBytes();
+
+  /**
+   * <pre>
+   * Map from the api.Data field names to the underlying model graph's outputs. When using a
+   * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct fields_map = 6;</code>
+   * @return Whether the fieldsMap field is set.
+   */
+  boolean hasFieldsMap();
+  /**
+   * <pre>
+   * Map from the api.Data field names to the underlying model graph's outputs. When using a
+   * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct fields_map = 6;</code>
+   * @return The fieldsMap.
+   */
+  com.google.protobuf.Struct getFieldsMap();
+  /**
+   * <pre>
+   * Map from the api.Data field names to the underlying model graph's outputs. When using a
+   * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct fields_map = 6;</code>
+   */
+  com.google.protobuf.StructOrBuilder getFieldsMapOrBuilder();
+
+  /**
+   * <pre>
+   * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+   * that the ModelTypeField defines. During inference, the settings contained within are sent
+   * to the model predictor to alter predictions from this Model.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct params = 7;</code>
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+  /**
+   * <pre>
+   * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+   * that the ModelTypeField defines. During inference, the settings contained within are sent
+   * to the model predictor to alter predictions from this Model.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct params = 7;</code>
+   * @return The params.
+   */
+  com.google.protobuf.Struct getParams();
+  /**
+   * <pre>
+   * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+   * that the ModelTypeField defines. During inference, the settings contained within are sent
+   * to the model predictor to alter predictions from this Model.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct params = 7;</code>
+   */
+  com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 }

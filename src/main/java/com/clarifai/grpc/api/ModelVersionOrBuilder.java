@@ -106,28 +106,6 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <pre>
-   * The worker id for this model; a worker is an object that is assigned to a model or
-   * a human to track changes to different entities in our platfrom
-   * </pre>
-   *
-   * <code>string worker_id = 9;</code>
-   * @return The workerId.
-   */
-  java.lang.String getWorkerId();
-  /**
-   * <pre>
-   * The worker id for this model; a worker is an object that is assigned to a model or
-   * a human to track changes to different entities in our platfrom
-   * </pre>
-   *
-   * <code>string worker_id = 9;</code>
-   * @return The bytes for workerId.
-   */
-  com.google.protobuf.ByteString
-      getWorkerIdBytes();
-
-  /**
-   * <pre>
    * When training of this version was completed.
    * </pre>
    *

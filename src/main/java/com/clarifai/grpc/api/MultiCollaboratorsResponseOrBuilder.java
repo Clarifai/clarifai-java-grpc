@@ -23,25 +23,25 @@ public interface MultiCollaboratorsResponseOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
-   * <code>repeated .clarifai.api.Collaborator collaborators = 2;</code>
+   * <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   java.util.List<com.clarifai.grpc.api.Collaborator> 
       getCollaboratorsList();
   /**
-   * <code>repeated .clarifai.api.Collaborator collaborators = 2;</code>
+   * <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   com.clarifai.grpc.api.Collaborator getCollaborators(int index);
   /**
-   * <code>repeated .clarifai.api.Collaborator collaborators = 2;</code>
+   * <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   int getCollaboratorsCount();
   /**
-   * <code>repeated .clarifai.api.Collaborator collaborators = 2;</code>
+   * <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.CollaboratorOrBuilder> 
       getCollaboratorsOrBuilderList();
   /**
-   * <code>repeated .clarifai.api.Collaborator collaborators = 2;</code>
+   * <code>repeated .clarifai.api.Collaborator collaborators = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   com.clarifai.grpc.api.CollaboratorOrBuilder getCollaboratorsOrBuilder(
       int index);

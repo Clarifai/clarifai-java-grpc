@@ -127,6 +127,11 @@ private static final long serialVersionUID = 0L;
             description_ = s;
             break;
           }
+          case 120: {
+
+            sampleMs_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -482,6 +487,20 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SAMPLE_MS_FIELD_NUMBER = 15;
+  private int sampleMs_;
+  /**
+   * <pre>
+   * Default value for model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
+   * </pre>
+   *
+   * <code>uint32 sample_ms = 15;</code>
+   * @return The sampleMs.
+   */
+  public int getSampleMs() {
+    return sampleMs_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -523,6 +542,9 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, description_);
     }
+    if (sampleMs_ != 0) {
+      output.writeUInt32(15, sampleMs_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -561,6 +583,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, description_);
+    }
+    if (sampleMs_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(15, sampleMs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -601,6 +627,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (getSampleMs()
+        != other.getSampleMs()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -634,6 +662,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SAMPLE_MS_FIELD_NUMBER;
+    hash = (53 * hash) + getSampleMs();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -799,6 +829,8 @@ private static final long serialVersionUID = 0L;
       }
       description_ = "";
 
+      sampleMs_ = 0;
+
       return this;
     }
 
@@ -842,6 +874,7 @@ private static final long serialVersionUID = 0L;
         result.metadata_ = metadataBuilder_.build();
       }
       result.description_ = description_;
+      result.sampleMs_ = sampleMs_;
       onBuilt();
       return result;
     }
@@ -922,6 +955,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
+      }
+      if (other.getSampleMs() != 0) {
+        setSampleMs(other.getSampleMs());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1821,6 +1857,48 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int sampleMs_ ;
+    /**
+     * <pre>
+     * Default value for model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
+     * </pre>
+     *
+     * <code>uint32 sample_ms = 15;</code>
+     * @return The sampleMs.
+     */
+    public int getSampleMs() {
+      return sampleMs_;
+    }
+    /**
+     * <pre>
+     * Default value for model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
+     * </pre>
+     *
+     * <code>uint32 sample_ms = 15;</code>
+     * @param value The sampleMs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSampleMs(int value) {
+      
+      sampleMs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Default value for model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
+     * </pre>
+     *
+     * <code>uint32 sample_ms = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSampleMs() {
+      
+      sampleMs_ = 0;
       onChanged();
       return this;
     }

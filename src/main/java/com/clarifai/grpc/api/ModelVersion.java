@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
   }
   private ModelVersion() {
     id_ = "";
-    workerId_ = "";
   }
 
   @java.lang.Override
@@ -109,12 +108,6 @@ private static final long serialVersionUID = 0L;
           case 48: {
 
             totalInputCount_ = input.readUInt32();
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            workerId_ = s;
             break;
           }
           case 82: {
@@ -315,52 +308,6 @@ private static final long serialVersionUID = 0L;
     return totalInputCount_;
   }
 
-  public static final int WORKER_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object workerId_;
-  /**
-   * <pre>
-   * The worker id for this model; a worker is an object that is assigned to a model or
-   * a human to track changes to different entities in our platfrom
-   * </pre>
-   *
-   * <code>string worker_id = 9;</code>
-   * @return The workerId.
-   */
-  public java.lang.String getWorkerId() {
-    java.lang.Object ref = workerId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      workerId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The worker id for this model; a worker is an object that is assigned to a model or
-   * a human to track changes to different entities in our platfrom
-   * </pre>
-   *
-   * <code>string worker_id = 9;</code>
-   * @return The bytes for workerId.
-   */
-  public com.google.protobuf.ByteString
-      getWorkerIdBytes() {
-    java.lang.Object ref = workerId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      workerId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int COMPLETED_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp completedAt_;
   /**
@@ -428,9 +375,6 @@ private static final long serialVersionUID = 0L;
     if (totalInputCount_ != 0) {
       output.writeUInt32(6, totalInputCount_);
     }
-    if (!getWorkerIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, workerId_);
-    }
     if (completedAt_ != null) {
       output.writeMessage(10, getCompletedAt());
     }
@@ -465,9 +409,6 @@ private static final long serialVersionUID = 0L;
     if (totalInputCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, totalInputCount_);
-    }
-    if (!getWorkerIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, workerId_);
     }
     if (completedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -509,8 +450,6 @@ private static final long serialVersionUID = 0L;
     }
     if (getTotalInputCount()
         != other.getTotalInputCount()) return false;
-    if (!getWorkerId()
-        .equals(other.getWorkerId())) return false;
     if (hasCompletedAt() != other.hasCompletedAt()) return false;
     if (hasCompletedAt()) {
       if (!getCompletedAt()
@@ -545,8 +484,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TOTAL_INPUT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTotalInputCount();
-    hash = (37 * hash) + WORKER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkerId().hashCode();
     if (hasCompletedAt()) {
       hash = (37 * hash) + COMPLETED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCompletedAt().hashCode();
@@ -714,8 +651,6 @@ private static final long serialVersionUID = 0L;
       }
       totalInputCount_ = 0;
 
-      workerId_ = "";
-
       if (completedAtBuilder_ == null) {
         completedAt_ = null;
       } else {
@@ -766,7 +701,6 @@ private static final long serialVersionUID = 0L;
         result.metrics_ = metricsBuilder_.build();
       }
       result.totalInputCount_ = totalInputCount_;
-      result.workerId_ = workerId_;
       if (completedAtBuilder_ == null) {
         result.completedAt_ = completedAt_;
       } else {
@@ -838,10 +772,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTotalInputCount() != 0) {
         setTotalInputCount(other.getTotalInputCount());
-      }
-      if (!other.getWorkerId().isEmpty()) {
-        workerId_ = other.workerId_;
-        onChanged();
       }
       if (other.hasCompletedAt()) {
         mergeCompletedAt(other.getCompletedAt());
@@ -1448,107 +1378,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearTotalInputCount() {
       
       totalInputCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object workerId_ = "";
-    /**
-     * <pre>
-     * The worker id for this model; a worker is an object that is assigned to a model or
-     * a human to track changes to different entities in our platfrom
-     * </pre>
-     *
-     * <code>string worker_id = 9;</code>
-     * @return The workerId.
-     */
-    public java.lang.String getWorkerId() {
-      java.lang.Object ref = workerId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        workerId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The worker id for this model; a worker is an object that is assigned to a model or
-     * a human to track changes to different entities in our platfrom
-     * </pre>
-     *
-     * <code>string worker_id = 9;</code>
-     * @return The bytes for workerId.
-     */
-    public com.google.protobuf.ByteString
-        getWorkerIdBytes() {
-      java.lang.Object ref = workerId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        workerId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The worker id for this model; a worker is an object that is assigned to a model or
-     * a human to track changes to different entities in our platfrom
-     * </pre>
-     *
-     * <code>string worker_id = 9;</code>
-     * @param value The workerId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkerId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      workerId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The worker id for this model; a worker is an object that is assigned to a model or
-     * a human to track changes to different entities in our platfrom
-     * </pre>
-     *
-     * <code>string worker_id = 9;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWorkerId() {
-      
-      workerId_ = getDefaultInstance().getWorkerId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The worker id for this model; a worker is an object that is assigned to a model or
-     * a human to track changes to different entities in our platfrom
-     * </pre>
-     *
-     * <code>string worker_id = 9;</code>
-     * @param value The bytes for workerId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkerIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      workerId_ = value;
       onChanged();
       return this;
     }

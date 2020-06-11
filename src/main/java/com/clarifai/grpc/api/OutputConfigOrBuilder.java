@@ -182,17 +182,6 @@ public interface OutputConfigOrBuilder extends
 
   /**
    * <pre>
-   * For custom deep training: Override for template name and test split percentage
-   * test_split_percent defaults to 10 in training_coordinator/client.go
-   * </pre>
-   *
-   * <code>uint32 test_split_percent = 11;</code>
-   * @return The testSplitPercent.
-   */
-  int getTestSplitPercent();
-
-  /**
-   * <pre>
    * For custom model training: Hyperparameters for custom training
    * </pre>
    *
@@ -258,12 +247,13 @@ public interface OutputConfigOrBuilder extends
    * introducing fields for new model types so we don't have to add a new proto field and DB field
    * each time. Please refer to the documentation or model implementation internally for more
    * details on what fields are supported for which models.
+   * TODO(zeiler): remove this field after Portal is updated.
    * </pre>
    *
-   * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    * @return Whether the modelMetadata field is set.
    */
-  boolean hasModelMetadata();
+  @java.lang.Deprecated boolean hasModelMetadata();
   /**
    * <pre>
    * For custom model training: This is any additional metadata as a JSON object that we want
@@ -271,12 +261,13 @@ public interface OutputConfigOrBuilder extends
    * introducing fields for new model types so we don't have to add a new proto field and DB field
    * each time. Please refer to the documentation or model implementation internally for more
    * details on what fields are supported for which models.
+   * TODO(zeiler): remove this field after Portal is updated.
    * </pre>
    *
-   * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    * @return The modelMetadata.
    */
-  com.google.protobuf.Struct getModelMetadata();
+  @java.lang.Deprecated com.google.protobuf.Struct getModelMetadata();
   /**
    * <pre>
    * For custom model training: This is any additional metadata as a JSON object that we want
@@ -284,32 +275,10 @@ public interface OutputConfigOrBuilder extends
    * introducing fields for new model types so we don't have to add a new proto field and DB field
    * each time. Please refer to the documentation or model implementation internally for more
    * details on what fields are supported for which models.
+   * TODO(zeiler): remove this field after Portal is updated.
    * </pre>
    *
-   * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    */
-  com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder();
-
-  /**
-   * <pre>
-   * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
-   * inputs among all training inputs. Training will be stopped with error thrown if actual
-   * percent of invalid inputs is higher than this.
-   * </pre>
-   *
-   * <code>float invalid_data_tolerance_percent = 18;</code>
-   * @return The invalidDataTolerancePercent.
-   */
-  float getInvalidDataTolerancePercent();
-
-  /**
-   * <pre>
-   * For custom deep training: Use this flag to set this model to use few shot K-NN classification
-   * instead of custom concept classification. Default is false.
-   * </pre>
-   *
-   * <code>bool use_knn_classifier = 19;</code>
-   * @return The useKnnClassifier.
-   */
-  boolean getUseKnnClassifier();
+  @java.lang.Deprecated com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder();
 }

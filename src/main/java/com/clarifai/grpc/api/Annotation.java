@@ -128,11 +128,6 @@ private static final long serialVersionUID = 0L;
             trusted_ = input.readBool();
             break;
           }
-          case 96: {
-
-            default_ = input.readBool();
-            break;
-          }
           case 106: {
             com.google.protobuf.Struct.Builder subBuilder = null;
             if (annotationInfo_ != null) {
@@ -162,6 +157,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             modelVersionId_ = s;
+            break;
+          }
+          case 136: {
+
+            inputLevel_ = input.readBool();
             break;
           }
           default: {
@@ -600,27 +600,28 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Whether or not this annotation is trusted
+   * Will be deprecated
    * </pre>
    *
-   * <code>bool trusted = 10;</code>
+   * <code>bool trusted = 10 [deprecated = true];</code>
    * @return The trusted.
    */
-  public boolean getTrusted() {
+  @java.lang.Deprecated public boolean getTrusted() {
     return trusted_;
   }
 
-  public static final int DEFAULT_FIELD_NUMBER = 12;
-  private boolean default_;
+  public static final int INPUT_LEVEL_FIELD_NUMBER = 17;
+  private boolean inputLevel_;
   /**
    * <pre>
-   * Is this the default annotation tied to the input
+   * Is this the input level annotation.
    * </pre>
    *
-   * <code>bool default = 12;</code>
-   * @return The default.
+   * <code>bool input_level = 17;</code>
+   * @return The inputLevel.
    */
-  public boolean getDefault() {
-    return default_;
+  public boolean getInputLevel() {
+    return inputLevel_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -658,9 +659,6 @@ private static final long serialVersionUID = 0L;
     if (trusted_ != false) {
       output.writeBool(10, trusted_);
     }
-    if (default_ != false) {
-      output.writeBool(12, default_);
-    }
     if (annotationInfo_ != null) {
       output.writeMessage(13, getAnnotationInfo());
     }
@@ -672,6 +670,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelVersionIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, modelVersionId_);
+    }
+    if (inputLevel_ != false) {
+      output.writeBool(17, inputLevel_);
     }
     unknownFields.writeTo(output);
   }
@@ -708,10 +709,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(10, trusted_);
     }
-    if (default_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(12, default_);
-    }
     if (annotationInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getAnnotationInfo());
@@ -724,6 +721,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelVersionIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, modelVersionId_);
+    }
+    if (inputLevel_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(17, inputLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -777,8 +778,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getTrusted()
         != other.getTrusted()) return false;
-    if (getDefault()
-        != other.getDefault()) return false;
+    if (getInputLevel()
+        != other.getInputLevel()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -823,9 +824,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRUSTED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTrusted());
-    hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
+    hash = (37 * hash) + INPUT_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDefault());
+        getInputLevel());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1007,7 +1008,7 @@ private static final long serialVersionUID = 0L;
       }
       trusted_ = false;
 
-      default_ = false;
+      inputLevel_ = false;
 
       return this;
     }
@@ -1066,7 +1067,7 @@ private static final long serialVersionUID = 0L;
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
       result.trusted_ = trusted_;
-      result.default_ = default_;
+      result.inputLevel_ = inputLevel_;
       onBuilt();
       return result;
     }
@@ -1153,8 +1154,8 @@ private static final long serialVersionUID = 0L;
       if (other.getTrusted() != false) {
         setTrusted(other.getTrusted());
       }
-      if (other.getDefault() != false) {
-        setDefault(other.getDefault());
+      if (other.getInputLevel() != false) {
+        setInputLevel(other.getInputLevel());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2454,24 +2455,26 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether or not this annotation is trusted
+     * Will be deprecated
      * </pre>
      *
-     * <code>bool trusted = 10;</code>
+     * <code>bool trusted = 10 [deprecated = true];</code>
      * @return The trusted.
      */
-    public boolean getTrusted() {
+    @java.lang.Deprecated public boolean getTrusted() {
       return trusted_;
     }
     /**
      * <pre>
      * Whether or not this annotation is trusted
+     * Will be deprecated
      * </pre>
      *
-     * <code>bool trusted = 10;</code>
+     * <code>bool trusted = 10 [deprecated = true];</code>
      * @param value The trusted to set.
      * @return This builder for chaining.
      */
-    public Builder setTrusted(boolean value) {
+    @java.lang.Deprecated public Builder setTrusted(boolean value) {
       
       trusted_ = value;
       onChanged();
@@ -2480,56 +2483,57 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether or not this annotation is trusted
+     * Will be deprecated
      * </pre>
      *
-     * <code>bool trusted = 10;</code>
+     * <code>bool trusted = 10 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTrusted() {
+    @java.lang.Deprecated public Builder clearTrusted() {
       
       trusted_ = false;
       onChanged();
       return this;
     }
 
-    private boolean default_ ;
+    private boolean inputLevel_ ;
     /**
      * <pre>
-     * Is this the default annotation tied to the input
+     * Is this the input level annotation.
      * </pre>
      *
-     * <code>bool default = 12;</code>
-     * @return The default.
+     * <code>bool input_level = 17;</code>
+     * @return The inputLevel.
      */
-    public boolean getDefault() {
-      return default_;
+    public boolean getInputLevel() {
+      return inputLevel_;
     }
     /**
      * <pre>
-     * Is this the default annotation tied to the input
+     * Is this the input level annotation.
      * </pre>
      *
-     * <code>bool default = 12;</code>
-     * @param value The default to set.
+     * <code>bool input_level = 17;</code>
+     * @param value The inputLevel to set.
      * @return This builder for chaining.
      */
-    public Builder setDefault(boolean value) {
+    public Builder setInputLevel(boolean value) {
       
-      default_ = value;
+      inputLevel_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Is this the default annotation tied to the input
+     * Is this the input level annotation.
      * </pre>
      *
-     * <code>bool default = 12;</code>
+     * <code>bool input_level = 17;</code>
      * @return This builder for chaining.
      */
-    public Builder clearDefault() {
+    public Builder clearInputLevel() {
       
-      default_ = false;
+      inputLevel_ = false;
       onChanged();
       return this;
     }

@@ -4,6 +4,12 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * OutputConfig is a collection of parameters controlling either inference or training settings for
+ * the given Model. This message will be deprecated over time in favor or infer_params and
+ * train_params in OutputInfo which are cleaner and more extensible for many ModelTypes.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.OutputConfig}
  */
 public  final class OutputConfig extends
@@ -111,11 +117,6 @@ private static final long serialVersionUID = 0L;
             sampleMs_ = input.readUInt32();
             break;
           }
-          case 88: {
-
-            testSplitPercent_ = input.readUInt32();
-            break;
-          }
           case 106: {
             com.google.protobuf.Struct.Builder subBuilder = null;
             if (hyperParams_ != null) {
@@ -151,16 +152,6 @@ private static final long serialVersionUID = 0L;
               modelMetadata_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 149: {
-
-            invalidDataTolerancePercent_ = input.readFloat();
-            break;
-          }
-          case 152: {
-
-            useKnnClassifier_ = input.readBool();
             break;
           }
           default: {
@@ -478,21 +469,6 @@ private static final long serialVersionUID = 0L;
     return sampleMs_;
   }
 
-  public static final int TEST_SPLIT_PERCENT_FIELD_NUMBER = 11;
-  private int testSplitPercent_;
-  /**
-   * <pre>
-   * For custom deep training: Override for template name and test split percentage
-   * test_split_percent defaults to 10 in training_coordinator/client.go
-   * </pre>
-   *
-   * <code>uint32 test_split_percent = 11;</code>
-   * @return The testSplitPercent.
-   */
-  public int getTestSplitPercent() {
-    return testSplitPercent_;
-  }
-
   public static final int HYPER_PARAMS_FIELD_NUMBER = 13;
   private com.google.protobuf.Struct hyperParams_;
   /**
@@ -598,12 +574,13 @@ private static final long serialVersionUID = 0L;
    * introducing fields for new model types so we don't have to add a new proto field and DB field
    * each time. Please refer to the documentation or model implementation internally for more
    * details on what fields are supported for which models.
+   * TODO(zeiler): remove this field after Portal is updated.
    * </pre>
    *
-   * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    * @return Whether the modelMetadata field is set.
    */
-  public boolean hasModelMetadata() {
+  @java.lang.Deprecated public boolean hasModelMetadata() {
     return modelMetadata_ != null;
   }
   /**
@@ -613,12 +590,13 @@ private static final long serialVersionUID = 0L;
    * introducing fields for new model types so we don't have to add a new proto field and DB field
    * each time. Please refer to the documentation or model implementation internally for more
    * details on what fields are supported for which models.
+   * TODO(zeiler): remove this field after Portal is updated.
    * </pre>
    *
-   * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    * @return The modelMetadata.
    */
-  public com.google.protobuf.Struct getModelMetadata() {
+  @java.lang.Deprecated public com.google.protobuf.Struct getModelMetadata() {
     return modelMetadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : modelMetadata_;
   }
   /**
@@ -628,43 +606,13 @@ private static final long serialVersionUID = 0L;
    * introducing fields for new model types so we don't have to add a new proto field and DB field
    * each time. Please refer to the documentation or model implementation internally for more
    * details on what fields are supported for which models.
+   * TODO(zeiler): remove this field after Portal is updated.
    * </pre>
    *
-   * <code>.google.protobuf.Struct model_metadata = 17;</code>
+   * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    */
-  public com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder() {
     return getModelMetadata();
-  }
-
-  public static final int INVALID_DATA_TOLERANCE_PERCENT_FIELD_NUMBER = 18;
-  private float invalidDataTolerancePercent_;
-  /**
-   * <pre>
-   * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
-   * inputs among all training inputs. Training will be stopped with error thrown if actual
-   * percent of invalid inputs is higher than this.
-   * </pre>
-   *
-   * <code>float invalid_data_tolerance_percent = 18;</code>
-   * @return The invalidDataTolerancePercent.
-   */
-  public float getInvalidDataTolerancePercent() {
-    return invalidDataTolerancePercent_;
-  }
-
-  public static final int USE_KNN_CLASSIFIER_FIELD_NUMBER = 19;
-  private boolean useKnnClassifier_;
-  /**
-   * <pre>
-   * For custom deep training: Use this flag to set this model to use few shot K-NN classification
-   * instead of custom concept classification. Default is false.
-   * </pre>
-   *
-   * <code>bool use_knn_classifier = 19;</code>
-   * @return The useKnnClassifier.
-   */
-  public boolean getUseKnnClassifier() {
-    return useKnnClassifier_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -711,9 +659,6 @@ private static final long serialVersionUID = 0L;
     if (sampleMs_ != 0) {
       output.writeUInt32(10, sampleMs_);
     }
-    if (testSplitPercent_ != 0) {
-      output.writeUInt32(11, testSplitPercent_);
-    }
     if (hyperParams_ != null) {
       output.writeMessage(13, getHyperParams());
     }
@@ -725,12 +670,6 @@ private static final long serialVersionUID = 0L;
     }
     if (modelMetadata_ != null) {
       output.writeMessage(17, getModelMetadata());
-    }
-    if (invalidDataTolerancePercent_ != 0F) {
-      output.writeFloat(18, invalidDataTolerancePercent_);
-    }
-    if (useKnnClassifier_ != false) {
-      output.writeBool(19, useKnnClassifier_);
     }
     unknownFields.writeTo(output);
   }
@@ -778,10 +717,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(10, sampleMs_);
     }
-    if (testSplitPercent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(11, testSplitPercent_);
-    }
     if (hyperParams_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getHyperParams());
@@ -796,14 +731,6 @@ private static final long serialVersionUID = 0L;
     if (modelMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getModelMetadata());
-    }
-    if (invalidDataTolerancePercent_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(18, invalidDataTolerancePercent_);
-    }
-    if (useKnnClassifier_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(19, useKnnClassifier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -841,8 +768,6 @@ private static final long serialVersionUID = 0L;
         != other.getTrainingTimeout()) return false;
     if (getSampleMs()
         != other.getSampleMs()) return false;
-    if (getTestSplitPercent()
-        != other.getTestSplitPercent()) return false;
     if (hasHyperParams() != other.hasHyperParams()) return false;
     if (hasHyperParams()) {
       if (!getHyperParams()
@@ -857,11 +782,6 @@ private static final long serialVersionUID = 0L;
       if (!getModelMetadata()
           .equals(other.getModelMetadata())) return false;
     }
-    if (java.lang.Float.floatToIntBits(getInvalidDataTolerancePercent())
-        != java.lang.Float.floatToIntBits(
-            other.getInvalidDataTolerancePercent())) return false;
-    if (getUseKnnClassifier()
-        != other.getUseKnnClassifier()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -898,8 +818,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTrainingTimeout();
     hash = (37 * hash) + SAMPLE_MS_FIELD_NUMBER;
     hash = (53 * hash) + getSampleMs();
-    hash = (37 * hash) + TEST_SPLIT_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + getTestSplitPercent();
     if (hasHyperParams()) {
       hash = (37 * hash) + HYPER_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getHyperParams().hashCode();
@@ -913,12 +831,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODEL_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getModelMetadata().hashCode();
     }
-    hash = (37 * hash) + INVALID_DATA_TOLERANCE_PERCENT_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getInvalidDataTolerancePercent());
-    hash = (37 * hash) + USE_KNN_CLASSIFIER_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getUseKnnClassifier());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1015,6 +927,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * OutputConfig is a collection of parameters controlling either inference or training settings for
+   * the given Model. This message will be deprecated over time in favor or infer_params and
+   * train_params in OutputInfo which are cleaner and more extensible for many ModelTypes.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.OutputConfig}
    */
   public static final class Builder extends
@@ -1077,8 +995,6 @@ private static final long serialVersionUID = 0L;
 
       sampleMs_ = 0;
 
-      testSplitPercent_ = 0;
-
       if (hyperParamsBuilder_ == null) {
         hyperParams_ = null;
       } else {
@@ -1095,10 +1011,6 @@ private static final long serialVersionUID = 0L;
         modelMetadata_ = null;
         modelMetadataBuilder_ = null;
       }
-      invalidDataTolerancePercent_ = 0F;
-
-      useKnnClassifier_ = false;
-
       return this;
     }
 
@@ -1144,7 +1056,6 @@ private static final long serialVersionUID = 0L;
       }
       result.trainingTimeout_ = trainingTimeout_;
       result.sampleMs_ = sampleMs_;
-      result.testSplitPercent_ = testSplitPercent_;
       if (hyperParamsBuilder_ == null) {
         result.hyperParams_ = hyperParams_;
       } else {
@@ -1157,8 +1068,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modelMetadata_ = modelMetadataBuilder_.build();
       }
-      result.invalidDataTolerancePercent_ = invalidDataTolerancePercent_;
-      result.useKnnClassifier_ = useKnnClassifier_;
       onBuilt();
       return result;
     }
@@ -1263,9 +1172,6 @@ private static final long serialVersionUID = 0L;
       if (other.getSampleMs() != 0) {
         setSampleMs(other.getSampleMs());
       }
-      if (other.getTestSplitPercent() != 0) {
-        setTestSplitPercent(other.getTestSplitPercent());
-      }
       if (other.hasHyperParams()) {
         mergeHyperParams(other.getHyperParams());
       }
@@ -1278,12 +1184,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModelMetadata()) {
         mergeModelMetadata(other.getModelMetadata());
-      }
-      if (other.getInvalidDataTolerancePercent() != 0F) {
-        setInvalidDataTolerancePercent(other.getInvalidDataTolerancePercent());
-      }
-      if (other.getUseKnnClassifier() != false) {
-        setUseKnnClassifier(other.getUseKnnClassifier());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2192,51 +2092,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int testSplitPercent_ ;
-    /**
-     * <pre>
-     * For custom deep training: Override for template name and test split percentage
-     * test_split_percent defaults to 10 in training_coordinator/client.go
-     * </pre>
-     *
-     * <code>uint32 test_split_percent = 11;</code>
-     * @return The testSplitPercent.
-     */
-    public int getTestSplitPercent() {
-      return testSplitPercent_;
-    }
-    /**
-     * <pre>
-     * For custom deep training: Override for template name and test split percentage
-     * test_split_percent defaults to 10 in training_coordinator/client.go
-     * </pre>
-     *
-     * <code>uint32 test_split_percent = 11;</code>
-     * @param value The testSplitPercent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTestSplitPercent(int value) {
-      
-      testSplitPercent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * For custom deep training: Override for template name and test split percentage
-     * test_split_percent defaults to 10 in training_coordinator/client.go
-     * </pre>
-     *
-     * <code>uint32 test_split_percent = 11;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTestSplitPercent() {
-      
-      testSplitPercent_ = 0;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.Struct hyperParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> hyperParamsBuilder_;
@@ -2548,12 +2403,13 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      * @return Whether the modelMetadata field is set.
      */
-    public boolean hasModelMetadata() {
+    @java.lang.Deprecated public boolean hasModelMetadata() {
       return modelMetadataBuilder_ != null || modelMetadata_ != null;
     }
     /**
@@ -2563,12 +2419,13 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      * @return The modelMetadata.
      */
-    public com.google.protobuf.Struct getModelMetadata() {
+    @java.lang.Deprecated public com.google.protobuf.Struct getModelMetadata() {
       if (modelMetadataBuilder_ == null) {
         return modelMetadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : modelMetadata_;
       } else {
@@ -2582,11 +2439,12 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
-    public Builder setModelMetadata(com.google.protobuf.Struct value) {
+    @java.lang.Deprecated public Builder setModelMetadata(com.google.protobuf.Struct value) {
       if (modelMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2606,11 +2464,12 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
-    public Builder setModelMetadata(
+    @java.lang.Deprecated public Builder setModelMetadata(
         com.google.protobuf.Struct.Builder builderForValue) {
       if (modelMetadataBuilder_ == null) {
         modelMetadata_ = builderForValue.build();
@@ -2628,11 +2487,12 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
-    public Builder mergeModelMetadata(com.google.protobuf.Struct value) {
+    @java.lang.Deprecated public Builder mergeModelMetadata(com.google.protobuf.Struct value) {
       if (modelMetadataBuilder_ == null) {
         if (modelMetadata_ != null) {
           modelMetadata_ =
@@ -2654,11 +2514,12 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
-    public Builder clearModelMetadata() {
+    @java.lang.Deprecated public Builder clearModelMetadata() {
       if (modelMetadataBuilder_ == null) {
         modelMetadata_ = null;
         onChanged();
@@ -2676,11 +2537,12 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
-    public com.google.protobuf.Struct.Builder getModelMetadataBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Struct.Builder getModelMetadataBuilder() {
       
       onChanged();
       return getModelMetadataFieldBuilder().getBuilder();
@@ -2692,11 +2554,12 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
-    public com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder() {
       if (modelMetadataBuilder_ != null) {
         return modelMetadataBuilder_.getMessageOrBuilder();
       } else {
@@ -2711,9 +2574,10 @@ private static final long serialVersionUID = 0L;
      * introducing fields for new model types so we don't have to add a new proto field and DB field
      * each time. Please refer to the documentation or model implementation internally for more
      * details on what fields are supported for which models.
+     * TODO(zeiler): remove this field after Portal is updated.
      * </pre>
      *
-     * <code>.google.protobuf.Struct model_metadata = 17;</code>
+     * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -2727,99 +2591,6 @@ private static final long serialVersionUID = 0L;
         modelMetadata_ = null;
       }
       return modelMetadataBuilder_;
-    }
-
-    private float invalidDataTolerancePercent_ ;
-    /**
-     * <pre>
-     * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
-     * inputs among all training inputs. Training will be stopped with error thrown if actual
-     * percent of invalid inputs is higher than this.
-     * </pre>
-     *
-     * <code>float invalid_data_tolerance_percent = 18;</code>
-     * @return The invalidDataTolerancePercent.
-     */
-    public float getInvalidDataTolerancePercent() {
-      return invalidDataTolerancePercent_;
-    }
-    /**
-     * <pre>
-     * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
-     * inputs among all training inputs. Training will be stopped with error thrown if actual
-     * percent of invalid inputs is higher than this.
-     * </pre>
-     *
-     * <code>float invalid_data_tolerance_percent = 18;</code>
-     * @param value The invalidDataTolerancePercent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setInvalidDataTolerancePercent(float value) {
-      
-      invalidDataTolerancePercent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * For custom deep training: Percentage value (0 to 100) of user's tolerance level to invalid
-     * inputs among all training inputs. Training will be stopped with error thrown if actual
-     * percent of invalid inputs is higher than this.
-     * </pre>
-     *
-     * <code>float invalid_data_tolerance_percent = 18;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearInvalidDataTolerancePercent() {
-      
-      invalidDataTolerancePercent_ = 0F;
-      onChanged();
-      return this;
-    }
-
-    private boolean useKnnClassifier_ ;
-    /**
-     * <pre>
-     * For custom deep training: Use this flag to set this model to use few shot K-NN classification
-     * instead of custom concept classification. Default is false.
-     * </pre>
-     *
-     * <code>bool use_knn_classifier = 19;</code>
-     * @return The useKnnClassifier.
-     */
-    public boolean getUseKnnClassifier() {
-      return useKnnClassifier_;
-    }
-    /**
-     * <pre>
-     * For custom deep training: Use this flag to set this model to use few shot K-NN classification
-     * instead of custom concept classification. Default is false.
-     * </pre>
-     *
-     * <code>bool use_knn_classifier = 19;</code>
-     * @param value The useKnnClassifier to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUseKnnClassifier(boolean value) {
-      
-      useKnnClassifier_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * For custom deep training: Use this flag to set this model to use few shot K-NN classification
-     * instead of custom concept classification. Default is false.
-     * </pre>
-     *
-     * <code>bool use_knn_classifier = 19;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUseKnnClassifier() {
-      
-      useKnnClassifier_ = false;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

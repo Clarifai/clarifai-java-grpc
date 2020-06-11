@@ -165,4 +165,14 @@ public interface AppOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * Default value for model predictions on video: Sample delay for video predicting (1 frame per N milliseconds)
+   * </pre>
+   *
+   * <code>uint32 sample_ms = 15;</code>
+   * @return The sampleMs.
+   */
+  int getSampleMs();
 }

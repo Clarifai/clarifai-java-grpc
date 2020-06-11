@@ -4,6 +4,17 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * OutputInfo defines some of the settings for each model version that PatchModels can effect. These
+ * parameters control some of the training or inference operations that this model can do.
+ * As the number of parameters continued to grow when we launched more ModelTypes we decided to move
+ * to using the OutputInfo.params field which is a Struct (or JSON object if you're using
+ * our JSON REST APIs). This allows each ModelType to define the set of fields, their default values
+ * and description of each field so that we can display those in Portal and make the creation of
+ * Model's very extensible. The OutputConfig object will eventually go away in favor of
+ * infer_params struct.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.OutputInfo}
  */
 public  final class OutputInfo extends
@@ -95,6 +106,32 @@ private static final long serialVersionUID = 0L;
             typeExt_ = s;
             break;
           }
+          case 50: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (fieldsMap_ != null) {
+              subBuilder = fieldsMap_.toBuilder();
+            }
+            fieldsMap_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(fieldsMap_);
+              fieldsMap_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 58: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (params_ != null) {
+              subBuilder = params_.toBuilder();
+            }
+            params_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(params_);
+              params_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -166,7 +203,8 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.OutputConfig outputConfig_;
   /**
    * <pre>
-   * Model configuration.
+   * Model configuration...going away in favor of infer_params and train_params over time.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -177,7 +215,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Model configuration.
+   * Model configuration...going away in favor of infer_params and train_params over time.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -188,7 +227,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Model configuration.
+   * Model configuration...going away in favor of infer_params and train_params over time.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -246,6 +286,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * To help clients know what type of Data to expect out of the model.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type = 4;</code>
@@ -266,6 +307,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * To help clients know what type of Data to expect out of the model.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type = 4;</code>
@@ -290,6 +332,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Extra metadata about the Type data.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type_ext = 5;</code>
@@ -310,6 +353,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Extra metadata about the Type data.
+   * TO BE DEPRECATED
    * </pre>
    *
    * <code>string type_ext = 5;</code>
@@ -327,6 +371,85 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int FIELDS_MAP_FIELD_NUMBER = 6;
+  private com.google.protobuf.Struct fieldsMap_;
+  /**
+   * <pre>
+   * Map from the api.Data field names to the underlying model graph's outputs. When using a
+   * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct fields_map = 6;</code>
+   * @return Whether the fieldsMap field is set.
+   */
+  public boolean hasFieldsMap() {
+    return fieldsMap_ != null;
+  }
+  /**
+   * <pre>
+   * Map from the api.Data field names to the underlying model graph's outputs. When using a
+   * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct fields_map = 6;</code>
+   * @return The fieldsMap.
+   */
+  public com.google.protobuf.Struct getFieldsMap() {
+    return fieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : fieldsMap_;
+  }
+  /**
+   * <pre>
+   * Map from the api.Data field names to the underlying model graph's outputs. When using a
+   * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct fields_map = 6;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getFieldsMapOrBuilder() {
+    return getFieldsMap();
+  }
+
+  public static final int PARAMS_FIELD_NUMBER = 7;
+  private com.google.protobuf.Struct params_;
+  /**
+   * <pre>
+   * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+   * that the ModelTypeField defines. During inference, the settings contained within are sent
+   * to the model predictor to alter predictions from this Model.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct params = 7;</code>
+   * @return Whether the params field is set.
+   */
+  public boolean hasParams() {
+    return params_ != null;
+  }
+  /**
+   * <pre>
+   * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+   * that the ModelTypeField defines. During inference, the settings contained within are sent
+   * to the model predictor to alter predictions from this Model.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct params = 7;</code>
+   * @return The params.
+   */
+  public com.google.protobuf.Struct getParams() {
+    return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
+  }
+  /**
+   * <pre>
+   * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+   * that the ModelTypeField defines. During inference, the settings contained within are sent
+   * to the model predictor to alter predictions from this Model.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct params = 7;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getParamsOrBuilder() {
+    return getParams();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -358,6 +481,12 @@ private static final long serialVersionUID = 0L;
     if (!getTypeExtBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, typeExt_);
     }
+    if (fieldsMap_ != null) {
+      output.writeMessage(6, getFieldsMap());
+    }
+    if (params_ != null) {
+      output.writeMessage(7, getParams());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -383,6 +512,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTypeExtBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, typeExt_);
+    }
+    if (fieldsMap_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getFieldsMap());
+    }
+    if (params_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getParams());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -415,6 +552,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getType())) return false;
     if (!getTypeExt()
         .equals(other.getTypeExt())) return false;
+    if (hasFieldsMap() != other.hasFieldsMap()) return false;
+    if (hasFieldsMap()) {
+      if (!getFieldsMap()
+          .equals(other.getFieldsMap())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams()
+          .equals(other.getParams())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -440,6 +587,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + TYPE_EXT_FIELD_NUMBER;
     hash = (53 * hash) + getTypeExt().hashCode();
+    if (hasFieldsMap()) {
+      hash = (37 * hash) + FIELDS_MAP_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldsMap().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -536,6 +691,17 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * OutputInfo defines some of the settings for each model version that PatchModels can effect. These
+   * parameters control some of the training or inference operations that this model can do.
+   * As the number of parameters continued to grow when we launched more ModelTypes we decided to move
+   * to using the OutputInfo.params field which is a Struct (or JSON object if you're using
+   * our JSON REST APIs). This allows each ModelType to define the set of fields, their default values
+   * and description of each field so that we can display those in Portal and make the creation of
+   * Model's very extensible. The OutputConfig object will eventually go away in favor of
+   * infer_params struct.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.OutputInfo}
    */
   public static final class Builder extends
@@ -591,6 +757,18 @@ private static final long serialVersionUID = 0L;
 
       typeExt_ = "";
 
+      if (fieldsMapBuilder_ == null) {
+        fieldsMap_ = null;
+      } else {
+        fieldsMap_ = null;
+        fieldsMapBuilder_ = null;
+      }
+      if (paramsBuilder_ == null) {
+        params_ = null;
+      } else {
+        params_ = null;
+        paramsBuilder_ = null;
+      }
       return this;
     }
 
@@ -630,6 +808,16 @@ private static final long serialVersionUID = 0L;
       result.message_ = message_;
       result.type_ = type_;
       result.typeExt_ = typeExt_;
+      if (fieldsMapBuilder_ == null) {
+        result.fieldsMap_ = fieldsMap_;
+      } else {
+        result.fieldsMap_ = fieldsMapBuilder_.build();
+      }
+      if (paramsBuilder_ == null) {
+        result.params_ = params_;
+      } else {
+        result.params_ = paramsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -695,6 +883,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getTypeExt().isEmpty()) {
         typeExt_ = other.typeExt_;
         onChanged();
+      }
+      if (other.hasFieldsMap()) {
+        mergeFieldsMap(other.getFieldsMap());
+      }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -885,7 +1079,8 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.OutputConfig, com.clarifai.grpc.api.OutputConfig.Builder, com.clarifai.grpc.api.OutputConfigOrBuilder> outputConfigBuilder_;
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -896,7 +1091,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -911,7 +1107,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -931,7 +1128,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -949,7 +1147,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -971,7 +1170,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -989,7 +1189,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -1001,7 +1202,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -1016,7 +1218,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration.
+     * Model configuration...going away in favor of infer_params and train_params over time.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>.clarifai.api.OutputConfig output_config = 2;</code>
@@ -1135,6 +1338,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * To help clients know what type of Data to expect out of the model.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type = 4;</code>
@@ -1155,6 +1359,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * To help clients know what type of Data to expect out of the model.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type = 4;</code>
@@ -1176,6 +1381,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * To help clients know what type of Data to expect out of the model.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type = 4;</code>
@@ -1195,6 +1401,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * To help clients know what type of Data to expect out of the model.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type = 4;</code>
@@ -1209,6 +1416,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * To help clients know what type of Data to expect out of the model.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type = 4;</code>
@@ -1231,6 +1439,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Extra metadata about the Type data.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type_ext = 5;</code>
@@ -1251,6 +1460,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Extra metadata about the Type data.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type_ext = 5;</code>
@@ -1272,6 +1482,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Extra metadata about the Type data.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type_ext = 5;</code>
@@ -1291,6 +1502,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Extra metadata about the Type data.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type_ext = 5;</code>
@@ -1305,6 +1517,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Extra metadata about the Type data.
+     * TO BE DEPRECATED
      * </pre>
      *
      * <code>string type_ext = 5;</code>
@@ -1321,6 +1534,343 @@ private static final long serialVersionUID = 0L;
       typeExt_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct fieldsMap_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> fieldsMapBuilder_;
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     * @return Whether the fieldsMap field is set.
+     */
+    public boolean hasFieldsMap() {
+      return fieldsMapBuilder_ != null || fieldsMap_ != null;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     * @return The fieldsMap.
+     */
+    public com.google.protobuf.Struct getFieldsMap() {
+      if (fieldsMapBuilder_ == null) {
+        return fieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : fieldsMap_;
+      } else {
+        return fieldsMapBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    public Builder setFieldsMap(com.google.protobuf.Struct value) {
+      if (fieldsMapBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fieldsMap_ = value;
+        onChanged();
+      } else {
+        fieldsMapBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    public Builder setFieldsMap(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (fieldsMapBuilder_ == null) {
+        fieldsMap_ = builderForValue.build();
+        onChanged();
+      } else {
+        fieldsMapBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    public Builder mergeFieldsMap(com.google.protobuf.Struct value) {
+      if (fieldsMapBuilder_ == null) {
+        if (fieldsMap_ != null) {
+          fieldsMap_ =
+            com.google.protobuf.Struct.newBuilder(fieldsMap_).mergeFrom(value).buildPartial();
+        } else {
+          fieldsMap_ = value;
+        }
+        onChanged();
+      } else {
+        fieldsMapBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    public Builder clearFieldsMap() {
+      if (fieldsMapBuilder_ == null) {
+        fieldsMap_ = null;
+        onChanged();
+      } else {
+        fieldsMap_ = null;
+        fieldsMapBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    public com.google.protobuf.Struct.Builder getFieldsMapBuilder() {
+      
+      onChanged();
+      return getFieldsMapFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getFieldsMapOrBuilder() {
+      if (fieldsMapBuilder_ != null) {
+        return fieldsMapBuilder_.getMessageOrBuilder();
+      } else {
+        return fieldsMap_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : fieldsMap_;
+      }
+    }
+    /**
+     * <pre>
+     * Map from the api.Data field names to the underlying model graph's outputs. When using a
+     * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct fields_map = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getFieldsMapFieldBuilder() {
+      if (fieldsMapBuilder_ == null) {
+        fieldsMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getFieldsMap(),
+                getParentForChildren(),
+                isClean());
+        fieldsMap_ = null;
+      }
+      return fieldsMapBuilder_;
+    }
+
+    private com.google.protobuf.Struct params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> paramsBuilder_;
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return paramsBuilder_ != null || params_ != null;
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     * @return The params.
+     */
+    public com.google.protobuf.Struct getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    public Builder setParams(com.google.protobuf.Struct value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+        onChanged();
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    public Builder setParams(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+        onChanged();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    public Builder mergeParams(com.google.protobuf.Struct value) {
+      if (paramsBuilder_ == null) {
+        if (params_ != null) {
+          params_ =
+            com.google.protobuf.Struct.newBuilder(params_).mergeFrom(value).buildPartial();
+        } else {
+          params_ = value;
+        }
+        onChanged();
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    public Builder clearParams() {
+      if (paramsBuilder_ == null) {
+        params_ = null;
+        onChanged();
+      } else {
+        params_ = null;
+        paramsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    public com.google.protobuf.Struct.Builder getParamsBuilder() {
+      
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : params_;
+      }
+    }
+    /**
+     * <pre>
+     * For predicting with the various ModelType's we accept a Struct (JSON object) worth of args
+     * that the ModelTypeField defines. During inference, the settings contained within are sent
+     * to the model predictor to alter predictions from this Model.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct params = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getParams(),
+                getParentForChildren(),
+                isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

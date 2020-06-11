@@ -1226,9 +1226,9 @@ public enum StatusCode
    * The task was requested to be closed (with status DONE), but validation failed.
    * </pre>
    *
-   * <code>TASK_NOT_VALID_TO_CLOSE = 541000;</code>
+   * <code>TASK_NOT_VALID_TO_CLOSE = 54100;</code>
    */
-  TASK_NOT_VALID_TO_CLOSE(541000),
+  TASK_NOT_VALID_TO_CLOSE(54100),
   /**
    * <pre>
    * License Related Status Code 600xx
@@ -2594,9 +2594,9 @@ public enum StatusCode
    * The task was requested to be closed (with status DONE), but validation failed.
    * </pre>
    *
-   * <code>TASK_NOT_VALID_TO_CLOSE = 541000;</code>
+   * <code>TASK_NOT_VALID_TO_CLOSE = 54100;</code>
    */
-  public static final int TASK_NOT_VALID_TO_CLOSE_VALUE = 541000;
+  public static final int TASK_NOT_VALID_TO_CLOSE_VALUE = 54100;
   /**
    * <pre>
    * License Related Status Code 600xx
@@ -2996,7 +2996,7 @@ public enum StatusCode
       case 53001: return SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST;
       case 54001: return TASK_IN_PROGRESS;
       case 54002: return TASK_DONE;
-      case 541000: return TASK_NOT_VALID_TO_CLOSE;
+      case 54100: return TASK_NOT_VALID_TO_CLOSE;
       case 60000: return LICENSE_ACTIVE;
       case 60001: return LICENSE_DOES_NOT_EXIST;
       case 60002: return LICENSE_NEED_UPDATE;

@@ -172,26 +172,6 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Override the default template_name used for the model type
-   * </pre>
-   *
-   * <code>string template_name = 8;</code>
-   * @return The templateName.
-   */
-  java.lang.String getTemplateName();
-  /**
-   * <pre>
-   * Override the default template_name used for the model type
-   * </pre>
-   *
-   * <code>string template_name = 8;</code>
-   * @return The bytes for templateName.
-   */
-  com.google.protobuf.ByteString
-      getTemplateNameBytes();
-
-  /**
-   * <pre>
    * The user id that the model belongs to.
    * </pre>
    *
@@ -212,55 +192,77 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * Info about the models' input and configuration of them.
    * </pre>
    *
-   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
-   * @return Whether the inputFieldsMap field is set.
+   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * @return Whether the inputInfo field is set.
    */
-  boolean hasInputFieldsMap();
+  boolean hasInputInfo();
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * Info about the models' input and configuration of them.
    * </pre>
    *
-   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
-   * @return The inputFieldsMap.
+   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * @return The inputInfo.
    */
-  com.google.protobuf.Struct getInputFieldsMap();
+  com.clarifai.grpc.api.InputInfo getInputInfo();
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * Info about the models' input and configuration of them.
    * </pre>
    *
-   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12;</code>
    */
-  com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder();
+  com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder();
 
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * Configuration for the training process of this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
-   * @return Whether the outputFieldsMap field is set.
+   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * @return Whether the trainInfo field is set.
    */
-  boolean hasOutputFieldsMap();
+  boolean hasTrainInfo();
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * Configuration for the training process of this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
-   * @return The outputFieldsMap.
+   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * @return The trainInfo.
    */
-  com.google.protobuf.Struct getOutputFieldsMap();
+  com.clarifai.grpc.api.TrainInfo getTrainInfo();
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * Configuration for the training process of this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
    */
-  com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder();
+  com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder();
+
+  /**
+   * <pre>
+   * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+   * change model_type_id between versions of the same model.
+   * </pre>
+   *
+   * <code>string model_type_id = 14;</code>
+   * @return The modelTypeId.
+   */
+  java.lang.String getModelTypeId();
+  /**
+   * <pre>
+   * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+   * change model_type_id between versions of the same model.
+   * </pre>
+   *
+   * <code>string model_type_id = 14;</code>
+   * @return The bytes for modelTypeId.
+   */
+  com.google.protobuf.ByteString
+      getModelTypeIdBytes();
 }

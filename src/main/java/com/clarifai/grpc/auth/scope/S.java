@@ -260,14 +260,6 @@ public enum S
   TSNEVisualizations_Get(25),
   /**
    * <pre>
-   * Read from the templates DB table.
-   * </pre>
-   *
-   * <code>Templates_Get = 33 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  Templates_Get(33),
-  /**
-   * <pre>
    * Write to the annotations DB table.
    * </pre>
    *
@@ -414,6 +406,14 @@ public enum S
   Metrics_Get(53),
   /**
    * <pre>
+   * To delete we need read/write
+   * </pre>
+   *
+   * <code>Metrics_Delete = 63 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Metrics_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Metrics_Get];</code>
+   */
+  Metrics_Delete(63),
+  /**
+   * <pre>
    * Write to tasks DB table.
    * </pre>
    *
@@ -476,6 +476,30 @@ public enum S
    * <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
    */
   PasswordHistory_Delete(62),
+  /**
+   * <pre>
+   * Read from notifications table
+   * </pre>
+   *
+   * <code>Notifications_Get = 64 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+   */
+  Notifications_Get(64),
+  /**
+   * <pre>
+   * Write to notifications table
+   * </pre>
+   *
+   * <code>Notifications_Add = 65 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
+   */
+  Notifications_Add(65),
+  /**
+   * <pre>
+   * To delete notifications we need read/write
+   * </pre>
+   *
+   * <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
+   */
+  Notifications_Delete(66),
   UNRECOGNIZED(-1),
   ;
 
@@ -707,14 +731,6 @@ public enum S
   public static final int TSNEVisualizations_Get_VALUE = 25;
   /**
    * <pre>
-   * Read from the templates DB table.
-   * </pre>
-   *
-   * <code>Templates_Get = 33 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  public static final int Templates_Get_VALUE = 33;
-  /**
-   * <pre>
    * Write to the annotations DB table.
    * </pre>
    *
@@ -860,6 +876,14 @@ public enum S
   public static final int Metrics_Get_VALUE = 53;
   /**
    * <pre>
+   * To delete we need read/write
+   * </pre>
+   *
+   * <code>Metrics_Delete = 63 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Metrics_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Metrics_Get];</code>
+   */
+  public static final int Metrics_Delete_VALUE = 63;
+  /**
+   * <pre>
    * Write to tasks DB table.
    * </pre>
    *
@@ -922,6 +946,30 @@ public enum S
    * <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
    */
   public static final int PasswordHistory_Delete_VALUE = 62;
+  /**
+   * <pre>
+   * Read from notifications table
+   * </pre>
+   *
+   * <code>Notifications_Get = 64 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
+   */
+  public static final int Notifications_Get_VALUE = 64;
+  /**
+   * <pre>
+   * Write to notifications table
+   * </pre>
+   *
+   * <code>Notifications_Add = 65 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
+   */
+  public static final int Notifications_Add_VALUE = 65;
+  /**
+   * <pre>
+   * To delete notifications we need read/write
+   * </pre>
+   *
+   * <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
+   */
+  public static final int Notifications_Delete_VALUE = 66;
 
 
   public final int getNumber() {
@@ -976,7 +1024,6 @@ public enum S
       case 21: return Workflows_Delete;
       case 24: return TSNEVisualizations_Add;
       case 25: return TSNEVisualizations_Get;
-      case 33: return Templates_Get;
       case 37: return Annotations_Add;
       case 38: return Annotations_Get;
       case 39: return Annotations_Patch;
@@ -995,6 +1042,7 @@ public enum S
       case 52: return Collaborators_Delete;
       case 54: return Metrics_Add;
       case 53: return Metrics_Get;
+      case 63: return Metrics_Delete;
       case 55: return Tasks_Add;
       case 56: return Tasks_Get;
       case 57: return PasswordPolicies_Add;
@@ -1003,6 +1051,9 @@ public enum S
       case 60: return PasswordHistory_Add;
       case 61: return PasswordHistory_Get;
       case 62: return PasswordHistory_Delete;
+      case 64: return Notifications_Get;
+      case 65: return Notifications_Add;
+      case 66: return Notifications_Delete;
       default: return null;
     }
   }

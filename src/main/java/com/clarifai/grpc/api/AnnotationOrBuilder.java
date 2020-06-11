@@ -249,20 +249,21 @@ public interface AnnotationOrBuilder extends
   /**
    * <pre>
    * Whether or not this annotation is trusted
+   * Will be deprecated
    * </pre>
    *
-   * <code>bool trusted = 10;</code>
+   * <code>bool trusted = 10 [deprecated = true];</code>
    * @return The trusted.
    */
-  boolean getTrusted();
+  @java.lang.Deprecated boolean getTrusted();
 
   /**
    * <pre>
-   * Is this the default annotation tied to the input
+   * Is this the input level annotation.
    * </pre>
    *
-   * <code>bool default = 12;</code>
-   * @return The default.
+   * <code>bool input_level = 17;</code>
+   * @return The inputLevel.
    */
-  boolean getDefault();
+  boolean getInputLevel();
 }

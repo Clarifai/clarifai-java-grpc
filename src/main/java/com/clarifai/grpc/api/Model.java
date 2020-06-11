@@ -8,6 +8,17 @@ package com.clarifai.grpc.api;
  *&#47;/////////////////////////////////////////////////////////////////////////////
  * Messages from /proto/clarifai/api/model.proto
  * //////////////////////////////////////////////////////////////////////////////
+ * This is the Model object which represents a created model in the platform.
+ * Each model has a particular type denoted by the model_type_id.
+ * When creating a Model with PostModels the following happens:
+ *  - if the ModelType is trainable, then a new ModelVersion is created that is
+ *    - UNTRAINED status by default
+ *    - TRAINED status if a ModelVersion was included with PretrainedModelConfig in PostModels
+ *  - if the ModelType is not trainable, then a new ModelVersion is created with TRAINED status.
+ * To modify config settings like OutputInfo for the Model you an use PatchModels. This will
+ * also create a new ModelVersion, potentially UNTRAINED following the same rules as above.
+ * The fields that are patchable include Model.name, Model.display_name and Model.output_info
+ * (except the Model.output_info.type and Model.output_info.type_ext).
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Model}
@@ -26,8 +37,8 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     appId_ = "";
     displayName_ = "";
-    templateName_ = "";
     userId_ = "";
+    modelTypeId_ = "";
   }
 
   @java.lang.Override
@@ -123,42 +134,42 @@ private static final long serialVersionUID = 0L;
             displayName_ = s;
             break;
           }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            templateName_ = s;
-            break;
-          }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
 
             userId_ = s;
             break;
           }
-          case 82: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (inputFieldsMap_ != null) {
-              subBuilder = inputFieldsMap_.toBuilder();
+          case 98: {
+            com.clarifai.grpc.api.InputInfo.Builder subBuilder = null;
+            if (inputInfo_ != null) {
+              subBuilder = inputInfo_.toBuilder();
             }
-            inputFieldsMap_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            inputInfo_ = input.readMessage(com.clarifai.grpc.api.InputInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(inputFieldsMap_);
-              inputFieldsMap_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(inputInfo_);
+              inputInfo_ = subBuilder.buildPartial();
             }
 
             break;
           }
-          case 90: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (outputFieldsMap_ != null) {
-              subBuilder = outputFieldsMap_.toBuilder();
+          case 106: {
+            com.clarifai.grpc.api.TrainInfo.Builder subBuilder = null;
+            if (trainInfo_ != null) {
+              subBuilder = trainInfo_.toBuilder();
             }
-            outputFieldsMap_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            trainInfo_ = input.readMessage(com.clarifai.grpc.api.TrainInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(outputFieldsMap_);
-              outputFieldsMap_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(trainInfo_);
+              trainInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            modelTypeId_ = s;
             break;
           }
           default: {
@@ -476,50 +487,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TEMPLATE_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object templateName_;
-  /**
-   * <pre>
-   * Override the default template_name used for the model type
-   * </pre>
-   *
-   * <code>string template_name = 8;</code>
-   * @return The templateName.
-   */
-  public java.lang.String getTemplateName() {
-    java.lang.Object ref = templateName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      templateName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Override the default template_name used for the model type
-   * </pre>
-   *
-   * <code>string template_name = 8;</code>
-   * @return The bytes for templateName.
-   */
-  public com.google.protobuf.ByteString
-      getTemplateNameBytes() {
-    java.lang.Object ref = templateName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      templateName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int USER_ID_FIELD_NUMBER = 9;
   private volatile java.lang.Object userId_;
   /**
@@ -564,74 +531,120 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INPUT_FIELDS_MAP_FIELD_NUMBER = 10;
-  private com.google.protobuf.Struct inputFieldsMap_;
+  public static final int INPUT_INFO_FIELD_NUMBER = 12;
+  private com.clarifai.grpc.api.InputInfo inputInfo_;
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * Info about the models' input and configuration of them.
    * </pre>
    *
-   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
-   * @return Whether the inputFieldsMap field is set.
+   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * @return Whether the inputInfo field is set.
    */
-  public boolean hasInputFieldsMap() {
-    return inputFieldsMap_ != null;
+  public boolean hasInputInfo() {
+    return inputInfo_ != null;
   }
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * Info about the models' input and configuration of them.
    * </pre>
    *
-   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
-   * @return The inputFieldsMap.
+   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * @return The inputInfo.
    */
-  public com.google.protobuf.Struct getInputFieldsMap() {
-    return inputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
+  public com.clarifai.grpc.api.InputInfo getInputInfo() {
+    return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
   }
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt input.
+   * Info about the models' input and configuration of them.
    * </pre>
    *
-   * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12;</code>
    */
-  public com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder() {
-    return getInputFieldsMap();
+  public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
+    return getInputInfo();
   }
 
-  public static final int OUTPUT_FIELDS_MAP_FIELD_NUMBER = 11;
-  private com.google.protobuf.Struct outputFieldsMap_;
+  public static final int TRAIN_INFO_FIELD_NUMBER = 13;
+  private com.clarifai.grpc.api.TrainInfo trainInfo_;
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * Configuration for the training process of this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
-   * @return Whether the outputFieldsMap field is set.
+   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * @return Whether the trainInfo field is set.
    */
-  public boolean hasOutputFieldsMap() {
-    return outputFieldsMap_ != null;
+  public boolean hasTrainInfo() {
+    return trainInfo_ != null;
   }
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * Configuration for the training process of this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
-   * @return The outputFieldsMap.
+   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * @return The trainInfo.
    */
-  public com.google.protobuf.Struct getOutputFieldsMap() {
-    return outputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
+  public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
+    return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
   }
   /**
    * <pre>
-   * Map from the api.Data field names to the Triton config.pbtxt output.
+   * Configuration for the training process of this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
    */
-  public com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder() {
-    return getOutputFieldsMap();
+  public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
+    return getTrainInfo();
+  }
+
+  public static final int MODEL_TYPE_ID_FIELD_NUMBER = 14;
+  private volatile java.lang.Object modelTypeId_;
+  /**
+   * <pre>
+   * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+   * change model_type_id between versions of the same model.
+   * </pre>
+   *
+   * <code>string model_type_id = 14;</code>
+   * @return The modelTypeId.
+   */
+  public java.lang.String getModelTypeId() {
+    java.lang.Object ref = modelTypeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelTypeId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+   * change model_type_id between versions of the same model.
+   * </pre>
+   *
+   * <code>string model_type_id = 14;</code>
+   * @return The bytes for modelTypeId.
+   */
+  public com.google.protobuf.ByteString
+      getModelTypeIdBytes() {
+    java.lang.Object ref = modelTypeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      modelTypeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -669,17 +682,17 @@ private static final long serialVersionUID = 0L;
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, displayName_);
     }
-    if (!getTemplateNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, templateName_);
-    }
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
     }
-    if (inputFieldsMap_ != null) {
-      output.writeMessage(10, getInputFieldsMap());
+    if (inputInfo_ != null) {
+      output.writeMessage(12, getInputInfo());
     }
-    if (outputFieldsMap_ != null) {
-      output.writeMessage(11, getOutputFieldsMap());
+    if (trainInfo_ != null) {
+      output.writeMessage(13, getTrainInfo());
+    }
+    if (!getModelTypeIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, modelTypeId_);
     }
     unknownFields.writeTo(output);
   }
@@ -714,19 +727,19 @@ private static final long serialVersionUID = 0L;
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, displayName_);
     }
-    if (!getTemplateNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, templateName_);
-    }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
     }
-    if (inputFieldsMap_ != null) {
+    if (inputInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getInputFieldsMap());
+        .computeMessageSize(12, getInputInfo());
     }
-    if (outputFieldsMap_ != null) {
+    if (trainInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getOutputFieldsMap());
+        .computeMessageSize(13, getTrainInfo());
+    }
+    if (!getModelTypeIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, modelTypeId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -766,20 +779,20 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
-    if (!getTemplateName()
-        .equals(other.getTemplateName())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
-    if (hasInputFieldsMap() != other.hasInputFieldsMap()) return false;
-    if (hasInputFieldsMap()) {
-      if (!getInputFieldsMap()
-          .equals(other.getInputFieldsMap())) return false;
+    if (hasInputInfo() != other.hasInputInfo()) return false;
+    if (hasInputInfo()) {
+      if (!getInputInfo()
+          .equals(other.getInputInfo())) return false;
     }
-    if (hasOutputFieldsMap() != other.hasOutputFieldsMap()) return false;
-    if (hasOutputFieldsMap()) {
-      if (!getOutputFieldsMap()
-          .equals(other.getOutputFieldsMap())) return false;
+    if (hasTrainInfo() != other.hasTrainInfo()) return false;
+    if (hasTrainInfo()) {
+      if (!getTrainInfo()
+          .equals(other.getTrainInfo())) return false;
     }
+    if (!getModelTypeId()
+        .equals(other.getModelTypeId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -811,18 +824,18 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + TEMPLATE_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getTemplateName().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
-    if (hasInputFieldsMap()) {
-      hash = (37 * hash) + INPUT_FIELDS_MAP_FIELD_NUMBER;
-      hash = (53 * hash) + getInputFieldsMap().hashCode();
+    if (hasInputInfo()) {
+      hash = (37 * hash) + INPUT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getInputInfo().hashCode();
     }
-    if (hasOutputFieldsMap()) {
-      hash = (37 * hash) + OUTPUT_FIELDS_MAP_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputFieldsMap().hashCode();
+    if (hasTrainInfo()) {
+      hash = (37 * hash) + TRAIN_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTrainInfo().hashCode();
     }
+    hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelTypeId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -923,6 +936,17 @@ private static final long serialVersionUID = 0L;
    *&#47;/////////////////////////////////////////////////////////////////////////////
    * Messages from /proto/clarifai/api/model.proto
    * //////////////////////////////////////////////////////////////////////////////
+   * This is the Model object which represents a created model in the platform.
+   * Each model has a particular type denoted by the model_type_id.
+   * When creating a Model with PostModels the following happens:
+   *  - if the ModelType is trainable, then a new ModelVersion is created that is
+   *    - UNTRAINED status by default
+   *    - TRAINED status if a ModelVersion was included with PretrainedModelConfig in PostModels
+   *  - if the ModelType is not trainable, then a new ModelVersion is created with TRAINED status.
+   * To modify config settings like OutputInfo for the Model you an use PatchModels. This will
+   * also create a new ModelVersion, potentially UNTRAINED following the same rules as above.
+   * The fields that are patchable include Model.name, Model.display_name and Model.output_info
+   * (except the Model.output_info.type and Model.output_info.type_ext).
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Model}
@@ -988,22 +1012,22 @@ private static final long serialVersionUID = 0L;
       }
       displayName_ = "";
 
-      templateName_ = "";
-
       userId_ = "";
 
-      if (inputFieldsMapBuilder_ == null) {
-        inputFieldsMap_ = null;
+      if (inputInfoBuilder_ == null) {
+        inputInfo_ = null;
       } else {
-        inputFieldsMap_ = null;
-        inputFieldsMapBuilder_ = null;
+        inputInfo_ = null;
+        inputInfoBuilder_ = null;
       }
-      if (outputFieldsMapBuilder_ == null) {
-        outputFieldsMap_ = null;
+      if (trainInfoBuilder_ == null) {
+        trainInfo_ = null;
       } else {
-        outputFieldsMap_ = null;
-        outputFieldsMapBuilder_ = null;
+        trainInfo_ = null;
+        trainInfoBuilder_ = null;
       }
+      modelTypeId_ = "";
+
       return this;
     }
 
@@ -1049,18 +1073,18 @@ private static final long serialVersionUID = 0L;
         result.modelVersion_ = modelVersionBuilder_.build();
       }
       result.displayName_ = displayName_;
-      result.templateName_ = templateName_;
       result.userId_ = userId_;
-      if (inputFieldsMapBuilder_ == null) {
-        result.inputFieldsMap_ = inputFieldsMap_;
+      if (inputInfoBuilder_ == null) {
+        result.inputInfo_ = inputInfo_;
       } else {
-        result.inputFieldsMap_ = inputFieldsMapBuilder_.build();
+        result.inputInfo_ = inputInfoBuilder_.build();
       }
-      if (outputFieldsMapBuilder_ == null) {
-        result.outputFieldsMap_ = outputFieldsMap_;
+      if (trainInfoBuilder_ == null) {
+        result.trainInfo_ = trainInfo_;
       } else {
-        result.outputFieldsMap_ = outputFieldsMapBuilder_.build();
+        result.trainInfo_ = trainInfoBuilder_.build();
       }
+      result.modelTypeId_ = modelTypeId_;
       onBuilt();
       return result;
     }
@@ -1134,19 +1158,19 @@ private static final long serialVersionUID = 0L;
         displayName_ = other.displayName_;
         onChanged();
       }
-      if (!other.getTemplateName().isEmpty()) {
-        templateName_ = other.templateName_;
-        onChanged();
-      }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
       }
-      if (other.hasInputFieldsMap()) {
-        mergeInputFieldsMap(other.getInputFieldsMap());
+      if (other.hasInputInfo()) {
+        mergeInputInfo(other.getInputInfo());
       }
-      if (other.hasOutputFieldsMap()) {
-        mergeOutputFieldsMap(other.getOutputFieldsMap());
+      if (other.hasTrainInfo()) {
+        mergeTrainInfo(other.getTrainInfo());
+      }
+      if (!other.getModelTypeId().isEmpty()) {
+        modelTypeId_ = other.modelTypeId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2031,102 +2055,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object templateName_ = "";
-    /**
-     * <pre>
-     * Override the default template_name used for the model type
-     * </pre>
-     *
-     * <code>string template_name = 8;</code>
-     * @return The templateName.
-     */
-    public java.lang.String getTemplateName() {
-      java.lang.Object ref = templateName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        templateName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Override the default template_name used for the model type
-     * </pre>
-     *
-     * <code>string template_name = 8;</code>
-     * @return The bytes for templateName.
-     */
-    public com.google.protobuf.ByteString
-        getTemplateNameBytes() {
-      java.lang.Object ref = templateName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        templateName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Override the default template_name used for the model type
-     * </pre>
-     *
-     * <code>string template_name = 8;</code>
-     * @param value The templateName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTemplateName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      templateName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Override the default template_name used for the model type
-     * </pre>
-     *
-     * <code>string template_name = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTemplateName() {
-      
-      templateName_ = getDefaultInstance().getTemplateName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Override the default template_name used for the model type
-     * </pre>
-     *
-     * <code>string template_name = 8;</code>
-     * @param value The bytes for templateName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTemplateNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      templateName_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object userId_ = "";
     /**
      * <pre>
@@ -2223,314 +2151,415 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Struct inputFieldsMap_;
+    private com.clarifai.grpc.api.InputInfo inputInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> inputFieldsMapBuilder_;
+        com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> inputInfoBuilder_;
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
-     * @return Whether the inputFieldsMap field is set.
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * @return Whether the inputInfo field is set.
      */
-    public boolean hasInputFieldsMap() {
-      return inputFieldsMapBuilder_ != null || inputFieldsMap_ != null;
+    public boolean hasInputInfo() {
+      return inputInfoBuilder_ != null || inputInfo_ != null;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
-     * @return The inputFieldsMap.
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * @return The inputInfo.
      */
-    public com.google.protobuf.Struct getInputFieldsMap() {
-      if (inputFieldsMapBuilder_ == null) {
-        return inputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
+    public com.clarifai.grpc.api.InputInfo getInputInfo() {
+      if (inputInfoBuilder_ == null) {
+        return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
       } else {
-        return inputFieldsMapBuilder_.getMessage();
+        return inputInfoBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
-    public Builder setInputFieldsMap(com.google.protobuf.Struct value) {
-      if (inputFieldsMapBuilder_ == null) {
+    public Builder setInputInfo(com.clarifai.grpc.api.InputInfo value) {
+      if (inputInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        inputFieldsMap_ = value;
+        inputInfo_ = value;
         onChanged();
       } else {
-        inputFieldsMapBuilder_.setMessage(value);
+        inputInfoBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
-    public Builder setInputFieldsMap(
-        com.google.protobuf.Struct.Builder builderForValue) {
-      if (inputFieldsMapBuilder_ == null) {
-        inputFieldsMap_ = builderForValue.build();
+    public Builder setInputInfo(
+        com.clarifai.grpc.api.InputInfo.Builder builderForValue) {
+      if (inputInfoBuilder_ == null) {
+        inputInfo_ = builderForValue.build();
         onChanged();
       } else {
-        inputFieldsMapBuilder_.setMessage(builderForValue.build());
+        inputInfoBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
-    public Builder mergeInputFieldsMap(com.google.protobuf.Struct value) {
-      if (inputFieldsMapBuilder_ == null) {
-        if (inputFieldsMap_ != null) {
-          inputFieldsMap_ =
-            com.google.protobuf.Struct.newBuilder(inputFieldsMap_).mergeFrom(value).buildPartial();
+    public Builder mergeInputInfo(com.clarifai.grpc.api.InputInfo value) {
+      if (inputInfoBuilder_ == null) {
+        if (inputInfo_ != null) {
+          inputInfo_ =
+            com.clarifai.grpc.api.InputInfo.newBuilder(inputInfo_).mergeFrom(value).buildPartial();
         } else {
-          inputFieldsMap_ = value;
+          inputInfo_ = value;
         }
         onChanged();
       } else {
-        inputFieldsMapBuilder_.mergeFrom(value);
+        inputInfoBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
-    public Builder clearInputFieldsMap() {
-      if (inputFieldsMapBuilder_ == null) {
-        inputFieldsMap_ = null;
+    public Builder clearInputInfo() {
+      if (inputInfoBuilder_ == null) {
+        inputInfo_ = null;
         onChanged();
       } else {
-        inputFieldsMap_ = null;
-        inputFieldsMapBuilder_ = null;
+        inputInfo_ = null;
+        inputInfoBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
-    public com.google.protobuf.Struct.Builder getInputFieldsMapBuilder() {
+    public com.clarifai.grpc.api.InputInfo.Builder getInputInfoBuilder() {
       
       onChanged();
-      return getInputFieldsMapFieldBuilder().getBuilder();
+      return getInputInfoFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
-    public com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder() {
-      if (inputFieldsMapBuilder_ != null) {
-        return inputFieldsMapBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
+      if (inputInfoBuilder_ != null) {
+        return inputInfoBuilder_.getMessageOrBuilder();
       } else {
-        return inputFieldsMap_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
+        return inputInfo_ == null ?
+            com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
       }
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt input.
+     * Info about the models' input and configuration of them.
      * </pre>
      *
-     * <code>.google.protobuf.Struct input_fields_map = 10;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
-        getInputFieldsMapFieldBuilder() {
-      if (inputFieldsMapBuilder_ == null) {
-        inputFieldsMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getInputFieldsMap(),
+        com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> 
+        getInputInfoFieldBuilder() {
+      if (inputInfoBuilder_ == null) {
+        inputInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder>(
+                getInputInfo(),
                 getParentForChildren(),
                 isClean());
-        inputFieldsMap_ = null;
+        inputInfo_ = null;
       }
-      return inputFieldsMapBuilder_;
+      return inputInfoBuilder_;
     }
 
-    private com.google.protobuf.Struct outputFieldsMap_;
+    private com.clarifai.grpc.api.TrainInfo trainInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> outputFieldsMapBuilder_;
+        com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> trainInfoBuilder_;
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
-     * @return Whether the outputFieldsMap field is set.
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * @return Whether the trainInfo field is set.
      */
-    public boolean hasOutputFieldsMap() {
-      return outputFieldsMapBuilder_ != null || outputFieldsMap_ != null;
+    public boolean hasTrainInfo() {
+      return trainInfoBuilder_ != null || trainInfo_ != null;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
-     * @return The outputFieldsMap.
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * @return The trainInfo.
      */
-    public com.google.protobuf.Struct getOutputFieldsMap() {
-      if (outputFieldsMapBuilder_ == null) {
-        return outputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
+    public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
+      if (trainInfoBuilder_ == null) {
+        return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
       } else {
-        return outputFieldsMapBuilder_.getMessage();
+        return trainInfoBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
-    public Builder setOutputFieldsMap(com.google.protobuf.Struct value) {
-      if (outputFieldsMapBuilder_ == null) {
+    public Builder setTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
+      if (trainInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        outputFieldsMap_ = value;
+        trainInfo_ = value;
         onChanged();
       } else {
-        outputFieldsMapBuilder_.setMessage(value);
+        trainInfoBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
-    public Builder setOutputFieldsMap(
-        com.google.protobuf.Struct.Builder builderForValue) {
-      if (outputFieldsMapBuilder_ == null) {
-        outputFieldsMap_ = builderForValue.build();
+    public Builder setTrainInfo(
+        com.clarifai.grpc.api.TrainInfo.Builder builderForValue) {
+      if (trainInfoBuilder_ == null) {
+        trainInfo_ = builderForValue.build();
         onChanged();
       } else {
-        outputFieldsMapBuilder_.setMessage(builderForValue.build());
+        trainInfoBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
-    public Builder mergeOutputFieldsMap(com.google.protobuf.Struct value) {
-      if (outputFieldsMapBuilder_ == null) {
-        if (outputFieldsMap_ != null) {
-          outputFieldsMap_ =
-            com.google.protobuf.Struct.newBuilder(outputFieldsMap_).mergeFrom(value).buildPartial();
+    public Builder mergeTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
+      if (trainInfoBuilder_ == null) {
+        if (trainInfo_ != null) {
+          trainInfo_ =
+            com.clarifai.grpc.api.TrainInfo.newBuilder(trainInfo_).mergeFrom(value).buildPartial();
         } else {
-          outputFieldsMap_ = value;
+          trainInfo_ = value;
         }
         onChanged();
       } else {
-        outputFieldsMapBuilder_.mergeFrom(value);
+        trainInfoBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
-    public Builder clearOutputFieldsMap() {
-      if (outputFieldsMapBuilder_ == null) {
-        outputFieldsMap_ = null;
+    public Builder clearTrainInfo() {
+      if (trainInfoBuilder_ == null) {
+        trainInfo_ = null;
         onChanged();
       } else {
-        outputFieldsMap_ = null;
-        outputFieldsMapBuilder_ = null;
+        trainInfo_ = null;
+        trainInfoBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
-    public com.google.protobuf.Struct.Builder getOutputFieldsMapBuilder() {
+    public com.clarifai.grpc.api.TrainInfo.Builder getTrainInfoBuilder() {
       
       onChanged();
-      return getOutputFieldsMapFieldBuilder().getBuilder();
+      return getTrainInfoFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
-    public com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder() {
-      if (outputFieldsMapBuilder_ != null) {
-        return outputFieldsMapBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
+      if (trainInfoBuilder_ != null) {
+        return trainInfoBuilder_.getMessageOrBuilder();
       } else {
-        return outputFieldsMap_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
+        return trainInfo_ == null ?
+            com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
       }
     }
     /**
      * <pre>
-     * Map from the api.Data field names to the Triton config.pbtxt output.
+     * Configuration for the training process of this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct output_fields_map = 11;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
-        getOutputFieldsMapFieldBuilder() {
-      if (outputFieldsMapBuilder_ == null) {
-        outputFieldsMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getOutputFieldsMap(),
+        com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> 
+        getTrainInfoFieldBuilder() {
+      if (trainInfoBuilder_ == null) {
+        trainInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder>(
+                getTrainInfo(),
                 getParentForChildren(),
                 isClean());
-        outputFieldsMap_ = null;
+        trainInfo_ = null;
       }
-      return outputFieldsMapBuilder_;
+      return trainInfoBuilder_;
+    }
+
+    private java.lang.Object modelTypeId_ = "";
+    /**
+     * <pre>
+     * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+     * change model_type_id between versions of the same model.
+     * </pre>
+     *
+     * <code>string model_type_id = 14;</code>
+     * @return The modelTypeId.
+     */
+    public java.lang.String getModelTypeId() {
+      java.lang.Object ref = modelTypeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelTypeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+     * change model_type_id between versions of the same model.
+     * </pre>
+     *
+     * <code>string model_type_id = 14;</code>
+     * @return The bytes for modelTypeId.
+     */
+    public com.google.protobuf.ByteString
+        getModelTypeIdBytes() {
+      java.lang.Object ref = modelTypeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelTypeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+     * change model_type_id between versions of the same model.
+     * </pre>
+     *
+     * <code>string model_type_id = 14;</code>
+     * @param value The modelTypeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+     * change model_type_id between versions of the same model.
+     * </pre>
+     *
+     * <code>string model_type_id = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelTypeId() {
+      
+      modelTypeId_ = getDefaultInstance().getModelTypeId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The ModelType.Id that is used for this model. This is used for all versions and you cannot
+     * change model_type_id between versions of the same model.
+     * </pre>
+     *
+     * <code>string model_type_id = 14;</code>
+     * @param value The bytes for modelTypeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelTypeId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
