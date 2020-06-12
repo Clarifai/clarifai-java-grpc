@@ -208,7 +208,7 @@ class JsonEndpoint<RequestT, ResponseT> {
               String[] result = new String[2];
               JsonObject app = apps.get(0).getAsJsonObject();
               result[0] = app.get("id").getAsString();
-              result[1] = app.get("user_id").getAsString();
+              result[1] = app.has("user_id") ? app.get("user_id").getAsString() : "me";
               return result;
             } else if (apps.size() == 0) {
               return new String[0];
