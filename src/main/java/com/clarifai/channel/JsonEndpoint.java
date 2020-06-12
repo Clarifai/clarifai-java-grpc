@@ -187,8 +187,9 @@ class JsonEndpoint<RequestT, ResponseT> {
   }
 
   /**
-   * Extracts the app_id and user_id values from the request object, or returns an empty array.
-   * @return ["app_id", "user_id"] values if they are present, or empty array.
+   * @return ["app_id", "user_id"] values if they are present, or empty array. If only "app_id" is
+   *         present, "user_id" is set to 'me' If only "app_id" is present, "user_id" is set
+   *         to "me".
    */
   private String[] readAppIdAndUserId(JsonElement element) {
       if (element.isJsonArray()) {
