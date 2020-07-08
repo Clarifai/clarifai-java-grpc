@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList conceptIds_;
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -2242,7 +2242,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2254,7 +2254,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2265,7 +2265,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2277,7 +2277,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2290,7 +2290,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2310,7 +2310,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2329,7 +2329,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2346,7 +2346,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>
@@ -2360,7 +2360,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task.
+     * List of concept ids used in the work of this task if label type is classification.
      * </pre>
      *
      * <code>repeated string concept_ids = 7;</code>

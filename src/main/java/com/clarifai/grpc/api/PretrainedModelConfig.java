@@ -102,6 +102,11 @@ private static final long serialVersionUID = 0L;
             modelZipUrl_ = s;
             break;
           }
+          case 56: {
+
+            overwrite_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -380,6 +385,20 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int OVERWRITE_FIELD_NUMBER = 7;
+  private boolean overwrite_;
+  /**
+   * <pre>
+   * Whether to overwrite the model for the existing internal id
+   * </pre>
+   *
+   * <code>bool overwrite = 7;</code>
+   * @return The overwrite.
+   */
+  public boolean getOverwrite() {
+    return overwrite_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -412,6 +431,9 @@ private static final long serialVersionUID = 0L;
     if (!getModelZipUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelZipUrl_);
     }
+    if (overwrite_ != false) {
+      output.writeBool(7, overwrite_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -440,6 +462,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelZipUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelZipUrl_);
+    }
+    if (overwrite_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, overwrite_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -474,6 +500,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDataProviderParams())) return false;
     if (!getModelZipUrl()
         .equals(other.getModelZipUrl())) return false;
+    if (getOverwrite()
+        != other.getOverwrite()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -501,6 +529,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDataProviderParams().hashCode();
     hash = (37 * hash) + MODEL_ZIP_URL_FIELD_NUMBER;
     hash = (53 * hash) + getModelZipUrl().hashCode();
+    hash = (37 * hash) + OVERWRITE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getOverwrite());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -654,6 +685,8 @@ private static final long serialVersionUID = 0L;
 
       modelZipUrl_ = "";
 
+      overwrite_ = false;
+
       return this;
     }
 
@@ -694,6 +727,7 @@ private static final long serialVersionUID = 0L;
       }
       result.dataProviderParams_ = dataProviderParams_;
       result.modelZipUrl_ = modelZipUrl_;
+      result.overwrite_ = overwrite_;
       onBuilt();
       return result;
     }
@@ -763,6 +797,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getModelZipUrl().isEmpty()) {
         modelZipUrl_ = other.modelZipUrl_;
         onChanged();
+      }
+      if (other.getOverwrite() != false) {
+        setOverwrite(other.getOverwrite());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1483,6 +1520,48 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       modelZipUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean overwrite_ ;
+    /**
+     * <pre>
+     * Whether to overwrite the model for the existing internal id
+     * </pre>
+     *
+     * <code>bool overwrite = 7;</code>
+     * @return The overwrite.
+     */
+    public boolean getOverwrite() {
+      return overwrite_;
+    }
+    /**
+     * <pre>
+     * Whether to overwrite the model for the existing internal id
+     * </pre>
+     *
+     * <code>bool overwrite = 7;</code>
+     * @param value The overwrite to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOverwrite(boolean value) {
+      
+      overwrite_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to overwrite the model for the existing internal id
+     * </pre>
+     *
+     * <code>bool overwrite = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOverwrite() {
+      
+      overwrite_ = false;
       onChanged();
       return this;
     }

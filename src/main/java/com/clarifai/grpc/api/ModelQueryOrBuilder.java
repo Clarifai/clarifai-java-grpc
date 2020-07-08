@@ -8,11 +8,19 @@ public interface ModelQueryOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The name ofthe field. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
    * <code>string name = 1;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
+   * <pre>
+   * The name ofthe field. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
    * <code>string name = 1;</code>
    * @return The bytes for name.
    */
@@ -20,14 +28,44 @@ public interface ModelQueryOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>string type = 2;</code>
+   * <pre>
+   * This is the legacy model type. Do not use, only kept for support in old API clients.
+   * </pre>
+   *
+   * <code>string type = 2 [deprecated = true];</code>
    * @return The type.
    */
-  java.lang.String getType();
+  @java.lang.Deprecated java.lang.String getType();
   /**
-   * <code>string type = 2;</code>
+   * <pre>
+   * This is the legacy model type. Do not use, only kept for support in old API clients.
+   * </pre>
+   *
+   * <code>string type = 2 [deprecated = true];</code>
    * @return The bytes for type.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getTypeBytes();
+
+  /**
+   * <pre>
+   * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+   * supported.
+   * </pre>
+   *
+   * <code>string model_type_id = 3;</code>
+   * @return The modelTypeId.
+   */
+  java.lang.String getModelTypeId();
+  /**
+   * <pre>
+   * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+   * supported.
+   * </pre>
+   *
+   * <code>string model_type_id = 3;</code>
+   * @return The bytes for modelTypeId.
+   */
+  com.google.protobuf.ByteString
+      getModelTypeIdBytes();
 }

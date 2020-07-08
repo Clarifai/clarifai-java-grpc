@@ -36,7 +36,7 @@ public interface MultiModelTypeResponseOrBuilder extends
 
   /**
    * <pre>
-   * List of ModelType objcts.
+   * List of ModelType objects.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -45,7 +45,7 @@ public interface MultiModelTypeResponseOrBuilder extends
       getModelTypesList();
   /**
    * <pre>
-   * List of ModelType objcts.
+   * List of ModelType objects.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -53,7 +53,7 @@ public interface MultiModelTypeResponseOrBuilder extends
   com.clarifai.grpc.api.ModelType getModelTypes(int index);
   /**
    * <pre>
-   * List of ModelType objcts.
+   * List of ModelType objects.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -61,7 +61,7 @@ public interface MultiModelTypeResponseOrBuilder extends
   int getModelTypesCount();
   /**
    * <pre>
-   * List of ModelType objcts.
+   * List of ModelType objects.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
@@ -70,7 +70,7 @@ public interface MultiModelTypeResponseOrBuilder extends
       getModelTypesOrBuilderList();
   /**
    * <pre>
-   * List of ModelType objcts.
+   * List of ModelType objects.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>

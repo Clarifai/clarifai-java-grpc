@@ -210,6 +210,10 @@ public enum StatusCode
    */
   MODEL_UPLOADING(21104),
   /**
+   * <code>MODEL_UPLOADING_FAILED = 21105;</code>
+   */
+  MODEL_UPLOADING_FAILED(21105),
+  /**
    * <pre>
    * Custom model training had no data.
    * </pre>
@@ -1207,6 +1211,7 @@ public enum StatusCode
   SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST(53001),
   /**
    * <pre>
+   * Tasks 54xxx
    * The task was created.
    * </pre>
    *
@@ -1223,12 +1228,40 @@ public enum StatusCode
   TASK_DONE(54002),
   /**
    * <pre>
-   * The task was requested to be closed (with status DONE), but validation failed.
+   * The task operation is in conflict with the current state of the server.
    * </pre>
    *
-   * <code>TASK_NOT_VALID_TO_CLOSE = 54100;</code>
+   * <code>TASK_CONFLICT = 54100;</code>
    */
-  TASK_NOT_VALID_TO_CLOSE(54100),
+  TASK_CONFLICT(54100),
+  /**
+   * <pre>
+   * Certain task-related scenarios are not implemented.
+   * </pre>
+   *
+   * <code>TASK_NOT_IMPLEMENTED = 54101;</code>
+   */
+  TASK_NOT_IMPLEMENTED(54101),
+  /**
+   * <pre>
+   * Label Order Related Status Code 55xxx
+   * </pre>
+   *
+   * <code>LABEL_ORDER_PENDING = 55001;</code>
+   */
+  LABEL_ORDER_PENDING(55001),
+  /**
+   * <code>LABEL_ORDER_IN_PROGRESS = 55002;</code>
+   */
+  LABEL_ORDER_IN_PROGRESS(55002),
+  /**
+   * <code>LABEL_ORDER_SUCCESS = 55003;</code>
+   */
+  LABEL_ORDER_SUCCESS(55003),
+  /**
+   * <code>LABEL_ORDER_CANCELED = 55004;</code>
+   */
+  LABEL_ORDER_CANCELED(55004),
   /**
    * <pre>
    * License Related Status Code 600xx
@@ -1577,6 +1610,10 @@ public enum StatusCode
    * <code>MODEL_UPLOADING = 21104;</code>
    */
   public static final int MODEL_UPLOADING_VALUE = 21104;
+  /**
+   * <code>MODEL_UPLOADING_FAILED = 21105;</code>
+   */
+  public static final int MODEL_UPLOADING_FAILED_VALUE = 21105;
   /**
    * <pre>
    * Custom model training had no data.
@@ -2575,6 +2612,7 @@ public enum StatusCode
   public static final int SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST_VALUE = 53001;
   /**
    * <pre>
+   * Tasks 54xxx
    * The task was created.
    * </pre>
    *
@@ -2591,12 +2629,40 @@ public enum StatusCode
   public static final int TASK_DONE_VALUE = 54002;
   /**
    * <pre>
-   * The task was requested to be closed (with status DONE), but validation failed.
+   * The task operation is in conflict with the current state of the server.
    * </pre>
    *
-   * <code>TASK_NOT_VALID_TO_CLOSE = 54100;</code>
+   * <code>TASK_CONFLICT = 54100;</code>
    */
-  public static final int TASK_NOT_VALID_TO_CLOSE_VALUE = 54100;
+  public static final int TASK_CONFLICT_VALUE = 54100;
+  /**
+   * <pre>
+   * Certain task-related scenarios are not implemented.
+   * </pre>
+   *
+   * <code>TASK_NOT_IMPLEMENTED = 54101;</code>
+   */
+  public static final int TASK_NOT_IMPLEMENTED_VALUE = 54101;
+  /**
+   * <pre>
+   * Label Order Related Status Code 55xxx
+   * </pre>
+   *
+   * <code>LABEL_ORDER_PENDING = 55001;</code>
+   */
+  public static final int LABEL_ORDER_PENDING_VALUE = 55001;
+  /**
+   * <code>LABEL_ORDER_IN_PROGRESS = 55002;</code>
+   */
+  public static final int LABEL_ORDER_IN_PROGRESS_VALUE = 55002;
+  /**
+   * <code>LABEL_ORDER_SUCCESS = 55003;</code>
+   */
+  public static final int LABEL_ORDER_SUCCESS_VALUE = 55003;
+  /**
+   * <code>LABEL_ORDER_CANCELED = 55004;</code>
+   */
+  public static final int LABEL_ORDER_CANCELED_VALUE = 55004;
   /**
    * <pre>
    * License Related Status Code 600xx
@@ -2794,6 +2860,7 @@ public enum StatusCode
       case 21102: return MODEL_UNTRAINED;
       case 21103: return MODEL_QUEUED_FOR_TRAINING;
       case 21104: return MODEL_UPLOADING;
+      case 21105: return MODEL_UPLOADING_FAILED;
       case 21110: return MODEL_TRAINING_NO_DATA;
       case 21111: return MODEL_TRAINING_NO_POSITIVES;
       case 21112: return MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS;
@@ -2996,7 +3063,12 @@ public enum StatusCode
       case 53001: return SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST;
       case 54001: return TASK_IN_PROGRESS;
       case 54002: return TASK_DONE;
-      case 54100: return TASK_NOT_VALID_TO_CLOSE;
+      case 54100: return TASK_CONFLICT;
+      case 54101: return TASK_NOT_IMPLEMENTED;
+      case 55001: return LABEL_ORDER_PENDING;
+      case 55002: return LABEL_ORDER_IN_PROGRESS;
+      case 55003: return LABEL_ORDER_SUCCESS;
+      case 55004: return LABEL_ORDER_CANCELED;
       case 60000: return LICENSE_ACTIVE;
       case 60001: return LICENSE_DOES_NOT_EXIST;
       case 60002: return LICENSE_NEED_UPDATE;

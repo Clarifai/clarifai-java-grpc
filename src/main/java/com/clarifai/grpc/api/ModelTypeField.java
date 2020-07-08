@@ -109,6 +109,24 @@ private static final long serialVersionUID = 0L;
             internalOnly_ = input.readBool();
             break;
           }
+          case 64: {
+
+            required_ = input.readBool();
+            break;
+          }
+          case 74: {
+            com.clarifai.grpc.api.ModelTypeRangeInfo.Builder subBuilder = null;
+            if (modelTypeRangeInfo_ != null) {
+              subBuilder = modelTypeRangeInfo_.toBuilder();
+            }
+            modelTypeRangeInfo_ = input.readMessage(com.clarifai.grpc.api.ModelTypeRangeInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modelTypeRangeInfo_);
+              modelTypeRangeInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -170,14 +188,26 @@ private static final long serialVersionUID = 0L;
      */
     NUMBER(3),
     /**
+     * <pre>
+     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * </pre>
+     *
      * <code>ARRAY_OF_CONCEPTS = 4;</code>
      */
     ARRAY_OF_CONCEPTS(4),
     /**
+     * <pre>
+     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * </pre>
+     *
      * <code>ARRAY_OF_CONCEPTS_WITH_THRESHOLD = 5;</code>
      */
     ARRAY_OF_CONCEPTS_WITH_THRESHOLD(5),
     /**
+     * <pre>
+     * A range for a float value.
+     * </pre>
+     *
      * <code>RANGE = 7;</code>
      */
     RANGE(7),
@@ -191,10 +221,18 @@ private static final long serialVersionUID = 0L;
      */
     ENUM(8),
     /**
+     * <pre>
+     * For listing collaborators of the app. The field is a string of the collaborator's user_id.
+     * </pre>
+     *
      * <code>COLLABORATORS = 9;</code>
      */
     COLLABORATORS(9),
     /**
+     * <pre>
+     * For arbitrary json object: "{...}"
+     * </pre>
+     *
      * <code>JSON = 10;</code>
      */
     JSON(10),
@@ -206,6 +244,15 @@ private static final long serialVersionUID = 0L;
      * <code>ARRAY_OF_NUMBERS = 11;</code>
      */
     ARRAY_OF_NUMBERS(11),
+    /**
+     * <pre>
+     * For selecting the embed_model_version_id for context based models.
+     * This is a string type in the API request.
+     * </pre>
+     *
+     * <code>WORKFLOW_EMBED_MODELS = 12;</code>
+     */
+    WORKFLOW_EMBED_MODELS(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -226,14 +273,26 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NUMBER_VALUE = 3;
     /**
+     * <pre>
+     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * </pre>
+     *
      * <code>ARRAY_OF_CONCEPTS = 4;</code>
      */
     public static final int ARRAY_OF_CONCEPTS_VALUE = 4;
     /**
+     * <pre>
+     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * </pre>
+     *
      * <code>ARRAY_OF_CONCEPTS_WITH_THRESHOLD = 5;</code>
      */
     public static final int ARRAY_OF_CONCEPTS_WITH_THRESHOLD_VALUE = 5;
     /**
+     * <pre>
+     * A range for a float value.
+     * </pre>
+     *
      * <code>RANGE = 7;</code>
      */
     public static final int RANGE_VALUE = 7;
@@ -247,10 +306,18 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ENUM_VALUE = 8;
     /**
+     * <pre>
+     * For listing collaborators of the app. The field is a string of the collaborator's user_id.
+     * </pre>
+     *
      * <code>COLLABORATORS = 9;</code>
      */
     public static final int COLLABORATORS_VALUE = 9;
     /**
+     * <pre>
+     * For arbitrary json object: "{...}"
+     * </pre>
+     *
      * <code>JSON = 10;</code>
      */
     public static final int JSON_VALUE = 10;
@@ -262,6 +329,15 @@ private static final long serialVersionUID = 0L;
      * <code>ARRAY_OF_NUMBERS = 11;</code>
      */
     public static final int ARRAY_OF_NUMBERS_VALUE = 11;
+    /**
+     * <pre>
+     * For selecting the embed_model_version_id for context based models.
+     * This is a string type in the API request.
+     * </pre>
+     *
+     * <code>WORKFLOW_EMBED_MODELS = 12;</code>
+     */
+    public static final int WORKFLOW_EMBED_MODELS_VALUE = 12;
 
 
     public final int getNumber() {
@@ -299,6 +375,7 @@ private static final long serialVersionUID = 0L;
         case 9: return COLLABORATORS;
         case 10: return JSON;
         case 11: return ARRAY_OF_NUMBERS;
+        case 12: return WORKFLOW_EMBED_MODELS;
         default: return null;
       }
     }
@@ -631,6 +708,57 @@ private static final long serialVersionUID = 0L;
     return internalOnly_;
   }
 
+  public static final int REQUIRED_FIELD_NUMBER = 8;
+  private boolean required_;
+  /**
+   * <pre>
+   * If this field is a required field. If True then during validation you won't be able to create
+   * a model of this type with providing a value for this field. When False, the ModelType's
+   * default_value will be used for this field.
+   * </pre>
+   *
+   * <code>bool required = 8;</code>
+   * @return The required.
+   */
+  public boolean getRequired() {
+    return required_;
+  }
+
+  public static final int MODEL_TYPE_RANGE_INFO_FIELD_NUMBER = 9;
+  private com.clarifai.grpc.api.ModelTypeRangeInfo modelTypeRangeInfo_;
+  /**
+   * <pre>
+   * If the field_type is RANGE, this must be filled in.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+   * @return Whether the modelTypeRangeInfo field is set.
+   */
+  public boolean hasModelTypeRangeInfo() {
+    return modelTypeRangeInfo_ != null;
+  }
+  /**
+   * <pre>
+   * If the field_type is RANGE, this must be filled in.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+   * @return The modelTypeRangeInfo.
+   */
+  public com.clarifai.grpc.api.ModelTypeRangeInfo getModelTypeRangeInfo() {
+    return modelTypeRangeInfo_ == null ? com.clarifai.grpc.api.ModelTypeRangeInfo.getDefaultInstance() : modelTypeRangeInfo_;
+  }
+  /**
+   * <pre>
+   * If the field_type is RANGE, this must be filled in.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+   */
+  public com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder getModelTypeRangeInfoOrBuilder() {
+    return getModelTypeRangeInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -666,6 +794,12 @@ private static final long serialVersionUID = 0L;
     if (internalOnly_ != false) {
       output.writeBool(7, internalOnly_);
     }
+    if (required_ != false) {
+      output.writeBool(8, required_);
+    }
+    if (modelTypeRangeInfo_ != null) {
+      output.writeMessage(9, getModelTypeRangeInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -700,6 +834,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, internalOnly_);
     }
+    if (required_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, required_);
+    }
+    if (modelTypeRangeInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getModelTypeRangeInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -731,6 +873,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelTypeEnumOptionsList())) return false;
     if (getInternalOnly()
         != other.getInternalOnly()) return false;
+    if (getRequired()
+        != other.getRequired()) return false;
+    if (hasModelTypeRangeInfo() != other.hasModelTypeRangeInfo()) return false;
+    if (hasModelTypeRangeInfo()) {
+      if (!getModelTypeRangeInfo()
+          .equals(other.getModelTypeRangeInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -761,6 +910,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INTERNAL_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getInternalOnly());
+    hash = (37 * hash) + REQUIRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getRequired());
+    if (hasModelTypeRangeInfo()) {
+      hash = (37 * hash) + MODEL_TYPE_RANGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getModelTypeRangeInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -921,6 +1077,14 @@ private static final long serialVersionUID = 0L;
       }
       internalOnly_ = false;
 
+      required_ = false;
+
+      if (modelTypeRangeInfoBuilder_ == null) {
+        modelTypeRangeInfo_ = null;
+      } else {
+        modelTypeRangeInfo_ = null;
+        modelTypeRangeInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -967,6 +1131,12 @@ private static final long serialVersionUID = 0L;
         result.modelTypeEnumOptions_ = modelTypeEnumOptionsBuilder_.build();
       }
       result.internalOnly_ = internalOnly_;
+      result.required_ = required_;
+      if (modelTypeRangeInfoBuilder_ == null) {
+        result.modelTypeRangeInfo_ = modelTypeRangeInfo_;
+      } else {
+        result.modelTypeRangeInfo_ = modelTypeRangeInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1061,6 +1231,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getInternalOnly() != false) {
         setInternalOnly(other.getInternalOnly());
+      }
+      if (other.getRequired() != false) {
+        setRequired(other.getRequired());
+      }
+      if (other.hasModelTypeRangeInfo()) {
+        mergeModelTypeRangeInfo(other.getModelTypeRangeInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2003,6 +2179,209 @@ private static final long serialVersionUID = 0L;
       internalOnly_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean required_ ;
+    /**
+     * <pre>
+     * If this field is a required field. If True then during validation you won't be able to create
+     * a model of this type with providing a value for this field. When False, the ModelType's
+     * default_value will be used for this field.
+     * </pre>
+     *
+     * <code>bool required = 8;</code>
+     * @return The required.
+     */
+    public boolean getRequired() {
+      return required_;
+    }
+    /**
+     * <pre>
+     * If this field is a required field. If True then during validation you won't be able to create
+     * a model of this type with providing a value for this field. When False, the ModelType's
+     * default_value will be used for this field.
+     * </pre>
+     *
+     * <code>bool required = 8;</code>
+     * @param value The required to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequired(boolean value) {
+      
+      required_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If this field is a required field. If True then during validation you won't be able to create
+     * a model of this type with providing a value for this field. When False, the ModelType's
+     * default_value will be used for this field.
+     * </pre>
+     *
+     * <code>bool required = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequired() {
+      
+      required_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.ModelTypeRangeInfo modelTypeRangeInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeRangeInfo, com.clarifai.grpc.api.ModelTypeRangeInfo.Builder, com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder> modelTypeRangeInfoBuilder_;
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     * @return Whether the modelTypeRangeInfo field is set.
+     */
+    public boolean hasModelTypeRangeInfo() {
+      return modelTypeRangeInfoBuilder_ != null || modelTypeRangeInfo_ != null;
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     * @return The modelTypeRangeInfo.
+     */
+    public com.clarifai.grpc.api.ModelTypeRangeInfo getModelTypeRangeInfo() {
+      if (modelTypeRangeInfoBuilder_ == null) {
+        return modelTypeRangeInfo_ == null ? com.clarifai.grpc.api.ModelTypeRangeInfo.getDefaultInstance() : modelTypeRangeInfo_;
+      } else {
+        return modelTypeRangeInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    public Builder setModelTypeRangeInfo(com.clarifai.grpc.api.ModelTypeRangeInfo value) {
+      if (modelTypeRangeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelTypeRangeInfo_ = value;
+        onChanged();
+      } else {
+        modelTypeRangeInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    public Builder setModelTypeRangeInfo(
+        com.clarifai.grpc.api.ModelTypeRangeInfo.Builder builderForValue) {
+      if (modelTypeRangeInfoBuilder_ == null) {
+        modelTypeRangeInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelTypeRangeInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    public Builder mergeModelTypeRangeInfo(com.clarifai.grpc.api.ModelTypeRangeInfo value) {
+      if (modelTypeRangeInfoBuilder_ == null) {
+        if (modelTypeRangeInfo_ != null) {
+          modelTypeRangeInfo_ =
+            com.clarifai.grpc.api.ModelTypeRangeInfo.newBuilder(modelTypeRangeInfo_).mergeFrom(value).buildPartial();
+        } else {
+          modelTypeRangeInfo_ = value;
+        }
+        onChanged();
+      } else {
+        modelTypeRangeInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    public Builder clearModelTypeRangeInfo() {
+      if (modelTypeRangeInfoBuilder_ == null) {
+        modelTypeRangeInfo_ = null;
+        onChanged();
+      } else {
+        modelTypeRangeInfo_ = null;
+        modelTypeRangeInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeRangeInfo.Builder getModelTypeRangeInfoBuilder() {
+      
+      onChanged();
+      return getModelTypeRangeInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder getModelTypeRangeInfoOrBuilder() {
+      if (modelTypeRangeInfoBuilder_ != null) {
+        return modelTypeRangeInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return modelTypeRangeInfo_ == null ?
+            com.clarifai.grpc.api.ModelTypeRangeInfo.getDefaultInstance() : modelTypeRangeInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * If the field_type is RANGE, this must be filled in.
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeRangeInfo, com.clarifai.grpc.api.ModelTypeRangeInfo.Builder, com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder> 
+        getModelTypeRangeInfoFieldBuilder() {
+      if (modelTypeRangeInfoBuilder_ == null) {
+        modelTypeRangeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ModelTypeRangeInfo, com.clarifai.grpc.api.ModelTypeRangeInfo.Builder, com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder>(
+                getModelTypeRangeInfo(),
+                getParentForChildren(),
+                isClean());
+        modelTypeRangeInfo_ = null;
+      }
+      return modelTypeRangeInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

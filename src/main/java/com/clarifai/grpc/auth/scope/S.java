@@ -196,16 +196,6 @@ public enum S
   Models_Sync(27),
   /**
    * <pre>
-   * Note: Models_Deploy is effectively doing POST /models/{models_id}/deployments so it's treated that
-   * way in terms of data access under the hood.
-   * Write to the model versions DB table.
-   * </pre>
-   *
-   * <code>Models_Deploy = 34 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
-   */
-  Models_Deploy(34),
-  /**
-   * <pre>
    * Write to the workflows DB table.
    * </pre>
    *
@@ -430,6 +420,14 @@ public enum S
   Tasks_Get(56),
   /**
    * <pre>
+   * To delete we need read/write
+   * </pre>
+   *
+   * <code>Tasks_Delete = 70 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Tasks_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Tasks_Get];</code>
+   */
+  Tasks_Delete(70),
+  /**
+   * <pre>
    * Write to the password_policies DB table
    * </pre>
    *
@@ -500,6 +498,54 @@ public enum S
    * <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
    */
   Notifications_Delete(66),
+  /**
+   * <pre>
+   * Read from label orders table
+   * </pre>
+   *
+   * <code>LabelOrders_Get = 67 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  LabelOrders_Get(67),
+  /**
+   * <pre>
+   * Write to label orders table
+   * </pre>
+   *
+   * <code>LabelOrders_Add = 68 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = LabelOrders_Get];</code>
+   */
+  LabelOrders_Add(68),
+  /**
+   * <pre>
+   * To delete label orders we need read/write
+   * </pre>
+   *
+   * <code>LabelOrders_Delete = 69 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = LabelOrders_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = LabelOrders_Get];</code>
+   */
+  LabelOrders_Delete(69),
+  /**
+   * <pre>
+   * Read from user_feature_configs table
+   * </pre>
+   *
+   * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  UserFeatureConfigs_Get(71),
+  /**
+   * <pre>
+   * Write to configs table
+   * </pre>
+   *
+   * <code>UserFeatureConfigs_Add = 72 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
+   */
+  UserFeatureConfigs_Add(72),
+  /**
+   * <pre>
+   * To delete configs we need read/write
+   * </pre>
+   *
+   * <code>UserFeatureConfigs_Delete = 73 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
+   */
+  UserFeatureConfigs_Delete(73),
   UNRECOGNIZED(-1),
   ;
 
@@ -668,16 +714,6 @@ public enum S
    * <code>Models_Sync = 27 [(.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
    */
   public static final int Models_Sync_VALUE = 27;
-  /**
-   * <pre>
-   * Note: Models_Deploy is effectively doing POST /models/{models_id}/deployments so it's treated that
-   * way in terms of data access under the hood.
-   * Write to the model versions DB table.
-   * </pre>
-   *
-   * <code>Models_Deploy = 34 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
-   */
-  public static final int Models_Deploy_VALUE = 34;
   /**
    * <pre>
    * Write to the workflows DB table.
@@ -900,6 +936,14 @@ public enum S
   public static final int Tasks_Get_VALUE = 56;
   /**
    * <pre>
+   * To delete we need read/write
+   * </pre>
+   *
+   * <code>Tasks_Delete = 70 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Tasks_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Tasks_Get];</code>
+   */
+  public static final int Tasks_Delete_VALUE = 70;
+  /**
+   * <pre>
    * Write to the password_policies DB table
    * </pre>
    *
@@ -970,6 +1014,54 @@ public enum S
    * <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
    */
   public static final int Notifications_Delete_VALUE = 66;
+  /**
+   * <pre>
+   * Read from label orders table
+   * </pre>
+   *
+   * <code>LabelOrders_Get = 67 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int LabelOrders_Get_VALUE = 67;
+  /**
+   * <pre>
+   * Write to label orders table
+   * </pre>
+   *
+   * <code>LabelOrders_Add = 68 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = LabelOrders_Get];</code>
+   */
+  public static final int LabelOrders_Add_VALUE = 68;
+  /**
+   * <pre>
+   * To delete label orders we need read/write
+   * </pre>
+   *
+   * <code>LabelOrders_Delete = 69 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = LabelOrders_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = LabelOrders_Get];</code>
+   */
+  public static final int LabelOrders_Delete_VALUE = 69;
+  /**
+   * <pre>
+   * Read from user_feature_configs table
+   * </pre>
+   *
+   * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int UserFeatureConfigs_Get_VALUE = 71;
+  /**
+   * <pre>
+   * Write to configs table
+   * </pre>
+   *
+   * <code>UserFeatureConfigs_Add = 72 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
+   */
+  public static final int UserFeatureConfigs_Add_VALUE = 72;
+  /**
+   * <pre>
+   * To delete configs we need read/write
+   * </pre>
+   *
+   * <code>UserFeatureConfigs_Delete = 73 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
+   */
+  public static final int UserFeatureConfigs_Delete_VALUE = 73;
 
 
   public final int getNumber() {
@@ -1017,7 +1109,6 @@ public enum S
       case 17: return Models_Delete;
       case 26: return Models_Train;
       case 27: return Models_Sync;
-      case 34: return Models_Deploy;
       case 18: return Workflows_Add;
       case 19: return Workflows_Get;
       case 20: return Workflows_Patch;
@@ -1045,6 +1136,7 @@ public enum S
       case 63: return Metrics_Delete;
       case 55: return Tasks_Add;
       case 56: return Tasks_Get;
+      case 70: return Tasks_Delete;
       case 57: return PasswordPolicies_Add;
       case 58: return PasswordPolicies_Get;
       case 59: return PasswordPolicies_Delete;
@@ -1054,6 +1146,12 @@ public enum S
       case 64: return Notifications_Get;
       case 65: return Notifications_Add;
       case 66: return Notifications_Delete;
+      case 67: return LabelOrders_Get;
+      case 68: return LabelOrders_Add;
+      case 69: return LabelOrders_Delete;
+      case 71: return UserFeatureConfigs_Get;
+      case 72: return UserFeatureConfigs_Add;
+      case 73: return UserFeatureConfigs_Delete;
       default: return null;
     }
   }

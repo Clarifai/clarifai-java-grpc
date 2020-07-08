@@ -183,4 +183,43 @@ public interface ModelTypeFieldOrBuilder extends
    * @return The internalOnly.
    */
   boolean getInternalOnly();
+
+  /**
+   * <pre>
+   * If this field is a required field. If True then during validation you won't be able to create
+   * a model of this type with providing a value for this field. When False, the ModelType's
+   * default_value will be used for this field.
+   * </pre>
+   *
+   * <code>bool required = 8;</code>
+   * @return The required.
+   */
+  boolean getRequired();
+
+  /**
+   * <pre>
+   * If the field_type is RANGE, this must be filled in.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+   * @return Whether the modelTypeRangeInfo field is set.
+   */
+  boolean hasModelTypeRangeInfo();
+  /**
+   * <pre>
+   * If the field_type is RANGE, this must be filled in.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+   * @return The modelTypeRangeInfo.
+   */
+  com.clarifai.grpc.api.ModelTypeRangeInfo getModelTypeRangeInfo();
+  /**
+   * <pre>
+   * If the field_type is RANGE, this must be filled in.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder getModelTypeRangeInfoOrBuilder();
 }

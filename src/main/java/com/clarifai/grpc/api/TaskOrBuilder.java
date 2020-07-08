@@ -161,7 +161,7 @@ public interface TaskOrBuilder extends
 
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -171,7 +171,7 @@ public interface TaskOrBuilder extends
       getConceptIdsList();
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -180,7 +180,7 @@ public interface TaskOrBuilder extends
   int getConceptIdsCount();
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>
@@ -190,7 +190,7 @@ public interface TaskOrBuilder extends
   java.lang.String getConceptIds(int index);
   /**
    * <pre>
-   * List of concept ids used in the work of this task.
+   * List of concept ids used in the work of this task if label type is classification.
    * </pre>
    *
    * <code>repeated string concept_ids = 7;</code>

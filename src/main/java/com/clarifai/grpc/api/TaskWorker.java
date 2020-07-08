@@ -66,6 +66,20 @@ private static final long serialVersionUID = 0L;
             userIds_.add(s);
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder subBuilder = null;
+            if (strategyInfoCase_ == 3) {
+              subBuilder = ((com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_).toBuilder();
+            }
+            strategyInfo_ =
+                input.readMessage(com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_);
+              strategyInfo_ = subBuilder.buildPartial();
+            }
+            strategyInfoCase_ = 3;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,12 +126,21 @@ private static final long serialVersionUID = 0L;
     WORKER_STRATEGY_NOT_SET(0),
     /**
      * <pre>
-     * Manual work strategy.
+     * The inputs will be partitioned in several partitions.
+     * Each worker will label one or more input partitions.
      * </pre>
      *
-     * <code>MANUAL = 1;</code>
+     * <code>PARTITIONED = 2;</code>
      */
-    MANUAL(1),
+    PARTITIONED(2),
+    /**
+     * <pre>
+     * Each worker will label all inputs from input source.
+     * </pre>
+     *
+     * <code>FULL = 3;</code>
+     */
+    FULL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -127,12 +150,21 @@ private static final long serialVersionUID = 0L;
     public static final int WORKER_STRATEGY_NOT_SET_VALUE = 0;
     /**
      * <pre>
-     * Manual work strategy.
+     * The inputs will be partitioned in several partitions.
+     * Each worker will label one or more input partitions.
      * </pre>
      *
-     * <code>MANUAL = 1;</code>
+     * <code>PARTITIONED = 2;</code>
      */
-    public static final int MANUAL_VALUE = 1;
+    public static final int PARTITIONED_VALUE = 2;
+    /**
+     * <pre>
+     * Each worker will label all inputs from input source.
+     * </pre>
+     *
+     * <code>FULL = 3;</code>
+     */
+    public static final int FULL_VALUE = 3;
 
 
     public final int getNumber() {
@@ -160,7 +192,8 @@ private static final long serialVersionUID = 0L;
     public static TaskWorkerStrategy forNumber(int value) {
       switch (value) {
         case 0: return WORKER_STRATEGY_NOT_SET;
-        case 1: return MANUAL;
+        case 2: return PARTITIONED;
+        case 3: return FULL;
         default: return null;
       }
     }
@@ -213,11 +246,50 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:clarifai.api.TaskWorker.TaskWorkerStrategy)
   }
 
+  private int strategyInfoCase_ = 0;
+  private java.lang.Object strategyInfo_;
+  public enum StrategyInfoCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PARTITIONED_STRATEGY_INFO(3),
+    STRATEGYINFO_NOT_SET(0);
+    private final int value;
+    private StrategyInfoCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StrategyInfoCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static StrategyInfoCase forNumber(int value) {
+      switch (value) {
+        case 3: return PARTITIONED_STRATEGY_INFO;
+        case 0: return STRATEGYINFO_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public StrategyInfoCase
+  getStrategyInfoCase() {
+    return StrategyInfoCase.forNumber(
+        strategyInfoCase_);
+  }
+
   public static final int STRATEGY_FIELD_NUMBER = 1;
   private int strategy_;
   /**
    * <pre>
-   * Work strategy.
+   * Worker strategy.
    * </pre>
    *
    * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -228,7 +300,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Work strategy.
+   * Worker strategy.
    * </pre>
    *
    * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -291,6 +363,34 @@ private static final long serialVersionUID = 0L;
     return userIds_.getByteString(index);
   }
 
+  public static final int PARTITIONED_STRATEGY_INFO_FIELD_NUMBER = 3;
+  /**
+   * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+   * @return Whether the partitionedStrategyInfo field is set.
+   */
+  public boolean hasPartitionedStrategyInfo() {
+    return strategyInfoCase_ == 3;
+  }
+  /**
+   * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+   * @return The partitionedStrategyInfo.
+   */
+  public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo getPartitionedStrategyInfo() {
+    if (strategyInfoCase_ == 3) {
+       return (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_;
+    }
+    return com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+   */
+  public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder getPartitionedStrategyInfoOrBuilder() {
+    if (strategyInfoCase_ == 3) {
+       return (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_;
+    }
+    return com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -310,6 +410,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < userIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userIds_.getRaw(i));
+    }
+    if (strategyInfoCase_ == 3) {
+      output.writeMessage(3, (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_);
     }
     unknownFields.writeTo(output);
   }
@@ -332,6 +435,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getUserIdsList().size();
     }
+    if (strategyInfoCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,6 +457,15 @@ private static final long serialVersionUID = 0L;
     if (strategy_ != other.strategy_) return false;
     if (!getUserIdsList()
         .equals(other.getUserIdsList())) return false;
+    if (!getStrategyInfoCase().equals(other.getStrategyInfoCase())) return false;
+    switch (strategyInfoCase_) {
+      case 3:
+        if (!getPartitionedStrategyInfo()
+            .equals(other.getPartitionedStrategyInfo())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -366,6 +482,14 @@ private static final long serialVersionUID = 0L;
     if (getUserIdsCount() > 0) {
       hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdsList().hashCode();
+    }
+    switch (strategyInfoCase_) {
+      case 3:
+        hash = (37 * hash) + PARTITIONED_STRATEGY_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getPartitionedStrategyInfo().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -504,6 +628,8 @@ private static final long serialVersionUID = 0L;
 
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      strategyInfoCase_ = 0;
+      strategyInfo_ = null;
       return this;
     }
 
@@ -537,6 +663,14 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.userIds_ = userIds_;
+      if (strategyInfoCase_ == 3) {
+        if (partitionedStrategyInfoBuilder_ == null) {
+          result.strategyInfo_ = strategyInfo_;
+        } else {
+          result.strategyInfo_ = partitionedStrategyInfoBuilder_.build();
+        }
+      }
+      result.strategyInfoCase_ = strategyInfoCase_;
       onBuilt();
       return result;
     }
@@ -598,6 +732,15 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      switch (other.getStrategyInfoCase()) {
+        case PARTITIONED_STRATEGY_INFO: {
+          mergePartitionedStrategyInfo(other.getPartitionedStrategyInfo());
+          break;
+        }
+        case STRATEGYINFO_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -626,12 +769,27 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int strategyInfoCase_ = 0;
+    private java.lang.Object strategyInfo_;
+    public StrategyInfoCase
+        getStrategyInfoCase() {
+      return StrategyInfoCase.forNumber(
+          strategyInfoCase_);
+    }
+
+    public Builder clearStrategyInfo() {
+      strategyInfoCase_ = 0;
+      strategyInfo_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private int strategy_ = 0;
     /**
      * <pre>
-     * Work strategy.
+     * Worker strategy.
      * </pre>
      *
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -642,7 +800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Work strategy.
+     * Worker strategy.
      * </pre>
      *
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -656,7 +814,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Work strategy.
+     * Worker strategy.
      * </pre>
      *
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -669,7 +827,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Work strategy.
+     * Worker strategy.
      * </pre>
      *
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -687,7 +845,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Work strategy.
+     * Worker strategy.
      * </pre>
      *
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -844,6 +1002,144 @@ private static final long serialVersionUID = 0L;
       userIds_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder> partitionedStrategyInfoBuilder_;
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     * @return Whether the partitionedStrategyInfo field is set.
+     */
+    public boolean hasPartitionedStrategyInfo() {
+      return strategyInfoCase_ == 3;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     * @return The partitionedStrategyInfo.
+     */
+    public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo getPartitionedStrategyInfo() {
+      if (partitionedStrategyInfoBuilder_ == null) {
+        if (strategyInfoCase_ == 3) {
+          return (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_;
+        }
+        return com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance();
+      } else {
+        if (strategyInfoCase_ == 3) {
+          return partitionedStrategyInfoBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    public Builder setPartitionedStrategyInfo(com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo value) {
+      if (partitionedStrategyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        strategyInfo_ = value;
+        onChanged();
+      } else {
+        partitionedStrategyInfoBuilder_.setMessage(value);
+      }
+      strategyInfoCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    public Builder setPartitionedStrategyInfo(
+        com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder builderForValue) {
+      if (partitionedStrategyInfoBuilder_ == null) {
+        strategyInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        partitionedStrategyInfoBuilder_.setMessage(builderForValue.build());
+      }
+      strategyInfoCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    public Builder mergePartitionedStrategyInfo(com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo value) {
+      if (partitionedStrategyInfoBuilder_ == null) {
+        if (strategyInfoCase_ == 3 &&
+            strategyInfo_ != com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance()) {
+          strategyInfo_ = com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.newBuilder((com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          strategyInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (strategyInfoCase_ == 3) {
+          partitionedStrategyInfoBuilder_.mergeFrom(value);
+        }
+        partitionedStrategyInfoBuilder_.setMessage(value);
+      }
+      strategyInfoCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    public Builder clearPartitionedStrategyInfo() {
+      if (partitionedStrategyInfoBuilder_ == null) {
+        if (strategyInfoCase_ == 3) {
+          strategyInfoCase_ = 0;
+          strategyInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (strategyInfoCase_ == 3) {
+          strategyInfoCase_ = 0;
+          strategyInfo_ = null;
+        }
+        partitionedStrategyInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder getPartitionedStrategyInfoBuilder() {
+      return getPartitionedStrategyInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder getPartitionedStrategyInfoOrBuilder() {
+      if ((strategyInfoCase_ == 3) && (partitionedStrategyInfoBuilder_ != null)) {
+        return partitionedStrategyInfoBuilder_.getMessageOrBuilder();
+      } else {
+        if (strategyInfoCase_ == 3) {
+          return (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_;
+        }
+        return com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder> 
+        getPartitionedStrategyInfoFieldBuilder() {
+      if (partitionedStrategyInfoBuilder_ == null) {
+        if (!(strategyInfoCase_ == 3)) {
+          strategyInfo_ = com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.getDefaultInstance();
+        }
+        partitionedStrategyInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder>(
+                (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_,
+                getParentForChildren(),
+                isClean());
+        strategyInfo_ = null;
+      }
+      strategyInfoCase_ = 3;
+      onChanged();;
+      return partitionedStrategyInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

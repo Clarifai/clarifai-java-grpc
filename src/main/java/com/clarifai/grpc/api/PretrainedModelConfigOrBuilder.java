@@ -140,4 +140,14 @@ public interface PretrainedModelConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelZipUrlBytes();
+
+  /**
+   * <pre>
+   * Whether to overwrite the model for the existing internal id
+   * </pre>
+   *
+   * <code>bool overwrite = 7;</code>
+   * @return The overwrite.
+   */
+  boolean getOverwrite();
 }

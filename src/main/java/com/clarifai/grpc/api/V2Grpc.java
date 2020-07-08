@@ -1050,6 +1050,37 @@ public final class V2Grpc {
     return getPostModelOutputsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModelTypeRequest,
+      com.clarifai.grpc.api.SingleModelTypeResponse> getGetModelTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetModelType",
+      requestType = com.clarifai.grpc.api.GetModelTypeRequest.class,
+      responseType = com.clarifai.grpc.api.SingleModelTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModelTypeRequest,
+      com.clarifai.grpc.api.SingleModelTypeResponse> getGetModelTypeMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModelTypeRequest, com.clarifai.grpc.api.SingleModelTypeResponse> getGetModelTypeMethod;
+    if ((getGetModelTypeMethod = V2Grpc.getGetModelTypeMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetModelTypeMethod = V2Grpc.getGetModelTypeMethod) == null) {
+          V2Grpc.getGetModelTypeMethod = getGetModelTypeMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetModelTypeRequest, com.clarifai.grpc.api.SingleModelTypeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModelType"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetModelTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleModelTypeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModelType"))
+              .build();
+        }
+      }
+    }
+    return getGetModelTypeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModelTypesRequest,
       com.clarifai.grpc.api.MultiModelTypeResponse> getListModelTypesMethod;
 
@@ -2195,6 +2226,37 @@ public final class V2Grpc {
       }
     }
     return getPatchAppsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAppsSearchesRequest,
+      com.clarifai.grpc.api.MultiAppResponse> getPostAppsSearchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostAppsSearches",
+      requestType = com.clarifai.grpc.api.PostAppsSearchesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAppResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAppsSearchesRequest,
+      com.clarifai.grpc.api.MultiAppResponse> getPostAppsSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAppsSearchesRequest, com.clarifai.grpc.api.MultiAppResponse> getPostAppsSearchesMethod;
+    if ((getPostAppsSearchesMethod = V2Grpc.getPostAppsSearchesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostAppsSearchesMethod = V2Grpc.getPostAppsSearchesMethod) == null) {
+          V2Grpc.getPostAppsSearchesMethod = getPostAppsSearchesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAppsSearchesRequest, com.clarifai.grpc.api.MultiAppResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAppsSearches"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostAppsSearchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAppResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAppsSearches"))
+              .build();
+        }
+      }
+    }
+    return getPostAppsSearchesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostValidatePasswordRequest,
@@ -3575,7 +3637,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the models available in the platform.
+     * Get a specific model type.
+     * </pre>
+     */
+    public void getModelType(com.clarifai.grpc.api.GetModelTypeRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelTypeResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetModelTypeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the model types available in the platform.
      * </pre>
      */
     public void listModelTypes(com.clarifai.grpc.api.ListModelTypesRequest request,
@@ -3951,6 +4023,18 @@ public final class V2Grpc {
     public void patchApps(com.clarifai.grpc.api.PatchAppsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPatchAppsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Search over the applications to find one or more you're looking for.
+     * This leverage the "body" parameter because we also have page and
+     * per_page as url query param variables in this request.
+     * </pre>
+     */
+    public void postAppsSearches(com.clarifai.grpc.api.PostAppsSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostAppsSearchesMethod(), responseObserver);
     }
 
     /**
@@ -4505,6 +4589,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiOutputResponse>(
                   this, METHODID_POST_MODEL_OUTPUTS)))
           .addMethod(
+            getGetModelTypeMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetModelTypeRequest,
+                com.clarifai.grpc.api.SingleModelTypeResponse>(
+                  this, METHODID_GET_MODEL_TYPE)))
+          .addMethod(
             getListModelTypesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -4763,6 +4854,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PatchAppsRequest,
                 com.clarifai.grpc.api.MultiAppResponse>(
                   this, METHODID_PATCH_APPS)))
+          .addMethod(
+            getPostAppsSearchesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostAppsSearchesRequest,
+                com.clarifai.grpc.api.MultiAppResponse>(
+                  this, METHODID_POST_APPS_SEARCHES)))
           .addMethod(
             getPostValidatePasswordMethod(),
             asyncUnaryCall(
@@ -5376,7 +5474,18 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the models available in the platform.
+     * Get a specific model type.
+     * </pre>
+     */
+    public void getModelType(com.clarifai.grpc.api.GetModelTypeRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelTypeResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetModelTypeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the model types available in the platform.
      * </pre>
      */
     public void listModelTypes(com.clarifai.grpc.api.ListModelTypesRequest request,
@@ -5789,6 +5898,19 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPatchAppsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Search over the applications to find one or more you're looking for.
+     * This leverage the "body" parameter because we also have page and
+     * per_page as url query param variables in this request.
+     * </pre>
+     */
+    public void postAppsSearches(com.clarifai.grpc.api.PostAppsSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostAppsSearchesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -6494,7 +6616,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the models available in the platform.
+     * Get a specific model type.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleModelTypeResponse getModelType(com.clarifai.grpc.api.GetModelTypeRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetModelTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all the model types available in the platform.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiModelTypeResponse listModelTypes(com.clarifai.grpc.api.ListModelTypesRequest request) {
@@ -6870,6 +7002,18 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiAppResponse patchApps(com.clarifai.grpc.api.PatchAppsRequest request) {
       return blockingUnaryCall(
           getChannel(), getPatchAppsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Search over the applications to find one or more you're looking for.
+     * This leverage the "body" parameter because we also have page and
+     * per_page as url query param variables in this request.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiAppResponse postAppsSearches(com.clarifai.grpc.api.PostAppsSearchesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostAppsSearchesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7576,7 +7720,18 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the models available in the platform.
+     * Get a specific model type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModelTypeResponse> getModelType(
+        com.clarifai.grpc.api.GetModelTypeRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetModelTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all the model types available in the platform.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModelTypeResponse> listModelTypes(
@@ -7993,6 +8148,19 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Search over the applications to find one or more you're looking for.
+     * This leverage the "body" parameter because we also have page and
+     * per_page as url query param variables in this request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppResponse> postAppsSearches(
+        com.clarifai.grpc.api.PostAppsSearchesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostAppsSearchesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Validate new password in real-time for a user
      * </pre>
      */
@@ -8375,75 +8543,77 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_INPUTS = 30;
   private static final int METHODID_POST_INPUTS_SEARCHES = 31;
   private static final int METHODID_POST_MODEL_OUTPUTS = 32;
-  private static final int METHODID_LIST_MODEL_TYPES = 33;
-  private static final int METHODID_GET_MODEL = 34;
-  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 35;
-  private static final int METHODID_LIST_MODELS = 36;
-  private static final int METHODID_POST_MODELS_SEARCHES = 37;
-  private static final int METHODID_POST_MODELS = 38;
-  private static final int METHODID_PATCH_MODELS = 39;
-  private static final int METHODID_DELETE_MODEL = 40;
-  private static final int METHODID_DELETE_MODELS = 41;
-  private static final int METHODID_LIST_MODEL_INPUTS = 42;
-  private static final int METHODID_GET_MODEL_VERSION = 43;
-  private static final int METHODID_LIST_MODEL_VERSIONS = 44;
-  private static final int METHODID_POST_MODEL_VERSIONS = 45;
-  private static final int METHODID_DELETE_MODEL_VERSION = 46;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 47;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 48;
-  private static final int METHODID_GET_WORKFLOW = 49;
-  private static final int METHODID_LIST_WORKFLOWS = 50;
-  private static final int METHODID_POST_WORKFLOWS = 51;
-  private static final int METHODID_PATCH_WORKFLOWS = 52;
-  private static final int METHODID_DELETE_WORKFLOW = 53;
-  private static final int METHODID_DELETE_WORKFLOWS = 54;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 55;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 56;
-  private static final int METHODID_GET_KEY = 57;
-  private static final int METHODID_LIST_KEYS = 58;
-  private static final int METHODID_LIST_APP_KEYS = 59;
-  private static final int METHODID_DELETE_KEY = 60;
-  private static final int METHODID_POST_KEYS = 61;
-  private static final int METHODID_PATCH_KEYS = 62;
-  private static final int METHODID_MY_SCOPES = 63;
-  private static final int METHODID_LIST_SCOPES = 64;
-  private static final int METHODID_GET_APP = 65;
-  private static final int METHODID_LIST_APPS = 66;
-  private static final int METHODID_DELETE_APP = 67;
-  private static final int METHODID_POST_APPS = 68;
-  private static final int METHODID_PATCH_APPS = 69;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 70;
-  private static final int METHODID_GET_SEARCH = 71;
-  private static final int METHODID_LIST_SEARCHES = 72;
-  private static final int METHODID_POST_SEARCHES = 73;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 74;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 75;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 76;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 77;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 78;
-  private static final int METHODID_DELETE_SEARCH = 79;
-  private static final int METHODID_LIST_STATUS_CODES = 80;
-  private static final int METHODID_GET_STATUS_CODE = 81;
-  private static final int METHODID_LIST_COLLABORATORS = 82;
-  private static final int METHODID_POST_COLLABORATORS = 83;
-  private static final int METHODID_PATCH_COLLABORATORS = 84;
-  private static final int METHODID_DELETE_COLLABORATORS = 85;
-  private static final int METHODID_LIST_COLLABORATIONS = 86;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 87;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 88;
-  private static final int METHODID_GET_APP_DUPLICATION = 89;
-  private static final int METHODID_POST_TASKS = 90;
-  private static final int METHODID_GET_TASK = 91;
-  private static final int METHODID_LIST_TASKS = 92;
-  private static final int METHODID_PATCH_TASKS = 93;
-  private static final int METHODID_DELETE_TASKS = 94;
-  private static final int METHODID_POST_COLLECTORS = 95;
-  private static final int METHODID_GET_COLLECTOR = 96;
-  private static final int METHODID_LIST_COLLECTORS = 97;
-  private static final int METHODID_PATCH_COLLECTORS = 98;
-  private static final int METHODID_DELETE_COLLECTORS = 99;
-  private static final int METHODID_POST_STAT_VALUES = 100;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 101;
+  private static final int METHODID_GET_MODEL_TYPE = 33;
+  private static final int METHODID_LIST_MODEL_TYPES = 34;
+  private static final int METHODID_GET_MODEL = 35;
+  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 36;
+  private static final int METHODID_LIST_MODELS = 37;
+  private static final int METHODID_POST_MODELS_SEARCHES = 38;
+  private static final int METHODID_POST_MODELS = 39;
+  private static final int METHODID_PATCH_MODELS = 40;
+  private static final int METHODID_DELETE_MODEL = 41;
+  private static final int METHODID_DELETE_MODELS = 42;
+  private static final int METHODID_LIST_MODEL_INPUTS = 43;
+  private static final int METHODID_GET_MODEL_VERSION = 44;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 45;
+  private static final int METHODID_POST_MODEL_VERSIONS = 46;
+  private static final int METHODID_DELETE_MODEL_VERSION = 47;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 48;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 49;
+  private static final int METHODID_GET_WORKFLOW = 50;
+  private static final int METHODID_LIST_WORKFLOWS = 51;
+  private static final int METHODID_POST_WORKFLOWS = 52;
+  private static final int METHODID_PATCH_WORKFLOWS = 53;
+  private static final int METHODID_DELETE_WORKFLOW = 54;
+  private static final int METHODID_DELETE_WORKFLOWS = 55;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 56;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 57;
+  private static final int METHODID_GET_KEY = 58;
+  private static final int METHODID_LIST_KEYS = 59;
+  private static final int METHODID_LIST_APP_KEYS = 60;
+  private static final int METHODID_DELETE_KEY = 61;
+  private static final int METHODID_POST_KEYS = 62;
+  private static final int METHODID_PATCH_KEYS = 63;
+  private static final int METHODID_MY_SCOPES = 64;
+  private static final int METHODID_LIST_SCOPES = 65;
+  private static final int METHODID_GET_APP = 66;
+  private static final int METHODID_LIST_APPS = 67;
+  private static final int METHODID_DELETE_APP = 68;
+  private static final int METHODID_POST_APPS = 69;
+  private static final int METHODID_PATCH_APPS = 70;
+  private static final int METHODID_POST_APPS_SEARCHES = 71;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 72;
+  private static final int METHODID_GET_SEARCH = 73;
+  private static final int METHODID_LIST_SEARCHES = 74;
+  private static final int METHODID_POST_SEARCHES = 75;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 76;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 77;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 78;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 79;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 80;
+  private static final int METHODID_DELETE_SEARCH = 81;
+  private static final int METHODID_LIST_STATUS_CODES = 82;
+  private static final int METHODID_GET_STATUS_CODE = 83;
+  private static final int METHODID_LIST_COLLABORATORS = 84;
+  private static final int METHODID_POST_COLLABORATORS = 85;
+  private static final int METHODID_PATCH_COLLABORATORS = 86;
+  private static final int METHODID_DELETE_COLLABORATORS = 87;
+  private static final int METHODID_LIST_COLLABORATIONS = 88;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 89;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 90;
+  private static final int METHODID_GET_APP_DUPLICATION = 91;
+  private static final int METHODID_POST_TASKS = 92;
+  private static final int METHODID_GET_TASK = 93;
+  private static final int METHODID_LIST_TASKS = 94;
+  private static final int METHODID_PATCH_TASKS = 95;
+  private static final int METHODID_DELETE_TASKS = 96;
+  private static final int METHODID_POST_COLLECTORS = 97;
+  private static final int METHODID_GET_COLLECTOR = 98;
+  private static final int METHODID_LIST_COLLECTORS = 99;
+  private static final int METHODID_PATCH_COLLECTORS = 100;
+  private static final int METHODID_DELETE_COLLECTORS = 101;
+  private static final int METHODID_POST_STAT_VALUES = 102;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 103;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8594,6 +8764,10 @@ public final class V2Grpc {
           serviceImpl.postModelOutputs((com.clarifai.grpc.api.PostModelOutputsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiOutputResponse>) responseObserver);
           break;
+        case METHODID_GET_MODEL_TYPE:
+          serviceImpl.getModelType((com.clarifai.grpc.api.GetModelTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelTypeResponse>) responseObserver);
+          break;
         case METHODID_LIST_MODEL_TYPES:
           serviceImpl.listModelTypes((com.clarifai.grpc.api.ListModelTypesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelTypeResponse>) responseObserver);
@@ -8740,6 +8914,10 @@ public final class V2Grpc {
           break;
         case METHODID_PATCH_APPS:
           serviceImpl.patchApps((com.clarifai.grpc.api.PatchAppsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse>) responseObserver);
+          break;
+        case METHODID_POST_APPS_SEARCHES:
+          serviceImpl.postAppsSearches((com.clarifai.grpc.api.PostAppsSearchesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse>) responseObserver);
           break;
         case METHODID_POST_VALIDATE_PASSWORD:
@@ -8964,6 +9142,7 @@ public final class V2Grpc {
               .addMethod(getDeleteInputsMethod())
               .addMethod(getPostInputsSearchesMethod())
               .addMethod(getPostModelOutputsMethod())
+              .addMethod(getGetModelTypeMethod())
               .addMethod(getListModelTypesMethod())
               .addMethod(getGetModelMethod())
               .addMethod(getGetModelOutputInfoMethod())
@@ -9001,6 +9180,7 @@ public final class V2Grpc {
               .addMethod(getDeleteAppMethod())
               .addMethod(getPostAppsMethod())
               .addMethod(getPatchAppsMethod())
+              .addMethod(getPostAppsSearchesMethod())
               .addMethod(getPostValidatePasswordMethod())
               .addMethod(getGetSearchMethod())
               .addMethod(getListSearchesMethod())

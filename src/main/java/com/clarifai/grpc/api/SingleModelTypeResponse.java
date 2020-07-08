@@ -4,26 +4,25 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf type {@code clarifai.api.MultiModelTypeResponse}
+ * Protobuf type {@code clarifai.api.SingleModelTypeResponse}
  */
-public  final class MultiModelTypeResponse extends
+public  final class SingleModelTypeResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.MultiModelTypeResponse)
-    MultiModelTypeResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.SingleModelTypeResponse)
+    SingleModelTypeResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use MultiModelTypeResponse.newBuilder() to construct.
-  private MultiModelTypeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SingleModelTypeResponse.newBuilder() to construct.
+  private SingleModelTypeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private MultiModelTypeResponse() {
-    modelTypes_ = java.util.Collections.emptyList();
+  private SingleModelTypeResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new MultiModelTypeResponse();
+    return new SingleModelTypeResponse();
   }
 
   @java.lang.Override
@@ -31,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private MultiModelTypeResponse(
+  private SingleModelTypeResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -39,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -64,12 +62,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              modelTypes_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelType>();
-              mutable_bitField0_ |= 0x00000001;
+            com.clarifai.grpc.api.ModelType.Builder subBuilder = null;
+            if (modelType_ != null) {
+              subBuilder = modelType_.toBuilder();
             }
-            modelTypes_.add(
-                input.readMessage(com.clarifai.grpc.api.ModelType.parser(), extensionRegistry));
+            modelType_ = input.readMessage(com.clarifai.grpc.api.ModelType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modelType_);
+              modelType_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -87,24 +89,21 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        modelTypes_ = java.util.Collections.unmodifiableList(modelTypes_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiModelTypeResponse_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleModelTypeResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiModelTypeResponse_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleModelTypeResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.MultiModelTypeResponse.class, com.clarifai.grpc.api.MultiModelTypeResponse.Builder.class);
+            com.clarifai.grpc.api.SingleModelTypeResponse.class, com.clarifai.grpc.api.SingleModelTypeResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -142,59 +141,39 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
-  public static final int MODEL_TYPES_FIELD_NUMBER = 2;
-  private java.util.List<com.clarifai.grpc.api.ModelType> modelTypes_;
+  public static final int MODEL_TYPE_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.ModelType modelType_;
   /**
    * <pre>
-   * List of ModelType objects.
+   * The retrieved ModelType object. .
    * </pre>
    *
-   * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return Whether the modelType field is set.
    */
-  public java.util.List<com.clarifai.grpc.api.ModelType> getModelTypesList() {
-    return modelTypes_;
+  public boolean hasModelType() {
+    return modelType_ != null;
   }
   /**
    * <pre>
-   * List of ModelType objects.
+   * The retrieved ModelType object. .
    * </pre>
    *
-   * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The modelType.
    */
-  public java.util.List<? extends com.clarifai.grpc.api.ModelTypeOrBuilder> 
-      getModelTypesOrBuilderList() {
-    return modelTypes_;
+  public com.clarifai.grpc.api.ModelType getModelType() {
+    return modelType_ == null ? com.clarifai.grpc.api.ModelType.getDefaultInstance() : modelType_;
   }
   /**
    * <pre>
-   * List of ModelType objects.
+   * The retrieved ModelType object. .
    * </pre>
    *
-   * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
-  public int getModelTypesCount() {
-    return modelTypes_.size();
-  }
-  /**
-   * <pre>
-   * List of ModelType objects.
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   */
-  public com.clarifai.grpc.api.ModelType getModelTypes(int index) {
-    return modelTypes_.get(index);
-  }
-  /**
-   * <pre>
-   * List of ModelType objects.
-   * </pre>
-   *
-   * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   */
-  public com.clarifai.grpc.api.ModelTypeOrBuilder getModelTypesOrBuilder(
-      int index) {
-    return modelTypes_.get(index);
+  public com.clarifai.grpc.api.ModelTypeOrBuilder getModelTypeOrBuilder() {
+    return getModelType();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -214,8 +193,8 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(1, getStatus());
     }
-    for (int i = 0; i < modelTypes_.size(); i++) {
-      output.writeMessage(2, modelTypes_.get(i));
+    if (modelType_ != null) {
+      output.writeMessage(2, getModelType());
     }
     unknownFields.writeTo(output);
   }
@@ -230,9 +209,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getStatus());
     }
-    for (int i = 0; i < modelTypes_.size(); i++) {
+    if (modelType_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, modelTypes_.get(i));
+        .computeMessageSize(2, getModelType());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -244,18 +223,21 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.MultiModelTypeResponse)) {
+    if (!(obj instanceof com.clarifai.grpc.api.SingleModelTypeResponse)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.MultiModelTypeResponse other = (com.clarifai.grpc.api.MultiModelTypeResponse) obj;
+    com.clarifai.grpc.api.SingleModelTypeResponse other = (com.clarifai.grpc.api.SingleModelTypeResponse) obj;
 
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
-    if (!getModelTypesList()
-        .equals(other.getModelTypesList())) return false;
+    if (hasModelType() != other.hasModelType()) return false;
+    if (hasModelType()) {
+      if (!getModelType()
+          .equals(other.getModelType())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -271,78 +253,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
-    if (getModelTypesCount() > 0) {
-      hash = (37 * hash) + MODEL_TYPES_FIELD_NUMBER;
-      hash = (53 * hash) + getModelTypesList().hashCode();
+    if (hasModelType()) {
+      hash = (37 * hash) + MODEL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getModelType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseDelimitedFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.MultiModelTypeResponse parseFrom(
+  public static com.clarifai.grpc.api.SingleModelTypeResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -355,7 +337,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.MultiModelTypeResponse prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.SingleModelTypeResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -371,26 +353,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code clarifai.api.MultiModelTypeResponse}
+   * Protobuf type {@code clarifai.api.SingleModelTypeResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.MultiModelTypeResponse)
-      com.clarifai.grpc.api.MultiModelTypeResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.SingleModelTypeResponse)
+      com.clarifai.grpc.api.SingleModelTypeResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiModelTypeResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleModelTypeResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiModelTypeResponse_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleModelTypeResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.MultiModelTypeResponse.class, com.clarifai.grpc.api.MultiModelTypeResponse.Builder.class);
+              com.clarifai.grpc.api.SingleModelTypeResponse.class, com.clarifai.grpc.api.SingleModelTypeResponse.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.MultiModelTypeResponse.newBuilder()
+    // Construct using com.clarifai.grpc.api.SingleModelTypeResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -403,7 +385,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getModelTypesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -415,11 +396,11 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
-      if (modelTypesBuilder_ == null) {
-        modelTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (modelTypeBuilder_ == null) {
+        modelType_ = null;
       } else {
-        modelTypesBuilder_.clear();
+        modelType_ = null;
+        modelTypeBuilder_ = null;
       }
       return this;
     }
@@ -427,17 +408,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiModelTypeResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_SingleModelTypeResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.MultiModelTypeResponse getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.MultiModelTypeResponse.getDefaultInstance();
+    public com.clarifai.grpc.api.SingleModelTypeResponse getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.SingleModelTypeResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.MultiModelTypeResponse build() {
-      com.clarifai.grpc.api.MultiModelTypeResponse result = buildPartial();
+    public com.clarifai.grpc.api.SingleModelTypeResponse build() {
+      com.clarifai.grpc.api.SingleModelTypeResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -445,22 +426,17 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.MultiModelTypeResponse buildPartial() {
-      com.clarifai.grpc.api.MultiModelTypeResponse result = new com.clarifai.grpc.api.MultiModelTypeResponse(this);
-      int from_bitField0_ = bitField0_;
+    public com.clarifai.grpc.api.SingleModelTypeResponse buildPartial() {
+      com.clarifai.grpc.api.SingleModelTypeResponse result = new com.clarifai.grpc.api.SingleModelTypeResponse(this);
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
         result.status_ = statusBuilder_.build();
       }
-      if (modelTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          modelTypes_ = java.util.Collections.unmodifiableList(modelTypes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.modelTypes_ = modelTypes_;
+      if (modelTypeBuilder_ == null) {
+        result.modelType_ = modelType_;
       } else {
-        result.modelTypes_ = modelTypesBuilder_.build();
+        result.modelType_ = modelTypeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -500,44 +476,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.MultiModelTypeResponse) {
-        return mergeFrom((com.clarifai.grpc.api.MultiModelTypeResponse)other);
+      if (other instanceof com.clarifai.grpc.api.SingleModelTypeResponse) {
+        return mergeFrom((com.clarifai.grpc.api.SingleModelTypeResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.MultiModelTypeResponse other) {
-      if (other == com.clarifai.grpc.api.MultiModelTypeResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.SingleModelTypeResponse other) {
+      if (other == com.clarifai.grpc.api.SingleModelTypeResponse.getDefaultInstance()) return this;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
-      if (modelTypesBuilder_ == null) {
-        if (!other.modelTypes_.isEmpty()) {
-          if (modelTypes_.isEmpty()) {
-            modelTypes_ = other.modelTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureModelTypesIsMutable();
-            modelTypes_.addAll(other.modelTypes_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.modelTypes_.isEmpty()) {
-          if (modelTypesBuilder_.isEmpty()) {
-            modelTypesBuilder_.dispose();
-            modelTypesBuilder_ = null;
-            modelTypes_ = other.modelTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            modelTypesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getModelTypesFieldBuilder() : null;
-          } else {
-            modelTypesBuilder_.addAllMessages(other.modelTypes_);
-          }
-        }
+      if (other.hasModelType()) {
+        mergeModelType(other.getModelType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -554,11 +507,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.MultiModelTypeResponse parsedMessage = null;
+      com.clarifai.grpc.api.SingleModelTypeResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.MultiModelTypeResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.SingleModelTypeResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -567,7 +520,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private com.clarifai.grpc.api.status.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -724,316 +676,159 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.ModelType> modelTypes_ =
-      java.util.Collections.emptyList();
-    private void ensureModelTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        modelTypes_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelType>(modelTypes_);
-        bitField0_ |= 0x00000001;
-       }
+    private com.clarifai.grpc.api.ModelType modelType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelType, com.clarifai.grpc.api.ModelType.Builder, com.clarifai.grpc.api.ModelTypeOrBuilder> modelTypeBuilder_;
+    /**
+     * <pre>
+     * The retrieved ModelType object. .
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return Whether the modelType field is set.
+     */
+    public boolean hasModelType() {
+      return modelTypeBuilder_ != null || modelType_ != null;
     }
+    /**
+     * <pre>
+     * The retrieved ModelType object. .
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The modelType.
+     */
+    public com.clarifai.grpc.api.ModelType getModelType() {
+      if (modelTypeBuilder_ == null) {
+        return modelType_ == null ? com.clarifai.grpc.api.ModelType.getDefaultInstance() : modelType_;
+      } else {
+        return modelTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The retrieved ModelType object. .
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder setModelType(com.clarifai.grpc.api.ModelType value) {
+      if (modelTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelType_ = value;
+        onChanged();
+      } else {
+        modelTypeBuilder_.setMessage(value);
+      }
 
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.ModelType, com.clarifai.grpc.api.ModelType.Builder, com.clarifai.grpc.api.ModelTypeOrBuilder> modelTypesBuilder_;
-
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public java.util.List<com.clarifai.grpc.api.ModelType> getModelTypesList() {
-      if (modelTypesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(modelTypes_);
-      } else {
-        return modelTypesBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public int getModelTypesCount() {
-      if (modelTypesBuilder_ == null) {
-        return modelTypes_.size();
-      } else {
-        return modelTypesBuilder_.getCount();
-      }
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public com.clarifai.grpc.api.ModelType getModelTypes(int index) {
-      if (modelTypesBuilder_ == null) {
-        return modelTypes_.get(index);
-      } else {
-        return modelTypesBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder setModelTypes(
-        int index, com.clarifai.grpc.api.ModelType value) {
-      if (modelTypesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureModelTypesIsMutable();
-        modelTypes_.set(index, value);
-        onChanged();
-      } else {
-        modelTypesBuilder_.setMessage(index, value);
-      }
       return this;
     }
     /**
      * <pre>
-     * List of ModelType objects.
+     * The retrieved ModelType object. .
      * </pre>
      *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder setModelTypes(
-        int index, com.clarifai.grpc.api.ModelType.Builder builderForValue) {
-      if (modelTypesBuilder_ == null) {
-        ensureModelTypesIsMutable();
-        modelTypes_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        modelTypesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder addModelTypes(com.clarifai.grpc.api.ModelType value) {
-      if (modelTypesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureModelTypesIsMutable();
-        modelTypes_.add(value);
-        onChanged();
-      } else {
-        modelTypesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder addModelTypes(
-        int index, com.clarifai.grpc.api.ModelType value) {
-      if (modelTypesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureModelTypesIsMutable();
-        modelTypes_.add(index, value);
-        onChanged();
-      } else {
-        modelTypesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder addModelTypes(
+    public Builder setModelType(
         com.clarifai.grpc.api.ModelType.Builder builderForValue) {
-      if (modelTypesBuilder_ == null) {
-        ensureModelTypesIsMutable();
-        modelTypes_.add(builderForValue.build());
+      if (modelTypeBuilder_ == null) {
+        modelType_ = builderForValue.build();
         onChanged();
       } else {
-        modelTypesBuilder_.addMessage(builderForValue.build());
+        modelTypeBuilder_.setMessage(builderForValue.build());
       }
+
       return this;
     }
     /**
      * <pre>
-     * List of ModelType objects.
+     * The retrieved ModelType object. .
      * </pre>
      *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addModelTypes(
-        int index, com.clarifai.grpc.api.ModelType.Builder builderForValue) {
-      if (modelTypesBuilder_ == null) {
-        ensureModelTypesIsMutable();
-        modelTypes_.add(index, builderForValue.build());
+    public Builder mergeModelType(com.clarifai.grpc.api.ModelType value) {
+      if (modelTypeBuilder_ == null) {
+        if (modelType_ != null) {
+          modelType_ =
+            com.clarifai.grpc.api.ModelType.newBuilder(modelType_).mergeFrom(value).buildPartial();
+        } else {
+          modelType_ = value;
+        }
         onChanged();
       } else {
-        modelTypesBuilder_.addMessage(index, builderForValue.build());
+        modelTypeBuilder_.mergeFrom(value);
       }
+
       return this;
     }
     /**
      * <pre>
-     * List of ModelType objects.
+     * The retrieved ModelType object. .
      * </pre>
      *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addAllModelTypes(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelType> values) {
-      if (modelTypesBuilder_ == null) {
-        ensureModelTypesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, modelTypes_);
+    public Builder clearModelType() {
+      if (modelTypeBuilder_ == null) {
+        modelType_ = null;
         onChanged();
       } else {
-        modelTypesBuilder_.addAllMessages(values);
+        modelType_ = null;
+        modelTypeBuilder_ = null;
       }
+
       return this;
     }
     /**
      * <pre>
-     * List of ModelType objects.
+     * The retrieved ModelType object. .
      * </pre>
      *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder clearModelTypes() {
-      if (modelTypesBuilder_ == null) {
-        modelTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
+    public com.clarifai.grpc.api.ModelType.Builder getModelTypeBuilder() {
+      
+      onChanged();
+      return getModelTypeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The retrieved ModelType object. .
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeOrBuilder getModelTypeOrBuilder() {
+      if (modelTypeBuilder_ != null) {
+        return modelTypeBuilder_.getMessageOrBuilder();
       } else {
-        modelTypesBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public Builder removeModelTypes(int index) {
-      if (modelTypesBuilder_ == null) {
-        ensureModelTypesIsMutable();
-        modelTypes_.remove(index);
-        onChanged();
-      } else {
-        modelTypesBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public com.clarifai.grpc.api.ModelType.Builder getModelTypesBuilder(
-        int index) {
-      return getModelTypesFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public com.clarifai.grpc.api.ModelTypeOrBuilder getModelTypesOrBuilder(
-        int index) {
-      if (modelTypesBuilder_ == null) {
-        return modelTypes_.get(index);  } else {
-        return modelTypesBuilder_.getMessageOrBuilder(index);
+        return modelType_ == null ?
+            com.clarifai.grpc.api.ModelType.getDefaultInstance() : modelType_;
       }
     }
     /**
      * <pre>
-     * List of ModelType objects.
+     * The retrieved ModelType object. .
      * </pre>
      *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>.clarifai.api.ModelType model_type = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.ModelTypeOrBuilder> 
-         getModelTypesOrBuilderList() {
-      if (modelTypesBuilder_ != null) {
-        return modelTypesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(modelTypes_);
-      }
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public com.clarifai.grpc.api.ModelType.Builder addModelTypesBuilder() {
-      return getModelTypesFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.ModelType.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public com.clarifai.grpc.api.ModelType.Builder addModelTypesBuilder(
-        int index) {
-      return getModelTypesFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.ModelType.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * List of ModelType objects.
-     * </pre>
-     *
-     * <code>repeated .clarifai.api.ModelType model_types = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     */
-    public java.util.List<com.clarifai.grpc.api.ModelType.Builder> 
-         getModelTypesBuilderList() {
-      return getModelTypesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.ModelType, com.clarifai.grpc.api.ModelType.Builder, com.clarifai.grpc.api.ModelTypeOrBuilder> 
-        getModelTypesFieldBuilder() {
-      if (modelTypesBuilder_ == null) {
-        modelTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getModelTypeFieldBuilder() {
+      if (modelTypeBuilder_ == null) {
+        modelTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.ModelType, com.clarifai.grpc.api.ModelType.Builder, com.clarifai.grpc.api.ModelTypeOrBuilder>(
-                modelTypes_,
-                ((bitField0_ & 0x00000001) != 0),
+                getModelType(),
                 getParentForChildren(),
                 isClean());
-        modelTypes_ = null;
+        modelType_ = null;
       }
-      return modelTypesBuilder_;
+      return modelTypeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1048,41 +843,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.MultiModelTypeResponse)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.SingleModelTypeResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.MultiModelTypeResponse)
-  private static final com.clarifai.grpc.api.MultiModelTypeResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.SingleModelTypeResponse)
+  private static final com.clarifai.grpc.api.SingleModelTypeResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.MultiModelTypeResponse();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.SingleModelTypeResponse();
   }
 
-  public static com.clarifai.grpc.api.MultiModelTypeResponse getDefaultInstance() {
+  public static com.clarifai.grpc.api.SingleModelTypeResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MultiModelTypeResponse>
-      PARSER = new com.google.protobuf.AbstractParser<MultiModelTypeResponse>() {
+  private static final com.google.protobuf.Parser<SingleModelTypeResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SingleModelTypeResponse>() {
     @java.lang.Override
-    public MultiModelTypeResponse parsePartialFrom(
+    public SingleModelTypeResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MultiModelTypeResponse(input, extensionRegistry);
+      return new SingleModelTypeResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<MultiModelTypeResponse> parser() {
+  public static com.google.protobuf.Parser<SingleModelTypeResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<MultiModelTypeResponse> getParserForType() {
+  public com.google.protobuf.Parser<SingleModelTypeResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.MultiModelTypeResponse getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.SingleModelTypeResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -9,7 +9,7 @@ public interface TaskWorkerOrBuilder extends
 
   /**
    * <pre>
-   * Work strategy.
+   * Worker strategy.
    * </pre>
    *
    * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -18,7 +18,7 @@ public interface TaskWorkerOrBuilder extends
   int getStrategyValue();
   /**
    * <pre>
-   * Work strategy.
+   * Worker strategy.
    * </pre>
    *
    * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
@@ -66,4 +66,21 @@ public interface TaskWorkerOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdsBytes(int index);
+
+  /**
+   * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+   * @return Whether the partitionedStrategyInfo field is set.
+   */
+  boolean hasPartitionedStrategyInfo();
+  /**
+   * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+   * @return The partitionedStrategyInfo.
+   */
+  com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo getPartitionedStrategyInfo();
+  /**
+   * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
+   */
+  com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder getPartitionedStrategyInfoOrBuilder();
+
+  public com.clarifai.grpc.api.TaskWorker.StrategyInfoCase getStrategyInfoCase();
 }
