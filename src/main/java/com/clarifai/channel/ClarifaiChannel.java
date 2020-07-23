@@ -21,22 +21,25 @@ public enum ClarifaiChannel {
 
   private MarshallerType marshallerType = MarshallerType.PROTO;
 
-  /**
-   * Currently, the secure gRPC channel is not supported.
-   *
-   * @return
-   * @throws SSLException
-   */
-  public ManagedChannel getGrpcChannel() throws SSLException {
-    marshallerType = MarshallerType.PROTO;
-    return NettyChannelBuilder
-        .forAddress("api-grpc.clarifai.com", 18081)
-        .sslContext(
-            GrpcSslContexts.forClient()
-                .trustManager(InsecureTrustManagerFactory.INSTANCE)
-                .build()
-        )
-        .build();
+  public ManagedChannel getGrpcChannel() {
+    return getGrpcChannel("api.clarifai.com");
+  }
+
+  public ManagedChannel getGrpcChannel(String base) {
+    try {
+      marshallerType = MarshallerType.PROTO;
+      return NettyChannelBuilder
+          .forAddress(base, 443)
+          .sslContext(
+              GrpcSslContexts.forClient()
+                  .trustManager(InsecureTrustManagerFactory.INSTANCE)
+                  .build()
+          )
+          .build();
+    } catch (SSLException e) {
+      // This should never happen.
+      throw new RuntimeException(e);
+    }
   }
 
   public ManagedChannel getInsecureGrpcChannel() {
