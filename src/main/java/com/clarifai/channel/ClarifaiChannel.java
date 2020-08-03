@@ -22,7 +22,10 @@ public enum ClarifaiChannel {
   private MarshallerType marshallerType = MarshallerType.PROTO;
 
   public ManagedChannel getGrpcChannel() {
-    return getGrpcChannel("api.clarifai.com");
+    String base = System.getenv("CLARIFAI_GRPC_BASE");
+    if (base == null)
+      base = "api.clarifai.com";
+    return getGrpcChannel(base);
   }
 
   public ManagedChannel getGrpcChannel(String base) {
