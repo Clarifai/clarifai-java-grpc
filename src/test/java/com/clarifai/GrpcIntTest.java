@@ -6,9 +6,12 @@ import com.clarifai.grpc.api.*;
 import com.clarifai.grpc.api.status.BaseResponse;
 import com.clarifai.grpc.api.status.StatusCode;
 import io.grpc.ManagedChannel;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class GrpcIntTest {
 
@@ -20,6 +23,13 @@ public class GrpcIntTest {
     channel = ClarifaiChannel.INSTANCE.getGrpcChannel();
     stub = V2Grpc.newBlockingStub(channel)
         .withCallCredentials(new ClarifaiCallCredentials());
+  }
+
+  @After
+  public void after() throws InterruptedException {
+    // If we don't shutdown the channel, it complains to the logs.
+    channel.shutdown();
+    channel.awaitTermination(5, TimeUnit.SECONDS);
   }
 
   @Test
