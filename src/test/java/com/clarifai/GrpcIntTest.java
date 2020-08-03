@@ -5,6 +5,7 @@ import com.clarifai.credentials.ClarifaiCallCredentials;
 import com.clarifai.grpc.api.*;
 import com.clarifai.grpc.api.status.BaseResponse;
 import com.clarifai.grpc.api.status.StatusCode;
+import io.grpc.ManagedChannel;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,12 +13,13 @@ import org.junit.Test;
 public class GrpcIntTest {
 
   private V2Grpc.V2BlockingStub stub;
+  private ManagedChannel channel;
 
   @Before
   public void before() {
-    stub = V2Grpc.newBlockingStub(
-        ClarifaiChannel.INSTANCE.getInsecureGrpcChannel()
-    ).withCallCredentials(new ClarifaiCallCredentials());
+    channel = ClarifaiChannel.INSTANCE.getGrpcChannel();
+    stub = V2Grpc.newBlockingStub(channel)
+        .withCallCredentials(new ClarifaiCallCredentials());
   }
 
   @Test
