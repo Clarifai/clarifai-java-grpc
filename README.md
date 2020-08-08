@@ -24,6 +24,26 @@ dependencies {
 }
 ```
 
+Via Maven:
+
+```
+<repositories>
+    <repository>
+        <id>jcenter</id>
+        <name>jcenter</name>
+        <url>https://jcenter.bintray.com</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.clarifai</groupId>
+        <artifactId>clarifai-grpc</artifactId>
+        <version>LATEST_VERSION</version>
+    </dependency>
+</dependencies>
+```
+
 ## Getting started
 
 ```java
