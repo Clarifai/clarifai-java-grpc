@@ -126,4 +126,14 @@ public interface WorkflowResultOrBuilder extends
    */
   com.clarifai.grpc.api.OutputOrBuilder getOutputsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Indicate if the output of this model is suppressed.
+   * </pre>
+   *
+   * <code>bool suppress_output = 7;</code>
+   * @return The suppressOutput.
+   */
+  boolean getSuppressOutput();
 }

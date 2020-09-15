@@ -79,6 +79,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.NodeInput.parser(), extensionRegistry));
             break;
           }
+          case 32: {
+
+            suppressOutput_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -258,6 +263,20 @@ private static final long serialVersionUID = 0L;
     return nodeInputs_.get(index);
   }
 
+  public static final int SUPPRESS_OUTPUT_FIELD_NUMBER = 4;
+  private boolean suppressOutput_;
+  /**
+   * <pre>
+   * suppress the output for workflow prediction
+   * </pre>
+   *
+   * <code>bool suppress_output = 4;</code>
+   * @return The suppressOutput.
+   */
+  public boolean getSuppressOutput() {
+    return suppressOutput_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -281,6 +300,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < nodeInputs_.size(); i++) {
       output.writeMessage(3, nodeInputs_.get(i));
     }
+    if (suppressOutput_ != false) {
+      output.writeBool(4, suppressOutput_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -300,6 +322,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < nodeInputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, nodeInputs_.get(i));
+    }
+    if (suppressOutput_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, suppressOutput_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -325,6 +351,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNodeInputsList()
         .equals(other.getNodeInputsList())) return false;
+    if (getSuppressOutput()
+        != other.getSuppressOutput()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -346,6 +374,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NODE_INPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getNodeInputsList().hashCode();
     }
+    hash = (37 * hash) + SUPPRESS_OUTPUT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSuppressOutput());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -494,6 +525,8 @@ private static final long serialVersionUID = 0L;
       } else {
         nodeInputsBuilder_.clear();
       }
+      suppressOutput_ = false;
+
       return this;
     }
 
@@ -536,6 +569,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.nodeInputs_ = nodeInputsBuilder_.build();
       }
+      result.suppressOutput_ = suppressOutput_;
       onBuilt();
       return result;
     }
@@ -616,6 +650,9 @@ private static final long serialVersionUID = 0L;
             nodeInputsBuilder_.addAllMessages(other.nodeInputs_);
           }
         }
+      }
+      if (other.getSuppressOutput() != false) {
+        setSuppressOutput(other.getSuppressOutput());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1240,6 +1277,48 @@ private static final long serialVersionUID = 0L;
         nodeInputs_ = null;
       }
       return nodeInputsBuilder_;
+    }
+
+    private boolean suppressOutput_ ;
+    /**
+     * <pre>
+     * suppress the output for workflow prediction
+     * </pre>
+     *
+     * <code>bool suppress_output = 4;</code>
+     * @return The suppressOutput.
+     */
+    public boolean getSuppressOutput() {
+      return suppressOutput_;
+    }
+    /**
+     * <pre>
+     * suppress the output for workflow prediction
+     * </pre>
+     *
+     * <code>bool suppress_output = 4;</code>
+     * @param value The suppressOutput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuppressOutput(boolean value) {
+      
+      suppressOutput_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * suppress the output for workflow prediction
+     * </pre>
+     *
+     * <code>bool suppress_output = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSuppressOutput() {
+      
+      suppressOutput_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

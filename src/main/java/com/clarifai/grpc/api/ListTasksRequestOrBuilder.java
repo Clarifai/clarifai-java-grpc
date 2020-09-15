@@ -115,4 +115,14 @@ public interface ListTasksRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getReviewUserIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Get label order tasks as well
+   * </pre>
+   *
+   * <code>bool including_label_order_tasks = 6;</code>
+   * @return The includingLabelOrderTasks.
+   */
+  boolean getIncludingLabelOrderTasks();
 }

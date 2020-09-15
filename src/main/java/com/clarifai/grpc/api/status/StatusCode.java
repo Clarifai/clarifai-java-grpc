@@ -1228,6 +1228,14 @@ public enum StatusCode
   TASK_DONE(54002),
   /**
    * <pre>
+   * An error occurred during add-task-annotations pipeline.
+   * </pre>
+   *
+   * <code>TASK_ADD_ANNOTATIONS_FAILURE = 54005;</code>
+   */
+  TASK_ADD_ANNOTATIONS_FAILURE(54005),
+  /**
+   * <pre>
    * The task operation is in conflict with the current state of the server.
    * </pre>
    *
@@ -1314,6 +1322,18 @@ public enum StatusCode
    * <code>PASSWORDPOLICY_INVALID_ARGUMENT = 61002;</code>
    */
   PASSWORDPOLICY_INVALID_ARGUMENT(61002),
+  /**
+   * <pre>
+   * Feature flags status code
+   * </pre>
+   *
+   * <code>FEATUREFLAG_CONFIG_NOT_FOUND = 62000;</code>
+   */
+  FEATUREFLAG_CONFIG_NOT_FOUND(62000),
+  /**
+   * <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
+   */
+  FEATUREFLAG_INVALID_ARGUMENT(62001),
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -2629,6 +2649,14 @@ public enum StatusCode
   public static final int TASK_DONE_VALUE = 54002;
   /**
    * <pre>
+   * An error occurred during add-task-annotations pipeline.
+   * </pre>
+   *
+   * <code>TASK_ADD_ANNOTATIONS_FAILURE = 54005;</code>
+   */
+  public static final int TASK_ADD_ANNOTATIONS_FAILURE_VALUE = 54005;
+  /**
+   * <pre>
    * The task operation is in conflict with the current state of the server.
    * </pre>
    *
@@ -2715,6 +2743,18 @@ public enum StatusCode
    * <code>PASSWORDPOLICY_INVALID_ARGUMENT = 61002;</code>
    */
   public static final int PASSWORDPOLICY_INVALID_ARGUMENT_VALUE = 61002;
+  /**
+   * <pre>
+   * Feature flags status code
+   * </pre>
+   *
+   * <code>FEATUREFLAG_CONFIG_NOT_FOUND = 62000;</code>
+   */
+  public static final int FEATUREFLAG_CONFIG_NOT_FOUND_VALUE = 62000;
+  /**
+   * <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
+   */
+  public static final int FEATUREFLAG_INVALID_ARGUMENT_VALUE = 62001;
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -3063,6 +3103,7 @@ public enum StatusCode
       case 53001: return SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST;
       case 54001: return TASK_IN_PROGRESS;
       case 54002: return TASK_DONE;
+      case 54005: return TASK_ADD_ANNOTATIONS_FAILURE;
       case 54100: return TASK_CONFLICT;
       case 54101: return TASK_NOT_IMPLEMENTED;
       case 55001: return LABEL_ORDER_PENDING;
@@ -3079,6 +3120,8 @@ public enum StatusCode
       case 61000: return PASSWORD_VALIDATION_SUCCESS;
       case 61001: return PASSWORD_VALIDATION_FAILED;
       case 61002: return PASSWORDPOLICY_INVALID_ARGUMENT;
+      case 62000: return FEATUREFLAG_CONFIG_NOT_FOUND;
+      case 62001: return FEATUREFLAG_INVALID_ARGUMENT;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;

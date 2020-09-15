@@ -118,6 +118,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Output.parser(), extensionRegistry));
             break;
           }
+          case 56: {
+
+            suppressOutput_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -340,6 +345,20 @@ private static final long serialVersionUID = 0L;
     return outputs_.get(index);
   }
 
+  public static final int SUPPRESS_OUTPUT_FIELD_NUMBER = 7;
+  private boolean suppressOutput_;
+  /**
+   * <pre>
+   * Indicate if the output of this model is suppressed.
+   * </pre>
+   *
+   * <code>bool suppress_output = 7;</code>
+   * @return The suppressOutput.
+   */
+  public boolean getSuppressOutput() {
+    return suppressOutput_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -372,6 +391,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < outputs_.size(); i++) {
       output.writeMessage(6, outputs_.get(i));
     }
+    if (suppressOutput_ != false) {
+      output.writeBool(7, suppressOutput_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -403,6 +425,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < outputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, outputs_.get(i));
+    }
+    if (suppressOutput_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, suppressOutput_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -443,6 +469,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getOutputsList()
         .equals(other.getOutputsList())) return false;
+    if (getSuppressOutput()
+        != other.getSuppressOutput()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -476,6 +504,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getOutputsList().hashCode();
     }
+    hash = (37 * hash) + SUPPRESS_OUTPUT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSuppressOutput());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -642,6 +673,8 @@ private static final long serialVersionUID = 0L;
       } else {
         outputsBuilder_.clear();
       }
+      suppressOutput_ = false;
+
       return this;
     }
 
@@ -699,6 +732,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.outputs_ = outputsBuilder_.build();
       }
+      result.suppressOutput_ = suppressOutput_;
       onBuilt();
       return result;
     }
@@ -788,6 +822,9 @@ private static final long serialVersionUID = 0L;
             outputsBuilder_.addAllMessages(other.outputs_);
           }
         }
+      }
+      if (other.getSuppressOutput() != false) {
+        setSuppressOutput(other.getSuppressOutput());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1681,6 +1718,48 @@ private static final long serialVersionUID = 0L;
         outputs_ = null;
       }
       return outputsBuilder_;
+    }
+
+    private boolean suppressOutput_ ;
+    /**
+     * <pre>
+     * Indicate if the output of this model is suppressed.
+     * </pre>
+     *
+     * <code>bool suppress_output = 7;</code>
+     * @return The suppressOutput.
+     */
+    public boolean getSuppressOutput() {
+      return suppressOutput_;
+    }
+    /**
+     * <pre>
+     * Indicate if the output of this model is suppressed.
+     * </pre>
+     *
+     * <code>bool suppress_output = 7;</code>
+     * @param value The suppressOutput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuppressOutput(boolean value) {
+      
+      suppressOutput_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicate if the output of this model is suppressed.
+     * </pre>
+     *
+     * <code>bool suppress_output = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSuppressOutput() {
+      
+      suppressOutput_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

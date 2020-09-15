@@ -96,6 +96,11 @@ private static final long serialVersionUID = 0L;
             reviewUserIds_.add(s);
             break;
           }
+          case 48: {
+
+            includingLabelOrderTasks_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -279,6 +284,20 @@ private static final long serialVersionUID = 0L;
     return reviewUserIds_.getByteString(index);
   }
 
+  public static final int INCLUDING_LABEL_ORDER_TASKS_FIELD_NUMBER = 6;
+  private boolean includingLabelOrderTasks_;
+  /**
+   * <pre>
+   * Get label order tasks as well
+   * </pre>
+   *
+   * <code>bool including_label_order_tasks = 6;</code>
+   * @return The includingLabelOrderTasks.
+   */
+  public boolean getIncludingLabelOrderTasks() {
+    return includingLabelOrderTasks_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -307,6 +326,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < reviewUserIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, reviewUserIds_.getRaw(i));
+    }
+    if (includingLabelOrderTasks_ != false) {
+      output.writeBool(6, includingLabelOrderTasks_);
     }
     unknownFields.writeTo(output);
   }
@@ -345,6 +367,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getReviewUserIdsList().size();
     }
+    if (includingLabelOrderTasks_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, includingLabelOrderTasks_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -373,6 +399,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkerUserIdsList())) return false;
     if (!getReviewUserIdsList()
         .equals(other.getReviewUserIdsList())) return false;
+    if (getIncludingLabelOrderTasks()
+        != other.getIncludingLabelOrderTasks()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -400,6 +428,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REVIEW_USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getReviewUserIdsList().hashCode();
     }
+    hash = (37 * hash) + INCLUDING_LABEL_ORDER_TASKS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIncludingLabelOrderTasks());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -551,6 +582,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       reviewUserIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      includingLabelOrderTasks_ = false;
+
       return this;
     }
 
@@ -595,6 +628,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.reviewUserIds_ = reviewUserIds_;
+      result.includingLabelOrderTasks_ = includingLabelOrderTasks_;
       onBuilt();
       return result;
     }
@@ -671,6 +705,9 @@ private static final long serialVersionUID = 0L;
           reviewUserIds_.addAll(other.reviewUserIds_);
         }
         onChanged();
+      }
+      if (other.getIncludingLabelOrderTasks() != false) {
+        setIncludingLabelOrderTasks(other.getIncludingLabelOrderTasks());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1169,6 +1206,48 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureReviewUserIdsIsMutable();
       reviewUserIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean includingLabelOrderTasks_ ;
+    /**
+     * <pre>
+     * Get label order tasks as well
+     * </pre>
+     *
+     * <code>bool including_label_order_tasks = 6;</code>
+     * @return The includingLabelOrderTasks.
+     */
+    public boolean getIncludingLabelOrderTasks() {
+      return includingLabelOrderTasks_;
+    }
+    /**
+     * <pre>
+     * Get label order tasks as well
+     * </pre>
+     *
+     * <code>bool including_label_order_tasks = 6;</code>
+     * @param value The includingLabelOrderTasks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludingLabelOrderTasks(boolean value) {
+      
+      includingLabelOrderTasks_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Get label order tasks as well
+     * </pre>
+     *
+     * <code>bool including_label_order_tasks = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludingLabelOrderTasks() {
+      
+      includingLabelOrderTasks_ = false;
       onChanged();
       return this;
     }

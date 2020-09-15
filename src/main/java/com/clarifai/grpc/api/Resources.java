@@ -854,158 +854,161 @@ public final class Resources {
       "lter\022\016\n\006negate\030\003 \001(\010\022,\n\nannotation\030\004 \001(\013" +
       "2\030.clarifai.api.Annotation\"D\n\004Rank\022\016\n\006ne" +
       "gate\030\003 \001(\010\022,\n\nannotation\030\004 \001(\0132\030.clarifa" +
-      "i.api.Annotation\"\237\001\n\027AnnotationSearchMet" +
+      "i.api.Annotation\"\337\001\n\027AnnotationSearchMet" +
       "rics\022*\n\014ground_truth\030\001 \001(\0132\024.clarifai.ap" +
       "i.Search\022,\n\016search_to_eval\030\002 \001(\0132\024.clari" +
       "fai.api.Search\022*\n\007metrics\030\003 \001(\0132\031.clarif" +
-      "ai.api.EvalMetrics\"f\n\004Text\022\013\n\003raw\030\001 \001(\t\022" +
-      "\013\n\003url\030\002 \001(\t\022\033\n\023allow_duplicate_url\030\003 \001(" +
-      "\010\022\'\n\006hosted\030\004 \001(\0132\027.clarifai.api.HostedU" +
-      "RL\"\270\003\n\004User\022\n\n\002id\030\001 \001(\t\022\025\n\rprimary_email" +
-      "\030\002 \001(\t\022\022\n\nfirst_name\030\003 \001(\t\022\021\n\tlast_name\030" +
-      "\004 \001(\t\022\024\n\014company_name\030\005 \001(\t\022\021\n\tbill_type" +
-      "\030\007 \001(\t\022.\n\ncreated_at\030\006 \001(\0132\032.google.prot" +
-      "obuf.Timestamp\0225\n\021date_gdpr_consent\030\010 \001(" +
-      "\0132\032.google.protobuf.Timestamp\0224\n\020date_to" +
-      "s_consent\030\t \001(\0132\032.google.protobuf.Timest" +
-      "amp\022:\n\026date_marketing_consent\030\n \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022)\n\010metadata\030\013 \001(" +
-      "\0132\027.google.protobuf.Struct\0223\n\017email_addr" +
-      "esses\030\014 \003(\0132\032.clarifai.api.EmailAddressJ" +
-      "\004\010\r\020\016\"R\n\014EmailAddress\022\023\n\005email\030\001 \001(\tB\004\200\265" +
-      "\030\001\022\025\n\007primary\030\002 \001(\010B\004\200\265\030\001\022\026\n\010verified\030\003 " +
-      "\001(\010B\004\200\265\030\001\"\035\n\010Password\022\021\n\tplaintext\030\001 \001(\t" +
-      "\"\206\003\n\022PasswordViolations\022\026\n\016minimum_lengt" +
-      "h\030\001 \001(\010\022\026\n\016maximum_length\030\002 \001(\010\022\031\n\021upper" +
-      "_case_needed\030\003 \001(\010\022\031\n\021lower_case_needed\030" +
-      "\004 \001(\010\022\026\n\016numeric_needed\030\005 \001(\010\022\037\n\027non_alp" +
-      "hanumeric_needed\030\006 \001(\010\022\026\n\016password_reuse" +
-      "\030\007 \001(\010\022\025\n\rexclude_names\030\010 \001(\010\022\025\n\rexclude" +
-      "_email\030\t \001(\010\022\034\n\024no_confusing_letters\030\n \001" +
-      "(\010\022\033\n\023no_simple_passwords\030\013 \001(\010\022\030\n\020no_co" +
-      "mmon_vocabs\030\014 \001(\010\022\033\n\023no_overlap_with_old" +
-      "\030\r \001(\010\022\031\n\021password_lifespan\030\016 \001(\010\"\201\001\n\005Vi" +
-      "deo\022\013\n\003url\030\001 \001(\t\022\016\n\006base64\030\002 \001(\014\022\033\n\023allo" +
-      "w_duplicate_url\030\004 \001(\010\022\025\n\rthumbnail_url\030\005" +
-      " \001(\t\022\'\n\006hosted\030\006 \001(\0132\027.clarifai.api.Host" +
-      "edURL\"\201\001\n\010Workflow\022\n\n\002id\030\001 \001(\t\022\016\n\006app_id" +
-      "\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132\032.google.prot" +
-      "obuf.Timestamp\022)\n\005nodes\030\004 \003(\0132\032.clarifai" +
-      ".api.WorkflowNode\"l\n\014WorkflowNode\022\n\n\002id\030" +
-      "\001 \001(\t\022\"\n\005model\030\002 \001(\0132\023.clarifai.api.Mode" +
-      "l\022,\n\013node_inputs\030\003 \003(\0132\027.clarifai.api.No" +
-      "deInput\"\034\n\tNodeInput\022\017\n\007node_id\030\001 \001(\t\"\350\001" +
-      "\n\016WorkflowResult\022\n\n\002id\030\001 \001(\t\022+\n\006status\030\002" +
-      " \001(\0132\033.clarifai.api.status.Status\022.\n\ncre" +
-      "ated_at\030\003 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022\"\n\005model\030\004 \001(\0132\023.clarifai.api.Model\022\"\n" +
-      "\005input\030\005 \001(\0132\023.clarifai.api.Input\022%\n\007out" +
-      "puts\030\006 \003(\0132\024.clarifai.api.Output\"\216\002\n\016App" +
-      "Duplication\022\n\n\002id\030\001 \001(\t\022\022\n\nnew_app_id\030\002 " +
-      "\001(\t\022\024\n\014new_app_name\030\003 \001(\t\022+\n\006status\030\004 \001(" +
-      "\0132\033.clarifai.api.status.Status\022.\n\ncreate" +
-      "d_at\030\005 \001(\0132\032.google.protobuf.Timestamp\0224" +
-      "\n\020last_modified_at\030\006 \001(\0132\032.google.protob" +
-      "uf.Timestamp\0223\n\006filter\030\007 \001(\0132#.clarifai." +
-      "api.AppDuplicationFilters\"\212\001\n\025AppDuplica" +
-      "tionFilters\022\023\n\013copy_inputs\030\001 \001(\010\022\025\n\rcopy" +
-      "_concepts\030\002 \001(\010\022\030\n\020copy_annotations\030\003 \001(" +
-      "\010\022\023\n\013copy_models\030\004 \001(\010\022\026\n\016copy_workflows" +
-      "\030\005 \001(\010\"\302\004\n\004Task\022\n\n\002id\030\001 \001(\t\022.\n\ncreated_a" +
-      "t\030\002 \001(\0132\032.google.protobuf.Timestamp\022/\n\013m" +
-      "odified_at\030\003 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022)\n\004type\030\004 \001(\0162\033.clarifai.api.Task.T" +
-      "askType\022\023\n\013description\030\005 \001(\t\022(\n\006worker\030\006" +
-      " \001(\0132\030.clarifai.api.TaskWorker\022\023\n\013concep" +
-      "t_ids\030\007 \003(\t\0223\n\014input_source\030\010 \001(\0132\035.clar" +
-      "ifai.api.TaskInputSource\022\021\n\tsample_ms\030\t " +
-      "\001(\r\0223\n\014ai_assistant\030\n \001(\0132\035.clarifai.api" +
-      ".TaskAIAssistant\022(\n\006review\030\013 \001(\0132\030.clari" +
-      "fai.api.TaskReview\022+\n\006status\030\014 \001(\0132\033.cla" +
-      "rifai.api.status.Status\022\014\n\004name\030\r \001(\t\"l\n" +
-      "\010TaskType\022\020\n\014TYPE_NOT_SET\020\000\022\033\n\027CONCEPTS_" +
-      "CLASSIFICATION\020\001\022\032\n\026BOUNDING_BOX_DETECTI" +
-      "ON\020\002\022\025\n\021POLYGON_DETECTION\020\003\"\230\002\n\nTaskWork" +
-      "er\022=\n\010strategy\030\001 \001(\0162+.clarifai.api.Task" +
-      "Worker.TaskWorkerStrategy\022\020\n\010user_ids\030\002 " +
-      "\003(\t\022T\n\031partitioned_strategy_info\030\003 \001(\0132/" +
-      ".clarifai.api.TaskWorkerPartitionedStrat" +
-      "egyInfoH\000\"R\n\022TaskWorkerStrategy\022\033\n\027WORKE" +
-      "R_STRATEGY_NOT_SET\020\000\022\017\n\013PARTITIONED\020\002\022\010\n" +
-      "\004FULL\020\003\"\004\010\001\020\001B\017\n\rstrategy_info\"\251\002\n!TaskW" +
-      "orkerPartitionedStrategyInfo\022[\n\004type\030\001 \001" +
-      "(\0162M.clarifai.api.TaskWorkerPartitionedS" +
-      "trategyInfo.TaskWorkerPartitionedStrateg" +
-      "y\022\031\n\021workers_per_input\030\002 \001(\005\022(\n\007weights\030" +
-      "\003 \001(\0132\027.google.protobuf.Struct\"b\n\035TaskWo" +
-      "rkerPartitionedStrategy\022\'\n#PARTITIONED_W" +
-      "ORKER_STRATEGY_NOT_SET\020\000\022\n\n\006EVENLY\020\001\022\014\n\010" +
-      "WEIGHTED\020\002\"\266\001\n\017TaskInputSource\022?\n\004type\030\001" +
-      " \001(\01621.clarifai.api.TaskInputSource.Task" +
-      "InputSourceType\022\n\n\002id\030\002 \001(\t\"V\n\023TaskInput" +
-      "SourceType\022\035\n\031INPUT_SOURCE_TYPE_NOT_SET\020" +
-      "\000\022\016\n\nALL_INPUTS\020\001\022\020\n\014SAVED_SEARCH\020\002\"\351\002\n\n" +
-      "TaskReview\022=\n\010strategy\030\001 \001(\0162+.clarifai." +
-      "api.TaskReview.TaskReviewStrategy\022\020\n\010use" +
-      "r_ids\030\002 \003(\t\022J\n\024manual_strategy_info\030\003 \001(",
-      "\0132*.clarifai.api.TaskReviewManualStrateg" +
-      "yInfoH\000\022P\n\027consensus_strategy_info\030\004 \001(\013" +
-      "2-.clarifai.api.TaskReviewConsensusStrat" +
-      "egyInfoH\000\"[\n\022TaskReviewStrategy\022 \n\034TASK_" +
-      "REVIEW_STRATEGY_NOT_SET\020\000\022\010\n\004NONE\020\001\022\n\n\006M" +
-      "ANUAL\020\002\022\r\n\tCONSENSUS\020\003B\017\n\rstrategy_info\"" +
-      "9\n\034TaskReviewManualStrategyInfo\022\031\n\021sampl" +
-      "e_percentage\030\001 \001(\002\"H\n\037TaskReviewConsensu" +
-      "sStrategyInfo\022%\n\035quorum_necessary_for_ap" +
-      "proval\030\001 \001(\r\"&\n\017TaskAIAssistant\022\023\n\013workf" +
-      "low_id\030\001 \001(\t\"\201\002\n\tCollector\022\n\n\002id\030\001 \001(\t\022\023" +
-      "\n\013description\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132" +
-      "\032.google.protobuf.Timestamp\022\035\n\025pre_queue" +
-      "_workflow_id\030\004 \001(\t\022\036\n\026post_queue_workflo" +
-      "w_id\030\005 \001(\t\0227\n\020collector_source\030\006 \001(\0132\035.c" +
-      "larifai.api.CollectorSource\022+\n\006status\030\007 " +
-      "\001(\0132\033.clarifai.api.status.Status\"t\n\017Coll" +
-      "ectorSource\022a\n\'api_post_model_outputs_co" +
-      "llector_source\030\002 \001(\01320.clarifai.api.APIP" +
-      "ostModelOutputsCollectorSource\"\231\001\n\"APIPo" +
-      "stModelOutputsCollectorSource\022\025\n\rmodel_u" +
-      "ser_id\030\001 \001(\t\022\024\n\014model_app_id\030\002 \001(\t\022\020\n\010mo" +
-      "del_id\030\003 \001(\t\022\030\n\020model_version_id\030\004 \001(\t\022\032" +
-      "\n\022post_inputs_key_id\030\005 \001(\t\"R\n\tStatValue\022" +
-      "(\n\004time\030\001 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022\r\n\005value\030\002 \001(\002\022\014\n\004tags\030\003 \003(\t\"\246\001\n\030StatV" +
-      "alueAggregateResult\022?\n\025stat_value_aggreg" +
-      "ates\030\001 \003(\0132 .clarifai.api.StatValueAggre" +
-      "gate\022I\n\032stat_value_aggregate_query\030\002 \001(\013" +
-      "2%.clarifai.api.StatValueAggregateQuery\"" +
-      "t\n\022StatValueAggregate\022(\n\004time\030\001 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022\027\n\017aggregate_val" +
-      "ue\030\002 \001(\002\022\r\n\005count\030\003 \001(\004\022\014\n\004tags\030\004 \003(\t\"\221\002" +
-      "\n\027StatValueAggregateQuery\022\014\n\004tags\030\001 \003(\t\022" +
-      "\022\n\ntag_groups\030\002 \003(\t\022;\n\023stat_value_agg_ty" +
-      "pe\030\003 \001(\0162\036.clarifai.api.StatValueAggType" +
-      "\0229\n\022stat_time_agg_type\030\004 \001(\0162\035.clarifai." +
-      "api.StatTimeAggType\022.\n\nstart_time\030\005 \001(\0132" +
-      "\032.google.protobuf.Timestamp\022,\n\010end_time\030" +
-      "\006 \001(\0132\032.google.protobuf.Timestamp*H\n\020Exp" +
-      "irationAction\022\035\n\031EXPIRATION_ACTION_NOT_S" +
-      "ET\020\000\022\t\n\005DELAY\020\001\022\n\n\006EXPIRY\020\002*M\n\014LicenseSc" +
-      "ope\022\031\n\025LICENSE_SCOPE_NOT_SET\020\000\022\013\n\007PREDIC" +
-      "T\020\001\022\t\n\005TRAIN\020\002\022\n\n\006SEARCH\020\003*\217\001\n\017ValueComp" +
-      "arator\022\035\n\031CONCEPT_THRESHOLD_NOT_SET\020\000\022\020\n" +
-      "\014GREATER_THAN\020\001\022\031\n\025GREATER_THAN_OR_EQUAL" +
-      "\020\002\022\r\n\tLESS_THAN\020\003\022\026\n\022LESS_THAN_OR_EQUAL\020" +
-      "\004\022\t\n\005EQUAL\020\005*3\n\016EvaluationType\022\022\n\016Classi" +
-      "fication\020\000\022\r\n\tDetection\020\001*f\n\014APIEventTyp" +
-      "e\022\032\n\026API_EVENT_TYPE_NOT_SET\020\000\022\023\n\017ON_PREM" +
-      "_PREDICT\020\001\022\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_PREM" +
-      "_SEARCH\020\003*<\n\021UsageIntervalType\022\t\n\005undef\020" +
-      "\000\022\007\n\003day\020\001\022\t\n\005month\020\002\022\010\n\004year\020\003*$\n\020StatV" +
-      "alueAggType\022\007\n\003SUM\020\000\022\007\n\003AVG\020\001*`\n\017StatTim" +
-      "eAggType\022\017\n\013NO_TIME_AGG\020\000\022\010\n\004YEAR\020\001\022\t\n\005M" +
-      "ONTH\020\002\022\010\n\004WEEK\020\003\022\007\n\003DAY\020\004\022\010\n\004HOUR\020\005\022\n\n\006M" +
-      "INUTE\020\006B%\n\025com.clarifai.grpc.apiP\001Z\003api\242" +
-      "\002\004CAIPb\006proto3"
+      "ai.api.EvalMetrics\022 \n\004data\030\004 \001(\0132\022.clari" +
+      "fai.api.Data\022\034\n\024active_concept_count\030\005 \001" +
+      "(\r\"f\n\004Text\022\013\n\003raw\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\033\n\023" +
+      "allow_duplicate_url\030\003 \001(\010\022\'\n\006hosted\030\004 \001(" +
+      "\0132\027.clarifai.api.HostedURL\"\270\003\n\004User\022\n\n\002i" +
+      "d\030\001 \001(\t\022\025\n\rprimary_email\030\002 \001(\t\022\022\n\nfirst_" +
+      "name\030\003 \001(\t\022\021\n\tlast_name\030\004 \001(\t\022\024\n\014company" +
+      "_name\030\005 \001(\t\022\021\n\tbill_type\030\007 \001(\t\022.\n\ncreate" +
+      "d_at\030\006 \001(\0132\032.google.protobuf.Timestamp\0225" +
+      "\n\021date_gdpr_consent\030\010 \001(\0132\032.google.proto" +
+      "buf.Timestamp\0224\n\020date_tos_consent\030\t \001(\0132" +
+      "\032.google.protobuf.Timestamp\022:\n\026date_mark" +
+      "eting_consent\030\n \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022)\n\010metadata\030\013 \001(\0132\027.google.proto" +
+      "buf.Struct\0223\n\017email_addresses\030\014 \003(\0132\032.cl" +
+      "arifai.api.EmailAddressJ\004\010\r\020\016\"R\n\014EmailAd" +
+      "dress\022\023\n\005email\030\001 \001(\tB\004\200\265\030\001\022\025\n\007primary\030\002 " +
+      "\001(\010B\004\200\265\030\001\022\026\n\010verified\030\003 \001(\010B\004\200\265\030\001\"\035\n\010Pas" +
+      "sword\022\021\n\tplaintext\030\001 \001(\t\"\206\003\n\022PasswordVio" +
+      "lations\022\026\n\016minimum_length\030\001 \001(\010\022\026\n\016maxim" +
+      "um_length\030\002 \001(\010\022\031\n\021upper_case_needed\030\003 \001" +
+      "(\010\022\031\n\021lower_case_needed\030\004 \001(\010\022\026\n\016numeric" +
+      "_needed\030\005 \001(\010\022\037\n\027non_alphanumeric_needed" +
+      "\030\006 \001(\010\022\026\n\016password_reuse\030\007 \001(\010\022\025\n\rexclud" +
+      "e_names\030\010 \001(\010\022\025\n\rexclude_email\030\t \001(\010\022\034\n\024" +
+      "no_confusing_letters\030\n \001(\010\022\033\n\023no_simple_" +
+      "passwords\030\013 \001(\010\022\030\n\020no_common_vocabs\030\014 \001(" +
+      "\010\022\033\n\023no_overlap_with_old\030\r \001(\010\022\031\n\021passwo" +
+      "rd_lifespan\030\016 \001(\010\"\201\001\n\005Video\022\013\n\003url\030\001 \001(\t" +
+      "\022\016\n\006base64\030\002 \001(\014\022\033\n\023allow_duplicate_url\030" +
+      "\004 \001(\010\022\025\n\rthumbnail_url\030\005 \001(\t\022\'\n\006hosted\030\006" +
+      " \001(\0132\027.clarifai.api.HostedURL\"\201\001\n\010Workfl" +
+      "ow\022\n\n\002id\030\001 \001(\t\022\016\n\006app_id\030\002 \001(\t\022.\n\ncreate" +
+      "d_at\030\003 \001(\0132\032.google.protobuf.Timestamp\022)" +
+      "\n\005nodes\030\004 \003(\0132\032.clarifai.api.WorkflowNod" +
+      "e\"\205\001\n\014WorkflowNode\022\n\n\002id\030\001 \001(\t\022\"\n\005model\030" +
+      "\002 \001(\0132\023.clarifai.api.Model\022,\n\013node_input" +
+      "s\030\003 \003(\0132\027.clarifai.api.NodeInput\022\027\n\017supp" +
+      "ress_output\030\004 \001(\010\"\034\n\tNodeInput\022\017\n\007node_i" +
+      "d\030\001 \001(\t\"\201\002\n\016WorkflowResult\022\n\n\002id\030\001 \001(\t\022+" +
+      "\n\006status\030\002 \001(\0132\033.clarifai.api.status.Sta" +
+      "tus\022.\n\ncreated_at\030\003 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022\"\n\005model\030\004 \001(\0132\023.clarifai.ap" +
+      "i.Model\022\"\n\005input\030\005 \001(\0132\023.clarifai.api.In" +
+      "put\022%\n\007outputs\030\006 \003(\0132\024.clarifai.api.Outp" +
+      "ut\022\027\n\017suppress_output\030\007 \001(\010\"\216\002\n\016AppDupli" +
+      "cation\022\n\n\002id\030\001 \001(\t\022\022\n\nnew_app_id\030\002 \001(\t\022\024" +
+      "\n\014new_app_name\030\003 \001(\t\022+\n\006status\030\004 \001(\0132\033.c" +
+      "larifai.api.status.Status\022.\n\ncreated_at\030" +
+      "\005 \001(\0132\032.google.protobuf.Timestamp\0224\n\020las" +
+      "t_modified_at\030\006 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\0223\n\006filter\030\007 \001(\0132#.clarifai.api.A" +
+      "ppDuplicationFilters\"\212\001\n\025AppDuplicationF" +
+      "ilters\022\023\n\013copy_inputs\030\001 \001(\010\022\025\n\rcopy_conc" +
+      "epts\030\002 \001(\010\022\030\n\020copy_annotations\030\003 \001(\010\022\023\n\013" +
+      "copy_models\030\004 \001(\010\022\026\n\016copy_workflows\030\005 \001(" +
+      "\010\"\302\004\n\004Task\022\n\n\002id\030\001 \001(\t\022.\n\ncreated_at\030\002 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022/\n\013modifi" +
+      "ed_at\030\003 \001(\0132\032.google.protobuf.Timestamp\022" +
+      ")\n\004type\030\004 \001(\0162\033.clarifai.api.Task.TaskTy" +
+      "pe\022\023\n\013description\030\005 \001(\t\022(\n\006worker\030\006 \001(\0132" +
+      "\030.clarifai.api.TaskWorker\022\023\n\013concept_ids" +
+      "\030\007 \003(\t\0223\n\014input_source\030\010 \001(\0132\035.clarifai." +
+      "api.TaskInputSource\022\021\n\tsample_ms\030\t \001(\r\0223" +
+      "\n\014ai_assistant\030\n \001(\0132\035.clarifai.api.Task" +
+      "AIAssistant\022(\n\006review\030\013 \001(\0132\030.clarifai.a" +
+      "pi.TaskReview\022+\n\006status\030\014 \001(\0132\033.clarifai" +
+      ".api.status.Status\022\014\n\004name\030\r \001(\t\"l\n\010Task" +
+      "Type\022\020\n\014TYPE_NOT_SET\020\000\022\033\n\027CONCEPTS_CLASS" +
+      "IFICATION\020\001\022\032\n\026BOUNDING_BOX_DETECTION\020\002\022" +
+      "\025\n\021POLYGON_DETECTION\020\003\"\230\002\n\nTaskWorker\022=\n" +
+      "\010strategy\030\001 \001(\0162+.clarifai.api.TaskWorke" +
+      "r.TaskWorkerStrategy\022\020\n\010user_ids\030\002 \003(\t\022T" +
+      "\n\031partitioned_strategy_info\030\003 \001(\0132/.clar" +
+      "ifai.api.TaskWorkerPartitionedStrategyIn" +
+      "foH\000\"R\n\022TaskWorkerStrategy\022\033\n\027WORKER_STR" +
+      "ATEGY_NOT_SET\020\000\022\017\n\013PARTITIONED\020\002\022\010\n\004FULL" +
+      "\020\003\"\004\010\001\020\001B\017\n\rstrategy_info\"\251\002\n!TaskWorker" +
+      "PartitionedStrategyInfo\022[\n\004type\030\001 \001(\0162M." +
+      "clarifai.api.TaskWorkerPartitionedStrate" +
+      "gyInfo.TaskWorkerPartitionedStrategy\022\031\n\021" +
+      "workers_per_input\030\002 \001(\005\022(\n\007weights\030\003 \001(\013" +
+      "2\027.google.protobuf.Struct\"b\n\035TaskWorkerP" +
+      "artitionedStrategy\022\'\n#PARTITIONED_WORKER" +
+      "_STRATEGY_NOT_SET\020\000\022\n\n\006EVENLY\020\001\022\014\n\010WEIGH" +
+      "TED\020\002\"\266\001\n\017TaskInputSource\022?\n\004type\030\001 \001(\0162" +
+      "1.clarifai.api.TaskInputSource.TaskInput" +
+      "SourceType\022\n\n\002id\030\002 \001(\t\"V\n\023TaskInputSourc" +
+      "eType\022\035\n\031INPUT_SOURCE_TYPE_NOT_SET\020\000\022\016\n\n" +
+      "ALL_INPUTS\020\001\022\020\n\014SAVED_SEARCH\020\002\"\351\002\n\nTaskR",
+      "eview\022=\n\010strategy\030\001 \001(\0162+.clarifai.api.T" +
+      "askReview.TaskReviewStrategy\022\020\n\010user_ids" +
+      "\030\002 \003(\t\022J\n\024manual_strategy_info\030\003 \001(\0132*.c" +
+      "larifai.api.TaskReviewManualStrategyInfo" +
+      "H\000\022P\n\027consensus_strategy_info\030\004 \001(\0132-.cl" +
+      "arifai.api.TaskReviewConsensusStrategyIn" +
+      "foH\000\"[\n\022TaskReviewStrategy\022 \n\034TASK_REVIE" +
+      "W_STRATEGY_NOT_SET\020\000\022\010\n\004NONE\020\001\022\n\n\006MANUAL" +
+      "\020\002\022\r\n\tCONSENSUS\020\003B\017\n\rstrategy_info\"9\n\034Ta" +
+      "skReviewManualStrategyInfo\022\031\n\021sample_per" +
+      "centage\030\001 \001(\002\"H\n\037TaskReviewConsensusStra" +
+      "tegyInfo\022%\n\035quorum_necessary_for_approva" +
+      "l\030\001 \001(\r\"&\n\017TaskAIAssistant\022\023\n\013workflow_i" +
+      "d\030\001 \001(\t\"\201\002\n\tCollector\022\n\n\002id\030\001 \001(\t\022\023\n\013des" +
+      "cription\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022\035\n\025pre_queue_work" +
+      "flow_id\030\004 \001(\t\022\036\n\026post_queue_workflow_id\030" +
+      "\005 \001(\t\0227\n\020collector_source\030\006 \001(\0132\035.clarif" +
+      "ai.api.CollectorSource\022+\n\006status\030\007 \001(\0132\033" +
+      ".clarifai.api.status.Status\"t\n\017Collector" +
+      "Source\022a\n\'api_post_model_outputs_collect" +
+      "or_source\030\002 \001(\01320.clarifai.api.APIPostMo" +
+      "delOutputsCollectorSource\"\231\001\n\"APIPostMod" +
+      "elOutputsCollectorSource\022\025\n\rmodel_user_i" +
+      "d\030\001 \001(\t\022\024\n\014model_app_id\030\002 \001(\t\022\020\n\010model_i" +
+      "d\030\003 \001(\t\022\030\n\020model_version_id\030\004 \001(\t\022\032\n\022pos" +
+      "t_inputs_key_id\030\005 \001(\t\"R\n\tStatValue\022(\n\004ti" +
+      "me\030\001 \001(\0132\032.google.protobuf.Timestamp\022\r\n\005" +
+      "value\030\002 \001(\002\022\014\n\004tags\030\003 \003(\t\"\246\001\n\030StatValueA" +
+      "ggregateResult\022?\n\025stat_value_aggregates\030" +
+      "\001 \003(\0132 .clarifai.api.StatValueAggregate\022" +
+      "I\n\032stat_value_aggregate_query\030\002 \001(\0132%.cl" +
+      "arifai.api.StatValueAggregateQuery\"t\n\022St" +
+      "atValueAggregate\022(\n\004time\030\001 \001(\0132\032.google." +
+      "protobuf.Timestamp\022\027\n\017aggregate_value\030\002 " +
+      "\001(\002\022\r\n\005count\030\003 \001(\004\022\014\n\004tags\030\004 \003(\t\"\221\002\n\027Sta" +
+      "tValueAggregateQuery\022\014\n\004tags\030\001 \003(\t\022\022\n\nta" +
+      "g_groups\030\002 \003(\t\022;\n\023stat_value_agg_type\030\003 " +
+      "\001(\0162\036.clarifai.api.StatValueAggType\0229\n\022s" +
+      "tat_time_agg_type\030\004 \001(\0162\035.clarifai.api.S" +
+      "tatTimeAggType\022.\n\nstart_time\030\005 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022,\n\010end_time\030\006 \001(\013" +
+      "2\032.google.protobuf.Timestamp*H\n\020Expirati" +
+      "onAction\022\035\n\031EXPIRATION_ACTION_NOT_SET\020\000\022" +
+      "\t\n\005DELAY\020\001\022\n\n\006EXPIRY\020\002*M\n\014LicenseScope\022\031" +
+      "\n\025LICENSE_SCOPE_NOT_SET\020\000\022\013\n\007PREDICT\020\001\022\t" +
+      "\n\005TRAIN\020\002\022\n\n\006SEARCH\020\003*\217\001\n\017ValueComparato" +
+      "r\022\035\n\031CONCEPT_THRESHOLD_NOT_SET\020\000\022\020\n\014GREA" +
+      "TER_THAN\020\001\022\031\n\025GREATER_THAN_OR_EQUAL\020\002\022\r\n" +
+      "\tLESS_THAN\020\003\022\026\n\022LESS_THAN_OR_EQUAL\020\004\022\t\n\005" +
+      "EQUAL\020\005*3\n\016EvaluationType\022\022\n\016Classificat" +
+      "ion\020\000\022\r\n\tDetection\020\001*f\n\014APIEventType\022\032\n\026" +
+      "API_EVENT_TYPE_NOT_SET\020\000\022\023\n\017ON_PREM_PRED" +
+      "ICT\020\001\022\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_PREM_SEAR" +
+      "CH\020\003*<\n\021UsageIntervalType\022\t\n\005undef\020\000\022\007\n\003" +
+      "day\020\001\022\t\n\005month\020\002\022\010\n\004year\020\003*$\n\020StatValueA" +
+      "ggType\022\007\n\003SUM\020\000\022\007\n\003AVG\020\001*`\n\017StatTimeAggT" +
+      "ype\022\017\n\013NO_TIME_AGG\020\000\022\010\n\004YEAR\020\001\022\t\n\005MONTH\020" +
+      "\002\022\010\n\004WEEK\020\003\022\007\n\003DAY\020\004\022\010\n\004HOUR\020\005\022\n\n\006MINUTE" +
+      "\020\006B%\n\025com.clarifai.grpc.apiP\001Z\003api\242\002\004CAI" +
+      "Pb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1483,7 +1486,7 @@ public final class Resources {
     internal_static_clarifai_api_AnnotationSearchMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_AnnotationSearchMetrics_descriptor,
-        new java.lang.String[] { "GroundTruth", "SearchToEval", "Metrics", });
+        new java.lang.String[] { "GroundTruth", "SearchToEval", "Metrics", "Data", "ActiveConceptCount", });
     internal_static_clarifai_api_Text_descriptor =
       getDescriptor().getMessageTypes().get(78);
     internal_static_clarifai_api_Text_fieldAccessorTable = new
@@ -1531,7 +1534,7 @@ public final class Resources {
     internal_static_clarifai_api_WorkflowNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowNode_descriptor,
-        new java.lang.String[] { "Id", "Model", "NodeInputs", });
+        new java.lang.String[] { "Id", "Model", "NodeInputs", "SuppressOutput", });
     internal_static_clarifai_api_NodeInput_descriptor =
       getDescriptor().getMessageTypes().get(86);
     internal_static_clarifai_api_NodeInput_fieldAccessorTable = new
@@ -1543,7 +1546,7 @@ public final class Resources {
     internal_static_clarifai_api_WorkflowResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_WorkflowResult_descriptor,
-        new java.lang.String[] { "Id", "Status", "CreatedAt", "Model", "Input", "Outputs", });
+        new java.lang.String[] { "Id", "Status", "CreatedAt", "Model", "Input", "Outputs", "SuppressOutput", });
     internal_static_clarifai_api_AppDuplication_descriptor =
       getDescriptor().getMessageTypes().get(88);
     internal_static_clarifai_api_AppDuplication_fieldAccessorTable = new

@@ -87,6 +87,24 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.clarifai.grpc.api.Data.Builder subBuilder = null;
+            if (data_ != null) {
+              subBuilder = data_.toBuilder();
+            }
+            data_ = input.readMessage(com.clarifai.grpc.api.Data.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(data_);
+              data_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 40: {
+
+            activeConceptCount_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -224,6 +242,55 @@ private static final long serialVersionUID = 0L;
     return getMetrics();
   }
 
+  public static final int DATA_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.Data data_;
+  /**
+   * <pre>
+   * data is filled out with the concepts used for this evaluation
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 4;</code>
+   * @return Whether the data field is set.
+   */
+  public boolean hasData() {
+    return data_ != null;
+  }
+  /**
+   * <pre>
+   * data is filled out with the concepts used for this evaluation
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 4;</code>
+   * @return The data.
+   */
+  public com.clarifai.grpc.api.Data getData() {
+    return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
+  }
+  /**
+   * <pre>
+   * data is filled out with the concepts used for this evaluation
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 4;</code>
+   */
+  public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
+    return getData();
+  }
+
+  public static final int ACTIVE_CONCEPT_COUNT_FIELD_NUMBER = 5;
+  private int activeConceptCount_;
+  /**
+   * <pre>
+   * active_concept_count is the number of concepts for this evaluation
+   * </pre>
+   *
+   * <code>uint32 active_concept_count = 5;</code>
+   * @return The activeConceptCount.
+   */
+  public int getActiveConceptCount() {
+    return activeConceptCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -247,6 +314,12 @@ private static final long serialVersionUID = 0L;
     if (metrics_ != null) {
       output.writeMessage(3, getMetrics());
     }
+    if (data_ != null) {
+      output.writeMessage(4, getData());
+    }
+    if (activeConceptCount_ != 0) {
+      output.writeUInt32(5, activeConceptCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -267,6 +340,14 @@ private static final long serialVersionUID = 0L;
     if (metrics_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getMetrics());
+    }
+    if (data_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getData());
+    }
+    if (activeConceptCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(5, activeConceptCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,6 +379,13 @@ private static final long serialVersionUID = 0L;
       if (!getMetrics()
           .equals(other.getMetrics())) return false;
     }
+    if (hasData() != other.hasData()) return false;
+    if (hasData()) {
+      if (!getData()
+          .equals(other.getData())) return false;
+    }
+    if (getActiveConceptCount()
+        != other.getActiveConceptCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -321,6 +409,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetrics().hashCode();
     }
+    if (hasData()) {
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+    }
+    hash = (37 * hash) + ACTIVE_CONCEPT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getActiveConceptCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -472,6 +566,14 @@ private static final long serialVersionUID = 0L;
         metrics_ = null;
         metricsBuilder_ = null;
       }
+      if (dataBuilder_ == null) {
+        data_ = null;
+      } else {
+        data_ = null;
+        dataBuilder_ = null;
+      }
+      activeConceptCount_ = 0;
+
       return this;
     }
 
@@ -513,6 +615,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
+      if (dataBuilder_ == null) {
+        result.data_ = data_;
+      } else {
+        result.data_ = dataBuilder_.build();
+      }
+      result.activeConceptCount_ = activeConceptCount_;
       onBuilt();
       return result;
     }
@@ -569,6 +677,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetrics()) {
         mergeMetrics(other.getMetrics());
+      }
+      if (other.hasData()) {
+        mergeData(other.getData());
+      }
+      if (other.getActiveConceptCount() != 0) {
+        setActiveConceptCount(other.getActiveConceptCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1062,6 +1176,203 @@ private static final long serialVersionUID = 0L;
         metrics_ = null;
       }
       return metricsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Data data_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> dataBuilder_;
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    public boolean hasData() {
+      return dataBuilder_ != null || data_ != null;
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     * @return The data.
+     */
+    public com.clarifai.grpc.api.Data getData() {
+      if (dataBuilder_ == null) {
+        return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
+      } else {
+        return dataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    public Builder setData(com.clarifai.grpc.api.Data value) {
+      if (dataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        dataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    public Builder setData(
+        com.clarifai.grpc.api.Data.Builder builderForValue) {
+      if (dataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    public Builder mergeData(com.clarifai.grpc.api.Data value) {
+      if (dataBuilder_ == null) {
+        if (data_ != null) {
+          data_ =
+            com.clarifai.grpc.api.Data.newBuilder(data_).mergeFrom(value).buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        dataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    public Builder clearData() {
+      if (dataBuilder_ == null) {
+        data_ = null;
+        onChanged();
+      } else {
+        data_ = null;
+        dataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    public com.clarifai.grpc.api.Data.Builder getDataBuilder() {
+      
+      onChanged();
+      return getDataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
+      if (dataBuilder_ != null) {
+        return dataBuilder_.getMessageOrBuilder();
+      } else {
+        return data_ == null ?
+            com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
+      }
+    }
+    /**
+     * <pre>
+     * data is filled out with the concepts used for this evaluation
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> 
+        getDataFieldBuilder() {
+      if (dataBuilder_ == null) {
+        dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder>(
+                getData(),
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      return dataBuilder_;
+    }
+
+    private int activeConceptCount_ ;
+    /**
+     * <pre>
+     * active_concept_count is the number of concepts for this evaluation
+     * </pre>
+     *
+     * <code>uint32 active_concept_count = 5;</code>
+     * @return The activeConceptCount.
+     */
+    public int getActiveConceptCount() {
+      return activeConceptCount_;
+    }
+    /**
+     * <pre>
+     * active_concept_count is the number of concepts for this evaluation
+     * </pre>
+     *
+     * <code>uint32 active_concept_count = 5;</code>
+     * @param value The activeConceptCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveConceptCount(int value) {
+      
+      activeConceptCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * active_concept_count is the number of concepts for this evaluation
+     * </pre>
+     *
+     * <code>uint32 active_concept_count = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveConceptCount() {
+      
+      activeConceptCount_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

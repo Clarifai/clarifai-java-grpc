@@ -107,4 +107,14 @@ public interface WorkflowNodeOrBuilder extends
    */
   com.clarifai.grpc.api.NodeInputOrBuilder getNodeInputsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * suppress the output for workflow prediction
+   * </pre>
+   *
+   * <code>bool suppress_output = 4;</code>
+   * @return The suppressOutput.
+   */
+  boolean getSuppressOutput();
 }

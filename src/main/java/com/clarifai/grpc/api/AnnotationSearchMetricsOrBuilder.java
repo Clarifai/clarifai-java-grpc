@@ -87,4 +87,41 @@ public interface AnnotationSearchMetricsOrBuilder extends
    * <code>.clarifai.api.EvalMetrics metrics = 3;</code>
    */
   com.clarifai.grpc.api.EvalMetricsOrBuilder getMetricsOrBuilder();
+
+  /**
+   * <pre>
+   * data is filled out with the concepts used for this evaluation
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 4;</code>
+   * @return Whether the data field is set.
+   */
+  boolean hasData();
+  /**
+   * <pre>
+   * data is filled out with the concepts used for this evaluation
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 4;</code>
+   * @return The data.
+   */
+  com.clarifai.grpc.api.Data getData();
+  /**
+   * <pre>
+   * data is filled out with the concepts used for this evaluation
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 4;</code>
+   */
+  com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
+
+  /**
+   * <pre>
+   * active_concept_count is the number of concepts for this evaluation
+   * </pre>
+   *
+   * <code>uint32 active_concept_count = 5;</code>
+   * @return The activeConceptCount.
+   */
+  int getActiveConceptCount();
 }
