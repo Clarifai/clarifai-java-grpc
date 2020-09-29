@@ -28,7 +28,7 @@ jobs:
         CLARIFAI_USER_PASSWORD: ${{ secrets.CLARIFAI_USER_PASSWORD }}
       shell: bash
       run: |
-        export CLARIFAI_APP_ID="$(python scripts/app_and_key_for_tests.py --create-app python-github)"
+        export CLARIFAI_APP_ID="$(python scripts/app_and_key_for_tests.py --create-app java-github)"
         export CLARIFAI_API_KEY="$(python scripts/app_and_key_for_tests.py --create-key ${CLARIFAI_APP_ID})"
         python scripts/app_and_key_for_tests.py --create-workflow ${CLARIFAI_API_KEY}
         ./gradlew test --tests *Grpc*Test
