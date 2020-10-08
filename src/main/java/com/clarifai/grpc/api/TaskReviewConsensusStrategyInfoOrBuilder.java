@@ -12,8 +12,8 @@ public interface TaskReviewConsensusStrategyInfoOrBuilder extends
    * The number of labelers that need to agree in order to automatically approve an annotation.
    * </pre>
    *
-   * <code>uint32 quorum_necessary_for_approval = 1;</code>
-   * @return The quorumNecessaryForApproval.
+   * <code>uint32 approval_threshold = 2;</code>
+   * @return The approvalThreshold.
    */
-  int getQuorumNecessaryForApproval();
+  int getApprovalThreshold();
 }

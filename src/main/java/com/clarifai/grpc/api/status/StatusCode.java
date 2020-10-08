@@ -1220,12 +1220,20 @@ public enum StatusCode
   TASK_IN_PROGRESS(54001),
   /**
    * <pre>
-   * The task is closed.
+   * The task is completed.
    * </pre>
    *
    * <code>TASK_DONE = 54002;</code>
    */
   TASK_DONE(54002),
+  /**
+   * <pre>
+   * The task is marked as abandoned.
+   * </pre>
+   *
+   * <code>TASK_WONT_DO = 54003;</code>
+   */
+  TASK_WONT_DO(54003),
   /**
    * <pre>
    * An error occurred during add-task-annotations pipeline.
@@ -1334,6 +1342,10 @@ public enum StatusCode
    * <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
    */
   FEATUREFLAG_INVALID_ARGUMENT(62001),
+  /**
+   * <code>FEATUREFLAG_BLOCKED = 62002;</code>
+   */
+  FEATUREFLAG_BLOCKED(62002),
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -2641,12 +2653,20 @@ public enum StatusCode
   public static final int TASK_IN_PROGRESS_VALUE = 54001;
   /**
    * <pre>
-   * The task is closed.
+   * The task is completed.
    * </pre>
    *
    * <code>TASK_DONE = 54002;</code>
    */
   public static final int TASK_DONE_VALUE = 54002;
+  /**
+   * <pre>
+   * The task is marked as abandoned.
+   * </pre>
+   *
+   * <code>TASK_WONT_DO = 54003;</code>
+   */
+  public static final int TASK_WONT_DO_VALUE = 54003;
   /**
    * <pre>
    * An error occurred during add-task-annotations pipeline.
@@ -2755,6 +2775,10 @@ public enum StatusCode
    * <code>FEATUREFLAG_INVALID_ARGUMENT = 62001;</code>
    */
   public static final int FEATUREFLAG_INVALID_ARGUMENT_VALUE = 62001;
+  /**
+   * <code>FEATUREFLAG_BLOCKED = 62002;</code>
+   */
+  public static final int FEATUREFLAG_BLOCKED_VALUE = 62002;
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -3103,6 +3127,7 @@ public enum StatusCode
       case 53001: return SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST;
       case 54001: return TASK_IN_PROGRESS;
       case 54002: return TASK_DONE;
+      case 54003: return TASK_WONT_DO;
       case 54005: return TASK_ADD_ANNOTATIONS_FAILURE;
       case 54100: return TASK_CONFLICT;
       case 54101: return TASK_NOT_IMPLEMENTED;
@@ -3122,6 +3147,7 @@ public enum StatusCode
       case 61002: return PASSWORDPOLICY_INVALID_ARGUMENT;
       case 62000: return FEATUREFLAG_CONFIG_NOT_FOUND;
       case 62001: return FEATUREFLAG_INVALID_ARGUMENT;
+      case 62002: return FEATUREFLAG_BLOCKED;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;

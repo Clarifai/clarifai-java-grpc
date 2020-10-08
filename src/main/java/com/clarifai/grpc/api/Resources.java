@@ -958,57 +958,57 @@ public final class Resources {
       "W_STRATEGY_NOT_SET\020\000\022\010\n\004NONE\020\001\022\n\n\006MANUAL" +
       "\020\002\022\r\n\tCONSENSUS\020\003B\017\n\rstrategy_info\"9\n\034Ta" +
       "skReviewManualStrategyInfo\022\031\n\021sample_per" +
-      "centage\030\001 \001(\002\"H\n\037TaskReviewConsensusStra" +
-      "tegyInfo\022%\n\035quorum_necessary_for_approva" +
-      "l\030\001 \001(\r\"&\n\017TaskAIAssistant\022\023\n\013workflow_i" +
-      "d\030\001 \001(\t\"\201\002\n\tCollector\022\n\n\002id\030\001 \001(\t\022\023\n\013des" +
-      "cription\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022\035\n\025pre_queue_work" +
-      "flow_id\030\004 \001(\t\022\036\n\026post_queue_workflow_id\030" +
-      "\005 \001(\t\0227\n\020collector_source\030\006 \001(\0132\035.clarif" +
-      "ai.api.CollectorSource\022+\n\006status\030\007 \001(\0132\033" +
-      ".clarifai.api.status.Status\"t\n\017Collector" +
-      "Source\022a\n\'api_post_model_outputs_collect" +
-      "or_source\030\002 \001(\01320.clarifai.api.APIPostMo" +
-      "delOutputsCollectorSource\"\231\001\n\"APIPostMod" +
-      "elOutputsCollectorSource\022\025\n\rmodel_user_i" +
-      "d\030\001 \001(\t\022\024\n\014model_app_id\030\002 \001(\t\022\020\n\010model_i" +
-      "d\030\003 \001(\t\022\030\n\020model_version_id\030\004 \001(\t\022\032\n\022pos" +
-      "t_inputs_key_id\030\005 \001(\t\"R\n\tStatValue\022(\n\004ti" +
-      "me\030\001 \001(\0132\032.google.protobuf.Timestamp\022\r\n\005" +
-      "value\030\002 \001(\002\022\014\n\004tags\030\003 \003(\t\"\246\001\n\030StatValueA" +
-      "ggregateResult\022?\n\025stat_value_aggregates\030" +
-      "\001 \003(\0132 .clarifai.api.StatValueAggregate\022" +
-      "I\n\032stat_value_aggregate_query\030\002 \001(\0132%.cl" +
-      "arifai.api.StatValueAggregateQuery\"t\n\022St" +
-      "atValueAggregate\022(\n\004time\030\001 \001(\0132\032.google." +
-      "protobuf.Timestamp\022\027\n\017aggregate_value\030\002 " +
-      "\001(\002\022\r\n\005count\030\003 \001(\004\022\014\n\004tags\030\004 \003(\t\"\221\002\n\027Sta" +
-      "tValueAggregateQuery\022\014\n\004tags\030\001 \003(\t\022\022\n\nta" +
-      "g_groups\030\002 \003(\t\022;\n\023stat_value_agg_type\030\003 " +
-      "\001(\0162\036.clarifai.api.StatValueAggType\0229\n\022s" +
-      "tat_time_agg_type\030\004 \001(\0162\035.clarifai.api.S" +
-      "tatTimeAggType\022.\n\nstart_time\030\005 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022,\n\010end_time\030\006 \001(\013" +
-      "2\032.google.protobuf.Timestamp*H\n\020Expirati" +
-      "onAction\022\035\n\031EXPIRATION_ACTION_NOT_SET\020\000\022" +
-      "\t\n\005DELAY\020\001\022\n\n\006EXPIRY\020\002*M\n\014LicenseScope\022\031" +
-      "\n\025LICENSE_SCOPE_NOT_SET\020\000\022\013\n\007PREDICT\020\001\022\t" +
-      "\n\005TRAIN\020\002\022\n\n\006SEARCH\020\003*\217\001\n\017ValueComparato" +
-      "r\022\035\n\031CONCEPT_THRESHOLD_NOT_SET\020\000\022\020\n\014GREA" +
-      "TER_THAN\020\001\022\031\n\025GREATER_THAN_OR_EQUAL\020\002\022\r\n" +
-      "\tLESS_THAN\020\003\022\026\n\022LESS_THAN_OR_EQUAL\020\004\022\t\n\005" +
-      "EQUAL\020\005*3\n\016EvaluationType\022\022\n\016Classificat" +
-      "ion\020\000\022\r\n\tDetection\020\001*f\n\014APIEventType\022\032\n\026" +
-      "API_EVENT_TYPE_NOT_SET\020\000\022\023\n\017ON_PREM_PRED" +
-      "ICT\020\001\022\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_PREM_SEAR" +
-      "CH\020\003*<\n\021UsageIntervalType\022\t\n\005undef\020\000\022\007\n\003" +
-      "day\020\001\022\t\n\005month\020\002\022\010\n\004year\020\003*$\n\020StatValueA" +
-      "ggType\022\007\n\003SUM\020\000\022\007\n\003AVG\020\001*`\n\017StatTimeAggT" +
-      "ype\022\017\n\013NO_TIME_AGG\020\000\022\010\n\004YEAR\020\001\022\t\n\005MONTH\020" +
-      "\002\022\010\n\004WEEK\020\003\022\007\n\003DAY\020\004\022\010\n\004HOUR\020\005\022\n\n\006MINUTE" +
-      "\020\006B%\n\025com.clarifai.grpc.apiP\001Z\003api\242\002\004CAI" +
-      "Pb\006proto3"
+      "centage\030\001 \001(\002\"C\n\037TaskReviewConsensusStra" +
+      "tegyInfo\022\032\n\022approval_threshold\030\002 \001(\rJ\004\010\001" +
+      "\020\002\"&\n\017TaskAIAssistant\022\023\n\013workflow_id\030\001 \001" +
+      "(\t\"\201\002\n\tCollector\022\n\n\002id\030\001 \001(\t\022\023\n\013descript" +
+      "ion\030\002 \001(\t\022.\n\ncreated_at\030\003 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022\035\n\025pre_queue_workflow_" +
+      "id\030\004 \001(\t\022\036\n\026post_queue_workflow_id\030\005 \001(\t" +
+      "\0227\n\020collector_source\030\006 \001(\0132\035.clarifai.ap" +
+      "i.CollectorSource\022+\n\006status\030\007 \001(\0132\033.clar" +
+      "ifai.api.status.Status\"t\n\017CollectorSourc" +
+      "e\022a\n\'api_post_model_outputs_collector_so" +
+      "urce\030\002 \001(\01320.clarifai.api.APIPostModelOu" +
+      "tputsCollectorSource\"\231\001\n\"APIPostModelOut" +
+      "putsCollectorSource\022\025\n\rmodel_user_id\030\001 \001" +
+      "(\t\022\024\n\014model_app_id\030\002 \001(\t\022\020\n\010model_id\030\003 \001" +
+      "(\t\022\030\n\020model_version_id\030\004 \001(\t\022\032\n\022post_inp" +
+      "uts_key_id\030\005 \001(\t\"R\n\tStatValue\022(\n\004time\030\001 " +
+      "\001(\0132\032.google.protobuf.Timestamp\022\r\n\005value" +
+      "\030\002 \001(\002\022\014\n\004tags\030\003 \003(\t\"\246\001\n\030StatValueAggreg" +
+      "ateResult\022?\n\025stat_value_aggregates\030\001 \003(\013" +
+      "2 .clarifai.api.StatValueAggregate\022I\n\032st" +
+      "at_value_aggregate_query\030\002 \001(\0132%.clarifa" +
+      "i.api.StatValueAggregateQuery\"t\n\022StatVal" +
+      "ueAggregate\022(\n\004time\030\001 \001(\0132\032.google.proto" +
+      "buf.Timestamp\022\027\n\017aggregate_value\030\002 \001(\002\022\r" +
+      "\n\005count\030\003 \001(\004\022\014\n\004tags\030\004 \003(\t\"\221\002\n\027StatValu" +
+      "eAggregateQuery\022\014\n\004tags\030\001 \003(\t\022\022\n\ntag_gro" +
+      "ups\030\002 \003(\t\022;\n\023stat_value_agg_type\030\003 \001(\0162\036" +
+      ".clarifai.api.StatValueAggType\0229\n\022stat_t" +
+      "ime_agg_type\030\004 \001(\0162\035.clarifai.api.StatTi" +
+      "meAggType\022.\n\nstart_time\030\005 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022,\n\010end_time\030\006 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp*H\n\020ExpirationAct" +
+      "ion\022\035\n\031EXPIRATION_ACTION_NOT_SET\020\000\022\t\n\005DE" +
+      "LAY\020\001\022\n\n\006EXPIRY\020\002*M\n\014LicenseScope\022\031\n\025LIC" +
+      "ENSE_SCOPE_NOT_SET\020\000\022\013\n\007PREDICT\020\001\022\t\n\005TRA" +
+      "IN\020\002\022\n\n\006SEARCH\020\003*\217\001\n\017ValueComparator\022\035\n\031" +
+      "CONCEPT_THRESHOLD_NOT_SET\020\000\022\020\n\014GREATER_T" +
+      "HAN\020\001\022\031\n\025GREATER_THAN_OR_EQUAL\020\002\022\r\n\tLESS" +
+      "_THAN\020\003\022\026\n\022LESS_THAN_OR_EQUAL\020\004\022\t\n\005EQUAL" +
+      "\020\005*3\n\016EvaluationType\022\022\n\016Classification\020\000" +
+      "\022\r\n\tDetection\020\001*f\n\014APIEventType\022\032\n\026API_E" +
+      "VENT_TYPE_NOT_SET\020\000\022\023\n\017ON_PREM_PREDICT\020\001" +
+      "\022\021\n\rON_PREM_TRAIN\020\002\022\022\n\016ON_PREM_SEARCH\020\003*" +
+      "<\n\021UsageIntervalType\022\t\n\005undef\020\000\022\007\n\003day\020\001" +
+      "\022\t\n\005month\020\002\022\010\n\004year\020\003*$\n\020StatValueAggTyp" +
+      "e\022\007\n\003SUM\020\000\022\007\n\003AVG\020\001*`\n\017StatTimeAggType\022\017" +
+      "\n\013NO_TIME_AGG\020\000\022\010\n\004YEAR\020\001\022\t\n\005MONTH\020\002\022\010\n\004" +
+      "WEEK\020\003\022\007\n\003DAY\020\004\022\010\n\004HOUR\020\005\022\n\n\006MINUTE\020\006B%\n" +
+      "\025com.clarifai.grpc.apiP\001Z\003api\242\002\004CAIPb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1600,7 +1600,7 @@ public final class Resources {
     internal_static_clarifai_api_TaskReviewConsensusStrategyInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_TaskReviewConsensusStrategyInfo_descriptor,
-        new java.lang.String[] { "QuorumNecessaryForApproval", });
+        new java.lang.String[] { "ApprovalThreshold", });
     internal_static_clarifai_api_TaskAIAssistant_descriptor =
       getDescriptor().getMessageTypes().get(97);
     internal_static_clarifai_api_TaskAIAssistant_fieldAccessorTable = new

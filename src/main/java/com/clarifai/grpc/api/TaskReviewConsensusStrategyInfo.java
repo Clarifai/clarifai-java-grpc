@@ -48,9 +48,9 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 16: {
 
-            quorumNecessaryForApproval_ = input.readUInt32();
+            approvalThreshold_ = input.readUInt32();
             break;
           }
           default: {
@@ -85,18 +85,18 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo.class, com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo.Builder.class);
   }
 
-  public static final int QUORUM_NECESSARY_FOR_APPROVAL_FIELD_NUMBER = 1;
-  private int quorumNecessaryForApproval_;
+  public static final int APPROVAL_THRESHOLD_FIELD_NUMBER = 2;
+  private int approvalThreshold_;
   /**
    * <pre>
    * The number of labelers that need to agree in order to automatically approve an annotation.
    * </pre>
    *
-   * <code>uint32 quorum_necessary_for_approval = 1;</code>
-   * @return The quorumNecessaryForApproval.
+   * <code>uint32 approval_threshold = 2;</code>
+   * @return The approvalThreshold.
    */
-  public int getQuorumNecessaryForApproval() {
-    return quorumNecessaryForApproval_;
+  public int getApprovalThreshold() {
+    return approvalThreshold_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -113,8 +113,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (quorumNecessaryForApproval_ != 0) {
-      output.writeUInt32(1, quorumNecessaryForApproval_);
+    if (approvalThreshold_ != 0) {
+      output.writeUInt32(2, approvalThreshold_);
     }
     unknownFields.writeTo(output);
   }
@@ -125,9 +125,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (quorumNecessaryForApproval_ != 0) {
+    if (approvalThreshold_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, quorumNecessaryForApproval_);
+        .computeUInt32Size(2, approvalThreshold_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -144,8 +144,8 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo other = (com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo) obj;
 
-    if (getQuorumNecessaryForApproval()
-        != other.getQuorumNecessaryForApproval()) return false;
+    if (getApprovalThreshold()
+        != other.getApprovalThreshold()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -157,8 +157,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + QUORUM_NECESSARY_FOR_APPROVAL_FIELD_NUMBER;
-    hash = (53 * hash) + getQuorumNecessaryForApproval();
+    hash = (37 * hash) + APPROVAL_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovalThreshold();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -292,7 +292,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      quorumNecessaryForApproval_ = 0;
+      approvalThreshold_ = 0;
 
       return this;
     }
@@ -320,7 +320,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo buildPartial() {
       com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo result = new com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo(this);
-      result.quorumNecessaryForApproval_ = quorumNecessaryForApproval_;
+      result.approvalThreshold_ = approvalThreshold_;
       onBuilt();
       return result;
     }
@@ -369,8 +369,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo other) {
       if (other == com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo.getDefaultInstance()) return this;
-      if (other.getQuorumNecessaryForApproval() != 0) {
-        setQuorumNecessaryForApproval(other.getQuorumNecessaryForApproval());
+      if (other.getApprovalThreshold() != 0) {
+        setApprovalThreshold(other.getApprovalThreshold());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -401,30 +401,30 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int quorumNecessaryForApproval_ ;
+    private int approvalThreshold_ ;
     /**
      * <pre>
      * The number of labelers that need to agree in order to automatically approve an annotation.
      * </pre>
      *
-     * <code>uint32 quorum_necessary_for_approval = 1;</code>
-     * @return The quorumNecessaryForApproval.
+     * <code>uint32 approval_threshold = 2;</code>
+     * @return The approvalThreshold.
      */
-    public int getQuorumNecessaryForApproval() {
-      return quorumNecessaryForApproval_;
+    public int getApprovalThreshold() {
+      return approvalThreshold_;
     }
     /**
      * <pre>
      * The number of labelers that need to agree in order to automatically approve an annotation.
      * </pre>
      *
-     * <code>uint32 quorum_necessary_for_approval = 1;</code>
-     * @param value The quorumNecessaryForApproval to set.
+     * <code>uint32 approval_threshold = 2;</code>
+     * @param value The approvalThreshold to set.
      * @return This builder for chaining.
      */
-    public Builder setQuorumNecessaryForApproval(int value) {
+    public Builder setApprovalThreshold(int value) {
       
-      quorumNecessaryForApproval_ = value;
+      approvalThreshold_ = value;
       onChanged();
       return this;
     }
@@ -433,12 +433,12 @@ private static final long serialVersionUID = 0L;
      * The number of labelers that need to agree in order to automatically approve an annotation.
      * </pre>
      *
-     * <code>uint32 quorum_necessary_for_approval = 1;</code>
+     * <code>uint32 approval_threshold = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearQuorumNecessaryForApproval() {
+    public Builder clearApprovalThreshold() {
       
-      quorumNecessaryForApproval_ = 0;
+      approvalThreshold_ = 0;
       onChanged();
       return this;
     }
