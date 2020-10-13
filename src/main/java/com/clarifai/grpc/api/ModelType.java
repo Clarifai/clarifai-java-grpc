@@ -128,6 +128,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.ModelTypeField.parser(), extensionRegistry));
             break;
           }
+          case 96: {
+
+            requiresSequentialFrames_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -577,6 +582,21 @@ private static final long serialVersionUID = 0L;
     return modelTypeFields_.get(index);
   }
 
+  public static final int REQUIRES_SEQUENTIAL_FRAMES_FIELD_NUMBER = 12;
+  private boolean requiresSequentialFrames_;
+  /**
+   * <pre>
+   * For sequence models we need to know when processing that they require temporal time frames
+   * in sequential order. This will be true for model types like trackers as an example.
+   * </pre>
+   *
+   * <code>bool requires_sequential_frames = 12;</code>
+   * @return The requiresSequentialFrames.
+   */
+  public boolean getRequiresSequentialFrames() {
+    return requiresSequentialFrames_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -620,6 +640,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < modelTypeFields_.size(); i++) {
       output.writeMessage(11, modelTypeFields_.get(i));
+    }
+    if (requiresSequentialFrames_ != false) {
+      output.writeBool(12, requiresSequentialFrames_);
     }
     unknownFields.writeTo(output);
   }
@@ -674,6 +697,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, modelTypeFields_.get(i));
     }
+    if (requiresSequentialFrames_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, requiresSequentialFrames_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -709,6 +736,8 @@ private static final long serialVersionUID = 0L;
         != other.getInternalOnly()) return false;
     if (!getModelTypeFieldsList()
         .equals(other.getModelTypeFieldsList())) return false;
+    if (getRequiresSequentialFrames()
+        != other.getRequiresSequentialFrames()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -749,6 +778,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODEL_TYPE_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getModelTypeFieldsList().hashCode();
     }
+    hash = (37 * hash) + REQUIRES_SEQUENTIAL_FRAMES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getRequiresSequentialFrames());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -913,6 +945,8 @@ private static final long serialVersionUID = 0L;
       } else {
         modelTypeFieldsBuilder_.clear();
       }
+      requiresSequentialFrames_ = false;
+
       return this;
     }
 
@@ -966,6 +1000,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modelTypeFields_ = modelTypeFieldsBuilder_.build();
       }
+      result.requiresSequentialFrames_ = requiresSequentialFrames_;
       onBuilt();
       return result;
     }
@@ -1084,6 +1119,9 @@ private static final long serialVersionUID = 0L;
             modelTypeFieldsBuilder_.addAllMessages(other.modelTypeFields_);
           }
         }
+      }
+      if (other.getRequiresSequentialFrames() != false) {
+        setRequiresSequentialFrames(other.getRequiresSequentialFrames());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2330,6 +2368,51 @@ private static final long serialVersionUID = 0L;
         modelTypeFields_ = null;
       }
       return modelTypeFieldsBuilder_;
+    }
+
+    private boolean requiresSequentialFrames_ ;
+    /**
+     * <pre>
+     * For sequence models we need to know when processing that they require temporal time frames
+     * in sequential order. This will be true for model types like trackers as an example.
+     * </pre>
+     *
+     * <code>bool requires_sequential_frames = 12;</code>
+     * @return The requiresSequentialFrames.
+     */
+    public boolean getRequiresSequentialFrames() {
+      return requiresSequentialFrames_;
+    }
+    /**
+     * <pre>
+     * For sequence models we need to know when processing that they require temporal time frames
+     * in sequential order. This will be true for model types like trackers as an example.
+     * </pre>
+     *
+     * <code>bool requires_sequential_frames = 12;</code>
+     * @param value The requiresSequentialFrames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiresSequentialFrames(boolean value) {
+      
+      requiresSequentialFrames_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * For sequence models we need to know when processing that they require temporal time frames
+     * in sequential order. This will be true for model types like trackers as an example.
+     * </pre>
+     *
+     * <code>bool requires_sequential_frames = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiresSequentialFrames() {
+      
+      requiresSequentialFrames_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -172,6 +172,21 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.EmailAddress.parser(), extensionRegistry));
             break;
           }
+          case 112: {
+
+            isOrgAdmin_ = input.readBool();
+            break;
+          }
+          case 120: {
+
+            twoFactorAuthEnabled_ = input.readBool();
+            break;
+          }
+          case 128: {
+
+            teamsCount_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -612,6 +627,36 @@ private static final long serialVersionUID = 0L;
     return emailAddresses_.get(index);
   }
 
+  public static final int IS_ORG_ADMIN_FIELD_NUMBER = 14;
+  private boolean isOrgAdmin_;
+  /**
+   * <code>bool is_org_admin = 14;</code>
+   * @return The isOrgAdmin.
+   */
+  public boolean getIsOrgAdmin() {
+    return isOrgAdmin_;
+  }
+
+  public static final int TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER = 15;
+  private boolean twoFactorAuthEnabled_;
+  /**
+   * <code>bool two_factor_auth_enabled = 15;</code>
+   * @return The twoFactorAuthEnabled.
+   */
+  public boolean getTwoFactorAuthEnabled() {
+    return twoFactorAuthEnabled_;
+  }
+
+  public static final int TEAMS_COUNT_FIELD_NUMBER = 16;
+  private int teamsCount_;
+  /**
+   * <code>uint32 teams_count = 16;</code>
+   * @return The teamsCount.
+   */
+  public int getTeamsCount() {
+    return teamsCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -661,6 +706,15 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < emailAddresses_.size(); i++) {
       output.writeMessage(12, emailAddresses_.get(i));
+    }
+    if (isOrgAdmin_ != false) {
+      output.writeBool(14, isOrgAdmin_);
+    }
+    if (twoFactorAuthEnabled_ != false) {
+      output.writeBool(15, twoFactorAuthEnabled_);
+    }
+    if (teamsCount_ != 0) {
+      output.writeUInt32(16, teamsCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -712,6 +766,18 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < emailAddresses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, emailAddresses_.get(i));
+    }
+    if (isOrgAdmin_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, isOrgAdmin_);
+    }
+    if (twoFactorAuthEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, twoFactorAuthEnabled_);
+    }
+    if (teamsCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(16, teamsCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -767,6 +833,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEmailAddressesList()
         .equals(other.getEmailAddressesList())) return false;
+    if (getIsOrgAdmin()
+        != other.getIsOrgAdmin()) return false;
+    if (getTwoFactorAuthEnabled()
+        != other.getTwoFactorAuthEnabled()) return false;
+    if (getTeamsCount()
+        != other.getTeamsCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -814,6 +886,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EMAIL_ADDRESSES_FIELD_NUMBER;
       hash = (53 * hash) + getEmailAddressesList().hashCode();
     }
+    hash = (37 * hash) + IS_ORG_ADMIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsOrgAdmin());
+    hash = (37 * hash) + TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTwoFactorAuthEnabled());
+    hash = (37 * hash) + TEAMS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getTeamsCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1002,6 +1082,12 @@ private static final long serialVersionUID = 0L;
       } else {
         emailAddressesBuilder_.clear();
       }
+      isOrgAdmin_ = false;
+
+      twoFactorAuthEnabled_ = false;
+
+      teamsCount_ = 0;
+
       return this;
     }
 
@@ -1069,6 +1155,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.emailAddresses_ = emailAddressesBuilder_.build();
       }
+      result.isOrgAdmin_ = isOrgAdmin_;
+      result.twoFactorAuthEnabled_ = twoFactorAuthEnabled_;
+      result.teamsCount_ = teamsCount_;
       onBuilt();
       return result;
     }
@@ -1181,6 +1270,15 @@ private static final long serialVersionUID = 0L;
             emailAddressesBuilder_.addAllMessages(other.emailAddresses_);
           }
         }
+      }
+      if (other.getIsOrgAdmin() != false) {
+        setIsOrgAdmin(other.getIsOrgAdmin());
+      }
+      if (other.getTwoFactorAuthEnabled() != false) {
+        setTwoFactorAuthEnabled(other.getTwoFactorAuthEnabled());
+      }
+      if (other.getTeamsCount() != 0) {
+        setTeamsCount(other.getTeamsCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2618,6 +2716,96 @@ private static final long serialVersionUID = 0L;
         emailAddresses_ = null;
       }
       return emailAddressesBuilder_;
+    }
+
+    private boolean isOrgAdmin_ ;
+    /**
+     * <code>bool is_org_admin = 14;</code>
+     * @return The isOrgAdmin.
+     */
+    public boolean getIsOrgAdmin() {
+      return isOrgAdmin_;
+    }
+    /**
+     * <code>bool is_org_admin = 14;</code>
+     * @param value The isOrgAdmin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsOrgAdmin(boolean value) {
+      
+      isOrgAdmin_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool is_org_admin = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsOrgAdmin() {
+      
+      isOrgAdmin_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean twoFactorAuthEnabled_ ;
+    /**
+     * <code>bool two_factor_auth_enabled = 15;</code>
+     * @return The twoFactorAuthEnabled.
+     */
+    public boolean getTwoFactorAuthEnabled() {
+      return twoFactorAuthEnabled_;
+    }
+    /**
+     * <code>bool two_factor_auth_enabled = 15;</code>
+     * @param value The twoFactorAuthEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTwoFactorAuthEnabled(boolean value) {
+      
+      twoFactorAuthEnabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool two_factor_auth_enabled = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTwoFactorAuthEnabled() {
+      
+      twoFactorAuthEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int teamsCount_ ;
+    /**
+     * <code>uint32 teams_count = 16;</code>
+     * @return The teamsCount.
+     */
+    public int getTeamsCount() {
+      return teamsCount_;
+    }
+    /**
+     * <code>uint32 teams_count = 16;</code>
+     * @param value The teamsCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTeamsCount(int value) {
+      
+      teamsCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 teams_count = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTeamsCount() {
+      
+      teamsCount_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

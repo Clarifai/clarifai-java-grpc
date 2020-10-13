@@ -216,4 +216,22 @@ public interface UserOrBuilder extends
    */
   com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index);
+
+  /**
+   * <code>bool is_org_admin = 14;</code>
+   * @return The isOrgAdmin.
+   */
+  boolean getIsOrgAdmin();
+
+  /**
+   * <code>bool two_factor_auth_enabled = 15;</code>
+   * @return The twoFactorAuthEnabled.
+   */
+  boolean getTwoFactorAuthEnabled();
+
+  /**
+   * <code>uint32 teams_count = 16;</code>
+   * @return The teamsCount.
+   */
+  int getTeamsCount();
 }

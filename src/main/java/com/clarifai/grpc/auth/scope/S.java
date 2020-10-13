@@ -46,11 +46,6 @@ public enum S
    */
   Predict(2),
   /**
-   * <code>Predict_Feedback = 29 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  @java.lang.Deprecated
-  Predict_Feedback(29),
-  /**
    * <pre>
    * Make an rpc to our search services.
    * </pre>
@@ -58,11 +53,6 @@ public enum S
    * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   Search(3),
-  /**
-   * <code>Search_Feedback = 28 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  @java.lang.Deprecated
-  Search_Feedback(28),
   /**
    * <pre>
    * Write to the inputs table in the DB.
@@ -452,54 +442,6 @@ public enum S
   PasswordPolicies_Delete(59),
   /**
    * <pre>
-   * Write to password_history table
-   * </pre>
-   *
-   * <code>PasswordHistory_Add = 60 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
-   */
-  PasswordHistory_Add(60),
-  /**
-   * <pre>
-   * Read from password_history table
-   * </pre>
-   *
-   * <code>PasswordHistory_Get = 61 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  PasswordHistory_Get(61),
-  /**
-   * <pre>
-   * To delete password history we need read/write
-   * </pre>
-   *
-   * <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
-   */
-  PasswordHistory_Delete(62),
-  /**
-   * <pre>
-   * Read from notifications table
-   * </pre>
-   *
-   * <code>Notifications_Get = 64 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  Notifications_Get(64),
-  /**
-   * <pre>
-   * Write to notifications table
-   * </pre>
-   *
-   * <code>Notifications_Add = 65 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
-   */
-  Notifications_Add(65),
-  /**
-   * <pre>
-   * To delete notifications we need read/write
-   * </pre>
-   *
-   * <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
-   */
-  Notifications_Delete(66),
-  /**
-   * <pre>
    * Read from label orders table
    * </pre>
    *
@@ -530,22 +472,6 @@ public enum S
    * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   UserFeatureConfigs_Get(71),
-  /**
-   * <pre>
-   * Write to configs table
-   * </pre>
-   *
-   * <code>UserFeatureConfigs_Add = 72 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
-   */
-  UserFeatureConfigs_Add(72),
-  /**
-   * <pre>
-   * To delete configs we need read/write
-   * </pre>
-   *
-   * <code>UserFeatureConfigs_Delete = 73 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
-   */
-  UserFeatureConfigs_Delete(73),
   UNRECOGNIZED(-1),
   ;
 
@@ -572,10 +498,6 @@ public enum S
    */
   public static final int Predict_VALUE = 2;
   /**
-   * <code>Predict_Feedback = 29 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  public static final int Predict_Feedback_VALUE = 29;
-  /**
    * <pre>
    * Make an rpc to our search services.
    * </pre>
@@ -583,10 +505,6 @@ public enum S
    * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int Search_VALUE = 3;
-  /**
-   * <code>Search_Feedback = 28 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  public static final int Search_Feedback_VALUE = 28;
   /**
    * <pre>
    * Write to the inputs table in the DB.
@@ -968,54 +886,6 @@ public enum S
   public static final int PasswordPolicies_Delete_VALUE = 59;
   /**
    * <pre>
-   * Write to password_history table
-   * </pre>
-   *
-   * <code>PasswordHistory_Add = 60 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
-   */
-  public static final int PasswordHistory_Add_VALUE = 60;
-  /**
-   * <pre>
-   * Read from password_history table
-   * </pre>
-   *
-   * <code>PasswordHistory_Get = 61 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  public static final int PasswordHistory_Get_VALUE = 61;
-  /**
-   * <pre>
-   * To delete password history we need read/write
-   * </pre>
-   *
-   * <code>PasswordHistory_Delete = 62 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = PasswordHistory_Get];</code>
-   */
-  public static final int PasswordHistory_Delete_VALUE = 62;
-  /**
-   * <pre>
-   * Read from notifications table
-   * </pre>
-   *
-   * <code>Notifications_Get = 64 [(.clarifai.auth.scope.clarfai_exposed) = false];</code>
-   */
-  public static final int Notifications_Get_VALUE = 64;
-  /**
-   * <pre>
-   * Write to notifications table
-   * </pre>
-   *
-   * <code>Notifications_Add = 65 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
-   */
-  public static final int Notifications_Add_VALUE = 65;
-  /**
-   * <pre>
-   * To delete notifications we need read/write
-   * </pre>
-   *
-   * <code>Notifications_Delete = 66 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Notifications_Get];</code>
-   */
-  public static final int Notifications_Delete_VALUE = 66;
-  /**
-   * <pre>
    * Read from label orders table
    * </pre>
    *
@@ -1046,22 +916,6 @@ public enum S
    * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int UserFeatureConfigs_Get_VALUE = 71;
-  /**
-   * <pre>
-   * Write to configs table
-   * </pre>
-   *
-   * <code>UserFeatureConfigs_Add = 72 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
-   */
-  public static final int UserFeatureConfigs_Add_VALUE = 72;
-  /**
-   * <pre>
-   * To delete configs we need read/write
-   * </pre>
-   *
-   * <code>UserFeatureConfigs_Delete = 73 [(.clarifai.auth.scope.clarfai_exposed) = false, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = UserFeatureConfigs_Get];</code>
-   */
-  public static final int UserFeatureConfigs_Delete_VALUE = 73;
 
 
   public final int getNumber() {
@@ -1091,9 +945,7 @@ public enum S
       case 0: return undef;
       case 1: return All;
       case 2: return Predict;
-      case 29: return Predict_Feedback;
       case 3: return Search;
-      case 28: return Search_Feedback;
       case 4: return Inputs_Add;
       case 5: return Inputs_Get;
       case 7: return Inputs_Patch;
@@ -1140,18 +992,10 @@ public enum S
       case 57: return PasswordPolicies_Add;
       case 58: return PasswordPolicies_Get;
       case 59: return PasswordPolicies_Delete;
-      case 60: return PasswordHistory_Add;
-      case 61: return PasswordHistory_Get;
-      case 62: return PasswordHistory_Delete;
-      case 64: return Notifications_Get;
-      case 65: return Notifications_Add;
-      case 66: return Notifications_Delete;
       case 67: return LabelOrders_Get;
       case 68: return LabelOrders_Add;
       case 69: return LabelOrders_Delete;
       case 71: return UserFeatureConfigs_Get;
-      case 72: return UserFeatureConfigs_Add;
-      case 73: return UserFeatureConfigs_Delete;
       default: return null;
     }
   }

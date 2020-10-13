@@ -66,6 +66,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.Input.Builder subBuilder = null;
+            if (input_ != null) {
+              subBuilder = input_.toBuilder();
+            }
+            input_ = input.readMessage(com.clarifai.grpc.api.Input.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(input_);
+              input_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -148,6 +161,44 @@ private static final long serialVersionUID = 0L;
     return getAnnotation();
   }
 
+  public static final int INPUT_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Input input_;
+  /**
+   * <pre>
+   * FILTER by input information.
+   * For example you can filter inputs by status,
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 5;</code>
+   * @return Whether the input field is set.
+   */
+  public boolean hasInput() {
+    return input_ != null;
+  }
+  /**
+   * <pre>
+   * FILTER by input information.
+   * For example you can filter inputs by status,
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 5;</code>
+   * @return The input.
+   */
+  public com.clarifai.grpc.api.Input getInput() {
+    return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
+  }
+  /**
+   * <pre>
+   * FILTER by input information.
+   * For example you can filter inputs by status,
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 5;</code>
+   */
+  public com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder() {
+    return getInput();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -168,6 +219,9 @@ private static final long serialVersionUID = 0L;
     if (annotation_ != null) {
       output.writeMessage(4, getAnnotation());
     }
+    if (input_ != null) {
+      output.writeMessage(5, getInput());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -184,6 +238,10 @@ private static final long serialVersionUID = 0L;
     if (annotation_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getAnnotation());
+    }
+    if (input_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getInput());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -207,6 +265,11 @@ private static final long serialVersionUID = 0L;
       if (!getAnnotation()
           .equals(other.getAnnotation())) return false;
     }
+    if (hasInput() != other.hasInput()) return false;
+    if (hasInput()) {
+      if (!getInput()
+          .equals(other.getInput())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -224,6 +287,10 @@ private static final long serialVersionUID = 0L;
     if (hasAnnotation()) {
       hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotation().hashCode();
+    }
+    if (hasInput()) {
+      hash = (37 * hash) + INPUT_FIELD_NUMBER;
+      hash = (53 * hash) + getInput().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -366,6 +433,12 @@ private static final long serialVersionUID = 0L;
         annotation_ = null;
         annotationBuilder_ = null;
       }
+      if (inputBuilder_ == null) {
+        input_ = null;
+      } else {
+        input_ = null;
+        inputBuilder_ = null;
+      }
       return this;
     }
 
@@ -397,6 +470,11 @@ private static final long serialVersionUID = 0L;
         result.annotation_ = annotation_;
       } else {
         result.annotation_ = annotationBuilder_.build();
+      }
+      if (inputBuilder_ == null) {
+        result.input_ = input_;
+      } else {
+        result.input_ = inputBuilder_.build();
       }
       onBuilt();
       return result;
@@ -451,6 +529,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAnnotation()) {
         mergeAnnotation(other.getAnnotation());
+      }
+      if (other.hasInput()) {
+        mergeInput(other.getInput());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -679,6 +760,170 @@ private static final long serialVersionUID = 0L;
         annotation_ = null;
       }
       return annotationBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Input input_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> inputBuilder_;
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     * @return Whether the input field is set.
+     */
+    public boolean hasInput() {
+      return inputBuilder_ != null || input_ != null;
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     * @return The input.
+     */
+    public com.clarifai.grpc.api.Input getInput() {
+      if (inputBuilder_ == null) {
+        return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
+      } else {
+        return inputBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    public Builder setInput(com.clarifai.grpc.api.Input value) {
+      if (inputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        inputBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    public Builder setInput(
+        com.clarifai.grpc.api.Input.Builder builderForValue) {
+      if (inputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    public Builder mergeInput(com.clarifai.grpc.api.Input value) {
+      if (inputBuilder_ == null) {
+        if (input_ != null) {
+          input_ =
+            com.clarifai.grpc.api.Input.newBuilder(input_).mergeFrom(value).buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        inputBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    public Builder clearInput() {
+      if (inputBuilder_ == null) {
+        input_ = null;
+        onChanged();
+      } else {
+        input_ = null;
+        inputBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    public com.clarifai.grpc.api.Input.Builder getInputBuilder() {
+      
+      onChanged();
+      return getInputFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    public com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder() {
+      if (inputBuilder_ != null) {
+        return inputBuilder_.getMessageOrBuilder();
+      } else {
+        return input_ == null ?
+            com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
+      }
+    }
+    /**
+     * <pre>
+     * FILTER by input information.
+     * For example you can filter inputs by status,
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> 
+        getInputFieldBuilder() {
+      if (inputBuilder_ == null) {
+        inputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder>(
+                getInput(),
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      return inputBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

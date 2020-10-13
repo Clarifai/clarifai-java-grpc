@@ -9,7 +9,7 @@ public interface AppQueryOrBuilder extends
 
   /**
    * <pre>
-   * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -18,7 +18,7 @@ public interface AppQueryOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
    * <code>string name = 1;</code>

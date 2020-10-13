@@ -275,4 +275,15 @@ public interface ModelTypeOrBuilder extends
    */
   com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelTypeFieldsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * For sequence models we need to know when processing that they require temporal time frames
+   * in sequential order. This will be true for model types like trackers as an example.
+   * </pre>
+   *
+   * <code>bool requires_sequential_frames = 12;</code>
+   * @return The requiresSequentialFrames.
+   */
+  boolean getRequiresSequentialFrames();
 }

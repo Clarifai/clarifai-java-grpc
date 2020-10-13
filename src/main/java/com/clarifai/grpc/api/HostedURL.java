@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     prefix_ = "";
     suffix_ = "";
     sizes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    crossorigin_ = "";
   }
 
   @java.lang.Override
@@ -71,6 +72,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             sizes_.add(s);
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            crossorigin_ = s;
             break;
           }
           default: {
@@ -251,6 +258,52 @@ private static final long serialVersionUID = 0L;
     return sizes_.getByteString(index);
   }
 
+  public static final int CROSSORIGIN_FIELD_NUMBER = 4;
+  private volatile java.lang.Object crossorigin_;
+  /**
+   * <pre>
+   * The crossorigin property of html media tag
+   * For Secure Data Hosting this needs to be set to 'use-credentials'
+   * </pre>
+   *
+   * <code>string crossorigin = 4;</code>
+   * @return The crossorigin.
+   */
+  public java.lang.String getCrossorigin() {
+    java.lang.Object ref = crossorigin_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      crossorigin_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The crossorigin property of html media tag
+   * For Secure Data Hosting this needs to be set to 'use-credentials'
+   * </pre>
+   *
+   * <code>string crossorigin = 4;</code>
+   * @return The bytes for crossorigin.
+   */
+  public com.google.protobuf.ByteString
+      getCrossoriginBytes() {
+    java.lang.Object ref = crossorigin_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      crossorigin_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -273,6 +326,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < sizes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sizes_.getRaw(i));
+    }
+    if (!getCrossoriginBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, crossorigin_);
     }
     unknownFields.writeTo(output);
   }
@@ -297,6 +353,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getSizesList().size();
     }
+    if (!getCrossoriginBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, crossorigin_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -318,6 +377,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSuffix())) return false;
     if (!getSizesList()
         .equals(other.getSizesList())) return false;
+    if (!getCrossorigin()
+        .equals(other.getCrossorigin())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -337,6 +398,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SIZES_FIELD_NUMBER;
       hash = (53 * hash) + getSizesList().hashCode();
     }
+    hash = (37 * hash) + CROSSORIGIN_FIELD_NUMBER;
+    hash = (53 * hash) + getCrossorigin().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -476,6 +539,8 @@ private static final long serialVersionUID = 0L;
 
       sizes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      crossorigin_ = "";
+
       return this;
     }
 
@@ -510,6 +575,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.sizes_ = sizes_;
+      result.crossorigin_ = crossorigin_;
       onBuilt();
       return result;
     }
@@ -574,6 +640,10 @@ private static final long serialVersionUID = 0L;
           ensureSizesIsMutable();
           sizes_.addAll(other.sizes_);
         }
+        onChanged();
+      }
+      if (!other.getCrossorigin().isEmpty()) {
+        crossorigin_ = other.crossorigin_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -949,6 +1019,107 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureSizesIsMutable();
       sizes_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object crossorigin_ = "";
+    /**
+     * <pre>
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     * </pre>
+     *
+     * <code>string crossorigin = 4;</code>
+     * @return The crossorigin.
+     */
+    public java.lang.String getCrossorigin() {
+      java.lang.Object ref = crossorigin_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        crossorigin_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     * </pre>
+     *
+     * <code>string crossorigin = 4;</code>
+     * @return The bytes for crossorigin.
+     */
+    public com.google.protobuf.ByteString
+        getCrossoriginBytes() {
+      java.lang.Object ref = crossorigin_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        crossorigin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     * </pre>
+     *
+     * <code>string crossorigin = 4;</code>
+     * @param value The crossorigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCrossorigin(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      crossorigin_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     * </pre>
+     *
+     * <code>string crossorigin = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCrossorigin() {
+      
+      crossorigin_ = getDefaultInstance().getCrossorigin();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The crossorigin property of html media tag
+     * For Secure Data Hosting this needs to be set to 'use-credentials'
+     * </pre>
+     *
+     * <code>string crossorigin = 4;</code>
+     * @param value The bytes for crossorigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCrossoriginBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      crossorigin_ = value;
       onChanged();
       return this;
     }

@@ -2910,6 +2910,37 @@ public final class V2Grpc {
     return getPostTasksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest,
+      com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getGetTaskAnnotationsCountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTaskAnnotationsCount",
+      requestType = com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.class,
+      responseType = com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest,
+      com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getGetTaskAnnotationsCountMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest, com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getGetTaskAnnotationsCountMethod;
+    if ((getGetTaskAnnotationsCountMethod = V2Grpc.getGetTaskAnnotationsCountMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetTaskAnnotationsCountMethod = V2Grpc.getGetTaskAnnotationsCountMethod) == null) {
+          V2Grpc.getGetTaskAnnotationsCountMethod = getGetTaskAnnotationsCountMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest, com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTaskAnnotationsCount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetTaskAnnotationsCount"))
+              .build();
+        }
+      }
+    }
+    return getGetTaskAnnotationsCountMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskRequest,
       com.clarifai.grpc.api.SingleTaskResponse> getGetTaskMethod;
 
@@ -4028,8 +4059,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Search over the applications to find one or more you're looking for.
-     * This leverage the "body" parameter because we also have page and
-     * per_page as url query param variables in this request.
      * </pre>
      */
     public void postAppsSearches(com.clarifai.grpc.api.PostAppsSearchesRequest request,
@@ -4243,6 +4272,16 @@ public final class V2Grpc {
     public void postTasks(com.clarifai.grpc.api.PostTasksRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPostTasksMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Task annotation counts
+     * </pre>
+     */
+    public void getTaskAnnotationsCount(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetTaskAnnotationsCountMethod(), responseObserver);
     }
 
     /**
@@ -5008,6 +5047,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostTasksRequest,
                 com.clarifai.grpc.api.MultiTaskResponse>(
                   this, METHODID_POST_TASKS)))
+          .addMethod(
+            getGetTaskAnnotationsCountMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetTaskAnnotationsCountRequest,
+                com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse>(
+                  this, METHODID_GET_TASK_ANNOTATIONS_COUNT)))
           .addMethod(
             getGetTaskMethod(),
             asyncUnaryCall(
@@ -5903,8 +5949,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Search over the applications to find one or more you're looking for.
-     * This leverage the "body" parameter because we also have page and
-     * per_page as url query param variables in this request.
      * </pre>
      */
     public void postAppsSearches(com.clarifai.grpc.api.PostAppsSearchesRequest request,
@@ -6140,6 +6184,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPostTasksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Task annotation counts
+     * </pre>
+     */
+    public void getTaskAnnotationsCount(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetTaskAnnotationsCountMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -7007,8 +7062,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Search over the applications to find one or more you're looking for.
-     * This leverage the "body" parameter because we also have page and
-     * per_page as url query param variables in this request.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiAppResponse postAppsSearches(com.clarifai.grpc.api.PostAppsSearchesRequest request) {
@@ -7222,6 +7275,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiTaskResponse postTasks(com.clarifai.grpc.api.PostTasksRequest request) {
       return blockingUnaryCall(
           getChannel(), getPostTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Task annotation counts
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse getTaskAnnotationsCount(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetTaskAnnotationsCountMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8149,8 +8212,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Search over the applications to find one or more you're looking for.
-     * This leverage the "body" parameter because we also have page and
-     * per_page as url query param variables in this request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppResponse> postAppsSearches(
@@ -8390,6 +8451,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Task annotation counts
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getTaskAnnotationsCount(
+        com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetTaskAnnotationsCountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get a specific task from an app.
      * </pre>
      */
@@ -8603,17 +8675,18 @@ public final class V2Grpc {
   private static final int METHODID_LIST_APP_DUPLICATIONS = 90;
   private static final int METHODID_GET_APP_DUPLICATION = 91;
   private static final int METHODID_POST_TASKS = 92;
-  private static final int METHODID_GET_TASK = 93;
-  private static final int METHODID_LIST_TASKS = 94;
-  private static final int METHODID_PATCH_TASKS = 95;
-  private static final int METHODID_DELETE_TASKS = 96;
-  private static final int METHODID_POST_COLLECTORS = 97;
-  private static final int METHODID_GET_COLLECTOR = 98;
-  private static final int METHODID_LIST_COLLECTORS = 99;
-  private static final int METHODID_PATCH_COLLECTORS = 100;
-  private static final int METHODID_DELETE_COLLECTORS = 101;
-  private static final int METHODID_POST_STAT_VALUES = 102;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 103;
+  private static final int METHODID_GET_TASK_ANNOTATIONS_COUNT = 93;
+  private static final int METHODID_GET_TASK = 94;
+  private static final int METHODID_LIST_TASKS = 95;
+  private static final int METHODID_PATCH_TASKS = 96;
+  private static final int METHODID_DELETE_TASKS = 97;
+  private static final int METHODID_POST_COLLECTORS = 98;
+  private static final int METHODID_GET_COLLECTOR = 99;
+  private static final int METHODID_LIST_COLLECTORS = 100;
+  private static final int METHODID_PATCH_COLLECTORS = 101;
+  private static final int METHODID_DELETE_COLLECTORS = 102;
+  private static final int METHODID_POST_STAT_VALUES = 103;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 104;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9004,6 +9077,10 @@ public final class V2Grpc {
           serviceImpl.postTasks((com.clarifai.grpc.api.PostTasksRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse>) responseObserver);
           break;
+        case METHODID_GET_TASK_ANNOTATIONS_COUNT:
+          serviceImpl.getTaskAnnotationsCount((com.clarifai.grpc.api.GetTaskAnnotationsCountRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse>) responseObserver);
+          break;
         case METHODID_GET_TASK:
           serviceImpl.getTask((com.clarifai.grpc.api.GetTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskResponse>) responseObserver);
@@ -9202,6 +9279,7 @@ public final class V2Grpc {
               .addMethod(getListAppDuplicationsMethod())
               .addMethod(getGetAppDuplicationMethod())
               .addMethod(getPostTasksMethod())
+              .addMethod(getGetTaskAnnotationsCountMethod())
               .addMethod(getGetTaskMethod())
               .addMethod(getListTasksMethod())
               .addMethod(getPatchTasksMethod())

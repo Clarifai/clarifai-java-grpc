@@ -91,7 +91,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -456,7 +456,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -510,7 +510,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the field. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Query by application name. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
      * <code>string name = 1;</code>

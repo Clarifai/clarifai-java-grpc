@@ -91,4 +91,26 @@ public interface HostedURLOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSizesBytes(int index);
+
+  /**
+   * <pre>
+   * The crossorigin property of html media tag
+   * For Secure Data Hosting this needs to be set to 'use-credentials'
+   * </pre>
+   *
+   * <code>string crossorigin = 4;</code>
+   * @return The crossorigin.
+   */
+  java.lang.String getCrossorigin();
+  /**
+   * <pre>
+   * The crossorigin property of html media tag
+   * For Secure Data Hosting this needs to be set to 'use-credentials'
+   * </pre>
+   *
+   * <code>string crossorigin = 4;</code>
+   * @return The bytes for crossorigin.
+   */
+  com.google.protobuf.ByteString
+      getCrossoriginBytes();
 }

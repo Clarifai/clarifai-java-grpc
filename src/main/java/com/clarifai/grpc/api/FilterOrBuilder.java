@@ -44,4 +44,34 @@ public interface FilterOrBuilder extends
    * <code>.clarifai.api.Annotation annotation = 4;</code>
    */
   com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder();
+
+  /**
+   * <pre>
+   * FILTER by input information.
+   * For example you can filter inputs by status,
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 5;</code>
+   * @return Whether the input field is set.
+   */
+  boolean hasInput();
+  /**
+   * <pre>
+   * FILTER by input information.
+   * For example you can filter inputs by status,
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 5;</code>
+   * @return The input.
+   */
+  com.clarifai.grpc.api.Input getInput();
+  /**
+   * <pre>
+   * FILTER by input information.
+   * For example you can filter inputs by status,
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 5;</code>
+   */
+  com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder();
 }

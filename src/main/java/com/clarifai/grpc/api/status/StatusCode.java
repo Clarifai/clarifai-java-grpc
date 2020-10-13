@@ -546,6 +546,10 @@ public enum StatusCode
    */
   ANNOTATION_AWAITING_REVIEW(24157),
   /**
+   * <code>ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;</code>
+   */
+  ANNOTATION_AWAITING_CONSENSUS_REVIEW(24159),
+  /**
    * <code>ANNOTATION_REVIEW_DENIED = 24158;</code>
    */
   ANNOTATION_REVIEW_DENIED(24158),
@@ -1135,7 +1139,7 @@ public enum StatusCode
   APP_COUNT_INTERNAL_FAILURE(47004),
   /**
    * <pre>
-   * Media processor related errors 471xx
+   * Media processor related errors 471xx -- DEPRECATED
    * </pre>
    *
    * <code>MP_DOWNLOAD_ERROR = 47101;</code>
@@ -1979,6 +1983,10 @@ public enum StatusCode
    */
   public static final int ANNOTATION_AWAITING_REVIEW_VALUE = 24157;
   /**
+   * <code>ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;</code>
+   */
+  public static final int ANNOTATION_AWAITING_CONSENSUS_REVIEW_VALUE = 24159;
+  /**
    * <code>ANNOTATION_REVIEW_DENIED = 24158;</code>
    */
   public static final int ANNOTATION_REVIEW_DENIED_VALUE = 24158;
@@ -2568,7 +2576,7 @@ public enum StatusCode
   public static final int APP_COUNT_INTERNAL_FAILURE_VALUE = 47004;
   /**
    * <pre>
-   * Media processor related errors 471xx
+   * Media processor related errors 471xx -- DEPRECATED
    * </pre>
    *
    * <code>MP_DOWNLOAD_ERROR = 47101;</code>
@@ -2983,6 +2991,7 @@ public enum StatusCode
       case 24155: return ANNOTATION_INVALID_ARGUMENT;
       case 24156: return ANNOTATION_PERMISSION_DENIED;
       case 24157: return ANNOTATION_AWAITING_REVIEW;
+      case 24159: return ANNOTATION_AWAITING_CONSENSUS_REVIEW;
       case 24158: return ANNOTATION_REVIEW_DENIED;
       case 24250: return ANNOTATION_MODIFY_SUCCESS;
       case 24251: return ANNOTATION_MODIFY_PENDING;
