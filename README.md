@@ -46,19 +46,24 @@ Via Maven:
 
 ## Getting started
 
+Construct the *Stub* object using which you'll access all the Clarifai API functionality:
+
 ```java
 import com.clarifai.channel.ClarifaiChannel;
 import io.grpc.Channel;
 
 ...
 
-// Construct one of the channels you want to use
-Channel channel = ClarifaiChannel.INSTANCE.getJsonChannel();
-Channel channel = ClarifaiChannel.INSTANCE.getInsecureGrpcChannel();
-
-// Note: You can also use a secure (encrypted) ClarifaiChannel.INSTANCE.getGrpcChannel() however
-// it is currently not supported in the latest gRPC version.
+V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(ClarifaiChannel.INSTANCE.getGrpcChannel())
+    .withCallCredentials(new ClarifaiCallCredentials("YOUR_CLARIFAI_API_KEY"));
 ```
+
+> Alternatives to the encrypted gRPC channel (`ClarifaiChannel.INSTANCE.getGrpcChannel()`) are:
+> - the HTTPS+JSON channel (`ClarifaiChannel.INSTANCE.getJsonChannel()`), and
+> - the unencrypted gRPC channel (`ClarifaiChannel.INSTANCE.getInsecureGrpcChannel()`).
+>
+> We only recommend them in special cases.
+
 
 Predict concepts in an image:
 
@@ -68,9 +73,6 @@ import com.clarifai.grpc.api.*;
 import com.clarifai.grpc.api.status.StatusCode;
 
 ...
-
-V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(channel)
-    .withCallCredentials(new ClarifaiCallCredentials("YOUR_CLARIFAI_API_KEY"));
 
 MultiOutputResponse response = stub.postModelOutputs(
     PostModelOutputsRequest.newBuilder()
