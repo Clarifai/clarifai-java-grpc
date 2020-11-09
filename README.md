@@ -4,11 +4,19 @@
 
 This is the official Clarifai Java gRPC client.
 
-In addition to the actual gRPC channel, it is also possible to use a JSON channel, which uses 
-JSON & HTTP/REST, while using the same request / response handling code.
+This is the official Clarifai gRPC Go client for interacting with our powerful recognition
+[API](https://docs.clarifai.com).
+Clarifai provides a platform for data scientists, developers, researchers and enterprises to master the entire
+artificial intelligence lifecycle. Gather valuable business insights from images, video and text using computer vision
+and natural language processing.
 
-![Build](https://github.com/Clarifai/clarifai-java-grpc/workflows/Run%20tests/badge.svg)
+* Try the Clarifai demo at: https://clarifai.com/demo
+* Sign up for a free account at: https://portal.clarifai.com/signup
+* Read the documentation at: https://docs.clarifai.com/
+
+
 [ ![Download](https://api.bintray.com/packages/clarifai/Clarifai/ClarifaiGrpc/images/download.svg) ](https://bintray.com/clarifai/Clarifai/ClarifaiGrpc)
+[![Build](https://github.com/Clarifai/clarifai-java-grpc/workflows/Run%20tests/badge.svg)](https://github.com/Clarifai/clarifai-java-grpc/actions)
 
 ## Installation
 
