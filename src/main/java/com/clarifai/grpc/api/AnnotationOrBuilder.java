@@ -266,4 +266,37 @@ public interface AnnotationOrBuilder extends
    * @return The inputLevel.
    */
   boolean getInputLevel();
+
+  /**
+   * <pre>
+   * Consensus review related information, e.g.
+   * * annotation group
+   * * id of annotation parent, in case the annotation was split from another annotation
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct consensus_info = 18;</code>
+   * @return Whether the consensusInfo field is set.
+   */
+  boolean hasConsensusInfo();
+  /**
+   * <pre>
+   * Consensus review related information, e.g.
+   * * annotation group
+   * * id of annotation parent, in case the annotation was split from another annotation
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct consensus_info = 18;</code>
+   * @return The consensusInfo.
+   */
+  com.google.protobuf.Struct getConsensusInfo();
+  /**
+   * <pre>
+   * Consensus review related information, e.g.
+   * * annotation group
+   * * id of annotation parent, in case the annotation was split from another annotation
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct consensus_info = 18;</code>
+   */
+  com.google.protobuf.StructOrBuilder getConsensusInfoOrBuilder();
 }

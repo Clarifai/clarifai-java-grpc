@@ -902,14 +902,6 @@ public enum StatusCode
    */
   DATABASE_CONSTRAINT_VIOLATED(40017),
   /**
-   * <code>DATABASE_NO_ONGOING_OPERATIONS = 40018;</code>
-   */
-  DATABASE_NO_ONGOING_OPERATIONS(40018),
-  /**
-   * <code>DATABASE_LOCKED_BY_ONGOING_OPERATION = 40019;</code>
-   */
-  DATABASE_LOCKED_BY_ONGOING_OPERATION(40019),
-  /**
    * <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
    */
   ASYNC_WORKER_MULTI_ERRORS(40020),
@@ -1102,6 +1094,10 @@ public enum StatusCode
    */
   REDIS_SCRIPT_EXITED_WITH_FAILURE(45002),
   /**
+   * <code>REDIS_STREAM_ERR = 45003;</code>
+   */
+  REDIS_STREAM_ERR(45003),
+  /**
    * <pre>
    * Sift Science 46xxx
    * </pre>
@@ -1264,6 +1260,14 @@ public enum StatusCode
   TASK_NOT_IMPLEMENTED(54101),
   /**
    * <pre>
+   * Task was not found.
+   * </pre>
+   *
+   * <code>TASK_MISSING = 54102;</code>
+   */
+  TASK_MISSING(54102),
+  /**
+   * <pre>
    * Label Order Related Status Code 55xxx
    * </pre>
    *
@@ -1350,6 +1354,18 @@ public enum StatusCode
    * <code>FEATUREFLAG_BLOCKED = 62002;</code>
    */
   FEATUREFLAG_BLOCKED(62002),
+  /**
+   * <pre>
+   * Maintenance status code
+   * </pre>
+   *
+   * <code>MAINTENANCE_SUCCESS = 63000;</code>
+   */
+  MAINTENANCE_SUCCESS(63000),
+  /**
+   * <code>MAINTENANCE_FAILED = 63001;</code>
+   */
+  MAINTENANCE_FAILED(63001),
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -2339,14 +2355,6 @@ public enum StatusCode
    */
   public static final int DATABASE_CONSTRAINT_VIOLATED_VALUE = 40017;
   /**
-   * <code>DATABASE_NO_ONGOING_OPERATIONS = 40018;</code>
-   */
-  public static final int DATABASE_NO_ONGOING_OPERATIONS_VALUE = 40018;
-  /**
-   * <code>DATABASE_LOCKED_BY_ONGOING_OPERATION = 40019;</code>
-   */
-  public static final int DATABASE_LOCKED_BY_ONGOING_OPERATION_VALUE = 40019;
-  /**
    * <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
    */
   public static final int ASYNC_WORKER_MULTI_ERRORS_VALUE = 40020;
@@ -2539,6 +2547,10 @@ public enum StatusCode
    */
   public static final int REDIS_SCRIPT_EXITED_WITH_FAILURE_VALUE = 45002;
   /**
+   * <code>REDIS_STREAM_ERR = 45003;</code>
+   */
+  public static final int REDIS_STREAM_ERR_VALUE = 45003;
+  /**
    * <pre>
    * Sift Science 46xxx
    * </pre>
@@ -2701,6 +2713,14 @@ public enum StatusCode
   public static final int TASK_NOT_IMPLEMENTED_VALUE = 54101;
   /**
    * <pre>
+   * Task was not found.
+   * </pre>
+   *
+   * <code>TASK_MISSING = 54102;</code>
+   */
+  public static final int TASK_MISSING_VALUE = 54102;
+  /**
+   * <pre>
    * Label Order Related Status Code 55xxx
    * </pre>
    *
@@ -2787,6 +2807,18 @@ public enum StatusCode
    * <code>FEATUREFLAG_BLOCKED = 62002;</code>
    */
   public static final int FEATUREFLAG_BLOCKED_VALUE = 62002;
+  /**
+   * <pre>
+   * Maintenance status code
+   * </pre>
+   *
+   * <code>MAINTENANCE_SUCCESS = 63000;</code>
+   */
+  public static final int MAINTENANCE_SUCCESS_VALUE = 63000;
+  /**
+   * <code>MAINTENANCE_FAILED = 63001;</code>
+   */
+  public static final int MAINTENANCE_FAILED_VALUE = 63001;
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -3070,8 +3102,6 @@ public enum StatusCode
       case 40015: return DATABASE_FAIL_TO_GET_CONNECTIONS;
       case 40016: return DATABASE_TOO_MANY_CLIENTS;
       case 40017: return DATABASE_CONSTRAINT_VIOLATED;
-      case 40018: return DATABASE_NO_ONGOING_OPERATIONS;
-      case 40019: return DATABASE_LOCKED_BY_ONGOING_OPERATION;
       case 40020: return ASYNC_WORKER_MULTI_ERRORS;
       case 40030: return RPC_REQUEST_QUEUE_FULL;
       case 40031: return RPC_SERVER_UNAVAILABLE;
@@ -3113,6 +3143,7 @@ public enum StatusCode
       case 44001: return STRIPE_EVENT_ERROR;
       case 45001: return CACHE_MISS;
       case 45002: return REDIS_SCRIPT_EXITED_WITH_FAILURE;
+      case 45003: return REDIS_STREAM_ERR;
       case 46001: return SIGNUP_EVENT_ERROR;
       case 46002: return SIGNUP_FLAGGED;
       case 46003: return FILETYPE_UNSUPPORTED;
@@ -3140,6 +3171,7 @@ public enum StatusCode
       case 54005: return TASK_ADD_ANNOTATIONS_FAILURE;
       case 54100: return TASK_CONFLICT;
       case 54101: return TASK_NOT_IMPLEMENTED;
+      case 54102: return TASK_MISSING;
       case 55001: return LABEL_ORDER_PENDING;
       case 55002: return LABEL_ORDER_IN_PROGRESS;
       case 55003: return LABEL_ORDER_SUCCESS;
@@ -3157,6 +3189,8 @@ public enum StatusCode
       case 62000: return FEATUREFLAG_CONFIG_NOT_FOUND;
       case 62001: return FEATUREFLAG_INVALID_ARGUMENT;
       case 62002: return FEATUREFLAG_BLOCKED;
+      case 63000: return MAINTENANCE_SUCCESS;
+      case 63001: return MAINTENANCE_FAILED;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;

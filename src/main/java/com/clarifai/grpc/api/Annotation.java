@@ -164,6 +164,19 @@ private static final long serialVersionUID = 0L;
             inputLevel_ = input.readBool();
             break;
           }
+          case 146: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (consensusInfo_ != null) {
+              subBuilder = consensusInfo_.toBuilder();
+            }
+            consensusInfo_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(consensusInfo_);
+              consensusInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -624,6 +637,47 @@ private static final long serialVersionUID = 0L;
     return inputLevel_;
   }
 
+  public static final int CONSENSUS_INFO_FIELD_NUMBER = 18;
+  private com.google.protobuf.Struct consensusInfo_;
+  /**
+   * <pre>
+   * Consensus review related information, e.g.
+   * * annotation group
+   * * id of annotation parent, in case the annotation was split from another annotation
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct consensus_info = 18;</code>
+   * @return Whether the consensusInfo field is set.
+   */
+  public boolean hasConsensusInfo() {
+    return consensusInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Consensus review related information, e.g.
+   * * annotation group
+   * * id of annotation parent, in case the annotation was split from another annotation
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct consensus_info = 18;</code>
+   * @return The consensusInfo.
+   */
+  public com.google.protobuf.Struct getConsensusInfo() {
+    return consensusInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : consensusInfo_;
+  }
+  /**
+   * <pre>
+   * Consensus review related information, e.g.
+   * * annotation group
+   * * id of annotation parent, in case the annotation was split from another annotation
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct consensus_info = 18;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getConsensusInfoOrBuilder() {
+    return getConsensusInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -673,6 +727,9 @@ private static final long serialVersionUID = 0L;
     }
     if (inputLevel_ != false) {
       output.writeBool(17, inputLevel_);
+    }
+    if (consensusInfo_ != null) {
+      output.writeMessage(18, getConsensusInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -725,6 +782,10 @@ private static final long serialVersionUID = 0L;
     if (inputLevel_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(17, inputLevel_);
+    }
+    if (consensusInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getConsensusInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -780,6 +841,11 @@ private static final long serialVersionUID = 0L;
         != other.getTrusted()) return false;
     if (getInputLevel()
         != other.getInputLevel()) return false;
+    if (hasConsensusInfo() != other.hasConsensusInfo()) return false;
+    if (hasConsensusInfo()) {
+      if (!getConsensusInfo()
+          .equals(other.getConsensusInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -827,6 +893,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INPUT_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getInputLevel());
+    if (hasConsensusInfo()) {
+      hash = (37 * hash) + CONSENSUS_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getConsensusInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1010,6 +1080,12 @@ private static final long serialVersionUID = 0L;
 
       inputLevel_ = false;
 
+      if (consensusInfoBuilder_ == null) {
+        consensusInfo_ = null;
+      } else {
+        consensusInfo_ = null;
+        consensusInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1068,6 +1144,11 @@ private static final long serialVersionUID = 0L;
       }
       result.trusted_ = trusted_;
       result.inputLevel_ = inputLevel_;
+      if (consensusInfoBuilder_ == null) {
+        result.consensusInfo_ = consensusInfo_;
+      } else {
+        result.consensusInfo_ = consensusInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1156,6 +1237,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getInputLevel() != false) {
         setInputLevel(other.getInputLevel());
+      }
+      if (other.hasConsensusInfo()) {
+        mergeConsensusInfo(other.getConsensusInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2536,6 +2620,179 @@ private static final long serialVersionUID = 0L;
       inputLevel_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct consensusInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> consensusInfoBuilder_;
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     * @return Whether the consensusInfo field is set.
+     */
+    public boolean hasConsensusInfo() {
+      return consensusInfoBuilder_ != null || consensusInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     * @return The consensusInfo.
+     */
+    public com.google.protobuf.Struct getConsensusInfo() {
+      if (consensusInfoBuilder_ == null) {
+        return consensusInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : consensusInfo_;
+      } else {
+        return consensusInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    public Builder setConsensusInfo(com.google.protobuf.Struct value) {
+      if (consensusInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        consensusInfo_ = value;
+        onChanged();
+      } else {
+        consensusInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    public Builder setConsensusInfo(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (consensusInfoBuilder_ == null) {
+        consensusInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        consensusInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    public Builder mergeConsensusInfo(com.google.protobuf.Struct value) {
+      if (consensusInfoBuilder_ == null) {
+        if (consensusInfo_ != null) {
+          consensusInfo_ =
+            com.google.protobuf.Struct.newBuilder(consensusInfo_).mergeFrom(value).buildPartial();
+        } else {
+          consensusInfo_ = value;
+        }
+        onChanged();
+      } else {
+        consensusInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    public Builder clearConsensusInfo() {
+      if (consensusInfoBuilder_ == null) {
+        consensusInfo_ = null;
+        onChanged();
+      } else {
+        consensusInfo_ = null;
+        consensusInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    public com.google.protobuf.Struct.Builder getConsensusInfoBuilder() {
+      
+      onChanged();
+      return getConsensusInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getConsensusInfoOrBuilder() {
+      if (consensusInfoBuilder_ != null) {
+        return consensusInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return consensusInfo_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : consensusInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Consensus review related information, e.g.
+     * * annotation group
+     * * id of annotation parent, in case the annotation was split from another annotation
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct consensus_info = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getConsensusInfoFieldBuilder() {
+      if (consensusInfoBuilder_ == null) {
+        consensusInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getConsensusInfo(),
+                getParentForChildren(),
+                isClean());
+        consensusInfo_ = null;
+      }
+      return consensusInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

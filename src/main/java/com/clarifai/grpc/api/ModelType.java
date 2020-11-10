@@ -133,6 +133,37 @@ private static final long serialVersionUID = 0L;
             requiresSequentialFrames_ = input.readBool();
             break;
           }
+          case 104: {
+
+            evaluable_ = input.readBool();
+            break;
+          }
+          case 114: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (expectedPretrainedInputFields_ != null) {
+              subBuilder = expectedPretrainedInputFields_.toBuilder();
+            }
+            expectedPretrainedInputFields_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(expectedPretrainedInputFields_);
+              expectedPretrainedInputFields_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 122: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (expectedPretrainedOutputFields_ != null) {
+              subBuilder = expectedPretrainedOutputFields_.toBuilder();
+            }
+            expectedPretrainedOutputFields_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(expectedPretrainedOutputFields_);
+              expectedPretrainedOutputFields_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -597,6 +628,90 @@ private static final long serialVersionUID = 0L;
     return requiresSequentialFrames_;
   }
 
+  public static final int EVALUABLE_FIELD_NUMBER = 13;
+  private boolean evaluable_;
+  /**
+   * <pre>
+   * Can this model be evaluated?
+   * </pre>
+   *
+   * <code>bool evaluable = 13;</code>
+   * @return The evaluable.
+   */
+  public boolean getEvaluable() {
+    return evaluable_;
+  }
+
+  public static final int EXPECTED_PRETRAINED_INPUT_FIELDS_FIELD_NUMBER = 14;
+  private com.google.protobuf.Struct expectedPretrainedInputFields_;
+  /**
+   * <pre>
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+   * @return Whether the expectedPretrainedInputFields field is set.
+   */
+  public boolean hasExpectedPretrainedInputFields() {
+    return expectedPretrainedInputFields_ != null;
+  }
+  /**
+   * <pre>
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+   * @return The expectedPretrainedInputFields.
+   */
+  public com.google.protobuf.Struct getExpectedPretrainedInputFields() {
+    return expectedPretrainedInputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedInputFields_;
+  }
+  /**
+   * <pre>
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getExpectedPretrainedInputFieldsOrBuilder() {
+    return getExpectedPretrainedInputFields();
+  }
+
+  public static final int EXPECTED_PRETRAINED_OUTPUT_FIELDS_FIELD_NUMBER = 15;
+  private com.google.protobuf.Struct expectedPretrainedOutputFields_;
+  /**
+   * <pre>
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+   * @return Whether the expectedPretrainedOutputFields field is set.
+   */
+  public boolean hasExpectedPretrainedOutputFields() {
+    return expectedPretrainedOutputFields_ != null;
+  }
+  /**
+   * <pre>
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+   * @return The expectedPretrainedOutputFields.
+   */
+  public com.google.protobuf.Struct getExpectedPretrainedOutputFields() {
+    return expectedPretrainedOutputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedOutputFields_;
+  }
+  /**
+   * <pre>
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder() {
+    return getExpectedPretrainedOutputFields();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -643,6 +758,15 @@ private static final long serialVersionUID = 0L;
     }
     if (requiresSequentialFrames_ != false) {
       output.writeBool(12, requiresSequentialFrames_);
+    }
+    if (evaluable_ != false) {
+      output.writeBool(13, evaluable_);
+    }
+    if (expectedPretrainedInputFields_ != null) {
+      output.writeMessage(14, getExpectedPretrainedInputFields());
+    }
+    if (expectedPretrainedOutputFields_ != null) {
+      output.writeMessage(15, getExpectedPretrainedOutputFields());
     }
     unknownFields.writeTo(output);
   }
@@ -701,6 +825,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(12, requiresSequentialFrames_);
     }
+    if (evaluable_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, evaluable_);
+    }
+    if (expectedPretrainedInputFields_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getExpectedPretrainedInputFields());
+    }
+    if (expectedPretrainedOutputFields_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getExpectedPretrainedOutputFields());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -738,6 +874,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelTypeFieldsList())) return false;
     if (getRequiresSequentialFrames()
         != other.getRequiresSequentialFrames()) return false;
+    if (getEvaluable()
+        != other.getEvaluable()) return false;
+    if (hasExpectedPretrainedInputFields() != other.hasExpectedPretrainedInputFields()) return false;
+    if (hasExpectedPretrainedInputFields()) {
+      if (!getExpectedPretrainedInputFields()
+          .equals(other.getExpectedPretrainedInputFields())) return false;
+    }
+    if (hasExpectedPretrainedOutputFields() != other.hasExpectedPretrainedOutputFields()) return false;
+    if (hasExpectedPretrainedOutputFields()) {
+      if (!getExpectedPretrainedOutputFields()
+          .equals(other.getExpectedPretrainedOutputFields())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -781,6 +929,17 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + REQUIRES_SEQUENTIAL_FRAMES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getRequiresSequentialFrames());
+    hash = (37 * hash) + EVALUABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEvaluable());
+    if (hasExpectedPretrainedInputFields()) {
+      hash = (37 * hash) + EXPECTED_PRETRAINED_INPUT_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedPretrainedInputFields().hashCode();
+    }
+    if (hasExpectedPretrainedOutputFields()) {
+      hash = (37 * hash) + EXPECTED_PRETRAINED_OUTPUT_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedPretrainedOutputFields().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -947,6 +1106,20 @@ private static final long serialVersionUID = 0L;
       }
       requiresSequentialFrames_ = false;
 
+      evaluable_ = false;
+
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        expectedPretrainedInputFields_ = null;
+      } else {
+        expectedPretrainedInputFields_ = null;
+        expectedPretrainedInputFieldsBuilder_ = null;
+      }
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        expectedPretrainedOutputFields_ = null;
+      } else {
+        expectedPretrainedOutputFields_ = null;
+        expectedPretrainedOutputFieldsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1001,6 +1174,17 @@ private static final long serialVersionUID = 0L;
         result.modelTypeFields_ = modelTypeFieldsBuilder_.build();
       }
       result.requiresSequentialFrames_ = requiresSequentialFrames_;
+      result.evaluable_ = evaluable_;
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        result.expectedPretrainedInputFields_ = expectedPretrainedInputFields_;
+      } else {
+        result.expectedPretrainedInputFields_ = expectedPretrainedInputFieldsBuilder_.build();
+      }
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        result.expectedPretrainedOutputFields_ = expectedPretrainedOutputFields_;
+      } else {
+        result.expectedPretrainedOutputFields_ = expectedPretrainedOutputFieldsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1122,6 +1306,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRequiresSequentialFrames() != false) {
         setRequiresSequentialFrames(other.getRequiresSequentialFrames());
+      }
+      if (other.getEvaluable() != false) {
+        setEvaluable(other.getEvaluable());
+      }
+      if (other.hasExpectedPretrainedInputFields()) {
+        mergeExpectedPretrainedInputFields(other.getExpectedPretrainedInputFields());
+      }
+      if (other.hasExpectedPretrainedOutputFields()) {
+        mergeExpectedPretrainedOutputFields(other.getExpectedPretrainedOutputFields());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2413,6 +2606,358 @@ private static final long serialVersionUID = 0L;
       requiresSequentialFrames_ = false;
       onChanged();
       return this;
+    }
+
+    private boolean evaluable_ ;
+    /**
+     * <pre>
+     * Can this model be evaluated?
+     * </pre>
+     *
+     * <code>bool evaluable = 13;</code>
+     * @return The evaluable.
+     */
+    public boolean getEvaluable() {
+      return evaluable_;
+    }
+    /**
+     * <pre>
+     * Can this model be evaluated?
+     * </pre>
+     *
+     * <code>bool evaluable = 13;</code>
+     * @param value The evaluable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluable(boolean value) {
+      
+      evaluable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Can this model be evaluated?
+     * </pre>
+     *
+     * <code>bool evaluable = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluable() {
+      
+      evaluable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct expectedPretrainedInputFields_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> expectedPretrainedInputFieldsBuilder_;
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * @return Whether the expectedPretrainedInputFields field is set.
+     */
+    public boolean hasExpectedPretrainedInputFields() {
+      return expectedPretrainedInputFieldsBuilder_ != null || expectedPretrainedInputFields_ != null;
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * @return The expectedPretrainedInputFields.
+     */
+    public com.google.protobuf.Struct getExpectedPretrainedInputFields() {
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        return expectedPretrainedInputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedInputFields_;
+      } else {
+        return expectedPretrainedInputFieldsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    public Builder setExpectedPretrainedInputFields(com.google.protobuf.Struct value) {
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expectedPretrainedInputFields_ = value;
+        onChanged();
+      } else {
+        expectedPretrainedInputFieldsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    public Builder setExpectedPretrainedInputFields(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        expectedPretrainedInputFields_ = builderForValue.build();
+        onChanged();
+      } else {
+        expectedPretrainedInputFieldsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    public Builder mergeExpectedPretrainedInputFields(com.google.protobuf.Struct value) {
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        if (expectedPretrainedInputFields_ != null) {
+          expectedPretrainedInputFields_ =
+            com.google.protobuf.Struct.newBuilder(expectedPretrainedInputFields_).mergeFrom(value).buildPartial();
+        } else {
+          expectedPretrainedInputFields_ = value;
+        }
+        onChanged();
+      } else {
+        expectedPretrainedInputFieldsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    public Builder clearExpectedPretrainedInputFields() {
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        expectedPretrainedInputFields_ = null;
+        onChanged();
+      } else {
+        expectedPretrainedInputFields_ = null;
+        expectedPretrainedInputFieldsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    public com.google.protobuf.Struct.Builder getExpectedPretrainedInputFieldsBuilder() {
+      
+      onChanged();
+      return getExpectedPretrainedInputFieldsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getExpectedPretrainedInputFieldsOrBuilder() {
+      if (expectedPretrainedInputFieldsBuilder_ != null) {
+        return expectedPretrainedInputFieldsBuilder_.getMessageOrBuilder();
+      } else {
+        return expectedPretrainedInputFields_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedInputFields_;
+      }
+    }
+    /**
+     * <pre>
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getExpectedPretrainedInputFieldsFieldBuilder() {
+      if (expectedPretrainedInputFieldsBuilder_ == null) {
+        expectedPretrainedInputFieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getExpectedPretrainedInputFields(),
+                getParentForChildren(),
+                isClean());
+        expectedPretrainedInputFields_ = null;
+      }
+      return expectedPretrainedInputFieldsBuilder_;
+    }
+
+    private com.google.protobuf.Struct expectedPretrainedOutputFields_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> expectedPretrainedOutputFieldsBuilder_;
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * @return Whether the expectedPretrainedOutputFields field is set.
+     */
+    public boolean hasExpectedPretrainedOutputFields() {
+      return expectedPretrainedOutputFieldsBuilder_ != null || expectedPretrainedOutputFields_ != null;
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * @return The expectedPretrainedOutputFields.
+     */
+    public com.google.protobuf.Struct getExpectedPretrainedOutputFields() {
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        return expectedPretrainedOutputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedOutputFields_;
+      } else {
+        return expectedPretrainedOutputFieldsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    public Builder setExpectedPretrainedOutputFields(com.google.protobuf.Struct value) {
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expectedPretrainedOutputFields_ = value;
+        onChanged();
+      } else {
+        expectedPretrainedOutputFieldsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    public Builder setExpectedPretrainedOutputFields(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        expectedPretrainedOutputFields_ = builderForValue.build();
+        onChanged();
+      } else {
+        expectedPretrainedOutputFieldsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    public Builder mergeExpectedPretrainedOutputFields(com.google.protobuf.Struct value) {
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        if (expectedPretrainedOutputFields_ != null) {
+          expectedPretrainedOutputFields_ =
+            com.google.protobuf.Struct.newBuilder(expectedPretrainedOutputFields_).mergeFrom(value).buildPartial();
+        } else {
+          expectedPretrainedOutputFields_ = value;
+        }
+        onChanged();
+      } else {
+        expectedPretrainedOutputFieldsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    public Builder clearExpectedPretrainedOutputFields() {
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        expectedPretrainedOutputFields_ = null;
+        onChanged();
+      } else {
+        expectedPretrainedOutputFields_ = null;
+        expectedPretrainedOutputFieldsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    public com.google.protobuf.Struct.Builder getExpectedPretrainedOutputFieldsBuilder() {
+      
+      onChanged();
+      return getExpectedPretrainedOutputFieldsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder() {
+      if (expectedPretrainedOutputFieldsBuilder_ != null) {
+        return expectedPretrainedOutputFieldsBuilder_.getMessageOrBuilder();
+      } else {
+        return expectedPretrainedOutputFields_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedOutputFields_;
+      }
+    }
+    /**
+     * <pre>
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getExpectedPretrainedOutputFieldsFieldBuilder() {
+      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+        expectedPretrainedOutputFieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getExpectedPretrainedOutputFields(),
+                getParentForChildren(),
+                isClean());
+        expectedPretrainedOutputFields_ = null;
+      }
+      return expectedPretrainedOutputFieldsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

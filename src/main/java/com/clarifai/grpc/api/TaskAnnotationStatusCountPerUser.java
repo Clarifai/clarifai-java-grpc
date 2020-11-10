@@ -75,6 +75,11 @@ private static final long serialVersionUID = 0L;
             reviewDenied_ = input.readUInt32();
             break;
           }
+          case 48: {
+
+            awaitingConsensusReview_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -183,6 +188,16 @@ private static final long serialVersionUID = 0L;
     return reviewDenied_;
   }
 
+  public static final int AWAITING_CONSENSUS_REVIEW_FIELD_NUMBER = 6;
+  private int awaitingConsensusReview_;
+  /**
+   * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The awaitingConsensusReview.
+   */
+  public int getAwaitingConsensusReview() {
+    return awaitingConsensusReview_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -212,6 +227,9 @@ private static final long serialVersionUID = 0L;
     if (reviewDenied_ != 0) {
       output.writeUInt32(5, reviewDenied_);
     }
+    if (awaitingConsensusReview_ != 0) {
+      output.writeUInt32(6, awaitingConsensusReview_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -240,6 +258,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(5, reviewDenied_);
     }
+    if (awaitingConsensusReview_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(6, awaitingConsensusReview_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -265,6 +287,8 @@ private static final long serialVersionUID = 0L;
         != other.getSuccess()) return false;
     if (getReviewDenied()
         != other.getReviewDenied()) return false;
+    if (getAwaitingConsensusReview()
+        != other.getAwaitingConsensusReview()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -286,6 +310,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSuccess();
     hash = (37 * hash) + REVIEW_DENIED_FIELD_NUMBER;
     hash = (53 * hash) + getReviewDenied();
+    hash = (37 * hash) + AWAITING_CONSENSUS_REVIEW_FIELD_NUMBER;
+    hash = (53 * hash) + getAwaitingConsensusReview();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -429,6 +455,8 @@ private static final long serialVersionUID = 0L;
 
       reviewDenied_ = 0;
 
+      awaitingConsensusReview_ = 0;
+
       return this;
     }
 
@@ -460,6 +488,7 @@ private static final long serialVersionUID = 0L;
       result.awaitingReview_ = awaitingReview_;
       result.success_ = success_;
       result.reviewDenied_ = reviewDenied_;
+      result.awaitingConsensusReview_ = awaitingConsensusReview_;
       onBuilt();
       return result;
     }
@@ -523,6 +552,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getReviewDenied() != 0) {
         setReviewDenied(other.getReviewDenied());
+      }
+      if (other.getAwaitingConsensusReview() != 0) {
+        setAwaitingConsensusReview(other.getAwaitingConsensusReview());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -745,6 +777,36 @@ private static final long serialVersionUID = 0L;
     public Builder clearReviewDenied() {
       
       reviewDenied_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int awaitingConsensusReview_ ;
+    /**
+     * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The awaitingConsensusReview.
+     */
+    public int getAwaitingConsensusReview() {
+      return awaitingConsensusReview_;
+    }
+    /**
+     * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The awaitingConsensusReview to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAwaitingConsensusReview(int value) {
+      
+      awaitingConsensusReview_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAwaitingConsensusReview() {
+      
+      awaitingConsensusReview_ = 0;
       onChanged();
       return this;
     }

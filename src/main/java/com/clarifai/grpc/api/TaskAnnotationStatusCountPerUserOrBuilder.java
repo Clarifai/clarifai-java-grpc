@@ -42,4 +42,10 @@ public interface TaskAnnotationStatusCountPerUserOrBuilder extends
    * @return The reviewDenied.
    */
   int getReviewDenied();
+
+  /**
+   * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The awaitingConsensusReview.
+   */
+  int getAwaitingConsensusReview();
 }
