@@ -161,4 +161,29 @@ public class GrpcIntTest {
       Assert.assertEquals(StatusCode.SUCCESS, deleteResponse.getStatus().getCode());
     }
   }
+
+  @Test
+  public void listCollaborators() {
+    V2Grpc.V2BlockingStub stubWithPat = V2Grpc.newBlockingStub(channel)
+        .withCallCredentials(new ClarifaiCallCredentials(System.getenv("CLARIFAI_PAT_KEY")));
+
+    MultiAppResponse listAppsResponse = stubWithPat.listApps(
+      ListAppsRequest.newBuilder()
+      .build()
+    );
+    Assert.assertEquals(StatusCode.SUCCESS, listAppsResponse.getStatus().getCode());
+
+    String appId = listAppsResponse.getApps(0).getId();
+
+    MultiCollaboratorsResponse listCollaboratorsResponse = stubWithPat.listCollaborators(
+      ListCollaboratorsRequest.newBuilder()
+        .setUserAppId(
+          UserAppIDSet.newBuilder()
+            .setAppId(appId)
+            .setUserId("me")
+        )
+        .build()
+    );
+    Assert.assertEquals(StatusCode.SUCCESS, listCollaboratorsResponse.getStatus().getCode());
+  }
 }

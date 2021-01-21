@@ -188,8 +188,7 @@ class JsonEndpoint<RequestT, ResponseT> {
 
   /**
    * @return ["app_id", "user_id"] values if they are present, or empty array. If only "app_id" is
-   *         present, "user_id" is set to 'me' If only "app_id" is present, "user_id" is set
-   *         to "me".
+   *         present, "user_id" is set to 'me'.
    */
   private String[] readAppIdAndUserId(JsonElement element) {
       if (element.isJsonArray()) {
@@ -203,7 +202,13 @@ class JsonEndpoint<RequestT, ResponseT> {
         for (Map.Entry<String, JsonElement> entry : element.getAsJsonObject().entrySet()) {
           String key = entry.getKey();
           JsonElement value = entry.getValue();
-          if (key.equals("apps")) {
+          if (key.equals("user_app_id")) {
+              String[] result = new String[2];
+              JsonObject userAppId = value.getAsJsonObject();
+              result[0] = userAppId.get("app_id").getAsString();
+              result[1] = userAppId.has("user_id") ? userAppId.get("user_id").getAsString() : "me";
+              return result;
+          } else if (key.equals("apps")) {
             JsonArray apps = value.getAsJsonArray();
             if (apps.size() == 1) {
               String[] result = new String[2];
