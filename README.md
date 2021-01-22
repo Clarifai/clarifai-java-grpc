@@ -2,9 +2,7 @@
 
 # Clarifai Java gRPC Client
 
-This is the official Clarifai Java gRPC client.
-
-This is the official Clarifai gRPC Go client for interacting with our powerful recognition
+This is the official Clarifai gRPC Java client for interacting with our powerful recognition
 [API](https://docs.clarifai.com).
 Clarifai provides a platform for data scientists, developers, researchers and enterprises to master the entire
 artificial intelligence lifecycle. Gather valuable business insights from images, video and text using computer vision
@@ -51,6 +49,13 @@ Via Maven:
     </dependency>
 </dependencies>
 ```
+
+## Versioning
+
+This library doesn't use semantic versioning. The first two version numbers (`X.Y` out of `X.Y.Z`) follow the API (backend) versioning, and
+whenever the API gets updated, this library follows it.
+
+The third version number (`Z` out of `X.Y.Z`) is used by this library for any independent releases of library-specific improvements and bug fixes.
 
 ## Getting started
 
