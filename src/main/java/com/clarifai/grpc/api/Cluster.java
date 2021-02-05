@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
   private Cluster() {
     id_ = "";
     hits_ = java.util.Collections.emptyList();
+    projection_ = emptyFloatList();
   }
 
   @java.lang.Override
@@ -82,6 +83,27 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Hit.parser(), extensionRegistry));
             break;
           }
+          case 45: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              projection_ = newFloatList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            projection_.addFloat(input.readFloat());
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int limit = input.pushLimit(length);
+            if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              projection_ = newFloatList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            while (input.getBytesUntilLimit() > 0) {
+              projection_.addFloat(input.readFloat());
+            }
+            input.popLimit(limit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +121,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         hits_ = java.util.Collections.unmodifiableList(hits_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        projection_.makeImmutable(); // C
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -236,6 +261,33 @@ private static final long serialVersionUID = 0L;
     return hits_.get(index);
   }
 
+  public static final int PROJECTION_FIELD_NUMBER = 5;
+  private com.google.protobuf.Internal.FloatList projection_;
+  /**
+   * <code>repeated float projection = 5;</code>
+   * @return A list containing the projection.
+   */
+  public java.util.List<java.lang.Float>
+      getProjectionList() {
+    return projection_;
+  }
+  /**
+   * <code>repeated float projection = 5;</code>
+   * @return The count of projection.
+   */
+  public int getProjectionCount() {
+    return projection_.size();
+  }
+  /**
+   * <code>repeated float projection = 5;</code>
+   * @param index The index of the element to return.
+   * @return The projection at the given index.
+   */
+  public float getProjection(int index) {
+    return projection_.getFloat(index);
+  }
+  private int projectionMemoizedSerializedSize = -1;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -250,6 +302,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
@@ -261,6 +314,13 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < hits_.size(); i++) {
       output.writeMessage(4, hits_.get(i));
+    }
+    if (getProjectionList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(projectionMemoizedSerializedSize);
+    }
+    for (int i = 0; i < projection_.size(); i++) {
+      output.writeFloatNoTag(projection_.getFloat(i));
     }
     unknownFields.writeTo(output);
   }
@@ -286,6 +346,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, hits_.get(i));
     }
+    {
+      int dataSize = 0;
+      dataSize = 4 * getProjectionList().size();
+      size += dataSize;
+      if (!getProjectionList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(dataSize);
+      }
+      projectionMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -310,6 +381,8 @@ private static final long serialVersionUID = 0L;
             other.getScore())) return false;
     if (!getHitsList()
         .equals(other.getHitsList())) return false;
+    if (!getProjectionList()
+        .equals(other.getProjectionList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -331,6 +404,10 @@ private static final long serialVersionUID = 0L;
     if (getHitsCount() > 0) {
       hash = (37 * hash) + HITS_FIELD_NUMBER;
       hash = (53 * hash) + getHitsList().hashCode();
+    }
+    if (getProjectionCount() > 0) {
+      hash = (37 * hash) + PROJECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectionList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -484,6 +561,8 @@ private static final long serialVersionUID = 0L;
       } else {
         hitsBuilder_.clear();
       }
+      projection_ = emptyFloatList();
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -523,6 +602,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.hits_ = hitsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        projection_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.projection_ = projection_;
       onBuilt();
       return result;
     }
@@ -606,6 +690,16 @@ private static final long serialVersionUID = 0L;
             hitsBuilder_.addAllMessages(other.hits_);
           }
         }
+      }
+      if (!other.projection_.isEmpty()) {
+        if (projection_.isEmpty()) {
+          projection_ = other.projection_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureProjectionIsMutable();
+          projection_.addAll(other.projection_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1107,6 +1201,85 @@ private static final long serialVersionUID = 0L;
         hits_ = null;
       }
       return hitsBuilder_;
+    }
+
+    private com.google.protobuf.Internal.FloatList projection_ = emptyFloatList();
+    private void ensureProjectionIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        projection_ = mutableCopy(projection_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @return A list containing the projection.
+     */
+    public java.util.List<java.lang.Float>
+        getProjectionList() {
+      return ((bitField0_ & 0x00000002) != 0) ?
+               java.util.Collections.unmodifiableList(projection_) : projection_;
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @return The count of projection.
+     */
+    public int getProjectionCount() {
+      return projection_.size();
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @param index The index of the element to return.
+     * @return The projection at the given index.
+     */
+    public float getProjection(int index) {
+      return projection_.getFloat(index);
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The projection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjection(
+        int index, float value) {
+      ensureProjectionIsMutable();
+      projection_.setFloat(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @param value The projection to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProjection(float value) {
+      ensureProjectionIsMutable();
+      projection_.addFloat(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @param values The projection to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProjection(
+        java.lang.Iterable<? extends java.lang.Float> values) {
+      ensureProjectionIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, projection_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated float projection = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProjection() {
+      projection_ = emptyFloatList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

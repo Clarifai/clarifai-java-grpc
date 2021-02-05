@@ -484,6 +484,22 @@ public enum S
    * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   UserFeatureConfigs_Get(71),
+  /**
+   * <pre>
+   * CRUD on FindDuplicateAnnotationsJobs table
+   * </pre>
+   *
+   * <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+   */
+  FindDuplicateAnnotationsJobs_Add(102),
+  /**
+   * <code>FindDuplicateAnnotationsJobs_Get = 103 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  FindDuplicateAnnotationsJobs_Get(103),
+  /**
+   * <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+   */
+  FindDuplicateAnnotationsJobs_Delete(104),
   UNRECOGNIZED(-1),
   ;
 
@@ -940,6 +956,22 @@ public enum S
    * <code>UserFeatureConfigs_Get = 71 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int UserFeatureConfigs_Get_VALUE = 71;
+  /**
+   * <pre>
+   * CRUD on FindDuplicateAnnotationsJobs table
+   * </pre>
+   *
+   * <code>FindDuplicateAnnotationsJobs_Add = 102 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+   */
+  public static final int FindDuplicateAnnotationsJobs_Add_VALUE = 102;
+  /**
+   * <code>FindDuplicateAnnotationsJobs_Get = 103 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int FindDuplicateAnnotationsJobs_Get_VALUE = 103;
+  /**
+   * <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
+   */
+  public static final int FindDuplicateAnnotationsJobs_Delete_VALUE = 104;
 
 
   public final int getNumber() {
@@ -1023,6 +1055,9 @@ public enum S
       case 68: return LabelOrders_Add;
       case 69: return LabelOrders_Delete;
       case 71: return UserFeatureConfigs_Get;
+      case 102: return FindDuplicateAnnotationsJobs_Add;
+      case 103: return FindDuplicateAnnotationsJobs_Get;
+      case 104: return FindDuplicateAnnotationsJobs_Delete;
       default: return null;
     }
   }

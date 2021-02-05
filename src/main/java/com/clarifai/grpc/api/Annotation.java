@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     modelVersionId_ = "";
     embedModelVersionId_ = "";
+    taskId_ = "";
   }
 
   @java.lang.Override
@@ -175,6 +176,12 @@ private static final long serialVersionUID = 0L;
               consensusInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 154: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskId_ = s;
             break;
           }
           default: {
@@ -335,6 +342,10 @@ private static final long serialVersionUID = 0L;
   public static final int ANNOTATION_INFO_FIELD_NUMBER = 13;
   private com.google.protobuf.Struct annotationInfo_;
   /**
+   * <pre>
+   * task_id is deprecated in annotation_info. Use task_id
+   * </pre>
+   *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    * @return Whether the annotationInfo field is set.
    */
@@ -342,6 +353,10 @@ private static final long serialVersionUID = 0L;
     return annotationInfo_ != null;
   }
   /**
+   * <pre>
+   * task_id is deprecated in annotation_info. Use task_id
+   * </pre>
+   *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    * @return The annotationInfo.
    */
@@ -349,6 +364,10 @@ private static final long serialVersionUID = 0L;
     return annotationInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotationInfo_;
   }
   /**
+   * <pre>
+   * task_id is deprecated in annotation_info. Use task_id
+   * </pre>
+   *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    */
   public com.google.protobuf.StructOrBuilder getAnnotationInfoOrBuilder() {
@@ -447,15 +466,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object embedModelVersionId_;
   /**
    * <pre>
-   * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+   * DEPRECATED.
    * </pre>
    *
-   * <code>string embed_model_version_id = 14;</code>
+   * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @return The embedModelVersionId.
    */
-  public java.lang.String getEmbedModelVersionId() {
+  @java.lang.Deprecated public java.lang.String getEmbedModelVersionId() {
     java.lang.Object ref = embedModelVersionId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -469,15 +486,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+   * DEPRECATED.
    * </pre>
    *
-   * <code>string embed_model_version_id = 14;</code>
+   * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @return The bytes for embedModelVersionId.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes() {
     java.lang.Object ref = embedModelVersionId_;
     if (ref instanceof java.lang.String) {
@@ -678,6 +693,50 @@ private static final long serialVersionUID = 0L;
     return getConsensusInfo();
   }
 
+  public static final int TASK_ID_FIELD_NUMBER = 19;
+  private volatile java.lang.Object taskId_;
+  /**
+   * <pre>
+   * The id of the task annotation belongs to
+   * </pre>
+   *
+   * <code>string task_id = 19;</code>
+   * @return The taskId.
+   */
+  public java.lang.String getTaskId() {
+    java.lang.Object ref = taskId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The id of the task annotation belongs to
+   * </pre>
+   *
+   * <code>string task_id = 19;</code>
+   * @return The bytes for taskId.
+   */
+  public com.google.protobuf.ByteString
+      getTaskIdBytes() {
+    java.lang.Object ref = taskId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -730,6 +789,9 @@ private static final long serialVersionUID = 0L;
     }
     if (consensusInfo_ != null) {
       output.writeMessage(18, getConsensusInfo());
+    }
+    if (!getTaskIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, taskId_);
     }
     unknownFields.writeTo(output);
   }
@@ -786,6 +848,9 @@ private static final long serialVersionUID = 0L;
     if (consensusInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getConsensusInfo());
+    }
+    if (!getTaskIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, taskId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -846,6 +911,8 @@ private static final long serialVersionUID = 0L;
       if (!getConsensusInfo()
           .equals(other.getConsensusInfo())) return false;
     }
+    if (!getTaskId()
+        .equals(other.getTaskId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -897,6 +964,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CONSENSUS_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getConsensusInfo().hashCode();
     }
+    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1086,6 +1155,8 @@ private static final long serialVersionUID = 0L;
         consensusInfo_ = null;
         consensusInfoBuilder_ = null;
       }
+      taskId_ = "";
+
       return this;
     }
 
@@ -1149,6 +1220,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.consensusInfo_ = consensusInfoBuilder_.build();
       }
+      result.taskId_ = taskId_;
       onBuilt();
       return result;
     }
@@ -1240,6 +1312,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasConsensusInfo()) {
         mergeConsensusInfo(other.getConsensusInfo());
+      }
+      if (!other.getTaskId().isEmpty()) {
+        taskId_ = other.taskId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1621,6 +1697,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> annotationInfoBuilder_;
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      * @return Whether the annotationInfo field is set.
      */
@@ -1628,6 +1708,10 @@ private static final long serialVersionUID = 0L;
       return annotationInfoBuilder_ != null || annotationInfo_ != null;
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      * @return The annotationInfo.
      */
@@ -1639,6 +1723,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     public Builder setAnnotationInfo(com.google.protobuf.Struct value) {
@@ -1655,6 +1743,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     public Builder setAnnotationInfo(
@@ -1669,6 +1761,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     public Builder mergeAnnotationInfo(com.google.protobuf.Struct value) {
@@ -1687,6 +1783,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     public Builder clearAnnotationInfo() {
@@ -1701,6 +1801,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     public com.google.protobuf.Struct.Builder getAnnotationInfoBuilder() {
@@ -1709,6 +1813,10 @@ private static final long serialVersionUID = 0L;
       return getAnnotationInfoFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     public com.google.protobuf.StructOrBuilder getAnnotationInfoOrBuilder() {
@@ -1720,6 +1828,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * task_id is deprecated in annotation_info. Use task_id
+     * </pre>
+     *
      * <code>.google.protobuf.Struct annotation_info = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1931,15 +2043,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object embedModelVersionId_ = "";
     /**
      * <pre>
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      * </pre>
      *
-     * <code>string embed_model_version_id = 14;</code>
+     * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @return The embedModelVersionId.
      */
-    public java.lang.String getEmbedModelVersionId() {
+    @java.lang.Deprecated public java.lang.String getEmbedModelVersionId() {
       java.lang.Object ref = embedModelVersionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1953,15 +2063,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      * </pre>
      *
-     * <code>string embed_model_version_id = 14;</code>
+     * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @return The bytes for embedModelVersionId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getEmbedModelVersionIdBytes() {
       java.lang.Object ref = embedModelVersionId_;
       if (ref instanceof String) {
@@ -1976,16 +2084,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      * </pre>
      *
-     * <code>string embed_model_version_id = 14;</code>
+     * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @param value The embedModelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setEmbedModelVersionId(
+    @java.lang.Deprecated public Builder setEmbedModelVersionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1997,15 +2103,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      * </pre>
      *
-     * <code>string embed_model_version_id = 14;</code>
+     * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearEmbedModelVersionId() {
+    @java.lang.Deprecated public Builder clearEmbedModelVersionId() {
       
       embedModelVersionId_ = getDefaultInstance().getEmbedModelVersionId();
       onChanged();
@@ -2013,16 +2117,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The embedding model version used make this annotation available for search and training
-     * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-     * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+     * DEPRECATED.
      * </pre>
      *
-     * <code>string embed_model_version_id = 14;</code>
+     * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @param value The bytes for embedModelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setEmbedModelVersionIdBytes(
+    @java.lang.Deprecated public Builder setEmbedModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2793,6 +2895,102 @@ private static final long serialVersionUID = 0L;
         consensusInfo_ = null;
       }
       return consensusInfoBuilder_;
+    }
+
+    private java.lang.Object taskId_ = "";
+    /**
+     * <pre>
+     * The id of the task annotation belongs to
+     * </pre>
+     *
+     * <code>string task_id = 19;</code>
+     * @return The taskId.
+     */
+    public java.lang.String getTaskId() {
+      java.lang.Object ref = taskId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The id of the task annotation belongs to
+     * </pre>
+     *
+     * <code>string task_id = 19;</code>
+     * @return The bytes for taskId.
+     */
+    public com.google.protobuf.ByteString
+        getTaskIdBytes() {
+      java.lang.Object ref = taskId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The id of the task annotation belongs to
+     * </pre>
+     *
+     * <code>string task_id = 19;</code>
+     * @param value The taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The id of the task annotation belongs to
+     * </pre>
+     *
+     * <code>string task_id = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskId() {
+      
+      taskId_ = getDefaultInstance().getTaskId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The id of the task annotation belongs to
+     * </pre>
+     *
+     * <code>string task_id = 19;</code>
+     * @param value The bytes for taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -66,7 +66,7 @@ public final class Scope {
       "\023clarifai.auth.scope\032 google/protobuf/de" +
       "scriptor.proto\"F\n\tScopeList\022&\n\006scopes\030\001 " +
       "\003(\0162\026.clarifai.auth.scope.S\022\021\n\tendpoints" +
-      "\030\002 \003(\t*\265\r\n\001S\022\t\n\005undef\020\000\022\r\n\003All\020\001\032\004\360\233\'\001\022\021" +
+      "\030\002 \003(\t*\310\016\n\001S\022\t\n\005undef\020\000\022\r\n\003All\020\001\032\004\360\233\'\001\022\021" +
       "\n\007Predict\020\002\032\004\360\233\'\001\022\020\n\006Search\020\003\032\004\360\233\'\001\022\030\n\nI" +
       "nputs_Add\020\004\032\010\360\233\'\001\370\233\'\005\022\024\n\nInputs_Get\020\005\032\004\360" +
       "\233\'\001\022 \n\014Inputs_Patch\020\007\032\016\010\001\360\233\'\001\370\233\'\004\370\233\'\005\022\037\n" +
@@ -108,13 +108,18 @@ public final class Scope {
       "\'9\370\233\':\022\031\n\017LabelOrders_Get\020C\032\004\360\233\'\001\022\035\n\017Lab" +
       "elOrders_Add\020D\032\010\360\233\'\001\370\233\'C\022$\n\022LabelOrders_" +
       "Delete\020E\032\014\360\233\'\001\370\233\'D\370\233\'C\022 \n\026UserFeatureCon" +
-      "figs_Get\020G\032\004\360\233\'\001\"\004\010\036\020\036\"\004\010\037\020\037\"\004\010 \020 \"\004\010!\020!" +
-      "\"\004\010\"\020\":<\n\017clarfai_exposed\022!.google.proto" +
-      "buf.EnumValueOptions\030\276\363\004 \001(\010:^\n\031clarifai" +
-      "_depending_scopes\022!.google.protobuf.Enum" +
-      "ValueOptions\030\277\363\004 \003(\0162\026.clarifai.auth.sco" +
-      "pe.SB.\n\034com.clarifai.grpc.auth.scopeP\001Z\005" +
-      "scope\242\002\004CAIPb\006proto3"
+      "figs_Get\020G\032\004\360\233\'\001\022.\n FindDuplicateAnnotat" +
+      "ionsJobs_Add\020f\032\010\360\233\'\001\370\233\'g\022*\n FindDuplicat" +
+      "eAnnotationsJobs_Get\020g\032\004\360\233\'\001\0225\n#FindDupl" +
+      "icateAnnotationsJobs_Delete\020h\032\014\360\233\'\001\370\233\'f\370" +
+      "\233\'g\"\004\010\036\020\036\"\004\010\037\020\037\"\004\010 \020 \"\004\010!\020!\"\004\010\"\020\":<\n\017cla" +
+      "rfai_exposed\022!.google.protobuf.EnumValue" +
+      "Options\030\276\363\004 \001(\010:^\n\031clarifai_depending_sc" +
+      "opes\022!.google.protobuf.EnumValueOptions\030" +
+      "\277\363\004 \003(\0162\026.clarifai.auth.scope.SBg\n\034com.c" +
+      "larifai.grpc.auth.scopeP\001Z>github.com/Cl" +
+      "arifai/clarifai-go-grpc/proto/clarifai/a" +
+      "uth/scope\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

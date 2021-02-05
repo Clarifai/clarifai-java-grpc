@@ -78,9 +78,10 @@ public final class Extensions {
       "google.protobuf.FieldOptions\030\320\206\003 \001(\010:4\n\013" +
       "cl_moretags\022\035.google.protobuf.FieldOptio" +
       "ns\030\321\206\003 \001(\t:9\n\020cl_default_float\022\035.google." +
-      "protobuf.FieldOptions\030\332\206\003 \001(\002B-\n\033com.cla" +
-      "rifai.grpc.api.utilsP\001Z\005utils\242\002\004CAIPb\006pr" +
-      "oto3"
+      "protobuf.FieldOptions\030\332\206\003 \001(\002Be\n\033com.cla" +
+      "rifai.grpc.api.utilsP\001Z=github.com/Clari" +
+      "fai/clarifai-go-grpc/proto/clarifai/api/" +
+      "utils\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

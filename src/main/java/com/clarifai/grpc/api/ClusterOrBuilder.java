@@ -82,4 +82,21 @@ public interface ClusterOrBuilder extends
    */
   com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
       int index);
+
+  /**
+   * <code>repeated float projection = 5;</code>
+   * @return A list containing the projection.
+   */
+  java.util.List<java.lang.Float> getProjectionList();
+  /**
+   * <code>repeated float projection = 5;</code>
+   * @return The count of projection.
+   */
+  int getProjectionCount();
+  /**
+   * <code>repeated float projection = 5;</code>
+   * @param index The index of the element to return.
+   * @return The projection at the given index.
+   */
+  float getProjection(int index);
 }

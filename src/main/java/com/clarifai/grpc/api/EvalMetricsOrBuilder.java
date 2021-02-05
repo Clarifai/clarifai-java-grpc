@@ -189,4 +189,28 @@ public interface EvalMetricsOrBuilder extends
    */
   com.clarifai.grpc.api.BinaryMetricsOrBuilder getMetricsByClassOrBuilder(
       int index);
+
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.TrackerMetrics> 
+      getTrackerMetricsList();
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  com.clarifai.grpc.api.TrackerMetrics getTrackerMetrics(int index);
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  int getTrackerMetricsCount();
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.TrackerMetricsOrBuilder> 
+      getTrackerMetricsOrBuilderList();
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  com.clarifai.grpc.api.TrackerMetricsOrBuilder getTrackerMetricsOrBuilder(
+      int index);
 }

@@ -133,8 +133,9 @@ public final class Extension {
       "gle.protobuf.MethodOptions\030\303\363\004 \001(\0162\035.cla" +
       "rifai.auth.types.AuthType:=\n\022cl_private_" +
       "message\022\037.google.protobuf.MessageOptions" +
-      "\030\304\363\004 \001(\010B,\n\033com.clarifai.grpc.auth.utilP" +
-      "\001Z\004util\242\002\004CAIPb\006proto3"
+      "\030\304\363\004 \001(\010Be\n\033com.clarifai.grpc.auth.utilP" +
+      "\001Z=github.com/Clarifai/clarifai-go-grpc/" +
+      "proto/clarifai/auth/util\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

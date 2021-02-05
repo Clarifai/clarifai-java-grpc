@@ -75,16 +75,28 @@ public interface AnnotationOrBuilder extends
   com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
 
   /**
+   * <pre>
+   * task_id is deprecated in annotation_info. Use task_id
+   * </pre>
+   *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    * @return Whether the annotationInfo field is set.
    */
   boolean hasAnnotationInfo();
   /**
+   * <pre>
+   * task_id is deprecated in annotation_info. Use task_id
+   * </pre>
+   *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    * @return The annotationInfo.
    */
   com.google.protobuf.Struct getAnnotationInfo();
   /**
+   * <pre>
+   * task_id is deprecated in annotation_info. Use task_id
+   * </pre>
+   *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    */
   com.google.protobuf.StructOrBuilder getAnnotationInfoOrBuilder();
@@ -131,26 +143,22 @@ public interface AnnotationOrBuilder extends
 
   /**
    * <pre>
-   * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+   * DEPRECATED.
    * </pre>
    *
-   * <code>string embed_model_version_id = 14;</code>
+   * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @return The embedModelVersionId.
    */
-  java.lang.String getEmbedModelVersionId();
+  @java.lang.Deprecated java.lang.String getEmbedModelVersionId();
   /**
    * <pre>
-   * The embedding model version used make this annotation available for search and training
-   * Note that an annotation always have an 'embed_model_version_id' even if it is For human
-   * produced annotations i.e. if its worker is of type 'human' or 'app_owner'.
+   * DEPRECATED.
    * </pre>
    *
-   * <code>string embed_model_version_id = 14;</code>
+   * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @return The bytes for embedModelVersionId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes();
 
   /**
@@ -299,4 +307,24 @@ public interface AnnotationOrBuilder extends
    * <code>.google.protobuf.Struct consensus_info = 18;</code>
    */
   com.google.protobuf.StructOrBuilder getConsensusInfoOrBuilder();
+
+  /**
+   * <pre>
+   * The id of the task annotation belongs to
+   * </pre>
+   *
+   * <code>string task_id = 19;</code>
+   * @return The taskId.
+   */
+  java.lang.String getTaskId();
+  /**
+   * <pre>
+   * The id of the task annotation belongs to
+   * </pre>
+   *
+   * <code>string task_id = 19;</code>
+   * @return The bytes for taskId.
+   */
+  com.google.protobuf.ByteString
+      getTaskIdBytes();
 }

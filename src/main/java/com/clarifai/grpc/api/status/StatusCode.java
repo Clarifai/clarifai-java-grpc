@@ -626,6 +626,10 @@ public enum StatusCode
    */
   DATA_DUMP_IN_PROGRESS(25153),
   /**
+   * <code>DATA_DUMP_NO_DATA = 25154;</code>
+   */
+  DATA_DUMP_NO_DATA(25154),
+  /**
    * <pre>
    * Duplicate related 252xx
    * </pre>
@@ -1388,6 +1392,26 @@ public enum StatusCode
   MAINTENANCE_FAILED(63001),
   /**
    * <pre>
+   * Generic Job status codes
+   * </pre>
+   *
+   * <code>JOB_QUEUED = 6400;</code>
+   */
+  JOB_QUEUED(6400),
+  /**
+   * <code>JOB_RUNNING = 6401;</code>
+   */
+  JOB_RUNNING(6401),
+  /**
+   * <code>JOB_COMPLETED = 6402;</code>
+   */
+  JOB_COMPLETED(6402),
+  /**
+   * <code>JOB_FAILED = 6403;</code>
+   */
+  JOB_FAILED(6403),
+  /**
+   * <pre>
    * Internal issues: 98xxx
    * </pre>
    *
@@ -2098,6 +2122,10 @@ public enum StatusCode
    * <code>DATA_DUMP_IN_PROGRESS = 25153;</code>
    */
   public static final int DATA_DUMP_IN_PROGRESS_VALUE = 25153;
+  /**
+   * <code>DATA_DUMP_NO_DATA = 25154;</code>
+   */
+  public static final int DATA_DUMP_NO_DATA_VALUE = 25154;
   /**
    * <pre>
    * Duplicate related 252xx
@@ -2861,6 +2889,26 @@ public enum StatusCode
   public static final int MAINTENANCE_FAILED_VALUE = 63001;
   /**
    * <pre>
+   * Generic Job status codes
+   * </pre>
+   *
+   * <code>JOB_QUEUED = 6400;</code>
+   */
+  public static final int JOB_QUEUED_VALUE = 6400;
+  /**
+   * <code>JOB_RUNNING = 6401;</code>
+   */
+  public static final int JOB_RUNNING_VALUE = 6401;
+  /**
+   * <code>JOB_COMPLETED = 6402;</code>
+   */
+  public static final int JOB_COMPLETED_VALUE = 6402;
+  /**
+   * <code>JOB_FAILED = 6403;</code>
+   */
+  public static final int JOB_FAILED_VALUE = 6403;
+  /**
+   * <pre>
    * Internal issues: 98xxx
    * </pre>
    *
@@ -3080,6 +3128,7 @@ public enum StatusCode
       case 25151: return DATA_DUMP_PENDING;
       case 25152: return DATA_DUMP_FAILED;
       case 25153: return DATA_DUMP_IN_PROGRESS;
+      case 25154: return DATA_DUMP_NO_DATA;
       case 25200: return APP_DUPLICATION_SUCCESS;
       case 25201: return APP_DUPLICATION_FAILED;
       case 25202: return APP_DUPLICATION_PENDING;
@@ -3236,6 +3285,10 @@ public enum StatusCode
       case 62002: return FEATUREFLAG_BLOCKED;
       case 63000: return MAINTENANCE_SUCCESS;
       case 63001: return MAINTENANCE_FAILED;
+      case 6400: return JOB_QUEUED;
+      case 6401: return JOB_RUNNING;
+      case 6402: return JOB_COMPLETED;
+      case 6403: return JOB_FAILED;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;

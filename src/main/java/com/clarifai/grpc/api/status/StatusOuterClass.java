@@ -43,9 +43,10 @@ public final class StatusOuterClass {
       "nt_completed\030\005 \001(\r\022\026\n\016time_remaining\030\006 \001" +
       "(\r\022\016\n\006req_id\030\007 \001(\t\022\036\n\020internal_details\030\010" +
       " \001(\tB\004\200\234\'\001\";\n\014BaseResponse\022+\n\006status\030\001 \001" +
-      "(\0132\033.clarifai.api.status.StatusB/\n\034com.c" +
-      "larifai.grpc.api.statusP\001Z\006status\242\002\004CAIP" +
-      "b\006proto3"
+      "(\0132\033.clarifai.api.status.StatusBg\n\034com.c" +
+      "larifai.grpc.api.statusP\001Z>github.com/Cl" +
+      "arifai/clarifai-go-grpc/proto/clarifai/a" +
+      "pi/status\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

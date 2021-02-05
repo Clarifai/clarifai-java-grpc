@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     testSet_ = java.util.Collections.emptyList();
     metricsByArea_ = java.util.Collections.emptyList();
     metricsByClass_ = java.util.Collections.emptyList();
+    trackerMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -161,6 +162,15 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              trackerMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.TrackerMetrics>();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            trackerMetrics_.add(
+                input.readMessage(com.clarifai.grpc.api.TrackerMetrics.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -187,6 +197,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         metricsByClass_ = java.util.Collections.unmodifiableList(metricsByClass_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        trackerMetrics_ = java.util.Collections.unmodifiableList(trackerMetrics_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -496,6 +509,41 @@ private static final long serialVersionUID = 0L;
     return metricsByClass_.get(index);
   }
 
+  public static final int TRACKER_METRICS_FIELD_NUMBER = 11;
+  private java.util.List<com.clarifai.grpc.api.TrackerMetrics> trackerMetrics_;
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  public java.util.List<com.clarifai.grpc.api.TrackerMetrics> getTrackerMetricsList() {
+    return trackerMetrics_;
+  }
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  public java.util.List<? extends com.clarifai.grpc.api.TrackerMetricsOrBuilder> 
+      getTrackerMetricsOrBuilderList() {
+    return trackerMetrics_;
+  }
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  public int getTrackerMetricsCount() {
+    return trackerMetrics_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  public com.clarifai.grpc.api.TrackerMetrics getTrackerMetrics(int index) {
+    return trackerMetrics_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+   */
+  public com.clarifai.grpc.api.TrackerMetricsOrBuilder getTrackerMetricsOrBuilder(
+      int index) {
+    return trackerMetrics_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -539,6 +587,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
+    }
+    for (int i = 0; i < trackerMetrics_.size(); i++) {
+      output.writeMessage(11, trackerMetrics_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -587,6 +638,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
+    }
+    for (int i = 0; i < trackerMetrics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, trackerMetrics_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -638,6 +693,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMetricsByAreaList())) return false;
     if (!getMetricsByClassList()
         .equals(other.getMetricsByClassList())) return false;
+    if (!getTrackerMetricsList()
+        .equals(other.getTrackerMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -686,6 +743,10 @@ private static final long serialVersionUID = 0L;
     if (getMetricsByClassCount() > 0) {
       hash = (37 * hash) + METRICS_BY_CLASS_FIELD_NUMBER;
       hash = (53 * hash) + getMetricsByClassList().hashCode();
+    }
+    if (getTrackerMetricsCount() > 0) {
+      hash = (37 * hash) + TRACKER_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getTrackerMetricsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -819,6 +880,7 @@ private static final long serialVersionUID = 0L;
         getTestSetFieldBuilder();
         getMetricsByAreaFieldBuilder();
         getMetricsByClassFieldBuilder();
+        getTrackerMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -879,6 +941,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         metricsByClassBuilder_.clear();
+      }
+      if (trackerMetricsBuilder_ == null) {
+        trackerMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        trackerMetricsBuilder_.clear();
       }
       return this;
     }
@@ -968,6 +1036,15 @@ private static final long serialVersionUID = 0L;
         result.metricsByClass_ = metricsByClass_;
       } else {
         result.metricsByClass_ = metricsByClassBuilder_.build();
+      }
+      if (trackerMetricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          trackerMetrics_ = java.util.Collections.unmodifiableList(trackerMetrics_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.trackerMetrics_ = trackerMetrics_;
+      } else {
+        result.trackerMetrics_ = trackerMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1137,6 +1214,32 @@ private static final long serialVersionUID = 0L;
                  getMetricsByClassFieldBuilder() : null;
           } else {
             metricsByClassBuilder_.addAllMessages(other.metricsByClass_);
+          }
+        }
+      }
+      if (trackerMetricsBuilder_ == null) {
+        if (!other.trackerMetrics_.isEmpty()) {
+          if (trackerMetrics_.isEmpty()) {
+            trackerMetrics_ = other.trackerMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureTrackerMetricsIsMutable();
+            trackerMetrics_.addAll(other.trackerMetrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.trackerMetrics_.isEmpty()) {
+          if (trackerMetricsBuilder_.isEmpty()) {
+            trackerMetricsBuilder_.dispose();
+            trackerMetricsBuilder_ = null;
+            trackerMetrics_ = other.trackerMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            trackerMetricsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTrackerMetricsFieldBuilder() : null;
+          } else {
+            trackerMetricsBuilder_.addAllMessages(other.trackerMetrics_);
           }
         }
       }
@@ -2799,6 +2902,246 @@ private static final long serialVersionUID = 0L;
         metricsByClass_ = null;
       }
       return metricsByClassBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.TrackerMetrics> trackerMetrics_ =
+      java.util.Collections.emptyList();
+    private void ensureTrackerMetricsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        trackerMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.TrackerMetrics>(trackerMetrics_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.TrackerMetrics, com.clarifai.grpc.api.TrackerMetrics.Builder, com.clarifai.grpc.api.TrackerMetricsOrBuilder> trackerMetricsBuilder_;
+
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.TrackerMetrics> getTrackerMetricsList() {
+      if (trackerMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(trackerMetrics_);
+      } else {
+        return trackerMetricsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public int getTrackerMetricsCount() {
+      if (trackerMetricsBuilder_ == null) {
+        return trackerMetrics_.size();
+      } else {
+        return trackerMetricsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public com.clarifai.grpc.api.TrackerMetrics getTrackerMetrics(int index) {
+      if (trackerMetricsBuilder_ == null) {
+        return trackerMetrics_.get(index);
+      } else {
+        return trackerMetricsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder setTrackerMetrics(
+        int index, com.clarifai.grpc.api.TrackerMetrics value) {
+      if (trackerMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.set(index, value);
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder setTrackerMetrics(
+        int index, com.clarifai.grpc.api.TrackerMetrics.Builder builderForValue) {
+      if (trackerMetricsBuilder_ == null) {
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder addTrackerMetrics(com.clarifai.grpc.api.TrackerMetrics value) {
+      if (trackerMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.add(value);
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder addTrackerMetrics(
+        int index, com.clarifai.grpc.api.TrackerMetrics value) {
+      if (trackerMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.add(index, value);
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder addTrackerMetrics(
+        com.clarifai.grpc.api.TrackerMetrics.Builder builderForValue) {
+      if (trackerMetricsBuilder_ == null) {
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder addTrackerMetrics(
+        int index, com.clarifai.grpc.api.TrackerMetrics.Builder builderForValue) {
+      if (trackerMetricsBuilder_ == null) {
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder addAllTrackerMetrics(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.TrackerMetrics> values) {
+      if (trackerMetricsBuilder_ == null) {
+        ensureTrackerMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, trackerMetrics_);
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder clearTrackerMetrics() {
+      if (trackerMetricsBuilder_ == null) {
+        trackerMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public Builder removeTrackerMetrics(int index) {
+      if (trackerMetricsBuilder_ == null) {
+        ensureTrackerMetricsIsMutable();
+        trackerMetrics_.remove(index);
+        onChanged();
+      } else {
+        trackerMetricsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public com.clarifai.grpc.api.TrackerMetrics.Builder getTrackerMetricsBuilder(
+        int index) {
+      return getTrackerMetricsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public com.clarifai.grpc.api.TrackerMetricsOrBuilder getTrackerMetricsOrBuilder(
+        int index) {
+      if (trackerMetricsBuilder_ == null) {
+        return trackerMetrics_.get(index);  } else {
+        return trackerMetricsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.TrackerMetricsOrBuilder> 
+         getTrackerMetricsOrBuilderList() {
+      if (trackerMetricsBuilder_ != null) {
+        return trackerMetricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(trackerMetrics_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public com.clarifai.grpc.api.TrackerMetrics.Builder addTrackerMetricsBuilder() {
+      return getTrackerMetricsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.TrackerMetrics.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public com.clarifai.grpc.api.TrackerMetrics.Builder addTrackerMetricsBuilder(
+        int index) {
+      return getTrackerMetricsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.TrackerMetrics.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.TrackerMetrics.Builder> 
+         getTrackerMetricsBuilderList() {
+      return getTrackerMetricsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.TrackerMetrics, com.clarifai.grpc.api.TrackerMetrics.Builder, com.clarifai.grpc.api.TrackerMetricsOrBuilder> 
+        getTrackerMetricsFieldBuilder() {
+      if (trackerMetricsBuilder_ == null) {
+        trackerMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.TrackerMetrics, com.clarifai.grpc.api.TrackerMetrics.Builder, com.clarifai.grpc.api.TrackerMetricsOrBuilder>(
+                trackerMetrics_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        trackerMetrics_ = null;
+      }
+      return trackerMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -4,29 +4,29 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.StatValueAggType}
+ * Protobuf enum {@code clarifai.api.RoleType}
  */
-public enum StatValueAggType
+public enum RoleType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>SUM = 0;</code>
+   * <code>TEAM = 0;</code>
    */
-  SUM(0),
+  TEAM(0),
   /**
-   * <code>AVG = 1;</code>
+   * <code>ORG = 1;</code>
    */
-  AVG(1),
+  ORG(1),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>SUM = 0;</code>
+   * <code>TEAM = 0;</code>
    */
-  public static final int SUM_VALUE = 0;
+  public static final int TEAM_VALUE = 0;
   /**
-   * <code>AVG = 1;</code>
+   * <code>ORG = 1;</code>
    */
-  public static final int AVG_VALUE = 1;
+  public static final int ORG_VALUE = 1;
 
 
   public final int getNumber() {
@@ -43,7 +43,7 @@ public enum StatValueAggType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static StatValueAggType valueOf(int value) {
+  public static RoleType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -51,23 +51,23 @@ public enum StatValueAggType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static StatValueAggType forNumber(int value) {
+  public static RoleType forNumber(int value) {
     switch (value) {
-      case 0: return SUM;
-      case 1: return AVG;
+      case 0: return TEAM;
+      case 1: return ORG;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<StatValueAggType>
+  public static com.google.protobuf.Internal.EnumLiteMap<RoleType>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      StatValueAggType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<StatValueAggType>() {
-          public StatValueAggType findValueByNumber(int number) {
-            return StatValueAggType.forNumber(number);
+      RoleType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RoleType>() {
+          public RoleType findValueByNumber(int number) {
+            return RoleType.forNumber(number);
           }
         };
 
@@ -81,12 +81,12 @@ public enum StatValueAggType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(7);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(6);
   }
 
-  private static final StatValueAggType[] VALUES = values();
+  private static final RoleType[] VALUES = values();
 
-  public static StatValueAggType valueOf(
+  public static RoleType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -100,10 +100,10 @@ public enum StatValueAggType
 
   private final int value;
 
-  private StatValueAggType(int value) {
+  private RoleType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.StatValueAggType)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.RoleType)
 }
 

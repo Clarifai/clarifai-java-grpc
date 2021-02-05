@@ -26,9 +26,10 @@ public final class Types {
       "\n%proto/clarifai/auth/types/types.proto\022" +
       "\023clarifai.auth.types*`\n\010AuthType\022\t\n\005unde" +
       "f\020\000\022\n\n\006NoAuth\020\001\022\013\n\007KeyAuth\020\002\022\024\n\020SessionT" +
-      "okenAuth\020\003\022\r\n\tAdminAuth\020\004\022\013\n\007PATAuth\020\005B." +
-      "\n\034com.clarifai.grpc.auth.typesP\001Z\005types\242" +
-      "\002\004CAIPb\006proto3"
+      "okenAuth\020\003\022\r\n\tAdminAuth\020\004\022\013\n\007PATAuth\020\005Bg" +
+      "\n\034com.clarifai.grpc.auth.typesP\001Z>github" +
+      ".com/Clarifai/clarifai-go-grpc/proto/cla" +
+      "rifai/auth/types\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
