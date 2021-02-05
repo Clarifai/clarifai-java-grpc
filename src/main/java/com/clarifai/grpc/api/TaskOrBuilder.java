@@ -337,4 +337,19 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+   * @return Whether the aiAssistParams field is set.
+   */
+  boolean hasAiAssistParams();
+  /**
+   * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+   * @return The aiAssistParams.
+   */
+  com.clarifai.grpc.api.AiAssistParameters getAiAssistParams();
+  /**
+   * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+   */
+  com.clarifai.grpc.api.AiAssistParametersOrBuilder getAiAssistParamsOrBuilder();
 }

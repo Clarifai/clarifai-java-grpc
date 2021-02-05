@@ -344,7 +344,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object knowledgeGraphId_;
   /**
    * <pre>
-   * The knowledge graph id that this edge belongs to
+   * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+   * and not a specific one then this should be the empty string "".
    * </pre>
    *
    * <code>string knowledge_graph_id = 5;</code>
@@ -364,7 +365,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The knowledge graph id that this edge belongs to
+   * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+   * and not a specific one then this should be the empty string "".
    * </pre>
    *
    * <code>string knowledge_graph_id = 5;</code>
@@ -1412,7 +1414,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object knowledgeGraphId_ = "";
     /**
      * <pre>
-     * The knowledge graph id that this edge belongs to
+     * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+     * and not a specific one then this should be the empty string "".
      * </pre>
      *
      * <code>string knowledge_graph_id = 5;</code>
@@ -1432,7 +1435,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The knowledge graph id that this edge belongs to
+     * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+     * and not a specific one then this should be the empty string "".
      * </pre>
      *
      * <code>string knowledge_graph_id = 5;</code>
@@ -1453,7 +1457,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The knowledge graph id that this edge belongs to
+     * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+     * and not a specific one then this should be the empty string "".
      * </pre>
      *
      * <code>string knowledge_graph_id = 5;</code>
@@ -1472,7 +1477,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The knowledge graph id that this edge belongs to
+     * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+     * and not a specific one then this should be the empty string "".
      * </pre>
      *
      * <code>string knowledge_graph_id = 5;</code>
@@ -1486,7 +1492,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The knowledge graph id that this edge belongs to
+     * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+     * and not a specific one then this should be the empty string "".
      * </pre>
      *
      * <code>string knowledge_graph_id = 5;</code>

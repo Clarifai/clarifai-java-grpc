@@ -99,6 +99,7 @@ public interface PostAnnotationSearchMetricsRequestOrBuilder extends
   /**
    * <pre>
    * List of concepts to evaluate are expected to be in data.concepts
+   * If nil, then all app concepts are used
    * </pre>
    *
    * <code>.clarifai.api.Data data = 5;</code>
@@ -108,6 +109,7 @@ public interface PostAnnotationSearchMetricsRequestOrBuilder extends
   /**
    * <pre>
    * List of concepts to evaluate are expected to be in data.concepts
+   * If nil, then all app concepts are used
    * </pre>
    *
    * <code>.clarifai.api.Data data = 5;</code>
@@ -117,6 +119,7 @@ public interface PostAnnotationSearchMetricsRequestOrBuilder extends
   /**
    * <pre>
    * List of concepts to evaluate are expected to be in data.concepts
+   * If nil, then all app concepts are used
    * </pre>
    *
    * <code>.clarifai.api.Data data = 5;</code>

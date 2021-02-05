@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     embeddings_ = java.util.Collections.emptyList();
     regions_ = java.util.Collections.emptyList();
     frames_ = java.util.Collections.emptyList();
+    tracks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -193,6 +194,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 122: {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              tracks_ = new java.util.ArrayList<com.clarifai.grpc.api.Track>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            tracks_.add(
+                input.readMessage(com.clarifai.grpc.api.Track.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -225,6 +235,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000020) != 0)) {
         frames_ = java.util.Collections.unmodifiableList(frames_);
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        tracks_ = java.util.Collections.unmodifiableList(tracks_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -786,6 +799,61 @@ private static final long serialVersionUID = 0L;
     return getAudio();
   }
 
+  public static final int TRACKS_FIELD_NUMBER = 15;
+  private java.util.List<com.clarifai.grpc.api.Track> tracks_;
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  public java.util.List<com.clarifai.grpc.api.Track> getTracksList() {
+    return tracks_;
+  }
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  public java.util.List<? extends com.clarifai.grpc.api.TrackOrBuilder> 
+      getTracksOrBuilderList() {
+    return tracks_;
+  }
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  public int getTracksCount() {
+    return tracks_.size();
+  }
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  public com.clarifai.grpc.api.Track getTracks(int index) {
+    return tracks_.get(index);
+  }
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  public com.clarifai.grpc.api.TrackOrBuilder getTracksOrBuilder(
+      int index) {
+    return tracks_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -835,6 +903,9 @@ private static final long serialVersionUID = 0L;
     }
     if (audio_ != null) {
       output.writeMessage(14, getAudio());
+    }
+    for (int i = 0; i < tracks_.size(); i++) {
+      output.writeMessage(15, tracks_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -893,6 +964,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getAudio());
     }
+    for (int i = 0; i < tracks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, tracks_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -950,6 +1025,8 @@ private static final long serialVersionUID = 0L;
       if (!getAudio()
           .equals(other.getAudio())) return false;
     }
+    if (!getTracksList()
+        .equals(other.getTracksList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1008,6 +1085,10 @@ private static final long serialVersionUID = 0L;
     if (hasAudio()) {
       hash = (37 * hash) + AUDIO_FIELD_NUMBER;
       hash = (53 * hash) + getAudio().hashCode();
+    }
+    if (getTracksCount() > 0) {
+      hash = (37 * hash) + TRACKS_FIELD_NUMBER;
+      hash = (53 * hash) + getTracksList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1149,6 +1230,7 @@ private static final long serialVersionUID = 0L;
         getEmbeddingsFieldBuilder();
         getRegionsFieldBuilder();
         getFramesFieldBuilder();
+        getTracksFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1225,6 +1307,12 @@ private static final long serialVersionUID = 0L;
       } else {
         audio_ = null;
         audioBuilder_ = null;
+      }
+      if (tracksBuilder_ == null) {
+        tracks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        tracksBuilder_.clear();
       }
       return this;
     }
@@ -1336,6 +1424,15 @@ private static final long serialVersionUID = 0L;
         result.audio_ = audio_;
       } else {
         result.audio_ = audioBuilder_.build();
+      }
+      if (tracksBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          tracks_ = java.util.Collections.unmodifiableList(tracks_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.tracks_ = tracks_;
+      } else {
+        result.tracks_ = tracksBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1558,6 +1655,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAudio()) {
         mergeAudio(other.getAudio());
+      }
+      if (tracksBuilder_ == null) {
+        if (!other.tracks_.isEmpty()) {
+          if (tracks_.isEmpty()) {
+            tracks_ = other.tracks_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureTracksIsMutable();
+            tracks_.addAll(other.tracks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tracks_.isEmpty()) {
+          if (tracksBuilder_.isEmpty()) {
+            tracksBuilder_.dispose();
+            tracksBuilder_ = null;
+            tracks_ = other.tracks_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            tracksBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTracksFieldBuilder() : null;
+          } else {
+            tracksBuilder_.addAllMessages(other.tracks_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4398,6 +4521,318 @@ private static final long serialVersionUID = 0L;
         audio_ = null;
       }
       return audioBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Track> tracks_ =
+      java.util.Collections.emptyList();
+    private void ensureTracksIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        tracks_ = new java.util.ArrayList<com.clarifai.grpc.api.Track>(tracks_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Track, com.clarifai.grpc.api.Track.Builder, com.clarifai.grpc.api.TrackOrBuilder> tracksBuilder_;
+
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Track> getTracksList() {
+      if (tracksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tracks_);
+      } else {
+        return tracksBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public int getTracksCount() {
+      if (tracksBuilder_ == null) {
+        return tracks_.size();
+      } else {
+        return tracksBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public com.clarifai.grpc.api.Track getTracks(int index) {
+      if (tracksBuilder_ == null) {
+        return tracks_.get(index);
+      } else {
+        return tracksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder setTracks(
+        int index, com.clarifai.grpc.api.Track value) {
+      if (tracksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTracksIsMutable();
+        tracks_.set(index, value);
+        onChanged();
+      } else {
+        tracksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder setTracks(
+        int index, com.clarifai.grpc.api.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tracksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder addTracks(com.clarifai.grpc.api.Track value) {
+      if (tracksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTracksIsMutable();
+        tracks_.add(value);
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder addTracks(
+        int index, com.clarifai.grpc.api.Track value) {
+      if (tracksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTracksIsMutable();
+        tracks_.add(index, value);
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder addTracks(
+        com.clarifai.grpc.api.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder addTracks(
+        int index, com.clarifai.grpc.api.Track.Builder builderForValue) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tracksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder addAllTracks(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Track> values) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tracks_);
+        onChanged();
+      } else {
+        tracksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder clearTracks() {
+      if (tracksBuilder_ == null) {
+        tracks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        tracksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public Builder removeTracks(int index) {
+      if (tracksBuilder_ == null) {
+        ensureTracksIsMutable();
+        tracks_.remove(index);
+        onChanged();
+      } else {
+        tracksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public com.clarifai.grpc.api.Track.Builder getTracksBuilder(
+        int index) {
+      return getTracksFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public com.clarifai.grpc.api.TrackOrBuilder getTracksOrBuilder(
+        int index) {
+      if (tracksBuilder_ == null) {
+        return tracks_.get(index);  } else {
+        return tracksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.TrackOrBuilder> 
+         getTracksOrBuilderList() {
+      if (tracksBuilder_ != null) {
+        return tracksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tracks_);
+      }
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public com.clarifai.grpc.api.Track.Builder addTracksBuilder() {
+      return getTracksFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Track.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public com.clarifai.grpc.api.Track.Builder addTracksBuilder(
+        int index) {
+      return getTracksFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Track.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Track information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Track tracks = 15;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Track.Builder> 
+         getTracksBuilderList() {
+      return getTracksFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Track, com.clarifai.grpc.api.Track.Builder, com.clarifai.grpc.api.TrackOrBuilder> 
+        getTracksFieldBuilder() {
+      if (tracksBuilder_ == null) {
+        tracksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Track, com.clarifai.grpc.api.Track.Builder, com.clarifai.grpc.api.TrackOrBuilder>(
+                tracks_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        tracks_ = null;
+      }
+      return tracksBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface SingleTaskAnnotationsCountResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.SingleTaskAnnotationsCountResponse)
+public interface SingleTaskCountResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.SingleTaskCountResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -47,26 +47,26 @@ public interface SingleTaskAnnotationsCountResponseOrBuilder extends
       getTaskIdBytes();
 
   /**
-   * <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+   * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
-  java.util.List<com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser> 
+  java.util.List<com.clarifai.grpc.api.TaskStatusCountPerUser> 
       getCountsList();
   /**
-   * <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+   * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
-  com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser getCounts(int index);
+  com.clarifai.grpc.api.TaskStatusCountPerUser getCounts(int index);
   /**
-   * <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+   * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
   int getCountsCount();
   /**
-   * <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+   * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
-  java.util.List<? extends com.clarifai.grpc.api.TaskAnnotationStatusCountPerUserOrBuilder> 
+  java.util.List<? extends com.clarifai.grpc.api.TaskStatusCountPerUserOrBuilder> 
       getCountsOrBuilderList();
   /**
-   * <code>repeated .clarifai.api.TaskAnnotationStatusCountPerUser counts = 4;</code>
+   * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
-  com.clarifai.grpc.api.TaskAnnotationStatusCountPerUserOrBuilder getCountsOrBuilder(
+  com.clarifai.grpc.api.TaskStatusCountPerUserOrBuilder getCountsOrBuilder(
       int index);
 }

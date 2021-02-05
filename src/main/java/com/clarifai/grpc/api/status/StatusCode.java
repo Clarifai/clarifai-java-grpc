@@ -926,6 +926,10 @@ public enum StatusCode
    */
   RPC_CANCELED(40035),
   /**
+   * <code>RPC_UNKNOWN_METHOD = 40036;</code>
+   */
+  RPC_UNKNOWN_METHOD(40036),
+  /**
    * <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
    */
   CLUSTER_INTERNAL_FAILURE(43040),
@@ -1050,29 +1054,41 @@ public enum StatusCode
    */
   SAVED_SEARCH_MODIFY_FAILED(43005),
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION = 43100;</code>
+   * <code>EVALUATION_QUEUED = 43100;</code>
    */
-  ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION(43100),
+  EVALUATION_QUEUED(43100),
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_EVALUATING = 43101;</code>
+   * <code>EVALUATION_IN_PROGRESS = 43101;</code>
    */
-  ANNOTATION_SEARCH_METRICS_EVALUATING(43101),
+  EVALUATION_IN_PROGRESS(43101),
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_EVALUATED = 43102;</code>
+   * <code>EVALUATION_SUCCESS = 43102;</code>
    */
-  ANNOTATION_SEARCH_METRICS_EVALUATED(43102),
+  EVALUATION_SUCCESS(43102),
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA = 43103;</code>
+   * <code>EVALUATION_FAILED_TO_RETRIEVE_DATA = 43103;</code>
    */
-  ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA(43103),
+  EVALUATION_FAILED_TO_RETRIEVE_DATA(43103),
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT = 43104;</code>
+   * <code>EVALUATION_INVALID_ARGUMENT = 43104;</code>
    */
-  ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT(43104),
+  EVALUATION_INVALID_ARGUMENT(43104),
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_FAILED = 43105;</code>
+   * <code>EVALUATION_FAILED = 43105;</code>
    */
-  ANNOTATION_SEARCH_METRICS_FAILED(43105),
+  EVALUATION_FAILED(43105),
+  /**
+   * <code>EVALUATION_PENDING = 43106;</code>
+   */
+  EVALUATION_PENDING(43106),
+  /**
+   * <code>EVALUATION_TIMED_OUT = 43107;</code>
+   */
+  EVALUATION_TIMED_OUT(43107),
+  /**
+   * <code>EVALUATION_UNEXPECTED_ERROR = 43108;</code>
+   */
+  EVALUATION_UNEXPECTED_ERROR(43108),
   /**
    * <pre>
    * Stripe 44xxx
@@ -1097,6 +1113,10 @@ public enum StatusCode
    * <code>REDIS_STREAM_ERR = 45003;</code>
    */
   REDIS_STREAM_ERR(45003),
+  /**
+   * <code>REDIS_NO_CONSUMERS = 45004;</code>
+   */
+  REDIS_NO_CONSUMERS(45004),
   /**
    * <pre>
    * Sift Science 46xxx
@@ -2379,6 +2399,10 @@ public enum StatusCode
    */
   public static final int RPC_CANCELED_VALUE = 40035;
   /**
+   * <code>RPC_UNKNOWN_METHOD = 40036;</code>
+   */
+  public static final int RPC_UNKNOWN_METHOD_VALUE = 40036;
+  /**
    * <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
    */
   public static final int CLUSTER_INTERNAL_FAILURE_VALUE = 43040;
@@ -2503,29 +2527,41 @@ public enum StatusCode
    */
   public static final int SAVED_SEARCH_MODIFY_FAILED_VALUE = 43005;
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION = 43100;</code>
+   * <code>EVALUATION_QUEUED = 43100;</code>
    */
-  public static final int ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION_VALUE = 43100;
+  public static final int EVALUATION_QUEUED_VALUE = 43100;
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_EVALUATING = 43101;</code>
+   * <code>EVALUATION_IN_PROGRESS = 43101;</code>
    */
-  public static final int ANNOTATION_SEARCH_METRICS_EVALUATING_VALUE = 43101;
+  public static final int EVALUATION_IN_PROGRESS_VALUE = 43101;
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_EVALUATED = 43102;</code>
+   * <code>EVALUATION_SUCCESS = 43102;</code>
    */
-  public static final int ANNOTATION_SEARCH_METRICS_EVALUATED_VALUE = 43102;
+  public static final int EVALUATION_SUCCESS_VALUE = 43102;
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA = 43103;</code>
+   * <code>EVALUATION_FAILED_TO_RETRIEVE_DATA = 43103;</code>
    */
-  public static final int ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA_VALUE = 43103;
+  public static final int EVALUATION_FAILED_TO_RETRIEVE_DATA_VALUE = 43103;
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT = 43104;</code>
+   * <code>EVALUATION_INVALID_ARGUMENT = 43104;</code>
    */
-  public static final int ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT_VALUE = 43104;
+  public static final int EVALUATION_INVALID_ARGUMENT_VALUE = 43104;
   /**
-   * <code>ANNOTATION_SEARCH_METRICS_FAILED = 43105;</code>
+   * <code>EVALUATION_FAILED = 43105;</code>
    */
-  public static final int ANNOTATION_SEARCH_METRICS_FAILED_VALUE = 43105;
+  public static final int EVALUATION_FAILED_VALUE = 43105;
+  /**
+   * <code>EVALUATION_PENDING = 43106;</code>
+   */
+  public static final int EVALUATION_PENDING_VALUE = 43106;
+  /**
+   * <code>EVALUATION_TIMED_OUT = 43107;</code>
+   */
+  public static final int EVALUATION_TIMED_OUT_VALUE = 43107;
+  /**
+   * <code>EVALUATION_UNEXPECTED_ERROR = 43108;</code>
+   */
+  public static final int EVALUATION_UNEXPECTED_ERROR_VALUE = 43108;
   /**
    * <pre>
    * Stripe 44xxx
@@ -2550,6 +2586,10 @@ public enum StatusCode
    * <code>REDIS_STREAM_ERR = 45003;</code>
    */
   public static final int REDIS_STREAM_ERR_VALUE = 45003;
+  /**
+   * <code>REDIS_NO_CONSUMERS = 45004;</code>
+   */
+  public static final int REDIS_NO_CONSUMERS_VALUE = 45004;
   /**
    * <pre>
    * Sift Science 46xxx
@@ -3108,6 +3148,7 @@ public enum StatusCode
       case 40032: return RPC_REQUEST_TIMEOUT;
       case 40033: return RPC_MAX_MESSAGE_SIZE_EXCEEDED;
       case 40035: return RPC_CANCELED;
+      case 40036: return RPC_UNKNOWN_METHOD;
       case 43040: return CLUSTER_INTERNAL_FAILURE;
       case 40034: return EXTERNAL_CONNECTION_ERROR;
       case 41000: return QUEUE_CONN_ERROR;
@@ -3134,16 +3175,20 @@ public enum StatusCode
       case 43003: return SEARCH_PREDICTION_FAILURE;
       case 43004: return SEARCH_BY_NOT_FULLY_INDEXED_INPUT;
       case 43005: return SAVED_SEARCH_MODIFY_FAILED;
-      case 43100: return ANNOTATION_SEARCH_METRICS_QUEUED_FOR_EVALUATION;
-      case 43101: return ANNOTATION_SEARCH_METRICS_EVALUATING;
-      case 43102: return ANNOTATION_SEARCH_METRICS_EVALUATED;
-      case 43103: return ANNOTATION_SEARCH_METRICS_FAILED_TO_RETRIEVE_DATA;
-      case 43104: return ANNOTATION_SEARCH_METRICS_INVALID_ARGUMENT;
-      case 43105: return ANNOTATION_SEARCH_METRICS_FAILED;
+      case 43100: return EVALUATION_QUEUED;
+      case 43101: return EVALUATION_IN_PROGRESS;
+      case 43102: return EVALUATION_SUCCESS;
+      case 43103: return EVALUATION_FAILED_TO_RETRIEVE_DATA;
+      case 43104: return EVALUATION_INVALID_ARGUMENT;
+      case 43105: return EVALUATION_FAILED;
+      case 43106: return EVALUATION_PENDING;
+      case 43107: return EVALUATION_TIMED_OUT;
+      case 43108: return EVALUATION_UNEXPECTED_ERROR;
       case 44001: return STRIPE_EVENT_ERROR;
       case 45001: return CACHE_MISS;
       case 45002: return REDIS_SCRIPT_EXITED_WITH_FAILURE;
       case 45003: return REDIS_STREAM_ERR;
+      case 45004: return REDIS_NO_CONSUMERS;
       case 46001: return SIGNUP_EVENT_ERROR;
       case 46002: return SIGNUP_FLAGGED;
       case 46003: return FILETYPE_UNSUPPORTED;

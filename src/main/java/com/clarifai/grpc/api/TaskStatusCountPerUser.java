@@ -4,18 +4,18 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf type {@code clarifai.api.TaskAnnotationStatusCountPerUser}
+ * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
  */
-public  final class TaskAnnotationStatusCountPerUser extends
+public  final class TaskStatusCountPerUser extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.TaskAnnotationStatusCountPerUser)
-    TaskAnnotationStatusCountPerUserOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.TaskStatusCountPerUser)
+    TaskStatusCountPerUserOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use TaskAnnotationStatusCountPerUser.newBuilder() to construct.
-  private TaskAnnotationStatusCountPerUser(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TaskStatusCountPerUser.newBuilder() to construct.
+  private TaskStatusCountPerUser(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaskAnnotationStatusCountPerUser() {
+  private TaskStatusCountPerUser() {
     userId_ = "";
   }
 
@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new TaskAnnotationStatusCountPerUser();
+    return new TaskStatusCountPerUser();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private TaskAnnotationStatusCountPerUser(
+  private TaskStatusCountPerUser(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -101,15 +101,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskAnnotationStatusCountPerUser_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskStatusCountPerUser_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskAnnotationStatusCountPerUser_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskStatusCountPerUser_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.class, com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.Builder.class);
+            com.clarifai.grpc.api.TaskStatusCountPerUser.class, com.clarifai.grpc.api.TaskStatusCountPerUser.Builder.class);
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
@@ -272,10 +272,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser)) {
+    if (!(obj instanceof com.clarifai.grpc.api.TaskStatusCountPerUser)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser other = (com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser) obj;
+    com.clarifai.grpc.api.TaskStatusCountPerUser other = (com.clarifai.grpc.api.TaskStatusCountPerUser) obj;
 
     if (!getUserId()
         .equals(other.getUserId())) return false;
@@ -317,69 +317,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseDelimitedFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parseFrom(
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.TaskStatusCountPerUser prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -408,26 +408,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code clarifai.api.TaskAnnotationStatusCountPerUser}
+   * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.TaskAnnotationStatusCountPerUser)
-      com.clarifai.grpc.api.TaskAnnotationStatusCountPerUserOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.TaskStatusCountPerUser)
+      com.clarifai.grpc.api.TaskStatusCountPerUserOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskAnnotationStatusCountPerUser_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskStatusCountPerUser_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskAnnotationStatusCountPerUser_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskStatusCountPerUser_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.class, com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.Builder.class);
+              com.clarifai.grpc.api.TaskStatusCountPerUser.class, com.clarifai.grpc.api.TaskStatusCountPerUser.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.newBuilder()
+    // Construct using com.clarifai.grpc.api.TaskStatusCountPerUser.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -463,17 +463,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskAnnotationStatusCountPerUser_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskStatusCountPerUser_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.getDefaultInstance();
+    public com.clarifai.grpc.api.TaskStatusCountPerUser getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.TaskStatusCountPerUser.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser build() {
-      com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser result = buildPartial();
+    public com.clarifai.grpc.api.TaskStatusCountPerUser build() {
+      com.clarifai.grpc.api.TaskStatusCountPerUser result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -481,8 +481,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser buildPartial() {
-      com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser result = new com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser(this);
+    public com.clarifai.grpc.api.TaskStatusCountPerUser buildPartial() {
+      com.clarifai.grpc.api.TaskStatusCountPerUser result = new com.clarifai.grpc.api.TaskStatusCountPerUser(this);
       result.userId_ = userId_;
       result.pending_ = pending_;
       result.awaitingReview_ = awaitingReview_;
@@ -527,16 +527,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser) {
-        return mergeFrom((com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser)other);
+      if (other instanceof com.clarifai.grpc.api.TaskStatusCountPerUser) {
+        return mergeFrom((com.clarifai.grpc.api.TaskStatusCountPerUser)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser other) {
-      if (other == com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.TaskStatusCountPerUser other) {
+      if (other == com.clarifai.grpc.api.TaskStatusCountPerUser.getDefaultInstance()) return this;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
@@ -571,11 +571,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser parsedMessage = null;
+      com.clarifai.grpc.api.TaskStatusCountPerUser parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.TaskStatusCountPerUser) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -823,41 +823,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.TaskAnnotationStatusCountPerUser)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.TaskStatusCountPerUser)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.TaskAnnotationStatusCountPerUser)
-  private static final com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.TaskStatusCountPerUser)
+  private static final com.clarifai.grpc.api.TaskStatusCountPerUser DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.TaskStatusCountPerUser();
   }
 
-  public static com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser getDefaultInstance() {
+  public static com.clarifai.grpc.api.TaskStatusCountPerUser getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaskAnnotationStatusCountPerUser>
-      PARSER = new com.google.protobuf.AbstractParser<TaskAnnotationStatusCountPerUser>() {
+  private static final com.google.protobuf.Parser<TaskStatusCountPerUser>
+      PARSER = new com.google.protobuf.AbstractParser<TaskStatusCountPerUser>() {
     @java.lang.Override
-    public TaskAnnotationStatusCountPerUser parsePartialFrom(
+    public TaskStatusCountPerUser parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TaskAnnotationStatusCountPerUser(input, extensionRegistry);
+      return new TaskStatusCountPerUser(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaskAnnotationStatusCountPerUser> parser() {
+  public static com.google.protobuf.Parser<TaskStatusCountPerUser> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaskAnnotationStatusCountPerUser> getParserForType() {
+  public com.google.protobuf.Parser<TaskStatusCountPerUser> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.TaskAnnotationStatusCountPerUser getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.TaskStatusCountPerUser getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

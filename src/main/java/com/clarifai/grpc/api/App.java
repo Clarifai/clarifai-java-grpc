@@ -311,6 +311,11 @@ private static final long serialVersionUID = 0L;
   public static final int USER_ID_FIELD_NUMBER = 5;
   private volatile java.lang.Object userId_;
   /**
+   * <pre>
+   *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+   *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+   * </pre>
+   *
    * <code>string user_id = 5;</code>
    * @return The userId.
    */
@@ -327,6 +332,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+   *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+   * </pre>
+   *
    * <code>string user_id = 5;</code>
    * @return The bytes for userId.
    */
@@ -1294,6 +1304,11 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object userId_ = "";
     /**
+     * <pre>
+     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * </pre>
+     *
      * <code>string user_id = 5;</code>
      * @return The userId.
      */
@@ -1310,6 +1325,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * </pre>
+     *
      * <code>string user_id = 5;</code>
      * @return The bytes for userId.
      */
@@ -1327,6 +1347,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * </pre>
+     *
      * <code>string user_id = 5;</code>
      * @param value The userId to set.
      * @return This builder for chaining.
@@ -1342,6 +1367,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * </pre>
+     *
      * <code>string user_id = 5;</code>
      * @return This builder for chaining.
      */
@@ -1352,6 +1382,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *why is user_id present here when this message type is used in PostApps but completely ignored there? PostApp already specifies the userid in path but doesn't even actually use neither of userids, it instead used the id from auth context.
+     *This creates a lot of ambiguity, should always have different message types for Post/Get endpoints so that the minimum interface for each op can be described
+     * </pre>
+     *
      * <code>string user_id = 5;</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.

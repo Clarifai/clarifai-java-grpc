@@ -72,6 +72,19 @@ private static final long serialVersionUID = 0L;
             allowDuplicateUrl_ = input.readBool();
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.HostedURL.Builder subBuilder = null;
+            if (hosted_ != null) {
+              subBuilder = hosted_.toBuilder();
+            }
+            hosted_ = input.readMessage(com.clarifai.grpc.api.HostedURL.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(hosted_);
+              hosted_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -183,6 +196,44 @@ private static final long serialVersionUID = 0L;
     return allowDuplicateUrl_;
   }
 
+  public static final int HOSTED_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.HostedURL hosted_;
+  /**
+   * <pre>
+   * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+   * only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 5;</code>
+   * @return Whether the hosted field is set.
+   */
+  public boolean hasHosted() {
+    return hosted_ != null;
+  }
+  /**
+   * <pre>
+   * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+   * only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 5;</code>
+   * @return The hosted.
+   */
+  public com.clarifai.grpc.api.HostedURL getHosted() {
+    return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
+  }
+  /**
+   * <pre>
+   * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+   * only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 5;</code>
+   */
+  public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
+    return getHosted();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -206,6 +257,9 @@ private static final long serialVersionUID = 0L;
     if (allowDuplicateUrl_ != false) {
       output.writeBool(4, allowDuplicateUrl_);
     }
+    if (hosted_ != null) {
+      output.writeMessage(5, getHosted());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -225,6 +279,10 @@ private static final long serialVersionUID = 0L;
     if (allowDuplicateUrl_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, allowDuplicateUrl_);
+    }
+    if (hosted_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getHosted());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -247,6 +305,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getBase64())) return false;
     if (getAllowDuplicateUrl()
         != other.getAllowDuplicateUrl()) return false;
+    if (hasHosted() != other.hasHosted()) return false;
+    if (hasHosted()) {
+      if (!getHosted()
+          .equals(other.getHosted())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -265,6 +328,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ALLOW_DUPLICATE_URL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAllowDuplicateUrl());
+    if (hasHosted()) {
+      hash = (37 * hash) + HOSTED_FIELD_NUMBER;
+      hash = (53 * hash) + getHosted().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -410,6 +477,12 @@ private static final long serialVersionUID = 0L;
 
       allowDuplicateUrl_ = false;
 
+      if (hostedBuilder_ == null) {
+        hosted_ = null;
+      } else {
+        hosted_ = null;
+        hostedBuilder_ = null;
+      }
       return this;
     }
 
@@ -439,6 +512,11 @@ private static final long serialVersionUID = 0L;
       result.url_ = url_;
       result.base64_ = base64_;
       result.allowDuplicateUrl_ = allowDuplicateUrl_;
+      if (hostedBuilder_ == null) {
+        result.hosted_ = hosted_;
+      } else {
+        result.hosted_ = hostedBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -496,6 +574,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getAllowDuplicateUrl() != false) {
         setAllowDuplicateUrl(other.getAllowDuplicateUrl());
+      }
+      if (other.hasHosted()) {
+        mergeHosted(other.getHosted());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -727,6 +808,170 @@ private static final long serialVersionUID = 0L;
       allowDuplicateUrl_ = false;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.HostedURL hosted_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder> hostedBuilder_;
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     * @return Whether the hosted field is set.
+     */
+    public boolean hasHosted() {
+      return hostedBuilder_ != null || hosted_ != null;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     * @return The hosted.
+     */
+    public com.clarifai.grpc.api.HostedURL getHosted() {
+      if (hostedBuilder_ == null) {
+        return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
+      } else {
+        return hostedBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    public Builder setHosted(com.clarifai.grpc.api.HostedURL value) {
+      if (hostedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hosted_ = value;
+        onChanged();
+      } else {
+        hostedBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    public Builder setHosted(
+        com.clarifai.grpc.api.HostedURL.Builder builderForValue) {
+      if (hostedBuilder_ == null) {
+        hosted_ = builderForValue.build();
+        onChanged();
+      } else {
+        hostedBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    public Builder mergeHosted(com.clarifai.grpc.api.HostedURL value) {
+      if (hostedBuilder_ == null) {
+        if (hosted_ != null) {
+          hosted_ =
+            com.clarifai.grpc.api.HostedURL.newBuilder(hosted_).mergeFrom(value).buildPartial();
+        } else {
+          hosted_ = value;
+        }
+        onChanged();
+      } else {
+        hostedBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    public Builder clearHosted() {
+      if (hostedBuilder_ == null) {
+        hosted_ = null;
+        onChanged();
+      } else {
+        hosted_ = null;
+        hostedBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    public com.clarifai.grpc.api.HostedURL.Builder getHostedBuilder() {
+      
+      onChanged();
+      return getHostedFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
+      if (hostedBuilder_ != null) {
+        return hostedBuilder_.getMessageOrBuilder();
+      } else {
+        return hosted_ == null ?
+            com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
+      }
+    }
+    /**
+     * <pre>
+     * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+     * only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder> 
+        getHostedFieldBuilder() {
+      if (hostedBuilder_ == null) {
+        hostedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder>(
+                getHosted(),
+                getParentForChildren(),
+                isClean());
+        hosted_ = null;
+      }
+      return hostedBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

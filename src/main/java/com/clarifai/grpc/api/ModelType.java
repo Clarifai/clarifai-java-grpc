@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct expectedPretrainedInputFields_;
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -657,7 +657,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct expectedPretrainedOutputFields_;
   /**
    * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -703,7 +703,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2655,7 +2655,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> expectedPretrainedInputFieldsBuilder_;
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2666,7 +2666,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2681,7 +2681,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2701,7 +2701,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2719,7 +2719,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2741,7 +2741,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2759,7 +2759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2771,7 +2771,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2786,7 +2786,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -2810,7 +2810,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> expectedPretrainedOutputFieldsBuilder_;
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2821,7 +2821,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2836,7 +2836,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2856,7 +2856,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2874,7 +2874,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2896,7 +2896,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2914,7 +2914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2926,7 +2926,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -2941,7 +2941,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
      * </pre>
      *
      * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>

@@ -173,4 +173,24 @@ public interface PostModelVersionsRequestOrBuilder extends
    * @return The evaluateAfterTraining.
    */
   boolean getEvaluateAfterTraining();
+
+  /**
+   * <pre>
+   * Description about this training run
+   * </pre>
+   *
+   * <code>string description = 8;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Description about this training run
+   * </pre>
+   *
+   * <code>string description = 8;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
 }

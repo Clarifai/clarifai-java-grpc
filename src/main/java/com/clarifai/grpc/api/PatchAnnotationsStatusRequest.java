@@ -4,31 +4,29 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * Request to get tasks annotations count per user per status
- * </pre>
- *
- * Protobuf type {@code clarifai.api.GetTaskAnnotationsCountRequest}
+ * Protobuf type {@code clarifai.api.PatchAnnotationsStatusRequest}
  */
-public  final class GetTaskAnnotationsCountRequest extends
+public  final class PatchAnnotationsStatusRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetTaskAnnotationsCountRequest)
-    GetTaskAnnotationsCountRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PatchAnnotationsStatusRequest)
+    PatchAnnotationsStatusRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetTaskAnnotationsCountRequest.newBuilder() to construct.
-  private GetTaskAnnotationsCountRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PatchAnnotationsStatusRequest.newBuilder() to construct.
+  private PatchAnnotationsStatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetTaskAnnotationsCountRequest() {
-    taskId_ = "";
+  private PatchAnnotationsStatusRequest() {
+    statusCode_ = 0;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    taskId_ = "";
+    action_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetTaskAnnotationsCountRequest();
+    return new PatchAnnotationsStatusRequest();
   }
 
   @java.lang.Override
@@ -36,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetTaskAnnotationsCountRequest(
+  private PatchAnnotationsStatusRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -68,10 +66,10 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16: {
+            int rawValue = input.readEnum();
 
-            taskId_ = s;
+            statusCode_ = rawValue;
             break;
           }
           case 26: {
@@ -81,6 +79,18 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             userIds_.add(s);
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskId_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            action_ = s;
             break;
           }
           default: {
@@ -107,15 +117,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskAnnotationsCountRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAnnotationsStatusRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskAnnotationsCountRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAnnotationsStatusRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.class, com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.Builder.class);
+            com.clarifai.grpc.api.PatchAnnotationsStatusRequest.class, com.clarifai.grpc.api.PatchAnnotationsStatusRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -141,14 +151,72 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int TASK_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object taskId_;
+  public static final int STATUS_CODE_FIELD_NUMBER = 2;
+  private int statusCode_;
   /**
    * <pre>
-   * task_id for which count per user per status is needed
+   * Annotation Status code
    * </pre>
    *
-   * <code>string task_id = 2;</code>
+   * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+   * @return The enum numeric value on the wire for statusCode.
+   */
+  public int getStatusCodeValue() {
+    return statusCode_;
+  }
+  /**
+   * <pre>
+   * Annotation Status code
+   * </pre>
+   *
+   * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+   * @return The statusCode.
+   */
+  public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
+    return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
+  }
+
+  public static final int USER_IDS_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList userIds_;
+  /**
+   * <code>repeated string user_ids = 3;</code>
+   * @return A list containing the userIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getUserIdsList() {
+    return userIds_;
+  }
+  /**
+   * <code>repeated string user_ids = 3;</code>
+   * @return The count of userIds.
+   */
+  public int getUserIdsCount() {
+    return userIds_.size();
+  }
+  /**
+   * <code>repeated string user_ids = 3;</code>
+   * @param index The index of the element to return.
+   * @return The userIds at the given index.
+   */
+  public java.lang.String getUserIds(int index) {
+    return userIds_.get(index);
+  }
+  /**
+   * <code>repeated string user_ids = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the userIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getUserIdsBytes(int index) {
+    return userIds_.getByteString(index);
+  }
+
+  public static final int TASK_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object taskId_;
+  /**
+   * <code>string task_id = 4;</code>
    * @return The taskId.
    */
   public java.lang.String getTaskId() {
@@ -164,11 +232,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * task_id for which count per user per status is needed
-   * </pre>
-   *
-   * <code>string task_id = 2;</code>
+   * <code>string task_id = 4;</code>
    * @return The bytes for taskId.
    */
   public com.google.protobuf.ByteString
@@ -185,55 +249,48 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_IDS_FIELD_NUMBER = 3;
-  private com.google.protobuf.LazyStringList userIds_;
+  public static final int ACTION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object action_;
   /**
    * <pre>
-   * for given task_id, user_ids to filter on
+   * 'overwrite' is supported
    * </pre>
    *
-   * <code>repeated string user_ids = 3;</code>
-   * @return A list containing the userIds.
+   * <code>string action = 5;</code>
+   * @return The action.
    */
-  public com.google.protobuf.ProtocolStringList
-      getUserIdsList() {
-    return userIds_;
+  public java.lang.String getAction() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      action_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * for given task_id, user_ids to filter on
+   * 'overwrite' is supported
    * </pre>
    *
-   * <code>repeated string user_ids = 3;</code>
-   * @return The count of userIds.
-   */
-  public int getUserIdsCount() {
-    return userIds_.size();
-  }
-  /**
-   * <pre>
-   * for given task_id, user_ids to filter on
-   * </pre>
-   *
-   * <code>repeated string user_ids = 3;</code>
-   * @param index The index of the element to return.
-   * @return The userIds at the given index.
-   */
-  public java.lang.String getUserIds(int index) {
-    return userIds_.get(index);
-  }
-  /**
-   * <pre>
-   * for given task_id, user_ids to filter on
-   * </pre>
-   *
-   * <code>repeated string user_ids = 3;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the userIds at the given index.
+   * <code>string action = 5;</code>
+   * @return The bytes for action.
    */
   public com.google.protobuf.ByteString
-      getUserIdsBytes(int index) {
-    return userIds_.getByteString(index);
+      getActionBytes() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      action_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -253,11 +310,17 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getTaskIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskId_);
+    if (statusCode_ != com.clarifai.grpc.api.status.StatusCode.ZERO.getNumber()) {
+      output.writeEnum(2, statusCode_);
     }
     for (int i = 0; i < userIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userIds_.getRaw(i));
+    }
+    if (!getTaskIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskId_);
+    }
+    if (!getActionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, action_);
     }
     unknownFields.writeTo(output);
   }
@@ -272,8 +335,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getTaskIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskId_);
+    if (statusCode_ != com.clarifai.grpc.api.status.StatusCode.ZERO.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, statusCode_);
     }
     {
       int dataSize = 0;
@@ -282,6 +346,12 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getUserIdsList().size();
+    }
+    if (!getTaskIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskId_);
+    }
+    if (!getActionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, action_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -293,20 +363,23 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetTaskAnnotationsCountRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PatchAnnotationsStatusRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetTaskAnnotationsCountRequest other = (com.clarifai.grpc.api.GetTaskAnnotationsCountRequest) obj;
+    com.clarifai.grpc.api.PatchAnnotationsStatusRequest other = (com.clarifai.grpc.api.PatchAnnotationsStatusRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getTaskId()
-        .equals(other.getTaskId())) return false;
+    if (statusCode_ != other.statusCode_) return false;
     if (!getUserIdsList()
         .equals(other.getUserIdsList())) return false;
+    if (!getTaskId()
+        .equals(other.getTaskId())) return false;
+    if (!getAction()
+        .equals(other.getAction())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -322,80 +395,84 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskId().hashCode();
+    hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + statusCode_;
     if (getUserIdsCount() > 0) {
       hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdsList().hashCode();
     }
+    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskId().hashCode();
+    hash = (37 * hash) + ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + getAction().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -408,7 +485,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PatchAnnotationsStatusRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -424,30 +501,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Request to get tasks annotations count per user per status
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.GetTaskAnnotationsCountRequest}
+   * Protobuf type {@code clarifai.api.PatchAnnotationsStatusRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetTaskAnnotationsCountRequest)
-      com.clarifai.grpc.api.GetTaskAnnotationsCountRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PatchAnnotationsStatusRequest)
+      com.clarifai.grpc.api.PatchAnnotationsStatusRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskAnnotationsCountRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAnnotationsStatusRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskAnnotationsCountRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAnnotationsStatusRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.class, com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.Builder.class);
+              com.clarifai.grpc.api.PatchAnnotationsStatusRequest.class, com.clarifai.grpc.api.PatchAnnotationsStatusRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PatchAnnotationsStatusRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -471,27 +544,31 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      taskId_ = "";
+      statusCode_ = 0;
 
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      taskId_ = "";
+
+      action_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskAnnotationsCountRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAnnotationsStatusRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetTaskAnnotationsCountRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PatchAnnotationsStatusRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PatchAnnotationsStatusRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetTaskAnnotationsCountRequest build() {
-      com.clarifai.grpc.api.GetTaskAnnotationsCountRequest result = buildPartial();
+    public com.clarifai.grpc.api.PatchAnnotationsStatusRequest build() {
+      com.clarifai.grpc.api.PatchAnnotationsStatusRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -499,20 +576,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetTaskAnnotationsCountRequest buildPartial() {
-      com.clarifai.grpc.api.GetTaskAnnotationsCountRequest result = new com.clarifai.grpc.api.GetTaskAnnotationsCountRequest(this);
+    public com.clarifai.grpc.api.PatchAnnotationsStatusRequest buildPartial() {
+      com.clarifai.grpc.api.PatchAnnotationsStatusRequest result = new com.clarifai.grpc.api.PatchAnnotationsStatusRequest(this);
       int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      result.taskId_ = taskId_;
+      result.statusCode_ = statusCode_;
       if (((bitField0_ & 0x00000001) != 0)) {
         userIds_ = userIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.userIds_ = userIds_;
+      result.taskId_ = taskId_;
+      result.action_ = action_;
       onBuilt();
       return result;
     }
@@ -551,22 +630,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetTaskAnnotationsCountRequest) {
-        return mergeFrom((com.clarifai.grpc.api.GetTaskAnnotationsCountRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PatchAnnotationsStatusRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PatchAnnotationsStatusRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest other) {
-      if (other == com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PatchAnnotationsStatusRequest other) {
+      if (other == com.clarifai.grpc.api.PatchAnnotationsStatusRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (!other.getTaskId().isEmpty()) {
-        taskId_ = other.taskId_;
-        onChanged();
+      if (other.statusCode_ != 0) {
+        setStatusCodeValue(other.getStatusCodeValue());
       }
       if (!other.userIds_.isEmpty()) {
         if (userIds_.isEmpty()) {
@@ -576,6 +654,14 @@ private static final long serialVersionUID = 0L;
           ensureUserIdsIsMutable();
           userIds_.addAll(other.userIds_);
         }
+        onChanged();
+      }
+      if (!other.getTaskId().isEmpty()) {
+        taskId_ = other.taskId_;
+        onChanged();
+      }
+      if (!other.getAction().isEmpty()) {
+        action_ = other.action_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -593,11 +679,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetTaskAnnotationsCountRequest parsedMessage = null;
+      com.clarifai.grpc.api.PatchAnnotationsStatusRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetTaskAnnotationsCountRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PatchAnnotationsStatusRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -727,98 +813,74 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.lang.Object taskId_ = "";
+    private int statusCode_ = 0;
     /**
      * <pre>
-     * task_id for which count per user per status is needed
+     * Annotation Status code
      * </pre>
      *
-     * <code>string task_id = 2;</code>
-     * @return The taskId.
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @return The enum numeric value on the wire for statusCode.
      */
-    public java.lang.String getTaskId() {
-      java.lang.Object ref = taskId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public int getStatusCodeValue() {
+      return statusCode_;
     }
     /**
      * <pre>
-     * task_id for which count per user per status is needed
+     * Annotation Status code
      * </pre>
      *
-     * <code>string task_id = 2;</code>
-     * @return The bytes for taskId.
-     */
-    public com.google.protobuf.ByteString
-        getTaskIdBytes() {
-      java.lang.Object ref = taskId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * task_id for which count per user per status is needed
-     * </pre>
-     *
-     * <code>string task_id = 2;</code>
-     * @param value The taskId to set.
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @param value The enum numeric value on the wire for statusCode to set.
      * @return This builder for chaining.
      */
-    public Builder setTaskId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskId_ = value;
+    public Builder setStatusCodeValue(int value) {
+      statusCode_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * task_id for which count per user per status is needed
+     * Annotation Status code
      * </pre>
      *
-     * <code>string task_id = 2;</code>
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @return The statusCode.
+     */
+    public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
+      return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Annotation Status code
+     * </pre>
+     *
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @param value The statusCode to set.
      * @return This builder for chaining.
      */
-    public Builder clearTaskId() {
+    public Builder setStatusCode(com.clarifai.grpc.api.status.StatusCode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
       
-      taskId_ = getDefaultInstance().getTaskId();
+      statusCode_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * task_id for which count per user per status is needed
+     * Annotation Status code
      * </pre>
      *
-     * <code>string task_id = 2;</code>
-     * @param value The bytes for taskId to set.
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder setTaskIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+    public Builder clearStatusCode() {
       
-      taskId_ = value;
+      statusCode_ = 0;
       onChanged();
       return this;
     }
@@ -831,10 +893,6 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @return A list containing the userIds.
      */
@@ -843,10 +901,6 @@ private static final long serialVersionUID = 0L;
       return userIds_.getUnmodifiableView();
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @return The count of userIds.
      */
@@ -854,10 +908,6 @@ private static final long serialVersionUID = 0L;
       return userIds_.size();
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @param index The index of the element to return.
      * @return The userIds at the given index.
@@ -866,10 +916,6 @@ private static final long serialVersionUID = 0L;
       return userIds_.get(index);
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
@@ -879,10 +925,6 @@ private static final long serialVersionUID = 0L;
       return userIds_.getByteString(index);
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @param index The index to set the value at.
      * @param value The userIds to set.
@@ -899,10 +941,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @param value The userIds to add.
      * @return This builder for chaining.
@@ -918,10 +956,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @param values The userIds to add.
      * @return This builder for chaining.
@@ -935,10 +969,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @return This builder for chaining.
      */
@@ -949,10 +979,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * for given task_id, user_ids to filter on
-     * </pre>
-     *
      * <code>repeated string user_ids = 3;</code>
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
@@ -965,6 +991,178 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureUserIdsIsMutable();
       userIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskId_ = "";
+    /**
+     * <code>string task_id = 4;</code>
+     * @return The taskId.
+     */
+    public java.lang.String getTaskId() {
+      java.lang.Object ref = taskId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string task_id = 4;</code>
+     * @return The bytes for taskId.
+     */
+    public com.google.protobuf.ByteString
+        getTaskIdBytes() {
+      java.lang.Object ref = taskId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string task_id = 4;</code>
+     * @param value The taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskId() {
+      
+      taskId_ = getDefaultInstance().getTaskId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string task_id = 4;</code>
+     * @param value The bytes for taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object action_ = "";
+    /**
+     * <pre>
+     * 'overwrite' is supported
+     * </pre>
+     *
+     * <code>string action = 5;</code>
+     * @return The action.
+     */
+    public java.lang.String getAction() {
+      java.lang.Object ref = action_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        action_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 'overwrite' is supported
+     * </pre>
+     *
+     * <code>string action = 5;</code>
+     * @return The bytes for action.
+     */
+    public com.google.protobuf.ByteString
+        getActionBytes() {
+      java.lang.Object ref = action_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        action_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 'overwrite' is supported
+     * </pre>
+     *
+     * <code>string action = 5;</code>
+     * @param value The action to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAction(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      action_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 'overwrite' is supported
+     * </pre>
+     *
+     * <code>string action = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAction() {
+      
+      action_ = getDefaultInstance().getAction();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 'overwrite' is supported
+     * </pre>
+     *
+     * <code>string action = 5;</code>
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      action_ = value;
       onChanged();
       return this;
     }
@@ -981,41 +1179,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetTaskAnnotationsCountRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PatchAnnotationsStatusRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetTaskAnnotationsCountRequest)
-  private static final com.clarifai.grpc.api.GetTaskAnnotationsCountRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PatchAnnotationsStatusRequest)
+  private static final com.clarifai.grpc.api.PatchAnnotationsStatusRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetTaskAnnotationsCountRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PatchAnnotationsStatusRequest();
   }
 
-  public static com.clarifai.grpc.api.GetTaskAnnotationsCountRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PatchAnnotationsStatusRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetTaskAnnotationsCountRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetTaskAnnotationsCountRequest>() {
+  private static final com.google.protobuf.Parser<PatchAnnotationsStatusRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PatchAnnotationsStatusRequest>() {
     @java.lang.Override
-    public GetTaskAnnotationsCountRequest parsePartialFrom(
+    public PatchAnnotationsStatusRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetTaskAnnotationsCountRequest(input, extensionRegistry);
+      return new PatchAnnotationsStatusRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetTaskAnnotationsCountRequest> parser() {
+  public static com.google.protobuf.Parser<PatchAnnotationsStatusRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetTaskAnnotationsCountRequest> getParserForType() {
+  public com.google.protobuf.Parser<PatchAnnotationsStatusRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetTaskAnnotationsCountRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PatchAnnotationsStatusRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

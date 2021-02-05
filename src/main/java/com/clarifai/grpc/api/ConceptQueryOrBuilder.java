@@ -46,4 +46,24 @@ public interface ConceptQueryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLanguageBytes();
+
+  /**
+   * <pre>
+   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * </pre>
+   *
+   * <code>string workflow_id = 3;</code>
+   * @return The workflowId.
+   */
+  java.lang.String getWorkflowId();
+  /**
+   * <pre>
+   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * </pre>
+   *
+   * <code>string workflow_id = 3;</code>
+   * @return The bytes for workflowId.
+   */
+  com.google.protobuf.ByteString
+      getWorkflowIdBytes();
 }

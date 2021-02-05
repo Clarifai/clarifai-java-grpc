@@ -92,6 +92,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.WorkflowNode.parser(), extensionRegistry));
             break;
           }
+          case 42: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -297,6 +310,29 @@ private static final long serialVersionUID = 0L;
     return nodes_.get(index);
   }
 
+  public static final int METADATA_FIELD_NUMBER = 5;
+  private com.google.protobuf.Struct metadata_;
+  /**
+   * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return Whether the metadata field is set.
+   */
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return The metadata.
+   */
+  public com.google.protobuf.Struct getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <code>.google.protobuf.Struct metadata = 5;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -323,6 +359,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < nodes_.size(); i++) {
       output.writeMessage(4, nodes_.get(i));
     }
+    if (metadata_ != null) {
+      output.writeMessage(5, getMetadata());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -345,6 +384,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < nodes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, nodes_.get(i));
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getMetadata());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -372,6 +415,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNodesList()
         .equals(other.getNodesList())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -394,6 +442,10 @@ private static final long serialVersionUID = 0L;
     if (getNodesCount() > 0) {
       hash = (37 * hash) + NODES_FIELD_NUMBER;
       hash = (53 * hash) + getNodesList().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -551,6 +603,12 @@ private static final long serialVersionUID = 0L;
       } else {
         nodesBuilder_.clear();
       }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -593,6 +651,11 @@ private static final long serialVersionUID = 0L;
         result.nodes_ = nodes_;
       } else {
         result.nodes_ = nodesBuilder_.build();
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
       }
       onBuilt();
       return result;
@@ -678,6 +741,9 @@ private static final long serialVersionUID = 0L;
             nodesBuilder_.addAllMessages(other.nodes_);
           }
         }
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1330,6 +1396,125 @@ private static final long serialVersionUID = 0L;
         nodes_ = null;
       }
       return nodesBuilder_;
+    }
+
+    private com.google.protobuf.Struct metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     * @return The metadata.
+     */
+    public com.google.protobuf.Struct getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    public Builder setMetadata(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct metadata = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

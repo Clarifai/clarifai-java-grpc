@@ -187,6 +187,19 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          case 114: {
+            com.clarifai.grpc.api.AiAssistParameters.Builder subBuilder = null;
+            if (aiAssistParams_ != null) {
+              subBuilder = aiAssistParams_.toBuilder();
+            }
+            aiAssistParams_ = input.readMessage(com.clarifai.grpc.api.AiAssistParameters.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(aiAssistParams_);
+              aiAssistParams_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -849,6 +862,29 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int AI_ASSIST_PARAMS_FIELD_NUMBER = 14;
+  private com.clarifai.grpc.api.AiAssistParameters aiAssistParams_;
+  /**
+   * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+   * @return Whether the aiAssistParams field is set.
+   */
+  public boolean hasAiAssistParams() {
+    return aiAssistParams_ != null;
+  }
+  /**
+   * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+   * @return The aiAssistParams.
+   */
+  public com.clarifai.grpc.api.AiAssistParameters getAiAssistParams() {
+    return aiAssistParams_ == null ? com.clarifai.grpc.api.AiAssistParameters.getDefaultInstance() : aiAssistParams_;
+  }
+  /**
+   * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+   */
+  public com.clarifai.grpc.api.AiAssistParametersOrBuilder getAiAssistParamsOrBuilder() {
+    return getAiAssistParams();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -901,6 +937,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, name_);
+    }
+    if (aiAssistParams_ != null) {
+      output.writeMessage(14, getAiAssistParams());
     }
     unknownFields.writeTo(output);
   }
@@ -964,6 +1003,10 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, name_);
     }
+    if (aiAssistParams_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getAiAssistParams());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1025,6 +1068,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getName()
         .equals(other.getName())) return false;
+    if (hasAiAssistParams() != other.hasAiAssistParams()) return false;
+    if (hasAiAssistParams()) {
+      if (!getAiAssistParams()
+          .equals(other.getAiAssistParams())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1078,6 +1126,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasAiAssistParams()) {
+      hash = (37 * hash) + AI_ASSIST_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getAiAssistParams().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1269,6 +1321,12 @@ private static final long serialVersionUID = 0L;
       }
       name_ = "";
 
+      if (aiAssistParamsBuilder_ == null) {
+        aiAssistParams_ = null;
+      } else {
+        aiAssistParams_ = null;
+        aiAssistParamsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1341,6 +1399,11 @@ private static final long serialVersionUID = 0L;
         result.status_ = statusBuilder_.build();
       }
       result.name_ = name_;
+      if (aiAssistParamsBuilder_ == null) {
+        result.aiAssistParams_ = aiAssistParams_;
+      } else {
+        result.aiAssistParams_ = aiAssistParamsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1437,6 +1500,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.hasAiAssistParams()) {
+        mergeAiAssistParams(other.getAiAssistParams());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3135,6 +3201,125 @@ private static final long serialVersionUID = 0L;
       name_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.AiAssistParameters aiAssistParams_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AiAssistParameters, com.clarifai.grpc.api.AiAssistParameters.Builder, com.clarifai.grpc.api.AiAssistParametersOrBuilder> aiAssistParamsBuilder_;
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     * @return Whether the aiAssistParams field is set.
+     */
+    public boolean hasAiAssistParams() {
+      return aiAssistParamsBuilder_ != null || aiAssistParams_ != null;
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     * @return The aiAssistParams.
+     */
+    public com.clarifai.grpc.api.AiAssistParameters getAiAssistParams() {
+      if (aiAssistParamsBuilder_ == null) {
+        return aiAssistParams_ == null ? com.clarifai.grpc.api.AiAssistParameters.getDefaultInstance() : aiAssistParams_;
+      } else {
+        return aiAssistParamsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    public Builder setAiAssistParams(com.clarifai.grpc.api.AiAssistParameters value) {
+      if (aiAssistParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aiAssistParams_ = value;
+        onChanged();
+      } else {
+        aiAssistParamsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    public Builder setAiAssistParams(
+        com.clarifai.grpc.api.AiAssistParameters.Builder builderForValue) {
+      if (aiAssistParamsBuilder_ == null) {
+        aiAssistParams_ = builderForValue.build();
+        onChanged();
+      } else {
+        aiAssistParamsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    public Builder mergeAiAssistParams(com.clarifai.grpc.api.AiAssistParameters value) {
+      if (aiAssistParamsBuilder_ == null) {
+        if (aiAssistParams_ != null) {
+          aiAssistParams_ =
+            com.clarifai.grpc.api.AiAssistParameters.newBuilder(aiAssistParams_).mergeFrom(value).buildPartial();
+        } else {
+          aiAssistParams_ = value;
+        }
+        onChanged();
+      } else {
+        aiAssistParamsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    public Builder clearAiAssistParams() {
+      if (aiAssistParamsBuilder_ == null) {
+        aiAssistParams_ = null;
+        onChanged();
+      } else {
+        aiAssistParams_ = null;
+        aiAssistParamsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    public com.clarifai.grpc.api.AiAssistParameters.Builder getAiAssistParamsBuilder() {
+      
+      onChanged();
+      return getAiAssistParamsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    public com.clarifai.grpc.api.AiAssistParametersOrBuilder getAiAssistParamsOrBuilder() {
+      if (aiAssistParamsBuilder_ != null) {
+        return aiAssistParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return aiAssistParams_ == null ?
+            com.clarifai.grpc.api.AiAssistParameters.getDefaultInstance() : aiAssistParams_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AiAssistParameters, com.clarifai.grpc.api.AiAssistParameters.Builder, com.clarifai.grpc.api.AiAssistParametersOrBuilder> 
+        getAiAssistParamsFieldBuilder() {
+      if (aiAssistParamsBuilder_ == null) {
+        aiAssistParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AiAssistParameters, com.clarifai.grpc.api.AiAssistParameters.Builder, com.clarifai.grpc.api.AiAssistParametersOrBuilder>(
+                getAiAssistParams(),
+                getParentForChildren(),
+                isClean());
+        aiAssistParams_ = null;
+      }
+      return aiAssistParamsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

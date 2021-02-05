@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-   * only in response..
+   * only in response.
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-   * only in response..
+   * only in response.
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -245,7 +245,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-   * only in response..
+   * only in response.
    * </pre>
    *
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -867,7 +867,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -904,7 +904,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -923,7 +923,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -946,7 +946,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -965,7 +965,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>
@@ -994,7 +994,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The hosted field lists original text hosted in Clarifai storage. This field is currently used
-     * only in response..
+     * only in response.
      * </pre>
      *
      * <code>.clarifai.api.HostedURL hosted = 4;</code>

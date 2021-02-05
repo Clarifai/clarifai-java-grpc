@@ -435,4 +435,48 @@ public interface DataOrBuilder extends
    * <code>.clarifai.api.Audio audio = 14;</code>
    */
   com.clarifai.grpc.api.AudioOrBuilder getAudioOrBuilder();
+
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Track> 
+      getTracksList();
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  com.clarifai.grpc.api.Track getTracks(int index);
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  int getTracksCount();
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.TrackOrBuilder> 
+      getTracksOrBuilderList();
+  /**
+   * <pre>
+   * Track information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Track tracks = 15;</code>
+   */
+  com.clarifai.grpc.api.TrackOrBuilder getTracksOrBuilder(
+      int index);
 }

@@ -27,6 +27,99 @@ public final class V2Grpc {
   public static final String SERVICE_NAME = "clarifai.api.V2";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListConceptRelations",
+      requestType = com.clarifai.grpc.api.ListConceptRelationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptRelationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod;
+    if ((getListConceptRelationsMethod = V2Grpc.getListConceptRelationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListConceptRelationsMethod = V2Grpc.getListConceptRelationsMethod) == null) {
+          V2Grpc.getListConceptRelationsMethod = getListConceptRelationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListConceptRelations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListConceptRelationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptRelationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListConceptRelations"))
+              .build();
+        }
+      }
+    }
+    return getListConceptRelationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostConceptRelations",
+      requestType = com.clarifai.grpc.api.PostConceptRelationsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiConceptRelationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest,
+      com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod;
+    if ((getPostConceptRelationsMethod = V2Grpc.getPostConceptRelationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostConceptRelationsMethod = V2Grpc.getPostConceptRelationsMethod) == null) {
+          V2Grpc.getPostConceptRelationsMethod = getPostConceptRelationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptRelations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostConceptRelationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiConceptRelationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptRelations"))
+              .build();
+        }
+      }
+    }
+    return getPostConceptRelationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteConceptRelations",
+      requestType = com.clarifai.grpc.api.DeleteConceptRelationsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod;
+    if ((getDeleteConceptRelationsMethod = V2Grpc.getDeleteConceptRelationsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteConceptRelationsMethod = V2Grpc.getDeleteConceptRelationsMethod) == null) {
+          V2Grpc.getDeleteConceptRelationsMethod = getDeleteConceptRelationsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteConceptRelationsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteConceptRelations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteConceptRelationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteConceptRelations"))
+              .build();
+        }
+      }
+    }
+    return getDeleteConceptRelationsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetConceptCountsRequest,
       com.clarifai.grpc.api.MultiConceptCountResponse> getGetConceptCountsMethod;
 
@@ -337,99 +430,6 @@ public final class V2Grpc {
     return getPatchConceptLanguagesMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest,
-      com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListConceptRelations",
-      requestType = com.clarifai.grpc.api.ListConceptRelationsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiConceptRelationResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest,
-      com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse> getListConceptRelationsMethod;
-    if ((getListConceptRelationsMethod = V2Grpc.getListConceptRelationsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getListConceptRelationsMethod = V2Grpc.getListConceptRelationsMethod) == null) {
-          V2Grpc.getListConceptRelationsMethod = getListConceptRelationsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListConceptRelations"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.ListConceptRelationsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiConceptRelationResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListConceptRelations"))
-              .build();
-        }
-      }
-    }
-    return getListConceptRelationsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest,
-      com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostConceptRelations",
-      requestType = com.clarifai.grpc.api.PostConceptRelationsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiConceptRelationResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest,
-      com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse> getPostConceptRelationsMethod;
-    if ((getPostConceptRelationsMethod = V2Grpc.getPostConceptRelationsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostConceptRelationsMethod = V2Grpc.getPostConceptRelationsMethod) == null) {
-          V2Grpc.getPostConceptRelationsMethod = getPostConceptRelationsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostConceptRelationsRequest, com.clarifai.grpc.api.MultiConceptRelationResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptRelations"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostConceptRelationsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiConceptRelationResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptRelations"))
-              .build();
-        }
-      }
-    }
-    return getPostConceptRelationsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteConceptRelations",
-      requestType = com.clarifai.grpc.api.DeleteConceptRelationsRequest.class,
-      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest,
-      com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteConceptRelationsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteConceptRelationsMethod;
-    if ((getDeleteConceptRelationsMethod = V2Grpc.getDeleteConceptRelationsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getDeleteConceptRelationsMethod = V2Grpc.getDeleteConceptRelationsMethod) == null) {
-          V2Grpc.getDeleteConceptRelationsMethod = getDeleteConceptRelationsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteConceptRelationsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteConceptRelations"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.DeleteConceptRelationsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteConceptRelations"))
-              .build();
-        }
-      }
-    }
-    return getDeleteConceptRelationsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListKnowledgeGraphsRequest,
       com.clarifai.grpc.api.MultiKnowledgeGraphResponse> getListKnowledgeGraphsMethod;
 
@@ -647,6 +647,37 @@ public final class V2Grpc {
     return getPatchAnnotationsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchAnnotationsStatusRequest,
+      com.clarifai.grpc.api.PatchAnnotationsStatusResponse> getPatchAnnotationsStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchAnnotationsStatus",
+      requestType = com.clarifai.grpc.api.PatchAnnotationsStatusRequest.class,
+      responseType = com.clarifai.grpc.api.PatchAnnotationsStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchAnnotationsStatusRequest,
+      com.clarifai.grpc.api.PatchAnnotationsStatusResponse> getPatchAnnotationsStatusMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchAnnotationsStatusRequest, com.clarifai.grpc.api.PatchAnnotationsStatusResponse> getPatchAnnotationsStatusMethod;
+    if ((getPatchAnnotationsStatusMethod = V2Grpc.getPatchAnnotationsStatusMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchAnnotationsStatusMethod = V2Grpc.getPatchAnnotationsStatusMethod) == null) {
+          V2Grpc.getPatchAnnotationsStatusMethod = getPatchAnnotationsStatusMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchAnnotationsStatusRequest, com.clarifai.grpc.api.PatchAnnotationsStatusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchAnnotationsStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchAnnotationsStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchAnnotationsStatusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchAnnotationsStatus"))
+              .build();
+        }
+      }
+    }
+    return getPatchAnnotationsStatusMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteAnnotationRequest,
       com.clarifai.grpc.api.status.BaseResponse> getDeleteAnnotationMethod;
 
@@ -800,6 +831,37 @@ public final class V2Grpc {
       }
     }
     return getStreamInputsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInputSamplesRequest,
+      com.clarifai.grpc.api.MultiInputAnnotationResponse> getGetInputSamplesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetInputSamples",
+      requestType = com.clarifai.grpc.api.GetInputSamplesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiInputAnnotationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInputSamplesRequest,
+      com.clarifai.grpc.api.MultiInputAnnotationResponse> getGetInputSamplesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInputSamplesRequest, com.clarifai.grpc.api.MultiInputAnnotationResponse> getGetInputSamplesMethod;
+    if ((getGetInputSamplesMethod = V2Grpc.getGetInputSamplesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetInputSamplesMethod = V2Grpc.getGetInputSamplesMethod) == null) {
+          V2Grpc.getGetInputSamplesMethod = getGetInputSamplesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetInputSamplesRequest, com.clarifai.grpc.api.MultiInputAnnotationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInputSamples"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetInputSamplesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiInputAnnotationResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetInputSamples"))
+              .build();
+        }
+      }
+    }
+    return getGetInputSamplesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInputRequest,
@@ -2910,35 +2972,66 @@ public final class V2Grpc {
     return getPostTasksMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest,
-      com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getGetTaskAnnotationsCountMethod;
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskCountRequest,
+      com.clarifai.grpc.api.SingleTaskCountResponse> getGetTaskAnnotationCountMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetTaskAnnotationsCount",
-      requestType = com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.class,
-      responseType = com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetTaskAnnotationCount",
+      requestType = com.clarifai.grpc.api.GetTaskCountRequest.class,
+      responseType = com.clarifai.grpc.api.SingleTaskCountResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest,
-      com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getGetTaskAnnotationsCountMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest, com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getGetTaskAnnotationsCountMethod;
-    if ((getGetTaskAnnotationsCountMethod = V2Grpc.getGetTaskAnnotationsCountMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskCountRequest,
+      com.clarifai.grpc.api.SingleTaskCountResponse> getGetTaskAnnotationCountMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskCountRequest, com.clarifai.grpc.api.SingleTaskCountResponse> getGetTaskAnnotationCountMethod;
+    if ((getGetTaskAnnotationCountMethod = V2Grpc.getGetTaskAnnotationCountMethod) == null) {
       synchronized (V2Grpc.class) {
-        if ((getGetTaskAnnotationsCountMethod = V2Grpc.getGetTaskAnnotationsCountMethod) == null) {
-          V2Grpc.getGetTaskAnnotationsCountMethod = getGetTaskAnnotationsCountMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetTaskAnnotationsCountRequest, com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse>newBuilder()
+        if ((getGetTaskAnnotationCountMethod = V2Grpc.getGetTaskAnnotationCountMethod) == null) {
+          V2Grpc.getGetTaskAnnotationCountMethod = getGetTaskAnnotationCountMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetTaskCountRequest, com.clarifai.grpc.api.SingleTaskCountResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTaskAnnotationsCount"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTaskAnnotationCount"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetTaskAnnotationsCountRequest.getDefaultInstance()))
+                  com.clarifai.grpc.api.GetTaskCountRequest.getDefaultInstance()))
               .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetTaskAnnotationsCount"))
+                  com.clarifai.grpc.api.SingleTaskCountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetTaskAnnotationCount"))
               .build();
         }
       }
     }
-    return getGetTaskAnnotationsCountMethod;
+    return getGetTaskAnnotationCountMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskCountRequest,
+      com.clarifai.grpc.api.SingleTaskCountResponse> getGetTaskInputCountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTaskInputCount",
+      requestType = com.clarifai.grpc.api.GetTaskCountRequest.class,
+      responseType = com.clarifai.grpc.api.SingleTaskCountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskCountRequest,
+      com.clarifai.grpc.api.SingleTaskCountResponse> getGetTaskInputCountMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskCountRequest, com.clarifai.grpc.api.SingleTaskCountResponse> getGetTaskInputCountMethod;
+    if ((getGetTaskInputCountMethod = V2Grpc.getGetTaskInputCountMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetTaskInputCountMethod = V2Grpc.getGetTaskInputCountMethod) == null) {
+          V2Grpc.getGetTaskInputCountMethod = getGetTaskInputCountMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetTaskCountRequest, com.clarifai.grpc.api.SingleTaskCountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTaskInputCount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetTaskCountRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleTaskCountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetTaskInputCount"))
+              .build();
+        }
+      }
+    }
+    return getGetTaskInputCountMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetTaskRequest,
@@ -3332,6 +3425,38 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List concept relations between concepts in the platform.
+     * MUST be above ListConcepts so that if concept_id is empty this will still match
+     * /concepts/relations to list all the concept relations in the app.
+     * </pre>
+     */
+    public void listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListConceptRelationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostConceptRelationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteConceptRelationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * List all the concepts with their positive and negative counts
      * </pre>
      */
@@ -3435,36 +3560,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List concept relations between concepts in the platform.
-     * </pre>
-     */
-    public void listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListConceptRelationsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public void postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getPostConceptRelationsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public void deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getDeleteConceptRelationsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * List all domain graphs.
      * </pre>
      */
@@ -3535,6 +3630,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch annotations status by worker id and task id.
+     * </pre>
+     */
+    public void patchAnnotationsStatus(com.clarifai.grpc.api.PatchAnnotationsStatusRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PatchAnnotationsStatusResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchAnnotationsStatusMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Delete a single annotation.
      * </pre>
      */
@@ -3565,7 +3670,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Patch one or more inputs.
+     * Get input count per status.
      * </pre>
      */
     public void getInputCount(com.clarifai.grpc.api.GetInputCountRequest request,
@@ -3581,6 +3686,16 @@ public final class V2Grpc {
     public void streamInputs(com.clarifai.grpc.api.StreamInputsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getStreamInputsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific input from an app.
+     * </pre>
+     */
+    public void getInputSamples(com.clarifai.grpc.api.GetInputSamplesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputAnnotationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetInputSamplesMethod(), responseObserver);
     }
 
     /**
@@ -3679,6 +3794,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List all the model types available in the platform.
+     * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
      */
     public void listModelTypes(com.clarifai.grpc.api.ListModelTypesRequest request,
@@ -4276,12 +4392,22 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Task annotation counts
+     * Task annotation count
      * </pre>
      */
-    public void getTaskAnnotationsCount(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetTaskAnnotationsCountMethod(), responseObserver);
+    public void getTaskAnnotationCount(com.clarifai.grpc.api.GetTaskCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskCountResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetTaskAnnotationCountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Task Input count
+     * </pre>
+     */
+    public void getTaskInputCount(com.clarifai.grpc.api.GetTaskCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskCountResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetTaskInputCountMethod(), responseObserver);
     }
 
     /**
@@ -4397,6 +4523,27 @@ public final class V2Grpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
+            getListConceptRelationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListConceptRelationsRequest,
+                com.clarifai.grpc.api.MultiConceptRelationResponse>(
+                  this, METHODID_LIST_CONCEPT_RELATIONS)))
+          .addMethod(
+            getPostConceptRelationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostConceptRelationsRequest,
+                com.clarifai.grpc.api.MultiConceptRelationResponse>(
+                  this, METHODID_POST_CONCEPT_RELATIONS)))
+          .addMethod(
+            getDeleteConceptRelationsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteConceptRelationsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_CONCEPT_RELATIONS)))
+          .addMethod(
             getGetConceptCountsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -4467,27 +4614,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiConceptLanguageResponse>(
                   this, METHODID_PATCH_CONCEPT_LANGUAGES)))
           .addMethod(
-            getListConceptRelationsMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.ListConceptRelationsRequest,
-                com.clarifai.grpc.api.MultiConceptRelationResponse>(
-                  this, METHODID_LIST_CONCEPT_RELATIONS)))
-          .addMethod(
-            getPostConceptRelationsMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostConceptRelationsRequest,
-                com.clarifai.grpc.api.MultiConceptRelationResponse>(
-                  this, METHODID_POST_CONCEPT_RELATIONS)))
-          .addMethod(
-            getDeleteConceptRelationsMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.DeleteConceptRelationsRequest,
-                com.clarifai.grpc.api.status.BaseResponse>(
-                  this, METHODID_DELETE_CONCEPT_RELATIONS)))
-          .addMethod(
             getListKnowledgeGraphsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -4537,6 +4663,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiAnnotationResponse>(
                   this, METHODID_PATCH_ANNOTATIONS)))
           .addMethod(
+            getPatchAnnotationsStatusMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchAnnotationsStatusRequest,
+                com.clarifai.grpc.api.PatchAnnotationsStatusResponse>(
+                  this, METHODID_PATCH_ANNOTATIONS_STATUS)))
+          .addMethod(
             getDeleteAnnotationMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -4571,6 +4704,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.StreamInputsRequest,
                 com.clarifai.grpc.api.MultiInputResponse>(
                   this, METHODID_STREAM_INPUTS)))
+          .addMethod(
+            getGetInputSamplesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetInputSamplesRequest,
+                com.clarifai.grpc.api.MultiInputAnnotationResponse>(
+                  this, METHODID_GET_INPUT_SAMPLES)))
           .addMethod(
             getGetInputMethod(),
             asyncUnaryCall(
@@ -5048,12 +5188,19 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiTaskResponse>(
                   this, METHODID_POST_TASKS)))
           .addMethod(
-            getGetTaskAnnotationsCountMethod(),
+            getGetTaskAnnotationCountMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.clarifai.grpc.api.GetTaskAnnotationsCountRequest,
-                com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse>(
-                  this, METHODID_GET_TASK_ANNOTATIONS_COUNT)))
+                com.clarifai.grpc.api.GetTaskCountRequest,
+                com.clarifai.grpc.api.SingleTaskCountResponse>(
+                  this, METHODID_GET_TASK_ANNOTATION_COUNT)))
+          .addMethod(
+            getGetTaskInputCountMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetTaskCountRequest,
+                com.clarifai.grpc.api.SingleTaskCountResponse>(
+                  this, METHODID_GET_TASK_INPUT_COUNT)))
           .addMethod(
             getGetTaskMethod(),
             asyncUnaryCall(
@@ -5147,6 +5294,41 @@ public final class V2Grpc {
     protected V2Stub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new V2Stub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * List concept relations between concepts in the platform.
+     * MUST be above ListConcepts so that if concept_id is empty this will still match
+     * /concepts/relations to list all the concept relations in the app.
+     * </pre>
+     */
+    public void listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListConceptRelationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostConceptRelationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public void deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteConceptRelationsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -5264,39 +5446,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List concept relations between concepts in the platform.
-     * </pre>
-     */
-    public void listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getListConceptRelationsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public void postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getPostConceptRelationsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public void deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getDeleteConceptRelationsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * List all domain graphs.
      * </pre>
      */
@@ -5374,6 +5523,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch annotations status by worker id and task id.
+     * </pre>
+     */
+    public void patchAnnotationsStatus(com.clarifai.grpc.api.PatchAnnotationsStatusRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PatchAnnotationsStatusResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchAnnotationsStatusMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Delete a single annotation.
      * </pre>
      */
@@ -5407,7 +5567,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Patch one or more inputs.
+     * Get input count per status.
      * </pre>
      */
     public void getInputCount(com.clarifai.grpc.api.GetInputCountRequest request,
@@ -5425,6 +5585,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getStreamInputsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a specific input from an app.
+     * </pre>
+     */
+    public void getInputSamples(com.clarifai.grpc.api.GetInputSamplesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputAnnotationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetInputSamplesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -5532,6 +5703,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List all the model types available in the platform.
+     * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
      */
     public void listModelTypes(com.clarifai.grpc.api.ListModelTypesRequest request,
@@ -6188,13 +6360,24 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Task annotation counts
+     * Task annotation count
      * </pre>
      */
-    public void getTaskAnnotationsCount(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> responseObserver) {
+    public void getTaskAnnotationCount(com.clarifai.grpc.api.GetTaskCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskCountResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getGetTaskAnnotationsCountMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetTaskAnnotationCountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Task Input count
+     * </pre>
+     */
+    public void getTaskInputCount(com.clarifai.grpc.api.GetTaskCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskCountResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetTaskInputCountMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -6335,6 +6518,38 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List concept relations between concepts in the platform.
+     * MUST be above ListConcepts so that if concept_id is empty this will still match
+     * /concepts/relations to list all the concept relations in the app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptRelationResponse listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListConceptRelationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiConceptRelationResponse postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostConceptRelationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteConceptRelationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * List all the concepts with their positive and negative counts
      * </pre>
      */
@@ -6438,36 +6653,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List concept relations between concepts in the platform.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiConceptRelationResponse listConceptRelations(com.clarifai.grpc.api.ListConceptRelationsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListConceptRelationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiConceptRelationResponse postConceptRelations(com.clarifai.grpc.api.PostConceptRelationsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getPostConceptRelationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.status.BaseResponse deleteConceptRelations(com.clarifai.grpc.api.DeleteConceptRelationsRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getDeleteConceptRelationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
      * List all domain graphs.
      * </pre>
      */
@@ -6538,6 +6723,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch annotations status by worker id and task id.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.PatchAnnotationsStatusResponse patchAnnotationsStatus(com.clarifai.grpc.api.PatchAnnotationsStatusRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchAnnotationsStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Delete a single annotation.
      * </pre>
      */
@@ -6568,7 +6763,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Patch one or more inputs.
+     * Get input count per status.
      * </pre>
      */
     public com.clarifai.grpc.api.SingleInputCountResponse getInputCount(com.clarifai.grpc.api.GetInputCountRequest request) {
@@ -6584,6 +6779,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiInputResponse streamInputs(com.clarifai.grpc.api.StreamInputsRequest request) {
       return blockingUnaryCall(
           getChannel(), getStreamInputsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific input from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiInputAnnotationResponse getInputSamples(com.clarifai.grpc.api.GetInputSamplesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetInputSamplesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6682,6 +6887,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List all the model types available in the platform.
+     * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiModelTypeResponse listModelTypes(com.clarifai.grpc.api.ListModelTypesRequest request) {
@@ -7279,12 +7485,22 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Task annotation counts
+     * Task annotation count
      * </pre>
      */
-    public com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse getTaskAnnotationsCount(com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request) {
+    public com.clarifai.grpc.api.SingleTaskCountResponse getTaskAnnotationCount(com.clarifai.grpc.api.GetTaskCountRequest request) {
       return blockingUnaryCall(
-          getChannel(), getGetTaskAnnotationsCountMethod(), getCallOptions(), request);
+          getChannel(), getGetTaskAnnotationCountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Task Input count
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleTaskCountResponse getTaskInputCount(com.clarifai.grpc.api.GetTaskCountRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetTaskInputCountMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7414,6 +7630,41 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List concept relations between concepts in the platform.
+     * MUST be above ListConcepts so that if concept_id is empty this will still match
+     * /concepts/relations to list all the concept relations in the app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptRelationResponse> listConceptRelations(
+        com.clarifai.grpc.api.ListConceptRelationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListConceptRelationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptRelationResponse> postConceptRelations(
+        com.clarifai.grpc.api.PostConceptRelationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostConceptRelationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post concept relations to create relations between concepts in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteConceptRelations(
+        com.clarifai.grpc.api.DeleteConceptRelationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteConceptRelationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * List all the concepts with their positive and negative counts
      * </pre>
      */
@@ -7527,39 +7778,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List concept relations between concepts in the platform.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptRelationResponse> listConceptRelations(
-        com.clarifai.grpc.api.ListConceptRelationsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListConceptRelationsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptRelationResponse> postConceptRelations(
-        com.clarifai.grpc.api.PostConceptRelationsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getPostConceptRelationsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Post concept relations to create relations between concepts in the platform.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteConceptRelations(
-        com.clarifai.grpc.api.DeleteConceptRelationsRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getDeleteConceptRelationsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * List all domain graphs.
      * </pre>
      */
@@ -7637,6 +7855,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Patch annotations status by worker id and task id.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.PatchAnnotationsStatusResponse> patchAnnotationsStatus(
+        com.clarifai.grpc.api.PatchAnnotationsStatusRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchAnnotationsStatusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Delete a single annotation.
      * </pre>
      */
@@ -7670,7 +7899,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Patch one or more inputs.
+     * Get input count per status.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleInputCountResponse> getInputCount(
@@ -7688,6 +7917,17 @@ public final class V2Grpc {
         com.clarifai.grpc.api.StreamInputsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getStreamInputsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific input from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputAnnotationResponse> getInputSamples(
+        com.clarifai.grpc.api.GetInputSamplesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetInputSamplesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -7795,6 +8035,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List all the model types available in the platform.
+     * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModelTypeResponse> listModelTypes(
@@ -8451,13 +8692,24 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Task annotation counts
+     * Task annotation count
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse> getTaskAnnotationsCount(
-        com.clarifai.grpc.api.GetTaskAnnotationsCountRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleTaskCountResponse> getTaskAnnotationCount(
+        com.clarifai.grpc.api.GetTaskCountRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetTaskAnnotationsCountMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetTaskAnnotationCountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Task Input count
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleTaskCountResponse> getTaskInputCount(
+        com.clarifai.grpc.api.GetTaskCountRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetTaskInputCountMethod(), getCallOptions()), request);
     }
 
     /**
@@ -8582,19 +8834,19 @@ public final class V2Grpc {
     }
   }
 
-  private static final int METHODID_GET_CONCEPT_COUNTS = 0;
-  private static final int METHODID_GET_CONCEPT = 1;
-  private static final int METHODID_LIST_CONCEPTS = 2;
-  private static final int METHODID_POST_CONCEPTS_SEARCHES = 3;
-  private static final int METHODID_POST_CONCEPTS = 4;
-  private static final int METHODID_PATCH_CONCEPTS = 5;
-  private static final int METHODID_GET_CONCEPT_LANGUAGE = 6;
-  private static final int METHODID_LIST_CONCEPT_LANGUAGES = 7;
-  private static final int METHODID_POST_CONCEPT_LANGUAGES = 8;
-  private static final int METHODID_PATCH_CONCEPT_LANGUAGES = 9;
-  private static final int METHODID_LIST_CONCEPT_RELATIONS = 10;
-  private static final int METHODID_POST_CONCEPT_RELATIONS = 11;
-  private static final int METHODID_DELETE_CONCEPT_RELATIONS = 12;
+  private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
+  private static final int METHODID_POST_CONCEPT_RELATIONS = 1;
+  private static final int METHODID_DELETE_CONCEPT_RELATIONS = 2;
+  private static final int METHODID_GET_CONCEPT_COUNTS = 3;
+  private static final int METHODID_GET_CONCEPT = 4;
+  private static final int METHODID_LIST_CONCEPTS = 5;
+  private static final int METHODID_POST_CONCEPTS_SEARCHES = 6;
+  private static final int METHODID_POST_CONCEPTS = 7;
+  private static final int METHODID_PATCH_CONCEPTS = 8;
+  private static final int METHODID_GET_CONCEPT_LANGUAGE = 9;
+  private static final int METHODID_LIST_CONCEPT_LANGUAGES = 10;
+  private static final int METHODID_POST_CONCEPT_LANGUAGES = 11;
+  private static final int METHODID_PATCH_CONCEPT_LANGUAGES = 12;
   private static final int METHODID_LIST_KNOWLEDGE_GRAPHS = 13;
   private static final int METHODID_POST_KNOWLEDGE_GRAPHS = 14;
   private static final int METHODID_POST_CONCEPT_MAPPING_JOBS = 15;
@@ -8602,91 +8854,94 @@ public final class V2Grpc {
   private static final int METHODID_LIST_ANNOTATIONS = 17;
   private static final int METHODID_POST_ANNOTATIONS = 18;
   private static final int METHODID_PATCH_ANNOTATIONS = 19;
-  private static final int METHODID_DELETE_ANNOTATION = 20;
-  private static final int METHODID_DELETE_ANNOTATIONS = 21;
-  private static final int METHODID_POST_ANNOTATIONS_SEARCHES = 22;
-  private static final int METHODID_GET_INPUT_COUNT = 23;
-  private static final int METHODID_STREAM_INPUTS = 24;
-  private static final int METHODID_GET_INPUT = 25;
-  private static final int METHODID_LIST_INPUTS = 26;
-  private static final int METHODID_POST_INPUTS = 27;
-  private static final int METHODID_PATCH_INPUTS = 28;
-  private static final int METHODID_DELETE_INPUT = 29;
-  private static final int METHODID_DELETE_INPUTS = 30;
-  private static final int METHODID_POST_INPUTS_SEARCHES = 31;
-  private static final int METHODID_POST_MODEL_OUTPUTS = 32;
-  private static final int METHODID_GET_MODEL_TYPE = 33;
-  private static final int METHODID_LIST_MODEL_TYPES = 34;
-  private static final int METHODID_GET_MODEL = 35;
-  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 36;
-  private static final int METHODID_LIST_MODELS = 37;
-  private static final int METHODID_POST_MODELS_SEARCHES = 38;
-  private static final int METHODID_POST_MODELS = 39;
-  private static final int METHODID_PATCH_MODELS = 40;
-  private static final int METHODID_DELETE_MODEL = 41;
-  private static final int METHODID_DELETE_MODELS = 42;
-  private static final int METHODID_LIST_MODEL_INPUTS = 43;
-  private static final int METHODID_GET_MODEL_VERSION = 44;
-  private static final int METHODID_LIST_MODEL_VERSIONS = 45;
-  private static final int METHODID_POST_MODEL_VERSIONS = 46;
-  private static final int METHODID_DELETE_MODEL_VERSION = 47;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 48;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 49;
-  private static final int METHODID_GET_WORKFLOW = 50;
-  private static final int METHODID_LIST_WORKFLOWS = 51;
-  private static final int METHODID_POST_WORKFLOWS = 52;
-  private static final int METHODID_PATCH_WORKFLOWS = 53;
-  private static final int METHODID_DELETE_WORKFLOW = 54;
-  private static final int METHODID_DELETE_WORKFLOWS = 55;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 56;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 57;
-  private static final int METHODID_GET_KEY = 58;
-  private static final int METHODID_LIST_KEYS = 59;
-  private static final int METHODID_LIST_APP_KEYS = 60;
-  private static final int METHODID_DELETE_KEY = 61;
-  private static final int METHODID_POST_KEYS = 62;
-  private static final int METHODID_PATCH_KEYS = 63;
-  private static final int METHODID_MY_SCOPES = 64;
-  private static final int METHODID_LIST_SCOPES = 65;
-  private static final int METHODID_GET_APP = 66;
-  private static final int METHODID_LIST_APPS = 67;
-  private static final int METHODID_DELETE_APP = 68;
-  private static final int METHODID_POST_APPS = 69;
-  private static final int METHODID_PATCH_APPS = 70;
-  private static final int METHODID_POST_APPS_SEARCHES = 71;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 72;
-  private static final int METHODID_GET_SEARCH = 73;
-  private static final int METHODID_LIST_SEARCHES = 74;
-  private static final int METHODID_POST_SEARCHES = 75;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 76;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 77;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 78;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 79;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 80;
-  private static final int METHODID_DELETE_SEARCH = 81;
-  private static final int METHODID_LIST_STATUS_CODES = 82;
-  private static final int METHODID_GET_STATUS_CODE = 83;
-  private static final int METHODID_LIST_COLLABORATORS = 84;
-  private static final int METHODID_POST_COLLABORATORS = 85;
-  private static final int METHODID_PATCH_COLLABORATORS = 86;
-  private static final int METHODID_DELETE_COLLABORATORS = 87;
-  private static final int METHODID_LIST_COLLABORATIONS = 88;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 89;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 90;
-  private static final int METHODID_GET_APP_DUPLICATION = 91;
-  private static final int METHODID_POST_TASKS = 92;
-  private static final int METHODID_GET_TASK_ANNOTATIONS_COUNT = 93;
-  private static final int METHODID_GET_TASK = 94;
-  private static final int METHODID_LIST_TASKS = 95;
-  private static final int METHODID_PATCH_TASKS = 96;
-  private static final int METHODID_DELETE_TASKS = 97;
-  private static final int METHODID_POST_COLLECTORS = 98;
-  private static final int METHODID_GET_COLLECTOR = 99;
-  private static final int METHODID_LIST_COLLECTORS = 100;
-  private static final int METHODID_PATCH_COLLECTORS = 101;
-  private static final int METHODID_DELETE_COLLECTORS = 102;
-  private static final int METHODID_POST_STAT_VALUES = 103;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 104;
+  private static final int METHODID_PATCH_ANNOTATIONS_STATUS = 20;
+  private static final int METHODID_DELETE_ANNOTATION = 21;
+  private static final int METHODID_DELETE_ANNOTATIONS = 22;
+  private static final int METHODID_POST_ANNOTATIONS_SEARCHES = 23;
+  private static final int METHODID_GET_INPUT_COUNT = 24;
+  private static final int METHODID_STREAM_INPUTS = 25;
+  private static final int METHODID_GET_INPUT_SAMPLES = 26;
+  private static final int METHODID_GET_INPUT = 27;
+  private static final int METHODID_LIST_INPUTS = 28;
+  private static final int METHODID_POST_INPUTS = 29;
+  private static final int METHODID_PATCH_INPUTS = 30;
+  private static final int METHODID_DELETE_INPUT = 31;
+  private static final int METHODID_DELETE_INPUTS = 32;
+  private static final int METHODID_POST_INPUTS_SEARCHES = 33;
+  private static final int METHODID_POST_MODEL_OUTPUTS = 34;
+  private static final int METHODID_GET_MODEL_TYPE = 35;
+  private static final int METHODID_LIST_MODEL_TYPES = 36;
+  private static final int METHODID_GET_MODEL = 37;
+  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 38;
+  private static final int METHODID_LIST_MODELS = 39;
+  private static final int METHODID_POST_MODELS_SEARCHES = 40;
+  private static final int METHODID_POST_MODELS = 41;
+  private static final int METHODID_PATCH_MODELS = 42;
+  private static final int METHODID_DELETE_MODEL = 43;
+  private static final int METHODID_DELETE_MODELS = 44;
+  private static final int METHODID_LIST_MODEL_INPUTS = 45;
+  private static final int METHODID_GET_MODEL_VERSION = 46;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 47;
+  private static final int METHODID_POST_MODEL_VERSIONS = 48;
+  private static final int METHODID_DELETE_MODEL_VERSION = 49;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 50;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 51;
+  private static final int METHODID_GET_WORKFLOW = 52;
+  private static final int METHODID_LIST_WORKFLOWS = 53;
+  private static final int METHODID_POST_WORKFLOWS = 54;
+  private static final int METHODID_PATCH_WORKFLOWS = 55;
+  private static final int METHODID_DELETE_WORKFLOW = 56;
+  private static final int METHODID_DELETE_WORKFLOWS = 57;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 58;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 59;
+  private static final int METHODID_GET_KEY = 60;
+  private static final int METHODID_LIST_KEYS = 61;
+  private static final int METHODID_LIST_APP_KEYS = 62;
+  private static final int METHODID_DELETE_KEY = 63;
+  private static final int METHODID_POST_KEYS = 64;
+  private static final int METHODID_PATCH_KEYS = 65;
+  private static final int METHODID_MY_SCOPES = 66;
+  private static final int METHODID_LIST_SCOPES = 67;
+  private static final int METHODID_GET_APP = 68;
+  private static final int METHODID_LIST_APPS = 69;
+  private static final int METHODID_DELETE_APP = 70;
+  private static final int METHODID_POST_APPS = 71;
+  private static final int METHODID_PATCH_APPS = 72;
+  private static final int METHODID_POST_APPS_SEARCHES = 73;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 74;
+  private static final int METHODID_GET_SEARCH = 75;
+  private static final int METHODID_LIST_SEARCHES = 76;
+  private static final int METHODID_POST_SEARCHES = 77;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 78;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 79;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 80;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 81;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 82;
+  private static final int METHODID_DELETE_SEARCH = 83;
+  private static final int METHODID_LIST_STATUS_CODES = 84;
+  private static final int METHODID_GET_STATUS_CODE = 85;
+  private static final int METHODID_LIST_COLLABORATORS = 86;
+  private static final int METHODID_POST_COLLABORATORS = 87;
+  private static final int METHODID_PATCH_COLLABORATORS = 88;
+  private static final int METHODID_DELETE_COLLABORATORS = 89;
+  private static final int METHODID_LIST_COLLABORATIONS = 90;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 91;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 92;
+  private static final int METHODID_GET_APP_DUPLICATION = 93;
+  private static final int METHODID_POST_TASKS = 94;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 95;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 96;
+  private static final int METHODID_GET_TASK = 97;
+  private static final int METHODID_LIST_TASKS = 98;
+  private static final int METHODID_PATCH_TASKS = 99;
+  private static final int METHODID_DELETE_TASKS = 100;
+  private static final int METHODID_POST_COLLECTORS = 101;
+  private static final int METHODID_GET_COLLECTOR = 102;
+  private static final int METHODID_LIST_COLLECTORS = 103;
+  private static final int METHODID_PATCH_COLLECTORS = 104;
+  private static final int METHODID_DELETE_COLLECTORS = 105;
+  private static final int METHODID_POST_STAT_VALUES = 106;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 107;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8705,6 +8960,18 @@ public final class V2Grpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_CONCEPT_RELATIONS:
+          serviceImpl.listConceptRelations((com.clarifai.grpc.api.ListConceptRelationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse>) responseObserver);
+          break;
+        case METHODID_POST_CONCEPT_RELATIONS:
+          serviceImpl.postConceptRelations((com.clarifai.grpc.api.PostConceptRelationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_CONCEPT_RELATIONS:
+          serviceImpl.deleteConceptRelations((com.clarifai.grpc.api.DeleteConceptRelationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         case METHODID_GET_CONCEPT_COUNTS:
           serviceImpl.getConceptCounts((com.clarifai.grpc.api.GetConceptCountsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptCountResponse>) responseObserver);
@@ -8745,18 +9012,6 @@ public final class V2Grpc {
           serviceImpl.patchConceptLanguages((com.clarifai.grpc.api.PatchConceptLanguagesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptLanguageResponse>) responseObserver);
           break;
-        case METHODID_LIST_CONCEPT_RELATIONS:
-          serviceImpl.listConceptRelations((com.clarifai.grpc.api.ListConceptRelationsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse>) responseObserver);
-          break;
-        case METHODID_POST_CONCEPT_RELATIONS:
-          serviceImpl.postConceptRelations((com.clarifai.grpc.api.PostConceptRelationsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptRelationResponse>) responseObserver);
-          break;
-        case METHODID_DELETE_CONCEPT_RELATIONS:
-          serviceImpl.deleteConceptRelations((com.clarifai.grpc.api.DeleteConceptRelationsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
-          break;
         case METHODID_LIST_KNOWLEDGE_GRAPHS:
           serviceImpl.listKnowledgeGraphs((com.clarifai.grpc.api.ListKnowledgeGraphsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse>) responseObserver);
@@ -8785,6 +9040,10 @@ public final class V2Grpc {
           serviceImpl.patchAnnotations((com.clarifai.grpc.api.PatchAnnotationsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAnnotationResponse>) responseObserver);
           break;
+        case METHODID_PATCH_ANNOTATIONS_STATUS:
+          serviceImpl.patchAnnotationsStatus((com.clarifai.grpc.api.PatchAnnotationsStatusRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PatchAnnotationsStatusResponse>) responseObserver);
+          break;
         case METHODID_DELETE_ANNOTATION:
           serviceImpl.deleteAnnotation((com.clarifai.grpc.api.DeleteAnnotationRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
@@ -8804,6 +9063,10 @@ public final class V2Grpc {
         case METHODID_STREAM_INPUTS:
           serviceImpl.streamInputs((com.clarifai.grpc.api.StreamInputsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse>) responseObserver);
+          break;
+        case METHODID_GET_INPUT_SAMPLES:
+          serviceImpl.getInputSamples((com.clarifai.grpc.api.GetInputSamplesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputAnnotationResponse>) responseObserver);
           break;
         case METHODID_GET_INPUT:
           serviceImpl.getInput((com.clarifai.grpc.api.GetInputRequest) request,
@@ -9077,9 +9340,13 @@ public final class V2Grpc {
           serviceImpl.postTasks((com.clarifai.grpc.api.PostTasksRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTaskResponse>) responseObserver);
           break;
-        case METHODID_GET_TASK_ANNOTATIONS_COUNT:
-          serviceImpl.getTaskAnnotationsCount((com.clarifai.grpc.api.GetTaskAnnotationsCountRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskAnnotationsCountResponse>) responseObserver);
+        case METHODID_GET_TASK_ANNOTATION_COUNT:
+          serviceImpl.getTaskAnnotationCount((com.clarifai.grpc.api.GetTaskCountRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskCountResponse>) responseObserver);
+          break;
+        case METHODID_GET_TASK_INPUT_COUNT:
+          serviceImpl.getTaskInputCount((com.clarifai.grpc.api.GetTaskCountRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleTaskCountResponse>) responseObserver);
           break;
         case METHODID_GET_TASK:
           serviceImpl.getTask((com.clarifai.grpc.api.GetTaskRequest) request,
@@ -9186,6 +9453,9 @@ public final class V2Grpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new V2FileDescriptorSupplier())
+              .addMethod(getListConceptRelationsMethod())
+              .addMethod(getPostConceptRelationsMethod())
+              .addMethod(getDeleteConceptRelationsMethod())
               .addMethod(getGetConceptCountsMethod())
               .addMethod(getGetConceptMethod())
               .addMethod(getListConceptsMethod())
@@ -9196,9 +9466,6 @@ public final class V2Grpc {
               .addMethod(getListConceptLanguagesMethod())
               .addMethod(getPostConceptLanguagesMethod())
               .addMethod(getPatchConceptLanguagesMethod())
-              .addMethod(getListConceptRelationsMethod())
-              .addMethod(getPostConceptRelationsMethod())
-              .addMethod(getDeleteConceptRelationsMethod())
               .addMethod(getListKnowledgeGraphsMethod())
               .addMethod(getPostKnowledgeGraphsMethod())
               .addMethod(getPostConceptMappingJobsMethod())
@@ -9206,11 +9473,13 @@ public final class V2Grpc {
               .addMethod(getListAnnotationsMethod())
               .addMethod(getPostAnnotationsMethod())
               .addMethod(getPatchAnnotationsMethod())
+              .addMethod(getPatchAnnotationsStatusMethod())
               .addMethod(getDeleteAnnotationMethod())
               .addMethod(getDeleteAnnotationsMethod())
               .addMethod(getPostAnnotationsSearchesMethod())
               .addMethod(getGetInputCountMethod())
               .addMethod(getStreamInputsMethod())
+              .addMethod(getGetInputSamplesMethod())
               .addMethod(getGetInputMethod())
               .addMethod(getListInputsMethod())
               .addMethod(getPostInputsMethod())
@@ -9279,7 +9548,8 @@ public final class V2Grpc {
               .addMethod(getListAppDuplicationsMethod())
               .addMethod(getGetAppDuplicationMethod())
               .addMethod(getPostTasksMethod())
-              .addMethod(getGetTaskAnnotationsCountMethod())
+              .addMethod(getGetTaskAnnotationCountMethod())
+              .addMethod(getGetTaskInputCountMethod())
               .addMethod(getGetTaskMethod())
               .addMethod(getListTasksMethod())
               .addMethod(getPatchTasksMethod())

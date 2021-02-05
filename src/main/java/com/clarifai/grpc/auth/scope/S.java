@@ -219,6 +219,18 @@ public enum S
    */
   Workflows_Delete(21),
   /**
+   * <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  WorkflowMetrics_Get(96),
+  /**
+   * <code>WorkflowMetrics_Add = 97 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
+   */
+  WorkflowMetrics_Add(97),
+  /**
+   * <code>WorkflowMetrics_Delete = 98 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
+   */
+  WorkflowMetrics_Delete(98),
+  /**
    * <pre>
    * Write to the visualizations DB table.
    * Deprecated
@@ -666,6 +678,18 @@ public enum S
    */
   public static final int Workflows_Delete_VALUE = 21;
   /**
+   * <code>WorkflowMetrics_Get = 96 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int WorkflowMetrics_Get_VALUE = 96;
+  /**
+   * <code>WorkflowMetrics_Add = 97 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
+   */
+  public static final int WorkflowMetrics_Add_VALUE = 97;
+  /**
+   * <code>WorkflowMetrics_Delete = 98 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = WorkflowMetrics_Get];</code>
+   */
+  public static final int WorkflowMetrics_Delete_VALUE = 98;
+  /**
    * <pre>
    * Write to the visualizations DB table.
    * Deprecated
@@ -965,6 +989,9 @@ public enum S
       case 19: return Workflows_Get;
       case 20: return Workflows_Patch;
       case 21: return Workflows_Delete;
+      case 96: return WorkflowMetrics_Get;
+      case 97: return WorkflowMetrics_Add;
+      case 98: return WorkflowMetrics_Delete;
       case 24: return TSNEVisualizations_Add;
       case 25: return TSNEVisualizations_Get;
       case 37: return Annotations_Add;

@@ -53,4 +53,34 @@ public interface AudioOrBuilder extends
    * @return The allowDuplicateUrl.
    */
   boolean getAllowDuplicateUrl();
+
+  /**
+   * <pre>
+   * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+   * only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 5;</code>
+   * @return Whether the hosted field is set.
+   */
+  boolean hasHosted();
+  /**
+   * <pre>
+   * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+   * only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 5;</code>
+   * @return The hosted.
+   */
+  com.clarifai.grpc.api.HostedURL getHosted();
+  /**
+   * <pre>
+   * The hosted field lists original audio hosted in Clarifai storage. This field is currently used
+   * only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted = 5;</code>
+   */
+  com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
 }

@@ -151,7 +151,8 @@ public interface ConceptRelationOrBuilder extends
 
   /**
    * <pre>
-   * The knowledge graph id that this edge belongs to
+   * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+   * and not a specific one then this should be the empty string "".
    * </pre>
    *
    * <code>string knowledge_graph_id = 5;</code>
@@ -160,7 +161,8 @@ public interface ConceptRelationOrBuilder extends
   java.lang.String getKnowledgeGraphId();
   /**
    * <pre>
-   * The knowledge graph id that this edge belongs to
+   * The knowledge graph id that this edge belongs to. If using the app's global knowledge graph
+   * and not a specific one then this should be the empty string "".
    * </pre>
    *
    * <code>string knowledge_graph_id = 5;</code>

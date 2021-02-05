@@ -299,7 +299,7 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -308,7 +308,7 @@ public interface ModelTypeOrBuilder extends
   boolean hasExpectedPretrainedInputFields();
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -317,7 +317,7 @@ public interface ModelTypeOrBuilder extends
   com.google.protobuf.Struct getExpectedPretrainedInputFields();
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs 
+   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
@@ -326,7 +326,7 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -335,7 +335,7 @@ public interface ModelTypeOrBuilder extends
   boolean hasExpectedPretrainedOutputFields();
   /**
    * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
@@ -344,7 +344,7 @@ public interface ModelTypeOrBuilder extends
   com.google.protobuf.Struct getExpectedPretrainedOutputFields();
   /**
    * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs 
+   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
    * </pre>
    *
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>

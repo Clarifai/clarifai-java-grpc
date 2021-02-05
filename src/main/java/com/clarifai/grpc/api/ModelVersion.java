@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   }
   private ModelVersion() {
     id_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
@@ -121,6 +122,12 @@ private static final long serialVersionUID = 0L;
               completedAt_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
             break;
           }
           default: {
@@ -343,6 +350,50 @@ private static final long serialVersionUID = 0L;
     return getCompletedAt();
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 11;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * Description about this version
+   * </pre>
+   *
+   * <code>string description = 11;</code>
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Description about this version
+   * </pre>
+   *
+   * <code>string description = 11;</code>
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -377,6 +428,9 @@ private static final long serialVersionUID = 0L;
     }
     if (completedAt_ != null) {
       output.writeMessage(10, getCompletedAt());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -413,6 +467,9 @@ private static final long serialVersionUID = 0L;
     if (completedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getCompletedAt());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -455,6 +512,8 @@ private static final long serialVersionUID = 0L;
       if (!getCompletedAt()
           .equals(other.getCompletedAt())) return false;
     }
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -488,6 +547,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COMPLETED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCompletedAt().hashCode();
     }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -657,6 +718,8 @@ private static final long serialVersionUID = 0L;
         completedAt_ = null;
         completedAtBuilder_ = null;
       }
+      description_ = "";
+
       return this;
     }
 
@@ -706,6 +769,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.completedAt_ = completedAtBuilder_.build();
       }
+      result.description_ = description_;
       onBuilt();
       return result;
     }
@@ -775,6 +839,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCompletedAt()) {
         mergeCompletedAt(other.getCompletedAt());
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1535,6 +1603,102 @@ private static final long serialVersionUID = 0L;
         completedAt_ = null;
       }
       return completedAtBuilder_;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * Description about this version
+     * </pre>
+     *
+     * <code>string description = 11;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Description about this version
+     * </pre>
+     *
+     * <code>string description = 11;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Description about this version
+     * </pre>
+     *
+     * <code>string description = 11;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Description about this version
+     * </pre>
+     *
+     * <code>string description = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Description about this version
+     * </pre>
+     *
+     * <code>string description = 11;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

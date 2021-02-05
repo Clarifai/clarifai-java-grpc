@@ -176,6 +176,18 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The subject concept id in your app to get all the relationships for.
+   * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+   * When listing all the relations it will only return one direction of the relationship
+   * with the predicate acting on the subject and not the inverse like is done when providing a
+   * concept_id so that we can return a reliable page size always.
+   * When providing a concept_id, if a hyponym is present in the DB such as:
+   * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+   * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+   * object.
+   * But you can also list the concept relations for 'food' and it will return the same hyponym
+   * relationship with 'honey' as subject and 'food' as predicate.
+   * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+   * when listing the relations.
    * </pre>
    *
    * <code>string concept_id = 2;</code>
@@ -196,6 +208,18 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The subject concept id in your app to get all the relationships for.
+   * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+   * When listing all the relations it will only return one direction of the relationship
+   * with the predicate acting on the subject and not the inverse like is done when providing a
+   * concept_id so that we can return a reliable page size always.
+   * When providing a concept_id, if a hyponym is present in the DB such as:
+   * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+   * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+   * object.
+   * But you can also list the concept relations for 'food' and it will return the same hyponym
+   * relationship with 'honey' as subject and 'food' as predicate.
+   * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+   * when listing the relations.
    * </pre>
    *
    * <code>string concept_id = 2;</code>
@@ -269,7 +293,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object knowledgeGraphId_;
   /**
    * <pre>
-   * This identifies the subgraph you want to search over, if any.
+   * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+   * If not provided then list relations from all knowledge graphs including the global one for this
+   * app one (ie. knowledge_graph "") and any specific ones in the app.
    * </pre>
    *
    * <code>string knowledge_graph_id = 4;</code>
@@ -289,7 +315,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This identifies the subgraph you want to search over, if any.
+   * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+   * If not provided then list relations from all knowledge graphs including the global one for this
+   * app one (ie. knowledge_graph "") and any specific ones in the app.
    * </pre>
    *
    * <code>string knowledge_graph_id = 4;</code>
@@ -910,6 +938,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      * </pre>
      *
      * <code>string concept_id = 2;</code>
@@ -930,6 +970,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      * </pre>
      *
      * <code>string concept_id = 2;</code>
@@ -951,6 +1003,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      * </pre>
      *
      * <code>string concept_id = 2;</code>
@@ -970,6 +1034,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      * </pre>
      *
      * <code>string concept_id = 2;</code>
@@ -984,6 +1060,18 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The subject concept id in your app to get all the relationships for.
+     * Leave as an empty string (GET /concepts/relations) to list ALL the relations in the app.
+     * When listing all the relations it will only return one direction of the relationship
+     * with the predicate acting on the subject and not the inverse like is done when providing a
+     * concept_id so that we can return a reliable page size always.
+     * When providing a concept_id, if a hyponym is present in the DB such as:
+     * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+     * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
+     * object.
+     * But you can also list the concept relations for 'food' and it will return the same hyponym
+     * relationship with 'honey' as subject and 'food' as predicate.
+     * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
+     * when listing the relations.
      * </pre>
      *
      * <code>string concept_id = 2;</code>
@@ -1116,7 +1204,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object knowledgeGraphId_ = "";
     /**
      * <pre>
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      * </pre>
      *
      * <code>string knowledge_graph_id = 4;</code>
@@ -1136,7 +1226,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      * </pre>
      *
      * <code>string knowledge_graph_id = 4;</code>
@@ -1157,7 +1249,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      * </pre>
      *
      * <code>string knowledge_graph_id = 4;</code>
@@ -1176,7 +1270,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      * </pre>
      *
      * <code>string knowledge_graph_id = 4;</code>
@@ -1190,7 +1286,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This identifies the subgraph you want to search over, if any.
+     * If knowledge_graph_id is provided then just list relations from that knowledge graph.
+     * If not provided then list relations from all knowledge graphs including the global one for this
+     * app one (ie. knowledge_graph "") and any specific ones in the app.
      * </pre>
      *
      * <code>string knowledge_graph_id = 4;</code>

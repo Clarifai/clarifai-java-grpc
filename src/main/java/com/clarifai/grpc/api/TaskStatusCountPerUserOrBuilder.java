@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface TaskAnnotationStatusCountPerUserOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.TaskAnnotationStatusCountPerUser)
+public interface TaskStatusCountPerUserOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.TaskStatusCountPerUser)
     com.google.protobuf.MessageOrBuilder {
 
   /**

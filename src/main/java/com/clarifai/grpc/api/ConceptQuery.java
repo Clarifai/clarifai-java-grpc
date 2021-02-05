@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private ConceptQuery() {
     name_ = "";
     language_ = "";
+    workflowId_ = "";
   }
 
   @java.lang.Override
@@ -60,6 +61,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             language_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            workflowId_ = s;
             break;
           }
           default: {
@@ -182,6 +189,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int WORKFLOW_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object workflowId_;
+  /**
+   * <pre>
+   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * </pre>
+   *
+   * <code>string workflow_id = 3;</code>
+   * @return The workflowId.
+   */
+  public java.lang.String getWorkflowId() {
+    java.lang.Object ref = workflowId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workflowId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * </pre>
+   *
+   * <code>string workflow_id = 3;</code>
+   * @return The bytes for workflowId.
+   */
+  public com.google.protobuf.ByteString
+      getWorkflowIdBytes() {
+    java.lang.Object ref = workflowId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      workflowId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -202,6 +253,9 @@ private static final long serialVersionUID = 0L;
     if (!getLanguageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language_);
     }
+    if (!getWorkflowIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflowId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -216,6 +270,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLanguageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language_);
+    }
+    if (!getWorkflowIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflowId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -236,6 +293,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getLanguage()
         .equals(other.getLanguage())) return false;
+    if (!getWorkflowId()
+        .equals(other.getWorkflowId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +310,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguage().hashCode();
+    hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkflowId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -388,6 +449,8 @@ private static final long serialVersionUID = 0L;
 
       language_ = "";
 
+      workflowId_ = "";
+
       return this;
     }
 
@@ -416,6 +479,7 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.ConceptQuery result = new com.clarifai.grpc.api.ConceptQuery(this);
       result.name_ = name_;
       result.language_ = language_;
+      result.workflowId_ = workflowId_;
       onBuilt();
       return result;
     }
@@ -470,6 +534,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        onChanged();
+      }
+      if (!other.getWorkflowId().isEmpty()) {
+        workflowId_ = other.workflowId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -689,6 +757,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       language_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object workflowId_ = "";
+    /**
+     * <pre>
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * </pre>
+     *
+     * <code>string workflow_id = 3;</code>
+     * @return The workflowId.
+     */
+    public java.lang.String getWorkflowId() {
+      java.lang.Object ref = workflowId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workflowId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * </pre>
+     *
+     * <code>string workflow_id = 3;</code>
+     * @return The bytes for workflowId.
+     */
+    public com.google.protobuf.ByteString
+        getWorkflowIdBytes() {
+      java.lang.Object ref = workflowId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workflowId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * </pre>
+     *
+     * <code>string workflow_id = 3;</code>
+     * @param value The workflowId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      workflowId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * </pre>
+     *
+     * <code>string workflow_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflowId() {
+      
+      workflowId_ = getDefaultInstance().getWorkflowId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * </pre>
+     *
+     * <code>string workflow_id = 3;</code>
+     * @param value The bytes for workflowId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      workflowId_ = value;
       onChanged();
       return this;
     }

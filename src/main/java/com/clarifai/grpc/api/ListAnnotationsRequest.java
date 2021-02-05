@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     statuses_ = java.util.Collections.emptyList();
+    taskId_ = "";
   }
 
   @java.lang.Override
@@ -125,6 +126,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000008;
             }
             modelVersionIds_.add(s);
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            taskId_ = s;
             break;
           }
           default: {
@@ -552,6 +559,50 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int TASK_ID_FIELD_NUMBER = 11;
+  private volatile java.lang.Object taskId_;
+  /**
+   * <pre>
+   * Flag to filter annotations by task_id
+   * </pre>
+   *
+   * <code>string task_id = 11;</code>
+   * @return The taskId.
+   */
+  public java.lang.String getTaskId() {
+    java.lang.Object ref = taskId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      taskId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Flag to filter annotations by task_id
+   * </pre>
+   *
+   * <code>string task_id = 11;</code>
+   * @return The bytes for taskId.
+   */
+  public com.google.protobuf.ByteString
+      getTaskIdBytes() {
+    java.lang.Object ref = taskId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      taskId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -592,6 +643,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < modelVersionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, modelVersionIds_.getRaw(i));
+    }
+    if (!getTaskIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, taskId_);
     }
     unknownFields.writeTo(output);
   }
@@ -654,6 +708,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getModelVersionIdsList().size();
     }
+    if (!getTaskIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, taskId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -690,6 +747,8 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (!getTaskId()
+        .equals(other.getTaskId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -732,6 +791,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getTaskId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -892,6 +953,8 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      taskId_ = "";
+
       return this;
     }
 
@@ -956,6 +1019,7 @@ private static final long serialVersionUID = 0L;
       result.listAllAnnotations_ = listAllAnnotations_;
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.taskId_ = taskId_;
       onBuilt();
       return result;
     }
@@ -1081,6 +1145,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
+      }
+      if (!other.getTaskId().isEmpty()) {
+        taskId_ = other.taskId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2372,6 +2440,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object taskId_ = "";
+    /**
+     * <pre>
+     * Flag to filter annotations by task_id
+     * </pre>
+     *
+     * <code>string task_id = 11;</code>
+     * @return The taskId.
+     */
+    public java.lang.String getTaskId() {
+      java.lang.Object ref = taskId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taskId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Flag to filter annotations by task_id
+     * </pre>
+     *
+     * <code>string task_id = 11;</code>
+     * @return The bytes for taskId.
+     */
+    public com.google.protobuf.ByteString
+        getTaskIdBytes() {
+      java.lang.Object ref = taskId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taskId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Flag to filter annotations by task_id
+     * </pre>
+     *
+     * <code>string task_id = 11;</code>
+     * @param value The taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      taskId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Flag to filter annotations by task_id
+     * </pre>
+     *
+     * <code>string task_id = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTaskId() {
+      
+      taskId_ = getDefaultInstance().getTaskId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Flag to filter annotations by task_id
+     * </pre>
+     *
+     * <code>string task_id = 11;</code>
+     * @param value The bytes for taskId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      taskId_ = value;
       onChanged();
       return this;
     }

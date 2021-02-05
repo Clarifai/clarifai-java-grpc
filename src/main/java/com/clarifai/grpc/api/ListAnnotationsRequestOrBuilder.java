@@ -313,4 +313,24 @@ public interface ListAnnotationsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Flag to filter annotations by task_id
+   * </pre>
+   *
+   * <code>string task_id = 11;</code>
+   * @return The taskId.
+   */
+  java.lang.String getTaskId();
+  /**
+   * <pre>
+   * Flag to filter annotations by task_id
+   * </pre>
+   *
+   * <code>string task_id = 11;</code>
+   * @return The bytes for taskId.
+   */
+  com.google.protobuf.ByteString
+      getTaskIdBytes();
 }

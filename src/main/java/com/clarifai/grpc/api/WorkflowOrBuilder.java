@@ -109,4 +109,19 @@ public interface WorkflowOrBuilder extends
    */
   com.clarifai.grpc.api.WorkflowNodeOrBuilder getNodesOrBuilder(
       int index);
+
+  /**
+   * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <code>.google.protobuf.Struct metadata = 5;</code>
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   * <code>.google.protobuf.Struct metadata = 5;</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 }

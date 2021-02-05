@@ -130,4 +130,24 @@ public interface ModelVersionOrBuilder extends
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCompletedAtOrBuilder();
+
+  /**
+   * <pre>
+   * Description about this version
+   * </pre>
+   *
+   * <code>string description = 11;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Description about this version
+   * </pre>
+   *
+   * <code>string description = 11;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
 }

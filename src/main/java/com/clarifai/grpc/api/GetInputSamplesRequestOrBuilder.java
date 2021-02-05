@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface GetTaskAnnotationsCountRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.GetTaskAnnotationsCountRequest)
+public interface GetInputSamplesRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.GetInputSamplesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,19 +23,11 @@ public interface GetTaskAnnotationsCountRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <pre>
-   * task_id for which count per user per status is needed
-   * </pre>
-   *
    * <code>string task_id = 2;</code>
    * @return The taskId.
    */
   java.lang.String getTaskId();
   /**
-   * <pre>
-   * task_id for which count per user per status is needed
-   * </pre>
-   *
    * <code>string task_id = 2;</code>
    * @return The bytes for taskId.
    */
@@ -44,7 +36,7 @@ public interface GetTaskAnnotationsCountRequestOrBuilder extends
 
   /**
    * <pre>
-   * for given task_id, user_ids to filter on
+   * URL param. If zero ids provided, returns for all task labelers
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -54,7 +46,7 @@ public interface GetTaskAnnotationsCountRequestOrBuilder extends
       getUserIdsList();
   /**
    * <pre>
-   * for given task_id, user_ids to filter on
+   * URL param. If zero ids provided, returns for all task labelers
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -63,7 +55,7 @@ public interface GetTaskAnnotationsCountRequestOrBuilder extends
   int getUserIdsCount();
   /**
    * <pre>
-   * for given task_id, user_ids to filter on
+   * URL param. If zero ids provided, returns for all task labelers
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -73,7 +65,7 @@ public interface GetTaskAnnotationsCountRequestOrBuilder extends
   java.lang.String getUserIds(int index);
   /**
    * <pre>
-   * for given task_id, user_ids to filter on
+   * URL param. If zero ids provided, returns for all task labelers
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
