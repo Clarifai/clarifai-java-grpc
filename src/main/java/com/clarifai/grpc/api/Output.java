@@ -126,6 +126,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.Operator.Builder subBuilder = null;
+            if (operator_ != null) {
+              subBuilder = operator_.toBuilder();
+            }
+            operator_ = input.readMessage(com.clarifai.grpc.api.Operator.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(operator_);
+              operator_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -307,6 +320,41 @@ private static final long serialVersionUID = 0L;
     return getModel();
   }
 
+  public static final int OPERATOR_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.Operator operator_;
+  /**
+   * <pre>
+   * The operator that created this Output.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 7;</code>
+   * @return Whether the operator field is set.
+   */
+  public boolean hasOperator() {
+    return operator_ != null;
+  }
+  /**
+   * <pre>
+   * The operator that created this Output.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 7;</code>
+   * @return The operator.
+   */
+  public com.clarifai.grpc.api.Operator getOperator() {
+    return operator_ == null ? com.clarifai.grpc.api.Operator.getDefaultInstance() : operator_;
+  }
+  /**
+   * <pre>
+   * The operator that created this Output.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 7;</code>
+   */
+  public com.clarifai.grpc.api.OperatorOrBuilder getOperatorOrBuilder() {
+    return getOperator();
+  }
+
   public static final int INPUT_FIELD_NUMBER = 5;
   private com.clarifai.grpc.api.Input input_;
   /**
@@ -415,6 +463,9 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(6, getData());
     }
+    if (operator_ != null) {
+      output.writeMessage(7, getOperator());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -447,6 +498,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getData());
     }
+    if (operator_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getOperator());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -478,6 +533,11 @@ private static final long serialVersionUID = 0L;
     if (hasModel()) {
       if (!getModel()
           .equals(other.getModel())) return false;
+    }
+    if (hasOperator() != other.hasOperator()) return false;
+    if (hasOperator()) {
+      if (!getOperator()
+          .equals(other.getOperator())) return false;
     }
     if (hasInput() != other.hasInput()) return false;
     if (hasInput()) {
@@ -513,6 +573,10 @@ private static final long serialVersionUID = 0L;
     if (hasModel()) {
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
+    }
+    if (hasOperator()) {
+      hash = (37 * hash) + OPERATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getOperator().hashCode();
     }
     if (hasInput()) {
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
@@ -681,6 +745,12 @@ private static final long serialVersionUID = 0L;
         model_ = null;
         modelBuilder_ = null;
       }
+      if (operatorBuilder_ == null) {
+        operator_ = null;
+      } else {
+        operator_ = null;
+        operatorBuilder_ = null;
+      }
       if (inputBuilder_ == null) {
         input_ = null;
       } else {
@@ -734,6 +804,11 @@ private static final long serialVersionUID = 0L;
         result.model_ = model_;
       } else {
         result.model_ = modelBuilder_.build();
+      }
+      if (operatorBuilder_ == null) {
+        result.operator_ = operator_;
+      } else {
+        result.operator_ = operatorBuilder_.build();
       }
       if (inputBuilder_ == null) {
         result.input_ = input_;
@@ -805,6 +880,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModel()) {
         mergeModel(other.getModel());
+      }
+      if (other.hasOperator()) {
+        mergeOperator(other.getOperator());
       }
       if (other.hasInput()) {
         mergeInput(other.getInput());
@@ -1400,6 +1478,161 @@ private static final long serialVersionUID = 0L;
         model_ = null;
       }
       return modelBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Operator operator_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Operator, com.clarifai.grpc.api.Operator.Builder, com.clarifai.grpc.api.OperatorOrBuilder> operatorBuilder_;
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     * @return Whether the operator field is set.
+     */
+    public boolean hasOperator() {
+      return operatorBuilder_ != null || operator_ != null;
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     * @return The operator.
+     */
+    public com.clarifai.grpc.api.Operator getOperator() {
+      if (operatorBuilder_ == null) {
+        return operator_ == null ? com.clarifai.grpc.api.Operator.getDefaultInstance() : operator_;
+      } else {
+        return operatorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    public Builder setOperator(com.clarifai.grpc.api.Operator value) {
+      if (operatorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operator_ = value;
+        onChanged();
+      } else {
+        operatorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    public Builder setOperator(
+        com.clarifai.grpc.api.Operator.Builder builderForValue) {
+      if (operatorBuilder_ == null) {
+        operator_ = builderForValue.build();
+        onChanged();
+      } else {
+        operatorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    public Builder mergeOperator(com.clarifai.grpc.api.Operator value) {
+      if (operatorBuilder_ == null) {
+        if (operator_ != null) {
+          operator_ =
+            com.clarifai.grpc.api.Operator.newBuilder(operator_).mergeFrom(value).buildPartial();
+        } else {
+          operator_ = value;
+        }
+        onChanged();
+      } else {
+        operatorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    public Builder clearOperator() {
+      if (operatorBuilder_ == null) {
+        operator_ = null;
+        onChanged();
+      } else {
+        operator_ = null;
+        operatorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    public com.clarifai.grpc.api.Operator.Builder getOperatorBuilder() {
+      
+      onChanged();
+      return getOperatorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    public com.clarifai.grpc.api.OperatorOrBuilder getOperatorOrBuilder() {
+      if (operatorBuilder_ != null) {
+        return operatorBuilder_.getMessageOrBuilder();
+      } else {
+        return operator_ == null ?
+            com.clarifai.grpc.api.Operator.getDefaultInstance() : operator_;
+      }
+    }
+    /**
+     * <pre>
+     * The operator that created this Output.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Operator, com.clarifai.grpc.api.Operator.Builder, com.clarifai.grpc.api.OperatorOrBuilder> 
+        getOperatorFieldBuilder() {
+      if (operatorBuilder_ == null) {
+        operatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Operator, com.clarifai.grpc.api.Operator.Builder, com.clarifai.grpc.api.OperatorOrBuilder>(
+                getOperator(),
+                getParentForChildren(),
+                isClean());
+        operator_ = null;
+      }
+      return operatorBuilder_;
     }
 
     private com.clarifai.grpc.api.Input input_;

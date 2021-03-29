@@ -87,41 +87,114 @@ public interface WorkflowOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   java.util.List<com.clarifai.grpc.api.WorkflowNode> 
       getNodesList();
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   com.clarifai.grpc.api.WorkflowNode getNodes(int index);
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   int getNodesCount();
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.WorkflowNodeOrBuilder> 
       getNodesOrBuilderList();
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   com.clarifai.grpc.api.WorkflowNodeOrBuilder getNodesOrBuilder(
       int index);
 
   /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
   /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   * @return Whether the visibility field is set.
+   */
+  boolean hasVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Visibility getVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   */
+  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
 }

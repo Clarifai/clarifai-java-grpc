@@ -76,11 +76,6 @@ private static final long serialVersionUID = 0L;
             ids_.add(s);
             break;
           }
-          case 24: {
-
-            deleteAll_ = input.readBool();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -174,16 +169,6 @@ private static final long serialVersionUID = 0L;
     return ids_.getByteString(index);
   }
 
-  public static final int DELETE_ALL_FIELD_NUMBER = 3;
-  private boolean deleteAll_;
-  /**
-   * <code>bool delete_all = 3;</code>
-   * @return The deleteAll.
-   */
-  public boolean getDeleteAll() {
-    return deleteAll_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -203,9 +188,6 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < ids_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ids_.getRaw(i));
-    }
-    if (deleteAll_ != false) {
-      output.writeBool(3, deleteAll_);
     }
     unknownFields.writeTo(output);
   }
@@ -227,10 +209,6 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getIdsList().size();
-    }
-    if (deleteAll_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, deleteAll_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -254,8 +232,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIdsList()
         .equals(other.getIdsList())) return false;
-    if (getDeleteAll()
-        != other.getDeleteAll()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -275,9 +251,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IDS_FIELD_NUMBER;
       hash = (53 * hash) + getIdsList().hashCode();
     }
-    hash = (37 * hash) + DELETE_ALL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDeleteAll());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,8 +396,6 @@ private static final long serialVersionUID = 0L;
       }
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      deleteAll_ = false;
-
       return this;
     }
 
@@ -462,7 +433,6 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ids_ = ids_;
-      result.deleteAll_ = deleteAll_;
       onBuilt();
       return result;
     }
@@ -523,9 +493,6 @@ private static final long serialVersionUID = 0L;
           ids_.addAll(other.ids_);
         }
         onChanged();
-      }
-      if (other.getDeleteAll() != false) {
-        setDeleteAll(other.getDeleteAll());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -782,36 +749,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private boolean deleteAll_ ;
-    /**
-     * <code>bool delete_all = 3;</code>
-     * @return The deleteAll.
-     */
-    public boolean getDeleteAll() {
-      return deleteAll_;
-    }
-    /**
-     * <code>bool delete_all = 3;</code>
-     * @param value The deleteAll to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDeleteAll(boolean value) {
-      
-      deleteAll_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool delete_all = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDeleteAll() {
-      
-      deleteAll_ = false;
       onChanged();
       return this;
     }

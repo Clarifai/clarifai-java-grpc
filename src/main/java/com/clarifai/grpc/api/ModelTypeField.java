@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * For each field in ModelType.model_type_fields we defined them with ModelTypeField
+ * ModelTypeField stores a field value of a configurable type.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.ModelTypeField}
@@ -189,7 +189,7 @@ private static final long serialVersionUID = 0L;
     NUMBER(3),
     /**
      * <pre>
-     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * For auto-completing to concepts in the app. This goes into an data.concepts field.
      * </pre>
      *
      * <code>ARRAY_OF_CONCEPTS = 4;</code>
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
     ARRAY_OF_CONCEPTS(4),
     /**
      * <pre>
-     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * For auto-completing to concepts in the app. This goes into an data.concepts field.
      * </pre>
      *
      * <code>ARRAY_OF_CONCEPTS_WITH_THRESHOLD = 5;</code>
@@ -253,6 +253,14 @@ private static final long serialVersionUID = 0L;
      * <code>WORKFLOW_EMBED_MODELS = 12;</code>
      */
     WORKFLOW_EMBED_MODELS(12),
+    /**
+     * <pre>
+     * Such as ['a', 'b', 'cantaloupe']
+     * </pre>
+     *
+     * <code>ARRAY_OF_STRINGS = 13;</code>
+     */
+    ARRAY_OF_STRINGS(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -274,7 +282,7 @@ private static final long serialVersionUID = 0L;
     public static final int NUMBER_VALUE = 3;
     /**
      * <pre>
-     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * For auto-completing to concepts in the app. This goes into an data.concepts field.
      * </pre>
      *
      * <code>ARRAY_OF_CONCEPTS = 4;</code>
@@ -282,7 +290,7 @@ private static final long serialVersionUID = 0L;
     public static final int ARRAY_OF_CONCEPTS_VALUE = 4;
     /**
      * <pre>
-     * For auto-completting to concepts in the app. This goes into an data.concepts field.
+     * For auto-completing to concepts in the app. This goes into an data.concepts field.
      * </pre>
      *
      * <code>ARRAY_OF_CONCEPTS_WITH_THRESHOLD = 5;</code>
@@ -338,6 +346,14 @@ private static final long serialVersionUID = 0L;
      * <code>WORKFLOW_EMBED_MODELS = 12;</code>
      */
     public static final int WORKFLOW_EMBED_MODELS_VALUE = 12;
+    /**
+     * <pre>
+     * Such as ['a', 'b', 'cantaloupe']
+     * </pre>
+     *
+     * <code>ARRAY_OF_STRINGS = 13;</code>
+     */
+    public static final int ARRAY_OF_STRINGS_VALUE = 13;
 
 
     public final int getNumber() {
@@ -376,6 +392,7 @@ private static final long serialVersionUID = 0L;
         case 10: return JSON;
         case 11: return ARRAY_OF_NUMBERS;
         case 12: return WORKFLOW_EMBED_MODELS;
+        case 13: return ARRAY_OF_STRINGS;
         default: return null;
       }
     }
@@ -432,7 +449,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object path_;
   /**
    * <pre>
-   * The path to the field within the Model proto.
+   * The path where the value of the field will be stored.
    * Example:
    * "output_info.data" would be the Data message in the OutputInfo message.
    * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -459,7 +476,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The path to the field within the Model proto.
+   * The path where the value of the field will be stored.
    * Example:
    * "output_info.data" would be the Data message in the OutputInfo message.
    * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1014,7 +1031,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For each field in ModelType.model_type_fields we defined them with ModelTypeField
+   * ModelTypeField stores a field value of a configurable type.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.ModelTypeField}
@@ -1271,7 +1288,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object path_ = "";
     /**
      * <pre>
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1298,7 +1315,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1326,7 +1343,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1352,7 +1369,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1373,7 +1390,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path to the field within the Model proto.
+     * The path where the value of the field will be stored.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo

@@ -9,7 +9,7 @@ public interface ModelTypeFieldOrBuilder extends
 
   /**
    * <pre>
-   * The path to the field within the Model proto.
+   * The path where the value of the field will be stored.
    * Example:
    * "output_info.data" would be the Data message in the OutputInfo message.
    * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -25,7 +25,7 @@ public interface ModelTypeFieldOrBuilder extends
   java.lang.String getPath();
   /**
    * <pre>
-   * The path to the field within the Model proto.
+   * The path where the value of the field will be stored.
    * Example:
    * "output_info.data" would be the Data message in the OutputInfo message.
    * "output_info.output_config.language" is in the OutputConfig message within OutputInfo

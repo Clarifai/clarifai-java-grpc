@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) The number of results that will be contained in each page. Defaults
-   * to 10.
+   * to 128.
    * </pre>
    *
    * <code>uint32 per_page = 4;</code>
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      * </pre>
      *
      * <code>uint32 per_page = 4;</code>
@@ -829,7 +829,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      * </pre>
      *
      * <code>uint32 per_page = 4;</code>
@@ -845,7 +845,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 10.
+     * to 128.
      * </pre>
      *
      * <code>uint32 per_page = 4;</code>

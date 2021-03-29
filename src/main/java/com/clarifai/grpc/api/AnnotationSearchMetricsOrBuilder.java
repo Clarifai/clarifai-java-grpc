@@ -124,4 +124,37 @@ public interface AnnotationSearchMetricsOrBuilder extends
    * @return The activeConceptCount.
    */
   int getActiveConceptCount();
+
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   * @return Whether the visibility field is set.
+   */
+  boolean hasVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Visibility getVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   */
+  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
 }

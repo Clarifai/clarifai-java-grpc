@@ -28,4 +28,31 @@ public interface ListScopesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getKeyTypeBytes();
+
+  /**
+   * <pre>
+   * For all user specific information we include user_app_id to get the user_id in a consistent way
+   * </pre>
+   *
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+   * @return Whether the userAppId field is set.
+   */
+  boolean hasUserAppId();
+  /**
+   * <pre>
+   * For all user specific information we include user_app_id to get the user_id in a consistent way
+   * </pre>
+   *
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+   * @return The userAppId.
+   */
+  com.clarifai.grpc.api.UserAppIDSet getUserAppId();
+  /**
+   * <pre>
+   * For all user specific information we include user_app_id to get the user_id in a consistent way
+   * </pre>
+   *
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+   */
+  com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 }

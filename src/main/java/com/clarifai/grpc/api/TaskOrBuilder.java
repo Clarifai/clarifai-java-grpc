@@ -352,4 +352,37 @@ public interface TaskOrBuilder extends
    * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
    */
   com.clarifai.grpc.api.AiAssistParametersOrBuilder getAiAssistParamsOrBuilder();
+
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 15;</code>
+   * @return Whether the visibility field is set.
+   */
+  boolean hasVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 15;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Visibility getVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 15;</code>
+   */
+  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
 }
