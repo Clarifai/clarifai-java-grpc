@@ -46,10 +46,4 @@ public interface DeleteInputsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdsBytes(int index);
-
-  /**
-   * <code>bool delete_all = 3;</code>
-   * @return The deleteAll.
-   */
-  boolean getDeleteAll();
 }

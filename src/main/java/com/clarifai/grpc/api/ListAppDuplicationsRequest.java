@@ -65,6 +65,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            page_ = input.readUInt32();
+            break;
+          }
+          case 24: {
+
+            perPage_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -120,6 +130,36 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
+  public static final int PAGE_FIELD_NUMBER = 2;
+  private int page_;
+  /**
+   * <pre>
+   * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+   * Defaults to 1.
+   * </pre>
+   *
+   * <code>uint32 page = 2;</code>
+   * @return The page.
+   */
+  public int getPage() {
+    return page_;
+  }
+
+  public static final int PER_PAGE_FIELD_NUMBER = 3;
+  private int perPage_;
+  /**
+   * <pre>
+   * (optional URL parameter) The number of results that will be contained in each page. Defaults
+   * to 128.
+   * </pre>
+   *
+   * <code>uint32 per_page = 3;</code>
+   * @return The perPage.
+   */
+  public int getPerPage() {
+    return perPage_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -137,6 +177,12 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
+    if (page_ != 0) {
+      output.writeUInt32(2, page_);
+    }
+    if (perPage_ != 0) {
+      output.writeUInt32(3, perPage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -149,6 +195,14 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
+    }
+    if (page_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(2, page_);
+    }
+    if (perPage_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(3, perPage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -170,6 +224,10 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
+    if (getPage()
+        != other.getPage()) return false;
+    if (getPerPage()
+        != other.getPerPage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -185,6 +243,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
+    hash = (37 * hash) + PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPage();
+    hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPerPage();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,6 +390,10 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
+      page_ = 0;
+
+      perPage_ = 0;
+
       return this;
     }
 
@@ -359,6 +425,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
+      result.page_ = page_;
+      result.perPage_ = perPage_;
       onBuilt();
       return result;
     }
@@ -409,6 +477,12 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.ListAppDuplicationsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
+      }
+      if (other.getPage() != 0) {
+        setPage(other.getPage());
+      }
+      if (other.getPerPage() != 0) {
+        setPerPage(other.getPerPage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -556,6 +630,96 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
       }
       return userAppIdBuilder_;
+    }
+
+    private int page_ ;
+    /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 page = 2;</code>
+     * @return The page.
+     */
+    public int getPage() {
+      return page_;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 page = 2;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPage(int value) {
+      
+      page_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 page = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPage() {
+      
+      page_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int perPage_ ;
+    /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
+     * <code>uint32 per_page = 3;</code>
+     * @return The perPage.
+     */
+    public int getPerPage() {
+      return perPage_;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
+     * <code>uint32 per_page = 3;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerPage(int value) {
+      
+      perPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
+     * <code>uint32 per_page = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPerPage() {
+      
+      perPage_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

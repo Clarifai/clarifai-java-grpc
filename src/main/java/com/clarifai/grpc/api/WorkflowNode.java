@@ -84,6 +84,19 @@ private static final long serialVersionUID = 0L;
             suppressOutput_ = input.readBool();
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.Operator.Builder subBuilder = null;
+            if (operator_ != null) {
+              subBuilder = operator_.toBuilder();
+            }
+            operator_ = input.readMessage(com.clarifai.grpc.api.Operator.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(operator_);
+              operator_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -203,6 +216,41 @@ private static final long serialVersionUID = 0L;
     return getModel();
   }
 
+  public static final int OPERATOR_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Operator operator_;
+  /**
+   * <pre>
+   * An operator will process this node.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 5;</code>
+   * @return Whether the operator field is set.
+   */
+  public boolean hasOperator() {
+    return operator_ != null;
+  }
+  /**
+   * <pre>
+   * An operator will process this node.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 5;</code>
+   * @return The operator.
+   */
+  public com.clarifai.grpc.api.Operator getOperator() {
+    return operator_ == null ? com.clarifai.grpc.api.Operator.getDefaultInstance() : operator_;
+  }
+  /**
+   * <pre>
+   * An operator will process this node.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 5;</code>
+   */
+  public com.clarifai.grpc.api.OperatorOrBuilder getOperatorOrBuilder() {
+    return getOperator();
+  }
+
   public static final int NODE_INPUTS_FIELD_NUMBER = 3;
   private java.util.List<com.clarifai.grpc.api.NodeInput> nodeInputs_;
   /**
@@ -303,6 +351,9 @@ private static final long serialVersionUID = 0L;
     if (suppressOutput_ != false) {
       output.writeBool(4, suppressOutput_);
     }
+    if (operator_ != null) {
+      output.writeMessage(5, getOperator());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -327,6 +378,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, suppressOutput_);
     }
+    if (operator_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getOperator());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -349,6 +404,11 @@ private static final long serialVersionUID = 0L;
       if (!getModel()
           .equals(other.getModel())) return false;
     }
+    if (hasOperator() != other.hasOperator()) return false;
+    if (hasOperator()) {
+      if (!getOperator()
+          .equals(other.getOperator())) return false;
+    }
     if (!getNodeInputsList()
         .equals(other.getNodeInputsList())) return false;
     if (getSuppressOutput()
@@ -369,6 +429,10 @@ private static final long serialVersionUID = 0L;
     if (hasModel()) {
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
+    }
+    if (hasOperator()) {
+      hash = (37 * hash) + OPERATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getOperator().hashCode();
     }
     if (getNodeInputsCount() > 0) {
       hash = (37 * hash) + NODE_INPUTS_FIELD_NUMBER;
@@ -519,6 +583,12 @@ private static final long serialVersionUID = 0L;
         model_ = null;
         modelBuilder_ = null;
       }
+      if (operatorBuilder_ == null) {
+        operator_ = null;
+      } else {
+        operator_ = null;
+        operatorBuilder_ = null;
+      }
       if (nodeInputsBuilder_ == null) {
         nodeInputs_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -559,6 +629,11 @@ private static final long serialVersionUID = 0L;
         result.model_ = model_;
       } else {
         result.model_ = modelBuilder_.build();
+      }
+      if (operatorBuilder_ == null) {
+        result.operator_ = operator_;
+      } else {
+        result.operator_ = operatorBuilder_.build();
       }
       if (nodeInputsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -624,6 +699,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModel()) {
         mergeModel(other.getModel());
+      }
+      if (other.hasOperator()) {
+        mergeOperator(other.getOperator());
       }
       if (nodeInputsBuilder_ == null) {
         if (!other.nodeInputs_.isEmpty()) {
@@ -947,6 +1025,161 @@ private static final long serialVersionUID = 0L;
         model_ = null;
       }
       return modelBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Operator operator_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Operator, com.clarifai.grpc.api.Operator.Builder, com.clarifai.grpc.api.OperatorOrBuilder> operatorBuilder_;
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     * @return Whether the operator field is set.
+     */
+    public boolean hasOperator() {
+      return operatorBuilder_ != null || operator_ != null;
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     * @return The operator.
+     */
+    public com.clarifai.grpc.api.Operator getOperator() {
+      if (operatorBuilder_ == null) {
+        return operator_ == null ? com.clarifai.grpc.api.Operator.getDefaultInstance() : operator_;
+      } else {
+        return operatorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    public Builder setOperator(com.clarifai.grpc.api.Operator value) {
+      if (operatorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operator_ = value;
+        onChanged();
+      } else {
+        operatorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    public Builder setOperator(
+        com.clarifai.grpc.api.Operator.Builder builderForValue) {
+      if (operatorBuilder_ == null) {
+        operator_ = builderForValue.build();
+        onChanged();
+      } else {
+        operatorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    public Builder mergeOperator(com.clarifai.grpc.api.Operator value) {
+      if (operatorBuilder_ == null) {
+        if (operator_ != null) {
+          operator_ =
+            com.clarifai.grpc.api.Operator.newBuilder(operator_).mergeFrom(value).buildPartial();
+        } else {
+          operator_ = value;
+        }
+        onChanged();
+      } else {
+        operatorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    public Builder clearOperator() {
+      if (operatorBuilder_ == null) {
+        operator_ = null;
+        onChanged();
+      } else {
+        operator_ = null;
+        operatorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    public com.clarifai.grpc.api.Operator.Builder getOperatorBuilder() {
+      
+      onChanged();
+      return getOperatorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    public com.clarifai.grpc.api.OperatorOrBuilder getOperatorOrBuilder() {
+      if (operatorBuilder_ != null) {
+        return operatorBuilder_.getMessageOrBuilder();
+      } else {
+        return operator_ == null ?
+            com.clarifai.grpc.api.Operator.getDefaultInstance() : operator_;
+      }
+    }
+    /**
+     * <pre>
+     * An operator will process this node.
+     * </pre>
+     *
+     * <code>.clarifai.api.Operator operator = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Operator, com.clarifai.grpc.api.Operator.Builder, com.clarifai.grpc.api.OperatorOrBuilder> 
+        getOperatorFieldBuilder() {
+      if (operatorBuilder_ == null) {
+        operatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Operator, com.clarifai.grpc.api.Operator.Builder, com.clarifai.grpc.api.OperatorOrBuilder>(
+                getOperator(),
+                getParentForChildren(),
+                isClean());
+        operator_ = null;
+      }
+      return operatorBuilder_;
     }
 
     private java.util.List<com.clarifai.grpc.api.NodeInput> nodeInputs_ =

@@ -20,15 +20,15 @@ public interface UserOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>string primary_email = 2;</code>
+   * <code>string primary_email = 2 [deprecated = true];</code>
    * @return The primaryEmail.
    */
-  java.lang.String getPrimaryEmail();
+  @java.lang.Deprecated java.lang.String getPrimaryEmail();
   /**
-   * <code>string primary_email = 2;</code>
+   * <code>string primary_email = 2 [deprecated = true];</code>
    * @return The bytes for primaryEmail.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getPrimaryEmailBytes();
 
   /**
@@ -68,15 +68,15 @@ public interface UserOrBuilder extends
       getCompanyNameBytes();
 
   /**
-   * <code>string bill_type = 7;</code>
+   * <code>string bill_type = 7 [deprecated = true];</code>
    * @return The billType.
    */
-  java.lang.String getBillType();
+  @java.lang.Deprecated java.lang.String getBillType();
   /**
-   * <code>string bill_type = 7;</code>
+   * <code>string bill_type = 7 [deprecated = true];</code>
    * @return The bytes for billType.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getBillTypeBytes();
 
   /**
@@ -119,49 +119,49 @@ public interface UserOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @return Whether the dateGdprConsent field is set.
    */
-  boolean hasDateGdprConsent();
+  @java.lang.Deprecated boolean hasDateGdprConsent();
   /**
-   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @return The dateGdprConsent.
    */
-  com.google.protobuf.Timestamp getDateGdprConsent();
+  @java.lang.Deprecated com.google.protobuf.Timestamp getDateGdprConsent();
   /**
-   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    */
-  com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+   * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @return Whether the dateTosConsent field is set.
    */
-  boolean hasDateTosConsent();
+  @java.lang.Deprecated boolean hasDateTosConsent();
   /**
-   * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+   * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @return The dateTosConsent.
    */
-  com.google.protobuf.Timestamp getDateTosConsent();
+  @java.lang.Deprecated com.google.protobuf.Timestamp getDateTosConsent();
   /**
-   * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+   * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    */
-  com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+   * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @return Whether the dateMarketingConsent field is set.
    */
-  boolean hasDateMarketingConsent();
+  @java.lang.Deprecated boolean hasDateMarketingConsent();
   /**
-   * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+   * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @return The dateMarketingConsent.
    */
-  com.google.protobuf.Timestamp getDateMarketingConsent();
+  @java.lang.Deprecated com.google.protobuf.Timestamp getDateMarketingConsent();
   /**
-   * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+   * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    */
-  com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder();
 
   /**
    * <pre>
@@ -169,69 +169,135 @@ public interface UserOrBuilder extends
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadata = 11;</code>
+   * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @return Whether the metadata field is set.
    */
-  boolean hasMetadata();
+  @java.lang.Deprecated boolean hasMetadata();
   /**
    * <pre>
    * To handle arbitrary json metadata you can use a struct field:
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadata = 11;</code>
+   * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @return The metadata.
    */
-  com.google.protobuf.Struct getMetadata();
+  @java.lang.Deprecated com.google.protobuf.Struct getMetadata();
   /**
    * <pre>
    * To handle arbitrary json metadata you can use a struct field:
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadata = 11;</code>
+   * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    */
-  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  java.util.List<com.clarifai.grpc.api.EmailAddress> 
+  @java.lang.Deprecated java.util.List<com.clarifai.grpc.api.EmailAddress> 
       getEmailAddressesList();
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index);
+  @java.lang.Deprecated com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index);
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  int getEmailAddressesCount();
+  @java.lang.Deprecated int getEmailAddressesCount();
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
+  @java.lang.Deprecated java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
       getEmailAddressesOrBuilderList();
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
+  @java.lang.Deprecated com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index);
 
   /**
-   * <code>bool is_org_admin = 14;</code>
+   * <code>bool is_org_admin = 14 [deprecated = true];</code>
    * @return The isOrgAdmin.
    */
-  boolean getIsOrgAdmin();
+  @java.lang.Deprecated boolean getIsOrgAdmin();
 
   /**
-   * <code>bool two_factor_auth_enabled = 15;</code>
+   * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
    * @return The twoFactorAuthEnabled.
    */
-  boolean getTwoFactorAuthEnabled();
+  @java.lang.Deprecated boolean getTwoFactorAuthEnabled();
 
   /**
-   * <code>uint32 teams_count = 16;</code>
+   * <code>uint32 teams_count = 16 [deprecated = true];</code>
    * @return The teamsCount.
    */
-  int getTeamsCount();
+  @java.lang.Deprecated int getTeamsCount();
+
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 17;</code>
+   * @return Whether the visibility field is set.
+   */
+  boolean hasVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 17;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Visibility getVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 17;</code>
+   */
+  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * This is all the personal information of a user. GetUser/ListUsers will not return this
+   * information unless the caller has the UserAccounts_Get scope on their key or is the user
+   * themselves.
+   * </pre>
+   *
+   * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+   * @return Whether the userDetail field is set.
+   */
+  boolean hasUserDetail();
+  /**
+   * <pre>
+   * This is all the personal information of a user. GetUser/ListUsers will not return this
+   * information unless the caller has the UserAccounts_Get scope on their key or is the user
+   * themselves.
+   * </pre>
+   *
+   * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+   * @return The userDetail.
+   */
+  com.clarifai.grpc.api.UserDetail getUserDetail();
+  /**
+   * <pre>
+   * This is all the personal information of a user. GetUser/ListUsers will not return this
+   * information unless the caller has the UserAccounts_Get scope on their key or is the user
+   * themselves.
+   * </pre>
+   *
+   * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+   */
+  com.clarifai.grpc.api.UserDetailOrBuilder getUserDetailOrBuilder();
 }

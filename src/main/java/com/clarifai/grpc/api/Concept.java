@@ -114,6 +114,19 @@ private static final long serialVersionUID = 0L;
             vocabId_ = s;
             break;
           }
+          case 74: {
+            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
+            if (visibility_ != null) {
+              subBuilder = visibility_.toBuilder();
+            }
+            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(visibility_);
+              visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -475,6 +488,47 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int VISIBILITY_FIELD_NUMBER = 9;
+  private com.clarifai.grpc.api.Visibility visibility_;
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 9;</code>
+   * @return Whether the visibility field is set.
+   */
+  public boolean hasVisibility() {
+    return visibility_ != null;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 9;</code>
+   * @return The visibility.
+   */
+  public com.clarifai.grpc.api.Visibility getVisibility() {
+    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 9;</code>
+   */
+  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+    return getVisibility();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -513,6 +567,9 @@ private static final long serialVersionUID = 0L;
     if (!getVocabIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, vocabId_);
     }
+    if (visibility_ != null) {
+      output.writeMessage(9, getVisibility());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -547,6 +604,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getVocabIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, vocabId_);
+    }
+    if (visibility_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getVisibility());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -583,6 +644,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDefinition())) return false;
     if (!getVocabId()
         .equals(other.getVocabId())) return false;
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (!getVisibility()
+          .equals(other.getVisibility())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -613,6 +679,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDefinition().hashCode();
     hash = (37 * hash) + VOCAB_ID_FIELD_NUMBER;
     hash = (53 * hash) + getVocabId().hashCode();
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibility().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -772,6 +842,12 @@ private static final long serialVersionUID = 0L;
 
       vocabId_ = "";
 
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
       return this;
     }
 
@@ -810,6 +886,11 @@ private static final long serialVersionUID = 0L;
       result.appId_ = appId_;
       result.definition_ = definition_;
       result.vocabId_ = vocabId_;
+      if (visibilityBuilder_ == null) {
+        result.visibility_ = visibility_;
+      } else {
+        result.visibility_ = visibilityBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -887,6 +968,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getVocabId().isEmpty()) {
         vocabId_ = other.vocabId_;
         onChanged();
+      }
+      if (other.hasVisibility()) {
+        mergeVisibility(other.getVisibility());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1731,6 +1815,179 @@ private static final long serialVersionUID = 0L;
       vocabId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Visibility visibility_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     * @return Whether the visibility field is set.
+     */
+    public boolean hasVisibility() {
+      return visibilityBuilder_ != null || visibility_ != null;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     * @return The visibility.
+     */
+    public com.clarifai.grpc.api.Visibility getVisibility() {
+      if (visibilityBuilder_ == null) {
+        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      } else {
+        return visibilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visibility_ = value;
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    public Builder setVisibility(
+        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
+      if (visibilityBuilder_ == null) {
+        visibility_ = builderForValue.build();
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (visibility_ != null) {
+          visibility_ =
+            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
+        } else {
+          visibility_ = value;
+        }
+        onChanged();
+      } else {
+        visibilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    public Builder clearVisibility() {
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+        onChanged();
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
+      
+      onChanged();
+      return getVisibilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+      if (visibilityBuilder_ != null) {
+        return visibilityBuilder_.getMessageOrBuilder();
+      } else {
+        return visibility_ == null ?
+            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
+        getVisibilityFieldBuilder() {
+      if (visibilityBuilder_ == null) {
+        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
+                getVisibility(),
+                getParentForChildren(),
+                isClean());
+        visibility_ = null;
+      }
+      return visibilityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -142,7 +142,7 @@ public interface ListConceptRelationsRequestOrBuilder extends
   /**
    * <pre>
    * (optional URL parameter) The number of results that will be contained in each page. Defaults
-   * to 10.
+   * to 128.
    * </pre>
    *
    * <code>uint32 per_page = 6;</code>

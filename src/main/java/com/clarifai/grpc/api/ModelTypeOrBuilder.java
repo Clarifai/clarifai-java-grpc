@@ -216,7 +216,7 @@ public interface ModelTypeOrBuilder extends
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
    * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data obejct within the OutputInfo object. We deciddd to not break these up
+   * if it's the Data object within the OutputInfo object. We decided to not break these up
    * into input_info, train_info and output_info related parameters and instead use the path
    * so that they are most flexible.
    * </pre>
@@ -229,7 +229,7 @@ public interface ModelTypeOrBuilder extends
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
    * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data obejct within the OutputInfo object. We deciddd to not break these up
+   * if it's the Data object within the OutputInfo object. We decided to not break these up
    * into input_info, train_info and output_info related parameters and instead use the path
    * so that they are most flexible.
    * </pre>
@@ -241,7 +241,7 @@ public interface ModelTypeOrBuilder extends
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
    * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data obejct within the OutputInfo object. We deciddd to not break these up
+   * if it's the Data object within the OutputInfo object. We decided to not break these up
    * into input_info, train_info and output_info related parameters and instead use the path
    * so that they are most flexible.
    * </pre>
@@ -253,7 +253,7 @@ public interface ModelTypeOrBuilder extends
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
    * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data obejct within the OutputInfo object. We deciddd to not break these up
+   * if it's the Data object within the OutputInfo object. We decided to not break these up
    * into input_info, train_info and output_info related parameters and instead use the path
    * so that they are most flexible.
    * </pre>
@@ -266,7 +266,7 @@ public interface ModelTypeOrBuilder extends
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
    * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data obejct within the OutputInfo object. We deciddd to not break these up
+   * if it's the Data object within the OutputInfo object. We decided to not break these up
    * into input_info, train_info and output_info related parameters and instead use the path
    * so that they are most flexible.
    * </pre>
@@ -350,4 +350,14 @@ public interface ModelTypeOrBuilder extends
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
    */
   com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder();
+
+  /**
+   * <pre>
+   * Can this model type be used as an operator type in workflows?
+   * </pre>
+   *
+   * <code>bool is_operator = 16;</code>
+   * @return The isOperator.
+   */
+  boolean getIsOperator();
 }

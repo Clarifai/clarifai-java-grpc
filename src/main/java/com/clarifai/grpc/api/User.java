@@ -187,6 +187,32 @@ private static final long serialVersionUID = 0L;
             teamsCount_ = input.readUInt32();
             break;
           }
+          case 138: {
+            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
+            if (visibility_ != null) {
+              subBuilder = visibility_.toBuilder();
+            }
+            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(visibility_);
+              visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 146: {
+            com.clarifai.grpc.api.UserDetail.Builder subBuilder = null;
+            if (userDetail_ != null) {
+              subBuilder = userDetail_.toBuilder();
+            }
+            userDetail_ = input.readMessage(com.clarifai.grpc.api.UserDetail.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(userDetail_);
+              userDetail_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -261,10 +287,10 @@ private static final long serialVersionUID = 0L;
   public static final int PRIMARY_EMAIL_FIELD_NUMBER = 2;
   private volatile java.lang.Object primaryEmail_;
   /**
-   * <code>string primary_email = 2;</code>
+   * <code>string primary_email = 2 [deprecated = true];</code>
    * @return The primaryEmail.
    */
-  public java.lang.String getPrimaryEmail() {
+  @java.lang.Deprecated public java.lang.String getPrimaryEmail() {
     java.lang.Object ref = primaryEmail_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -277,10 +303,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string primary_email = 2;</code>
+   * <code>string primary_email = 2 [deprecated = true];</code>
    * @return The bytes for primaryEmail.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getPrimaryEmailBytes() {
     java.lang.Object ref = primaryEmail_;
     if (ref instanceof java.lang.String) {
@@ -405,10 +431,10 @@ private static final long serialVersionUID = 0L;
   public static final int BILL_TYPE_FIELD_NUMBER = 7;
   private volatile java.lang.Object billType_;
   /**
-   * <code>string bill_type = 7;</code>
+   * <code>string bill_type = 7 [deprecated = true];</code>
    * @return The billType.
    */
-  public java.lang.String getBillType() {
+  @java.lang.Deprecated public java.lang.String getBillType() {
     java.lang.Object ref = billType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -421,10 +447,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string bill_type = 7;</code>
+   * <code>string bill_type = 7 [deprecated = true];</code>
    * @return The bytes for billType.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getBillTypeBytes() {
     java.lang.Object ref = billType_;
     if (ref instanceof java.lang.String) {
@@ -488,69 +514,69 @@ private static final long serialVersionUID = 0L;
   public static final int DATE_GDPR_CONSENT_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp dateGdprConsent_;
   /**
-   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @return Whether the dateGdprConsent field is set.
    */
-  public boolean hasDateGdprConsent() {
+  @java.lang.Deprecated public boolean hasDateGdprConsent() {
     return dateGdprConsent_ != null;
   }
   /**
-   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @return The dateGdprConsent.
    */
-  public com.google.protobuf.Timestamp getDateGdprConsent() {
+  @java.lang.Deprecated public com.google.protobuf.Timestamp getDateGdprConsent() {
     return dateGdprConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateGdprConsent_;
   }
   /**
-   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+   * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    */
-  public com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder() {
     return getDateGdprConsent();
   }
 
   public static final int DATE_TOS_CONSENT_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp dateTosConsent_;
   /**
-   * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+   * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @return Whether the dateTosConsent field is set.
    */
-  public boolean hasDateTosConsent() {
+  @java.lang.Deprecated public boolean hasDateTosConsent() {
     return dateTosConsent_ != null;
   }
   /**
-   * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+   * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @return The dateTosConsent.
    */
-  public com.google.protobuf.Timestamp getDateTosConsent() {
+  @java.lang.Deprecated public com.google.protobuf.Timestamp getDateTosConsent() {
     return dateTosConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTosConsent_;
   }
   /**
-   * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+   * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    */
-  public com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder() {
     return getDateTosConsent();
   }
 
   public static final int DATE_MARKETING_CONSENT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp dateMarketingConsent_;
   /**
-   * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+   * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @return Whether the dateMarketingConsent field is set.
    */
-  public boolean hasDateMarketingConsent() {
+  @java.lang.Deprecated public boolean hasDateMarketingConsent() {
     return dateMarketingConsent_ != null;
   }
   /**
-   * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+   * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @return The dateMarketingConsent.
    */
-  public com.google.protobuf.Timestamp getDateMarketingConsent() {
+  @java.lang.Deprecated public com.google.protobuf.Timestamp getDateMarketingConsent() {
     return dateMarketingConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateMarketingConsent_;
   }
   /**
-   * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+   * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    */
-  public com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder() {
     return getDateMarketingConsent();
   }
 
@@ -562,10 +588,10 @@ private static final long serialVersionUID = 0L;
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadata = 11;</code>
+   * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @return Whether the metadata field is set.
    */
-  public boolean hasMetadata() {
+  @java.lang.Deprecated public boolean hasMetadata() {
     return metadata_ != null;
   }
   /**
@@ -574,10 +600,10 @@ private static final long serialVersionUID = 0L;
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadata = 11;</code>
+   * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @return The metadata.
    */
-  public com.google.protobuf.Struct getMetadata() {
+  @java.lang.Deprecated public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
   /**
@@ -586,43 +612,43 @@ private static final long serialVersionUID = 0L;
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadata = 11;</code>
+   * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    */
-  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
 
   public static final int EMAIL_ADDRESSES_FIELD_NUMBER = 12;
   private java.util.List<com.clarifai.grpc.api.EmailAddress> emailAddresses_;
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  public java.util.List<com.clarifai.grpc.api.EmailAddress> getEmailAddressesList() {
+  @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.EmailAddress> getEmailAddressesList() {
     return emailAddresses_;
   }
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  public java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
+  @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
       getEmailAddressesOrBuilderList() {
     return emailAddresses_;
   }
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  public int getEmailAddressesCount() {
+  @java.lang.Deprecated public int getEmailAddressesCount() {
     return emailAddresses_.size();
   }
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index) {
+  @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index) {
     return emailAddresses_.get(index);
   }
   /**
-   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+   * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
+  @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index) {
     return emailAddresses_.get(index);
   }
@@ -630,31 +656,113 @@ private static final long serialVersionUID = 0L;
   public static final int IS_ORG_ADMIN_FIELD_NUMBER = 14;
   private boolean isOrgAdmin_;
   /**
-   * <code>bool is_org_admin = 14;</code>
+   * <code>bool is_org_admin = 14 [deprecated = true];</code>
    * @return The isOrgAdmin.
    */
-  public boolean getIsOrgAdmin() {
+  @java.lang.Deprecated public boolean getIsOrgAdmin() {
     return isOrgAdmin_;
   }
 
   public static final int TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER = 15;
   private boolean twoFactorAuthEnabled_;
   /**
-   * <code>bool two_factor_auth_enabled = 15;</code>
+   * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
    * @return The twoFactorAuthEnabled.
    */
-  public boolean getTwoFactorAuthEnabled() {
+  @java.lang.Deprecated public boolean getTwoFactorAuthEnabled() {
     return twoFactorAuthEnabled_;
   }
 
   public static final int TEAMS_COUNT_FIELD_NUMBER = 16;
   private int teamsCount_;
   /**
-   * <code>uint32 teams_count = 16;</code>
+   * <code>uint32 teams_count = 16 [deprecated = true];</code>
    * @return The teamsCount.
    */
-  public int getTeamsCount() {
+  @java.lang.Deprecated public int getTeamsCount() {
     return teamsCount_;
+  }
+
+  public static final int VISIBILITY_FIELD_NUMBER = 17;
+  private com.clarifai.grpc.api.Visibility visibility_;
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 17;</code>
+   * @return Whether the visibility field is set.
+   */
+  public boolean hasVisibility() {
+    return visibility_ != null;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 17;</code>
+   * @return The visibility.
+   */
+  public com.clarifai.grpc.api.Visibility getVisibility() {
+    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 17;</code>
+   */
+  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+    return getVisibility();
+  }
+
+  public static final int USER_DETAIL_FIELD_NUMBER = 18;
+  private com.clarifai.grpc.api.UserDetail userDetail_;
+  /**
+   * <pre>
+   * This is all the personal information of a user. GetUser/ListUsers will not return this
+   * information unless the caller has the UserAccounts_Get scope on their key or is the user
+   * themselves.
+   * </pre>
+   *
+   * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+   * @return Whether the userDetail field is set.
+   */
+  public boolean hasUserDetail() {
+    return userDetail_ != null;
+  }
+  /**
+   * <pre>
+   * This is all the personal information of a user. GetUser/ListUsers will not return this
+   * information unless the caller has the UserAccounts_Get scope on their key or is the user
+   * themselves.
+   * </pre>
+   *
+   * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+   * @return The userDetail.
+   */
+  public com.clarifai.grpc.api.UserDetail getUserDetail() {
+    return userDetail_ == null ? com.clarifai.grpc.api.UserDetail.getDefaultInstance() : userDetail_;
+  }
+  /**
+   * <pre>
+   * This is all the personal information of a user. GetUser/ListUsers will not return this
+   * information unless the caller has the UserAccounts_Get scope on their key or is the user
+   * themselves.
+   * </pre>
+   *
+   * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+   */
+  public com.clarifai.grpc.api.UserDetailOrBuilder getUserDetailOrBuilder() {
+    return getUserDetail();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -715,6 +823,12 @@ private static final long serialVersionUID = 0L;
     }
     if (teamsCount_ != 0) {
       output.writeUInt32(16, teamsCount_);
+    }
+    if (visibility_ != null) {
+      output.writeMessage(17, getVisibility());
+    }
+    if (userDetail_ != null) {
+      output.writeMessage(18, getUserDetail());
     }
     unknownFields.writeTo(output);
   }
@@ -779,6 +893,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(16, teamsCount_);
     }
+    if (visibility_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getVisibility());
+    }
+    if (userDetail_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getUserDetail());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -839,6 +961,16 @@ private static final long serialVersionUID = 0L;
         != other.getTwoFactorAuthEnabled()) return false;
     if (getTeamsCount()
         != other.getTeamsCount()) return false;
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (!getVisibility()
+          .equals(other.getVisibility())) return false;
+    }
+    if (hasUserDetail() != other.hasUserDetail()) return false;
+    if (hasUserDetail()) {
+      if (!getUserDetail()
+          .equals(other.getUserDetail())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -894,6 +1026,14 @@ private static final long serialVersionUID = 0L;
         getTwoFactorAuthEnabled());
     hash = (37 * hash) + TEAMS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTeamsCount();
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibility().hashCode();
+    }
+    if (hasUserDetail()) {
+      hash = (37 * hash) + USER_DETAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserDetail().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1088,6 +1228,18 @@ private static final long serialVersionUID = 0L;
 
       teamsCount_ = 0;
 
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+      if (userDetailBuilder_ == null) {
+        userDetail_ = null;
+      } else {
+        userDetail_ = null;
+        userDetailBuilder_ = null;
+      }
       return this;
     }
 
@@ -1158,6 +1310,16 @@ private static final long serialVersionUID = 0L;
       result.isOrgAdmin_ = isOrgAdmin_;
       result.twoFactorAuthEnabled_ = twoFactorAuthEnabled_;
       result.teamsCount_ = teamsCount_;
+      if (visibilityBuilder_ == null) {
+        result.visibility_ = visibility_;
+      } else {
+        result.visibility_ = visibilityBuilder_.build();
+      }
+      if (userDetailBuilder_ == null) {
+        result.userDetail_ = userDetail_;
+      } else {
+        result.userDetail_ = userDetailBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1280,6 +1442,12 @@ private static final long serialVersionUID = 0L;
       if (other.getTeamsCount() != 0) {
         setTeamsCount(other.getTeamsCount());
       }
+      if (other.hasVisibility()) {
+        mergeVisibility(other.getVisibility());
+      }
+      if (other.hasUserDetail()) {
+        mergeUserDetail(other.getUserDetail());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1388,10 +1556,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object primaryEmail_ = "";
     /**
-     * <code>string primary_email = 2;</code>
+     * <code>string primary_email = 2 [deprecated = true];</code>
      * @return The primaryEmail.
      */
-    public java.lang.String getPrimaryEmail() {
+    @java.lang.Deprecated public java.lang.String getPrimaryEmail() {
       java.lang.Object ref = primaryEmail_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1404,10 +1572,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string primary_email = 2;</code>
+     * <code>string primary_email = 2 [deprecated = true];</code>
      * @return The bytes for primaryEmail.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getPrimaryEmailBytes() {
       java.lang.Object ref = primaryEmail_;
       if (ref instanceof String) {
@@ -1421,11 +1589,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string primary_email = 2;</code>
+     * <code>string primary_email = 2 [deprecated = true];</code>
      * @param value The primaryEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setPrimaryEmail(
+    @java.lang.Deprecated public Builder setPrimaryEmail(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1436,21 +1604,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string primary_email = 2;</code>
+     * <code>string primary_email = 2 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearPrimaryEmail() {
+    @java.lang.Deprecated public Builder clearPrimaryEmail() {
       
       primaryEmail_ = getDefaultInstance().getPrimaryEmail();
       onChanged();
       return this;
     }
     /**
-     * <code>string primary_email = 2;</code>
+     * <code>string primary_email = 2 [deprecated = true];</code>
      * @param value The bytes for primaryEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setPrimaryEmailBytes(
+    @java.lang.Deprecated public Builder setPrimaryEmailBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1692,10 +1860,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object billType_ = "";
     /**
-     * <code>string bill_type = 7;</code>
+     * <code>string bill_type = 7 [deprecated = true];</code>
      * @return The billType.
      */
-    public java.lang.String getBillType() {
+    @java.lang.Deprecated public java.lang.String getBillType() {
       java.lang.Object ref = billType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1708,10 +1876,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bill_type = 7;</code>
+     * <code>string bill_type = 7 [deprecated = true];</code>
      * @return The bytes for billType.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getBillTypeBytes() {
       java.lang.Object ref = billType_;
       if (ref instanceof String) {
@@ -1725,11 +1893,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string bill_type = 7;</code>
+     * <code>string bill_type = 7 [deprecated = true];</code>
      * @param value The billType to set.
      * @return This builder for chaining.
      */
-    public Builder setBillType(
+    @java.lang.Deprecated public Builder setBillType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1740,21 +1908,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string bill_type = 7;</code>
+     * <code>string bill_type = 7 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearBillType() {
+    @java.lang.Deprecated public Builder clearBillType() {
       
       billType_ = getDefaultInstance().getBillType();
       onChanged();
       return this;
     }
     /**
-     * <code>string bill_type = 7;</code>
+     * <code>string bill_type = 7 [deprecated = true];</code>
      * @param value The bytes for billType to set.
      * @return This builder for chaining.
      */
-    public Builder setBillTypeBytes(
+    @java.lang.Deprecated public Builder setBillTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1961,17 +2129,17 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateGdprConsentBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @return Whether the dateGdprConsent field is set.
      */
-    public boolean hasDateGdprConsent() {
+    @java.lang.Deprecated public boolean hasDateGdprConsent() {
       return dateGdprConsentBuilder_ != null || dateGdprConsent_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @return The dateGdprConsent.
      */
-    public com.google.protobuf.Timestamp getDateGdprConsent() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getDateGdprConsent() {
       if (dateGdprConsentBuilder_ == null) {
         return dateGdprConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateGdprConsent_;
       } else {
@@ -1979,9 +2147,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
-    public Builder setDateGdprConsent(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder setDateGdprConsent(com.google.protobuf.Timestamp value) {
       if (dateGdprConsentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1995,9 +2163,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
-    public Builder setDateGdprConsent(
+    @java.lang.Deprecated public Builder setDateGdprConsent(
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dateGdprConsentBuilder_ == null) {
         dateGdprConsent_ = builderForValue.build();
@@ -2009,9 +2177,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
-    public Builder mergeDateGdprConsent(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder mergeDateGdprConsent(com.google.protobuf.Timestamp value) {
       if (dateGdprConsentBuilder_ == null) {
         if (dateGdprConsent_ != null) {
           dateGdprConsent_ =
@@ -2027,9 +2195,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
-    public Builder clearDateGdprConsent() {
+    @java.lang.Deprecated public Builder clearDateGdprConsent() {
       if (dateGdprConsentBuilder_ == null) {
         dateGdprConsent_ = null;
         onChanged();
@@ -2041,17 +2209,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp.Builder getDateGdprConsentBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getDateGdprConsentBuilder() {
       
       onChanged();
       return getDateGdprConsentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder() {
       if (dateGdprConsentBuilder_ != null) {
         return dateGdprConsentBuilder_.getMessageOrBuilder();
       } else {
@@ -2060,7 +2228,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8;</code>
+     * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2080,17 +2248,17 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateTosConsentBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @return Whether the dateTosConsent field is set.
      */
-    public boolean hasDateTosConsent() {
+    @java.lang.Deprecated public boolean hasDateTosConsent() {
       return dateTosConsentBuilder_ != null || dateTosConsent_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @return The dateTosConsent.
      */
-    public com.google.protobuf.Timestamp getDateTosConsent() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getDateTosConsent() {
       if (dateTosConsentBuilder_ == null) {
         return dateTosConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTosConsent_;
       } else {
@@ -2098,9 +2266,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
-    public Builder setDateTosConsent(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder setDateTosConsent(com.google.protobuf.Timestamp value) {
       if (dateTosConsentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2114,9 +2282,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
-    public Builder setDateTosConsent(
+    @java.lang.Deprecated public Builder setDateTosConsent(
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dateTosConsentBuilder_ == null) {
         dateTosConsent_ = builderForValue.build();
@@ -2128,9 +2296,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
-    public Builder mergeDateTosConsent(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder mergeDateTosConsent(com.google.protobuf.Timestamp value) {
       if (dateTosConsentBuilder_ == null) {
         if (dateTosConsent_ != null) {
           dateTosConsent_ =
@@ -2146,9 +2314,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
-    public Builder clearDateTosConsent() {
+    @java.lang.Deprecated public Builder clearDateTosConsent() {
       if (dateTosConsentBuilder_ == null) {
         dateTosConsent_ = null;
         onChanged();
@@ -2160,17 +2328,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp.Builder getDateTosConsentBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getDateTosConsentBuilder() {
       
       onChanged();
       return getDateTosConsentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder() {
       if (dateTosConsentBuilder_ != null) {
         return dateTosConsentBuilder_.getMessageOrBuilder();
       } else {
@@ -2179,7 +2347,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp date_tos_consent = 9;</code>
+     * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2199,17 +2367,17 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateMarketingConsentBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @return Whether the dateMarketingConsent field is set.
      */
-    public boolean hasDateMarketingConsent() {
+    @java.lang.Deprecated public boolean hasDateMarketingConsent() {
       return dateMarketingConsentBuilder_ != null || dateMarketingConsent_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @return The dateMarketingConsent.
      */
-    public com.google.protobuf.Timestamp getDateMarketingConsent() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getDateMarketingConsent() {
       if (dateMarketingConsentBuilder_ == null) {
         return dateMarketingConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateMarketingConsent_;
       } else {
@@ -2217,9 +2385,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
-    public Builder setDateMarketingConsent(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder setDateMarketingConsent(com.google.protobuf.Timestamp value) {
       if (dateMarketingConsentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2233,9 +2401,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
-    public Builder setDateMarketingConsent(
+    @java.lang.Deprecated public Builder setDateMarketingConsent(
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (dateMarketingConsentBuilder_ == null) {
         dateMarketingConsent_ = builderForValue.build();
@@ -2247,9 +2415,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
-    public Builder mergeDateMarketingConsent(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated public Builder mergeDateMarketingConsent(com.google.protobuf.Timestamp value) {
       if (dateMarketingConsentBuilder_ == null) {
         if (dateMarketingConsent_ != null) {
           dateMarketingConsent_ =
@@ -2265,9 +2433,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
-    public Builder clearDateMarketingConsent() {
+    @java.lang.Deprecated public Builder clearDateMarketingConsent() {
       if (dateMarketingConsentBuilder_ == null) {
         dateMarketingConsent_ = null;
         onChanged();
@@ -2279,17 +2447,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp.Builder getDateMarketingConsentBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getDateMarketingConsentBuilder() {
       
       onChanged();
       return getDateMarketingConsentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder() {
       if (dateMarketingConsentBuilder_ != null) {
         return dateMarketingConsentBuilder_.getMessageOrBuilder();
       } else {
@@ -2298,7 +2466,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp date_marketing_consent = 10;</code>
+     * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2323,10 +2491,10 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @return Whether the metadata field is set.
      */
-    public boolean hasMetadata() {
+    @java.lang.Deprecated public boolean hasMetadata() {
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
@@ -2335,10 +2503,10 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @return The metadata.
      */
-    public com.google.protobuf.Struct getMetadata() {
+    @java.lang.Deprecated public com.google.protobuf.Struct getMetadata() {
       if (metadataBuilder_ == null) {
         return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
       } else {
@@ -2351,9 +2519,9 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
-    public Builder setMetadata(com.google.protobuf.Struct value) {
+    @java.lang.Deprecated public Builder setMetadata(com.google.protobuf.Struct value) {
       if (metadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2372,9 +2540,9 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
-    public Builder setMetadata(
+    @java.lang.Deprecated public Builder setMetadata(
         com.google.protobuf.Struct.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
@@ -2391,9 +2559,9 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
-    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+    @java.lang.Deprecated public Builder mergeMetadata(com.google.protobuf.Struct value) {
       if (metadataBuilder_ == null) {
         if (metadata_ != null) {
           metadata_ =
@@ -2414,9 +2582,9 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
-    public Builder clearMetadata() {
+    @java.lang.Deprecated public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
         metadata_ = null;
         onChanged();
@@ -2433,9 +2601,9 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
-    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Struct.Builder getMetadataBuilder() {
       
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
@@ -2446,9 +2614,9 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
-    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
         return metadataBuilder_.getMessageOrBuilder();
       } else {
@@ -2462,7 +2630,7 @@ private static final long serialVersionUID = 0L;
      * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadata = 11;</code>
+     * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -2491,9 +2659,9 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.EmailAddress, com.clarifai.grpc.api.EmailAddress.Builder, com.clarifai.grpc.api.EmailAddressOrBuilder> emailAddressesBuilder_;
 
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.EmailAddress> getEmailAddressesList() {
+    @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.EmailAddress> getEmailAddressesList() {
       if (emailAddressesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(emailAddresses_);
       } else {
@@ -2501,9 +2669,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public int getEmailAddressesCount() {
+    @java.lang.Deprecated public int getEmailAddressesCount() {
       if (emailAddressesBuilder_ == null) {
         return emailAddresses_.size();
       } else {
@@ -2511,9 +2679,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index) {
+    @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index) {
       if (emailAddressesBuilder_ == null) {
         return emailAddresses_.get(index);
       } else {
@@ -2521,9 +2689,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder setEmailAddresses(
+    @java.lang.Deprecated public Builder setEmailAddresses(
         int index, com.clarifai.grpc.api.EmailAddress value) {
       if (emailAddressesBuilder_ == null) {
         if (value == null) {
@@ -2538,9 +2706,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder setEmailAddresses(
+    @java.lang.Deprecated public Builder setEmailAddresses(
         int index, com.clarifai.grpc.api.EmailAddress.Builder builderForValue) {
       if (emailAddressesBuilder_ == null) {
         ensureEmailAddressesIsMutable();
@@ -2552,9 +2720,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder addEmailAddresses(com.clarifai.grpc.api.EmailAddress value) {
+    @java.lang.Deprecated public Builder addEmailAddresses(com.clarifai.grpc.api.EmailAddress value) {
       if (emailAddressesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2568,9 +2736,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder addEmailAddresses(
+    @java.lang.Deprecated public Builder addEmailAddresses(
         int index, com.clarifai.grpc.api.EmailAddress value) {
       if (emailAddressesBuilder_ == null) {
         if (value == null) {
@@ -2585,9 +2753,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder addEmailAddresses(
+    @java.lang.Deprecated public Builder addEmailAddresses(
         com.clarifai.grpc.api.EmailAddress.Builder builderForValue) {
       if (emailAddressesBuilder_ == null) {
         ensureEmailAddressesIsMutable();
@@ -2599,9 +2767,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder addEmailAddresses(
+    @java.lang.Deprecated public Builder addEmailAddresses(
         int index, com.clarifai.grpc.api.EmailAddress.Builder builderForValue) {
       if (emailAddressesBuilder_ == null) {
         ensureEmailAddressesIsMutable();
@@ -2613,9 +2781,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder addAllEmailAddresses(
+    @java.lang.Deprecated public Builder addAllEmailAddresses(
         java.lang.Iterable<? extends com.clarifai.grpc.api.EmailAddress> values) {
       if (emailAddressesBuilder_ == null) {
         ensureEmailAddressesIsMutable();
@@ -2628,9 +2796,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder clearEmailAddresses() {
+    @java.lang.Deprecated public Builder clearEmailAddresses() {
       if (emailAddressesBuilder_ == null) {
         emailAddresses_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2641,9 +2809,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public Builder removeEmailAddresses(int index) {
+    @java.lang.Deprecated public Builder removeEmailAddresses(int index) {
       if (emailAddressesBuilder_ == null) {
         ensureEmailAddressesIsMutable();
         emailAddresses_.remove(index);
@@ -2654,16 +2822,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.EmailAddress.Builder getEmailAddressesBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddress.Builder getEmailAddressesBuilder(
         int index) {
       return getEmailAddressesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
         int index) {
       if (emailAddressesBuilder_ == null) {
         return emailAddresses_.get(index);  } else {
@@ -2671,9 +2839,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
+    @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
          getEmailAddressesOrBuilderList() {
       if (emailAddressesBuilder_ != null) {
         return emailAddressesBuilder_.getMessageOrBuilderList();
@@ -2682,24 +2850,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.EmailAddress.Builder addEmailAddressesBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddress.Builder addEmailAddressesBuilder() {
       return getEmailAddressesFieldBuilder().addBuilder(
           com.clarifai.grpc.api.EmailAddress.getDefaultInstance());
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.EmailAddress.Builder addEmailAddressesBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddress.Builder addEmailAddressesBuilder(
         int index) {
       return getEmailAddressesFieldBuilder().addBuilder(
           index, com.clarifai.grpc.api.EmailAddress.getDefaultInstance());
     }
     /**
-     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12;</code>
+     * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.EmailAddress.Builder> 
+    @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.EmailAddress.Builder> 
          getEmailAddressesBuilderList() {
       return getEmailAddressesFieldBuilder().getBuilderList();
     }
@@ -2720,28 +2888,28 @@ private static final long serialVersionUID = 0L;
 
     private boolean isOrgAdmin_ ;
     /**
-     * <code>bool is_org_admin = 14;</code>
+     * <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @return The isOrgAdmin.
      */
-    public boolean getIsOrgAdmin() {
+    @java.lang.Deprecated public boolean getIsOrgAdmin() {
       return isOrgAdmin_;
     }
     /**
-     * <code>bool is_org_admin = 14;</code>
+     * <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @param value The isOrgAdmin to set.
      * @return This builder for chaining.
      */
-    public Builder setIsOrgAdmin(boolean value) {
+    @java.lang.Deprecated public Builder setIsOrgAdmin(boolean value) {
       
       isOrgAdmin_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool is_org_admin = 14;</code>
+     * <code>bool is_org_admin = 14 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearIsOrgAdmin() {
+    @java.lang.Deprecated public Builder clearIsOrgAdmin() {
       
       isOrgAdmin_ = false;
       onChanged();
@@ -2750,28 +2918,28 @@ private static final long serialVersionUID = 0L;
 
     private boolean twoFactorAuthEnabled_ ;
     /**
-     * <code>bool two_factor_auth_enabled = 15;</code>
+     * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @return The twoFactorAuthEnabled.
      */
-    public boolean getTwoFactorAuthEnabled() {
+    @java.lang.Deprecated public boolean getTwoFactorAuthEnabled() {
       return twoFactorAuthEnabled_;
     }
     /**
-     * <code>bool two_factor_auth_enabled = 15;</code>
+     * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @param value The twoFactorAuthEnabled to set.
      * @return This builder for chaining.
      */
-    public Builder setTwoFactorAuthEnabled(boolean value) {
+    @java.lang.Deprecated public Builder setTwoFactorAuthEnabled(boolean value) {
       
       twoFactorAuthEnabled_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool two_factor_auth_enabled = 15;</code>
+     * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTwoFactorAuthEnabled() {
+    @java.lang.Deprecated public Builder clearTwoFactorAuthEnabled() {
       
       twoFactorAuthEnabled_ = false;
       onChanged();
@@ -2780,32 +2948,378 @@ private static final long serialVersionUID = 0L;
 
     private int teamsCount_ ;
     /**
-     * <code>uint32 teams_count = 16;</code>
+     * <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @return The teamsCount.
      */
-    public int getTeamsCount() {
+    @java.lang.Deprecated public int getTeamsCount() {
       return teamsCount_;
     }
     /**
-     * <code>uint32 teams_count = 16;</code>
+     * <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @param value The teamsCount to set.
      * @return This builder for chaining.
      */
-    public Builder setTeamsCount(int value) {
+    @java.lang.Deprecated public Builder setTeamsCount(int value) {
       
       teamsCount_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 teams_count = 16;</code>
+     * <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearTeamsCount() {
+    @java.lang.Deprecated public Builder clearTeamsCount() {
       
       teamsCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Visibility visibility_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     * @return Whether the visibility field is set.
+     */
+    public boolean hasVisibility() {
+      return visibilityBuilder_ != null || visibility_ != null;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     * @return The visibility.
+     */
+    public com.clarifai.grpc.api.Visibility getVisibility() {
+      if (visibilityBuilder_ == null) {
+        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      } else {
+        return visibilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visibility_ = value;
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    public Builder setVisibility(
+        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
+      if (visibilityBuilder_ == null) {
+        visibility_ = builderForValue.build();
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (visibility_ != null) {
+          visibility_ =
+            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
+        } else {
+          visibility_ = value;
+        }
+        onChanged();
+      } else {
+        visibilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    public Builder clearVisibility() {
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+        onChanged();
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
+      
+      onChanged();
+      return getVisibilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+      if (visibilityBuilder_ != null) {
+        return visibilityBuilder_.getMessageOrBuilder();
+      } else {
+        return visibility_ == null ?
+            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
+        getVisibilityFieldBuilder() {
+      if (visibilityBuilder_ == null) {
+        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
+                getVisibility(),
+                getParentForChildren(),
+                isClean());
+        visibility_ = null;
+      }
+      return visibilityBuilder_;
+    }
+
+    private com.clarifai.grpc.api.UserDetail userDetail_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.UserDetail, com.clarifai.grpc.api.UserDetail.Builder, com.clarifai.grpc.api.UserDetailOrBuilder> userDetailBuilder_;
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     * @return Whether the userDetail field is set.
+     */
+    public boolean hasUserDetail() {
+      return userDetailBuilder_ != null || userDetail_ != null;
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     * @return The userDetail.
+     */
+    public com.clarifai.grpc.api.UserDetail getUserDetail() {
+      if (userDetailBuilder_ == null) {
+        return userDetail_ == null ? com.clarifai.grpc.api.UserDetail.getDefaultInstance() : userDetail_;
+      } else {
+        return userDetailBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    public Builder setUserDetail(com.clarifai.grpc.api.UserDetail value) {
+      if (userDetailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userDetail_ = value;
+        onChanged();
+      } else {
+        userDetailBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    public Builder setUserDetail(
+        com.clarifai.grpc.api.UserDetail.Builder builderForValue) {
+      if (userDetailBuilder_ == null) {
+        userDetail_ = builderForValue.build();
+        onChanged();
+      } else {
+        userDetailBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    public Builder mergeUserDetail(com.clarifai.grpc.api.UserDetail value) {
+      if (userDetailBuilder_ == null) {
+        if (userDetail_ != null) {
+          userDetail_ =
+            com.clarifai.grpc.api.UserDetail.newBuilder(userDetail_).mergeFrom(value).buildPartial();
+        } else {
+          userDetail_ = value;
+        }
+        onChanged();
+      } else {
+        userDetailBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    public Builder clearUserDetail() {
+      if (userDetailBuilder_ == null) {
+        userDetail_ = null;
+        onChanged();
+      } else {
+        userDetail_ = null;
+        userDetailBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    public com.clarifai.grpc.api.UserDetail.Builder getUserDetailBuilder() {
+      
+      onChanged();
+      return getUserDetailFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    public com.clarifai.grpc.api.UserDetailOrBuilder getUserDetailOrBuilder() {
+      if (userDetailBuilder_ != null) {
+        return userDetailBuilder_.getMessageOrBuilder();
+      } else {
+        return userDetail_ == null ?
+            com.clarifai.grpc.api.UserDetail.getDefaultInstance() : userDetail_;
+      }
+    }
+    /**
+     * <pre>
+     * This is all the personal information of a user. GetUser/ListUsers will not return this
+     * information unless the caller has the UserAccounts_Get scope on their key or is the user
+     * themselves.
+     * </pre>
+     *
+     * <code>.clarifai.api.UserDetail user_detail = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.UserDetail, com.clarifai.grpc.api.UserDetail.Builder, com.clarifai.grpc.api.UserDetailOrBuilder> 
+        getUserDetailFieldBuilder() {
+      if (userDetailBuilder_ == null) {
+        userDetailBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.UserDetail, com.clarifai.grpc.api.UserDetail.Builder, com.clarifai.grpc.api.UserDetailOrBuilder>(
+                getUserDetail(),
+                getParentForChildren(),
+                isClean());
+        userDetail_ = null;
+      }
+      return userDetailBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

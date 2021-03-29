@@ -61,6 +61,19 @@ private static final long serialVersionUID = 0L;
             keyType_ = s;
             break;
           }
+          case 18: {
+            com.clarifai.grpc.api.UserAppIDSet.Builder subBuilder = null;
+            if (userAppId_ != null) {
+              subBuilder = userAppId_.toBuilder();
+            }
+            userAppId_ = input.readMessage(com.clarifai.grpc.api.UserAppIDSet.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(userAppId_);
+              userAppId_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -139,6 +152,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USER_APP_ID_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.UserAppIDSet userAppId_;
+  /**
+   * <pre>
+   * For all user specific information we include user_app_id to get the user_id in a consistent way
+   * </pre>
+   *
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+   * @return Whether the userAppId field is set.
+   */
+  public boolean hasUserAppId() {
+    return userAppId_ != null;
+  }
+  /**
+   * <pre>
+   * For all user specific information we include user_app_id to get the user_id in a consistent way
+   * </pre>
+   *
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+   * @return The userAppId.
+   */
+  public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
+    return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
+  }
+  /**
+   * <pre>
+   * For all user specific information we include user_app_id to get the user_id in a consistent way
+   * </pre>
+   *
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+   */
+  public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
+    return getUserAppId();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -156,6 +204,9 @@ private static final long serialVersionUID = 0L;
     if (!getKeyTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyType_);
     }
+    if (userAppId_ != null) {
+      output.writeMessage(2, getUserAppId());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -167,6 +218,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getKeyTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyType_);
+    }
+    if (userAppId_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getUserAppId());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -185,6 +240,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getKeyType()
         .equals(other.getKeyType())) return false;
+    if (hasUserAppId() != other.hasUserAppId()) return false;
+    if (hasUserAppId()) {
+      if (!getUserAppId()
+          .equals(other.getUserAppId())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -198,6 +258,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + KEY_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getKeyType().hashCode();
+    if (hasUserAppId()) {
+      hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserAppId().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -339,6 +403,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       keyType_ = "";
 
+      if (userAppIdBuilder_ == null) {
+        userAppId_ = null;
+      } else {
+        userAppId_ = null;
+        userAppIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -366,6 +436,11 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.ListScopesRequest buildPartial() {
       com.clarifai.grpc.api.ListScopesRequest result = new com.clarifai.grpc.api.ListScopesRequest(this);
       result.keyType_ = keyType_;
+      if (userAppIdBuilder_ == null) {
+        result.userAppId_ = userAppId_;
+      } else {
+        result.userAppId_ = userAppIdBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -417,6 +492,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getKeyType().isEmpty()) {
         keyType_ = other.keyType_;
         onChanged();
+      }
+      if (other.hasUserAppId()) {
+        mergeUserAppId(other.getUserAppId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -546,6 +624,161 @@ private static final long serialVersionUID = 0L;
       keyType_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.UserAppIDSet userAppId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     * @return Whether the userAppId field is set.
+     */
+    public boolean hasUserAppId() {
+      return userAppIdBuilder_ != null || userAppId_ != null;
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     * @return The userAppId.
+     */
+    public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
+      if (userAppIdBuilder_ == null) {
+        return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
+      } else {
+        return userAppIdBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    public Builder setUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
+      if (userAppIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userAppId_ = value;
+        onChanged();
+      } else {
+        userAppIdBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    public Builder setUserAppId(
+        com.clarifai.grpc.api.UserAppIDSet.Builder builderForValue) {
+      if (userAppIdBuilder_ == null) {
+        userAppId_ = builderForValue.build();
+        onChanged();
+      } else {
+        userAppIdBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    public Builder mergeUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
+      if (userAppIdBuilder_ == null) {
+        if (userAppId_ != null) {
+          userAppId_ =
+            com.clarifai.grpc.api.UserAppIDSet.newBuilder(userAppId_).mergeFrom(value).buildPartial();
+        } else {
+          userAppId_ = value;
+        }
+        onChanged();
+      } else {
+        userAppIdBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    public Builder clearUserAppId() {
+      if (userAppIdBuilder_ == null) {
+        userAppId_ = null;
+        onChanged();
+      } else {
+        userAppId_ = null;
+        userAppIdBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    public com.clarifai.grpc.api.UserAppIDSet.Builder getUserAppIdBuilder() {
+      
+      onChanged();
+      return getUserAppIdFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
+      if (userAppIdBuilder_ != null) {
+        return userAppIdBuilder_.getMessageOrBuilder();
+      } else {
+        return userAppId_ == null ?
+            com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
+      }
+    }
+    /**
+     * <pre>
+     * For all user specific information we include user_app_id to get the user_id in a consistent way
+     * </pre>
+     *
+     * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> 
+        getUserAppIdFieldBuilder() {
+      if (userAppIdBuilder_ == null) {
+        userAppIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder>(
+                getUserAppId(),
+                getParentForChildren(),
+                isClean());
+        userAppId_ = null;
+      }
+      return userAppIdBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

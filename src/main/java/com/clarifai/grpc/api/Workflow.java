@@ -105,6 +105,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
+            if (visibility_ != null) {
+              subBuilder = visibility_.toBuilder();
+            }
+            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(visibility_);
+              visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -278,12 +291,22 @@ private static final long serialVersionUID = 0L;
   public static final int NODES_FIELD_NUMBER = 4;
   private java.util.List<com.clarifai.grpc.api.WorkflowNode> nodes_;
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   public java.util.List<com.clarifai.grpc.api.WorkflowNode> getNodesList() {
     return nodes_;
   }
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   public java.util.List<? extends com.clarifai.grpc.api.WorkflowNodeOrBuilder> 
@@ -291,18 +314,33 @@ private static final long serialVersionUID = 0L;
     return nodes_;
   }
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   public int getNodesCount() {
     return nodes_.size();
   }
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   public com.clarifai.grpc.api.WorkflowNode getNodes(int index) {
     return nodes_.get(index);
   }
   /**
+   * <pre>
+   * The list of nodes that make up the workflow. Each node can specify an input node
+   * that it connects to in order to define the graph.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
   public com.clarifai.grpc.api.WorkflowNodeOrBuilder getNodesOrBuilder(
@@ -313,6 +351,11 @@ private static final long serialVersionUID = 0L;
   public static final int METADATA_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct metadata_;
   /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return Whether the metadata field is set.
    */
@@ -320,6 +363,11 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return The metadata.
    */
@@ -327,10 +375,56 @@ private static final long serialVersionUID = 0L;
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
   /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    */
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
+  }
+
+  public static final int VISIBILITY_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.Visibility visibility_;
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   * @return Whether the visibility field is set.
+   */
+  public boolean hasVisibility() {
+    return visibility_ != null;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   * @return The visibility.
+   */
+  public com.clarifai.grpc.api.Visibility getVisibility() {
+    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 6;</code>
+   */
+  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+    return getVisibility();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -362,6 +456,9 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(5, getMetadata());
     }
+    if (visibility_ != null) {
+      output.writeMessage(6, getVisibility());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -388,6 +485,10 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getMetadata());
+    }
+    if (visibility_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getVisibility());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -420,6 +521,11 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (!getVisibility()
+          .equals(other.getVisibility())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -446,6 +552,10 @@ private static final long serialVersionUID = 0L;
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibility().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -609,6 +719,12 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
       return this;
     }
 
@@ -656,6 +772,11 @@ private static final long serialVersionUID = 0L;
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
+      }
+      if (visibilityBuilder_ == null) {
+        result.visibility_ = visibility_;
+      } else {
+        result.visibility_ = visibilityBuilder_.build();
       }
       onBuilt();
       return result;
@@ -744,6 +865,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
+      }
+      if (other.hasVisibility()) {
+        mergeVisibility(other.getVisibility());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1171,6 +1295,11 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.WorkflowNode, com.clarifai.grpc.api.WorkflowNode.Builder, com.clarifai.grpc.api.WorkflowNodeOrBuilder> nodesBuilder_;
 
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public java.util.List<com.clarifai.grpc.api.WorkflowNode> getNodesList() {
@@ -1181,6 +1310,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public int getNodesCount() {
@@ -1191,6 +1325,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public com.clarifai.grpc.api.WorkflowNode getNodes(int index) {
@@ -1201,6 +1340,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder setNodes(
@@ -1218,6 +1362,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder setNodes(
@@ -1232,6 +1381,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder addNodes(com.clarifai.grpc.api.WorkflowNode value) {
@@ -1248,6 +1402,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder addNodes(
@@ -1265,6 +1424,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder addNodes(
@@ -1279,6 +1443,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder addNodes(
@@ -1293,6 +1462,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder addAllNodes(
@@ -1308,6 +1482,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder clearNodes() {
@@ -1321,6 +1500,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public Builder removeNodes(int index) {
@@ -1334,6 +1518,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public com.clarifai.grpc.api.WorkflowNode.Builder getNodesBuilder(
@@ -1341,6 +1530,11 @@ private static final long serialVersionUID = 0L;
       return getNodesFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public com.clarifai.grpc.api.WorkflowNodeOrBuilder getNodesOrBuilder(
@@ -1351,6 +1545,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.WorkflowNodeOrBuilder> 
@@ -1362,6 +1561,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public com.clarifai.grpc.api.WorkflowNode.Builder addNodesBuilder() {
@@ -1369,6 +1573,11 @@ private static final long serialVersionUID = 0L;
           com.clarifai.grpc.api.WorkflowNode.getDefaultInstance());
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public com.clarifai.grpc.api.WorkflowNode.Builder addNodesBuilder(
@@ -1377,6 +1586,11 @@ private static final long serialVersionUID = 0L;
           index, com.clarifai.grpc.api.WorkflowNode.getDefaultInstance());
     }
     /**
+     * <pre>
+     * The list of nodes that make up the workflow. Each node can specify an input node
+     * that it connects to in order to define the graph.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
      */
     public java.util.List<com.clarifai.grpc.api.WorkflowNode.Builder> 
@@ -1402,6 +1616,11 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      * @return Whether the metadata field is set.
      */
@@ -1409,6 +1628,11 @@ private static final long serialVersionUID = 0L;
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      * @return The metadata.
      */
@@ -1420,6 +1644,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     public Builder setMetadata(com.google.protobuf.Struct value) {
@@ -1436,6 +1665,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     public Builder setMetadata(
@@ -1450,6 +1684,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     public Builder mergeMetadata(com.google.protobuf.Struct value) {
@@ -1468,6 +1707,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     public Builder clearMetadata() {
@@ -1482,6 +1726,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataBuilder() {
@@ -1490,6 +1739,11 @@ private static final long serialVersionUID = 0L;
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
@@ -1501,6 +1755,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
      * <code>.google.protobuf.Struct metadata = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1515,6 +1774,179 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Visibility visibility_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     * @return Whether the visibility field is set.
+     */
+    public boolean hasVisibility() {
+      return visibilityBuilder_ != null || visibility_ != null;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     * @return The visibility.
+     */
+    public com.clarifai.grpc.api.Visibility getVisibility() {
+      if (visibilityBuilder_ == null) {
+        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      } else {
+        return visibilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visibility_ = value;
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    public Builder setVisibility(
+        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
+      if (visibilityBuilder_ == null) {
+        visibility_ = builderForValue.build();
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (visibility_ != null) {
+          visibility_ =
+            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
+        } else {
+          visibility_ = value;
+        }
+        onChanged();
+      } else {
+        visibilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    public Builder clearVisibility() {
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+        onChanged();
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
+      
+      onChanged();
+      return getVisibilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+      if (visibilityBuilder_ != null) {
+        return visibilityBuilder_.getMessageOrBuilder();
+      } else {
+        return visibility_ == null ?
+            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
+        getVisibilityFieldBuilder() {
+      if (visibilityBuilder_ == null) {
+        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
+                getVisibility(),
+                getParentForChildren(),
+                isClean());
+        visibility_ = null;
+      }
+      return visibilityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -61,6 +61,33 @@ public interface WorkflowNodeOrBuilder extends
 
   /**
    * <pre>
+   * An operator will process this node.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 5;</code>
+   * @return Whether the operator field is set.
+   */
+  boolean hasOperator();
+  /**
+   * <pre>
+   * An operator will process this node.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 5;</code>
+   * @return The operator.
+   */
+  com.clarifai.grpc.api.Operator getOperator();
+  /**
+   * <pre>
+   * An operator will process this node.
+   * </pre>
+   *
+   * <code>.clarifai.api.Operator operator = 5;</code>
+   */
+  com.clarifai.grpc.api.OperatorOrBuilder getOperatorOrBuilder();
+
+  /**
+   * <pre>
    * Each WorkflowNode can connect to multiple input nodes so that we can handle multi-model data
    * and more complex workflow operations.
    * </pre>

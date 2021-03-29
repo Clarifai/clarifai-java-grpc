@@ -55,11 +55,12 @@ public enum StatusCode
   CONN_ACCOUNT_ISSUES(11000),
   /**
    * <pre>
-   * invalid auth token used
+   * invalid auth token used. Deprecated: we should return CONN_KEY_INVALID instead now in all cases.
    * </pre>
    *
-   * <code>CONN_TOKEN_INVALID = 11001;</code>
+   * <code>CONN_TOKEN_INVALID = 11001 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   CONN_TOKEN_INVALID(11001),
   /**
    * <pre>
@@ -1094,6 +1095,10 @@ public enum StatusCode
    */
   EVALUATION_UNEXPECTED_ERROR(43108),
   /**
+   * <code>EVALUATION_MIXED = 43109;</code>
+   */
+  EVALUATION_MIXED(43109),
+  /**
    * <pre>
    * Stripe 44xxx
    * </pre>
@@ -1121,6 +1126,10 @@ public enum StatusCode
    * <code>REDIS_NO_CONSUMERS = 45004;</code>
    */
   REDIS_NO_CONSUMERS(45004),
+  /**
+   * <code>REDIS_STREAM_BACKOFF = 45005;</code>
+   */
+  REDIS_STREAM_BACKOFF(45005),
   /**
    * <pre>
    * Sift Science 46xxx
@@ -1492,13 +1501,17 @@ public enum StatusCode
   INTERNAL_UNCATEGORIZED(99009),
   /**
    * <pre>
-   * Depreciated codes: migrate off these to one of the internal issues
+   * Deprecated: migrate off to one of the internal issues
    * </pre>
    *
    * <code>BAD_REQUEST = 90400;</code>
    */
   BAD_REQUEST(90400),
   /**
+   * <pre>
+   * Deprecated: migrate off to one of the internal issues
+   * </pre>
+   *
    * <code>SERVER_ERROR = 90500;</code>
    */
   SERVER_ERROR(90500),
@@ -1552,10 +1565,10 @@ public enum StatusCode
   public static final int CONN_ACCOUNT_ISSUES_VALUE = 11000;
   /**
    * <pre>
-   * invalid auth token used
+   * invalid auth token used. Deprecated: we should return CONN_KEY_INVALID instead now in all cases.
    * </pre>
    *
-   * <code>CONN_TOKEN_INVALID = 11001;</code>
+   * <code>CONN_TOKEN_INVALID = 11001 [deprecated = true];</code>
    */
   public static final int CONN_TOKEN_INVALID_VALUE = 11001;
   /**
@@ -2591,6 +2604,10 @@ public enum StatusCode
    */
   public static final int EVALUATION_UNEXPECTED_ERROR_VALUE = 43108;
   /**
+   * <code>EVALUATION_MIXED = 43109;</code>
+   */
+  public static final int EVALUATION_MIXED_VALUE = 43109;
+  /**
    * <pre>
    * Stripe 44xxx
    * </pre>
@@ -2618,6 +2635,10 @@ public enum StatusCode
    * <code>REDIS_NO_CONSUMERS = 45004;</code>
    */
   public static final int REDIS_NO_CONSUMERS_VALUE = 45004;
+  /**
+   * <code>REDIS_STREAM_BACKOFF = 45005;</code>
+   */
+  public static final int REDIS_STREAM_BACKOFF_VALUE = 45005;
   /**
    * <pre>
    * Sift Science 46xxx
@@ -2989,13 +3010,17 @@ public enum StatusCode
   public static final int INTERNAL_UNCATEGORIZED_VALUE = 99009;
   /**
    * <pre>
-   * Depreciated codes: migrate off these to one of the internal issues
+   * Deprecated: migrate off to one of the internal issues
    * </pre>
    *
    * <code>BAD_REQUEST = 90400;</code>
    */
   public static final int BAD_REQUEST_VALUE = 90400;
   /**
+   * <pre>
+   * Deprecated: migrate off to one of the internal issues
+   * </pre>
+   *
    * <code>SERVER_ERROR = 90500;</code>
    */
   public static final int SERVER_ERROR_VALUE = 90500;
@@ -3233,11 +3258,13 @@ public enum StatusCode
       case 43106: return EVALUATION_PENDING;
       case 43107: return EVALUATION_TIMED_OUT;
       case 43108: return EVALUATION_UNEXPECTED_ERROR;
+      case 43109: return EVALUATION_MIXED;
       case 44001: return STRIPE_EVENT_ERROR;
       case 45001: return CACHE_MISS;
       case 45002: return REDIS_SCRIPT_EXITED_WITH_FAILURE;
       case 45003: return REDIS_STREAM_ERR;
       case 45004: return REDIS_NO_CONSUMERS;
+      case 45005: return REDIS_STREAM_BACKOFF;
       case 46001: return SIGNUP_EVENT_ERROR;
       case 46002: return SIGNUP_FLAGGED;
       case 46003: return FILETYPE_UNSUPPORTED;

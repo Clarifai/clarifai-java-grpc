@@ -30,6 +30,7 @@ public interface CollaboratorOrBuilder extends
   /**
    * <pre>
    *the app this collaborator has access to
+   * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
    * <code>.clarifai.api.App app = 2;</code>
@@ -39,6 +40,7 @@ public interface CollaboratorOrBuilder extends
   /**
    * <pre>
    *the app this collaborator has access to
+   * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
    * <code>.clarifai.api.App app = 2;</code>
@@ -48,6 +50,7 @@ public interface CollaboratorOrBuilder extends
   /**
    * <pre>
    *the app this collaborator has access to
+   * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
    * <code>.clarifai.api.App app = 2;</code>

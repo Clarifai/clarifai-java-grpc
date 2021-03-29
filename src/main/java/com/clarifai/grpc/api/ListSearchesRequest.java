@@ -129,6 +129,11 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_FIELD_NUMBER = 2;
   private int page_;
   /**
+   * <pre>
+   * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+   * Defaults to 1.
+   * </pre>
+   *
    * <code>uint32 page = 2;</code>
    * @return The page.
    */
@@ -139,6 +144,11 @@ private static final long serialVersionUID = 0L;
   public static final int PER_PAGE_FIELD_NUMBER = 3;
   private int perPage_;
   /**
+   * <pre>
+   * (optional URL parameter) The number of results that will be contained in each page. Defaults
+   * to 128.
+   * </pre>
+   *
    * <code>uint32 per_page = 3;</code>
    * @return The perPage.
    */
@@ -616,6 +626,11 @@ private static final long serialVersionUID = 0L;
 
     private int page_ ;
     /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
      * <code>uint32 page = 2;</code>
      * @return The page.
      */
@@ -623,6 +638,11 @@ private static final long serialVersionUID = 0L;
       return page_;
     }
     /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
      * <code>uint32 page = 2;</code>
      * @param value The page to set.
      * @return This builder for chaining.
@@ -634,6 +654,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
      * <code>uint32 page = 2;</code>
      * @return This builder for chaining.
      */
@@ -646,6 +671,11 @@ private static final long serialVersionUID = 0L;
 
     private int perPage_ ;
     /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
      * <code>uint32 per_page = 3;</code>
      * @return The perPage.
      */
@@ -653,6 +683,11 @@ private static final long serialVersionUID = 0L;
       return perPage_;
     }
     /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
      * <code>uint32 per_page = 3;</code>
      * @param value The perPage to set.
      * @return This builder for chaining.
@@ -664,6 +699,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
      * <code>uint32 per_page = 3;</code>
      * @return This builder for chaining.
      */
