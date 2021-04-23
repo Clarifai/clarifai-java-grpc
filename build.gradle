@@ -19,7 +19,6 @@ plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
     id 'com.jfrog.bintray' version '1.8.4'
-    id "signing"
     id "maven-publish"
 }
 
@@ -104,10 +103,6 @@ bintray{
             released = new Date()
         }
     }
-}
-
-signing {
-    sign publishing.publications.mavenJava
 }
 
 publishing{
