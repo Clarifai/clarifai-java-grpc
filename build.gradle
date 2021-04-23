@@ -116,25 +116,25 @@ publishing{
             artifact sourcesJar
 
             pom {
-                name 'ClarifaiGrpc'
-                description 'Clarifai Java gRPC Client'
-                url "https://github.com/Clarifai/clarifai-java-grpc"
-                inceptionYear "2021"
+                name = 'ClarifaiGrpc'
+                description = 'Clarifai Java gRPC Client'
+                url = "https://github.com/Clarifai/clarifai-java-grpc"
+                inceptionYear = "2021"
 
                 licenses {
                     license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution = 'repo'
                     }
                 }
                 scm {
-                    url "https://github.com/Clarifai/clarifai-java-grpc"
-                    connection "https://github.com/Clarifai/clarifai-java-grpc.git"
+                    url = "https://github.com/Clarifai/clarifai-java-grpc"
+                    connection = "https://github.com/Clarifai/clarifai-java-grpc.git"
                 }
                 developers {
                     developer {
-                        name "Clarifai, Inc."
+                        name = "Clarifai, Inc."
                     }
                 }
             }
