@@ -61,36 +61,6 @@ def clarifai = [
   github: "https://github.com/Clarifai/clarifai-java",
 ]
 
-// Why do we have to do this? I thought the plugin handled this for us... ¯\_(ツ)_/¯
-// TODO(KM): check https://github.com/bintray/gradle-bintray-plugin and Ctrl+F for "MavenPublication" for instructions to fix this mess
-install {
-    repositories.mavenInstaller {
-        pom.project {
-            name 'ClarifaiGrpc'
-            description 'Clarifai Java gRPC Client'
-            url "https://github.com/Clarifai/clarifai-java-grpc"
-            inceptionYear "2020"
-
-            licenses {
-                license {
-                    name 'The Apache Software License, Version 2.0'
-                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    distribution 'repo'
-                }
-            }
-            scm {
-                url "https://github.com/Clarifai/clarifai-java-grpc"
-                connection "https://github.com/Clarifai/clarifai-java-grpc.git"
-            }
-            developers {
-                developer {
-                    name "Clarifai, Inc."
-                }
-            }
-        }
-    }
-}
-
 task sourcesJar(type: Jar, dependsOn: classes) {
   classifier = 'sources'
   from sourceSets.main.allSource
@@ -132,12 +102,6 @@ bintray{
         version{
             name = project.version
             released = new Date()
-
-            mavenCentralSync {
-                sync = true
-                user = System.getenv('SONATYPE_USERNAME_CLARIFAI')
-                password = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
-            }
         }
     }
 }
@@ -155,14 +119,42 @@ publishing{
             version project.version
             artifact javadocJar
             artifact sourcesJar
+
+            pom {
+                name 'ClarifaiGrpc'
+                description 'Clarifai Java gRPC Client'
+                url "https://github.com/Clarifai/clarifai-java-grpc"
+                inceptionYear "2021"
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+                scm {
+                    url "https://github.com/Clarifai/clarifai-java-grpc"
+                    connection "https://github.com/Clarifai/clarifai-java-grpc.git"
+                }
+                developers {
+                    developer {
+                        name "Clarifai, Inc."
+                    }
+                }
+            }
         }
     }
     repositories {
         maven {
-            // change URLs to point to your repos, e.g. http://my.org/repo
-            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
-            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            // This is an arbitrary name, you may also use "mavencentral" or
+            // any other name that's descriptive for you
+            name = "sonatype"
+            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = System.getenv('SONATYPE_USERNAME_CLARIFAI')
+                password = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
+            }
         }
     }
 }
