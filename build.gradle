@@ -1,6 +1,5 @@
 buildscript {
 	repositories {
-		jcenter()
         maven { url "https://plugins.gradle.org/m2/" }
         mavenCentral()
 	}
@@ -20,7 +19,7 @@ plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
     id 'com.jfrog.bintray' version '1.8.4'
-    id "maven"
+    id "signing"
     id "maven-publish"
 }
 
@@ -28,9 +27,7 @@ group = 'com.clarifai'
 version = '7.3.0'
 
 repositories {
-    // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
     mavenCentral()
 }
 
@@ -136,14 +133,17 @@ bintray{
             name = project.version
             released = new Date()
 
-            // For some reason this doesn't work, so we're only publishing to jCenter for now.
-//            mavenCentralSync {
-//                sync = true
-//                user = System.getenv('SONATYPE_USERNAME_CLARIFAI')
-//                password = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
-//            }
+            mavenCentralSync {
+                sync = true
+                user = System.getenv('SONATYPE_USERNAME_CLARIFAI')
+                password = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
+            }
         }
     }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
 
 publishing{
@@ -155,6 +155,14 @@ publishing{
             version project.version
             artifact javadocJar
             artifact sourcesJar
+        }
+    }
+    repositories {
+        maven {
+            // change URLs to point to your repos, e.g. http://my.org/repo
+            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
         }
     }
 }
