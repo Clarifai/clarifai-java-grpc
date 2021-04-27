@@ -5,12 +5,18 @@ import com.clarifai.credentials.ClarifaiCallCredentials;
 import com.clarifai.grpc.api.*;
 import com.clarifai.grpc.api.status.BaseResponse;
 import com.clarifai.grpc.api.status.StatusCode;
+import com.google.protobuf.ByteString;
+
 import io.grpc.ManagedChannel;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class GrpcIntTest {
@@ -88,6 +94,49 @@ public class GrpcIntTest {
       System.out.println(c);
     }
   }
+
+   @Test
+    public void postModelOutputsWithImageByte() {
+       URL url = null;
+       try {
+           url = new URL("https://samples.clarifai.com/dog2.jpeg");
+       } catch (MalformedURLException e) {
+           e.printStackTrace();
+       }
+       ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+     try (InputStream inputStream = url.openStream()) {
+       int n = 0;
+       byte [] buffer = new byte[ 1024 ];
+       while (-1 != (n = inputStream.read(buffer))) {
+         output.write(buffer, 0, n);
+       }
+     } catch (Exception e) {
+         e.printStackTrace();
+
+     }
+
+      MultiOutputResponse response = stub.postModelOutputs(
+          PostModelOutputsRequest.newBuilder()
+              .setModelId("aaa03c23b3724a16a56b629203edc62c")
+              .addInputs(
+                  Input.newBuilder().setData(
+                      Data.newBuilder().setImage(
+                          Image.newBuilder().setBase64(
+                                  ByteString.copyFrom(output.toByteArray())
+                          )
+                      )
+                  )
+              )
+              .build()
+      );
+
+      Assert.assertNotEquals(0, response.getOutputs(0).getData().getConceptsList().size());
+
+      for (Concept c : response.getOutputs(0).getData().getConceptsList()) {
+        System.out.println(c);
+      }
+    }
 
   @Test public void addModifyGetAndDeleteInput() throws InterruptedException {
     String truckUrl = "https://s3.amazonaws.com/samples.clarifai.com/red-truck.png";
