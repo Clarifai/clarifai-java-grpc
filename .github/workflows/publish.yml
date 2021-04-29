@@ -9,7 +9,7 @@ on:
       - '[0-9]+.[0-9]+.[0-9a-zA-Z]+'  # Matches 1.2.3, 1.2.3alpha1 etc.
 
 jobs:
-  publish-bintray:
+  publish-maven:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,14 +21,16 @@ jobs:
         run: chmod +x gradlew
       - name: Deploy
         env:
-          BINTRAY_USERNAME: ${{ secrets.BINTRAY_USERNAME }}
-          BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
+          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
+          SIGNING_SECRET_KEY_RING_FILE: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
           SONATYPE_USERNAME_CLARIFAI: ${{ secrets.SONATYPE_USERNAME_CLARIFAI }}
           SONATYPE_PASSWORD_CLARIFAI: ${{ secrets.SONATYPE_PASSWORD_CLARIFAI }}
-        run: ./gradlew bintrayUpload
+        run: |
+        sudo bash -c "echo '$GPG_KEY_CONTENTS' | base64 -d > '$SIGNING_SECRET_KEY_RING_FILE'"
+        ./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
 
   publish-github-release:
-    needs: publish-bintray
+    needs: publish-maven
     name: Create Release
     runs-on: ubuntu-latest
     steps:

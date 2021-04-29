@@ -10,7 +10,6 @@ buildscript {
                 "com.github.ben-manes:gradle-versions-plugin:0.13.0",
                 "gradle.plugin.de.fuerstenau:BuildConfigPlugin:1.1.4",
                 "net.ltgt.gradle:gradle-apt-plugin:0.21",
-                "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3",
         )
     }
 }
@@ -18,8 +17,36 @@ buildscript {
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
-    id 'com.jfrog.bintray' version '1.8.4'
     id "maven-publish"
+    id "signing"
+    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
+}
+
+// Create variables with empty default values
+ext["ossrhUsername"] = ''
+ext["ossrhPassword"] = ''
+ext["sonatypeStagingProfileId"] = ''
+ext["signing.keyId"] = ''
+ext["signing.password"] = ''
+ext["signing.secretKeyRingFile"] = ''
+
+
+ext["ossrhUsername"] = System.getenv('SONATYPE_USERNAME_CLARIFAI')
+ext["ossrhPassword"] = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
+ext["sonatypeStagingProfileId"] = System.getenv('SONATYPE_STAGING_PROFILE_ID')
+ext["signing.keyId"] = System.getenv('SIGNING_KEY_ID')
+ext["signing.password"] = System.getenv('SIGNING_PASSWORD')
+ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')
+
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            stagingProfileId = sonatypeStagingProfileId
+            username = ossrhUsername
+            password = ossrhPassword
+        }
+    }
 }
 
 group = 'com.clarifai'
@@ -65,11 +92,6 @@ task sourcesJar(type: Jar, dependsOn: classes) {
   from sourceSets.main.allSource
 }
 
-task javadoc(type: Javadoc, overwrite: true) {
-  source = sourceSets.main.allSource
-  classpath += configurations.compile + configurations.compileOnly
-}
-
 task javadocJar(type: Jar, dependsOn: javadoc) {
   classifier = 'javadoc'
   //noinspection GroovyAccessibility
@@ -79,35 +101,11 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 artifacts {
   archives jar
   archives sourcesJar
-  archives javadocJar
-}
-
-bintray{
-    user = System.getenv("BINTRAY_USERNAME")
-    key = System.getenv("BINTRAY_API_KEY")
-    publications = ['ClarifaiGrpcRelease']
-
-    publish = true
-    configurations = ['archives']
-
-    pkg{
-        userOrg = 'clarifai'
-        repo = 'Clarifai'
-        name = 'ClarifaiGrpc'
-        description = 'Clarifai Java gRPC Client'
-
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/Clarifai/clarifai-java-grpc'
-        version{
-            name = project.version
-            released = new Date()
-        }
-    }
 }
 
 publishing{
     publications{
-        ClarifaiGrpcRelease(MavenPublication){
+        release(MavenPublication){
             from components.java
             groupId project.group
             artifactId 'clarifai-grpc'
@@ -140,16 +138,8 @@ publishing{
             }
         }
     }
-    repositories {
-        maven {
-            // This is an arbitrary name, you may also use "mavencentral" or
-            // any other name that's descriptive for you
-            name = "sonatype"
-            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-            credentials {
-                username = System.getenv('SONATYPE_USERNAME_CLARIFAI')
-                password = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
-            }
-        }
-    }
+}
+
+signing {
+    sign publishing.publications
 }
