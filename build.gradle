@@ -22,15 +22,6 @@ plugins {
     id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
 }
 
-// Create variables with empty default values
-ext["ossrhUsername"] = ''
-ext["ossrhPassword"] = ''
-ext["sonatypeStagingProfileId"] = ''
-ext["signing.keyId"] = ''
-ext["signing.password"] = ''
-ext["signing.secretKeyRingFile"] = ''
-
-
 ext["ossrhUsername"] = System.getenv('SONATYPE_USERNAME_CLARIFAI')
 ext["ossrhPassword"] = System.getenv('SONATYPE_PASSWORD_CLARIFAI')
 ext["sonatypeStagingProfileId"] = System.getenv('SONATYPE_STAGING_PROFILE_ID')
@@ -53,7 +44,6 @@ group = 'com.clarifai'
 version = '7.3.0'
 
 repositories {
-    // You can declare any Maven/Ivy/file repository here.
     mavenCentral()
 }
 
@@ -90,6 +80,11 @@ def clarifai = [
 task sourcesJar(type: Jar, dependsOn: classes) {
   classifier = 'sources'
   from sourceSets.main.allSource
+}
+
+task javadoc(type: Javadoc, overwrite: true) {
+  source = sourceSets.main.allSource
+  classpath += configurations.compile + configurations.compileOnly
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
