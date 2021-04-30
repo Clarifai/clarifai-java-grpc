@@ -27,6 +27,8 @@ private static final long serialVersionUID = 0L;
     firstName_ = "";
     lastName_ = "";
     companyName_ = "";
+    jobTitle_ = "";
+    jobRole_ = "";
     billType_ = "";
     emailAddresses_ = java.util.Collections.emptyList();
   }
@@ -211,6 +213,18 @@ private static final long serialVersionUID = 0L;
               userDetail_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 154: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            jobTitle_ = s;
+            break;
+          }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            jobRole_ = s;
             break;
           }
           default: {
@@ -422,6 +436,78 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       companyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int JOB_TITLE_FIELD_NUMBER = 19;
+  private volatile java.lang.Object jobTitle_;
+  /**
+   * <code>string job_title = 19;</code>
+   * @return The jobTitle.
+   */
+  public java.lang.String getJobTitle() {
+    java.lang.Object ref = jobTitle_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobTitle_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string job_title = 19;</code>
+   * @return The bytes for jobTitle.
+   */
+  public com.google.protobuf.ByteString
+      getJobTitleBytes() {
+    java.lang.Object ref = jobTitle_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      jobTitle_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int JOB_ROLE_FIELD_NUMBER = 20;
+  private volatile java.lang.Object jobRole_;
+  /**
+   * <code>string job_role = 20;</code>
+   * @return The jobRole.
+   */
+  public java.lang.String getJobRole() {
+    java.lang.Object ref = jobRole_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobRole_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string job_role = 20;</code>
+   * @return The bytes for jobRole.
+   */
+  public com.google.protobuf.ByteString
+      getJobRoleBytes() {
+    java.lang.Object ref = jobRole_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      jobRole_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -830,6 +916,12 @@ private static final long serialVersionUID = 0L;
     if (userDetail_ != null) {
       output.writeMessage(18, getUserDetail());
     }
+    if (!getJobTitleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, jobTitle_);
+    }
+    if (!getJobRoleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, jobRole_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -901,6 +993,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getUserDetail());
     }
+    if (!getJobTitleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, jobTitle_);
+    }
+    if (!getJobRoleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, jobRole_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -926,6 +1024,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLastName())) return false;
     if (!getCompanyName()
         .equals(other.getCompanyName())) return false;
+    if (!getJobTitle()
+        .equals(other.getJobTitle())) return false;
+    if (!getJobRole()
+        .equals(other.getJobRole())) return false;
     if (!getBillType()
         .equals(other.getBillType())) return false;
     if (hasCreatedAt() != other.hasCreatedAt()) return false;
@@ -992,6 +1094,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLastName().hashCode();
     hash = (37 * hash) + COMPANY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCompanyName().hashCode();
+    hash = (37 * hash) + JOB_TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getJobTitle().hashCode();
+    hash = (37 * hash) + JOB_ROLE_FIELD_NUMBER;
+    hash = (53 * hash) + getJobRole().hashCode();
     hash = (37 * hash) + BILL_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getBillType().hashCode();
     if (hasCreatedAt()) {
@@ -1184,6 +1290,10 @@ private static final long serialVersionUID = 0L;
 
       companyName_ = "";
 
+      jobTitle_ = "";
+
+      jobRole_ = "";
+
       billType_ = "";
 
       if (createdAtBuilder_ == null) {
@@ -1272,6 +1382,8 @@ private static final long serialVersionUID = 0L;
       result.firstName_ = firstName_;
       result.lastName_ = lastName_;
       result.companyName_ = companyName_;
+      result.jobTitle_ = jobTitle_;
+      result.jobRole_ = jobRole_;
       result.billType_ = billType_;
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
@@ -1386,6 +1498,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getCompanyName().isEmpty()) {
         companyName_ = other.companyName_;
+        onChanged();
+      }
+      if (!other.getJobTitle().isEmpty()) {
+        jobTitle_ = other.jobTitle_;
+        onChanged();
+      }
+      if (!other.getJobRole().isEmpty()) {
+        jobRole_ = other.jobRole_;
         onChanged();
       }
       if (!other.getBillType().isEmpty()) {
@@ -1854,6 +1974,158 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       companyName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object jobTitle_ = "";
+    /**
+     * <code>string job_title = 19;</code>
+     * @return The jobTitle.
+     */
+    public java.lang.String getJobTitle() {
+      java.lang.Object ref = jobTitle_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobTitle_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string job_title = 19;</code>
+     * @return The bytes for jobTitle.
+     */
+    public com.google.protobuf.ByteString
+        getJobTitleBytes() {
+      java.lang.Object ref = jobTitle_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobTitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string job_title = 19;</code>
+     * @param value The jobTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobTitle(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      jobTitle_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string job_title = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearJobTitle() {
+      
+      jobTitle_ = getDefaultInstance().getJobTitle();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string job_title = 19;</code>
+     * @param value The bytes for jobTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobTitleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      jobTitle_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object jobRole_ = "";
+    /**
+     * <code>string job_role = 20;</code>
+     * @return The jobRole.
+     */
+    public java.lang.String getJobRole() {
+      java.lang.Object ref = jobRole_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobRole_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string job_role = 20;</code>
+     * @return The bytes for jobRole.
+     */
+    public com.google.protobuf.ByteString
+        getJobRoleBytes() {
+      java.lang.Object ref = jobRole_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobRole_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string job_role = 20;</code>
+     * @param value The jobRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobRole(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      jobRole_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string job_role = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearJobRole() {
+      
+      jobRole_ = getDefaultInstance().getJobRole();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string job_role = 20;</code>
+     * @param value The bytes for jobRole to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJobRoleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      jobRole_ = value;
       onChanged();
       return this;
     }

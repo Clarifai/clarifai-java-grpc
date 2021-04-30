@@ -4,26 +4,26 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf type {@code clarifai.api.ListWorkflowsRequest}
+ * Protobuf type {@code clarifai.api.ListModelReferencesRequest}
  */
-public  final class ListWorkflowsRequest extends
+public  final class ListModelReferencesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.ListWorkflowsRequest)
-    ListWorkflowsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.ListModelReferencesRequest)
+    ListModelReferencesRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListWorkflowsRequest.newBuilder() to construct.
-  private ListWorkflowsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListModelReferencesRequest.newBuilder() to construct.
+  private ListModelReferencesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListWorkflowsRequest() {
-    id_ = "";
+  private ListModelReferencesRequest() {
+    modelId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ListWorkflowsRequest();
+    return new ListModelReferencesRequest();
   }
 
   @java.lang.Override
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListWorkflowsRequest(
+  private ListModelReferencesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -62,20 +62,20 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            page_ = input.readUInt32();
+            modelId_ = s;
             break;
           }
           case 24: {
 
-            perPage_ = input.readUInt32();
+            page_ = input.readUInt32();
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 32: {
 
-            id_ = s;
+            perPage_ = input.readUInt32();
             break;
           }
           default: {
@@ -99,15 +99,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListWorkflowsRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelReferencesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListWorkflowsRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelReferencesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.ListWorkflowsRequest.class, com.clarifai.grpc.api.ListWorkflowsRequest.Builder.class);
+            com.clarifai.grpc.api.ListModelReferencesRequest.class, com.clarifai.grpc.api.ListModelReferencesRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -133,78 +133,68 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int PAGE_FIELD_NUMBER = 2;
-  private int page_;
+  public static final int MODEL_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object modelId_;
   /**
-   * <pre>
-   * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-   * Defaults to 1.
-   * </pre>
-   *
-   * <code>uint32 page = 2;</code>
-   * @return The page.
+   * <code>string model_id = 2;</code>
+   * @return The modelId.
    */
-  public int getPage() {
-    return page_;
-  }
-
-  public static final int PER_PAGE_FIELD_NUMBER = 3;
-  private int perPage_;
-  /**
-   * <pre>
-   * (optional URL parameter) The number of results that will be contained in each page. Defaults
-   * to 128.
-   * </pre>
-   *
-   * <code>uint32 per_page = 3;</code>
-   * @return The perPage.
-   */
-  public int getPerPage() {
-    return perPage_;
-  }
-
-  public static final int ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object id_;
-  /**
-   * <pre>
-   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string id = 4;</code>
-   * @return The id.
-   */
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
+  public java.lang.String getModelId() {
+    java.lang.Object ref = modelId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      id_ = s;
+      modelId_ = s;
       return s;
     }
   }
   /**
-   * <pre>
-   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string id = 4;</code>
-   * @return The bytes for id.
+   * <code>string model_id = 2;</code>
+   * @return The bytes for modelId.
    */
   public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
+      getModelIdBytes() {
+    java.lang.Object ref = modelId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      id_ = b;
+      modelId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PAGE_FIELD_NUMBER = 3;
+  private int page_;
+  /**
+   * <pre>
+   * Optional, defaults to 1.
+   * </pre>
+   *
+   * <code>uint32 page = 3;</code>
+   * @return The page.
+   */
+  public int getPage() {
+    return page_;
+  }
+
+  public static final int PER_PAGE_FIELD_NUMBER = 4;
+  private int perPage_;
+  /**
+   * <pre>
+   * Optional, defaults to 128 references per page.
+   * </pre>
+   *
+   * <code>uint32 per_page = 4;</code>
+   * @return The perPage.
+   */
+  public int getPerPage() {
+    return perPage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -224,14 +214,14 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
+    if (!getModelIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
+    }
     if (page_ != 0) {
-      output.writeUInt32(2, page_);
+      output.writeUInt32(3, page_);
     }
     if (perPage_ != 0) {
-      output.writeUInt32(3, perPage_);
-    }
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, id_);
+      output.writeUInt32(4, perPage_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,16 +236,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
+    if (!getModelIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
+    }
     if (page_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, page_);
+        .computeUInt32Size(3, page_);
     }
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, perPage_);
-    }
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, id_);
+        .computeUInt32Size(4, perPage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,22 +257,22 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.ListWorkflowsRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.ListModelReferencesRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.ListWorkflowsRequest other = (com.clarifai.grpc.api.ListWorkflowsRequest) obj;
+    com.clarifai.grpc.api.ListModelReferencesRequest other = (com.clarifai.grpc.api.ListModelReferencesRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
+    if (!getModelId()
+        .equals(other.getModelId())) return false;
     if (getPage()
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
-    if (!getId()
-        .equals(other.getId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -298,80 +288,80 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
+    hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelId().hashCode();
     hash = (37 * hash) + PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.ListWorkflowsRequest parseFrom(
+  public static com.clarifai.grpc.api.ListModelReferencesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -384,7 +374,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.ListWorkflowsRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.ListModelReferencesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -400,26 +390,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code clarifai.api.ListWorkflowsRequest}
+   * Protobuf type {@code clarifai.api.ListModelReferencesRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.ListWorkflowsRequest)
-      com.clarifai.grpc.api.ListWorkflowsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.ListModelReferencesRequest)
+      com.clarifai.grpc.api.ListModelReferencesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListWorkflowsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelReferencesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListWorkflowsRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelReferencesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.ListWorkflowsRequest.class, com.clarifai.grpc.api.ListWorkflowsRequest.Builder.class);
+              com.clarifai.grpc.api.ListModelReferencesRequest.class, com.clarifai.grpc.api.ListModelReferencesRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.ListWorkflowsRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.ListModelReferencesRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -443,11 +433,11 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
+      modelId_ = "";
+
       page_ = 0;
 
       perPage_ = 0;
-
-      id_ = "";
 
       return this;
     }
@@ -455,17 +445,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListWorkflowsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelReferencesRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.ListWorkflowsRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.ListWorkflowsRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.ListModelReferencesRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.ListModelReferencesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.ListWorkflowsRequest build() {
-      com.clarifai.grpc.api.ListWorkflowsRequest result = buildPartial();
+    public com.clarifai.grpc.api.ListModelReferencesRequest build() {
+      com.clarifai.grpc.api.ListModelReferencesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -473,16 +463,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.ListWorkflowsRequest buildPartial() {
-      com.clarifai.grpc.api.ListWorkflowsRequest result = new com.clarifai.grpc.api.ListWorkflowsRequest(this);
+    public com.clarifai.grpc.api.ListModelReferencesRequest buildPartial() {
+      com.clarifai.grpc.api.ListModelReferencesRequest result = new com.clarifai.grpc.api.ListModelReferencesRequest(this);
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
+      result.modelId_ = modelId_;
       result.page_ = page_;
       result.perPage_ = perPage_;
-      result.id_ = id_;
       onBuilt();
       return result;
     }
@@ -521,28 +511,28 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.ListWorkflowsRequest) {
-        return mergeFrom((com.clarifai.grpc.api.ListWorkflowsRequest)other);
+      if (other instanceof com.clarifai.grpc.api.ListModelReferencesRequest) {
+        return mergeFrom((com.clarifai.grpc.api.ListModelReferencesRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.ListWorkflowsRequest other) {
-      if (other == com.clarifai.grpc.api.ListWorkflowsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.ListModelReferencesRequest other) {
+      if (other == com.clarifai.grpc.api.ListModelReferencesRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
+      }
+      if (!other.getModelId().isEmpty()) {
+        modelId_ = other.modelId_;
+        onChanged();
       }
       if (other.getPage() != 0) {
         setPage(other.getPage());
       }
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
-      }
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -559,11 +549,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.ListWorkflowsRequest parsedMessage = null;
+      com.clarifai.grpc.api.ListModelReferencesRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.ListWorkflowsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.ListModelReferencesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -692,14 +682,89 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
+    private java.lang.Object modelId_ = "";
+    /**
+     * <code>string model_id = 2;</code>
+     * @return The modelId.
+     */
+    public java.lang.String getModelId() {
+      java.lang.Object ref = modelId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string model_id = 2;</code>
+     * @return The bytes for modelId.
+     */
+    public com.google.protobuf.ByteString
+        getModelIdBytes() {
+      java.lang.Object ref = modelId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string model_id = 2;</code>
+     * @param value The modelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string model_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelId() {
+      
+      modelId_ = getDefaultInstance().getModelId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string model_id = 2;</code>
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelId_ = value;
+      onChanged();
+      return this;
+    }
+
     private int page_ ;
     /**
      * <pre>
-     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Optional, defaults to 1.
      * </pre>
      *
-     * <code>uint32 page = 2;</code>
+     * <code>uint32 page = 3;</code>
      * @return The page.
      */
     public int getPage() {
@@ -707,11 +772,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Optional, defaults to 1.
      * </pre>
      *
-     * <code>uint32 page = 2;</code>
+     * <code>uint32 page = 3;</code>
      * @param value The page to set.
      * @return This builder for chaining.
      */
@@ -723,11 +787,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
-     * Defaults to 1.
+     * Optional, defaults to 1.
      * </pre>
      *
-     * <code>uint32 page = 2;</code>
+     * <code>uint32 page = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPage() {
@@ -740,11 +803,10 @@ private static final long serialVersionUID = 0L;
     private int perPage_ ;
     /**
      * <pre>
-     * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * Optional, defaults to 128 references per page.
      * </pre>
      *
-     * <code>uint32 per_page = 3;</code>
+     * <code>uint32 per_page = 4;</code>
      * @return The perPage.
      */
     public int getPerPage() {
@@ -752,11 +814,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * Optional, defaults to 128 references per page.
      * </pre>
      *
-     * <code>uint32 per_page = 3;</code>
+     * <code>uint32 per_page = 4;</code>
      * @param value The perPage to set.
      * @return This builder for chaining.
      */
@@ -768,112 +829,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) The number of results that will be contained in each page. Defaults
-     * to 128.
+     * Optional, defaults to 128 references per page.
      * </pre>
      *
-     * <code>uint32 per_page = 3;</code>
+     * <code>uint32 per_page = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearPerPage() {
       
       perPage_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string id = 4;</code>
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string id = 4;</code>
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string id = 4;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string id = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string id = 4;</code>
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value;
       onChanged();
       return this;
     }
@@ -890,41 +854,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.ListWorkflowsRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.ListModelReferencesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.ListWorkflowsRequest)
-  private static final com.clarifai.grpc.api.ListWorkflowsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.ListModelReferencesRequest)
+  private static final com.clarifai.grpc.api.ListModelReferencesRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.ListWorkflowsRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.ListModelReferencesRequest();
   }
 
-  public static com.clarifai.grpc.api.ListWorkflowsRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.ListModelReferencesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListWorkflowsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListWorkflowsRequest>() {
+  private static final com.google.protobuf.Parser<ListModelReferencesRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ListModelReferencesRequest>() {
     @java.lang.Override
-    public ListWorkflowsRequest parsePartialFrom(
+    public ListModelReferencesRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListWorkflowsRequest(input, extensionRegistry);
+      return new ListModelReferencesRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListWorkflowsRequest> parser() {
+  public static com.google.protobuf.Parser<ListModelReferencesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListWorkflowsRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListModelReferencesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.ListWorkflowsRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.ListModelReferencesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

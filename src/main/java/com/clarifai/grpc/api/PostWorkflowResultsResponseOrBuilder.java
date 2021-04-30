@@ -8,56 +8,139 @@ public interface PostWorkflowResultsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The status of the request.
+   * </pre>
+   *
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
+   * <pre>
+   * The status of the request.
+   * </pre>
+   *
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
   /**
+   * <pre>
+   * The status of the request.
+   * </pre>
+   *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   * <pre>
+   * The workflow that was used in predictions with PostWorkflowResults
+   * </pre>
+   *
    * <code>.clarifai.api.Workflow workflow = 2;</code>
    * @return Whether the workflow field is set.
    */
   boolean hasWorkflow();
   /**
+   * <pre>
+   * The workflow that was used in predictions with PostWorkflowResults
+   * </pre>
+   *
    * <code>.clarifai.api.Workflow workflow = 2;</code>
    * @return The workflow.
    */
   com.clarifai.grpc.api.Workflow getWorkflow();
   /**
+   * <pre>
+   * The workflow that was used in predictions with PostWorkflowResults
+   * </pre>
+   *
    * <code>.clarifai.api.Workflow workflow = 2;</code>
    */
   com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
 
   /**
+   * <pre>
+   * The resulting predictions of all models in the workflow.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
   java.util.List<com.clarifai.grpc.api.WorkflowResult> 
       getResultsList();
   /**
+   * <pre>
+   * The resulting predictions of all models in the workflow.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
   com.clarifai.grpc.api.WorkflowResult getResults(int index);
   /**
+   * <pre>
+   * The resulting predictions of all models in the workflow.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
   int getResultsCount();
   /**
+   * <pre>
+   * The resulting predictions of all models in the workflow.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.WorkflowResultOrBuilder> 
       getResultsOrBuilderList();
   /**
+   * <pre>
+   * The resulting predictions of all models in the workflow.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
   com.clarifai.grpc.api.WorkflowResultOrBuilder getResultsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * This WorkflowState should be passed in to subsequent PostWorkflowResults calls
+   * if you want to keep track of state across requests.
+   * If no WorkflowState was initialized in a request then no WorkflowState will be returned in this
+   * response.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 4;</code>
+   * @return Whether the workflowState field is set.
+   */
+  boolean hasWorkflowState();
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * This WorkflowState should be passed in to subsequent PostWorkflowResults calls
+   * if you want to keep track of state across requests.
+   * If no WorkflowState was initialized in a request then no WorkflowState will be returned in this
+   * response.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 4;</code>
+   * @return The workflowState.
+   */
+  com.clarifai.grpc.api.WorkflowState getWorkflowState();
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * This WorkflowState should be passed in to subsequent PostWorkflowResults calls
+   * if you want to keep track of state across requests.
+   * If no WorkflowState was initialized in a request then no WorkflowState will be returned in this
+   * response.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 4;</code>
+   */
+  com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder();
 }

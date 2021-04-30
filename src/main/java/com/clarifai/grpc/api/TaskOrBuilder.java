@@ -385,4 +385,44 @@ public interface TaskOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * The app the task belongs to.
+   * </pre>
+   *
+   * <code>string app_id = 16;</code>
+   * @return The appId.
+   */
+  java.lang.String getAppId();
+  /**
+   * <pre>
+   * The app the task belongs to.
+   * </pre>
+   *
+   * <code>string app_id = 16;</code>
+   * @return The bytes for appId.
+   */
+  com.google.protobuf.ByteString
+      getAppIdBytes();
+
+  /**
+   * <pre>
+   * The user the task belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 17;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * The user the task belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 17;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

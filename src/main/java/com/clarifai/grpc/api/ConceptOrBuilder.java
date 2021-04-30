@@ -212,4 +212,24 @@ public interface ConceptOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 9;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * The user the concept belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 10;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * The user the concept belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 10;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

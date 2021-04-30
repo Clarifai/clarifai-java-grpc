@@ -68,6 +68,30 @@ public interface UserOrBuilder extends
       getCompanyNameBytes();
 
   /**
+   * <code>string job_title = 19;</code>
+   * @return The jobTitle.
+   */
+  java.lang.String getJobTitle();
+  /**
+   * <code>string job_title = 19;</code>
+   * @return The bytes for jobTitle.
+   */
+  com.google.protobuf.ByteString
+      getJobTitleBytes();
+
+  /**
+   * <code>string job_role = 20;</code>
+   * @return The jobRole.
+   */
+  java.lang.String getJobRole();
+  /**
+   * <code>string job_role = 20;</code>
+   * @return The bytes for jobRole.
+   */
+  com.google.protobuf.ByteString
+      getJobRoleBytes();
+
+  /**
    * <code>string bill_type = 7 [deprecated = true];</code>
    * @return The billType.
    */

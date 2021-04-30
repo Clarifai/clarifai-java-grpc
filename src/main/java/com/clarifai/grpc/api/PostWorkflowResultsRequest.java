@@ -97,6 +97,19 @@ private static final long serialVersionUID = 0L;
             favorClarifaiWorkflows_ = input.readBool();
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.WorkflowState.Builder subBuilder = null;
+            if (workflowState_ != null) {
+              subBuilder = workflowState_.toBuilder();
+            }
+            workflowState_ = input.readMessage(com.clarifai.grpc.api.WorkflowState.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(workflowState_);
+              workflowState_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -302,6 +315,47 @@ private static final long serialVersionUID = 0L;
     return favorClarifaiWorkflows_;
   }
 
+  public static final int WORKFLOW_STATE_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.WorkflowState workflowState_;
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * If it is not sent in the initial request with workflow_state.id = "init" then no
+   * state will be saved or returned in PostWorkflowResultsResponse.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+   * @return Whether the workflowState field is set.
+   */
+  public boolean hasWorkflowState() {
+    return workflowState_ != null;
+  }
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * If it is not sent in the initial request with workflow_state.id = "init" then no
+   * state will be saved or returned in PostWorkflowResultsResponse.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+   * @return The workflowState.
+   */
+  public com.clarifai.grpc.api.WorkflowState getWorkflowState() {
+    return workflowState_ == null ? com.clarifai.grpc.api.WorkflowState.getDefaultInstance() : workflowState_;
+  }
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * If it is not sent in the initial request with workflow_state.id = "init" then no
+   * state will be saved or returned in PostWorkflowResultsResponse.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+   */
+  public com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder() {
+    return getWorkflowState();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -331,6 +385,9 @@ private static final long serialVersionUID = 0L;
     if (favorClarifaiWorkflows_ != false) {
       output.writeBool(5, favorClarifaiWorkflows_);
     }
+    if (workflowState_ != null) {
+      output.writeMessage(6, getWorkflowState());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -358,6 +415,10 @@ private static final long serialVersionUID = 0L;
     if (favorClarifaiWorkflows_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, favorClarifaiWorkflows_);
+    }
+    if (workflowState_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getWorkflowState());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -390,6 +451,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getFavorClarifaiWorkflows()
         != other.getFavorClarifaiWorkflows()) return false;
+    if (hasWorkflowState() != other.hasWorkflowState()) return false;
+    if (hasWorkflowState()) {
+      if (!getWorkflowState()
+          .equals(other.getWorkflowState())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -418,6 +484,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FAVOR_CLARIFAI_WORKFLOWS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFavorClarifaiWorkflows());
+    if (hasWorkflowState()) {
+      hash = (37 * hash) + WORKFLOW_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowState().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -574,6 +644,12 @@ private static final long serialVersionUID = 0L;
       }
       favorClarifaiWorkflows_ = false;
 
+      if (workflowStateBuilder_ == null) {
+        workflowState_ = null;
+      } else {
+        workflowState_ = null;
+        workflowStateBuilder_ = null;
+      }
       return this;
     }
 
@@ -622,6 +698,11 @@ private static final long serialVersionUID = 0L;
         result.outputConfig_ = outputConfigBuilder_.build();
       }
       result.favorClarifaiWorkflows_ = favorClarifaiWorkflows_;
+      if (workflowStateBuilder_ == null) {
+        result.workflowState_ = workflowState_;
+      } else {
+        result.workflowState_ = workflowStateBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -708,6 +789,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFavorClarifaiWorkflows() != false) {
         setFavorClarifaiWorkflows(other.getFavorClarifaiWorkflows());
+      }
+      if (other.hasWorkflowState()) {
+        mergeWorkflowState(other.getWorkflowState());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1444,6 +1528,179 @@ private static final long serialVersionUID = 0L;
       favorClarifaiWorkflows_ = false;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.WorkflowState workflowState_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowState, com.clarifai.grpc.api.WorkflowState.Builder, com.clarifai.grpc.api.WorkflowStateOrBuilder> workflowStateBuilder_;
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     * @return Whether the workflowState field is set.
+     */
+    public boolean hasWorkflowState() {
+      return workflowStateBuilder_ != null || workflowState_ != null;
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     * @return The workflowState.
+     */
+    public com.clarifai.grpc.api.WorkflowState getWorkflowState() {
+      if (workflowStateBuilder_ == null) {
+        return workflowState_ == null ? com.clarifai.grpc.api.WorkflowState.getDefaultInstance() : workflowState_;
+      } else {
+        return workflowStateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    public Builder setWorkflowState(com.clarifai.grpc.api.WorkflowState value) {
+      if (workflowStateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workflowState_ = value;
+        onChanged();
+      } else {
+        workflowStateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    public Builder setWorkflowState(
+        com.clarifai.grpc.api.WorkflowState.Builder builderForValue) {
+      if (workflowStateBuilder_ == null) {
+        workflowState_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowStateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    public Builder mergeWorkflowState(com.clarifai.grpc.api.WorkflowState value) {
+      if (workflowStateBuilder_ == null) {
+        if (workflowState_ != null) {
+          workflowState_ =
+            com.clarifai.grpc.api.WorkflowState.newBuilder(workflowState_).mergeFrom(value).buildPartial();
+        } else {
+          workflowState_ = value;
+        }
+        onChanged();
+      } else {
+        workflowStateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    public Builder clearWorkflowState() {
+      if (workflowStateBuilder_ == null) {
+        workflowState_ = null;
+        onChanged();
+      } else {
+        workflowState_ = null;
+        workflowStateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowState.Builder getWorkflowStateBuilder() {
+      
+      onChanged();
+      return getWorkflowStateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder() {
+      if (workflowStateBuilder_ != null) {
+        return workflowStateBuilder_.getMessageOrBuilder();
+      } else {
+        return workflowState_ == null ?
+            com.clarifai.grpc.api.WorkflowState.getDefaultInstance() : workflowState_;
+      }
+    }
+    /**
+     * <pre>
+     * A workflow state to be maintained across PostWorkflowResults requests/responses.
+     * If it is not sent in the initial request with workflow_state.id = "init" then no
+     * state will be saved or returned in PostWorkflowResultsResponse.
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowState, com.clarifai.grpc.api.WorkflowState.Builder, com.clarifai.grpc.api.WorkflowStateOrBuilder> 
+        getWorkflowStateFieldBuilder() {
+      if (workflowStateBuilder_ == null) {
+        workflowStateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.WorkflowState, com.clarifai.grpc.api.WorkflowState.Builder, com.clarifai.grpc.api.WorkflowStateOrBuilder>(
+                getWorkflowState(),
+                getParentForChildren(),
+                isClean());
+        workflowState_ = null;
+      }
+      return workflowStateBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

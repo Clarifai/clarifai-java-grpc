@@ -164,11 +164,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 128: {
-
-            isOperator_ = input.readBool();
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -717,20 +712,6 @@ private static final long serialVersionUID = 0L;
     return getExpectedPretrainedOutputFields();
   }
 
-  public static final int IS_OPERATOR_FIELD_NUMBER = 16;
-  private boolean isOperator_;
-  /**
-   * <pre>
-   * Can this model type be used as an operator type in workflows?
-   * </pre>
-   *
-   * <code>bool is_operator = 16;</code>
-   * @return The isOperator.
-   */
-  public boolean getIsOperator() {
-    return isOperator_;
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -786,9 +767,6 @@ private static final long serialVersionUID = 0L;
     }
     if (expectedPretrainedOutputFields_ != null) {
       output.writeMessage(15, getExpectedPretrainedOutputFields());
-    }
-    if (isOperator_ != false) {
-      output.writeBool(16, isOperator_);
     }
     unknownFields.writeTo(output);
   }
@@ -859,10 +837,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getExpectedPretrainedOutputFields());
     }
-    if (isOperator_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(16, isOperator_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -912,8 +886,6 @@ private static final long serialVersionUID = 0L;
       if (!getExpectedPretrainedOutputFields()
           .equals(other.getExpectedPretrainedOutputFields())) return false;
     }
-    if (getIsOperator()
-        != other.getIsOperator()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -968,9 +940,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXPECTED_PRETRAINED_OUTPUT_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getExpectedPretrainedOutputFields().hashCode();
     }
-    hash = (37 * hash) + IS_OPERATOR_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsOperator());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1151,8 +1120,6 @@ private static final long serialVersionUID = 0L;
         expectedPretrainedOutputFields_ = null;
         expectedPretrainedOutputFieldsBuilder_ = null;
       }
-      isOperator_ = false;
-
       return this;
     }
 
@@ -1218,7 +1185,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.expectedPretrainedOutputFields_ = expectedPretrainedOutputFieldsBuilder_.build();
       }
-      result.isOperator_ = isOperator_;
       onBuilt();
       return result;
     }
@@ -1349,9 +1315,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExpectedPretrainedOutputFields()) {
         mergeExpectedPretrainedOutputFields(other.getExpectedPretrainedOutputFields());
-      }
-      if (other.getIsOperator() != false) {
-        setIsOperator(other.getIsOperator());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2995,48 +2958,6 @@ private static final long serialVersionUID = 0L;
         expectedPretrainedOutputFields_ = null;
       }
       return expectedPretrainedOutputFieldsBuilder_;
-    }
-
-    private boolean isOperator_ ;
-    /**
-     * <pre>
-     * Can this model type be used as an operator type in workflows?
-     * </pre>
-     *
-     * <code>bool is_operator = 16;</code>
-     * @return The isOperator.
-     */
-    public boolean getIsOperator() {
-      return isOperator_;
-    }
-    /**
-     * <pre>
-     * Can this model type be used as an operator type in workflows?
-     * </pre>
-     *
-     * <code>bool is_operator = 16;</code>
-     * @param value The isOperator to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsOperator(boolean value) {
-      
-      isOperator_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Can this model type be used as an operator type in workflows?
-     * </pre>
-     *
-     * <code>bool is_operator = 16;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIsOperator() {
-      
-      isOperator_ = false;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

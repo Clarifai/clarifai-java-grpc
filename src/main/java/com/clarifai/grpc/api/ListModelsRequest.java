@@ -17,6 +17,10 @@ private static final long serialVersionUID = 0L;
   }
   private ListModelsRequest() {
     ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    name_ = "";
+    modelTypeId_ = "";
+    inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -82,6 +86,41 @@ private static final long serialVersionUID = 0L;
             ids_.add(s);
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            modelTypeId_ = s;
+            break;
+          }
+          case 56: {
+
+            trainedOnly_ = input.readBool();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              inputFields_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            inputFields_.add(s);
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              outputFields_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            outputFields_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +138,12 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         ids_ = ids_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        inputFields_ = inputFields_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        outputFields_ = outputFields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -205,6 +250,220 @@ private static final long serialVersionUID = 0L;
     return ids_.getByteString(index);
   }
 
+  public static final int NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   * @return The name.
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   * @return The bytes for name.
+   */
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_TYPE_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object modelTypeId_;
+  /**
+   * <pre>
+   * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+   * supported.
+   * </pre>
+   *
+   * <code>string model_type_id = 6;</code>
+   * @return The modelTypeId.
+   */
+  public java.lang.String getModelTypeId() {
+    java.lang.Object ref = modelTypeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelTypeId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+   * supported.
+   * </pre>
+   *
+   * <code>string model_type_id = 6;</code>
+   * @return The bytes for modelTypeId.
+   */
+  public com.google.protobuf.ByteString
+      getModelTypeIdBytes() {
+    java.lang.Object ref = modelTypeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      modelTypeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRAINED_ONLY_FIELD_NUMBER = 7;
+  private boolean trainedOnly_;
+  /**
+   * <pre>
+   * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+   * </pre>
+   *
+   * <code>bool trained_only = 7;</code>
+   * @return The trainedOnly.
+   */
+  public boolean getTrainedOnly() {
+    return trainedOnly_;
+  }
+
+  public static final int INPUT_FIELDS_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList inputFields_;
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @return A list containing the inputFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getInputFieldsList() {
+    return inputFields_;
+  }
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @return The count of inputFields.
+   */
+  public int getInputFieldsCount() {
+    return inputFields_.size();
+  }
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @param index The index of the element to return.
+   * @return The inputFields at the given index.
+   */
+  public java.lang.String getInputFields(int index) {
+    return inputFields_.get(index);
+  }
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the inputFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getInputFieldsBytes(int index) {
+    return inputFields_.getByteString(index);
+  }
+
+  public static final int OUTPUT_FIELDS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList outputFields_;
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @return A list containing the outputFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getOutputFieldsList() {
+    return outputFields_;
+  }
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @return The count of outputFields.
+   */
+  public int getOutputFieldsCount() {
+    return outputFields_.size();
+  }
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @param index The index of the element to return.
+   * @return The outputFields at the given index.
+   */
+  public java.lang.String getOutputFields(int index) {
+    return outputFields_.get(index);
+  }
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the outputFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getOutputFieldsBytes(int index) {
+    return outputFields_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -230,6 +489,21 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < ids_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ids_.getRaw(i));
+    }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
+    }
+    if (!getModelTypeIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelTypeId_);
+    }
+    if (trainedOnly_ != false) {
+      output.writeBool(7, trainedOnly_);
+    }
+    for (int i = 0; i < inputFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, inputFields_.getRaw(i));
+    }
+    for (int i = 0; i < outputFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, outputFields_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -260,6 +534,32 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getIdsList().size();
     }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
+    }
+    if (!getModelTypeIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelTypeId_);
+    }
+    if (trainedOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, trainedOnly_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < inputFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(inputFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getInputFieldsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < outputFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(outputFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getOutputFieldsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -286,6 +586,16 @@ private static final long serialVersionUID = 0L;
         != other.getPerPage()) return false;
     if (!getIdsList()
         .equals(other.getIdsList())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getModelTypeId()
+        .equals(other.getModelTypeId())) return false;
+    if (getTrainedOnly()
+        != other.getTrainedOnly()) return false;
+    if (!getInputFieldsList()
+        .equals(other.getInputFieldsList())) return false;
+    if (!getOutputFieldsList()
+        .equals(other.getOutputFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -308,6 +618,21 @@ private static final long serialVersionUID = 0L;
     if (getIdsCount() > 0) {
       hash = (37 * hash) + IDS_FIELD_NUMBER;
       hash = (53 * hash) + getIdsList().hashCode();
+    }
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelTypeId().hashCode();
+    hash = (37 * hash) + TRAINED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTrainedOnly());
+    if (getInputFieldsCount() > 0) {
+      hash = (37 * hash) + INPUT_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getInputFieldsList().hashCode();
+    }
+    if (getOutputFieldsCount() > 0) {
+      hash = (37 * hash) + OUTPUT_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputFieldsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -454,6 +779,16 @@ private static final long serialVersionUID = 0L;
 
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      name_ = "";
+
+      modelTypeId_ = "";
+
+      trainedOnly_ = false;
+
+      inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -493,6 +828,19 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ids_ = ids_;
+      result.name_ = name_;
+      result.modelTypeId_ = modelTypeId_;
+      result.trainedOnly_ = trainedOnly_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        inputFields_ = inputFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.inputFields_ = inputFields_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        outputFields_ = outputFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.outputFields_ = outputFields_;
       onBuilt();
       return result;
     }
@@ -557,6 +905,37 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
+        }
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getModelTypeId().isEmpty()) {
+        modelTypeId_ = other.modelTypeId_;
+        onChanged();
+      }
+      if (other.getTrainedOnly() != false) {
+        setTrainedOnly(other.getTrainedOnly());
+      }
+      if (!other.inputFields_.isEmpty()) {
+        if (inputFields_.isEmpty()) {
+          inputFields_ = other.inputFields_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureInputFieldsIsMutable();
+          inputFields_.addAll(other.inputFields_);
+        }
+        onChanged();
+      }
+      if (!other.outputFields_.isEmpty()) {
+        if (outputFields_.isEmpty()) {
+          outputFields_ = other.outputFields_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureOutputFieldsIsMutable();
+          outputFields_.addAll(other.outputFields_);
         }
         onChanged();
       }
@@ -905,6 +1284,555 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 5;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 5;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 5;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 5;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelTypeId_ = "";
+    /**
+     * <pre>
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     * </pre>
+     *
+     * <code>string model_type_id = 6;</code>
+     * @return The modelTypeId.
+     */
+    public java.lang.String getModelTypeId() {
+      java.lang.Object ref = modelTypeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelTypeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     * </pre>
+     *
+     * <code>string model_type_id = 6;</code>
+     * @return The bytes for modelTypeId.
+     */
+    public com.google.protobuf.ByteString
+        getModelTypeIdBytes() {
+      java.lang.Object ref = modelTypeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelTypeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     * </pre>
+     *
+     * <code>string model_type_id = 6;</code>
+     * @param value The modelTypeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     * </pre>
+     *
+     * <code>string model_type_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelTypeId() {
+      
+      modelTypeId_ = getDefaultInstance().getModelTypeId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+     * supported.
+     * </pre>
+     *
+     * <code>string model_type_id = 6;</code>
+     * @param value The bytes for modelTypeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean trainedOnly_ ;
+    /**
+     * <pre>
+     * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     * </pre>
+     *
+     * <code>bool trained_only = 7;</code>
+     * @return The trainedOnly.
+     */
+    public boolean getTrainedOnly() {
+      return trainedOnly_;
+    }
+    /**
+     * <pre>
+     * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     * </pre>
+     *
+     * <code>bool trained_only = 7;</code>
+     * @param value The trainedOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainedOnly(boolean value) {
+      
+      trainedOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+     * </pre>
+     *
+     * <code>bool trained_only = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrainedOnly() {
+      
+      trainedOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureInputFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        inputFields_ = new com.google.protobuf.LazyStringArrayList(inputFields_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @return A list containing the inputFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getInputFieldsList() {
+      return inputFields_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @return The count of inputFields.
+     */
+    public int getInputFieldsCount() {
+      return inputFields_.size();
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @param index The index of the element to return.
+     * @return The inputFields at the given index.
+     */
+    public java.lang.String getInputFields(int index) {
+      return inputFields_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the inputFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getInputFieldsBytes(int index) {
+      return inputFields_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The inputFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureInputFieldsIsMutable();
+      inputFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @param value The inputFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInputFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureInputFieldsIsMutable();
+      inputFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @param values The inputFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInputFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureInputFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, inputFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputFields() {
+      inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of input fields to the model.
+     * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+     * </pre>
+     *
+     * <code>repeated string input_fields = 8;</code>
+     * @param value The bytes of the inputFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInputFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureInputFieldsIsMutable();
+      inputFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureOutputFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        outputFields_ = new com.google.protobuf.LazyStringArrayList(outputFields_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @return A list containing the outputFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getOutputFieldsList() {
+      return outputFields_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @return The count of outputFields.
+     */
+    public int getOutputFieldsCount() {
+      return outputFields_.size();
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @param index The index of the element to return.
+     * @return The outputFields at the given index.
+     */
+    public java.lang.String getOutputFields(int index) {
+      return outputFields_.get(index);
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the outputFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getOutputFieldsBytes(int index) {
+      return outputFields_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The outputFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureOutputFieldsIsMutable();
+      outputFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @param value The outputFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOutputFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureOutputFieldsIsMutable();
+      outputFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @param values The outputFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllOutputFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureOutputFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, outputFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOutputFields() {
+      outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The list of output fields to the model.
+     * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+     * </pre>
+     *
+     * <code>repeated string output_fields = 9;</code>
+     * @param value The bytes of the outputFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOutputFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureOutputFieldsIsMutable();
+      outputFields_.add(value);
       onChanged();
       return this;
     }
