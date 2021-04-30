@@ -8,3 +8,4 @@
  */
 
 rootProject.name = 'clarifai-java-grpc'
+rootProject.buildFileName = 'build.gradle'
