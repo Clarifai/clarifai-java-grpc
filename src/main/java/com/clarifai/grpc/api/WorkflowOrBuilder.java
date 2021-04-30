@@ -9,7 +9,7 @@ public interface WorkflowOrBuilder extends
 
   /**
    * <pre>
-   * The concept's unique id.
+   * The workflows's unique id.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -18,7 +18,7 @@ public interface WorkflowOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * The concept's unique id.
+   * The workflows's unique id.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -29,7 +29,7 @@ public interface WorkflowOrBuilder extends
 
   /**
    * <pre>
-   * The name of the concept in the given language.
+   * The app the workflow belongs to
    * </pre>
    *
    * <code>string app_id = 2;</code>
@@ -38,7 +38,7 @@ public interface WorkflowOrBuilder extends
   java.lang.String getAppId();
   /**
    * <pre>
-   * The name of the concept in the given language.
+   * The app the workflow belongs to
    * </pre>
    *
    * <code>string app_id = 2;</code>
@@ -197,4 +197,24 @@ public interface WorkflowOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * The user the workflow belongs to
+   * </pre>
+   *
+   * <code>string user_id = 7;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * The user the workflow belongs to
+   * </pre>
+   *
+   * <code>string user_id = 7;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

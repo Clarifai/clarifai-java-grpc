@@ -350,14 +350,4 @@ public interface ModelTypeOrBuilder extends
    * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
    */
   com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder();
-
-  /**
-   * <pre>
-   * Can this model type be used as an operator type in workflows?
-   * </pre>
-   *
-   * <code>bool is_operator = 16;</code>
-   * @return The isOperator.
-   */
-  boolean getIsOperator();
 }

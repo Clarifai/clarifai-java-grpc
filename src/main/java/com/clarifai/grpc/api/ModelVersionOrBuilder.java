@@ -183,4 +183,44 @@ public interface ModelVersionOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 12;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * The app the model version belongs to.
+   * </pre>
+   *
+   * <code>string app_id = 13;</code>
+   * @return The appId.
+   */
+  java.lang.String getAppId();
+  /**
+   * <pre>
+   * The app the model version belongs to.
+   * </pre>
+   *
+   * <code>string app_id = 13;</code>
+   * @return The bytes for appId.
+   */
+  com.google.protobuf.ByteString
+      getAppIdBytes();
+
+  /**
+   * <pre>
+   * The user the model version belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 14;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * The user the model version belongs to.
+   * </pre>
+   *
+   * <code>string user_id = 14;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
 }

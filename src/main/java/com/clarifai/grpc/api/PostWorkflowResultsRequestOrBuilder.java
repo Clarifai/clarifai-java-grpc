@@ -121,4 +121,37 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * @return The favorClarifaiWorkflows.
    */
   boolean getFavorClarifaiWorkflows();
+
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * If it is not sent in the initial request with workflow_state.id = "init" then no
+   * state will be saved or returned in PostWorkflowResultsResponse.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+   * @return Whether the workflowState field is set.
+   */
+  boolean hasWorkflowState();
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * If it is not sent in the initial request with workflow_state.id = "init" then no
+   * state will be saved or returned in PostWorkflowResultsResponse.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+   * @return The workflowState.
+   */
+  com.clarifai.grpc.api.WorkflowState getWorkflowState();
+  /**
+   * <pre>
+   * A workflow state to be maintained across PostWorkflowResults requests/responses.
+   * If it is not sent in the initial request with workflow_state.id = "init" then no
+   * state will be saved or returned in PostWorkflowResultsResponse.
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
+   */
+  com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder();
 }

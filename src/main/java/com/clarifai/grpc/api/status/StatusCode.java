@@ -420,6 +420,22 @@ public enum StatusCode
   MODEL_NOT_DEPLOYED(21353),
   /**
    * <pre>
+   * Used when a model reference field is not set properly
+   * </pre>
+   *
+   * <code>MODEL_REFERENCE_INVALID_ARGUMENT = 21400;</code>
+   */
+  MODEL_REFERENCE_INVALID_ARGUMENT(21400),
+  /**
+   * <pre>
+   * Used when a model example input field is not set properly
+   * </pre>
+   *
+   * <code>MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT = 21420;</code>
+   */
+  MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT(21420),
+  /**
+   * <pre>
    * specified model input not in workflow
    * </pre>
    *
@@ -1421,6 +1437,14 @@ public enum StatusCode
   JOB_FAILED(6403),
   /**
    * <pre>
+   *auth issues
+   * </pre>
+   *
+   * <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
+   */
+  AUTH_MISSING_IDP_ASSOC(65000),
+  /**
+   * <pre>
    * Internal issues: 98xxx
    * </pre>
    *
@@ -1927,6 +1951,22 @@ public enum StatusCode
    * <code>MODEL_NOT_DEPLOYED = 21353;</code>
    */
   public static final int MODEL_NOT_DEPLOYED_VALUE = 21353;
+  /**
+   * <pre>
+   * Used when a model reference field is not set properly
+   * </pre>
+   *
+   * <code>MODEL_REFERENCE_INVALID_ARGUMENT = 21400;</code>
+   */
+  public static final int MODEL_REFERENCE_INVALID_ARGUMENT_VALUE = 21400;
+  /**
+   * <pre>
+   * Used when a model example input field is not set properly
+   * </pre>
+   *
+   * <code>MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT = 21420;</code>
+   */
+  public static final int MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT_VALUE = 21420;
   /**
    * <pre>
    * specified model input not in workflow
@@ -2930,6 +2970,14 @@ public enum StatusCode
   public static final int JOB_FAILED_VALUE = 6403;
   /**
    * <pre>
+   *auth issues
+   * </pre>
+   *
+   * <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
+   */
+  public static final int AUTH_MISSING_IDP_ASSOC_VALUE = 65000;
+  /**
+   * <pre>
    * Internal issues: 98xxx
    * </pre>
    *
@@ -3110,6 +3158,8 @@ public enum StatusCode
       case 21351: return MODEL_DEPLOYING;
       case 21352: return MODEL_QUEUED_FOR_DEPLOYMENT;
       case 21353: return MODEL_NOT_DEPLOYED;
+      case 21400: return MODEL_REFERENCE_INVALID_ARGUMENT;
+      case 21420: return MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT;
       case 22001: return WORKFLOW_NO_MATCHING_INPUT;
       case 22002: return WORKFLOW_REQUIRE_TRAINED_MODEL;
       case 22100: return WORKFLOW_DUPLICATE;
@@ -3316,6 +3366,7 @@ public enum StatusCode
       case 6401: return JOB_RUNNING;
       case 6402: return JOB_COMPLETED;
       case 6403: return JOB_FAILED;
+      case 65000: return AUTH_MISSING_IDP_ASSOC;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;

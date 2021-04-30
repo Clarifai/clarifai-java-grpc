@@ -110,33 +110,6 @@ public interface OutputOrBuilder extends
 
   /**
    * <pre>
-   * The operator that created this Output.
-   * </pre>
-   *
-   * <code>.clarifai.api.Operator operator = 7;</code>
-   * @return Whether the operator field is set.
-   */
-  boolean hasOperator();
-  /**
-   * <pre>
-   * The operator that created this Output.
-   * </pre>
-   *
-   * <code>.clarifai.api.Operator operator = 7;</code>
-   * @return The operator.
-   */
-  com.clarifai.grpc.api.Operator getOperator();
-  /**
-   * <pre>
-   * The operator that created this Output.
-   * </pre>
-   *
-   * <code>.clarifai.api.Operator operator = 7;</code>
-   */
-  com.clarifai.grpc.api.OperatorOrBuilder getOperatorOrBuilder();
-
-  /**
-   * <pre>
    * The input that was passed to the model to create this Output. For example if we have an image
    * model then it will take as input here an Input object with Image filled in.
    * </pre>

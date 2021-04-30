@@ -43,4 +43,24 @@ public interface ListWorkflowsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string id = 4;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <pre>
+   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string id = 4;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 }

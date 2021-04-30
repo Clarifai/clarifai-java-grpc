@@ -68,4 +68,146 @@ public interface ListModelsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+   * supported.
+   * </pre>
+   *
+   * <code>string model_type_id = 6;</code>
+   * @return The modelTypeId.
+   */
+  java.lang.String getModelTypeId();
+  /**
+   * <pre>
+   * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
+   * supported.
+   * </pre>
+   *
+   * <code>string model_type_id = 6;</code>
+   * @return The bytes for modelTypeId.
+   */
+  com.google.protobuf.ByteString
+      getModelTypeIdBytes();
+
+  /**
+   * <pre>
+   * If true, we only return models that have the status MODEL_TRAINED, which includes non-trainable model types.
+   * </pre>
+   *
+   * <code>bool trained_only = 7;</code>
+   * @return The trainedOnly.
+   */
+  boolean getTrainedOnly();
+
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @return A list containing the inputFields.
+   */
+  java.util.List<java.lang.String>
+      getInputFieldsList();
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @return The count of inputFields.
+   */
+  int getInputFieldsCount();
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @param index The index of the element to return.
+   * @return The inputFields at the given index.
+   */
+  java.lang.String getInputFields(int index);
+  /**
+   * <pre>
+   * The list of input fields to the model.
+   * For example, you can specify 'image', which will return models that make inferences on images like visual-classifier models.
+   * </pre>
+   *
+   * <code>repeated string input_fields = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the inputFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getInputFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @return A list containing the outputFields.
+   */
+  java.util.List<java.lang.String>
+      getOutputFieldsList();
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @return The count of outputFields.
+   */
+  int getOutputFieldsCount();
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @param index The index of the element to return.
+   * @return The outputFields at the given index.
+   */
+  java.lang.String getOutputFields(int index);
+  /**
+   * <pre>
+   * The list of output fields to the model.
+   * For example, you can specify 'regions[...].data.concepts', which will return visual-detector models.
+   * </pre>
+   *
+   * <code>repeated string output_fields = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the outputFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getOutputFieldsBytes(int index);
 }

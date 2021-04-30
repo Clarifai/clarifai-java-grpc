@@ -298,4 +298,24 @@ public interface ModelOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * Description about this model
+   * </pre>
+   *
+   * <code>string description = 16;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Description about this model
+   * </pre>
+   *
+   * <code>string description = 16;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
 }

@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListAppsRequest() {
+    name_ = "";
   }
 
   @java.lang.Override
@@ -69,6 +70,12 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             perPage_ = input.readUInt32();
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
             break;
           }
           default: {
@@ -156,6 +163,50 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   * @return The name.
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   * @return The bytes for name.
+   */
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -179,6 +230,9 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +253,9 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
+    }
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -224,6 +281,8 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -243,6 +302,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -386,6 +447,8 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      name_ = "";
+
       return this;
     }
 
@@ -419,6 +482,7 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -475,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -710,6 +778,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
       onChanged();
       return this;
     }

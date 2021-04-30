@@ -43,4 +43,24 @@ public interface ListAppsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }
