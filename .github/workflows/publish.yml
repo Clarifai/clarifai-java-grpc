@@ -19,12 +19,12 @@ jobs:
           java-version: 1.8
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Prepare
+      - name: Prepare gpg key for signing
         env:
           GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
           SIGNING_SECRET_KEY_RING_FILE: ${{ secrets.SIGNING_SECRET_KEY_RING_FILE }}
         run: sudo bash -c "echo '$GPG_KEY_CONTENTS' | base64 -d > '$SIGNING_SECRET_KEY_RING_FILE'"
-      - name: Deploy
+      - name: Publish artifact to repository
         env:
           SONATYPE_USERNAME_CLARIFAI: ${{ secrets.SONATYPE_USERNAME_CLARIFAI }}
           SONATYPE_PASSWORD_CLARIFAI: ${{ secrets.SONATYPE_PASSWORD_CLARIFAI }}
