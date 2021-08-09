@@ -88,8 +88,8 @@ public interface WorkflowOrBuilder extends
 
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -98,8 +98,8 @@ public interface WorkflowOrBuilder extends
       getNodesList();
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -107,8 +107,8 @@ public interface WorkflowOrBuilder extends
   com.clarifai.grpc.api.WorkflowNode getNodes(int index);
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -116,8 +116,8 @@ public interface WorkflowOrBuilder extends
   int getNodesCount();
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -126,8 +126,8 @@ public interface WorkflowOrBuilder extends
       getNodesOrBuilderList();
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -217,4 +217,58 @@ public interface WorkflowOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
+   * Info about the workflow version
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+   * @return Whether the version field is set.
+   */
+  boolean hasVersion();
+  /**
+   * <pre>
+   * Info about the workflow version
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+   * @return The version.
+   */
+  com.clarifai.grpc.api.WorkflowVersion getVersion();
+  /**
+   * <pre>
+   * Info about the workflow version
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+   */
+  com.clarifai.grpc.api.WorkflowVersionOrBuilder getVersionOrBuilder();
 }

@@ -125,6 +125,32 @@ private static final long serialVersionUID = 0L;
             userId_ = s;
             break;
           }
+          case 66: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (modifiedAt_ != null) {
+              subBuilder = modifiedAt_.toBuilder();
+            }
+            modifiedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modifiedAt_);
+              modifiedAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 74: {
+            com.clarifai.grpc.api.WorkflowVersion.Builder subBuilder = null;
+            if (version_ != null) {
+              subBuilder = version_.toBuilder();
+            }
+            version_ = input.readMessage(com.clarifai.grpc.api.WorkflowVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(version_);
+              version_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -299,8 +325,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.clarifai.grpc.api.WorkflowNode> nodes_;
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -310,8 +336,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -322,8 +348,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -333,8 +359,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -344,8 +370,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of nodes that make up the workflow. Each node can specify an input node
-   * that it connects to in order to define the graph.
+   * The list of nodes retrieved from latest workflow version.
+   * Each node can specify an input node that it connects to in order to define the graph.
    * </pre>
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -478,6 +504,76 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MODIFIED_AT_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp modifiedAt_;
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  public boolean hasModifiedAt() {
+    return modifiedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
+   */
+  public com.google.protobuf.Timestamp getModifiedAt() {
+    return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+  }
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+    return getModifiedAt();
+  }
+
+  public static final int VERSION_FIELD_NUMBER = 9;
+  private com.clarifai.grpc.api.WorkflowVersion version_;
+  /**
+   * <pre>
+   * Info about the workflow version
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+   * @return Whether the version field is set.
+   */
+  public boolean hasVersion() {
+    return version_ != null;
+  }
+  /**
+   * <pre>
+   * Info about the workflow version
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+   * @return The version.
+   */
+  public com.clarifai.grpc.api.WorkflowVersion getVersion() {
+    return version_ == null ? com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : version_;
+  }
+  /**
+   * <pre>
+   * Info about the workflow version
+   * </pre>
+   *
+   * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+   */
+  public com.clarifai.grpc.api.WorkflowVersionOrBuilder getVersionOrBuilder() {
+    return getVersion();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -513,6 +609,12 @@ private static final long serialVersionUID = 0L;
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
     }
+    if (modifiedAt_ != null) {
+      output.writeMessage(8, getModifiedAt());
+    }
+    if (version_ != null) {
+      output.writeMessage(9, getVersion());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -546,6 +648,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
+    }
+    if (modifiedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getModifiedAt());
+    }
+    if (version_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getVersion());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -585,6 +695,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (hasModifiedAt() != other.hasModifiedAt()) return false;
+    if (hasModifiedAt()) {
+      if (!getModifiedAt()
+          .equals(other.getModifiedAt())) return false;
+    }
+    if (hasVersion() != other.hasVersion()) return false;
+    if (hasVersion()) {
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -618,6 +738,14 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    if (hasModifiedAt()) {
+      hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getModifiedAt().hashCode();
+    }
+    if (hasVersion()) {
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -788,6 +916,18 @@ private static final long serialVersionUID = 0L;
       }
       userId_ = "";
 
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+      if (versionBuilder_ == null) {
+        version_ = null;
+      } else {
+        version_ = null;
+        versionBuilder_ = null;
+      }
       return this;
     }
 
@@ -842,6 +982,16 @@ private static final long serialVersionUID = 0L;
         result.visibility_ = visibilityBuilder_.build();
       }
       result.userId_ = userId_;
+      if (modifiedAtBuilder_ == null) {
+        result.modifiedAt_ = modifiedAt_;
+      } else {
+        result.modifiedAt_ = modifiedAtBuilder_.build();
+      }
+      if (versionBuilder_ == null) {
+        result.version_ = version_;
+      } else {
+        result.version_ = versionBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -936,6 +1086,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
+      }
+      if (other.hasModifiedAt()) {
+        mergeModifiedAt(other.getModifiedAt());
+      }
+      if (other.hasVersion()) {
+        mergeVersion(other.getVersion());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1364,8 +1520,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1379,8 +1535,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1394,8 +1550,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1409,8 +1565,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1431,8 +1587,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1450,8 +1606,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1471,8 +1627,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1493,8 +1649,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1512,8 +1668,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1531,8 +1687,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1551,8 +1707,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1569,8 +1725,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1587,8 +1743,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1599,8 +1755,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1614,8 +1770,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1630,8 +1786,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1642,8 +1798,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -1655,8 +1811,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of nodes that make up the workflow. Each node can specify an input node
-     * that it connects to in order to define the graph.
+     * The list of nodes retrieved from latest workflow version.
+     * Each node can specify an input node that it connects to in order to define the graph.
      * </pre>
      *
      * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
@@ -2111,6 +2267,316 @@ private static final long serialVersionUID = 0L;
       userId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp modifiedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    public boolean hasModifiedAt() {
+      return modifiedAtBuilder_ != null || modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return The modifiedAt.
+     */
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      } else {
+        return modifiedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifiedAt_ = value;
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder setModifiedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (modifiedAt_ != null) {
+          modifiedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(modifiedAt_).mergeFrom(value).buildPartial();
+        } else {
+          modifiedAt_ = value;
+        }
+        onChanged();
+      } else {
+        modifiedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder clearModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+        onChanged();
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+      
+      onChanged();
+      return getModifiedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      if (modifiedAtBuilder_ != null) {
+        return modifiedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return modifiedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getModifiedAtFieldBuilder() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getModifiedAt(),
+                getParentForChildren(),
+                isClean());
+        modifiedAt_ = null;
+      }
+      return modifiedAtBuilder_;
+    }
+
+    private com.clarifai.grpc.api.WorkflowVersion version_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> versionBuilder_;
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     * @return Whether the version field is set.
+     */
+    public boolean hasVersion() {
+      return versionBuilder_ != null || version_ != null;
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     * @return The version.
+     */
+    public com.clarifai.grpc.api.WorkflowVersion getVersion() {
+      if (versionBuilder_ == null) {
+        return version_ == null ? com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : version_;
+      } else {
+        return versionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    public Builder setVersion(com.clarifai.grpc.api.WorkflowVersion value) {
+      if (versionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        version_ = value;
+        onChanged();
+      } else {
+        versionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    public Builder setVersion(
+        com.clarifai.grpc.api.WorkflowVersion.Builder builderForValue) {
+      if (versionBuilder_ == null) {
+        version_ = builderForValue.build();
+        onChanged();
+      } else {
+        versionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    public Builder mergeVersion(com.clarifai.grpc.api.WorkflowVersion value) {
+      if (versionBuilder_ == null) {
+        if (version_ != null) {
+          version_ =
+            com.clarifai.grpc.api.WorkflowVersion.newBuilder(version_).mergeFrom(value).buildPartial();
+        } else {
+          version_ = value;
+        }
+        onChanged();
+      } else {
+        versionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    public Builder clearVersion() {
+      if (versionBuilder_ == null) {
+        version_ = null;
+        onChanged();
+      } else {
+        version_ = null;
+        versionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersion.Builder getVersionBuilder() {
+      
+      onChanged();
+      return getVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowVersionOrBuilder getVersionOrBuilder() {
+      if (versionBuilder_ != null) {
+        return versionBuilder_.getMessageOrBuilder();
+      } else {
+        return version_ == null ?
+            com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : version_;
+      }
+    }
+    /**
+     * <pre>
+     * Info about the workflow version
+     * </pre>
+     *
+     * <code>.clarifai.api.WorkflowVersion version = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> 
+        getVersionFieldBuilder() {
+      if (versionBuilder_ == null) {
+        versionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder>(
+                getVersion(),
+                getParentForChildren(),
+                isClean());
+        version_ = null;
+      }
+      return versionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

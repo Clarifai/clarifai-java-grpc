@@ -1143,6 +1143,37 @@ public final class V2Grpc {
     return getGetModelTypeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListOpenSourceLicensesRequest,
+      com.clarifai.grpc.api.ListOpenSourceLicensesResponse> getListOpenSourceLicensesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOpenSourceLicenses",
+      requestType = com.clarifai.grpc.api.ListOpenSourceLicensesRequest.class,
+      responseType = com.clarifai.grpc.api.ListOpenSourceLicensesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListOpenSourceLicensesRequest,
+      com.clarifai.grpc.api.ListOpenSourceLicensesResponse> getListOpenSourceLicensesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListOpenSourceLicensesRequest, com.clarifai.grpc.api.ListOpenSourceLicensesResponse> getListOpenSourceLicensesMethod;
+    if ((getListOpenSourceLicensesMethod = V2Grpc.getListOpenSourceLicensesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListOpenSourceLicensesMethod = V2Grpc.getListOpenSourceLicensesMethod) == null) {
+          V2Grpc.getListOpenSourceLicensesMethod = getListOpenSourceLicensesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListOpenSourceLicensesRequest, com.clarifai.grpc.api.ListOpenSourceLicensesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOpenSourceLicenses"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListOpenSourceLicensesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListOpenSourceLicensesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListOpenSourceLicenses"))
+              .build();
+        }
+      }
+    }
+    return getListOpenSourceLicensesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModelTypesRequest,
       com.clarifai.grpc.api.MultiModelTypeResponse> getListModelTypesMethod;
 
@@ -2009,6 +2040,130 @@ public final class V2Grpc {
       }
     }
     return getPostWorkflowResultsSimilarityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionsRequest,
+      com.clarifai.grpc.api.MultiWorkflowVersionResponse> getListWorkflowVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkflowVersions",
+      requestType = com.clarifai.grpc.api.ListWorkflowVersionsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiWorkflowVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionsRequest,
+      com.clarifai.grpc.api.MultiWorkflowVersionResponse> getListWorkflowVersionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionsRequest, com.clarifai.grpc.api.MultiWorkflowVersionResponse> getListWorkflowVersionsMethod;
+    if ((getListWorkflowVersionsMethod = V2Grpc.getListWorkflowVersionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListWorkflowVersionsMethod = V2Grpc.getListWorkflowVersionsMethod) == null) {
+          V2Grpc.getListWorkflowVersionsMethod = getListWorkflowVersionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListWorkflowVersionsRequest, com.clarifai.grpc.api.MultiWorkflowVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkflowVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListWorkflowVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiWorkflowVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListWorkflowVersions"))
+              .build();
+        }
+      }
+    }
+    return getListWorkflowVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetWorkflowVersionRequest,
+      com.clarifai.grpc.api.SingleWorkflowVersionResponse> getGetWorkflowVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetWorkflowVersion",
+      requestType = com.clarifai.grpc.api.GetWorkflowVersionRequest.class,
+      responseType = com.clarifai.grpc.api.SingleWorkflowVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetWorkflowVersionRequest,
+      com.clarifai.grpc.api.SingleWorkflowVersionResponse> getGetWorkflowVersionMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetWorkflowVersionRequest, com.clarifai.grpc.api.SingleWorkflowVersionResponse> getGetWorkflowVersionMethod;
+    if ((getGetWorkflowVersionMethod = V2Grpc.getGetWorkflowVersionMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetWorkflowVersionMethod = V2Grpc.getGetWorkflowVersionMethod) == null) {
+          V2Grpc.getGetWorkflowVersionMethod = getGetWorkflowVersionMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetWorkflowVersionRequest, com.clarifai.grpc.api.SingleWorkflowVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWorkflowVersion"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetWorkflowVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleWorkflowVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetWorkflowVersion"))
+              .build();
+        }
+      }
+    }
+    return getGetWorkflowVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteWorkflowVersionsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteWorkflowVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteWorkflowVersions",
+      requestType = com.clarifai.grpc.api.DeleteWorkflowVersionsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteWorkflowVersionsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteWorkflowVersionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteWorkflowVersionsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteWorkflowVersionsMethod;
+    if ((getDeleteWorkflowVersionsMethod = V2Grpc.getDeleteWorkflowVersionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteWorkflowVersionsMethod = V2Grpc.getDeleteWorkflowVersionsMethod) == null) {
+          V2Grpc.getDeleteWorkflowVersionsMethod = getDeleteWorkflowVersionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteWorkflowVersionsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteWorkflowVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteWorkflowVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteWorkflowVersions"))
+              .build();
+        }
+      }
+    }
+    return getDeleteWorkflowVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchWorkflowVersionsRequest,
+      com.clarifai.grpc.api.MultiWorkflowVersionResponse> getPatchWorkflowVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchWorkflowVersions",
+      requestType = com.clarifai.grpc.api.PatchWorkflowVersionsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiWorkflowVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchWorkflowVersionsRequest,
+      com.clarifai.grpc.api.MultiWorkflowVersionResponse> getPatchWorkflowVersionsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchWorkflowVersionsRequest, com.clarifai.grpc.api.MultiWorkflowVersionResponse> getPatchWorkflowVersionsMethod;
+    if ((getPatchWorkflowVersionsMethod = V2Grpc.getPatchWorkflowVersionsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchWorkflowVersionsMethod = V2Grpc.getPatchWorkflowVersionsMethod) == null) {
+          V2Grpc.getPatchWorkflowVersionsMethod = getPatchWorkflowVersionsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchWorkflowVersionsRequest, com.clarifai.grpc.api.MultiWorkflowVersionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchWorkflowVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchWorkflowVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiWorkflowVersionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchWorkflowVersions"))
+              .build();
+        }
+      }
+    }
+    return getPatchWorkflowVersionsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetKeyRequest,
@@ -3499,6 +3654,68 @@ public final class V2Grpc {
     return getPostStatValuesAggregateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTrendingMetricsViewRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostTrendingMetricsViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostTrendingMetricsView",
+      requestType = com.clarifai.grpc.api.PostTrendingMetricsViewRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTrendingMetricsViewRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostTrendingMetricsViewMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostTrendingMetricsViewRequest, com.clarifai.grpc.api.status.BaseResponse> getPostTrendingMetricsViewMethod;
+    if ((getPostTrendingMetricsViewMethod = V2Grpc.getPostTrendingMetricsViewMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostTrendingMetricsViewMethod = V2Grpc.getPostTrendingMetricsViewMethod) == null) {
+          V2Grpc.getPostTrendingMetricsViewMethod = getPostTrendingMetricsViewMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostTrendingMetricsViewRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostTrendingMetricsView"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostTrendingMetricsViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostTrendingMetricsView"))
+              .build();
+        }
+      }
+    }
+    return getPostTrendingMetricsViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest,
+      com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> getListTrendingMetricsViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTrendingMetricsViews",
+      requestType = com.clarifai.grpc.api.ListTrendingMetricsViewsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiTrendingMetricsViewResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest,
+      com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> getListTrendingMetricsViewsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest, com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> getListTrendingMetricsViewsMethod;
+    if ((getListTrendingMetricsViewsMethod = V2Grpc.getListTrendingMetricsViewsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListTrendingMetricsViewsMethod = V2Grpc.getListTrendingMetricsViewsMethod) == null) {
+          V2Grpc.getListTrendingMetricsViewsMethod = getListTrendingMetricsViewsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListTrendingMetricsViewsRequest, com.clarifai.grpc.api.MultiTrendingMetricsViewResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTrendingMetricsViews"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListTrendingMetricsViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiTrendingMetricsViewResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListTrendingMetricsViews"))
+              .build();
+        }
+      }
+    }
+    return getListTrendingMetricsViewsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -3917,6 +4134,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public void listOpenSourceLicenses(com.clarifai.grpc.api.ListOpenSourceLicensesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.ListOpenSourceLicensesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListOpenSourceLicensesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -4187,6 +4414,46 @@ public final class V2Grpc {
     public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getPostWorkflowResultsSimilarityMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List workflow versions.
+     * </pre>
+     */
+    public void listWorkflowVersions(com.clarifai.grpc.api.ListWorkflowVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListWorkflowVersionsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get single workflow version.
+     * </pre>
+     */
+    public void getWorkflowVersion(com.clarifai.grpc.api.GetWorkflowVersionRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleWorkflowVersionResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetWorkflowVersionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete workflow versions.
+     * </pre>
+     */
+    public void deleteWorkflowVersions(com.clarifai.grpc.api.DeleteWorkflowVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteWorkflowVersionsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch workflow versions.
+     * </pre>
+     */
+    public void patchWorkflowVersions(com.clarifai.grpc.api.PatchWorkflowVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchWorkflowVersionsMethod(), responseObserver);
     }
 
     /**
@@ -4675,6 +4942,26 @@ public final class V2Grpc {
       asyncUnimplementedUnaryCall(getPostStatValuesAggregateMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Increase the view metric for a detail view
+     * </pre>
+     */
+    public void postTrendingMetricsView(com.clarifai.grpc.api.PostTrendingMetricsViewRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostTrendingMetricsViewMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List the view metrics for a detail view
+     * </pre>
+     */
+    public void listTrendingMetricsViews(com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListTrendingMetricsViewsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -4930,6 +5217,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.SingleModelTypeResponse>(
                   this, METHODID_GET_MODEL_TYPE)))
           .addMethod(
+            getListOpenSourceLicensesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListOpenSourceLicensesRequest,
+                com.clarifai.grpc.api.ListOpenSourceLicensesResponse>(
+                  this, METHODID_LIST_OPEN_SOURCE_LICENSES)))
+          .addMethod(
             getListModelTypesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -5125,6 +5419,34 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
                 com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>(
                   this, METHODID_POST_WORKFLOW_RESULTS_SIMILARITY)))
+          .addMethod(
+            getListWorkflowVersionsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListWorkflowVersionsRequest,
+                com.clarifai.grpc.api.MultiWorkflowVersionResponse>(
+                  this, METHODID_LIST_WORKFLOW_VERSIONS)))
+          .addMethod(
+            getGetWorkflowVersionMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetWorkflowVersionRequest,
+                com.clarifai.grpc.api.SingleWorkflowVersionResponse>(
+                  this, METHODID_GET_WORKFLOW_VERSION)))
+          .addMethod(
+            getDeleteWorkflowVersionsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteWorkflowVersionsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_WORKFLOW_VERSIONS)))
+          .addMethod(
+            getPatchWorkflowVersionsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchWorkflowVersionsRequest,
+                com.clarifai.grpc.api.MultiWorkflowVersionResponse>(
+                  this, METHODID_PATCH_WORKFLOW_VERSIONS)))
           .addMethod(
             getGetKeyMethod(),
             asyncUnaryCall(
@@ -5461,6 +5783,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostStatValuesAggregateRequest,
                 com.clarifai.grpc.api.MultiStatValueAggregateResponse>(
                   this, METHODID_POST_STAT_VALUES_AGGREGATE)))
+          .addMethod(
+            getPostTrendingMetricsViewMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostTrendingMetricsViewRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_POST_TRENDING_METRICS_VIEW)))
+          .addMethod(
+            getListTrendingMetricsViewsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListTrendingMetricsViewsRequest,
+                com.clarifai.grpc.api.MultiTrendingMetricsViewResponse>(
+                  this, METHODID_LIST_TRENDING_METRICS_VIEWS)))
           .build();
     }
   }
@@ -5885,6 +6221,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public void listOpenSourceLicenses(com.clarifai.grpc.api.ListOpenSourceLicensesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.ListOpenSourceLicensesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListOpenSourceLicensesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -6183,6 +6530,50 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getPostWorkflowResultsSimilarityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List workflow versions.
+     * </pre>
+     */
+    public void listWorkflowVersions(com.clarifai.grpc.api.ListWorkflowVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListWorkflowVersionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get single workflow version.
+     * </pre>
+     */
+    public void getWorkflowVersion(com.clarifai.grpc.api.GetWorkflowVersionRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleWorkflowVersionResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetWorkflowVersionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete workflow versions.
+     * </pre>
+     */
+    public void deleteWorkflowVersions(com.clarifai.grpc.api.DeleteWorkflowVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteWorkflowVersionsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch workflow versions.
+     * </pre>
+     */
+    public void patchWorkflowVersions(com.clarifai.grpc.api.PatchWorkflowVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchWorkflowVersionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -6718,6 +7109,28 @@ public final class V2Grpc {
       asyncUnaryCall(
           getChannel().newCall(getPostStatValuesAggregateMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Increase the view metric for a detail view
+     * </pre>
+     */
+    public void postTrendingMetricsView(com.clarifai.grpc.api.PostTrendingMetricsViewRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostTrendingMetricsViewMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List the view metrics for a detail view
+     * </pre>
+     */
+    public void listTrendingMetricsViews(com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListTrendingMetricsViewsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -7104,6 +7517,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.ListOpenSourceLicensesResponse listOpenSourceLicenses(com.clarifai.grpc.api.ListOpenSourceLicensesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListOpenSourceLicensesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -7374,6 +7797,46 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
       return blockingUnaryCall(
           getChannel(), getPostWorkflowResultsSimilarityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List workflow versions.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiWorkflowVersionResponse listWorkflowVersions(com.clarifai.grpc.api.ListWorkflowVersionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListWorkflowVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get single workflow version.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleWorkflowVersionResponse getWorkflowVersion(com.clarifai.grpc.api.GetWorkflowVersionRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetWorkflowVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete workflow versions.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteWorkflowVersions(com.clarifai.grpc.api.DeleteWorkflowVersionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteWorkflowVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch workflow versions.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiWorkflowVersionResponse patchWorkflowVersions(com.clarifai.grpc.api.PatchWorkflowVersionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchWorkflowVersionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7861,6 +8324,26 @@ public final class V2Grpc {
       return blockingUnaryCall(
           getChannel(), getPostStatValuesAggregateMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Increase the view metric for a detail view
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse postTrendingMetricsView(com.clarifai.grpc.api.PostTrendingMetricsViewRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostTrendingMetricsViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List the view metrics for a detail view
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiTrendingMetricsViewResponse listTrendingMetricsViews(com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListTrendingMetricsViewsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -8283,6 +8766,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.ListOpenSourceLicensesResponse> listOpenSourceLicenses(
+        com.clarifai.grpc.api.ListOpenSourceLicensesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListOpenSourceLicensesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -8581,6 +9075,50 @@ public final class V2Grpc {
         com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getPostWorkflowResultsSimilarityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List workflow versions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiWorkflowVersionResponse> listWorkflowVersions(
+        com.clarifai.grpc.api.ListWorkflowVersionsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListWorkflowVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get single workflow version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleWorkflowVersionResponse> getWorkflowVersion(
+        com.clarifai.grpc.api.GetWorkflowVersionRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetWorkflowVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete workflow versions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteWorkflowVersions(
+        com.clarifai.grpc.api.DeleteWorkflowVersionsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteWorkflowVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch workflow versions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiWorkflowVersionResponse> patchWorkflowVersions(
+        com.clarifai.grpc.api.PatchWorkflowVersionsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchWorkflowVersionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -9116,6 +9654,28 @@ public final class V2Grpc {
       return futureUnaryCall(
           getChannel().newCall(getPostStatValuesAggregateMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Increase the view metric for a detail view
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postTrendingMetricsView(
+        com.clarifai.grpc.api.PostTrendingMetricsViewRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostTrendingMetricsViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List the view metrics for a detail view
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse> listTrendingMetricsViews(
+        com.clarifai.grpc.api.ListTrendingMetricsViewsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListTrendingMetricsViewsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -9154,82 +9714,89 @@ public final class V2Grpc {
   private static final int METHODID_POST_INPUTS_SEARCHES = 33;
   private static final int METHODID_POST_MODEL_OUTPUTS = 34;
   private static final int METHODID_GET_MODEL_TYPE = 35;
-  private static final int METHODID_LIST_MODEL_TYPES = 36;
-  private static final int METHODID_GET_MODEL = 37;
-  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 38;
-  private static final int METHODID_LIST_MODELS = 39;
-  private static final int METHODID_POST_MODELS_SEARCHES = 40;
-  private static final int METHODID_POST_MODELS = 41;
-  private static final int METHODID_PATCH_MODELS = 42;
-  private static final int METHODID_DELETE_MODEL = 43;
-  private static final int METHODID_DELETE_MODELS = 44;
-  private static final int METHODID_LIST_MODEL_INPUTS = 45;
-  private static final int METHODID_GET_MODEL_VERSION = 46;
-  private static final int METHODID_LIST_MODEL_VERSIONS = 47;
-  private static final int METHODID_POST_MODEL_VERSIONS = 48;
-  private static final int METHODID_PATCH_MODEL_VERSIONS = 49;
-  private static final int METHODID_DELETE_MODEL_VERSION = 50;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 51;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 52;
-  private static final int METHODID_LIST_MODEL_REFERENCES = 53;
-  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 54;
-  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 55;
-  private static final int METHODID_GET_WORKFLOW = 56;
-  private static final int METHODID_LIST_WORKFLOWS = 57;
-  private static final int METHODID_POST_WORKFLOWS = 58;
-  private static final int METHODID_PATCH_WORKFLOWS = 59;
-  private static final int METHODID_DELETE_WORKFLOW = 60;
-  private static final int METHODID_DELETE_WORKFLOWS = 61;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 62;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 63;
-  private static final int METHODID_GET_KEY = 64;
-  private static final int METHODID_LIST_KEYS = 65;
-  private static final int METHODID_LIST_APP_KEYS = 66;
-  private static final int METHODID_DELETE_KEY = 67;
-  private static final int METHODID_POST_KEYS = 68;
-  private static final int METHODID_PATCH_KEYS = 69;
-  private static final int METHODID_MY_SCOPES = 70;
-  private static final int METHODID_LIST_SCOPES = 71;
-  private static final int METHODID_GET_APP = 72;
-  private static final int METHODID_LIST_APPS = 73;
-  private static final int METHODID_DELETE_APP = 74;
-  private static final int METHODID_POST_APPS = 75;
-  private static final int METHODID_PATCH_APPS = 76;
-  private static final int METHODID_POST_APPS_SEARCHES = 77;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 78;
-  private static final int METHODID_GET_SEARCH = 79;
-  private static final int METHODID_LIST_SEARCHES = 80;
-  private static final int METHODID_POST_SEARCHES = 81;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 82;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 83;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 84;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 85;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 86;
-  private static final int METHODID_DELETE_SEARCH = 87;
-  private static final int METHODID_LIST_STATUS_CODES = 88;
-  private static final int METHODID_GET_STATUS_CODE = 89;
-  private static final int METHODID_LIST_COLLABORATORS = 90;
-  private static final int METHODID_POST_COLLABORATORS = 91;
-  private static final int METHODID_PATCH_COLLABORATORS = 92;
-  private static final int METHODID_DELETE_COLLABORATORS = 93;
-  private static final int METHODID_LIST_COLLABORATIONS = 94;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 95;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 96;
-  private static final int METHODID_GET_APP_DUPLICATION = 97;
-  private static final int METHODID_POST_TASKS = 98;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 99;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 100;
-  private static final int METHODID_GET_TASK = 101;
-  private static final int METHODID_LIST_TASKS = 102;
-  private static final int METHODID_PATCH_TASKS = 103;
-  private static final int METHODID_DELETE_TASKS = 104;
-  private static final int METHODID_POST_COLLECTORS = 105;
-  private static final int METHODID_GET_COLLECTOR = 106;
-  private static final int METHODID_LIST_COLLECTORS = 107;
-  private static final int METHODID_PATCH_COLLECTORS = 108;
-  private static final int METHODID_DELETE_COLLECTORS = 109;
-  private static final int METHODID_POST_STAT_VALUES = 110;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 111;
+  private static final int METHODID_LIST_OPEN_SOURCE_LICENSES = 36;
+  private static final int METHODID_LIST_MODEL_TYPES = 37;
+  private static final int METHODID_GET_MODEL = 38;
+  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 39;
+  private static final int METHODID_LIST_MODELS = 40;
+  private static final int METHODID_POST_MODELS_SEARCHES = 41;
+  private static final int METHODID_POST_MODELS = 42;
+  private static final int METHODID_PATCH_MODELS = 43;
+  private static final int METHODID_DELETE_MODEL = 44;
+  private static final int METHODID_DELETE_MODELS = 45;
+  private static final int METHODID_LIST_MODEL_INPUTS = 46;
+  private static final int METHODID_GET_MODEL_VERSION = 47;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 48;
+  private static final int METHODID_POST_MODEL_VERSIONS = 49;
+  private static final int METHODID_PATCH_MODEL_VERSIONS = 50;
+  private static final int METHODID_DELETE_MODEL_VERSION = 51;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 52;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 53;
+  private static final int METHODID_LIST_MODEL_REFERENCES = 54;
+  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 55;
+  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 56;
+  private static final int METHODID_GET_WORKFLOW = 57;
+  private static final int METHODID_LIST_WORKFLOWS = 58;
+  private static final int METHODID_POST_WORKFLOWS = 59;
+  private static final int METHODID_PATCH_WORKFLOWS = 60;
+  private static final int METHODID_DELETE_WORKFLOW = 61;
+  private static final int METHODID_DELETE_WORKFLOWS = 62;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 63;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 64;
+  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 65;
+  private static final int METHODID_GET_WORKFLOW_VERSION = 66;
+  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 67;
+  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 68;
+  private static final int METHODID_GET_KEY = 69;
+  private static final int METHODID_LIST_KEYS = 70;
+  private static final int METHODID_LIST_APP_KEYS = 71;
+  private static final int METHODID_DELETE_KEY = 72;
+  private static final int METHODID_POST_KEYS = 73;
+  private static final int METHODID_PATCH_KEYS = 74;
+  private static final int METHODID_MY_SCOPES = 75;
+  private static final int METHODID_LIST_SCOPES = 76;
+  private static final int METHODID_GET_APP = 77;
+  private static final int METHODID_LIST_APPS = 78;
+  private static final int METHODID_DELETE_APP = 79;
+  private static final int METHODID_POST_APPS = 80;
+  private static final int METHODID_PATCH_APPS = 81;
+  private static final int METHODID_POST_APPS_SEARCHES = 82;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 83;
+  private static final int METHODID_GET_SEARCH = 84;
+  private static final int METHODID_LIST_SEARCHES = 85;
+  private static final int METHODID_POST_SEARCHES = 86;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 87;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 88;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 89;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 90;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 91;
+  private static final int METHODID_DELETE_SEARCH = 92;
+  private static final int METHODID_LIST_STATUS_CODES = 93;
+  private static final int METHODID_GET_STATUS_CODE = 94;
+  private static final int METHODID_LIST_COLLABORATORS = 95;
+  private static final int METHODID_POST_COLLABORATORS = 96;
+  private static final int METHODID_PATCH_COLLABORATORS = 97;
+  private static final int METHODID_DELETE_COLLABORATORS = 98;
+  private static final int METHODID_LIST_COLLABORATIONS = 99;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 100;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 101;
+  private static final int METHODID_GET_APP_DUPLICATION = 102;
+  private static final int METHODID_POST_TASKS = 103;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 104;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 105;
+  private static final int METHODID_GET_TASK = 106;
+  private static final int METHODID_LIST_TASKS = 107;
+  private static final int METHODID_PATCH_TASKS = 108;
+  private static final int METHODID_DELETE_TASKS = 109;
+  private static final int METHODID_POST_COLLECTORS = 110;
+  private static final int METHODID_GET_COLLECTOR = 111;
+  private static final int METHODID_LIST_COLLECTORS = 112;
+  private static final int METHODID_PATCH_COLLECTORS = 113;
+  private static final int METHODID_DELETE_COLLECTORS = 114;
+  private static final int METHODID_POST_STAT_VALUES = 115;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 116;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 117;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 118;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9392,6 +9959,10 @@ public final class V2Grpc {
           serviceImpl.getModelType((com.clarifai.grpc.api.GetModelTypeRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelTypeResponse>) responseObserver);
           break;
+        case METHODID_LIST_OPEN_SOURCE_LICENSES:
+          serviceImpl.listOpenSourceLicenses((com.clarifai.grpc.api.ListOpenSourceLicensesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.ListOpenSourceLicensesResponse>) responseObserver);
+          break;
         case METHODID_LIST_MODEL_TYPES:
           serviceImpl.listModelTypes((com.clarifai.grpc.api.ListModelTypesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelTypeResponse>) responseObserver);
@@ -9503,6 +10074,22 @@ public final class V2Grpc {
         case METHODID_POST_WORKFLOW_RESULTS_SIMILARITY:
           serviceImpl.postWorkflowResultsSimilarity((com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>) responseObserver);
+          break;
+        case METHODID_LIST_WORKFLOW_VERSIONS:
+          serviceImpl.listWorkflowVersions((com.clarifai.grpc.api.ListWorkflowVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionResponse>) responseObserver);
+          break;
+        case METHODID_GET_WORKFLOW_VERSION:
+          serviceImpl.getWorkflowVersion((com.clarifai.grpc.api.GetWorkflowVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleWorkflowVersionResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_WORKFLOW_VERSIONS:
+          serviceImpl.deleteWorkflowVersions((com.clarifai.grpc.api.DeleteWorkflowVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_WORKFLOW_VERSIONS:
+          serviceImpl.patchWorkflowVersions((com.clarifai.grpc.api.PatchWorkflowVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowVersionResponse>) responseObserver);
           break;
         case METHODID_GET_KEY:
           serviceImpl.getKey((com.clarifai.grpc.api.GetKeyRequest) request,
@@ -9696,6 +10283,14 @@ public final class V2Grpc {
           serviceImpl.postStatValuesAggregate((com.clarifai.grpc.api.PostStatValuesAggregateRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse>) responseObserver);
           break;
+        case METHODID_POST_TRENDING_METRICS_VIEW:
+          serviceImpl.postTrendingMetricsView((com.clarifai.grpc.api.PostTrendingMetricsViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_TRENDING_METRICS_VIEWS:
+          serviceImpl.listTrendingMetricsViews((com.clarifai.grpc.api.ListTrendingMetricsViewsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrendingMetricsViewResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -9793,6 +10388,7 @@ public final class V2Grpc {
               .addMethod(getPostInputsSearchesMethod())
               .addMethod(getPostModelOutputsMethod())
               .addMethod(getGetModelTypeMethod())
+              .addMethod(getListOpenSourceLicensesMethod())
               .addMethod(getListModelTypesMethod())
               .addMethod(getGetModelMethod())
               .addMethod(getGetModelOutputInfoMethod())
@@ -9821,6 +10417,10 @@ public final class V2Grpc {
               .addMethod(getDeleteWorkflowsMethod())
               .addMethod(getPostWorkflowResultsMethod())
               .addMethod(getPostWorkflowResultsSimilarityMethod())
+              .addMethod(getListWorkflowVersionsMethod())
+              .addMethod(getGetWorkflowVersionMethod())
+              .addMethod(getDeleteWorkflowVersionsMethod())
+              .addMethod(getPatchWorkflowVersionsMethod())
               .addMethod(getGetKeyMethod())
               .addMethod(getListKeysMethod())
               .addMethod(getListAppKeysMethod())
@@ -9869,6 +10469,8 @@ public final class V2Grpc {
               .addMethod(getDeleteCollectorsMethod())
               .addMethod(getPostStatValuesMethod())
               .addMethod(getPostStatValuesAggregateMethod())
+              .addMethod(getPostTrendingMetricsViewMethod())
+              .addMethod(getListTrendingMetricsViewsMethod())
               .build();
         }
       }

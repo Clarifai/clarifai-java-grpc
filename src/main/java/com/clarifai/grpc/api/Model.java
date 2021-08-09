@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     modelTypeId_ = "";
     description_ = "";
+    notes_ = "";
   }
 
   @java.lang.Override
@@ -190,6 +191,25 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
+            break;
+          }
+          case 138: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notes_ = s;
             break;
           }
           default: {
@@ -712,7 +732,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -732,7 +752,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -746,6 +766,92 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 17;
+  private com.google.protobuf.Struct metadata_;
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   * @return Whether the metadata field is set.
+   */
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   * @return The metadata.
+   */
+  public com.google.protobuf.Struct getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
+  public static final int NOTES_FIELD_NUMBER = 18;
+  private volatile java.lang.Object notes_;
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The notes.
+   */
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The bytes for notes.
+   */
+  public com.google.protobuf.ByteString
+      getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notes_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -805,6 +911,12 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
     }
+    if (metadata_ != null) {
+      output.writeMessage(17, getMetadata());
+    }
+    if (!getNotesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, notes_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -858,6 +970,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getMetadata());
+    }
+    if (!getNotesBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, notes_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -918,6 +1037,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
+    }
+    if (!getNotes()
+        .equals(other.getNotes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -967,6 +1093,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1167,6 +1299,14 @@ private static final long serialVersionUID = 0L;
       }
       description_ = "";
 
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+      notes_ = "";
+
       return this;
     }
 
@@ -1230,6 +1370,12 @@ private static final long serialVersionUID = 0L;
         result.visibility_ = visibilityBuilder_.build();
       }
       result.description_ = description_;
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
+      result.notes_ = notes_;
       onBuilt();
       return result;
     }
@@ -1322,6 +1468,13 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        onChanged();
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2890,7 +3043,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2910,7 +3063,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2931,7 +3084,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2950,7 +3103,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2964,7 +3117,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2979,6 +3132,276 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     * @return The metadata.
+     */
+    public com.google.protobuf.Struct getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    public Builder setMetadata(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
+    }
+
+    private java.lang.Object notes_ = "";
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString
+        getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      
+      notes_ = getDefaultInstance().getNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notes_ = value;
       onChanged();
       return this;
     }

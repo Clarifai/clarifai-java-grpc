@@ -79,6 +79,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.TimeRange.Builder subBuilder = null;
+            if (lastUpdatedTimeRange_ != null) {
+              subBuilder = lastUpdatedTimeRange_.toBuilder();
+            }
+            lastUpdatedTimeRange_ = input.readMessage(com.clarifai.grpc.api.TimeRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(lastUpdatedTimeRange_);
+              lastUpdatedTimeRange_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +212,41 @@ private static final long serialVersionUID = 0L;
     return getInput();
   }
 
+  public static final int LAST_UPDATED_TIME_RANGE_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.TimeRange lastUpdatedTimeRange_;
+  /**
+   * <pre>
+   * Filter by annotation last updated time range.
+   * </pre>
+   *
+   * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+   * @return Whether the lastUpdatedTimeRange field is set.
+   */
+  public boolean hasLastUpdatedTimeRange() {
+    return lastUpdatedTimeRange_ != null;
+  }
+  /**
+   * <pre>
+   * Filter by annotation last updated time range.
+   * </pre>
+   *
+   * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+   * @return The lastUpdatedTimeRange.
+   */
+  public com.clarifai.grpc.api.TimeRange getLastUpdatedTimeRange() {
+    return lastUpdatedTimeRange_ == null ? com.clarifai.grpc.api.TimeRange.getDefaultInstance() : lastUpdatedTimeRange_;
+  }
+  /**
+   * <pre>
+   * Filter by annotation last updated time range.
+   * </pre>
+   *
+   * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+   */
+  public com.clarifai.grpc.api.TimeRangeOrBuilder getLastUpdatedTimeRangeOrBuilder() {
+    return getLastUpdatedTimeRange();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -222,6 +270,9 @@ private static final long serialVersionUID = 0L;
     if (input_ != null) {
       output.writeMessage(5, getInput());
     }
+    if (lastUpdatedTimeRange_ != null) {
+      output.writeMessage(6, getLastUpdatedTimeRange());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -242,6 +293,10 @@ private static final long serialVersionUID = 0L;
     if (input_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getInput());
+    }
+    if (lastUpdatedTimeRange_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getLastUpdatedTimeRange());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,6 +325,11 @@ private static final long serialVersionUID = 0L;
       if (!getInput()
           .equals(other.getInput())) return false;
     }
+    if (hasLastUpdatedTimeRange() != other.hasLastUpdatedTimeRange()) return false;
+    if (hasLastUpdatedTimeRange()) {
+      if (!getLastUpdatedTimeRange()
+          .equals(other.getLastUpdatedTimeRange())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -291,6 +351,10 @@ private static final long serialVersionUID = 0L;
     if (hasInput()) {
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getInput().hashCode();
+    }
+    if (hasLastUpdatedTimeRange()) {
+      hash = (37 * hash) + LAST_UPDATED_TIME_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastUpdatedTimeRange().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -439,6 +503,12 @@ private static final long serialVersionUID = 0L;
         input_ = null;
         inputBuilder_ = null;
       }
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        lastUpdatedTimeRange_ = null;
+      } else {
+        lastUpdatedTimeRange_ = null;
+        lastUpdatedTimeRangeBuilder_ = null;
+      }
       return this;
     }
 
@@ -475,6 +545,11 @@ private static final long serialVersionUID = 0L;
         result.input_ = input_;
       } else {
         result.input_ = inputBuilder_.build();
+      }
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        result.lastUpdatedTimeRange_ = lastUpdatedTimeRange_;
+      } else {
+        result.lastUpdatedTimeRange_ = lastUpdatedTimeRangeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -532,6 +607,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasInput()) {
         mergeInput(other.getInput());
+      }
+      if (other.hasLastUpdatedTimeRange()) {
+        mergeLastUpdatedTimeRange(other.getLastUpdatedTimeRange());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -924,6 +1002,161 @@ private static final long serialVersionUID = 0L;
         input_ = null;
       }
       return inputBuilder_;
+    }
+
+    private com.clarifai.grpc.api.TimeRange lastUpdatedTimeRange_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TimeRange, com.clarifai.grpc.api.TimeRange.Builder, com.clarifai.grpc.api.TimeRangeOrBuilder> lastUpdatedTimeRangeBuilder_;
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     * @return Whether the lastUpdatedTimeRange field is set.
+     */
+    public boolean hasLastUpdatedTimeRange() {
+      return lastUpdatedTimeRangeBuilder_ != null || lastUpdatedTimeRange_ != null;
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     * @return The lastUpdatedTimeRange.
+     */
+    public com.clarifai.grpc.api.TimeRange getLastUpdatedTimeRange() {
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        return lastUpdatedTimeRange_ == null ? com.clarifai.grpc.api.TimeRange.getDefaultInstance() : lastUpdatedTimeRange_;
+      } else {
+        return lastUpdatedTimeRangeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    public Builder setLastUpdatedTimeRange(com.clarifai.grpc.api.TimeRange value) {
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastUpdatedTimeRange_ = value;
+        onChanged();
+      } else {
+        lastUpdatedTimeRangeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    public Builder setLastUpdatedTimeRange(
+        com.clarifai.grpc.api.TimeRange.Builder builderForValue) {
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        lastUpdatedTimeRange_ = builderForValue.build();
+        onChanged();
+      } else {
+        lastUpdatedTimeRangeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    public Builder mergeLastUpdatedTimeRange(com.clarifai.grpc.api.TimeRange value) {
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        if (lastUpdatedTimeRange_ != null) {
+          lastUpdatedTimeRange_ =
+            com.clarifai.grpc.api.TimeRange.newBuilder(lastUpdatedTimeRange_).mergeFrom(value).buildPartial();
+        } else {
+          lastUpdatedTimeRange_ = value;
+        }
+        onChanged();
+      } else {
+        lastUpdatedTimeRangeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    public Builder clearLastUpdatedTimeRange() {
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        lastUpdatedTimeRange_ = null;
+        onChanged();
+      } else {
+        lastUpdatedTimeRange_ = null;
+        lastUpdatedTimeRangeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    public com.clarifai.grpc.api.TimeRange.Builder getLastUpdatedTimeRangeBuilder() {
+      
+      onChanged();
+      return getLastUpdatedTimeRangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    public com.clarifai.grpc.api.TimeRangeOrBuilder getLastUpdatedTimeRangeOrBuilder() {
+      if (lastUpdatedTimeRangeBuilder_ != null) {
+        return lastUpdatedTimeRangeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastUpdatedTimeRange_ == null ?
+            com.clarifai.grpc.api.TimeRange.getDefaultInstance() : lastUpdatedTimeRange_;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by annotation last updated time range.
+     * </pre>
+     *
+     * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TimeRange, com.clarifai.grpc.api.TimeRange.Builder, com.clarifai.grpc.api.TimeRangeOrBuilder> 
+        getLastUpdatedTimeRangeFieldBuilder() {
+      if (lastUpdatedTimeRangeBuilder_ == null) {
+        lastUpdatedTimeRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TimeRange, com.clarifai.grpc.api.TimeRange.Builder, com.clarifai.grpc.api.TimeRangeOrBuilder>(
+                getLastUpdatedTimeRange(),
+                getParentForChildren(),
+                isClean());
+        lastUpdatedTimeRange_ = null;
+      }
+      return lastUpdatedTimeRangeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

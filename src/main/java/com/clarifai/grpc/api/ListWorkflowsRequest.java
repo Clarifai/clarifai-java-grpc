@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListWorkflowsRequest() {
+    query_ = "";
     id_ = "";
   }
 
@@ -78,6 +79,27 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
+          case 40: {
+
+            sortAscending_ = input.readBool();
+            break;
+          }
+          case 48: {
+            sortByCase_ = 6;
+            sortBy_ = input.readBool();
+            break;
+          }
+          case 56: {
+            sortByCase_ = 7;
+            sortBy_ = input.readBool();
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            query_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -108,6 +130,47 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListWorkflowsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.ListWorkflowsRequest.class, com.clarifai.grpc.api.ListWorkflowsRequest.Builder.class);
+  }
+
+  private int sortByCase_ = 0;
+  private java.lang.Object sortBy_;
+  public enum SortByCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SORT_BY_ID(6),
+    SORT_BY_MODIFIED_AT(7),
+    SORTBY_NOT_SET(0);
+    private final int value;
+    private SortByCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortByCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SortByCase forNumber(int value) {
+      switch (value) {
+        case 6: return SORT_BY_ID;
+        case 7: return SORT_BY_MODIFIED_AT;
+        case 0: return SORTBY_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SortByCase
+  getSortByCase() {
+    return SortByCase.forNumber(
+        sortByCase_);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -163,17 +226,110 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int SORT_ASCENDING_FIELD_NUMBER = 5;
+  private boolean sortAscending_;
+  /**
+   * <pre>
+   * Sorting options:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 5;</code>
+   * @return The sortAscending.
+   */
+  public boolean getSortAscending() {
+    return sortAscending_;
+  }
+
+  public static final int SORT_BY_ID_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_id = 6;</code>
+   * @return The sortById.
+   */
+  public boolean getSortById() {
+    if (sortByCase_ == 6) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_MODIFIED_AT_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Whether to order by the modified_at time.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 7;</code>
+   * @return The sortByModifiedAt.
+   */
+  public boolean getSortByModifiedAt() {
+    if (sortByCase_ == 7) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int QUERY_FIELD_NUMBER = 8;
+  private volatile java.lang.Object query_;
+  /**
+   * <pre>
+   * Query various text fields that can contain the words in the query string.
+   * </pre>
+   *
+   * <code>string query = 8;</code>
+   * @return The query.
+   */
+  public java.lang.String getQuery() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      query_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Query various text fields that can contain the words in the query string.
+   * </pre>
+   *
+   * <code>string query = 8;</code>
+   * @return The bytes for query.
+   */
+  public com.google.protobuf.ByteString
+      getQueryBytes() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object id_;
   /**
    * <pre>
    * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string id = 4;</code>
+   * <code>string id = 4 [deprecated = true];</code>
    * @return The id.
    */
-  public java.lang.String getId() {
+  @java.lang.Deprecated public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -188,12 +344,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string id = 4;</code>
+   * <code>string id = 4 [deprecated = true];</code>
    * @return The bytes for id.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -233,6 +390,20 @@ private static final long serialVersionUID = 0L;
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, id_);
     }
+    if (sortAscending_ != false) {
+      output.writeBool(5, sortAscending_);
+    }
+    if (sortByCase_ == 6) {
+      output.writeBool(
+          6, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 7) {
+      output.writeBool(
+          7, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!getQueryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, query_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +427,23 @@ private static final long serialVersionUID = 0L;
     }
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, id_);
+    }
+    if (sortAscending_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, sortAscending_);
+    }
+    if (sortByCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            6, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            7, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!getQueryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, query_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,8 +469,25 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (getSortAscending()
+        != other.getSortAscending()) return false;
+    if (!getQuery()
+        .equals(other.getQuery())) return false;
     if (!getId()
         .equals(other.getId())) return false;
+    if (!getSortByCase().equals(other.getSortByCase())) return false;
+    switch (sortByCase_) {
+      case 6:
+        if (getSortById()
+            != other.getSortById()) return false;
+        break;
+      case 7:
+        if (getSortByModifiedAt()
+            != other.getSortByModifiedAt()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -302,8 +507,27 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSortAscending());
+    hash = (37 * hash) + QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    switch (sortByCase_) {
+      case 6:
+        hash = (37 * hash) + SORT_BY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortById());
+        break;
+      case 7:
+        hash = (37 * hash) + SORT_BY_MODIFIED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByModifiedAt());
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -447,8 +671,14 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      sortAscending_ = false;
+
+      query_ = "";
+
       id_ = "";
 
+      sortByCase_ = 0;
+      sortBy_ = null;
       return this;
     }
 
@@ -482,7 +712,16 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.sortAscending_ = sortAscending_;
+      if (sortByCase_ == 6) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 7) {
+        result.sortBy_ = sortBy_;
+      }
+      result.query_ = query_;
       result.id_ = id_;
+      result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
     }
@@ -540,9 +779,29 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (other.getSortAscending() != false) {
+        setSortAscending(other.getSortAscending());
+      }
+      if (!other.getQuery().isEmpty()) {
+        query_ = other.query_;
+        onChanged();
+      }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
+      }
+      switch (other.getSortByCase()) {
+        case SORT_BY_ID: {
+          setSortById(other.getSortById());
+          break;
+        }
+        case SORT_BY_MODIFIED_AT: {
+          setSortByModifiedAt(other.getSortByModifiedAt());
+          break;
+        }
+        case SORTBY_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -572,6 +831,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int sortByCase_ = 0;
+    private java.lang.Object sortBy_;
+    public SortByCase
+        getSortByCase() {
+      return SortByCase.forNumber(
+          sortByCase_);
+    }
+
+    public Builder clearSortBy() {
+      sortByCase_ = 0;
+      sortBy_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -782,16 +1056,253 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean sortAscending_ ;
+    /**
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 5;</code>
+     * @return The sortAscending.
+     */
+    public boolean getSortAscending() {
+      return sortAscending_;
+    }
+    /**
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 5;</code>
+     * @param value The sortAscending to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortAscending(boolean value) {
+      
+      sortAscending_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortAscending() {
+      
+      sortAscending_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_id = 6;</code>
+     * @return The sortById.
+     */
+    public boolean getSortById() {
+      if (sortByCase_ == 6) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_id = 6;</code>
+     * @param value The sortById to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortById(boolean value) {
+      sortByCase_ = 6;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortById() {
+      if (sortByCase_ == 6) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 7;</code>
+     * @return The sortByModifiedAt.
+     */
+    public boolean getSortByModifiedAt() {
+      if (sortByCase_ == 7) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 7;</code>
+     * @param value The sortByModifiedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByModifiedAt(boolean value) {
+      sortByCase_ = 7;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByModifiedAt() {
+      if (sortByCase_ == 7) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private java.lang.Object query_ = "";
+    /**
+     * <pre>
+     * Query various text fields that can contain the words in the query string.
+     * </pre>
+     *
+     * <code>string query = 8;</code>
+     * @return The query.
+     */
+    public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Query various text fields that can contain the words in the query string.
+     * </pre>
+     *
+     * <code>string query = 8;</code>
+     * @return The bytes for query.
+     */
+    public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Query various text fields that can contain the words in the query string.
+     * </pre>
+     *
+     * <code>string query = 8;</code>
+     * @param value The query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuery(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Query various text fields that can contain the words in the query string.
+     * </pre>
+     *
+     * <code>string query = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQuery() {
+      
+      query_ = getDefaultInstance().getQuery();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Query various text fields that can contain the words in the query string.
+     * </pre>
+     *
+     * <code>string query = 8;</code>
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      query_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object id_ = "";
     /**
      * <pre>
      * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string id = 4;</code>
+     * <code>string id = 4 [deprecated = true];</code>
      * @return The id.
      */
-    public java.lang.String getId() {
+    @java.lang.Deprecated public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -806,12 +1317,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string id = 4;</code>
+     * <code>string id = 4 [deprecated = true];</code>
      * @return The bytes for id.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
@@ -827,13 +1339,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string id = 4;</code>
+     * <code>string id = 4 [deprecated = true];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    @java.lang.Deprecated public Builder setId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -846,12 +1359,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string id = 4;</code>
+     * <code>string id = 4 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    @java.lang.Deprecated public Builder clearId() {
       
       id_ = getDefaultInstance().getId();
       onChanged();
@@ -860,13 +1374,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string id = 4;</code>
+     * <code>string id = 4 [deprecated = true];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    @java.lang.Deprecated public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

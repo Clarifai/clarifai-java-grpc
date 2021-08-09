@@ -16,11 +16,12 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListModelsRequest() {
-    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    query_ = "";
     name_ = "";
     modelTypeId_ = "";
     inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    license_ = "";
   }
 
   @java.lang.Override
@@ -77,15 +78,6 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              ids_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            ids_.add(s);
-            break;
-          }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -105,20 +97,52 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               inputFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             inputFields_.add(s);
             break;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               outputFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000002;
             }
             outputFields_.add(s);
+            break;
+          }
+          case 80: {
+
+            sortAscending_ = input.readBool();
+            break;
+          }
+          case 88: {
+            sortByCase_ = 11;
+            sortBy_ = input.readBool();
+            break;
+          }
+          case 96: {
+            sortByCase_ = 12;
+            sortBy_ = input.readBool();
+            break;
+          }
+          case 104: {
+            sortByCase_ = 13;
+            sortBy_ = input.readBool();
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            query_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            license_ = s;
             break;
           }
           default: {
@@ -137,12 +161,9 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         inputFields_ = inputFields_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         outputFields_ = outputFields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -160,6 +181,49 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.ListModelsRequest.class, com.clarifai.grpc.api.ListModelsRequest.Builder.class);
+  }
+
+  private int sortByCase_ = 0;
+  private java.lang.Object sortBy_;
+  public enum SortByCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SORT_BY_NAME(11),
+    SORT_BY_NUM_INPUTS(12),
+    SORT_BY_MODIFIED_AT(13),
+    SORTBY_NOT_SET(0);
+    private final int value;
+    private SortByCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortByCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SortByCase forNumber(int value) {
+      switch (value) {
+        case 11: return SORT_BY_NAME;
+        case 12: return SORT_BY_NUM_INPUTS;
+        case 13: return SORT_BY_MODIFIED_AT;
+        case 0: return SORTBY_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SortByCase
+  getSortByCase() {
+    return SortByCase.forNumber(
+        sortByCase_);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -215,39 +279,114 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
-  public static final int IDS_FIELD_NUMBER = 4;
-  private com.google.protobuf.LazyStringList ids_;
+  public static final int SORT_ASCENDING_FIELD_NUMBER = 10;
+  private boolean sortAscending_;
   /**
-   * <code>repeated string ids = 4;</code>
-   * @return A list containing the ids.
+   * <pre>
+   * Sorting options:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 10;</code>
+   * @return The sortAscending.
    */
-  public com.google.protobuf.ProtocolStringList
-      getIdsList() {
-    return ids_;
+  public boolean getSortAscending() {
+    return sortAscending_;
+  }
+
+  public static final int SORT_BY_NAME_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_name = 11;</code>
+   * @return The sortByName.
+   */
+  public boolean getSortByName() {
+    if (sortByCase_ == 11) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_NUM_INPUTS_FIELD_NUMBER = 12;
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 12;</code>
+   * @return The sortByNumInputs.
+   */
+  public boolean getSortByNumInputs() {
+    if (sortByCase_ == 12) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_MODIFIED_AT_FIELD_NUMBER = 13;
+  /**
+   * <pre>
+   * Whether to order by the modified_at time of the latest model version.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 13;</code>
+   * @return The sortByModifiedAt.
+   */
+  public boolean getSortByModifiedAt() {
+    if (sortByCase_ == 13) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int QUERY_FIELD_NUMBER = 14;
+  private volatile java.lang.Object query_;
+  /**
+   * <pre>
+   * Filtering options:
+   * // Query various text fields that can contain the words in the query string
+   * </pre>
+   *
+   * <code>string query = 14;</code>
+   * @return The query.
+   */
+  public java.lang.String getQuery() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      query_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated string ids = 4;</code>
-   * @return The count of ids.
-   */
-  public int getIdsCount() {
-    return ids_.size();
-  }
-  /**
-   * <code>repeated string ids = 4;</code>
-   * @param index The index of the element to return.
-   * @return The ids at the given index.
-   */
-  public java.lang.String getIds(int index) {
-    return ids_.get(index);
-  }
-  /**
-   * <code>repeated string ids = 4;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the ids at the given index.
+   * <pre>
+   * Filtering options:
+   * // Query various text fields that can contain the words in the query string
+   * </pre>
+   *
+   * <code>string query = 14;</code>
+   * @return The bytes for query.
    */
   public com.google.protobuf.ByteString
-      getIdsBytes(int index) {
-    return ids_.getByteString(index);
+      getQueryBytes() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 5;
@@ -255,12 +394,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>string name = 5 [deprecated = true];</code>
    * @return The name.
    */
-  public java.lang.String getName() {
+  @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -275,12 +415,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>string name = 5 [deprecated = true];</code>
    * @return The bytes for name.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -464,6 +605,50 @@ private static final long serialVersionUID = 0L;
     return outputFields_.getByteString(index);
   }
 
+  public static final int LICENSE_FIELD_NUMBER = 15;
+  private volatile java.lang.Object license_;
+  /**
+   * <pre>
+   * Filter by the license of the model version
+   * </pre>
+   *
+   * <code>string license = 15;</code>
+   * @return The license.
+   */
+  public java.lang.String getLicense() {
+    java.lang.Object ref = license_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      license_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the license of the model version
+   * </pre>
+   *
+   * <code>string license = 15;</code>
+   * @return The bytes for license.
+   */
+  public com.google.protobuf.ByteString
+      getLicenseBytes() {
+    java.lang.Object ref = license_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      license_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -487,9 +672,6 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
-    for (int i = 0; i < ids_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ids_.getRaw(i));
-    }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
     }
@@ -504,6 +686,27 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < outputFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, outputFields_.getRaw(i));
+    }
+    if (sortAscending_ != false) {
+      output.writeBool(10, sortAscending_);
+    }
+    if (sortByCase_ == 11) {
+      output.writeBool(
+          11, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 12) {
+      output.writeBool(
+          12, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 13) {
+      output.writeBool(
+          13, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!getQueryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, query_);
+    }
+    if (!getLicenseBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, license_);
     }
     unknownFields.writeTo(output);
   }
@@ -525,14 +728,6 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < ids_.size(); i++) {
-        dataSize += computeStringSizeNoTag(ids_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getIdsList().size();
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
@@ -560,6 +755,31 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getOutputFieldsList().size();
     }
+    if (sortAscending_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, sortAscending_);
+    }
+    if (sortByCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            11, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 12) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            12, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 13) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            13, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!getQueryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, query_);
+    }
+    if (!getLicenseBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, license_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -584,8 +804,10 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
-    if (!getIdsList()
-        .equals(other.getIdsList())) return false;
+    if (getSortAscending()
+        != other.getSortAscending()) return false;
+    if (!getQuery()
+        .equals(other.getQuery())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getModelTypeId()
@@ -596,6 +818,25 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInputFieldsList())) return false;
     if (!getOutputFieldsList()
         .equals(other.getOutputFieldsList())) return false;
+    if (!getLicense()
+        .equals(other.getLicense())) return false;
+    if (!getSortByCase().equals(other.getSortByCase())) return false;
+    switch (sortByCase_) {
+      case 11:
+        if (getSortByName()
+            != other.getSortByName()) return false;
+        break;
+      case 12:
+        if (getSortByNumInputs()
+            != other.getSortByNumInputs()) return false;
+        break;
+      case 13:
+        if (getSortByModifiedAt()
+            != other.getSortByModifiedAt()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -615,10 +856,11 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
-    if (getIdsCount() > 0) {
-      hash = (37 * hash) + IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getIdsList().hashCode();
-    }
+    hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSortAscending());
+    hash = (37 * hash) + QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
@@ -633,6 +875,27 @@ private static final long serialVersionUID = 0L;
     if (getOutputFieldsCount() > 0) {
       hash = (37 * hash) + OUTPUT_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getOutputFieldsList().hashCode();
+    }
+    hash = (37 * hash) + LICENSE_FIELD_NUMBER;
+    hash = (53 * hash) + getLicense().hashCode();
+    switch (sortByCase_) {
+      case 11:
+        hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByName());
+        break;
+      case 12:
+        hash = (37 * hash) + SORT_BY_NUM_INPUTS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByNumInputs());
+        break;
+      case 13:
+        hash = (37 * hash) + SORT_BY_MODIFIED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByModifiedAt());
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -777,8 +1040,10 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      sortAscending_ = false;
+
+      query_ = "";
+
       name_ = "";
 
       modelTypeId_ = "";
@@ -786,9 +1051,13 @@ private static final long serialVersionUID = 0L;
       trainedOnly_ = false;
 
       inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
+      license_ = "";
+
+      sortByCase_ = 0;
+      sortBy_ = null;
       return this;
     }
 
@@ -823,24 +1092,32 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      result.sortAscending_ = sortAscending_;
+      if (sortByCase_ == 11) {
+        result.sortBy_ = sortBy_;
       }
-      result.ids_ = ids_;
+      if (sortByCase_ == 12) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 13) {
+        result.sortBy_ = sortBy_;
+      }
+      result.query_ = query_;
       result.name_ = name_;
       result.modelTypeId_ = modelTypeId_;
       result.trainedOnly_ = trainedOnly_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         inputFields_ = inputFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.inputFields_ = inputFields_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         outputFields_ = outputFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.outputFields_ = outputFields_;
+      result.license_ = license_;
+      result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
     }
@@ -898,14 +1175,11 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
-      if (!other.ids_.isEmpty()) {
-        if (ids_.isEmpty()) {
-          ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureIdsIsMutable();
-          ids_.addAll(other.ids_);
-        }
+      if (other.getSortAscending() != false) {
+        setSortAscending(other.getSortAscending());
+      }
+      if (!other.getQuery().isEmpty()) {
+        query_ = other.query_;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
@@ -922,7 +1196,7 @@ private static final long serialVersionUID = 0L;
       if (!other.inputFields_.isEmpty()) {
         if (inputFields_.isEmpty()) {
           inputFields_ = other.inputFields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           ensureInputFieldsIsMutable();
           inputFields_.addAll(other.inputFields_);
@@ -932,12 +1206,33 @@ private static final long serialVersionUID = 0L;
       if (!other.outputFields_.isEmpty()) {
         if (outputFields_.isEmpty()) {
           outputFields_ = other.outputFields_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureOutputFieldsIsMutable();
           outputFields_.addAll(other.outputFields_);
         }
         onChanged();
+      }
+      if (!other.getLicense().isEmpty()) {
+        license_ = other.license_;
+        onChanged();
+      }
+      switch (other.getSortByCase()) {
+        case SORT_BY_NAME: {
+          setSortByName(other.getSortByName());
+          break;
+        }
+        case SORT_BY_NUM_INPUTS: {
+          setSortByNumInputs(other.getSortByNumInputs());
+          break;
+        }
+        case SORT_BY_MODIFIED_AT: {
+          setSortByModifiedAt(other.getSortByModifiedAt());
+          break;
+        }
+        case SORTBY_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -967,6 +1262,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int sortByCase_ = 0;
+    private java.lang.Object sortBy_;
+    public SortByCase
+        getSortByCase() {
+      return SortByCase.forNumber(
+          sortByCase_);
+    }
+
+    public Builder clearSortBy() {
+      sortByCase_ = 0;
+      sortBy_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
@@ -1178,112 +1488,289 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000001;
-       }
-    }
+    private boolean sortAscending_ ;
     /**
-     * <code>repeated string ids = 4;</code>
-     * @return A list containing the ids.
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 10;</code>
+     * @return The sortAscending.
      */
-    public com.google.protobuf.ProtocolStringList
-        getIdsList() {
-      return ids_.getUnmodifiableView();
+    public boolean getSortAscending() {
+      return sortAscending_;
     }
     /**
-     * <code>repeated string ids = 4;</code>
-     * @return The count of ids.
-     */
-    public int getIdsCount() {
-      return ids_.size();
-    }
-    /**
-     * <code>repeated string ids = 4;</code>
-     * @param index The index of the element to return.
-     * @return The ids at the given index.
-     */
-    public java.lang.String getIds(int index) {
-      return ids_.get(index);
-    }
-    /**
-     * <code>repeated string ids = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the ids at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getIdsBytes(int index) {
-      return ids_.getByteString(index);
-    }
-    /**
-     * <code>repeated string ids = 4;</code>
-     * @param index The index to set the value at.
-     * @param value The ids to set.
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 10;</code>
+     * @param value The sortAscending to set.
      * @return This builder for chaining.
      */
-    public Builder setIds(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureIdsIsMutable();
-      ids_.set(index, value);
+    public Builder setSortAscending(boolean value) {
+      
+      sortAscending_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string ids = 4;</code>
-     * @param value The ids to add.
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 10;</code>
      * @return This builder for chaining.
      */
-    public Builder addIds(
+    public Builder clearSortAscending() {
+      
+      sortAscending_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_name = 11;</code>
+     * @return The sortByName.
+     */
+    public boolean getSortByName() {
+      if (sortByCase_ == 11) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_name = 11;</code>
+     * @param value The sortByName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByName(boolean value) {
+      sortByCase_ = 11;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_name = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByName() {
+      if (sortByCase_ == 11) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 12;</code>
+     * @return The sortByNumInputs.
+     */
+    public boolean getSortByNumInputs() {
+      if (sortByCase_ == 12) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 12;</code>
+     * @param value The sortByNumInputs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByNumInputs(boolean value) {
+      sortByCase_ = 12;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByNumInputs() {
+      if (sortByCase_ == 12) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the modified_at time of the latest model version.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 13;</code>
+     * @return The sortByModifiedAt.
+     */
+    public boolean getSortByModifiedAt() {
+      if (sortByCase_ == 13) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the modified_at time of the latest model version.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 13;</code>
+     * @param value The sortByModifiedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByModifiedAt(boolean value) {
+      sortByCase_ = 13;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the modified_at time of the latest model version.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByModifiedAt() {
+      if (sortByCase_ == 13) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private java.lang.Object query_ = "";
+    /**
+     * <pre>
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     * </pre>
+     *
+     * <code>string query = 14;</code>
+     * @return The query.
+     */
+    public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     * </pre>
+     *
+     * <code>string query = 14;</code>
+     * @return The bytes for query.
+     */
+    public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     * </pre>
+     *
+     * <code>string query = 14;</code>
+     * @param value The query to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuery(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureIdsIsMutable();
-      ids_.add(value);
+  
+      query_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string ids = 4;</code>
-     * @param values The ids to add.
+     * <pre>
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     * </pre>
+     *
+     * <code>string query = 14;</code>
      * @return This builder for chaining.
      */
-    public Builder addAllIds(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, ids_);
+    public Builder clearQuery() {
+      
+      query_ = getDefaultInstance().getQuery();
       onChanged();
       return this;
     }
     /**
-     * <code>repeated string ids = 4;</code>
+     * <pre>
+     * Filtering options:
+     * // Query various text fields that can contain the words in the query string
+     * </pre>
+     *
+     * <code>string query = 14;</code>
+     * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
-    public Builder clearIds() {
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string ids = 4;</code>
-     * @param value The bytes of the ids to add.
-     * @return This builder for chaining.
-     */
-    public Builder addIdsBytes(
+    public Builder setQueryBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureIdsIsMutable();
-      ids_.add(value);
+      
+      query_ = value;
       onChanged();
       return this;
     }
@@ -1292,12 +1779,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 5 [deprecated = true];</code>
      * @return The name.
      */
-    public java.lang.String getName() {
+    @java.lang.Deprecated public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1312,12 +1800,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 5 [deprecated = true];</code>
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
@@ -1333,13 +1822,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 5 [deprecated = true];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    @java.lang.Deprecated public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1352,12 +1842,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 5 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    @java.lang.Deprecated public Builder clearName() {
       
       name_ = getDefaultInstance().getName();
       onChanged();
@@ -1366,13 +1857,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Deprecated in favor of query
      * </pre>
      *
-     * <code>string name = 5;</code>
+     * <code>string name = 5 [deprecated = true];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    @java.lang.Deprecated public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1529,9 +2021,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInputFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         inputFields_ = new com.google.protobuf.LazyStringArrayList(inputFields_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
     /**
@@ -1656,7 +2148,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearInputFields() {
       inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1684,9 +2176,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureOutputFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         outputFields_ = new com.google.protobuf.LazyStringArrayList(outputFields_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -1811,7 +2303,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOutputFields() {
       outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1833,6 +2325,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureOutputFieldsIsMutable();
       outputFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object license_ = "";
+    /**
+     * <pre>
+     * Filter by the license of the model version
+     * </pre>
+     *
+     * <code>string license = 15;</code>
+     * @return The license.
+     */
+    public java.lang.String getLicense() {
+      java.lang.Object ref = license_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        license_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the license of the model version
+     * </pre>
+     *
+     * <code>string license = 15;</code>
+     * @return The bytes for license.
+     */
+    public com.google.protobuf.ByteString
+        getLicenseBytes() {
+      java.lang.Object ref = license_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        license_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the license of the model version
+     * </pre>
+     *
+     * <code>string license = 15;</code>
+     * @param value The license to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicense(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      license_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the license of the model version
+     * </pre>
+     *
+     * <code>string license = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLicense() {
+      
+      license_ = getDefaultInstance().getLicense();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the license of the model version
+     * </pre>
+     *
+     * <code>string license = 15;</code>
+     * @param value The bytes for license to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicenseBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      license_ = value;
       onChanged();
       return this;
     }

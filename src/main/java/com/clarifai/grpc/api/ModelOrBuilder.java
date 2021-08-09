@@ -301,7 +301,7 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -310,7 +310,7 @@ public interface ModelOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -318,4 +318,58 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The notes.
+   */
+  java.lang.String getNotes();
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The bytes for notes.
+   */
+  com.google.protobuf.ByteString
+      getNotesBytes();
 }

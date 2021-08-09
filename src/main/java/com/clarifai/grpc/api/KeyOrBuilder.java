@@ -263,4 +263,45 @@ public interface KeyOrBuilder extends
    * <code>.google.protobuf.Timestamp expires_at = 6;</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
+
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @return A list containing the authorizedIdpIds.
+   */
+  java.util.List<java.lang.String>
+      getAuthorizedIdpIdsList();
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @return The count of authorizedIdpIds.
+   */
+  int getAuthorizedIdpIdsCount();
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @param index The index of the element to return.
+   * @return The authorizedIdpIds at the given index.
+   */
+  java.lang.String getAuthorizedIdpIds(int index);
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the authorizedIdpIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAuthorizedIdpIdsBytes(int index);
 }
