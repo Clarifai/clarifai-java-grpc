@@ -74,4 +74,31 @@ public interface FilterOrBuilder extends
    * <code>.clarifai.api.Input input = 5;</code>
    */
   com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder();
+
+  /**
+   * <pre>
+   * Filter by annotation last updated time range.
+   * </pre>
+   *
+   * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+   * @return Whether the lastUpdatedTimeRange field is set.
+   */
+  boolean hasLastUpdatedTimeRange();
+  /**
+   * <pre>
+   * Filter by annotation last updated time range.
+   * </pre>
+   *
+   * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+   * @return The lastUpdatedTimeRange.
+   */
+  com.clarifai.grpc.api.TimeRange getLastUpdatedTimeRange();
+  /**
+   * <pre>
+   * Filter by annotation last updated time range.
+   * </pre>
+   *
+   * <code>.clarifai.api.TimeRange last_updated_time_range = 6;</code>
+   */
+  com.clarifai.grpc.api.TimeRangeOrBuilder getLastUpdatedTimeRangeOrBuilder();
 }

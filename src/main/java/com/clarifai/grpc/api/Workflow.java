@@ -125,6 +125,19 @@ private static final long serialVersionUID = 0L;
             userId_ = s;
             break;
           }
+          case 66: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (modifiedAt_ != null) {
+              subBuilder = modifiedAt_.toBuilder();
+            }
+            modifiedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modifiedAt_);
+              modifiedAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -478,6 +491,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MODIFIED_AT_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp modifiedAt_;
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  public boolean hasModifiedAt() {
+    return modifiedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
+   */
+  public com.google.protobuf.Timestamp getModifiedAt() {
+    return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+  }
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+    return getModifiedAt();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -513,6 +561,9 @@ private static final long serialVersionUID = 0L;
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
     }
+    if (modifiedAt_ != null) {
+      output.writeMessage(8, getModifiedAt());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -546,6 +597,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
+    }
+    if (modifiedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getModifiedAt());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -585,6 +640,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (hasModifiedAt() != other.hasModifiedAt()) return false;
+    if (hasModifiedAt()) {
+      if (!getModifiedAt()
+          .equals(other.getModifiedAt())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -618,6 +678,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    if (hasModifiedAt()) {
+      hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getModifiedAt().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -788,6 +852,12 @@ private static final long serialVersionUID = 0L;
       }
       userId_ = "";
 
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -842,6 +912,11 @@ private static final long serialVersionUID = 0L;
         result.visibility_ = visibilityBuilder_.build();
       }
       result.userId_ = userId_;
+      if (modifiedAtBuilder_ == null) {
+        result.modifiedAt_ = modifiedAt_;
+      } else {
+        result.modifiedAt_ = modifiedAtBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -936,6 +1011,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
+      }
+      if (other.hasModifiedAt()) {
+        mergeModifiedAt(other.getModifiedAt());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2111,6 +2189,161 @@ private static final long serialVersionUID = 0L;
       userId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp modifiedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    public boolean hasModifiedAt() {
+      return modifiedAtBuilder_ != null || modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     * @return The modifiedAt.
+     */
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      } else {
+        return modifiedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifiedAt_ = value;
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder setModifiedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (modifiedAt_ != null) {
+          modifiedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(modifiedAt_).mergeFrom(value).buildPartial();
+        } else {
+          modifiedAt_ = value;
+        }
+        onChanged();
+      } else {
+        modifiedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public Builder clearModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+        onChanged();
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+      
+      onChanged();
+      return getModifiedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      if (modifiedAtBuilder_ != null) {
+        return modifiedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return modifiedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the workflow was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getModifiedAtFieldBuilder() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getModifiedAt(),
+                getParentForChildren(),
+                isClean());
+        modifiedAt_ = null;
+      }
+      return modifiedAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

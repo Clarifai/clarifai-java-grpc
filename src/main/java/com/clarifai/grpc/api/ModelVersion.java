@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     appId_ = "";
     userId_ = "";
+    license_ = "";
   }
 
   @java.lang.Override
@@ -155,6 +156,38 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             userId_ = s;
+            break;
+          }
+          case 122: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (modifiedAt_ != null) {
+              subBuilder = modifiedAt_.toBuilder();
+            }
+            modifiedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modifiedAt_);
+              modifiedAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 130: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            license_ = s;
             break;
           }
           default: {
@@ -550,6 +583,115 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MODIFIED_AT_FIELD_NUMBER = 15;
+  private com.google.protobuf.Timestamp modifiedAt_;
+  /**
+   * <pre>
+   * When this model version was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  public boolean hasModifiedAt() {
+    return modifiedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When this model version was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+   * @return The modifiedAt.
+   */
+  public com.google.protobuf.Timestamp getModifiedAt() {
+    return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+  }
+  /**
+   * <pre>
+   * When this model version was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+    return getModifiedAt();
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 16;
+  private com.google.protobuf.Struct metadata_;
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 16;</code>
+   * @return Whether the metadata field is set.
+   */
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 16;</code>
+   * @return The metadata.
+   */
+  public com.google.protobuf.Struct getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 16;</code>
+   */
+  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
+  public static final int LICENSE_FIELD_NUMBER = 17;
+  private volatile java.lang.Object license_;
+  /**
+   * <code>string license = 17;</code>
+   * @return The license.
+   */
+  public java.lang.String getLicense() {
+    java.lang.Object ref = license_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      license_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string license = 17;</code>
+   * @return The bytes for license.
+   */
+  public com.google.protobuf.ByteString
+      getLicenseBytes() {
+    java.lang.Object ref = license_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      license_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -596,6 +738,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, userId_);
+    }
+    if (modifiedAt_ != null) {
+      output.writeMessage(15, getModifiedAt());
+    }
+    if (metadata_ != null) {
+      output.writeMessage(16, getMetadata());
+    }
+    if (!getLicenseBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, license_);
     }
     unknownFields.writeTo(output);
   }
@@ -645,6 +796,17 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, userId_);
+    }
+    if (modifiedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getModifiedAt());
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getMetadata());
+    }
+    if (!getLicenseBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, license_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -698,6 +860,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAppId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (hasModifiedAt() != other.hasModifiedAt()) return false;
+    if (hasModifiedAt()) {
+      if (!getModifiedAt()
+          .equals(other.getModifiedAt())) return false;
+    }
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
+    }
+    if (!getLicense()
+        .equals(other.getLicense())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -741,6 +915,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAppId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    if (hasModifiedAt()) {
+      hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getModifiedAt().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
+    hash = (37 * hash) + LICENSE_FIELD_NUMBER;
+    hash = (53 * hash) + getLicense().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -922,6 +1106,20 @@ private static final long serialVersionUID = 0L;
 
       userId_ = "";
 
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+      license_ = "";
+
       return this;
     }
 
@@ -979,6 +1177,17 @@ private static final long serialVersionUID = 0L;
       }
       result.appId_ = appId_;
       result.userId_ = userId_;
+      if (modifiedAtBuilder_ == null) {
+        result.modifiedAt_ = modifiedAt_;
+      } else {
+        result.modifiedAt_ = modifiedAtBuilder_.build();
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
+      result.license_ = license_;
       onBuilt();
       return result;
     }
@@ -1062,6 +1271,16 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
+        onChanged();
+      }
+      if (other.hasModifiedAt()) {
+        mergeModifiedAt(other.getModifiedAt());
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
+      if (!other.getLicense().isEmpty()) {
+        license_ = other.license_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2282,6 +2501,401 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       userId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp modifiedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    public boolean hasModifiedAt() {
+      return modifiedAtBuilder_ != null || modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     * @return The modifiedAt.
+     */
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      } else {
+        return modifiedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifiedAt_ = value;
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    public Builder setModifiedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (modifiedAt_ != null) {
+          modifiedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(modifiedAt_).mergeFrom(value).buildPartial();
+        } else {
+          modifiedAt_ = value;
+        }
+        onChanged();
+      } else {
+        modifiedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    public Builder clearModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+        onChanged();
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+      
+      onChanged();
+      return getModifiedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      if (modifiedAtBuilder_ != null) {
+        return modifiedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return modifiedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When this model version was last modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getModifiedAtFieldBuilder() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getModifiedAt(),
+                getParentForChildren(),
+                isClean());
+        modifiedAt_ = null;
+      }
+      return modifiedAtBuilder_;
+    }
+
+    private com.google.protobuf.Struct metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     * @return The metadata.
+     */
+    public com.google.protobuf.Struct getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    public Builder setMetadata(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata you can use a struct field:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
+    }
+
+    private java.lang.Object license_ = "";
+    /**
+     * <code>string license = 17;</code>
+     * @return The license.
+     */
+    public java.lang.String getLicense() {
+      java.lang.Object ref = license_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        license_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string license = 17;</code>
+     * @return The bytes for license.
+     */
+    public com.google.protobuf.ByteString
+        getLicenseBytes() {
+      java.lang.Object ref = license_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        license_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string license = 17;</code>
+     * @param value The license to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicense(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      license_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string license = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLicense() {
+      
+      license_ = getDefaultInstance().getLicense();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string license = 17;</code>
+     * @param value The bytes for license to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicenseBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      license_ = value;
       onChanged();
       return this;
     }

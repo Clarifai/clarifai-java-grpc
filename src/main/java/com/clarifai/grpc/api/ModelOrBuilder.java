@@ -318,4 +318,34 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata you can use a struct field:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 17;</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 }

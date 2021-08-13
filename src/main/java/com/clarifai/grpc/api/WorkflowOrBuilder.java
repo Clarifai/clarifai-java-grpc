@@ -217,4 +217,31 @@ public interface WorkflowOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When the workflow was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 8;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
 }

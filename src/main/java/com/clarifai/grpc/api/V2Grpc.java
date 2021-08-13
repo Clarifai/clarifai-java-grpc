@@ -1143,6 +1143,37 @@ public final class V2Grpc {
     return getGetModelTypeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListOpenSourceLicensesRequest,
+      com.clarifai.grpc.api.ListOpenSourceLicensesResponse> getListOpenSourceLicensesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOpenSourceLicenses",
+      requestType = com.clarifai.grpc.api.ListOpenSourceLicensesRequest.class,
+      responseType = com.clarifai.grpc.api.ListOpenSourceLicensesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListOpenSourceLicensesRequest,
+      com.clarifai.grpc.api.ListOpenSourceLicensesResponse> getListOpenSourceLicensesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListOpenSourceLicensesRequest, com.clarifai.grpc.api.ListOpenSourceLicensesResponse> getListOpenSourceLicensesMethod;
+    if ((getListOpenSourceLicensesMethod = V2Grpc.getListOpenSourceLicensesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListOpenSourceLicensesMethod = V2Grpc.getListOpenSourceLicensesMethod) == null) {
+          V2Grpc.getListOpenSourceLicensesMethod = getListOpenSourceLicensesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListOpenSourceLicensesRequest, com.clarifai.grpc.api.ListOpenSourceLicensesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOpenSourceLicenses"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListOpenSourceLicensesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListOpenSourceLicensesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListOpenSourceLicenses"))
+              .build();
+        }
+      }
+    }
+    return getListOpenSourceLicensesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListModelTypesRequest,
       com.clarifai.grpc.api.MultiModelTypeResponse> getListModelTypesMethod;
 
@@ -3917,6 +3948,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public void listOpenSourceLicenses(com.clarifai.grpc.api.ListOpenSourceLicensesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.ListOpenSourceLicensesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListOpenSourceLicensesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -4930,6 +4971,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.SingleModelTypeResponse>(
                   this, METHODID_GET_MODEL_TYPE)))
           .addMethod(
+            getListOpenSourceLicensesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListOpenSourceLicensesRequest,
+                com.clarifai.grpc.api.ListOpenSourceLicensesResponse>(
+                  this, METHODID_LIST_OPEN_SOURCE_LICENSES)))
+          .addMethod(
             getListModelTypesMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -5881,6 +5929,17 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelTypeResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetModelTypeMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public void listOpenSourceLicenses(com.clarifai.grpc.api.ListOpenSourceLicensesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.ListOpenSourceLicensesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListOpenSourceLicensesMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -7104,6 +7163,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.ListOpenSourceLicensesResponse listOpenSourceLicenses(com.clarifai.grpc.api.ListOpenSourceLicensesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListOpenSourceLicensesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -8283,6 +8352,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List all the supported open source licenses in the platform.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.ListOpenSourceLicensesResponse> listOpenSourceLicenses(
+        com.clarifai.grpc.api.ListOpenSourceLicensesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListOpenSourceLicensesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * List all the model types available in the platform.
      * This MUST be above ListModels so that the /models/types endpoint takes precedence.
      * </pre>
@@ -9154,82 +9234,83 @@ public final class V2Grpc {
   private static final int METHODID_POST_INPUTS_SEARCHES = 33;
   private static final int METHODID_POST_MODEL_OUTPUTS = 34;
   private static final int METHODID_GET_MODEL_TYPE = 35;
-  private static final int METHODID_LIST_MODEL_TYPES = 36;
-  private static final int METHODID_GET_MODEL = 37;
-  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 38;
-  private static final int METHODID_LIST_MODELS = 39;
-  private static final int METHODID_POST_MODELS_SEARCHES = 40;
-  private static final int METHODID_POST_MODELS = 41;
-  private static final int METHODID_PATCH_MODELS = 42;
-  private static final int METHODID_DELETE_MODEL = 43;
-  private static final int METHODID_DELETE_MODELS = 44;
-  private static final int METHODID_LIST_MODEL_INPUTS = 45;
-  private static final int METHODID_GET_MODEL_VERSION = 46;
-  private static final int METHODID_LIST_MODEL_VERSIONS = 47;
-  private static final int METHODID_POST_MODEL_VERSIONS = 48;
-  private static final int METHODID_PATCH_MODEL_VERSIONS = 49;
-  private static final int METHODID_DELETE_MODEL_VERSION = 50;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 51;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 52;
-  private static final int METHODID_LIST_MODEL_REFERENCES = 53;
-  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 54;
-  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 55;
-  private static final int METHODID_GET_WORKFLOW = 56;
-  private static final int METHODID_LIST_WORKFLOWS = 57;
-  private static final int METHODID_POST_WORKFLOWS = 58;
-  private static final int METHODID_PATCH_WORKFLOWS = 59;
-  private static final int METHODID_DELETE_WORKFLOW = 60;
-  private static final int METHODID_DELETE_WORKFLOWS = 61;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 62;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 63;
-  private static final int METHODID_GET_KEY = 64;
-  private static final int METHODID_LIST_KEYS = 65;
-  private static final int METHODID_LIST_APP_KEYS = 66;
-  private static final int METHODID_DELETE_KEY = 67;
-  private static final int METHODID_POST_KEYS = 68;
-  private static final int METHODID_PATCH_KEYS = 69;
-  private static final int METHODID_MY_SCOPES = 70;
-  private static final int METHODID_LIST_SCOPES = 71;
-  private static final int METHODID_GET_APP = 72;
-  private static final int METHODID_LIST_APPS = 73;
-  private static final int METHODID_DELETE_APP = 74;
-  private static final int METHODID_POST_APPS = 75;
-  private static final int METHODID_PATCH_APPS = 76;
-  private static final int METHODID_POST_APPS_SEARCHES = 77;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 78;
-  private static final int METHODID_GET_SEARCH = 79;
-  private static final int METHODID_LIST_SEARCHES = 80;
-  private static final int METHODID_POST_SEARCHES = 81;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 82;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 83;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 84;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 85;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 86;
-  private static final int METHODID_DELETE_SEARCH = 87;
-  private static final int METHODID_LIST_STATUS_CODES = 88;
-  private static final int METHODID_GET_STATUS_CODE = 89;
-  private static final int METHODID_LIST_COLLABORATORS = 90;
-  private static final int METHODID_POST_COLLABORATORS = 91;
-  private static final int METHODID_PATCH_COLLABORATORS = 92;
-  private static final int METHODID_DELETE_COLLABORATORS = 93;
-  private static final int METHODID_LIST_COLLABORATIONS = 94;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 95;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 96;
-  private static final int METHODID_GET_APP_DUPLICATION = 97;
-  private static final int METHODID_POST_TASKS = 98;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 99;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 100;
-  private static final int METHODID_GET_TASK = 101;
-  private static final int METHODID_LIST_TASKS = 102;
-  private static final int METHODID_PATCH_TASKS = 103;
-  private static final int METHODID_DELETE_TASKS = 104;
-  private static final int METHODID_POST_COLLECTORS = 105;
-  private static final int METHODID_GET_COLLECTOR = 106;
-  private static final int METHODID_LIST_COLLECTORS = 107;
-  private static final int METHODID_PATCH_COLLECTORS = 108;
-  private static final int METHODID_DELETE_COLLECTORS = 109;
-  private static final int METHODID_POST_STAT_VALUES = 110;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 111;
+  private static final int METHODID_LIST_OPEN_SOURCE_LICENSES = 36;
+  private static final int METHODID_LIST_MODEL_TYPES = 37;
+  private static final int METHODID_GET_MODEL = 38;
+  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 39;
+  private static final int METHODID_LIST_MODELS = 40;
+  private static final int METHODID_POST_MODELS_SEARCHES = 41;
+  private static final int METHODID_POST_MODELS = 42;
+  private static final int METHODID_PATCH_MODELS = 43;
+  private static final int METHODID_DELETE_MODEL = 44;
+  private static final int METHODID_DELETE_MODELS = 45;
+  private static final int METHODID_LIST_MODEL_INPUTS = 46;
+  private static final int METHODID_GET_MODEL_VERSION = 47;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 48;
+  private static final int METHODID_POST_MODEL_VERSIONS = 49;
+  private static final int METHODID_PATCH_MODEL_VERSIONS = 50;
+  private static final int METHODID_DELETE_MODEL_VERSION = 51;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 52;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 53;
+  private static final int METHODID_LIST_MODEL_REFERENCES = 54;
+  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 55;
+  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 56;
+  private static final int METHODID_GET_WORKFLOW = 57;
+  private static final int METHODID_LIST_WORKFLOWS = 58;
+  private static final int METHODID_POST_WORKFLOWS = 59;
+  private static final int METHODID_PATCH_WORKFLOWS = 60;
+  private static final int METHODID_DELETE_WORKFLOW = 61;
+  private static final int METHODID_DELETE_WORKFLOWS = 62;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 63;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 64;
+  private static final int METHODID_GET_KEY = 65;
+  private static final int METHODID_LIST_KEYS = 66;
+  private static final int METHODID_LIST_APP_KEYS = 67;
+  private static final int METHODID_DELETE_KEY = 68;
+  private static final int METHODID_POST_KEYS = 69;
+  private static final int METHODID_PATCH_KEYS = 70;
+  private static final int METHODID_MY_SCOPES = 71;
+  private static final int METHODID_LIST_SCOPES = 72;
+  private static final int METHODID_GET_APP = 73;
+  private static final int METHODID_LIST_APPS = 74;
+  private static final int METHODID_DELETE_APP = 75;
+  private static final int METHODID_POST_APPS = 76;
+  private static final int METHODID_PATCH_APPS = 77;
+  private static final int METHODID_POST_APPS_SEARCHES = 78;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 79;
+  private static final int METHODID_GET_SEARCH = 80;
+  private static final int METHODID_LIST_SEARCHES = 81;
+  private static final int METHODID_POST_SEARCHES = 82;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 83;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 84;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 85;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 86;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 87;
+  private static final int METHODID_DELETE_SEARCH = 88;
+  private static final int METHODID_LIST_STATUS_CODES = 89;
+  private static final int METHODID_GET_STATUS_CODE = 90;
+  private static final int METHODID_LIST_COLLABORATORS = 91;
+  private static final int METHODID_POST_COLLABORATORS = 92;
+  private static final int METHODID_PATCH_COLLABORATORS = 93;
+  private static final int METHODID_DELETE_COLLABORATORS = 94;
+  private static final int METHODID_LIST_COLLABORATIONS = 95;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 96;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 97;
+  private static final int METHODID_GET_APP_DUPLICATION = 98;
+  private static final int METHODID_POST_TASKS = 99;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 100;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 101;
+  private static final int METHODID_GET_TASK = 102;
+  private static final int METHODID_LIST_TASKS = 103;
+  private static final int METHODID_PATCH_TASKS = 104;
+  private static final int METHODID_DELETE_TASKS = 105;
+  private static final int METHODID_POST_COLLECTORS = 106;
+  private static final int METHODID_GET_COLLECTOR = 107;
+  private static final int METHODID_LIST_COLLECTORS = 108;
+  private static final int METHODID_PATCH_COLLECTORS = 109;
+  private static final int METHODID_DELETE_COLLECTORS = 110;
+  private static final int METHODID_POST_STAT_VALUES = 111;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 112;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9391,6 +9472,10 @@ public final class V2Grpc {
         case METHODID_GET_MODEL_TYPE:
           serviceImpl.getModelType((com.clarifai.grpc.api.GetModelTypeRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelTypeResponse>) responseObserver);
+          break;
+        case METHODID_LIST_OPEN_SOURCE_LICENSES:
+          serviceImpl.listOpenSourceLicenses((com.clarifai.grpc.api.ListOpenSourceLicensesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.ListOpenSourceLicensesResponse>) responseObserver);
           break;
         case METHODID_LIST_MODEL_TYPES:
           serviceImpl.listModelTypes((com.clarifai.grpc.api.ListModelTypesRequest) request,
@@ -9793,6 +9878,7 @@ public final class V2Grpc {
               .addMethod(getPostInputsSearchesMethod())
               .addMethod(getPostModelOutputsMethod())
               .addMethod(getGetModelTypeMethod())
+              .addMethod(getListOpenSourceLicensesMethod())
               .addMethod(getListModelTypesMethod())
               .addMethod(getGetModelMethod())
               .addMethod(getGetModelOutputInfoMethod())

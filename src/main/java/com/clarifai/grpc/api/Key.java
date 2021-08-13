@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     apps_ = java.util.Collections.emptyList();
+    authorizedIdpIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -132,6 +133,15 @@ private static final long serialVersionUID = 0L;
             type_ = s;
             break;
           }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              authorizedIdpIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            authorizedIdpIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -155,6 +165,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         endpoints_ = endpoints_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        authorizedIdpIds_ = authorizedIdpIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -549,6 +562,57 @@ private static final long serialVersionUID = 0L;
     return getExpiresAt();
   }
 
+  public static final int AUTHORIZED_IDP_IDS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList authorizedIdpIds_;
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @return A list containing the authorizedIdpIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAuthorizedIdpIdsList() {
+    return authorizedIdpIds_;
+  }
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @return The count of authorizedIdpIds.
+   */
+  public int getAuthorizedIdpIdsCount() {
+    return authorizedIdpIds_.size();
+  }
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @param index The index of the element to return.
+   * @return The authorizedIdpIds at the given index.
+   */
+  public java.lang.String getAuthorizedIdpIds(int index) {
+    return authorizedIdpIds_.get(index);
+  }
+  /**
+   * <pre>
+   * list of idp ids at which key is currently authorized
+   * </pre>
+   *
+   * <code>repeated string authorized_idp_ids = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the authorizedIdpIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAuthorizedIdpIdsBytes(int index) {
+    return authorizedIdpIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -586,6 +650,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, type_);
+    }
+    for (int i = 0; i < authorizedIdpIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, authorizedIdpIds_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -633,6 +700,14 @@ private static final long serialVersionUID = 0L;
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, type_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < authorizedIdpIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(authorizedIdpIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAuthorizedIdpIdsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -670,6 +745,8 @@ private static final long serialVersionUID = 0L;
       if (!getExpiresAt()
           .equals(other.getExpiresAt())) return false;
     }
+    if (!getAuthorizedIdpIdsList()
+        .equals(other.getAuthorizedIdpIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -706,6 +783,10 @@ private static final long serialVersionUID = 0L;
     if (hasExpiresAt()) {
       hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
       hash = (53 * hash) + getExpiresAt().hashCode();
+    }
+    if (getAuthorizedIdpIdsCount() > 0) {
+      hash = (37 * hash) + AUTHORIZED_IDP_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthorizedIdpIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -875,6 +956,8 @@ private static final long serialVersionUID = 0L;
         expiresAt_ = null;
         expiresAtBuilder_ = null;
       }
+      authorizedIdpIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -934,6 +1017,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.expiresAt_ = expiresAtBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        authorizedIdpIds_ = authorizedIdpIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.authorizedIdpIds_ = authorizedIdpIds_;
       onBuilt();
       return result;
     }
@@ -1045,6 +1133,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasExpiresAt()) {
         mergeExpiresAt(other.getExpiresAt());
+      }
+      if (!other.authorizedIdpIds_.isEmpty()) {
+        if (authorizedIdpIds_.isEmpty()) {
+          authorizedIdpIds_ = other.authorizedIdpIds_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureAuthorizedIdpIdsIsMutable();
+          authorizedIdpIds_.addAll(other.authorizedIdpIds_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2330,6 +2428,152 @@ private static final long serialVersionUID = 0L;
         expiresAt_ = null;
       }
       return expiresAtBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList authorizedIdpIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAuthorizedIdpIdsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        authorizedIdpIds_ = new com.google.protobuf.LazyStringArrayList(authorizedIdpIds_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @return A list containing the authorizedIdpIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAuthorizedIdpIdsList() {
+      return authorizedIdpIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @return The count of authorizedIdpIds.
+     */
+    public int getAuthorizedIdpIdsCount() {
+      return authorizedIdpIds_.size();
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @param index The index of the element to return.
+     * @return The authorizedIdpIds at the given index.
+     */
+    public java.lang.String getAuthorizedIdpIds(int index) {
+      return authorizedIdpIds_.get(index);
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the authorizedIdpIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAuthorizedIdpIdsBytes(int index) {
+      return authorizedIdpIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The authorizedIdpIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizedIdpIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorizedIdpIdsIsMutable();
+      authorizedIdpIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @param value The authorizedIdpIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAuthorizedIdpIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAuthorizedIdpIdsIsMutable();
+      authorizedIdpIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @param values The authorizedIdpIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAuthorizedIdpIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAuthorizedIdpIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, authorizedIdpIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthorizedIdpIds() {
+      authorizedIdpIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * list of idp ids at which key is currently authorized
+     * </pre>
+     *
+     * <code>repeated string authorized_idp_ids = 9;</code>
+     * @param value The bytes of the authorizedIdpIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAuthorizedIdpIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAuthorizedIdpIdsIsMutable();
+      authorizedIdpIds_.add(value);
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

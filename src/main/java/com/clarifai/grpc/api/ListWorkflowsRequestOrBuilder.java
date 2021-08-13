@@ -46,21 +46,77 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Sorting options:
+   * Whether to sort in ascending order. If false, will order in descending order. 
    * </pre>
    *
-   * <code>string id = 4;</code>
-   * @return The id.
+   * <code>bool sort_ascending = 5;</code>
+   * @return The sortAscending.
    */
-  java.lang.String getId();
+  boolean getSortAscending();
+
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_id = 6;</code>
+   * @return The sortById.
+   */
+  boolean getSortById();
+
+  /**
+   * <pre>
+   * Whether to order by the modified_at time.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 7;</code>
+   * @return The sortByModifiedAt.
+   */
+  boolean getSortByModifiedAt();
+
+  /**
+   * <pre>
+   * Query various text fields that can contain the words in the query string.
+   * </pre>
+   *
+   * <code>string query = 8;</code>
+   * @return The query.
+   */
+  java.lang.String getQuery();
+  /**
+   * <pre>
+   * Query various text fields that can contain the words in the query string.
+   * </pre>
+   *
+   * <code>string query = 8;</code>
+   * @return The bytes for query.
+   */
+  com.google.protobuf.ByteString
+      getQueryBytes();
+
   /**
    * <pre>
    * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string id = 4;</code>
+   * <code>string id = 4 [deprecated = true];</code>
+   * @return The id.
+   */
+  @java.lang.Deprecated java.lang.String getId();
+  /**
+   * <pre>
+   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
+   * </pre>
+   *
+   * <code>string id = 4 [deprecated = true];</code>
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getIdBytes();
+
+  public com.clarifai.grpc.api.ListWorkflowsRequest.SortByCase getSortByCase();
 }
