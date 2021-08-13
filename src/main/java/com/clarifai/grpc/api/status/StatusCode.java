@@ -267,8 +267,9 @@ public enum StatusCode
    * Training message was redelivered.
    * </pre>
    *
-   * <code>MODEL_TRAINING_MSG_REDELIVER = 21116;</code>
+   * <code>MODEL_TRAINING_MSG_REDELIVER = 21116 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   MODEL_TRAINING_MSG_REDELIVER(21116),
   /**
    * <pre>
@@ -367,8 +368,9 @@ public enum StatusCode
    * Eval message was redelivered.
    * </pre>
    *
-   * <code>MODEL_EVALUATION_MSG_REDELIVER = 21314;</code>
+   * <code>MODEL_EVALUATION_MSG_REDELIVER = 21314 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   MODEL_EVALUATION_MSG_REDELIVER(21314),
   /**
    * <pre>
@@ -1028,30 +1030,6 @@ public enum StatusCode
   SQS_UNKNOWN(41102),
   /**
    * <pre>
-   * KAFKA related errros 412xx
-   * </pre>
-   *
-   * <code>KAFKA_UNKNOW = 41200;</code>
-   */
-  KAFKA_UNKNOW(41200),
-  /**
-   * <code>KAFKA_MISSING_TOPIC = 41201;</code>
-   */
-  KAFKA_MISSING_TOPIC(41201),
-  /**
-   * <code>KAFKA_ADMIN_ERR = 41202;</code>
-   */
-  KAFKA_ADMIN_ERR(41202),
-  /**
-   * <code>KAFKA_CONSUMER_ERR = 41203;</code>
-   */
-  KAFKA_CONSUMER_ERR(41203),
-  /**
-   * <code>KAFKA_PUBLISHER_ERR = 41204;</code>
-   */
-  KAFKA_PUBLISHER_ERR(41204),
-  /**
-   * <pre>
    *Search related errors 43xxxx
    * </pre>
    *
@@ -1212,6 +1190,14 @@ public enum StatusCode
   MP_IMAGE_PROCESSING_ERROR(47106),
   /**
    * <pre>
+   * DataTier related error 472xx
+   * </pre>
+   *
+   * <code>DATATIER_CONN_ERROR = 47201;</code>
+   */
+  DATATIER_CONN_ERROR(47201),
+  /**
+   * <pre>
    * User legal consent stauts related 50xxx
    * </pre>
    *
@@ -1250,6 +1236,10 @@ public enum StatusCode
    * <code>COLLECTOR_INACTIVE = 52002;</code>
    */
   COLLECTOR_INACTIVE(52002),
+  /**
+   * <code>COLLECTOR_POST_INPUT_FAILED = 52003;</code>
+   */
+  COLLECTOR_POST_INPUT_FAILED(52003),
   /**
    * <pre>
    * SSO 53xxx
@@ -1800,7 +1790,7 @@ public enum StatusCode
    * Training message was redelivered.
    * </pre>
    *
-   * <code>MODEL_TRAINING_MSG_REDELIVER = 21116;</code>
+   * <code>MODEL_TRAINING_MSG_REDELIVER = 21116 [deprecated = true];</code>
    */
   public static final int MODEL_TRAINING_MSG_REDELIVER_VALUE = 21116;
   /**
@@ -1900,7 +1890,7 @@ public enum StatusCode
    * Eval message was redelivered.
    * </pre>
    *
-   * <code>MODEL_EVALUATION_MSG_REDELIVER = 21314;</code>
+   * <code>MODEL_EVALUATION_MSG_REDELIVER = 21314 [deprecated = true];</code>
    */
   public static final int MODEL_EVALUATION_MSG_REDELIVER_VALUE = 21314;
   /**
@@ -2561,30 +2551,6 @@ public enum StatusCode
   public static final int SQS_UNKNOWN_VALUE = 41102;
   /**
    * <pre>
-   * KAFKA related errros 412xx
-   * </pre>
-   *
-   * <code>KAFKA_UNKNOW = 41200;</code>
-   */
-  public static final int KAFKA_UNKNOW_VALUE = 41200;
-  /**
-   * <code>KAFKA_MISSING_TOPIC = 41201;</code>
-   */
-  public static final int KAFKA_MISSING_TOPIC_VALUE = 41201;
-  /**
-   * <code>KAFKA_ADMIN_ERR = 41202;</code>
-   */
-  public static final int KAFKA_ADMIN_ERR_VALUE = 41202;
-  /**
-   * <code>KAFKA_CONSUMER_ERR = 41203;</code>
-   */
-  public static final int KAFKA_CONSUMER_ERR_VALUE = 41203;
-  /**
-   * <code>KAFKA_PUBLISHER_ERR = 41204;</code>
-   */
-  public static final int KAFKA_PUBLISHER_ERR_VALUE = 41204;
-  /**
-   * <pre>
    *Search related errors 43xxxx
    * </pre>
    *
@@ -2745,6 +2711,14 @@ public enum StatusCode
   public static final int MP_IMAGE_PROCESSING_ERROR_VALUE = 47106;
   /**
    * <pre>
+   * DataTier related error 472xx
+   * </pre>
+   *
+   * <code>DATATIER_CONN_ERROR = 47201;</code>
+   */
+  public static final int DATATIER_CONN_ERROR_VALUE = 47201;
+  /**
+   * <pre>
    * User legal consent stauts related 50xxx
    * </pre>
    *
@@ -2783,6 +2757,10 @@ public enum StatusCode
    * <code>COLLECTOR_INACTIVE = 52002;</code>
    */
   public static final int COLLECTOR_INACTIVE_VALUE = 52002;
+  /**
+   * <code>COLLECTOR_POST_INPUT_FAILED = 52003;</code>
+   */
+  public static final int COLLECTOR_POST_INPUT_FAILED_VALUE = 52003;
   /**
    * <pre>
    * SSO 53xxx
@@ -3289,11 +3267,6 @@ public enum StatusCode
       case 41100: return SQS_OVERLIMIT;
       case 41101: return SQS_INVALID_RECEIPT_HANDLE;
       case 41102: return SQS_UNKNOWN;
-      case 41200: return KAFKA_UNKNOW;
-      case 41201: return KAFKA_MISSING_TOPIC;
-      case 41202: return KAFKA_ADMIN_ERR;
-      case 41203: return KAFKA_CONSUMER_ERR;
-      case 41204: return KAFKA_PUBLISHER_ERR;
       case 43001: return SEARCH_INTERNAL_FAILURE;
       case 43002: return SEARCH_PROJECTION_FAILURE;
       case 43003: return SEARCH_PREDICTION_FAILURE;
@@ -3328,6 +3301,7 @@ public enum StatusCode
       case 47104: return MP_IMAGE_DECODE_ERROR;
       case 47105: return MP_INVALID_ARGUMENT;
       case 47106: return MP_IMAGE_PROCESSING_ERROR;
+      case 47201: return DATATIER_CONN_ERROR;
       case 50001: return USER_CONSENT_FACE;
       case 51000: return WORKER_MISSING;
       case 51001: return WORKER_ACTIVE;
@@ -3335,6 +3309,7 @@ public enum StatusCode
       case 52000: return COLLECTOR_MISSING;
       case 52001: return COLLECTOR_ACTIVE;
       case 52002: return COLLECTOR_INACTIVE;
+      case 52003: return COLLECTOR_POST_INPUT_FAILED;
       case 53001: return SSO_IDENTITY_PROVIDER_DOES_NOT_EXIST;
       case 54001: return TASK_IN_PROGRESS;
       case 54002: return TASK_DONE;

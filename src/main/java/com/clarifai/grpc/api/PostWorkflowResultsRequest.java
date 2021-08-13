@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private PostWorkflowResultsRequest() {
     workflowId_ = "";
+    versionId_ = "";
     inputs_ = java.util.Collections.emptyList();
   }
 
@@ -108,6 +109,12 @@ private static final long serialVersionUID = 0L;
               workflowState_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            versionId_ = s;
             break;
           }
           default: {
@@ -210,6 +217,52 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       workflowId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VERSION_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object versionId_;
+  /**
+   * <pre>
+   * Workflow version ID to retrieve
+   * If no ID is specified, latest workflow version is used
+   * </pre>
+   *
+   * <code>string version_id = 7;</code>
+   * @return The versionId.
+   */
+  public java.lang.String getVersionId() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Workflow version ID to retrieve
+   * If no ID is specified, latest workflow version is used
+   * </pre>
+   *
+   * <code>string version_id = 7;</code>
+   * @return The bytes for versionId.
+   */
+  public com.google.protobuf.ByteString
+      getVersionIdBytes() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      versionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -388,6 +441,9 @@ private static final long serialVersionUID = 0L;
     if (workflowState_ != null) {
       output.writeMessage(6, getWorkflowState());
     }
+    if (!getVersionIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, versionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -420,6 +476,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getWorkflowState());
     }
+    if (!getVersionIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, versionId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -442,6 +501,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
+    if (!getVersionId()
+        .equals(other.getVersionId())) return false;
     if (!getInputsList()
         .equals(other.getInputsList())) return false;
     if (hasOutputConfig() != other.hasOutputConfig()) return false;
@@ -473,6 +534,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowId().hashCode();
+    hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionId().hashCode();
     if (getInputsCount() > 0) {
       hash = (37 * hash) + INPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getInputsList().hashCode();
@@ -630,6 +693,8 @@ private static final long serialVersionUID = 0L;
       }
       workflowId_ = "";
 
+      versionId_ = "";
+
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -683,6 +748,7 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.workflowId_ = workflowId_;
+      result.versionId_ = versionId_;
       if (inputsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           inputs_ = java.util.Collections.unmodifiableList(inputs_);
@@ -756,6 +822,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getWorkflowId().isEmpty()) {
         workflowId_ = other.workflowId_;
+        onChanged();
+      }
+      if (!other.getVersionId().isEmpty()) {
+        versionId_ = other.versionId_;
         onChanged();
       }
       if (inputsBuilder_ == null) {
@@ -1044,6 +1114,107 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       workflowId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object versionId_ = "";
+    /**
+     * <pre>
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     * </pre>
+     *
+     * <code>string version_id = 7;</code>
+     * @return The versionId.
+     */
+    public java.lang.String getVersionId() {
+      java.lang.Object ref = versionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     * </pre>
+     *
+     * <code>string version_id = 7;</code>
+     * @return The bytes for versionId.
+     */
+    public com.google.protobuf.ByteString
+        getVersionIdBytes() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     * </pre>
+     *
+     * <code>string version_id = 7;</code>
+     * @param value The versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      versionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     * </pre>
+     *
+     * <code>string version_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionId() {
+      
+      versionId_ = getDefaultInstance().getVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow version ID to retrieve
+     * If no ID is specified, latest workflow version is used
+     * </pre>
+     *
+     * <code>string version_id = 7;</code>
+     * @param value The bytes for versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      versionId_ = value;
       onChanged();
       return this;
     }

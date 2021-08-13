@@ -45,48 +45,89 @@ public interface ListModelsRequestOrBuilder extends
   int getPerPage();
 
   /**
-   * <code>repeated string ids = 4;</code>
-   * @return A list containing the ids.
+   * <pre>
+   * Sorting options:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 10;</code>
+   * @return The sortAscending.
    */
-  java.util.List<java.lang.String>
-      getIdsList();
+  boolean getSortAscending();
+
   /**
-   * <code>repeated string ids = 4;</code>
-   * @return The count of ids.
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_name = 11;</code>
+   * @return The sortByName.
    */
-  int getIdsCount();
+  boolean getSortByName();
+
   /**
-   * <code>repeated string ids = 4;</code>
-   * @param index The index of the element to return.
-   * @return The ids at the given index.
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 12;</code>
+   * @return The sortByNumInputs.
    */
-  java.lang.String getIds(int index);
+  boolean getSortByNumInputs();
+
   /**
-   * <code>repeated string ids = 4;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the ids at the given index.
+   * <pre>
+   * Whether to order by the modified_at time of the latest model version.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 13;</code>
+   * @return The sortByModifiedAt.
+   */
+  boolean getSortByModifiedAt();
+
+  /**
+   * <pre>
+   * Filtering options:
+   * // Query various text fields that can contain the words in the query string
+   * </pre>
+   *
+   * <code>string query = 14;</code>
+   * @return The query.
+   */
+  java.lang.String getQuery();
+  /**
+   * <pre>
+   * Filtering options:
+   * // Query various text fields that can contain the words in the query string
+   * </pre>
+   *
+   * <code>string query = 14;</code>
+   * @return The bytes for query.
    */
   com.google.protobuf.ByteString
-      getIdsBytes(int index);
+      getQueryBytes();
 
   /**
    * <pre>
    * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>string name = 5 [deprecated = true];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  @java.lang.Deprecated java.lang.String getName();
   /**
    * <pre>
    * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated in favor of query
    * </pre>
    *
-   * <code>string name = 5;</code>
+   * <code>string name = 5 [deprecated = true];</code>
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getNameBytes();
 
   /**
@@ -210,4 +251,26 @@ public interface ListModelsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getOutputFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * Filter by the license of the model version
+   * </pre>
+   *
+   * <code>string license = 15;</code>
+   * @return The license.
+   */
+  java.lang.String getLicense();
+  /**
+   * <pre>
+   * Filter by the license of the model version
+   * </pre>
+   *
+   * <code>string license = 15;</code>
+   * @return The bytes for license.
+   */
+  com.google.protobuf.ByteString
+      getLicenseBytes();
+
+  public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

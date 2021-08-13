@@ -118,6 +118,33 @@ public interface AppOrBuilder extends
 
   /**
    * <pre>
+   * When the app was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 17;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When the app was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 17;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When the app was last modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 17;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
    * if user accept legal consent for face recognition
    * </pre>
    *
