@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     modelTypeId_ = "";
     description_ = "";
+    notes_ = "";
   }
 
   @java.lang.Override
@@ -205,6 +206,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+<<<<<<< HEAD
+=======
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notes_ = s;
+            break;
+          }
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -725,7 +735,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -745,7 +755,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -803,6 +813,57 @@ private static final long serialVersionUID = 0L;
     return getMetadata();
   }
 
+<<<<<<< HEAD
+=======
+  public static final int NOTES_FIELD_NUMBER = 18;
+  private volatile java.lang.Object notes_;
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The notes.
+   */
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The bytes for notes.
+   */
+  public com.google.protobuf.ByteString
+      getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -859,6 +920,12 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(17, getMetadata());
     }
+<<<<<<< HEAD
+=======
+    if (!getNotesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, notes_);
+    }
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
     unknownFields.writeTo(output);
   }
 
@@ -917,6 +984,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getMetadata());
     }
+<<<<<<< HEAD
+=======
+    if (!getNotesBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, notes_);
+    }
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -981,6 +1054,11 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
+<<<<<<< HEAD
+=======
+    if (!getNotes()
+        .equals(other.getNotes())) return false;
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1034,6 +1112,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
+<<<<<<< HEAD
+=======
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1240,6 +1323,11 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
+<<<<<<< HEAD
+=======
+      notes_ = "";
+
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
       return this;
     }
 
@@ -1308,6 +1396,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
+<<<<<<< HEAD
+=======
+      result.notes_ = notes_;
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
       onBuilt();
       return result;
     }
@@ -1405,6 +1497,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+<<<<<<< HEAD
+=======
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
+        onChanged();
+      }
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2971,7 +3070,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2991,7 +3090,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3012,7 +3111,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3031,7 +3130,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3045,7 +3144,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3227,6 +3326,115 @@ private static final long serialVersionUID = 0L;
       }
       return metadataBuilder_;
     }
+<<<<<<< HEAD
+=======
+
+    private java.lang.Object notes_ = "";
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString
+        getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      
+      notes_ = getDefaultInstance().getNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

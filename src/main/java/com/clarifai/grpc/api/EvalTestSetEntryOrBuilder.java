@@ -12,32 +12,59 @@ public interface EvalTestSetEntryOrBuilder extends
    * Input CFID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [deprecated = true];</code>
    * @return The id.
    */
-  java.lang.String getId();
+  @java.lang.Deprecated java.lang.String getId();
   /**
    * <pre>
    * Input CFID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [deprecated = true];</code>
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string url = 2;</code>
+   * <code>string url = 2 [deprecated = true];</code>
    * @return The url.
    */
-  java.lang.String getUrl();
+  @java.lang.Deprecated java.lang.String getUrl();
   /**
-   * <code>string url = 2;</code>
+   * <code>string url = 2 [deprecated = true];</code>
    * @return The bytes for url.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getUrlBytes();
+
+  /**
+   * <pre>
+   * the input information
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 6;</code>
+   * @return Whether the input field is set.
+   */
+  boolean hasInput();
+  /**
+   * <pre>
+   * the input information
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 6;</code>
+   * @return The input.
+   */
+  com.clarifai.grpc.api.Input getInput();
+  /**
+   * <pre>
+   * the input information
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 6;</code>
+   */
+  com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder();
 
   /**
    * <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>

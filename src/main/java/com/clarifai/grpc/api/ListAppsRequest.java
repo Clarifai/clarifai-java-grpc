@@ -231,7 +231,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Sorting opitons:
+<<<<<<< HEAD
    * Whether to sort in ascending order. If false, will order in descending order. 
+=======
+   * Whether to sort in ascending order. If false, will order in descending order.
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
    * </pre>
    *
    * <code>bool sort_ascending = 5;</code>
@@ -1062,7 +1066,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Sorting opitons:
+<<<<<<< HEAD
      * Whether to sort in ascending order. If false, will order in descending order. 
+=======
+     * Whether to sort in ascending order. If false, will order in descending order.
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
      * </pre>
      *
      * <code>bool sort_ascending = 5;</code>
@@ -1074,7 +1082,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Sorting opitons:
+<<<<<<< HEAD
      * Whether to sort in ascending order. If false, will order in descending order. 
+=======
+     * Whether to sort in ascending order. If false, will order in descending order.
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
      * </pre>
      *
      * <code>bool sort_ascending = 5;</code>
@@ -1090,7 +1102,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Sorting opitons:
+<<<<<<< HEAD
      * Whether to sort in ascending order. If false, will order in descending order. 
+=======
+     * Whether to sort in ascending order. If false, will order in descending order.
+>>>>>>> 1aeea2ce6f54a98e9b8b4858278673170fbccd60
      * </pre>
      *
      * <code>bool sort_ascending = 5;</code>

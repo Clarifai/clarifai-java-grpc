@@ -96,6 +96,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.Input.Builder subBuilder = null;
+            if (input_ != null) {
+              subBuilder = input_.toBuilder();
+            }
+            input_ = input.readMessage(com.clarifai.grpc.api.Input.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(input_);
+              input_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -141,10 +154,10 @@ private static final long serialVersionUID = 0L;
    * Input CFID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [deprecated = true];</code>
    * @return The id.
    */
-  public java.lang.String getId() {
+  @java.lang.Deprecated public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -161,10 +174,10 @@ private static final long serialVersionUID = 0L;
    * Input CFID
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [deprecated = true];</code>
    * @return The bytes for id.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -181,10 +194,10 @@ private static final long serialVersionUID = 0L;
   public static final int URL_FIELD_NUMBER = 2;
   private volatile java.lang.Object url_;
   /**
-   * <code>string url = 2;</code>
+   * <code>string url = 2 [deprecated = true];</code>
    * @return The url.
    */
-  public java.lang.String getUrl() {
+  @java.lang.Deprecated public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -197,10 +210,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string url = 2;</code>
+   * <code>string url = 2 [deprecated = true];</code>
    * @return The bytes for url.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +225,41 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int INPUT_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.Input input_;
+  /**
+   * <pre>
+   * the input information
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 6;</code>
+   * @return Whether the input field is set.
+   */
+  public boolean hasInput() {
+    return input_ != null;
+  }
+  /**
+   * <pre>
+   * the input information
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 6;</code>
+   * @return The input.
+   */
+  public com.clarifai.grpc.api.Input getInput() {
+    return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
+  }
+  /**
+   * <pre>
+   * the input information
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input = 6;</code>
+   */
+  public com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder() {
+    return getInput();
   }
 
   public static final int PREDICTED_CONCEPTS_FIELD_NUMBER = 3;
@@ -374,6 +422,9 @@ private static final long serialVersionUID = 0L;
     if (annotation_ != null) {
       output.writeMessage(5, getAnnotation());
     }
+    if (input_ != null) {
+      output.writeMessage(6, getInput());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -401,6 +452,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getAnnotation());
     }
+    if (input_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getInput());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -420,6 +475,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getUrl()
         .equals(other.getUrl())) return false;
+    if (hasInput() != other.hasInput()) return false;
+    if (hasInput()) {
+      if (!getInput()
+          .equals(other.getInput())) return false;
+    }
     if (!getPredictedConceptsList()
         .equals(other.getPredictedConceptsList())) return false;
     if (!getGroundTruthConceptsList()
@@ -444,6 +504,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + URL_FIELD_NUMBER;
     hash = (53 * hash) + getUrl().hashCode();
+    if (hasInput()) {
+      hash = (37 * hash) + INPUT_FIELD_NUMBER;
+      hash = (53 * hash) + getInput().hashCode();
+    }
     if (getPredictedConceptsCount() > 0) {
       hash = (37 * hash) + PREDICTED_CONCEPTS_FIELD_NUMBER;
       hash = (53 * hash) + getPredictedConceptsList().hashCode();
@@ -595,6 +659,12 @@ private static final long serialVersionUID = 0L;
 
       url_ = "";
 
+      if (inputBuilder_ == null) {
+        input_ = null;
+      } else {
+        input_ = null;
+        inputBuilder_ = null;
+      }
       if (predictedConceptsBuilder_ == null) {
         predictedConcepts_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -642,6 +712,11 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.url_ = url_;
+      if (inputBuilder_ == null) {
+        result.input_ = input_;
+      } else {
+        result.input_ = inputBuilder_.build();
+      }
       if (predictedConceptsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           predictedConcepts_ = java.util.Collections.unmodifiableList(predictedConcepts_);
@@ -720,6 +795,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
         onChanged();
+      }
+      if (other.hasInput()) {
+        mergeInput(other.getInput());
       }
       if (predictedConceptsBuilder_ == null) {
         if (!other.predictedConcepts_.isEmpty()) {
@@ -812,10 +890,10 @@ private static final long serialVersionUID = 0L;
      * Input CFID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [deprecated = true];</code>
      * @return The id.
      */
-    public java.lang.String getId() {
+    @java.lang.Deprecated public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -832,10 +910,10 @@ private static final long serialVersionUID = 0L;
      * Input CFID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [deprecated = true];</code>
      * @return The bytes for id.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
@@ -853,11 +931,11 @@ private static final long serialVersionUID = 0L;
      * Input CFID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [deprecated = true];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
+    @java.lang.Deprecated public Builder setId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -872,10 +950,10 @@ private static final long serialVersionUID = 0L;
      * Input CFID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    @java.lang.Deprecated public Builder clearId() {
       
       id_ = getDefaultInstance().getId();
       onChanged();
@@ -886,11 +964,11 @@ private static final long serialVersionUID = 0L;
      * Input CFID
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [deprecated = true];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
+    @java.lang.Deprecated public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -904,10 +982,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object url_ = "";
     /**
-     * <code>string url = 2;</code>
+     * <code>string url = 2 [deprecated = true];</code>
      * @return The url.
      */
-    public java.lang.String getUrl() {
+    @java.lang.Deprecated public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -920,10 +998,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string url = 2;</code>
+     * <code>string url = 2 [deprecated = true];</code>
      * @return The bytes for url.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof String) {
@@ -937,11 +1015,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string url = 2;</code>
+     * <code>string url = 2 [deprecated = true];</code>
      * @param value The url to set.
      * @return This builder for chaining.
      */
-    public Builder setUrl(
+    @java.lang.Deprecated public Builder setUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -952,21 +1030,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string url = 2;</code>
+     * <code>string url = 2 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearUrl() {
+    @java.lang.Deprecated public Builder clearUrl() {
       
       url_ = getDefaultInstance().getUrl();
       onChanged();
       return this;
     }
     /**
-     * <code>string url = 2;</code>
+     * <code>string url = 2 [deprecated = true];</code>
      * @param value The bytes for url to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlBytes(
+    @java.lang.Deprecated public Builder setUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -976,6 +1054,161 @@ private static final long serialVersionUID = 0L;
       url_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Input input_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> inputBuilder_;
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     * @return Whether the input field is set.
+     */
+    public boolean hasInput() {
+      return inputBuilder_ != null || input_ != null;
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     * @return The input.
+     */
+    public com.clarifai.grpc.api.Input getInput() {
+      if (inputBuilder_ == null) {
+        return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
+      } else {
+        return inputBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    public Builder setInput(com.clarifai.grpc.api.Input value) {
+      if (inputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        inputBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    public Builder setInput(
+        com.clarifai.grpc.api.Input.Builder builderForValue) {
+      if (inputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    public Builder mergeInput(com.clarifai.grpc.api.Input value) {
+      if (inputBuilder_ == null) {
+        if (input_ != null) {
+          input_ =
+            com.clarifai.grpc.api.Input.newBuilder(input_).mergeFrom(value).buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        inputBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    public Builder clearInput() {
+      if (inputBuilder_ == null) {
+        input_ = null;
+        onChanged();
+      } else {
+        input_ = null;
+        inputBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    public com.clarifai.grpc.api.Input.Builder getInputBuilder() {
+      
+      onChanged();
+      return getInputFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    public com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder() {
+      if (inputBuilder_ != null) {
+        return inputBuilder_.getMessageOrBuilder();
+      } else {
+        return input_ == null ?
+            com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
+      }
+    }
+    /**
+     * <pre>
+     * the input information
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> 
+        getInputFieldBuilder() {
+      if (inputBuilder_ == null) {
+        inputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder>(
+                getInput(),
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      return inputBuilder_;
     }
 
     private java.util.List<com.clarifai.grpc.api.Concept> predictedConcepts_ =
