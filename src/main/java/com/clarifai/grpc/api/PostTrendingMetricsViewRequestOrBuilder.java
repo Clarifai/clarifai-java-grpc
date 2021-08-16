@@ -36,7 +36,7 @@ public interface PostTrendingMetricsViewRequestOrBuilder extends
 
   /**
    * <pre>
-   * For now view types 'apps', 'workflows', and 'models' are supported.
+   * For now view types 'apps', 'workflows', and 'models' are supported
    * </pre>
    *
    * <code>string view_type = 2;</code>
@@ -45,7 +45,7 @@ public interface PostTrendingMetricsViewRequestOrBuilder extends
   java.lang.String getViewType();
   /**
    * <pre>
-   * For now view types 'apps', 'workflows', and 'models' are supported.
+   * For now view types 'apps', 'workflows', and 'models' are supported
    * </pre>
    *
    * <code>string view_type = 2;</code>
@@ -56,7 +56,7 @@ public interface PostTrendingMetricsViewRequestOrBuilder extends
 
   /**
    * <pre>
-   * ID of the views object.
+   * ID of the views object
    * </pre>
    *
    * <code>string object_id = 3;</code>
@@ -65,7 +65,7 @@ public interface PostTrendingMetricsViewRequestOrBuilder extends
   java.lang.String getObjectId();
   /**
    * <pre>
-   * ID of the views object.
+   * ID of the views object
    * </pre>
    *
    * <code>string object_id = 3;</code>
