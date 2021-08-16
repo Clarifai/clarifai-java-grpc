@@ -301,7 +301,7 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Short description about this model
+   * Description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -310,7 +310,7 @@ public interface ModelOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * Short description about this model
+   * Description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -348,28 +348,4 @@ public interface ModelOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 17;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
-
-  /**
-   * <pre>
-   * Notes about a model (should support markdown)
-   * This field should be used for in-depth notes about
-   * about a model and supports up to 64Kbs.
-   * </pre>
-   *
-   * <code>string notes = 18;</code>
-   * @return The notes.
-   */
-  java.lang.String getNotes();
-  /**
-   * <pre>
-   * Notes about a model (should support markdown)
-   * This field should be used for in-depth notes about
-   * about a model and supports up to 64Kbs.
-   * </pre>
-   *
-   * <code>string notes = 18;</code>
-   * @return The bytes for notes.
-   */
-  com.google.protobuf.ByteString
-      getNotesBytes();
 }

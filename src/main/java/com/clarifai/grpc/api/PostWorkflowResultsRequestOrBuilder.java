@@ -47,28 +47,6 @@ public interface PostWorkflowResultsRequestOrBuilder extends
       getWorkflowIdBytes();
 
   /**
-   * <pre>
-   * Workflow version ID to retrieve
-   * If no ID is specified, latest workflow version is used
-   * </pre>
-   *
-   * <code>string version_id = 7;</code>
-   * @return The versionId.
-   */
-  java.lang.String getVersionId();
-  /**
-   * <pre>
-   * Workflow version ID to retrieve
-   * If no ID is specified, latest workflow version is used
-   * </pre>
-   *
-   * <code>string version_id = 7;</code>
-   * @return The bytes for versionId.
-   */
-  com.google.protobuf.ByteString
-      getVersionIdBytes();
-
-  /**
    * <code>repeated .clarifai.api.Input inputs = 3;</code>
    */
   java.util.List<com.clarifai.grpc.api.Input> 

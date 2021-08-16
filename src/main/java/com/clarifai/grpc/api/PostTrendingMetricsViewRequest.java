@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object viewType_;
   /**
    * <pre>
-   * For now view types 'apps', 'workflows', and 'models' are supported.
+   * For now view types 'apps', 'workflows', and 'models' are supported
    * </pre>
    *
    * <code>string view_type = 2;</code>
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For now view types 'apps', 'workflows', and 'models' are supported.
+   * For now view types 'apps', 'workflows', and 'models' are supported
    * </pre>
    *
    * <code>string view_type = 2;</code>
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object objectId_;
   /**
    * <pre>
-   * ID of the views object.
+   * ID of the views object
    * </pre>
    *
    * <code>string object_id = 3;</code>
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ID of the views object.
+   * ID of the views object
    * </pre>
    *
    * <code>string object_id = 3;</code>
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object viewType_ = "";
     /**
      * <pre>
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      * </pre>
      *
      * <code>string view_type = 2;</code>
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      * </pre>
      *
      * <code>string view_type = 2;</code>
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      * </pre>
      *
      * <code>string view_type = 2;</code>
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      * </pre>
      *
      * <code>string view_type = 2;</code>
@@ -811,7 +811,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For now view types 'apps', 'workflows', and 'models' are supported.
+     * For now view types 'apps', 'workflows', and 'models' are supported
      * </pre>
      *
      * <code>string view_type = 2;</code>
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object objectId_ = "";
     /**
      * <pre>
-     * ID of the views object.
+     * ID of the views object
      * </pre>
      *
      * <code>string object_id = 3;</code>
@@ -853,7 +853,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the views object.
+     * ID of the views object
      * </pre>
      *
      * <code>string object_id = 3;</code>
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the views object.
+     * ID of the views object
      * </pre>
      *
      * <code>string object_id = 3;</code>
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the views object.
+     * ID of the views object
      * </pre>
      *
      * <code>string object_id = 3;</code>
@@ -907,7 +907,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the views object.
+     * ID of the views object
      * </pre>
      *
      * <code>string object_id = 3;</code>
