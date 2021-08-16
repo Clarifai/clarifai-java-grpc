@@ -272,5 +272,15 @@ public interface ListModelsRequestOrBuilder extends
   com.google.protobuf.ByteString
       getLicenseBytes();
 
+  /**
+   * <pre>
+   * If true, we only return models that are handpicked by clarifai staff
+   * </pre>
+   *
+   * <code>bool featured_only = 16;</code>
+   * @return The featuredOnly.
+   */
+  boolean getFeaturedOnly();
+
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

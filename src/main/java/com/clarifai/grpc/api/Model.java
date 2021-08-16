@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     modelTypeId_ = "";
     description_ = "";
+    notes_ = "";
   }
 
   @java.lang.Override
@@ -205,6 +206,25 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notes_ = s;
+            break;
+          }
+          case 154: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (modifiedAt_ != null) {
+              subBuilder = modifiedAt_.toBuilder();
+            }
+            modifiedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modifiedAt_);
+              modifiedAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -329,7 +349,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   * When the model was created.
+   * When the model was created. We follow the XXXX timestamp
+   * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+   * "2006-01-02T15:04:05.999999Z" so you can expect results like
+   *  the following from the API:
+   *  "2017-04-11T21:50:50.223962Z"
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -340,7 +364,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the model was created.
+   * When the model was created. We follow the XXXX timestamp
+   * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+   * "2006-01-02T15:04:05.999999Z" so you can expect results like
+   *  the following from the API:
+   *  "2017-04-11T21:50:50.223962Z"
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -351,13 +379,52 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the model was created.
+   * When the model was created. We follow the XXXX timestamp
+   * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+   * "2006-01-02T15:04:05.999999Z" so you can expect results like
+   *  the following from the API:
+   *  "2017-04-11T21:50:50.223962Z"
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
+  }
+
+  public static final int MODIFIED_AT_FIELD_NUMBER = 19;
+  private com.google.protobuf.Timestamp modifiedAt_;
+  /**
+   * <pre>
+   * When was the most recent model version created at
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  public boolean hasModifiedAt() {
+    return modifiedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When was the most recent model version created at
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+   * @return The modifiedAt.
+   */
+  public com.google.protobuf.Timestamp getModifiedAt() {
+    return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+  }
+  /**
+   * <pre>
+   * When was the most recent model version created at
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+    return getModifiedAt();
   }
 
   public static final int APP_ID_FIELD_NUMBER = 4;
@@ -725,7 +792,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -745,7 +812,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -803,6 +870,54 @@ private static final long serialVersionUID = 0L;
     return getMetadata();
   }
 
+  public static final int NOTES_FIELD_NUMBER = 18;
+  private volatile java.lang.Object notes_;
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The notes.
+   */
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The bytes for notes.
+   */
+  public com.google.protobuf.ByteString
+      getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -858,6 +973,12 @@ private static final long serialVersionUID = 0L;
     }
     if (metadata_ != null) {
       output.writeMessage(17, getMetadata());
+    }
+    if (!getNotesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, notes_);
+    }
+    if (modifiedAt_ != null) {
+      output.writeMessage(19, getModifiedAt());
     }
     unknownFields.writeTo(output);
   }
@@ -917,6 +1038,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getMetadata());
     }
+    if (!getNotesBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, notes_);
+    }
+    if (modifiedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getModifiedAt());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -940,6 +1068,11 @@ private static final long serialVersionUID = 0L;
     if (hasCreatedAt()) {
       if (!getCreatedAt()
           .equals(other.getCreatedAt())) return false;
+    }
+    if (hasModifiedAt() != other.hasModifiedAt()) return false;
+    if (hasModifiedAt()) {
+      if (!getModifiedAt()
+          .equals(other.getModifiedAt())) return false;
     }
     if (!getAppId()
         .equals(other.getAppId())) return false;
@@ -981,6 +1114,8 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
+    if (!getNotes()
+        .equals(other.getNotes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -999,6 +1134,10 @@ private static final long serialVersionUID = 0L;
     if (hasCreatedAt()) {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
+    }
+    if (hasModifiedAt()) {
+      hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getModifiedAt().hashCode();
     }
     hash = (37 * hash) + APP_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppId().hashCode();
@@ -1034,6 +1173,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1194,6 +1335,12 @@ private static final long serialVersionUID = 0L;
         createdAt_ = null;
         createdAtBuilder_ = null;
       }
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
       appId_ = "";
 
       if (outputInfoBuilder_ == null) {
@@ -1240,6 +1387,8 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
+      notes_ = "";
+
       return this;
     }
 
@@ -1272,6 +1421,11 @@ private static final long serialVersionUID = 0L;
         result.createdAt_ = createdAt_;
       } else {
         result.createdAt_ = createdAtBuilder_.build();
+      }
+      if (modifiedAtBuilder_ == null) {
+        result.modifiedAt_ = modifiedAt_;
+      } else {
+        result.modifiedAt_ = modifiedAtBuilder_.build();
       }
       result.appId_ = appId_;
       if (outputInfoBuilder_ == null) {
@@ -1308,6 +1462,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
+      result.notes_ = notes_;
       onBuilt();
       return result;
     }
@@ -1367,6 +1522,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
       }
+      if (other.hasModifiedAt()) {
+        mergeModifiedAt(other.getModifiedAt());
+      }
       if (!other.getAppId().isEmpty()) {
         appId_ = other.appId_;
         onChanged();
@@ -1404,6 +1562,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
+      }
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1631,7 +1793,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1642,7 +1808,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1657,7 +1827,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1677,7 +1851,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1695,7 +1873,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1717,7 +1899,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1735,7 +1921,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1747,7 +1937,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1762,7 +1956,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the model was created.
+     * When the model was created. We follow the XXXX timestamp
+     * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+     * "2006-01-02T15:04:05.999999Z" so you can expect results like
+     *  the following from the API:
+     *  "2017-04-11T21:50:50.223962Z"
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1779,6 +1977,161 @@ private static final long serialVersionUID = 0L;
         createdAt_ = null;
       }
       return createdAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp modifiedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    public boolean hasModifiedAt() {
+      return modifiedAtBuilder_ != null || modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     * @return The modifiedAt.
+     */
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      } else {
+        return modifiedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifiedAt_ = value;
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    public Builder setModifiedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (modifiedAt_ != null) {
+          modifiedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(modifiedAt_).mergeFrom(value).buildPartial();
+        } else {
+          modifiedAt_ = value;
+        }
+        onChanged();
+      } else {
+        modifiedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    public Builder clearModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+        onChanged();
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+      
+      onChanged();
+      return getModifiedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      if (modifiedAtBuilder_ != null) {
+        return modifiedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return modifiedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When was the most recent model version created at
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getModifiedAtFieldBuilder() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getModifiedAt(),
+                getParentForChildren(),
+                isClean());
+        modifiedAt_ = null;
+      }
+      return modifiedAtBuilder_;
     }
 
     private java.lang.Object appId_ = "";
@@ -2971,7 +3324,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -2991,7 +3344,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3012,7 +3365,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3031,7 +3384,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3045,7 +3398,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description about this model
+     * Short description about this model
      * </pre>
      *
      * <code>string description = 16;</code>
@@ -3226,6 +3579,112 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private java.lang.Object notes_ = "";
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString
+        getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      
+      notes_ = getDefaultInstance().getNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes about a model (should support markdown)
+     * This field should be used for in-depth notes about
+     * about a model and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 18;</code>
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notes_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -120,5 +120,15 @@ public interface ListAppsRequestOrBuilder extends
   @java.lang.Deprecated com.google.protobuf.ByteString
       getNameBytes();
 
+  /**
+   * <pre>
+   * If true, we only return workflows that are handpicked by clarifai staff
+   * </pre>
+   *
+   * <code>bool featured_only = 9;</code>
+   * @return The featuredOnly.
+   */
+  boolean getFeaturedOnly();
+
   public com.clarifai.grpc.api.ListAppsRequest.SortByCase getSortByCase();
 }

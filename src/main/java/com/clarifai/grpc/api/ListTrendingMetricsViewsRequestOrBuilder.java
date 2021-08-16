@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface PostTrendingMetricsViewRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.PostTrendingMetricsViewRequest)
+public interface ListTrendingMetricsViewsRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.ListTrendingMetricsViewsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -56,21 +56,23 @@ public interface PostTrendingMetricsViewRequestOrBuilder extends
 
   /**
    * <pre>
-   * ID of the views object.
+   * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+   * Defaults to 1.
    * </pre>
    *
-   * <code>string object_id = 3;</code>
-   * @return The objectId.
+   * <code>uint32 page = 3;</code>
+   * @return The page.
    */
-  java.lang.String getObjectId();
+  int getPage();
+
   /**
    * <pre>
-   * ID of the views object.
+   * (optional URL parameter) The number of results that will be contained in each page. Defaults
+   * to 128.
    * </pre>
    *
-   * <code>string object_id = 3;</code>
-   * @return The bytes for objectId.
+   * <code>uint32 per_page = 4;</code>
+   * @return The perPage.
    */
-  com.google.protobuf.ByteString
-      getObjectIdBytes();
+  int getPerPage();
 }
