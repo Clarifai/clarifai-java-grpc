@@ -100,6 +100,11 @@ private static final long serialVersionUID = 0L;
             query_ = s;
             break;
           }
+          case 72: {
+
+            featuredOnly_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -366,6 +371,20 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FEATURED_ONLY_FIELD_NUMBER = 9;
+  private boolean featuredOnly_;
+  /**
+   * <pre>
+   * If true, we only return workflows that are handpicked by clarifai staff
+   * </pre>
+   *
+   * <code>bool featured_only = 9;</code>
+   * @return The featuredOnly.
+   */
+  public boolean getFeaturedOnly() {
+    return featuredOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -405,6 +424,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getQueryBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, query_);
+    }
+    if (featuredOnly_ != false) {
+      output.writeBool(9, featuredOnly_);
     }
     unknownFields.writeTo(output);
   }
@@ -447,6 +469,10 @@ private static final long serialVersionUID = 0L;
     if (!getQueryBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, query_);
     }
+    if (featuredOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, featuredOnly_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -477,6 +503,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getQuery())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getFeaturedOnly()
+        != other.getFeaturedOnly()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 6:
@@ -516,6 +544,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FEATURED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFeaturedOnly());
     switch (sortByCase_) {
       case 6:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -679,6 +710,8 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      featuredOnly_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -723,6 +756,7 @@ private static final long serialVersionUID = 0L;
       }
       result.query_ = query_;
       result.name_ = name_;
+      result.featuredOnly_ = featuredOnly_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -791,6 +825,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getFeaturedOnly() != false) {
+        setFeaturedOnly(other.getFeaturedOnly());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -1396,6 +1433,48 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean featuredOnly_ ;
+    /**
+     * <pre>
+     * If true, we only return workflows that are handpicked by clarifai staff
+     * </pre>
+     *
+     * <code>bool featured_only = 9;</code>
+     * @return The featuredOnly.
+     */
+    public boolean getFeaturedOnly() {
+      return featuredOnly_;
+    }
+    /**
+     * <pre>
+     * If true, we only return workflows that are handpicked by clarifai staff
+     * </pre>
+     *
+     * <code>bool featured_only = 9;</code>
+     * @param value The featuredOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFeaturedOnly(boolean value) {
+      
+      featuredOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, we only return workflows that are handpicked by clarifai staff
+     * </pre>
+     *
+     * <code>bool featured_only = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFeaturedOnly() {
+      
+      featuredOnly_ = false;
       onChanged();
       return this;
     }

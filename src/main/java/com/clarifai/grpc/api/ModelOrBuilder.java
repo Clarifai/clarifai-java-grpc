@@ -49,7 +49,11 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * When the model was created.
+   * When the model was created. We follow the XXXX timestamp
+   * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+   * "2006-01-02T15:04:05.999999Z" so you can expect results like
+   *  the following from the API:
+   *  "2017-04-11T21:50:50.223962Z"
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -58,7 +62,11 @@ public interface ModelOrBuilder extends
   boolean hasCreatedAt();
   /**
    * <pre>
-   * When the model was created.
+   * When the model was created. We follow the XXXX timestamp
+   * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+   * "2006-01-02T15:04:05.999999Z" so you can expect results like
+   *  the following from the API:
+   *  "2017-04-11T21:50:50.223962Z"
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -67,12 +75,43 @@ public interface ModelOrBuilder extends
   com.google.protobuf.Timestamp getCreatedAt();
   /**
    * <pre>
-   * When the model was created.
+   * When the model was created. We follow the XXXX timestamp
+   * format. We use https://www.ietf.org/rfc/rfc3339.txt format:
+   * "2006-01-02T15:04:05.999999Z" so you can expect results like
+   *  the following from the API:
+   *  "2017-04-11T21:50:50.223962Z"
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <pre>
+   * When was the most recent model version created at
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When was the most recent model version created at
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When was the most recent model version created at
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 19;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
 
   /**
    * <pre>
@@ -301,7 +340,7 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -310,7 +349,7 @@ public interface ModelOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * Description about this model
+   * Short description about this model
    * </pre>
    *
    * <code>string description = 16;</code>
@@ -348,4 +387,28 @@ public interface ModelOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 17;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The notes.
+   */
+  java.lang.String getNotes();
+  /**
+   * <pre>
+   * Notes about a model (should support markdown)
+   * This field should be used for in-depth notes about
+   * about a model and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 18;</code>
+   * @return The bytes for notes.
+   */
+  com.google.protobuf.ByteString
+      getNotesBytes();
 }
