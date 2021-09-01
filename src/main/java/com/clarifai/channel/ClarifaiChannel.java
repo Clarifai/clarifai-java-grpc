@@ -47,11 +47,9 @@ public enum ClarifaiChannel {
 
   public ManagedChannel getInsecureGrpcChannel() {
     marshallerType = MarshallerType.PROTO;
-    // TODO: This can be merged with the above helper function
-    //       if the address gets changed to api.clarifai.com 
     String base = System.getenv("CLARIFAI_GRPC_BASE");
     if (base == null)
-      base = "api-grpc.clarifai.com";
+      base = "api.clarifai.com";
     String port = System.getenv("CLARIFAI_GRPC_PORT");
     if (port == null)
       port = "18080";
