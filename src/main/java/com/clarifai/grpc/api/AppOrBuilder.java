@@ -245,4 +245,24 @@ public interface AppOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 16;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * data tier id this app is using.
+   * </pre>
+   *
+   * <code>string data_tier_id = 18;</code>
+   * @return The dataTierId.
+   */
+  java.lang.String getDataTierId();
+  /**
+   * <pre>
+   * data tier id this app is using.
+   * </pre>
+   *
+   * <code>string data_tier_id = 18;</code>
+   * @return The bytes for dataTierId.
+   */
+  com.google.protobuf.ByteString
+      getDataTierIdBytes();
 }

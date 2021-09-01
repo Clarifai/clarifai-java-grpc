@@ -479,4 +479,48 @@ public interface DataOrBuilder extends
    */
   com.clarifai.grpc.api.TrackOrBuilder getTracksOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.TimeSegment> 
+      getTimeSegmentsList();
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  com.clarifai.grpc.api.TimeSegment getTimeSegments(int index);
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  int getTimeSegmentsCount();
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.TimeSegmentOrBuilder> 
+      getTimeSegmentsOrBuilderList();
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  com.clarifai.grpc.api.TimeSegmentOrBuilder getTimeSegmentsOrBuilder(
+      int index);
 }

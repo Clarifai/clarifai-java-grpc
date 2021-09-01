@@ -52,19 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.clarifai.grpc.api.Color.Builder subBuilder = null;
-            if (color_ != null) {
-              subBuilder = color_.toBuilder();
-            }
-            color_ = input.readMessage(com.clarifai.grpc.api.Color.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(color_);
-              color_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 18: {
             com.clarifai.grpc.api.Image.Builder subBuilder = null;
             if (image_ != null) {
@@ -108,44 +95,6 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Mask_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Mask.class, com.clarifai.grpc.api.Mask.Builder.class);
-  }
-
-  public static final int COLOR_FIELD_NUMBER = 1;
-  private com.clarifai.grpc.api.Color color_;
-  /**
-   * <pre>
-   * The color of the segmentation mask that was created. This is used in visualizing masks next to
-   * each other.
-   * </pre>
-   *
-   * <code>.clarifai.api.Color color = 1;</code>
-   * @return Whether the color field is set.
-   */
-  public boolean hasColor() {
-    return color_ != null;
-  }
-  /**
-   * <pre>
-   * The color of the segmentation mask that was created. This is used in visualizing masks next to
-   * each other.
-   * </pre>
-   *
-   * <code>.clarifai.api.Color color = 1;</code>
-   * @return The color.
-   */
-  public com.clarifai.grpc.api.Color getColor() {
-    return color_ == null ? com.clarifai.grpc.api.Color.getDefaultInstance() : color_;
-  }
-  /**
-   * <pre>
-   * The color of the segmentation mask that was created. This is used in visualizing masks next to
-   * each other.
-   * </pre>
-   *
-   * <code>.clarifai.api.Color color = 1;</code>
-   */
-  public com.clarifai.grpc.api.ColorOrBuilder getColorOrBuilder() {
-    return getColor();
   }
 
   public static final int IMAGE_FIELD_NUMBER = 2;
@@ -197,9 +146,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (color_ != null) {
-      output.writeMessage(1, getColor());
-    }
     if (image_ != null) {
       output.writeMessage(2, getImage());
     }
@@ -212,10 +158,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (color_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getColor());
-    }
     if (image_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getImage());
@@ -235,11 +177,6 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.Mask other = (com.clarifai.grpc.api.Mask) obj;
 
-    if (hasColor() != other.hasColor()) return false;
-    if (hasColor()) {
-      if (!getColor()
-          .equals(other.getColor())) return false;
-    }
     if (hasImage() != other.hasImage()) return false;
     if (hasImage()) {
       if (!getImage()
@@ -256,10 +193,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasColor()) {
-      hash = (37 * hash) + COLOR_FIELD_NUMBER;
-      hash = (53 * hash) + getColor().hashCode();
-    }
     if (hasImage()) {
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
@@ -401,12 +334,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (colorBuilder_ == null) {
-        color_ = null;
-      } else {
-        color_ = null;
-        colorBuilder_ = null;
-      }
       if (imageBuilder_ == null) {
         image_ = null;
       } else {
@@ -439,11 +366,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.Mask buildPartial() {
       com.clarifai.grpc.api.Mask result = new com.clarifai.grpc.api.Mask(this);
-      if (colorBuilder_ == null) {
-        result.color_ = color_;
-      } else {
-        result.color_ = colorBuilder_.build();
-      }
       if (imageBuilder_ == null) {
         result.image_ = image_;
       } else {
@@ -497,9 +419,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.Mask other) {
       if (other == com.clarifai.grpc.api.Mask.getDefaultInstance()) return this;
-      if (other.hasColor()) {
-        mergeColor(other.getColor());
-      }
       if (other.hasImage()) {
         mergeImage(other.getImage());
       }
@@ -530,170 +449,6 @@ private static final long serialVersionUID = 0L;
         }
       }
       return this;
-    }
-
-    private com.clarifai.grpc.api.Color color_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Color, com.clarifai.grpc.api.Color.Builder, com.clarifai.grpc.api.ColorOrBuilder> colorBuilder_;
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     * @return Whether the color field is set.
-     */
-    public boolean hasColor() {
-      return colorBuilder_ != null || color_ != null;
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     * @return The color.
-     */
-    public com.clarifai.grpc.api.Color getColor() {
-      if (colorBuilder_ == null) {
-        return color_ == null ? com.clarifai.grpc.api.Color.getDefaultInstance() : color_;
-      } else {
-        return colorBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    public Builder setColor(com.clarifai.grpc.api.Color value) {
-      if (colorBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        color_ = value;
-        onChanged();
-      } else {
-        colorBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    public Builder setColor(
-        com.clarifai.grpc.api.Color.Builder builderForValue) {
-      if (colorBuilder_ == null) {
-        color_ = builderForValue.build();
-        onChanged();
-      } else {
-        colorBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    public Builder mergeColor(com.clarifai.grpc.api.Color value) {
-      if (colorBuilder_ == null) {
-        if (color_ != null) {
-          color_ =
-            com.clarifai.grpc.api.Color.newBuilder(color_).mergeFrom(value).buildPartial();
-        } else {
-          color_ = value;
-        }
-        onChanged();
-      } else {
-        colorBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    public Builder clearColor() {
-      if (colorBuilder_ == null) {
-        color_ = null;
-        onChanged();
-      } else {
-        color_ = null;
-        colorBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    public com.clarifai.grpc.api.Color.Builder getColorBuilder() {
-      
-      onChanged();
-      return getColorFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    public com.clarifai.grpc.api.ColorOrBuilder getColorOrBuilder() {
-      if (colorBuilder_ != null) {
-        return colorBuilder_.getMessageOrBuilder();
-      } else {
-        return color_ == null ?
-            com.clarifai.grpc.api.Color.getDefaultInstance() : color_;
-      }
-    }
-    /**
-     * <pre>
-     * The color of the segmentation mask that was created. This is used in visualizing masks next to
-     * each other.
-     * </pre>
-     *
-     * <code>.clarifai.api.Color color = 1;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Color, com.clarifai.grpc.api.Color.Builder, com.clarifai.grpc.api.ColorOrBuilder> 
-        getColorFieldBuilder() {
-      if (colorBuilder_ == null) {
-        colorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Color, com.clarifai.grpc.api.Color.Builder, com.clarifai.grpc.api.ColorOrBuilder>(
-                getColor(),
-                getParentForChildren(),
-                isClean());
-        color_ = null;
-      }
-      return colorBuilder_;
     }
 
     private com.clarifai.grpc.api.Image image_;

@@ -85,6 +85,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.clarifai.grpc.api.TimeInfo.Builder subBuilder = null;
+            if (timeInfo_ != null) {
+              subBuilder = timeInfo_.toBuilder();
+            }
+            timeInfo_ = input.readMessage(com.clarifai.grpc.api.TimeInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(timeInfo_);
+              timeInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1358,6 +1371,29 @@ private static final long serialVersionUID = 0L;
     return getTrackInfo();
   }
 
+  public static final int TIME_INFO_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.TimeInfo timeInfo_;
+  /**
+   * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+   * @return Whether the timeInfo field is set.
+   */
+  public boolean hasTimeInfo() {
+    return timeInfo_ != null;
+  }
+  /**
+   * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+   * @return The timeInfo.
+   */
+  public com.clarifai.grpc.api.TimeInfo getTimeInfo() {
+    return timeInfo_ == null ? com.clarifai.grpc.api.TimeInfo.getDefaultInstance() : timeInfo_;
+  }
+  /**
+   * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+   */
+  public com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder() {
+    return getTimeInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1381,6 +1417,9 @@ private static final long serialVersionUID = 0L;
     if (trackInfo_ != null) {
       output.writeMessage(3, getTrackInfo());
     }
+    if (timeInfo_ != null) {
+      output.writeMessage(4, getTimeInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1400,6 +1439,10 @@ private static final long serialVersionUID = 0L;
     if (trackInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getTrackInfo());
+    }
+    if (timeInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getTimeInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1428,6 +1471,11 @@ private static final long serialVersionUID = 0L;
       if (!getTrackInfo()
           .equals(other.getTrackInfo())) return false;
     }
+    if (hasTimeInfo() != other.hasTimeInfo()) return false;
+    if (hasTimeInfo()) {
+      if (!getTimeInfo()
+          .equals(other.getTimeInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1448,6 +1496,10 @@ private static final long serialVersionUID = 0L;
     if (hasTrackInfo()) {
       hash = (37 * hash) + TRACK_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getTrackInfo().hashCode();
+    }
+    if (hasTimeInfo()) {
+      hash = (37 * hash) + TIME_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1600,6 +1652,12 @@ private static final long serialVersionUID = 0L;
         trackInfo_ = null;
         trackInfoBuilder_ = null;
       }
+      if (timeInfoBuilder_ == null) {
+        timeInfo_ = null;
+      } else {
+        timeInfo_ = null;
+        timeInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1636,6 +1694,11 @@ private static final long serialVersionUID = 0L;
         result.trackInfo_ = trackInfo_;
       } else {
         result.trackInfo_ = trackInfoBuilder_.build();
+      }
+      if (timeInfoBuilder_ == null) {
+        result.timeInfo_ = timeInfo_;
+      } else {
+        result.timeInfo_ = timeInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1694,6 +1757,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasTrackInfo()) {
         mergeTrackInfo(other.getTrackInfo());
+      }
+      if (other.hasTimeInfo()) {
+        mergeTimeInfo(other.getTimeInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2137,6 +2203,125 @@ private static final long serialVersionUID = 0L;
         trackInfo_ = null;
       }
       return trackInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.TimeInfo timeInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TimeInfo, com.clarifai.grpc.api.TimeInfo.Builder, com.clarifai.grpc.api.TimeInfoOrBuilder> timeInfoBuilder_;
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     * @return Whether the timeInfo field is set.
+     */
+    public boolean hasTimeInfo() {
+      return timeInfoBuilder_ != null || timeInfo_ != null;
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     * @return The timeInfo.
+     */
+    public com.clarifai.grpc.api.TimeInfo getTimeInfo() {
+      if (timeInfoBuilder_ == null) {
+        return timeInfo_ == null ? com.clarifai.grpc.api.TimeInfo.getDefaultInstance() : timeInfo_;
+      } else {
+        return timeInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    public Builder setTimeInfo(com.clarifai.grpc.api.TimeInfo value) {
+      if (timeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timeInfo_ = value;
+        onChanged();
+      } else {
+        timeInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    public Builder setTimeInfo(
+        com.clarifai.grpc.api.TimeInfo.Builder builderForValue) {
+      if (timeInfoBuilder_ == null) {
+        timeInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        timeInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    public Builder mergeTimeInfo(com.clarifai.grpc.api.TimeInfo value) {
+      if (timeInfoBuilder_ == null) {
+        if (timeInfo_ != null) {
+          timeInfo_ =
+            com.clarifai.grpc.api.TimeInfo.newBuilder(timeInfo_).mergeFrom(value).buildPartial();
+        } else {
+          timeInfo_ = value;
+        }
+        onChanged();
+      } else {
+        timeInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    public Builder clearTimeInfo() {
+      if (timeInfoBuilder_ == null) {
+        timeInfo_ = null;
+        onChanged();
+      } else {
+        timeInfo_ = null;
+        timeInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TimeInfo.Builder getTimeInfoBuilder() {
+      
+      onChanged();
+      return getTimeInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder() {
+      if (timeInfoBuilder_ != null) {
+        return timeInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return timeInfo_ == null ?
+            com.clarifai.grpc.api.TimeInfo.getDefaultInstance() : timeInfo_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.TimeInfo time_info = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TimeInfo, com.clarifai.grpc.api.TimeInfo.Builder, com.clarifai.grpc.api.TimeInfoOrBuilder> 
+        getTimeInfoFieldBuilder() {
+      if (timeInfoBuilder_ == null) {
+        timeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TimeInfo, com.clarifai.grpc.api.TimeInfo.Builder, com.clarifai.grpc.api.TimeInfoOrBuilder>(
+                getTimeInfo(),
+                getParentForChildren(),
+                isClean());
+        timeInfo_ = null;
+      }
+      return timeInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     regions_ = java.util.Collections.emptyList();
     frames_ = java.util.Collections.emptyList();
     tracks_ = java.util.Collections.emptyList();
+    timeSegments_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -203,6 +204,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Track.parser(), extensionRegistry));
             break;
           }
+          case 130: {
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              timeSegments_ = new java.util.ArrayList<com.clarifai.grpc.api.TimeSegment>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            timeSegments_.add(
+                input.readMessage(com.clarifai.grpc.api.TimeSegment.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -238,6 +248,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
         tracks_ = java.util.Collections.unmodifiableList(tracks_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        timeSegments_ = java.util.Collections.unmodifiableList(timeSegments_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -854,6 +867,61 @@ private static final long serialVersionUID = 0L;
     return tracks_.get(index);
   }
 
+  public static final int TIME_SEGMENTS_FIELD_NUMBER = 16;
+  private java.util.List<com.clarifai.grpc.api.TimeSegment> timeSegments_;
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  public java.util.List<com.clarifai.grpc.api.TimeSegment> getTimeSegmentsList() {
+    return timeSegments_;
+  }
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  public java.util.List<? extends com.clarifai.grpc.api.TimeSegmentOrBuilder> 
+      getTimeSegmentsOrBuilderList() {
+    return timeSegments_;
+  }
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  public int getTimeSegmentsCount() {
+    return timeSegments_.size();
+  }
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  public com.clarifai.grpc.api.TimeSegment getTimeSegments(int index) {
+    return timeSegments_.get(index);
+  }
+  /**
+   * <pre>
+   * Time segments information.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+   */
+  public com.clarifai.grpc.api.TimeSegmentOrBuilder getTimeSegmentsOrBuilder(
+      int index) {
+    return timeSegments_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -906,6 +974,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < tracks_.size(); i++) {
       output.writeMessage(15, tracks_.get(i));
+    }
+    for (int i = 0; i < timeSegments_.size(); i++) {
+      output.writeMessage(16, timeSegments_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -968,6 +1039,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, tracks_.get(i));
     }
+    for (int i = 0; i < timeSegments_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, timeSegments_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1027,6 +1102,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTracksList()
         .equals(other.getTracksList())) return false;
+    if (!getTimeSegmentsList()
+        .equals(other.getTimeSegmentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1089,6 +1166,10 @@ private static final long serialVersionUID = 0L;
     if (getTracksCount() > 0) {
       hash = (37 * hash) + TRACKS_FIELD_NUMBER;
       hash = (53 * hash) + getTracksList().hashCode();
+    }
+    if (getTimeSegmentsCount() > 0) {
+      hash = (37 * hash) + TIME_SEGMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeSegmentsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1231,6 +1312,7 @@ private static final long serialVersionUID = 0L;
         getRegionsFieldBuilder();
         getFramesFieldBuilder();
         getTracksFieldBuilder();
+        getTimeSegmentsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1313,6 +1395,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         tracksBuilder_.clear();
+      }
+      if (timeSegmentsBuilder_ == null) {
+        timeSegments_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        timeSegmentsBuilder_.clear();
       }
       return this;
     }
@@ -1433,6 +1521,15 @@ private static final long serialVersionUID = 0L;
         result.tracks_ = tracks_;
       } else {
         result.tracks_ = tracksBuilder_.build();
+      }
+      if (timeSegmentsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          timeSegments_ = java.util.Collections.unmodifiableList(timeSegments_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.timeSegments_ = timeSegments_;
+      } else {
+        result.timeSegments_ = timeSegmentsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1679,6 +1776,32 @@ private static final long serialVersionUID = 0L;
                  getTracksFieldBuilder() : null;
           } else {
             tracksBuilder_.addAllMessages(other.tracks_);
+          }
+        }
+      }
+      if (timeSegmentsBuilder_ == null) {
+        if (!other.timeSegments_.isEmpty()) {
+          if (timeSegments_.isEmpty()) {
+            timeSegments_ = other.timeSegments_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureTimeSegmentsIsMutable();
+            timeSegments_.addAll(other.timeSegments_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.timeSegments_.isEmpty()) {
+          if (timeSegmentsBuilder_.isEmpty()) {
+            timeSegmentsBuilder_.dispose();
+            timeSegmentsBuilder_ = null;
+            timeSegments_ = other.timeSegments_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            timeSegmentsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTimeSegmentsFieldBuilder() : null;
+          } else {
+            timeSegmentsBuilder_.addAllMessages(other.timeSegments_);
           }
         }
       }
@@ -4833,6 +4956,318 @@ private static final long serialVersionUID = 0L;
         tracks_ = null;
       }
       return tracksBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.TimeSegment> timeSegments_ =
+      java.util.Collections.emptyList();
+    private void ensureTimeSegmentsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        timeSegments_ = new java.util.ArrayList<com.clarifai.grpc.api.TimeSegment>(timeSegments_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.TimeSegment, com.clarifai.grpc.api.TimeSegment.Builder, com.clarifai.grpc.api.TimeSegmentOrBuilder> timeSegmentsBuilder_;
+
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.TimeSegment> getTimeSegmentsList() {
+      if (timeSegmentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(timeSegments_);
+      } else {
+        return timeSegmentsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public int getTimeSegmentsCount() {
+      if (timeSegmentsBuilder_ == null) {
+        return timeSegments_.size();
+      } else {
+        return timeSegmentsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public com.clarifai.grpc.api.TimeSegment getTimeSegments(int index) {
+      if (timeSegmentsBuilder_ == null) {
+        return timeSegments_.get(index);
+      } else {
+        return timeSegmentsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder setTimeSegments(
+        int index, com.clarifai.grpc.api.TimeSegment value) {
+      if (timeSegmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.set(index, value);
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder setTimeSegments(
+        int index, com.clarifai.grpc.api.TimeSegment.Builder builderForValue) {
+      if (timeSegmentsBuilder_ == null) {
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder addTimeSegments(com.clarifai.grpc.api.TimeSegment value) {
+      if (timeSegmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.add(value);
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder addTimeSegments(
+        int index, com.clarifai.grpc.api.TimeSegment value) {
+      if (timeSegmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.add(index, value);
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder addTimeSegments(
+        com.clarifai.grpc.api.TimeSegment.Builder builderForValue) {
+      if (timeSegmentsBuilder_ == null) {
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.add(builderForValue.build());
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder addTimeSegments(
+        int index, com.clarifai.grpc.api.TimeSegment.Builder builderForValue) {
+      if (timeSegmentsBuilder_ == null) {
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder addAllTimeSegments(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.TimeSegment> values) {
+      if (timeSegmentsBuilder_ == null) {
+        ensureTimeSegmentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, timeSegments_);
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder clearTimeSegments() {
+      if (timeSegmentsBuilder_ == null) {
+        timeSegments_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public Builder removeTimeSegments(int index) {
+      if (timeSegmentsBuilder_ == null) {
+        ensureTimeSegmentsIsMutable();
+        timeSegments_.remove(index);
+        onChanged();
+      } else {
+        timeSegmentsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public com.clarifai.grpc.api.TimeSegment.Builder getTimeSegmentsBuilder(
+        int index) {
+      return getTimeSegmentsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public com.clarifai.grpc.api.TimeSegmentOrBuilder getTimeSegmentsOrBuilder(
+        int index) {
+      if (timeSegmentsBuilder_ == null) {
+        return timeSegments_.get(index);  } else {
+        return timeSegmentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.TimeSegmentOrBuilder> 
+         getTimeSegmentsOrBuilderList() {
+      if (timeSegmentsBuilder_ != null) {
+        return timeSegmentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(timeSegments_);
+      }
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public com.clarifai.grpc.api.TimeSegment.Builder addTimeSegmentsBuilder() {
+      return getTimeSegmentsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.TimeSegment.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public com.clarifai.grpc.api.TimeSegment.Builder addTimeSegmentsBuilder(
+        int index) {
+      return getTimeSegmentsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.TimeSegment.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Time segments information.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.TimeSegment.Builder> 
+         getTimeSegmentsBuilderList() {
+      return getTimeSegmentsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.TimeSegment, com.clarifai.grpc.api.TimeSegment.Builder, com.clarifai.grpc.api.TimeSegmentOrBuilder> 
+        getTimeSegmentsFieldBuilder() {
+      if (timeSegmentsBuilder_ == null) {
+        timeSegmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.TimeSegment, com.clarifai.grpc.api.TimeSegment.Builder, com.clarifai.grpc.api.TimeSegmentOrBuilder>(
+                timeSegments_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        timeSegments_ = null;
+      }
+      return timeSegmentsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

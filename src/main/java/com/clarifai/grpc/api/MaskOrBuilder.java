@@ -9,36 +9,6 @@ public interface MaskOrBuilder extends
 
   /**
    * <pre>
-   * The color of the segmentation mask that was created. This is used in visualizing masks next to
-   * each other.
-   * </pre>
-   *
-   * <code>.clarifai.api.Color color = 1;</code>
-   * @return Whether the color field is set.
-   */
-  boolean hasColor();
-  /**
-   * <pre>
-   * The color of the segmentation mask that was created. This is used in visualizing masks next to
-   * each other.
-   * </pre>
-   *
-   * <code>.clarifai.api.Color color = 1;</code>
-   * @return The color.
-   */
-  com.clarifai.grpc.api.Color getColor();
-  /**
-   * <pre>
-   * The color of the segmentation mask that was created. This is used in visualizing masks next to
-   * each other.
-   * </pre>
-   *
-   * <code>.clarifai.api.Color color = 1;</code>
-   */
-  com.clarifai.grpc.api.ColorOrBuilder getColorOrBuilder();
-
-  /**
-   * <pre>
    * The image of the mask in a non-raster format.
    * </pre>
    *
