@@ -57,7 +57,7 @@ public enum ClarifaiChannel {
       port = "18080";
     
     return NettyChannelBuilder
-        .forAddress(base, port)
+        .forAddress(base, Integer.parseInt(port))
         .usePlaintext()
         .build();
   }
