@@ -41,6 +41,8 @@ private static final long serialVersionUID = 0L;
     modelTypeId_ = "";
     description_ = "";
     notes_ = "";
+    toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -63,6 +65,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -225,6 +228,34 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              toolkits_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            toolkits_.add(s);
+            break;
+          }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              useCases_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            useCases_.add(s);
+            break;
+          }
+          case 176: {
+
+            isStarred_ = input.readBool();
+            break;
+          }
+          case 184: {
+
+            starCount_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -240,6 +271,12 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        toolkits_ = toolkits_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        useCases_ = useCases_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -918,6 +955,138 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TOOLKITS_FIELD_NUMBER = 20;
+  private com.google.protobuf.LazyStringList toolkits_;
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the toolkits.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getToolkitsList() {
+    return toolkits_;
+  }
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of toolkits.
+   */
+  public int getToolkitsCount() {
+    return toolkits_.size();
+  }
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The toolkits at the given index.
+   */
+  public java.lang.String getToolkits(int index) {
+    return toolkits_.get(index);
+  }
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the toolkits at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getToolkitsBytes(int index) {
+    return toolkits_.getByteString(index);
+  }
+
+  public static final int USE_CASES_FIELD_NUMBER = 21;
+  private com.google.protobuf.LazyStringList useCases_;
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the useCases.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getUseCasesList() {
+    return useCases_;
+  }
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of useCases.
+   */
+  public int getUseCasesCount() {
+    return useCases_.size();
+  }
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  public java.lang.String getUseCases(int index) {
+    return useCases_.get(index);
+  }
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the useCases at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getUseCasesBytes(int index) {
+    return useCases_.getByteString(index);
+  }
+
+  public static final int IS_STARRED_FIELD_NUMBER = 22;
+  private boolean isStarred_;
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+   * </pre>
+   *
+   * <code>bool is_starred = 22;</code>
+   * @return The isStarred.
+   */
+  public boolean getIsStarred() {
+    return isStarred_;
+  }
+
+  public static final int STAR_COUNT_FIELD_NUMBER = 23;
+  private int starCount_;
+  /**
+   * <pre>
+   * How many users have starred the model (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 23;</code>
+   * @return The starCount.
+   */
+  public int getStarCount() {
+    return starCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -979,6 +1148,18 @@ private static final long serialVersionUID = 0L;
     }
     if (modifiedAt_ != null) {
       output.writeMessage(19, getModifiedAt());
+    }
+    for (int i = 0; i < toolkits_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, toolkits_.getRaw(i));
+    }
+    for (int i = 0; i < useCases_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, useCases_.getRaw(i));
+    }
+    if (isStarred_ != false) {
+      output.writeBool(22, isStarred_);
+    }
+    if (starCount_ != 0) {
+      output.writeInt32(23, starCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -1044,6 +1225,30 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getModifiedAt());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < toolkits_.size(); i++) {
+        dataSize += computeStringSizeNoTag(toolkits_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getToolkitsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < useCases_.size(); i++) {
+        dataSize += computeStringSizeNoTag(useCases_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getUseCasesList().size();
+    }
+    if (isStarred_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(22, isStarred_);
+    }
+    if (starCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(23, starCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1116,6 +1321,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNotes()
         .equals(other.getNotes())) return false;
+    if (!getToolkitsList()
+        .equals(other.getToolkitsList())) return false;
+    if (!getUseCasesList()
+        .equals(other.getUseCasesList())) return false;
+    if (getIsStarred()
+        != other.getIsStarred()) return false;
+    if (getStarCount()
+        != other.getStarCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1175,6 +1388,19 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NOTES_FIELD_NUMBER;
     hash = (53 * hash) + getNotes().hashCode();
+    if (getToolkitsCount() > 0) {
+      hash = (37 * hash) + TOOLKITS_FIELD_NUMBER;
+      hash = (53 * hash) + getToolkitsList().hashCode();
+    }
+    if (getUseCasesCount() > 0) {
+      hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
+      hash = (53 * hash) + getUseCasesList().hashCode();
+    }
+    hash = (37 * hash) + IS_STARRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsStarred());
+    hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getStarCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1389,6 +1615,14 @@ private static final long serialVersionUID = 0L;
       }
       notes_ = "";
 
+      toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      isStarred_ = false;
+
+      starCount_ = 0;
+
       return this;
     }
 
@@ -1415,6 +1649,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.Model buildPartial() {
       com.clarifai.grpc.api.Model result = new com.clarifai.grpc.api.Model(this);
+      int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.name_ = name_;
       if (createdAtBuilder_ == null) {
@@ -1463,6 +1698,18 @@ private static final long serialVersionUID = 0L;
         result.metadata_ = metadataBuilder_.build();
       }
       result.notes_ = notes_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        toolkits_ = toolkits_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.toolkits_ = toolkits_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        useCases_ = useCases_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.useCases_ = useCases_;
+      result.isStarred_ = isStarred_;
+      result.starCount_ = starCount_;
       onBuilt();
       return result;
     }
@@ -1567,6 +1814,32 @@ private static final long serialVersionUID = 0L;
         notes_ = other.notes_;
         onChanged();
       }
+      if (!other.toolkits_.isEmpty()) {
+        if (toolkits_.isEmpty()) {
+          toolkits_ = other.toolkits_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureToolkitsIsMutable();
+          toolkits_.addAll(other.toolkits_);
+        }
+        onChanged();
+      }
+      if (!other.useCases_.isEmpty()) {
+        if (useCases_.isEmpty()) {
+          useCases_ = other.useCases_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureUseCasesIsMutable();
+          useCases_.addAll(other.useCases_);
+        }
+        onChanged();
+      }
+      if (other.getIsStarred() != false) {
+        setIsStarred(other.getIsStarred());
+      }
+      if (other.getStarCount() != 0) {
+        setStarCount(other.getStarCount());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1595,6 +1868,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -3683,6 +3957,388 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       notes_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureToolkitsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        toolkits_ = new com.google.protobuf.LazyStringArrayList(toolkits_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the toolkits.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getToolkitsList() {
+      return toolkits_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of toolkits.
+     */
+    public int getToolkitsCount() {
+      return toolkits_.size();
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The toolkits at the given index.
+     */
+    public java.lang.String getToolkits(int index) {
+      return toolkits_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the toolkits at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getToolkitsBytes(int index) {
+      return toolkits_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The toolkits to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToolkits(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureToolkitsIsMutable();
+      toolkits_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The toolkits to add.
+     * @return This builder for chaining.
+     */
+    public Builder addToolkits(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureToolkitsIsMutable();
+      toolkits_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The toolkits to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllToolkits(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureToolkitsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, toolkits_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearToolkits() {
+      toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from toolkits category
+     * </pre>
+     *
+     * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes of the toolkits to add.
+     * @return This builder for chaining.
+     */
+    public Builder addToolkitsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureToolkitsIsMutable();
+      toolkits_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureUseCasesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        useCases_ = new com.google.protobuf.LazyStringArrayList(useCases_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the useCases.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUseCasesList() {
+      return useCases_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of useCases.
+     */
+    public int getUseCasesCount() {
+      return useCases_.size();
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The useCases at the given index.
+     */
+    public java.lang.String getUseCases(int index) {
+      return useCases_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the useCases at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getUseCasesBytes(int index) {
+      return useCases_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The useCases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseCases(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseCasesIsMutable();
+      useCases_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCases(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseCasesIsMutable();
+      useCases_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUseCases(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureUseCasesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, useCases_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUseCases() {
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes of the useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCasesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureUseCasesIsMutable();
+      useCases_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean isStarred_ ;
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     * </pre>
+     *
+     * <code>bool is_starred = 22;</code>
+     * @return The isStarred.
+     */
+    public boolean getIsStarred() {
+      return isStarred_;
+    }
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     * </pre>
+     *
+     * <code>bool is_starred = 22;</code>
+     * @param value The isStarred to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsStarred(boolean value) {
+      
+      isStarred_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+     * </pre>
+     *
+     * <code>bool is_starred = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsStarred() {
+      
+      isStarred_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int starCount_ ;
+    /**
+     * <pre>
+     * How many users have starred the model (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 23;</code>
+     * @return The starCount.
+     */
+    public int getStarCount() {
+      return starCount_;
+    }
+    /**
+     * <pre>
+     * How many users have starred the model (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 23;</code>
+     * @param value The starCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarCount(int value) {
+      
+      starCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * How many users have starred the model (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarCount() {
+      
+      starCount_ = 0;
       onChanged();
       return this;
     }

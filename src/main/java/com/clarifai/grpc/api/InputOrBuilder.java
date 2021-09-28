@@ -149,4 +149,49 @@ public interface InputOrBuilder extends
    * <code>.clarifai.api.status.Status status = 6;</code>
    */
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @return A list containing the datasetIds.
+   */
+  java.util.List<java.lang.String>
+      getDatasetIdsList();
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @return The count of datasetIds.
+   */
+  int getDatasetIdsCount();
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @param index The index of the element to return.
+   * @return The datasetIds at the given index.
+   */
+  java.lang.String getDatasetIds(int index);
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the datasetIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDatasetIdsBytes(int index);
 }

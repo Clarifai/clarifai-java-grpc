@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
   }
   private Input() {
     id_ = "";
+    datasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -45,6 +46,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -113,6 +115,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              datasetIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            datasetIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +139,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        datasetIds_ = datasetIds_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -344,6 +358,61 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
+  public static final int DATASET_IDS_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList datasetIds_;
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @return A list containing the datasetIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDatasetIdsList() {
+    return datasetIds_;
+  }
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @return The count of datasetIds.
+   */
+  public int getDatasetIdsCount() {
+    return datasetIds_.size();
+  }
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @param index The index of the element to return.
+   * @return The datasetIds at the given index.
+   */
+  public java.lang.String getDatasetIds(int index) {
+    return datasetIds_.get(index);
+  }
+  /**
+   * <pre>
+   * List of dataset IDs that this input is part of
+   * Currently, this field is ONLY used in search.
+   * </pre>
+   *
+   * <code>repeated string dataset_ids = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the datasetIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDatasetIdsBytes(int index) {
+    return datasetIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -373,6 +442,9 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(6, getStatus());
     }
+    for (int i = 0; i < datasetIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, datasetIds_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -400,6 +472,14 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getStatus());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < datasetIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(datasetIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDatasetIdsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -438,6 +518,8 @@ private static final long serialVersionUID = 0L;
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
+    if (!getDatasetIdsList()
+        .equals(other.getDatasetIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -466,6 +548,10 @@ private static final long serialVersionUID = 0L;
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+    }
+    if (getDatasetIdsCount() > 0) {
+      hash = (37 * hash) + DATASET_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getDatasetIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -632,6 +718,8 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
+      datasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -658,6 +746,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.Input buildPartial() {
       com.clarifai.grpc.api.Input result = new com.clarifai.grpc.api.Input(this);
+      int from_bitField0_ = bitField0_;
       result.id_ = id_;
       if (dataBuilder_ == null) {
         result.data_ = data_;
@@ -679,6 +768,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.status_ = statusBuilder_.build();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        datasetIds_ = datasetIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.datasetIds_ = datasetIds_;
       onBuilt();
       return result;
     }
@@ -743,6 +837,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
+      if (!other.datasetIds_.isEmpty()) {
+        if (datasetIds_.isEmpty()) {
+          datasetIds_ = other.datasetIds_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureDatasetIdsIsMutable();
+          datasetIds_.addAll(other.datasetIds_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -771,6 +875,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -1531,6 +1636,161 @@ private static final long serialVersionUID = 0L;
         status_ = null;
       }
       return statusBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList datasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureDatasetIdsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        datasetIds_ = new com.google.protobuf.LazyStringArrayList(datasetIds_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @return A list containing the datasetIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDatasetIdsList() {
+      return datasetIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @return The count of datasetIds.
+     */
+    public int getDatasetIdsCount() {
+      return datasetIds_.size();
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @param index The index of the element to return.
+     * @return The datasetIds at the given index.
+     */
+    public java.lang.String getDatasetIds(int index) {
+      return datasetIds_.get(index);
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the datasetIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDatasetIdsBytes(int index) {
+      return datasetIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The datasetIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatasetIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDatasetIdsIsMutable();
+      datasetIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @param value The datasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDatasetIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDatasetIdsIsMutable();
+      datasetIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @param values The datasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDatasetIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDatasetIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, datasetIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDatasetIds() {
+      datasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of dataset IDs that this input is part of
+     * Currently, this field is ONLY used in search.
+     * </pre>
+     *
+     * <code>repeated string dataset_ids = 7;</code>
+     * @param value The bytes of the datasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDatasetIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureDatasetIdsIsMutable();
+      datasetIds_.add(value);
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -282,5 +282,128 @@ public interface ListModelsRequestOrBuilder extends
    */
   boolean getFeaturedOnly();
 
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @return A list containing the toolkits.
+   */
+  java.util.List<java.lang.String>
+      getToolkitsList();
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @return The count of toolkits.
+   */
+  int getToolkitsCount();
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @param index The index of the element to return.
+   * @return The toolkits at the given index.
+   */
+  java.lang.String getToolkits(int index);
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the toolkits at the given index.
+   */
+  com.google.protobuf.ByteString
+      getToolkitsBytes(int index);
+
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @return A list containing the useCases.
+   */
+  java.util.List<java.lang.String>
+      getUseCasesList();
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @return The count of useCases.
+   */
+  int getUseCasesCount();
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  java.lang.String getUseCases(int index);
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the useCases at the given index.
+   */
+  com.google.protobuf.ByteString
+      getUseCasesBytes(int index);
+
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
+
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

@@ -24,6 +24,8 @@ private static final long serialVersionUID = 0L;
     primaryEmail_ = "";
     billType_ = "";
     emailAddresses_ = java.util.Collections.emptyList();
+    country_ = "";
+    state_ = "";
   }
 
   @java.lang.Override
@@ -143,6 +145,18 @@ private static final long serialVersionUID = 0L;
           case 80: {
 
             teamsCount_ = input.readUInt32();
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            country_ = s;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            state_ = s;
             break;
           }
           default: {
@@ -424,6 +438,78 @@ private static final long serialVersionUID = 0L;
     return teamsCount_;
   }
 
+  public static final int COUNTRY_FIELD_NUMBER = 11;
+  private volatile java.lang.Object country_;
+  /**
+   * <code>string country = 11;</code>
+   * @return The country.
+   */
+  public java.lang.String getCountry() {
+    java.lang.Object ref = country_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      country_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string country = 11;</code>
+   * @return The bytes for country.
+   */
+  public com.google.protobuf.ByteString
+      getCountryBytes() {
+    java.lang.Object ref = country_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      country_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATE_FIELD_NUMBER = 12;
+  private volatile java.lang.Object state_;
+  /**
+   * <code>string state = 12;</code>
+   * @return The state.
+   */
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string state = 12;</code>
+   * @return The bytes for state.
+   */
+  public com.google.protobuf.ByteString
+      getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -467,6 +553,12 @@ private static final long serialVersionUID = 0L;
     }
     if (teamsCount_ != 0) {
       output.writeUInt32(10, teamsCount_);
+    }
+    if (!getCountryBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, country_);
+    }
+    if (!getStateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, state_);
     }
     unknownFields.writeTo(output);
   }
@@ -515,6 +607,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(10, teamsCount_);
     }
+    if (!getCountryBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, country_);
+    }
+    if (!getStateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, state_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -562,6 +660,10 @@ private static final long serialVersionUID = 0L;
         != other.getTwoFactorAuthEnabled()) return false;
     if (getTeamsCount()
         != other.getTeamsCount()) return false;
+    if (!getCountry()
+        .equals(other.getCountry())) return false;
+    if (!getState()
+        .equals(other.getState())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -605,6 +707,10 @@ private static final long serialVersionUID = 0L;
         getTwoFactorAuthEnabled());
     hash = (37 * hash) + TEAMS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTeamsCount();
+    hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+    hash = (53 * hash) + getCountry().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + getState().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -784,6 +890,10 @@ private static final long serialVersionUID = 0L;
 
       teamsCount_ = 0;
 
+      country_ = "";
+
+      state_ = "";
+
       return this;
     }
 
@@ -845,6 +955,8 @@ private static final long serialVersionUID = 0L;
       result.isOrgAdmin_ = isOrgAdmin_;
       result.twoFactorAuthEnabled_ = twoFactorAuthEnabled_;
       result.teamsCount_ = teamsCount_;
+      result.country_ = country_;
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -947,6 +1059,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTeamsCount() != 0) {
         setTeamsCount(other.getTeamsCount());
+      }
+      if (!other.getCountry().isEmpty()) {
+        country_ = other.country_;
+        onChanged();
+      }
+      if (!other.getState().isEmpty()) {
+        state_ = other.state_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1977,6 +2097,158 @@ private static final long serialVersionUID = 0L;
     public Builder clearTeamsCount() {
       
       teamsCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object country_ = "";
+    /**
+     * <code>string country = 11;</code>
+     * @return The country.
+     */
+    public java.lang.String getCountry() {
+      java.lang.Object ref = country_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        country_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string country = 11;</code>
+     * @return The bytes for country.
+     */
+    public com.google.protobuf.ByteString
+        getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        country_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string country = 11;</code>
+     * @param value The country to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCountry(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      country_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string country = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCountry() {
+      
+      country_ = getDefaultInstance().getCountry();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string country = 11;</code>
+     * @param value The bytes for country to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCountryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      country_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object state_ = "";
+    /**
+     * <code>string state = 12;</code>
+     * @return The state.
+     */
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string state = 12;</code>
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString
+        getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string state = 12;</code>
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string state = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      
+      state_ = getDefaultInstance().getState();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string state = 12;</code>
+     * @param value The bytes for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      state_ = value;
       onChanged();
       return this;
     }

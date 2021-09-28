@@ -271,4 +271,26 @@ public interface WorkflowOrBuilder extends
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
    */
   com.clarifai.grpc.api.WorkflowVersionOrBuilder getVersionOrBuilder();
+
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostWorkflowStars/DeleteWorkflowStars endpoints to star/unstar a workflow
+   * </pre>
+   *
+   * <code>bool is_starred = 10;</code>
+   * @return The isStarred.
+   */
+  boolean getIsStarred();
+
+  /**
+   * <pre>
+   * How many users have starred the workflow (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 11;</code>
+   * @return The starCount.
+   */
+  int getStarCount();
 }

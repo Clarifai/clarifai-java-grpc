@@ -4,32 +4,25 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/app.proto
- * //////////////////////////////////////////////////////////////////////////////
- * </pre>
- *
- * Protobuf type {@code clarifai.api.GetAppRequest}
+ * Protobuf type {@code clarifai.api.MyScopesUserRequest}
  */
-public  final class GetAppRequest extends
+public  final class MyScopesUserRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetAppRequest)
-    GetAppRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.MyScopesUserRequest)
+    MyScopesUserRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetAppRequest.newBuilder() to construct.
-  private GetAppRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MyScopesUserRequest.newBuilder() to construct.
+  private MyScopesUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetAppRequest() {
-    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  private MyScopesUserRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetAppRequest();
+    return new MyScopesUserRequest();
   }
 
   @java.lang.Override
@@ -37,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetAppRequest(
+  private MyScopesUserRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -45,7 +38,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,15 +61,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              additionalFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            additionalFields_.add(s);
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -93,24 +76,21 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        additionalFields_ = additionalFields_.getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetAppRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MyScopesUserRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetAppRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MyScopesUserRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetAppRequest.class, com.clarifai.grpc.api.GetAppRequest.Builder.class);
+            com.clarifai.grpc.api.MyScopesUserRequest.class, com.clarifai.grpc.api.MyScopesUserRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -136,57 +116,6 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList additionalFields_;
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 2;</code>
-   * @return A list containing the additionalFields.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getAdditionalFieldsList() {
-    return additionalFields_;
-  }
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 2;</code>
-   * @return The count of additionalFields.
-   */
-  public int getAdditionalFieldsCount() {
-    return additionalFields_.size();
-  }
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 2;</code>
-   * @param index The index of the element to return.
-   * @return The additionalFields at the given index.
-   */
-  public java.lang.String getAdditionalFields(int index) {
-    return additionalFields_.get(index);
-  }
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 2;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the additionalFields at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getAdditionalFieldsBytes(int index) {
-    return additionalFields_.getByteString(index);
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -204,9 +133,6 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    for (int i = 0; i < additionalFields_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, additionalFields_.getRaw(i));
-    }
     unknownFields.writeTo(output);
   }
 
@@ -220,14 +146,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < additionalFields_.size(); i++) {
-        dataSize += computeStringSizeNoTag(additionalFields_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getAdditionalFieldsList().size();
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -238,18 +156,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetAppRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.MyScopesUserRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetAppRequest other = (com.clarifai.grpc.api.GetAppRequest) obj;
+    com.clarifai.grpc.api.MyScopesUserRequest other = (com.clarifai.grpc.api.MyScopesUserRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getAdditionalFieldsList()
-        .equals(other.getAdditionalFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -265,78 +181,74 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (getAdditionalFieldsCount() > 0) {
-      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetAppRequest parseFrom(
+  public static com.clarifai.grpc.api.MyScopesUserRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -349,7 +261,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetAppRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.MyScopesUserRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -365,32 +277,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Requests / Responses from /proto/clarifai/api/app.proto
-   * //////////////////////////////////////////////////////////////////////////////
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.GetAppRequest}
+   * Protobuf type {@code clarifai.api.MyScopesUserRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetAppRequest)
-      com.clarifai.grpc.api.GetAppRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.MyScopesUserRequest)
+      com.clarifai.grpc.api.MyScopesUserRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetAppRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MyScopesUserRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetAppRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MyScopesUserRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetAppRequest.class, com.clarifai.grpc.api.GetAppRequest.Builder.class);
+              com.clarifai.grpc.api.MyScopesUserRequest.class, com.clarifai.grpc.api.MyScopesUserRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetAppRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.MyScopesUserRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -414,25 +320,23 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetAppRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MyScopesUserRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetAppRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetAppRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.MyScopesUserRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.MyScopesUserRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetAppRequest build() {
-      com.clarifai.grpc.api.GetAppRequest result = buildPartial();
+    public com.clarifai.grpc.api.MyScopesUserRequest build() {
+      com.clarifai.grpc.api.MyScopesUserRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -440,19 +344,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetAppRequest buildPartial() {
-      com.clarifai.grpc.api.GetAppRequest result = new com.clarifai.grpc.api.GetAppRequest(this);
-      int from_bitField0_ = bitField0_;
+    public com.clarifai.grpc.api.MyScopesUserRequest buildPartial() {
+      com.clarifai.grpc.api.MyScopesUserRequest result = new com.clarifai.grpc.api.MyScopesUserRequest(this);
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        additionalFields_ = additionalFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.additionalFields_ = additionalFields_;
       onBuilt();
       return result;
     }
@@ -491,28 +389,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetAppRequest) {
-        return mergeFrom((com.clarifai.grpc.api.GetAppRequest)other);
+      if (other instanceof com.clarifai.grpc.api.MyScopesUserRequest) {
+        return mergeFrom((com.clarifai.grpc.api.MyScopesUserRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetAppRequest other) {
-      if (other == com.clarifai.grpc.api.GetAppRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.MyScopesUserRequest other) {
+      if (other == com.clarifai.grpc.api.MyScopesUserRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
-      }
-      if (!other.additionalFields_.isEmpty()) {
-        if (additionalFields_.isEmpty()) {
-          additionalFields_ = other.additionalFields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureAdditionalFieldsIsMutable();
-          additionalFields_.addAll(other.additionalFields_);
-        }
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -529,11 +417,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetAppRequest parsedMessage = null;
+      com.clarifai.grpc.api.MyScopesUserRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetAppRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.MyScopesUserRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -542,7 +430,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -662,152 +549,6 @@ private static final long serialVersionUID = 0L;
       }
       return userAppIdBuilder_;
     }
-
-    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureAdditionalFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @return A list containing the additionalFields.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getAdditionalFieldsList() {
-      return additionalFields_.getUnmodifiableView();
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @return The count of additionalFields.
-     */
-    public int getAdditionalFieldsCount() {
-      return additionalFields_.size();
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @param index The index of the element to return.
-     * @return The additionalFields at the given index.
-     */
-    public java.lang.String getAdditionalFields(int index) {
-      return additionalFields_.get(index);
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the additionalFields at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getAdditionalFieldsBytes(int index) {
-      return additionalFields_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @param index The index to set the value at.
-     * @param value The additionalFields to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdditionalFields(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAdditionalFieldsIsMutable();
-      additionalFields_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @param value The additionalFields to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAdditionalFields(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAdditionalFieldsIsMutable();
-      additionalFields_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @param values The additionalFields to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllAdditionalFields(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureAdditionalFieldsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, additionalFields_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAdditionalFields() {
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 2;</code>
-     * @param value The bytes of the additionalFields to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAdditionalFieldsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureAdditionalFieldsIsMutable();
-      additionalFields_.add(value);
-      onChanged();
-      return this;
-    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -821,41 +562,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetAppRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.MyScopesUserRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetAppRequest)
-  private static final com.clarifai.grpc.api.GetAppRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.MyScopesUserRequest)
+  private static final com.clarifai.grpc.api.MyScopesUserRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetAppRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.MyScopesUserRequest();
   }
 
-  public static com.clarifai.grpc.api.GetAppRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.MyScopesUserRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetAppRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetAppRequest>() {
+  private static final com.google.protobuf.Parser<MyScopesUserRequest>
+      PARSER = new com.google.protobuf.AbstractParser<MyScopesUserRequest>() {
     @java.lang.Override
-    public GetAppRequest parsePartialFrom(
+    public MyScopesUserRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetAppRequest(input, extensionRegistry);
+      return new MyScopesUserRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetAppRequest> parser() {
+  public static com.google.protobuf.Parser<MyScopesUserRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetAppRequest> getParserForType() {
+  public com.google.protobuf.Parser<MyScopesUserRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetAppRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.MyScopesUserRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

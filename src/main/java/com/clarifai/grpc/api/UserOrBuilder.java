@@ -261,6 +261,28 @@ public interface UserOrBuilder extends
 
   /**
    * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+   * </pre>
+   *
+   * <code>bool is_starred = 21;</code>
+   * @return The isStarred.
+   */
+  boolean getIsStarred();
+
+  /**
+   * <pre>
+   * How many users have starred the user (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 22;</code>
+   * @return The starCount.
+   */
+  int getStarCount();
+
+  /**
+   * <pre>
    * The visibility field represents whether this message is privately/publicly visible.
    * To be visible to the public the App that contains it AND the User that contains the App must
    * also be publicly visible.

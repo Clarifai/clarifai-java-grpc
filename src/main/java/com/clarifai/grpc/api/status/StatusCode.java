@@ -953,6 +953,10 @@ public enum StatusCode
    */
   RPC_UNKNOWN_METHOD(40036),
   /**
+   * <code>REQUEST_CANCELED_BY_USER = 40037;</code>
+   */
+  REQUEST_CANCELED_BY_USER(40037),
+  /**
    * <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
    */
   CLUSTER_INTERNAL_FAILURE(43040),
@@ -1407,24 +1411,65 @@ public enum StatusCode
   MAINTENANCE_FAILED(63001),
   /**
    * <pre>
+   * Datasets 64xxx
+   * The dataset version is pending to be processed.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_PENDING = 64005;</code>
+   */
+  DATASET_VERSION_PENDING(64005),
+  /**
+   * <pre>
+   * The dataset version is currently being processed.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_IN_PROGRESS = 64010;</code>
+   */
+  DATASET_VERSION_IN_PROGRESS(64010),
+  /**
+   * <pre>
+   * The dataset version is ready to be used.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_READY = 64015;</code>
+   */
+  DATASET_VERSION_READY(64015),
+  /**
+   * <pre>
+   * An error occurred during the dataset version processing.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_FAILURE = 64020;</code>
+   */
+  DATASET_VERSION_FAILURE(64020),
+  /**
+   * <pre>
+   * An unexpected error occurred during the dataset version processing.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_UNEXPECTED_ERROR = 64025;</code>
+   */
+  DATASET_VERSION_UNEXPECTED_ERROR(64025),
+  /**
+   * <pre>
    * Generic Job status codes
    * </pre>
    *
-   * <code>JOB_QUEUED = 6400;</code>
+   * <code>JOB_QUEUED = 64000;</code>
    */
-  JOB_QUEUED(6400),
+  JOB_QUEUED(64000),
   /**
-   * <code>JOB_RUNNING = 6401;</code>
+   * <code>JOB_RUNNING = 64001;</code>
    */
-  JOB_RUNNING(6401),
+  JOB_RUNNING(64001),
   /**
-   * <code>JOB_COMPLETED = 6402;</code>
+   * <code>JOB_COMPLETED = 64002;</code>
    */
-  JOB_COMPLETED(6402),
+  JOB_COMPLETED(64002),
   /**
-   * <code>JOB_FAILED = 6403;</code>
+   * <code>JOB_FAILED = 64003;</code>
    */
-  JOB_FAILED(6403),
+  JOB_FAILED(64003),
   /**
    * <pre>
    *auth issues
@@ -2474,6 +2519,10 @@ public enum StatusCode
    */
   public static final int RPC_UNKNOWN_METHOD_VALUE = 40036;
   /**
+   * <code>REQUEST_CANCELED_BY_USER = 40037;</code>
+   */
+  public static final int REQUEST_CANCELED_BY_USER_VALUE = 40037;
+  /**
    * <code>CLUSTER_INTERNAL_FAILURE = 43040;</code>
    */
   public static final int CLUSTER_INTERNAL_FAILURE_VALUE = 43040;
@@ -2928,24 +2977,65 @@ public enum StatusCode
   public static final int MAINTENANCE_FAILED_VALUE = 63001;
   /**
    * <pre>
+   * Datasets 64xxx
+   * The dataset version is pending to be processed.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_PENDING = 64005;</code>
+   */
+  public static final int DATASET_VERSION_PENDING_VALUE = 64005;
+  /**
+   * <pre>
+   * The dataset version is currently being processed.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_IN_PROGRESS = 64010;</code>
+   */
+  public static final int DATASET_VERSION_IN_PROGRESS_VALUE = 64010;
+  /**
+   * <pre>
+   * The dataset version is ready to be used.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_READY = 64015;</code>
+   */
+  public static final int DATASET_VERSION_READY_VALUE = 64015;
+  /**
+   * <pre>
+   * An error occurred during the dataset version processing.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_FAILURE = 64020;</code>
+   */
+  public static final int DATASET_VERSION_FAILURE_VALUE = 64020;
+  /**
+   * <pre>
+   * An unexpected error occurred during the dataset version processing.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_UNEXPECTED_ERROR = 64025;</code>
+   */
+  public static final int DATASET_VERSION_UNEXPECTED_ERROR_VALUE = 64025;
+  /**
+   * <pre>
    * Generic Job status codes
    * </pre>
    *
-   * <code>JOB_QUEUED = 6400;</code>
+   * <code>JOB_QUEUED = 64000;</code>
    */
-  public static final int JOB_QUEUED_VALUE = 6400;
+  public static final int JOB_QUEUED_VALUE = 64000;
   /**
-   * <code>JOB_RUNNING = 6401;</code>
+   * <code>JOB_RUNNING = 64001;</code>
    */
-  public static final int JOB_RUNNING_VALUE = 6401;
+  public static final int JOB_RUNNING_VALUE = 64001;
   /**
-   * <code>JOB_COMPLETED = 6402;</code>
+   * <code>JOB_COMPLETED = 64002;</code>
    */
-  public static final int JOB_COMPLETED_VALUE = 6402;
+  public static final int JOB_COMPLETED_VALUE = 64002;
   /**
-   * <code>JOB_FAILED = 6403;</code>
+   * <code>JOB_FAILED = 64003;</code>
    */
-  public static final int JOB_FAILED_VALUE = 6403;
+  public static final int JOB_FAILED_VALUE = 64003;
   /**
    * <pre>
    *auth issues
@@ -3251,6 +3341,7 @@ public enum StatusCode
       case 40033: return RPC_MAX_MESSAGE_SIZE_EXCEEDED;
       case 40035: return RPC_CANCELED;
       case 40036: return RPC_UNKNOWN_METHOD;
+      case 40037: return REQUEST_CANCELED_BY_USER;
       case 43040: return CLUSTER_INTERNAL_FAILURE;
       case 40034: return EXTERNAL_CONNECTION_ERROR;
       case 41000: return QUEUE_CONN_ERROR;
@@ -3337,10 +3428,15 @@ public enum StatusCode
       case 62002: return FEATUREFLAG_BLOCKED;
       case 63000: return MAINTENANCE_SUCCESS;
       case 63001: return MAINTENANCE_FAILED;
-      case 6400: return JOB_QUEUED;
-      case 6401: return JOB_RUNNING;
-      case 6402: return JOB_COMPLETED;
-      case 6403: return JOB_FAILED;
+      case 64005: return DATASET_VERSION_PENDING;
+      case 64010: return DATASET_VERSION_IN_PROGRESS;
+      case 64015: return DATASET_VERSION_READY;
+      case 64020: return DATASET_VERSION_FAILURE;
+      case 64025: return DATASET_VERSION_UNEXPECTED_ERROR;
+      case 64000: return JOB_QUEUED;
+      case 64001: return JOB_RUNNING;
+      case 64002: return JOB_COMPLETED;
+      case 64003: return JOB_FAILED;
       case 65000: return AUTH_MISSING_IDP_ASSOC;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;

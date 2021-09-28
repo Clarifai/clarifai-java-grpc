@@ -227,6 +227,16 @@ private static final long serialVersionUID = 0L;
             jobRole_ = s;
             break;
           }
+          case 168: {
+
+            isStarred_ = input.readBool();
+            break;
+          }
+          case 176: {
+
+            starCount_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -769,6 +779,36 @@ private static final long serialVersionUID = 0L;
     return teamsCount_;
   }
 
+  public static final int IS_STARRED_FIELD_NUMBER = 21;
+  private boolean isStarred_;
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+   * </pre>
+   *
+   * <code>bool is_starred = 21;</code>
+   * @return The isStarred.
+   */
+  public boolean getIsStarred() {
+    return isStarred_;
+  }
+
+  public static final int STAR_COUNT_FIELD_NUMBER = 22;
+  private int starCount_;
+  /**
+   * <pre>
+   * How many users have starred the user (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 22;</code>
+   * @return The starCount.
+   */
+  public int getStarCount() {
+    return starCount_;
+  }
+
   public static final int VISIBILITY_FIELD_NUMBER = 17;
   private com.clarifai.grpc.api.Visibility visibility_;
   /**
@@ -922,6 +962,12 @@ private static final long serialVersionUID = 0L;
     if (!getJobRoleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, jobRole_);
     }
+    if (isStarred_ != false) {
+      output.writeBool(21, isStarred_);
+    }
+    if (starCount_ != 0) {
+      output.writeInt32(22, starCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -999,6 +1045,14 @@ private static final long serialVersionUID = 0L;
     if (!getJobRoleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, jobRole_);
     }
+    if (isStarred_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(21, isStarred_);
+    }
+    if (starCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(22, starCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1063,6 +1117,10 @@ private static final long serialVersionUID = 0L;
         != other.getTwoFactorAuthEnabled()) return false;
     if (getTeamsCount()
         != other.getTeamsCount()) return false;
+    if (getIsStarred()
+        != other.getIsStarred()) return false;
+    if (getStarCount()
+        != other.getStarCount()) return false;
     if (hasVisibility() != other.hasVisibility()) return false;
     if (hasVisibility()) {
       if (!getVisibility()
@@ -1132,6 +1190,11 @@ private static final long serialVersionUID = 0L;
         getTwoFactorAuthEnabled());
     hash = (37 * hash) + TEAMS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTeamsCount();
+    hash = (37 * hash) + IS_STARRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsStarred());
+    hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getStarCount();
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
@@ -1338,6 +1401,10 @@ private static final long serialVersionUID = 0L;
 
       teamsCount_ = 0;
 
+      isStarred_ = false;
+
+      starCount_ = 0;
+
       if (visibilityBuilder_ == null) {
         visibility_ = null;
       } else {
@@ -1422,6 +1489,8 @@ private static final long serialVersionUID = 0L;
       result.isOrgAdmin_ = isOrgAdmin_;
       result.twoFactorAuthEnabled_ = twoFactorAuthEnabled_;
       result.teamsCount_ = teamsCount_;
+      result.isStarred_ = isStarred_;
+      result.starCount_ = starCount_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
       } else {
@@ -1561,6 +1630,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTeamsCount() != 0) {
         setTeamsCount(other.getTeamsCount());
+      }
+      if (other.getIsStarred() != false) {
+        setIsStarred(other.getIsStarred());
+      }
+      if (other.getStarCount() != 0) {
+        setStarCount(other.getStarCount());
       }
       if (other.hasVisibility()) {
         mergeVisibility(other.getVisibility());
@@ -3244,6 +3319,96 @@ private static final long serialVersionUID = 0L;
     @java.lang.Deprecated public Builder clearTeamsCount() {
       
       teamsCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isStarred_ ;
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     * </pre>
+     *
+     * <code>bool is_starred = 21;</code>
+     * @return The isStarred.
+     */
+    public boolean getIsStarred() {
+      return isStarred_;
+    }
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     * </pre>
+     *
+     * <code>bool is_starred = 21;</code>
+     * @param value The isStarred to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsStarred(boolean value) {
+      
+      isStarred_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostUserStars/DeleteUserStars endpoints to star/unstar an user
+     * </pre>
+     *
+     * <code>bool is_starred = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsStarred() {
+      
+      isStarred_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int starCount_ ;
+    /**
+     * <pre>
+     * How many users have starred the user (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 22;</code>
+     * @return The starCount.
+     */
+    public int getStarCount() {
+      return starCount_;
+    }
+    /**
+     * <pre>
+     * How many users have starred the user (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 22;</code>
+     * @param value The starCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarCount(int value) {
+      
+      starCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * How many users have starred the user (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarCount() {
+      
+      starCount_ = 0;
       onChanged();
       return this;
     }

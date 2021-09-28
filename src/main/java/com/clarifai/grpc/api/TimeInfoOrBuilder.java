@@ -22,52 +22,18 @@ public interface TimeInfoOrBuilder extends
    * Timestamp where track begins.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-   * @return Whether the beginTime field is set.
-   */
-  boolean hasBeginTime();
-  /**
-   * <pre>
-   * Timestamp where track begins.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp begin_time = 2;</code>
+   * <code>uint32 begin_time = 2;</code>
    * @return The beginTime.
    */
-  com.google.protobuf.Timestamp getBeginTime();
-  /**
-   * <pre>
-   * Timestamp where track begins.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getBeginTimeOrBuilder();
+  int getBeginTime();
 
   /**
    * <pre>
    * Timestamp where track ends.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 3;</code>
-   * @return Whether the endTime field is set.
-   */
-  boolean hasEndTime();
-  /**
-   * <pre>
-   * Timestamp where track ends.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp end_time = 3;</code>
+   * <code>uint32 end_time = 3;</code>
    * @return The endTime.
    */
-  com.google.protobuf.Timestamp getEndTime();
-  /**
-   * <pre>
-   * Timestamp where track ends.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp end_time = 3;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+  int getEndTime();
 }
