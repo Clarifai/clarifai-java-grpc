@@ -1546,6 +1546,68 @@ public final class V2Grpc {
     return getListModelVersionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsPublishRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostModelVersionsPublishMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostModelVersionsPublish",
+      requestType = com.clarifai.grpc.api.PostModelVersionsPublishRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsPublishRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPostModelVersionsPublishMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsPublishRequest, com.clarifai.grpc.api.status.BaseResponse> getPostModelVersionsPublishMethod;
+    if ((getPostModelVersionsPublishMethod = V2Grpc.getPostModelVersionsPublishMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostModelVersionsPublishMethod = V2Grpc.getPostModelVersionsPublishMethod) == null) {
+          V2Grpc.getPostModelVersionsPublishMethod = getPostModelVersionsPublishMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostModelVersionsPublishRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModelVersionsPublish"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostModelVersionsPublishRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModelVersionsPublish"))
+              .build();
+        }
+      }
+    }
+    return getPostModelVersionsPublishMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteModelVersionsUnPublishMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteModelVersionsUnPublish",
+      requestType = com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteModelVersionsUnPublishMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteModelVersionsUnPublishMethod;
+    if ((getDeleteModelVersionsUnPublishMethod = V2Grpc.getDeleteModelVersionsUnPublishMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteModelVersionsUnPublishMethod = V2Grpc.getDeleteModelVersionsUnPublishMethod) == null) {
+          V2Grpc.getDeleteModelVersionsUnPublishMethod = getDeleteModelVersionsUnPublishMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModelVersionsUnPublish"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteModelVersionsUnPublish"))
+              .build();
+        }
+      }
+    }
+    return getDeleteModelVersionsUnPublishMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsRequest,
       com.clarifai.grpc.api.SingleModelResponse> getPostModelVersionsMethod;
 
@@ -2381,6 +2443,68 @@ public final class V2Grpc {
       }
     }
     return getMyScopesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesUserRequest,
+      com.clarifai.grpc.api.MultiScopeUserResponse> getMyScopesUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MyScopesUser",
+      requestType = com.clarifai.grpc.api.MyScopesUserRequest.class,
+      responseType = com.clarifai.grpc.api.MultiScopeUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesUserRequest,
+      com.clarifai.grpc.api.MultiScopeUserResponse> getMyScopesUserMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesUserRequest, com.clarifai.grpc.api.MultiScopeUserResponse> getMyScopesUserMethod;
+    if ((getMyScopesUserMethod = V2Grpc.getMyScopesUserMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getMyScopesUserMethod = V2Grpc.getMyScopesUserMethod) == null) {
+          V2Grpc.getMyScopesUserMethod = getMyScopesUserMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.MyScopesUserRequest, com.clarifai.grpc.api.MultiScopeUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MyScopesUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MyScopesUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiScopeUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("MyScopesUser"))
+              .build();
+        }
+      }
+    }
+    return getMyScopesUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesRootRequest,
+      com.clarifai.grpc.api.MultiScopeRootResponse> getMyScopesRootMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MyScopesRoot",
+      requestType = com.clarifai.grpc.api.MyScopesRootRequest.class,
+      responseType = com.clarifai.grpc.api.MultiScopeRootResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesRootRequest,
+      com.clarifai.grpc.api.MultiScopeRootResponse> getMyScopesRootMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.MyScopesRootRequest, com.clarifai.grpc.api.MultiScopeRootResponse> getMyScopesRootMethod;
+    if ((getMyScopesRootMethod = V2Grpc.getMyScopesRootMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getMyScopesRootMethod = V2Grpc.getMyScopesRootMethod) == null) {
+          V2Grpc.getMyScopesRootMethod = getMyScopesRootMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.MyScopesRootRequest, com.clarifai.grpc.api.MultiScopeRootResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MyScopesRoot"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MyScopesRootRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiScopeRootResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("MyScopesRoot"))
+              .build();
+        }
+      }
+    }
+    return getMyScopesRootMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListScopesRequest,
@@ -4268,6 +4392,20 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public void postModelVersionsPublish(com.clarifai.grpc.api.PostModelVersionsPublishRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostModelVersionsPublishMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteModelVersionsUnPublish(com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteModelVersionsUnPublishMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * Create a new model version to trigger training of the model.
      * FIXME(zeiler): this should have been a plural response.
@@ -4528,6 +4666,20 @@ public final class V2Grpc {
     public void myScopes(com.clarifai.grpc.api.MyScopesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getMyScopesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void myScopesUser(com.clarifai.grpc.api.MyScopesUserRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeUserResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getMyScopesUserMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void myScopesRoot(com.clarifai.grpc.api.MyScopesRootRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeRootResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getMyScopesRootMethod(), responseObserver);
     }
 
     /**
@@ -5308,6 +5460,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiModelVersionResponse>(
                   this, METHODID_LIST_MODEL_VERSIONS)))
           .addMethod(
+            getPostModelVersionsPublishMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostModelVersionsPublishRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_POST_MODEL_VERSIONS_PUBLISH)))
+          .addMethod(
+            getDeleteModelVersionsUnPublishMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_MODEL_VERSIONS_UN_PUBLISH)))
+          .addMethod(
             getPostModelVersionsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
@@ -5496,6 +5662,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MyScopesRequest,
                 com.clarifai.grpc.api.MultiScopeResponse>(
                   this, METHODID_MY_SCOPES)))
+          .addMethod(
+            getMyScopesUserMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.MyScopesUserRequest,
+                com.clarifai.grpc.api.MultiScopeUserResponse>(
+                  this, METHODID_MY_SCOPES_USER)))
+          .addMethod(
+            getMyScopesRootMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.MyScopesRootRequest,
+                com.clarifai.grpc.api.MultiScopeRootResponse>(
+                  this, METHODID_MY_SCOPES_ROOT)))
           .addMethod(
             getListScopesMethod(),
             asyncUnaryCall(
@@ -6368,6 +6548,22 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public void postModelVersionsPublish(com.clarifai.grpc.api.PostModelVersionsPublishRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostModelVersionsPublishMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteModelVersionsUnPublish(com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteModelVersionsUnPublishMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * Create a new model version to trigger training of the model.
      * FIXME(zeiler): this should have been a plural response.
@@ -6655,6 +6851,22 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getMyScopesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void myScopesUser(com.clarifai.grpc.api.MyScopesUserRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeUserResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getMyScopesUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void myScopesRoot(com.clarifai.grpc.api.MyScopesRootRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeRootResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getMyScopesRootMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -7651,6 +7863,20 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public com.clarifai.grpc.api.status.BaseResponse postModelVersionsPublish(com.clarifai.grpc.api.PostModelVersionsPublishRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostModelVersionsPublishMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteModelVersionsUnPublish(com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteModelVersionsUnPublishMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * Create a new model version to trigger training of the model.
      * FIXME(zeiler): this should have been a plural response.
@@ -7911,6 +8137,20 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiScopeResponse myScopes(com.clarifai.grpc.api.MyScopesRequest request) {
       return blockingUnaryCall(
           getChannel(), getMyScopesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiScopeUserResponse myScopesUser(com.clarifai.grpc.api.MyScopesUserRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getMyScopesUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiScopeRootResponse myScopesRoot(com.clarifai.grpc.api.MyScopesRootRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getMyScopesRootMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8913,6 +9153,22 @@ public final class V2Grpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postModelVersionsPublish(
+        com.clarifai.grpc.api.PostModelVersionsPublishRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostModelVersionsPublishMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteModelVersionsUnPublish(
+        com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteModelVersionsUnPublishMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * Create a new model version to trigger training of the model.
      * FIXME(zeiler): this should have been a plural response.
@@ -9200,6 +9456,22 @@ public final class V2Grpc {
         com.clarifai.grpc.api.MyScopesRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getMyScopesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiScopeUserResponse> myScopesUser(
+        com.clarifai.grpc.api.MyScopesUserRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getMyScopesUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiScopeRootResponse> myScopesRoot(
+        com.clarifai.grpc.api.MyScopesRootRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getMyScopesRootMethod(), getCallOptions()), request);
     }
 
     /**
@@ -9727,76 +9999,80 @@ public final class V2Grpc {
   private static final int METHODID_LIST_MODEL_INPUTS = 46;
   private static final int METHODID_GET_MODEL_VERSION = 47;
   private static final int METHODID_LIST_MODEL_VERSIONS = 48;
-  private static final int METHODID_POST_MODEL_VERSIONS = 49;
-  private static final int METHODID_PATCH_MODEL_VERSIONS = 50;
-  private static final int METHODID_DELETE_MODEL_VERSION = 51;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 52;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 53;
-  private static final int METHODID_LIST_MODEL_REFERENCES = 54;
-  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 55;
-  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 56;
-  private static final int METHODID_GET_WORKFLOW = 57;
-  private static final int METHODID_LIST_WORKFLOWS = 58;
-  private static final int METHODID_POST_WORKFLOWS = 59;
-  private static final int METHODID_PATCH_WORKFLOWS = 60;
-  private static final int METHODID_DELETE_WORKFLOW = 61;
-  private static final int METHODID_DELETE_WORKFLOWS = 62;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 63;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 64;
-  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 65;
-  private static final int METHODID_GET_WORKFLOW_VERSION = 66;
-  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 67;
-  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 68;
-  private static final int METHODID_GET_KEY = 69;
-  private static final int METHODID_LIST_KEYS = 70;
-  private static final int METHODID_LIST_APP_KEYS = 71;
-  private static final int METHODID_DELETE_KEY = 72;
-  private static final int METHODID_POST_KEYS = 73;
-  private static final int METHODID_PATCH_KEYS = 74;
-  private static final int METHODID_MY_SCOPES = 75;
-  private static final int METHODID_LIST_SCOPES = 76;
-  private static final int METHODID_GET_APP = 77;
-  private static final int METHODID_LIST_APPS = 78;
-  private static final int METHODID_DELETE_APP = 79;
-  private static final int METHODID_POST_APPS = 80;
-  private static final int METHODID_PATCH_APPS = 81;
-  private static final int METHODID_POST_APPS_SEARCHES = 82;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 83;
-  private static final int METHODID_GET_SEARCH = 84;
-  private static final int METHODID_LIST_SEARCHES = 85;
-  private static final int METHODID_POST_SEARCHES = 86;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 87;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 88;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 89;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 90;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 91;
-  private static final int METHODID_DELETE_SEARCH = 92;
-  private static final int METHODID_LIST_STATUS_CODES = 93;
-  private static final int METHODID_GET_STATUS_CODE = 94;
-  private static final int METHODID_LIST_COLLABORATORS = 95;
-  private static final int METHODID_POST_COLLABORATORS = 96;
-  private static final int METHODID_PATCH_COLLABORATORS = 97;
-  private static final int METHODID_DELETE_COLLABORATORS = 98;
-  private static final int METHODID_LIST_COLLABORATIONS = 99;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 100;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 101;
-  private static final int METHODID_GET_APP_DUPLICATION = 102;
-  private static final int METHODID_POST_TASKS = 103;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 104;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 105;
-  private static final int METHODID_GET_TASK = 106;
-  private static final int METHODID_LIST_TASKS = 107;
-  private static final int METHODID_PATCH_TASKS = 108;
-  private static final int METHODID_DELETE_TASKS = 109;
-  private static final int METHODID_POST_COLLECTORS = 110;
-  private static final int METHODID_GET_COLLECTOR = 111;
-  private static final int METHODID_LIST_COLLECTORS = 112;
-  private static final int METHODID_PATCH_COLLECTORS = 113;
-  private static final int METHODID_DELETE_COLLECTORS = 114;
-  private static final int METHODID_POST_STAT_VALUES = 115;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 116;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 117;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 118;
+  private static final int METHODID_POST_MODEL_VERSIONS_PUBLISH = 49;
+  private static final int METHODID_DELETE_MODEL_VERSIONS_UN_PUBLISH = 50;
+  private static final int METHODID_POST_MODEL_VERSIONS = 51;
+  private static final int METHODID_PATCH_MODEL_VERSIONS = 52;
+  private static final int METHODID_DELETE_MODEL_VERSION = 53;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 54;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 55;
+  private static final int METHODID_LIST_MODEL_REFERENCES = 56;
+  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 57;
+  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 58;
+  private static final int METHODID_GET_WORKFLOW = 59;
+  private static final int METHODID_LIST_WORKFLOWS = 60;
+  private static final int METHODID_POST_WORKFLOWS = 61;
+  private static final int METHODID_PATCH_WORKFLOWS = 62;
+  private static final int METHODID_DELETE_WORKFLOW = 63;
+  private static final int METHODID_DELETE_WORKFLOWS = 64;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 65;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 66;
+  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 67;
+  private static final int METHODID_GET_WORKFLOW_VERSION = 68;
+  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 69;
+  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 70;
+  private static final int METHODID_GET_KEY = 71;
+  private static final int METHODID_LIST_KEYS = 72;
+  private static final int METHODID_LIST_APP_KEYS = 73;
+  private static final int METHODID_DELETE_KEY = 74;
+  private static final int METHODID_POST_KEYS = 75;
+  private static final int METHODID_PATCH_KEYS = 76;
+  private static final int METHODID_MY_SCOPES = 77;
+  private static final int METHODID_MY_SCOPES_USER = 78;
+  private static final int METHODID_MY_SCOPES_ROOT = 79;
+  private static final int METHODID_LIST_SCOPES = 80;
+  private static final int METHODID_GET_APP = 81;
+  private static final int METHODID_LIST_APPS = 82;
+  private static final int METHODID_DELETE_APP = 83;
+  private static final int METHODID_POST_APPS = 84;
+  private static final int METHODID_PATCH_APPS = 85;
+  private static final int METHODID_POST_APPS_SEARCHES = 86;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 87;
+  private static final int METHODID_GET_SEARCH = 88;
+  private static final int METHODID_LIST_SEARCHES = 89;
+  private static final int METHODID_POST_SEARCHES = 90;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 91;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 92;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 93;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 94;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 95;
+  private static final int METHODID_DELETE_SEARCH = 96;
+  private static final int METHODID_LIST_STATUS_CODES = 97;
+  private static final int METHODID_GET_STATUS_CODE = 98;
+  private static final int METHODID_LIST_COLLABORATORS = 99;
+  private static final int METHODID_POST_COLLABORATORS = 100;
+  private static final int METHODID_PATCH_COLLABORATORS = 101;
+  private static final int METHODID_DELETE_COLLABORATORS = 102;
+  private static final int METHODID_LIST_COLLABORATIONS = 103;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 104;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 105;
+  private static final int METHODID_GET_APP_DUPLICATION = 106;
+  private static final int METHODID_POST_TASKS = 107;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 108;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 109;
+  private static final int METHODID_GET_TASK = 110;
+  private static final int METHODID_LIST_TASKS = 111;
+  private static final int METHODID_PATCH_TASKS = 112;
+  private static final int METHODID_DELETE_TASKS = 113;
+  private static final int METHODID_POST_COLLECTORS = 114;
+  private static final int METHODID_GET_COLLECTOR = 115;
+  private static final int METHODID_LIST_COLLECTORS = 116;
+  private static final int METHODID_PATCH_COLLECTORS = 117;
+  private static final int METHODID_DELETE_COLLECTORS = 118;
+  private static final int METHODID_POST_STAT_VALUES = 119;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 120;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 121;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 122;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10011,6 +10287,14 @@ public final class V2Grpc {
           serviceImpl.listModelVersions((com.clarifai.grpc.api.ListModelVersionsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelVersionResponse>) responseObserver);
           break;
+        case METHODID_POST_MODEL_VERSIONS_PUBLISH:
+          serviceImpl.postModelVersionsPublish((com.clarifai.grpc.api.PostModelVersionsPublishRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_MODEL_VERSIONS_UN_PUBLISH:
+          serviceImpl.deleteModelVersionsUnPublish((com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         case METHODID_POST_MODEL_VERSIONS:
           serviceImpl.postModelVersions((com.clarifai.grpc.api.PostModelVersionsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelResponse>) responseObserver);
@@ -10118,6 +10402,14 @@ public final class V2Grpc {
         case METHODID_MY_SCOPES:
           serviceImpl.myScopes((com.clarifai.grpc.api.MyScopesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeResponse>) responseObserver);
+          break;
+        case METHODID_MY_SCOPES_USER:
+          serviceImpl.myScopesUser((com.clarifai.grpc.api.MyScopesUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeUserResponse>) responseObserver);
+          break;
+        case METHODID_MY_SCOPES_ROOT:
+          serviceImpl.myScopesRoot((com.clarifai.grpc.api.MyScopesRootRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiScopeRootResponse>) responseObserver);
           break;
         case METHODID_LIST_SCOPES:
           serviceImpl.listScopes((com.clarifai.grpc.api.ListScopesRequest) request,
@@ -10401,6 +10693,8 @@ public final class V2Grpc {
               .addMethod(getListModelInputsMethod())
               .addMethod(getGetModelVersionMethod())
               .addMethod(getListModelVersionsMethod())
+              .addMethod(getPostModelVersionsPublishMethod())
+              .addMethod(getDeleteModelVersionsUnPublishMethod())
               .addMethod(getPostModelVersionsMethod())
               .addMethod(getPatchModelVersionsMethod())
               .addMethod(getDeleteModelVersionMethod())
@@ -10428,6 +10722,8 @@ public final class V2Grpc {
               .addMethod(getPostKeysMethod())
               .addMethod(getPatchKeysMethod())
               .addMethod(getMyScopesMethod())
+              .addMethod(getMyScopesUserMethod())
+              .addMethod(getMyScopesRootMethod())
               .addMethod(getListScopesMethod())
               .addMethod(getGetAppMethod())
               .addMethod(getListAppsMethod())

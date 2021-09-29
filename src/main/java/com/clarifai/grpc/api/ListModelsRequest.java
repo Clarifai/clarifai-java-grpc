@@ -22,6 +22,9 @@ private static final long serialVersionUID = 0L;
     inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     license_ = "";
+    toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -150,6 +153,33 @@ private static final long serialVersionUID = 0L;
             featuredOnly_ = input.readBool();
             break;
           }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              toolkits_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            toolkits_.add(s);
+            break;
+          }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              useCases_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            useCases_.add(s);
+            break;
+          }
+          case 154: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              additionalFields_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            additionalFields_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -170,6 +200,15 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         outputFields_ = outputFields_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        toolkits_ = toolkits_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        useCases_ = useCases_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -668,6 +707,159 @@ private static final long serialVersionUID = 0L;
     return featuredOnly_;
   }
 
+  public static final int TOOLKITS_FIELD_NUMBER = 17;
+  private com.google.protobuf.LazyStringList toolkits_;
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @return A list containing the toolkits.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getToolkitsList() {
+    return toolkits_;
+  }
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @return The count of toolkits.
+   */
+  public int getToolkitsCount() {
+    return toolkits_.size();
+  }
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @param index The index of the element to return.
+   * @return The toolkits at the given index.
+   */
+  public java.lang.String getToolkits(int index) {
+    return toolkits_.get(index);
+  }
+  /**
+   * <pre>
+   * List of toolkit tags to filter by
+   * </pre>
+   *
+   * <code>repeated string toolkits = 17;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the toolkits at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getToolkitsBytes(int index) {
+    return toolkits_.getByteString(index);
+  }
+
+  public static final int USE_CASES_FIELD_NUMBER = 18;
+  private com.google.protobuf.LazyStringList useCases_;
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @return A list containing the useCases.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getUseCasesList() {
+    return useCases_;
+  }
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @return The count of useCases.
+   */
+  public int getUseCasesCount() {
+    return useCases_.size();
+  }
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  public java.lang.String getUseCases(int index) {
+    return useCases_.get(index);
+  }
+  /**
+   * <pre>
+   * List of use_case tags to filter by
+   * </pre>
+   *
+   * <code>repeated string use_cases = 18;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the useCases at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getUseCasesBytes(int index) {
+    return useCases_.getByteString(index);
+  }
+
+  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 19;
+  private com.google.protobuf.LazyStringList additionalFields_;
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return A list containing the additionalFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAdditionalFieldsList() {
+    return additionalFields_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return The count of additionalFields.
+   */
+  public int getAdditionalFieldsCount() {
+    return additionalFields_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  public java.lang.String getAdditionalFields(int index) {
+    return additionalFields_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index) {
+    return additionalFields_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -729,6 +921,15 @@ private static final long serialVersionUID = 0L;
     }
     if (featuredOnly_ != false) {
       output.writeBool(16, featuredOnly_);
+    }
+    for (int i = 0; i < toolkits_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, toolkits_.getRaw(i));
+    }
+    for (int i = 0; i < useCases_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, useCases_.getRaw(i));
+    }
+    for (int i = 0; i < additionalFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, additionalFields_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -806,6 +1007,30 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(16, featuredOnly_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < toolkits_.size(); i++) {
+        dataSize += computeStringSizeNoTag(toolkits_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getToolkitsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < useCases_.size(); i++) {
+        dataSize += computeStringSizeNoTag(useCases_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getUseCasesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAdditionalFieldsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -848,6 +1073,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLicense())) return false;
     if (getFeaturedOnly()
         != other.getFeaturedOnly()) return false;
+    if (!getToolkitsList()
+        .equals(other.getToolkitsList())) return false;
+    if (!getUseCasesList()
+        .equals(other.getUseCasesList())) return false;
+    if (!getAdditionalFieldsList()
+        .equals(other.getAdditionalFieldsList())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -909,6 +1140,18 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FEATURED_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFeaturedOnly());
+    if (getToolkitsCount() > 0) {
+      hash = (37 * hash) + TOOLKITS_FIELD_NUMBER;
+      hash = (53 * hash) + getToolkitsList().hashCode();
+    }
+    if (getUseCasesCount() > 0) {
+      hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
+      hash = (53 * hash) + getUseCasesList().hashCode();
+    }
+    if (getAdditionalFieldsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -1089,6 +1332,12 @@ private static final long serialVersionUID = 0L;
 
       featuredOnly_ = false;
 
+      toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -1151,6 +1400,21 @@ private static final long serialVersionUID = 0L;
       result.outputFields_ = outputFields_;
       result.license_ = license_;
       result.featuredOnly_ = featuredOnly_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        toolkits_ = toolkits_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.toolkits_ = toolkits_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        useCases_ = useCases_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.useCases_ = useCases_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.additionalFields_ = additionalFields_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1253,6 +1517,36 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFeaturedOnly() != false) {
         setFeaturedOnly(other.getFeaturedOnly());
+      }
+      if (!other.toolkits_.isEmpty()) {
+        if (toolkits_.isEmpty()) {
+          toolkits_ = other.toolkits_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureToolkitsIsMutable();
+          toolkits_.addAll(other.toolkits_);
+        }
+        onChanged();
+      }
+      if (!other.useCases_.isEmpty()) {
+        if (useCases_.isEmpty()) {
+          useCases_ = other.useCases_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureUseCasesIsMutable();
+          useCases_.addAll(other.useCases_);
+        }
+        onChanged();
+      }
+      if (!other.additionalFields_.isEmpty()) {
+        if (additionalFields_.isEmpty()) {
+          additionalFields_ = other.additionalFields_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureAdditionalFieldsIsMutable();
+          additionalFields_.addAll(other.additionalFields_);
+        }
+        onChanged();
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -2500,6 +2794,444 @@ private static final long serialVersionUID = 0L;
     public Builder clearFeaturedOnly() {
       
       featuredOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureToolkitsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        toolkits_ = new com.google.protobuf.LazyStringArrayList(toolkits_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @return A list containing the toolkits.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getToolkitsList() {
+      return toolkits_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @return The count of toolkits.
+     */
+    public int getToolkitsCount() {
+      return toolkits_.size();
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @param index The index of the element to return.
+     * @return The toolkits at the given index.
+     */
+    public java.lang.String getToolkits(int index) {
+      return toolkits_.get(index);
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the toolkits at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getToolkitsBytes(int index) {
+      return toolkits_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @param index The index to set the value at.
+     * @param value The toolkits to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToolkits(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureToolkitsIsMutable();
+      toolkits_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @param value The toolkits to add.
+     * @return This builder for chaining.
+     */
+    public Builder addToolkits(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureToolkitsIsMutable();
+      toolkits_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @param values The toolkits to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllToolkits(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureToolkitsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, toolkits_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearToolkits() {
+      toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of toolkit tags to filter by
+     * </pre>
+     *
+     * <code>repeated string toolkits = 17;</code>
+     * @param value The bytes of the toolkits to add.
+     * @return This builder for chaining.
+     */
+    public Builder addToolkitsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureToolkitsIsMutable();
+      toolkits_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureUseCasesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        useCases_ = new com.google.protobuf.LazyStringArrayList(useCases_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @return A list containing the useCases.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUseCasesList() {
+      return useCases_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @return The count of useCases.
+     */
+    public int getUseCasesCount() {
+      return useCases_.size();
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @param index The index of the element to return.
+     * @return The useCases at the given index.
+     */
+    public java.lang.String getUseCases(int index) {
+      return useCases_.get(index);
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the useCases at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getUseCasesBytes(int index) {
+      return useCases_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @param index The index to set the value at.
+     * @param value The useCases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseCases(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseCasesIsMutable();
+      useCases_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @param value The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCases(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseCasesIsMutable();
+      useCases_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @param values The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUseCases(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureUseCasesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, useCases_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUseCases() {
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of use_case tags to filter by
+     * </pre>
+     *
+     * <code>repeated string use_cases = 18;</code>
+     * @param value The bytes of the useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCasesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureUseCasesIsMutable();
+      useCases_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAdditionalFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @return A list containing the additionalFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAdditionalFieldsList() {
+      return additionalFields_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @return The count of additionalFields.
+     */
+    public int getAdditionalFieldsCount() {
+      return additionalFields_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param index The index of the element to return.
+     * @return The additionalFields at the given index.
+     */
+    public java.lang.String getAdditionalFields(int index) {
+      return additionalFields_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalFieldsBytes(int index) {
+      return additionalFields_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param index The index to set the value at.
+     * @param value The additionalFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param value The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param values The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, additionalFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalFields() {
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param value The bytes of the additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
       onChanged();
       return this;
     }

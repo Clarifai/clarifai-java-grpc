@@ -213,8 +213,8 @@ private static final long serialVersionUID = 0L;
     RANGE(7),
     /**
      * <pre>
-     * If ENUM is used then the "enum_options" field should also be filled in which allows for
-     * additional ModelTypeFields too depending on the enum choice.
+     * If ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
+     * for the different ENUM options.
      * </pre>
      *
      * <code>ENUM = 8;</code>
@@ -261,6 +261,15 @@ private static final long serialVersionUID = 0L;
      * <code>ARRAY_OF_STRINGS = 13;</code>
      */
     ARRAY_OF_STRINGS(13),
+    /**
+     * <pre>
+     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
+     * for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
+     * </pre>
+     *
+     * <code>RECURSIVE_ENUM = 14;</code>
+     */
+    RECURSIVE_ENUM(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -306,8 +315,8 @@ private static final long serialVersionUID = 0L;
     public static final int RANGE_VALUE = 7;
     /**
      * <pre>
-     * If ENUM is used then the "enum_options" field should also be filled in which allows for
-     * additional ModelTypeFields too depending on the enum choice.
+     * If ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
+     * for the different ENUM options.
      * </pre>
      *
      * <code>ENUM = 8;</code>
@@ -354,6 +363,15 @@ private static final long serialVersionUID = 0L;
      * <code>ARRAY_OF_STRINGS = 13;</code>
      */
     public static final int ARRAY_OF_STRINGS_VALUE = 13;
+    /**
+     * <pre>
+     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
+     * for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
+     * </pre>
+     *
+     * <code>RECURSIVE_ENUM = 14;</code>
+     */
+    public static final int RECURSIVE_ENUM_VALUE = 14;
 
 
     public final int getNumber() {
@@ -393,6 +411,7 @@ private static final long serialVersionUID = 0L;
         case 11: return ARRAY_OF_NUMBERS;
         case 12: return WORKFLOW_EMBED_MODELS;
         case 13: return ARRAY_OF_STRINGS;
+        case 14: return RECURSIVE_ENUM;
         default: return null;
       }
     }

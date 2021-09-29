@@ -8,32 +8,52 @@ public interface TimeSegmentOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.clarifai.api.Data data = 1;</code>
+   * <pre>
+   * A unique id for the time segment.
+   * </pre>
+   *
+   * <code>string id = 1;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <pre>
+   * A unique id for the time segment.
+   * </pre>
+   *
+   * <code>string id = 1;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <code>.clarifai.api.Data data = 2;</code>
    * @return Whether the data field is set.
    */
   boolean hasData();
   /**
-   * <code>.clarifai.api.Data data = 1;</code>
+   * <code>.clarifai.api.Data data = 2;</code>
    * @return The data.
    */
   com.clarifai.grpc.api.Data getData();
   /**
-   * <code>.clarifai.api.Data data = 1;</code>
+   * <code>.clarifai.api.Data data = 2;</code>
    */
   com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
 
   /**
-   * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+   * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    * @return Whether the timeInfo field is set.
    */
   boolean hasTimeInfo();
   /**
-   * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+   * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    * @return The timeInfo.
    */
   com.clarifai.grpc.api.TimeInfo getTimeInfo();
   /**
-   * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+   * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    */
   com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder();
 }

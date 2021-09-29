@@ -147,4 +147,28 @@ public interface UserDetailOrBuilder extends
    * @return The teamsCount.
    */
   int getTeamsCount();
+
+  /**
+   * <code>string country = 11;</code>
+   * @return The country.
+   */
+  java.lang.String getCountry();
+  /**
+   * <code>string country = 11;</code>
+   * @return The bytes for country.
+   */
+  com.google.protobuf.ByteString
+      getCountryBytes();
+
+  /**
+   * <code>string state = 12;</code>
+   * @return The state.
+   */
+  java.lang.String getState();
+  /**
+   * <code>string state = 12;</code>
+   * @return The bytes for state.
+   */
+  com.google.protobuf.ByteString
+      getStateBytes();
 }

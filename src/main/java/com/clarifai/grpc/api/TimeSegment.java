@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TimeSegment() {
+    id_ = "";
   }
 
   @java.lang.Override
@@ -49,6 +50,12 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            id_ = s;
+            break;
+          }
+          case 18: {
             com.clarifai.grpc.api.Data.Builder subBuilder = null;
             if (data_ != null) {
               subBuilder = data_.toBuilder();
@@ -61,7 +68,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
+          case 26: {
             com.clarifai.grpc.api.TimeInfo.Builder subBuilder = null;
             if (timeInfo_ != null) {
               subBuilder = timeInfo_.toBuilder();
@@ -106,47 +113,91 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.TimeSegment.class, com.clarifai.grpc.api.TimeSegment.Builder.class);
   }
 
-  public static final int DATA_FIELD_NUMBER = 1;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object id_;
+  /**
+   * <pre>
+   * A unique id for the time segment.
+   * </pre>
+   *
+   * <code>string id = 1;</code>
+   * @return The id.
+   */
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A unique id for the time segment.
+   * </pre>
+   *
+   * <code>string id = 1;</code>
+   * @return The bytes for id.
+   */
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATA_FIELD_NUMBER = 2;
   private com.clarifai.grpc.api.Data data_;
   /**
-   * <code>.clarifai.api.Data data = 1;</code>
+   * <code>.clarifai.api.Data data = 2;</code>
    * @return Whether the data field is set.
    */
   public boolean hasData() {
     return data_ != null;
   }
   /**
-   * <code>.clarifai.api.Data data = 1;</code>
+   * <code>.clarifai.api.Data data = 2;</code>
    * @return The data.
    */
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
   /**
-   * <code>.clarifai.api.Data data = 1;</code>
+   * <code>.clarifai.api.Data data = 2;</code>
    */
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
 
-  public static final int TIME_INFO_FIELD_NUMBER = 2;
+  public static final int TIME_INFO_FIELD_NUMBER = 3;
   private com.clarifai.grpc.api.TimeInfo timeInfo_;
   /**
-   * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+   * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    * @return Whether the timeInfo field is set.
    */
   public boolean hasTimeInfo() {
     return timeInfo_ != null;
   }
   /**
-   * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+   * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    * @return The timeInfo.
    */
   public com.clarifai.grpc.api.TimeInfo getTimeInfo() {
     return timeInfo_ == null ? com.clarifai.grpc.api.TimeInfo.getDefaultInstance() : timeInfo_;
   }
   /**
-   * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+   * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    */
   public com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder() {
     return getTimeInfo();
@@ -166,11 +217,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+    }
     if (data_ != null) {
-      output.writeMessage(1, getData());
+      output.writeMessage(2, getData());
     }
     if (timeInfo_ != null) {
-      output.writeMessage(2, getTimeInfo());
+      output.writeMessage(3, getTimeInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -181,13 +235,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+    }
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getData());
+        .computeMessageSize(2, getData());
     }
     if (timeInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getTimeInfo());
+        .computeMessageSize(3, getTimeInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,6 +261,8 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.TimeSegment other = (com.clarifai.grpc.api.TimeSegment) obj;
 
+    if (!getId()
+        .equals(other.getId())) return false;
     if (hasData() != other.hasData()) return false;
     if (hasData()) {
       if (!getData()
@@ -225,6 +284,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
@@ -366,6 +427,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      id_ = "";
+
       if (dataBuilder_ == null) {
         data_ = null;
       } else {
@@ -404,6 +467,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.TimeSegment buildPartial() {
       com.clarifai.grpc.api.TimeSegment result = new com.clarifai.grpc.api.TimeSegment(this);
+      result.id_ = id_;
       if (dataBuilder_ == null) {
         result.data_ = data_;
       } else {
@@ -462,6 +526,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.TimeSegment other) {
       if (other == com.clarifai.grpc.api.TimeSegment.getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
       if (other.hasData()) {
         mergeData(other.getData());
       }
@@ -497,18 +565,114 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object id_ = "";
+    /**
+     * <pre>
+     * A unique id for the time segment.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A unique id for the time segment.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A unique id for the time segment.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A unique id for the time segment.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A unique id for the time segment.
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.clarifai.grpc.api.Data data_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> dataBuilder_;
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      * @return Whether the data field is set.
      */
     public boolean hasData() {
       return dataBuilder_ != null || data_ != null;
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      * @return The data.
      */
     public com.clarifai.grpc.api.Data getData() {
@@ -519,7 +683,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder setData(com.clarifai.grpc.api.Data value) {
       if (dataBuilder_ == null) {
@@ -535,7 +699,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder setData(
         com.clarifai.grpc.api.Data.Builder builderForValue) {
@@ -549,7 +713,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder mergeData(com.clarifai.grpc.api.Data value) {
       if (dataBuilder_ == null) {
@@ -567,7 +731,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     public Builder clearData() {
       if (dataBuilder_ == null) {
@@ -581,7 +745,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     public com.clarifai.grpc.api.Data.Builder getDataBuilder() {
       
@@ -589,7 +753,7 @@ private static final long serialVersionUID = 0L;
       return getDataFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
       if (dataBuilder_ != null) {
@@ -600,7 +764,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.clarifai.api.Data data = 1;</code>
+     * <code>.clarifai.api.Data data = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> 
@@ -620,14 +784,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.TimeInfo, com.clarifai.grpc.api.TimeInfo.Builder, com.clarifai.grpc.api.TimeInfoOrBuilder> timeInfoBuilder_;
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      * @return Whether the timeInfo field is set.
      */
     public boolean hasTimeInfo() {
       return timeInfoBuilder_ != null || timeInfo_ != null;
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      * @return The timeInfo.
      */
     public com.clarifai.grpc.api.TimeInfo getTimeInfo() {
@@ -638,7 +802,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     public Builder setTimeInfo(com.clarifai.grpc.api.TimeInfo value) {
       if (timeInfoBuilder_ == null) {
@@ -654,7 +818,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     public Builder setTimeInfo(
         com.clarifai.grpc.api.TimeInfo.Builder builderForValue) {
@@ -668,7 +832,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     public Builder mergeTimeInfo(com.clarifai.grpc.api.TimeInfo value) {
       if (timeInfoBuilder_ == null) {
@@ -686,7 +850,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     public Builder clearTimeInfo() {
       if (timeInfoBuilder_ == null) {
@@ -700,7 +864,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     public com.clarifai.grpc.api.TimeInfo.Builder getTimeInfoBuilder() {
       
@@ -708,7 +872,7 @@ private static final long serialVersionUID = 0L;
       return getTimeInfoFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     public com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder() {
       if (timeInfoBuilder_ != null) {
@@ -719,7 +883,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.clarifai.api.TimeInfo time_info = 2;</code>
+     * <code>.clarifai.api.TimeInfo time_info = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.TimeInfo, com.clarifai.grpc.api.TimeInfo.Builder, com.clarifai.grpc.api.TimeInfoOrBuilder> 

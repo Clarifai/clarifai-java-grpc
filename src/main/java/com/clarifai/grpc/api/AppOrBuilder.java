@@ -265,4 +265,26 @@ public interface AppOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDataTierIdBytes();
+
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+   * </pre>
+   *
+   * <code>bool is_starred = 19;</code>
+   * @return The isStarred.
+   */
+  boolean getIsStarred();
+
+  /**
+   * <pre>
+   * How many users have starred the app (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 20;</code>
+   * @return The starCount.
+   */
+  int getStarCount();
 }

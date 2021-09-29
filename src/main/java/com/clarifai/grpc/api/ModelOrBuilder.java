@@ -411,4 +411,108 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNotesBytes();
+
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the toolkits.
+   */
+  java.util.List<java.lang.String>
+      getToolkitsList();
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of toolkits.
+   */
+  int getToolkitsCount();
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The toolkits at the given index.
+   */
+  java.lang.String getToolkits(int index);
+  /**
+   * <pre>
+   * Tags from toolkits category
+   * </pre>
+   *
+   * <code>repeated string toolkits = 20 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the toolkits at the given index.
+   */
+  com.google.protobuf.ByteString
+      getToolkitsBytes(int index);
+
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the useCases.
+   */
+  java.util.List<java.lang.String>
+      getUseCasesList();
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of useCases.
+   */
+  int getUseCasesCount();
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  java.lang.String getUseCases(int index);
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 21 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the useCases at the given index.
+   */
+  com.google.protobuf.ByteString
+      getUseCasesBytes(int index);
+
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
+   * </pre>
+   *
+   * <code>bool is_starred = 22;</code>
+   * @return The isStarred.
+   */
+  boolean getIsStarred();
+
+  /**
+   * <pre>
+   * How many users have starred the model (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 23;</code>
+   * @return The starCount.
+   */
+  int getStarCount();
 }

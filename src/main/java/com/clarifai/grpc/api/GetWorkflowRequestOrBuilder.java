@@ -55,4 +55,45 @@ public interface GetWorkflowRequestOrBuilder extends
    * @return The favorClarifaiWorkflows.
    */
   boolean getFavorClarifaiWorkflows();
+
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 4;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 4;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 4;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
 }

@@ -165,6 +165,16 @@ private static final long serialVersionUID = 0L;
             dataTierId_ = s;
             break;
           }
+          case 152: {
+
+            isStarred_ = input.readBool();
+            break;
+          }
+          case 160: {
+
+            starCount_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -664,6 +674,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_STARRED_FIELD_NUMBER = 19;
+  private boolean isStarred_;
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+   * </pre>
+   *
+   * <code>bool is_starred = 19;</code>
+   * @return The isStarred.
+   */
+  public boolean getIsStarred() {
+    return isStarred_;
+  }
+
+  public static final int STAR_COUNT_FIELD_NUMBER = 20;
+  private int starCount_;
+  /**
+   * <pre>
+   * How many users have starred the app (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 20;</code>
+   * @return The starCount.
+   */
+  public int getStarCount() {
+    return starCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -716,6 +756,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDataTierIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, dataTierId_);
+    }
+    if (isStarred_ != false) {
+      output.writeBool(19, isStarred_);
+    }
+    if (starCount_ != 0) {
+      output.writeInt32(20, starCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -771,6 +817,14 @@ private static final long serialVersionUID = 0L;
     if (!getDataTierIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, dataTierId_);
     }
+    if (isStarred_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(19, isStarred_);
+    }
+    if (starCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(20, starCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -824,6 +878,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDataTierId()
         .equals(other.getDataTierId())) return false;
+    if (getIsStarred()
+        != other.getIsStarred()) return false;
+    if (getStarCount()
+        != other.getStarCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -869,6 +927,11 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DATA_TIER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDataTierId().hashCode();
+    hash = (37 * hash) + IS_STARRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsStarred());
+    hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getStarCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1050,6 +1113,10 @@ private static final long serialVersionUID = 0L;
       }
       dataTierId_ = "";
 
+      isStarred_ = false;
+
+      starCount_ = 0;
+
       return this;
     }
 
@@ -1105,6 +1172,8 @@ private static final long serialVersionUID = 0L;
         result.visibility_ = visibilityBuilder_.build();
       }
       result.dataTierId_ = dataTierId_;
+      result.isStarred_ = isStarred_;
+      result.starCount_ = starCount_;
       onBuilt();
       return result;
     }
@@ -1198,6 +1267,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getDataTierId().isEmpty()) {
         dataTierId_ = other.dataTierId_;
         onChanged();
+      }
+      if (other.getIsStarred() != false) {
+        setIsStarred(other.getIsStarred());
+      }
+      if (other.getStarCount() != 0) {
+        setStarCount(other.getStarCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2588,6 +2663,96 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       dataTierId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean isStarred_ ;
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     * </pre>
+     *
+     * <code>bool is_starred = 19;</code>
+     * @return The isStarred.
+     */
+    public boolean getIsStarred() {
+      return isStarred_;
+    }
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     * </pre>
+     *
+     * <code>bool is_starred = 19;</code>
+     * @param value The isStarred to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsStarred(boolean value) {
+      
+      isStarred_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Is starred by the requesting user (only showed on get/list requests)
+     * Please use PostAppStars/DeleteAppStars endpoints to star/unstar an app
+     * </pre>
+     *
+     * <code>bool is_starred = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsStarred() {
+      
+      isStarred_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int starCount_ ;
+    /**
+     * <pre>
+     * How many users have starred the app (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 20;</code>
+     * @return The starCount.
+     */
+    public int getStarCount() {
+      return starCount_;
+    }
+    /**
+     * <pre>
+     * How many users have starred the app (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 20;</code>
+     * @param value The starCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarCount(int value) {
+      
+      starCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * How many users have starred the app (only showed on get/list requests)
+     * Computed value, not editable
+     * </pre>
+     *
+     * <code>int32 star_count = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarCount() {
+      
+      starCount_ = 0;
       onChanged();
       return this;
     }
