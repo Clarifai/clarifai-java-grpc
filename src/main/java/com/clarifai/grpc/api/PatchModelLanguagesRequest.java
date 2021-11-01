@@ -4,27 +4,28 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf type {@code clarifai.api.DeleteModelVersionsUnpublishRequest}
+ * Protobuf type {@code clarifai.api.PatchModelLanguagesRequest}
  */
-public  final class DeleteModelVersionsUnpublishRequest extends
+public  final class PatchModelLanguagesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.DeleteModelVersionsUnpublishRequest)
-    DeleteModelVersionsUnpublishRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PatchModelLanguagesRequest)
+    PatchModelLanguagesRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DeleteModelVersionsUnpublishRequest.newBuilder() to construct.
-  private DeleteModelVersionsUnpublishRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PatchModelLanguagesRequest.newBuilder() to construct.
+  private PatchModelLanguagesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DeleteModelVersionsUnpublishRequest() {
+  private PatchModelLanguagesRequest() {
     modelId_ = "";
-    publications_ = java.util.Collections.emptyList();
+    languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    action_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new DeleteModelVersionsUnpublishRequest();
+    return new PatchModelLanguagesRequest();
   }
 
   @java.lang.Override
@@ -32,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DeleteModelVersionsUnpublishRequest(
+  private PatchModelLanguagesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -71,12 +72,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              publications_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelVersionUnpublishRequest>();
+              languages_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
-            publications_.add(
-                input.readMessage(com.clarifai.grpc.api.ModelVersionUnpublishRequest.parser(), extensionRegistry));
+            languages_.add(s);
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            action_ = s;
             break;
           }
           default: {
@@ -95,7 +102,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        publications_ = java.util.Collections.unmodifiableList(publications_);
+        languages_ = languages_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -103,15 +110,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteModelVersionsUnpublishRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchModelLanguagesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteModelVersionsUnpublishRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchModelLanguagesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.class, com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.Builder.class);
+            com.clarifai.grpc.api.PatchModelLanguagesRequest.class, com.clarifai.grpc.api.PatchModelLanguagesRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -173,39 +180,83 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PUBLICATIONS_FIELD_NUMBER = 3;
-  private java.util.List<com.clarifai.grpc.api.ModelVersionUnpublishRequest> publications_;
+  public static final int LANGUAGES_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList languages_;
   /**
-   * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+   * <code>repeated string languages = 3;</code>
+   * @return A list containing the languages.
    */
-  public java.util.List<com.clarifai.grpc.api.ModelVersionUnpublishRequest> getPublicationsList() {
-    return publications_;
+  public com.google.protobuf.ProtocolStringList
+      getLanguagesList() {
+    return languages_;
   }
   /**
-   * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+   * <code>repeated string languages = 3;</code>
+   * @return The count of languages.
    */
-  public java.util.List<? extends com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder> 
-      getPublicationsOrBuilderList() {
-    return publications_;
+  public int getLanguagesCount() {
+    return languages_.size();
   }
   /**
-   * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+   * <code>repeated string languages = 3;</code>
+   * @param index The index of the element to return.
+   * @return The languages at the given index.
    */
-  public int getPublicationsCount() {
-    return publications_.size();
+  public java.lang.String getLanguages(int index) {
+    return languages_.get(index);
   }
   /**
-   * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+   * <code>repeated string languages = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languages at the given index.
    */
-  public com.clarifai.grpc.api.ModelVersionUnpublishRequest getPublications(int index) {
-    return publications_.get(index);
+  public com.google.protobuf.ByteString
+      getLanguagesBytes(int index) {
+    return languages_.getByteString(index);
+  }
+
+  public static final int ACTION_FIELD_NUMBER = 4;
+  private volatile java.lang.Object action_;
+  /**
+   * <pre>
+   * Only overwrite supported
+   * </pre>
+   *
+   * <code>string action = 4;</code>
+   * @return The action.
+   */
+  public java.lang.String getAction() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      action_ = s;
+      return s;
+    }
   }
   /**
-   * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+   * <pre>
+   * Only overwrite supported
+   * </pre>
+   *
+   * <code>string action = 4;</code>
+   * @return The bytes for action.
    */
-  public com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder getPublicationsOrBuilder(
-      int index) {
-    return publications_.get(index);
+  public com.google.protobuf.ByteString
+      getActionBytes() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      action_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -228,8 +279,11 @@ private static final long serialVersionUID = 0L;
     if (!getModelIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
-    for (int i = 0; i < publications_.size(); i++) {
-      output.writeMessage(3, publications_.get(i));
+    for (int i = 0; i < languages_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languages_.getRaw(i));
+    }
+    if (!getActionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, action_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,9 +301,16 @@ private static final long serialVersionUID = 0L;
     if (!getModelIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
     }
-    for (int i = 0; i < publications_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, publications_.get(i));
+    {
+      int dataSize = 0;
+      for (int i = 0; i < languages_.size(); i++) {
+        dataSize += computeStringSizeNoTag(languages_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLanguagesList().size();
+    }
+    if (!getActionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, action_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -261,10 +322,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PatchModelLanguagesRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest other = (com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest) obj;
+    com.clarifai.grpc.api.PatchModelLanguagesRequest other = (com.clarifai.grpc.api.PatchModelLanguagesRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
@@ -273,8 +334,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelId()
         .equals(other.getModelId())) return false;
-    if (!getPublicationsList()
-        .equals(other.getPublicationsList())) return false;
+    if (!getLanguagesList()
+        .equals(other.getLanguagesList())) return false;
+    if (!getAction()
+        .equals(other.getAction())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -292,78 +355,80 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelId().hashCode();
-    if (getPublicationsCount() > 0) {
-      hash = (37 * hash) + PUBLICATIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getPublicationsList().hashCode();
+    if (getLanguagesCount() > 0) {
+      hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguagesList().hashCode();
     }
+    hash = (37 * hash) + ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + getAction().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -376,7 +441,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PatchModelLanguagesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -392,26 +457,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code clarifai.api.DeleteModelVersionsUnpublishRequest}
+   * Protobuf type {@code clarifai.api.PatchModelLanguagesRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.DeleteModelVersionsUnpublishRequest)
-      com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PatchModelLanguagesRequest)
+      com.clarifai.grpc.api.PatchModelLanguagesRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteModelVersionsUnpublishRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchModelLanguagesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteModelVersionsUnpublishRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchModelLanguagesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.class, com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.Builder.class);
+              com.clarifai.grpc.api.PatchModelLanguagesRequest.class, com.clarifai.grpc.api.PatchModelLanguagesRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PatchModelLanguagesRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -424,7 +489,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getPublicationsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -438,29 +502,27 @@ private static final long serialVersionUID = 0L;
       }
       modelId_ = "";
 
-      if (publicationsBuilder_ == null) {
-        publications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        publicationsBuilder_.clear();
-      }
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      action_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteModelVersionsUnpublishRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchModelLanguagesRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PatchModelLanguagesRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PatchModelLanguagesRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest build() {
-      com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest result = buildPartial();
+    public com.clarifai.grpc.api.PatchModelLanguagesRequest build() {
+      com.clarifai.grpc.api.PatchModelLanguagesRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -468,8 +530,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest buildPartial() {
-      com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest result = new com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest(this);
+    public com.clarifai.grpc.api.PatchModelLanguagesRequest buildPartial() {
+      com.clarifai.grpc.api.PatchModelLanguagesRequest result = new com.clarifai.grpc.api.PatchModelLanguagesRequest(this);
       int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
@@ -477,15 +539,12 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.modelId_ = modelId_;
-      if (publicationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          publications_ = java.util.Collections.unmodifiableList(publications_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.publications_ = publications_;
-      } else {
-        result.publications_ = publicationsBuilder_.build();
+      if (((bitField0_ & 0x00000001) != 0)) {
+        languages_ = languages_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
+      result.languages_ = languages_;
+      result.action_ = action_;
       onBuilt();
       return result;
     }
@@ -524,16 +583,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest) {
-        return mergeFrom((com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PatchModelLanguagesRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PatchModelLanguagesRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest other) {
-      if (other == com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PatchModelLanguagesRequest other) {
+      if (other == com.clarifai.grpc.api.PatchModelLanguagesRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
@@ -541,31 +600,19 @@ private static final long serialVersionUID = 0L;
         modelId_ = other.modelId_;
         onChanged();
       }
-      if (publicationsBuilder_ == null) {
-        if (!other.publications_.isEmpty()) {
-          if (publications_.isEmpty()) {
-            publications_ = other.publications_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensurePublicationsIsMutable();
-            publications_.addAll(other.publications_);
-          }
-          onChanged();
+      if (!other.languages_.isEmpty()) {
+        if (languages_.isEmpty()) {
+          languages_ = other.languages_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureLanguagesIsMutable();
+          languages_.addAll(other.languages_);
         }
-      } else {
-        if (!other.publications_.isEmpty()) {
-          if (publicationsBuilder_.isEmpty()) {
-            publicationsBuilder_.dispose();
-            publicationsBuilder_ = null;
-            publications_ = other.publications_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            publicationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPublicationsFieldBuilder() : null;
-          } else {
-            publicationsBuilder_.addAllMessages(other.publications_);
-          }
-        }
+        onChanged();
+      }
+      if (!other.getAction().isEmpty()) {
+        action_ = other.action_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -582,11 +629,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest parsedMessage = null;
+      com.clarifai.grpc.api.PatchModelLanguagesRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PatchModelLanguagesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -792,244 +839,210 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.clarifai.grpc.api.ModelVersionUnpublishRequest> publications_ =
-      java.util.Collections.emptyList();
-    private void ensurePublicationsIsMutable() {
+    private com.google.protobuf.LazyStringList languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLanguagesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        publications_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelVersionUnpublishRequest>(publications_);
+        languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
         bitField0_ |= 0x00000001;
        }
     }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @return A list containing the languages.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLanguagesList() {
+      return languages_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @return The count of languages.
+     */
+    public int getLanguagesCount() {
+      return languages_.size();
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @param index The index of the element to return.
+     * @return The languages at the given index.
+     */
+    public java.lang.String getLanguages(int index) {
+      return languages_.get(index);
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the languages at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLanguagesBytes(int index) {
+      return languages_.getByteString(index);
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The languages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguages(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguagesIsMutable();
+      languages_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @param value The languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguages(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguagesIsMutable();
+      languages_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @param values The languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguages(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLanguagesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, languages_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguages() {
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string languages = 3;</code>
+     * @param value The bytes of the languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguagesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureLanguagesIsMutable();
+      languages_.add(value);
+      onChanged();
+      return this;
+    }
 
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.ModelVersionUnpublishRequest, com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder, com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder> publicationsBuilder_;
-
+    private java.lang.Object action_ = "";
     /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * <pre>
+     * Only overwrite supported
+     * </pre>
+     *
+     * <code>string action = 4;</code>
+     * @return The action.
      */
-    public java.util.List<com.clarifai.grpc.api.ModelVersionUnpublishRequest> getPublicationsList() {
-      if (publicationsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(publications_);
+    public java.lang.String getAction() {
+      java.lang.Object ref = action_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        action_ = s;
+        return s;
       } else {
-        return publicationsBuilder_.getMessageList();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * <pre>
+     * Only overwrite supported
+     * </pre>
+     *
+     * <code>string action = 4;</code>
+     * @return The bytes for action.
      */
-    public int getPublicationsCount() {
-      if (publicationsBuilder_ == null) {
-        return publications_.size();
+    public com.google.protobuf.ByteString
+        getActionBytes() {
+      java.lang.Object ref = action_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        action_ = b;
+        return b;
       } else {
-        return publicationsBuilder_.getCount();
+        return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * <pre>
+     * Only overwrite supported
+     * </pre>
+     *
+     * <code>string action = 4;</code>
+     * @param value The action to set.
+     * @return This builder for chaining.
      */
-    public com.clarifai.grpc.api.ModelVersionUnpublishRequest getPublications(int index) {
-      if (publicationsBuilder_ == null) {
-        return publications_.get(index);
-      } else {
-        return publicationsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder setPublications(
-        int index, com.clarifai.grpc.api.ModelVersionUnpublishRequest value) {
-      if (publicationsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePublicationsIsMutable();
-        publications_.set(index, value);
-        onChanged();
-      } else {
-        publicationsBuilder_.setMessage(index, value);
-      }
+    public Builder setAction(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      action_ = value;
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * <pre>
+     * Only overwrite supported
+     * </pre>
+     *
+     * <code>string action = 4;</code>
+     * @return This builder for chaining.
      */
-    public Builder setPublications(
-        int index, com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder builderForValue) {
-      if (publicationsBuilder_ == null) {
-        ensurePublicationsIsMutable();
-        publications_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        publicationsBuilder_.setMessage(index, builderForValue.build());
-      }
+    public Builder clearAction() {
+      
+      action_ = getDefaultInstance().getAction();
+      onChanged();
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
+     * <pre>
+     * Only overwrite supported
+     * </pre>
+     *
+     * <code>string action = 4;</code>
+     * @param value The bytes for action to set.
+     * @return This builder for chaining.
      */
-    public Builder addPublications(com.clarifai.grpc.api.ModelVersionUnpublishRequest value) {
-      if (publicationsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePublicationsIsMutable();
-        publications_.add(value);
-        onChanged();
-      } else {
-        publicationsBuilder_.addMessage(value);
-      }
+    public Builder setActionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      action_ = value;
+      onChanged();
       return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder addPublications(
-        int index, com.clarifai.grpc.api.ModelVersionUnpublishRequest value) {
-      if (publicationsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePublicationsIsMutable();
-        publications_.add(index, value);
-        onChanged();
-      } else {
-        publicationsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder addPublications(
-        com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder builderForValue) {
-      if (publicationsBuilder_ == null) {
-        ensurePublicationsIsMutable();
-        publications_.add(builderForValue.build());
-        onChanged();
-      } else {
-        publicationsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder addPublications(
-        int index, com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder builderForValue) {
-      if (publicationsBuilder_ == null) {
-        ensurePublicationsIsMutable();
-        publications_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        publicationsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder addAllPublications(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelVersionUnpublishRequest> values) {
-      if (publicationsBuilder_ == null) {
-        ensurePublicationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, publications_);
-        onChanged();
-      } else {
-        publicationsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder clearPublications() {
-      if (publicationsBuilder_ == null) {
-        publications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        publicationsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public Builder removePublications(int index) {
-      if (publicationsBuilder_ == null) {
-        ensurePublicationsIsMutable();
-        publications_.remove(index);
-        onChanged();
-      } else {
-        publicationsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder getPublicationsBuilder(
-        int index) {
-      return getPublicationsFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder getPublicationsOrBuilder(
-        int index) {
-      if (publicationsBuilder_ == null) {
-        return publications_.get(index);  } else {
-        return publicationsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public java.util.List<? extends com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder> 
-         getPublicationsOrBuilderList() {
-      if (publicationsBuilder_ != null) {
-        return publicationsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(publications_);
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder addPublicationsBuilder() {
-      return getPublicationsFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.ModelVersionUnpublishRequest.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder addPublicationsBuilder(
-        int index) {
-      return getPublicationsFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.ModelVersionUnpublishRequest.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .clarifai.api.ModelVersionUnpublishRequest publications = 3;</code>
-     */
-    public java.util.List<com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder> 
-         getPublicationsBuilderList() {
-      return getPublicationsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.ModelVersionUnpublishRequest, com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder, com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder> 
-        getPublicationsFieldBuilder() {
-      if (publicationsBuilder_ == null) {
-        publicationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.clarifai.grpc.api.ModelVersionUnpublishRequest, com.clarifai.grpc.api.ModelVersionUnpublishRequest.Builder, com.clarifai.grpc.api.ModelVersionUnpublishRequestOrBuilder>(
-                publications_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
-        publications_ = null;
-      }
-      return publicationsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1044,41 +1057,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.DeleteModelVersionsUnpublishRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PatchModelLanguagesRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.DeleteModelVersionsUnpublishRequest)
-  private static final com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PatchModelLanguagesRequest)
+  private static final com.clarifai.grpc.api.PatchModelLanguagesRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PatchModelLanguagesRequest();
   }
 
-  public static com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PatchModelLanguagesRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteModelVersionsUnpublishRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteModelVersionsUnpublishRequest>() {
+  private static final com.google.protobuf.Parser<PatchModelLanguagesRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PatchModelLanguagesRequest>() {
     @java.lang.Override
-    public DeleteModelVersionsUnpublishRequest parsePartialFrom(
+    public PatchModelLanguagesRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeleteModelVersionsUnpublishRequest(input, extensionRegistry);
+      return new PatchModelLanguagesRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DeleteModelVersionsUnpublishRequest> parser() {
+  public static com.google.protobuf.Parser<PatchModelLanguagesRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteModelVersionsUnpublishRequest> getParserForType() {
+  public com.google.protobuf.Parser<PatchModelLanguagesRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.DeleteModelVersionsUnpublishRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PatchModelLanguagesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

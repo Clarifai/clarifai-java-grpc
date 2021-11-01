@@ -72,19 +72,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
-            com.clarifai.grpc.api.Track.TrackInfo.Builder subBuilder = null;
-            if (trackInfo_ != null) {
-              subBuilder = trackInfo_.toBuilder();
-            }
-            trackInfo_ = input.readMessage(com.clarifai.grpc.api.Track.TrackInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(trackInfo_);
-              trackInfo_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 34: {
             com.clarifai.grpc.api.TimeInfo.Builder subBuilder = null;
             if (timeInfo_ != null) {
@@ -96,6 +83,11 @@ private static final long serialVersionUID = 0L;
               timeInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 45: {
+
+            quality_ = input.readFloat();
             break;
           }
           default: {
@@ -128,1130 +120,6 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Track_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Track.class, com.clarifai.grpc.api.Track.Builder.class);
-  }
-
-  public interface TrackInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:clarifai.api.Track.TrackInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Number of frames
-     * </pre>
-     *
-     * <code>uint32 num_frames = 1;</code>
-     * @return The numFrames.
-     */
-    int getNumFrames();
-
-    /**
-     * <pre>
-     * Timestamp where track begins.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     * @return Whether the beginTime field is set.
-     */
-    boolean hasBeginTime();
-    /**
-     * <pre>
-     * Timestamp where track begins.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     * @return The beginTime.
-     */
-    com.google.protobuf.Timestamp getBeginTime();
-    /**
-     * <pre>
-     * Timestamp where track begins.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getBeginTimeOrBuilder();
-
-    /**
-     * <pre>
-     * Timestamp where track ends.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return Whether the endTime field is set.
-     */
-    boolean hasEndTime();
-    /**
-     * <pre>
-     * Timestamp where track ends.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return The endTime.
-     */
-    com.google.protobuf.Timestamp getEndTime();
-    /**
-     * <pre>
-     * Timestamp where track ends.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
-
-    /**
-     * <pre>
-     * Quality of the track.
-     * </pre>
-     *
-     * <code>float quality = 4;</code>
-     * @return The quality.
-     */
-    float getQuality();
-  }
-  /**
-   * <pre>
-   * Here is where we store the track metadata.
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.Track.TrackInfo}
-   */
-  public  static final class TrackInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:clarifai.api.Track.TrackInfo)
-      TrackInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TrackInfo.newBuilder() to construct.
-    private TrackInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TrackInfo() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TrackInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TrackInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              numFrames_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (beginTime_ != null) {
-                subBuilder = beginTime_.toBuilder();
-              }
-              beginTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(beginTime_);
-                beginTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 37: {
-
-              quality_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Track_TrackInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Track_TrackInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.Track.TrackInfo.class, com.clarifai.grpc.api.Track.TrackInfo.Builder.class);
-    }
-
-    public static final int NUM_FRAMES_FIELD_NUMBER = 1;
-    private int numFrames_;
-    /**
-     * <pre>
-     * Number of frames
-     * </pre>
-     *
-     * <code>uint32 num_frames = 1;</code>
-     * @return The numFrames.
-     */
-    public int getNumFrames() {
-      return numFrames_;
-    }
-
-    public static final int BEGIN_TIME_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp beginTime_;
-    /**
-     * <pre>
-     * Timestamp where track begins.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     * @return Whether the beginTime field is set.
-     */
-    public boolean hasBeginTime() {
-      return beginTime_ != null;
-    }
-    /**
-     * <pre>
-     * Timestamp where track begins.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     * @return The beginTime.
-     */
-    public com.google.protobuf.Timestamp getBeginTime() {
-      return beginTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginTime_;
-    }
-    /**
-     * <pre>
-     * Timestamp where track begins.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getBeginTimeOrBuilder() {
-      return getBeginTime();
-    }
-
-    public static final int END_TIME_FIELD_NUMBER = 3;
-    private com.google.protobuf.Timestamp endTime_;
-    /**
-     * <pre>
-     * Timestamp where track ends.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return Whether the endTime field is set.
-     */
-    public boolean hasEndTime() {
-      return endTime_ != null;
-    }
-    /**
-     * <pre>
-     * Timestamp where track ends.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
-     * @return The endTime.
-     */
-    public com.google.protobuf.Timestamp getEndTime() {
-      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
-    }
-    /**
-     * <pre>
-     * Timestamp where track ends.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 3;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      return getEndTime();
-    }
-
-    public static final int QUALITY_FIELD_NUMBER = 4;
-    private float quality_;
-    /**
-     * <pre>
-     * Quality of the track.
-     * </pre>
-     *
-     * <code>float quality = 4;</code>
-     * @return The quality.
-     */
-    public float getQuality() {
-      return quality_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (numFrames_ != 0) {
-        output.writeUInt32(1, numFrames_);
-      }
-      if (beginTime_ != null) {
-        output.writeMessage(2, getBeginTime());
-      }
-      if (endTime_ != null) {
-        output.writeMessage(3, getEndTime());
-      }
-      if (quality_ != 0F) {
-        output.writeFloat(4, quality_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (numFrames_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, numFrames_);
-      }
-      if (beginTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getBeginTime());
-      }
-      if (endTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getEndTime());
-      }
-      if (quality_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, quality_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.clarifai.grpc.api.Track.TrackInfo)) {
-        return super.equals(obj);
-      }
-      com.clarifai.grpc.api.Track.TrackInfo other = (com.clarifai.grpc.api.Track.TrackInfo) obj;
-
-      if (getNumFrames()
-          != other.getNumFrames()) return false;
-      if (hasBeginTime() != other.hasBeginTime()) return false;
-      if (hasBeginTime()) {
-        if (!getBeginTime()
-            .equals(other.getBeginTime())) return false;
-      }
-      if (hasEndTime() != other.hasEndTime()) return false;
-      if (hasEndTime()) {
-        if (!getEndTime()
-            .equals(other.getEndTime())) return false;
-      }
-      if (java.lang.Float.floatToIntBits(getQuality())
-          != java.lang.Float.floatToIntBits(
-              other.getQuality())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NUM_FRAMES_FIELD_NUMBER;
-      hash = (53 * hash) + getNumFrames();
-      if (hasBeginTime()) {
-        hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getBeginTime().hashCode();
-      }
-      if (hasEndTime()) {
-        hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getEndTime().hashCode();
-      }
-      hash = (37 * hash) + QUALITY_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getQuality());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.clarifai.grpc.api.Track.TrackInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.clarifai.grpc.api.Track.TrackInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Here is where we store the track metadata.
-     * </pre>
-     *
-     * Protobuf type {@code clarifai.api.Track.TrackInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:clarifai.api.Track.TrackInfo)
-        com.clarifai.grpc.api.Track.TrackInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Track_TrackInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Track_TrackInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.clarifai.grpc.api.Track.TrackInfo.class, com.clarifai.grpc.api.Track.TrackInfo.Builder.class);
-      }
-
-      // Construct using com.clarifai.grpc.api.Track.TrackInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        numFrames_ = 0;
-
-        if (beginTimeBuilder_ == null) {
-          beginTime_ = null;
-        } else {
-          beginTime_ = null;
-          beginTimeBuilder_ = null;
-        }
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-        } else {
-          endTime_ = null;
-          endTimeBuilder_ = null;
-        }
-        quality_ = 0F;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Track_TrackInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public com.clarifai.grpc.api.Track.TrackInfo getDefaultInstanceForType() {
-        return com.clarifai.grpc.api.Track.TrackInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.clarifai.grpc.api.Track.TrackInfo build() {
-        com.clarifai.grpc.api.Track.TrackInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.clarifai.grpc.api.Track.TrackInfo buildPartial() {
-        com.clarifai.grpc.api.Track.TrackInfo result = new com.clarifai.grpc.api.Track.TrackInfo(this);
-        result.numFrames_ = numFrames_;
-        if (beginTimeBuilder_ == null) {
-          result.beginTime_ = beginTime_;
-        } else {
-          result.beginTime_ = beginTimeBuilder_.build();
-        }
-        if (endTimeBuilder_ == null) {
-          result.endTime_ = endTime_;
-        } else {
-          result.endTime_ = endTimeBuilder_.build();
-        }
-        result.quality_ = quality_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.clarifai.grpc.api.Track.TrackInfo) {
-          return mergeFrom((com.clarifai.grpc.api.Track.TrackInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.clarifai.grpc.api.Track.TrackInfo other) {
-        if (other == com.clarifai.grpc.api.Track.TrackInfo.getDefaultInstance()) return this;
-        if (other.getNumFrames() != 0) {
-          setNumFrames(other.getNumFrames());
-        }
-        if (other.hasBeginTime()) {
-          mergeBeginTime(other.getBeginTime());
-        }
-        if (other.hasEndTime()) {
-          mergeEndTime(other.getEndTime());
-        }
-        if (other.getQuality() != 0F) {
-          setQuality(other.getQuality());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.clarifai.grpc.api.Track.TrackInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.clarifai.grpc.api.Track.TrackInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int numFrames_ ;
-      /**
-       * <pre>
-       * Number of frames
-       * </pre>
-       *
-       * <code>uint32 num_frames = 1;</code>
-       * @return The numFrames.
-       */
-      public int getNumFrames() {
-        return numFrames_;
-      }
-      /**
-       * <pre>
-       * Number of frames
-       * </pre>
-       *
-       * <code>uint32 num_frames = 1;</code>
-       * @param value The numFrames to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNumFrames(int value) {
-        
-        numFrames_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Number of frames
-       * </pre>
-       *
-       * <code>uint32 num_frames = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNumFrames() {
-        
-        numFrames_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Timestamp beginTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> beginTimeBuilder_;
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       * @return Whether the beginTime field is set.
-       */
-      public boolean hasBeginTime() {
-        return beginTimeBuilder_ != null || beginTime_ != null;
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       * @return The beginTime.
-       */
-      public com.google.protobuf.Timestamp getBeginTime() {
-        if (beginTimeBuilder_ == null) {
-          return beginTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginTime_;
-        } else {
-          return beginTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      public Builder setBeginTime(com.google.protobuf.Timestamp value) {
-        if (beginTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          beginTime_ = value;
-          onChanged();
-        } else {
-          beginTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      public Builder setBeginTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (beginTimeBuilder_ == null) {
-          beginTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          beginTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      public Builder mergeBeginTime(com.google.protobuf.Timestamp value) {
-        if (beginTimeBuilder_ == null) {
-          if (beginTime_ != null) {
-            beginTime_ =
-              com.google.protobuf.Timestamp.newBuilder(beginTime_).mergeFrom(value).buildPartial();
-          } else {
-            beginTime_ = value;
-          }
-          onChanged();
-        } else {
-          beginTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      public Builder clearBeginTime() {
-        if (beginTimeBuilder_ == null) {
-          beginTime_ = null;
-          onChanged();
-        } else {
-          beginTime_ = null;
-          beginTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getBeginTimeBuilder() {
-        
-        onChanged();
-        return getBeginTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getBeginTimeOrBuilder() {
-        if (beginTimeBuilder_ != null) {
-          return beginTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return beginTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : beginTime_;
-        }
-      }
-      /**
-       * <pre>
-       * Timestamp where track begins.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp begin_time = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getBeginTimeFieldBuilder() {
-        if (beginTimeBuilder_ == null) {
-          beginTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getBeginTime(),
-                  getParentForChildren(),
-                  isClean());
-          beginTime_ = null;
-        }
-        return beginTimeBuilder_;
-      }
-
-      private com.google.protobuf.Timestamp endTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       * @return Whether the endTime field is set.
-       */
-      public boolean hasEndTime() {
-        return endTimeBuilder_ != null || endTime_ != null;
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       * @return The endTime.
-       */
-      public com.google.protobuf.Timestamp getEndTime() {
-        if (endTimeBuilder_ == null) {
-          return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
-        } else {
-          return endTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      public Builder setEndTime(com.google.protobuf.Timestamp value) {
-        if (endTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          endTime_ = value;
-          onChanged();
-        } else {
-          endTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      public Builder setEndTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (endTimeBuilder_ == null) {
-          endTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          endTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
-        if (endTimeBuilder_ == null) {
-          if (endTime_ != null) {
-            endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
-          } else {
-            endTime_ = value;
-          }
-          onChanged();
-        } else {
-          endTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      public Builder clearEndTime() {
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-          onChanged();
-        } else {
-          endTime_ = null;
-          endTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-        
-        onChanged();
-        return getEndTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-        if (endTimeBuilder_ != null) {
-          return endTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return endTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
-        }
-      }
-      /**
-       * <pre>
-       * Timestamp where track ends.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp end_time = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getEndTimeFieldBuilder() {
-        if (endTimeBuilder_ == null) {
-          endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getEndTime(),
-                  getParentForChildren(),
-                  isClean());
-          endTime_ = null;
-        }
-        return endTimeBuilder_;
-      }
-
-      private float quality_ ;
-      /**
-       * <pre>
-       * Quality of the track.
-       * </pre>
-       *
-       * <code>float quality = 4;</code>
-       * @return The quality.
-       */
-      public float getQuality() {
-        return quality_;
-      }
-      /**
-       * <pre>
-       * Quality of the track.
-       * </pre>
-       *
-       * <code>float quality = 4;</code>
-       * @param value The quality to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQuality(float value) {
-        
-        quality_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Quality of the track.
-       * </pre>
-       *
-       * <code>float quality = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQuality() {
-        
-        quality_ = 0F;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:clarifai.api.Track.TrackInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:clarifai.api.Track.TrackInfo)
-    private static final com.clarifai.grpc.api.Track.TrackInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.clarifai.grpc.api.Track.TrackInfo();
-    }
-
-    public static com.clarifai.grpc.api.Track.TrackInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TrackInfo>
-        PARSER = new com.google.protobuf.AbstractParser<TrackInfo>() {
-      @java.lang.Override
-      public TrackInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TrackInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TrackInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TrackInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.clarifai.grpc.api.Track.TrackInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -1336,41 +204,6 @@ private static final long serialVersionUID = 0L;
     return getData();
   }
 
-  public static final int TRACK_INFO_FIELD_NUMBER = 3;
-  private com.clarifai.grpc.api.Track.TrackInfo trackInfo_;
-  /**
-   * <pre>
-   * The track information.
-   * </pre>
-   *
-   * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-   * @return Whether the trackInfo field is set.
-   */
-  public boolean hasTrackInfo() {
-    return trackInfo_ != null;
-  }
-  /**
-   * <pre>
-   * The track information.
-   * </pre>
-   *
-   * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-   * @return The trackInfo.
-   */
-  public com.clarifai.grpc.api.Track.TrackInfo getTrackInfo() {
-    return trackInfo_ == null ? com.clarifai.grpc.api.Track.TrackInfo.getDefaultInstance() : trackInfo_;
-  }
-  /**
-   * <pre>
-   * The track information.
-   * </pre>
-   *
-   * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-   */
-  public com.clarifai.grpc.api.Track.TrackInfoOrBuilder getTrackInfoOrBuilder() {
-    return getTrackInfo();
-  }
-
   public static final int TIME_INFO_FIELD_NUMBER = 4;
   private com.clarifai.grpc.api.TimeInfo timeInfo_;
   /**
@@ -1394,6 +227,16 @@ private static final long serialVersionUID = 0L;
     return getTimeInfo();
   }
 
+  public static final int QUALITY_FIELD_NUMBER = 5;
+  private float quality_;
+  /**
+   * <code>float quality = 5;</code>
+   * @return The quality.
+   */
+  public float getQuality() {
+    return quality_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1414,11 +257,11 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(2, getData());
     }
-    if (trackInfo_ != null) {
-      output.writeMessage(3, getTrackInfo());
-    }
     if (timeInfo_ != null) {
       output.writeMessage(4, getTimeInfo());
+    }
+    if (quality_ != 0F) {
+      output.writeFloat(5, quality_);
     }
     unknownFields.writeTo(output);
   }
@@ -1436,13 +279,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getData());
     }
-    if (trackInfo_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getTrackInfo());
-    }
     if (timeInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getTimeInfo());
+    }
+    if (quality_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(5, quality_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1466,16 +309,14 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
-    if (hasTrackInfo() != other.hasTrackInfo()) return false;
-    if (hasTrackInfo()) {
-      if (!getTrackInfo()
-          .equals(other.getTrackInfo())) return false;
-    }
     if (hasTimeInfo() != other.hasTimeInfo()) return false;
     if (hasTimeInfo()) {
       if (!getTimeInfo()
           .equals(other.getTimeInfo())) return false;
     }
+    if (java.lang.Float.floatToIntBits(getQuality())
+        != java.lang.Float.floatToIntBits(
+            other.getQuality())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1493,14 +334,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
     }
-    if (hasTrackInfo()) {
-      hash = (37 * hash) + TRACK_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getTrackInfo().hashCode();
-    }
     if (hasTimeInfo()) {
       hash = (37 * hash) + TIME_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getTimeInfo().hashCode();
     }
+    hash = (37 * hash) + QUALITY_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getQuality());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1646,18 +486,14 @@ private static final long serialVersionUID = 0L;
         data_ = null;
         dataBuilder_ = null;
       }
-      if (trackInfoBuilder_ == null) {
-        trackInfo_ = null;
-      } else {
-        trackInfo_ = null;
-        trackInfoBuilder_ = null;
-      }
       if (timeInfoBuilder_ == null) {
         timeInfo_ = null;
       } else {
         timeInfo_ = null;
         timeInfoBuilder_ = null;
       }
+      quality_ = 0F;
+
       return this;
     }
 
@@ -1690,16 +526,12 @@ private static final long serialVersionUID = 0L;
       } else {
         result.data_ = dataBuilder_.build();
       }
-      if (trackInfoBuilder_ == null) {
-        result.trackInfo_ = trackInfo_;
-      } else {
-        result.trackInfo_ = trackInfoBuilder_.build();
-      }
       if (timeInfoBuilder_ == null) {
         result.timeInfo_ = timeInfo_;
       } else {
         result.timeInfo_ = timeInfoBuilder_.build();
       }
+      result.quality_ = quality_;
       onBuilt();
       return result;
     }
@@ -1755,11 +587,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
-      if (other.hasTrackInfo()) {
-        mergeTrackInfo(other.getTrackInfo());
-      }
       if (other.hasTimeInfo()) {
         mergeTimeInfo(other.getTimeInfo());
+      }
+      if (other.getQuality() != 0F) {
+        setQuality(other.getQuality());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2050,161 +882,6 @@ private static final long serialVersionUID = 0L;
       return dataBuilder_;
     }
 
-    private com.clarifai.grpc.api.Track.TrackInfo trackInfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Track.TrackInfo, com.clarifai.grpc.api.Track.TrackInfo.Builder, com.clarifai.grpc.api.Track.TrackInfoOrBuilder> trackInfoBuilder_;
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     * @return Whether the trackInfo field is set.
-     */
-    public boolean hasTrackInfo() {
-      return trackInfoBuilder_ != null || trackInfo_ != null;
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     * @return The trackInfo.
-     */
-    public com.clarifai.grpc.api.Track.TrackInfo getTrackInfo() {
-      if (trackInfoBuilder_ == null) {
-        return trackInfo_ == null ? com.clarifai.grpc.api.Track.TrackInfo.getDefaultInstance() : trackInfo_;
-      } else {
-        return trackInfoBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    public Builder setTrackInfo(com.clarifai.grpc.api.Track.TrackInfo value) {
-      if (trackInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        trackInfo_ = value;
-        onChanged();
-      } else {
-        trackInfoBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    public Builder setTrackInfo(
-        com.clarifai.grpc.api.Track.TrackInfo.Builder builderForValue) {
-      if (trackInfoBuilder_ == null) {
-        trackInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        trackInfoBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    public Builder mergeTrackInfo(com.clarifai.grpc.api.Track.TrackInfo value) {
-      if (trackInfoBuilder_ == null) {
-        if (trackInfo_ != null) {
-          trackInfo_ =
-            com.clarifai.grpc.api.Track.TrackInfo.newBuilder(trackInfo_).mergeFrom(value).buildPartial();
-        } else {
-          trackInfo_ = value;
-        }
-        onChanged();
-      } else {
-        trackInfoBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    public Builder clearTrackInfo() {
-      if (trackInfoBuilder_ == null) {
-        trackInfo_ = null;
-        onChanged();
-      } else {
-        trackInfo_ = null;
-        trackInfoBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    public com.clarifai.grpc.api.Track.TrackInfo.Builder getTrackInfoBuilder() {
-      
-      onChanged();
-      return getTrackInfoFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    public com.clarifai.grpc.api.Track.TrackInfoOrBuilder getTrackInfoOrBuilder() {
-      if (trackInfoBuilder_ != null) {
-        return trackInfoBuilder_.getMessageOrBuilder();
-      } else {
-        return trackInfo_ == null ?
-            com.clarifai.grpc.api.Track.TrackInfo.getDefaultInstance() : trackInfo_;
-      }
-    }
-    /**
-     * <pre>
-     * The track information.
-     * </pre>
-     *
-     * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Track.TrackInfo, com.clarifai.grpc.api.Track.TrackInfo.Builder, com.clarifai.grpc.api.Track.TrackInfoOrBuilder> 
-        getTrackInfoFieldBuilder() {
-      if (trackInfoBuilder_ == null) {
-        trackInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Track.TrackInfo, com.clarifai.grpc.api.Track.TrackInfo.Builder, com.clarifai.grpc.api.Track.TrackInfoOrBuilder>(
-                getTrackInfo(),
-                getParentForChildren(),
-                isClean());
-        trackInfo_ = null;
-      }
-      return trackInfoBuilder_;
-    }
-
     private com.clarifai.grpc.api.TimeInfo timeInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.TimeInfo, com.clarifai.grpc.api.TimeInfo.Builder, com.clarifai.grpc.api.TimeInfoOrBuilder> timeInfoBuilder_;
@@ -2322,6 +999,36 @@ private static final long serialVersionUID = 0L;
         timeInfo_ = null;
       }
       return timeInfoBuilder_;
+    }
+
+    private float quality_ ;
+    /**
+     * <code>float quality = 5;</code>
+     * @return The quality.
+     */
+    public float getQuality() {
+      return quality_;
+    }
+    /**
+     * <code>float quality = 5;</code>
+     * @param value The quality to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuality(float value) {
+      
+      quality_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float quality = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQuality() {
+      
+      quality_ = 0F;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

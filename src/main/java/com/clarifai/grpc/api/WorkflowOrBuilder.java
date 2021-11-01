@@ -293,4 +293,87 @@ public interface WorkflowOrBuilder extends
    * @return The starCount.
    */
   int getStarCount();
+
+  /**
+   * <pre>
+   * Short description about this workflow
+   * </pre>
+   *
+   * <code>string description = 12;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Short description about this workflow
+   * </pre>
+   *
+   * <code>string description = 12;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <pre>
+   * Notes for the workflow
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 13;</code>
+   * @return The notes.
+   */
+  java.lang.String getNotes();
+  /**
+   * <pre>
+   * Notes for the workflow
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 13;</code>
+   * @return The bytes for notes.
+   */
+  com.google.protobuf.ByteString
+      getNotesBytes();
+
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the useCases.
+   */
+  java.util.List<java.lang.String>
+      getUseCasesList();
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of useCases.
+   */
+  int getUseCasesCount();
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  java.lang.String getUseCases(int index);
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the useCases at the given index.
+   */
+  com.google.protobuf.ByteString
+      getUseCasesBytes(int index);
 }

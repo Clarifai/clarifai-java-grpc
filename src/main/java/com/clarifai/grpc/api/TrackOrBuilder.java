@@ -58,33 +58,6 @@ public interface TrackOrBuilder extends
   com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder();
 
   /**
-   * <pre>
-   * The track information.
-   * </pre>
-   *
-   * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-   * @return Whether the trackInfo field is set.
-   */
-  boolean hasTrackInfo();
-  /**
-   * <pre>
-   * The track information.
-   * </pre>
-   *
-   * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-   * @return The trackInfo.
-   */
-  com.clarifai.grpc.api.Track.TrackInfo getTrackInfo();
-  /**
-   * <pre>
-   * The track information.
-   * </pre>
-   *
-   * <code>.clarifai.api.Track.TrackInfo track_info = 3;</code>
-   */
-  com.clarifai.grpc.api.Track.TrackInfoOrBuilder getTrackInfoOrBuilder();
-
-  /**
    * <code>.clarifai.api.TimeInfo time_info = 4;</code>
    * @return Whether the timeInfo field is set.
    */
@@ -98,4 +71,10 @@ public interface TrackOrBuilder extends
    * <code>.clarifai.api.TimeInfo time_info = 4;</code>
    */
   com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder();
+
+  /**
+   * <code>float quality = 5;</code>
+   * @return The quality.
+   */
+  float getQuality();
 }

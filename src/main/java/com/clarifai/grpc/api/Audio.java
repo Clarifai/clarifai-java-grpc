@@ -85,6 +85,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.AudioInfo.Builder subBuilder = null;
+            if (audioInfo_ != null) {
+              subBuilder = audioInfo_.toBuilder();
+            }
+            audioInfo_ = input.readMessage(com.clarifai.grpc.api.AudioInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(audioInfo_);
+              audioInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -234,6 +247,41 @@ private static final long serialVersionUID = 0L;
     return getHosted();
   }
 
+  public static final int AUDIO_INFO_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.AudioInfo audioInfo_;
+  /**
+   * <pre>
+   * audio info
+   * </pre>
+   *
+   * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+   * @return Whether the audioInfo field is set.
+   */
+  public boolean hasAudioInfo() {
+    return audioInfo_ != null;
+  }
+  /**
+   * <pre>
+   * audio info
+   * </pre>
+   *
+   * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+   * @return The audioInfo.
+   */
+  public com.clarifai.grpc.api.AudioInfo getAudioInfo() {
+    return audioInfo_ == null ? com.clarifai.grpc.api.AudioInfo.getDefaultInstance() : audioInfo_;
+  }
+  /**
+   * <pre>
+   * audio info
+   * </pre>
+   *
+   * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+   */
+  public com.clarifai.grpc.api.AudioInfoOrBuilder getAudioInfoOrBuilder() {
+    return getAudioInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -260,6 +308,9 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       output.writeMessage(5, getHosted());
     }
+    if (audioInfo_ != null) {
+      output.writeMessage(6, getAudioInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -283,6 +334,10 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getHosted());
+    }
+    if (audioInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getAudioInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,6 +365,11 @@ private static final long serialVersionUID = 0L;
       if (!getHosted()
           .equals(other.getHosted())) return false;
     }
+    if (hasAudioInfo() != other.hasAudioInfo()) return false;
+    if (hasAudioInfo()) {
+      if (!getAudioInfo()
+          .equals(other.getAudioInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -331,6 +391,10 @@ private static final long serialVersionUID = 0L;
     if (hasHosted()) {
       hash = (37 * hash) + HOSTED_FIELD_NUMBER;
       hash = (53 * hash) + getHosted().hashCode();
+    }
+    if (hasAudioInfo()) {
+      hash = (37 * hash) + AUDIO_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAudioInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -483,6 +547,12 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
         hostedBuilder_ = null;
       }
+      if (audioInfoBuilder_ == null) {
+        audioInfo_ = null;
+      } else {
+        audioInfo_ = null;
+        audioInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -516,6 +586,11 @@ private static final long serialVersionUID = 0L;
         result.hosted_ = hosted_;
       } else {
         result.hosted_ = hostedBuilder_.build();
+      }
+      if (audioInfoBuilder_ == null) {
+        result.audioInfo_ = audioInfo_;
+      } else {
+        result.audioInfo_ = audioInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -577,6 +652,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasHosted()) {
         mergeHosted(other.getHosted());
+      }
+      if (other.hasAudioInfo()) {
+        mergeAudioInfo(other.getAudioInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -972,6 +1050,161 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
       }
       return hostedBuilder_;
+    }
+
+    private com.clarifai.grpc.api.AudioInfo audioInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AudioInfo, com.clarifai.grpc.api.AudioInfo.Builder, com.clarifai.grpc.api.AudioInfoOrBuilder> audioInfoBuilder_;
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     * @return Whether the audioInfo field is set.
+     */
+    public boolean hasAudioInfo() {
+      return audioInfoBuilder_ != null || audioInfo_ != null;
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     * @return The audioInfo.
+     */
+    public com.clarifai.grpc.api.AudioInfo getAudioInfo() {
+      if (audioInfoBuilder_ == null) {
+        return audioInfo_ == null ? com.clarifai.grpc.api.AudioInfo.getDefaultInstance() : audioInfo_;
+      } else {
+        return audioInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    public Builder setAudioInfo(com.clarifai.grpc.api.AudioInfo value) {
+      if (audioInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        audioInfo_ = value;
+        onChanged();
+      } else {
+        audioInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    public Builder setAudioInfo(
+        com.clarifai.grpc.api.AudioInfo.Builder builderForValue) {
+      if (audioInfoBuilder_ == null) {
+        audioInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    public Builder mergeAudioInfo(com.clarifai.grpc.api.AudioInfo value) {
+      if (audioInfoBuilder_ == null) {
+        if (audioInfo_ != null) {
+          audioInfo_ =
+            com.clarifai.grpc.api.AudioInfo.newBuilder(audioInfo_).mergeFrom(value).buildPartial();
+        } else {
+          audioInfo_ = value;
+        }
+        onChanged();
+      } else {
+        audioInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    public Builder clearAudioInfo() {
+      if (audioInfoBuilder_ == null) {
+        audioInfo_ = null;
+        onChanged();
+      } else {
+        audioInfo_ = null;
+        audioInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    public com.clarifai.grpc.api.AudioInfo.Builder getAudioInfoBuilder() {
+      
+      onChanged();
+      return getAudioInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    public com.clarifai.grpc.api.AudioInfoOrBuilder getAudioInfoOrBuilder() {
+      if (audioInfoBuilder_ != null) {
+        return audioInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return audioInfo_ == null ?
+            com.clarifai.grpc.api.AudioInfo.getDefaultInstance() : audioInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * audio info
+     * </pre>
+     *
+     * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AudioInfo, com.clarifai.grpc.api.AudioInfo.Builder, com.clarifai.grpc.api.AudioInfoOrBuilder> 
+        getAudioInfoFieldBuilder() {
+      if (audioInfoBuilder_ == null) {
+        audioInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AudioInfo, com.clarifai.grpc.api.AudioInfo.Builder, com.clarifai.grpc.api.AudioInfoOrBuilder>(
+                getAudioInfo(),
+                getParentForChildren(),
+                isClean());
+        audioInfo_ = null;
+      }
+      return audioInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

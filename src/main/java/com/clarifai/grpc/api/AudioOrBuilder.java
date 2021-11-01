@@ -83,4 +83,31 @@ public interface AudioOrBuilder extends
    * <code>.clarifai.api.HostedURL hosted = 5;</code>
    */
   com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
+
+  /**
+   * <pre>
+   * audio info
+   * </pre>
+   *
+   * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+   * @return Whether the audioInfo field is set.
+   */
+  boolean hasAudioInfo();
+  /**
+   * <pre>
+   * audio info
+   * </pre>
+   *
+   * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+   * @return The audioInfo.
+   */
+  com.clarifai.grpc.api.AudioInfo getAudioInfo();
+  /**
+   * <pre>
+   * audio info
+   * </pre>
+   *
+   * <code>.clarifai.api.AudioInfo audio_info = 6;</code>
+   */
+  com.clarifai.grpc.api.AudioInfoOrBuilder getAudioInfoOrBuilder();
 }

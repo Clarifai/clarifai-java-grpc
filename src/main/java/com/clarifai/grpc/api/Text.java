@@ -86,6 +86,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.TextInfo.Builder subBuilder = null;
+            if (textInfo_ != null) {
+              subBuilder = textInfo_.toBuilder();
+            }
+            textInfo_ = input.readMessage(com.clarifai.grpc.api.TextInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(textInfo_);
+              textInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -254,6 +267,41 @@ private static final long serialVersionUID = 0L;
     return getHosted();
   }
 
+  public static final int TEXT_INFO_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.TextInfo textInfo_;
+  /**
+   * <pre>
+   * text info
+   * </pre>
+   *
+   * <code>.clarifai.api.TextInfo text_info = 5;</code>
+   * @return Whether the textInfo field is set.
+   */
+  public boolean hasTextInfo() {
+    return textInfo_ != null;
+  }
+  /**
+   * <pre>
+   * text info
+   * </pre>
+   *
+   * <code>.clarifai.api.TextInfo text_info = 5;</code>
+   * @return The textInfo.
+   */
+  public com.clarifai.grpc.api.TextInfo getTextInfo() {
+    return textInfo_ == null ? com.clarifai.grpc.api.TextInfo.getDefaultInstance() : textInfo_;
+  }
+  /**
+   * <pre>
+   * text info
+   * </pre>
+   *
+   * <code>.clarifai.api.TextInfo text_info = 5;</code>
+   */
+  public com.clarifai.grpc.api.TextInfoOrBuilder getTextInfoOrBuilder() {
+    return getTextInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -280,6 +328,9 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       output.writeMessage(4, getHosted());
     }
+    if (textInfo_ != null) {
+      output.writeMessage(5, getTextInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -302,6 +353,10 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getHosted());
+    }
+    if (textInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getTextInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -329,6 +384,11 @@ private static final long serialVersionUID = 0L;
       if (!getHosted()
           .equals(other.getHosted())) return false;
     }
+    if (hasTextInfo() != other.hasTextInfo()) return false;
+    if (hasTextInfo()) {
+      if (!getTextInfo()
+          .equals(other.getTextInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -350,6 +410,10 @@ private static final long serialVersionUID = 0L;
     if (hasHosted()) {
       hash = (37 * hash) + HOSTED_FIELD_NUMBER;
       hash = (53 * hash) + getHosted().hashCode();
+    }
+    if (hasTextInfo()) {
+      hash = (37 * hash) + TEXT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTextInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -502,6 +566,12 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
         hostedBuilder_ = null;
       }
+      if (textInfoBuilder_ == null) {
+        textInfo_ = null;
+      } else {
+        textInfo_ = null;
+        textInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -535,6 +605,11 @@ private static final long serialVersionUID = 0L;
         result.hosted_ = hosted_;
       } else {
         result.hosted_ = hostedBuilder_.build();
+      }
+      if (textInfoBuilder_ == null) {
+        result.textInfo_ = textInfo_;
+      } else {
+        result.textInfo_ = textInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -597,6 +672,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasHosted()) {
         mergeHosted(other.getHosted());
+      }
+      if (other.hasTextInfo()) {
+        mergeTextInfo(other.getTextInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1011,6 +1089,161 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
       }
       return hostedBuilder_;
+    }
+
+    private com.clarifai.grpc.api.TextInfo textInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TextInfo, com.clarifai.grpc.api.TextInfo.Builder, com.clarifai.grpc.api.TextInfoOrBuilder> textInfoBuilder_;
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     * @return Whether the textInfo field is set.
+     */
+    public boolean hasTextInfo() {
+      return textInfoBuilder_ != null || textInfo_ != null;
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     * @return The textInfo.
+     */
+    public com.clarifai.grpc.api.TextInfo getTextInfo() {
+      if (textInfoBuilder_ == null) {
+        return textInfo_ == null ? com.clarifai.grpc.api.TextInfo.getDefaultInstance() : textInfo_;
+      } else {
+        return textInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    public Builder setTextInfo(com.clarifai.grpc.api.TextInfo value) {
+      if (textInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textInfo_ = value;
+        onChanged();
+      } else {
+        textInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    public Builder setTextInfo(
+        com.clarifai.grpc.api.TextInfo.Builder builderForValue) {
+      if (textInfoBuilder_ == null) {
+        textInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        textInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    public Builder mergeTextInfo(com.clarifai.grpc.api.TextInfo value) {
+      if (textInfoBuilder_ == null) {
+        if (textInfo_ != null) {
+          textInfo_ =
+            com.clarifai.grpc.api.TextInfo.newBuilder(textInfo_).mergeFrom(value).buildPartial();
+        } else {
+          textInfo_ = value;
+        }
+        onChanged();
+      } else {
+        textInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    public Builder clearTextInfo() {
+      if (textInfoBuilder_ == null) {
+        textInfo_ = null;
+        onChanged();
+      } else {
+        textInfo_ = null;
+        textInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    public com.clarifai.grpc.api.TextInfo.Builder getTextInfoBuilder() {
+      
+      onChanged();
+      return getTextInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    public com.clarifai.grpc.api.TextInfoOrBuilder getTextInfoOrBuilder() {
+      if (textInfoBuilder_ != null) {
+        return textInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return textInfo_ == null ?
+            com.clarifai.grpc.api.TextInfo.getDefaultInstance() : textInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * text info
+     * </pre>
+     *
+     * <code>.clarifai.api.TextInfo text_info = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TextInfo, com.clarifai.grpc.api.TextInfo.Builder, com.clarifai.grpc.api.TextInfoOrBuilder> 
+        getTextInfoFieldBuilder() {
+      if (textInfoBuilder_ == null) {
+        textInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TextInfo, com.clarifai.grpc.api.TextInfo.Builder, com.clarifai.grpc.api.TextInfoOrBuilder>(
+                getTextInfo(),
+                getParentForChildren(),
+                isClean());
+        textInfo_ = null;
+      }
+      return textInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

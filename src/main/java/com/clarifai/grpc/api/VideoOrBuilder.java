@@ -101,4 +101,31 @@ public interface VideoOrBuilder extends
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
    */
   com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
+
+  /**
+   * <pre>
+   * video info
+   * </pre>
+   *
+   * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+   * @return Whether the videoInfo field is set.
+   */
+  boolean hasVideoInfo();
+  /**
+   * <pre>
+   * video info
+   * </pre>
+   *
+   * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+   * @return The videoInfo.
+   */
+  com.clarifai.grpc.api.VideoInfo getVideoInfo();
+  /**
+   * <pre>
+   * video info
+   * </pre>
+   *
+   * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+   */
+  com.clarifai.grpc.api.VideoInfoOrBuilder getVideoInfoOrBuilder();
 }

@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
     nodes_ = java.util.Collections.emptyList();
     appId_ = "";
     userId_ = "";
+    description_ = "";
+    license_ = "";
   }
 
   @java.lang.Override
@@ -137,6 +139,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             userId_ = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            license_ = s;
             break;
           }
           default: {
@@ -571,6 +585,94 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 10;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * Short description about this workflow version
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Short description about this workflow version
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LICENSE_FIELD_NUMBER = 11;
+  private volatile java.lang.Object license_;
+  /**
+   * <pre>
+   * License associated to this workflow version
+   * </pre>
+   *
+   * <code>string license = 11;</code>
+   * @return The license.
+   */
+  public java.lang.String getLicense() {
+    java.lang.Object ref = license_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      license_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * License associated to this workflow version
+   * </pre>
+   *
+   * <code>string license = 11;</code>
+   * @return The bytes for license.
+   */
+  public com.google.protobuf.ByteString
+      getLicenseBytes() {
+    java.lang.Object ref = license_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      license_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -612,6 +714,12 @@ private static final long serialVersionUID = 0L;
     if (!getUserIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
+    }
+    if (!getLicenseBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, license_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -652,6 +760,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
+    }
+    if (!getLicenseBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, license_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -698,6 +812,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAppId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getLicense()
+        .equals(other.getLicense())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -737,6 +855,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAppId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + LICENSE_FIELD_NUMBER;
+    hash = (53 * hash) + getLicense().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -909,6 +1031,10 @@ private static final long serialVersionUID = 0L;
 
       userId_ = "";
 
+      description_ = "";
+
+      license_ = "";
+
       return this;
     }
 
@@ -969,6 +1095,8 @@ private static final long serialVersionUID = 0L;
       }
       result.appId_ = appId_;
       result.userId_ = userId_;
+      result.description_ = description_;
+      result.license_ = license_;
       onBuilt();
       return result;
     }
@@ -1069,6 +1197,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (!other.getLicense().isEmpty()) {
+        license_ = other.license_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2494,6 +2630,198 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       userId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * Short description about this workflow version
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description about this workflow version
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description about this workflow version
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description about this workflow version
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description about this workflow version
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object license_ = "";
+    /**
+     * <pre>
+     * License associated to this workflow version
+     * </pre>
+     *
+     * <code>string license = 11;</code>
+     * @return The license.
+     */
+    public java.lang.String getLicense() {
+      java.lang.Object ref = license_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        license_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * License associated to this workflow version
+     * </pre>
+     *
+     * <code>string license = 11;</code>
+     * @return The bytes for license.
+     */
+    public com.google.protobuf.ByteString
+        getLicenseBytes() {
+      java.lang.Object ref = license_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        license_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * License associated to this workflow version
+     * </pre>
+     *
+     * <code>string license = 11;</code>
+     * @param value The license to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicense(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      license_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * License associated to this workflow version
+     * </pre>
+     *
+     * <code>string license = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLicense() {
+      
+      license_ = getDefaultInstance().getLicense();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * License associated to this workflow version
+     * </pre>
+     *
+     * <code>string license = 11;</code>
+     * @param value The bytes for license to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicenseBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      license_ = value;
       onChanged();
       return this;
     }

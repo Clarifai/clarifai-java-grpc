@@ -122,13 +122,23 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
-   * If true, we only return workflows that are handpicked by clarifai staff
+   * If true, we only return apps that are handpicked by clarifai staff
    * </pre>
    *
    * <code>bool featured_only = 9;</code>
    * @return The featuredOnly.
    */
   boolean getFeaturedOnly();
+
+  /**
+   * <pre>
+   * If true, we only return apps that are starred by the requesting user
+   * </pre>
+   *
+   * <code>bool starred_only = 11;</code>
+   * @return The starredOnly.
+   */
+  boolean getStarredOnly();
 
   /**
    * <pre>

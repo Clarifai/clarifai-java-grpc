@@ -390,9 +390,8 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Notes about a model (should support markdown)
-   * This field should be used for in-depth notes about
-   * about a model and supports up to 64Kbs.
+   * Notes for the model
+   * This field should be used for in-depth notes and supports up to 64Kbs.
    * </pre>
    *
    * <code>string notes = 18;</code>
@@ -401,9 +400,8 @@ public interface ModelOrBuilder extends
   java.lang.String getNotes();
   /**
    * <pre>
-   * Notes about a model (should support markdown)
-   * This field should be used for in-depth notes about
-   * about a model and supports up to 64Kbs.
+   * Notes for the model
+   * This field should be used for in-depth notes and supports up to 64Kbs.
    * </pre>
    *
    * <code>string notes = 18;</code>
@@ -496,6 +494,47 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the languages.
+   */
+  java.util.List<java.lang.String>
+      getLanguagesList();
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of languages.
+   */
+  int getLanguagesCount();
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The languages at the given index.
+   */
+  java.lang.String getLanguages(int index);
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languages at the given index.
+   */
+  com.google.protobuf.ByteString
+      getLanguagesBytes(int index);
+
+  /**
+   * <pre>
    * Is starred by the requesting user (only showed on get/list requests)
    * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
    * </pre>
@@ -515,4 +554,31 @@ public interface ModelOrBuilder extends
    * @return The starCount.
    */
   int getStarCount();
+
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * @return Whether the importInfo field is set.
+   */
+  boolean hasImportInfo();
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * @return The importInfo.
+   */
+  com.clarifai.grpc.api.ImportInfo getImportInfo();
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   */
+  com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
 }

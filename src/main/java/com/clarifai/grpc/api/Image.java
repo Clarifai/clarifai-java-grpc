@@ -85,6 +85,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.ImageInfo.Builder subBuilder = null;
+            if (imageInfo_ != null) {
+              subBuilder = imageInfo_.toBuilder();
+            }
+            imageInfo_ = input.readMessage(com.clarifai.grpc.api.ImageInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(imageInfo_);
+              imageInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -227,6 +240,41 @@ private static final long serialVersionUID = 0L;
     return getHosted();
   }
 
+  public static final int IMAGE_INFO_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.ImageInfo imageInfo_;
+  /**
+   * <pre>
+   * image info
+   * </pre>
+   *
+   * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+   * @return Whether the imageInfo field is set.
+   */
+  public boolean hasImageInfo() {
+    return imageInfo_ != null;
+  }
+  /**
+   * <pre>
+   * image info
+   * </pre>
+   *
+   * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+   * @return The imageInfo.
+   */
+  public com.clarifai.grpc.api.ImageInfo getImageInfo() {
+    return imageInfo_ == null ? com.clarifai.grpc.api.ImageInfo.getDefaultInstance() : imageInfo_;
+  }
+  /**
+   * <pre>
+   * image info
+   * </pre>
+   *
+   * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+   */
+  public com.clarifai.grpc.api.ImageInfoOrBuilder getImageInfoOrBuilder() {
+    return getImageInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -253,6 +301,9 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       output.writeMessage(5, getHosted());
     }
+    if (imageInfo_ != null) {
+      output.writeMessage(6, getImageInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -276,6 +327,10 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getHosted());
+    }
+    if (imageInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getImageInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,6 +358,11 @@ private static final long serialVersionUID = 0L;
       if (!getHosted()
           .equals(other.getHosted())) return false;
     }
+    if (hasImageInfo() != other.hasImageInfo()) return false;
+    if (hasImageInfo()) {
+      if (!getImageInfo()
+          .equals(other.getImageInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,6 +384,10 @@ private static final long serialVersionUID = 0L;
     if (hasHosted()) {
       hash = (37 * hash) + HOSTED_FIELD_NUMBER;
       hash = (53 * hash) + getHosted().hashCode();
+    }
+    if (hasImageInfo()) {
+      hash = (37 * hash) + IMAGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getImageInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -476,6 +540,12 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
         hostedBuilder_ = null;
       }
+      if (imageInfoBuilder_ == null) {
+        imageInfo_ = null;
+      } else {
+        imageInfo_ = null;
+        imageInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -509,6 +579,11 @@ private static final long serialVersionUID = 0L;
         result.hosted_ = hosted_;
       } else {
         result.hosted_ = hostedBuilder_.build();
+      }
+      if (imageInfoBuilder_ == null) {
+        result.imageInfo_ = imageInfo_;
+      } else {
+        result.imageInfo_ = imageInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -570,6 +645,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasHosted()) {
         mergeHosted(other.getHosted());
+      }
+      if (other.hasImageInfo()) {
+        mergeImageInfo(other.getImageInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -944,6 +1022,161 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
       }
       return hostedBuilder_;
+    }
+
+    private com.clarifai.grpc.api.ImageInfo imageInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ImageInfo, com.clarifai.grpc.api.ImageInfo.Builder, com.clarifai.grpc.api.ImageInfoOrBuilder> imageInfoBuilder_;
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     * @return Whether the imageInfo field is set.
+     */
+    public boolean hasImageInfo() {
+      return imageInfoBuilder_ != null || imageInfo_ != null;
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     * @return The imageInfo.
+     */
+    public com.clarifai.grpc.api.ImageInfo getImageInfo() {
+      if (imageInfoBuilder_ == null) {
+        return imageInfo_ == null ? com.clarifai.grpc.api.ImageInfo.getDefaultInstance() : imageInfo_;
+      } else {
+        return imageInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    public Builder setImageInfo(com.clarifai.grpc.api.ImageInfo value) {
+      if (imageInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        imageInfo_ = value;
+        onChanged();
+      } else {
+        imageInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    public Builder setImageInfo(
+        com.clarifai.grpc.api.ImageInfo.Builder builderForValue) {
+      if (imageInfoBuilder_ == null) {
+        imageInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    public Builder mergeImageInfo(com.clarifai.grpc.api.ImageInfo value) {
+      if (imageInfoBuilder_ == null) {
+        if (imageInfo_ != null) {
+          imageInfo_ =
+            com.clarifai.grpc.api.ImageInfo.newBuilder(imageInfo_).mergeFrom(value).buildPartial();
+        } else {
+          imageInfo_ = value;
+        }
+        onChanged();
+      } else {
+        imageInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    public Builder clearImageInfo() {
+      if (imageInfoBuilder_ == null) {
+        imageInfo_ = null;
+        onChanged();
+      } else {
+        imageInfo_ = null;
+        imageInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    public com.clarifai.grpc.api.ImageInfo.Builder getImageInfoBuilder() {
+      
+      onChanged();
+      return getImageInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    public com.clarifai.grpc.api.ImageInfoOrBuilder getImageInfoOrBuilder() {
+      if (imageInfoBuilder_ != null) {
+        return imageInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return imageInfo_ == null ?
+            com.clarifai.grpc.api.ImageInfo.getDefaultInstance() : imageInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * image info
+     * </pre>
+     *
+     * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ImageInfo, com.clarifai.grpc.api.ImageInfo.Builder, com.clarifai.grpc.api.ImageInfoOrBuilder> 
+        getImageInfoFieldBuilder() {
+      if (imageInfoBuilder_ == null) {
+        imageInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ImageInfo, com.clarifai.grpc.api.ImageInfo.Builder, com.clarifai.grpc.api.ImageInfoOrBuilder>(
+                getImageInfo(),
+                getParentForChildren(),
+                isClean());
+        imageInfo_ = null;
+      }
+      return imageInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

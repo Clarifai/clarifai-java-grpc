@@ -76,4 +76,31 @@ public interface ImageOrBuilder extends
    * <code>.clarifai.api.HostedURL hosted = 5;</code>
    */
   com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
+
+  /**
+   * <pre>
+   * image info
+   * </pre>
+   *
+   * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+   * @return Whether the imageInfo field is set.
+   */
+  boolean hasImageInfo();
+  /**
+   * <pre>
+   * image info
+   * </pre>
+   *
+   * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+   * @return The imageInfo.
+   */
+  com.clarifai.grpc.api.ImageInfo getImageInfo();
+  /**
+   * <pre>
+   * image info
+   * </pre>
+   *
+   * <code>.clarifai.api.ImageInfo image_info = 6;</code>
+   */
+  com.clarifai.grpc.api.ImageInfoOrBuilder getImageInfoOrBuilder();
 }

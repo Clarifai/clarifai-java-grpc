@@ -86,6 +86,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    * Use this to filter inputs that are used in training
+   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -95,6 +96,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    * Use this to filter inputs that are used in training
+   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -104,6 +106,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    * Use this to filter inputs that are used in training
+   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -113,6 +116,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    *train_search is used to specify what data to train on.
+   * Alternatively, use dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search train_search = 5;</code>
@@ -122,6 +126,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    *train_search is used to specify what data to train on.
+   * Alternatively, use dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search train_search = 5;</code>
@@ -131,6 +136,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    *train_search is used to specify what data to train on.
+   * Alternatively, use dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search train_search = 5;</code>
@@ -140,6 +146,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    *test_search is used to specify what data to test on.
+   * Alternatively, use dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search test_search = 6;</code>
@@ -149,6 +156,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    *test_search is used to specify what data to test on.
+   * Alternatively, use dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search test_search = 6;</code>
@@ -158,6 +166,7 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    *test_search is used to specify what data to test on.
+   * Alternatively, use dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search test_search = 6;</code>
@@ -193,4 +202,46 @@ public interface PostModelVersionsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * Use the data from this dataset version for training.
+   * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+   * When dataset_version.id field is set,
+   * the system will reuse the data from provided dataset version.
+   * When dataset_version.id is not set,
+   * a new dataset version will be created in the dataset using provided dataset_version fields.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+   * @return Whether the datasetVersion field is set.
+   */
+  boolean hasDatasetVersion();
+  /**
+   * <pre>
+   * Use the data from this dataset version for training.
+   * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+   * When dataset_version.id field is set,
+   * the system will reuse the data from provided dataset version.
+   * When dataset_version.id is not set,
+   * a new dataset version will be created in the dataset using provided dataset_version fields.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+   * @return The datasetVersion.
+   */
+  com.clarifai.grpc.api.DatasetVersion getDatasetVersion();
+  /**
+   * <pre>
+   * Use the data from this dataset version for training.
+   * Set dataset_version.dataset_id to identify the dataset that you would like to use.
+   * When dataset_version.id field is set,
+   * the system will reuse the data from provided dataset version.
+   * When dataset_version.id is not set,
+   * a new dataset version will be created in the dataset using provided dataset_version fields.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder();
 }

@@ -130,6 +130,16 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
+   * If true, we only return workflows that are starred by the requesting user
+   * </pre>
+   *
+   * <code>bool starred_only = 11;</code>
+   * @return The starredOnly.
+   */
+  boolean getStarredOnly();
+
+  /**
+   * <pre>
    * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
    * </pre>
    *
