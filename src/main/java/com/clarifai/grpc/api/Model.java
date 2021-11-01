@@ -43,6 +43,7 @@ private static final long serialVersionUID = 0L;
     notes_ = "";
     toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -256,6 +257,28 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
+          case 194: {
+            com.clarifai.grpc.api.ImportInfo.Builder subBuilder = null;
+            if (importInfo_ != null) {
+              subBuilder = importInfo_.toBuilder();
+            }
+            importInfo_ = input.readMessage(com.clarifai.grpc.api.ImportInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(importInfo_);
+              importInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 202: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              languages_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            languages_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -276,6 +299,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         useCases_ = useCases_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        languages_ = languages_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -911,9 +937,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object notes_;
   /**
    * <pre>
-   * Notes about a model (should support markdown)
-   * This field should be used for in-depth notes about
-   * about a model and supports up to 64Kbs.
+   * Notes for the model
+   * This field should be used for in-depth notes and supports up to 64Kbs.
    * </pre>
    *
    * <code>string notes = 18;</code>
@@ -933,9 +958,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Notes about a model (should support markdown)
-   * This field should be used for in-depth notes about
-   * about a model and supports up to 64Kbs.
+   * Notes for the model
+   * This field should be used for in-depth notes and supports up to 64Kbs.
    * </pre>
    *
    * <code>string notes = 18;</code>
@@ -1057,6 +1081,57 @@ private static final long serialVersionUID = 0L;
     return useCases_.getByteString(index);
   }
 
+  public static final int LANGUAGES_FIELD_NUMBER = 25;
+  private com.google.protobuf.LazyStringList languages_;
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the languages.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getLanguagesList() {
+    return languages_;
+  }
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of languages.
+   */
+  public int getLanguagesCount() {
+    return languages_.size();
+  }
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The languages at the given index.
+   */
+  public java.lang.String getLanguages(int index) {
+    return languages_.get(index);
+  }
+  /**
+   * <pre>
+   * Tags from languages category.
+   * </pre>
+   *
+   * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languages at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getLanguagesBytes(int index) {
+    return languages_.getByteString(index);
+  }
+
   public static final int IS_STARRED_FIELD_NUMBER = 22;
   private boolean isStarred_;
   /**
@@ -1085,6 +1160,41 @@ private static final long serialVersionUID = 0L;
    */
   public int getStarCount() {
     return starCount_;
+  }
+
+  public static final int IMPORT_INFO_FIELD_NUMBER = 24;
+  private com.clarifai.grpc.api.ImportInfo importInfo_;
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * @return Whether the importInfo field is set.
+   */
+  public boolean hasImportInfo() {
+    return importInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * @return The importInfo.
+   */
+  public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+    return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
+  }
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   */
+  public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+    return getImportInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1160,6 +1270,12 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(23, starCount_);
+    }
+    if (importInfo_ != null) {
+      output.writeMessage(24, getImportInfo());
+    }
+    for (int i = 0; i < languages_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, languages_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1250,6 +1366,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(23, starCount_);
     }
+    if (importInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getImportInfo());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < languages_.size(); i++) {
+        dataSize += computeStringSizeNoTag(languages_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getLanguagesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1325,10 +1453,17 @@ private static final long serialVersionUID = 0L;
         .equals(other.getToolkitsList())) return false;
     if (!getUseCasesList()
         .equals(other.getUseCasesList())) return false;
+    if (!getLanguagesList()
+        .equals(other.getLanguagesList())) return false;
     if (getIsStarred()
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
+    if (hasImportInfo() != other.hasImportInfo()) return false;
+    if (hasImportInfo()) {
+      if (!getImportInfo()
+          .equals(other.getImportInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1396,11 +1531,19 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
       hash = (53 * hash) + getUseCasesList().hashCode();
     }
+    if (getLanguagesCount() > 0) {
+      hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguagesList().hashCode();
+    }
     hash = (37 * hash) + IS_STARRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
+    if (hasImportInfo()) {
+      hash = (37 * hash) + IMPORT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getImportInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1619,10 +1762,18 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       isStarred_ = false;
 
       starCount_ = 0;
 
+      if (importInfoBuilder_ == null) {
+        importInfo_ = null;
+      } else {
+        importInfo_ = null;
+        importInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1708,8 +1859,18 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.useCases_ = useCases_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        languages_ = languages_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.languages_ = languages_;
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
+      if (importInfoBuilder_ == null) {
+        result.importInfo_ = importInfo_;
+      } else {
+        result.importInfo_ = importInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1834,11 +1995,24 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.languages_.isEmpty()) {
+        if (languages_.isEmpty()) {
+          languages_ = other.languages_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureLanguagesIsMutable();
+          languages_.addAll(other.languages_);
+        }
+        onChanged();
+      }
       if (other.getIsStarred() != false) {
         setIsStarred(other.getIsStarred());
       }
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
+      }
+      if (other.hasImportInfo()) {
+        mergeImportInfo(other.getImportInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3858,9 +4032,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object notes_ = "";
     /**
      * <pre>
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      * </pre>
      *
      * <code>string notes = 18;</code>
@@ -3880,9 +4053,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      * </pre>
      *
      * <code>string notes = 18;</code>
@@ -3903,9 +4075,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      * </pre>
      *
      * <code>string notes = 18;</code>
@@ -3924,9 +4095,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      * </pre>
      *
      * <code>string notes = 18;</code>
@@ -3940,9 +4110,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Notes about a model (should support markdown)
-     * This field should be used for in-depth notes about
-     * about a model and supports up to 64Kbs.
+     * Notes for the model
+     * This field should be used for in-depth notes and supports up to 64Kbs.
      * </pre>
      *
      * <code>string notes = 18;</code>
@@ -4253,6 +4422,152 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLanguagesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the languages.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLanguagesList() {
+      return languages_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of languages.
+     */
+    public int getLanguagesCount() {
+      return languages_.size();
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The languages at the given index.
+     */
+    public java.lang.String getLanguages(int index) {
+      return languages_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the languages at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLanguagesBytes(int index) {
+      return languages_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The languages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguages(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguagesIsMutable();
+      languages_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguages(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguagesIsMutable();
+      languages_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguages(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLanguagesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, languages_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguages() {
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category.
+     * </pre>
+     *
+     * <code>repeated string languages = 25 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes of the languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguagesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureLanguagesIsMutable();
+      languages_.add(value);
+      onChanged();
+      return this;
+    }
+
     private boolean isStarred_ ;
     /**
      * <pre>
@@ -4341,6 +4656,161 @@ private static final long serialVersionUID = 0L;
       starCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.ImportInfo importInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> importInfoBuilder_;
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * @return Whether the importInfo field is set.
+     */
+    public boolean hasImportInfo() {
+      return importInfoBuilder_ != null || importInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * @return The importInfo.
+     */
+    public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+      if (importInfoBuilder_ == null) {
+        return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
+      } else {
+        return importInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+      if (importInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importInfo_ = value;
+        onChanged();
+      } else {
+        importInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    public Builder setImportInfo(
+        com.clarifai.grpc.api.ImportInfo.Builder builderForValue) {
+      if (importInfoBuilder_ == null) {
+        importInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        importInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+      if (importInfoBuilder_ == null) {
+        if (importInfo_ != null) {
+          importInfo_ =
+            com.clarifai.grpc.api.ImportInfo.newBuilder(importInfo_).mergeFrom(value).buildPartial();
+        } else {
+          importInfo_ = value;
+        }
+        onChanged();
+      } else {
+        importInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    public Builder clearImportInfo() {
+      if (importInfoBuilder_ == null) {
+        importInfo_ = null;
+        onChanged();
+      } else {
+        importInfo_ = null;
+        importInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
+      
+      onChanged();
+      return getImportInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+      if (importInfoBuilder_ != null) {
+        return importInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return importInfo_ == null ?
+            com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> 
+        getImportInfoFieldBuilder() {
+      if (importInfoBuilder_ == null) {
+        importInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder>(
+                getImportInfo(),
+                getParentForChildren(),
+                isClean());
+        importInfo_ = null;
+      }
+      return importInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

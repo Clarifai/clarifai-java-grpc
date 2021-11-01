@@ -26,6 +26,9 @@ private static final long serialVersionUID = 0L;
     appId_ = "";
     nodes_ = java.util.Collections.emptyList();
     userId_ = "";
+    description_ = "";
+    notes_ = "";
+    useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -161,6 +164,27 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notes_ = s;
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              useCases_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            useCases_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -178,6 +202,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         nodes_ = java.util.Collections.unmodifiableList(nodes_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        useCases_ = useCases_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -614,6 +641,147 @@ private static final long serialVersionUID = 0L;
     return starCount_;
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 12;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * Short description about this workflow
+   * </pre>
+   *
+   * <code>string description = 12;</code>
+   * @return The description.
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Short description about this workflow
+   * </pre>
+   *
+   * <code>string description = 12;</code>
+   * @return The bytes for description.
+   */
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NOTES_FIELD_NUMBER = 13;
+  private volatile java.lang.Object notes_;
+  /**
+   * <pre>
+   * Notes for the workflow
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 13;</code>
+   * @return The notes.
+   */
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes for the workflow
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 13;</code>
+   * @return The bytes for notes.
+   */
+  public com.google.protobuf.ByteString
+      getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USE_CASES_FIELD_NUMBER = 14;
+  private com.google.protobuf.LazyStringList useCases_;
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the useCases.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getUseCasesList() {
+    return useCases_;
+  }
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of useCases.
+   */
+  public int getUseCasesCount() {
+    return useCases_.size();
+  }
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  public java.lang.String getUseCases(int index) {
+    return useCases_.get(index);
+  }
+  /**
+   * <pre>
+   * Tags from use_cases category
+   * </pre>
+   *
+   * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the useCases at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getUseCasesBytes(int index) {
+    return useCases_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -660,6 +828,15 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(11, starCount_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, description_);
+    }
+    if (!getNotesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, notes_);
+    }
+    for (int i = 0; i < useCases_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, useCases_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -710,6 +887,20 @@ private static final long serialVersionUID = 0L;
     if (starCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, starCount_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, description_);
+    }
+    if (!getNotesBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, notes_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < useCases_.size(); i++) {
+        dataSize += computeStringSizeNoTag(useCases_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUseCasesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -763,6 +954,12 @@ private static final long serialVersionUID = 0L;
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getNotes()
+        .equals(other.getNotes())) return false;
+    if (!getUseCasesList()
+        .equals(other.getUseCasesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -809,6 +1006,14 @@ private static final long serialVersionUID = 0L;
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
+    if (getUseCasesCount() > 0) {
+      hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
+      hash = (53 * hash) + getUseCasesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -995,6 +1200,12 @@ private static final long serialVersionUID = 0L;
 
       starCount_ = 0;
 
+      description_ = "";
+
+      notes_ = "";
+
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1061,6 +1272,13 @@ private static final long serialVersionUID = 0L;
       }
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
+      result.description_ = description_;
+      result.notes_ = notes_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        useCases_ = useCases_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.useCases_ = useCases_;
       onBuilt();
       return result;
     }
@@ -1167,6 +1385,24 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
+        onChanged();
+      }
+      if (!other.useCases_.isEmpty()) {
+        if (useCases_.isEmpty()) {
+          useCases_ = other.useCases_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureUseCasesIsMutable();
+          useCases_.addAll(other.useCases_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2740,6 +2976,349 @@ private static final long serialVersionUID = 0L;
     public Builder clearStarCount() {
       
       starCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * Short description about this workflow
+     * </pre>
+     *
+     * <code>string description = 12;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description about this workflow
+     * </pre>
+     *
+     * <code>string description = 12;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description about this workflow
+     * </pre>
+     *
+     * <code>string description = 12;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description about this workflow
+     * </pre>
+     *
+     * <code>string description = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description about this workflow
+     * </pre>
+     *
+     * <code>string description = 12;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object notes_ = "";
+    /**
+     * <pre>
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 13;</code>
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 13;</code>
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString
+        getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 13;</code>
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      
+      notes_ = getDefaultInstance().getNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for the workflow
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 13;</code>
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureUseCasesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        useCases_ = new com.google.protobuf.LazyStringArrayList(useCases_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the useCases.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUseCasesList() {
+      return useCases_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of useCases.
+     */
+    public int getUseCasesCount() {
+      return useCases_.size();
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The useCases at the given index.
+     */
+    public java.lang.String getUseCases(int index) {
+      return useCases_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the useCases at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getUseCasesBytes(int index) {
+      return useCases_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The useCases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseCases(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseCasesIsMutable();
+      useCases_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCases(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUseCasesIsMutable();
+      useCases_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUseCases(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureUseCasesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, useCases_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUseCases() {
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from use_cases category
+     * </pre>
+     *
+     * <code>repeated string use_cases = 14 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes of the useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCasesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureUseCasesIsMutable();
+      useCases_.add(value);
       onChanged();
       return this;
     }

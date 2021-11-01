@@ -116,6 +116,11 @@ private static final long serialVersionUID = 0L;
             additionalFields_.add(s);
             break;
           }
+          case 88: {
+
+            starredOnly_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -397,6 +402,20 @@ private static final long serialVersionUID = 0L;
     return featuredOnly_;
   }
 
+  public static final int STARRED_ONLY_FIELD_NUMBER = 11;
+  private boolean starredOnly_;
+  /**
+   * <pre>
+   * If true, we only return workflows that are starred by the requesting user
+   * </pre>
+   *
+   * <code>bool starred_only = 11;</code>
+   * @return The starredOnly.
+   */
+  public boolean getStarredOnly() {
+    return starredOnly_;
+  }
+
   public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 10;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
@@ -494,6 +513,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < additionalFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, additionalFields_.getRaw(i));
     }
+    if (starredOnly_ != false) {
+      output.writeBool(11, starredOnly_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -547,6 +569,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAdditionalFieldsList().size();
     }
+    if (starredOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(11, starredOnly_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -579,6 +605,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (getFeaturedOnly()
         != other.getFeaturedOnly()) return false;
+    if (getStarredOnly()
+        != other.getStarredOnly()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
@@ -623,6 +651,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FEATURED_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFeaturedOnly());
+    hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getStarredOnly());
     if (getAdditionalFieldsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
@@ -792,6 +823,8 @@ private static final long serialVersionUID = 0L;
 
       featuredOnly_ = false;
 
+      starredOnly_ = false;
+
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       sortByCase_ = 0;
@@ -840,6 +873,7 @@ private static final long serialVersionUID = 0L;
       result.query_ = query_;
       result.id_ = id_;
       result.featuredOnly_ = featuredOnly_;
+      result.starredOnly_ = starredOnly_;
       if (((bitField0_ & 0x00000001) != 0)) {
         additionalFields_ = additionalFields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -916,6 +950,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFeaturedOnly() != false) {
         setFeaturedOnly(other.getFeaturedOnly());
+      }
+      if (other.getStarredOnly() != false) {
+        setStarredOnly(other.getStarredOnly());
       }
       if (!other.additionalFields_.isEmpty()) {
         if (additionalFields_.isEmpty()) {
@@ -1569,6 +1606,48 @@ private static final long serialVersionUID = 0L;
     public Builder clearFeaturedOnly() {
       
       featuredOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean starredOnly_ ;
+    /**
+     * <pre>
+     * If true, we only return workflows that are starred by the requesting user
+     * </pre>
+     *
+     * <code>bool starred_only = 11;</code>
+     * @return The starredOnly.
+     */
+    public boolean getStarredOnly() {
+      return starredOnly_;
+    }
+    /**
+     * <pre>
+     * If true, we only return workflows that are starred by the requesting user
+     * </pre>
+     *
+     * <code>bool starred_only = 11;</code>
+     * @param value The starredOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarredOnly(boolean value) {
+      
+      starredOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, we only return workflows that are starred by the requesting user
+     * </pre>
+     *
+     * <code>bool starred_only = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarredOnly() {
+      
+      starredOnly_ = false;
       onChanged();
       return this;
     }

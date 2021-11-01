@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     license_ = "";
     toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -173,11 +174,25 @@ private static final long serialVersionUID = 0L;
           }
           case 154: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               additionalFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             additionalFields_.add(s);
+            break;
+          }
+          case 160: {
+
+            starredOnly_ = input.readBool();
+            break;
+          }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              languages_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            languages_.add(s);
             break;
           }
           default: {
@@ -207,8 +222,11 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         useCases_ = useCases_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         additionalFields_ = additionalFields_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        languages_ = languages_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -437,7 +455,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
@@ -458,7 +476,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
@@ -707,6 +725,20 @@ private static final long serialVersionUID = 0L;
     return featuredOnly_;
   }
 
+  public static final int STARRED_ONLY_FIELD_NUMBER = 20;
+  private boolean starredOnly_;
+  /**
+   * <pre>
+   * If true, we only return models that are starred by the requesting user
+   * </pre>
+   *
+   * <code>bool starred_only = 20;</code>
+   * @return The starredOnly.
+   */
+  public boolean getStarredOnly() {
+    return starredOnly_;
+  }
+
   public static final int TOOLKITS_FIELD_NUMBER = 17;
   private com.google.protobuf.LazyStringList toolkits_;
   /**
@@ -807,6 +839,57 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getUseCasesBytes(int index) {
     return useCases_.getByteString(index);
+  }
+
+  public static final int LANGUAGES_FIELD_NUMBER = 21;
+  private com.google.protobuf.LazyStringList languages_;
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @return A list containing the languages.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getLanguagesList() {
+    return languages_;
+  }
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @return The count of languages.
+   */
+  public int getLanguagesCount() {
+    return languages_.size();
+  }
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @param index The index of the element to return.
+   * @return The languages at the given index.
+   */
+  public java.lang.String getLanguages(int index) {
+    return languages_.get(index);
+  }
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languages at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getLanguagesBytes(int index) {
+    return languages_.getByteString(index);
   }
 
   public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 19;
@@ -931,6 +1014,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < additionalFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, additionalFields_.getRaw(i));
     }
+    if (starredOnly_ != false) {
+      output.writeBool(20, starredOnly_);
+    }
+    for (int i = 0; i < languages_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, languages_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1031,6 +1120,18 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 2 * getAdditionalFieldsList().size();
     }
+    if (starredOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(20, starredOnly_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < languages_.size(); i++) {
+        dataSize += computeStringSizeNoTag(languages_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getLanguagesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1073,10 +1174,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLicense())) return false;
     if (getFeaturedOnly()
         != other.getFeaturedOnly()) return false;
+    if (getStarredOnly()
+        != other.getStarredOnly()) return false;
     if (!getToolkitsList()
         .equals(other.getToolkitsList())) return false;
     if (!getUseCasesList()
         .equals(other.getUseCasesList())) return false;
+    if (!getLanguagesList()
+        .equals(other.getLanguagesList())) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
@@ -1140,6 +1245,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FEATURED_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFeaturedOnly());
+    hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getStarredOnly());
     if (getToolkitsCount() > 0) {
       hash = (37 * hash) + TOOLKITS_FIELD_NUMBER;
       hash = (53 * hash) + getToolkitsList().hashCode();
@@ -1147,6 +1255,10 @@ private static final long serialVersionUID = 0L;
     if (getUseCasesCount() > 0) {
       hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
       hash = (53 * hash) + getUseCasesList().hashCode();
+    }
+    if (getLanguagesCount() > 0) {
+      hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguagesList().hashCode();
     }
     if (getAdditionalFieldsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
@@ -1332,12 +1444,16 @@ private static final long serialVersionUID = 0L;
 
       featuredOnly_ = false;
 
+      starredOnly_ = false;
+
       toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -1400,6 +1516,7 @@ private static final long serialVersionUID = 0L;
       result.outputFields_ = outputFields_;
       result.license_ = license_;
       result.featuredOnly_ = featuredOnly_;
+      result.starredOnly_ = starredOnly_;
       if (((bitField0_ & 0x00000004) != 0)) {
         toolkits_ = toolkits_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -1411,8 +1528,13 @@ private static final long serialVersionUID = 0L;
       }
       result.useCases_ = useCases_;
       if (((bitField0_ & 0x00000010) != 0)) {
-        additionalFields_ = additionalFields_.getUnmodifiableView();
+        languages_ = languages_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.languages_ = languages_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.additionalFields_ = additionalFields_;
       result.sortByCase_ = sortByCase_;
@@ -1518,6 +1640,9 @@ private static final long serialVersionUID = 0L;
       if (other.getFeaturedOnly() != false) {
         setFeaturedOnly(other.getFeaturedOnly());
       }
+      if (other.getStarredOnly() != false) {
+        setStarredOnly(other.getStarredOnly());
+      }
       if (!other.toolkits_.isEmpty()) {
         if (toolkits_.isEmpty()) {
           toolkits_ = other.toolkits_;
@@ -1538,10 +1663,20 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.languages_.isEmpty()) {
+        if (languages_.isEmpty()) {
+          languages_ = other.languages_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureLanguagesIsMutable();
+          languages_.addAll(other.languages_);
+        }
+        onChanged();
+      }
       if (!other.additionalFields_.isEmpty()) {
         if (additionalFields_.isEmpty()) {
           additionalFields_ = other.additionalFields_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureAdditionalFieldsIsMutable();
           additionalFields_.addAll(other.additionalFields_);
@@ -2109,7 +2244,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      * </pre>
      *
@@ -2130,7 +2265,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      * </pre>
      *
@@ -2152,7 +2287,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      * </pre>
      *
@@ -2172,7 +2307,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      * </pre>
      *
@@ -2187,7 +2322,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+     * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * Deprecated in favor of query
      * </pre>
      *
@@ -2798,6 +2933,48 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean starredOnly_ ;
+    /**
+     * <pre>
+     * If true, we only return models that are starred by the requesting user
+     * </pre>
+     *
+     * <code>bool starred_only = 20;</code>
+     * @return The starredOnly.
+     */
+    public boolean getStarredOnly() {
+      return starredOnly_;
+    }
+    /**
+     * <pre>
+     * If true, we only return models that are starred by the requesting user
+     * </pre>
+     *
+     * <code>bool starred_only = 20;</code>
+     * @param value The starredOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarredOnly(boolean value) {
+      
+      starredOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, we only return models that are starred by the requesting user
+     * </pre>
+     *
+     * <code>bool starred_only = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarredOnly() {
+      
+      starredOnly_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureToolkitsIsMutable() {
       if (!((bitField0_ & 0x00000004) != 0)) {
@@ -3090,11 +3267,157 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLanguagesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @return A list containing the languages.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLanguagesList() {
+      return languages_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @return The count of languages.
+     */
+    public int getLanguagesCount() {
+      return languages_.size();
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @param index The index of the element to return.
+     * @return The languages at the given index.
+     */
+    public java.lang.String getLanguages(int index) {
+      return languages_.get(index);
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the languages at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLanguagesBytes(int index) {
+      return languages_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @param index The index to set the value at.
+     * @param value The languages to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguages(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguagesIsMutable();
+      languages_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @param value The languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguages(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLanguagesIsMutable();
+      languages_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @param values The languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguages(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLanguagesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, languages_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguages() {
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * List of language tags to filter by
+     * </pre>
+     *
+     * <code>repeated string languages = 21;</code>
+     * @param value The bytes of the languages to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguagesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureLanguagesIsMutable();
+      languages_.add(value);
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAdditionalFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
     /**
@@ -3211,7 +3534,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearAdditionalFields() {
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

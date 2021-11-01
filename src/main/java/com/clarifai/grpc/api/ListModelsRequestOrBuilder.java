@@ -110,7 +110,7 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
@@ -120,7 +120,7 @@ public interface ListModelsRequestOrBuilder extends
   @java.lang.Deprecated java.lang.String getName();
   /**
    * <pre>
-   * Filter by the name of the model. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
@@ -284,6 +284,16 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
+   * If true, we only return models that are starred by the requesting user
+   * </pre>
+   *
+   * <code>bool starred_only = 20;</code>
+   * @return The starredOnly.
+   */
+  boolean getStarredOnly();
+
+  /**
+   * <pre>
    * List of toolkit tags to filter by
    * </pre>
    *
@@ -363,6 +373,47 @@ public interface ListModelsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUseCasesBytes(int index);
+
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @return A list containing the languages.
+   */
+  java.util.List<java.lang.String>
+      getLanguagesList();
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @return The count of languages.
+   */
+  int getLanguagesCount();
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @param index The index of the element to return.
+   * @return The languages at the given index.
+   */
+  java.lang.String getLanguages(int index);
+  /**
+   * <pre>
+   * List of language tags to filter by
+   * </pre>
+   *
+   * <code>repeated string languages = 21;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the languages at the given index.
+   */
+  com.google.protobuf.ByteString
+      getLanguagesBytes(int index);
 
   /**
    * <pre>

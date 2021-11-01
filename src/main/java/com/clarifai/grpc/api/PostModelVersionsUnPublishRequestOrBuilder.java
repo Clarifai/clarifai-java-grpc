@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface DeleteModelVersionsUnpublishRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.DeleteModelVersionsUnpublishRequest)
+public interface PostModelVersionsUnPublishRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.PostModelVersionsUnPublishRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

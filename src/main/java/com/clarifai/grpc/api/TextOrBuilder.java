@@ -82,4 +82,31 @@ public interface TextOrBuilder extends
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
    */
   com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
+
+  /**
+   * <pre>
+   * text info
+   * </pre>
+   *
+   * <code>.clarifai.api.TextInfo text_info = 5;</code>
+   * @return Whether the textInfo field is set.
+   */
+  boolean hasTextInfo();
+  /**
+   * <pre>
+   * text info
+   * </pre>
+   *
+   * <code>.clarifai.api.TextInfo text_info = 5;</code>
+   * @return The textInfo.
+   */
+  com.clarifai.grpc.api.TextInfo getTextInfo();
+  /**
+   * <pre>
+   * text info
+   * </pre>
+   *
+   * <code>.clarifai.api.TextInfo text_info = 5;</code>
+   */
+  com.clarifai.grpc.api.TextInfoOrBuilder getTextInfoOrBuilder();
 }

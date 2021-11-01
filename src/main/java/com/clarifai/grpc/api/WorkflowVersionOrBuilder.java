@@ -264,4 +264,44 @@ public interface WorkflowVersionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <pre>
+   * Short description about this workflow version
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Short description about this workflow version
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <pre>
+   * License associated to this workflow version
+   * </pre>
+   *
+   * <code>string license = 11;</code>
+   * @return The license.
+   */
+  java.lang.String getLicense();
+  /**
+   * <pre>
+   * License associated to this workflow version
+   * </pre>
+   *
+   * <code>string license = 11;</code>
+   * @return The bytes for license.
+   */
+  com.google.protobuf.ByteString
+      getLicenseBytes();
 }

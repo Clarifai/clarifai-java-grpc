@@ -92,6 +92,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.VideoInfo.Builder subBuilder = null;
+            if (videoInfo_ != null) {
+              subBuilder = videoInfo_.toBuilder();
+            }
+            videoInfo_ = input.readMessage(com.clarifai.grpc.api.VideoInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(videoInfo_);
+              videoInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -283,6 +296,41 @@ private static final long serialVersionUID = 0L;
     return getHosted();
   }
 
+  public static final int VIDEO_INFO_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.VideoInfo videoInfo_;
+  /**
+   * <pre>
+   * video info
+   * </pre>
+   *
+   * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+   * @return Whether the videoInfo field is set.
+   */
+  public boolean hasVideoInfo() {
+    return videoInfo_ != null;
+  }
+  /**
+   * <pre>
+   * video info
+   * </pre>
+   *
+   * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+   * @return The videoInfo.
+   */
+  public com.clarifai.grpc.api.VideoInfo getVideoInfo() {
+    return videoInfo_ == null ? com.clarifai.grpc.api.VideoInfo.getDefaultInstance() : videoInfo_;
+  }
+  /**
+   * <pre>
+   * video info
+   * </pre>
+   *
+   * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+   */
+  public com.clarifai.grpc.api.VideoInfoOrBuilder getVideoInfoOrBuilder() {
+    return getVideoInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -312,6 +360,9 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       output.writeMessage(6, getHosted());
     }
+    if (videoInfo_ != null) {
+      output.writeMessage(7, getVideoInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -338,6 +389,10 @@ private static final long serialVersionUID = 0L;
     if (hosted_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getHosted());
+    }
+    if (videoInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getVideoInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -367,6 +422,11 @@ private static final long serialVersionUID = 0L;
       if (!getHosted()
           .equals(other.getHosted())) return false;
     }
+    if (hasVideoInfo() != other.hasVideoInfo()) return false;
+    if (hasVideoInfo()) {
+      if (!getVideoInfo()
+          .equals(other.getVideoInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -390,6 +450,10 @@ private static final long serialVersionUID = 0L;
     if (hasHosted()) {
       hash = (37 * hash) + HOSTED_FIELD_NUMBER;
       hash = (53 * hash) + getHosted().hashCode();
+    }
+    if (hasVideoInfo()) {
+      hash = (37 * hash) + VIDEO_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getVideoInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -544,6 +608,12 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
         hostedBuilder_ = null;
       }
+      if (videoInfoBuilder_ == null) {
+        videoInfo_ = null;
+      } else {
+        videoInfo_ = null;
+        videoInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -578,6 +648,11 @@ private static final long serialVersionUID = 0L;
         result.hosted_ = hosted_;
       } else {
         result.hosted_ = hostedBuilder_.build();
+      }
+      if (videoInfoBuilder_ == null) {
+        result.videoInfo_ = videoInfo_;
+      } else {
+        result.videoInfo_ = videoInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -643,6 +718,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasHosted()) {
         mergeHosted(other.getHosted());
+      }
+      if (other.hasVideoInfo()) {
+        mergeVideoInfo(other.getVideoInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1127,6 +1205,161 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
       }
       return hostedBuilder_;
+    }
+
+    private com.clarifai.grpc.api.VideoInfo videoInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.VideoInfo, com.clarifai.grpc.api.VideoInfo.Builder, com.clarifai.grpc.api.VideoInfoOrBuilder> videoInfoBuilder_;
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     * @return Whether the videoInfo field is set.
+     */
+    public boolean hasVideoInfo() {
+      return videoInfoBuilder_ != null || videoInfo_ != null;
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     * @return The videoInfo.
+     */
+    public com.clarifai.grpc.api.VideoInfo getVideoInfo() {
+      if (videoInfoBuilder_ == null) {
+        return videoInfo_ == null ? com.clarifai.grpc.api.VideoInfo.getDefaultInstance() : videoInfo_;
+      } else {
+        return videoInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    public Builder setVideoInfo(com.clarifai.grpc.api.VideoInfo value) {
+      if (videoInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        videoInfo_ = value;
+        onChanged();
+      } else {
+        videoInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    public Builder setVideoInfo(
+        com.clarifai.grpc.api.VideoInfo.Builder builderForValue) {
+      if (videoInfoBuilder_ == null) {
+        videoInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    public Builder mergeVideoInfo(com.clarifai.grpc.api.VideoInfo value) {
+      if (videoInfoBuilder_ == null) {
+        if (videoInfo_ != null) {
+          videoInfo_ =
+            com.clarifai.grpc.api.VideoInfo.newBuilder(videoInfo_).mergeFrom(value).buildPartial();
+        } else {
+          videoInfo_ = value;
+        }
+        onChanged();
+      } else {
+        videoInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    public Builder clearVideoInfo() {
+      if (videoInfoBuilder_ == null) {
+        videoInfo_ = null;
+        onChanged();
+      } else {
+        videoInfo_ = null;
+        videoInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    public com.clarifai.grpc.api.VideoInfo.Builder getVideoInfoBuilder() {
+      
+      onChanged();
+      return getVideoInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    public com.clarifai.grpc.api.VideoInfoOrBuilder getVideoInfoOrBuilder() {
+      if (videoInfoBuilder_ != null) {
+        return videoInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return videoInfo_ == null ?
+            com.clarifai.grpc.api.VideoInfo.getDefaultInstance() : videoInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * video info
+     * </pre>
+     *
+     * <code>.clarifai.api.VideoInfo video_info = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.VideoInfo, com.clarifai.grpc.api.VideoInfo.Builder, com.clarifai.grpc.api.VideoInfoOrBuilder> 
+        getVideoInfoFieldBuilder() {
+      if (videoInfoBuilder_ == null) {
+        videoInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.VideoInfo, com.clarifai.grpc.api.VideoInfo.Builder, com.clarifai.grpc.api.VideoInfoOrBuilder>(
+                getVideoInfo(),
+                getParentForChildren(),
+                isClean());
+        videoInfo_ = null;
+      }
+      return videoInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
