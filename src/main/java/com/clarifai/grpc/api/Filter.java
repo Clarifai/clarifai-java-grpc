@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Filter
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Filter}
  */
 public  final class Filter extends
@@ -452,6 +456,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Filter
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Filter}
    */
   public static final class Builder extends

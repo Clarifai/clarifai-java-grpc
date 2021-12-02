@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListModelTypesRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListModelTypesRequest}
  */
 public  final class ListModelTypesRequest extends
@@ -351,6 +355,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListModelTypesRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListModelTypesRequest}
    */
   public static final class Builder extends

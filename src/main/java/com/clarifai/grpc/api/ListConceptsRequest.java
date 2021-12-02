@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListConceptsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListConceptsRequest}
  */
 public  final class ListConceptsRequest extends
@@ -339,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListConceptsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListConceptsRequest}
    */
   public static final class Builder extends

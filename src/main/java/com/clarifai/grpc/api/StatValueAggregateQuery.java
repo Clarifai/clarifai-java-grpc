@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * StatValueAggregateQuery
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.StatValueAggregateQuery}
  */
 public  final class StatValueAggregateQuery extends
@@ -660,6 +664,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * StatValueAggregateQuery
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.StatValueAggregateQuery}
    */
   public static final class Builder extends

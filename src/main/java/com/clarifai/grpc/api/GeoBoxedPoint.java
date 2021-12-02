@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * GeoBoxedPoint
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.GeoBoxedPoint}
  */
 public  final class GeoBoxedPoint extends
@@ -277,6 +281,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * GeoBoxedPoint
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.GeoBoxedPoint}
    */
   public static final class Builder extends

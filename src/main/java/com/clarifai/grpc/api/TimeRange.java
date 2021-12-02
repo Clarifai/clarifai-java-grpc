@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TimeRange
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TimeRange}
  */
 public  final class TimeRange extends
@@ -353,6 +357,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TimeRange
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TimeRange}
    */
   public static final class Builder extends

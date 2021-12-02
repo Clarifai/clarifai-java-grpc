@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ModelVersionUnpublishRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ModelVersionUnpublishRequest}
  */
 public  final class ModelVersionUnpublishRequest extends
@@ -278,6 +282,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ModelVersionUnpublishRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ModelVersionUnpublishRequest}
    */
   public static final class Builder extends

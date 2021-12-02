@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/embedding.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Embedding
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Embedding}
@@ -336,9 +334,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/embedding.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * Embedding
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Embedding}

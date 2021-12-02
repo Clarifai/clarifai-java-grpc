@@ -5,9 +5,6 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;//////////////////////////
- * Visibilty of the resource.
- * ///////////////////////////
  * Visibility represents how visible the given resource is to other users.
  * When authenticating a request we can tell if a user is a collaborator or a teammate for the
  * the app that contains the resource and set their allowed visibility. We use that to restrict
@@ -437,9 +434,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;//////////////////////////
-   * Visibilty of the resource.
-   * ///////////////////////////
    * Visibility represents how visible the given resource is to other users.
    * When authenticating a request we can tell if a user is a collaborator or a teammate for the
    * the app that contains the resource and set their allowed visibility. We use that to restrict

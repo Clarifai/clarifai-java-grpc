@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * GeoLimit
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.GeoLimit}
  */
 public  final class GeoLimit extends
@@ -306,6 +310,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * GeoLimit
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.GeoLimit}
    */
   public static final class Builder extends

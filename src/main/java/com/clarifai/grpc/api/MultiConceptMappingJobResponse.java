@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiConceptMappingJobResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiConceptMappingJobResponse}
  */
 public  final class MultiConceptMappingJobResponse extends
@@ -371,6 +375,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiConceptMappingJobResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiConceptMappingJobResponse}
    */
   public static final class Builder extends

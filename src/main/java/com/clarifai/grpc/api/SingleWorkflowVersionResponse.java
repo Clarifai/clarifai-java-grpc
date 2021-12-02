@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * SingleWorkflowVersionResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.SingleWorkflowVersionResponse}
  */
 public  final class SingleWorkflowVersionResponse extends
@@ -329,6 +333,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * SingleWorkflowVersionResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.SingleWorkflowVersionResponse}
    */
   public static final class Builder extends

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiKnowledgeGraphResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiKnowledgeGraphResponse}
  */
 public  final class MultiKnowledgeGraphResponse extends
@@ -371,6 +375,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiKnowledgeGraphResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiKnowledgeGraphResponse}
    */
   public static final class Builder extends

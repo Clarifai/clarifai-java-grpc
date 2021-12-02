@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Password
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Password}
  */
 public  final class Password extends
@@ -91,7 +95,6 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object plaintext_;
   /**
    * <pre>
-   * TODO(lawrence): merge this with message UserPassword above
    * unencrypted password string
    * </pre>
    *
@@ -112,7 +115,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * TODO(lawrence): merge this with message UserPassword above
    * unencrypted password string
    * </pre>
    *
@@ -288,6 +290,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Password
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Password}
    */
   public static final class Builder extends
@@ -438,7 +444,6 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object plaintext_ = "";
     /**
      * <pre>
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      * </pre>
      *
@@ -459,7 +464,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      * </pre>
      *
@@ -481,7 +485,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      * </pre>
      *
@@ -501,7 +504,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      * </pre>
      *
@@ -516,7 +518,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * TODO(lawrence): merge this with message UserPassword above
      * unencrypted password string
      * </pre>
      *

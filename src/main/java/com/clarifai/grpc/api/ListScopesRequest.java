@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/scope.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * ListScopesRequest
  * </pre>
  *
  * Protobuf type {@code clarifai.api.ListScopesRequest}
@@ -359,9 +357,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Requests / Responses from /proto/clarifai/api/scope.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * ListScopesRequest
    * </pre>
    *
    * Protobuf type {@code clarifai.api.ListScopesRequest}

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TimeInfo
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TimeInfo}
  */
 public  final class TimeInfo extends
@@ -315,6 +319,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TimeInfo
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TimeInfo}
    */
   public static final class Builder extends

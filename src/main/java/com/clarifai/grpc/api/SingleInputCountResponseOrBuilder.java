@@ -23,28 +23,16 @@ public interface SingleInputCountResponseOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
-   * <pre>
-   * NOTE: inconsistency: not named after the object name.
-   * </pre>
-   *
    * <code>.clarifai.api.InputCount counts = 2;</code>
    * @return Whether the counts field is set.
    */
   boolean hasCounts();
   /**
-   * <pre>
-   * NOTE: inconsistency: not named after the object name.
-   * </pre>
-   *
    * <code>.clarifai.api.InputCount counts = 2;</code>
    * @return The counts.
    */
   com.clarifai.grpc.api.InputCount getCounts();
   /**
-   * <pre>
-   * NOTE: inconsistency: not named after the object name.
-   * </pre>
-   *
    * <code>.clarifai.api.InputCount counts = 2;</code>
    */
   com.clarifai.grpc.api.InputCountOrBuilder getCountsOrBuilder();

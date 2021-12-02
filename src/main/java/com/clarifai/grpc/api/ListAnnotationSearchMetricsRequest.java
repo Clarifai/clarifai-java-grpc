@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListAnnotationSearchMetricsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListAnnotationSearchMetricsRequest}
  */
 public  final class ListAnnotationSearchMetricsRequest extends
@@ -277,6 +281,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListAnnotationSearchMetricsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListAnnotationSearchMetricsRequest}
    */
   public static final class Builder extends

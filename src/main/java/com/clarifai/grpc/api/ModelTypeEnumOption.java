@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ModelTypeEnumOption
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ModelTypeEnumOption}
  */
 public  final class ModelTypeEnumOption extends
@@ -465,6 +469,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ModelTypeEnumOption
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ModelTypeEnumOption}
    */
   public static final class Builder extends

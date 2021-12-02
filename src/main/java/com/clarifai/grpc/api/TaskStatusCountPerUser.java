@@ -4,6 +4,11 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TaskStatusCountPerUser can represents count of human created annotations for a user for each valid status,
+ * count of inputs (anchor annotation) for a user for each valid status
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
  */
 public  final class TaskStatusCountPerUser extends
@@ -408,6 +413,11 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TaskStatusCountPerUser can represents count of human created annotations for a user for each valid status,
+   * count of inputs (anchor annotation) for a user for each valid status
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
    */
   public static final class Builder extends

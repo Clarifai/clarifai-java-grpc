@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ModelQuery
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ModelQuery}
  */
 public  final class ModelQuery extends
@@ -410,6 +414,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ModelQuery
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ModelQuery}
    */
   public static final class Builder extends

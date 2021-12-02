@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * EmailAddress
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.EmailAddress}
  */
 public  final class EmailAddress extends
@@ -332,6 +336,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * EmailAddress
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.EmailAddress}
    */
   public static final class Builder extends

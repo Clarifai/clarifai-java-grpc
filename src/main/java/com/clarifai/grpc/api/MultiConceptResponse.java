@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiConceptResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiConceptResponse}
  */
 public  final class MultiConceptResponse extends
@@ -371,6 +375,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiConceptResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiConceptResponse}
    */
   public static final class Builder extends

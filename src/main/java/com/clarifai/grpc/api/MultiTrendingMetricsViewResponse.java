@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiTrendingMetricsViewResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiTrendingMetricsViewResponse}
  */
 public  final class MultiTrendingMetricsViewResponse extends
@@ -339,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiTrendingMetricsViewResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiTrendingMetricsViewResponse}
    */
   public static final class Builder extends

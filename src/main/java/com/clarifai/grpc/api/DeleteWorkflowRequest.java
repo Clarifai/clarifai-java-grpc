@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DeleteWorkflowRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DeleteWorkflowRequest}
  */
 public  final class DeleteWorkflowRequest extends
@@ -330,6 +334,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DeleteWorkflowRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DeleteWorkflowRequest}
    */
   public static final class Builder extends

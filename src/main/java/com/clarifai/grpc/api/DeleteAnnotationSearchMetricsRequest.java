@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DeleteAnnotationSearchMetricsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DeleteAnnotationSearchMetricsRequest}
  */
 public  final class DeleteAnnotationSearchMetricsRequest extends
@@ -330,6 +334,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DeleteAnnotationSearchMetricsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DeleteAnnotationSearchMetricsRequest}
    */
   public static final class Builder extends

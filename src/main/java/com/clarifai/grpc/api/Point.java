@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Point
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Point}
  */
 public  final class Point extends
@@ -323,6 +327,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Point
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Point}
    */
   public static final class Builder extends

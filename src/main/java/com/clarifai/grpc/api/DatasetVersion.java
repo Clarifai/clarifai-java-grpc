@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DatasetVersion
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DatasetVersion}
  */
 public  final class DatasetVersion extends
@@ -1134,6 +1138,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DatasetVersion
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DatasetVersion}
    */
   public static final class Builder extends

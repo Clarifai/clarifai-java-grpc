@@ -4097,7 +4097,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a new tranlsation for this concept.
+     * Add a new translation for this concept.
      * </pre>
      */
     public void postConceptLanguages(com.clarifai.grpc.api.PostConceptLanguagesRequest request,
@@ -4416,7 +4416,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a models to an app.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public void postModels(com.clarifai.grpc.api.PostModelsRequest request,
@@ -4515,6 +4514,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsPublish
+     * </pre>
      */
     public void postModelVersionsPublish(com.clarifai.grpc.api.PostModelVersionsPublishRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
@@ -4522,6 +4524,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsUnPublish
+     * </pre>
      */
     public void postModelVersionsUnPublish(com.clarifai.grpc.api.PostModelVersionsUnPublishRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
@@ -4531,7 +4536,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Create a new model version to trigger training of the model.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public void postModelVersions(com.clarifai.grpc.api.PostModelVersionsRequest request,
@@ -4540,6 +4544,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PatchModelVersions
+     * </pre>
      */
     public void patchModelVersions(com.clarifai.grpc.api.PatchModelVersionsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelVersionResponse> responseObserver) {
@@ -4587,6 +4594,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * GetModelVersionInputExample
+     * </pre>
      */
     public void getModelVersionInputExample(com.clarifai.grpc.api.GetModelVersionInputExampleRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelVersionInputExampleResponse> responseObserver) {
@@ -4594,6 +4604,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * ListModelVersionInputExamples
+     * </pre>
      */
     public void listModelVersionInputExamples(com.clarifai.grpc.api.ListModelVersionInputExamplesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelVersionInputExampleResponse> responseObserver) {
@@ -4671,6 +4684,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Compare embeddings distances using a workflow
+     * </pre>
      */
     public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
@@ -4960,6 +4976,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * DeleteAnnotationSearchMetrics
+     * </pre>
      */
     public void deleteAnnotationSearchMetrics(com.clarifai.grpc.api.DeleteAnnotationSearchMetricsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
@@ -5204,6 +5223,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValues
+     * </pre>
      */
     public void postStatValues(com.clarifai.grpc.api.PostStatValuesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueResponse> responseObserver) {
@@ -5211,6 +5233,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValuesAggregate
+     * </pre>
      */
     public void postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse> responseObserver) {
@@ -6266,7 +6291,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a new tranlsation for this concept.
+     * Add a new translation for this concept.
      * </pre>
      */
     public void postConceptLanguages(com.clarifai.grpc.api.PostConceptLanguagesRequest request,
@@ -6616,7 +6641,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a models to an app.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public void postModels(com.clarifai.grpc.api.PostModelsRequest request,
@@ -6725,6 +6749,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsPublish
+     * </pre>
      */
     public void postModelVersionsPublish(com.clarifai.grpc.api.PostModelVersionsPublishRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
@@ -6733,6 +6760,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsUnPublish
+     * </pre>
      */
     public void postModelVersionsUnPublish(com.clarifai.grpc.api.PostModelVersionsUnPublishRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
@@ -6743,7 +6773,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Create a new model version to trigger training of the model.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public void postModelVersions(com.clarifai.grpc.api.PostModelVersionsRequest request,
@@ -6753,6 +6782,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PatchModelVersions
+     * </pre>
      */
     public void patchModelVersions(com.clarifai.grpc.api.PatchModelVersionsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelVersionResponse> responseObserver) {
@@ -6805,6 +6837,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * GetModelVersionInputExample
+     * </pre>
      */
     public void getModelVersionInputExample(com.clarifai.grpc.api.GetModelVersionInputExampleRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModelVersionInputExampleResponse> responseObserver) {
@@ -6813,6 +6848,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * ListModelVersionInputExamples
+     * </pre>
      */
     public void listModelVersionInputExamples(com.clarifai.grpc.api.ListModelVersionInputExamplesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiModelVersionInputExampleResponse> responseObserver) {
@@ -6898,6 +6936,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Compare embeddings distances using a workflow
+     * </pre>
      */
     public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
@@ -7216,6 +7257,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * DeleteAnnotationSearchMetrics
+     * </pre>
      */
     public void deleteAnnotationSearchMetrics(com.clarifai.grpc.api.DeleteAnnotationSearchMetricsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
@@ -7484,6 +7528,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValues
+     * </pre>
      */
     public void postStatValues(com.clarifai.grpc.api.PostStatValuesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueResponse> responseObserver) {
@@ -7492,6 +7539,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValuesAggregate
+     * </pre>
      */
     public void postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiStatValueAggregateResponse> responseObserver) {
@@ -7652,7 +7702,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a new tranlsation for this concept.
+     * Add a new translation for this concept.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiConceptLanguageResponse postConceptLanguages(com.clarifai.grpc.api.PostConceptLanguagesRequest request) {
@@ -7971,7 +8021,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a models to an app.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public com.clarifai.grpc.api.SingleModelResponse postModels(com.clarifai.grpc.api.PostModelsRequest request) {
@@ -8070,6 +8119,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsPublish
+     * </pre>
      */
     public com.clarifai.grpc.api.status.BaseResponse postModelVersionsPublish(com.clarifai.grpc.api.PostModelVersionsPublishRequest request) {
       return blockingUnaryCall(
@@ -8077,6 +8129,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsUnPublish
+     * </pre>
      */
     public com.clarifai.grpc.api.status.BaseResponse postModelVersionsUnPublish(com.clarifai.grpc.api.PostModelVersionsUnPublishRequest request) {
       return blockingUnaryCall(
@@ -8086,7 +8141,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Create a new model version to trigger training of the model.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public com.clarifai.grpc.api.SingleModelResponse postModelVersions(com.clarifai.grpc.api.PostModelVersionsRequest request) {
@@ -8095,6 +8149,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PatchModelVersions
+     * </pre>
      */
     public com.clarifai.grpc.api.MultiModelVersionResponse patchModelVersions(com.clarifai.grpc.api.PatchModelVersionsRequest request) {
       return blockingUnaryCall(
@@ -8142,6 +8199,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * GetModelVersionInputExample
+     * </pre>
      */
     public com.clarifai.grpc.api.SingleModelVersionInputExampleResponse getModelVersionInputExample(com.clarifai.grpc.api.GetModelVersionInputExampleRequest request) {
       return blockingUnaryCall(
@@ -8149,6 +8209,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * ListModelVersionInputExamples
+     * </pre>
      */
     public com.clarifai.grpc.api.MultiModelVersionInputExampleResponse listModelVersionInputExamples(com.clarifai.grpc.api.ListModelVersionInputExamplesRequest request) {
       return blockingUnaryCall(
@@ -8226,6 +8289,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Compare embeddings distances using a workflow
+     * </pre>
      */
     public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
       return blockingUnaryCall(
@@ -8515,6 +8581,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * DeleteAnnotationSearchMetrics
+     * </pre>
      */
     public com.clarifai.grpc.api.status.BaseResponse deleteAnnotationSearchMetrics(com.clarifai.grpc.api.DeleteAnnotationSearchMetricsRequest request) {
       return blockingUnaryCall(
@@ -8759,6 +8828,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValues
+     * </pre>
      */
     public com.clarifai.grpc.api.MultiStatValueResponse postStatValues(com.clarifai.grpc.api.PostStatValuesRequest request) {
       return blockingUnaryCall(
@@ -8766,6 +8838,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValuesAggregate
+     * </pre>
      */
     public com.clarifai.grpc.api.MultiStatValueAggregateResponse postStatValuesAggregate(com.clarifai.grpc.api.PostStatValuesAggregateRequest request) {
       return blockingUnaryCall(
@@ -8934,7 +9009,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a new tranlsation for this concept.
+     * Add a new translation for this concept.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptLanguageResponse> postConceptLanguages(
@@ -9284,7 +9359,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a models to an app.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModelResponse> postModels(
@@ -9393,6 +9467,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsPublish
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postModelVersionsPublish(
         com.clarifai.grpc.api.PostModelVersionsPublishRequest request) {
@@ -9401,6 +9478,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostModelVersionsUnPublish
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> postModelVersionsUnPublish(
         com.clarifai.grpc.api.PostModelVersionsUnPublishRequest request) {
@@ -9411,7 +9491,6 @@ public final class V2Grpc {
     /**
      * <pre>
      * Create a new model version to trigger training of the model.
-     * FIXME(zeiler): this should have been a plural response.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModelResponse> postModelVersions(
@@ -9421,6 +9500,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PatchModelVersions
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModelVersionResponse> patchModelVersions(
         com.clarifai.grpc.api.PatchModelVersionsRequest request) {
@@ -9473,6 +9555,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * GetModelVersionInputExample
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModelVersionInputExampleResponse> getModelVersionInputExample(
         com.clarifai.grpc.api.GetModelVersionInputExampleRequest request) {
@@ -9481,6 +9566,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * ListModelVersionInputExamples
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiModelVersionInputExampleResponse> listModelVersionInputExamples(
         com.clarifai.grpc.api.ListModelVersionInputExamplesRequest request) {
@@ -9566,6 +9654,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Compare embeddings distances using a workflow
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> postWorkflowResultsSimilarity(
         com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
@@ -9884,6 +9975,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * DeleteAnnotationSearchMetrics
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteAnnotationSearchMetrics(
         com.clarifai.grpc.api.DeleteAnnotationSearchMetricsRequest request) {
@@ -10152,6 +10246,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValues
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiStatValueResponse> postStatValues(
         com.clarifai.grpc.api.PostStatValuesRequest request) {
@@ -10160,6 +10257,9 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * PostStatValuesAggregate
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiStatValueAggregateResponse> postStatValuesAggregate(
         com.clarifai.grpc.api.PostStatValuesAggregateRequest request) {

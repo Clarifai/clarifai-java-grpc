@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiStatusCodeResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiStatusCodeResponse}
  */
 public  final class MultiStatusCodeResponse extends
@@ -339,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiStatusCodeResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiStatusCodeResponse}
    */
   public static final class Builder extends

@@ -5,9 +5,6 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/model.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This is the Model object which represents a created model in the platform.
  * Each model has a particular type denoted by the model_type_id.
  * When creating a Model with PostModels the following happens:
@@ -1641,9 +1638,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/model.proto
-   * //////////////////////////////////////////////////////////////////////////////
    * This is the Model object which represents a created model in the platform.
    * Each model has a particular type denoted by the model_type_id.
    * When creating a Model with PostModels the following happens:

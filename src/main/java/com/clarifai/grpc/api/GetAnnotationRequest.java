@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/annotation.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * GetAnnotationRequest
  * </pre>
  *
  * Protobuf type {@code clarifai.api.GetAnnotationRequest}
@@ -390,9 +388,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Requests / Responses from /proto/clarifai/api/annotation.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * GetAnnotationRequest
    * </pre>
    *
    * Protobuf type {@code clarifai.api.GetAnnotationRequest}

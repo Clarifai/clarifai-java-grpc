@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * PostStatValuesAggregateRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.PostStatValuesAggregateRequest}
  */
 public  final class PostStatValuesAggregateRequest extends
@@ -371,6 +375,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PostStatValuesAggregateRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.PostStatValuesAggregateRequest}
    */
   public static final class Builder extends

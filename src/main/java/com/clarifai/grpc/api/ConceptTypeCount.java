@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ConceptTypeCount
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ConceptTypeCount}
  */
 public  final class ConceptTypeCount extends
@@ -287,6 +291,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ConceptTypeCount
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ConceptTypeCount}
    */
   public static final class Builder extends

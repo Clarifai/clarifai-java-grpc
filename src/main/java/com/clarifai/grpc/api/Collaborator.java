@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/app_sharing.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Collaborator - invited user, who shares an access to an application
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Collaborator}
@@ -775,9 +773,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/app_sharing.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * Collaborator - invited user, who shares an access to an application
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Collaborator}

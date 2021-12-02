@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ModelTypeRangeInfo
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ModelTypeRangeInfo}
  */
 public  final class ModelTypeRangeInfo extends
@@ -322,6 +326,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ModelTypeRangeInfo
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ModelTypeRangeInfo}
    */
   public static final class Builder extends

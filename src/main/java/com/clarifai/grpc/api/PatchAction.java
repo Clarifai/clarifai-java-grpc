@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * PatchAction
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.PatchAction}
  */
 public  final class PatchAction extends
@@ -536,6 +540,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PatchAction
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.PatchAction}
    */
   public static final class Builder extends

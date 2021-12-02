@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * BinaryMetrics
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.BinaryMetrics}
  */
 public  final class BinaryMetrics extends
@@ -680,6 +684,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * BinaryMetrics
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.BinaryMetrics}
    */
   public static final class Builder extends

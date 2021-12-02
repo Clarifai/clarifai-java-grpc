@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TimeSegment
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TimeSegment}
  */
 public  final class TimeSegment extends
@@ -390,6 +394,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TimeSegment
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TimeSegment}
    */
   public static final class Builder extends

@@ -5,7 +5,6 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * NOTE: this is same as GetModelRequest but backend doesn't support sharing same
  * request for different endpoints currently.
  * </pre>
  *
@@ -389,7 +388,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * NOTE: this is same as GetModelRequest but backend doesn't support sharing same
    * request for different endpoints currently.
    * </pre>
    *

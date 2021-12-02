@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DatasetFilter
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DatasetFilter}
  */
 public  final class DatasetFilter extends
@@ -673,6 +677,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DatasetFilter
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DatasetFilter}
    */
   public static final class Builder extends

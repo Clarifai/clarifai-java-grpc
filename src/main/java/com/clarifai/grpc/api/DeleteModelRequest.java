@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DeleteModelRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DeleteModelRequest}
  */
 public  final class DeleteModelRequest extends
@@ -330,6 +334,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DeleteModelRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DeleteModelRequest}
    */
   public static final class Builder extends

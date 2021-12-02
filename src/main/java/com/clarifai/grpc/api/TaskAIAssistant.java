@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TaskAIAssistant
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TaskAIAssistant}
  */
 public  final class TaskAIAssistant extends
@@ -290,6 +294,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TaskAIAssistant
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TaskAIAssistant}
    */
   public static final class Builder extends
