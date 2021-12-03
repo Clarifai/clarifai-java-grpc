@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * WorkflowResultsSimilarity
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.WorkflowResultsSimilarity}
  */
 public  final class WorkflowResultsSimilarity extends
@@ -351,6 +355,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * WorkflowResultsSimilarity
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.WorkflowResultsSimilarity}
    */
   public static final class Builder extends

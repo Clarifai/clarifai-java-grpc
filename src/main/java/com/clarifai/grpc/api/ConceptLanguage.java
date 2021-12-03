@@ -5,9 +5,6 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/concept_language.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This represents a link to an outside source for the given concept.
  * The values from here are sticked into Concept message into the name and definition fields when
  * returning from the API in your default language. The "id" field here becomes the "language"
@@ -419,9 +416,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/concept_language.proto
-   * //////////////////////////////////////////////////////////////////////////////
    * This represents a link to an outside source for the given concept.
    * The values from here are sticked into Concept message into the name and definition fields when
    * returning from the API in your default language. The "id" field here becomes the "language"

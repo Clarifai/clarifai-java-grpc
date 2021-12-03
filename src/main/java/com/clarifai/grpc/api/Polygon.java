@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Polygon
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Polygon}
  */
 public  final class Polygon extends
@@ -307,6 +311,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Polygon
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Polygon}
    */
   public static final class Builder extends

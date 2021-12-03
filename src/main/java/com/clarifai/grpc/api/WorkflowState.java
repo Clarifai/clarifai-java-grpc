@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * WorkflowState
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.WorkflowState}
  */
 public  final class WorkflowState extends
@@ -292,6 +296,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * WorkflowState
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.WorkflowState}
    */
   public static final class Builder extends

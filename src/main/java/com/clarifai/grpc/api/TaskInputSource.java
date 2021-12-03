@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TaskInputSource
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TaskInputSource}
  */
 public  final class TaskInputSource extends
@@ -459,6 +463,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TaskInputSource
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TaskInputSource}
    */
   public static final class Builder extends

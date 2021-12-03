@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TrackerMetrics
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TrackerMetrics}
  */
 public  final class TrackerMetrics extends
@@ -444,6 +448,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TrackerMetrics
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TrackerMetrics}
    */
   public static final class Builder extends

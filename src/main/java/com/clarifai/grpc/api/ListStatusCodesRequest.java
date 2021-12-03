@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListStatusCodesRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListStatusCodesRequest}
  */
 public  final class ListStatusCodesRequest extends
@@ -225,6 +229,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListStatusCodesRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListStatusCodesRequest}
    */
   public static final class Builder extends

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiAnnotationResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiAnnotationResponse}
  */
 public  final class MultiAnnotationResponse extends
@@ -339,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiAnnotationResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiAnnotationResponse}
    */
   public static final class Builder extends

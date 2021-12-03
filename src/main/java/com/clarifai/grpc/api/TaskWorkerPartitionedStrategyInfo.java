@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TaskWorkerPartitionedStrategyInfo
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TaskWorkerPartitionedStrategyInfo}
  */
 public  final class TaskWorkerPartitionedStrategyInfo extends
@@ -551,6 +555,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TaskWorkerPartitionedStrategyInfo
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TaskWorkerPartitionedStrategyInfo}
    */
   public static final class Builder extends

@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Requests / Responses from /proto/clarifai/api/key.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * GetKeyRequest
  * </pre>
  *
  * Protobuf type {@code clarifai.api.GetKeyRequest}
@@ -337,9 +335,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Requests / Responses from /proto/clarifai/api/key.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * GetKeyRequest
    * </pre>
    *
    * Protobuf type {@code clarifai.api.GetKeyRequest}

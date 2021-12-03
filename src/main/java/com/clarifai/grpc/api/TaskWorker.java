@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TaskWorker
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TaskWorker}
  */
 public  final class TaskWorker extends
@@ -587,6 +591,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TaskWorker
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TaskWorker}
    */
   public static final class Builder extends

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiScopeDepsResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiScopeDepsResponse}
  */
 public  final class MultiScopeDepsResponse extends
@@ -462,6 +466,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiScopeDepsResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiScopeDepsResponse}
    */
   public static final class Builder extends

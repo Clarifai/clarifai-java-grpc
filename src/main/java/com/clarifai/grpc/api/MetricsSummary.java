@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * FIXME: copy this into an internal proto since it is stored in DB and field names can't change.
+ * MetricsSummary
  * </pre>
  *
  * Protobuf type {@code clarifai.api.MetricsSummary}
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * FIXME: copy this into an internal proto since it is stored in DB and field names can't change.
+   * MetricsSummary
    * </pre>
    *
    * Protobuf type {@code clarifai.api.MetricsSummary}

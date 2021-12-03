@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ConceptQuery
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ConceptQuery}
  */
 public  final class ConceptQuery extends
@@ -408,6 +412,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ConceptQuery
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ConceptQuery}
    */
   public static final class Builder extends

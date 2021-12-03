@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * AppDuplication
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.AppDuplication}
  */
 public  final class AppDuplication extends
@@ -664,6 +668,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * AppDuplication
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.AppDuplication}
    */
   public static final class Builder extends

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListModelReferencesRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListModelReferencesRequest}
  */
 public  final class ListModelReferencesRequest extends
@@ -390,6 +394,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListModelReferencesRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListModelReferencesRequest}
    */
   public static final class Builder extends

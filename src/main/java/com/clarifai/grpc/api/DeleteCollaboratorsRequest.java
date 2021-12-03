@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DeleteCollaboratorsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DeleteCollaboratorsRequest}
  */
 public  final class DeleteCollaboratorsRequest extends
@@ -408,6 +412,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DeleteCollaboratorsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DeleteCollaboratorsRequest}
    */
   public static final class Builder extends

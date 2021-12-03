@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * AiAssistParameters
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.AiAssistParameters}
  */
 public  final class AiAssistParameters extends
@@ -367,6 +371,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * AiAssistParameters
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.AiAssistParameters}
    */
   public static final class Builder extends

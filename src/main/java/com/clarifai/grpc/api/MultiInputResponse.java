@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MultiInputResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MultiInputResponse}
  */
 public  final class MultiInputResponse extends
@@ -339,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MultiInputResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MultiInputResponse}
    */
   public static final class Builder extends

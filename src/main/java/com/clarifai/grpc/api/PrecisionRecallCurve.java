@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * PrecisionRecallCurve
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.PrecisionRecallCurve}
  */
 public  final class PrecisionRecallCurve extends
@@ -455,6 +459,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PrecisionRecallCurve
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.PrecisionRecallCurve}
    */
   public static final class Builder extends

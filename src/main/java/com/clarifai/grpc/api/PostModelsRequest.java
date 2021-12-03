@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * PostModelsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.PostModelsRequest}
  */
 public  final class PostModelsRequest extends
@@ -432,6 +436,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PostModelsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.PostModelsRequest}
    */
   public static final class Builder extends

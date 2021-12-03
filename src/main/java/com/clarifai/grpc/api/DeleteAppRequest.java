@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DeleteAppRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DeleteAppRequest}
  */
 public  final class DeleteAppRequest extends
@@ -277,6 +281,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DeleteAppRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DeleteAppRequest}
    */
   public static final class Builder extends

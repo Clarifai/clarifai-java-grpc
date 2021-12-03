@@ -5,8 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * A link to a html/markdown/text file that stores reference material
- * tied to a model.
+ * A link to a html/markdown/text file that stores reference material tied to a model.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.ModelReference}
@@ -542,8 +541,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A link to a html/markdown/text file that stores reference material
-   * tied to a model.
+   * A link to a html/markdown/text file that stores reference material tied to a model.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.ModelReference}

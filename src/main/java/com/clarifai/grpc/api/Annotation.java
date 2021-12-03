@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/annotation.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Annotation of an asset with metadata
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Annotation}
@@ -1063,9 +1061,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/annotation.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * Annotation of an asset with metadata
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Annotation}

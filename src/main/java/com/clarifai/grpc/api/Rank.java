@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Rank
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Rank}
  */
 public  final class Rank extends
@@ -321,6 +325,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Rank
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Rank}
    */
   public static final class Builder extends

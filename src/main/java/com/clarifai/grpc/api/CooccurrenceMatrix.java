@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * CooccurrenceMatrix
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.CooccurrenceMatrix}
  */
 public  final class CooccurrenceMatrix extends
@@ -368,6 +372,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * CooccurrenceMatrix
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.CooccurrenceMatrix}
    */
   public static final class Builder extends

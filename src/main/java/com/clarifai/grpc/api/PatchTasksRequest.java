@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The action to perform on the patched objects
-   * For now only 'overwrite' action is supported
+   * For now actions 'merge', 'overwrite', and 'remove' are supported
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The action to perform on the patched objects
-   * For now only 'overwrite' action is supported
+   * For now actions 'merge', 'overwrite', and 'remove' are supported
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -978,7 +978,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -999,7 +999,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1021,7 +1021,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1056,7 +1056,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now only 'overwrite' action is supported
+     * For now actions 'merge', 'overwrite', and 'remove' are supported
      * </pre>
      *
      * <code>string action = 3;</code>

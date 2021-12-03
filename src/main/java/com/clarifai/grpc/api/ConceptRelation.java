@@ -5,9 +5,6 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/concept_graph.proto
- * //////////////////////////////////////////////////////////////////////////////
  * This represents a relation (i.e. edge) between the subject concept and the object concept
  * </pre>
  *
@@ -664,9 +661,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/concept_graph.proto
-   * //////////////////////////////////////////////////////////////////////////////
    * This represents a relation (i.e. edge) between the subject concept and the object concept
    * </pre>
    *

@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * HostedURL
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.HostedURL}
  */
 public  final class HostedURL extends
@@ -496,6 +500,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * HostedURL
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.HostedURL}
    */
   public static final class Builder extends

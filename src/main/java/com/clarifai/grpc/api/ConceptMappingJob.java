@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ConceptMappingJob
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ConceptMappingJob}
  */
 public  final class ConceptMappingJob extends
@@ -368,6 +372,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ConceptMappingJob
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ConceptMappingJob}
    */
   public static final class Builder extends

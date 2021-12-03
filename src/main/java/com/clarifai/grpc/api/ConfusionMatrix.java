@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ConfusionMatrix
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ConfusionMatrix}
  */
 public  final class ConfusionMatrix extends
@@ -368,6 +372,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ConfusionMatrix
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ConfusionMatrix}
    */
   public static final class Builder extends

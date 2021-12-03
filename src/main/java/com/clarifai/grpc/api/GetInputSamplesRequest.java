@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * GetInputSamplesRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.GetInputSamplesRequest}
  */
 public  final class GetInputSamplesRequest extends
@@ -412,6 +416,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * GetInputSamplesRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.GetInputSamplesRequest}
    */
   public static final class Builder extends

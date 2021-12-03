@@ -9,7 +9,6 @@ public interface PasswordOrBuilder extends
 
   /**
    * <pre>
-   * TODO(lawrence): merge this with message UserPassword above
    * unencrypted password string
    * </pre>
    *
@@ -19,7 +18,6 @@ public interface PasswordOrBuilder extends
   java.lang.String getPlaintext();
   /**
    * <pre>
-   * TODO(lawrence): merge this with message UserPassword above
    * unencrypted password string
    * </pre>
    *

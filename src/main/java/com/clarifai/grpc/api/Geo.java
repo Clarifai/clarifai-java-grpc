@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Geo
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.Geo}
  */
 public  final class Geo extends
@@ -411,6 +415,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Geo
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.Geo}
    */
   public static final class Builder extends

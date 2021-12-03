@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * FieldsValue
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.FieldsValue}
  */
 public  final class FieldsValue extends
@@ -414,6 +418,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * FieldsValue
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.FieldsValue}
    */
   public static final class Builder extends

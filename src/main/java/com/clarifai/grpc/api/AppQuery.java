@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * App query
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.AppQuery}
  */
 public  final class AppQuery extends
@@ -286,6 +290,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * App query
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.AppQuery}
    */
   public static final class Builder extends

@@ -251,10 +251,11 @@ public final class StatusCodeOuterClass {
       "\010\010\322\202\002\020\322\202\002\"\010\010\260\203\002\020\260\203\002\"\010\010\261\203\002\020\261\203\002\"\010\010\263\203\002\020\263\203\002\"" +
       "\010\010\272\203\002\020\272\203\002\"\010\010\273\270\002\020\273\270\002\"\010\010\322\270\002\020\322\270\002\"\010\010\323\270\002\020\323\270\002\"" +
       "\010\010\360\301\002\020\360\301\002\"\010\010\361\301\002\020\361\301\002\"\010\010\362\301\002\020\362\301\002\"\010\010\363\301\002\020\363\301\002\"" +
-      "\010\010\364\301\002\020\364\301\002Bg\n\034com.clarifai.grpc.api.statu" +
-      "sP\001Z>github.com/Clarifai/clarifai-go-grp" +
-      "c/proto/clarifai/api/status\242\002\004CAIPb\006prot" +
-      "o3"
+      "\010\010\364\301\002\020\364\301\002B\237\001\n\034com.clarifai.grpc.api.stat" +
+      "usP\001Zvgithub.com/Clarifai/clarifai-go-gr" +
+      "pc/proto/clarifai/api/github.com/Clarifa" +
+      "i/clarifai-go-grpc/proto/clarifai/api/st" +
+      "atus\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

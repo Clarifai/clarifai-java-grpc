@@ -2316,9 +2316,11 @@ public final class Service {
       "er_app_id.user_id}/apps/{user_app_id.app" +
       "_id}/trending_metrics/views/{view_type}Z" +
       "(\022&/v2/trending_metrics/views/{view_type" +
-      "}\230\234\'\002B]\n\025com.clarifai.grpc.apiP\001Z;github" +
-      ".com/Clarifai/clarifai-go-grpc/proto/cla" +
-      "rifai/api/api\242\002\004CAIPb\006proto3"
+      "}\230\234\'\002B\225\001\n\025com.clarifai.grpc.apiP\001Zsgithu" +
+      "b.com/Clarifai/clarifai-go-grpc/proto/cl" +
+      "arifai/api/github.com/Clarifai/clarifai-" +
+      "go-grpc/proto/clarifai/api/api\242\002\004CAIPb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

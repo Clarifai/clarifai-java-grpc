@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * MyScopesUserRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.MyScopesUserRequest}
  */
 public  final class MyScopesUserRequest extends
@@ -277,6 +281,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * MyScopesUserRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.MyScopesUserRequest}
    */
   public static final class Builder extends

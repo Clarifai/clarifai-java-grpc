@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/audio.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Audio asset struct
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Audio}
@@ -493,9 +491,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/audio.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * Audio asset struct
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Audio}

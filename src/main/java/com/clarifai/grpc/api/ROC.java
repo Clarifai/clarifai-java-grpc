@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ROC
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ROC}
  */
 public  final class ROC extends
@@ -607,6 +611,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ROC
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ROC}
    */
   public static final class Builder extends

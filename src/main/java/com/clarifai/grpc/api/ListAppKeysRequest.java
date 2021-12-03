@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListAppKeysRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListAppKeysRequest}
  */
 public  final class ListAppKeysRequest extends
@@ -339,6 +343,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListAppKeysRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListAppKeysRequest}
    */
   public static final class Builder extends

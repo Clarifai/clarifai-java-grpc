@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Stats Collection Endpoints.
- * //////////////////////////////////////////////////////////////////////////////
+ * PostStatValuesRequest
  * </pre>
  *
  * Protobuf type {@code clarifai.api.PostStatValuesRequest}
@@ -378,9 +376,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Stats Collection Endpoints.
-   * //////////////////////////////////////////////////////////////////////////////
+   * PostStatValuesRequest
    * </pre>
    *
    * Protobuf type {@code clarifai.api.PostStatValuesRequest}

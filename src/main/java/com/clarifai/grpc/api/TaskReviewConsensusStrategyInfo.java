@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * TaskReviewConsensusStrategyInfo
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.TaskReviewConsensusStrategyInfo}
  */
 public  final class TaskReviewConsensusStrategyInfo extends
@@ -255,6 +259,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * TaskReviewConsensusStrategyInfo
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.TaskReviewConsensusStrategyInfo}
    */
   public static final class Builder extends

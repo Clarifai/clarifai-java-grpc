@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * PasswordViolations
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.PasswordViolations}
  */
 public  final class PasswordViolations extends
@@ -659,6 +663,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * PasswordViolations
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.PasswordViolations}
    */
   public static final class Builder extends

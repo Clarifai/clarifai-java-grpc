@@ -5,9 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *&#47;/////////////////////////////////////////////////////////////////////////////
- * Messages from /proto/clarifai/api/app.proto
- * //////////////////////////////////////////////////////////////////////////////
+ * Application with tasks and datasets
  * </pre>
  *
  * Protobuf type {@code clarifai.api.App}
@@ -1029,9 +1027,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *&#47;/////////////////////////////////////////////////////////////////////////////
-   * Messages from /proto/clarifai/api/app.proto
-   * //////////////////////////////////////////////////////////////////////////////
+   * Application with tasks and datasets
    * </pre>
    *
    * Protobuf type {@code clarifai.api.App}

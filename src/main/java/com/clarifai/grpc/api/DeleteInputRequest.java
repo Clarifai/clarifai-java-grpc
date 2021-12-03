@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * DeleteInputRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.DeleteInputRequest}
  */
 public  final class DeleteInputRequest extends
@@ -330,6 +334,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * DeleteInputRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.DeleteInputRequest}
    */
   public static final class Builder extends

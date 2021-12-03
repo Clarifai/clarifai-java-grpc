@@ -5,8 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * NOTE(Janvier): We copy this from proto/utils/lopq_service.proto instead of importing it because
- * we should not import internal protos in public protos.
+ * LOPQEvalResult
  * </pre>
  *
  * Protobuf type {@code clarifai.api.LOPQEvalResult}
@@ -439,8 +438,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * NOTE(Janvier): We copy this from proto/utils/lopq_service.proto instead of importing it because
-   * we should not import internal protos in public protos.
+   * LOPQEvalResult
    * </pre>
    *
    * Protobuf type {@code clarifai.api.LOPQEvalResult}

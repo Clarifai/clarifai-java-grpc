@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * ListAnnotationsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.ListAnnotationsRequest}
  */
 public  final class ListAnnotationsRequest extends
@@ -899,6 +903,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ListAnnotationsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.ListAnnotationsRequest}
    */
   public static final class Builder extends

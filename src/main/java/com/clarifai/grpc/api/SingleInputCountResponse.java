@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * SingleInputCountResponse
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.SingleInputCountResponse}
  */
 public  final class SingleInputCountResponse extends
@@ -132,10 +136,6 @@ private static final long serialVersionUID = 0L;
   public static final int COUNTS_FIELD_NUMBER = 2;
   private com.clarifai.grpc.api.InputCount counts_;
   /**
-   * <pre>
-   * NOTE: inconsistency: not named after the object name.
-   * </pre>
-   *
    * <code>.clarifai.api.InputCount counts = 2;</code>
    * @return Whether the counts field is set.
    */
@@ -143,10 +143,6 @@ private static final long serialVersionUID = 0L;
     return counts_ != null;
   }
   /**
-   * <pre>
-   * NOTE: inconsistency: not named after the object name.
-   * </pre>
-   *
    * <code>.clarifai.api.InputCount counts = 2;</code>
    * @return The counts.
    */
@@ -154,10 +150,6 @@ private static final long serialVersionUID = 0L;
     return counts_ == null ? com.clarifai.grpc.api.InputCount.getDefaultInstance() : counts_;
   }
   /**
-   * <pre>
-   * NOTE: inconsistency: not named after the object name.
-   * </pre>
-   *
    * <code>.clarifai.api.InputCount counts = 2;</code>
    */
   public com.clarifai.grpc.api.InputCountOrBuilder getCountsOrBuilder() {
@@ -341,6 +333,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * SingleInputCountResponse
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.SingleInputCountResponse}
    */
   public static final class Builder extends
@@ -632,10 +628,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.InputCount, com.clarifai.grpc.api.InputCount.Builder, com.clarifai.grpc.api.InputCountOrBuilder> countsBuilder_;
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      * @return Whether the counts field is set.
      */
@@ -643,10 +635,6 @@ private static final long serialVersionUID = 0L;
       return countsBuilder_ != null || counts_ != null;
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      * @return The counts.
      */
@@ -658,10 +646,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     public Builder setCounts(com.clarifai.grpc.api.InputCount value) {
@@ -678,10 +662,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     public Builder setCounts(
@@ -696,10 +676,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     public Builder mergeCounts(com.clarifai.grpc.api.InputCount value) {
@@ -718,10 +694,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     public Builder clearCounts() {
@@ -736,10 +708,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     public com.clarifai.grpc.api.InputCount.Builder getCountsBuilder() {
@@ -748,10 +716,6 @@ private static final long serialVersionUID = 0L;
       return getCountsFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     public com.clarifai.grpc.api.InputCountOrBuilder getCountsOrBuilder() {
@@ -763,10 +727,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * NOTE: inconsistency: not named after the object name.
-     * </pre>
-     *
      * <code>.clarifai.api.InputCount counts = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
