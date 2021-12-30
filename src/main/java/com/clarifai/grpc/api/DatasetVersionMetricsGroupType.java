@@ -4,53 +4,29 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.ExpirationAction}
+ * Protobuf enum {@code clarifai.api.DatasetVersionMetricsGroupType}
  */
-public enum ExpirationAction
+public enum DatasetVersionMetricsGroupType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>EXPIRATION_ACTION_NOT_SET = 0;</code>
+   * <code>DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0;</code>
    */
-  EXPIRATION_ACTION_NOT_SET(0),
+  DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET(0),
   /**
-   * <pre>
-   * Progressively delay the execution of operations
-   * </pre>
-   *
-   * <code>DELAY = 1;</code>
+   * <code>INPUT_TYPE = 1;</code>
    */
-  DELAY(1),
-  /**
-   * <pre>
-   * Cease functioning
-   * </pre>
-   *
-   * <code>EXPIRY = 2;</code>
-   */
-  EXPIRY(2),
+  INPUT_TYPE(1),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>EXPIRATION_ACTION_NOT_SET = 0;</code>
+   * <code>DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET = 0;</code>
    */
-  public static final int EXPIRATION_ACTION_NOT_SET_VALUE = 0;
+  public static final int DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET_VALUE = 0;
   /**
-   * <pre>
-   * Progressively delay the execution of operations
-   * </pre>
-   *
-   * <code>DELAY = 1;</code>
+   * <code>INPUT_TYPE = 1;</code>
    */
-  public static final int DELAY_VALUE = 1;
-  /**
-   * <pre>
-   * Cease functioning
-   * </pre>
-   *
-   * <code>EXPIRY = 2;</code>
-   */
-  public static final int EXPIRY_VALUE = 2;
+  public static final int INPUT_TYPE_VALUE = 1;
 
 
   public final int getNumber() {
@@ -67,7 +43,7 @@ public enum ExpirationAction
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static ExpirationAction valueOf(int value) {
+  public static DatasetVersionMetricsGroupType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -75,24 +51,23 @@ public enum ExpirationAction
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static ExpirationAction forNumber(int value) {
+  public static DatasetVersionMetricsGroupType forNumber(int value) {
     switch (value) {
-      case 0: return EXPIRATION_ACTION_NOT_SET;
-      case 1: return DELAY;
-      case 2: return EXPIRY;
+      case 0: return DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET;
+      case 1: return INPUT_TYPE;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ExpirationAction>
+  public static com.google.protobuf.Internal.EnumLiteMap<DatasetVersionMetricsGroupType>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      ExpirationAction> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ExpirationAction>() {
-          public ExpirationAction findValueByNumber(int number) {
-            return ExpirationAction.forNumber(number);
+      DatasetVersionMetricsGroupType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DatasetVersionMetricsGroupType>() {
+          public DatasetVersionMetricsGroupType findValueByNumber(int number) {
+            return DatasetVersionMetricsGroupType.forNumber(number);
           }
         };
 
@@ -106,12 +81,12 @@ public enum ExpirationAction
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(1);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final ExpirationAction[] VALUES = values();
+  private static final DatasetVersionMetricsGroupType[] VALUES = values();
 
-  public static ExpirationAction valueOf(
+  public static DatasetVersionMetricsGroupType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -125,10 +100,10 @@ public enum ExpirationAction
 
   private final int value;
 
-  private ExpirationAction(int value) {
+  private DatasetVersionMetricsGroupType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.ExpirationAction)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.DatasetVersionMetricsGroupType)
 }
 

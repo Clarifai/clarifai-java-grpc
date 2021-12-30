@@ -137,12 +137,28 @@ private static final long serialVersionUID = 0L;
   public static final int INPUTS_FIELD_NUMBER = 2;
   private java.util.List<com.clarifai.grpc.api.Input> inputs_;
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   public java.util.List<com.clarifai.grpc.api.Input> getInputsList() {
     return inputs_;
   }
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   public java.util.List<? extends com.clarifai.grpc.api.InputOrBuilder> 
@@ -150,18 +166,42 @@ private static final long serialVersionUID = 0L;
     return inputs_;
   }
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   public int getInputsCount() {
     return inputs_.size();
   }
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   public com.clarifai.grpc.api.Input getInputs(int index) {
     return inputs_.get(index);
   }
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   public com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(
@@ -677,6 +717,14 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> inputsBuilder_;
 
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public java.util.List<com.clarifai.grpc.api.Input> getInputsList() {
@@ -687,6 +735,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public int getInputsCount() {
@@ -697,6 +753,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public com.clarifai.grpc.api.Input getInputs(int index) {
@@ -707,6 +771,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder setInputs(
@@ -724,6 +796,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder setInputs(
@@ -738,6 +818,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder addInputs(com.clarifai.grpc.api.Input value) {
@@ -754,6 +842,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder addInputs(
@@ -771,6 +867,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder addInputs(
@@ -785,6 +889,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder addInputs(
@@ -799,6 +911,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder addAllInputs(
@@ -814,6 +934,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder clearInputs() {
@@ -827,6 +955,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public Builder removeInputs(int index) {
@@ -840,6 +976,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public com.clarifai.grpc.api.Input.Builder getInputsBuilder(
@@ -847,6 +991,14 @@ private static final long serialVersionUID = 0L;
       return getInputsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(
@@ -857,6 +1009,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.InputOrBuilder> 
@@ -868,6 +1028,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public com.clarifai.grpc.api.Input.Builder addInputsBuilder() {
@@ -875,6 +1043,14 @@ private static final long serialVersionUID = 0L;
           com.clarifai.grpc.api.Input.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public com.clarifai.grpc.api.Input.Builder addInputsBuilder(
@@ -883,6 +1059,14 @@ private static final long serialVersionUID = 0L;
           index, com.clarifai.grpc.api.Input.getDefaultInstance());
     }
     /**
+     * <pre>
+     * List of inputs to post.
+     * For each input, the following fields are used:
+     * * id
+     * * data
+     * * dataset_ids
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Input inputs = 2;</code>
      */
     public java.util.List<com.clarifai.grpc.api.Input.Builder> 

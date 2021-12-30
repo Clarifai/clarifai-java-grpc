@@ -29,26 +29,6 @@ public interface ModelQueryOrBuilder extends
 
   /**
    * <pre>
-   * This is the legacy model type. Do not use, only kept for support in old API clients.
-   * </pre>
-   *
-   * <code>string type = 2 [deprecated = true];</code>
-   * @return The type.
-   */
-  @java.lang.Deprecated java.lang.String getType();
-  /**
-   * <pre>
-   * This is the legacy model type. Do not use, only kept for support in old API clients.
-   * </pre>
-   *
-   * <code>string type = 2 [deprecated = true];</code>
-   * @return The bytes for type.
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <pre>
    * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
    * supported.
    * </pre>

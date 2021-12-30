@@ -116,12 +116,10 @@ public final class Scope {
       "rfai_exposed\022!.google.protobuf.EnumValue" +
       "Options\030\276\363\004 \001(\010:^\n\031clarifai_depending_sc" +
       "opes\022!.google.protobuf.EnumValueOptions\030" +
-      "\277\363\004 \003(\0162\026.clarifai.auth.scope.SB\240\001\n\034com." +
-      "clarifai.grpc.auth.scopeP\001Zwgithub.com/C" +
-      "larifai/clarifai-go-grpc/proto/clarifai/" +
-      "auth/github.com/Clarifai/clarifai-go-grp" +
-      "c/proto/clarifai/auth/scope\242\002\004CAIPb\006prot" +
-      "o3"
+      "\277\363\004 \003(\0162\026.clarifai.auth.scope.SBg\n\034com.c" +
+      "larifai.grpc.auth.scopeP\001Z>github.com/Cl" +
+      "arifai/clarifai-go-grpc/proto/clarifai/a" +
+      "uth/scope\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

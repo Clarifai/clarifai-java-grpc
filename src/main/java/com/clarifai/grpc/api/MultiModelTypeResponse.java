@@ -76,6 +76,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.ModelType.parser(), extensionRegistry));
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.ModelTypeField.Builder subBuilder = null;
+            if (modelImporters_ != null) {
+              subBuilder = modelImporters_.toBuilder();
+            }
+            modelImporters_ = input.readMessage(com.clarifai.grpc.api.ModelTypeField.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modelImporters_);
+              modelImporters_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -201,6 +214,41 @@ private static final long serialVersionUID = 0L;
     return modelTypes_.get(index);
   }
 
+  public static final int MODEL_IMPORTERS_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.ModelTypeField modelImporters_;
+  /**
+   * <pre>
+   * List of model importers
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+   * @return Whether the modelImporters field is set.
+   */
+  public boolean hasModelImporters() {
+    return modelImporters_ != null;
+  }
+  /**
+   * <pre>
+   * List of model importers
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+   * @return The modelImporters.
+   */
+  public com.clarifai.grpc.api.ModelTypeField getModelImporters() {
+    return modelImporters_ == null ? com.clarifai.grpc.api.ModelTypeField.getDefaultInstance() : modelImporters_;
+  }
+  /**
+   * <pre>
+   * List of model importers
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+   */
+  public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelImportersOrBuilder() {
+    return getModelImporters();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -221,6 +269,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < modelTypes_.size(); i++) {
       output.writeMessage(2, modelTypes_.get(i));
     }
+    if (modelImporters_ != null) {
+      output.writeMessage(3, getModelImporters());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -237,6 +288,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < modelTypes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, modelTypes_.get(i));
+    }
+    if (modelImporters_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getModelImporters());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -260,6 +315,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelTypesList()
         .equals(other.getModelTypesList())) return false;
+    if (hasModelImporters() != other.hasModelImporters()) return false;
+    if (hasModelImporters()) {
+      if (!getModelImporters()
+          .equals(other.getModelImporters())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -278,6 +338,10 @@ private static final long serialVersionUID = 0L;
     if (getModelTypesCount() > 0) {
       hash = (37 * hash) + MODEL_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getModelTypesList().hashCode();
+    }
+    if (hasModelImporters()) {
+      hash = (37 * hash) + MODEL_IMPORTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelImporters().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -429,6 +493,12 @@ private static final long serialVersionUID = 0L;
       } else {
         modelTypesBuilder_.clear();
       }
+      if (modelImportersBuilder_ == null) {
+        modelImporters_ = null;
+      } else {
+        modelImporters_ = null;
+        modelImportersBuilder_ = null;
+      }
       return this;
     }
 
@@ -469,6 +539,11 @@ private static final long serialVersionUID = 0L;
         result.modelTypes_ = modelTypes_;
       } else {
         result.modelTypes_ = modelTypesBuilder_.build();
+      }
+      if (modelImportersBuilder_ == null) {
+        result.modelImporters_ = modelImporters_;
+      } else {
+        result.modelImporters_ = modelImportersBuilder_.build();
       }
       onBuilt();
       return result;
@@ -546,6 +621,9 @@ private static final long serialVersionUID = 0L;
             modelTypesBuilder_.addAllMessages(other.modelTypes_);
           }
         }
+      }
+      if (other.hasModelImporters()) {
+        mergeModelImporters(other.getModelImporters());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1042,6 +1120,161 @@ private static final long serialVersionUID = 0L;
         modelTypes_ = null;
       }
       return modelTypesBuilder_;
+    }
+
+    private com.clarifai.grpc.api.ModelTypeField modelImporters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> modelImportersBuilder_;
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     * @return Whether the modelImporters field is set.
+     */
+    public boolean hasModelImporters() {
+      return modelImportersBuilder_ != null || modelImporters_ != null;
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     * @return The modelImporters.
+     */
+    public com.clarifai.grpc.api.ModelTypeField getModelImporters() {
+      if (modelImportersBuilder_ == null) {
+        return modelImporters_ == null ? com.clarifai.grpc.api.ModelTypeField.getDefaultInstance() : modelImporters_;
+      } else {
+        return modelImportersBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    public Builder setModelImporters(com.clarifai.grpc.api.ModelTypeField value) {
+      if (modelImportersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelImporters_ = value;
+        onChanged();
+      } else {
+        modelImportersBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    public Builder setModelImporters(
+        com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (modelImportersBuilder_ == null) {
+        modelImporters_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelImportersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    public Builder mergeModelImporters(com.clarifai.grpc.api.ModelTypeField value) {
+      if (modelImportersBuilder_ == null) {
+        if (modelImporters_ != null) {
+          modelImporters_ =
+            com.clarifai.grpc.api.ModelTypeField.newBuilder(modelImporters_).mergeFrom(value).buildPartial();
+        } else {
+          modelImporters_ = value;
+        }
+        onChanged();
+      } else {
+        modelImportersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    public Builder clearModelImporters() {
+      if (modelImportersBuilder_ == null) {
+        modelImporters_ = null;
+        onChanged();
+      } else {
+        modelImporters_ = null;
+        modelImportersBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder getModelImportersBuilder() {
+      
+      onChanged();
+      return getModelImportersFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelImportersOrBuilder() {
+      if (modelImportersBuilder_ != null) {
+        return modelImportersBuilder_.getMessageOrBuilder();
+      } else {
+        return modelImporters_ == null ?
+            com.clarifai.grpc.api.ModelTypeField.getDefaultInstance() : modelImporters_;
+      }
+    }
+    /**
+     * <pre>
+     * List of model importers
+     * </pre>
+     *
+     * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+        getModelImportersFieldBuilder() {
+      if (modelImportersBuilder_ == null) {
+        modelImportersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder>(
+                getModelImporters(),
+                getParentForChildren(),
+                isClean());
+        modelImporters_ = null;
+      }
+      return modelImportersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

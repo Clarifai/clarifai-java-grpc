@@ -28,8 +28,6 @@ private static final long serialVersionUID = 0L;
   }
   private OutputInfo() {
     message_ = "";
-    type_ = "";
-    typeExt_ = "";
   }
 
   @java.lang.Override
@@ -92,18 +90,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             message_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            type_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            typeExt_ = s;
             break;
           }
           case 50: {
@@ -281,98 +267,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object type_;
-  /**
-   * <pre>
-   * To help clients know what type of Data to expect out of the model.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The type.
-   */
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * To help clients know what type of Data to expect out of the model.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
-   */
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      type_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_EXT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object typeExt_;
-  /**
-   * <pre>
-   * Extra metadata about the Type data.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type_ext = 5;</code>
-   * @return The typeExt.
-   */
-  public java.lang.String getTypeExt() {
-    java.lang.Object ref = typeExt_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      typeExt_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Extra metadata about the Type data.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type_ext = 5;</code>
-   * @return The bytes for typeExt.
-   */
-  public com.google.protobuf.ByteString
-      getTypeExtBytes() {
-    java.lang.Object ref = typeExt_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      typeExt_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int FIELDS_MAP_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct fieldsMap_;
   /**
@@ -475,12 +369,6 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type_);
-    }
-    if (!getTypeExtBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, typeExt_);
-    }
     if (fieldsMap_ != null) {
       output.writeMessage(6, getFieldsMap());
     }
@@ -506,12 +394,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
-    }
-    if (!getTypeExtBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, typeExt_);
     }
     if (fieldsMap_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -548,10 +430,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getMessage()
         .equals(other.getMessage())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (!getTypeExt()
-        .equals(other.getTypeExt())) return false;
     if (hasFieldsMap() != other.hasFieldsMap()) return false;
     if (hasFieldsMap()) {
       if (!getFieldsMap()
@@ -583,10 +461,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
-    hash = (37 * hash) + TYPE_EXT_FIELD_NUMBER;
-    hash = (53 * hash) + getTypeExt().hashCode();
     if (hasFieldsMap()) {
       hash = (37 * hash) + FIELDS_MAP_FIELD_NUMBER;
       hash = (53 * hash) + getFieldsMap().hashCode();
@@ -753,10 +627,6 @@ private static final long serialVersionUID = 0L;
       }
       message_ = "";
 
-      type_ = "";
-
-      typeExt_ = "";
-
       if (fieldsMapBuilder_ == null) {
         fieldsMap_ = null;
       } else {
@@ -806,8 +676,6 @@ private static final long serialVersionUID = 0L;
         result.outputConfig_ = outputConfigBuilder_.build();
       }
       result.message_ = message_;
-      result.type_ = type_;
-      result.typeExt_ = typeExt_;
       if (fieldsMapBuilder_ == null) {
         result.fieldsMap_ = fieldsMap_;
       } else {
@@ -874,14 +742,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
-        onChanged();
-      }
-      if (!other.getTypeExt().isEmpty()) {
-        typeExt_ = other.typeExt_;
         onChanged();
       }
       if (other.hasFieldsMap()) {
@@ -1330,208 +1190,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       message_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     * <pre>
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @return The type.
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @return The bytes for type.
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @param value The type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearType() {
-      
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * To help clients know what type of Data to expect out of the model.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      type_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object typeExt_ = "";
-    /**
-     * <pre>
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type_ext = 5;</code>
-     * @return The typeExt.
-     */
-    public java.lang.String getTypeExt() {
-      java.lang.Object ref = typeExt_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        typeExt_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type_ext = 5;</code>
-     * @return The bytes for typeExt.
-     */
-    public com.google.protobuf.ByteString
-        getTypeExtBytes() {
-      java.lang.Object ref = typeExt_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        typeExt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type_ext = 5;</code>
-     * @param value The typeExt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeExt(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      typeExt_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type_ext = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTypeExt() {
-      
-      typeExt_ = getDefaultInstance().getTypeExt();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Extra metadata about the Type data.
-     * TO BE DEPRECATED
-     * </pre>
-     *
-     * <code>string type_ext = 5;</code>
-     * @param value The bytes for typeExt to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeExtBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      typeExt_ = value;
       onChanged();
       return this;
     }

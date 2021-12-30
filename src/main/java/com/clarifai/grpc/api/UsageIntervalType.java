@@ -107,7 +107,7 @@ public enum UsageIntervalType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(5);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final UsageIntervalType[] VALUES = values();

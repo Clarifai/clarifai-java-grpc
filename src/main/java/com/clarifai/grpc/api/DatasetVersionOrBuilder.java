@@ -229,30 +229,30 @@ public interface DatasetVersionOrBuilder extends
 
   /**
    * <pre>
-   * Dataset version summary
+   * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
-   * @return Whether the summary field is set.
+   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+   * @return Whether the metrics field is set.
    */
-  boolean hasSummary();
+  boolean hasMetrics();
   /**
    * <pre>
-   * Dataset version summary
+   * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
-   * @return The summary.
+   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+   * @return The metrics.
    */
-  com.clarifai.grpc.api.DatasetVersionSummary getSummary();
+  com.clarifai.grpc.api.DatasetVersionMetrics getMetrics();
   /**
    * <pre>
-   * Dataset version summary
+   * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
    */
-  com.clarifai.grpc.api.DatasetVersionSummaryOrBuilder getSummaryOrBuilder();
+  com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder getMetricsOrBuilder();
 
   /**
    * <pre>

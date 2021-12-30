@@ -674,6 +674,26 @@ public enum StatusCode
   APP_DUPLICATION_INVALID_REQUEST(25204),
   /**
    * <pre>
+   * Module related codes 253xx
+   * </pre>
+   *
+   * <code>MODULE_DOES_NOT_EXIST = 25300;</code>
+   */
+  MODULE_DOES_NOT_EXIST(25300),
+  /**
+   * <code>MODULE_PERMISSION_DENIED = 25301;</code>
+   */
+  MODULE_PERMISSION_DENIED(25301),
+  /**
+   * <code>MODULE_INVALID_ARGUMENT = 25302;</code>
+   */
+  MODULE_INVALID_ARGUMENT(25302),
+  /**
+   * <code>MODULE_INVALID_REQUEST = 25303;</code>
+   */
+  MODULE_INVALID_REQUEST(25303),
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -2240,6 +2260,26 @@ public enum StatusCode
   public static final int APP_DUPLICATION_INVALID_REQUEST_VALUE = 25204;
   /**
    * <pre>
+   * Module related codes 253xx
+   * </pre>
+   *
+   * <code>MODULE_DOES_NOT_EXIST = 25300;</code>
+   */
+  public static final int MODULE_DOES_NOT_EXIST_VALUE = 25300;
+  /**
+   * <code>MODULE_PERMISSION_DENIED = 25301;</code>
+   */
+  public static final int MODULE_PERMISSION_DENIED_VALUE = 25301;
+  /**
+   * <code>MODULE_INVALID_ARGUMENT = 25302;</code>
+   */
+  public static final int MODULE_INVALID_ARGUMENT_VALUE = 25302;
+  /**
+   * <code>MODULE_INVALID_REQUEST = 25303;</code>
+   */
+  public static final int MODULE_INVALID_REQUEST_VALUE = 25303;
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -3277,6 +3317,10 @@ public enum StatusCode
       case 25202: return APP_DUPLICATION_PENDING;
       case 25203: return APP_DUPLICATION_IN_PROGRESS;
       case 25204: return APP_DUPLICATION_INVALID_REQUEST;
+      case 25300: return MODULE_DOES_NOT_EXIST;
+      case 25301: return MODULE_PERMISSION_DENIED;
+      case 25302: return MODULE_INVALID_ARGUMENT;
+      case 25303: return MODULE_INVALID_REQUEST;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;

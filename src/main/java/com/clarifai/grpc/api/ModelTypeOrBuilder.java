@@ -73,26 +73,6 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * The type of the model to create. This is currently stored in output_info.type.
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The type.
-   */
-  java.lang.String getType();
-  /**
-   * <pre>
-   * The type of the model to create. This is currently stored in output_info.type.
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
-   */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <pre>
    * The list of input fields that this model accepts. These are the keys of the Model's
    * InputInfo.fields_map
    * </pre>

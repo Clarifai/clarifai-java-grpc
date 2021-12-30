@@ -86,50 +86,6 @@ public interface OutputInfoOrBuilder extends
 
   /**
    * <pre>
-   * To help clients know what type of Data to expect out of the model.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The type.
-   */
-  java.lang.String getType();
-  /**
-   * <pre>
-   * To help clients know what type of Data to expect out of the model.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
-   */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <pre>
-   * Extra metadata about the Type data.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type_ext = 5;</code>
-   * @return The typeExt.
-   */
-  java.lang.String getTypeExt();
-  /**
-   * <pre>
-   * Extra metadata about the Type data.
-   * TO BE DEPRECATED
-   * </pre>
-   *
-   * <code>string type_ext = 5;</code>
-   * @return The bytes for typeExt.
-   */
-  com.google.protobuf.ByteString
-      getTypeExtBytes();
-
-  /**
-   * <pre>
    * Map from the api.Data field names to the underlying model graph's outputs. When using a
    * PretrainedModelConfig the values in this map need to match the Triton config.pbtxt output names.
    * </pre>
