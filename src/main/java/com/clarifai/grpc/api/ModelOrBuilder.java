@@ -29,22 +29,22 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * A nicer-to-read name for the model. Can have spaces and special characters.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [deprecated = true];</code>
    * @return The name.
    */
-  java.lang.String getName();
+  @java.lang.Deprecated java.lang.String getName();
   /**
    * <pre>
-   * A nicer-to-read name for the model. Can have spaces and special characters.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [deprecated = true];</code>
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getNameBytes();
 
   /**
@@ -189,24 +189,22 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-   * need a temporary workaround while we check what depends on these names.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string display_name = 7;</code>
+   * <code>string display_name = 7 [deprecated = true];</code>
    * @return The displayName.
    */
-  java.lang.String getDisplayName();
+  @java.lang.Deprecated java.lang.String getDisplayName();
   /**
    * <pre>
-   * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-   * need a temporary workaround while we check what depends on these names.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string display_name = 7;</code>
+   * <code>string display_name = 7 [deprecated = true];</code>
    * @return The bytes for displayName.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getDisplayNameBytes();
 
   /**

@@ -42,11 +42,10 @@ public final class TestProtoOuterClass {
       "\tH\000\022\024\n\nbool_oneof\030\006 \001(\010H\000\0227\n\rmessage_one" +
       "of\030\007 \001(\0132\036.clarifai.api.utils.TestProto2" +
       "H\000B\016\n\014one_of_field\"&\n\nTestProto2\022\n\n\002id\030\001" +
-      " \001(\t\022\014\n\004flip\030\002 \001(\010B\235\001\n\033com.clarifai.grpc" +
-      ".api.utilsP\001Zugithub.com/Clarifai/clarif" +
-      "ai-go-grpc/proto/clarifai/api/github.com" +
-      "/Clarifai/clarifai-go-grpc/proto/clarifa" +
-      "i/api/utils\242\002\004CAIPb\006proto3"
+      " \001(\t\022\014\n\004flip\030\002 \001(\010Be\n\033com.clarifai.grpc." +
+      "api.utilsP\001Z=github.com/Clarifai/clarifa" +
+      "i-go-grpc/proto/clarifai/api/utils\242\002\004CAI" +
+      "Pb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

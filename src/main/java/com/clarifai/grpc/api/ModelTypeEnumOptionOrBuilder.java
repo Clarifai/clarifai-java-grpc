@@ -29,6 +29,70 @@ public interface ModelTypeEnumOptionOrBuilder extends
 
   /**
    * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias> 
+      getAliasesList();
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeEnumOptionAlias getAliases(int index);
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  int getAliasesCount();
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder> 
+      getAliasesOrBuilderList();
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder getAliasesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
    * Optional description for this enum option.
    * </pre>
    *

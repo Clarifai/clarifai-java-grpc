@@ -365,13 +365,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * A nicer-to-read name for the model. Can have spaces and special characters.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [deprecated = true];</code>
    * @return The name.
    */
-  public java.lang.String getName() {
+  @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -385,13 +385,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A nicer-to-read name for the model. Can have spaces and special characters.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [deprecated = true];</code>
    * @return The bytes for name.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -605,14 +605,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-   * need a temporary workaround while we check what depends on these names.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string display_name = 7;</code>
+   * <code>string display_name = 7 [deprecated = true];</code>
    * @return The displayName.
    */
-  public java.lang.String getDisplayName() {
+  @java.lang.Deprecated public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -626,14 +625,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-   * need a temporary workaround while we check what depends on these names.
+   * DEPRECATED: Please use the model id to name the model.
    * </pre>
    *
-   * <code>string display_name = 7;</code>
+   * <code>string display_name = 7 [deprecated = true];</code>
    * @return The bytes for displayName.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -2137,13 +2135,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [deprecated = true];</code>
      * @return The name.
      */
-    public java.lang.String getName() {
+    @java.lang.Deprecated public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -2157,13 +2155,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [deprecated = true];</code>
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
@@ -2178,14 +2176,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [deprecated = true];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    @java.lang.Deprecated public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2197,13 +2195,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    @java.lang.Deprecated public Builder clearName() {
       
       name_ = getDefaultInstance().getName();
       onChanged();
@@ -2211,14 +2209,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A nicer-to-read name for the model. Can have spaces and special characters.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [deprecated = true];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    @java.lang.Deprecated public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2985,14 +2983,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string display_name = 7;</code>
+     * <code>string display_name = 7 [deprecated = true];</code>
      * @return The displayName.
      */
-    public java.lang.String getDisplayName() {
+    @java.lang.Deprecated public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -3006,14 +3003,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string display_name = 7;</code>
+     * <code>string display_name = 7 [deprecated = true];</code>
      * @return The bytes for displayName.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
@@ -3028,15 +3024,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string display_name = 7;</code>
+     * <code>string display_name = 7 [deprecated = true];</code>
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setDisplayName(
+    @java.lang.Deprecated public Builder setDisplayName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -3048,14 +3043,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string display_name = 7;</code>
+     * <code>string display_name = 7 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearDisplayName() {
+    @java.lang.Deprecated public Builder clearDisplayName() {
       
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
@@ -3063,15 +3057,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An even nicer-to-read name for public Clarifai models where we're not happy with the name but
-     * need a temporary workaround while we check what depends on these names.
+     * DEPRECATED: Please use the model id to name the model.
      * </pre>
      *
-     * <code>string display_name = 7;</code>
+     * <code>string display_name = 7 [deprecated = true];</code>
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
-    public Builder setDisplayNameBytes(
+    @java.lang.Deprecated public Builder setDisplayNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

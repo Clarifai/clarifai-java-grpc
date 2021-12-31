@@ -292,4 +292,31 @@ public interface ModelVersionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLicenseBytes();
+
+  /**
+   * <pre>
+   * Dataset version used to create this model version.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+   * @return Whether the datasetVersion field is set.
+   */
+  boolean hasDatasetVersion();
+  /**
+   * <pre>
+   * Dataset version used to create this model version.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+   * @return The datasetVersion.
+   */
+  com.clarifai.grpc.api.DatasetVersion getDatasetVersion();
+  /**
+   * <pre>
+   * Dataset version used to create this model version.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder();
 }

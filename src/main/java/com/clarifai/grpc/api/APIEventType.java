@@ -107,7 +107,7 @@ public enum APIEventType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(4);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final APIEventType[] VALUES = values();

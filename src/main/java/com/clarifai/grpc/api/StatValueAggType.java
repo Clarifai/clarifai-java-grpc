@@ -81,7 +81,7 @@ public enum StatValueAggType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(7);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final StatValueAggType[] VALUES = values();

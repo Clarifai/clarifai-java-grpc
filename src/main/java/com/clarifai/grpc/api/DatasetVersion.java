@@ -143,14 +143,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            com.clarifai.grpc.api.DatasetVersionSummary.Builder subBuilder = null;
-            if (summary_ != null) {
-              subBuilder = summary_.toBuilder();
+            com.clarifai.grpc.api.DatasetVersionMetrics.Builder subBuilder = null;
+            if (metrics_ != null) {
+              subBuilder = metrics_.toBuilder();
             }
-            summary_ = input.readMessage(com.clarifai.grpc.api.DatasetVersionSummary.parser(), extensionRegistry);
+            metrics_ = input.readMessage(com.clarifai.grpc.api.DatasetVersionMetrics.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(summary_);
-              summary_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(metrics_);
+              metrics_ = subBuilder.buildPartial();
             }
 
             break;
@@ -641,39 +641,39 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SUMMARY_FIELD_NUMBER = 11;
-  private com.clarifai.grpc.api.DatasetVersionSummary summary_;
+  public static final int METRICS_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.DatasetVersionMetrics metrics_;
   /**
    * <pre>
-   * Dataset version summary
+   * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
-   * @return Whether the summary field is set.
+   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+   * @return Whether the metrics field is set.
    */
-  public boolean hasSummary() {
-    return summary_ != null;
+  public boolean hasMetrics() {
+    return metrics_ != null;
   }
   /**
    * <pre>
-   * Dataset version summary
+   * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
-   * @return The summary.
+   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+   * @return The metrics.
    */
-  public com.clarifai.grpc.api.DatasetVersionSummary getSummary() {
-    return summary_ == null ? com.clarifai.grpc.api.DatasetVersionSummary.getDefaultInstance() : summary_;
+  public com.clarifai.grpc.api.DatasetVersionMetrics getMetrics() {
+    return metrics_ == null ? com.clarifai.grpc.api.DatasetVersionMetrics.getDefaultInstance() : metrics_;
   }
   /**
    * <pre>
-   * Dataset version summary
+   * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
    */
-  public com.clarifai.grpc.api.DatasetVersionSummaryOrBuilder getSummaryOrBuilder() {
-    return getSummary();
+  public com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder getMetricsOrBuilder() {
+    return getMetrics();
   }
 
   public static final int METADATA_FIELD_NUMBER = 12;
@@ -847,8 +847,8 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
     }
-    if (summary_ != null) {
-      output.writeMessage(11, getSummary());
+    if (metrics_ != null) {
+      output.writeMessage(11, getMetrics());
     }
     if (metadata_ != null) {
       output.writeMessage(12, getMetadata());
@@ -899,9 +899,9 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
     }
-    if (summary_ != null) {
+    if (metrics_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getSummary());
+        .computeMessageSize(11, getMetrics());
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -959,10 +959,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (hasSummary() != other.hasSummary()) return false;
-    if (hasSummary()) {
-      if (!getSummary()
-          .equals(other.getSummary())) return false;
+    if (hasMetrics() != other.hasMetrics()) return false;
+    if (hasMetrics()) {
+      if (!getMetrics()
+          .equals(other.getMetrics())) return false;
     }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
@@ -1018,9 +1018,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    if (hasSummary()) {
-      hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
-      hash = (53 * hash) + getSummary().hashCode();
+    if (hasMetrics()) {
+      hash = (37 * hash) + METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetrics().hashCode();
     }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
@@ -1207,11 +1207,11 @@ private static final long serialVersionUID = 0L;
       }
       description_ = "";
 
-      if (summaryBuilder_ == null) {
-        summary_ = null;
+      if (metricsBuilder_ == null) {
+        metrics_ = null;
       } else {
-        summary_ = null;
-        summaryBuilder_ = null;
+        metrics_ = null;
+        metricsBuilder_ = null;
       }
       if (metadataBuilder_ == null) {
         metadata_ = null;
@@ -1283,10 +1283,10 @@ private static final long serialVersionUID = 0L;
         result.status_ = statusBuilder_.build();
       }
       result.description_ = description_;
-      if (summaryBuilder_ == null) {
-        result.summary_ = summary_;
+      if (metricsBuilder_ == null) {
+        result.metrics_ = metrics_;
       } else {
-        result.summary_ = summaryBuilder_.build();
+        result.metrics_ = metricsBuilder_.build();
       }
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
@@ -1381,8 +1381,8 @@ private static final long serialVersionUID = 0L;
         description_ = other.description_;
         onChanged();
       }
-      if (other.hasSummary()) {
-        mergeSummary(other.getSummary());
+      if (other.hasMetrics()) {
+        mergeMetrics(other.getMetrics());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
@@ -2609,159 +2609,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.DatasetVersionSummary summary_;
+    private com.clarifai.grpc.api.DatasetVersionMetrics metrics_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetVersionSummary, com.clarifai.grpc.api.DatasetVersionSummary.Builder, com.clarifai.grpc.api.DatasetVersionSummaryOrBuilder> summaryBuilder_;
+        com.clarifai.grpc.api.DatasetVersionMetrics, com.clarifai.grpc.api.DatasetVersionMetrics.Builder, com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder> metricsBuilder_;
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
-     * @return Whether the summary field is set.
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+     * @return Whether the metrics field is set.
      */
-    public boolean hasSummary() {
-      return summaryBuilder_ != null || summary_ != null;
+    public boolean hasMetrics() {
+      return metricsBuilder_ != null || metrics_ != null;
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
-     * @return The summary.
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+     * @return The metrics.
      */
-    public com.clarifai.grpc.api.DatasetVersionSummary getSummary() {
-      if (summaryBuilder_ == null) {
-        return summary_ == null ? com.clarifai.grpc.api.DatasetVersionSummary.getDefaultInstance() : summary_;
+    public com.clarifai.grpc.api.DatasetVersionMetrics getMetrics() {
+      if (metricsBuilder_ == null) {
+        return metrics_ == null ? com.clarifai.grpc.api.DatasetVersionMetrics.getDefaultInstance() : metrics_;
       } else {
-        return summaryBuilder_.getMessage();
+        return metricsBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
-    public Builder setSummary(com.clarifai.grpc.api.DatasetVersionSummary value) {
-      if (summaryBuilder_ == null) {
+    public Builder setMetrics(com.clarifai.grpc.api.DatasetVersionMetrics value) {
+      if (metricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        summary_ = value;
+        metrics_ = value;
         onChanged();
       } else {
-        summaryBuilder_.setMessage(value);
+        metricsBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
-    public Builder setSummary(
-        com.clarifai.grpc.api.DatasetVersionSummary.Builder builderForValue) {
-      if (summaryBuilder_ == null) {
-        summary_ = builderForValue.build();
+    public Builder setMetrics(
+        com.clarifai.grpc.api.DatasetVersionMetrics.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
         onChanged();
       } else {
-        summaryBuilder_.setMessage(builderForValue.build());
+        metricsBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
-    public Builder mergeSummary(com.clarifai.grpc.api.DatasetVersionSummary value) {
-      if (summaryBuilder_ == null) {
-        if (summary_ != null) {
-          summary_ =
-            com.clarifai.grpc.api.DatasetVersionSummary.newBuilder(summary_).mergeFrom(value).buildPartial();
+    public Builder mergeMetrics(com.clarifai.grpc.api.DatasetVersionMetrics value) {
+      if (metricsBuilder_ == null) {
+        if (metrics_ != null) {
+          metrics_ =
+            com.clarifai.grpc.api.DatasetVersionMetrics.newBuilder(metrics_).mergeFrom(value).buildPartial();
         } else {
-          summary_ = value;
+          metrics_ = value;
         }
         onChanged();
       } else {
-        summaryBuilder_.mergeFrom(value);
+        metricsBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
-    public Builder clearSummary() {
-      if (summaryBuilder_ == null) {
-        summary_ = null;
+    public Builder clearMetrics() {
+      if (metricsBuilder_ == null) {
+        metrics_ = null;
         onChanged();
       } else {
-        summary_ = null;
-        summaryBuilder_ = null;
+        metrics_ = null;
+        metricsBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
-    public com.clarifai.grpc.api.DatasetVersionSummary.Builder getSummaryBuilder() {
+    public com.clarifai.grpc.api.DatasetVersionMetrics.Builder getMetricsBuilder() {
       
       onChanged();
-      return getSummaryFieldBuilder().getBuilder();
+      return getMetricsFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
-    public com.clarifai.grpc.api.DatasetVersionSummaryOrBuilder getSummaryOrBuilder() {
-      if (summaryBuilder_ != null) {
-        return summaryBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder getMetricsOrBuilder() {
+      if (metricsBuilder_ != null) {
+        return metricsBuilder_.getMessageOrBuilder();
       } else {
-        return summary_ == null ?
-            com.clarifai.grpc.api.DatasetVersionSummary.getDefaultInstance() : summary_;
+        return metrics_ == null ?
+            com.clarifai.grpc.api.DatasetVersionMetrics.getDefaultInstance() : metrics_;
       }
     }
     /**
      * <pre>
-     * Dataset version summary
+     * Dataset version metrics
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionSummary summary = 11;</code>
+     * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetVersionSummary, com.clarifai.grpc.api.DatasetVersionSummary.Builder, com.clarifai.grpc.api.DatasetVersionSummaryOrBuilder> 
-        getSummaryFieldBuilder() {
-      if (summaryBuilder_ == null) {
-        summaryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.DatasetVersionSummary, com.clarifai.grpc.api.DatasetVersionSummary.Builder, com.clarifai.grpc.api.DatasetVersionSummaryOrBuilder>(
-                getSummary(),
+        com.clarifai.grpc.api.DatasetVersionMetrics, com.clarifai.grpc.api.DatasetVersionMetrics.Builder, com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder> 
+        getMetricsFieldBuilder() {
+      if (metricsBuilder_ == null) {
+        metricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DatasetVersionMetrics, com.clarifai.grpc.api.DatasetVersionMetrics.Builder, com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder>(
+                getMetrics(),
                 getParentForChildren(),
                 isClean());
-        summary_ = null;
+        metrics_ = null;
       }
-      return summaryBuilder_;
+      return metricsBuilder_;
     }
 
     private com.google.protobuf.Struct metadata_;

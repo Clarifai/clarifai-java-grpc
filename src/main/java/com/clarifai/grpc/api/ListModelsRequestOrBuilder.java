@@ -89,7 +89,7 @@ public interface ListModelsRequestOrBuilder extends
   /**
    * <pre>
    * Filtering options:
-   * // Query various text fields that can contain the words in the query string
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
    * </pre>
    *
    * <code>string query = 14;</code>
@@ -99,7 +99,7 @@ public interface ListModelsRequestOrBuilder extends
   /**
    * <pre>
    * Filtering options:
-   * // Query various text fields that can contain the words in the query string
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
    * </pre>
    *
    * <code>string query = 14;</code>
@@ -110,7 +110,7 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
@@ -120,7 +120,7 @@ public interface ListModelsRequestOrBuilder extends
   @java.lang.Deprecated java.lang.String getName();
   /**
    * <pre>
-   * Filter by the name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *

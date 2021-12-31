@@ -523,4 +523,48 @@ public interface DataOrBuilder extends
    */
   com.clarifai.grpc.api.TimeSegmentOrBuilder getTimeSegmentsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Hit> 
+      getHitsList();
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  com.clarifai.grpc.api.Hit getHits(int index);
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  int getHitsCount();
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.HitOrBuilder> 
+      getHitsOrBuilderList();
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
+      int index);
 }

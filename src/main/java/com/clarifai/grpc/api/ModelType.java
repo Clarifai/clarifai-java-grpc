@@ -25,7 +25,6 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     title_ = "";
     description_ = "";
-    type_ = "";
     inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     modelTypeFields_ = java.util.Collections.emptyList();
@@ -78,12 +77,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            type_ = s;
             break;
           }
           case 42: {
@@ -335,50 +328,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       description_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object type_;
-  /**
-   * <pre>
-   * The type of the model to create. This is currently stored in output_info.type.
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The type.
-   */
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The type of the model to create. This is currently stored in output_info.type.
-   * </pre>
-   *
-   * <code>string type = 4;</code>
-   * @return The bytes for type.
-   */
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      type_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -735,9 +684,6 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type_);
-    }
     for (int i = 0; i < inputFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputFields_.getRaw(i));
     }
@@ -785,9 +731,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
     }
     {
       int dataSize = 0;
@@ -858,8 +801,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTitle())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
     if (!getInputFieldsList()
         .equals(other.getInputFieldsList())) return false;
     if (!getOutputFieldsList()
@@ -903,8 +844,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTitle().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
     if (getInputFieldsCount() > 0) {
       hash = (37 * hash) + INPUT_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getInputFieldsList().hashCode();
@@ -1086,8 +1025,6 @@ private static final long serialVersionUID = 0L;
 
       description_ = "";
 
-      type_ = "";
-
       inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1150,7 +1087,6 @@ private static final long serialVersionUID = 0L;
       result.id_ = id_;
       result.title_ = title_;
       result.description_ = description_;
-      result.type_ = type_;
       if (((bitField0_ & 0x00000001) != 0)) {
         inputFields_ = inputFields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1243,10 +1179,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
         onChanged();
       }
       if (!other.inputFields_.isEmpty()) {
@@ -1640,102 +1572,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       description_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     * <pre>
-     * The type of the model to create. This is currently stored in output_info.type.
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @return The type.
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The type of the model to create. This is currently stored in output_info.type.
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @return The bytes for type.
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The type of the model to create. This is currently stored in output_info.type.
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @param value The type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The type of the model to create. This is currently stored in output_info.type.
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearType() {
-      
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The type of the model to create. This is currently stored in output_info.type.
-     * </pre>
-     *
-     * <code>string type = 4;</code>
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      type_ = value;
       onChanged();
       return this;
     }

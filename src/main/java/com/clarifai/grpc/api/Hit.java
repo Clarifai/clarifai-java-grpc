@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Hit() {
+    userId_ = "";
+    appId_ = "";
   }
 
   @java.lang.Override
@@ -81,6 +83,18 @@ private static final long serialVersionUID = 0L;
               annotation_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            appId_ = s;
             break;
           }
           default: {
@@ -225,6 +239,94 @@ private static final long serialVersionUID = 0L;
     return getAnnotation();
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object userId_;
+  /**
+   * <pre>
+   * The customer-facing id of the user who owns the app the asset came from.
+   * </pre>
+   *
+   * <code>string user_id = 4;</code>
+   * @return The userId.
+   */
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The customer-facing id of the user who owns the app the asset came from.
+   * </pre>
+   *
+   * <code>string user_id = 4;</code>
+   * @return The bytes for userId.
+   */
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APP_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object appId_;
+  /**
+   * <pre>
+   * The cfid of the app the asset came from.
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The appId.
+   */
+  public java.lang.String getAppId() {
+    java.lang.Object ref = appId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The cfid of the app the asset came from.
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The bytes for appId.
+   */
+  public com.google.protobuf.ByteString
+      getAppIdBytes() {
+    java.lang.Object ref = appId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      appId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -248,6 +350,12 @@ private static final long serialVersionUID = 0L;
     if (annotation_ != null) {
       output.writeMessage(3, getAnnotation());
     }
+    if (!getUserIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userId_);
+    }
+    if (!getAppIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -268,6 +376,12 @@ private static final long serialVersionUID = 0L;
     if (annotation_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getAnnotation());
+    }
+    if (!getUserIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userId_);
+    }
+    if (!getAppIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,6 +411,10 @@ private static final long serialVersionUID = 0L;
       if (!getAnnotation()
           .equals(other.getAnnotation())) return false;
     }
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -319,6 +437,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotation().hashCode();
     }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAppId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -470,6 +592,10 @@ private static final long serialVersionUID = 0L;
         annotation_ = null;
         annotationBuilder_ = null;
       }
+      userId_ = "";
+
+      appId_ = "";
+
       return this;
     }
 
@@ -507,6 +633,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.annotation_ = annotationBuilder_.build();
       }
+      result.userId_ = userId_;
+      result.appId_ = appId_;
       onBuilt();
       return result;
     }
@@ -563,6 +691,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAnnotation()) {
         mergeAnnotation(other.getAnnotation());
+      }
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
+        onChanged();
+      }
+      if (!other.getAppId().isEmpty()) {
+        appId_ = other.appId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1021,6 +1157,198 @@ private static final long serialVersionUID = 0L;
         annotation_ = null;
       }
       return annotationBuilder_;
+    }
+
+    private java.lang.Object userId_ = "";
+    /**
+     * <pre>
+     * The customer-facing id of the user who owns the app the asset came from.
+     * </pre>
+     *
+     * <code>string user_id = 4;</code>
+     * @return The userId.
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The customer-facing id of the user who owns the app the asset came from.
+     * </pre>
+     *
+     * <code>string user_id = 4;</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The customer-facing id of the user who owns the app the asset came from.
+     * </pre>
+     *
+     * <code>string user_id = 4;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The customer-facing id of the user who owns the app the asset came from.
+     * </pre>
+     *
+     * <code>string user_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId_ = getDefaultInstance().getUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The customer-facing id of the user who owns the app the asset came from.
+     * </pre>
+     *
+     * <code>string user_id = 4;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object appId_ = "";
+    /**
+     * <pre>
+     * The cfid of the app the asset came from.
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @return The appId.
+     */
+    public java.lang.String getAppId() {
+      java.lang.Object ref = appId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The cfid of the app the asset came from.
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @return The bytes for appId.
+     */
+    public com.google.protobuf.ByteString
+        getAppIdBytes() {
+      java.lang.Object ref = appId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The cfid of the app the asset came from.
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The cfid of the app the asset came from.
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAppId() {
+      
+      appId_ = getDefaultInstance().getAppId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The cfid of the app the asset came from.
+     * </pre>
+     *
+     * <code>string app_id = 5;</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -3654,6 +3654,161 @@ public final class V2Grpc {
     return getDeleteTasksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostLabelOrdersRequest,
+      com.clarifai.grpc.api.MultiLabelOrderResponse> getPostLabelOrdersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostLabelOrders",
+      requestType = com.clarifai.grpc.api.PostLabelOrdersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiLabelOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostLabelOrdersRequest,
+      com.clarifai.grpc.api.MultiLabelOrderResponse> getPostLabelOrdersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostLabelOrdersRequest, com.clarifai.grpc.api.MultiLabelOrderResponse> getPostLabelOrdersMethod;
+    if ((getPostLabelOrdersMethod = V2Grpc.getPostLabelOrdersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostLabelOrdersMethod = V2Grpc.getPostLabelOrdersMethod) == null) {
+          V2Grpc.getPostLabelOrdersMethod = getPostLabelOrdersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostLabelOrdersRequest, com.clarifai.grpc.api.MultiLabelOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostLabelOrders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostLabelOrdersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiLabelOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostLabelOrders"))
+              .build();
+        }
+      }
+    }
+    return getPostLabelOrdersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetLabelOrderRequest,
+      com.clarifai.grpc.api.SingleLabelOrderResponse> getGetLabelOrderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLabelOrder",
+      requestType = com.clarifai.grpc.api.GetLabelOrderRequest.class,
+      responseType = com.clarifai.grpc.api.SingleLabelOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetLabelOrderRequest,
+      com.clarifai.grpc.api.SingleLabelOrderResponse> getGetLabelOrderMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetLabelOrderRequest, com.clarifai.grpc.api.SingleLabelOrderResponse> getGetLabelOrderMethod;
+    if ((getGetLabelOrderMethod = V2Grpc.getGetLabelOrderMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetLabelOrderMethod = V2Grpc.getGetLabelOrderMethod) == null) {
+          V2Grpc.getGetLabelOrderMethod = getGetLabelOrderMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetLabelOrderRequest, com.clarifai.grpc.api.SingleLabelOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLabelOrder"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetLabelOrderRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleLabelOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetLabelOrder"))
+              .build();
+        }
+      }
+    }
+    return getGetLabelOrderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLabelOrdersRequest,
+      com.clarifai.grpc.api.MultiLabelOrderResponse> getListLabelOrdersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLabelOrders",
+      requestType = com.clarifai.grpc.api.ListLabelOrdersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiLabelOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLabelOrdersRequest,
+      com.clarifai.grpc.api.MultiLabelOrderResponse> getListLabelOrdersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListLabelOrdersRequest, com.clarifai.grpc.api.MultiLabelOrderResponse> getListLabelOrdersMethod;
+    if ((getListLabelOrdersMethod = V2Grpc.getListLabelOrdersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListLabelOrdersMethod = V2Grpc.getListLabelOrdersMethod) == null) {
+          V2Grpc.getListLabelOrdersMethod = getListLabelOrdersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListLabelOrdersRequest, com.clarifai.grpc.api.MultiLabelOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLabelOrders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListLabelOrdersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiLabelOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListLabelOrders"))
+              .build();
+        }
+      }
+    }
+    return getListLabelOrdersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchLabelOrdersRequest,
+      com.clarifai.grpc.api.MultiLabelOrderResponse> getPatchLabelOrdersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchLabelOrders",
+      requestType = com.clarifai.grpc.api.PatchLabelOrdersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiLabelOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchLabelOrdersRequest,
+      com.clarifai.grpc.api.MultiLabelOrderResponse> getPatchLabelOrdersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchLabelOrdersRequest, com.clarifai.grpc.api.MultiLabelOrderResponse> getPatchLabelOrdersMethod;
+    if ((getPatchLabelOrdersMethod = V2Grpc.getPatchLabelOrdersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchLabelOrdersMethod = V2Grpc.getPatchLabelOrdersMethod) == null) {
+          V2Grpc.getPatchLabelOrdersMethod = getPatchLabelOrdersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchLabelOrdersRequest, com.clarifai.grpc.api.MultiLabelOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchLabelOrders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchLabelOrdersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiLabelOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchLabelOrders"))
+              .build();
+        }
+      }
+    }
+    return getPatchLabelOrdersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteLabelOrdersRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteLabelOrdersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteLabelOrders",
+      requestType = com.clarifai.grpc.api.DeleteLabelOrdersRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteLabelOrdersRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteLabelOrdersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteLabelOrdersRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteLabelOrdersMethod;
+    if ((getDeleteLabelOrdersMethod = V2Grpc.getDeleteLabelOrdersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteLabelOrdersMethod = V2Grpc.getDeleteLabelOrdersMethod) == null) {
+          V2Grpc.getDeleteLabelOrdersMethod = getDeleteLabelOrdersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteLabelOrdersRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteLabelOrders"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteLabelOrdersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteLabelOrders"))
+              .build();
+        }
+      }
+    }
+    return getDeleteLabelOrdersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostCollectorsRequest,
       com.clarifai.grpc.api.MultiCollectorResponse> getPostCollectorsMethod;
 
@@ -5168,6 +5323,57 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Add Label orders.
+     * </pre>
+     */
+    public void postLabelOrders(com.clarifai.grpc.api.PostLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPostLabelOrdersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a label order.
+     * </pre>
+     */
+    public void getLabelOrder(com.clarifai.grpc.api.GetLabelOrderRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleLabelOrderResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetLabelOrderMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List label orders.
+     * </pre>
+     */
+    public void listLabelOrders(com.clarifai.grpc.api.ListLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListLabelOrdersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more label orders.
+     * </pre>
+     */
+    public void patchLabelOrders(com.clarifai.grpc.api.PatchLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPatchLabelOrdersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple label orders in one request.
+     * this do not change task status
+     * </pre>
+     */
+    public void deleteLabelOrders(com.clarifai.grpc.api.DeleteLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteLabelOrdersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Add a list of Collectors to an app.
      * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
      * endpoint.
@@ -6083,6 +6289,41 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteTasksRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_TASKS)))
+          .addMethod(
+            getPostLabelOrdersMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostLabelOrdersRequest,
+                com.clarifai.grpc.api.MultiLabelOrderResponse>(
+                  this, METHODID_POST_LABEL_ORDERS)))
+          .addMethod(
+            getGetLabelOrderMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetLabelOrderRequest,
+                com.clarifai.grpc.api.SingleLabelOrderResponse>(
+                  this, METHODID_GET_LABEL_ORDER)))
+          .addMethod(
+            getListLabelOrdersMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListLabelOrdersRequest,
+                com.clarifai.grpc.api.MultiLabelOrderResponse>(
+                  this, METHODID_LIST_LABEL_ORDERS)))
+          .addMethod(
+            getPatchLabelOrdersMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchLabelOrdersRequest,
+                com.clarifai.grpc.api.MultiLabelOrderResponse>(
+                  this, METHODID_PATCH_LABEL_ORDERS)))
+          .addMethod(
+            getDeleteLabelOrdersMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteLabelOrdersRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_LABEL_ORDERS)))
           .addMethod(
             getPostCollectorsMethod(),
             asyncUnaryCall(
@@ -7468,6 +7709,62 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Add Label orders.
+     * </pre>
+     */
+    public void postLabelOrders(com.clarifai.grpc.api.PostLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPostLabelOrdersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a label order.
+     * </pre>
+     */
+    public void getLabelOrder(com.clarifai.grpc.api.GetLabelOrderRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleLabelOrderResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetLabelOrderMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List label orders.
+     * </pre>
+     */
+    public void listLabelOrders(com.clarifai.grpc.api.ListLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListLabelOrdersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more label orders.
+     * </pre>
+     */
+    public void patchLabelOrders(com.clarifai.grpc.api.PatchLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPatchLabelOrdersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple label orders in one request.
+     * this do not change task status
+     * </pre>
+     */
+    public void deleteLabelOrders(com.clarifai.grpc.api.DeleteLabelOrdersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteLabelOrdersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Add a list of Collectors to an app.
      * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
      * endpoint.
@@ -8769,6 +9066,57 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteTasks(com.clarifai.grpc.api.DeleteTasksRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Add Label orders.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiLabelOrderResponse postLabelOrders(com.clarifai.grpc.api.PostLabelOrdersRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPostLabelOrdersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a label order.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleLabelOrderResponse getLabelOrder(com.clarifai.grpc.api.GetLabelOrderRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetLabelOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List label orders.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiLabelOrderResponse listLabelOrders(com.clarifai.grpc.api.ListLabelOrdersRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListLabelOrdersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more label orders.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiLabelOrderResponse patchLabelOrders(com.clarifai.grpc.api.PatchLabelOrdersRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getPatchLabelOrdersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple label orders in one request.
+     * this do not change task status
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteLabelOrders(com.clarifai.grpc.api.DeleteLabelOrdersRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteLabelOrdersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -10186,6 +10534,62 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Add Label orders.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiLabelOrderResponse> postLabelOrders(
+        com.clarifai.grpc.api.PostLabelOrdersRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPostLabelOrdersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a label order.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleLabelOrderResponse> getLabelOrder(
+        com.clarifai.grpc.api.GetLabelOrderRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetLabelOrderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List label orders.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiLabelOrderResponse> listLabelOrders(
+        com.clarifai.grpc.api.ListLabelOrdersRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListLabelOrdersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Patch one or more label orders.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiLabelOrderResponse> patchLabelOrders(
+        com.clarifai.grpc.api.PatchLabelOrdersRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPatchLabelOrdersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple label orders in one request.
+     * this do not change task status
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteLabelOrders(
+        com.clarifai.grpc.api.DeleteLabelOrdersRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteLabelOrdersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Add a list of Collectors to an app.
      * In the handler of this endpoint we also check for all the scopes of the  POST /inputs
      * endpoint.
@@ -10407,15 +10811,20 @@ public final class V2Grpc {
   private static final int METHODID_LIST_TASKS = 114;
   private static final int METHODID_PATCH_TASKS = 115;
   private static final int METHODID_DELETE_TASKS = 116;
-  private static final int METHODID_POST_COLLECTORS = 117;
-  private static final int METHODID_GET_COLLECTOR = 118;
-  private static final int METHODID_LIST_COLLECTORS = 119;
-  private static final int METHODID_PATCH_COLLECTORS = 120;
-  private static final int METHODID_DELETE_COLLECTORS = 121;
-  private static final int METHODID_POST_STAT_VALUES = 122;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 123;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 124;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 125;
+  private static final int METHODID_POST_LABEL_ORDERS = 117;
+  private static final int METHODID_GET_LABEL_ORDER = 118;
+  private static final int METHODID_LIST_LABEL_ORDERS = 119;
+  private static final int METHODID_PATCH_LABEL_ORDERS = 120;
+  private static final int METHODID_DELETE_LABEL_ORDERS = 121;
+  private static final int METHODID_POST_COLLECTORS = 122;
+  private static final int METHODID_GET_COLLECTOR = 123;
+  private static final int METHODID_LIST_COLLECTORS = 124;
+  private static final int METHODID_PATCH_COLLECTORS = 125;
+  private static final int METHODID_DELETE_COLLECTORS = 126;
+  private static final int METHODID_POST_STAT_VALUES = 127;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 128;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 129;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 130;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10902,6 +11311,26 @@ public final class V2Grpc {
           serviceImpl.deleteTasks((com.clarifai.grpc.api.DeleteTasksRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
+        case METHODID_POST_LABEL_ORDERS:
+          serviceImpl.postLabelOrders((com.clarifai.grpc.api.PostLabelOrdersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse>) responseObserver);
+          break;
+        case METHODID_GET_LABEL_ORDER:
+          serviceImpl.getLabelOrder((com.clarifai.grpc.api.GetLabelOrderRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleLabelOrderResponse>) responseObserver);
+          break;
+        case METHODID_LIST_LABEL_ORDERS:
+          serviceImpl.listLabelOrders((com.clarifai.grpc.api.ListLabelOrdersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_LABEL_ORDERS:
+          serviceImpl.patchLabelOrders((com.clarifai.grpc.api.PatchLabelOrdersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiLabelOrderResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_LABEL_ORDERS:
+          serviceImpl.deleteLabelOrders((com.clarifai.grpc.api.DeleteLabelOrdersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         case METHODID_POST_COLLECTORS:
           serviceImpl.postCollectors((com.clarifai.grpc.api.PostCollectorsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollectorResponse>) responseObserver);
@@ -11116,6 +11545,11 @@ public final class V2Grpc {
               .addMethod(getListTasksMethod())
               .addMethod(getPatchTasksMethod())
               .addMethod(getDeleteTasksMethod())
+              .addMethod(getPostLabelOrdersMethod())
+              .addMethod(getGetLabelOrderMethod())
+              .addMethod(getListLabelOrdersMethod())
+              .addMethod(getPatchLabelOrdersMethod())
+              .addMethod(getDeleteLabelOrdersMethod())
               .addMethod(getPostCollectorsMethod())
               .addMethod(getGetCollectorMethod())
               .addMethod(getListCollectorsMethod())

@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ModelTypeEnumOption() {
     id_ = "";
+    aliases_ = java.util.Collections.emptyList();
     description_ = "";
     modelTypeFields_ = java.util.Collections.emptyList();
   }
@@ -69,9 +70,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               modelTypeFields_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeField>();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             modelTypeFields_.add(
                 input.readMessage(com.clarifai.grpc.api.ModelTypeField.parser(), extensionRegistry));
@@ -80,6 +81,15 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             internalOnly_ = input.readBool();
+            break;
+          }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              aliases_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeEnumOptionAlias>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            aliases_.add(
+                input.readMessage(com.clarifai.grpc.api.ModelTypeEnumOptionAlias.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -97,8 +107,11 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         modelTypeFields_ = java.util.Collections.unmodifiableList(modelTypeFields_);
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        aliases_ = java.util.Collections.unmodifiableList(aliases_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -159,6 +172,81 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ALIASES_FIELD_NUMBER = 5;
+  private java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias> aliases_;
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  public java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias> getAliasesList() {
+    return aliases_;
+  }
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  public java.util.List<? extends com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder> 
+      getAliasesOrBuilderList() {
+    return aliases_;
+  }
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  public int getAliasesCount() {
+    return aliases_.size();
+  }
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  public com.clarifai.grpc.api.ModelTypeEnumOptionAlias getAliases(int index) {
+    return aliases_.get(index);
+  }
+  /**
+   * <pre>
+   * List of other ID values that are equivalent with this ID.
+   * This allows the user to choose this option by multiple IDs.
+   * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+   * 1. ID: "Estonia"
+   * 2. Alias: 37
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+   */
+  public com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder getAliasesOrBuilder(
+      int index) {
+    return aliases_.get(index);
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
@@ -305,6 +393,9 @@ private static final long serialVersionUID = 0L;
     if (internalOnly_ != false) {
       output.writeBool(4, internalOnly_);
     }
+    for (int i = 0; i < aliases_.size(); i++) {
+      output.writeMessage(5, aliases_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -328,6 +419,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, internalOnly_);
     }
+    for (int i = 0; i < aliases_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, aliases_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -345,6 +440,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (!getAliasesList()
+        .equals(other.getAliasesList())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (!getModelTypeFieldsList()
@@ -364,6 +461,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    if (getAliasesCount() > 0) {
+      hash = (37 * hash) + ALIASES_FIELD_NUMBER;
+      hash = (53 * hash) + getAliasesList().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (getModelTypeFieldsCount() > 0) {
@@ -505,6 +606,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAliasesFieldBuilder();
         getModelTypeFieldsFieldBuilder();
       }
     }
@@ -513,11 +615,17 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
+      if (aliasesBuilder_ == null) {
+        aliases_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        aliasesBuilder_.clear();
+      }
       description_ = "";
 
       if (modelTypeFieldsBuilder_ == null) {
         modelTypeFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         modelTypeFieldsBuilder_.clear();
       }
@@ -551,11 +659,20 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.ModelTypeEnumOption result = new com.clarifai.grpc.api.ModelTypeEnumOption(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
+      if (aliasesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          aliases_ = java.util.Collections.unmodifiableList(aliases_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.aliases_ = aliases_;
+      } else {
+        result.aliases_ = aliasesBuilder_.build();
+      }
       result.description_ = description_;
       if (modelTypeFieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           modelTypeFields_ = java.util.Collections.unmodifiableList(modelTypeFields_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.modelTypeFields_ = modelTypeFields_;
       } else {
@@ -614,6 +731,32 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
+      if (aliasesBuilder_ == null) {
+        if (!other.aliases_.isEmpty()) {
+          if (aliases_.isEmpty()) {
+            aliases_ = other.aliases_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAliasesIsMutable();
+            aliases_.addAll(other.aliases_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.aliases_.isEmpty()) {
+          if (aliasesBuilder_.isEmpty()) {
+            aliasesBuilder_.dispose();
+            aliasesBuilder_ = null;
+            aliases_ = other.aliases_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            aliasesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAliasesFieldBuilder() : null;
+          } else {
+            aliasesBuilder_.addAllMessages(other.aliases_);
+          }
+        }
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
@@ -622,7 +765,7 @@ private static final long serialVersionUID = 0L;
         if (!other.modelTypeFields_.isEmpty()) {
           if (modelTypeFields_.isEmpty()) {
             modelTypeFields_ = other.modelTypeFields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureModelTypeFieldsIsMutable();
             modelTypeFields_.addAll(other.modelTypeFields_);
@@ -635,7 +778,7 @@ private static final long serialVersionUID = 0L;
             modelTypeFieldsBuilder_.dispose();
             modelTypeFieldsBuilder_ = null;
             modelTypeFields_ = other.modelTypeFields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             modelTypeFieldsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getModelTypeFieldsFieldBuilder() : null;
@@ -773,6 +916,390 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias> aliases_ =
+      java.util.Collections.emptyList();
+    private void ensureAliasesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        aliases_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeEnumOptionAlias>(aliases_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeEnumOptionAlias, com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder, com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder> aliasesBuilder_;
+
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias> getAliasesList() {
+      if (aliasesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(aliases_);
+      } else {
+        return aliasesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public int getAliasesCount() {
+      if (aliasesBuilder_ == null) {
+        return aliases_.size();
+      } else {
+        return aliasesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeEnumOptionAlias getAliases(int index) {
+      if (aliasesBuilder_ == null) {
+        return aliases_.get(index);
+      } else {
+        return aliasesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder setAliases(
+        int index, com.clarifai.grpc.api.ModelTypeEnumOptionAlias value) {
+      if (aliasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAliasesIsMutable();
+        aliases_.set(index, value);
+        onChanged();
+      } else {
+        aliasesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder setAliases(
+        int index, com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder builderForValue) {
+      if (aliasesBuilder_ == null) {
+        ensureAliasesIsMutable();
+        aliases_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        aliasesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder addAliases(com.clarifai.grpc.api.ModelTypeEnumOptionAlias value) {
+      if (aliasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAliasesIsMutable();
+        aliases_.add(value);
+        onChanged();
+      } else {
+        aliasesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder addAliases(
+        int index, com.clarifai.grpc.api.ModelTypeEnumOptionAlias value) {
+      if (aliasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAliasesIsMutable();
+        aliases_.add(index, value);
+        onChanged();
+      } else {
+        aliasesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder addAliases(
+        com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder builderForValue) {
+      if (aliasesBuilder_ == null) {
+        ensureAliasesIsMutable();
+        aliases_.add(builderForValue.build());
+        onChanged();
+      } else {
+        aliasesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder addAliases(
+        int index, com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder builderForValue) {
+      if (aliasesBuilder_ == null) {
+        ensureAliasesIsMutable();
+        aliases_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        aliasesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder addAllAliases(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelTypeEnumOptionAlias> values) {
+      if (aliasesBuilder_ == null) {
+        ensureAliasesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, aliases_);
+        onChanged();
+      } else {
+        aliasesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder clearAliases() {
+      if (aliasesBuilder_ == null) {
+        aliases_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        aliasesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public Builder removeAliases(int index) {
+      if (aliasesBuilder_ == null) {
+        ensureAliasesIsMutable();
+        aliases_.remove(index);
+        onChanged();
+      } else {
+        aliasesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder getAliasesBuilder(
+        int index) {
+      return getAliasesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder getAliasesOrBuilder(
+        int index) {
+      if (aliasesBuilder_ == null) {
+        return aliases_.get(index);  } else {
+        return aliasesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder> 
+         getAliasesOrBuilderList() {
+      if (aliasesBuilder_ != null) {
+        return aliasesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(aliases_);
+      }
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder addAliasesBuilder() {
+      return getAliasesFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.ModelTypeEnumOptionAlias.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder addAliasesBuilder(
+        int index) {
+      return getAliasesFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.ModelTypeEnumOptionAlias.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * List of other ID values that are equivalent with this ID.
+     * This allows the user to choose this option by multiple IDs.
+     * Example: if enum is "Phone Number Prefix", you could add an option that is selectable by two values:
+     * 1. ID: "Estonia"
+     * 2. Alias: 37
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder> 
+         getAliasesBuilderList() {
+      return getAliasesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeEnumOptionAlias, com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder, com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder> 
+        getAliasesFieldBuilder() {
+      if (aliasesBuilder_ == null) {
+        aliasesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.ModelTypeEnumOptionAlias, com.clarifai.grpc.api.ModelTypeEnumOptionAlias.Builder, com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder>(
+                aliases_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        aliases_ = null;
+      }
+      return aliasesBuilder_;
+    }
+
     private java.lang.Object description_ = "";
     /**
      * <pre>
@@ -872,9 +1399,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.clarifai.grpc.api.ModelTypeField> modelTypeFields_ =
       java.util.Collections.emptyList();
     private void ensureModelTypeFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         modelTypeFields_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeField>(modelTypeFields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1079,7 +1606,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearModelTypeFields() {
       if (modelTypeFieldsBuilder_ == null) {
         modelTypeFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         modelTypeFieldsBuilder_.clear();
@@ -1191,7 +1718,7 @@ private static final long serialVersionUID = 0L;
         modelTypeFieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder>(
                 modelTypeFields_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         modelTypeFields_ = null;

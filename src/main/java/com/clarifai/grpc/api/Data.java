@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     frames_ = java.util.Collections.emptyList();
     tracks_ = java.util.Collections.emptyList();
     timeSegments_ = java.util.Collections.emptyList();
+    hits_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -211,6 +212,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.TimeSegment.parser(), extensionRegistry));
             break;
           }
+          case 138: {
+            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              hits_ = new java.util.ArrayList<com.clarifai.grpc.api.Hit>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            hits_.add(
+                input.readMessage(com.clarifai.grpc.api.Hit.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -249,6 +259,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000080) != 0)) {
         timeSegments_ = java.util.Collections.unmodifiableList(timeSegments_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        hits_ = java.util.Collections.unmodifiableList(hits_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -920,6 +933,61 @@ private static final long serialVersionUID = 0L;
     return timeSegments_.get(index);
   }
 
+  public static final int HITS_FIELD_NUMBER = 17;
+  private java.util.List<com.clarifai.grpc.api.Hit> hits_;
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  public java.util.List<com.clarifai.grpc.api.Hit> getHitsList() {
+    return hits_;
+  }
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  public java.util.List<? extends com.clarifai.grpc.api.HitOrBuilder> 
+      getHitsOrBuilderList() {
+    return hits_;
+  }
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  public int getHitsCount() {
+    return hits_.size();
+  }
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  public com.clarifai.grpc.api.Hit getHits(int index) {
+    return hits_.get(index);
+  }
+  /**
+   * <pre>
+   * Holds score, rank, and user, app, input IDs and search hit data
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Hit hits = 17;</code>
+   */
+  public com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
+      int index) {
+    return hits_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -975,6 +1043,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < timeSegments_.size(); i++) {
       output.writeMessage(16, timeSegments_.get(i));
+    }
+    for (int i = 0; i < hits_.size(); i++) {
+      output.writeMessage(17, hits_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1041,6 +1112,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, timeSegments_.get(i));
     }
+    for (int i = 0; i < hits_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, hits_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1102,6 +1177,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTracksList())) return false;
     if (!getTimeSegmentsList()
         .equals(other.getTimeSegmentsList())) return false;
+    if (!getHitsList()
+        .equals(other.getHitsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1168,6 +1245,10 @@ private static final long serialVersionUID = 0L;
     if (getTimeSegmentsCount() > 0) {
       hash = (37 * hash) + TIME_SEGMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getTimeSegmentsList().hashCode();
+    }
+    if (getHitsCount() > 0) {
+      hash = (37 * hash) + HITS_FIELD_NUMBER;
+      hash = (53 * hash) + getHitsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1309,6 +1390,7 @@ private static final long serialVersionUID = 0L;
         getFramesFieldBuilder();
         getTracksFieldBuilder();
         getTimeSegmentsFieldBuilder();
+        getHitsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1397,6 +1479,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         timeSegmentsBuilder_.clear();
+      }
+      if (hitsBuilder_ == null) {
+        hits_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        hitsBuilder_.clear();
       }
       return this;
     }
@@ -1526,6 +1614,15 @@ private static final long serialVersionUID = 0L;
         result.timeSegments_ = timeSegments_;
       } else {
         result.timeSegments_ = timeSegmentsBuilder_.build();
+      }
+      if (hitsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          hits_ = java.util.Collections.unmodifiableList(hits_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.hits_ = hits_;
+      } else {
+        result.hits_ = hitsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1798,6 +1895,32 @@ private static final long serialVersionUID = 0L;
                  getTimeSegmentsFieldBuilder() : null;
           } else {
             timeSegmentsBuilder_.addAllMessages(other.timeSegments_);
+          }
+        }
+      }
+      if (hitsBuilder_ == null) {
+        if (!other.hits_.isEmpty()) {
+          if (hits_.isEmpty()) {
+            hits_ = other.hits_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureHitsIsMutable();
+            hits_.addAll(other.hits_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.hits_.isEmpty()) {
+          if (hitsBuilder_.isEmpty()) {
+            hitsBuilder_.dispose();
+            hitsBuilder_ = null;
+            hits_ = other.hits_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            hitsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getHitsFieldBuilder() : null;
+          } else {
+            hitsBuilder_.addAllMessages(other.hits_);
           }
         }
       }
@@ -5264,6 +5387,318 @@ private static final long serialVersionUID = 0L;
         timeSegments_ = null;
       }
       return timeSegmentsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Hit> hits_ =
+      java.util.Collections.emptyList();
+    private void ensureHitsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        hits_ = new java.util.ArrayList<com.clarifai.grpc.api.Hit>(hits_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Hit, com.clarifai.grpc.api.Hit.Builder, com.clarifai.grpc.api.HitOrBuilder> hitsBuilder_;
+
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Hit> getHitsList() {
+      if (hitsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(hits_);
+      } else {
+        return hitsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public int getHitsCount() {
+      if (hitsBuilder_ == null) {
+        return hits_.size();
+      } else {
+        return hitsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public com.clarifai.grpc.api.Hit getHits(int index) {
+      if (hitsBuilder_ == null) {
+        return hits_.get(index);
+      } else {
+        return hitsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder setHits(
+        int index, com.clarifai.grpc.api.Hit value) {
+      if (hitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHitsIsMutable();
+        hits_.set(index, value);
+        onChanged();
+      } else {
+        hitsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder setHits(
+        int index, com.clarifai.grpc.api.Hit.Builder builderForValue) {
+      if (hitsBuilder_ == null) {
+        ensureHitsIsMutable();
+        hits_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        hitsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder addHits(com.clarifai.grpc.api.Hit value) {
+      if (hitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHitsIsMutable();
+        hits_.add(value);
+        onChanged();
+      } else {
+        hitsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder addHits(
+        int index, com.clarifai.grpc.api.Hit value) {
+      if (hitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHitsIsMutable();
+        hits_.add(index, value);
+        onChanged();
+      } else {
+        hitsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder addHits(
+        com.clarifai.grpc.api.Hit.Builder builderForValue) {
+      if (hitsBuilder_ == null) {
+        ensureHitsIsMutable();
+        hits_.add(builderForValue.build());
+        onChanged();
+      } else {
+        hitsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder addHits(
+        int index, com.clarifai.grpc.api.Hit.Builder builderForValue) {
+      if (hitsBuilder_ == null) {
+        ensureHitsIsMutable();
+        hits_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        hitsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder addAllHits(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Hit> values) {
+      if (hitsBuilder_ == null) {
+        ensureHitsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, hits_);
+        onChanged();
+      } else {
+        hitsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder clearHits() {
+      if (hitsBuilder_ == null) {
+        hits_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        hitsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public Builder removeHits(int index) {
+      if (hitsBuilder_ == null) {
+        ensureHitsIsMutable();
+        hits_.remove(index);
+        onChanged();
+      } else {
+        hitsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public com.clarifai.grpc.api.Hit.Builder getHitsBuilder(
+        int index) {
+      return getHitsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
+        int index) {
+      if (hitsBuilder_ == null) {
+        return hits_.get(index);  } else {
+        return hitsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.HitOrBuilder> 
+         getHitsOrBuilderList() {
+      if (hitsBuilder_ != null) {
+        return hitsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(hits_);
+      }
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public com.clarifai.grpc.api.Hit.Builder addHitsBuilder() {
+      return getHitsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Hit.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public com.clarifai.grpc.api.Hit.Builder addHitsBuilder(
+        int index) {
+      return getHitsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Hit.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Holds score, rank, and user, app, input IDs and search hit data
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Hit hits = 17;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Hit.Builder> 
+         getHitsBuilderList() {
+      return getHitsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Hit, com.clarifai.grpc.api.Hit.Builder, com.clarifai.grpc.api.HitOrBuilder> 
+        getHitsFieldBuilder() {
+      if (hitsBuilder_ == null) {
+        hitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Hit, com.clarifai.grpc.api.Hit.Builder, com.clarifai.grpc.api.HitOrBuilder>(
+                hits_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        hits_ = null;
+      }
+      return hitsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

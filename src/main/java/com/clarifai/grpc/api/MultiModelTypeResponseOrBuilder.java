@@ -77,4 +77,31 @@ public interface MultiModelTypeResponseOrBuilder extends
    */
   com.clarifai.grpc.api.ModelTypeOrBuilder getModelTypesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * List of model importers
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+   * @return Whether the modelImporters field is set.
+   */
+  boolean hasModelImporters();
+  /**
+   * <pre>
+   * List of model importers
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+   * @return The modelImporters.
+   */
+  com.clarifai.grpc.api.ModelTypeField getModelImporters();
+  /**
+   * <pre>
+   * List of model importers
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelImportersOrBuilder();
 }

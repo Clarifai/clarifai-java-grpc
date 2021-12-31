@@ -188,6 +188,19 @@ private static final long serialVersionUID = 0L;
             license_ = s;
             break;
           }
+          case 146: {
+            com.clarifai.grpc.api.DatasetVersion.Builder subBuilder = null;
+            if (datasetVersion_ != null) {
+              subBuilder = datasetVersion_.toBuilder();
+            }
+            datasetVersion_ = input.readMessage(com.clarifai.grpc.api.DatasetVersion.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(datasetVersion_);
+              datasetVersion_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -690,6 +703,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DATASET_VERSION_FIELD_NUMBER = 18;
+  private com.clarifai.grpc.api.DatasetVersion datasetVersion_;
+  /**
+   * <pre>
+   * Dataset version used to create this model version.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+   * @return Whether the datasetVersion field is set.
+   */
+  public boolean hasDatasetVersion() {
+    return datasetVersion_ != null;
+  }
+  /**
+   * <pre>
+   * Dataset version used to create this model version.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+   * @return The datasetVersion.
+   */
+  public com.clarifai.grpc.api.DatasetVersion getDatasetVersion() {
+    return datasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
+  }
+  /**
+   * <pre>
+   * Dataset version used to create this model version.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+   */
+  public com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder() {
+    return getDatasetVersion();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -745,6 +793,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLicenseBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, license_);
+    }
+    if (datasetVersion_ != null) {
+      output.writeMessage(18, getDatasetVersion());
     }
     unknownFields.writeTo(output);
   }
@@ -805,6 +856,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLicenseBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, license_);
+    }
+    if (datasetVersion_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getDatasetVersion());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -870,6 +925,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLicense()
         .equals(other.getLicense())) return false;
+    if (hasDatasetVersion() != other.hasDatasetVersion()) return false;
+    if (hasDatasetVersion()) {
+      if (!getDatasetVersion()
+          .equals(other.getDatasetVersion())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -923,6 +983,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + LICENSE_FIELD_NUMBER;
     hash = (53 * hash) + getLicense().hashCode();
+    if (hasDatasetVersion()) {
+      hash = (37 * hash) + DATASET_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDatasetVersion().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1116,6 +1180,12 @@ private static final long serialVersionUID = 0L;
       }
       license_ = "";
 
+      if (datasetVersionBuilder_ == null) {
+        datasetVersion_ = null;
+      } else {
+        datasetVersion_ = null;
+        datasetVersionBuilder_ = null;
+      }
       return this;
     }
 
@@ -1184,6 +1254,11 @@ private static final long serialVersionUID = 0L;
         result.metadata_ = metadataBuilder_.build();
       }
       result.license_ = license_;
+      if (datasetVersionBuilder_ == null) {
+        result.datasetVersion_ = datasetVersion_;
+      } else {
+        result.datasetVersion_ = datasetVersionBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1278,6 +1353,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getLicense().isEmpty()) {
         license_ = other.license_;
         onChanged();
+      }
+      if (other.hasDatasetVersion()) {
+        mergeDatasetVersion(other.getDatasetVersion());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2894,6 +2972,161 @@ private static final long serialVersionUID = 0L;
       license_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.DatasetVersion datasetVersion_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> datasetVersionBuilder_;
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     * @return Whether the datasetVersion field is set.
+     */
+    public boolean hasDatasetVersion() {
+      return datasetVersionBuilder_ != null || datasetVersion_ != null;
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     * @return The datasetVersion.
+     */
+    public com.clarifai.grpc.api.DatasetVersion getDatasetVersion() {
+      if (datasetVersionBuilder_ == null) {
+        return datasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
+      } else {
+        return datasetVersionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    public Builder setDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
+      if (datasetVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasetVersion_ = value;
+        onChanged();
+      } else {
+        datasetVersionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    public Builder setDatasetVersion(
+        com.clarifai.grpc.api.DatasetVersion.Builder builderForValue) {
+      if (datasetVersionBuilder_ == null) {
+        datasetVersion_ = builderForValue.build();
+        onChanged();
+      } else {
+        datasetVersionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    public Builder mergeDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
+      if (datasetVersionBuilder_ == null) {
+        if (datasetVersion_ != null) {
+          datasetVersion_ =
+            com.clarifai.grpc.api.DatasetVersion.newBuilder(datasetVersion_).mergeFrom(value).buildPartial();
+        } else {
+          datasetVersion_ = value;
+        }
+        onChanged();
+      } else {
+        datasetVersionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    public Builder clearDatasetVersion() {
+      if (datasetVersionBuilder_ == null) {
+        datasetVersion_ = null;
+        onChanged();
+      } else {
+        datasetVersion_ = null;
+        datasetVersionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersion.Builder getDatasetVersionBuilder() {
+      
+      onChanged();
+      return getDatasetVersionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder() {
+      if (datasetVersionBuilder_ != null) {
+        return datasetVersionBuilder_.getMessageOrBuilder();
+      } else {
+        return datasetVersion_ == null ?
+            com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
+      }
+    }
+    /**
+     * <pre>
+     * Dataset version used to create this model version.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> 
+        getDatasetVersionFieldBuilder() {
+      if (datasetVersionBuilder_ == null) {
+        datasetVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder>(
+                getDatasetVersion(),
+                getParentForChildren(),
+                isClean());
+        datasetVersion_ = null;
+      }
+      return datasetVersionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

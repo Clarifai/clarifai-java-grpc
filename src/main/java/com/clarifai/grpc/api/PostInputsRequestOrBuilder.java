@@ -23,24 +23,64 @@ public interface PostInputsRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   java.util.List<com.clarifai.grpc.api.Input> 
       getInputsList();
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   com.clarifai.grpc.api.Input getInputs(int index);
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   int getInputsCount();
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.InputOrBuilder> 
       getInputsOrBuilderList();
   /**
+   * <pre>
+   * List of inputs to post.
+   * For each input, the following fields are used:
+   * * id
+   * * data
+   * * dataset_ids
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
   com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(

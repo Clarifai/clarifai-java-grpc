@@ -96,4 +96,44 @@ public interface HitOrBuilder extends
    * <code>.clarifai.api.Annotation annotation = 3;</code>
    */
   com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder();
+
+  /**
+   * <pre>
+   * The customer-facing id of the user who owns the app the asset came from.
+   * </pre>
+   *
+   * <code>string user_id = 4;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * The customer-facing id of the user who owns the app the asset came from.
+   * </pre>
+   *
+   * <code>string user_id = 4;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
+  /**
+   * <pre>
+   * The cfid of the app the asset came from.
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The appId.
+   */
+  java.lang.String getAppId();
+  /**
+   * <pre>
+   * The cfid of the app the asset came from.
+   * </pre>
+   *
+   * <code>string app_id = 5;</code>
+   * @return The bytes for appId.
+   */
+  com.google.protobuf.ByteString
+      getAppIdBytes();
 }
