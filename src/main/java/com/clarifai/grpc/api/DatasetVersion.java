@@ -109,20 +109,6 @@ private static final long serialVersionUID = 0L;
             datasetId_ = s;
             break;
           }
-          case 58: {
-            com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.Builder subBuilder = null;
-            if (dataConfigCase_ == 7) {
-              subBuilder = ((com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_).toBuilder();
-            }
-            dataConfig_ =
-                input.readMessage(com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_);
-              dataConfig_ = subBuilder.buildPartial();
-            }
-            dataConfigCase_ = 7;
-            break;
-          }
           case 66: {
             com.clarifai.grpc.api.status.Status.Builder subBuilder = null;
             if (status_ != null) {
@@ -190,6 +176,20 @@ private static final long serialVersionUID = 0L;
             embedModelVersionIds_.add(s);
             break;
           }
+          case 122: {
+            com.clarifai.grpc.api.AnnotationFilterConfig.Builder subBuilder = null;
+            if (dataConfigCase_ == 15) {
+              subBuilder = ((com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_).toBuilder();
+            }
+            dataConfig_ =
+                input.readMessage(com.clarifai.grpc.api.AnnotationFilterConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_);
+              dataConfig_ = subBuilder.buildPartial();
+            }
+            dataConfigCase_ = 15;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
   public enum DataConfigCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    DATASET_FILTER_CONFIG(7),
+    ANNOTATION_FILTER_CONFIG(15),
     DATACONFIG_NOT_SET(0);
     private final int value;
     private DataConfigCase(int value) {
@@ -248,7 +248,7 @@ private static final long serialVersionUID = 0L;
 
     public static DataConfigCase forNumber(int value) {
       switch (value) {
-        case 7: return DATASET_FILTER_CONFIG;
+        case 15: return ANNOTATION_FILTER_CONFIG;
         case 0: return DATACONFIG_NOT_SET;
         default: return null;
       }
@@ -522,44 +522,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DATASET_FILTER_CONFIG_FIELD_NUMBER = 7;
+  public static final int ANNOTATION_FILTER_CONFIG_FIELD_NUMBER = 15;
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-   * @return Whether the datasetFilterConfig field is set.
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+   * @return Whether the annotationFilterConfig field is set.
    */
-  public boolean hasDatasetFilterConfig() {
-    return dataConfigCase_ == 7;
+  public boolean hasAnnotationFilterConfig() {
+    return dataConfigCase_ == 15;
   }
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-   * @return The datasetFilterConfig.
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+   * @return The annotationFilterConfig.
    */
-  public com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig getDatasetFilterConfig() {
-    if (dataConfigCase_ == 7) {
-       return (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_;
+  public com.clarifai.grpc.api.AnnotationFilterConfig getAnnotationFilterConfig() {
+    if (dataConfigCase_ == 15) {
+       return (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_;
     }
-    return com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance();
+    return com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance();
   }
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
    */
-  public com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder getDatasetFilterConfigOrBuilder() {
-    if (dataConfigCase_ == 7) {
-       return (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_;
+  public com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder getAnnotationFilterConfigOrBuilder() {
+    if (dataConfigCase_ == 15) {
+       return (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_;
     }
-    return com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance();
+    return com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance();
   }
 
   public static final int STATUS_FIELD_NUMBER = 8;
@@ -838,9 +838,6 @@ private static final long serialVersionUID = 0L;
     if (!getDatasetIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, datasetId_);
     }
-    if (dataConfigCase_ == 7) {
-      output.writeMessage(7, (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_);
-    }
     if (status_ != null) {
       output.writeMessage(8, getStatus());
     }
@@ -858,6 +855,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < embedModelVersionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, embedModelVersionIds_.getRaw(i));
+    }
+    if (dataConfigCase_ == 15) {
+      output.writeMessage(15, (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_);
     }
     unknownFields.writeTo(output);
   }
@@ -888,10 +888,6 @@ private static final long serialVersionUID = 0L;
     if (!getDatasetIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, datasetId_);
     }
-    if (dataConfigCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_);
-    }
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getStatus());
@@ -918,6 +914,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getEmbedModelVersionIdsList().size();
+    }
+    if (dataConfigCase_ == 15) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -978,9 +978,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getEmbedModelVersionIdsList())) return false;
     if (!getDataConfigCase().equals(other.getDataConfigCase())) return false;
     switch (dataConfigCase_) {
-      case 7:
-        if (!getDatasetFilterConfig()
-            .equals(other.getDatasetFilterConfig())) return false;
+      case 15:
+        if (!getAnnotationFilterConfig()
+            .equals(other.getAnnotationFilterConfig())) return false;
         break;
       case 0:
       default:
@@ -1035,9 +1035,9 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getEmbedModelVersionIdsList().hashCode();
     }
     switch (dataConfigCase_) {
-      case 7:
-        hash = (37 * hash) + DATASET_FILTER_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getDatasetFilterConfig().hashCode();
+      case 15:
+        hash = (37 * hash) + ANNOTATION_FILTER_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getAnnotationFilterConfig().hashCode();
         break;
       case 0:
       default:
@@ -1270,11 +1270,11 @@ private static final long serialVersionUID = 0L;
       result.appId_ = appId_;
       result.userId_ = userId_;
       result.datasetId_ = datasetId_;
-      if (dataConfigCase_ == 7) {
-        if (datasetFilterConfigBuilder_ == null) {
+      if (dataConfigCase_ == 15) {
+        if (annotationFilterConfigBuilder_ == null) {
           result.dataConfig_ = dataConfig_;
         } else {
-          result.dataConfig_ = datasetFilterConfigBuilder_.build();
+          result.dataConfig_ = annotationFilterConfigBuilder_.build();
         }
       }
       if (statusBuilder_ == null) {
@@ -1401,8 +1401,8 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getDataConfigCase()) {
-        case DATASET_FILTER_CONFIG: {
-          mergeDatasetFilterConfig(other.getDatasetFilterConfig());
+        case ANNOTATION_FILTER_CONFIG: {
+          mergeAnnotationFilterConfig(other.getAnnotationFilterConfig());
           break;
         }
         case DATACONFIG_NOT_SET: {
@@ -2185,177 +2185,177 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig, com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.Builder, com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder> datasetFilterConfigBuilder_;
+        com.clarifai.grpc.api.AnnotationFilterConfig, com.clarifai.grpc.api.AnnotationFilterConfig.Builder, com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder> annotationFilterConfigBuilder_;
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-     * @return Whether the datasetFilterConfig field is set.
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+     * @return Whether the annotationFilterConfig field is set.
      */
-    public boolean hasDatasetFilterConfig() {
-      return dataConfigCase_ == 7;
+    public boolean hasAnnotationFilterConfig() {
+      return dataConfigCase_ == 15;
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-     * @return The datasetFilterConfig.
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+     * @return The annotationFilterConfig.
      */
-    public com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig getDatasetFilterConfig() {
-      if (datasetFilterConfigBuilder_ == null) {
-        if (dataConfigCase_ == 7) {
-          return (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_;
+    public com.clarifai.grpc.api.AnnotationFilterConfig getAnnotationFilterConfig() {
+      if (annotationFilterConfigBuilder_ == null) {
+        if (dataConfigCase_ == 15) {
+          return (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_;
         }
-        return com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance();
+        return com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance();
       } else {
-        if (dataConfigCase_ == 7) {
-          return datasetFilterConfigBuilder_.getMessage();
+        if (dataConfigCase_ == 15) {
+          return annotationFilterConfigBuilder_.getMessage();
         }
-        return com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance();
+        return com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
-    public Builder setDatasetFilterConfig(com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig value) {
-      if (datasetFilterConfigBuilder_ == null) {
+    public Builder setAnnotationFilterConfig(com.clarifai.grpc.api.AnnotationFilterConfig value) {
+      if (annotationFilterConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         dataConfig_ = value;
         onChanged();
       } else {
-        datasetFilterConfigBuilder_.setMessage(value);
+        annotationFilterConfigBuilder_.setMessage(value);
       }
-      dataConfigCase_ = 7;
+      dataConfigCase_ = 15;
       return this;
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
-    public Builder setDatasetFilterConfig(
-        com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.Builder builderForValue) {
-      if (datasetFilterConfigBuilder_ == null) {
+    public Builder setAnnotationFilterConfig(
+        com.clarifai.grpc.api.AnnotationFilterConfig.Builder builderForValue) {
+      if (annotationFilterConfigBuilder_ == null) {
         dataConfig_ = builderForValue.build();
         onChanged();
       } else {
-        datasetFilterConfigBuilder_.setMessage(builderForValue.build());
+        annotationFilterConfigBuilder_.setMessage(builderForValue.build());
       }
-      dataConfigCase_ = 7;
+      dataConfigCase_ = 15;
       return this;
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
-    public Builder mergeDatasetFilterConfig(com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig value) {
-      if (datasetFilterConfigBuilder_ == null) {
-        if (dataConfigCase_ == 7 &&
-            dataConfig_ != com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance()) {
-          dataConfig_ = com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.newBuilder((com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_)
+    public Builder mergeAnnotationFilterConfig(com.clarifai.grpc.api.AnnotationFilterConfig value) {
+      if (annotationFilterConfigBuilder_ == null) {
+        if (dataConfigCase_ == 15 &&
+            dataConfig_ != com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance()) {
+          dataConfig_ = com.clarifai.grpc.api.AnnotationFilterConfig.newBuilder((com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_)
               .mergeFrom(value).buildPartial();
         } else {
           dataConfig_ = value;
         }
         onChanged();
       } else {
-        if (dataConfigCase_ == 7) {
-          datasetFilterConfigBuilder_.mergeFrom(value);
+        if (dataConfigCase_ == 15) {
+          annotationFilterConfigBuilder_.mergeFrom(value);
         }
-        datasetFilterConfigBuilder_.setMessage(value);
+        annotationFilterConfigBuilder_.setMessage(value);
       }
-      dataConfigCase_ = 7;
+      dataConfigCase_ = 15;
       return this;
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
-    public Builder clearDatasetFilterConfig() {
-      if (datasetFilterConfigBuilder_ == null) {
-        if (dataConfigCase_ == 7) {
+    public Builder clearAnnotationFilterConfig() {
+      if (annotationFilterConfigBuilder_ == null) {
+        if (dataConfigCase_ == 15) {
           dataConfigCase_ = 0;
           dataConfig_ = null;
           onChanged();
         }
       } else {
-        if (dataConfigCase_ == 7) {
+        if (dataConfigCase_ == 15) {
           dataConfigCase_ = 0;
           dataConfig_ = null;
         }
-        datasetFilterConfigBuilder_.clear();
+        annotationFilterConfigBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
-    public com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.Builder getDatasetFilterConfigBuilder() {
-      return getDatasetFilterConfigFieldBuilder().getBuilder();
+    public com.clarifai.grpc.api.AnnotationFilterConfig.Builder getAnnotationFilterConfigBuilder() {
+      return getAnnotationFilterConfigFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
-    public com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder getDatasetFilterConfigOrBuilder() {
-      if ((dataConfigCase_ == 7) && (datasetFilterConfigBuilder_ != null)) {
-        return datasetFilterConfigBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder getAnnotationFilterConfigOrBuilder() {
+      if ((dataConfigCase_ == 15) && (annotationFilterConfigBuilder_ != null)) {
+        return annotationFilterConfigBuilder_.getMessageOrBuilder();
       } else {
-        if (dataConfigCase_ == 7) {
-          return (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_;
+        if (dataConfigCase_ == 15) {
+          return (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_;
         }
-        return com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance();
+        return com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * The dataset version will be generated based on a single dataset filter.
+     * The dataset version will be generated based on a single annotation filter.
      * </pre>
      *
-     * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+     * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig, com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.Builder, com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder> 
-        getDatasetFilterConfigFieldBuilder() {
-      if (datasetFilterConfigBuilder_ == null) {
-        if (!(dataConfigCase_ == 7)) {
-          dataConfig_ = com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.getDefaultInstance();
+        com.clarifai.grpc.api.AnnotationFilterConfig, com.clarifai.grpc.api.AnnotationFilterConfig.Builder, com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder> 
+        getAnnotationFilterConfigFieldBuilder() {
+      if (annotationFilterConfigBuilder_ == null) {
+        if (!(dataConfigCase_ == 15)) {
+          dataConfig_ = com.clarifai.grpc.api.AnnotationFilterConfig.getDefaultInstance();
         }
-        datasetFilterConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig, com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig.Builder, com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder>(
-                (com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig) dataConfig_,
+        annotationFilterConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AnnotationFilterConfig, com.clarifai.grpc.api.AnnotationFilterConfig.Builder, com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder>(
+                (com.clarifai.grpc.api.AnnotationFilterConfig) dataConfig_,
                 getParentForChildren(),
                 isClean());
         dataConfig_ = null;
       }
-      dataConfigCase_ = 7;
+      dataConfigCase_ = 15;
       onChanged();;
-      return datasetFilterConfigBuilder_;
+      return annotationFilterConfigBuilder_;
     }
 
     private com.clarifai.grpc.api.status.Status status_;

@@ -3,13 +3,13 @@
 
 package com.clarifai.grpc.api;
 
-public interface DatasetFilterOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.DatasetFilter)
+public interface AnnotationFilterOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.AnnotationFilter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
-   * The ID for the dataset filter
+   * The ID for the annotation filter
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -18,7 +18,7 @@ public interface DatasetFilterOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * The ID for the dataset filter
+   * The ID for the annotation filter
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -29,7 +29,7 @@ public interface DatasetFilterOrBuilder extends
 
   /**
    * <pre>
-   * When the dataset filter was created.
+   * When the annotation filter was created.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -40,7 +40,7 @@ public interface DatasetFilterOrBuilder extends
   boolean hasCreatedAt();
   /**
    * <pre>
-   * When the dataset filter was created.
+   * When the annotation filter was created.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -51,7 +51,7 @@ public interface DatasetFilterOrBuilder extends
   com.google.protobuf.Timestamp getCreatedAt();
   /**
    * <pre>
-   * When the dataset filter was created.
+   * When the annotation filter was created.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -62,7 +62,7 @@ public interface DatasetFilterOrBuilder extends
 
   /**
    * <pre>
-   * When the dataset filter was modified.
+   * When the annotation filter was modified.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -73,7 +73,7 @@ public interface DatasetFilterOrBuilder extends
   boolean hasModifiedAt();
   /**
    * <pre>
-   * When the dataset filter was modified.
+   * When the annotation filter was modified.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -84,7 +84,7 @@ public interface DatasetFilterOrBuilder extends
   com.google.protobuf.Timestamp getModifiedAt();
   /**
    * <pre>
-   * When the dataset filter was modified.
+   * When the annotation filter was modified.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -95,7 +95,7 @@ public interface DatasetFilterOrBuilder extends
 
   /**
    * <pre>
-   * The user the dataset filter belongs to.
+   * The user the annotation filter belongs to.
    * </pre>
    *
    * <code>string user_id = 4;</code>
@@ -104,7 +104,7 @@ public interface DatasetFilterOrBuilder extends
   java.lang.String getUserId();
   /**
    * <pre>
-   * The user the dataset filter belongs to.
+   * The user the annotation filter belongs to.
    * </pre>
    *
    * <code>string user_id = 4;</code>
@@ -115,7 +115,7 @@ public interface DatasetFilterOrBuilder extends
 
   /**
    * <pre>
-   * The app the dataset filter belongs to.
+   * The app the annotation filter belongs to.
    * </pre>
    *
    * <code>string app_id = 5;</code>
@@ -124,7 +124,7 @@ public interface DatasetFilterOrBuilder extends
   java.lang.String getAppId();
   /**
    * <pre>
-   * The app the dataset filter belongs to.
+   * The app the annotation filter belongs to.
    * </pre>
    *
    * <code>string app_id = 5;</code>
@@ -132,26 +132,6 @@ public interface DatasetFilterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAppIdBytes();
-
-  /**
-   * <pre>
-   * The dataset the filter belongs to.
-   * </pre>
-   *
-   * <code>string dataset_id = 6;</code>
-   * @return The datasetId.
-   */
-  java.lang.String getDatasetId();
-  /**
-   * <pre>
-   * The dataset the filter belongs to.
-   * </pre>
-   *
-   * <code>string dataset_id = 6;</code>
-   * @return The bytes for datasetId.
-   */
-  com.google.protobuf.ByteString
-      getDatasetIdBytes();
 
   /**
    * <pre>

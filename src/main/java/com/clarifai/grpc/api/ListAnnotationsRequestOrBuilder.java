@@ -304,6 +304,16 @@ public interface ListAnnotationsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Set this flag to return the model output for model annotations in the response.
+   * </pre>
+   *
+   * <code>bool return_model_output = 12;</code>
+   * @return The returnModelOutput.
+   */
+  boolean getReturnModelOutput();
+
+  /**
+   * <pre>
    * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
    * Defaults to 1.
    * </pre>

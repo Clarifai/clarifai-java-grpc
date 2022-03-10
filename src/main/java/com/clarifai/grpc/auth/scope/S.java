@@ -47,14 +47,6 @@ public enum S
   Predict(2),
   /**
    * <pre>
-   * Make an rpc to our search services.
-   * </pre>
-   *
-   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  Search(3),
-  /**
-   * <pre>
    * Write to the inputs table in the DB.
    * </pre>
    *
@@ -500,6 +492,38 @@ public enum S
    * <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
    */
   FindDuplicateAnnotationsJobs_Delete(104),
+  /**
+   * <pre>
+   * Make an rpc to our search services.
+   * </pre>
+   *
+   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Search(3),
+  /**
+   * <pre>
+   * To get a saved search.
+   * </pre>
+   *
+   * <code>SavedSearch_Get = 114 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  SavedSearch_Get(114),
+  /**
+   * <pre>
+   * To add a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Add = 115 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get];</code>
+   */
+  SavedSearch_Add(115),
+  /**
+   * <pre>
+   * To delete a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Delete = 116 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Add];</code>
+   */
+  SavedSearch_Delete(116),
   UNRECOGNIZED(-1),
   ;
 
@@ -525,14 +549,6 @@ public enum S
    * <code>Predict = 2 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int Predict_VALUE = 2;
-  /**
-   * <pre>
-   * Make an rpc to our search services.
-   * </pre>
-   *
-   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  public static final int Search_VALUE = 3;
   /**
    * <pre>
    * Write to the inputs table in the DB.
@@ -972,6 +988,38 @@ public enum S
    * <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
    */
   public static final int FindDuplicateAnnotationsJobs_Delete_VALUE = 104;
+  /**
+   * <pre>
+   * Make an rpc to our search services.
+   * </pre>
+   *
+   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Search_VALUE = 3;
+  /**
+   * <pre>
+   * To get a saved search.
+   * </pre>
+   *
+   * <code>SavedSearch_Get = 114 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int SavedSearch_Get_VALUE = 114;
+  /**
+   * <pre>
+   * To add a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Add = 115 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get];</code>
+   */
+  public static final int SavedSearch_Add_VALUE = 115;
+  /**
+   * <pre>
+   * To delete a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Delete = 116 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Add];</code>
+   */
+  public static final int SavedSearch_Delete_VALUE = 116;
 
 
   public final int getNumber() {
@@ -1001,7 +1049,6 @@ public enum S
       case 0: return undef;
       case 1: return All;
       case 2: return Predict;
-      case 3: return Search;
       case 4: return Inputs_Add;
       case 5: return Inputs_Get;
       case 7: return Inputs_Patch;
@@ -1058,6 +1105,10 @@ public enum S
       case 102: return FindDuplicateAnnotationsJobs_Add;
       case 103: return FindDuplicateAnnotationsJobs_Get;
       case 104: return FindDuplicateAnnotationsJobs_Delete;
+      case 3: return Search;
+      case 114: return SavedSearch_Get;
+      case 115: return SavedSearch_Add;
+      case 116: return SavedSearch_Delete;
       default: return null;
     }
   }

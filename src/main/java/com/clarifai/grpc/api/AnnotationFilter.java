@@ -5,32 +5,33 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * DatasetFilter
+ * AnnotationFilter is used to create a new dataset version.
+ * For now, the filter is simply a wrapper over a Search.
+ * In the future, we may add extra fields to customize the filtering.
  * </pre>
  *
- * Protobuf type {@code clarifai.api.DatasetFilter}
+ * Protobuf type {@code clarifai.api.AnnotationFilter}
  */
-public  final class DatasetFilter extends
+public  final class AnnotationFilter extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.DatasetFilter)
-    DatasetFilterOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.AnnotationFilter)
+    AnnotationFilterOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DatasetFilter.newBuilder() to construct.
-  private DatasetFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use AnnotationFilter.newBuilder() to construct.
+  private AnnotationFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DatasetFilter() {
+  private AnnotationFilter() {
     id_ = "";
     userId_ = "";
     appId_ = "";
-    datasetId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new DatasetFilter();
+    return new AnnotationFilter();
   }
 
   @java.lang.Override
@@ -38,7 +39,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private DatasetFilter(
+  private AnnotationFilter(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -100,12 +101,6 @@ private static final long serialVersionUID = 0L;
             appId_ = s;
             break;
           }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            datasetId_ = s;
-            break;
-          }
           case 66: {
             com.clarifai.grpc.api.Search.Builder subBuilder = null;
             if (savedSearch_ != null) {
@@ -140,22 +135,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DatasetFilter_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_AnnotationFilter_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DatasetFilter_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_AnnotationFilter_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.DatasetFilter.class, com.clarifai.grpc.api.DatasetFilter.Builder.class);
+            com.clarifai.grpc.api.AnnotationFilter.class, com.clarifai.grpc.api.AnnotationFilter.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * The ID for the dataset filter
+   * The ID for the annotation filter
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -175,7 +170,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The ID for the dataset filter
+   * The ID for the annotation filter
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -199,7 +194,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   * When the dataset filter was created.
+   * When the annotation filter was created.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -212,7 +207,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the dataset filter was created.
+   * When the annotation filter was created.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -225,7 +220,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the dataset filter was created.
+   * When the annotation filter was created.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -240,7 +235,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp modifiedAt_;
   /**
    * <pre>
-   * When the dataset filter was modified.
+   * When the annotation filter was modified.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -253,7 +248,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the dataset filter was modified.
+   * When the annotation filter was modified.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -266,7 +261,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the dataset filter was modified.
+   * When the annotation filter was modified.
    * The format is https://www.ietf.org/rfc/rfc3339.txt.
    * Example: "2006-01-02T15:04:05.999999Z".
    * </pre>
@@ -281,7 +276,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object userId_;
   /**
    * <pre>
-   * The user the dataset filter belongs to.
+   * The user the annotation filter belongs to.
    * </pre>
    *
    * <code>string user_id = 4;</code>
@@ -301,7 +296,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The user the dataset filter belongs to.
+   * The user the annotation filter belongs to.
    * </pre>
    *
    * <code>string user_id = 4;</code>
@@ -325,7 +320,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object appId_;
   /**
    * <pre>
-   * The app the dataset filter belongs to.
+   * The app the annotation filter belongs to.
    * </pre>
    *
    * <code>string app_id = 5;</code>
@@ -345,7 +340,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The app the dataset filter belongs to.
+   * The app the annotation filter belongs to.
    * </pre>
    *
    * <code>string app_id = 5;</code>
@@ -359,50 +354,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       appId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DATASET_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object datasetId_;
-  /**
-   * <pre>
-   * The dataset the filter belongs to.
-   * </pre>
-   *
-   * <code>string dataset_id = 6;</code>
-   * @return The datasetId.
-   */
-  public java.lang.String getDatasetId() {
-    java.lang.Object ref = datasetId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      datasetId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The dataset the filter belongs to.
-   * </pre>
-   *
-   * <code>string dataset_id = 6;</code>
-   * @return The bytes for datasetId.
-   */
-  public com.google.protobuf.ByteString
-      getDatasetIdBytes() {
-    java.lang.Object ref = datasetId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      datasetId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -473,9 +424,6 @@ private static final long serialVersionUID = 0L;
     if (!getAppIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appId_);
     }
-    if (!getDatasetIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, datasetId_);
-    }
     if (savedSearch_ != null) {
       output.writeMessage(8, getSavedSearch());
     }
@@ -505,9 +453,6 @@ private static final long serialVersionUID = 0L;
     if (!getAppIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appId_);
     }
-    if (!getDatasetIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, datasetId_);
-    }
     if (savedSearch_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getSavedSearch());
@@ -522,10 +467,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.DatasetFilter)) {
+    if (!(obj instanceof com.clarifai.grpc.api.AnnotationFilter)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.DatasetFilter other = (com.clarifai.grpc.api.DatasetFilter) obj;
+    com.clarifai.grpc.api.AnnotationFilter other = (com.clarifai.grpc.api.AnnotationFilter) obj;
 
     if (!getId()
         .equals(other.getId())) return false;
@@ -543,8 +488,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getAppId()
         .equals(other.getAppId())) return false;
-    if (!getDatasetId()
-        .equals(other.getDatasetId())) return false;
     if (hasSavedSearch() != other.hasSavedSearch()) return false;
     if (hasSavedSearch()) {
       if (!getSavedSearch()
@@ -575,8 +518,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + APP_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppId().hashCode();
-    hash = (37 * hash) + DATASET_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getDatasetId().hashCode();
     if (hasSavedSearch()) {
       hash = (37 * hash) + SAVED_SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getSavedSearch().hashCode();
@@ -586,69 +527,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.AnnotationFilter parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseDelimitedFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.DatasetFilter parseFrom(
+  public static com.clarifai.grpc.api.AnnotationFilter parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -661,7 +602,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.DatasetFilter prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.AnnotationFilter prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -678,29 +619,31 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * DatasetFilter
+   * AnnotationFilter is used to create a new dataset version.
+   * For now, the filter is simply a wrapper over a Search.
+   * In the future, we may add extra fields to customize the filtering.
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.DatasetFilter}
+   * Protobuf type {@code clarifai.api.AnnotationFilter}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.DatasetFilter)
-      com.clarifai.grpc.api.DatasetFilterOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.AnnotationFilter)
+      com.clarifai.grpc.api.AnnotationFilterOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DatasetFilter_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_AnnotationFilter_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DatasetFilter_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_AnnotationFilter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.DatasetFilter.class, com.clarifai.grpc.api.DatasetFilter.Builder.class);
+              com.clarifai.grpc.api.AnnotationFilter.class, com.clarifai.grpc.api.AnnotationFilter.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.DatasetFilter.newBuilder()
+    // Construct using com.clarifai.grpc.api.AnnotationFilter.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -736,8 +679,6 @@ private static final long serialVersionUID = 0L;
 
       appId_ = "";
 
-      datasetId_ = "";
-
       if (savedSearchBuilder_ == null) {
         savedSearch_ = null;
       } else {
@@ -750,17 +691,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_DatasetFilter_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_AnnotationFilter_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.DatasetFilter getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.DatasetFilter.getDefaultInstance();
+    public com.clarifai.grpc.api.AnnotationFilter getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.AnnotationFilter.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.DatasetFilter build() {
-      com.clarifai.grpc.api.DatasetFilter result = buildPartial();
+    public com.clarifai.grpc.api.AnnotationFilter build() {
+      com.clarifai.grpc.api.AnnotationFilter result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -768,8 +709,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.DatasetFilter buildPartial() {
-      com.clarifai.grpc.api.DatasetFilter result = new com.clarifai.grpc.api.DatasetFilter(this);
+    public com.clarifai.grpc.api.AnnotationFilter buildPartial() {
+      com.clarifai.grpc.api.AnnotationFilter result = new com.clarifai.grpc.api.AnnotationFilter(this);
       result.id_ = id_;
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
@@ -783,7 +724,6 @@ private static final long serialVersionUID = 0L;
       }
       result.userId_ = userId_;
       result.appId_ = appId_;
-      result.datasetId_ = datasetId_;
       if (savedSearchBuilder_ == null) {
         result.savedSearch_ = savedSearch_;
       } else {
@@ -827,16 +767,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.DatasetFilter) {
-        return mergeFrom((com.clarifai.grpc.api.DatasetFilter)other);
+      if (other instanceof com.clarifai.grpc.api.AnnotationFilter) {
+        return mergeFrom((com.clarifai.grpc.api.AnnotationFilter)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.DatasetFilter other) {
-      if (other == com.clarifai.grpc.api.DatasetFilter.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.AnnotationFilter other) {
+      if (other == com.clarifai.grpc.api.AnnotationFilter.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
@@ -853,10 +793,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getAppId().isEmpty()) {
         appId_ = other.appId_;
-        onChanged();
-      }
-      if (!other.getDatasetId().isEmpty()) {
-        datasetId_ = other.datasetId_;
         onChanged();
       }
       if (other.hasSavedSearch()) {
@@ -877,11 +813,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.DatasetFilter parsedMessage = null;
+      com.clarifai.grpc.api.AnnotationFilter parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.DatasetFilter) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.AnnotationFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -894,7 +830,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * The ID for the dataset filter
+     * The ID for the annotation filter
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -914,7 +850,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID for the dataset filter
+     * The ID for the annotation filter
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -935,7 +871,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID for the dataset filter
+     * The ID for the annotation filter
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -954,7 +890,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID for the dataset filter
+     * The ID for the annotation filter
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -968,7 +904,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID for the dataset filter
+     * The ID for the annotation filter
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -992,7 +928,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1005,7 +941,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1022,7 +958,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1044,7 +980,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1064,7 +1000,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1088,7 +1024,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1108,7 +1044,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1122,7 +1058,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1139,7 +1075,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was created.
+     * When the annotation filter was created.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1165,7 +1101,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1178,7 +1114,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1195,7 +1131,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1217,7 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1237,7 +1173,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1261,7 +1197,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1281,7 +1217,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1295,7 +1231,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1312,7 +1248,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the dataset filter was modified.
+     * When the annotation filter was modified.
      * The format is https://www.ietf.org/rfc/rfc3339.txt.
      * Example: "2006-01-02T15:04:05.999999Z".
      * </pre>
@@ -1336,7 +1272,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object userId_ = "";
     /**
      * <pre>
-     * The user the dataset filter belongs to.
+     * The user the annotation filter belongs to.
      * </pre>
      *
      * <code>string user_id = 4;</code>
@@ -1356,7 +1292,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user the dataset filter belongs to.
+     * The user the annotation filter belongs to.
      * </pre>
      *
      * <code>string user_id = 4;</code>
@@ -1377,7 +1313,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user the dataset filter belongs to.
+     * The user the annotation filter belongs to.
      * </pre>
      *
      * <code>string user_id = 4;</code>
@@ -1396,7 +1332,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user the dataset filter belongs to.
+     * The user the annotation filter belongs to.
      * </pre>
      *
      * <code>string user_id = 4;</code>
@@ -1410,7 +1346,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user the dataset filter belongs to.
+     * The user the annotation filter belongs to.
      * </pre>
      *
      * <code>string user_id = 4;</code>
@@ -1432,7 +1368,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object appId_ = "";
     /**
      * <pre>
-     * The app the dataset filter belongs to.
+     * The app the annotation filter belongs to.
      * </pre>
      *
      * <code>string app_id = 5;</code>
@@ -1452,7 +1388,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The app the dataset filter belongs to.
+     * The app the annotation filter belongs to.
      * </pre>
      *
      * <code>string app_id = 5;</code>
@@ -1473,7 +1409,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The app the dataset filter belongs to.
+     * The app the annotation filter belongs to.
      * </pre>
      *
      * <code>string app_id = 5;</code>
@@ -1492,7 +1428,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The app the dataset filter belongs to.
+     * The app the annotation filter belongs to.
      * </pre>
      *
      * <code>string app_id = 5;</code>
@@ -1506,7 +1442,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The app the dataset filter belongs to.
+     * The app the annotation filter belongs to.
      * </pre>
      *
      * <code>string app_id = 5;</code>
@@ -1521,102 +1457,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       appId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object datasetId_ = "";
-    /**
-     * <pre>
-     * The dataset the filter belongs to.
-     * </pre>
-     *
-     * <code>string dataset_id = 6;</code>
-     * @return The datasetId.
-     */
-    public java.lang.String getDatasetId() {
-      java.lang.Object ref = datasetId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        datasetId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The dataset the filter belongs to.
-     * </pre>
-     *
-     * <code>string dataset_id = 6;</code>
-     * @return The bytes for datasetId.
-     */
-    public com.google.protobuf.ByteString
-        getDatasetIdBytes() {
-      java.lang.Object ref = datasetId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        datasetId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The dataset the filter belongs to.
-     * </pre>
-     *
-     * <code>string dataset_id = 6;</code>
-     * @param value The datasetId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDatasetId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      datasetId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The dataset the filter belongs to.
-     * </pre>
-     *
-     * <code>string dataset_id = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDatasetId() {
-      
-      datasetId_ = getDefaultInstance().getDatasetId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The dataset the filter belongs to.
-     * </pre>
-     *
-     * <code>string dataset_id = 6;</code>
-     * @param value The bytes for datasetId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDatasetIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      datasetId_ = value;
       onChanged();
       return this;
     }
@@ -1788,41 +1628,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.DatasetFilter)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.AnnotationFilter)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.DatasetFilter)
-  private static final com.clarifai.grpc.api.DatasetFilter DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.AnnotationFilter)
+  private static final com.clarifai.grpc.api.AnnotationFilter DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.DatasetFilter();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.AnnotationFilter();
   }
 
-  public static com.clarifai.grpc.api.DatasetFilter getDefaultInstance() {
+  public static com.clarifai.grpc.api.AnnotationFilter getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DatasetFilter>
-      PARSER = new com.google.protobuf.AbstractParser<DatasetFilter>() {
+  private static final com.google.protobuf.Parser<AnnotationFilter>
+      PARSER = new com.google.protobuf.AbstractParser<AnnotationFilter>() {
     @java.lang.Override
-    public DatasetFilter parsePartialFrom(
+    public AnnotationFilter parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DatasetFilter(input, extensionRegistry);
+      return new AnnotationFilter(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<DatasetFilter> parser() {
+  public static com.google.protobuf.Parser<AnnotationFilter> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DatasetFilter> getParserForType() {
+  public com.google.protobuf.Parser<AnnotationFilter> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.DatasetFilter getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.AnnotationFilter getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

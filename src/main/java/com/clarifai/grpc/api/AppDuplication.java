@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     newAppId_ = "";
     newAppName_ = "";
+    existingAppId_ = "";
   }
 
   @java.lang.Override
@@ -125,6 +126,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            existingAppId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -205,7 +212,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object newAppId_;
   /**
    * <pre>
-   *the id of new app
+   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+   * if new_app_name is empty, the name will be the same as this id.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
@@ -225,7 +234,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the id of new app
+   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+   * if new_app_name is empty, the name will be the same as this id.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
@@ -249,7 +260,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object newAppName_;
   /**
    * <pre>
-   *the name of new app
+   *the name of new app. If provided, we will create a new application with this name.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
@@ -269,7 +281,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the name of new app
+   *the name of new app. If provided, we will create a new application with this name.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
@@ -429,6 +442,54 @@ private static final long serialVersionUID = 0L;
     return getFilter();
   }
 
+  public static final int EXISTING_APP_ID_FIELD_NUMBER = 8;
+  private volatile java.lang.Object existingAppId_;
+  /**
+   * <pre>
+   * the id of existing app you want to copy data into.
+   * you can not set this if either new_app_id or new_app_name is set.
+   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The existingAppId.
+   */
+  public java.lang.String getExistingAppId() {
+    java.lang.Object ref = existingAppId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      existingAppId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * the id of existing app you want to copy data into.
+   * you can not set this if either new_app_id or new_app_name is set.
+   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The bytes for existingAppId.
+   */
+  public com.google.protobuf.ByteString
+      getExistingAppIdBytes() {
+    java.lang.Object ref = existingAppId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      existingAppId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -464,6 +525,9 @@ private static final long serialVersionUID = 0L;
     if (filter_ != null) {
       output.writeMessage(7, getFilter());
     }
+    if (!getExistingAppIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, existingAppId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -497,6 +561,9 @@ private static final long serialVersionUID = 0L;
     if (filter_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getFilter());
+    }
+    if (!getExistingAppIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, existingAppId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -539,6 +606,8 @@ private static final long serialVersionUID = 0L;
       if (!getFilter()
           .equals(other.getFilter())) return false;
     }
+    if (!getExistingAppId()
+        .equals(other.getExistingAppId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -572,6 +641,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getFilter().hashCode();
     }
+    hash = (37 * hash) + EXISTING_APP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getExistingAppId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -739,6 +810,8 @@ private static final long serialVersionUID = 0L;
         filter_ = null;
         filterBuilder_ = null;
       }
+      existingAppId_ = "";
+
       return this;
     }
 
@@ -788,6 +861,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.filter_ = filterBuilder_.build();
       }
+      result.existingAppId_ = existingAppId_;
       onBuilt();
       return result;
     }
@@ -859,6 +933,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
+      }
+      if (!other.getExistingAppId().isEmpty()) {
+        existingAppId_ = other.existingAppId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -988,7 +1066,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object newAppId_ = "";
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1008,7 +1088,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1029,7 +1111,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1048,7 +1132,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1062,7 +1148,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1084,7 +1172,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object newAppName_ = "";
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1104,7 +1193,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1125,7 +1215,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1144,7 +1235,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1158,7 +1250,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1795,6 +1888,112 @@ private static final long serialVersionUID = 0L;
         filter_ = null;
       }
       return filterBuilder_;
+    }
+
+    private java.lang.Object existingAppId_ = "";
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @return The existingAppId.
+     */
+    public java.lang.String getExistingAppId() {
+      java.lang.Object ref = existingAppId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        existingAppId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @return The bytes for existingAppId.
+     */
+    public com.google.protobuf.ByteString
+        getExistingAppIdBytes() {
+      java.lang.Object ref = existingAppId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        existingAppId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @param value The existingAppId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExistingAppId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      existingAppId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExistingAppId() {
+      
+      existingAppId_ = getDefaultInstance().getExistingAppId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @param value The bytes for existingAppId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExistingAppIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      existingAppId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

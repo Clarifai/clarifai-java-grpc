@@ -36,6 +36,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     userId_ = "";
     modelTypeId_ = "";
+    task_ = "";
     description_ = "";
     notes_ = "";
     toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -274,6 +275,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000004;
             }
             languages_.add(s);
+            break;
+          }
+          case 210: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            task_ = s;
             break;
           }
           default: {
@@ -805,6 +812,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TASK_FIELD_NUMBER = 26;
+  private volatile java.lang.Object task_;
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The task.
+   */
+  public java.lang.String getTask() {
+    java.lang.Object ref = task_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      task_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The bytes for task.
+   */
+  public com.google.protobuf.ByteString
+      getTaskBytes() {
+    java.lang.Object ref = task_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      task_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VISIBILITY_FIELD_NUMBER = 15;
   private com.clarifai.grpc.api.Visibility visibility_;
   /**
@@ -1272,6 +1323,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < languages_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, languages_.getRaw(i));
     }
+    if (!getTaskBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, task_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1373,6 +1427,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 2 * getLanguagesList().size();
     }
+    if (!getTaskBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, task_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1430,6 +1487,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelTypeId()
         .equals(other.getModelTypeId())) return false;
+    if (!getTask()
+        .equals(other.getTask())) return false;
     if (hasVisibility() != other.hasVisibility()) return false;
     if (hasVisibility()) {
       if (!getVisibility()
@@ -1506,6 +1565,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelTypeId().hashCode();
+    hash = (37 * hash) + TASK_FIELD_NUMBER;
+    hash = (53 * hash) + getTask().hashCode();
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
@@ -1734,6 +1795,8 @@ private static final long serialVersionUID = 0L;
       }
       modelTypeId_ = "";
 
+      task_ = "";
+
       if (visibilityBuilder_ == null) {
         visibility_ = null;
       } else {
@@ -1829,6 +1892,7 @@ private static final long serialVersionUID = 0L;
         result.trainInfo_ = trainInfoBuilder_.build();
       }
       result.modelTypeId_ = modelTypeId_;
+      result.task_ = task_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
       } else {
@@ -1951,6 +2015,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getModelTypeId().isEmpty()) {
         modelTypeId_ = other.modelTypeId_;
+        onChanged();
+      }
+      if (!other.getTask().isEmpty()) {
+        task_ = other.task_;
         onChanged();
       }
       if (other.hasVisibility()) {
@@ -3579,6 +3647,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object task_ = "";
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @return The task.
+     */
+    public java.lang.String getTask() {
+      java.lang.Object ref = task_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        task_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @return The bytes for task.
+     */
+    public com.google.protobuf.ByteString
+        getTaskBytes() {
+      java.lang.Object ref = task_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        task_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @param value The task to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTask(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      task_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTask() {
+      
+      task_ = getDefaultInstance().getTask();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @param value The bytes for task to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      task_ = value;
       onChanged();
       return this;
     }

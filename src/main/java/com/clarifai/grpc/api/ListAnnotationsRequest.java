@@ -138,6 +138,11 @@ private static final long serialVersionUID = 0L;
             taskId_ = s;
             break;
           }
+          case 96: {
+
+            returnModelOutput_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -543,6 +548,20 @@ private static final long serialVersionUID = 0L;
     return listAllAnnotations_;
   }
 
+  public static final int RETURN_MODEL_OUTPUT_FIELD_NUMBER = 12;
+  private boolean returnModelOutput_;
+  /**
+   * <pre>
+   * Set this flag to return the model output for model annotations in the response.
+   * </pre>
+   *
+   * <code>bool return_model_output = 12;</code>
+   * @return The returnModelOutput.
+   */
+  public boolean getReturnModelOutput() {
+    return returnModelOutput_;
+  }
+
   public static final int PAGE_FIELD_NUMBER = 7;
   private int page_;
   /**
@@ -661,6 +680,9 @@ private static final long serialVersionUID = 0L;
     if (!getTaskIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, taskId_);
     }
+    if (returnModelOutput_ != false) {
+      output.writeBool(12, returnModelOutput_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -725,6 +747,10 @@ private static final long serialVersionUID = 0L;
     if (!getTaskIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, taskId_);
     }
+    if (returnModelOutput_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, returnModelOutput_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -757,6 +783,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStatusesList())) return false;
     if (getListAllAnnotations()
         != other.getListAllAnnotations()) return false;
+    if (getReturnModelOutput()
+        != other.getReturnModelOutput()) return false;
     if (getPage()
         != other.getPage()) return false;
     if (getPerPage()
@@ -801,6 +829,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LIST_ALL_ANNOTATIONS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getListAllAnnotations());
+    hash = (37 * hash) + RETURN_MODEL_OUTPUT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getReturnModelOutput());
     hash = (37 * hash) + PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
@@ -967,6 +998,8 @@ private static final long serialVersionUID = 0L;
       }
       listAllAnnotations_ = false;
 
+      returnModelOutput_ = false;
+
       page_ = 0;
 
       perPage_ = 0;
@@ -1035,6 +1068,7 @@ private static final long serialVersionUID = 0L;
         result.statuses_ = statusesBuilder_.build();
       }
       result.listAllAnnotations_ = listAllAnnotations_;
+      result.returnModelOutput_ = returnModelOutput_;
       result.page_ = page_;
       result.perPage_ = perPage_;
       result.taskId_ = taskId_;
@@ -1157,6 +1191,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getListAllAnnotations() != false) {
         setListAllAnnotations(other.getListAllAnnotations());
+      }
+      if (other.getReturnModelOutput() != false) {
+        setReturnModelOutput(other.getReturnModelOutput());
       }
       if (other.getPage() != 0) {
         setPage(other.getPage());
@@ -2398,6 +2435,48 @@ private static final long serialVersionUID = 0L;
     public Builder clearListAllAnnotations() {
       
       listAllAnnotations_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean returnModelOutput_ ;
+    /**
+     * <pre>
+     * Set this flag to return the model output for model annotations in the response.
+     * </pre>
+     *
+     * <code>bool return_model_output = 12;</code>
+     * @return The returnModelOutput.
+     */
+    public boolean getReturnModelOutput() {
+      return returnModelOutput_;
+    }
+    /**
+     * <pre>
+     * Set this flag to return the model output for model annotations in the response.
+     * </pre>
+     *
+     * <code>bool return_model_output = 12;</code>
+     * @param value The returnModelOutput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnModelOutput(boolean value) {
+      
+      returnModelOutput_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Set this flag to return the model output for model annotations in the response.
+     * </pre>
+     *
+     * <code>bool return_model_output = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnModelOutput() {
+      
+      returnModelOutput_ = false;
       onChanged();
       return this;
     }

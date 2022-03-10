@@ -114,4 +114,58 @@ public interface RegionInfoOrBuilder extends
    * <code>.clarifai.api.Point point = 6;</code>
    */
   com.clarifai.grpc.api.PointOrBuilder getPointOrBuilder();
+
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return Whether the span field is set.
+   */
+  boolean hasSpan();
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return The span.
+   */
+  com.clarifai.grpc.api.Span getSpan();
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   */
+  com.clarifai.grpc.api.SpanOrBuilder getSpanOrBuilder();
+
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return Whether the token field is set.
+   */
+  boolean hasToken();
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return The token.
+   */
+  com.clarifai.grpc.api.Token getToken();
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   */
+  com.clarifai.grpc.api.TokenOrBuilder getTokenOrBuilder();
 }

@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     description_ = "";
     dataTierId_ = "";
+    notes_ = "";
   }
 
   @java.lang.Override
@@ -171,6 +172,12 @@ private static final long serialVersionUID = 0L;
           case 160: {
 
             starCount_ = input.readInt32();
+            break;
+          }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notes_ = s;
             break;
           }
           default: {
@@ -702,6 +709,52 @@ private static final long serialVersionUID = 0L;
     return starCount_;
   }
 
+  public static final int NOTES_FIELD_NUMBER = 21;
+  private volatile java.lang.Object notes_;
+  /**
+   * <pre>
+   * Notes for the application
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 21;</code>
+   * @return The notes.
+   */
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes for the application
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 21;</code>
+   * @return The bytes for notes.
+   */
+  public com.google.protobuf.ByteString
+      getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -760,6 +813,9 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(20, starCount_);
+    }
+    if (!getNotesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, notes_);
     }
     unknownFields.writeTo(output);
   }
@@ -823,6 +879,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(20, starCount_);
     }
+    if (!getNotesBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, notes_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -880,6 +939,8 @@ private static final long serialVersionUID = 0L;
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
+    if (!getNotes()
+        .equals(other.getNotes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -930,6 +991,8 @@ private static final long serialVersionUID = 0L;
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1113,6 +1176,8 @@ private static final long serialVersionUID = 0L;
 
       starCount_ = 0;
 
+      notes_ = "";
+
       return this;
     }
 
@@ -1170,6 +1235,7 @@ private static final long serialVersionUID = 0L;
       result.dataTierId_ = dataTierId_;
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
+      result.notes_ = notes_;
       onBuilt();
       return result;
     }
@@ -1269,6 +1335,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
+      }
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2749,6 +2819,107 @@ private static final long serialVersionUID = 0L;
     public Builder clearStarCount() {
       
       starCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object notes_ = "";
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString
+        getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      
+      notes_ = getDefaultInstance().getNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notes_ = value;
       onChanged();
       return this;
     }

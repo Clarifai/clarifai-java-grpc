@@ -155,30 +155,30 @@ public interface DatasetVersionOrBuilder extends
 
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-   * @return Whether the datasetFilterConfig field is set.
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+   * @return Whether the annotationFilterConfig field is set.
    */
-  boolean hasDatasetFilterConfig();
+  boolean hasAnnotationFilterConfig();
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-   * @return The datasetFilterConfig.
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+   * @return The annotationFilterConfig.
    */
-  com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig getDatasetFilterConfig();
+  com.clarifai.grpc.api.AnnotationFilterConfig getAnnotationFilterConfig();
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
    */
-  com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder getDatasetFilterConfigOrBuilder();
+  com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder getAnnotationFilterConfigOrBuilder();
 
   /**
    * <pre>

@@ -104,6 +104,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.Span.Builder subBuilder = null;
+            if (span_ != null) {
+              subBuilder = span_.toBuilder();
+            }
+            span_ = input.readMessage(com.clarifai.grpc.api.Span.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(span_);
+              span_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 66: {
+            com.clarifai.grpc.api.Token.Builder subBuilder = null;
+            if (token_ != null) {
+              subBuilder = token_.toBuilder();
+            }
+            token_ = input.readMessage(com.clarifai.grpc.api.Token.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(token_);
+              token_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -276,6 +302,76 @@ private static final long serialVersionUID = 0L;
     return getPoint();
   }
 
+  public static final int SPAN_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.Span span_;
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return Whether the span field is set.
+   */
+  public boolean hasSpan() {
+    return span_ != null;
+  }
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return The span.
+   */
+  public com.clarifai.grpc.api.Span getSpan() {
+    return span_ == null ? com.clarifai.grpc.api.Span.getDefaultInstance() : span_;
+  }
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   */
+  public com.clarifai.grpc.api.SpanOrBuilder getSpanOrBuilder() {
+    return getSpan();
+  }
+
+  public static final int TOKEN_FIELD_NUMBER = 8;
+  private com.clarifai.grpc.api.Token token_;
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return Whether the token field is set.
+   */
+  public boolean hasToken() {
+    return token_ != null;
+  }
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return The token.
+   */
+  public com.clarifai.grpc.api.Token getToken() {
+    return token_ == null ? com.clarifai.grpc.api.Token.getDefaultInstance() : token_;
+  }
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   */
+  public com.clarifai.grpc.api.TokenOrBuilder getTokenOrBuilder() {
+    return getToken();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -302,6 +398,12 @@ private static final long serialVersionUID = 0L;
     if (point_ != null) {
       output.writeMessage(6, getPoint());
     }
+    if (span_ != null) {
+      output.writeMessage(7, getSpan());
+    }
+    if (token_ != null) {
+      output.writeMessage(8, getToken());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -326,6 +428,14 @@ private static final long serialVersionUID = 0L;
     if (point_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getPoint());
+    }
+    if (span_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getSpan());
+    }
+    if (token_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getToken());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -362,6 +472,16 @@ private static final long serialVersionUID = 0L;
       if (!getPoint()
           .equals(other.getPoint())) return false;
     }
+    if (hasSpan() != other.hasSpan()) return false;
+    if (hasSpan()) {
+      if (!getSpan()
+          .equals(other.getSpan())) return false;
+    }
+    if (hasToken() != other.hasToken()) return false;
+    if (hasToken()) {
+      if (!getToken()
+          .equals(other.getToken())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -388,6 +508,14 @@ private static final long serialVersionUID = 0L;
     if (hasPoint()) {
       hash = (37 * hash) + POINT_FIELD_NUMBER;
       hash = (53 * hash) + getPoint().hashCode();
+    }
+    if (hasSpan()) {
+      hash = (37 * hash) + SPAN_FIELD_NUMBER;
+      hash = (53 * hash) + getSpan().hashCode();
+    }
+    if (hasToken()) {
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -550,6 +678,18 @@ private static final long serialVersionUID = 0L;
         point_ = null;
         pointBuilder_ = null;
       }
+      if (spanBuilder_ == null) {
+        span_ = null;
+      } else {
+        span_ = null;
+        spanBuilder_ = null;
+      }
+      if (tokenBuilder_ == null) {
+        token_ = null;
+      } else {
+        token_ = null;
+        tokenBuilder_ = null;
+      }
       return this;
     }
 
@@ -595,6 +735,16 @@ private static final long serialVersionUID = 0L;
         result.point_ = point_;
       } else {
         result.point_ = pointBuilder_.build();
+      }
+      if (spanBuilder_ == null) {
+        result.span_ = span_;
+      } else {
+        result.span_ = spanBuilder_.build();
+      }
+      if (tokenBuilder_ == null) {
+        result.token_ = token_;
+      } else {
+        result.token_ = tokenBuilder_.build();
       }
       onBuilt();
       return result;
@@ -655,6 +805,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPoint()) {
         mergePoint(other.getPoint());
+      }
+      if (other.hasSpan()) {
+        mergeSpan(other.getSpan());
+      }
+      if (other.hasToken()) {
+        mergeToken(other.getToken());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1303,6 +1459,316 @@ private static final long serialVersionUID = 0L;
         point_ = null;
       }
       return pointBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Span span_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Span, com.clarifai.grpc.api.Span.Builder, com.clarifai.grpc.api.SpanOrBuilder> spanBuilder_;
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     * @return Whether the span field is set.
+     */
+    public boolean hasSpan() {
+      return spanBuilder_ != null || span_ != null;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     * @return The span.
+     */
+    public com.clarifai.grpc.api.Span getSpan() {
+      if (spanBuilder_ == null) {
+        return span_ == null ? com.clarifai.grpc.api.Span.getDefaultInstance() : span_;
+      } else {
+        return spanBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder setSpan(com.clarifai.grpc.api.Span value) {
+      if (spanBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        span_ = value;
+        onChanged();
+      } else {
+        spanBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder setSpan(
+        com.clarifai.grpc.api.Span.Builder builderForValue) {
+      if (spanBuilder_ == null) {
+        span_ = builderForValue.build();
+        onChanged();
+      } else {
+        spanBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder mergeSpan(com.clarifai.grpc.api.Span value) {
+      if (spanBuilder_ == null) {
+        if (span_ != null) {
+          span_ =
+            com.clarifai.grpc.api.Span.newBuilder(span_).mergeFrom(value).buildPartial();
+        } else {
+          span_ = value;
+        }
+        onChanged();
+      } else {
+        spanBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder clearSpan() {
+      if (spanBuilder_ == null) {
+        span_ = null;
+        onChanged();
+      } else {
+        span_ = null;
+        spanBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public com.clarifai.grpc.api.Span.Builder getSpanBuilder() {
+      
+      onChanged();
+      return getSpanFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public com.clarifai.grpc.api.SpanOrBuilder getSpanOrBuilder() {
+      if (spanBuilder_ != null) {
+        return spanBuilder_.getMessageOrBuilder();
+      } else {
+        return span_ == null ?
+            com.clarifai.grpc.api.Span.getDefaultInstance() : span_;
+      }
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Span, com.clarifai.grpc.api.Span.Builder, com.clarifai.grpc.api.SpanOrBuilder> 
+        getSpanFieldBuilder() {
+      if (spanBuilder_ == null) {
+        spanBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Span, com.clarifai.grpc.api.Span.Builder, com.clarifai.grpc.api.SpanOrBuilder>(
+                getSpan(),
+                getParentForChildren(),
+                isClean());
+        span_ = null;
+      }
+      return spanBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Token token_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Token, com.clarifai.grpc.api.Token.Builder, com.clarifai.grpc.api.TokenOrBuilder> tokenBuilder_;
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     * @return Whether the token field is set.
+     */
+    public boolean hasToken() {
+      return tokenBuilder_ != null || token_ != null;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     * @return The token.
+     */
+    public com.clarifai.grpc.api.Token getToken() {
+      if (tokenBuilder_ == null) {
+        return token_ == null ? com.clarifai.grpc.api.Token.getDefaultInstance() : token_;
+      } else {
+        return tokenBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder setToken(com.clarifai.grpc.api.Token value) {
+      if (tokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        token_ = value;
+        onChanged();
+      } else {
+        tokenBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder setToken(
+        com.clarifai.grpc.api.Token.Builder builderForValue) {
+      if (tokenBuilder_ == null) {
+        token_ = builderForValue.build();
+        onChanged();
+      } else {
+        tokenBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder mergeToken(com.clarifai.grpc.api.Token value) {
+      if (tokenBuilder_ == null) {
+        if (token_ != null) {
+          token_ =
+            com.clarifai.grpc.api.Token.newBuilder(token_).mergeFrom(value).buildPartial();
+        } else {
+          token_ = value;
+        }
+        onChanged();
+      } else {
+        tokenBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder clearToken() {
+      if (tokenBuilder_ == null) {
+        token_ = null;
+        onChanged();
+      } else {
+        token_ = null;
+        tokenBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public com.clarifai.grpc.api.Token.Builder getTokenBuilder() {
+      
+      onChanged();
+      return getTokenFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public com.clarifai.grpc.api.TokenOrBuilder getTokenOrBuilder() {
+      if (tokenBuilder_ != null) {
+        return tokenBuilder_.getMessageOrBuilder();
+      } else {
+        return token_ == null ?
+            com.clarifai.grpc.api.Token.getDefaultInstance() : token_;
+      }
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Token, com.clarifai.grpc.api.Token.Builder, com.clarifai.grpc.api.TokenOrBuilder> 
+        getTokenFieldBuilder() {
+      if (tokenBuilder_ == null) {
+        tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Token, com.clarifai.grpc.api.Token.Builder, com.clarifai.grpc.api.TokenOrBuilder>(
+                getToken(),
+                getParentForChildren(),
+                isClean());
+        token_ = null;
+      }
+      return tokenBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

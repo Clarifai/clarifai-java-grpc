@@ -649,6 +649,10 @@ public enum StatusCode
    */
   DATA_DUMP_NO_DATA(25154),
   /**
+   * <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
+   */
+  DATA_DUMP_UNEXPECTED_ERROR(25155),
+  /**
    * <pre>
    * Duplicate related 252xx
    * </pre>
@@ -2235,6 +2239,10 @@ public enum StatusCode
    */
   public static final int DATA_DUMP_NO_DATA_VALUE = 25154;
   /**
+   * <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
+   */
+  public static final int DATA_DUMP_UNEXPECTED_ERROR_VALUE = 25155;
+  /**
    * <pre>
    * Duplicate related 252xx
    * </pre>
@@ -3312,6 +3320,7 @@ public enum StatusCode
       case 25152: return DATA_DUMP_FAILED;
       case 25153: return DATA_DUMP_IN_PROGRESS;
       case 25154: return DATA_DUMP_NO_DATA;
+      case 25155: return DATA_DUMP_UNEXPECTED_ERROR;
       case 25200: return APP_DUPLICATION_SUCCESS;
       case 25201: return APP_DUPLICATION_FAILED;
       case 25202: return APP_DUPLICATION_PENDING;

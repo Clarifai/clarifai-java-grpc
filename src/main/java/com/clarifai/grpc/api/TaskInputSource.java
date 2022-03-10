@@ -123,6 +123,14 @@ private static final long serialVersionUID = 0L;
      * <code>SAVED_SEARCH = 2;</code>
      */
     SAVED_SEARCH(2),
+    /**
+     * <pre>
+     * Inputs from a dataset.
+     * </pre>
+     *
+     * <code>DATASET = 3;</code>
+     */
+    DATASET(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -146,6 +154,14 @@ private static final long serialVersionUID = 0L;
      * <code>SAVED_SEARCH = 2;</code>
      */
     public static final int SAVED_SEARCH_VALUE = 2;
+    /**
+     * <pre>
+     * Inputs from a dataset.
+     * </pre>
+     *
+     * <code>DATASET = 3;</code>
+     */
+    public static final int DATASET_VALUE = 3;
 
 
     public final int getNumber() {
@@ -175,6 +191,7 @@ private static final long serialVersionUID = 0L;
         case 0: return INPUT_SOURCE_TYPE_NOT_SET;
         case 1: return ALL_INPUTS;
         case 2: return SAVED_SEARCH;
+        case 3: return DATASET;
         default: return null;
       }
     }

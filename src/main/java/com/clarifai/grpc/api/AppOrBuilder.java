@@ -287,4 +287,26 @@ public interface AppOrBuilder extends
    * @return The starCount.
    */
   int getStarCount();
+
+  /**
+   * <pre>
+   * Notes for the application
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 21;</code>
+   * @return The notes.
+   */
+  java.lang.String getNotes();
+  /**
+   * <pre>
+   * Notes for the application
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 21;</code>
+   * @return The bytes for notes.
+   */
+  com.google.protobuf.ByteString
+      getNotesBytes();
 }

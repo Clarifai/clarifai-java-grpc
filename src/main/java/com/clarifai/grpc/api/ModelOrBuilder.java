@@ -305,6 +305,26 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The task.
+   */
+  java.lang.String getTask();
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The bytes for task.
+   */
+  com.google.protobuf.ByteString
+      getTaskBytes();
+
+  /**
+   * <pre>
    * The visibility field represents whether this message is privately/publicly visible.
    * To be visible to the public the App that contains it AND the User that contains the App must
    * also be publicly visible.

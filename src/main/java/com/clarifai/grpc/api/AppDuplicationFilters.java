@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyInputs_;
   /**
    * <pre>
-   * Copy only inputs and default annotations
+   * Copy inputs what what it depends on: input level annotation and concepts
    * </pre>
    *
    * <code>bool copy_inputs = 1;</code>
@@ -561,7 +561,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyInputs_ ;
     /**
      * <pre>
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>

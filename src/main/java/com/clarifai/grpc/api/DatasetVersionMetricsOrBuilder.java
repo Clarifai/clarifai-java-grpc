@@ -8,20 +8,509 @@ public interface DatasetVersionMetricsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint64 inputs_count = 1;</code>
+   * <pre>
+   * Number of inputs
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+   * @return Whether the inputsCount field is set.
+   */
+  boolean hasInputsCount();
+  /**
+   * <pre>
+   * Number of inputs
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
    * @return The inputsCount.
    */
-  long getInputsCount();
-
+  com.google.protobuf.UInt64Value getInputsCount();
   /**
-   * <code>uint64 positive_annotations_count = 2;</code>
-   * @return The positiveAnnotationsCount.
+   * <pre>
+   * Number of inputs
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
    */
-  long getPositiveAnnotationsCount();
+  com.google.protobuf.UInt64ValueOrBuilder getInputsCountOrBuilder();
 
   /**
-   * <code>uint64 bounding_boxes_count = 3;</code>
+   * <pre>
+   * Number of unlabeled inputs
+   * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+   * @return Whether the unlabeledInputsCount field is set.
+   */
+  boolean hasUnlabeledInputsCount();
+  /**
+   * <pre>
+   * Number of unlabeled inputs
+   * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+   * @return The unlabeledInputsCount.
+   */
+  com.google.protobuf.UInt64Value getUnlabeledInputsCount();
+  /**
+   * <pre>
+   * Number of unlabeled inputs
+   * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getUnlabeledInputsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of inputs that have metadata
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+   * @return Whether the inputsWithMetadataCount field is set.
+   */
+  boolean hasInputsWithMetadataCount();
+  /**
+   * <pre>
+   * Number of inputs that have metadata
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+   * @return The inputsWithMetadataCount.
+   */
+  com.google.protobuf.UInt64Value getInputsWithMetadataCount();
+  /**
+   * <pre>
+   * Number of inputs that have metadata
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getInputsWithMetadataCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of inputs that have geo information
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+   * @return Whether the inputsWithGeoCount field is set.
+   */
+  boolean hasInputsWithGeoCount();
+  /**
+   * <pre>
+   * Number of inputs that have geo information
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+   * @return The inputsWithGeoCount.
+   */
+  com.google.protobuf.UInt64Value getInputsWithGeoCount();
+  /**
+   * <pre>
+   * Number of inputs that have geo information
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getInputsWithGeoCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of regions
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+   * @return Whether the regionsCount field is set.
+   */
+  boolean hasRegionsCount();
+  /**
+   * <pre>
+   * Number of regions
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+   * @return The regionsCount.
+   */
+  com.google.protobuf.UInt64Value getRegionsCount();
+  /**
+   * <pre>
+   * Number of regions
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getRegionsCountOrBuilder();
+
+  /**
+   * <pre>
+   * The matrix shows where the regions are located.
+   * Example: If the matrix has 2x2 dimensions, then
+   * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+   * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+   * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+   * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+   * </pre>
+   *
+   * <code>.MatrixUint64 region_location_matrix = 21;</code>
+   * @return Whether the regionLocationMatrix field is set.
+   */
+  boolean hasRegionLocationMatrix();
+  /**
+   * <pre>
+   * The matrix shows where the regions are located.
+   * Example: If the matrix has 2x2 dimensions, then
+   * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+   * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+   * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+   * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+   * </pre>
+   *
+   * <code>.MatrixUint64 region_location_matrix = 21;</code>
+   * @return The regionLocationMatrix.
+   */
+  utils.Matrix.MatrixUint64 getRegionLocationMatrix();
+  /**
+   * <pre>
+   * The matrix shows where the regions are located.
+   * Example: If the matrix has 2x2 dimensions, then
+   * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+   * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+   * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+   * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+   * </pre>
+   *
+   * <code>.MatrixUint64 region_location_matrix = 21;</code>
+   */
+  utils.Matrix.MatrixUint64OrBuilder getRegionLocationMatrixOrBuilder();
+
+  /**
+   * <pre>
+   * Number of bounding boxes
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+   * @return Whether the boundingBoxesCount field is set.
+   */
+  boolean hasBoundingBoxesCount();
+  /**
+   * <pre>
+   * Number of bounding boxes
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
    * @return The boundingBoxesCount.
    */
-  long getBoundingBoxesCount();
+  com.google.protobuf.UInt64Value getBoundingBoxesCount();
+  /**
+   * <pre>
+   * Number of bounding boxes
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getBoundingBoxesCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of polygons
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+   * @return Whether the polygonsCount field is set.
+   */
+  boolean hasPolygonsCount();
+  /**
+   * <pre>
+   * Number of polygons
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+   * @return The polygonsCount.
+   */
+  com.google.protobuf.UInt64Value getPolygonsCount();
+  /**
+   * <pre>
+   * Number of polygons
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getPolygonsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of points
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+   * @return Whether the pointsCount field is set.
+   */
+  boolean hasPointsCount();
+  /**
+   * <pre>
+   * Number of points
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+   * @return The pointsCount.
+   */
+  com.google.protobuf.UInt64Value getPointsCount();
+  /**
+   * <pre>
+   * Number of points
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getPointsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of masks
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+   * @return Whether the masksCount field is set.
+   */
+  boolean hasMasksCount();
+  /**
+   * <pre>
+   * Number of masks
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+   * @return The masksCount.
+   */
+  com.google.protobuf.UInt64Value getMasksCount();
+  /**
+   * <pre>
+   * Number of masks
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getMasksCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of inputs that have regions attached
+   * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+   * @return Whether the regionInputsCount field is set.
+   */
+  boolean hasRegionInputsCount();
+  /**
+   * <pre>
+   * Number of inputs that have regions attached
+   * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+   * @return The regionInputsCount.
+   */
+  com.google.protobuf.UInt64Value getRegionInputsCount();
+  /**
+   * <pre>
+   * Number of inputs that have regions attached
+   * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getRegionInputsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of frames that have regions attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+   * @return Whether the regionFramesCount field is set.
+   */
+  boolean hasRegionFramesCount();
+  /**
+   * <pre>
+   * Number of frames that have regions attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+   * @return The regionFramesCount.
+   */
+  com.google.protobuf.UInt64Value getRegionFramesCount();
+  /**
+   * <pre>
+   * Number of frames that have regions attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getRegionFramesCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of frames
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+   * @return Whether the framesCount field is set.
+   */
+  boolean hasFramesCount();
+  /**
+   * <pre>
+   * Number of frames
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+   * @return The framesCount.
+   */
+  com.google.protobuf.UInt64Value getFramesCount();
+  /**
+   * <pre>
+   * Number of frames
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getFramesCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of inputs that have frames attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+   * @return Whether the frameInputsCount field is set.
+   */
+  boolean hasFrameInputsCount();
+  /**
+   * <pre>
+   * Number of inputs that have frames attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+   * @return The frameInputsCount.
+   */
+  com.google.protobuf.UInt64Value getFrameInputsCount();
+  /**
+   * <pre>
+   * Number of inputs that have frames attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getFrameInputsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of embeddings
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+   * @return Whether the embeddingsCount field is set.
+   */
+  boolean hasEmbeddingsCount();
+  /**
+   * <pre>
+   * Number of embeddings
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+   * @return The embeddingsCount.
+   */
+  com.google.protobuf.UInt64Value getEmbeddingsCount();
+  /**
+   * <pre>
+   * Number of embeddings
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getEmbeddingsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of positive tags added at input-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+   * @return Whether the positiveInputTagsCount field is set.
+   */
+  boolean hasPositiveInputTagsCount();
+  /**
+   * <pre>
+   * Number of positive tags added at input-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+   * @return The positiveInputTagsCount.
+   */
+  com.google.protobuf.UInt64Value getPositiveInputTagsCount();
+  /**
+   * <pre>
+   * Number of positive tags added at input-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getPositiveInputTagsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of positive tags added at region-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+   * @return Whether the positiveRegionTagsCount field is set.
+   */
+  boolean hasPositiveRegionTagsCount();
+  /**
+   * <pre>
+   * Number of positive tags added at region-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+   * @return The positiveRegionTagsCount.
+   */
+  com.google.protobuf.UInt64Value getPositiveRegionTagsCount();
+  /**
+   * <pre>
+   * Number of positive tags added at region-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getPositiveRegionTagsCountOrBuilder();
+
+  /**
+   * <pre>
+   * Number of positive tags added at frame-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+   * @return Whether the positiveFrameTagsCount field is set.
+   */
+  boolean hasPositiveFrameTagsCount();
+  /**
+   * <pre>
+   * Number of positive tags added at frame-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+   * @return The positiveFrameTagsCount.
+   */
+  com.google.protobuf.UInt64Value getPositiveFrameTagsCount();
+  /**
+   * <pre>
+   * Number of positive tags added at frame-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+   */
+  com.google.protobuf.UInt64ValueOrBuilder getPositiveFrameTagsCountOrBuilder();
 }
