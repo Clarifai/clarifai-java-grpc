@@ -22,7 +22,7 @@ Via Gradle:
 
 ```
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -35,9 +35,9 @@ Via Maven:
 ```
 <repositories>
     <repository>
-        <id>jcenter</id>
-        <name>jcenter</name>
-        <url>https://jcenter.bintray.com</url>
+        <id>mavenCentral</id>
+        <name>mavenCentral</name>
+        <url>http://repo1.maven.org/maven2</url>
     </repository>
 </repositories>
 
