@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostWorkflowResultsRequest}
  */
-public  final class PostWorkflowResultsRequest extends
+public final class PostWorkflowResultsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostWorkflowResultsRequest)
     PostWorkflowResultsRequestOrBuilder {
@@ -132,6 +132,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -162,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -169,12 +172,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -191,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * <code>string workflow_id = 2;</code>
    * @return The workflowId.
    */
+  @java.lang.Override
   public java.lang.String getWorkflowId() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
@@ -213,6 +219,7 @@ private static final long serialVersionUID = 0L;
    * <code>string workflow_id = 2;</code>
    * @return The bytes for workflowId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getWorkflowIdBytes() {
     java.lang.Object ref = workflowId_;
@@ -238,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * <code>string version_id = 7;</code>
    * @return The versionId.
    */
+  @java.lang.Override
   public java.lang.String getVersionId() {
     java.lang.Object ref = versionId_;
     if (ref instanceof java.lang.String) {
@@ -259,6 +267,7 @@ private static final long serialVersionUID = 0L;
    * <code>string version_id = 7;</code>
    * @return The bytes for versionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getVersionIdBytes() {
     java.lang.Object ref = versionId_;
@@ -278,12 +287,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Input inputs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Input> getInputsList() {
     return inputs_;
   }
   /**
    * <code>repeated .clarifai.api.Input inputs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.InputOrBuilder> 
       getInputsOrBuilderList() {
     return inputs_;
@@ -291,18 +302,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Input inputs = 3;</code>
    */
+  @java.lang.Override
   public int getInputsCount() {
     return inputs_.size();
   }
   /**
    * <code>repeated .clarifai.api.Input inputs = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Input getInputs(int index) {
     return inputs_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.Input inputs = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(
       int index) {
     return inputs_.get(index);
@@ -323,6 +337,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.OutputConfig output_config = 4;</code>
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -339,6 +354,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.OutputConfig output_config = 4;</code>
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.OutputConfig getOutputConfig() {
     return outputConfig_ == null ? com.clarifai.grpc.api.OutputConfig.getDefaultInstance() : outputConfig_;
   }
@@ -354,6 +370,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputConfig output_config = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -368,6 +385,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool favor_clarifai_workflows = 5;</code>
    * @return The favorClarifaiWorkflows.
    */
+  @java.lang.Override
   public boolean getFavorClarifaiWorkflows() {
     return favorClarifaiWorkflows_;
   }
@@ -384,6 +402,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
    * @return Whether the workflowState field is set.
    */
+  @java.lang.Override
   public boolean hasWorkflowState() {
     return workflowState_ != null;
   }
@@ -397,6 +416,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
    * @return The workflowState.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowState getWorkflowState() {
     return workflowState_ == null ? com.clarifai.grpc.api.WorkflowState.getDefaultInstance() : workflowState_;
   }
@@ -409,6 +429,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder() {
     return getWorkflowState();
   }
@@ -430,7 +451,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, workflowId_);
     }
     for (int i = 0; i < inputs_.size(); i++) {
@@ -445,7 +466,7 @@ private static final long serialVersionUID = 0L;
     if (workflowState_ != null) {
       output.writeMessage(6, getWorkflowState());
     }
-    if (!getVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, versionId_);
     }
     unknownFields.writeTo(output);
@@ -461,7 +482,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, workflowId_);
     }
     for (int i = 0; i < inputs_.size(); i++) {
@@ -480,7 +501,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getWorkflowState());
     }
-    if (!getVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, versionId_);
     }
     size += unknownFields.getSerializedSize();
@@ -1676,6 +1697,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool favor_clarifai_workflows = 5;</code>
      * @return The favorClarifaiWorkflows.
      */
+    @java.lang.Override
     public boolean getFavorClarifaiWorkflows() {
       return favorClarifaiWorkflows_;
     }

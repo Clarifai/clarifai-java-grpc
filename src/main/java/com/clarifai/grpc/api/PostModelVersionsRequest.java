@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostModelVersionsRequest}
  */
-public  final class PostModelVersionsRequest extends
+public final class PostModelVersionsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostModelVersionsRequest)
     PostModelVersionsRequestOrBuilder {
@@ -123,11 +123,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 56: {
-
-            evaluateAfterTraining_ = input.readBool();
-            break;
-          }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -147,6 +142,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 82: {
+            com.clarifai.grpc.api.EvalInfo.Builder subBuilder = null;
+            if (evalInfo_ != null) {
+              subBuilder = evalInfo_.toBuilder();
+            }
+            evalInfo_ = input.readMessage(com.clarifai.grpc.api.EvalInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(evalInfo_);
+              evalInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +166,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -188,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -195,12 +206,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -211,6 +224,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 2;</code>
    * @return The modelId.
    */
+  @java.lang.Override
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +241,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 2;</code>
    * @return The bytes for modelId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelIdBytes() {
     java.lang.Object ref = modelId_;
@@ -244,58 +259,38 @@ private static final long serialVersionUID = 0L;
   public static final int MODEL_VERSIONS_FIELD_NUMBER = 3;
   private java.util.List<com.clarifai.grpc.api.ModelVersion> modelVersions_;
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ModelVersion> getModelVersionsList() {
     return modelVersions_;
   }
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ModelVersionOrBuilder> 
       getModelVersionsOrBuilderList() {
     return modelVersions_;
   }
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
+  @java.lang.Override
   public int getModelVersionsCount() {
     return modelVersions_.size();
   }
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelVersion getModelVersions(int index) {
     return modelVersions_.get(index);
   }
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionsOrBuilder(
       int index) {
     return modelVersions_.get(index);
@@ -306,35 +301,42 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Use this to filter inputs that are used in training
-   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+   * Alternatively, dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4510
    * @return Whether the search field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasSearch() {
     return search_ != null;
   }
   /**
    * <pre>
    * Use this to filter inputs that are used in training
-   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+   * Alternatively, dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4510
    * @return The search.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.clarifai.grpc.api.Search getSearch() {
     return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
   }
   /**
    * <pre>
    * Use this to filter inputs that are used in training
-   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+   * Alternatively, dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
     return getSearch();
   }
@@ -347,10 +349,13 @@ private static final long serialVersionUID = 0L;
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_search = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4513
    * @return Whether the trainSearch field is set.
    */
-  public boolean hasTrainSearch() {
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasTrainSearch() {
     return trainSearch_ != null;
   }
   /**
@@ -359,10 +364,13 @@ private static final long serialVersionUID = 0L;
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_search = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4513
    * @return The trainSearch.
    */
-  public com.clarifai.grpc.api.Search getTrainSearch() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.Search getTrainSearch() {
     return trainSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainSearch_;
   }
   /**
@@ -371,9 +379,10 @@ private static final long serialVersionUID = 0L;
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_search = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder() {
     return getTrainSearch();
   }
 
@@ -385,10 +394,13 @@ private static final long serialVersionUID = 0L;
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search test_search = 6;</code>
+   * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4516
    * @return Whether the testSearch field is set.
    */
-  public boolean hasTestSearch() {
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasTestSearch() {
     return testSearch_ != null;
   }
   /**
@@ -397,10 +409,13 @@ private static final long serialVersionUID = 0L;
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search test_search = 6;</code>
+   * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4516
    * @return The testSearch.
    */
-  public com.clarifai.grpc.api.Search getTestSearch() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.Search getTestSearch() {
     return testSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
   }
   /**
@@ -409,24 +424,11 @@ private static final long serialVersionUID = 0L;
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search test_search = 6;</code>
+   * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
     return getTestSearch();
-  }
-
-  public static final int EVALUATE_AFTER_TRAINING_FIELD_NUMBER = 7;
-  private boolean evaluateAfterTraining_;
-  /**
-   * <pre>
-   * whether to evaluate the transfer trained model after training
-   * </pre>
-   *
-   * <code>bool evaluate_after_training = 7;</code>
-   * @return The evaluateAfterTraining.
-   */
-  public boolean getEvaluateAfterTraining() {
-    return evaluateAfterTraining_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 8;
@@ -439,6 +441,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 8;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -459,6 +462,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 8;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -488,6 +492,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
    * @return Whether the datasetVersion field is set.
    */
+  @java.lang.Override
   public boolean hasDatasetVersion() {
     return datasetVersion_ != null;
   }
@@ -504,6 +509,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
    * @return The datasetVersion.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DatasetVersion getDatasetVersion() {
     return datasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
   }
@@ -519,8 +525,50 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder() {
     return getDatasetVersion();
+  }
+
+  public static final int EVAL_INFO_FIELD_NUMBER = 10;
+  private com.clarifai.grpc.api.EvalInfo evalInfo_;
+  /**
+   * <pre>
+   * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+   * We will merge this with default_eval_info.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   * @return Whether the evalInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvalInfo() {
+    return evalInfo_ != null;
+  }
+  /**
+   * <pre>
+   * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+   * We will merge this with default_eval_info.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   * @return The evalInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalInfo getEvalInfo() {
+    return evalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
+  }
+  /**
+   * <pre>
+   * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+   * We will merge this with default_eval_info.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder() {
+    return getEvalInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -540,7 +588,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
     for (int i = 0; i < modelVersions_.size(); i++) {
@@ -555,14 +603,14 @@ private static final long serialVersionUID = 0L;
     if (testSearch_ != null) {
       output.writeMessage(6, getTestSearch());
     }
-    if (evaluateAfterTraining_ != false) {
-      output.writeBool(7, evaluateAfterTraining_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
     }
     if (datasetVersion_ != null) {
       output.writeMessage(9, getDatasetVersion());
+    }
+    if (evalInfo_ != null) {
+      output.writeMessage(10, getEvalInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -577,7 +625,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
     }
     for (int i = 0; i < modelVersions_.size(); i++) {
@@ -596,16 +644,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getTestSearch());
     }
-    if (evaluateAfterTraining_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, evaluateAfterTraining_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
     }
     if (datasetVersion_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getDatasetVersion());
+    }
+    if (evalInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getEvalInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -646,14 +694,17 @@ private static final long serialVersionUID = 0L;
       if (!getTestSearch()
           .equals(other.getTestSearch())) return false;
     }
-    if (getEvaluateAfterTraining()
-        != other.getEvaluateAfterTraining()) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (hasDatasetVersion() != other.hasDatasetVersion()) return false;
     if (hasDatasetVersion()) {
       if (!getDatasetVersion()
           .equals(other.getDatasetVersion())) return false;
+    }
+    if (hasEvalInfo() != other.hasEvalInfo()) return false;
+    if (hasEvalInfo()) {
+      if (!getEvalInfo()
+          .equals(other.getEvalInfo())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -688,14 +739,15 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TEST_SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getTestSearch().hashCode();
     }
-    hash = (37 * hash) + EVALUATE_AFTER_TRAINING_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEvaluateAfterTraining());
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (hasDatasetVersion()) {
       hash = (37 * hash) + DATASET_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getDatasetVersion().hashCode();
+    }
+    if (hasEvalInfo()) {
+      hash = (37 * hash) + EVAL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getEvalInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -867,8 +919,6 @@ private static final long serialVersionUID = 0L;
         testSearch_ = null;
         testSearchBuilder_ = null;
       }
-      evaluateAfterTraining_ = false;
-
       description_ = "";
 
       if (datasetVersionBuilder_ == null) {
@@ -876,6 +926,12 @@ private static final long serialVersionUID = 0L;
       } else {
         datasetVersion_ = null;
         datasetVersionBuilder_ = null;
+      }
+      if (evalInfoBuilder_ == null) {
+        evalInfo_ = null;
+      } else {
+        evalInfo_ = null;
+        evalInfoBuilder_ = null;
       }
       return this;
     }
@@ -934,12 +990,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.testSearch_ = testSearchBuilder_.build();
       }
-      result.evaluateAfterTraining_ = evaluateAfterTraining_;
       result.description_ = description_;
       if (datasetVersionBuilder_ == null) {
         result.datasetVersion_ = datasetVersion_;
       } else {
         result.datasetVersion_ = datasetVersionBuilder_.build();
+      }
+      if (evalInfoBuilder_ == null) {
+        result.evalInfo_ = evalInfo_;
+      } else {
+        result.evalInfo_ = evalInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1031,15 +1091,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasTestSearch()) {
         mergeTestSearch(other.getTestSearch());
       }
-      if (other.getEvaluateAfterTraining() != false) {
-        setEvaluateAfterTraining(other.getEvaluateAfterTraining());
-      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
       }
       if (other.hasDatasetVersion()) {
         mergeDatasetVersion(other.getDatasetVersion());
+      }
+      if (other.hasEvalInfo()) {
+        mergeEvalInfo(other.getEvalInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1279,11 +1339,6 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ModelVersion, com.clarifai.grpc.api.ModelVersion.Builder, com.clarifai.grpc.api.ModelVersionOrBuilder> modelVersionsBuilder_;
 
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public java.util.List<com.clarifai.grpc.api.ModelVersion> getModelVersionsList() {
@@ -1294,11 +1349,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public int getModelVersionsCount() {
@@ -1309,11 +1359,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public com.clarifai.grpc.api.ModelVersion getModelVersions(int index) {
@@ -1324,11 +1369,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder setModelVersions(
@@ -1346,11 +1386,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder setModelVersions(
@@ -1365,11 +1400,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder addModelVersions(com.clarifai.grpc.api.ModelVersion value) {
@@ -1386,11 +1416,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder addModelVersions(
@@ -1408,11 +1433,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder addModelVersions(
@@ -1427,11 +1447,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder addModelVersions(
@@ -1446,11 +1461,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder addAllModelVersions(
@@ -1466,11 +1476,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder clearModelVersions() {
@@ -1484,11 +1489,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public Builder removeModelVersions(int index) {
@@ -1502,11 +1502,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public com.clarifai.grpc.api.ModelVersion.Builder getModelVersionsBuilder(
@@ -1514,11 +1509,6 @@ private static final long serialVersionUID = 0L;
       return getModelVersionsFieldBuilder().getBuilder(index);
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionsOrBuilder(
@@ -1529,11 +1519,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.ModelVersionOrBuilder> 
@@ -1545,11 +1530,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public com.clarifai.grpc.api.ModelVersion.Builder addModelVersionsBuilder() {
@@ -1557,11 +1537,6 @@ private static final long serialVersionUID = 0L;
           com.clarifai.grpc.api.ModelVersion.getDefaultInstance());
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public com.clarifai.grpc.api.ModelVersion.Builder addModelVersionsBuilder(
@@ -1570,11 +1545,6 @@ private static final long serialVersionUID = 0L;
           index, com.clarifai.grpc.api.ModelVersion.getDefaultInstance());
     }
     /**
-     * <pre>
-     * This lets you post an existing model version rather than training a new one.
-     * For internal Clarifai use only to start.
-     * </pre>
-     *
      * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
      */
     public java.util.List<com.clarifai.grpc.api.ModelVersion.Builder> 
@@ -1602,10 +1572,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4510
      * @return Whether the search field is set.
      */
     @java.lang.Deprecated public boolean hasSearch() {
@@ -1614,10 +1586,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4510
      * @return The search.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.Search getSearch() {
@@ -1630,7 +1604,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1651,7 +1625,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1670,7 +1644,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1693,7 +1667,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1712,7 +1686,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1725,7 +1699,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1741,7 +1715,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Use this to filter inputs that are used in training
-     * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+     * Alternatively, dataset_version field.
      * </pre>
      *
      * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -1769,10 +1743,12 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4513
      * @return Whether the trainSearch field is set.
      */
-    public boolean hasTrainSearch() {
+    @java.lang.Deprecated public boolean hasTrainSearch() {
       return trainSearchBuilder_ != null || trainSearch_ != null;
     }
     /**
@@ -1781,10 +1757,12 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4513
      * @return The trainSearch.
      */
-    public com.clarifai.grpc.api.Search getTrainSearch() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Search getTrainSearch() {
       if (trainSearchBuilder_ == null) {
         return trainSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : trainSearch_;
       } else {
@@ -1797,9 +1775,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
-    public Builder setTrainSearch(com.clarifai.grpc.api.Search value) {
+    @java.lang.Deprecated public Builder setTrainSearch(com.clarifai.grpc.api.Search value) {
       if (trainSearchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1818,9 +1796,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
-    public Builder setTrainSearch(
+    @java.lang.Deprecated public Builder setTrainSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
       if (trainSearchBuilder_ == null) {
         trainSearch_ = builderForValue.build();
@@ -1837,9 +1815,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
-    public Builder mergeTrainSearch(com.clarifai.grpc.api.Search value) {
+    @java.lang.Deprecated public Builder mergeTrainSearch(com.clarifai.grpc.api.Search value) {
       if (trainSearchBuilder_ == null) {
         if (trainSearch_ != null) {
           trainSearch_ =
@@ -1860,9 +1838,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
-    public Builder clearTrainSearch() {
+    @java.lang.Deprecated public Builder clearTrainSearch() {
       if (trainSearchBuilder_ == null) {
         trainSearch_ = null;
         onChanged();
@@ -1879,9 +1857,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getTrainSearchBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Search.Builder getTrainSearchBuilder() {
       
       onChanged();
       return getTrainSearchFieldBuilder().getBuilder();
@@ -1892,9 +1870,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder() {
       if (trainSearchBuilder_ != null) {
         return trainSearchBuilder_.getMessageOrBuilder();
       } else {
@@ -1908,7 +1886,7 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search train_search = 5;</code>
+     * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
@@ -1933,10 +1911,12 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4516
      * @return Whether the testSearch field is set.
      */
-    public boolean hasTestSearch() {
+    @java.lang.Deprecated public boolean hasTestSearch() {
       return testSearchBuilder_ != null || testSearch_ != null;
     }
     /**
@@ -1945,10 +1925,12 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4516
      * @return The testSearch.
      */
-    public com.clarifai.grpc.api.Search getTestSearch() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Search getTestSearch() {
       if (testSearchBuilder_ == null) {
         return testSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : testSearch_;
       } else {
@@ -1961,9 +1943,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
-    public Builder setTestSearch(com.clarifai.grpc.api.Search value) {
+    @java.lang.Deprecated public Builder setTestSearch(com.clarifai.grpc.api.Search value) {
       if (testSearchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1982,9 +1964,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
-    public Builder setTestSearch(
+    @java.lang.Deprecated public Builder setTestSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
       if (testSearchBuilder_ == null) {
         testSearch_ = builderForValue.build();
@@ -2001,9 +1983,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
-    public Builder mergeTestSearch(com.clarifai.grpc.api.Search value) {
+    @java.lang.Deprecated public Builder mergeTestSearch(com.clarifai.grpc.api.Search value) {
       if (testSearchBuilder_ == null) {
         if (testSearch_ != null) {
           testSearch_ =
@@ -2024,9 +2006,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
-    public Builder clearTestSearch() {
+    @java.lang.Deprecated public Builder clearTestSearch() {
       if (testSearchBuilder_ == null) {
         testSearch_ = null;
         onChanged();
@@ -2043,9 +2025,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getTestSearchBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Search.Builder getTestSearchBuilder() {
       
       onChanged();
       return getTestSearchFieldBuilder().getBuilder();
@@ -2056,9 +2038,9 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder() {
       if (testSearchBuilder_ != null) {
         return testSearchBuilder_.getMessageOrBuilder();
       } else {
@@ -2072,7 +2054,7 @@ private static final long serialVersionUID = 0L;
      * Alternatively, use dataset_version field.
      * </pre>
      *
-     * <code>.clarifai.api.Search test_search = 6;</code>
+     * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
@@ -2086,48 +2068,6 @@ private static final long serialVersionUID = 0L;
         testSearch_ = null;
       }
       return testSearchBuilder_;
-    }
-
-    private boolean evaluateAfterTraining_ ;
-    /**
-     * <pre>
-     * whether to evaluate the transfer trained model after training
-     * </pre>
-     *
-     * <code>bool evaluate_after_training = 7;</code>
-     * @return The evaluateAfterTraining.
-     */
-    public boolean getEvaluateAfterTraining() {
-      return evaluateAfterTraining_;
-    }
-    /**
-     * <pre>
-     * whether to evaluate the transfer trained model after training
-     * </pre>
-     *
-     * <code>bool evaluate_after_training = 7;</code>
-     * @param value The evaluateAfterTraining to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEvaluateAfterTraining(boolean value) {
-      
-      evaluateAfterTraining_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * whether to evaluate the transfer trained model after training
-     * </pre>
-     *
-     * <code>bool evaluate_after_training = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEvaluateAfterTraining() {
-      
-      evaluateAfterTraining_ = false;
-      onChanged();
-      return this;
     }
 
     private java.lang.Object description_ = "";
@@ -2424,6 +2364,170 @@ private static final long serialVersionUID = 0L;
         datasetVersion_ = null;
       }
       return datasetVersionBuilder_;
+    }
+
+    private com.clarifai.grpc.api.EvalInfo evalInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> evalInfoBuilder_;
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     * @return Whether the evalInfo field is set.
+     */
+    public boolean hasEvalInfo() {
+      return evalInfoBuilder_ != null || evalInfo_ != null;
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     * @return The evalInfo.
+     */
+    public com.clarifai.grpc.api.EvalInfo getEvalInfo() {
+      if (evalInfoBuilder_ == null) {
+        return evalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
+      } else {
+        return evalInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    public Builder setEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
+      if (evalInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evalInfo_ = value;
+        onChanged();
+      } else {
+        evalInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    public Builder setEvalInfo(
+        com.clarifai.grpc.api.EvalInfo.Builder builderForValue) {
+      if (evalInfoBuilder_ == null) {
+        evalInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        evalInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    public Builder mergeEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
+      if (evalInfoBuilder_ == null) {
+        if (evalInfo_ != null) {
+          evalInfo_ =
+            com.clarifai.grpc.api.EvalInfo.newBuilder(evalInfo_).mergeFrom(value).buildPartial();
+        } else {
+          evalInfo_ = value;
+        }
+        onChanged();
+      } else {
+        evalInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    public Builder clearEvalInfo() {
+      if (evalInfoBuilder_ == null) {
+        evalInfo_ = null;
+        onChanged();
+      } else {
+        evalInfo_ = null;
+        evalInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    public com.clarifai.grpc.api.EvalInfo.Builder getEvalInfoBuilder() {
+      
+      onChanged();
+      return getEvalInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    public com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder() {
+      if (evalInfoBuilder_ != null) {
+        return evalInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return evalInfo_ == null ?
+            com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+     * We will merge this with default_eval_info.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> 
+        getEvalInfoFieldBuilder() {
+      if (evalInfoBuilder_ == null) {
+        evalInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder>(
+                getEvalInfo(),
+                getParentForChildren(),
+                isClean());
+        evalInfo_ = null;
+      }
+      return evalInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

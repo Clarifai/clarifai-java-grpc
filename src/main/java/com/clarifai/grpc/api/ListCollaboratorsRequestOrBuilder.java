@@ -32,4 +32,26 @@ public interface ListCollaboratorsRequestOrBuilder extends
    * @return The listAllCollaborators.
    */
   boolean getListAllCollaborators();
+
+  /**
+   * <pre>
+   * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+   * Defaults to 1.
+   * </pre>
+   *
+   * <code>uint32 page = 3;</code>
+   * @return The page.
+   */
+  int getPage();
+
+  /**
+   * <pre>
+   * (optional URL parameter) The number of results that will be contained in each page. Defaults
+   * to 128.
+   * </pre>
+   *
+   * <code>uint32 per_page = 4;</code>
+   * @return The perPage.
+   */
+  int getPerPage();
 }

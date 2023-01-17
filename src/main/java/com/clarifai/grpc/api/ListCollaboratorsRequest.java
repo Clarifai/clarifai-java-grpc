@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ListCollaboratorsRequest}
  */
-public  final class ListCollaboratorsRequest extends
+public final class ListCollaboratorsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ListCollaboratorsRequest)
     ListCollaboratorsRequestOrBuilder {
@@ -70,6 +70,16 @@ private static final long serialVersionUID = 0L;
             listAllCollaborators_ = input.readBool();
             break;
           }
+          case 24: {
+
+            page_ = input.readUInt32();
+            break;
+          }
+          case 32: {
+
+            perPage_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -81,6 +91,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -108,6 +120,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -115,12 +128,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -136,8 +151,41 @@ private static final long serialVersionUID = 0L;
    * <code>bool list_all_collaborators = 2;</code>
    * @return The listAllCollaborators.
    */
+  @java.lang.Override
   public boolean getListAllCollaborators() {
     return listAllCollaborators_;
+  }
+
+  public static final int PAGE_FIELD_NUMBER = 3;
+  private int page_;
+  /**
+   * <pre>
+   * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+   * Defaults to 1.
+   * </pre>
+   *
+   * <code>uint32 page = 3;</code>
+   * @return The page.
+   */
+  @java.lang.Override
+  public int getPage() {
+    return page_;
+  }
+
+  public static final int PER_PAGE_FIELD_NUMBER = 4;
+  private int perPage_;
+  /**
+   * <pre>
+   * (optional URL parameter) The number of results that will be contained in each page. Defaults
+   * to 128.
+   * </pre>
+   *
+   * <code>uint32 per_page = 4;</code>
+   * @return The perPage.
+   */
+  @java.lang.Override
+  public int getPerPage() {
+    return perPage_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -160,6 +208,12 @@ private static final long serialVersionUID = 0L;
     if (listAllCollaborators_ != false) {
       output.writeBool(2, listAllCollaborators_);
     }
+    if (page_ != 0) {
+      output.writeUInt32(3, page_);
+    }
+    if (perPage_ != 0) {
+      output.writeUInt32(4, perPage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -176,6 +230,14 @@ private static final long serialVersionUID = 0L;
     if (listAllCollaborators_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, listAllCollaborators_);
+    }
+    if (page_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(3, page_);
+    }
+    if (perPage_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(4, perPage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -199,6 +261,10 @@ private static final long serialVersionUID = 0L;
     }
     if (getListAllCollaborators()
         != other.getListAllCollaborators()) return false;
+    if (getPage()
+        != other.getPage()) return false;
+    if (getPerPage()
+        != other.getPerPage()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -217,6 +283,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LIST_ALL_COLLABORATORS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getListAllCollaborators());
+    hash = (37 * hash) + PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPage();
+    hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPerPage();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -362,6 +432,10 @@ private static final long serialVersionUID = 0L;
       }
       listAllCollaborators_ = false;
 
+      page_ = 0;
+
+      perPage_ = 0;
+
       return this;
     }
 
@@ -394,6 +468,8 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.listAllCollaborators_ = listAllCollaborators_;
+      result.page_ = page_;
+      result.perPage_ = perPage_;
       onBuilt();
       return result;
     }
@@ -447,6 +523,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getListAllCollaborators() != false) {
         setListAllCollaborators(other.getListAllCollaborators());
+      }
+      if (other.getPage() != 0) {
+        setPage(other.getPage());
+      }
+      if (other.getPerPage() != 0) {
+        setPerPage(other.getPerPage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -606,6 +688,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool list_all_collaborators = 2;</code>
      * @return The listAllCollaborators.
      */
+    @java.lang.Override
     public boolean getListAllCollaborators() {
       return listAllCollaborators_;
     }
@@ -637,6 +720,98 @@ private static final long serialVersionUID = 0L;
     public Builder clearListAllCollaborators() {
       
       listAllCollaborators_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int page_ ;
+    /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 page = 3;</code>
+     * @return The page.
+     */
+    @java.lang.Override
+    public int getPage() {
+      return page_;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 page = 3;</code>
+     * @param value The page to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPage(int value) {
+      
+      page_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The page number. Pagination is used to split the results into chunks.
+     * Defaults to 1.
+     * </pre>
+     *
+     * <code>uint32 page = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPage() {
+      
+      page_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int perPage_ ;
+    /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
+     * <code>uint32 per_page = 4;</code>
+     * @return The perPage.
+     */
+    @java.lang.Override
+    public int getPerPage() {
+      return perPage_;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
+     * <code>uint32 per_page = 4;</code>
+     * @param value The perPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerPage(int value) {
+      
+      perPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) The number of results that will be contained in each page. Defaults
+     * to 128.
+     * </pre>
+     *
+     * <code>uint32 per_page = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPerPage() {
+      
+      perPage_ = 0;
       onChanged();
       return this;
     }

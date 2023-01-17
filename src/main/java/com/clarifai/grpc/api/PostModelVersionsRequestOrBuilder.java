@@ -35,49 +35,24 @@ public interface PostModelVersionsRequestOrBuilder extends
       getModelIdBytes();
 
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
   java.util.List<com.clarifai.grpc.api.ModelVersion> 
       getModelVersionsList();
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
   com.clarifai.grpc.api.ModelVersion getModelVersions(int index);
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
   int getModelVersionsCount();
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.ModelVersionOrBuilder> 
       getModelVersionsOrBuilderList();
   /**
-   * <pre>
-   * This lets you post an existing model version rather than training a new one.
-   * For internal Clarifai use only to start.
-   * </pre>
-   *
    * <code>repeated .clarifai.api.ModelVersion model_versions = 3;</code>
    */
   com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionsOrBuilder(
@@ -86,27 +61,31 @@ public interface PostModelVersionsRequestOrBuilder extends
   /**
    * <pre>
    * Use this to filter inputs that are used in training
-   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+   * Alternatively, dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4510
    * @return Whether the search field is set.
    */
   @java.lang.Deprecated boolean hasSearch();
   /**
    * <pre>
    * Use this to filter inputs that are used in training
-   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+   * Alternatively, dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4510
    * @return The search.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Search getSearch();
   /**
    * <pre>
    * Use this to filter inputs that are used in training
-   * Alternatively, use train_search &amp; test_search fields OR dataset_version field.
+   * Alternatively, dataset_version field.
    * </pre>
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
@@ -119,29 +98,33 @@ public interface PostModelVersionsRequestOrBuilder extends
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_search = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4513
    * @return Whether the trainSearch field is set.
    */
-  boolean hasTrainSearch();
+  @java.lang.Deprecated boolean hasTrainSearch();
   /**
    * <pre>
    *train_search is used to specify what data to train on.
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_search = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4513
    * @return The trainSearch.
    */
-  com.clarifai.grpc.api.Search getTrainSearch();
+  @java.lang.Deprecated com.clarifai.grpc.api.Search getTrainSearch();
   /**
    * <pre>
    *train_search is used to specify what data to train on.
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search train_search = 5;</code>
+   * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.SearchOrBuilder getTrainSearchOrBuilder();
 
   /**
    * <pre>
@@ -149,39 +132,33 @@ public interface PostModelVersionsRequestOrBuilder extends
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search test_search = 6;</code>
+   * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4516
    * @return Whether the testSearch field is set.
    */
-  boolean hasTestSearch();
+  @java.lang.Deprecated boolean hasTestSearch();
   /**
    * <pre>
    *test_search is used to specify what data to test on.
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search test_search = 6;</code>
+   * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4516
    * @return The testSearch.
    */
-  com.clarifai.grpc.api.Search getTestSearch();
+  @java.lang.Deprecated com.clarifai.grpc.api.Search getTestSearch();
   /**
    * <pre>
    *test_search is used to specify what data to test on.
    * Alternatively, use dataset_version field.
    * </pre>
    *
-   * <code>.clarifai.api.Search test_search = 6;</code>
+   * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder();
-
-  /**
-   * <pre>
-   * whether to evaluate the transfer trained model after training
-   * </pre>
-   *
-   * <code>bool evaluate_after_training = 7;</code>
-   * @return The evaluateAfterTraining.
-   */
-  boolean getEvaluateAfterTraining();
+  @java.lang.Deprecated com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder();
 
   /**
    * <pre>
@@ -244,4 +221,34 @@ public interface PostModelVersionsRequestOrBuilder extends
    * <code>.clarifai.api.DatasetVersion dataset_version = 9;</code>
    */
   com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder();
+
+  /**
+   * <pre>
+   * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+   * We will merge this with default_eval_info.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   * @return Whether the evalInfo field is set.
+   */
+  boolean hasEvalInfo();
+  /**
+   * <pre>
+   * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+   * We will merge this with default_eval_info.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   * @return The evalInfo.
+   */
+  com.clarifai.grpc.api.EvalInfo getEvalInfo();
+  /**
+   * <pre>
+   * When evaluate_after_training set to true, we will do evaluation immediately after training finishes.
+   * We will merge this with default_eval_info.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   */
+  com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder();
 }

@@ -76,7 +76,7 @@ public interface GetModelRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -86,7 +86,7 @@ public interface GetModelRequestOrBuilder extends
       getAdditionalFieldsList();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -95,7 +95,7 @@ public interface GetModelRequestOrBuilder extends
   int getAdditionalFieldsCount();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -105,7 +105,7 @@ public interface GetModelRequestOrBuilder extends
   java.lang.String getAdditionalFields(int index);
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>

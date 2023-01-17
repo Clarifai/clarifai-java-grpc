@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TimeRange}
  */
-public  final class TimeRange extends
+public final class TimeRange extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TimeRange)
     TimeRangeOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -131,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -141,6 +145,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -155,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -166,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -176,6 +183,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp end_time = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.CooccurrenceMatrixEntry}
  */
-public  final class CooccurrenceMatrixEntry extends
+public final class CooccurrenceMatrixEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.CooccurrenceMatrixEntry)
     CooccurrenceMatrixEntryOrBuilder {
@@ -82,6 +82,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -113,6 +115,7 @@ private static final long serialVersionUID = 0L;
    * <code>string row = 1;</code>
    * @return The row.
    */
+  @java.lang.Override
   public java.lang.String getRow() {
     java.lang.Object ref = row_;
     if (ref instanceof java.lang.String) {
@@ -133,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * <code>string row = 1;</code>
    * @return The bytes for row.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getRowBytes() {
     java.lang.Object ref = row_;
@@ -157,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * <code>string col = 2;</code>
    * @return The col.
    */
+  @java.lang.Override
   public java.lang.String getCol() {
     java.lang.Object ref = col_;
     if (ref instanceof java.lang.String) {
@@ -177,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * <code>string col = 2;</code>
    * @return The bytes for col.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getColBytes() {
     java.lang.Object ref = col_;
@@ -197,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 count = 3;</code>
    * @return The count.
    */
+  @java.lang.Override
   public int getCount() {
     return count_;
   }
@@ -215,10 +222,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRowBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(row_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, row_);
     }
-    if (!getColBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(col_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, col_);
     }
     if (count_ != 0) {
@@ -233,10 +240,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRowBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(row_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, row_);
     }
-    if (!getColBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(col_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, col_);
     }
     if (count_ != 0) {
@@ -738,6 +745,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 count = 3;</code>
      * @return The count.
      */
+    @java.lang.Override
     public int getCount() {
       return count_;
     }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Task}
  */
-public  final class Task extends
+public final class Task extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Task)
     TaskOrBuilder {
@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     appId_ = "";
     userId_ = "";
+    labelOrderId_ = "";
   }
 
   @java.lang.Override
@@ -227,6 +228,12 @@ private static final long serialVersionUID = 0L;
             userId_ = s;
             break;
           }
+          case 146: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            labelOrderId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -238,6 +245,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -374,6 +383,10 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -418,6 +431,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -438,6 +452,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -464,6 +479,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -477,6 +493,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -489,6 +506,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -505,6 +523,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 3;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -518,6 +537,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 3;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -530,6 +550,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -544,7 +565,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Task.TaskType type = 4;</code>
    * @return The enum numeric value on the wire for type.
    */
-  public int getTypeValue() {
+  @java.lang.Override public int getTypeValue() {
     return type_;
   }
   /**
@@ -555,7 +576,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Task.TaskType type = 4;</code>
    * @return The type.
    */
-  public com.clarifai.grpc.api.Task.TaskType getType() {
+  @java.lang.Override public com.clarifai.grpc.api.Task.TaskType getType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.Task.TaskType result = com.clarifai.grpc.api.Task.TaskType.valueOf(type_);
     return result == null ? com.clarifai.grpc.api.Task.TaskType.UNRECOGNIZED : result;
@@ -571,6 +592,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 5;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -591,6 +613,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 5;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -615,6 +638,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorker worker = 6;</code>
    * @return Whether the worker field is set.
    */
+  @java.lang.Override
   public boolean hasWorker() {
     return worker_ != null;
   }
@@ -626,6 +650,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorker worker = 6;</code>
    * @return The worker.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskWorker getWorker() {
     return worker_ == null ? com.clarifai.grpc.api.TaskWorker.getDefaultInstance() : worker_;
   }
@@ -636,6 +661,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.TaskWorker worker = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskWorkerOrBuilder getWorkerOrBuilder() {
     return getWorker();
   }
@@ -701,6 +727,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskInputSource input_source = 8;</code>
    * @return Whether the inputSource field is set.
    */
+  @java.lang.Override
   public boolean hasInputSource() {
     return inputSource_ != null;
   }
@@ -712,6 +739,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskInputSource input_source = 8;</code>
    * @return The inputSource.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskInputSource getInputSource() {
     return inputSource_ == null ? com.clarifai.grpc.api.TaskInputSource.getDefaultInstance() : inputSource_;
   }
@@ -722,6 +750,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.TaskInputSource input_source = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskInputSourceOrBuilder getInputSourceOrBuilder() {
     return getInputSource();
   }
@@ -736,6 +765,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 sample_ms = 9;</code>
    * @return The sampleMs.
    */
+  @java.lang.Override
   public int getSampleMs() {
     return sampleMs_;
   }
@@ -750,6 +780,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskAIAssistant ai_assistant = 10;</code>
    * @return Whether the aiAssistant field is set.
    */
+  @java.lang.Override
   public boolean hasAiAssistant() {
     return aiAssistant_ != null;
   }
@@ -761,6 +792,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskAIAssistant ai_assistant = 10;</code>
    * @return The aiAssistant.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskAIAssistant getAiAssistant() {
     return aiAssistant_ == null ? com.clarifai.grpc.api.TaskAIAssistant.getDefaultInstance() : aiAssistant_;
   }
@@ -771,6 +803,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.TaskAIAssistant ai_assistant = 10;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskAIAssistantOrBuilder getAiAssistantOrBuilder() {
     return getAiAssistant();
   }
@@ -785,6 +818,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskReview review = 11;</code>
    * @return Whether the review field is set.
    */
+  @java.lang.Override
   public boolean hasReview() {
     return review_ != null;
   }
@@ -796,6 +830,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskReview review = 11;</code>
    * @return The review.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskReview getReview() {
     return review_ == null ? com.clarifai.grpc.api.TaskReview.getDefaultInstance() : review_;
   }
@@ -806,6 +841,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.TaskReview review = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskReviewOrBuilder getReviewOrBuilder() {
     return getReview();
   }
@@ -820,6 +856,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 12;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -831,6 +868,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 12;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -841,6 +879,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 12;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -855,6 +894,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 13;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -875,6 +915,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 13;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -895,6 +936,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
    * @return Whether the aiAssistParams field is set.
    */
+  @java.lang.Override
   public boolean hasAiAssistParams() {
     return aiAssistParams_ != null;
   }
@@ -902,12 +944,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
    * @return The aiAssistParams.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AiAssistParameters getAiAssistParams() {
     return aiAssistParams_ == null ? com.clarifai.grpc.api.AiAssistParameters.getDefaultInstance() : aiAssistParams_;
   }
   /**
    * <code>.clarifai.api.AiAssistParameters ai_assist_params = 14;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AiAssistParametersOrBuilder getAiAssistParamsOrBuilder() {
     return getAiAssistParams();
   }
@@ -924,6 +968,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -937,6 +982,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -949,6 +995,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -963,6 +1010,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 16;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -983,6 +1031,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 16;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -1007,6 +1056,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 17;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -1027,6 +1077,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 17;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -1035,6 +1086,52 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LABEL_ORDER_ID_FIELD_NUMBER = 18;
+  private volatile java.lang.Object labelOrderId_;
+  /**
+   * <pre>
+   * The label order the task belongs to.
+   * </pre>
+   *
+   * <code>string label_order_id = 18;</code>
+   * @return The labelOrderId.
+   */
+  @java.lang.Override
+  public java.lang.String getLabelOrderId() {
+    java.lang.Object ref = labelOrderId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      labelOrderId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The label order the task belongs to.
+   * </pre>
+   *
+   * <code>string label_order_id = 18;</code>
+   * @return The bytes for labelOrderId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLabelOrderIdBytes() {
+    java.lang.Object ref = labelOrderId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      labelOrderId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1055,7 +1152,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (createdAt_ != null) {
@@ -1067,7 +1164,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.clarifai.grpc.api.Task.TaskType.TYPE_NOT_SET.getNumber()) {
       output.writeEnum(4, type_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
     if (worker_ != null) {
@@ -1091,7 +1188,7 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(12, getStatus());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, name_);
     }
     if (aiAssistParams_ != null) {
@@ -1100,11 +1197,14 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       output.writeMessage(15, getVisibility());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, appId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, userId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelOrderId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, labelOrderId_);
     }
     unknownFields.writeTo(output);
   }
@@ -1115,7 +1215,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (createdAt_ != null) {
@@ -1130,7 +1230,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, type_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
     if (worker_ != null) {
@@ -1165,7 +1265,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getStatus());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, name_);
     }
     if (aiAssistParams_ != null) {
@@ -1176,11 +1276,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getVisibility());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, appId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, userId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(labelOrderId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, labelOrderId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1257,6 +1360,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAppId())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (!getLabelOrderId()
+        .equals(other.getLabelOrderId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1322,6 +1427,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAppId().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + LABEL_ORDER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getLabelOrderId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1529,6 +1636,8 @@ private static final long serialVersionUID = 0L;
 
       userId_ = "";
 
+      labelOrderId_ = "";
+
       return this;
     }
 
@@ -1613,6 +1722,7 @@ private static final long serialVersionUID = 0L;
       }
       result.appId_ = appId_;
       result.userId_ = userId_;
+      result.labelOrderId_ = labelOrderId_;
       onBuilt();
       return result;
     }
@@ -1722,6 +1832,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
+        onChanged();
+      }
+      if (!other.getLabelOrderId().isEmpty()) {
+        labelOrderId_ = other.labelOrderId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -2205,7 +2319,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.Task.TaskType type = 4;</code>
      * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -2218,6 +2332,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+      
       type_ = value;
       onChanged();
       return this;
@@ -2230,6 +2345,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.Task.TaskType type = 4;</code>
      * @return The type.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.Task.TaskType getType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.Task.TaskType result = com.clarifai.grpc.api.Task.TaskType.valueOf(type_);
@@ -2829,6 +2945,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 sample_ms = 9;</code>
      * @return The sampleMs.
      */
+    @java.lang.Override
     public int getSampleMs() {
       return sampleMs_;
     }
@@ -3903,6 +4020,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       userId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object labelOrderId_ = "";
+    /**
+     * <pre>
+     * The label order the task belongs to.
+     * </pre>
+     *
+     * <code>string label_order_id = 18;</code>
+     * @return The labelOrderId.
+     */
+    public java.lang.String getLabelOrderId() {
+      java.lang.Object ref = labelOrderId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        labelOrderId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The label order the task belongs to.
+     * </pre>
+     *
+     * <code>string label_order_id = 18;</code>
+     * @return The bytes for labelOrderId.
+     */
+    public com.google.protobuf.ByteString
+        getLabelOrderIdBytes() {
+      java.lang.Object ref = labelOrderId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        labelOrderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The label order the task belongs to.
+     * </pre>
+     *
+     * <code>string label_order_id = 18;</code>
+     * @param value The labelOrderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelOrderId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      labelOrderId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The label order the task belongs to.
+     * </pre>
+     *
+     * <code>string label_order_id = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLabelOrderId() {
+      
+      labelOrderId_ = getDefaultInstance().getLabelOrderId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The label order the task belongs to.
+     * </pre>
+     *
+     * <code>string label_order_id = 18;</code>
+     * @param value The bytes for labelOrderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelOrderIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      labelOrderId_ = value;
       onChanged();
       return this;
     }

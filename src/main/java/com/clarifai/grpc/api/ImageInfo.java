@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * Protobuf type {@code clarifai.api.ImageInfo}
  */
-public  final class ImageInfo extends
+public final class ImageInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ImageInfo)
     ImageInfoOrBuilder {
@@ -83,6 +83,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -114,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 width = 1;</code>
    * @return The width.
    */
+  @java.lang.Override
   public int getWidth() {
     return width_;
   }
@@ -128,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 height = 2;</code>
    * @return The height.
    */
+  @java.lang.Override
   public int getHeight() {
     return height_;
   }
@@ -142,6 +146,7 @@ private static final long serialVersionUID = 0L;
    * <code>string format = 3;</code>
    * @return The format.
    */
+  @java.lang.Override
   public java.lang.String getFormat() {
     java.lang.Object ref = format_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +167,7 @@ private static final long serialVersionUID = 0L;
    * <code>string format = 3;</code>
    * @return The bytes for format.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getFormatBytes() {
     java.lang.Object ref = format_;
@@ -186,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * <code>string color_mode = 4;</code>
    * @return The colorMode.
    */
+  @java.lang.Override
   public java.lang.String getColorMode() {
     java.lang.Object ref = colorMode_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +213,7 @@ private static final long serialVersionUID = 0L;
    * <code>string color_mode = 4;</code>
    * @return The bytes for colorMode.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getColorModeBytes() {
     java.lang.Object ref = colorMode_;
@@ -240,10 +248,10 @@ private static final long serialVersionUID = 0L;
     if (height_ != 0) {
       output.writeInt32(2, height_);
     }
-    if (!getFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, format_);
     }
-    if (!getColorModeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(colorMode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, colorMode_);
     }
     unknownFields.writeTo(output);
@@ -263,10 +271,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, height_);
     }
-    if (!getFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, format_);
     }
-    if (!getColorModeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(colorMode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, colorMode_);
     }
     size += unknownFields.getSerializedSize();
@@ -582,6 +590,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 width = 1;</code>
      * @return The width.
      */
+    @java.lang.Override
     public int getWidth() {
       return width_;
     }
@@ -624,6 +633,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 height = 2;</code>
      * @return The height.
      */
+    @java.lang.Override
     public int getHeight() {
       return height_;
     }

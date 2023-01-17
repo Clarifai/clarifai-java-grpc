@@ -11,7 +11,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.CollectorSource}
  */
-public  final class CollectorSource extends
+public final class CollectorSource extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.CollectorSource)
     CollectorSourceOrBuilder {
@@ -77,6 +77,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -109,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.APIPostModelOutputsCollectorSource api_post_model_outputs_collector_source = 2;</code>
    * @return Whether the apiPostModelOutputsCollectorSource field is set.
    */
+  @java.lang.Override
   public boolean hasApiPostModelOutputsCollectorSource() {
     return apiPostModelOutputsCollectorSource_ != null;
   }
@@ -121,6 +124,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.APIPostModelOutputsCollectorSource api_post_model_outputs_collector_source = 2;</code>
    * @return The apiPostModelOutputsCollectorSource.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.APIPostModelOutputsCollectorSource getApiPostModelOutputsCollectorSource() {
     return apiPostModelOutputsCollectorSource_ == null ? com.clarifai.grpc.api.APIPostModelOutputsCollectorSource.getDefaultInstance() : apiPostModelOutputsCollectorSource_;
   }
@@ -132,6 +136,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.APIPostModelOutputsCollectorSource api_post_model_outputs_collector_source = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.APIPostModelOutputsCollectorSourceOrBuilder getApiPostModelOutputsCollectorSourceOrBuilder() {
     return getApiPostModelOutputsCollectorSource();
   }

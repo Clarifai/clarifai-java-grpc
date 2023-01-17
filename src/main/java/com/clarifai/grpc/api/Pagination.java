@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Pagination}
  */
-public  final class Pagination extends
+public final class Pagination extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Pagination)
     PaginationOrBuilder {
@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -104,6 +106,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 page = 1;</code>
    * @return The page.
    */
+  @java.lang.Override
   public int getPage() {
     return page_;
   }
@@ -118,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 per_page = 2;</code>
    * @return The perPage.
    */
+  @java.lang.Override
   public int getPerPage() {
     return perPage_;
   }
@@ -454,6 +458,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 page = 1;</code>
      * @return The page.
      */
+    @java.lang.Override
     public int getPage() {
       return page_;
     }
@@ -496,6 +501,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 per_page = 2;</code>
      * @return The perPage.
      */
+    @java.lang.Override
     public int getPerPage() {
       return perPage_;
     }

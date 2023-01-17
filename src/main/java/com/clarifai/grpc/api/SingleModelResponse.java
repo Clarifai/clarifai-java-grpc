@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.SingleModelResponse}
  */
-public  final class SingleModelResponse extends
+public final class SingleModelResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.SingleModelResponse)
     SingleModelResponseOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -116,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -123,12 +126,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -139,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Model model = 2;</code>
    * @return Whether the model field is set.
    */
+  @java.lang.Override
   public boolean hasModel() {
     return model_ != null;
   }
@@ -146,12 +152,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Model model = 2;</code>
    * @return The model.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
   }
   /**
    * <code>.clarifai.api.Model model = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
     return getModel();
   }

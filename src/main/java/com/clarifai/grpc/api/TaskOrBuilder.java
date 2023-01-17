@@ -425,4 +425,24 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <pre>
+   * The label order the task belongs to.
+   * </pre>
+   *
+   * <code>string label_order_id = 18;</code>
+   * @return The labelOrderId.
+   */
+  java.lang.String getLabelOrderId();
+  /**
+   * <pre>
+   * The label order the task belongs to.
+   * </pre>
+   *
+   * <code>string label_order_id = 18;</code>
+   * @return The bytes for labelOrderId.
+   */
+  com.google.protobuf.ByteString
+      getLabelOrderIdBytes();
 }

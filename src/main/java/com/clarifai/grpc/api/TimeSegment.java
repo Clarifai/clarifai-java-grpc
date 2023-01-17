@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TimeSegment}
  */
-public  final class TimeSegment extends
+public final class TimeSegment extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TimeSegment)
     TimeSegmentOrBuilder {
@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -127,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -147,6 +150,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -167,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 2;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -174,12 +179,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 2;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
   /**
    * <code>.clarifai.api.Data data = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -190,6 +197,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    * @return Whether the timeInfo field is set.
    */
+  @java.lang.Override
   public boolean hasTimeInfo() {
     return timeInfo_ != null;
   }
@@ -197,12 +205,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    * @return The timeInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TimeInfo getTimeInfo() {
     return timeInfo_ == null ? com.clarifai.grpc.api.TimeInfo.getDefaultInstance() : timeInfo_;
   }
   /**
    * <code>.clarifai.api.TimeInfo time_info = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TimeInfoOrBuilder getTimeInfoOrBuilder() {
     return getTimeInfo();
   }
@@ -221,7 +231,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (data_ != null) {
@@ -239,7 +249,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (data_ != null) {

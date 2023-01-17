@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PrecisionRecallCurve}
  */
-public  final class PrecisionRecallCurve extends
+public final class PrecisionRecallCurve extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PrecisionRecallCurve)
     PrecisionRecallCurveOrBuilder {
@@ -130,6 +130,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -166,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float recall = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return A list containing the recall.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getRecallList() {
     return recall_;
@@ -193,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float precision = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return A list containing the precision.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getPrecisionList() {
     return precision_;
@@ -220,6 +224,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return A list containing the thresholds.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getThresholdsList() {
     return thresholds_;

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.FrameInfo}
  */
-public  final class FrameInfo extends
+public final class FrameInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.FrameInfo)
     FrameInfoOrBuilder {
@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -105,6 +107,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The index.
    */
+  @java.lang.Override
   public int getIndex() {
     return index_;
   }
@@ -120,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The time.
    */
+  @java.lang.Override
   public int getTime() {
     return time_;
   }
@@ -457,6 +461,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The index.
      */
+    @java.lang.Override
     public int getIndex() {
       return index_;
     }
@@ -502,6 +507,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The time.
      */
+    @java.lang.Override
     public int getTime() {
       return time_;
     }

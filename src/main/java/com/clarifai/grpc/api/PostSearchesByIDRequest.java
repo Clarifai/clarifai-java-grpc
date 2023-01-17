@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostSearchesByIDRequest}
  */
-public  final class PostSearchesByIDRequest extends
+public final class PostSearchesByIDRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostSearchesByIDRequest)
     PostSearchesByIDRequestOrBuilder {
@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -123,6 +125,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -130,12 +133,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -150,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -194,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    * @return Whether the pagination field is set.
    */
+  @java.lang.Override
   public boolean hasPagination() {
     return pagination_ != null;
   }
@@ -205,6 +213,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    * @return The pagination.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Pagination getPagination() {
     return pagination_ == null ? com.clarifai.grpc.api.Pagination.getDefaultInstance() : pagination_;
   }
@@ -215,6 +224,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PaginationOrBuilder getPaginationOrBuilder() {
     return getPagination();
   }
@@ -236,7 +246,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     if (pagination_ != null) {
@@ -255,7 +265,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     if (pagination_ != null) {

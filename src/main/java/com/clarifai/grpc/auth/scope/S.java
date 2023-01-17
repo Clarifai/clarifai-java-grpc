@@ -17,6 +17,16 @@ package com.clarifai.grpc.auth.scope;
  * 1. *_Add requires the corresponding _Get.
  * 2. *_Delete requires the corresponding _Add and _Get.
  * 3. *_Patch is deprecated and not check anywhere.
+ * Think of the dependencies in this file at the DB level. If you cannot make a DB call to Get, Add
+ * or Delete a resource without having access to another resource then you should add it here. That
+ * should for the most part be the same resource type. In service.proto for the API level you will
+ * also specify cl_depending_scopes for each API endpoint. Those cover cases where an endpoint
+ * might need to access more than just that one resource type in order to operate (ie. API handlers
+ * that make multiple DB calls of various resource types likely have more cl_depending_scopes than
+ * the ones listed below). For example: PostCollectors to create a collector we make sure that you
+ * can do model predictions, get concepts, etc. so that you don't have a collector that would be
+ * useless at the end of that API handler but below you can see that the dependencies of Collector
+ * scopes are only on other Collector scopes.
  * </pre>
  *
  * Protobuf enum {@code clarifai.auth.scope.S}
@@ -45,14 +55,6 @@ public enum S
    * <code>Predict = 2 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   Predict(2),
-  /**
-   * <pre>
-   * Make an rpc to our search services.
-   * </pre>
-   *
-   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  Search(3),
   /**
    * <pre>
    * Write to the inputs table in the DB.
@@ -500,6 +502,166 @@ public enum S
    * <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
    */
   FindDuplicateAnnotationsJobs_Delete(104),
+  /**
+   * <code>Datasets_Get = 105 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Datasets_Get(105),
+  /**
+   * <code>Datasets_Add = 106 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Get];</code>
+   */
+  Datasets_Add(106),
+  /**
+   * <code>Datasets_Delete = 107 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Add];</code>
+   */
+  Datasets_Delete(107),
+  /**
+   * <pre>
+   * Write to the modules DB tables.
+   * </pre>
+   *
+   * <code>Modules_Add = 108 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  Modules_Add(108),
+  /**
+   * <pre>
+   * Read from the modules and modules versions DB tables.
+   * </pre>
+   *
+   * <code>Modules_Get = 109 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Modules_Get(109),
+  /**
+   * <pre>
+   * To delete we need read/write.
+   * </pre>
+   *
+   * <code>Modules_Delete = 110 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  Modules_Delete(110),
+  /**
+   * <pre>
+   * Write to the InstalledModuleVersions DB tables.
+   * </pre>
+   *
+   * <code>InstalledModuleVersions_Add = 111 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  InstalledModuleVersions_Add(111),
+  /**
+   * <pre>
+   * Read from the InstalledModuleVersions and InstalledModuleVersions versions DB tables.
+   * </pre>
+   *
+   * <code>InstalledModuleVersions_Get = 112 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  InstalledModuleVersions_Get(112),
+  /**
+   * <pre>
+   * To delete we need read/write.
+   * </pre>
+   *
+   * <code>InstalledModuleVersions_Delete = 113 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  InstalledModuleVersions_Delete(113),
+  /**
+   * <pre>
+   * Make an rpc to our search services.
+   * </pre>
+   *
+   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Search(3),
+  /**
+   * <pre>
+   * To get a saved search.
+   * </pre>
+   *
+   * <code>SavedSearch_Get = 114 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  SavedSearch_Get(114),
+  /**
+   * <pre>
+   * To add a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Add = 115 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get];</code>
+   */
+  SavedSearch_Add(115),
+  /**
+   * <pre>
+   * To delete a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Delete = 116 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Add];</code>
+   */
+  SavedSearch_Delete(116),
+  /**
+   * <code>ModelVersionPublications_Add = 117 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  ModelVersionPublications_Add(117),
+  /**
+   * <code>ModelVersionPublications_Delete = 118 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  ModelVersionPublications_Delete(118),
+  /**
+   * <code>WorkflowPublications_Add = 119 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  WorkflowPublications_Add(119),
+  /**
+   * <code>WorkflowPublications_Delete = 120 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  WorkflowPublications_Delete(120),
+  /**
+   * <pre>
+   * To write bulk operations to the DB
+   * </pre>
+   *
+   * <code>BulkOperation_Add = 121 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+   */
+  BulkOperation_Add(121),
+  /**
+   * <pre>
+   * To Read Bulk Operations from the DB
+   * </pre>
+   *
+   * <code>BulkOperation_Get = 122 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  BulkOperation_Get(122),
+  /**
+   * <pre>
+   * To Delete Bulk Operations from the DB
+   * </pre>
+   *
+   * <code>BulkOperation_Delete = 123 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+   */
+  BulkOperation_Delete(123),
+  /**
+   * <pre>
+   * To read historical usage from usage.dashboard_items table
+   * </pre>
+   *
+   * <code>HistoricalUsage_Get = 124;</code>
+   */
+  HistoricalUsage_Get(124),
+  /**
+   * <pre>
+   * To read uploaded files and archives info from Uploads endpoints
+   * </pre>
+   *
+   * <code>Uploads_Get = 128 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Uploads_Get(128),
+  /**
+   * <pre>
+   * To upload files or archives through the Uploads endpoints
+   * </pre>
+   *
+   * <code>Uploads_Add = 129 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get];</code>
+   */
+  Uploads_Add(129),
+  /**
+   * <code>Uploads_Delete = 130 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Add];</code>
+   */
+  Uploads_Delete(130),
   UNRECOGNIZED(-1),
   ;
 
@@ -527,14 +689,6 @@ public enum S
   public static final int Predict_VALUE = 2;
   /**
    * <pre>
-   * Make an rpc to our search services.
-   * </pre>
-   *
-   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
-   */
-  public static final int Search_VALUE = 3;
-  /**
-   * <pre>
    * Write to the inputs table in the DB.
    * </pre>
    *
@@ -558,7 +712,7 @@ public enum S
    *
    * <code>Inputs_Patch = 7 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Inputs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Inputs_Get];</code>
    */
-  public static final int Inputs_Patch_VALUE = 7;
+  @java.lang.Deprecated public static final int Inputs_Patch_VALUE = 7;
   /**
    * <pre>
    * To delete we need read/write
@@ -574,7 +728,7 @@ public enum S
    *
    * <code>Outputs_Patch = 9 [deprecated = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Inputs_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Predict];</code>
    */
-  public static final int Outputs_Patch_VALUE = 9;
+  @java.lang.Deprecated public static final int Outputs_Patch_VALUE = 9;
   /**
    * <pre>
    * Write to the concepts DB tables.
@@ -599,7 +753,7 @@ public enum S
    *
    * <code>Concepts_Patch = 12 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Concepts_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Concepts_Get];</code>
    */
-  public static final int Concepts_Patch_VALUE = 12;
+  @java.lang.Deprecated public static final int Concepts_Patch_VALUE = 12;
   /**
    * <pre>
    * To delete we need read/write.
@@ -633,7 +787,7 @@ public enum S
    *
    * <code>Models_Patch = 16 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Train];</code>
    */
-  public static final int Models_Patch_VALUE = 16;
+  @java.lang.Deprecated public static final int Models_Patch_VALUE = 16;
   /**
    * <pre>
    * To delete we need read/write.
@@ -684,7 +838,7 @@ public enum S
    *
    * <code>Workflows_Patch = 20 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Workflows_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Workflows_Get];</code>
    */
-  public static final int Workflows_Patch_VALUE = 20;
+  @java.lang.Deprecated public static final int Workflows_Patch_VALUE = 20;
   /**
    * <pre>
    * To delete we need read/write.
@@ -713,7 +867,7 @@ public enum S
    *
    * <code>TSNEVisualizations_Add = 24 [deprecated = true, (.clarifai.auth.scope.clarifai_depending_scopes) = TSNEVisualizations_Get];</code>
    */
-  public static final int TSNEVisualizations_Add_VALUE = 24;
+  @java.lang.Deprecated public static final int TSNEVisualizations_Add_VALUE = 24;
   /**
    * <pre>
    * Read from the visualizations DB table.
@@ -722,7 +876,7 @@ public enum S
    *
    * <code>TSNEVisualizations_Get = 25 [deprecated = true];</code>
    */
-  public static final int TSNEVisualizations_Get_VALUE = 25;
+  @java.lang.Deprecated public static final int TSNEVisualizations_Get_VALUE = 25;
   /**
    * <pre>
    * Write to the annotations DB table.
@@ -747,7 +901,7 @@ public enum S
    *
    * <code>Annotations_Patch = 39 [deprecated = true, (.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Annotations_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Annotations_Get];</code>
    */
-  public static final int Annotations_Patch_VALUE = 39;
+  @java.lang.Deprecated public static final int Annotations_Patch_VALUE = 39;
   /**
    * <pre>
    * To delete we need read/write.
@@ -972,6 +1126,166 @@ public enum S
    * <code>FindDuplicateAnnotationsJobs_Delete = 104 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = FindDuplicateAnnotationsJobs_Get];</code>
    */
   public static final int FindDuplicateAnnotationsJobs_Delete_VALUE = 104;
+  /**
+   * <code>Datasets_Get = 105 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Datasets_Get_VALUE = 105;
+  /**
+   * <code>Datasets_Add = 106 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Get];</code>
+   */
+  public static final int Datasets_Add_VALUE = 106;
+  /**
+   * <code>Datasets_Delete = 107 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Datasets_Add];</code>
+   */
+  public static final int Datasets_Delete_VALUE = 107;
+  /**
+   * <pre>
+   * Write to the modules DB tables.
+   * </pre>
+   *
+   * <code>Modules_Add = 108 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  public static final int Modules_Add_VALUE = 108;
+  /**
+   * <pre>
+   * Read from the modules and modules versions DB tables.
+   * </pre>
+   *
+   * <code>Modules_Get = 109 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Modules_Get_VALUE = 109;
+  /**
+   * <pre>
+   * To delete we need read/write.
+   * </pre>
+   *
+   * <code>Modules_Delete = 110 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  public static final int Modules_Delete_VALUE = 110;
+  /**
+   * <pre>
+   * Write to the InstalledModuleVersions DB tables.
+   * </pre>
+   *
+   * <code>InstalledModuleVersions_Add = 111 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  public static final int InstalledModuleVersions_Add_VALUE = 111;
+  /**
+   * <pre>
+   * Read from the InstalledModuleVersions and InstalledModuleVersions versions DB tables.
+   * </pre>
+   *
+   * <code>InstalledModuleVersions_Get = 112 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  public static final int InstalledModuleVersions_Get_VALUE = 112;
+  /**
+   * <pre>
+   * To delete we need read/write.
+   * </pre>
+   *
+   * <code>InstalledModuleVersions_Delete = 113 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = InstalledModuleVersions_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Modules_Get];</code>
+   */
+  public static final int InstalledModuleVersions_Delete_VALUE = 113;
+  /**
+   * <pre>
+   * Make an rpc to our search services.
+   * </pre>
+   *
+   * <code>Search = 3 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Search_VALUE = 3;
+  /**
+   * <pre>
+   * To get a saved search.
+   * </pre>
+   *
+   * <code>SavedSearch_Get = 114 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int SavedSearch_Get_VALUE = 114;
+  /**
+   * <pre>
+   * To add a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Add = 115 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get];</code>
+   */
+  public static final int SavedSearch_Add_VALUE = 115;
+  /**
+   * <pre>
+   * To delete a saved search
+   * </pre>
+   *
+   * <code>SavedSearch_Delete = 116 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = SavedSearch_Add];</code>
+   */
+  public static final int SavedSearch_Delete_VALUE = 116;
+  /**
+   * <code>ModelVersionPublications_Add = 117 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int ModelVersionPublications_Add_VALUE = 117;
+  /**
+   * <code>ModelVersionPublications_Delete = 118 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int ModelVersionPublications_Delete_VALUE = 118;
+  /**
+   * <code>WorkflowPublications_Add = 119 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int WorkflowPublications_Add_VALUE = 119;
+  /**
+   * <code>WorkflowPublications_Delete = 120 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int WorkflowPublications_Delete_VALUE = 120;
+  /**
+   * <pre>
+   * To write bulk operations to the DB
+   * </pre>
+   *
+   * <code>BulkOperation_Add = 121 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+   */
+  public static final int BulkOperation_Add_VALUE = 121;
+  /**
+   * <pre>
+   * To Read Bulk Operations from the DB
+   * </pre>
+   *
+   * <code>BulkOperation_Get = 122 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int BulkOperation_Get_VALUE = 122;
+  /**
+   * <pre>
+   * To Delete Bulk Operations from the DB
+   * </pre>
+   *
+   * <code>BulkOperation_Delete = 123 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Add, (.clarifai.auth.scope.clarifai_depending_scopes) = BulkOperation_Get];</code>
+   */
+  public static final int BulkOperation_Delete_VALUE = 123;
+  /**
+   * <pre>
+   * To read historical usage from usage.dashboard_items table
+   * </pre>
+   *
+   * <code>HistoricalUsage_Get = 124;</code>
+   */
+  public static final int HistoricalUsage_Get_VALUE = 124;
+  /**
+   * <pre>
+   * To read uploaded files and archives info from Uploads endpoints
+   * </pre>
+   *
+   * <code>Uploads_Get = 128 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Uploads_Get_VALUE = 128;
+  /**
+   * <pre>
+   * To upload files or archives through the Uploads endpoints
+   * </pre>
+   *
+   * <code>Uploads_Add = 129 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get];</code>
+   */
+  public static final int Uploads_Add_VALUE = 129;
+  /**
+   * <code>Uploads_Delete = 130 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Add];</code>
+   */
+  public static final int Uploads_Delete_VALUE = 130;
 
 
   public final int getNumber() {
@@ -1001,7 +1315,6 @@ public enum S
       case 0: return undef;
       case 1: return All;
       case 2: return Predict;
-      case 3: return Search;
       case 4: return Inputs_Add;
       case 5: return Inputs_Get;
       case 7: return Inputs_Patch;
@@ -1058,6 +1371,30 @@ public enum S
       case 102: return FindDuplicateAnnotationsJobs_Add;
       case 103: return FindDuplicateAnnotationsJobs_Get;
       case 104: return FindDuplicateAnnotationsJobs_Delete;
+      case 105: return Datasets_Get;
+      case 106: return Datasets_Add;
+      case 107: return Datasets_Delete;
+      case 108: return Modules_Add;
+      case 109: return Modules_Get;
+      case 110: return Modules_Delete;
+      case 111: return InstalledModuleVersions_Add;
+      case 112: return InstalledModuleVersions_Get;
+      case 113: return InstalledModuleVersions_Delete;
+      case 3: return Search;
+      case 114: return SavedSearch_Get;
+      case 115: return SavedSearch_Add;
+      case 116: return SavedSearch_Delete;
+      case 117: return ModelVersionPublications_Add;
+      case 118: return ModelVersionPublications_Delete;
+      case 119: return WorkflowPublications_Add;
+      case 120: return WorkflowPublications_Delete;
+      case 121: return BulkOperation_Add;
+      case 122: return BulkOperation_Get;
+      case 123: return BulkOperation_Delete;
+      case 124: return HistoricalUsage_Get;
+      case 128: return Uploads_Get;
+      case 129: return Uploads_Add;
+      case 130: return Uploads_Delete;
       default: return null;
     }
   }
@@ -1076,6 +1413,10 @@ public enum S
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor

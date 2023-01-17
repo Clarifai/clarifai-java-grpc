@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostAnnotationSearchMetricsRequest}
  */
-public  final class PostAnnotationSearchMetricsRequest extends
+public final class PostAnnotationSearchMetricsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostAnnotationSearchMetricsRequest)
     PostAnnotationSearchMetricsRequestOrBuilder {
@@ -129,6 +129,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -156,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -163,12 +166,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -183,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +209,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -227,6 +234,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search ground_truth = 3;</code>
    * @return Whether the groundTruth field is set.
    */
+  @java.lang.Override
   public boolean hasGroundTruth() {
     return groundTruth_ != null;
   }
@@ -238,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search ground_truth = 3;</code>
    * @return The groundTruth.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Search getGroundTruth() {
     return groundTruth_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : groundTruth_;
   }
@@ -248,6 +257,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Search ground_truth = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.SearchOrBuilder getGroundTruthOrBuilder() {
     return getGroundTruth();
   }
@@ -262,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search search_to_eval = 4;</code>
    * @return Whether the searchToEval field is set.
    */
+  @java.lang.Override
   public boolean hasSearchToEval() {
     return searchToEval_ != null;
   }
@@ -273,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search search_to_eval = 4;</code>
    * @return The searchToEval.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Search getSearchToEval() {
     return searchToEval_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : searchToEval_;
   }
@@ -283,6 +295,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Search search_to_eval = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.SearchOrBuilder getSearchToEvalOrBuilder() {
     return getSearchToEval();
   }
@@ -298,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 5;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -310,6 +324,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 5;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -321,6 +336,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -335,7 +351,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.EvaluationType evaluation_type = 6;</code>
    * @return The enum numeric value on the wire for evaluationType.
    */
-  public int getEvaluationTypeValue() {
+  @java.lang.Override public int getEvaluationTypeValue() {
     return evaluationType_;
   }
   /**
@@ -346,7 +362,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.EvaluationType evaluation_type = 6;</code>
    * @return The evaluationType.
    */
-  public com.clarifai.grpc.api.EvaluationType getEvaluationType() {
+  @java.lang.Override public com.clarifai.grpc.api.EvaluationType getEvaluationType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.EvaluationType result = com.clarifai.grpc.api.EvaluationType.valueOf(evaluationType_);
     return result == null ? com.clarifai.grpc.api.EvaluationType.UNRECOGNIZED : result;
@@ -369,7 +385,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     if (groundTruth_ != null) {
@@ -381,7 +397,7 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(5, getData());
     }
-    if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Classification.getNumber()) {
+    if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Undefined.getNumber()) {
       output.writeEnum(6, evaluationType_);
     }
     unknownFields.writeTo(output);
@@ -397,7 +413,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     if (groundTruth_ != null) {
@@ -412,7 +428,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getData());
     }
-    if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Classification.getNumber()) {
+    if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Undefined.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(6, evaluationType_);
     }
@@ -1492,7 +1508,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.EvaluationType evaluation_type = 6;</code>
      * @return The enum numeric value on the wire for evaluationType.
      */
-    public int getEvaluationTypeValue() {
+    @java.lang.Override public int getEvaluationTypeValue() {
       return evaluationType_;
     }
     /**
@@ -1505,6 +1521,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setEvaluationTypeValue(int value) {
+      
       evaluationType_ = value;
       onChanged();
       return this;
@@ -1517,6 +1534,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.EvaluationType evaluation_type = 6;</code>
      * @return The evaluationType.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.EvaluationType getEvaluationType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.EvaluationType result = com.clarifai.grpc.api.EvaluationType.valueOf(evaluationType_);

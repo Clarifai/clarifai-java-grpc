@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Input}
  */
-public  final class Input extends
+public final class Input extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Input)
     InputOrBuilder {
@@ -133,6 +133,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -167,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -211,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 2;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -222,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 2;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -232,6 +238,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -250,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -265,6 +273,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -279,6 +288,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -293,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 5;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -304,6 +315,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 5;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -314,6 +326,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -329,6 +342,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 6;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -341,6 +355,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 6;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -352,6 +367,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -361,7 +377,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -374,7 +393,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -386,7 +408,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -399,7 +424,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -425,7 +453,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (data_ != null) {
@@ -452,7 +480,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (data_ != null) {
@@ -1644,7 +1672,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1657,7 +1688,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1669,7 +1703,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1682,7 +1719,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1696,7 +1736,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1717,7 +1760,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1737,7 +1783,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1755,7 +1804,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>
@@ -1770,7 +1822,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * List of dataset IDs that this input is part of
-     * Currently, this field is ONLY used in search.
+     * Currently, this field is ONLY used to
+     * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+     * * to add inputs to dataset(s) in `PostInputs` endpoint.
+     * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
      * </pre>
      *
      * <code>repeated string dataset_ids = 7;</code>

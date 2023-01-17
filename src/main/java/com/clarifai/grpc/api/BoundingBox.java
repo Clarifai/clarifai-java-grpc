@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.BoundingBox}
  */
-public  final class BoundingBox extends
+public final class BoundingBox extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.BoundingBox)
     BoundingBoxOrBuilder {
@@ -83,6 +83,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -114,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The topRow.
    */
+  @java.lang.Override
   public float getTopRow() {
     return topRow_;
   }
@@ -128,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The leftCol.
    */
+  @java.lang.Override
   public float getLeftCol() {
     return leftCol_;
   }
@@ -142,6 +146,7 @@ private static final long serialVersionUID = 0L;
    * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The bottomRow.
    */
+  @java.lang.Override
   public float getBottomRow() {
     return bottomRow_;
   }
@@ -156,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The rightCol.
    */
+  @java.lang.Override
   public float getRightCol() {
     return rightCol_;
   }
@@ -174,16 +180,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (topRow_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(topRow_) != 0) {
       output.writeFloat(1, topRow_);
     }
-    if (leftCol_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(leftCol_) != 0) {
       output.writeFloat(2, leftCol_);
     }
-    if (bottomRow_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(bottomRow_) != 0) {
       output.writeFloat(3, bottomRow_);
     }
-    if (rightCol_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(rightCol_) != 0) {
       output.writeFloat(4, rightCol_);
     }
     unknownFields.writeTo(output);
@@ -195,19 +201,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (topRow_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(topRow_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, topRow_);
     }
-    if (leftCol_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(leftCol_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, leftCol_);
     }
-    if (bottomRow_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(bottomRow_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, bottomRow_);
     }
-    if (rightCol_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(rightCol_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, rightCol_);
     }
@@ -534,6 +540,7 @@ private static final long serialVersionUID = 0L;
      * <code>float top_row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The topRow.
      */
+    @java.lang.Override
     public float getTopRow() {
       return topRow_;
     }
@@ -576,6 +583,7 @@ private static final long serialVersionUID = 0L;
      * <code>float left_col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The leftCol.
      */
+    @java.lang.Override
     public float getLeftCol() {
       return leftCol_;
     }
@@ -618,6 +626,7 @@ private static final long serialVersionUID = 0L;
      * <code>float bottom_row = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The bottomRow.
      */
+    @java.lang.Override
     public float getBottomRow() {
       return bottomRow_;
     }
@@ -660,6 +669,7 @@ private static final long serialVersionUID = 0L;
      * <code>float right_col = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The rightCol.
      */
+    @java.lang.Override
     public float getRightCol() {
       return rightCol_;
     }

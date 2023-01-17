@@ -5,12 +5,12 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * Request to delete a list of tasks.
+ * Request to delete a list of label orders.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.DeleteLabelOrdersRequest}
  */
-public  final class DeleteLabelOrdersRequest extends
+public final class DeleteLabelOrdersRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.DeleteLabelOrdersRequest)
     DeleteLabelOrdersRequestOrBuilder {
@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -117,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -124,12 +127,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -348,7 +353,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request to delete a list of tasks.
+   * Request to delete a list of label orders.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.DeleteLabelOrdersRequest}

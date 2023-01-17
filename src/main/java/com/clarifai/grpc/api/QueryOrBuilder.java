@@ -11,49 +11,59 @@ public interface QueryOrBuilder extends
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  java.util.List<com.clarifai.grpc.api.And> 
+  @java.lang.Deprecated java.util.List<com.clarifai.grpc.api.And> 
       getAndsList();
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.And getAnds(int index);
+  @java.lang.Deprecated com.clarifai.grpc.api.And getAnds(int index);
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  int getAndsCount();
+  @java.lang.Deprecated int getAndsCount();
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  java.util.List<? extends com.clarifai.grpc.api.AndOrBuilder> 
+  @java.lang.Deprecated java.util.List<? extends com.clarifai.grpc.api.AndOrBuilder> 
       getAndsOrBuilderList();
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.AndOrBuilder getAndsOrBuilder(
+  @java.lang.Deprecated com.clarifai.grpc.api.AndOrBuilder getAndsOrBuilder(
       int index);
 
   /**

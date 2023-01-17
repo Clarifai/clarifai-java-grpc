@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Geo}
  */
-public  final class Geo extends
+public final class Geo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Geo)
     GeoOrBuilder {
@@ -100,6 +100,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
    * @return Whether the geoPoint field is set.
    */
+  @java.lang.Override
   public boolean hasGeoPoint() {
     return geoPoint_ != null;
   }
@@ -137,12 +140,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
    * @return The geoPoint.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoPoint getGeoPoint() {
     return geoPoint_ == null ? com.clarifai.grpc.api.GeoPoint.getDefaultInstance() : geoPoint_;
   }
   /**
    * <code>.clarifai.api.GeoPoint geo_point = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoPointOrBuilder getGeoPointOrBuilder() {
     return getGeoPoint();
   }
@@ -153,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
    * @return Whether the geoLimit field is set.
    */
+  @java.lang.Override
   public boolean hasGeoLimit() {
     return geoLimit_ != null;
   }
@@ -160,12 +166,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
    * @return The geoLimit.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoLimit getGeoLimit() {
     return geoLimit_ == null ? com.clarifai.grpc.api.GeoLimit.getDefaultInstance() : geoLimit_;
   }
   /**
    * <code>.clarifai.api.GeoLimit geo_limit = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoLimitOrBuilder getGeoLimitOrBuilder() {
     return getGeoLimit();
   }
@@ -179,6 +187,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.GeoBoxedPoint geo_box = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.GeoBoxedPoint> getGeoBoxList() {
     return geoBox_;
   }
@@ -189,6 +198,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.GeoBoxedPoint geo_box = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.GeoBoxedPointOrBuilder> 
       getGeoBoxOrBuilderList() {
     return geoBox_;
@@ -200,6 +210,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.GeoBoxedPoint geo_box = 3;</code>
    */
+  @java.lang.Override
   public int getGeoBoxCount() {
     return geoBox_.size();
   }
@@ -210,6 +221,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.GeoBoxedPoint geo_box = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoBoxedPoint getGeoBox(int index) {
     return geoBox_.get(index);
   }
@@ -220,6 +232,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.GeoBoxedPoint geo_box = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoBoxedPointOrBuilder getGeoBoxOrBuilder(
       int index) {
     return geoBox_.get(index);

@@ -10,45 +10,6 @@ public interface PretrainedModelConfigOrBuilder extends
   /**
    * <pre>
    * This is the internal id of the pretrained model.
-   * </pre>
-   *
-   * <code>string id = 1;</code>
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   * <pre>
-   * This is the internal id of the pretrained model.
-   * </pre>
-   *
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString
-      getIdBytes();
-
-  /**
-   * <pre>
-   * This is the internal type of the pretrained model.
-   * </pre>
-   *
-   * <code>string type = 2;</code>
-   * @return The type.
-   */
-  java.lang.String getType();
-  /**
-   * <pre>
-   * This is the internal type of the pretrained model.
-   * </pre>
-   *
-   * <code>string type = 2;</code>
-   * @return The bytes for type.
-   */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <pre>
    * Map from the api.Data field names to the Triton config.pbtxt input.
    * </pre>
    *
@@ -58,6 +19,7 @@ public interface PretrainedModelConfigOrBuilder extends
   boolean hasInputFieldsMap();
   /**
    * <pre>
+   * This is the internal id of the pretrained model.
    * Map from the api.Data field names to the Triton config.pbtxt input.
    * </pre>
    *
@@ -67,6 +29,7 @@ public interface PretrainedModelConfigOrBuilder extends
   com.google.protobuf.Struct getInputFieldsMap();
   /**
    * <pre>
+   * This is the internal id of the pretrained model.
    * Map from the api.Data field names to the Triton config.pbtxt input.
    * </pre>
    *
@@ -103,27 +66,9 @@ public interface PretrainedModelConfigOrBuilder extends
 
   /**
    * <pre>
-   * Preprocessing steps for the model as a json string
-   * </pre>
-   *
-   * <code>string data_provider_params = 5;</code>
-   * @return The dataProviderParams.
-   */
-  java.lang.String getDataProviderParams();
-  /**
-   * <pre>
-   * Preprocessing steps for the model as a json string
-   * </pre>
-   *
-   * <code>string data_provider_params = 5;</code>
-   * @return The bytes for dataProviderParams.
-   */
-  com.google.protobuf.ByteString
-      getDataProviderParamsBytes();
-
-  /**
-   * <pre>
-   * Url to a zipped up model in triton format with only version 1
+   * Url to a zipped up model in triton format with the following files and folders at the root:
+   *  config.pbtxt
+   *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
    * </pre>
    *
    * <code>string model_zip_url = 6;</code>
@@ -132,7 +77,9 @@ public interface PretrainedModelConfigOrBuilder extends
   java.lang.String getModelZipUrl();
   /**
    * <pre>
-   * Url to a zipped up model in triton format with only version 1
+   * Url to a zipped up model in triton format with the following files and folders at the root:
+   *  config.pbtxt
+   *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
    * </pre>
    *
    * <code>string model_zip_url = 6;</code>
@@ -140,14 +87,4 @@ public interface PretrainedModelConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelZipUrlBytes();
-
-  /**
-   * <pre>
-   * Whether to overwrite the model for the existing internal id
-   * </pre>
-   *
-   * <code>bool overwrite = 7;</code>
-   * @return The overwrite.
-   */
-  boolean getOverwrite();
 }

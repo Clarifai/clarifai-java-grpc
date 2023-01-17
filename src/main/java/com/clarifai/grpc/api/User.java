@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.User}
  */
-public  final class User extends
+public final class User extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.User)
     UserOrBuilder {
@@ -172,11 +172,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.EmailAddress.parser(), extensionRegistry));
             break;
           }
-          case 112: {
-
-            isOrgAdmin_ = input.readBool();
-            break;
-          }
           case 120: {
 
             twoFactorAuthEnabled_ = input.readBool();
@@ -235,6 +230,19 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
+          case 186: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (datePiiConsent_ != null) {
+              subBuilder = datePiiConsent_.toBuilder();
+            }
+            datePiiConsent_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(datePiiConsent_);
+              datePiiConsent_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -246,6 +254,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -276,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -292,6 +303,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -310,8 +322,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object primaryEmail_;
   /**
    * <code>string primary_email = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.primary_email is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2202
    * @return The primaryEmail.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getPrimaryEmail() {
     java.lang.Object ref = primaryEmail_;
     if (ref instanceof java.lang.String) {
@@ -326,8 +341,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string primary_email = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.primary_email is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2202
    * @return The bytes for primaryEmail.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getPrimaryEmailBytes() {
     java.lang.Object ref = primaryEmail_;
@@ -348,6 +366,7 @@ private static final long serialVersionUID = 0L;
    * <code>string first_name = 3;</code>
    * @return The firstName.
    */
+  @java.lang.Override
   public java.lang.String getFirstName() {
     java.lang.Object ref = firstName_;
     if (ref instanceof java.lang.String) {
@@ -364,6 +383,7 @@ private static final long serialVersionUID = 0L;
    * <code>string first_name = 3;</code>
    * @return The bytes for firstName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getFirstNameBytes() {
     java.lang.Object ref = firstName_;
@@ -384,6 +404,7 @@ private static final long serialVersionUID = 0L;
    * <code>string last_name = 4;</code>
    * @return The lastName.
    */
+  @java.lang.Override
   public java.lang.String getLastName() {
     java.lang.Object ref = lastName_;
     if (ref instanceof java.lang.String) {
@@ -400,6 +421,7 @@ private static final long serialVersionUID = 0L;
    * <code>string last_name = 4;</code>
    * @return The bytes for lastName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLastNameBytes() {
     java.lang.Object ref = lastName_;
@@ -420,6 +442,7 @@ private static final long serialVersionUID = 0L;
    * <code>string company_name = 5;</code>
    * @return The companyName.
    */
+  @java.lang.Override
   public java.lang.String getCompanyName() {
     java.lang.Object ref = companyName_;
     if (ref instanceof java.lang.String) {
@@ -436,6 +459,7 @@ private static final long serialVersionUID = 0L;
    * <code>string company_name = 5;</code>
    * @return The bytes for companyName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCompanyNameBytes() {
     java.lang.Object ref = companyName_;
@@ -456,6 +480,7 @@ private static final long serialVersionUID = 0L;
    * <code>string job_title = 19;</code>
    * @return The jobTitle.
    */
+  @java.lang.Override
   public java.lang.String getJobTitle() {
     java.lang.Object ref = jobTitle_;
     if (ref instanceof java.lang.String) {
@@ -472,6 +497,7 @@ private static final long serialVersionUID = 0L;
    * <code>string job_title = 19;</code>
    * @return The bytes for jobTitle.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getJobTitleBytes() {
     java.lang.Object ref = jobTitle_;
@@ -492,6 +518,7 @@ private static final long serialVersionUID = 0L;
    * <code>string job_role = 20;</code>
    * @return The jobRole.
    */
+  @java.lang.Override
   public java.lang.String getJobRole() {
     java.lang.Object ref = jobRole_;
     if (ref instanceof java.lang.String) {
@@ -508,6 +535,7 @@ private static final long serialVersionUID = 0L;
    * <code>string job_role = 20;</code>
    * @return The bytes for jobRole.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getJobRoleBytes() {
     java.lang.Object ref = jobRole_;
@@ -526,8 +554,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object billType_;
   /**
    * <code>string bill_type = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.bill_type is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2209
    * @return The billType.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getBillType() {
     java.lang.Object ref = billType_;
     if (ref instanceof java.lang.String) {
@@ -542,8 +573,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string bill_type = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.bill_type is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2209
    * @return The bytes for billType.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getBillTypeBytes() {
     java.lang.Object ref = billType_;
@@ -572,6 +606,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -587,6 +622,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -601,6 +637,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -609,21 +646,28 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp dateGdprConsent_;
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2217
    * @return Whether the dateGdprConsent field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasDateGdprConsent() {
     return dateGdprConsent_ != null;
   }
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2217
    * @return The dateGdprConsent.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.Timestamp getDateGdprConsent() {
     return dateGdprConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateGdprConsent_;
   }
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder() {
     return getDateGdprConsent();
   }
@@ -632,21 +676,28 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp dateTosConsent_;
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_tos_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2218
    * @return Whether the dateTosConsent field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasDateTosConsent() {
     return dateTosConsent_ != null;
   }
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_tos_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2218
    * @return The dateTosConsent.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.Timestamp getDateTosConsent() {
     return dateTosConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTosConsent_;
   }
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder() {
     return getDateTosConsent();
   }
@@ -655,23 +706,60 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp dateMarketingConsent_;
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2219
    * @return Whether the dateMarketingConsent field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasDateMarketingConsent() {
     return dateMarketingConsent_ != null;
   }
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2219
    * @return The dateMarketingConsent.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.Timestamp getDateMarketingConsent() {
     return dateMarketingConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateMarketingConsent_;
   }
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder() {
     return getDateMarketingConsent();
+  }
+
+  public static final int DATE_PII_CONSENT_FIELD_NUMBER = 23;
+  private com.google.protobuf.Timestamp datePiiConsent_;
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_pii_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2220
+   * @return Whether the datePiiConsent field is set.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasDatePiiConsent() {
+    return datePiiConsent_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.date_pii_consent is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2220
+   * @return The datePiiConsent.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.Timestamp getDatePiiConsent() {
+    return datePiiConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : datePiiConsent_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDatePiiConsentOrBuilder() {
+    return getDatePiiConsent();
   }
 
   public static final int METADATA_FIELD_NUMBER = 11;
@@ -683,8 +771,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.metadata is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2224
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -695,8 +786,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.metadata is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2224
    * @return The metadata.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -708,6 +802,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -717,12 +812,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.EmailAddress> getEmailAddressesList() {
     return emailAddresses_;
   }
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
       getEmailAddressesOrBuilderList() {
     return emailAddresses_;
@@ -730,39 +827,35 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public int getEmailAddressesCount() {
     return emailAddresses_.size();
   }
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index) {
     return emailAddresses_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 12 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index) {
     return emailAddresses_.get(index);
-  }
-
-  public static final int IS_ORG_ADMIN_FIELD_NUMBER = 14;
-  private boolean isOrgAdmin_;
-  /**
-   * <code>bool is_org_admin = 14 [deprecated = true];</code>
-   * @return The isOrgAdmin.
-   */
-  @java.lang.Deprecated public boolean getIsOrgAdmin() {
-    return isOrgAdmin_;
   }
 
   public static final int TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER = 15;
   private boolean twoFactorAuthEnabled_;
   /**
    * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2227
    * @return The twoFactorAuthEnabled.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean getTwoFactorAuthEnabled() {
     return twoFactorAuthEnabled_;
   }
@@ -771,8 +864,11 @@ private static final long serialVersionUID = 0L;
   private int teamsCount_;
   /**
    * <code>uint32 teams_count = 16 [deprecated = true];</code>
+   * @deprecated clarifai.api.User.teams_count is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2228
    * @return The teamsCount.
    */
+  @java.lang.Override
   @java.lang.Deprecated public int getTeamsCount() {
     return teamsCount_;
   }
@@ -788,6 +884,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool is_starred = 21;</code>
    * @return The isStarred.
    */
+  @java.lang.Override
   public boolean getIsStarred() {
     return isStarred_;
   }
@@ -803,6 +900,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 star_count = 22;</code>
    * @return The starCount.
    */
+  @java.lang.Override
   public int getStarCount() {
     return starCount_;
   }
@@ -819,6 +917,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 17;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -832,6 +931,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 17;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -844,6 +944,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 17;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -860,6 +961,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserDetail user_detail = 18;</code>
    * @return Whether the userDetail field is set.
    */
+  @java.lang.Override
   public boolean hasUserDetail() {
     return userDetail_ != null;
   }
@@ -873,6 +975,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserDetail user_detail = 18;</code>
    * @return The userDetail.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserDetail getUserDetail() {
     return userDetail_ == null ? com.clarifai.grpc.api.UserDetail.getDefaultInstance() : userDetail_;
   }
@@ -885,6 +988,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.UserDetail user_detail = 18;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserDetailOrBuilder getUserDetailOrBuilder() {
     return getUserDetail();
   }
@@ -903,25 +1007,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getPrimaryEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, primaryEmail_);
     }
-    if (!getFirstNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
     }
-    if (!getLastNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastName_);
     }
-    if (!getCompanyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, companyName_);
     }
     if (createdAt_ != null) {
       output.writeMessage(6, getCreatedAt());
     }
-    if (!getBillTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, billType_);
     }
     if (dateGdprConsent_ != null) {
@@ -939,9 +1043,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < emailAddresses_.size(); i++) {
       output.writeMessage(12, emailAddresses_.get(i));
     }
-    if (isOrgAdmin_ != false) {
-      output.writeBool(14, isOrgAdmin_);
-    }
     if (twoFactorAuthEnabled_ != false) {
       output.writeBool(15, twoFactorAuthEnabled_);
     }
@@ -954,10 +1055,10 @@ private static final long serialVersionUID = 0L;
     if (userDetail_ != null) {
       output.writeMessage(18, getUserDetail());
     }
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, jobTitle_);
     }
-    if (!getJobRoleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobRole_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, jobRole_);
     }
     if (isStarred_ != false) {
@@ -965,6 +1066,9 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(22, starCount_);
+    }
+    if (datePiiConsent_ != null) {
+      output.writeMessage(23, getDatePiiConsent());
     }
     unknownFields.writeTo(output);
   }
@@ -975,26 +1079,26 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getPrimaryEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, primaryEmail_);
     }
-    if (!getFirstNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firstName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
     }
-    if (!getLastNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastName_);
     }
-    if (!getCompanyNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, companyName_);
     }
     if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getCreatedAt());
     }
-    if (!getBillTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, billType_);
     }
     if (dateGdprConsent_ != null) {
@@ -1017,10 +1121,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, emailAddresses_.get(i));
     }
-    if (isOrgAdmin_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(14, isOrgAdmin_);
-    }
     if (twoFactorAuthEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(15, twoFactorAuthEnabled_);
@@ -1037,10 +1137,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getUserDetail());
     }
-    if (!getJobTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobTitle_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, jobTitle_);
     }
-    if (!getJobRoleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobRole_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, jobRole_);
     }
     if (isStarred_ != false) {
@@ -1050,6 +1150,10 @@ private static final long serialVersionUID = 0L;
     if (starCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(22, starCount_);
+    }
+    if (datePiiConsent_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getDatePiiConsent());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1102,6 +1206,11 @@ private static final long serialVersionUID = 0L;
       if (!getDateMarketingConsent()
           .equals(other.getDateMarketingConsent())) return false;
     }
+    if (hasDatePiiConsent() != other.hasDatePiiConsent()) return false;
+    if (hasDatePiiConsent()) {
+      if (!getDatePiiConsent()
+          .equals(other.getDatePiiConsent())) return false;
+    }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -1109,8 +1218,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEmailAddressesList()
         .equals(other.getEmailAddressesList())) return false;
-    if (getIsOrgAdmin()
-        != other.getIsOrgAdmin()) return false;
     if (getTwoFactorAuthEnabled()
         != other.getTwoFactorAuthEnabled()) return false;
     if (getTeamsCount()
@@ -1172,6 +1279,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATE_MARKETING_CONSENT_FIELD_NUMBER;
       hash = (53 * hash) + getDateMarketingConsent().hashCode();
     }
+    if (hasDatePiiConsent()) {
+      hash = (37 * hash) + DATE_PII_CONSENT_FIELD_NUMBER;
+      hash = (53 * hash) + getDatePiiConsent().hashCode();
+    }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -1180,9 +1291,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EMAIL_ADDRESSES_FIELD_NUMBER;
       hash = (53 * hash) + getEmailAddressesList().hashCode();
     }
-    hash = (37 * hash) + IS_ORG_ADMIN_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsOrgAdmin());
     hash = (37 * hash) + TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTwoFactorAuthEnabled());
@@ -1379,6 +1487,12 @@ private static final long serialVersionUID = 0L;
         dateMarketingConsent_ = null;
         dateMarketingConsentBuilder_ = null;
       }
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsent_ = null;
+      } else {
+        datePiiConsent_ = null;
+        datePiiConsentBuilder_ = null;
+      }
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -1391,8 +1505,6 @@ private static final long serialVersionUID = 0L;
       } else {
         emailAddressesBuilder_.clear();
       }
-      isOrgAdmin_ = false;
-
       twoFactorAuthEnabled_ = false;
 
       teamsCount_ = 0;
@@ -1468,6 +1580,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.dateMarketingConsent_ = dateMarketingConsentBuilder_.build();
       }
+      if (datePiiConsentBuilder_ == null) {
+        result.datePiiConsent_ = datePiiConsent_;
+      } else {
+        result.datePiiConsent_ = datePiiConsentBuilder_.build();
+      }
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -1482,7 +1599,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.emailAddresses_ = emailAddressesBuilder_.build();
       }
-      result.isOrgAdmin_ = isOrgAdmin_;
       result.twoFactorAuthEnabled_ = twoFactorAuthEnabled_;
       result.teamsCount_ = teamsCount_;
       result.isStarred_ = isStarred_;
@@ -1589,6 +1705,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasDateMarketingConsent()) {
         mergeDateMarketingConsent(other.getDateMarketingConsent());
       }
+      if (other.hasDatePiiConsent()) {
+        mergeDatePiiConsent(other.getDatePiiConsent());
+      }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
@@ -1617,9 +1736,6 @@ private static final long serialVersionUID = 0L;
             emailAddressesBuilder_.addAllMessages(other.emailAddresses_);
           }
         }
-      }
-      if (other.getIsOrgAdmin() != false) {
-        setIsOrgAdmin(other.getIsOrgAdmin());
       }
       if (other.getTwoFactorAuthEnabled() != false) {
         setTwoFactorAuthEnabled(other.getTwoFactorAuthEnabled());
@@ -1748,6 +1864,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object primaryEmail_ = "";
     /**
      * <code>string primary_email = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.primary_email is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2202
      * @return The primaryEmail.
      */
     @java.lang.Deprecated public java.lang.String getPrimaryEmail() {
@@ -1764,6 +1882,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string primary_email = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.primary_email is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2202
      * @return The bytes for primaryEmail.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1781,6 +1901,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string primary_email = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.primary_email is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2202
      * @param value The primaryEmail to set.
      * @return This builder for chaining.
      */
@@ -1796,6 +1918,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string primary_email = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.primary_email is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2202
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearPrimaryEmail() {
@@ -1806,6 +1930,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string primary_email = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.primary_email is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2202
      * @param value The bytes for primaryEmail to set.
      * @return This builder for chaining.
      */
@@ -2204,6 +2330,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object billType_ = "";
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.bill_type is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2209
      * @return The billType.
      */
     @java.lang.Deprecated public java.lang.String getBillType() {
@@ -2220,6 +2348,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.bill_type is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2209
      * @return The bytes for billType.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2237,6 +2367,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.bill_type is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2209
      * @param value The billType to set.
      * @return This builder for chaining.
      */
@@ -2252,6 +2384,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.bill_type is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2209
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearBillType() {
@@ -2262,6 +2396,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.bill_type is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2209
      * @param value The bytes for billType to set.
      * @return This builder for chaining.
      */
@@ -2473,6 +2609,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateGdprConsentBuilder_;
     /**
      * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @return Whether the dateGdprConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDateGdprConsent() {
@@ -2480,6 +2618,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2217
      * @return The dateGdprConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDateGdprConsent() {
@@ -2592,6 +2732,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateTosConsentBuilder_;
     /**
      * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_tos_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2218
      * @return Whether the dateTosConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDateTosConsent() {
@@ -2599,6 +2741,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_tos_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2218
      * @return The dateTosConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDateTosConsent() {
@@ -2711,6 +2855,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> dateMarketingConsentBuilder_;
     /**
      * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2219
      * @return Whether the dateMarketingConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDateMarketingConsent() {
@@ -2718,6 +2864,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2219
      * @return The dateMarketingConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDateMarketingConsent() {
@@ -2825,6 +2973,129 @@ private static final long serialVersionUID = 0L;
       return dateMarketingConsentBuilder_;
     }
 
+    private com.google.protobuf.Timestamp datePiiConsent_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> datePiiConsentBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_pii_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2220
+     * @return Whether the datePiiConsent field is set.
+     */
+    @java.lang.Deprecated public boolean hasDatePiiConsent() {
+      return datePiiConsentBuilder_ != null || datePiiConsent_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.date_pii_consent is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2220
+     * @return The datePiiConsent.
+     */
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getDatePiiConsent() {
+      if (datePiiConsentBuilder_ == null) {
+        return datePiiConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : datePiiConsent_;
+      } else {
+        return datePiiConsentBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder setDatePiiConsent(com.google.protobuf.Timestamp value) {
+      if (datePiiConsentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datePiiConsent_ = value;
+        onChanged();
+      } else {
+        datePiiConsentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder setDatePiiConsent(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsent_ = builderForValue.build();
+        onChanged();
+      } else {
+        datePiiConsentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder mergeDatePiiConsent(com.google.protobuf.Timestamp value) {
+      if (datePiiConsentBuilder_ == null) {
+        if (datePiiConsent_ != null) {
+          datePiiConsent_ =
+            com.google.protobuf.Timestamp.newBuilder(datePiiConsent_).mergeFrom(value).buildPartial();
+        } else {
+          datePiiConsent_ = value;
+        }
+        onChanged();
+      } else {
+        datePiiConsentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder clearDatePiiConsent() {
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsent_ = null;
+        onChanged();
+      } else {
+        datePiiConsent_ = null;
+        datePiiConsentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getDatePiiConsentBuilder() {
+      
+      onChanged();
+      return getDatePiiConsentFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getDatePiiConsentOrBuilder() {
+      if (datePiiConsentBuilder_ != null) {
+        return datePiiConsentBuilder_.getMessageOrBuilder();
+      } else {
+        return datePiiConsent_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : datePiiConsent_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getDatePiiConsentFieldBuilder() {
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getDatePiiConsent(),
+                getParentForChildren(),
+                isClean());
+        datePiiConsent_ = null;
+      }
+      return datePiiConsentBuilder_;
+    }
+
     private com.google.protobuf.Struct metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
@@ -2835,6 +3106,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.metadata is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2224
      * @return Whether the metadata field is set.
      */
     @java.lang.Deprecated public boolean hasMetadata() {
@@ -2847,6 +3120,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.metadata is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2224
      * @return The metadata.
      */
     @java.lang.Deprecated public com.google.protobuf.Struct getMetadata() {
@@ -3229,46 +3504,21 @@ private static final long serialVersionUID = 0L;
       return emailAddressesBuilder_;
     }
 
-    private boolean isOrgAdmin_ ;
-    /**
-     * <code>bool is_org_admin = 14 [deprecated = true];</code>
-     * @return The isOrgAdmin.
-     */
-    @java.lang.Deprecated public boolean getIsOrgAdmin() {
-      return isOrgAdmin_;
-    }
-    /**
-     * <code>bool is_org_admin = 14 [deprecated = true];</code>
-     * @param value The isOrgAdmin to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setIsOrgAdmin(boolean value) {
-      
-      isOrgAdmin_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool is_org_admin = 14 [deprecated = true];</code>
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearIsOrgAdmin() {
-      
-      isOrgAdmin_ = false;
-      onChanged();
-      return this;
-    }
-
     private boolean twoFactorAuthEnabled_ ;
     /**
      * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2227
      * @return The twoFactorAuthEnabled.
      */
+    @java.lang.Override
     @java.lang.Deprecated public boolean getTwoFactorAuthEnabled() {
       return twoFactorAuthEnabled_;
     }
     /**
      * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2227
      * @param value The twoFactorAuthEnabled to set.
      * @return This builder for chaining.
      */
@@ -3280,6 +3530,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2227
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTwoFactorAuthEnabled() {
@@ -3292,13 +3544,18 @@ private static final long serialVersionUID = 0L;
     private int teamsCount_ ;
     /**
      * <code>uint32 teams_count = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.teams_count is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2228
      * @return The teamsCount.
      */
+    @java.lang.Override
     @java.lang.Deprecated public int getTeamsCount() {
       return teamsCount_;
     }
     /**
      * <code>uint32 teams_count = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.teams_count is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2228
      * @param value The teamsCount to set.
      * @return This builder for chaining.
      */
@@ -3310,6 +3567,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>uint32 teams_count = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.User.teams_count is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2228
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTeamsCount() {
@@ -3329,6 +3588,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_starred = 21;</code>
      * @return The isStarred.
      */
+    @java.lang.Override
     public boolean getIsStarred() {
       return isStarred_;
     }
@@ -3374,6 +3634,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 star_count = 22;</code>
      * @return The starCount.
      */
+    @java.lang.Override
     public int getStarCount() {
       return starCount_;
     }

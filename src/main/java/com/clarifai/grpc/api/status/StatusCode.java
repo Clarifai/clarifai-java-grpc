@@ -37,14 +37,17 @@ public enum StatusCode
    */
   TRY_AGAIN(10030),
   /**
-   * <pre>
-   *SUCCESS_WARNING_API_DEPRECATED = 10001;
-   *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
-   * </pre>
-   *
    * <code>NOT_IMPLEMENTED = 10040;</code>
    */
   NOT_IMPLEMENTED(10040),
+  /**
+   * <pre>
+   * Resource moved. Respond with Http status 307 and add new Location header to response
+   * </pre>
+   *
+   * <code>MOVED = 10050;</code>
+   */
+  MOVED(10050),
   /**
    * <pre>
    * Clarifai Connection Codes: 11xxx
@@ -216,7 +219,15 @@ public enum StatusCode
   MODEL_UPLOADING_FAILED(21105),
   /**
    * <pre>
-   * Custom model training had no data.
+   * generic err msg for any type of model training err.
+   * </pre>
+   *
+   * <code>MODEL_TRAINING_FAILED = 21106;</code>
+   */
+  MODEL_TRAINING_FAILED(21106),
+  /**
+   * <pre>
+   * Custom model training had no data.  FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_NO_DATA = 21110;</code>
@@ -224,7 +235,7 @@ public enum StatusCode
   MODEL_TRAINING_NO_DATA(21110),
   /**
    * <pre>
-   * Custom model training had no positive examples.
+   * Custom model training had no positive examples. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_NO_POSITIVES = 21111;</code>
@@ -232,7 +243,7 @@ public enum StatusCode
   MODEL_TRAINING_NO_POSITIVES(21111),
   /**
    * <pre>
-   * Custom model training was ONE_VS_N but with a single class.
+   * Custom model training was ONE_VS_N but with a single class. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS = 21112;</code>
@@ -240,7 +251,7 @@ public enum StatusCode
   MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS(21112),
   /**
    * <pre>
-   * Training took longer than hard coded timeouts.
+   * Training took longer than hard coded timeouts. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_TIMED_OUT = 21113;</code>
@@ -248,7 +259,7 @@ public enum StatusCode
   MODEL_TRAINING_TIMED_OUT(21113),
   /**
    * <pre>
-   * Training got error waiting on asset pipeline to finish.
+   * Training got error waiting on asset pipeline to finish. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_WAITING_ERROR = 21114;</code>
@@ -264,7 +275,7 @@ public enum StatusCode
   MODEL_TRAINING_UNKNOWN_ERROR(21115),
   /**
    * <pre>
-   * Training message was redelivered.
+   * Training message was redelivered. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_MSG_REDELIVER = 21116 [deprecated = true];</code>
@@ -273,19 +284,23 @@ public enum StatusCode
   MODEL_TRAINING_MSG_REDELIVER(21116),
   /**
    * <pre>
-   * Training got error due to insufficient labelled data
+   * Training got error due to insufficient labelled data. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_INSUFFICIENT_DATA = 21117;</code>
    */
   MODEL_TRAINING_INSUFFICIENT_DATA(21117),
   /**
+   * <pre>
+   * FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
+   * </pre>
+   *
    * <code>MODEL_TRAINING_INVALID_PARAMS = 21118;</code>
    */
   MODEL_TRAINING_INVALID_PARAMS(21118),
   /**
    * <pre>
-   * Training is stopped because too much data was dropped
+   * Training is stopped because too much data was dropped. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
@@ -337,7 +352,7 @@ public enum StatusCode
   MODEL_QUEUED_FOR_EVALUATION(21303),
   /**
    * <pre>
-   * Evaluation took longer than hard coded timeouts.
+   * Evaluation took longer than hard coded timeouts. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_TIMED_OUT = 21310;</code>
@@ -345,7 +360,7 @@ public enum StatusCode
   MODEL_EVALUATION_TIMED_OUT(21310),
   /**
    * <pre>
-   * Evaluation got error waiting on asset pipeline to finish.
+   * Evaluation got error waiting on asset pipeline to finish.FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_WAITING_ERROR = 21311;</code>
@@ -365,7 +380,7 @@ public enum StatusCode
   MODEL_PREDICTION_FAILED(21313),
   /**
    * <pre>
-   * Eval message was redelivered.
+   * Eval message was redelivered. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_MSG_REDELIVER = 21314 [deprecated = true];</code>
@@ -374,7 +389,7 @@ public enum StatusCode
   MODEL_EVALUATION_MSG_REDELIVER(21314),
   /**
    * <pre>
-   * Don't have enough concepts labelled to perform evaluation
+   * Don't have enough concepts labelled to perform evaluation. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_NEED_LABELS = 21315;</code>
@@ -382,12 +397,20 @@ public enum StatusCode
   MODEL_EVALUATION_NEED_LABELS(21315),
   /**
    * <pre>
-   * Don't have enough inputs per concept to perform evaluation
+   * Don't have enough inputs per concept to perform evaluation. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_NEED_INPUTS = 21316;</code>
    */
   MODEL_EVALUATION_NEED_INPUTS(21316),
+  /**
+   * <pre>
+   * Generic err code for eval failure.
+   * </pre>
+   *
+   * <code>MODEL_EVALUATION_FAILED = 21317;</code>
+   */
+  MODEL_EVALUATION_FAILED(21317),
   /**
    * <pre>
    * Used when inference coordinator failed to deploy spire and throws an error
@@ -649,6 +672,30 @@ public enum StatusCode
    */
   DATA_DUMP_NO_DATA(25154),
   /**
+   * <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
+   */
+  DATA_DUMP_UNEXPECTED_ERROR(25155),
+  /**
+   * <code>DATA_DUMP_EXPORT_SUCCESS = 25170;</code>
+   */
+  DATA_DUMP_EXPORT_SUCCESS(25170),
+  /**
+   * <code>DATA_DUMP_EXPORT_PENDING = 25171;</code>
+   */
+  DATA_DUMP_EXPORT_PENDING(25171),
+  /**
+   * <code>DATA_DUMP_EXPORT_FAILED = 25172;</code>
+   */
+  DATA_DUMP_EXPORT_FAILED(25172),
+  /**
+   * <code>DATA_DUMP_EXPORT_IN_PROGRESS = 25173;</code>
+   */
+  DATA_DUMP_EXPORT_IN_PROGRESS(25173),
+  /**
+   * <code>DATA_DUMP_EXPORT_UNEXPECTED_ERROR = 25174;</code>
+   */
+  DATA_DUMP_EXPORT_UNEXPECTED_ERROR(25174),
+  /**
    * <pre>
    * Duplicate related 252xx
    * </pre>
@@ -692,6 +739,42 @@ public enum StatusCode
    * <code>MODULE_INVALID_REQUEST = 25303;</code>
    */
   MODULE_INVALID_REQUEST(25303),
+  /**
+   * <pre>
+   * Bulk Operation related codes 254xx
+   * </pre>
+   *
+   * <code>BULK_OPERATION_SUCCESS = 25400;</code>
+   */
+  BULK_OPERATION_SUCCESS(25400),
+  /**
+   * <code>BULK_OPERATION_FAILED = 25401;</code>
+   */
+  BULK_OPERATION_FAILED(25401),
+  /**
+   * <code>BULK_OPERATION_PENDING = 25402;</code>
+   */
+  BULK_OPERATION_PENDING(25402),
+  /**
+   * <code>BULK_OPERATION_IN_PROGRESS = 25403;</code>
+   */
+  BULK_OPERATION_IN_PROGRESS(25403),
+  /**
+   * <code>BULK_OPERATION_INVALID_REQUEST = 25404;</code>
+   */
+  BULK_OPERATION_INVALID_REQUEST(25404),
+  /**
+   * <code>BULK_OPERATION_CANCELLED = 25405;</code>
+   */
+  BULK_OPERATION_CANCELLED(25405),
+  /**
+   * <code>BULK_OPERATION_UNEXPECTED_ERROR = 25406;</code>
+   */
+  BULK_OPERATION_UNEXPECTED_ERROR(25406),
+  /**
+   * <code>BULK_OPERATION_DELETED = 25407;</code>
+   */
+  BULK_OPERATION_DELETED(25407),
   /**
    * <pre>
    * Input:Image related 30xxx
@@ -1077,6 +1160,10 @@ public enum StatusCode
    */
   SAVED_SEARCH_MODIFY_FAILED(43005),
   /**
+   * <pre>
+   * Workflow evaluation err code
+   * </pre>
+   *
    * <code>EVALUATION_QUEUED = 43100;</code>
    */
   EVALUATION_QUEUED(43100),
@@ -1472,6 +1559,31 @@ public enum StatusCode
   DATASET_VERSION_UNEXPECTED_ERROR(64025),
   /**
    * <pre>
+   * An alteration to dataset version would create a conflict
+   * </pre>
+   *
+   * <code>DATASET_VERSION_CONFLICT = 64030;</code>
+   */
+  DATASET_VERSION_CONFLICT(64030),
+  /**
+   * <pre>
+   * The dataset input was successfully added.
+   * </pre>
+   *
+   * <code>DATASET_INPUT_SUCCESS = 64100;</code>
+   */
+  DATASET_INPUT_SUCCESS(64100),
+  /**
+   * <pre>
+   * The dataset input is a duplicate.
+   * Deprecated: Unused.
+   * </pre>
+   *
+   * <code>DATASET_INPUT_DUPLICATE = 64101;</code>
+   */
+  DATASET_INPUT_DUPLICATE(64101),
+  /**
+   * <pre>
    * Generic Job status codes
    * </pre>
    *
@@ -1491,6 +1603,14 @@ public enum StatusCode
    */
   JOB_FAILED(64003),
   /**
+   * <code>JOB_CANCELLED = 64004;</code>
+   */
+  JOB_CANCELLED(64004),
+  /**
+   * <code>JOB_UNEXPECTED_ERROR = 64006;</code>
+   */
+  JOB_UNEXPECTED_ERROR(64006),
+  /**
    * <pre>
    *auth issues
    * </pre>
@@ -1498,6 +1618,46 @@ public enum StatusCode
    * <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
    */
   AUTH_MISSING_IDP_ASSOC(65000),
+  /**
+   * <code>LIST_OBJECTS_FAILED = 66000;</code>
+   */
+  LIST_OBJECTS_FAILED(66000),
+  /**
+   * <code>ARCHIVE_EXTRACT_FAILED = 67000;</code>
+   */
+  ARCHIVE_EXTRACT_FAILED(67000),
+  /**
+   * <pre>
+   * Multipart uploading status codes
+   * </pre>
+   *
+   * <code>UPLOAD_IN_PROGRESS = 68000;</code>
+   */
+  UPLOAD_IN_PROGRESS(68000),
+  /**
+   * <code>UPLOAD_DONE = 68001;</code>
+   */
+  UPLOAD_DONE(68001),
+  /**
+   * <code>UPLOAD_FAILED = 68002;</code>
+   */
+  UPLOAD_FAILED(68002),
+  /**
+   * <code>UPLOAD_UNEXPECTED_ERROR = 68003;</code>
+   */
+  UPLOAD_UNEXPECTED_ERROR(68003),
+  /**
+   * <code>UPLOAD_EXPIRED = 68004;</code>
+   */
+  UPLOAD_EXPIRED(68004),
+  /**
+   * <pre>
+   * Billing related issues: 69xxx
+   * </pre>
+   *
+   * <code>BILLING_INVALID_INFO = 69000;</code>
+   */
+  BILLING_INVALID_INFO(69000),
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -1626,14 +1786,17 @@ public enum StatusCode
    */
   public static final int TRY_AGAIN_VALUE = 10030;
   /**
-   * <pre>
-   *SUCCESS_WARNING_API_DEPRECATED = 10001;
-   *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
-   * </pre>
-   *
    * <code>NOT_IMPLEMENTED = 10040;</code>
    */
   public static final int NOT_IMPLEMENTED_VALUE = 10040;
+  /**
+   * <pre>
+   * Resource moved. Respond with Http status 307 and add new Location header to response
+   * </pre>
+   *
+   * <code>MOVED = 10050;</code>
+   */
+  public static final int MOVED_VALUE = 10050;
   /**
    * <pre>
    * Clarifai Connection Codes: 11xxx
@@ -1649,7 +1812,7 @@ public enum StatusCode
    *
    * <code>CONN_TOKEN_INVALID = 11001 [deprecated = true];</code>
    */
-  public static final int CONN_TOKEN_INVALID_VALUE = 11001;
+  @java.lang.Deprecated public static final int CONN_TOKEN_INVALID_VALUE = 11001;
   /**
    * <pre>
    * invalid auth credentials
@@ -1804,7 +1967,15 @@ public enum StatusCode
   public static final int MODEL_UPLOADING_FAILED_VALUE = 21105;
   /**
    * <pre>
-   * Custom model training had no data.
+   * generic err msg for any type of model training err.
+   * </pre>
+   *
+   * <code>MODEL_TRAINING_FAILED = 21106;</code>
+   */
+  public static final int MODEL_TRAINING_FAILED_VALUE = 21106;
+  /**
+   * <pre>
+   * Custom model training had no data.  FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_NO_DATA = 21110;</code>
@@ -1812,7 +1983,7 @@ public enum StatusCode
   public static final int MODEL_TRAINING_NO_DATA_VALUE = 21110;
   /**
    * <pre>
-   * Custom model training had no positive examples.
+   * Custom model training had no positive examples. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_NO_POSITIVES = 21111;</code>
@@ -1820,7 +1991,7 @@ public enum StatusCode
   public static final int MODEL_TRAINING_NO_POSITIVES_VALUE = 21111;
   /**
    * <pre>
-   * Custom model training was ONE_VS_N but with a single class.
+   * Custom model training was ONE_VS_N but with a single class. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS = 21112;</code>
@@ -1828,7 +1999,7 @@ public enum StatusCode
   public static final int MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS_VALUE = 21112;
   /**
    * <pre>
-   * Training took longer than hard coded timeouts.
+   * Training took longer than hard coded timeouts. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_TIMED_OUT = 21113;</code>
@@ -1836,7 +2007,7 @@ public enum StatusCode
   public static final int MODEL_TRAINING_TIMED_OUT_VALUE = 21113;
   /**
    * <pre>
-   * Training got error waiting on asset pipeline to finish.
+   * Training got error waiting on asset pipeline to finish. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_WAITING_ERROR = 21114;</code>
@@ -1852,27 +2023,31 @@ public enum StatusCode
   public static final int MODEL_TRAINING_UNKNOWN_ERROR_VALUE = 21115;
   /**
    * <pre>
-   * Training message was redelivered.
+   * Training message was redelivered. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_MSG_REDELIVER = 21116 [deprecated = true];</code>
    */
-  public static final int MODEL_TRAINING_MSG_REDELIVER_VALUE = 21116;
+  @java.lang.Deprecated public static final int MODEL_TRAINING_MSG_REDELIVER_VALUE = 21116;
   /**
    * <pre>
-   * Training got error due to insufficient labelled data
+   * Training got error due to insufficient labelled data. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_INSUFFICIENT_DATA = 21117;</code>
    */
   public static final int MODEL_TRAINING_INSUFFICIENT_DATA_VALUE = 21117;
   /**
+   * <pre>
+   * FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
+   * </pre>
+   *
    * <code>MODEL_TRAINING_INVALID_PARAMS = 21118;</code>
    */
   public static final int MODEL_TRAINING_INVALID_PARAMS_VALUE = 21118;
   /**
    * <pre>
-   * Training is stopped because too much data was dropped
+   * Training is stopped because too much data was dropped. FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_TRAINING_INVALID_DATA_TOLERANCE_EXCEEDED = 21119;</code>
@@ -1924,7 +2099,7 @@ public enum StatusCode
   public static final int MODEL_QUEUED_FOR_EVALUATION_VALUE = 21303;
   /**
    * <pre>
-   * Evaluation took longer than hard coded timeouts.
+   * Evaluation took longer than hard coded timeouts. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_TIMED_OUT = 21310;</code>
@@ -1932,7 +2107,7 @@ public enum StatusCode
   public static final int MODEL_EVALUATION_TIMED_OUT_VALUE = 21310;
   /**
    * <pre>
-   * Evaluation got error waiting on asset pipeline to finish.
+   * Evaluation got error waiting on asset pipeline to finish.FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_WAITING_ERROR = 21311;</code>
@@ -1952,15 +2127,15 @@ public enum StatusCode
   public static final int MODEL_PREDICTION_FAILED_VALUE = 21313;
   /**
    * <pre>
-   * Eval message was redelivered.
+   * Eval message was redelivered. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_MSG_REDELIVER = 21314 [deprecated = true];</code>
    */
-  public static final int MODEL_EVALUATION_MSG_REDELIVER_VALUE = 21314;
+  @java.lang.Deprecated public static final int MODEL_EVALUATION_MSG_REDELIVER_VALUE = 21314;
   /**
    * <pre>
-   * Don't have enough concepts labelled to perform evaluation
+   * Don't have enough concepts labelled to perform evaluation. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_NEED_LABELS = 21315;</code>
@@ -1968,12 +2143,20 @@ public enum StatusCode
   public static final int MODEL_EVALUATION_NEED_LABELS_VALUE = 21315;
   /**
    * <pre>
-   * Don't have enough inputs per concept to perform evaluation
+   * Don't have enough inputs per concept to perform evaluation. FIXME(yang): deprecate this. Use the 21317 + errStatusMsg
    * </pre>
    *
    * <code>MODEL_EVALUATION_NEED_INPUTS = 21316;</code>
    */
   public static final int MODEL_EVALUATION_NEED_INPUTS_VALUE = 21316;
+  /**
+   * <pre>
+   * Generic err code for eval failure.
+   * </pre>
+   *
+   * <code>MODEL_EVALUATION_FAILED = 21317;</code>
+   */
+  public static final int MODEL_EVALUATION_FAILED_VALUE = 21317;
   /**
    * <pre>
    * Used when inference coordinator failed to deploy spire and throws an error
@@ -2235,6 +2418,30 @@ public enum StatusCode
    */
   public static final int DATA_DUMP_NO_DATA_VALUE = 25154;
   /**
+   * <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
+   */
+  public static final int DATA_DUMP_UNEXPECTED_ERROR_VALUE = 25155;
+  /**
+   * <code>DATA_DUMP_EXPORT_SUCCESS = 25170;</code>
+   */
+  public static final int DATA_DUMP_EXPORT_SUCCESS_VALUE = 25170;
+  /**
+   * <code>DATA_DUMP_EXPORT_PENDING = 25171;</code>
+   */
+  public static final int DATA_DUMP_EXPORT_PENDING_VALUE = 25171;
+  /**
+   * <code>DATA_DUMP_EXPORT_FAILED = 25172;</code>
+   */
+  public static final int DATA_DUMP_EXPORT_FAILED_VALUE = 25172;
+  /**
+   * <code>DATA_DUMP_EXPORT_IN_PROGRESS = 25173;</code>
+   */
+  public static final int DATA_DUMP_EXPORT_IN_PROGRESS_VALUE = 25173;
+  /**
+   * <code>DATA_DUMP_EXPORT_UNEXPECTED_ERROR = 25174;</code>
+   */
+  public static final int DATA_DUMP_EXPORT_UNEXPECTED_ERROR_VALUE = 25174;
+  /**
    * <pre>
    * Duplicate related 252xx
    * </pre>
@@ -2278,6 +2485,42 @@ public enum StatusCode
    * <code>MODULE_INVALID_REQUEST = 25303;</code>
    */
   public static final int MODULE_INVALID_REQUEST_VALUE = 25303;
+  /**
+   * <pre>
+   * Bulk Operation related codes 254xx
+   * </pre>
+   *
+   * <code>BULK_OPERATION_SUCCESS = 25400;</code>
+   */
+  public static final int BULK_OPERATION_SUCCESS_VALUE = 25400;
+  /**
+   * <code>BULK_OPERATION_FAILED = 25401;</code>
+   */
+  public static final int BULK_OPERATION_FAILED_VALUE = 25401;
+  /**
+   * <code>BULK_OPERATION_PENDING = 25402;</code>
+   */
+  public static final int BULK_OPERATION_PENDING_VALUE = 25402;
+  /**
+   * <code>BULK_OPERATION_IN_PROGRESS = 25403;</code>
+   */
+  public static final int BULK_OPERATION_IN_PROGRESS_VALUE = 25403;
+  /**
+   * <code>BULK_OPERATION_INVALID_REQUEST = 25404;</code>
+   */
+  public static final int BULK_OPERATION_INVALID_REQUEST_VALUE = 25404;
+  /**
+   * <code>BULK_OPERATION_CANCELLED = 25405;</code>
+   */
+  public static final int BULK_OPERATION_CANCELLED_VALUE = 25405;
+  /**
+   * <code>BULK_OPERATION_UNEXPECTED_ERROR = 25406;</code>
+   */
+  public static final int BULK_OPERATION_UNEXPECTED_ERROR_VALUE = 25406;
+  /**
+   * <code>BULK_OPERATION_DELETED = 25407;</code>
+   */
+  public static final int BULK_OPERATION_DELETED_VALUE = 25407;
   /**
    * <pre>
    * Input:Image related 30xxx
@@ -2663,6 +2906,10 @@ public enum StatusCode
    */
   public static final int SAVED_SEARCH_MODIFY_FAILED_VALUE = 43005;
   /**
+   * <pre>
+   * Workflow evaluation err code
+   * </pre>
+   *
    * <code>EVALUATION_QUEUED = 43100;</code>
    */
   public static final int EVALUATION_QUEUED_VALUE = 43100;
@@ -3058,6 +3305,31 @@ public enum StatusCode
   public static final int DATASET_VERSION_UNEXPECTED_ERROR_VALUE = 64025;
   /**
    * <pre>
+   * An alteration to dataset version would create a conflict
+   * </pre>
+   *
+   * <code>DATASET_VERSION_CONFLICT = 64030;</code>
+   */
+  public static final int DATASET_VERSION_CONFLICT_VALUE = 64030;
+  /**
+   * <pre>
+   * The dataset input was successfully added.
+   * </pre>
+   *
+   * <code>DATASET_INPUT_SUCCESS = 64100;</code>
+   */
+  public static final int DATASET_INPUT_SUCCESS_VALUE = 64100;
+  /**
+   * <pre>
+   * The dataset input is a duplicate.
+   * Deprecated: Unused.
+   * </pre>
+   *
+   * <code>DATASET_INPUT_DUPLICATE = 64101;</code>
+   */
+  public static final int DATASET_INPUT_DUPLICATE_VALUE = 64101;
+  /**
+   * <pre>
    * Generic Job status codes
    * </pre>
    *
@@ -3077,6 +3349,14 @@ public enum StatusCode
    */
   public static final int JOB_FAILED_VALUE = 64003;
   /**
+   * <code>JOB_CANCELLED = 64004;</code>
+   */
+  public static final int JOB_CANCELLED_VALUE = 64004;
+  /**
+   * <code>JOB_UNEXPECTED_ERROR = 64006;</code>
+   */
+  public static final int JOB_UNEXPECTED_ERROR_VALUE = 64006;
+  /**
    * <pre>
    *auth issues
    * </pre>
@@ -3084,6 +3364,46 @@ public enum StatusCode
    * <code>AUTH_MISSING_IDP_ASSOC = 65000;</code>
    */
   public static final int AUTH_MISSING_IDP_ASSOC_VALUE = 65000;
+  /**
+   * <code>LIST_OBJECTS_FAILED = 66000;</code>
+   */
+  public static final int LIST_OBJECTS_FAILED_VALUE = 66000;
+  /**
+   * <code>ARCHIVE_EXTRACT_FAILED = 67000;</code>
+   */
+  public static final int ARCHIVE_EXTRACT_FAILED_VALUE = 67000;
+  /**
+   * <pre>
+   * Multipart uploading status codes
+   * </pre>
+   *
+   * <code>UPLOAD_IN_PROGRESS = 68000;</code>
+   */
+  public static final int UPLOAD_IN_PROGRESS_VALUE = 68000;
+  /**
+   * <code>UPLOAD_DONE = 68001;</code>
+   */
+  public static final int UPLOAD_DONE_VALUE = 68001;
+  /**
+   * <code>UPLOAD_FAILED = 68002;</code>
+   */
+  public static final int UPLOAD_FAILED_VALUE = 68002;
+  /**
+   * <code>UPLOAD_UNEXPECTED_ERROR = 68003;</code>
+   */
+  public static final int UPLOAD_UNEXPECTED_ERROR_VALUE = 68003;
+  /**
+   * <code>UPLOAD_EXPIRED = 68004;</code>
+   */
+  public static final int UPLOAD_EXPIRED_VALUE = 68004;
+  /**
+   * <pre>
+   * Billing related issues: 69xxx
+   * </pre>
+   *
+   * <code>BILLING_INVALID_INFO = 69000;</code>
+   */
+  public static final int BILLING_INVALID_INFO_VALUE = 69000;
   /**
    * <pre>
    * Internal issues: 98xxx
@@ -3212,6 +3532,7 @@ public enum StatusCode
       case 10020: return FAILURE;
       case 10030: return TRY_AGAIN;
       case 10040: return NOT_IMPLEMENTED;
+      case 10050: return MOVED;
       case 11000: return CONN_ACCOUNT_ISSUES;
       case 11001: return CONN_TOKEN_INVALID;
       case 11002: return CONN_CREDENTIALS_INVALID;
@@ -3234,6 +3555,7 @@ public enum StatusCode
       case 21103: return MODEL_QUEUED_FOR_TRAINING;
       case 21104: return MODEL_UPLOADING;
       case 21105: return MODEL_UPLOADING_FAILED;
+      case 21106: return MODEL_TRAINING_FAILED;
       case 21110: return MODEL_TRAINING_NO_DATA;
       case 21111: return MODEL_TRAINING_NO_POSITIVES;
       case 21112: return MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS;
@@ -3262,6 +3584,7 @@ public enum StatusCode
       case 21314: return MODEL_EVALUATION_MSG_REDELIVER;
       case 21315: return MODEL_EVALUATION_NEED_LABELS;
       case 21316: return MODEL_EVALUATION_NEED_INPUTS;
+      case 21317: return MODEL_EVALUATION_FAILED;
       case 21350: return MODEL_DEPLOYMENT_FAILED;
       case 21351: return MODEL_DEPLOYING;
       case 21352: return MODEL_QUEUED_FOR_DEPLOYMENT;
@@ -3312,6 +3635,12 @@ public enum StatusCode
       case 25152: return DATA_DUMP_FAILED;
       case 25153: return DATA_DUMP_IN_PROGRESS;
       case 25154: return DATA_DUMP_NO_DATA;
+      case 25155: return DATA_DUMP_UNEXPECTED_ERROR;
+      case 25170: return DATA_DUMP_EXPORT_SUCCESS;
+      case 25171: return DATA_DUMP_EXPORT_PENDING;
+      case 25172: return DATA_DUMP_EXPORT_FAILED;
+      case 25173: return DATA_DUMP_EXPORT_IN_PROGRESS;
+      case 25174: return DATA_DUMP_EXPORT_UNEXPECTED_ERROR;
       case 25200: return APP_DUPLICATION_SUCCESS;
       case 25201: return APP_DUPLICATION_FAILED;
       case 25202: return APP_DUPLICATION_PENDING;
@@ -3321,6 +3650,14 @@ public enum StatusCode
       case 25301: return MODULE_PERMISSION_DENIED;
       case 25302: return MODULE_INVALID_ARGUMENT;
       case 25303: return MODULE_INVALID_REQUEST;
+      case 25400: return BULK_OPERATION_SUCCESS;
+      case 25401: return BULK_OPERATION_FAILED;
+      case 25402: return BULK_OPERATION_PENDING;
+      case 25403: return BULK_OPERATION_IN_PROGRESS;
+      case 25404: return BULK_OPERATION_INVALID_REQUEST;
+      case 25405: return BULK_OPERATION_CANCELLED;
+      case 25406: return BULK_OPERATION_UNEXPECTED_ERROR;
+      case 25407: return BULK_OPERATION_DELETED;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;
@@ -3477,11 +3814,24 @@ public enum StatusCode
       case 64015: return DATASET_VERSION_READY;
       case 64020: return DATASET_VERSION_FAILURE;
       case 64025: return DATASET_VERSION_UNEXPECTED_ERROR;
+      case 64030: return DATASET_VERSION_CONFLICT;
+      case 64100: return DATASET_INPUT_SUCCESS;
+      case 64101: return DATASET_INPUT_DUPLICATE;
       case 64000: return JOB_QUEUED;
       case 64001: return JOB_RUNNING;
       case 64002: return JOB_COMPLETED;
       case 64003: return JOB_FAILED;
+      case 64004: return JOB_CANCELLED;
+      case 64006: return JOB_UNEXPECTED_ERROR;
       case 65000: return AUTH_MISSING_IDP_ASSOC;
+      case 66000: return LIST_OBJECTS_FAILED;
+      case 67000: return ARCHIVE_EXTRACT_FAILED;
+      case 68000: return UPLOAD_IN_PROGRESS;
+      case 68001: return UPLOAD_DONE;
+      case 68002: return UPLOAD_FAILED;
+      case 68003: return UPLOAD_UNEXPECTED_ERROR;
+      case 68004: return UPLOAD_EXPIRED;
+      case 69000: return BILLING_INVALID_INFO;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;
@@ -3520,6 +3870,10 @@ public enum StatusCode
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Color}
  */
-public  final class Color extends
+public final class Color extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Color)
     ColorOrBuilder {
@@ -88,6 +88,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * <code>string raw_hex = 1;</code>
    * @return The rawHex.
    */
+  @java.lang.Override
   public java.lang.String getRawHex() {
     java.lang.Object ref = rawHex_;
     if (ref instanceof java.lang.String) {
@@ -131,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * <code>string raw_hex = 1;</code>
    * @return The bytes for rawHex.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getRawHexBytes() {
     java.lang.Object ref = rawHex_;
@@ -151,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.W3C w3c = 2;</code>
    * @return Whether the w3c field is set.
    */
+  @java.lang.Override
   public boolean hasW3C() {
     return w3C_ != null;
   }
@@ -158,12 +163,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.W3C w3c = 2;</code>
    * @return The w3c.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.W3C getW3C() {
     return w3C_ == null ? com.clarifai.grpc.api.W3C.getDefaultInstance() : w3C_;
   }
   /**
    * <code>.clarifai.api.W3C w3c = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.W3COrBuilder getW3COrBuilder() {
     return getW3C();
   }
@@ -174,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The value.
    */
+  @java.lang.Override
   public float getValue() {
     return value_;
   }
@@ -192,13 +200,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRawHexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawHex_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rawHex_);
     }
     if (w3C_ != null) {
       output.writeMessage(2, getW3C());
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(3, value_);
     }
     unknownFields.writeTo(output);
@@ -210,14 +218,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRawHexBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawHex_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rawHex_);
     }
     if (w3C_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getW3C());
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, value_);
     }
@@ -733,6 +741,7 @@ private static final long serialVersionUID = 0L;
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The value.
      */
+    @java.lang.Override
     public float getValue() {
       return value_;
     }

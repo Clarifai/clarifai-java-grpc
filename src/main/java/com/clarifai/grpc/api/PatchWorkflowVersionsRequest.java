@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PatchWorkflowVersionsRequest}
  */
-public  final class PatchWorkflowVersionsRequest extends
+public final class PatchWorkflowVersionsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PatchWorkflowVersionsRequest)
     PatchWorkflowVersionsRequestOrBuilder {
@@ -101,6 +101,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -131,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -138,12 +141,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -158,6 +163,7 @@ private static final long serialVersionUID = 0L;
    * <code>string workflow_id = 2;</code>
    * @return The workflowId.
    */
+  @java.lang.Override
   public java.lang.String getWorkflowId() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
@@ -178,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * <code>string workflow_id = 2;</code>
    * @return The bytes for workflowId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getWorkflowIdBytes() {
     java.lang.Object ref = workflowId_;
@@ -201,6 +208,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowVersion workflow_versions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.WorkflowVersion> getWorkflowVersionsList() {
     return workflowVersions_;
   }
@@ -211,6 +219,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowVersion workflow_versions = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.WorkflowVersionOrBuilder> 
       getWorkflowVersionsOrBuilderList() {
     return workflowVersions_;
@@ -222,6 +231,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowVersion workflow_versions = 3;</code>
    */
+  @java.lang.Override
   public int getWorkflowVersionsCount() {
     return workflowVersions_.size();
   }
@@ -232,6 +242,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowVersion workflow_versions = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowVersion getWorkflowVersions(int index) {
     return workflowVersions_.get(index);
   }
@@ -242,6 +253,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowVersion workflow_versions = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowVersionOrBuilder getWorkflowVersionsOrBuilder(
       int index) {
     return workflowVersions_.get(index);
@@ -258,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 4;</code>
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -279,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 4;</code>
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActionBytes() {
     java.lang.Object ref = action_;
@@ -310,13 +324,13 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, workflowId_);
     }
     for (int i = 0; i < workflowVersions_.size(); i++) {
       output.writeMessage(3, workflowVersions_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, action_);
     }
     unknownFields.writeTo(output);
@@ -332,14 +346,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, workflowId_);
     }
     for (int i = 0; i < workflowVersions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, workflowVersions_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, action_);
     }
     size += unknownFields.getSerializedSize();

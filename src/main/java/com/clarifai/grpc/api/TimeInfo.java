@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TimeInfo}
  */
-public  final class TimeInfo extends
+public final class TimeInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TimeInfo)
     TimeInfoOrBuilder {
@@ -78,6 +78,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -109,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 num_frames = 1;</code>
    * @return The numFrames.
    */
+  @java.lang.Override
   public int getNumFrames() {
     return numFrames_;
   }
@@ -123,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 begin_time = 2;</code>
    * @return The beginTime.
    */
+  @java.lang.Override
   public int getBeginTime() {
     return beginTime_;
   }
@@ -137,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 end_time = 3;</code>
    * @return The endTime.
    */
+  @java.lang.Override
   public int getEndTime() {
     return endTime_;
   }
@@ -490,6 +495,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 num_frames = 1;</code>
      * @return The numFrames.
      */
+    @java.lang.Override
     public int getNumFrames() {
       return numFrames_;
     }
@@ -532,6 +538,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 begin_time = 2;</code>
      * @return The beginTime.
      */
+    @java.lang.Override
     public int getBeginTime() {
       return beginTime_;
     }
@@ -574,6 +581,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 end_time = 3;</code>
      * @return The endTime.
      */
+    @java.lang.Override
     public int getEndTime() {
       return endTime_;
     }

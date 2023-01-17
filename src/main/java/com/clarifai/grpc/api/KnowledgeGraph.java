@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.KnowledgeGraph}
  */
-public  final class KnowledgeGraph extends
+public final class KnowledgeGraph extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.KnowledgeGraph)
     KnowledgeGraphOrBuilder {
@@ -98,6 +98,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -129,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -149,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -173,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -217,6 +223,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 3;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -237,6 +244,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 3;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -261,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * <code>string examples_app_id = 4;</code>
    * @return The examplesAppId.
    */
+  @java.lang.Override
   public java.lang.String getExamplesAppId() {
     java.lang.Object ref = examplesAppId_;
     if (ref instanceof java.lang.String) {
@@ -281,6 +290,7 @@ private static final long serialVersionUID = 0L;
    * <code>string examples_app_id = 4;</code>
    * @return The bytes for examplesAppId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getExamplesAppIdBytes() {
     java.lang.Object ref = examplesAppId_;
@@ -305,6 +315,7 @@ private static final long serialVersionUID = 0L;
    * <code>string sampled_examples_app_id = 5;</code>
    * @return The sampledExamplesAppId.
    */
+  @java.lang.Override
   public java.lang.String getSampledExamplesAppId() {
     java.lang.Object ref = sampledExamplesAppId_;
     if (ref instanceof java.lang.String) {
@@ -325,6 +336,7 @@ private static final long serialVersionUID = 0L;
    * <code>string sampled_examples_app_id = 5;</code>
    * @return The bytes for sampledExamplesAppId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getSampledExamplesAppIdBytes() {
     java.lang.Object ref = sampledExamplesAppId_;
@@ -353,19 +365,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (!getExamplesAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(examplesAppId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, examplesAppId_);
     }
-    if (!getSampledExamplesAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sampledExamplesAppId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sampledExamplesAppId_);
     }
     unknownFields.writeTo(output);
@@ -377,19 +389,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
-    if (!getExamplesAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(examplesAppId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, examplesAppId_);
     }
-    if (!getSampledExamplesAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sampledExamplesAppId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sampledExamplesAppId_);
     }
     size += unknownFields.getSerializedSize();

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.BinaryMetrics}
  */
-public  final class BinaryMetrics extends
+public final class BinaryMetrics extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.BinaryMetrics)
     BinaryMetricsOrBuilder {
@@ -154,6 +154,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -181,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The numPos.
    */
+  @java.lang.Override
   public int getNumPos() {
     return numPos_;
   }
@@ -191,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The numNeg.
    */
+  @java.lang.Override
   public int getNumNeg() {
     return numNeg_;
   }
@@ -201,6 +205,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The numTot.
    */
+  @java.lang.Override
   public int getNumTot() {
     return numTot_;
   }
@@ -211,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The rocAuc.
    */
+  @java.lang.Override
   public float getRocAuc() {
     return rocAuc_;
   }
@@ -221,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The f1.
    */
+  @java.lang.Override
   public float getF1() {
     return f1_;
   }
@@ -231,6 +238,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Concept concept = 6;</code>
    * @return Whether the concept field is set.
    */
+  @java.lang.Override
   public boolean hasConcept() {
     return concept_ != null;
   }
@@ -238,12 +246,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Concept concept = 6;</code>
    * @return The concept.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getConcept() {
     return concept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : concept_;
   }
   /**
    * <code>.clarifai.api.Concept concept = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getConceptOrBuilder() {
     return getConcept();
   }
@@ -254,6 +264,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
    * @return Whether the rocCurve field is set.
    */
+  @java.lang.Override
   public boolean hasRocCurve() {
     return rocCurve_ != null;
   }
@@ -261,12 +272,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
    * @return The rocCurve.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ROC getRocCurve() {
     return rocCurve_ == null ? com.clarifai.grpc.api.ROC.getDefaultInstance() : rocCurve_;
   }
   /**
    * <code>.clarifai.api.ROC roc_curve = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ROCOrBuilder getRocCurveOrBuilder() {
     return getRocCurve();
   }
@@ -277,6 +290,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
    * @return Whether the precisionRecallCurve field is set.
    */
+  @java.lang.Override
   public boolean hasPrecisionRecallCurve() {
     return precisionRecallCurve_ != null;
   }
@@ -284,12 +298,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
    * @return The precisionRecallCurve.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PrecisionRecallCurve getPrecisionRecallCurve() {
     return precisionRecallCurve_ == null ? com.clarifai.grpc.api.PrecisionRecallCurve.getDefaultInstance() : precisionRecallCurve_;
   }
   /**
    * <code>.clarifai.api.PrecisionRecallCurve precision_recall_curve = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PrecisionRecallCurveOrBuilder getPrecisionRecallCurveOrBuilder() {
     return getPrecisionRecallCurve();
   }
@@ -300,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * <code>float avg_precision = 9;</code>
    * @return The avgPrecision.
    */
+  @java.lang.Override
   public float getAvgPrecision() {
     return avgPrecision_;
   }
@@ -310,6 +327,7 @@ private static final long serialVersionUID = 0L;
    * <code>string area_name = 10;</code>
    * @return The areaName.
    */
+  @java.lang.Override
   public java.lang.String getAreaName() {
     java.lang.Object ref = areaName_;
     if (ref instanceof java.lang.String) {
@@ -326,6 +344,7 @@ private static final long serialVersionUID = 0L;
    * <code>string area_name = 10;</code>
    * @return The bytes for areaName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAreaNameBytes() {
     java.lang.Object ref = areaName_;
@@ -346,6 +365,7 @@ private static final long serialVersionUID = 0L;
    * <code>double area_min = 11;</code>
    * @return The areaMin.
    */
+  @java.lang.Override
   public double getAreaMin() {
     return areaMin_;
   }
@@ -356,6 +376,7 @@ private static final long serialVersionUID = 0L;
    * <code>double area_max = 12;</code>
    * @return The areaMax.
    */
+  @java.lang.Override
   public double getAreaMax() {
     return areaMax_;
   }
@@ -366,6 +387,7 @@ private static final long serialVersionUID = 0L;
    * <code>float iou = 13;</code>
    * @return The iou.
    */
+  @java.lang.Override
   public float getIou() {
     return iou_;
   }
@@ -393,10 +415,10 @@ private static final long serialVersionUID = 0L;
     if (numTot_ != 0) {
       output.writeUInt32(3, numTot_);
     }
-    if (rocAuc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(rocAuc_) != 0) {
       output.writeFloat(4, rocAuc_);
     }
-    if (f1_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(f1_) != 0) {
       output.writeFloat(5, f1_);
     }
     if (concept_ != null) {
@@ -408,19 +430,19 @@ private static final long serialVersionUID = 0L;
     if (precisionRecallCurve_ != null) {
       output.writeMessage(8, getPrecisionRecallCurve());
     }
-    if (avgPrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(avgPrecision_) != 0) {
       output.writeFloat(9, avgPrecision_);
     }
-    if (!getAreaNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(areaName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, areaName_);
     }
-    if (areaMin_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(areaMin_) != 0) {
       output.writeDouble(11, areaMin_);
     }
-    if (areaMax_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(areaMax_) != 0) {
       output.writeDouble(12, areaMax_);
     }
-    if (iou_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(iou_) != 0) {
       output.writeFloat(13, iou_);
     }
     unknownFields.writeTo(output);
@@ -444,11 +466,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, numTot_);
     }
-    if (rocAuc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(rocAuc_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, rocAuc_);
     }
-    if (f1_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(f1_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, f1_);
     }
@@ -464,22 +486,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getPrecisionRecallCurve());
     }
-    if (avgPrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(avgPrecision_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(9, avgPrecision_);
     }
-    if (!getAreaNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(areaName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, areaName_);
     }
-    if (areaMin_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(areaMin_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(11, areaMin_);
     }
-    if (areaMax_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(areaMax_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(12, areaMax_);
     }
-    if (iou_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(iou_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(13, iou_);
     }
@@ -936,6 +958,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 num_pos = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The numPos.
      */
+    @java.lang.Override
     public int getNumPos() {
       return numPos_;
     }
@@ -966,6 +989,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 num_neg = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The numNeg.
      */
+    @java.lang.Override
     public int getNumNeg() {
       return numNeg_;
     }
@@ -996,6 +1020,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 num_tot = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The numTot.
      */
+    @java.lang.Override
     public int getNumTot() {
       return numTot_;
     }
@@ -1026,6 +1051,7 @@ private static final long serialVersionUID = 0L;
      * <code>float roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The rocAuc.
      */
+    @java.lang.Override
     public float getRocAuc() {
       return rocAuc_;
     }
@@ -1056,6 +1082,7 @@ private static final long serialVersionUID = 0L;
      * <code>float f1 = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The f1.
      */
+    @java.lang.Override
     public float getF1() {
       return f1_;
     }
@@ -1443,6 +1470,7 @@ private static final long serialVersionUID = 0L;
      * <code>float avg_precision = 9;</code>
      * @return The avgPrecision.
      */
+    @java.lang.Override
     public float getAvgPrecision() {
       return avgPrecision_;
     }
@@ -1549,6 +1577,7 @@ private static final long serialVersionUID = 0L;
      * <code>double area_min = 11;</code>
      * @return The areaMin.
      */
+    @java.lang.Override
     public double getAreaMin() {
       return areaMin_;
     }
@@ -1579,6 +1608,7 @@ private static final long serialVersionUID = 0L;
      * <code>double area_max = 12;</code>
      * @return The areaMax.
      */
+    @java.lang.Override
     public double getAreaMax() {
       return areaMax_;
     }
@@ -1609,6 +1639,7 @@ private static final long serialVersionUID = 0L;
      * <code>float iou = 13;</code>
      * @return The iou.
      */
+    @java.lang.Override
     public float getIou() {
       return iou_;
     }

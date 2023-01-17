@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.InputCount}
  */
-public  final class InputCount extends
+public final class InputCount extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.InputCount)
     InputCountOrBuilder {
@@ -103,6 +103,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The processed.
    */
+  @java.lang.Override
   public int getProcessed() {
     return processed_;
   }
@@ -140,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The toProcess.
    */
+  @java.lang.Override
   public int getToProcess() {
     return toProcess_;
   }
@@ -150,6 +154,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The errors.
    */
+  @java.lang.Override
   public int getErrors() {
     return errors_;
   }
@@ -160,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The processing.
    */
+  @java.lang.Override
   public int getProcessing() {
     return processing_;
   }
@@ -170,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The reindexed.
    */
+  @java.lang.Override
   public int getReindexed() {
     return reindexed_;
   }
@@ -180,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The toReindex.
    */
+  @java.lang.Override
   public int getToReindex() {
     return toReindex_;
   }
@@ -190,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The reindexErrors.
    */
+  @java.lang.Override
   public int getReindexErrors() {
     return reindexErrors_;
   }
@@ -200,6 +209,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The reindexing.
    */
+  @java.lang.Override
   public int getReindexing() {
     return reindexing_;
   }
@@ -634,6 +644,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 processed = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The processed.
      */
+    @java.lang.Override
     public int getProcessed() {
       return processed_;
     }
@@ -664,6 +675,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 to_process = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The toProcess.
      */
+    @java.lang.Override
     public int getToProcess() {
       return toProcess_;
     }
@@ -694,6 +706,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 errors = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The errors.
      */
+    @java.lang.Override
     public int getErrors() {
       return errors_;
     }
@@ -724,6 +737,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 processing = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The processing.
      */
+    @java.lang.Override
     public int getProcessing() {
       return processing_;
     }
@@ -754,6 +768,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 reindexed = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The reindexed.
      */
+    @java.lang.Override
     public int getReindexed() {
       return reindexed_;
     }
@@ -784,6 +799,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 to_reindex = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The toReindex.
      */
+    @java.lang.Override
     public int getToReindex() {
       return toReindex_;
     }
@@ -814,6 +830,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 reindex_errors = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The reindexErrors.
      */
+    @java.lang.Override
     public int getReindexErrors() {
       return reindexErrors_;
     }
@@ -844,6 +861,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 reindexing = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The reindexing.
      */
+    @java.lang.Override
     public int getReindexing() {
       return reindexing_;
     }

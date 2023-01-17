@@ -33,6 +33,8 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string name = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1178
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -42,6 +44,8 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string name = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1178
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -136,33 +140,41 @@ public interface ModelOrBuilder extends
   /**
    * <pre>
    * Info about the model's output and configuration.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.output_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1191
    * @return Whether the outputInfo field is set.
    */
-  boolean hasOutputInfo();
+  @java.lang.Deprecated boolean hasOutputInfo();
   /**
    * <pre>
    * Info about the model's output and configuration.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.output_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1191
    * @return The outputInfo.
    */
-  com.clarifai.grpc.api.OutputInfo getOutputInfo();
+  @java.lang.Deprecated com.clarifai.grpc.api.OutputInfo getOutputInfo();
   /**
    * <pre>
    * Info about the model's output and configuration.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder();
 
   /**
    * <pre>
-   * A particular version of the model, e.g., to specify the version when creating a workflow.
+   * A particular version of the model, e.g., to specify the version when creating a workflow or
+   * when listing Models to include the latest ModelVersion of the model in the response.
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -171,7 +183,8 @@ public interface ModelOrBuilder extends
   boolean hasModelVersion();
   /**
    * <pre>
-   * A particular version of the model, e.g., to specify the version when creating a workflow.
+   * A particular version of the model, e.g., to specify the version when creating a workflow or
+   * when listing Models to include the latest ModelVersion of the model in the response.
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -180,7 +193,8 @@ public interface ModelOrBuilder extends
   com.clarifai.grpc.api.ModelVersion getModelVersion();
   /**
    * <pre>
-   * A particular version of the model, e.g., to specify the version when creating a workflow.
+   * A particular version of the model, e.g., to specify the version when creating a workflow or
+   * when listing Models to include the latest ModelVersion of the model in the response.
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -193,6 +207,8 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.display_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1196
    * @return The displayName.
    */
   @java.lang.Deprecated java.lang.String getDisplayName();
@@ -202,6 +218,8 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>string display_name = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.display_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1196
    * @return The bytes for displayName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -230,56 +248,97 @@ public interface ModelOrBuilder extends
   /**
    * <pre>
    * Info about the models' input and configuration of them.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.input_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1201
    * @return Whether the inputInfo field is set.
    */
-  boolean hasInputInfo();
+  @java.lang.Deprecated boolean hasInputInfo();
   /**
    * <pre>
    * Info about the models' input and configuration of them.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.input_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1201
    * @return The inputInfo.
    */
-  com.clarifai.grpc.api.InputInfo getInputInfo();
+  @java.lang.Deprecated com.clarifai.grpc.api.InputInfo getInputInfo();
   /**
    * <pre>
    * Info about the models' input and configuration of them.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder();
 
   /**
    * <pre>
    * Configuration for the training process of this model.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.train_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1204
    * @return Whether the trainInfo field is set.
    */
-  boolean hasTrainInfo();
+  @java.lang.Deprecated boolean hasTrainInfo();
   /**
    * <pre>
    * Configuration for the training process of this model.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.train_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1204
    * @return The trainInfo.
    */
-  com.clarifai.grpc.api.TrainInfo getTrainInfo();
+  @java.lang.Deprecated com.clarifai.grpc.api.TrainInfo getTrainInfo();
   /**
    * <pre>
    * Configuration for the training process of this model.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder();
+
+  /**
+   * <pre>
+   * The default evaluation info. Can be overwritten by eval request.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+   * @return Whether the defaultEvalInfo field is set.
+   */
+  boolean hasDefaultEvalInfo();
+  /**
+   * <pre>
+   * The default evaluation info. Can be overwritten by eval request.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+   * @return The defaultEvalInfo.
+   */
+  com.clarifai.grpc.api.EvalInfo getDefaultEvalInfo();
+  /**
+   * <pre>
+   * The default evaluation info. Can be overwritten by eval request.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+   */
+  com.clarifai.grpc.api.EvalInfoOrBuilder getDefaultEvalInfoOrBuilder();
 
   /**
    * <pre>
@@ -302,6 +361,26 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelTypeIdBytes();
+
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The task.
+   */
+  java.lang.String getTask();
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The bytes for task.
+   */
+  com.google.protobuf.ByteString
+      getTaskBytes();
 
   /**
    * <pre>
@@ -385,6 +464,21 @@ public interface ModelOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 17;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <code>.google.protobuf.Struct presets = 27;</code>
+   * @return Whether the presets field is set.
+   */
+  boolean hasPresets();
+  /**
+   * <code>.google.protobuf.Struct presets = 27;</code>
+   * @return The presets.
+   */
+  com.google.protobuf.Struct getPresets();
+  /**
+   * <code>.google.protobuf.Struct presets = 27;</code>
+   */
+  com.google.protobuf.StructOrBuilder getPresetsOrBuilder();
 
   /**
    * <pre>
@@ -533,6 +627,75 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  java.util.List<com.clarifai.grpc.api.FullTag> 
+      getLanguagesFullList();
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  com.clarifai.grpc.api.FullTag getLanguagesFull(int index);
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  int getLanguagesFullCount();
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.FullTagOrBuilder> 
+      getLanguagesFullOrBuilderList();
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  com.clarifai.grpc.api.FullTagOrBuilder getLanguagesFullOrBuilder(
+      int index);
+
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the checkConsents.
+   */
+  java.util.List<java.lang.String>
+      getCheckConsentsList();
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of checkConsents.
+   */
+  int getCheckConsentsCount();
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The checkConsents at the given index.
+   */
+  java.lang.String getCheckConsents(int index);
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the checkConsents at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCheckConsentsBytes(int index);
+
+  /**
+   * <pre>
    * Is starred by the requesting user (only showed on get/list requests)
    * Please use PostModelStars/DeleteModelStars endpoints to star/unstar a model
    * </pre>
@@ -556,27 +719,61 @@ public interface ModelOrBuilder extends
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1250
    * @return Whether the importInfo field is set.
    */
-  boolean hasImportInfo();
+  @java.lang.Deprecated boolean hasImportInfo();
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1250
    * @return The importInfo.
    */
-  com.clarifai.grpc.api.ImportInfo getImportInfo();
+  @java.lang.Deprecated com.clarifai.grpc.api.ImportInfo getImportInfo();
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Whether it's recommended that this model is used within a workflow
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+   * @return Whether the workflowRecommended field is set.
+   */
+  boolean hasWorkflowRecommended();
+  /**
+   * <pre>
+   * Whether it's recommended that this model is used within a workflow
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+   * @return The workflowRecommended.
+   */
+  com.google.protobuf.BoolValue getWorkflowRecommended();
+  /**
+   * <pre>
+   * Whether it's recommended that this model is used within a workflow
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getWorkflowRecommendedOrBuilder();
 }

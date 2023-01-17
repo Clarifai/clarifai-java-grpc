@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelTypeField}
  */
-public  final class ModelTypeField extends
+public final class ModelTypeField extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelTypeField)
     ModelTypeFieldOrBuilder {
@@ -138,6 +138,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -270,6 +272,30 @@ private static final long serialVersionUID = 0L;
      * <code>RECURSIVE_ENUM = 14;</code>
      */
     RECURSIVE_ENUM(14),
+    /**
+     * <pre>
+     * For blocks of code that need to be specified by the user for setup or execution during workflow runs.
+     * </pre>
+     *
+     * <code>PYTHON_CODE = 15;</code>
+     */
+    PYTHON_CODE(15),
+    /**
+     * <pre>
+     * For selecting a dataset id in model parameters. String in API request.
+     * </pre>
+     *
+     * <code>DATASET_ID = 16;</code>
+     */
+    DATASET_ID(16),
+    /**
+     * <pre>
+     * For selecting a dataset version id. String.
+     * </pre>
+     *
+     * <code>DATASET_VERSION_ID = 17;</code>
+     */
+    DATASET_VERSION_ID(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -372,6 +398,30 @@ private static final long serialVersionUID = 0L;
      * <code>RECURSIVE_ENUM = 14;</code>
      */
     public static final int RECURSIVE_ENUM_VALUE = 14;
+    /**
+     * <pre>
+     * For blocks of code that need to be specified by the user for setup or execution during workflow runs.
+     * </pre>
+     *
+     * <code>PYTHON_CODE = 15;</code>
+     */
+    public static final int PYTHON_CODE_VALUE = 15;
+    /**
+     * <pre>
+     * For selecting a dataset id in model parameters. String in API request.
+     * </pre>
+     *
+     * <code>DATASET_ID = 16;</code>
+     */
+    public static final int DATASET_ID_VALUE = 16;
+    /**
+     * <pre>
+     * For selecting a dataset version id. String.
+     * </pre>
+     *
+     * <code>DATASET_VERSION_ID = 17;</code>
+     */
+    public static final int DATASET_VERSION_ID_VALUE = 17;
 
 
     public final int getNumber() {
@@ -412,6 +462,9 @@ private static final long serialVersionUID = 0L;
         case 12: return WORKFLOW_EMBED_MODELS;
         case 13: return ARRAY_OF_STRINGS;
         case 14: return RECURSIVE_ENUM;
+        case 15: return PYTHON_CODE;
+        case 16: return DATASET_ID;
+        case 17: return DATASET_VERSION_ID;
         default: return null;
       }
     }
@@ -430,6 +483,10 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -481,6 +538,7 @@ private static final long serialVersionUID = 0L;
    * <code>string path = 1;</code>
    * @return The path.
    */
+  @java.lang.Override
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -508,6 +566,7 @@ private static final long serialVersionUID = 0L;
    * <code>string path = 1;</code>
    * @return The bytes for path.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPathBytes() {
     java.lang.Object ref = path_;
@@ -532,7 +591,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
    * @return The enum numeric value on the wire for fieldType.
    */
-  public int getFieldTypeValue() {
+  @java.lang.Override public int getFieldTypeValue() {
     return fieldType_;
   }
   /**
@@ -543,7 +602,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
    * @return The fieldType.
    */
-  public com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType getFieldType() {
+  @java.lang.Override public com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType getFieldType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType result = com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType.valueOf(fieldType_);
     return result == null ? com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType.UNRECOGNIZED : result;
@@ -560,6 +619,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Value default_value = 3;</code>
    * @return Whether the defaultValue field is set.
    */
+  @java.lang.Override
   public boolean hasDefaultValue() {
     return defaultValue_ != null;
   }
@@ -572,6 +632,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Value default_value = 3;</code>
    * @return The defaultValue.
    */
+  @java.lang.Override
   public com.google.protobuf.Value getDefaultValue() {
     return defaultValue_ == null ? com.google.protobuf.Value.getDefaultInstance() : defaultValue_;
   }
@@ -583,6 +644,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Value default_value = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.ValueOrBuilder getDefaultValueOrBuilder() {
     return getDefaultValue();
   }
@@ -597,6 +659,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 4;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -617,6 +680,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 4;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -641,6 +705,7 @@ private static final long serialVersionUID = 0L;
    * <code>string placeholder = 5;</code>
    * @return The placeholder.
    */
+  @java.lang.Override
   public java.lang.String getPlaceholder() {
     java.lang.Object ref = placeholder_;
     if (ref instanceof java.lang.String) {
@@ -661,6 +726,7 @@ private static final long serialVersionUID = 0L;
    * <code>string placeholder = 5;</code>
    * @return The bytes for placeholder.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPlaceholderBytes() {
     java.lang.Object ref = placeholder_;
@@ -684,6 +750,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOption model_type_enum_options = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ModelTypeEnumOption> getModelTypeEnumOptionsList() {
     return modelTypeEnumOptions_;
   }
@@ -694,6 +761,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOption model_type_enum_options = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ModelTypeEnumOptionOrBuilder> 
       getModelTypeEnumOptionsOrBuilderList() {
     return modelTypeEnumOptions_;
@@ -705,6 +773,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOption model_type_enum_options = 6;</code>
    */
+  @java.lang.Override
   public int getModelTypeEnumOptionsCount() {
     return modelTypeEnumOptions_.size();
   }
@@ -715,6 +784,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOption model_type_enum_options = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeEnumOption getModelTypeEnumOptions(int index) {
     return modelTypeEnumOptions_.get(index);
   }
@@ -725,6 +795,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOption model_type_enum_options = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeEnumOptionOrBuilder getModelTypeEnumOptionsOrBuilder(
       int index) {
     return modelTypeEnumOptions_.get(index);
@@ -740,6 +811,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool internal_only = 7;</code>
    * @return The internalOnly.
    */
+  @java.lang.Override
   public boolean getInternalOnly() {
     return internalOnly_;
   }
@@ -756,6 +828,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool required = 8;</code>
    * @return The required.
    */
+  @java.lang.Override
   public boolean getRequired() {
     return required_;
   }
@@ -770,6 +843,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
    * @return Whether the modelTypeRangeInfo field is set.
    */
+  @java.lang.Override
   public boolean hasModelTypeRangeInfo() {
     return modelTypeRangeInfo_ != null;
   }
@@ -781,6 +855,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
    * @return The modelTypeRangeInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeRangeInfo getModelTypeRangeInfo() {
     return modelTypeRangeInfo_ == null ? com.clarifai.grpc.api.ModelTypeRangeInfo.getDefaultInstance() : modelTypeRangeInfo_;
   }
@@ -791,6 +866,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ModelTypeRangeInfo model_type_range_info = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeRangeInfoOrBuilder getModelTypeRangeInfoOrBuilder() {
     return getModelTypeRangeInfo();
   }
@@ -809,7 +885,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
     }
     if (fieldType_ != com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType.INVALID_MODEL_TYPE_FIELD_TYPE.getNumber()) {
@@ -818,10 +894,10 @@ private static final long serialVersionUID = 0L;
     if (defaultValue_ != null) {
       output.writeMessage(3, getDefaultValue());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (!getPlaceholderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeholder_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, placeholder_);
     }
     for (int i = 0; i < modelTypeEnumOptions_.size(); i++) {
@@ -845,7 +921,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
     }
     if (fieldType_ != com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType.INVALID_MODEL_TYPE_FIELD_TYPE.getNumber()) {
@@ -856,10 +932,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getDefaultValue());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (!getPlaceholderBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeholder_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, placeholder_);
     }
     for (int i = 0; i < modelTypeEnumOptions_.size(); i++) {
@@ -1444,7 +1520,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
      * @return The enum numeric value on the wire for fieldType.
      */
-    public int getFieldTypeValue() {
+    @java.lang.Override public int getFieldTypeValue() {
       return fieldType_;
     }
     /**
@@ -1457,6 +1533,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setFieldTypeValue(int value) {
+      
       fieldType_ = value;
       onChanged();
       return this;
@@ -1469,6 +1546,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.ModelTypeField.ModelTypeFieldType field_type = 2;</code>
      * @return The fieldType.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType getFieldType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType result = com.clarifai.grpc.api.ModelTypeField.ModelTypeFieldType.valueOf(fieldType_);
@@ -2184,6 +2262,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool internal_only = 7;</code>
      * @return The internalOnly.
      */
+    @java.lang.Override
     public boolean getInternalOnly() {
       return internalOnly_;
     }
@@ -2228,6 +2307,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool required = 8;</code>
      * @return The required.
      */
+    @java.lang.Override
     public boolean getRequired() {
       return required_;
     }

@@ -20,7 +20,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Model}
  */
-public  final class Model extends
+public final class Model extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Model)
     ModelOrBuilder {
@@ -36,11 +36,14 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     userId_ = "";
     modelTypeId_ = "";
+    task_ = "";
     description_ = "";
     notes_ = "";
     toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languagesFull_ = java.util.Collections.emptyList();
+    checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -276,6 +279,69 @@ private static final long serialVersionUID = 0L;
             languages_.add(s);
             break;
           }
+          case 210: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            task_ = s;
+            break;
+          }
+          case 218: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (presets_ != null) {
+              subBuilder = presets_.toBuilder();
+            }
+            presets_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(presets_);
+              presets_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 234: {
+            com.google.protobuf.BoolValue.Builder subBuilder = null;
+            if (workflowRecommended_ != null) {
+              subBuilder = workflowRecommended_.toBuilder();
+            }
+            workflowRecommended_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(workflowRecommended_);
+              workflowRecommended_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 242: {
+            com.clarifai.grpc.api.EvalInfo.Builder subBuilder = null;
+            if (defaultEvalInfo_ != null) {
+              subBuilder = defaultEvalInfo_.toBuilder();
+            }
+            defaultEvalInfo_ = input.readMessage(com.clarifai.grpc.api.EvalInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(defaultEvalInfo_);
+              defaultEvalInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 250: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              languagesFull_ = new java.util.ArrayList<com.clarifai.grpc.api.FullTag>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            languagesFull_.add(
+                input.readMessage(com.clarifai.grpc.api.FullTag.parser(), extensionRegistry));
+            break;
+          }
+          case 258: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              checkConsents_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            checkConsents_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -287,6 +353,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -299,6 +367,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         languages_ = languages_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        languagesFull_ = java.util.Collections.unmodifiableList(languagesFull_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        checkConsents_ = checkConsents_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -327,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -347,6 +422,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -369,8 +445,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1178
    * @return The name.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -389,8 +468,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1178
    * @return The bytes for name.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -419,6 +501,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -434,6 +517,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -448,6 +532,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -462,6 +547,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 19;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -473,6 +559,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 19;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -483,6 +570,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 19;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -497,6 +585,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -517,6 +606,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -536,33 +626,43 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Info about the model's output and configuration.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.output_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1191
    * @return Whether the outputInfo field is set.
    */
-  public boolean hasOutputInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasOutputInfo() {
     return outputInfo_ != null;
   }
   /**
    * <pre>
    * Info about the model's output and configuration.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.output_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1191
    * @return The outputInfo.
    */
-  public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
     return outputInfo_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfo_;
   }
   /**
    * <pre>
    * Info about the model's output and configuration.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+   * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder() {
     return getOutputInfo();
   }
 
@@ -570,33 +670,39 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.ModelVersion modelVersion_;
   /**
    * <pre>
-   * A particular version of the model, e.g., to specify the version when creating a workflow.
+   * A particular version of the model, e.g., to specify the version when creating a workflow or
+   * when listing Models to include the latest ModelVersion of the model in the response.
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
    * @return Whether the modelVersion field is set.
    */
+  @java.lang.Override
   public boolean hasModelVersion() {
     return modelVersion_ != null;
   }
   /**
    * <pre>
-   * A particular version of the model, e.g., to specify the version when creating a workflow.
+   * A particular version of the model, e.g., to specify the version when creating a workflow or
+   * when listing Models to include the latest ModelVersion of the model in the response.
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
    * @return The modelVersion.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelVersion getModelVersion() {
     return modelVersion_ == null ? com.clarifai.grpc.api.ModelVersion.getDefaultInstance() : modelVersion_;
   }
   /**
    * <pre>
-   * A particular version of the model, e.g., to specify the version when creating a workflow.
+   * A particular version of the model, e.g., to specify the version when creating a workflow or
+   * when listing Models to include the latest ModelVersion of the model in the response.
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelVersionOrBuilder getModelVersionOrBuilder() {
     return getModelVersion();
   }
@@ -609,8 +715,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.display_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1196
    * @return The displayName.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getDisplayName() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
@@ -629,8 +738,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string display_name = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.display_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1196
    * @return The bytes for displayName.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
@@ -655,6 +767,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 9;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -675,6 +788,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 9;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -694,33 +808,43 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Info about the models' input and configuration of them.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.input_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1201
    * @return Whether the inputInfo field is set.
    */
-  public boolean hasInputInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasInputInfo() {
     return inputInfo_ != null;
   }
   /**
    * <pre>
    * Info about the models' input and configuration of them.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.input_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1201
    * @return The inputInfo.
    */
-  public com.clarifai.grpc.api.InputInfo getInputInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.InputInfo getInputInfo() {
     return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
   }
   /**
    * <pre>
    * Info about the models' input and configuration of them.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.InputInfo input_info = 12;</code>
+   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
     return getInputInfo();
   }
 
@@ -729,34 +853,82 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for the training process of this model.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.train_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1204
    * @return Whether the trainInfo field is set.
    */
-  public boolean hasTrainInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasTrainInfo() {
     return trainInfo_ != null;
   }
   /**
    * <pre>
    * Configuration for the training process of this model.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.train_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1204
    * @return The trainInfo.
    */
-  public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
     return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
   }
   /**
    * <pre>
    * Configuration for the training process of this model.
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
     return getTrainInfo();
+  }
+
+  public static final int DEFAULT_EVAL_INFO_FIELD_NUMBER = 30;
+  private com.clarifai.grpc.api.EvalInfo defaultEvalInfo_;
+  /**
+   * <pre>
+   * The default evaluation info. Can be overwritten by eval request.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+   * @return Whether the defaultEvalInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultEvalInfo() {
+    return defaultEvalInfo_ != null;
+  }
+  /**
+   * <pre>
+   * The default evaluation info. Can be overwritten by eval request.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+   * @return The defaultEvalInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalInfo getDefaultEvalInfo() {
+    return defaultEvalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : defaultEvalInfo_;
+  }
+  /**
+   * <pre>
+   * The default evaluation info. Can be overwritten by eval request.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalInfoOrBuilder getDefaultEvalInfoOrBuilder() {
+    return getDefaultEvalInfo();
   }
 
   public static final int MODEL_TYPE_ID_FIELD_NUMBER = 14;
@@ -770,6 +942,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_type_id = 14;</code>
    * @return The modelTypeId.
    */
+  @java.lang.Override
   public java.lang.String getModelTypeId() {
     java.lang.Object ref = modelTypeId_;
     if (ref instanceof java.lang.String) {
@@ -791,6 +964,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_type_id = 14;</code>
    * @return The bytes for modelTypeId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelTypeIdBytes() {
     java.lang.Object ref = modelTypeId_;
@@ -799,6 +973,52 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       modelTypeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TASK_FIELD_NUMBER = 26;
+  private volatile java.lang.Object task_;
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The task.
+   */
+  @java.lang.Override
+  public java.lang.String getTask() {
+    java.lang.Object ref = task_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      task_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The task the model was trained to do
+   * </pre>
+   *
+   * <code>string task = 26;</code>
+   * @return The bytes for task.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTaskBytes() {
+    java.lang.Object ref = task_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      task_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -817,6 +1037,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -830,6 +1051,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -842,6 +1064,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 15;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -856,6 +1079,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 16;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -876,6 +1100,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 16;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -901,6 +1126,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 17;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -913,6 +1139,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 17;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -924,8 +1151,35 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 17;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
+  }
+
+  public static final int PRESETS_FIELD_NUMBER = 27;
+  private com.google.protobuf.Struct presets_;
+  /**
+   * <code>.google.protobuf.Struct presets = 27;</code>
+   * @return Whether the presets field is set.
+   */
+  @java.lang.Override
+  public boolean hasPresets() {
+    return presets_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Struct presets = 27;</code>
+   * @return The presets.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getPresets() {
+    return presets_ == null ? com.google.protobuf.Struct.getDefaultInstance() : presets_;
+  }
+  /**
+   * <code>.google.protobuf.Struct presets = 27;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getPresetsOrBuilder() {
+    return getPresets();
   }
 
   public static final int NOTES_FIELD_NUMBER = 18;
@@ -939,6 +1193,7 @@ private static final long serialVersionUID = 0L;
    * <code>string notes = 18;</code>
    * @return The notes.
    */
+  @java.lang.Override
   public java.lang.String getNotes() {
     java.lang.Object ref = notes_;
     if (ref instanceof java.lang.String) {
@@ -960,6 +1215,7 @@ private static final long serialVersionUID = 0L;
    * <code>string notes = 18;</code>
    * @return The bytes for notes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNotesBytes() {
     java.lang.Object ref = notes_;
@@ -1127,6 +1383,101 @@ private static final long serialVersionUID = 0L;
     return languages_.getByteString(index);
   }
 
+  public static final int LANGUAGES_FULL_FIELD_NUMBER = 31;
+  private java.util.List<com.clarifai.grpc.api.FullTag> languagesFull_;
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.FullTag> getLanguagesFullList() {
+    return languagesFull_;
+  }
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.FullTagOrBuilder> 
+      getLanguagesFullOrBuilderList() {
+    return languagesFull_;
+  }
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public int getLanguagesFullCount() {
+    return languagesFull_.size();
+  }
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.FullTag getLanguagesFull(int index) {
+    return languagesFull_.get(index);
+  }
+  /**
+   * <pre>
+   * Tags from languages category with names, only used in responses.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.FullTagOrBuilder getLanguagesFullOrBuilder(
+      int index) {
+    return languagesFull_.get(index);
+  }
+
+  public static final int CHECK_CONSENTS_FIELD_NUMBER = 32;
+  private com.google.protobuf.LazyStringList checkConsents_;
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the checkConsents.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getCheckConsentsList() {
+    return checkConsents_;
+  }
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of checkConsents.
+   */
+  public int getCheckConsentsCount() {
+    return checkConsents_.size();
+  }
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The checkConsents at the given index.
+   */
+  public java.lang.String getCheckConsents(int index) {
+    return checkConsents_.get(index);
+  }
+  /**
+   * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the checkConsents at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getCheckConsentsBytes(int index) {
+    return checkConsents_.getByteString(index);
+  }
+
   public static final int IS_STARRED_FIELD_NUMBER = 22;
   private boolean isStarred_;
   /**
@@ -1138,6 +1489,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool is_starred = 22;</code>
    * @return The isStarred.
    */
+  @java.lang.Override
   public boolean getIsStarred() {
     return isStarred_;
   }
@@ -1153,6 +1505,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 star_count = 23;</code>
    * @return The starCount.
    */
+  @java.lang.Override
   public int getStarCount() {
     return starCount_;
   }
@@ -1162,34 +1515,82 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1250
    * @return Whether the importInfo field is set.
    */
-  public boolean hasImportInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public boolean hasImportInfo() {
     return importInfo_ != null;
   }
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
+   * @deprecated clarifai.api.Model.import_info is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1250
    * @return The importInfo.
    */
-  public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
     return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
   }
   /**
    * <pre>
    * Configuration used to import model from third-party toolkits
+   * DEPRECATED: Will be moved to model version
    * </pre>
    *
-   * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
     return getImportInfo();
+  }
+
+  public static final int WORKFLOW_RECOMMENDED_FIELD_NUMBER = 29;
+  private com.google.protobuf.BoolValue workflowRecommended_;
+  /**
+   * <pre>
+   * Whether it's recommended that this model is used within a workflow
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+   * @return Whether the workflowRecommended field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflowRecommended() {
+    return workflowRecommended_ != null;
+  }
+  /**
+   * <pre>
+   * Whether it's recommended that this model is used within a workflow
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+   * @return The workflowRecommended.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getWorkflowRecommended() {
+    return workflowRecommended_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : workflowRecommended_;
+  }
+  /**
+   * <pre>
+   * Whether it's recommended that this model is used within a workflow
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getWorkflowRecommendedOrBuilder() {
+    return getWorkflowRecommended();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1206,16 +1607,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (createdAt_ != null) {
       output.writeMessage(3, getCreatedAt());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appId_);
     }
     if (outputInfo_ != null) {
@@ -1224,10 +1625,10 @@ private static final long serialVersionUID = 0L;
     if (modelVersion_ != null) {
       output.writeMessage(6, getModelVersion());
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, displayName_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
     }
     if (inputInfo_ != null) {
@@ -1236,19 +1637,19 @@ private static final long serialVersionUID = 0L;
     if (trainInfo_ != null) {
       output.writeMessage(13, getTrainInfo());
     }
-    if (!getModelTypeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, modelTypeId_);
     }
     if (visibility_ != null) {
       output.writeMessage(15, getVisibility());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
     }
     if (metadata_ != null) {
       output.writeMessage(17, getMetadata());
     }
-    if (!getNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, notes_);
     }
     if (modifiedAt_ != null) {
@@ -1272,6 +1673,24 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < languages_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, languages_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(task_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, task_);
+    }
+    if (presets_ != null) {
+      output.writeMessage(27, getPresets());
+    }
+    if (workflowRecommended_ != null) {
+      output.writeMessage(29, getWorkflowRecommended());
+    }
+    if (defaultEvalInfo_ != null) {
+      output.writeMessage(30, getDefaultEvalInfo());
+    }
+    for (int i = 0; i < languagesFull_.size(); i++) {
+      output.writeMessage(31, languagesFull_.get(i));
+    }
+    for (int i = 0; i < checkConsents_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 32, checkConsents_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1281,17 +1700,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCreatedAt());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appId_);
     }
     if (outputInfo_ != null) {
@@ -1302,10 +1721,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getModelVersion());
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, displayName_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
     }
     if (inputInfo_ != null) {
@@ -1316,21 +1735,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getTrainInfo());
     }
-    if (!getModelTypeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, modelTypeId_);
     }
     if (visibility_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getVisibility());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getMetadata());
     }
-    if (!getNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, notes_);
     }
     if (modifiedAt_ != null) {
@@ -1372,6 +1791,33 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 2 * getLanguagesList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(task_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, task_);
+    }
+    if (presets_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, getPresets());
+    }
+    if (workflowRecommended_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(29, getWorkflowRecommended());
+    }
+    if (defaultEvalInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(30, getDefaultEvalInfo());
+    }
+    for (int i = 0; i < languagesFull_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(31, languagesFull_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < checkConsents_.size(); i++) {
+        dataSize += computeStringSizeNoTag(checkConsents_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getCheckConsentsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1428,8 +1874,15 @@ private static final long serialVersionUID = 0L;
       if (!getTrainInfo()
           .equals(other.getTrainInfo())) return false;
     }
+    if (hasDefaultEvalInfo() != other.hasDefaultEvalInfo()) return false;
+    if (hasDefaultEvalInfo()) {
+      if (!getDefaultEvalInfo()
+          .equals(other.getDefaultEvalInfo())) return false;
+    }
     if (!getModelTypeId()
         .equals(other.getModelTypeId())) return false;
+    if (!getTask()
+        .equals(other.getTask())) return false;
     if (hasVisibility() != other.hasVisibility()) return false;
     if (hasVisibility()) {
       if (!getVisibility()
@@ -1442,6 +1895,11 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
+    if (hasPresets() != other.hasPresets()) return false;
+    if (hasPresets()) {
+      if (!getPresets()
+          .equals(other.getPresets())) return false;
+    }
     if (!getNotes()
         .equals(other.getNotes())) return false;
     if (!getToolkitsList()
@@ -1450,6 +1908,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUseCasesList())) return false;
     if (!getLanguagesList()
         .equals(other.getLanguagesList())) return false;
+    if (!getLanguagesFullList()
+        .equals(other.getLanguagesFullList())) return false;
+    if (!getCheckConsentsList()
+        .equals(other.getCheckConsentsList())) return false;
     if (getIsStarred()
         != other.getIsStarred()) return false;
     if (getStarCount()
@@ -1458,6 +1920,11 @@ private static final long serialVersionUID = 0L;
     if (hasImportInfo()) {
       if (!getImportInfo()
           .equals(other.getImportInfo())) return false;
+    }
+    if (hasWorkflowRecommended() != other.hasWorkflowRecommended()) return false;
+    if (hasWorkflowRecommended()) {
+      if (!getWorkflowRecommended()
+          .equals(other.getWorkflowRecommended())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1504,8 +1971,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TRAIN_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getTrainInfo().hashCode();
     }
+    if (hasDefaultEvalInfo()) {
+      hash = (37 * hash) + DEFAULT_EVAL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultEvalInfo().hashCode();
+    }
     hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelTypeId().hashCode();
+    hash = (37 * hash) + TASK_FIELD_NUMBER;
+    hash = (53 * hash) + getTask().hashCode();
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
@@ -1515,6 +1988,10 @@ private static final long serialVersionUID = 0L;
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (hasPresets()) {
+      hash = (37 * hash) + PRESETS_FIELD_NUMBER;
+      hash = (53 * hash) + getPresets().hashCode();
     }
     hash = (37 * hash) + NOTES_FIELD_NUMBER;
     hash = (53 * hash) + getNotes().hashCode();
@@ -1530,6 +2007,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
       hash = (53 * hash) + getLanguagesList().hashCode();
     }
+    if (getLanguagesFullCount() > 0) {
+      hash = (37 * hash) + LANGUAGES_FULL_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguagesFullList().hashCode();
+    }
+    if (getCheckConsentsCount() > 0) {
+      hash = (37 * hash) + CHECK_CONSENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckConsentsList().hashCode();
+    }
     hash = (37 * hash) + IS_STARRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsStarred());
@@ -1538,6 +2023,10 @@ private static final long serialVersionUID = 0L;
     if (hasImportInfo()) {
       hash = (37 * hash) + IMPORT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getImportInfo().hashCode();
+    }
+    if (hasWorkflowRecommended()) {
+      hash = (37 * hash) + WORKFLOW_RECOMMENDED_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowRecommended().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1681,6 +2170,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getLanguagesFullFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1732,7 +2222,15 @@ private static final long serialVersionUID = 0L;
         trainInfo_ = null;
         trainInfoBuilder_ = null;
       }
+      if (defaultEvalInfoBuilder_ == null) {
+        defaultEvalInfo_ = null;
+      } else {
+        defaultEvalInfo_ = null;
+        defaultEvalInfoBuilder_ = null;
+      }
       modelTypeId_ = "";
+
+      task_ = "";
 
       if (visibilityBuilder_ == null) {
         visibility_ = null;
@@ -1748,6 +2246,12 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
+      if (presetsBuilder_ == null) {
+        presets_ = null;
+      } else {
+        presets_ = null;
+        presetsBuilder_ = null;
+      }
       notes_ = "";
 
       toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1756,6 +2260,14 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (languagesFullBuilder_ == null) {
+        languagesFull_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        languagesFullBuilder_.clear();
+      }
+      checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       isStarred_ = false;
 
       starCount_ = 0;
@@ -1765,6 +2277,12 @@ private static final long serialVersionUID = 0L;
       } else {
         importInfo_ = null;
         importInfoBuilder_ = null;
+      }
+      if (workflowRecommendedBuilder_ == null) {
+        workflowRecommended_ = null;
+      } else {
+        workflowRecommended_ = null;
+        workflowRecommendedBuilder_ = null;
       }
       return this;
     }
@@ -1828,7 +2346,13 @@ private static final long serialVersionUID = 0L;
       } else {
         result.trainInfo_ = trainInfoBuilder_.build();
       }
+      if (defaultEvalInfoBuilder_ == null) {
+        result.defaultEvalInfo_ = defaultEvalInfo_;
+      } else {
+        result.defaultEvalInfo_ = defaultEvalInfoBuilder_.build();
+      }
       result.modelTypeId_ = modelTypeId_;
+      result.task_ = task_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
       } else {
@@ -1839,6 +2363,11 @@ private static final long serialVersionUID = 0L;
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
+      }
+      if (presetsBuilder_ == null) {
+        result.presets_ = presets_;
+      } else {
+        result.presets_ = presetsBuilder_.build();
       }
       result.notes_ = notes_;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -1856,12 +2385,31 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.languages_ = languages_;
+      if (languagesFullBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          languagesFull_ = java.util.Collections.unmodifiableList(languagesFull_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.languagesFull_ = languagesFull_;
+      } else {
+        result.languagesFull_ = languagesFullBuilder_.build();
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        checkConsents_ = checkConsents_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.checkConsents_ = checkConsents_;
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
       if (importInfoBuilder_ == null) {
         result.importInfo_ = importInfo_;
       } else {
         result.importInfo_ = importInfoBuilder_.build();
+      }
+      if (workflowRecommendedBuilder_ == null) {
+        result.workflowRecommended_ = workflowRecommended_;
+      } else {
+        result.workflowRecommended_ = workflowRecommendedBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1949,8 +2497,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasTrainInfo()) {
         mergeTrainInfo(other.getTrainInfo());
       }
+      if (other.hasDefaultEvalInfo()) {
+        mergeDefaultEvalInfo(other.getDefaultEvalInfo());
+      }
       if (!other.getModelTypeId().isEmpty()) {
         modelTypeId_ = other.modelTypeId_;
+        onChanged();
+      }
+      if (!other.getTask().isEmpty()) {
+        task_ = other.task_;
         onChanged();
       }
       if (other.hasVisibility()) {
@@ -1962,6 +2517,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
+      }
+      if (other.hasPresets()) {
+        mergePresets(other.getPresets());
       }
       if (!other.getNotes().isEmpty()) {
         notes_ = other.notes_;
@@ -1997,6 +2555,42 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (languagesFullBuilder_ == null) {
+        if (!other.languagesFull_.isEmpty()) {
+          if (languagesFull_.isEmpty()) {
+            languagesFull_ = other.languagesFull_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureLanguagesFullIsMutable();
+            languagesFull_.addAll(other.languagesFull_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.languagesFull_.isEmpty()) {
+          if (languagesFullBuilder_.isEmpty()) {
+            languagesFullBuilder_.dispose();
+            languagesFullBuilder_ = null;
+            languagesFull_ = other.languagesFull_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            languagesFullBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getLanguagesFullFieldBuilder() : null;
+          } else {
+            languagesFullBuilder_.addAllMessages(other.languagesFull_);
+          }
+        }
+      }
+      if (!other.checkConsents_.isEmpty()) {
+        if (checkConsents_.isEmpty()) {
+          checkConsents_ = other.checkConsents_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureCheckConsentsIsMutable();
+          checkConsents_.addAll(other.checkConsents_);
+        }
+        onChanged();
+      }
       if (other.getIsStarred() != false) {
         setIsStarred(other.getIsStarred());
       }
@@ -2005,6 +2599,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasImportInfo()) {
         mergeImportInfo(other.getImportInfo());
+      }
+      if (other.hasWorkflowRecommended()) {
+        mergeWorkflowRecommended(other.getWorkflowRecommended());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2139,6 +2736,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1178
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2159,6 +2758,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1178
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2180,6 +2781,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1178
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2199,6 +2802,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1178
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2213,6 +2818,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1178
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2676,23 +3283,29 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.output_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1191
      * @return Whether the outputInfo field is set.
      */
-    public boolean hasOutputInfo() {
+    @java.lang.Deprecated public boolean hasOutputInfo() {
       return outputInfoBuilder_ != null || outputInfo_ != null;
     }
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.output_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1191
      * @return The outputInfo.
      */
-    public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
       if (outputInfoBuilder_ == null) {
         return outputInfo_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfo_;
       } else {
@@ -2702,11 +3315,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
-    public Builder setOutputInfo(com.clarifai.grpc.api.OutputInfo value) {
+    @java.lang.Deprecated public Builder setOutputInfo(com.clarifai.grpc.api.OutputInfo value) {
       if (outputInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2722,11 +3336,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
-    public Builder setOutputInfo(
+    @java.lang.Deprecated public Builder setOutputInfo(
         com.clarifai.grpc.api.OutputInfo.Builder builderForValue) {
       if (outputInfoBuilder_ == null) {
         outputInfo_ = builderForValue.build();
@@ -2740,11 +3355,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
-    public Builder mergeOutputInfo(com.clarifai.grpc.api.OutputInfo value) {
+    @java.lang.Deprecated public Builder mergeOutputInfo(com.clarifai.grpc.api.OutputInfo value) {
       if (outputInfoBuilder_ == null) {
         if (outputInfo_ != null) {
           outputInfo_ =
@@ -2762,11 +3378,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
-    public Builder clearOutputInfo() {
+    @java.lang.Deprecated public Builder clearOutputInfo() {
       if (outputInfoBuilder_ == null) {
         outputInfo_ = null;
         onChanged();
@@ -2780,11 +3397,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.OutputInfo.Builder getOutputInfoBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo.Builder getOutputInfoBuilder() {
       
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
@@ -2792,11 +3410,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder() {
       if (outputInfoBuilder_ != null) {
         return outputInfoBuilder_.getMessageOrBuilder();
       } else {
@@ -2807,9 +3426,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the model's output and configuration.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.OutputInfo output_info = 5;</code>
+     * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder> 
@@ -2830,7 +3450,8 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ModelVersion, com.clarifai.grpc.api.ModelVersion.Builder, com.clarifai.grpc.api.ModelVersionOrBuilder> modelVersionBuilder_;
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2841,7 +3462,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2856,7 +3478,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2876,7 +3499,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2894,7 +3518,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2916,7 +3541,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2934,7 +3560,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2946,7 +3573,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2961,7 +3589,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A particular version of the model, e.g., to specify the version when creating a workflow.
+     * A particular version of the model, e.g., to specify the version when creating a workflow or
+     * when listing Models to include the latest ModelVersion of the model in the response.
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 6;</code>
@@ -2987,6 +3616,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.display_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1196
      * @return The displayName.
      */
     @java.lang.Deprecated public java.lang.String getDisplayName() {
@@ -3007,6 +3638,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.display_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1196
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3028,6 +3661,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.display_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1196
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -3047,6 +3682,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.display_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1196
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDisplayName() {
@@ -3061,6 +3698,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string display_name = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.display_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1196
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -3178,23 +3817,29 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.input_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1201
      * @return Whether the inputInfo field is set.
      */
-    public boolean hasInputInfo() {
+    @java.lang.Deprecated public boolean hasInputInfo() {
       return inputInfoBuilder_ != null || inputInfo_ != null;
     }
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.input_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1201
      * @return The inputInfo.
      */
-    public com.clarifai.grpc.api.InputInfo getInputInfo() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.InputInfo getInputInfo() {
       if (inputInfoBuilder_ == null) {
         return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
       } else {
@@ -3204,11 +3849,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
-    public Builder setInputInfo(com.clarifai.grpc.api.InputInfo value) {
+    @java.lang.Deprecated public Builder setInputInfo(com.clarifai.grpc.api.InputInfo value) {
       if (inputInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3224,11 +3870,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
-    public Builder setInputInfo(
+    @java.lang.Deprecated public Builder setInputInfo(
         com.clarifai.grpc.api.InputInfo.Builder builderForValue) {
       if (inputInfoBuilder_ == null) {
         inputInfo_ = builderForValue.build();
@@ -3242,11 +3889,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
-    public Builder mergeInputInfo(com.clarifai.grpc.api.InputInfo value) {
+    @java.lang.Deprecated public Builder mergeInputInfo(com.clarifai.grpc.api.InputInfo value) {
       if (inputInfoBuilder_ == null) {
         if (inputInfo_ != null) {
           inputInfo_ =
@@ -3264,11 +3912,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
-    public Builder clearInputInfo() {
+    @java.lang.Deprecated public Builder clearInputInfo() {
       if (inputInfoBuilder_ == null) {
         inputInfo_ = null;
         onChanged();
@@ -3282,11 +3931,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.InputInfo.Builder getInputInfoBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.InputInfo.Builder getInputInfoBuilder() {
       
       onChanged();
       return getInputInfoFieldBuilder().getBuilder();
@@ -3294,11 +3944,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
       if (inputInfoBuilder_ != null) {
         return inputInfoBuilder_.getMessageOrBuilder();
       } else {
@@ -3309,9 +3960,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Info about the models' input and configuration of them.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.InputInfo input_info = 12;</code>
+     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> 
@@ -3333,23 +3985,29 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.train_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1204
      * @return Whether the trainInfo field is set.
      */
-    public boolean hasTrainInfo() {
+    @java.lang.Deprecated public boolean hasTrainInfo() {
       return trainInfoBuilder_ != null || trainInfo_ != null;
     }
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.train_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1204
      * @return The trainInfo.
      */
-    public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
       if (trainInfoBuilder_ == null) {
         return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
       } else {
@@ -3359,11 +4017,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
-    public Builder setTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
+    @java.lang.Deprecated public Builder setTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
       if (trainInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3379,11 +4038,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
-    public Builder setTrainInfo(
+    @java.lang.Deprecated public Builder setTrainInfo(
         com.clarifai.grpc.api.TrainInfo.Builder builderForValue) {
       if (trainInfoBuilder_ == null) {
         trainInfo_ = builderForValue.build();
@@ -3397,11 +4057,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
-    public Builder mergeTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
+    @java.lang.Deprecated public Builder mergeTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
       if (trainInfoBuilder_ == null) {
         if (trainInfo_ != null) {
           trainInfo_ =
@@ -3419,11 +4080,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
-    public Builder clearTrainInfo() {
+    @java.lang.Deprecated public Builder clearTrainInfo() {
       if (trainInfoBuilder_ == null) {
         trainInfo_ = null;
         onChanged();
@@ -3437,11 +4099,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.TrainInfo.Builder getTrainInfoBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfo.Builder getTrainInfoBuilder() {
       
       onChanged();
       return getTrainInfoFieldBuilder().getBuilder();
@@ -3449,11 +4112,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
       if (trainInfoBuilder_ != null) {
         return trainInfoBuilder_.getMessageOrBuilder();
       } else {
@@ -3464,9 +4128,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for the training process of this model.
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.TrainInfo train_info = 13;</code>
+     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> 
@@ -3480,6 +4145,161 @@ private static final long serialVersionUID = 0L;
         trainInfo_ = null;
       }
       return trainInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.EvalInfo defaultEvalInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> defaultEvalInfoBuilder_;
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     * @return Whether the defaultEvalInfo field is set.
+     */
+    public boolean hasDefaultEvalInfo() {
+      return defaultEvalInfoBuilder_ != null || defaultEvalInfo_ != null;
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     * @return The defaultEvalInfo.
+     */
+    public com.clarifai.grpc.api.EvalInfo getDefaultEvalInfo() {
+      if (defaultEvalInfoBuilder_ == null) {
+        return defaultEvalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : defaultEvalInfo_;
+      } else {
+        return defaultEvalInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    public Builder setDefaultEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
+      if (defaultEvalInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultEvalInfo_ = value;
+        onChanged();
+      } else {
+        defaultEvalInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    public Builder setDefaultEvalInfo(
+        com.clarifai.grpc.api.EvalInfo.Builder builderForValue) {
+      if (defaultEvalInfoBuilder_ == null) {
+        defaultEvalInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        defaultEvalInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    public Builder mergeDefaultEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
+      if (defaultEvalInfoBuilder_ == null) {
+        if (defaultEvalInfo_ != null) {
+          defaultEvalInfo_ =
+            com.clarifai.grpc.api.EvalInfo.newBuilder(defaultEvalInfo_).mergeFrom(value).buildPartial();
+        } else {
+          defaultEvalInfo_ = value;
+        }
+        onChanged();
+      } else {
+        defaultEvalInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    public Builder clearDefaultEvalInfo() {
+      if (defaultEvalInfoBuilder_ == null) {
+        defaultEvalInfo_ = null;
+        onChanged();
+      } else {
+        defaultEvalInfo_ = null;
+        defaultEvalInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    public com.clarifai.grpc.api.EvalInfo.Builder getDefaultEvalInfoBuilder() {
+      
+      onChanged();
+      return getDefaultEvalInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    public com.clarifai.grpc.api.EvalInfoOrBuilder getDefaultEvalInfoOrBuilder() {
+      if (defaultEvalInfoBuilder_ != null) {
+        return defaultEvalInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultEvalInfo_ == null ?
+            com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : defaultEvalInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * The default evaluation info. Can be overwritten by eval request.
+     * </pre>
+     *
+     * <code>.clarifai.api.EvalInfo default_eval_info = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> 
+        getDefaultEvalInfoFieldBuilder() {
+      if (defaultEvalInfoBuilder_ == null) {
+        defaultEvalInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder>(
+                getDefaultEvalInfo(),
+                getParentForChildren(),
+                isClean());
+        defaultEvalInfo_ = null;
+      }
+      return defaultEvalInfoBuilder_;
     }
 
     private java.lang.Object modelTypeId_ = "";
@@ -3579,6 +4399,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object task_ = "";
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @return The task.
+     */
+    public java.lang.String getTask() {
+      java.lang.Object ref = task_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        task_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @return The bytes for task.
+     */
+    public com.google.protobuf.ByteString
+        getTaskBytes() {
+      java.lang.Object ref = task_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        task_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @param value The task to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTask(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      task_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTask() {
+      
+      task_ = getDefaultInstance().getTask();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The task the model was trained to do
+     * </pre>
+     *
+     * <code>string task = 26;</code>
+     * @param value The bytes for task to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaskBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      task_ = value;
       onChanged();
       return this;
     }
@@ -4014,6 +4930,125 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.google.protobuf.Struct presets_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> presetsBuilder_;
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     * @return Whether the presets field is set.
+     */
+    public boolean hasPresets() {
+      return presetsBuilder_ != null || presets_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     * @return The presets.
+     */
+    public com.google.protobuf.Struct getPresets() {
+      if (presetsBuilder_ == null) {
+        return presets_ == null ? com.google.protobuf.Struct.getDefaultInstance() : presets_;
+      } else {
+        return presetsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    public Builder setPresets(com.google.protobuf.Struct value) {
+      if (presetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        presets_ = value;
+        onChanged();
+      } else {
+        presetsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    public Builder setPresets(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (presetsBuilder_ == null) {
+        presets_ = builderForValue.build();
+        onChanged();
+      } else {
+        presetsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    public Builder mergePresets(com.google.protobuf.Struct value) {
+      if (presetsBuilder_ == null) {
+        if (presets_ != null) {
+          presets_ =
+            com.google.protobuf.Struct.newBuilder(presets_).mergeFrom(value).buildPartial();
+        } else {
+          presets_ = value;
+        }
+        onChanged();
+      } else {
+        presetsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    public Builder clearPresets() {
+      if (presetsBuilder_ == null) {
+        presets_ = null;
+        onChanged();
+      } else {
+        presets_ = null;
+        presetsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    public com.google.protobuf.Struct.Builder getPresetsBuilder() {
+      
+      onChanged();
+      return getPresetsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getPresetsOrBuilder() {
+      if (presetsBuilder_ != null) {
+        return presetsBuilder_.getMessageOrBuilder();
+      } else {
+        return presets_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : presets_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct presets = 27;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getPresetsFieldBuilder() {
+      if (presetsBuilder_ == null) {
+        presetsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getPresets(),
+                getParentForChildren(),
+                isClean());
+        presets_ = null;
+      }
+      return presetsBuilder_;
     }
 
     private java.lang.Object notes_ = "";
@@ -4555,6 +5590,428 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.util.List<com.clarifai.grpc.api.FullTag> languagesFull_ =
+      java.util.Collections.emptyList();
+    private void ensureLanguagesFullIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        languagesFull_ = new java.util.ArrayList<com.clarifai.grpc.api.FullTag>(languagesFull_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.FullTag, com.clarifai.grpc.api.FullTag.Builder, com.clarifai.grpc.api.FullTagOrBuilder> languagesFullBuilder_;
+
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.FullTag> getLanguagesFullList() {
+      if (languagesFullBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(languagesFull_);
+      } else {
+        return languagesFullBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public int getLanguagesFullCount() {
+      if (languagesFullBuilder_ == null) {
+        return languagesFull_.size();
+      } else {
+        return languagesFullBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.FullTag getLanguagesFull(int index) {
+      if (languagesFullBuilder_ == null) {
+        return languagesFull_.get(index);
+      } else {
+        return languagesFullBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder setLanguagesFull(
+        int index, com.clarifai.grpc.api.FullTag value) {
+      if (languagesFullBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLanguagesFullIsMutable();
+        languagesFull_.set(index, value);
+        onChanged();
+      } else {
+        languagesFullBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder setLanguagesFull(
+        int index, com.clarifai.grpc.api.FullTag.Builder builderForValue) {
+      if (languagesFullBuilder_ == null) {
+        ensureLanguagesFullIsMutable();
+        languagesFull_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        languagesFullBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addLanguagesFull(com.clarifai.grpc.api.FullTag value) {
+      if (languagesFullBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLanguagesFullIsMutable();
+        languagesFull_.add(value);
+        onChanged();
+      } else {
+        languagesFullBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addLanguagesFull(
+        int index, com.clarifai.grpc.api.FullTag value) {
+      if (languagesFullBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLanguagesFullIsMutable();
+        languagesFull_.add(index, value);
+        onChanged();
+      } else {
+        languagesFullBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addLanguagesFull(
+        com.clarifai.grpc.api.FullTag.Builder builderForValue) {
+      if (languagesFullBuilder_ == null) {
+        ensureLanguagesFullIsMutable();
+        languagesFull_.add(builderForValue.build());
+        onChanged();
+      } else {
+        languagesFullBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addLanguagesFull(
+        int index, com.clarifai.grpc.api.FullTag.Builder builderForValue) {
+      if (languagesFullBuilder_ == null) {
+        ensureLanguagesFullIsMutable();
+        languagesFull_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        languagesFullBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder addAllLanguagesFull(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.FullTag> values) {
+      if (languagesFullBuilder_ == null) {
+        ensureLanguagesFullIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, languagesFull_);
+        onChanged();
+      } else {
+        languagesFullBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder clearLanguagesFull() {
+      if (languagesFullBuilder_ == null) {
+        languagesFull_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        languagesFullBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public Builder removeLanguagesFull(int index) {
+      if (languagesFullBuilder_ == null) {
+        ensureLanguagesFullIsMutable();
+        languagesFull_.remove(index);
+        onChanged();
+      } else {
+        languagesFullBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.FullTag.Builder getLanguagesFullBuilder(
+        int index) {
+      return getLanguagesFullFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.FullTagOrBuilder getLanguagesFullOrBuilder(
+        int index) {
+      if (languagesFullBuilder_ == null) {
+        return languagesFull_.get(index);  } else {
+        return languagesFullBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.FullTagOrBuilder> 
+         getLanguagesFullOrBuilderList() {
+      if (languagesFullBuilder_ != null) {
+        return languagesFullBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(languagesFull_);
+      }
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.FullTag.Builder addLanguagesFullBuilder() {
+      return getLanguagesFullFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.FullTag.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public com.clarifai.grpc.api.FullTag.Builder addLanguagesFullBuilder(
+        int index) {
+      return getLanguagesFullFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.FullTag.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Tags from languages category with names, only used in responses.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.FullTag languages_full = 31 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.FullTag.Builder> 
+         getLanguagesFullBuilderList() {
+      return getLanguagesFullFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.FullTag, com.clarifai.grpc.api.FullTag.Builder, com.clarifai.grpc.api.FullTagOrBuilder> 
+        getLanguagesFullFieldBuilder() {
+      if (languagesFullBuilder_ == null) {
+        languagesFullBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.FullTag, com.clarifai.grpc.api.FullTag.Builder, com.clarifai.grpc.api.FullTagOrBuilder>(
+                languagesFull_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        languagesFull_ = null;
+      }
+      return languagesFullBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureCheckConsentsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        checkConsents_ = new com.google.protobuf.LazyStringArrayList(checkConsents_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the checkConsents.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCheckConsentsList() {
+      return checkConsents_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of checkConsents.
+     */
+    public int getCheckConsentsCount() {
+      return checkConsents_.size();
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The checkConsents at the given index.
+     */
+    public java.lang.String getCheckConsents(int index) {
+      return checkConsents_.get(index);
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the checkConsents at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCheckConsentsBytes(int index) {
+      return checkConsents_.getByteString(index);
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The checkConsents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckConsents(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCheckConsentsIsMutable();
+      checkConsents_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The checkConsents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCheckConsents(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCheckConsentsIsMutable();
+      checkConsents_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The checkConsents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCheckConsents(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCheckConsentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, checkConsents_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCheckConsents() {
+      checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string check_consents = 32 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes of the checkConsents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCheckConsentsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureCheckConsentsIsMutable();
+      checkConsents_.add(value);
+      onChanged();
+      return this;
+    }
+
     private boolean isStarred_ ;
     /**
      * <pre>
@@ -4565,6 +6022,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_starred = 22;</code>
      * @return The isStarred.
      */
+    @java.lang.Override
     public boolean getIsStarred() {
       return isStarred_;
     }
@@ -4610,6 +6068,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 star_count = 23;</code>
      * @return The starCount.
      */
+    @java.lang.Override
     public int getStarCount() {
       return starCount_;
     }
@@ -4651,23 +6110,29 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.import_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @return Whether the importInfo field is set.
      */
-    public boolean hasImportInfo() {
+    @java.lang.Deprecated public boolean hasImportInfo() {
       return importInfoBuilder_ != null || importInfo_ != null;
     }
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
+     * @deprecated clarifai.api.Model.import_info is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @return The importInfo.
      */
-    public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
       if (importInfoBuilder_ == null) {
         return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
       } else {
@@ -4677,11 +6142,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
-    public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+    @java.lang.Deprecated public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
       if (importInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4697,11 +6163,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
-    public Builder setImportInfo(
+    @java.lang.Deprecated public Builder setImportInfo(
         com.clarifai.grpc.api.ImportInfo.Builder builderForValue) {
       if (importInfoBuilder_ == null) {
         importInfo_ = builderForValue.build();
@@ -4715,11 +6182,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
-    public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+    @java.lang.Deprecated public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
       if (importInfoBuilder_ == null) {
         if (importInfo_ != null) {
           importInfo_ =
@@ -4737,11 +6205,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
-    public Builder clearImportInfo() {
+    @java.lang.Deprecated public Builder clearImportInfo() {
       if (importInfoBuilder_ == null) {
         importInfo_ = null;
         onChanged();
@@ -4755,11 +6224,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
       
       onChanged();
       return getImportInfoFieldBuilder().getBuilder();
@@ -4767,11 +6237,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
       if (importInfoBuilder_ != null) {
         return importInfoBuilder_.getMessageOrBuilder();
       } else {
@@ -4782,9 +6253,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration used to import model from third-party toolkits
+     * DEPRECATED: Will be moved to model version
      * </pre>
      *
-     * <code>.clarifai.api.ImportInfo import_info = 24;</code>
+     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> 
@@ -4798,6 +6270,161 @@ private static final long serialVersionUID = 0L;
         importInfo_ = null;
       }
       return importInfoBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue workflowRecommended_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> workflowRecommendedBuilder_;
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     * @return Whether the workflowRecommended field is set.
+     */
+    public boolean hasWorkflowRecommended() {
+      return workflowRecommendedBuilder_ != null || workflowRecommended_ != null;
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     * @return The workflowRecommended.
+     */
+    public com.google.protobuf.BoolValue getWorkflowRecommended() {
+      if (workflowRecommendedBuilder_ == null) {
+        return workflowRecommended_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : workflowRecommended_;
+      } else {
+        return workflowRecommendedBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    public Builder setWorkflowRecommended(com.google.protobuf.BoolValue value) {
+      if (workflowRecommendedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workflowRecommended_ = value;
+        onChanged();
+      } else {
+        workflowRecommendedBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    public Builder setWorkflowRecommended(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (workflowRecommendedBuilder_ == null) {
+        workflowRecommended_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowRecommendedBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    public Builder mergeWorkflowRecommended(com.google.protobuf.BoolValue value) {
+      if (workflowRecommendedBuilder_ == null) {
+        if (workflowRecommended_ != null) {
+          workflowRecommended_ =
+            com.google.protobuf.BoolValue.newBuilder(workflowRecommended_).mergeFrom(value).buildPartial();
+        } else {
+          workflowRecommended_ = value;
+        }
+        onChanged();
+      } else {
+        workflowRecommendedBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    public Builder clearWorkflowRecommended() {
+      if (workflowRecommendedBuilder_ == null) {
+        workflowRecommended_ = null;
+        onChanged();
+      } else {
+        workflowRecommended_ = null;
+        workflowRecommendedBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getWorkflowRecommendedBuilder() {
+      
+      onChanged();
+      return getWorkflowRecommendedFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getWorkflowRecommendedOrBuilder() {
+      if (workflowRecommendedBuilder_ != null) {
+        return workflowRecommendedBuilder_.getMessageOrBuilder();
+      } else {
+        return workflowRecommended_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : workflowRecommended_;
+      }
+    }
+    /**
+     * <pre>
+     * Whether it's recommended that this model is used within a workflow
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue workflow_recommended = 29;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getWorkflowRecommendedFieldBuilder() {
+      if (workflowRecommendedBuilder_ == null) {
+        workflowRecommendedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getWorkflowRecommended(),
+                getParentForChildren(),
+                isClean());
+        workflowRecommended_ = null;
+      }
+      return workflowRecommendedBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

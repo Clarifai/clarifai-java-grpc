@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ConceptTypeCount}
  */
-public  final class ConceptTypeCount extends
+public final class ConceptTypeCount extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ConceptTypeCount)
     ConceptTypeCountOrBuilder {
@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -105,6 +107,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The positive.
    */
+  @java.lang.Override
   public int getPositive() {
     return positive_;
   }
@@ -120,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The negative.
    */
+  @java.lang.Override
   public int getNegative() {
     return negative_;
   }
@@ -457,6 +461,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 positive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The positive.
      */
+    @java.lang.Override
     public int getPositive() {
       return positive_;
     }
@@ -502,6 +507,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 negative = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The negative.
      */
+    @java.lang.Override
     public int getNegative() {
       return negative_;
     }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.GetInputSamplesRequest}
  */
-public  final class GetInputSamplesRequest extends
+public final class GetInputSamplesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.GetInputSamplesRequest)
     GetInputSamplesRequestOrBuilder {
@@ -94,6 +94,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -124,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -131,12 +134,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -147,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 2;</code>
    * @return The taskId.
    */
+  @java.lang.Override
   public java.lang.String getTaskId() {
     java.lang.Object ref = taskId_;
     if (ref instanceof java.lang.String) {
@@ -163,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 2;</code>
    * @return The bytes for taskId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTaskIdBytes() {
     java.lang.Object ref = taskId_;
@@ -245,7 +252,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskId_);
     }
     for (int i = 0; i < userIds_.size(); i++) {
@@ -264,7 +271,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskId_);
     }
     {

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Query}
  */
-public  final class Query extends
+public final class Query extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Query)
     QueryOrBuilder {
@@ -101,6 +101,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -137,22 +139,28 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  public java.util.List<com.clarifai.grpc.api.And> getAndsList() {
+  @java.lang.Override
+  @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.And> getAndsList() {
     return ands_;
   }
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  public java.util.List<? extends com.clarifai.grpc.api.AndOrBuilder> 
+  @java.lang.Override
+  @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.AndOrBuilder> 
       getAndsOrBuilderList() {
     return ands_;
   }
@@ -160,33 +168,42 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  public int getAndsCount() {
+  @java.lang.Override
+  @java.lang.Deprecated public int getAndsCount() {
     return ands_.size();
   }
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.And getAnds(int index) {
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.And getAnds(int index) {
     return ands_.get(index);
   }
   /**
    * <pre>
    * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
    * results which are returned to the user as Hit messages.
+   * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+   * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
    * </pre>
    *
-   * <code>repeated .clarifai.api.And ands = 1;</code>
+   * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
    */
-  public com.clarifai.grpc.api.AndOrBuilder getAndsOrBuilder(
+  @java.lang.Override
+  @java.lang.Deprecated public com.clarifai.grpc.api.AndOrBuilder getAndsOrBuilder(
       int index) {
     return ands_.get(index);
   }
@@ -203,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 2;</code>
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -225,6 +243,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 2;</code>
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -249,6 +268,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Filter filters = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Filter> getFiltersList() {
     return filters_;
   }
@@ -260,6 +280,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Filter filters = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.FilterOrBuilder> 
       getFiltersOrBuilderList() {
     return filters_;
@@ -272,6 +293,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Filter filters = 3;</code>
    */
+  @java.lang.Override
   public int getFiltersCount() {
     return filters_.size();
   }
@@ -283,6 +305,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Filter filters = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Filter getFilters(int index) {
     return filters_.get(index);
   }
@@ -294,6 +317,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Filter filters = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.FilterOrBuilder getFiltersOrBuilder(
       int index) {
     return filters_.get(index);
@@ -309,6 +333,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Rank ranks = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Rank> getRanksList() {
     return ranks_;
   }
@@ -320,6 +345,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Rank ranks = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.RankOrBuilder> 
       getRanksOrBuilderList() {
     return ranks_;
@@ -332,6 +358,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Rank ranks = 4;</code>
    */
+  @java.lang.Override
   public int getRanksCount() {
     return ranks_.size();
   }
@@ -343,6 +370,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Rank ranks = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Rank getRanks(int index) {
     return ranks_.get(index);
   }
@@ -354,6 +382,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Rank ranks = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.RankOrBuilder getRanksOrBuilder(
       int index) {
     return ranks_.get(index);
@@ -376,7 +405,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < ands_.size(); i++) {
       output.writeMessage(1, ands_.get(i));
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, language_);
     }
     for (int i = 0; i < filters_.size(); i++) {
@@ -398,7 +427,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, ands_.get(i));
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, language_);
     }
     for (int i = 0; i < filters_.size(); i++) {
@@ -848,11 +877,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.And> getAndsList() {
+    @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.And> getAndsList() {
       if (andsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(ands_);
       } else {
@@ -863,11 +894,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public int getAndsCount() {
+    @java.lang.Deprecated public int getAndsCount() {
       if (andsBuilder_ == null) {
         return ands_.size();
       } else {
@@ -878,11 +911,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.And getAnds(int index) {
+    @java.lang.Deprecated public com.clarifai.grpc.api.And getAnds(int index) {
       if (andsBuilder_ == null) {
         return ands_.get(index);
       } else {
@@ -893,11 +928,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder setAnds(
+    @java.lang.Deprecated public Builder setAnds(
         int index, com.clarifai.grpc.api.And value) {
       if (andsBuilder_ == null) {
         if (value == null) {
@@ -915,11 +952,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder setAnds(
+    @java.lang.Deprecated public Builder setAnds(
         int index, com.clarifai.grpc.api.And.Builder builderForValue) {
       if (andsBuilder_ == null) {
         ensureAndsIsMutable();
@@ -934,11 +973,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder addAnds(com.clarifai.grpc.api.And value) {
+    @java.lang.Deprecated public Builder addAnds(com.clarifai.grpc.api.And value) {
       if (andsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -955,11 +996,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder addAnds(
+    @java.lang.Deprecated public Builder addAnds(
         int index, com.clarifai.grpc.api.And value) {
       if (andsBuilder_ == null) {
         if (value == null) {
@@ -977,11 +1020,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder addAnds(
+    @java.lang.Deprecated public Builder addAnds(
         com.clarifai.grpc.api.And.Builder builderForValue) {
       if (andsBuilder_ == null) {
         ensureAndsIsMutable();
@@ -996,11 +1041,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder addAnds(
+    @java.lang.Deprecated public Builder addAnds(
         int index, com.clarifai.grpc.api.And.Builder builderForValue) {
       if (andsBuilder_ == null) {
         ensureAndsIsMutable();
@@ -1015,11 +1062,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder addAllAnds(
+    @java.lang.Deprecated public Builder addAllAnds(
         java.lang.Iterable<? extends com.clarifai.grpc.api.And> values) {
       if (andsBuilder_ == null) {
         ensureAndsIsMutable();
@@ -1035,11 +1084,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder clearAnds() {
+    @java.lang.Deprecated public Builder clearAnds() {
       if (andsBuilder_ == null) {
         ands_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1053,11 +1104,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public Builder removeAnds(int index) {
+    @java.lang.Deprecated public Builder removeAnds(int index) {
       if (andsBuilder_ == null) {
         ensureAndsIsMutable();
         ands_.remove(index);
@@ -1071,11 +1124,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.And.Builder getAndsBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.And.Builder getAndsBuilder(
         int index) {
       return getAndsFieldBuilder().getBuilder(index);
     }
@@ -1083,11 +1138,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.AndOrBuilder getAndsOrBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.AndOrBuilder getAndsOrBuilder(
         int index) {
       if (andsBuilder_ == null) {
         return ands_.get(index);  } else {
@@ -1098,11 +1155,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.AndOrBuilder> 
+    @java.lang.Deprecated public java.util.List<? extends com.clarifai.grpc.api.AndOrBuilder> 
          getAndsOrBuilderList() {
       if (andsBuilder_ != null) {
         return andsBuilder_.getMessageOrBuilderList();
@@ -1114,11 +1173,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.And.Builder addAndsBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.And.Builder addAndsBuilder() {
       return getAndsFieldBuilder().addBuilder(
           com.clarifai.grpc.api.And.getDefaultInstance());
     }
@@ -1126,11 +1187,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.And.Builder addAndsBuilder(
+    @java.lang.Deprecated public com.clarifai.grpc.api.And.Builder addAndsBuilder(
         int index) {
       return getAndsFieldBuilder().addBuilder(
           index, com.clarifai.grpc.api.And.getDefaultInstance());
@@ -1139,11 +1202,13 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The query syntax is simply a list of And operatiosn that will be ANDed together to fetch
      * results which are returned to the user as Hit messages.
+     * Deprecated: Only used by the deprecated PostSearches endpoint. Use filters
+     * and ranks instead with PostInputsSearches or PostAnnotationsSearches.
      * </pre>
      *
-     * <code>repeated .clarifai.api.And ands = 1;</code>
+     * <code>repeated .clarifai.api.And ands = 1 [deprecated = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.And.Builder> 
+    @java.lang.Deprecated public java.util.List<com.clarifai.grpc.api.And.Builder> 
          getAndsBuilderList() {
       return getAndsFieldBuilder().getBuilderList();
     }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.SinglePasswordValidationResponse}
  */
-public  final class SinglePasswordValidationResponse extends
+public final class SinglePasswordValidationResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.SinglePasswordValidationResponse)
     SinglePasswordValidationResponseOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -131,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -141,6 +145,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -151,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.PasswordViolations password_violations = 2;</code>
    * @return Whether the passwordViolations field is set.
    */
+  @java.lang.Override
   public boolean hasPasswordViolations() {
     return passwordViolations_ != null;
   }
@@ -158,12 +164,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.PasswordViolations password_violations = 2;</code>
    * @return The passwordViolations.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PasswordViolations getPasswordViolations() {
     return passwordViolations_ == null ? com.clarifai.grpc.api.PasswordViolations.getDefaultInstance() : passwordViolations_;
   }
   /**
    * <code>.clarifai.api.PasswordViolations password_violations = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PasswordViolationsOrBuilder getPasswordViolationsOrBuilder() {
     return getPasswordViolations();
   }

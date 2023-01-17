@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostAppsSearchesRequest}
  */
-public  final class PostAppsSearchesRequest extends
+public final class PostAppsSearchesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostAppsSearchesRequest)
     PostAppsSearchesRequestOrBuilder {
@@ -102,6 +102,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -129,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -136,12 +139,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -156,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.AppQuery app_query = 2;</code>
    * @return Whether the appQuery field is set.
    */
+  @java.lang.Override
   public boolean hasAppQuery() {
     return appQuery_ != null;
   }
@@ -167,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.AppQuery app_query = 2;</code>
    * @return The appQuery.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppQuery getAppQuery() {
     return appQuery_ == null ? com.clarifai.grpc.api.AppQuery.getDefaultInstance() : appQuery_;
   }
@@ -177,6 +184,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.AppQuery app_query = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppQueryOrBuilder getAppQueryOrBuilder() {
     return getAppQuery();
   }
@@ -192,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    * @return Whether the pagination field is set.
    */
+  @java.lang.Override
   public boolean hasPagination() {
     return pagination_ != null;
   }
@@ -204,6 +213,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    * @return The pagination.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Pagination getPagination() {
     return pagination_ == null ? com.clarifai.grpc.api.Pagination.getDefaultInstance() : pagination_;
   }
@@ -215,6 +225,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PaginationOrBuilder getPaginationOrBuilder() {
     return getPagination();
   }

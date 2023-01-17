@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ListAppsRequest}
  */
-public  final class ListAppsRequest extends
+public final class ListAppsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ListAppsRequest)
     ListAppsRequestOrBuilder {
@@ -91,13 +91,13 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 48: {
-            sortByCase_ = 6;
             sortBy_ = input.readBool();
+            sortByCase_ = 6;
             break;
           }
           case 56: {
-            sortByCase_ = 7;
             sortBy_ = input.readBool();
+            sortByCase_ = 7;
             break;
           }
           case 66: {
@@ -136,6 +136,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -207,6 +209,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -214,12 +217,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -235,6 +240,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 page = 2;</code>
    * @return The page.
    */
+  @java.lang.Override
   public int getPage() {
     return page_;
   }
@@ -250,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 per_page = 3;</code>
    * @return The perPage.
    */
+  @java.lang.Override
   public int getPerPage() {
     return perPage_;
   }
@@ -265,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool sort_ascending = 5;</code>
    * @return The sortAscending.
    */
+  @java.lang.Override
   public boolean getSortAscending() {
     return sortAscending_;
   }
@@ -276,8 +284,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_name = 6;</code>
+   * @return Whether the sortByName field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByName() {
+    return sortByCase_ == 6;
+  }
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_name = 6;</code>
    * @return The sortByName.
    */
+  @java.lang.Override
   public boolean getSortByName() {
     if (sortByCase_ == 6) {
       return (java.lang.Boolean) sortBy_;
@@ -293,8 +314,22 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByModifiedAt() {
+    return sortByCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Whether to order by the modified_at time.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 7;</code>
    * @return The sortByModifiedAt.
    */
+  @java.lang.Override
   public boolean getSortByModifiedAt() {
     if (sortByCase_ == 7) {
       return (java.lang.Boolean) sortBy_;
@@ -313,6 +348,7 @@ private static final long serialVersionUID = 0L;
    * <code>string query = 8;</code>
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -334,6 +370,7 @@ private static final long serialVersionUID = 0L;
    * <code>string query = 8;</code>
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getQueryBytes() {
     java.lang.Object ref = query_;
@@ -357,8 +394,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3260
    * @return The name.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -378,8 +418,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3260
    * @return The bytes for name.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -404,6 +447,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool featured_only = 9;</code>
    * @return The featuredOnly.
    */
+  @java.lang.Override
   public boolean getFeaturedOnly() {
     return featuredOnly_;
   }
@@ -418,6 +462,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool starred_only = 11;</code>
    * @return The starredOnly.
    */
+  @java.lang.Override
   public boolean getStarredOnly() {
     return starredOnly_;
   }
@@ -496,7 +541,7 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     if (sortAscending_ != false) {
@@ -510,7 +555,7 @@ private static final long serialVersionUID = 0L;
       output.writeBool(
           7, (boolean)((java.lang.Boolean) sortBy_));
     }
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, query_);
     }
     if (featuredOnly_ != false) {
@@ -543,7 +588,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     if (sortAscending_ != false) {
@@ -560,7 +605,7 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             7, (boolean)((java.lang.Boolean) sortBy_));
     }
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, query_);
     }
     if (featuredOnly_ != false) {
@@ -1161,6 +1206,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 page = 2;</code>
      * @return The page.
      */
+    @java.lang.Override
     public int getPage() {
       return page_;
     }
@@ -1206,6 +1252,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 per_page = 3;</code>
      * @return The perPage.
      */
+    @java.lang.Override
     public int getPerPage() {
       return perPage_;
     }
@@ -1251,6 +1298,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool sort_ascending = 5;</code>
      * @return The sortAscending.
      */
+    @java.lang.Override
     public boolean getSortAscending() {
       return sortAscending_;
     }
@@ -1286,6 +1334,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_name = 6;</code>
+     * @return Whether the sortByName field is set.
+     */
+    public boolean hasSortByName() {
+      return sortByCase_ == 6;
+    }
     /**
      * <pre>
      * Whether to order by the name
@@ -1332,6 +1391,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 7;</code>
+     * @return Whether the sortByModifiedAt field is set.
+     */
+    public boolean hasSortByModifiedAt() {
+      return sortByCase_ == 7;
+    }
     /**
      * <pre>
      * Whether to order by the modified_at time.
@@ -1490,6 +1561,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=3260
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -1511,6 +1584,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=3260
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1533,6 +1608,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=3260
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1553,6 +1630,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=3260
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -1568,6 +1647,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=3260
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1592,6 +1673,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool featured_only = 9;</code>
      * @return The featuredOnly.
      */
+    @java.lang.Override
     public boolean getFeaturedOnly() {
       return featuredOnly_;
     }
@@ -1634,6 +1716,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool starred_only = 11;</code>
      * @return The starredOnly.
      */
+    @java.lang.Override
     public boolean getStarredOnly() {
       return starredOnly_;
     }

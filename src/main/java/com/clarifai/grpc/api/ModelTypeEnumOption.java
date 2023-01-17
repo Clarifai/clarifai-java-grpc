@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelTypeEnumOption}
  */
-public  final class ModelTypeEnumOption extends
+public final class ModelTypeEnumOption extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelTypeEnumOption)
     ModelTypeEnumOptionOrBuilder {
@@ -92,6 +92,11 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.ModelTypeEnumOptionAlias.parser(), extensionRegistry));
             break;
           }
+          case 48: {
+
+            recommended_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -103,6 +108,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -140,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -160,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -187,6 +196,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ModelTypeEnumOptionAlias> getAliasesList() {
     return aliases_;
   }
@@ -201,6 +211,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder> 
       getAliasesOrBuilderList() {
     return aliases_;
@@ -216,6 +227,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
    */
+  @java.lang.Override
   public int getAliasesCount() {
     return aliases_.size();
   }
@@ -230,6 +242,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeEnumOptionAlias getAliases(int index) {
     return aliases_.get(index);
   }
@@ -244,6 +257,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeEnumOptionAlias aliases = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeEnumOptionAliasOrBuilder getAliasesOrBuilder(
       int index) {
     return aliases_.get(index);
@@ -259,6 +273,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 2;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -279,6 +294,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 2;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -303,6 +319,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ModelTypeField> getModelTypeFieldsList() {
     return modelTypeFields_;
   }
@@ -314,6 +331,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
       getModelTypeFieldsOrBuilderList() {
     return modelTypeFields_;
@@ -326,6 +344,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 3;</code>
    */
+  @java.lang.Override
   public int getModelTypeFieldsCount() {
     return modelTypeFields_.size();
   }
@@ -337,6 +356,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeField getModelTypeFields(int index) {
     return modelTypeFields_.get(index);
   }
@@ -348,6 +368,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelTypeFieldsOrBuilder(
       int index) {
     return modelTypeFields_.get(index);
@@ -363,8 +384,25 @@ private static final long serialVersionUID = 0L;
    * <code>bool internal_only = 4;</code>
    * @return The internalOnly.
    */
+  @java.lang.Override
   public boolean getInternalOnly() {
     return internalOnly_;
+  }
+
+  public static final int RECOMMENDED_FIELD_NUMBER = 6;
+  private boolean recommended_;
+  /**
+   * <pre>
+   * Whether this is the recommended enum option. Set to `true` when there 
+   * are multiple options, and one is shown to be better than the others.
+   * </pre>
+   *
+   * <code>bool recommended = 6;</code>
+   * @return The recommended.
+   */
+  @java.lang.Override
+  public boolean getRecommended() {
+    return recommended_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,10 +419,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     for (int i = 0; i < modelTypeFields_.size(); i++) {
@@ -396,6 +434,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < aliases_.size(); i++) {
       output.writeMessage(5, aliases_.get(i));
     }
+    if (recommended_ != false) {
+      output.writeBool(6, recommended_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -405,10 +446,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     for (int i = 0; i < modelTypeFields_.size(); i++) {
@@ -422,6 +463,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < aliases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, aliases_.get(i));
+    }
+    if (recommended_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, recommended_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -448,6 +493,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelTypeFieldsList())) return false;
     if (getInternalOnly()
         != other.getInternalOnly()) return false;
+    if (getRecommended()
+        != other.getRecommended()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -474,6 +521,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INTERNAL_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getInternalOnly());
+    hash = (37 * hash) + RECOMMENDED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getRecommended());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,6 +681,8 @@ private static final long serialVersionUID = 0L;
       }
       internalOnly_ = false;
 
+      recommended_ = false;
+
       return this;
     }
 
@@ -679,6 +731,7 @@ private static final long serialVersionUID = 0L;
         result.modelTypeFields_ = modelTypeFieldsBuilder_.build();
       }
       result.internalOnly_ = internalOnly_;
+      result.recommended_ = recommended_;
       onBuilt();
       return result;
     }
@@ -789,6 +842,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getInternalOnly() != false) {
         setInternalOnly(other.getInternalOnly());
+      }
+      if (other.getRecommended() != false) {
+        setRecommended(other.getRecommended());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1735,6 +1791,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool internal_only = 4;</code>
      * @return The internalOnly.
      */
+    @java.lang.Override
     public boolean getInternalOnly() {
       return internalOnly_;
     }
@@ -1764,6 +1821,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearInternalOnly() {
       
       internalOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean recommended_ ;
+    /**
+     * <pre>
+     * Whether this is the recommended enum option. Set to `true` when there 
+     * are multiple options, and one is shown to be better than the others.
+     * </pre>
+     *
+     * <code>bool recommended = 6;</code>
+     * @return The recommended.
+     */
+    @java.lang.Override
+    public boolean getRecommended() {
+      return recommended_;
+    }
+    /**
+     * <pre>
+     * Whether this is the recommended enum option. Set to `true` when there 
+     * are multiple options, and one is shown to be better than the others.
+     * </pre>
+     *
+     * <code>bool recommended = 6;</code>
+     * @param value The recommended to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecommended(boolean value) {
+      
+      recommended_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether this is the recommended enum option. Set to `true` when there 
+     * are multiple options, and one is shown to be better than the others.
+     * </pre>
+     *
+     * <code>bool recommended = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRecommended() {
+      
+      recommended_ = false;
       onChanged();
       return this;
     }

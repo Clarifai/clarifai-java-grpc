@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.LabelCount}
  */
-public  final class LabelCount extends
+public final class LabelCount extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.LabelCount)
     LabelCountOrBuilder {
@@ -75,6 +75,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -107,6 +109,7 @@ private static final long serialVersionUID = 0L;
    * <code>string concept_name = 1;</code>
    * @return The conceptName.
    */
+  @java.lang.Override
   public java.lang.String getConceptName() {
     java.lang.Object ref = conceptName_;
     if (ref instanceof java.lang.String) {
@@ -128,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>string concept_name = 1;</code>
    * @return The bytes for conceptName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getConceptNameBytes() {
     java.lang.Object ref = conceptName_;
@@ -148,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 count = 2;</code>
    * @return The count.
    */
+  @java.lang.Override
   public int getCount() {
     return count_;
   }
@@ -166,7 +171,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getConceptNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conceptName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, conceptName_);
     }
     if (count_ != 0) {
@@ -181,7 +186,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getConceptNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conceptName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, conceptName_);
     }
     if (count_ != 0) {
@@ -581,6 +586,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 count = 2;</code>
      * @return The count.
      */
+    @java.lang.Override
     public int getCount() {
       return count_;
     }

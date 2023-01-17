@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Workflow}
  */
-public  final class Workflow extends
+public final class Workflow extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Workflow)
     WorkflowOrBuilder {
@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     notes_ = "";
     useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -183,6 +184,15 @@ private static final long serialVersionUID = 0L;
             useCases_.add(s);
             break;
           }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              checkConsents_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            checkConsents_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -194,6 +204,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -203,6 +215,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         useCases_ = useCases_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        checkConsents_ = checkConsents_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -231,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -251,6 +267,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -275,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 2;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -295,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 2;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -323,6 +342,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -338,6 +358,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -352,6 +373,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -366,6 +388,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.WorkflowNode> getNodesList() {
     return nodes_;
   }
@@ -377,6 +400,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.WorkflowNodeOrBuilder> 
       getNodesOrBuilderList() {
     return nodes_;
@@ -389,6 +413,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
+  @java.lang.Override
   public int getNodesCount() {
     return nodes_.size();
   }
@@ -400,6 +425,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowNode getNodes(int index) {
     return nodes_.get(index);
   }
@@ -411,6 +437,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowNodeOrBuilder getNodesOrBuilder(
       int index) {
     return nodes_.get(index);
@@ -427,6 +454,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -439,6 +467,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -450,6 +479,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -466,6 +496,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -479,6 +510,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -491,6 +523,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -505,6 +538,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 7;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -525,6 +559,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 7;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -549,6 +584,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -560,6 +596,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -570,6 +607,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -578,33 +616,36 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.WorkflowVersion version_;
   /**
    * <pre>
-   * Info about the workflow version
+   * Info about the workflow version used to return the latest version when listing Workflows.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
    * @return Whether the version field is set.
    */
+  @java.lang.Override
   public boolean hasVersion() {
     return version_ != null;
   }
   /**
    * <pre>
-   * Info about the workflow version
+   * Info about the workflow version used to return the latest version when listing Workflows.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
    * @return The version.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowVersion getVersion() {
     return version_ == null ? com.clarifai.grpc.api.WorkflowVersion.getDefaultInstance() : version_;
   }
   /**
    * <pre>
-   * Info about the workflow version
+   * Info about the workflow version used to return the latest version when listing Workflows.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowVersionOrBuilder getVersionOrBuilder() {
     return getVersion();
   }
@@ -620,6 +661,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool is_starred = 10;</code>
    * @return The isStarred.
    */
+  @java.lang.Override
   public boolean getIsStarred() {
     return isStarred_;
   }
@@ -635,6 +677,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 star_count = 11;</code>
    * @return The starCount.
    */
+  @java.lang.Override
   public int getStarCount() {
     return starCount_;
   }
@@ -649,6 +692,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 12;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -669,6 +713,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 12;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -694,6 +739,7 @@ private static final long serialVersionUID = 0L;
    * <code>string notes = 13;</code>
    * @return The notes.
    */
+  @java.lang.Override
   public java.lang.String getNotes() {
     java.lang.Object ref = notes_;
     if (ref instanceof java.lang.String) {
@@ -715,6 +761,7 @@ private static final long serialVersionUID = 0L;
    * <code>string notes = 13;</code>
    * @return The bytes for notes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNotesBytes() {
     java.lang.Object ref = notes_;
@@ -780,6 +827,57 @@ private static final long serialVersionUID = 0L;
     return useCases_.getByteString(index);
   }
 
+  public static final int CHECK_CONSENTS_FIELD_NUMBER = 15;
+  private com.google.protobuf.LazyStringList checkConsents_;
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the checkConsents.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getCheckConsentsList() {
+    return checkConsents_;
+  }
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of checkConsents.
+   */
+  public int getCheckConsentsCount() {
+    return checkConsents_.size();
+  }
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The checkConsents at the given index.
+   */
+  public java.lang.String getCheckConsents(int index) {
+    return checkConsents_.get(index);
+  }
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the checkConsents at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getCheckConsentsBytes(int index) {
+    return checkConsents_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -794,10 +892,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appId_);
     }
     if (createdAt_ != null) {
@@ -812,7 +910,7 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       output.writeMessage(6, getVisibility());
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
     }
     if (modifiedAt_ != null) {
@@ -827,14 +925,17 @@ private static final long serialVersionUID = 0L;
     if (starCount_ != 0) {
       output.writeInt32(11, starCount_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, description_);
     }
-    if (!getNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, notes_);
     }
     for (int i = 0; i < useCases_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, useCases_.getRaw(i));
+    }
+    for (int i = 0; i < checkConsents_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, checkConsents_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -845,10 +946,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appId_);
     }
     if (createdAt_ != null) {
@@ -867,7 +968,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getVisibility());
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
     }
     if (modifiedAt_ != null) {
@@ -886,10 +987,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(11, starCount_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, description_);
     }
-    if (!getNotesBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, notes_);
     }
     {
@@ -899,6 +1000,14 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getUseCasesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < checkConsents_.size(); i++) {
+        dataSize += computeStringSizeNoTag(checkConsents_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCheckConsentsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -958,6 +1067,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNotes())) return false;
     if (!getUseCasesList()
         .equals(other.getUseCasesList())) return false;
+    if (!getCheckConsentsList()
+        .equals(other.getCheckConsentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1011,6 +1122,10 @@ private static final long serialVersionUID = 0L;
     if (getUseCasesCount() > 0) {
       hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
       hash = (53 * hash) + getUseCasesList().hashCode();
+    }
+    if (getCheckConsentsCount() > 0) {
+      hash = (37 * hash) + CHECK_CONSENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckConsentsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1202,6 +1317,8 @@ private static final long serialVersionUID = 0L;
 
       useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1275,6 +1392,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.useCases_ = useCases_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        checkConsents_ = checkConsents_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.checkConsents_ = checkConsents_;
       onBuilt();
       return result;
     }
@@ -1397,6 +1519,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureUseCasesIsMutable();
           useCases_.addAll(other.useCases_);
+        }
+        onChanged();
+      }
+      if (!other.checkConsents_.isEmpty()) {
+        if (checkConsents_.isEmpty()) {
+          checkConsents_ = other.checkConsents_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureCheckConsentsIsMutable();
+          checkConsents_.addAll(other.checkConsents_);
         }
         onChanged();
       }
@@ -2736,7 +2868,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.WorkflowVersion, com.clarifai.grpc.api.WorkflowVersion.Builder, com.clarifai.grpc.api.WorkflowVersionOrBuilder> versionBuilder_;
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2747,7 +2879,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2762,7 +2894,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2782,7 +2914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2800,7 +2932,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2822,7 +2954,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2840,7 +2972,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2852,7 +2984,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2867,7 +2999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the workflow version
+     * Info about the workflow version used to return the latest version when listing Workflows.
      * </pre>
      *
      * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -2896,6 +3028,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_starred = 10;</code>
      * @return The isStarred.
      */
+    @java.lang.Override
     public boolean getIsStarred() {
       return isStarred_;
     }
@@ -2941,6 +3074,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 star_count = 11;</code>
      * @return The starCount.
      */
+    @java.lang.Override
     public int getStarCount() {
       return starCount_;
     }
@@ -3315,6 +3449,152 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureUseCasesIsMutable();
       useCases_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureCheckConsentsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        checkConsents_ = new com.google.protobuf.LazyStringArrayList(checkConsents_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return A list containing the checkConsents.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCheckConsentsList() {
+      return checkConsents_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return The count of checkConsents.
+     */
+    public int getCheckConsentsCount() {
+      return checkConsents_.size();
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the element to return.
+     * @return The checkConsents at the given index.
+     */
+    public java.lang.String getCheckConsents(int index) {
+      return checkConsents_.get(index);
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the checkConsents at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getCheckConsentsBytes(int index) {
+      return checkConsents_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param index The index to set the value at.
+     * @param value The checkConsents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckConsents(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCheckConsentsIsMutable();
+      checkConsents_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The checkConsents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCheckConsents(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCheckConsentsIsMutable();
+      checkConsents_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param values The checkConsents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCheckConsents(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCheckConsentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, checkConsents_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCheckConsents() {
+      checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Tags for check consents
+     * </pre>
+     *
+     * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @param value The bytes of the checkConsents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCheckConsentsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureCheckConsentsIsMutable();
+      checkConsents_.add(value);
       onChanged();
       return this;
     }

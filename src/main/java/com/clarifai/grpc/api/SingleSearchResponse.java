@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.SingleSearchResponse}
  */
-public  final class SingleSearchResponse extends
+public final class SingleSearchResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.SingleSearchResponse)
     SingleSearchResponseOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -131,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -141,6 +145,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -151,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search search = 5;</code>
    * @return Whether the search field is set.
    */
+  @java.lang.Override
   public boolean hasSearch() {
     return search_ != null;
   }
@@ -158,12 +164,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search search = 5;</code>
    * @return The search.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Search getSearch() {
     return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
   }
   /**
    * <code>.clarifai.api.Search search = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
     return getSearch();
   }

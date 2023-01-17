@@ -118,6 +118,10 @@ public enum StatTimeAggType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -126,7 +130,7 @@ public enum StatTimeAggType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(9);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(11);
   }
 
   private static final StatTimeAggType[] VALUES = values();

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ListScopesRequest}
  */
-public  final class ListScopesRequest extends
+public final class ListScopesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ListScopesRequest)
     ListScopesRequestOrBuilder {
@@ -83,6 +83,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * <code>string key_type = 1;</code>
    * @return The keyType.
    */
+  @java.lang.Override
   public java.lang.String getKeyType() {
     java.lang.Object ref = keyType_;
     if (ref instanceof java.lang.String) {
@@ -136,6 +139,7 @@ private static final long serialVersionUID = 0L;
    * <code>string key_type = 1;</code>
    * @return The bytes for keyType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getKeyTypeBytes() {
     java.lang.Object ref = keyType_;
@@ -160,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -171,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
@@ -181,6 +187,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -199,7 +206,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getKeyTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyType_);
     }
     if (userAppId_ != null) {
@@ -214,7 +221,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getKeyTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyType_);
     }
     if (userAppId_ != null) {

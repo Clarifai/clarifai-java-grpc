@@ -11,7 +11,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.APIPostModelOutputsCollectorSource}
  */
-public  final class APIPostModelOutputsCollectorSource extends
+public final class APIPostModelOutputsCollectorSource extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.APIPostModelOutputsCollectorSource)
     APIPostModelOutputsCollectorSourceOrBuilder {
@@ -99,6 +99,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -132,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_user_id = 1;</code>
    * @return The modelUserId.
    */
+  @java.lang.Override
   public java.lang.String getModelUserId() {
     java.lang.Object ref = modelUserId_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_user_id = 1;</code>
    * @return The bytes for modelUserId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelUserIdBytes() {
     java.lang.Object ref = modelUserId_;
@@ -178,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_app_id = 2;</code>
    * @return The modelAppId.
    */
+  @java.lang.Override
   public java.lang.String getModelAppId() {
     java.lang.Object ref = modelAppId_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_app_id = 2;</code>
    * @return The bytes for modelAppId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelAppIdBytes() {
     java.lang.Object ref = modelAppId_;
@@ -222,6 +228,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 3;</code>
    * @return The modelId.
    */
+  @java.lang.Override
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 3;</code>
    * @return The bytes for modelId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelIdBytes() {
     java.lang.Object ref = modelId_;
@@ -266,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_version_id = 4;</code>
    * @return The modelVersionId.
    */
+  @java.lang.Override
   public java.lang.String getModelVersionId() {
     java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
@@ -286,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_version_id = 4;</code>
    * @return The bytes for modelVersionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelVersionIdBytes() {
     java.lang.Object ref = modelVersionId_;
@@ -312,6 +322,7 @@ private static final long serialVersionUID = 0L;
    * <code>string post_inputs_key_id = 5;</code>
    * @return The postInputsKeyId.
    */
+  @java.lang.Override
   public java.lang.String getPostInputsKeyId() {
     java.lang.Object ref = postInputsKeyId_;
     if (ref instanceof java.lang.String) {
@@ -334,6 +345,7 @@ private static final long serialVersionUID = 0L;
    * <code>string post_inputs_key_id = 5;</code>
    * @return The bytes for postInputsKeyId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPostInputsKeyIdBytes() {
     java.lang.Object ref = postInputsKeyId_;
@@ -362,19 +374,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getModelUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelUserId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelUserId_);
     }
-    if (!getModelAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelAppId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelAppId_);
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelId_);
     }
-    if (!getModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, modelVersionId_);
     }
-    if (!getPostInputsKeyIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postInputsKeyId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, postInputsKeyId_);
     }
     unknownFields.writeTo(output);
@@ -386,19 +398,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getModelUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelUserId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelUserId_);
     }
-    if (!getModelAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelAppId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelAppId_);
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelId_);
     }
-    if (!getModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, modelVersionId_);
     }
-    if (!getPostInputsKeyIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postInputsKeyId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, postInputsKeyId_);
     }
     size += unknownFields.getSerializedSize();

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.EvalTestSetEntry}
  */
-public  final class EvalTestSetEntry extends
+public final class EvalTestSetEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.EvalTestSetEntry)
     EvalTestSetEntryOrBuilder {
@@ -124,6 +124,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -159,8 +161,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1814
    * @return The id.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -179,8 +184,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1814
    * @return The bytes for id.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -199,8 +207,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object url_;
   /**
    * <code>string url = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1815
    * @return The url.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -215,8 +226,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>string url = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1815
    * @return The bytes for url.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getUrlBytes() {
     java.lang.Object ref = url_;
@@ -241,6 +255,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Input input = 6;</code>
    * @return Whether the input field is set.
    */
+  @java.lang.Override
   public boolean hasInput() {
     return input_ != null;
   }
@@ -252,6 +267,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Input input = 6;</code>
    * @return The input.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Input getInput() {
     return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
   }
@@ -262,6 +278,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Input input = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder() {
     return getInput();
   }
@@ -271,12 +288,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Concept> getPredictedConceptsList() {
     return predictedConcepts_;
   }
   /**
    * <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
       getPredictedConceptsOrBuilderList() {
     return predictedConcepts_;
@@ -284,18 +303,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
    */
+  @java.lang.Override
   public int getPredictedConceptsCount() {
     return predictedConcepts_.size();
   }
   /**
    * <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getPredictedConcepts(int index) {
     return predictedConcepts_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.Concept predicted_concepts = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getPredictedConceptsOrBuilder(
       int index) {
     return predictedConcepts_.get(index);
@@ -310,6 +332,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept ground_truth_concepts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Concept> getGroundTruthConceptsList() {
     return groundTruthConcepts_;
   }
@@ -320,6 +343,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept ground_truth_concepts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
       getGroundTruthConceptsOrBuilderList() {
     return groundTruthConcepts_;
@@ -331,6 +355,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept ground_truth_concepts = 4;</code>
    */
+  @java.lang.Override
   public int getGroundTruthConceptsCount() {
     return groundTruthConcepts_.size();
   }
@@ -341,6 +366,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept ground_truth_concepts = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getGroundTruthConcepts(int index) {
     return groundTruthConcepts_.get(index);
   }
@@ -351,6 +377,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept ground_truth_concepts = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getGroundTruthConceptsOrBuilder(
       int index) {
     return groundTruthConcepts_.get(index);
@@ -368,6 +395,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Annotation annotation = 5;</code>
    * @return Whether the annotation field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotation() {
     return annotation_ != null;
   }
@@ -381,6 +409,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Annotation annotation = 5;</code>
    * @return The annotation.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Annotation getAnnotation() {
     return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
   }
@@ -393,6 +422,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Annotation annotation = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
     return getAnnotation();
   }
@@ -411,10 +441,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
     }
     for (int i = 0; i < predictedConcepts_.size(); i++) {
@@ -438,10 +468,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
     }
     for (int i = 0; i < predictedConcepts_.size(); i++) {
@@ -899,6 +929,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1814
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -919,6 +951,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1814
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -940,6 +974,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1814
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -959,6 +995,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1814
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -973,6 +1011,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1814
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -991,6 +1031,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object url_ = "";
     /**
      * <code>string url = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1815
      * @return The url.
      */
     @java.lang.Deprecated public java.lang.String getUrl() {
@@ -1007,6 +1049,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1815
      * @return The bytes for url.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1024,6 +1068,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1815
      * @param value The url to set.
      * @return This builder for chaining.
      */
@@ -1039,6 +1085,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1815
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUrl() {
@@ -1049,6 +1097,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string url = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1815
      * @param value The bytes for url to set.
      * @return This builder for chaining.
      */

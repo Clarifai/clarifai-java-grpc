@@ -12,7 +12,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.OutputConfig}
  */
-public  final class OutputConfig extends
+public final class OutputConfig extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.OutputConfig)
     OutputConfigOrBuilder {
@@ -165,6 +165,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -199,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The conceptsMutuallyExclusive.
    */
+  @java.lang.Override
   public boolean getConceptsMutuallyExclusive() {
     return conceptsMutuallyExclusive_;
   }
@@ -214,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The closedEnvironment.
    */
+  @java.lang.Override
   public boolean getClosedEnvironment() {
     return closedEnvironment_;
   }
@@ -227,8 +231,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1361
    * @return The existingModelId.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getExistingModelId() {
     java.lang.Object ref = existingModelId_;
     if (ref instanceof java.lang.String) {
@@ -248,8 +255,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1361
    * @return The bytes for existingModelId.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getExistingModelIdBytes() {
     java.lang.Object ref = existingModelId_;
@@ -274,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 4;</code>
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +305,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 4;</code>
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -317,8 +329,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1366
    * @return The hyperParameters.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getHyperParameters() {
     java.lang.Object ref = hyperParameters_;
     if (ref instanceof java.lang.String) {
@@ -338,8 +353,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1366
    * @return The bytes for hyperParameters.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getHyperParametersBytes() {
     java.lang.Object ref = hyperParameters_;
@@ -366,6 +384,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The maxConcepts.
    */
+  @java.lang.Override
   public int getMaxConcepts() {
     return maxConcepts_;
   }
@@ -382,6 +401,7 @@ private static final long serialVersionUID = 0L;
    * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The minValue.
    */
+  @java.lang.Override
   public float getMinValue() {
     return minValue_;
   }
@@ -395,6 +415,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Concept> getSelectConceptsList() {
     return selectConcepts_;
   }
@@ -405,6 +426,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
       getSelectConceptsOrBuilderList() {
     return selectConcepts_;
@@ -416,6 +438,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
    */
+  @java.lang.Override
   public int getSelectConceptsCount() {
     return selectConcepts_.size();
   }
@@ -426,6 +449,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getSelectConcepts(int index) {
     return selectConcepts_.get(index);
   }
@@ -436,6 +460,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept select_concepts = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getSelectConceptsOrBuilder(
       int index) {
     return selectConcepts_.get(index);
@@ -451,6 +476,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 training_timeout = 9;</code>
    * @return The trainingTimeout.
    */
+  @java.lang.Override
   public int getTrainingTimeout() {
     return trainingTimeout_;
   }
@@ -465,6 +491,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 sample_ms = 10;</code>
    * @return The sampleMs.
    */
+  @java.lang.Override
   public int getSampleMs() {
     return sampleMs_;
   }
@@ -479,6 +506,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
    * @return Whether the hyperParams field is set.
    */
+  @java.lang.Override
   public boolean hasHyperParams() {
     return hyperParams_ != null;
   }
@@ -490,6 +518,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
    * @return The hyperParams.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getHyperParams() {
     return hyperParams_ == null ? com.google.protobuf.Struct.getDefaultInstance() : hyperParams_;
   }
@@ -500,6 +529,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct hyper_params = 13;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getHyperParamsOrBuilder() {
     return getHyperParams();
   }
@@ -515,6 +545,7 @@ private static final long serialVersionUID = 0L;
    * <code>string embed_model_version_id = 14;</code>
    * @return The embedModelVersionId.
    */
+  @java.lang.Override
   public java.lang.String getEmbedModelVersionId() {
     java.lang.Object ref = embedModelVersionId_;
     if (ref instanceof java.lang.String) {
@@ -536,6 +567,7 @@ private static final long serialVersionUID = 0L;
    * <code>string embed_model_version_id = 14;</code>
    * @return The bytes for embedModelVersionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes() {
     java.lang.Object ref = embedModelVersionId_;
@@ -561,6 +593,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool fail_on_missing_positive_examples = 15;</code>
    * @return The failOnMissingPositiveExamples.
    */
+  @java.lang.Override
   public boolean getFailOnMissingPositiveExamples() {
     return failOnMissingPositiveExamples_;
   }
@@ -578,8 +611,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
+   * @deprecated clarifai.api.OutputConfig.model_metadata is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1395
    * @return Whether the modelMetadata field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasModelMetadata() {
     return modelMetadata_ != null;
   }
@@ -594,8 +630,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
+   * @deprecated clarifai.api.OutputConfig.model_metadata is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1395
    * @return The modelMetadata.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.Struct getModelMetadata() {
     return modelMetadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : modelMetadata_;
   }
@@ -611,6 +650,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getModelMetadataOrBuilder() {
     return getModelMetadata();
   }
@@ -635,19 +675,19 @@ private static final long serialVersionUID = 0L;
     if (closedEnvironment_ != false) {
       output.writeBool(2, closedEnvironment_);
     }
-    if (!getExistingModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(existingModelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, existingModelId_);
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
     }
-    if (!getHyperParametersBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hyperParameters_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, hyperParameters_);
     }
     if (maxConcepts_ != 0) {
       output.writeUInt32(6, maxConcepts_);
     }
-    if (minValue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(minValue_) != 0) {
       output.writeFloat(7, minValue_);
     }
     for (int i = 0; i < selectConcepts_.size(); i++) {
@@ -662,7 +702,7 @@ private static final long serialVersionUID = 0L;
     if (hyperParams_ != null) {
       output.writeMessage(13, getHyperParams());
     }
-    if (!getEmbedModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embedModelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, embedModelVersionId_);
     }
     if (failOnMissingPositiveExamples_ != false) {
@@ -688,20 +728,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, closedEnvironment_);
     }
-    if (!getExistingModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(existingModelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, existingModelId_);
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
     }
-    if (!getHyperParametersBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hyperParameters_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, hyperParameters_);
     }
     if (maxConcepts_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, maxConcepts_);
     }
-    if (minValue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(minValue_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(7, minValue_);
     }
@@ -721,7 +761,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getHyperParams());
     }
-    if (!getEmbedModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embedModelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, embedModelVersionId_);
     }
     if (failOnMissingPositiveExamples_ != false) {
@@ -1224,6 +1264,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool concepts_mutually_exclusive = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The conceptsMutuallyExclusive.
      */
+    @java.lang.Override
     public boolean getConceptsMutuallyExclusive() {
       return conceptsMutuallyExclusive_;
     }
@@ -1267,6 +1308,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool closed_environment = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The closedEnvironment.
      */
+    @java.lang.Override
     public boolean getClosedEnvironment() {
       return closedEnvironment_;
     }
@@ -1310,6 +1352,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1361
      * @return The existingModelId.
      */
     @java.lang.Deprecated public java.lang.String getExistingModelId() {
@@ -1331,6 +1375,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1361
      * @return The bytes for existingModelId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1353,6 +1399,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1361
      * @param value The existingModelId to set.
      * @return This builder for chaining.
      */
@@ -1373,6 +1421,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1361
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearExistingModelId() {
@@ -1388,6 +1438,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string existing_model_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1361
      * @param value The bytes for existingModelId to set.
      * @return This builder for chaining.
      */
@@ -1507,6 +1559,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1366
      * @return The hyperParameters.
      */
     @java.lang.Deprecated public java.lang.String getHyperParameters() {
@@ -1528,6 +1582,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1366
      * @return The bytes for hyperParameters.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1550,6 +1606,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1366
      * @param value The hyperParameters to set.
      * @return This builder for chaining.
      */
@@ -1570,6 +1628,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1366
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearHyperParameters() {
@@ -1585,6 +1645,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string hyper_parameters = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1366
      * @param value The bytes for hyperParameters to set.
      * @return This builder for chaining.
      */
@@ -1611,6 +1673,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 max_concepts = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The maxConcepts.
      */
+    @java.lang.Override
     public int getMaxConcepts() {
       return maxConcepts_;
     }
@@ -1659,6 +1722,7 @@ private static final long serialVersionUID = 0L;
      * <code>float min_value = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The minValue.
      */
+    @java.lang.Override
     public float getMinValue() {
       return minValue_;
     }
@@ -2017,6 +2081,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 training_timeout = 9;</code>
      * @return The trainingTimeout.
      */
+    @java.lang.Override
     public int getTrainingTimeout() {
       return trainingTimeout_;
     }
@@ -2059,6 +2124,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 sample_ms = 10;</code>
      * @return The sampleMs.
      */
+    @java.lang.Override
     public int getSampleMs() {
       return sampleMs_;
     }
@@ -2358,6 +2424,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool fail_on_missing_positive_examples = 15;</code>
      * @return The failOnMissingPositiveExamples.
      */
+    @java.lang.Override
     public boolean getFailOnMissingPositiveExamples() {
       return failOnMissingPositiveExamples_;
     }
@@ -2407,6 +2474,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.model_metadata is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1395
      * @return Whether the modelMetadata field is set.
      */
     @java.lang.Deprecated public boolean hasModelMetadata() {
@@ -2423,6 +2492,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
+     * @deprecated clarifai.api.OutputConfig.model_metadata is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1395
      * @return The modelMetadata.
      */
     @java.lang.Deprecated public com.google.protobuf.Struct getModelMetadata() {

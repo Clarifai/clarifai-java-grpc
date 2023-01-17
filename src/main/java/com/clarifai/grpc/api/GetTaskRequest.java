@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.GetTaskRequest}
  */
-public  final class GetTaskRequest extends
+public final class GetTaskRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.GetTaskRequest)
     GetTaskRequestOrBuilder {
@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private GetTaskRequest() {
     taskId_ = "";
+    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -43,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -72,6 +74,15 @@ private static final long serialVersionUID = 0L;
             taskId_ = s;
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              additionalFields_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            additionalFields_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -83,10 +94,15 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -110,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -117,12 +134,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -133,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 2;</code>
    * @return The taskId.
    */
+  @java.lang.Override
   public java.lang.String getTaskId() {
     java.lang.Object ref = taskId_;
     if (ref instanceof java.lang.String) {
@@ -149,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 2;</code>
    * @return The bytes for taskId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTaskIdBytes() {
     java.lang.Object ref = taskId_;
@@ -161,6 +182,61 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList additionalFields_;
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 3;</code>
+   * @return A list containing the additionalFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAdditionalFieldsList() {
+    return additionalFields_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 3;</code>
+   * @return The count of additionalFields.
+   */
+  public int getAdditionalFieldsCount() {
+    return additionalFields_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 3;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  public java.lang.String getAdditionalFields(int index) {
+    return additionalFields_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 3;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index) {
+    return additionalFields_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -180,8 +256,11 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskId_);
+    }
+    for (int i = 0; i < additionalFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, additionalFields_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -196,8 +275,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdditionalFieldsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -221,6 +308,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTaskId()
         .equals(other.getTaskId())) return false;
+    if (!getAdditionalFieldsList()
+        .equals(other.getAdditionalFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -238,6 +327,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTaskId().hashCode();
+    if (getAdditionalFieldsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -383,6 +476,8 @@ private static final long serialVersionUID = 0L;
       }
       taskId_ = "";
 
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -409,12 +504,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.GetTaskRequest buildPartial() {
       com.clarifai.grpc.api.GetTaskRequest result = new com.clarifai.grpc.api.GetTaskRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.taskId_ = taskId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.additionalFields_ = additionalFields_;
       onBuilt();
       return result;
     }
@@ -470,6 +571,16 @@ private static final long serialVersionUID = 0L;
         taskId_ = other.taskId_;
         onChanged();
       }
+      if (!other.additionalFields_.isEmpty()) {
+        if (additionalFields_.isEmpty()) {
+          additionalFields_ = other.additionalFields_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureAdditionalFieldsIsMutable();
+          additionalFields_.addAll(other.additionalFields_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -498,6 +609,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -690,6 +802,161 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       taskId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAdditionalFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @return A list containing the additionalFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAdditionalFieldsList() {
+      return additionalFields_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @return The count of additionalFields.
+     */
+    public int getAdditionalFieldsCount() {
+      return additionalFields_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @param index The index of the element to return.
+     * @return The additionalFields at the given index.
+     */
+    public java.lang.String getAdditionalFields(int index) {
+      return additionalFields_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalFieldsBytes(int index) {
+      return additionalFields_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @param index The index to set the value at.
+     * @param value The additionalFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @param value The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @param values The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, additionalFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalFields() {
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 3;</code>
+     * @param value The bytes of the additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
       onChanged();
       return this;
     }

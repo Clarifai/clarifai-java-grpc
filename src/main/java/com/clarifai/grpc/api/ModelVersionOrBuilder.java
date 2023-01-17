@@ -105,6 +105,21 @@ public interface ModelVersionOrBuilder extends
   int getTotalInputCount();
 
   /**
+   * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+   * @return Whether the pretrainedModelConfig field is set.
+   */
+  boolean hasPretrainedModelConfig();
+  /**
+   * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+   * @return The pretrainedModelConfig.
+   */
+  com.clarifai.grpc.api.PretrainedModelConfig getPretrainedModelConfig();
+  /**
+   * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+   */
+  com.clarifai.grpc.api.PretrainedModelConfigOrBuilder getPretrainedModelConfigOrBuilder();
+
+  /**
    * <pre>
    * When training of this version was completed.
    * </pre>
@@ -319,4 +334,112 @@ public interface ModelVersionOrBuilder extends
    * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
    */
   com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder();
+
+  /**
+   * <pre>
+   * Info about the model's output and configuration.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+   * @return Whether the outputInfo field is set.
+   */
+  boolean hasOutputInfo();
+  /**
+   * <pre>
+   * Info about the model's output and configuration.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+   * @return The outputInfo.
+   */
+  com.clarifai.grpc.api.OutputInfo getOutputInfo();
+  /**
+   * <pre>
+   * Info about the model's output and configuration.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+   */
+  com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Info about the models' input and configuration of them.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputInfo input_info = 20;</code>
+   * @return Whether the inputInfo field is set.
+   */
+  boolean hasInputInfo();
+  /**
+   * <pre>
+   * Info about the models' input and configuration of them.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputInfo input_info = 20;</code>
+   * @return The inputInfo.
+   */
+  com.clarifai.grpc.api.InputInfo getInputInfo();
+  /**
+   * <pre>
+   * Info about the models' input and configuration of them.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputInfo input_info = 20;</code>
+   */
+  com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Configuration for the training process of this model.
+   * </pre>
+   *
+   * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+   * @return Whether the trainInfo field is set.
+   */
+  boolean hasTrainInfo();
+  /**
+   * <pre>
+   * Configuration for the training process of this model.
+   * </pre>
+   *
+   * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+   * @return The trainInfo.
+   */
+  com.clarifai.grpc.api.TrainInfo getTrainInfo();
+  /**
+   * <pre>
+   * Configuration for the training process of this model.
+   * </pre>
+   *
+   * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+   */
+  com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * @return Whether the importInfo field is set.
+   */
+  boolean hasImportInfo();
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * @return The importInfo.
+   */
+  com.clarifai.grpc.api.ImportInfo getImportInfo();
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   */
+  com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
 }

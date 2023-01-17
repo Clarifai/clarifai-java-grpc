@@ -9,7 +9,7 @@ public interface AppDuplicationFiltersOrBuilder extends
 
   /**
    * <pre>
-   * Copy only inputs and default annotations
+   * Copy inputs what what it depends on: input level annotation and concepts
    * </pre>
    *
    * <code>bool copy_inputs = 1;</code>

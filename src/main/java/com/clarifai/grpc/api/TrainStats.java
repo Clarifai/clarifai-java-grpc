@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TrainStats}
  */
-public  final class TrainStats extends
+public final class TrainStats extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TrainStats)
     TrainStatsOrBuilder {
@@ -74,6 +74,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -103,12 +105,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.LossCurveEntry loss_curve = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.LossCurveEntry> getLossCurveList() {
     return lossCurve_;
   }
   /**
    * <code>repeated .clarifai.api.LossCurveEntry loss_curve = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.LossCurveEntryOrBuilder> 
       getLossCurveOrBuilderList() {
     return lossCurve_;
@@ -116,18 +120,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.LossCurveEntry loss_curve = 1;</code>
    */
+  @java.lang.Override
   public int getLossCurveCount() {
     return lossCurve_.size();
   }
   /**
    * <code>repeated .clarifai.api.LossCurveEntry loss_curve = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LossCurveEntry getLossCurve(int index) {
     return lossCurve_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.LossCurveEntry loss_curve = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LossCurveEntryOrBuilder getLossCurveOrBuilder(
       int index) {
     return lossCurve_.get(index);

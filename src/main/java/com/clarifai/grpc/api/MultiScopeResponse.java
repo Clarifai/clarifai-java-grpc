@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.MultiScopeResponse}
  */
-public  final class MultiScopeResponse extends
+public final class MultiScopeResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.MultiScopeResponse)
     MultiScopeResponseOrBuilder {
@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private MultiScopeResponse() {
     scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    userFeatureFlags_ = "";
   }
 
   @java.lang.Override
@@ -99,6 +100,12 @@ private static final long serialVersionUID = 0L;
             endpoints_.add(s);
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userFeatureFlags_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -110,6 +117,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -147,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -158,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -168,6 +179,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -233,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.App app = 3;</code>
    * @return Whether the app field is set.
    */
+  @java.lang.Override
   public boolean hasApp() {
     return app_ != null;
   }
@@ -244,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.App app = 3;</code>
    * @return The app.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.App getApp() {
     return app_ == null ? com.clarifai.grpc.api.App.getDefaultInstance() : app_;
   }
@@ -254,6 +268,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.App app = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppOrBuilder getAppOrBuilder() {
     return getApp();
   }
@@ -309,6 +324,44 @@ private static final long serialVersionUID = 0L;
     return endpoints_.getByteString(index);
   }
 
+  public static final int USER_FEATURE_FLAGS_FIELD_NUMBER = 5;
+  private volatile java.lang.Object userFeatureFlags_;
+  /**
+   * <code>string user_feature_flags = 5;</code>
+   * @return The userFeatureFlags.
+   */
+  @java.lang.Override
+  public java.lang.String getUserFeatureFlags() {
+    java.lang.Object ref = userFeatureFlags_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userFeatureFlags_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string user_feature_flags = 5;</code>
+   * @return The bytes for userFeatureFlags.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserFeatureFlagsBytes() {
+    java.lang.Object ref = userFeatureFlags_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userFeatureFlags_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -334,6 +387,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < endpoints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, endpoints_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userFeatureFlags_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userFeatureFlags_);
     }
     unknownFields.writeTo(output);
   }
@@ -368,6 +424,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getEndpointsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userFeatureFlags_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userFeatureFlags_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -397,6 +456,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEndpointsList()
         .equals(other.getEndpointsList())) return false;
+    if (!getUserFeatureFlags()
+        .equals(other.getUserFeatureFlags())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -424,6 +485,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointsList().hashCode();
     }
+    hash = (37 * hash) + USER_FEATURE_FLAGS_FIELD_NUMBER;
+    hash = (53 * hash) + getUserFeatureFlags().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -577,6 +640,8 @@ private static final long serialVersionUID = 0L;
       }
       endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      userFeatureFlags_ = "";
+
       return this;
     }
 
@@ -624,6 +689,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.endpoints_ = endpoints_;
+      result.userFeatureFlags_ = userFeatureFlags_;
       onBuilt();
       return result;
     }
@@ -696,6 +762,10 @@ private static final long serialVersionUID = 0L;
           ensureEndpointsIsMutable();
           endpoints_.addAll(other.endpoints_);
         }
+        onChanged();
+      }
+      if (!other.getUserFeatureFlags().isEmpty()) {
+        userFeatureFlags_ = other.userFeatureFlags_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1326,6 +1396,82 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureEndpointsIsMutable();
       endpoints_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object userFeatureFlags_ = "";
+    /**
+     * <code>string user_feature_flags = 5;</code>
+     * @return The userFeatureFlags.
+     */
+    public java.lang.String getUserFeatureFlags() {
+      java.lang.Object ref = userFeatureFlags_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userFeatureFlags_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string user_feature_flags = 5;</code>
+     * @return The bytes for userFeatureFlags.
+     */
+    public com.google.protobuf.ByteString
+        getUserFeatureFlagsBytes() {
+      java.lang.Object ref = userFeatureFlags_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userFeatureFlags_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string user_feature_flags = 5;</code>
+     * @param value The userFeatureFlags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserFeatureFlags(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userFeatureFlags_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_feature_flags = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserFeatureFlags() {
+      
+      userFeatureFlags_ = getDefaultInstance().getUserFeatureFlags();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string user_feature_flags = 5;</code>
+     * @param value The bytes for userFeatureFlags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserFeatureFlagsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userFeatureFlags_ = value;
       onChanged();
       return this;
     }

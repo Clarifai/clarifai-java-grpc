@@ -17,7 +17,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.OutputInfo}
  */
-public  final class OutputInfo extends
+public final class OutputInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.OutputInfo)
     OutputInfoOrBuilder {
@@ -129,6 +129,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -160,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 1;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -171,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 1;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -181,6 +185,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -196,6 +201,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Override
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -208,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
    * @return The outputConfig.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.OutputConfig getOutputConfig() {
     return outputConfig_ == null ? com.clarifai.grpc.api.OutputConfig.getDefaultInstance() : outputConfig_;
   }
@@ -219,6 +226,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputConfig output_config = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.OutputConfigOrBuilder getOutputConfigOrBuilder() {
     return getOutputConfig();
   }
@@ -233,6 +241,7 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 3;</code>
    * @return The message.
    */
+  @java.lang.Override
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -253,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 3;</code>
    * @return The bytes for message.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getMessageBytes() {
     java.lang.Object ref = message_;
@@ -278,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct fields_map = 6;</code>
    * @return Whether the fieldsMap field is set.
    */
+  @java.lang.Override
   public boolean hasFieldsMap() {
     return fieldsMap_ != null;
   }
@@ -290,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct fields_map = 6;</code>
    * @return The fieldsMap.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getFieldsMap() {
     return fieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : fieldsMap_;
   }
@@ -301,6 +313,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct fields_map = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getFieldsMapOrBuilder() {
     return getFieldsMap();
   }
@@ -317,6 +330,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct params = 7;</code>
    * @return Whether the params field is set.
    */
+  @java.lang.Override
   public boolean hasParams() {
     return params_ != null;
   }
@@ -330,6 +344,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct params = 7;</code>
    * @return The params.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
@@ -342,6 +357,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct params = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParamsOrBuilder() {
     return getParams();
   }
@@ -366,7 +382,7 @@ private static final long serialVersionUID = 0L;
     if (outputConfig_ != null) {
       output.writeMessage(2, getOutputConfig());
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
     if (fieldsMap_ != null) {
@@ -392,7 +408,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getOutputConfig());
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
     if (fieldsMap_ != null) {

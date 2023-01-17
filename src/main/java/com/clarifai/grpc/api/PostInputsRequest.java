@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostInputsRequest}
  */
-public  final class PostInputsRequest extends
+public final class PostInputsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostInputsRequest)
     PostInputsRequestOrBuilder {
@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private PostInputsRequest() {
     inputs_ = java.util.Collections.emptyList();
+    inputsAddJobId_ = "";
   }
 
   @java.lang.Override
@@ -76,6 +77,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Input.parser(), extensionRegistry));
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            inputsAddJobId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -87,6 +94,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -117,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -124,12 +134,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -147,6 +159,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Input> getInputsList() {
     return inputs_;
   }
@@ -161,6 +174,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.InputOrBuilder> 
       getInputsOrBuilderList() {
     return inputs_;
@@ -176,6 +190,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
+  @java.lang.Override
   public int getInputsCount() {
     return inputs_.size();
   }
@@ -190,6 +205,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Input getInputs(int index) {
     return inputs_.get(index);
   }
@@ -204,9 +220,62 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Input inputs = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(
       int index) {
     return inputs_.get(index);
+  }
+
+  public static final int INPUTS_ADD_JOB_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object inputsAddJobId_;
+  /**
+   * <pre>
+   * Collect statistics about created inputs in job with given ID.
+   * * If job ID is empty, then job is not created.
+   * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+   * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+   * </pre>
+   *
+   * <code>string inputs_add_job_id = 3;</code>
+   * @return The inputsAddJobId.
+   */
+  @java.lang.Override
+  public java.lang.String getInputsAddJobId() {
+    java.lang.Object ref = inputsAddJobId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      inputsAddJobId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Collect statistics about created inputs in job with given ID.
+   * * If job ID is empty, then job is not created.
+   * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+   * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+   * </pre>
+   *
+   * <code>string inputs_add_job_id = 3;</code>
+   * @return The bytes for inputsAddJobId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInputsAddJobIdBytes() {
+    java.lang.Object ref = inputsAddJobId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      inputsAddJobId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -229,6 +298,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < inputs_.size(); i++) {
       output.writeMessage(2, inputs_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputsAddJobId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, inputsAddJobId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -245,6 +317,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < inputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, inputs_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputsAddJobId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, inputsAddJobId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,6 +343,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInputsList()
         .equals(other.getInputsList())) return false;
+    if (!getInputsAddJobId()
+        .equals(other.getInputsAddJobId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -287,6 +364,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getInputsList().hashCode();
     }
+    hash = (37 * hash) + INPUTS_ADD_JOB_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getInputsAddJobId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,6 +516,8 @@ private static final long serialVersionUID = 0L;
       } else {
         inputsBuilder_.clear();
       }
+      inputsAddJobId_ = "";
+
       return this;
     }
 
@@ -478,6 +559,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.inputs_ = inputsBuilder_.build();
       }
+      result.inputsAddJobId_ = inputsAddJobId_;
       onBuilt();
       return result;
     }
@@ -554,6 +636,10 @@ private static final long serialVersionUID = 0L;
             inputsBuilder_.addAllMessages(other.inputs_);
           }
         }
+      }
+      if (!other.getInputsAddJobId().isEmpty()) {
+        inputsAddJobId_ = other.inputsAddJobId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1086,6 +1172,117 @@ private static final long serialVersionUID = 0L;
         inputs_ = null;
       }
       return inputsBuilder_;
+    }
+
+    private java.lang.Object inputsAddJobId_ = "";
+    /**
+     * <pre>
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     * </pre>
+     *
+     * <code>string inputs_add_job_id = 3;</code>
+     * @return The inputsAddJobId.
+     */
+    public java.lang.String getInputsAddJobId() {
+      java.lang.Object ref = inputsAddJobId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputsAddJobId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     * </pre>
+     *
+     * <code>string inputs_add_job_id = 3;</code>
+     * @return The bytes for inputsAddJobId.
+     */
+    public com.google.protobuf.ByteString
+        getInputsAddJobIdBytes() {
+      java.lang.Object ref = inputsAddJobId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inputsAddJobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     * </pre>
+     *
+     * <code>string inputs_add_job_id = 3;</code>
+     * @param value The inputsAddJobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputsAddJobId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      inputsAddJobId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     * </pre>
+     *
+     * <code>string inputs_add_job_id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputsAddJobId() {
+      
+      inputsAddJobId_ = getDefaultInstance().getInputsAddJobId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Collect statistics about created inputs in job with given ID.
+     * * If job ID is empty, then job is not created.
+     * * If job ID is non-empty and doesn't already exist, then a new job will be created with given ID.
+     * * If job ID does already exist, then new inputs statistics are merged with previous inputs statistics.
+     * </pre>
+     *
+     * <code>string inputs_add_job_id = 3;</code>
+     * @param value The bytes for inputsAddJobId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputsAddJobIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      inputsAddJobId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

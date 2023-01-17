@@ -169,4 +169,15 @@ public interface ModelTypeEnumOptionOrBuilder extends
    * @return The internalOnly.
    */
   boolean getInternalOnly();
+
+  /**
+   * <pre>
+   * Whether this is the recommended enum option. Set to `true` when there 
+   * are multiple options, and one is shown to be better than the others.
+   * </pre>
+   *
+   * <code>bool recommended = 6;</code>
+   * @return The recommended.
+   */
+  boolean getRecommended();
 }

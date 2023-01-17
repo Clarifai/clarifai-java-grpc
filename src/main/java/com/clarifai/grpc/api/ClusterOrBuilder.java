@@ -31,7 +31,8 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * The score assigned to this cluster
+   * The score assigned to this cluster.
+   * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
    * </pre>
    *
    * <code>float score = 3;</code>

@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * Protobuf type {@code clarifai.api.VideoInfo}
  */
-public  final class VideoInfo extends
+public final class VideoInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.VideoInfo)
     VideoInfoOrBuilder {
@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -127,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 width = 1;</code>
    * @return The width.
    */
+  @java.lang.Override
   public int getWidth() {
     return width_;
   }
@@ -141,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 height = 2;</code>
    * @return The height.
    */
+  @java.lang.Override
   public int getHeight() {
     return height_;
   }
@@ -155,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * <code>float fps = 3;</code>
    * @return The fps.
    */
+  @java.lang.Override
   public float getFps() {
     return fps_;
   }
@@ -169,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * <code>string video_format = 4;</code>
    * @return The videoFormat.
    */
+  @java.lang.Override
   public java.lang.String getVideoFormat() {
     java.lang.Object ref = videoFormat_;
     if (ref instanceof java.lang.String) {
@@ -189,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * <code>string video_format = 4;</code>
    * @return The bytes for videoFormat.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getVideoFormatBytes() {
     java.lang.Object ref = videoFormat_;
@@ -213,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 bit_rate = 5;</code>
    * @return The bitRate.
    */
+  @java.lang.Override
   public int getBitRate() {
     return bitRate_;
   }
@@ -227,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 frame_count = 6;</code>
    * @return The frameCount.
    */
+  @java.lang.Override
   public int getFrameCount() {
     return frameCount_;
   }
@@ -241,6 +250,7 @@ private static final long serialVersionUID = 0L;
    * <code>float duration_seconds = 7;</code>
    * @return The durationSeconds.
    */
+  @java.lang.Override
   public float getDurationSeconds() {
     return durationSeconds_;
   }
@@ -265,10 +275,10 @@ private static final long serialVersionUID = 0L;
     if (height_ != 0) {
       output.writeInt32(2, height_);
     }
-    if (fps_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(fps_) != 0) {
       output.writeFloat(3, fps_);
     }
-    if (!getVideoFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(videoFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, videoFormat_);
     }
     if (bitRate_ != 0) {
@@ -277,7 +287,7 @@ private static final long serialVersionUID = 0L;
     if (frameCount_ != 0) {
       output.writeInt32(6, frameCount_);
     }
-    if (durationSeconds_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(durationSeconds_) != 0) {
       output.writeFloat(7, durationSeconds_);
     }
     unknownFields.writeTo(output);
@@ -297,11 +307,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, height_);
     }
-    if (fps_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(fps_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, fps_);
     }
-    if (!getVideoFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(videoFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, videoFormat_);
     }
     if (bitRate_ != 0) {
@@ -312,7 +322,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, frameCount_);
     }
-    if (durationSeconds_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(durationSeconds_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(7, durationSeconds_);
     }
@@ -662,6 +672,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 width = 1;</code>
      * @return The width.
      */
+    @java.lang.Override
     public int getWidth() {
       return width_;
     }
@@ -704,6 +715,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 height = 2;</code>
      * @return The height.
      */
+    @java.lang.Override
     public int getHeight() {
       return height_;
     }
@@ -746,6 +758,7 @@ private static final long serialVersionUID = 0L;
      * <code>float fps = 3;</code>
      * @return The fps.
      */
+    @java.lang.Override
     public float getFps() {
       return fps_;
     }
@@ -884,6 +897,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 bit_rate = 5;</code>
      * @return The bitRate.
      */
+    @java.lang.Override
     public int getBitRate() {
       return bitRate_;
     }
@@ -926,6 +940,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 frame_count = 6;</code>
      * @return The frameCount.
      */
+    @java.lang.Override
     public int getFrameCount() {
       return frameCount_;
     }
@@ -968,6 +983,7 @@ private static final long serialVersionUID = 0L;
      * <code>float duration_seconds = 7;</code>
      * @return The durationSeconds.
      */
+    @java.lang.Override
     public float getDurationSeconds() {
       return durationSeconds_;
     }

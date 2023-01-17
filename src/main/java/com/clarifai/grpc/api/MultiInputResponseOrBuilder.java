@@ -45,4 +45,19 @@ public interface MultiInputResponseOrBuilder extends
    */
   com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(
       int index);
+
+  /**
+   * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+   * @return Whether the inputsAddJob field is set.
+   */
+  boolean hasInputsAddJob();
+  /**
+   * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+   * @return The inputsAddJob.
+   */
+  com.clarifai.grpc.api.InputsAddJob getInputsAddJob();
+  /**
+   * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+   */
+  com.clarifai.grpc.api.InputsAddJobOrBuilder getInputsAddJobOrBuilder();
 }

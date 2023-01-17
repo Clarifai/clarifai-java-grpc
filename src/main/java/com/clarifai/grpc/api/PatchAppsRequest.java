@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PatchAppsRequest}
  */
-public  final class PatchAppsRequest extends
+public final class PatchAppsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PatchAppsRequest)
     PatchAppsRequestOrBuilder {
@@ -112,6 +112,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -142,6 +144,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -149,12 +152,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -164,12 +169,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.App apps = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.App> getAppsList() {
     return apps_;
   }
   /**
    * <code>repeated .clarifai.api.App apps = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.AppOrBuilder> 
       getAppsOrBuilderList() {
     return apps_;
@@ -177,18 +184,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.App apps = 2;</code>
    */
+  @java.lang.Override
   public int getAppsCount() {
     return apps_.size();
   }
   /**
    * <code>repeated .clarifai.api.App apps = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.App getApps(int index) {
     return apps_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.App apps = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppOrBuilder getAppsOrBuilder(
       int index) {
     return apps_.get(index);
@@ -205,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 3;</code>
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +237,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 3;</code>
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActionBytes() {
     java.lang.Object ref = action_;
@@ -250,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.PatchAction metadata_action = 4;</code>
    * @return Whether the metadataAction field is set.
    */
+  @java.lang.Override
   public boolean hasMetadataAction() {
     return metadataAction_ != null;
   }
@@ -261,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.PatchAction metadata_action = 4;</code>
    * @return The metadataAction.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PatchAction getMetadataAction() {
     return metadataAction_ == null ? com.clarifai.grpc.api.PatchAction.getDefaultInstance() : metadataAction_;
   }
@@ -271,6 +285,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.PatchAction metadata_action = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PatchActionOrBuilder getMetadataActionOrBuilder() {
     return getMetadataAction();
   }
@@ -285,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool reindex = 5;</code>
    * @return The reindex.
    */
+  @java.lang.Override
   public boolean getReindex() {
     return reindex_;
   }
@@ -309,7 +325,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < apps_.size(); i++) {
       output.writeMessage(2, apps_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, action_);
     }
     if (metadataAction_ != null) {
@@ -335,7 +351,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, apps_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, action_);
     }
     if (metadataAction_ != null) {
@@ -1354,6 +1370,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool reindex = 5;</code>
      * @return The reindex.
      */
+    @java.lang.Override
     public boolean getReindex() {
       return reindex_;
     }

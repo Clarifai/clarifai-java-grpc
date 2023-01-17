@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostWorkflowResultsResponse}
  */
-public  final class PostWorkflowResultsResponse extends
+public final class PostWorkflowResultsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostWorkflowResultsResponse)
     PostWorkflowResultsResponseOrBuilder {
@@ -113,6 +113,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -147,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -158,6 +161,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -168,6 +172,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -182,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Workflow workflow = 2;</code>
    * @return Whether the workflow field is set.
    */
+  @java.lang.Override
   public boolean hasWorkflow() {
     return workflow_ != null;
   }
@@ -193,6 +199,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Workflow workflow = 2;</code>
    * @return The workflow.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Workflow getWorkflow() {
     return workflow_ == null ? com.clarifai.grpc.api.Workflow.getDefaultInstance() : workflow_;
   }
@@ -203,6 +210,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Workflow workflow = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
     return getWorkflow();
   }
@@ -216,6 +224,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.WorkflowResult> getResultsList() {
     return results_;
   }
@@ -226,6 +235,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.WorkflowResultOrBuilder> 
       getResultsOrBuilderList() {
     return results_;
@@ -237,6 +247,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
+  @java.lang.Override
   public int getResultsCount() {
     return results_.size();
   }
@@ -247,6 +258,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowResult getResults(int index) {
     return results_.get(index);
   }
@@ -257,6 +269,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowResult results = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowResultOrBuilder getResultsOrBuilder(
       int index) {
     return results_.get(index);
@@ -276,6 +289,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.WorkflowState workflow_state = 4;</code>
    * @return Whether the workflowState field is set.
    */
+  @java.lang.Override
   public boolean hasWorkflowState() {
     return workflowState_ != null;
   }
@@ -291,6 +305,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.WorkflowState workflow_state = 4;</code>
    * @return The workflowState.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowState getWorkflowState() {
     return workflowState_ == null ? com.clarifai.grpc.api.WorkflowState.getDefaultInstance() : workflowState_;
   }
@@ -305,6 +320,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.WorkflowState workflow_state = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder() {
     return getWorkflowState();
   }

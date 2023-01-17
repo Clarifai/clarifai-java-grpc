@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PatchAnnotationsStatusRequest}
  */
-public  final class PatchAnnotationsStatusRequest extends
+public final class PatchAnnotationsStatusRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PatchAnnotationsStatusRequest)
     PatchAnnotationsStatusRequestOrBuilder {
@@ -108,6 +108,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -138,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -145,12 +148,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -165,7 +170,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
    * @return The enum numeric value on the wire for statusCode.
    */
-  public int getStatusCodeValue() {
+  @java.lang.Override public int getStatusCodeValue() {
     return statusCode_;
   }
   /**
@@ -176,7 +181,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
    * @return The statusCode.
    */
-  public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
+  @java.lang.Override public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
     return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
@@ -223,6 +228,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 4;</code>
    * @return The taskId.
    */
+  @java.lang.Override
   public java.lang.String getTaskId() {
     java.lang.Object ref = taskId_;
     if (ref instanceof java.lang.String) {
@@ -239,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 4;</code>
    * @return The bytes for taskId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTaskIdBytes() {
     java.lang.Object ref = taskId_;
@@ -263,6 +270,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 5;</code>
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -283,6 +291,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 5;</code>
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActionBytes() {
     java.lang.Object ref = action_;
@@ -320,10 +329,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < userIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userIds_.getRaw(i));
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, taskId_);
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, action_);
     }
     unknownFields.writeTo(output);
@@ -351,10 +360,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getUserIdsList().size();
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, taskId_);
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, action_);
     }
     size += unknownFields.getSerializedSize();
@@ -830,7 +839,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
      * @return The enum numeric value on the wire for statusCode.
      */
-    public int getStatusCodeValue() {
+    @java.lang.Override public int getStatusCodeValue() {
       return statusCode_;
     }
     /**
@@ -843,6 +852,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStatusCodeValue(int value) {
+      
       statusCode_ = value;
       onChanged();
       return this;
@@ -855,6 +865,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
      * @return The statusCode.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);

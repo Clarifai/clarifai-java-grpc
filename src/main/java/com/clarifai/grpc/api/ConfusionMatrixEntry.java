@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ConfusionMatrixEntry}
  */
-public  final class ConfusionMatrixEntry extends
+public final class ConfusionMatrixEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ConfusionMatrixEntry)
     ConfusionMatrixEntryOrBuilder {
@@ -82,6 +82,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -109,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * <code>string predicted = 1;</code>
    * @return The predicted.
    */
+  @java.lang.Override
   public java.lang.String getPredicted() {
     java.lang.Object ref = predicted_;
     if (ref instanceof java.lang.String) {
@@ -125,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * <code>string predicted = 1;</code>
    * @return The bytes for predicted.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPredictedBytes() {
     java.lang.Object ref = predicted_;
@@ -145,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * <code>string actual = 2;</code>
    * @return The actual.
    */
+  @java.lang.Override
   public java.lang.String getActual() {
     java.lang.Object ref = actual_;
     if (ref instanceof java.lang.String) {
@@ -161,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * <code>string actual = 2;</code>
    * @return The bytes for actual.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActualBytes() {
     java.lang.Object ref = actual_;
@@ -181,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The value.
    */
+  @java.lang.Override
   public float getValue() {
     return value_;
   }
@@ -199,13 +206,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPredictedBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predicted_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, predicted_);
     }
-    if (!getActualBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(actual_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, actual_);
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(4, value_);
     }
     unknownFields.writeTo(output);
@@ -217,13 +224,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPredictedBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predicted_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, predicted_);
     }
-    if (!getActualBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(actual_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, actual_);
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, value_);
     }
@@ -684,6 +691,7 @@ private static final long serialVersionUID = 0L;
      * <code>float value = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The value.
      */
+    @java.lang.Override
     public float getValue() {
       return value_;
     }
