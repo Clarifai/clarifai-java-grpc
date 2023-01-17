@@ -91,6 +91,10 @@ public enum ValidationErrorType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -99,7 +103,7 @@ public enum ValidationErrorType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(10);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(12);
   }
 
   private static final ValidationErrorType[] VALUES = values();

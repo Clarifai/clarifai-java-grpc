@@ -77,6 +77,21 @@ public interface UserDetailOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder();
 
   /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+   * @return Whether the datePiiConsent field is set.
+   */
+  boolean hasDatePiiConsent();
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+   * @return The datePiiConsent.
+   */
+  com.google.protobuf.Timestamp getDatePiiConsent();
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDatePiiConsentOrBuilder();
+
+  /**
    * <pre>
    * To handle arbitrary json metadata you can use a struct field:
    * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
@@ -129,12 +144,6 @@ public interface UserDetailOrBuilder extends
    */
   com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index);
-
-  /**
-   * <code>bool is_org_admin = 8;</code>
-   * @return The isOrgAdmin.
-   */
-  boolean getIsOrgAdmin();
 
   /**
    * <code>bool two_factor_auth_enabled = 9;</code>

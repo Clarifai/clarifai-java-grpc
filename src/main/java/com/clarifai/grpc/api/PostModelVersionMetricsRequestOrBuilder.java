@@ -47,12 +47,6 @@ public interface PostModelVersionMetricsRequestOrBuilder extends
       getVersionIdBytes();
 
   /**
-   * <code>uint32 max_examples = 4;</code>
-   * @return The maxExamples.
-   */
-  int getMaxExamples();
-
-  /**
    * <pre>
    * Use this to filter inputs that are used in evaluation
    * </pre>
@@ -78,4 +72,31 @@ public interface PostModelVersionMetricsRequestOrBuilder extends
    * <code>.clarifai.api.Search test_search = 5;</code>
    */
   com.clarifai.grpc.api.SearchOrBuilder getTestSearchOrBuilder();
+
+  /**
+   * <pre>
+   * evaluation info. Such as dataset used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   * @return Whether the evalInfo field is set.
+   */
+  boolean hasEvalInfo();
+  /**
+   * <pre>
+   * evaluation info. Such as dataset used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   * @return The evalInfo.
+   */
+  com.clarifai.grpc.api.EvalInfo getEvalInfo();
+  /**
+   * <pre>
+   * evaluation info. Such as dataset used for evaluation.
+   * </pre>
+   *
+   * <code>.clarifai.api.EvalInfo eval_info = 10;</code>
+   */
+  com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder();
 }

@@ -13,9 +13,88 @@ public enum DatasetVersionMetricsGroupType
    */
   DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET(0),
   /**
-   * <code>INPUT_TYPE = 1;</code>
+   * <pre>
+   * Group data examples by input type.
+   * Examples: images, videos, text, audio.
+   * </pre>
+   *
+   * <code>INPUT_TYPE = 2;</code>
    */
-  INPUT_TYPE(1),
+  INPUT_TYPE(2),
+  /**
+   * <pre>
+   * Group data examples by concept ID.
+   * Examples: inputs with cat concept, inputs with dog concept.
+   * </pre>
+   *
+   * <code>CONCEPT_ID = 10;</code>
+   */
+  CONCEPT_ID(10),
+  /**
+   * <pre>
+   * Group data examples by concepts count.
+   * Examples: inputs with 20 concepts, inputs with 21 concepts.
+   * </pre>
+   *
+   * <code>CONCEPTS_COUNT = 11;</code>
+   */
+  CONCEPTS_COUNT(11),
+  /**
+   * <pre>
+   * Group data examples by bounding boxes count.
+   * Examples: inputs with 20 bounding boxes, inputs with 21 bounding boxes.
+   * </pre>
+   *
+   * <code>BOUNDING_BOXES_COUNT = 20;</code>
+   */
+  BOUNDING_BOXES_COUNT(20),
+  /**
+   * <pre>
+   * Group data examples by polygons count.
+   * Examples: inputs with 20 polygons, inputs with 21 polygons.
+   * </pre>
+   *
+   * <code>POLYGONS_COUNT = 21;</code>
+   */
+  POLYGONS_COUNT(21),
+  /**
+   * <pre>
+   * Group data examples by points count.
+   * Examples: inputs with 20 points, inputs with 21 points.
+   * </pre>
+   *
+   * <code>POINTS_COUNT = 22;</code>
+   */
+  POINTS_COUNT(22),
+  /**
+   * <pre>
+   * Group data examples by masks count.
+   * Examples: inputs with 20 masks, inputs with 21 masks.
+   * </pre>
+   *
+   * <code>MASKS_COUNT = 23;</code>
+   */
+  MASKS_COUNT(23),
+  /**
+   * <pre>
+   * Group data examples by pixels count.
+   * In order to reduce the number of groups, we use bins.
+   * Examples for bin size = 400: inputs with [200000, 200400) pixels, inputs with [200400, 200800) pixels.
+   * </pre>
+   *
+   * <code>PIXELS_COUNT = 30;</code>
+   */
+  PIXELS_COUNT(30),
+  /**
+   * <pre>
+   * Group data examples by aspect ratio.
+   * In order to reduce the number of groups, we use bins.
+   * Examples for bin size = 0.1: inputs with [0.5, 0.6) aspect ratio, inputs with [0.6, 0.7) aspect ratio.
+   * </pre>
+   *
+   * <code>ASPECT_RATIO = 31;</code>
+   */
+  ASPECT_RATIO(31),
   UNRECOGNIZED(-1),
   ;
 
@@ -24,9 +103,88 @@ public enum DatasetVersionMetricsGroupType
    */
   public static final int DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET_VALUE = 0;
   /**
-   * <code>INPUT_TYPE = 1;</code>
+   * <pre>
+   * Group data examples by input type.
+   * Examples: images, videos, text, audio.
+   * </pre>
+   *
+   * <code>INPUT_TYPE = 2;</code>
    */
-  public static final int INPUT_TYPE_VALUE = 1;
+  public static final int INPUT_TYPE_VALUE = 2;
+  /**
+   * <pre>
+   * Group data examples by concept ID.
+   * Examples: inputs with cat concept, inputs with dog concept.
+   * </pre>
+   *
+   * <code>CONCEPT_ID = 10;</code>
+   */
+  public static final int CONCEPT_ID_VALUE = 10;
+  /**
+   * <pre>
+   * Group data examples by concepts count.
+   * Examples: inputs with 20 concepts, inputs with 21 concepts.
+   * </pre>
+   *
+   * <code>CONCEPTS_COUNT = 11;</code>
+   */
+  public static final int CONCEPTS_COUNT_VALUE = 11;
+  /**
+   * <pre>
+   * Group data examples by bounding boxes count.
+   * Examples: inputs with 20 bounding boxes, inputs with 21 bounding boxes.
+   * </pre>
+   *
+   * <code>BOUNDING_BOXES_COUNT = 20;</code>
+   */
+  public static final int BOUNDING_BOXES_COUNT_VALUE = 20;
+  /**
+   * <pre>
+   * Group data examples by polygons count.
+   * Examples: inputs with 20 polygons, inputs with 21 polygons.
+   * </pre>
+   *
+   * <code>POLYGONS_COUNT = 21;</code>
+   */
+  public static final int POLYGONS_COUNT_VALUE = 21;
+  /**
+   * <pre>
+   * Group data examples by points count.
+   * Examples: inputs with 20 points, inputs with 21 points.
+   * </pre>
+   *
+   * <code>POINTS_COUNT = 22;</code>
+   */
+  public static final int POINTS_COUNT_VALUE = 22;
+  /**
+   * <pre>
+   * Group data examples by masks count.
+   * Examples: inputs with 20 masks, inputs with 21 masks.
+   * </pre>
+   *
+   * <code>MASKS_COUNT = 23;</code>
+   */
+  public static final int MASKS_COUNT_VALUE = 23;
+  /**
+   * <pre>
+   * Group data examples by pixels count.
+   * In order to reduce the number of groups, we use bins.
+   * Examples for bin size = 400: inputs with [200000, 200400) pixels, inputs with [200400, 200800) pixels.
+   * </pre>
+   *
+   * <code>PIXELS_COUNT = 30;</code>
+   */
+  public static final int PIXELS_COUNT_VALUE = 30;
+  /**
+   * <pre>
+   * Group data examples by aspect ratio.
+   * In order to reduce the number of groups, we use bins.
+   * Examples for bin size = 0.1: inputs with [0.5, 0.6) aspect ratio, inputs with [0.6, 0.7) aspect ratio.
+   * </pre>
+   *
+   * <code>ASPECT_RATIO = 31;</code>
+   */
+  public static final int ASPECT_RATIO_VALUE = 31;
 
 
   public final int getNumber() {
@@ -54,7 +212,15 @@ public enum DatasetVersionMetricsGroupType
   public static DatasetVersionMetricsGroupType forNumber(int value) {
     switch (value) {
       case 0: return DATASET_VERSION_METRICS_GROUP_TYPE_NOT_SET;
-      case 1: return INPUT_TYPE;
+      case 2: return INPUT_TYPE;
+      case 10: return CONCEPT_ID;
+      case 11: return CONCEPTS_COUNT;
+      case 20: return BOUNDING_BOXES_COUNT;
+      case 21: return POLYGONS_COUNT;
+      case 22: return POINTS_COUNT;
+      case 23: return MASKS_COUNT;
+      case 30: return PIXELS_COUNT;
+      case 31: return ASPECT_RATIO;
       default: return null;
     }
   }
@@ -73,6 +239,10 @@ public enum DatasetVersionMetricsGroupType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor

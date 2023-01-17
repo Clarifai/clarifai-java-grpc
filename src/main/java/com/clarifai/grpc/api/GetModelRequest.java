@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.GetModelRequest}
  */
-public  final class GetModelRequest extends
+public final class GetModelRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.GetModelRequest)
     GetModelRequestOrBuilder {
@@ -113,6 +113,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -143,6 +145,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -150,12 +153,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -166,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 2;</code>
    * @return The modelId.
    */
+  @java.lang.Override
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 2;</code>
    * @return The bytes for modelId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelIdBytes() {
     java.lang.Object ref = modelId_;
@@ -207,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>string version_id = 3;</code>
    * @return The versionId.
    */
+  @java.lang.Override
   public java.lang.String getVersionId() {
     java.lang.Object ref = versionId_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +236,7 @@ private static final long serialVersionUID = 0L;
    * <code>string version_id = 3;</code>
    * @return The bytes for versionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getVersionIdBytes() {
     java.lang.Object ref = versionId_;
@@ -248,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 4;</code>
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -264,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 4;</code>
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -284,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool trained_before = 5;</code>
    * @return The trainedBefore.
    */
+  @java.lang.Override
   public boolean getTrainedBefore() {
     return trainedBefore_;
   }
@@ -292,7 +304,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -304,7 +316,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -315,7 +327,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -327,7 +339,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -356,13 +368,13 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
-    if (!getVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
     }
     if (trainedBefore_ != false) {
@@ -384,13 +396,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
     }
-    if (!getVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
     }
     if (trainedBefore_ != false) {
@@ -1140,6 +1152,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool trained_before = 5;</code>
      * @return The trainedBefore.
      */
+    @java.lang.Override
     public boolean getTrainedBefore() {
       return trainedBefore_;
     }
@@ -1174,7 +1187,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1186,7 +1199,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1197,7 +1210,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1209,7 +1222,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1222,7 +1235,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1242,7 +1255,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1261,7 +1274,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1278,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -1292,7 +1305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>

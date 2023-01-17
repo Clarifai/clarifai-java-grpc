@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.WorkflowVersion}
  */
-public  final class WorkflowVersion extends
+public final class WorkflowVersion extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.WorkflowVersion)
     WorkflowVersionOrBuilder {
@@ -168,6 +168,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -202,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -222,6 +225,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -246,6 +250,7 @@ private static final long serialVersionUID = 0L;
    * <code>string workflow_id = 2;</code>
    * @return The workflowId.
    */
+  @java.lang.Override
   public java.lang.String getWorkflowId() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
@@ -266,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * <code>string workflow_id = 2;</code>
    * @return The bytes for workflowId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getWorkflowIdBytes() {
     java.lang.Object ref = workflowId_;
@@ -292,6 +298,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -305,6 +312,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -317,6 +325,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -333,6 +342,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -346,6 +356,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -358,6 +369,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -374,6 +386,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 5;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -387,6 +400,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 5;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -399,6 +413,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -413,6 +428,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.WorkflowNode> getNodesList() {
     return nodes_;
   }
@@ -424,6 +440,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.WorkflowNodeOrBuilder> 
       getNodesOrBuilderList() {
     return nodes_;
@@ -436,6 +453,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 6;</code>
    */
+  @java.lang.Override
   public int getNodesCount() {
     return nodes_.size();
   }
@@ -447,6 +465,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowNode getNodes(int index) {
     return nodes_.get(index);
   }
@@ -458,6 +477,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.WorkflowNode nodes = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.WorkflowNodeOrBuilder getNodesOrBuilder(
       int index) {
     return nodes_.get(index);
@@ -474,6 +494,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 7;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -486,6 +507,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 7;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -497,6 +519,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -511,6 +534,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 8;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -531,6 +555,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 8;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -555,6 +580,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 9;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -575,6 +601,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 9;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -599,6 +626,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 10;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -619,6 +647,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 10;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -643,6 +672,7 @@ private static final long serialVersionUID = 0L;
    * <code>string license = 11;</code>
    * @return The license.
    */
+  @java.lang.Override
   public java.lang.String getLicense() {
     java.lang.Object ref = license_;
     if (ref instanceof java.lang.String) {
@@ -663,6 +693,7 @@ private static final long serialVersionUID = 0L;
    * <code>string license = 11;</code>
    * @return The bytes for license.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLicenseBytes() {
     java.lang.Object ref = license_;
@@ -691,10 +722,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, workflowId_);
     }
     if (createdAt_ != null) {
@@ -712,16 +743,16 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(7, getMetadata());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, appId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
     }
-    if (!getLicenseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, license_);
     }
     unknownFields.writeTo(output);
@@ -733,10 +764,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, workflowId_);
     }
     if (createdAt_ != null) {
@@ -759,16 +790,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getMetadata());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, appId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
     }
-    if (!getLicenseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, license_);
     }
     size += unknownFields.getSerializedSize();

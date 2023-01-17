@@ -9,32 +9,64 @@ package com.clarifai.grpc.api;
 public enum EvaluationType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   * <code>Undefined = 0;</code>
+   */
+  Undefined(0),
+  /**
    * <pre>
    * default
    * </pre>
    *
-   * <code>Classification = 0;</code>
+   * <code>Classification = 1;</code>
    */
-  Classification(0),
+  Classification(1),
   /**
-   * <code>Detection = 1;</code>
+   * <code>Detection = 2;</code>
    */
-  Detection(1),
+  Detection(2),
+  /**
+   * <code>Segmentation = 3;</code>
+   */
+  Segmentation(3),
+  /**
+   * <code>Clustering = 4;</code>
+   */
+  Clustering(4),
+  /**
+   * <code>Tracker = 5;</code>
+   */
+  Tracker(5),
   UNRECOGNIZED(-1),
   ;
 
   /**
+   * <code>Undefined = 0;</code>
+   */
+  public static final int Undefined_VALUE = 0;
+  /**
    * <pre>
    * default
    * </pre>
    *
-   * <code>Classification = 0;</code>
+   * <code>Classification = 1;</code>
    */
-  public static final int Classification_VALUE = 0;
+  public static final int Classification_VALUE = 1;
   /**
-   * <code>Detection = 1;</code>
+   * <code>Detection = 2;</code>
    */
-  public static final int Detection_VALUE = 1;
+  public static final int Detection_VALUE = 2;
+  /**
+   * <code>Segmentation = 3;</code>
+   */
+  public static final int Segmentation_VALUE = 3;
+  /**
+   * <code>Clustering = 4;</code>
+   */
+  public static final int Clustering_VALUE = 4;
+  /**
+   * <code>Tracker = 5;</code>
+   */
+  public static final int Tracker_VALUE = 5;
 
 
   public final int getNumber() {
@@ -61,8 +93,12 @@ public enum EvaluationType
    */
   public static EvaluationType forNumber(int value) {
     switch (value) {
-      case 0: return Classification;
-      case 1: return Detection;
+      case 0: return Undefined;
+      case 1: return Classification;
+      case 2: return Detection;
+      case 3: return Segmentation;
+      case 4: return Clustering;
+      case 5: return Tracker;
       default: return null;
     }
   }
@@ -81,6 +117,10 @@ public enum EvaluationType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -89,7 +129,7 @@ public enum EvaluationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(4);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final EvaluationType[] VALUES = values();

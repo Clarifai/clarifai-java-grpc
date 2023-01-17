@@ -6,7 +6,7 @@ package com.clarifai.grpc.api.status;
 /**
  * Protobuf type {@code clarifai.api.status.Status}
  */
-public  final class Status extends
+public final class Status extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.status.Status)
     StatusOrBuilder {
@@ -104,6 +104,19 @@ private static final long serialVersionUID = 0L;
             internalDetails_ = s;
             break;
           }
+          case 74: {
+            com.clarifai.grpc.api.status.RedirectInfo.Builder subBuilder = null;
+            if (redirectInfo_ != null) {
+              subBuilder = redirectInfo_.toBuilder();
+            }
+            redirectInfo_ = input.readMessage(com.clarifai.grpc.api.status.RedirectInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(redirectInfo_);
+              redirectInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -115,6 +128,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -149,7 +164,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.StatusCode code = 1;</code>
    * @return The enum numeric value on the wire for code.
    */
-  public int getCodeValue() {
+  @java.lang.Override public int getCodeValue() {
     return code_;
   }
   /**
@@ -160,7 +175,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.StatusCode code = 1;</code>
    * @return The code.
    */
-  public com.clarifai.grpc.api.status.StatusCode getCode() {
+  @java.lang.Override public com.clarifai.grpc.api.status.StatusCode getCode() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(code_);
     return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
@@ -176,6 +191,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 2;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -196,6 +212,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 2;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -220,6 +237,7 @@ private static final long serialVersionUID = 0L;
    * <code>string details = 3;</code>
    * @return The details.
    */
+  @java.lang.Override
   public java.lang.String getDetails() {
     java.lang.Object ref = details_;
     if (ref instanceof java.lang.String) {
@@ -240,6 +258,7 @@ private static final long serialVersionUID = 0L;
    * <code>string details = 3;</code>
    * @return The bytes for details.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDetailsBytes() {
     java.lang.Object ref = details_;
@@ -319,6 +338,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 percent_completed = 5;</code>
    * @return The percentCompleted.
    */
+  @java.lang.Override
   public int getPercentCompleted() {
     return percentCompleted_;
   }
@@ -333,6 +353,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 time_remaining = 6;</code>
    * @return The timeRemaining.
    */
+  @java.lang.Override
   public int getTimeRemaining() {
     return timeRemaining_;
   }
@@ -347,6 +368,7 @@ private static final long serialVersionUID = 0L;
    * <code>string req_id = 7;</code>
    * @return The reqId.
    */
+  @java.lang.Override
   public java.lang.String getReqId() {
     java.lang.Object ref = reqId_;
     if (ref instanceof java.lang.String) {
@@ -367,6 +389,7 @@ private static final long serialVersionUID = 0L;
    * <code>string req_id = 7;</code>
    * @return The bytes for reqId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getReqIdBytes() {
     java.lang.Object ref = reqId_;
@@ -391,6 +414,7 @@ private static final long serialVersionUID = 0L;
    * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
    * @return The internalDetails.
    */
+  @java.lang.Override
   public java.lang.String getInternalDetails() {
     java.lang.Object ref = internalDetails_;
     if (ref instanceof java.lang.String) {
@@ -411,6 +435,7 @@ private static final long serialVersionUID = 0L;
    * <code>string internal_details = 8 [(.clarifai.auth.util.cl_private_field) = true];</code>
    * @return The bytes for internalDetails.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getInternalDetailsBytes() {
     java.lang.Object ref = internalDetails_;
@@ -423,6 +448,44 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int REDIRECT_INFO_FIELD_NUMBER = 9;
+  private com.clarifai.grpc.api.status.RedirectInfo redirectInfo_;
+  /**
+   * <pre>
+   * Resource location info for redirect, when resource location has been changed.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return Whether the redirectInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedirectInfo() {
+    return redirectInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Resource location info for redirect, when resource location has been changed.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The redirectInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.RedirectInfo getRedirectInfo() {
+    return redirectInfo_ == null ? com.clarifai.grpc.api.status.RedirectInfo.getDefaultInstance() : redirectInfo_;
+  }
+  /**
+   * <pre>
+   * Resource location info for redirect, when resource location has been changed.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.RedirectInfoOrBuilder getRedirectInfoOrBuilder() {
+    return getRedirectInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -442,10 +505,10 @@ private static final long serialVersionUID = 0L;
     if (code_ != com.clarifai.grpc.api.status.StatusCode.ZERO.getNumber()) {
       output.writeEnum(1, code_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, details_);
     }
     for (int i = 0; i < stackTrace_.size(); i++) {
@@ -457,11 +520,14 @@ private static final long serialVersionUID = 0L;
     if (timeRemaining_ != 0) {
       output.writeUInt32(6, timeRemaining_);
     }
-    if (!getReqIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, reqId_);
     }
-    if (!getInternalDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalDetails_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, internalDetails_);
+    }
+    if (redirectInfo_ != null) {
+      output.writeMessage(9, getRedirectInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -476,10 +542,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, code_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
-    if (!getDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, details_);
     }
     {
@@ -498,11 +564,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, timeRemaining_);
     }
-    if (!getReqIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reqId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, reqId_);
     }
-    if (!getInternalDetailsBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(internalDetails_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, internalDetails_);
+    }
+    if (redirectInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getRedirectInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -534,6 +604,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getReqId())) return false;
     if (!getInternalDetails()
         .equals(other.getInternalDetails())) return false;
+    if (hasRedirectInfo() != other.hasRedirectInfo()) return false;
+    if (hasRedirectInfo()) {
+      if (!getRedirectInfo()
+          .equals(other.getRedirectInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -563,6 +638,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getReqId().hashCode();
     hash = (37 * hash) + INTERNAL_DETAILS_FIELD_NUMBER;
     hash = (53 * hash) + getInternalDetails().hashCode();
+    if (hasRedirectInfo()) {
+      hash = (37 * hash) + REDIRECT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getRedirectInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -712,6 +791,12 @@ private static final long serialVersionUID = 0L;
 
       internalDetails_ = "";
 
+      if (redirectInfoBuilder_ == null) {
+        redirectInfo_ = null;
+      } else {
+        redirectInfo_ = null;
+        redirectInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -751,6 +836,11 @@ private static final long serialVersionUID = 0L;
       result.timeRemaining_ = timeRemaining_;
       result.reqId_ = reqId_;
       result.internalDetails_ = internalDetails_;
+      if (redirectInfoBuilder_ == null) {
+        result.redirectInfo_ = redirectInfo_;
+      } else {
+        result.redirectInfo_ = redirectInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -834,6 +924,9 @@ private static final long serialVersionUID = 0L;
         internalDetails_ = other.internalDetails_;
         onChanged();
       }
+      if (other.hasRedirectInfo()) {
+        mergeRedirectInfo(other.getRedirectInfo());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -873,7 +966,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
      * @return The enum numeric value on the wire for code.
      */
-    public int getCodeValue() {
+    @java.lang.Override public int getCodeValue() {
       return code_;
     }
     /**
@@ -886,6 +979,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
+      
       code_ = value;
       onChanged();
       return this;
@@ -898,6 +992,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.status.StatusCode code = 1;</code>
      * @return The code.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.status.StatusCode getCode() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(code_);
@@ -1292,6 +1387,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 percent_completed = 5;</code>
      * @return The percentCompleted.
      */
+    @java.lang.Override
     public int getPercentCompleted() {
       return percentCompleted_;
     }
@@ -1334,6 +1430,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 time_remaining = 6;</code>
      * @return The timeRemaining.
      */
+    @java.lang.Override
     public int getTimeRemaining() {
       return timeRemaining_;
     }
@@ -1557,6 +1654,161 @@ private static final long serialVersionUID = 0L;
       internalDetails_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.status.RedirectInfo redirectInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.status.RedirectInfo, com.clarifai.grpc.api.status.RedirectInfo.Builder, com.clarifai.grpc.api.status.RedirectInfoOrBuilder> redirectInfoBuilder_;
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return Whether the redirectInfo field is set.
+     */
+    public boolean hasRedirectInfo() {
+      return redirectInfoBuilder_ != null || redirectInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     * @return The redirectInfo.
+     */
+    public com.clarifai.grpc.api.status.RedirectInfo getRedirectInfo() {
+      if (redirectInfoBuilder_ == null) {
+        return redirectInfo_ == null ? com.clarifai.grpc.api.status.RedirectInfo.getDefaultInstance() : redirectInfo_;
+      } else {
+        return redirectInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    public Builder setRedirectInfo(com.clarifai.grpc.api.status.RedirectInfo value) {
+      if (redirectInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        redirectInfo_ = value;
+        onChanged();
+      } else {
+        redirectInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    public Builder setRedirectInfo(
+        com.clarifai.grpc.api.status.RedirectInfo.Builder builderForValue) {
+      if (redirectInfoBuilder_ == null) {
+        redirectInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        redirectInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    public Builder mergeRedirectInfo(com.clarifai.grpc.api.status.RedirectInfo value) {
+      if (redirectInfoBuilder_ == null) {
+        if (redirectInfo_ != null) {
+          redirectInfo_ =
+            com.clarifai.grpc.api.status.RedirectInfo.newBuilder(redirectInfo_).mergeFrom(value).buildPartial();
+        } else {
+          redirectInfo_ = value;
+        }
+        onChanged();
+      } else {
+        redirectInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    public Builder clearRedirectInfo() {
+      if (redirectInfoBuilder_ == null) {
+        redirectInfo_ = null;
+        onChanged();
+      } else {
+        redirectInfo_ = null;
+        redirectInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    public com.clarifai.grpc.api.status.RedirectInfo.Builder getRedirectInfoBuilder() {
+      
+      onChanged();
+      return getRedirectInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    public com.clarifai.grpc.api.status.RedirectInfoOrBuilder getRedirectInfoOrBuilder() {
+      if (redirectInfoBuilder_ != null) {
+        return redirectInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return redirectInfo_ == null ?
+            com.clarifai.grpc.api.status.RedirectInfo.getDefaultInstance() : redirectInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Resource location info for redirect, when resource location has been changed.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.status.RedirectInfo, com.clarifai.grpc.api.status.RedirectInfo.Builder, com.clarifai.grpc.api.status.RedirectInfoOrBuilder> 
+        getRedirectInfoFieldBuilder() {
+      if (redirectInfoBuilder_ == null) {
+        redirectInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.status.RedirectInfo, com.clarifai.grpc.api.status.RedirectInfo.Builder, com.clarifai.grpc.api.status.RedirectInfoOrBuilder>(
+                getRedirectInfo(),
+                getParentForChildren(),
+                isClean());
+        redirectInfo_ = null;
+      }
+      return redirectInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

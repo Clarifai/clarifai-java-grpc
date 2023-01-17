@@ -11,7 +11,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
  */
-public  final class TaskStatusCountPerUser extends
+public final class TaskStatusCountPerUser extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TaskStatusCountPerUser)
     TaskStatusCountPerUserOrBuilder {
@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -123,6 +125,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 1;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -139,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 1;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -159,6 +163,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 pending = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The pending.
    */
+  @java.lang.Override
   public int getPending() {
     return pending_;
   }
@@ -169,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 awaiting_review = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The awaitingReview.
    */
+  @java.lang.Override
   public int getAwaitingReview() {
     return awaitingReview_;
   }
@@ -179,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 success = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The success.
    */
+  @java.lang.Override
   public int getSuccess() {
     return success_;
   }
@@ -189,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 review_denied = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The reviewDenied.
    */
+  @java.lang.Override
   public int getReviewDenied() {
     return reviewDenied_;
   }
@@ -199,6 +207,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The awaitingConsensusReview.
    */
+  @java.lang.Override
   public int getAwaitingConsensusReview() {
     return awaitingConsensusReview_;
   }
@@ -217,7 +226,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
     if (pending_ != 0) {
@@ -244,7 +253,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
     if (pending_ != 0) {
@@ -676,6 +685,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 pending = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The pending.
      */
+    @java.lang.Override
     public int getPending() {
       return pending_;
     }
@@ -706,6 +716,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 awaiting_review = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The awaitingReview.
      */
+    @java.lang.Override
     public int getAwaitingReview() {
       return awaitingReview_;
     }
@@ -736,6 +747,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 success = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The success.
      */
+    @java.lang.Override
     public int getSuccess() {
       return success_;
     }
@@ -766,6 +778,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 review_denied = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The reviewDenied.
      */
+    @java.lang.Override
     public int getReviewDenied() {
       return reviewDenied_;
     }
@@ -796,6 +809,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 awaiting_consensus_review = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The awaitingConsensusReview.
      */
+    @java.lang.Override
     public int getAwaitingConsensusReview() {
       return awaitingConsensusReview_;
     }

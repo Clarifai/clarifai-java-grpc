@@ -99,6 +99,10 @@ public enum UsageIntervalType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -107,7 +111,7 @@ public enum UsageIntervalType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(6);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final UsageIntervalType[] VALUES = values();

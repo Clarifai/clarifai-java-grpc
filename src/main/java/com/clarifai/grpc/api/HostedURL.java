@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.HostedURL}
  */
-public  final class HostedURL extends
+public final class HostedURL extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.HostedURL)
     HostedURLOrBuilder {
@@ -95,6 +95,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -129,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>string prefix = 1;</code>
    * @return The prefix.
    */
+  @java.lang.Override
   public java.lang.String getPrefix() {
     java.lang.Object ref = prefix_;
     if (ref instanceof java.lang.String) {
@@ -149,6 +152,7 @@ private static final long serialVersionUID = 0L;
    * <code>string prefix = 1;</code>
    * @return The bytes for prefix.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPrefixBytes() {
     java.lang.Object ref = prefix_;
@@ -173,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * <code>string suffix = 2;</code>
    * @return The suffix.
    */
+  @java.lang.Override
   public java.lang.String getSuffix() {
     java.lang.Object ref = suffix_;
     if (ref instanceof java.lang.String) {
@@ -193,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * <code>string suffix = 2;</code>
    * @return The bytes for suffix.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getSuffixBytes() {
     java.lang.Object ref = suffix_;
@@ -273,6 +279,7 @@ private static final long serialVersionUID = 0L;
    * <code>string crossorigin = 4;</code>
    * @return The crossorigin.
    */
+  @java.lang.Override
   public java.lang.String getCrossorigin() {
     java.lang.Object ref = crossorigin_;
     if (ref instanceof java.lang.String) {
@@ -294,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * <code>string crossorigin = 4;</code>
    * @return The bytes for crossorigin.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCrossoriginBytes() {
     java.lang.Object ref = crossorigin_;
@@ -322,16 +330,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prefix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, prefix_);
     }
-    if (!getSuffixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suffix_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, suffix_);
     }
     for (int i = 0; i < sizes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sizes_.getRaw(i));
     }
-    if (!getCrossoriginBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossorigin_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, crossorigin_);
     }
     unknownFields.writeTo(output);
@@ -343,10 +351,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPrefixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prefix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, prefix_);
     }
-    if (!getSuffixBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suffix_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, suffix_);
     }
     {
@@ -357,7 +365,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getSizesList().size();
     }
-    if (!getCrossoriginBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crossorigin_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, crossorigin_);
     }
     size += unknownFields.getSerializedSize();

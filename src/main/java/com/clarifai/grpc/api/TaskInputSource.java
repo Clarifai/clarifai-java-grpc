@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TaskInputSource}
  */
-public  final class TaskInputSource extends
+public final class TaskInputSource extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TaskInputSource)
     TaskInputSourceOrBuilder {
@@ -77,6 +77,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -123,6 +125,14 @@ private static final long serialVersionUID = 0L;
      * <code>SAVED_SEARCH = 2;</code>
      */
     SAVED_SEARCH(2),
+    /**
+     * <pre>
+     * Inputs from a dataset.
+     * </pre>
+     *
+     * <code>DATASET = 3;</code>
+     */
+    DATASET(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -146,6 +156,14 @@ private static final long serialVersionUID = 0L;
      * <code>SAVED_SEARCH = 2;</code>
      */
     public static final int SAVED_SEARCH_VALUE = 2;
+    /**
+     * <pre>
+     * Inputs from a dataset.
+     * </pre>
+     *
+     * <code>DATASET = 3;</code>
+     */
+    public static final int DATASET_VALUE = 3;
 
 
     public final int getNumber() {
@@ -175,6 +193,7 @@ private static final long serialVersionUID = 0L;
         case 0: return INPUT_SOURCE_TYPE_NOT_SET;
         case 1: return ALL_INPUTS;
         case 2: return SAVED_SEARCH;
+        case 3: return DATASET;
         default: return null;
       }
     }
@@ -193,6 +212,10 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -237,7 +260,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskInputSource.TaskInputSourceType type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
-  public int getTypeValue() {
+  @java.lang.Override public int getTypeValue() {
     return type_;
   }
   /**
@@ -248,7 +271,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskInputSource.TaskInputSourceType type = 1;</code>
    * @return The type.
    */
-  public com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType getType() {
+  @java.lang.Override public com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType getType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType result = com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.valueOf(type_);
     return result == null ? com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.UNRECOGNIZED : result;
@@ -264,6 +287,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -284,6 +308,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -315,7 +340,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.INPUT_SOURCE_TYPE_NOT_SET.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     unknownFields.writeTo(output);
@@ -331,7 +356,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     size += unknownFields.getSerializedSize();
@@ -629,7 +654,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskInputSource.TaskInputSourceType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -642,6 +667,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+      
       type_ = value;
       onChanged();
       return this;
@@ -654,6 +680,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskInputSource.TaskInputSourceType type = 1;</code>
      * @return The type.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType getType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType result = com.clarifai.grpc.api.TaskInputSource.TaskInputSourceType.valueOf(type_);

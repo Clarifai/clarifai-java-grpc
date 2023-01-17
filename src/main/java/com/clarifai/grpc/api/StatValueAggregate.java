@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.StatValueAggregate}
  */
-public  final class StatValueAggregate extends
+public final class StatValueAggregate extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.StatValueAggregate)
     StatValueAggregateOrBuilder {
@@ -97,6 +97,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -133,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp time = 1;</code>
    * @return Whether the time field is set.
    */
+  @java.lang.Override
   public boolean hasTime() {
     return time_ != null;
   }
@@ -146,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp time = 1;</code>
    * @return The time.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getTime() {
     return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
   }
@@ -158,6 +162,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp time = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
     return getTime();
   }
@@ -172,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * <code>float aggregate_value = 2;</code>
    * @return The aggregateValue.
    */
+  @java.lang.Override
   public float getAggregateValue() {
     return aggregateValue_;
   }
@@ -186,6 +192,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint64 count = 3;</code>
    * @return The count.
    */
+  @java.lang.Override
   public long getCount() {
     return count_;
   }
@@ -262,7 +269,7 @@ private static final long serialVersionUID = 0L;
     if (time_ != null) {
       output.writeMessage(1, getTime());
     }
-    if (aggregateValue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(aggregateValue_) != 0) {
       output.writeFloat(2, aggregateValue_);
     }
     if (count_ != 0L) {
@@ -284,7 +291,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getTime());
     }
-    if (aggregateValue_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(aggregateValue_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, aggregateValue_);
     }
@@ -819,6 +826,7 @@ private static final long serialVersionUID = 0L;
      * <code>float aggregate_value = 2;</code>
      * @return The aggregateValue.
      */
+    @java.lang.Override
     public float getAggregateValue() {
       return aggregateValue_;
     }
@@ -861,6 +869,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint64 count = 3;</code>
      * @return The count.
      */
+    @java.lang.Override
     public long getCount() {
       return count_;
     }

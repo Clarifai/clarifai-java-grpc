@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.StatValueAggregateResult}
  */
-public  final class StatValueAggregateResult extends
+public final class StatValueAggregateResult extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.StatValueAggregateResult)
     StatValueAggregateResultOrBuilder {
@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,6 +122,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValueAggregate stat_value_aggregates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.StatValueAggregate> getStatValueAggregatesList() {
     return statValueAggregates_;
   }
@@ -130,6 +133,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValueAggregate stat_value_aggregates = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.StatValueAggregateOrBuilder> 
       getStatValueAggregatesOrBuilderList() {
     return statValueAggregates_;
@@ -141,6 +145,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValueAggregate stat_value_aggregates = 1;</code>
    */
+  @java.lang.Override
   public int getStatValueAggregatesCount() {
     return statValueAggregates_.size();
   }
@@ -151,6 +156,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValueAggregate stat_value_aggregates = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.StatValueAggregate getStatValueAggregates(int index) {
     return statValueAggregates_.get(index);
   }
@@ -161,6 +167,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValueAggregate stat_value_aggregates = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.StatValueAggregateOrBuilder getStatValueAggregatesOrBuilder(
       int index) {
     return statValueAggregates_.get(index);
@@ -176,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.StatValueAggregateQuery stat_value_aggregate_query = 2;</code>
    * @return Whether the statValueAggregateQuery field is set.
    */
+  @java.lang.Override
   public boolean hasStatValueAggregateQuery() {
     return statValueAggregateQuery_ != null;
   }
@@ -187,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.StatValueAggregateQuery stat_value_aggregate_query = 2;</code>
    * @return The statValueAggregateQuery.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.StatValueAggregateQuery getStatValueAggregateQuery() {
     return statValueAggregateQuery_ == null ? com.clarifai.grpc.api.StatValueAggregateQuery.getDefaultInstance() : statValueAggregateQuery_;
   }
@@ -197,6 +206,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.StatValueAggregateQuery stat_value_aggregate_query = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.StatValueAggregateQueryOrBuilder getStatValueAggregateQueryOrBuilder() {
     return getStatValueAggregateQuery();
   }

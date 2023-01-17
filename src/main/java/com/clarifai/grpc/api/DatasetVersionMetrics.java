@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * Protobuf type {@code clarifai.api.DatasetVersionMetrics}
  */
-public  final class DatasetVersionMetrics extends
+public final class DatasetVersionMetrics extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.DatasetVersionMetrics)
     DatasetVersionMetricsOrBuilder {
@@ -48,19 +48,238 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (inputsCount_ != null) {
+              subBuilder = inputsCount_.toBuilder();
+            }
+            inputsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputsCount_);
+              inputsCount_ = subBuilder.buildPartial();
+            }
 
-            inputsCount_ = input.readUInt64();
             break;
           }
-          case 16: {
+          case 50: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (unlabeledInputsCount_ != null) {
+              subBuilder = unlabeledInputsCount_.toBuilder();
+            }
+            unlabeledInputsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(unlabeledInputsCount_);
+              unlabeledInputsCount_ = subBuilder.buildPartial();
+            }
 
-            positiveAnnotationsCount_ = input.readUInt64();
             break;
           }
-          case 24: {
+          case 66: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (inputsWithMetadataCount_ != null) {
+              subBuilder = inputsWithMetadataCount_.toBuilder();
+            }
+            inputsWithMetadataCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputsWithMetadataCount_);
+              inputsWithMetadataCount_ = subBuilder.buildPartial();
+            }
 
-            boundingBoxesCount_ = input.readUInt64();
+            break;
+          }
+          case 74: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (inputsWithGeoCount_ != null) {
+              subBuilder = inputsWithGeoCount_.toBuilder();
+            }
+            inputsWithGeoCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputsWithGeoCount_);
+              inputsWithGeoCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 162: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (regionsCount_ != null) {
+              subBuilder = regionsCount_.toBuilder();
+            }
+            regionsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(regionsCount_);
+              regionsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 170: {
+            utils.Matrix.MatrixUint64.Builder subBuilder = null;
+            if (regionLocationMatrix_ != null) {
+              subBuilder = regionLocationMatrix_.toBuilder();
+            }
+            regionLocationMatrix_ = input.readMessage(utils.Matrix.MatrixUint64.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(regionLocationMatrix_);
+              regionLocationMatrix_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 178: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (boundingBoxesCount_ != null) {
+              subBuilder = boundingBoxesCount_.toBuilder();
+            }
+            boundingBoxesCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(boundingBoxesCount_);
+              boundingBoxesCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 186: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (polygonsCount_ != null) {
+              subBuilder = polygonsCount_.toBuilder();
+            }
+            polygonsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(polygonsCount_);
+              polygonsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 194: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (pointsCount_ != null) {
+              subBuilder = pointsCount_.toBuilder();
+            }
+            pointsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pointsCount_);
+              pointsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 202: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (masksCount_ != null) {
+              subBuilder = masksCount_.toBuilder();
+            }
+            masksCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(masksCount_);
+              masksCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 242: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (framesCount_ != null) {
+              subBuilder = framesCount_.toBuilder();
+            }
+            framesCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(framesCount_);
+              framesCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 322: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (embeddingsCount_ != null) {
+              subBuilder = embeddingsCount_.toBuilder();
+            }
+            embeddingsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(embeddingsCount_);
+              embeddingsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 402: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (positiveInputTagsCount_ != null) {
+              subBuilder = positiveInputTagsCount_.toBuilder();
+            }
+            positiveInputTagsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(positiveInputTagsCount_);
+              positiveInputTagsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 410: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (positiveRegionTagsCount_ != null) {
+              subBuilder = positiveRegionTagsCount_.toBuilder();
+            }
+            positiveRegionTagsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(positiveRegionTagsCount_);
+              positiveRegionTagsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 418: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (positiveFrameTagsCount_ != null) {
+              subBuilder = positiveFrameTagsCount_.toBuilder();
+            }
+            positiveFrameTagsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(positiveFrameTagsCount_);
+              positiveFrameTagsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 482: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (regionInputsCount_ != null) {
+              subBuilder = regionInputsCount_.toBuilder();
+            }
+            regionInputsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(regionInputsCount_);
+              regionInputsCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 490: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (regionFramesCount_ != null) {
+              subBuilder = regionFramesCount_.toBuilder();
+            }
+            regionFramesCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(regionFramesCount_);
+              regionFramesCount_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 562: {
+            com.google.protobuf.UInt64Value.Builder subBuilder = null;
+            if (frameInputsCount_ != null) {
+              subBuilder = frameInputsCount_.toBuilder();
+            }
+            frameInputsCount_ = input.readMessage(com.google.protobuf.UInt64Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(frameInputsCount_);
+              frameInputsCount_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -74,6 +293,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -96,33 +317,708 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INPUTS_COUNT_FIELD_NUMBER = 1;
-  private long inputsCount_;
+  private com.google.protobuf.UInt64Value inputsCount_;
   /**
-   * <code>uint64 inputs_count = 1;</code>
+   * <pre>
+   * Number of inputs
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+   * @return Whether the inputsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputsCount() {
+    return inputsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of inputs
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
    * @return The inputsCount.
    */
-  public long getInputsCount() {
-    return inputsCount_;
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getInputsCount() {
+    return inputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : inputsCount_;
   }
-
-  public static final int POSITIVE_ANNOTATIONS_COUNT_FIELD_NUMBER = 2;
-  private long positiveAnnotationsCount_;
   /**
-   * <code>uint64 positive_annotations_count = 2;</code>
-   * @return The positiveAnnotationsCount.
+   * <pre>
+   * Number of inputs
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
    */
-  public long getPositiveAnnotationsCount() {
-    return positiveAnnotationsCount_;
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getInputsCountOrBuilder() {
+    return getInputsCount();
   }
 
-  public static final int BOUNDING_BOXES_COUNT_FIELD_NUMBER = 3;
-  private long boundingBoxesCount_;
+  public static final int UNLABELED_INPUTS_COUNT_FIELD_NUMBER = 6;
+  private com.google.protobuf.UInt64Value unlabeledInputsCount_;
   /**
-   * <code>uint64 bounding_boxes_count = 3;</code>
+   * <pre>
+   * Number of unlabeled inputs
+   * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+   * @return Whether the unlabeledInputsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnlabeledInputsCount() {
+    return unlabeledInputsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of unlabeled inputs
+   * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+   * @return The unlabeledInputsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getUnlabeledInputsCount() {
+    return unlabeledInputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : unlabeledInputsCount_;
+  }
+  /**
+   * <pre>
+   * Number of unlabeled inputs
+   * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getUnlabeledInputsCountOrBuilder() {
+    return getUnlabeledInputsCount();
+  }
+
+  public static final int INPUTS_WITH_METADATA_COUNT_FIELD_NUMBER = 8;
+  private com.google.protobuf.UInt64Value inputsWithMetadataCount_;
+  /**
+   * <pre>
+   * Number of inputs that have metadata
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+   * @return Whether the inputsWithMetadataCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputsWithMetadataCount() {
+    return inputsWithMetadataCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have metadata
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+   * @return The inputsWithMetadataCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getInputsWithMetadataCount() {
+    return inputsWithMetadataCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : inputsWithMetadataCount_;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have metadata
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getInputsWithMetadataCountOrBuilder() {
+    return getInputsWithMetadataCount();
+  }
+
+  public static final int INPUTS_WITH_GEO_COUNT_FIELD_NUMBER = 9;
+  private com.google.protobuf.UInt64Value inputsWithGeoCount_;
+  /**
+   * <pre>
+   * Number of inputs that have geo information
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+   * @return Whether the inputsWithGeoCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputsWithGeoCount() {
+    return inputsWithGeoCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have geo information
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+   * @return The inputsWithGeoCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getInputsWithGeoCount() {
+    return inputsWithGeoCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : inputsWithGeoCount_;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have geo information
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getInputsWithGeoCountOrBuilder() {
+    return getInputsWithGeoCount();
+  }
+
+  public static final int REGIONS_COUNT_FIELD_NUMBER = 20;
+  private com.google.protobuf.UInt64Value regionsCount_;
+  /**
+   * <pre>
+   * Number of regions
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+   * @return Whether the regionsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegionsCount() {
+    return regionsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of regions
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+   * @return The regionsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getRegionsCount() {
+    return regionsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : regionsCount_;
+  }
+  /**
+   * <pre>
+   * Number of regions
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getRegionsCountOrBuilder() {
+    return getRegionsCount();
+  }
+
+  public static final int REGION_LOCATION_MATRIX_FIELD_NUMBER = 21;
+  private utils.Matrix.MatrixUint64 regionLocationMatrix_;
+  /**
+   * <pre>
+   * The matrix shows where the regions are located.
+   * Example: If the matrix has 2x2 dimensions, then
+   * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+   * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+   * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+   * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+   * </pre>
+   *
+   * <code>.MatrixUint64 region_location_matrix = 21;</code>
+   * @return Whether the regionLocationMatrix field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegionLocationMatrix() {
+    return regionLocationMatrix_ != null;
+  }
+  /**
+   * <pre>
+   * The matrix shows where the regions are located.
+   * Example: If the matrix has 2x2 dimensions, then
+   * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+   * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+   * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+   * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+   * </pre>
+   *
+   * <code>.MatrixUint64 region_location_matrix = 21;</code>
+   * @return The regionLocationMatrix.
+   */
+  @java.lang.Override
+  public utils.Matrix.MatrixUint64 getRegionLocationMatrix() {
+    return regionLocationMatrix_ == null ? utils.Matrix.MatrixUint64.getDefaultInstance() : regionLocationMatrix_;
+  }
+  /**
+   * <pre>
+   * The matrix shows where the regions are located.
+   * Example: If the matrix has 2x2 dimensions, then
+   * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+   * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+   * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+   * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+   * </pre>
+   *
+   * <code>.MatrixUint64 region_location_matrix = 21;</code>
+   */
+  @java.lang.Override
+  public utils.Matrix.MatrixUint64OrBuilder getRegionLocationMatrixOrBuilder() {
+    return getRegionLocationMatrix();
+  }
+
+  public static final int BOUNDING_BOXES_COUNT_FIELD_NUMBER = 22;
+  private com.google.protobuf.UInt64Value boundingBoxesCount_;
+  /**
+   * <pre>
+   * Number of bounding boxes
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+   * @return Whether the boundingBoxesCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoundingBoxesCount() {
+    return boundingBoxesCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of bounding boxes
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
    * @return The boundingBoxesCount.
    */
-  public long getBoundingBoxesCount() {
-    return boundingBoxesCount_;
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getBoundingBoxesCount() {
+    return boundingBoxesCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : boundingBoxesCount_;
+  }
+  /**
+   * <pre>
+   * Number of bounding boxes
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getBoundingBoxesCountOrBuilder() {
+    return getBoundingBoxesCount();
+  }
+
+  public static final int POLYGONS_COUNT_FIELD_NUMBER = 23;
+  private com.google.protobuf.UInt64Value polygonsCount_;
+  /**
+   * <pre>
+   * Number of polygons
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+   * @return Whether the polygonsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolygonsCount() {
+    return polygonsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of polygons
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+   * @return The polygonsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getPolygonsCount() {
+    return polygonsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : polygonsCount_;
+  }
+  /**
+   * <pre>
+   * Number of polygons
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getPolygonsCountOrBuilder() {
+    return getPolygonsCount();
+  }
+
+  public static final int POINTS_COUNT_FIELD_NUMBER = 24;
+  private com.google.protobuf.UInt64Value pointsCount_;
+  /**
+   * <pre>
+   * Number of points
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+   * @return Whether the pointsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPointsCount() {
+    return pointsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of points
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+   * @return The pointsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getPointsCount() {
+    return pointsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : pointsCount_;
+  }
+  /**
+   * <pre>
+   * Number of points
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getPointsCountOrBuilder() {
+    return getPointsCount();
+  }
+
+  public static final int MASKS_COUNT_FIELD_NUMBER = 25;
+  private com.google.protobuf.UInt64Value masksCount_;
+  /**
+   * <pre>
+   * Number of masks
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+   * @return Whether the masksCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasMasksCount() {
+    return masksCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of masks
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+   * @return The masksCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getMasksCount() {
+    return masksCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : masksCount_;
+  }
+  /**
+   * <pre>
+   * Number of masks
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getMasksCountOrBuilder() {
+    return getMasksCount();
+  }
+
+  public static final int REGION_INPUTS_COUNT_FIELD_NUMBER = 60;
+  private com.google.protobuf.UInt64Value regionInputsCount_;
+  /**
+   * <pre>
+   * Number of inputs that have regions attached
+   * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+   * @return Whether the regionInputsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegionInputsCount() {
+    return regionInputsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have regions attached
+   * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+   * @return The regionInputsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getRegionInputsCount() {
+    return regionInputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : regionInputsCount_;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have regions attached
+   * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getRegionInputsCountOrBuilder() {
+    return getRegionInputsCount();
+  }
+
+  public static final int REGION_FRAMES_COUNT_FIELD_NUMBER = 61;
+  private com.google.protobuf.UInt64Value regionFramesCount_;
+  /**
+   * <pre>
+   * Number of frames that have regions attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+   * @return Whether the regionFramesCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegionFramesCount() {
+    return regionFramesCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of frames that have regions attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+   * @return The regionFramesCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getRegionFramesCount() {
+    return regionFramesCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : regionFramesCount_;
+  }
+  /**
+   * <pre>
+   * Number of frames that have regions attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getRegionFramesCountOrBuilder() {
+    return getRegionFramesCount();
+  }
+
+  public static final int FRAMES_COUNT_FIELD_NUMBER = 30;
+  private com.google.protobuf.UInt64Value framesCount_;
+  /**
+   * <pre>
+   * Number of frames
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+   * @return Whether the framesCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasFramesCount() {
+    return framesCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of frames
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+   * @return The framesCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getFramesCount() {
+    return framesCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : framesCount_;
+  }
+  /**
+   * <pre>
+   * Number of frames
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getFramesCountOrBuilder() {
+    return getFramesCount();
+  }
+
+  public static final int FRAME_INPUTS_COUNT_FIELD_NUMBER = 70;
+  private com.google.protobuf.UInt64Value frameInputsCount_;
+  /**
+   * <pre>
+   * Number of inputs that have frames attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+   * @return Whether the frameInputsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasFrameInputsCount() {
+    return frameInputsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have frames attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+   * @return The frameInputsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getFrameInputsCount() {
+    return frameInputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : frameInputsCount_;
+  }
+  /**
+   * <pre>
+   * Number of inputs that have frames attached
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getFrameInputsCountOrBuilder() {
+    return getFrameInputsCount();
+  }
+
+  public static final int EMBEDDINGS_COUNT_FIELD_NUMBER = 40;
+  private com.google.protobuf.UInt64Value embeddingsCount_;
+  /**
+   * <pre>
+   * Number of embeddings
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+   * @return Whether the embeddingsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmbeddingsCount() {
+    return embeddingsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of embeddings
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+   * @return The embeddingsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getEmbeddingsCount() {
+    return embeddingsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : embeddingsCount_;
+  }
+  /**
+   * <pre>
+   * Number of embeddings
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getEmbeddingsCountOrBuilder() {
+    return getEmbeddingsCount();
+  }
+
+  public static final int POSITIVE_INPUT_TAGS_COUNT_FIELD_NUMBER = 50;
+  private com.google.protobuf.UInt64Value positiveInputTagsCount_;
+  /**
+   * <pre>
+   * Number of positive tags added at input-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+   * @return Whether the positiveInputTagsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPositiveInputTagsCount() {
+    return positiveInputTagsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of positive tags added at input-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+   * @return The positiveInputTagsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getPositiveInputTagsCount() {
+    return positiveInputTagsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : positiveInputTagsCount_;
+  }
+  /**
+   * <pre>
+   * Number of positive tags added at input-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getPositiveInputTagsCountOrBuilder() {
+    return getPositiveInputTagsCount();
+  }
+
+  public static final int POSITIVE_REGION_TAGS_COUNT_FIELD_NUMBER = 51;
+  private com.google.protobuf.UInt64Value positiveRegionTagsCount_;
+  /**
+   * <pre>
+   * Number of positive tags added at region-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+   * @return Whether the positiveRegionTagsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPositiveRegionTagsCount() {
+    return positiveRegionTagsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of positive tags added at region-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+   * @return The positiveRegionTagsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getPositiveRegionTagsCount() {
+    return positiveRegionTagsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : positiveRegionTagsCount_;
+  }
+  /**
+   * <pre>
+   * Number of positive tags added at region-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getPositiveRegionTagsCountOrBuilder() {
+    return getPositiveRegionTagsCount();
+  }
+
+  public static final int POSITIVE_FRAME_TAGS_COUNT_FIELD_NUMBER = 52;
+  private com.google.protobuf.UInt64Value positiveFrameTagsCount_;
+  /**
+   * <pre>
+   * Number of positive tags added at frame-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+   * @return Whether the positiveFrameTagsCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasPositiveFrameTagsCount() {
+    return positiveFrameTagsCount_ != null;
+  }
+  /**
+   * <pre>
+   * Number of positive tags added at frame-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+   * @return The positiveFrameTagsCount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64Value getPositiveFrameTagsCount() {
+    return positiveFrameTagsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : positiveFrameTagsCount_;
+  }
+  /**
+   * <pre>
+   * Number of positive tags added at frame-level
+   * </pre>
+   *
+   * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.UInt64ValueOrBuilder getPositiveFrameTagsCountOrBuilder() {
+    return getPositiveFrameTagsCount();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,14 +1035,59 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (inputsCount_ != 0L) {
-      output.writeUInt64(1, inputsCount_);
+    if (inputsCount_ != null) {
+      output.writeMessage(1, getInputsCount());
     }
-    if (positiveAnnotationsCount_ != 0L) {
-      output.writeUInt64(2, positiveAnnotationsCount_);
+    if (unlabeledInputsCount_ != null) {
+      output.writeMessage(6, getUnlabeledInputsCount());
     }
-    if (boundingBoxesCount_ != 0L) {
-      output.writeUInt64(3, boundingBoxesCount_);
+    if (inputsWithMetadataCount_ != null) {
+      output.writeMessage(8, getInputsWithMetadataCount());
+    }
+    if (inputsWithGeoCount_ != null) {
+      output.writeMessage(9, getInputsWithGeoCount());
+    }
+    if (regionsCount_ != null) {
+      output.writeMessage(20, getRegionsCount());
+    }
+    if (regionLocationMatrix_ != null) {
+      output.writeMessage(21, getRegionLocationMatrix());
+    }
+    if (boundingBoxesCount_ != null) {
+      output.writeMessage(22, getBoundingBoxesCount());
+    }
+    if (polygonsCount_ != null) {
+      output.writeMessage(23, getPolygonsCount());
+    }
+    if (pointsCount_ != null) {
+      output.writeMessage(24, getPointsCount());
+    }
+    if (masksCount_ != null) {
+      output.writeMessage(25, getMasksCount());
+    }
+    if (framesCount_ != null) {
+      output.writeMessage(30, getFramesCount());
+    }
+    if (embeddingsCount_ != null) {
+      output.writeMessage(40, getEmbeddingsCount());
+    }
+    if (positiveInputTagsCount_ != null) {
+      output.writeMessage(50, getPositiveInputTagsCount());
+    }
+    if (positiveRegionTagsCount_ != null) {
+      output.writeMessage(51, getPositiveRegionTagsCount());
+    }
+    if (positiveFrameTagsCount_ != null) {
+      output.writeMessage(52, getPositiveFrameTagsCount());
+    }
+    if (regionInputsCount_ != null) {
+      output.writeMessage(60, getRegionInputsCount());
+    }
+    if (regionFramesCount_ != null) {
+      output.writeMessage(61, getRegionFramesCount());
+    }
+    if (frameInputsCount_ != null) {
+      output.writeMessage(70, getFrameInputsCount());
     }
     unknownFields.writeTo(output);
   }
@@ -157,17 +1098,77 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (inputsCount_ != 0L) {
+    if (inputsCount_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(1, inputsCount_);
+        .computeMessageSize(1, getInputsCount());
     }
-    if (positiveAnnotationsCount_ != 0L) {
+    if (unlabeledInputsCount_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(2, positiveAnnotationsCount_);
+        .computeMessageSize(6, getUnlabeledInputsCount());
     }
-    if (boundingBoxesCount_ != 0L) {
+    if (inputsWithMetadataCount_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(3, boundingBoxesCount_);
+        .computeMessageSize(8, getInputsWithMetadataCount());
+    }
+    if (inputsWithGeoCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getInputsWithGeoCount());
+    }
+    if (regionsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getRegionsCount());
+    }
+    if (regionLocationMatrix_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getRegionLocationMatrix());
+    }
+    if (boundingBoxesCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getBoundingBoxesCount());
+    }
+    if (polygonsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getPolygonsCount());
+    }
+    if (pointsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getPointsCount());
+    }
+    if (masksCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, getMasksCount());
+    }
+    if (framesCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(30, getFramesCount());
+    }
+    if (embeddingsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(40, getEmbeddingsCount());
+    }
+    if (positiveInputTagsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(50, getPositiveInputTagsCount());
+    }
+    if (positiveRegionTagsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(51, getPositiveRegionTagsCount());
+    }
+    if (positiveFrameTagsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(52, getPositiveFrameTagsCount());
+    }
+    if (regionInputsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(60, getRegionInputsCount());
+    }
+    if (regionFramesCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(61, getRegionFramesCount());
+    }
+    if (frameInputsCount_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(70, getFrameInputsCount());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,12 +1185,96 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.DatasetVersionMetrics other = (com.clarifai.grpc.api.DatasetVersionMetrics) obj;
 
-    if (getInputsCount()
-        != other.getInputsCount()) return false;
-    if (getPositiveAnnotationsCount()
-        != other.getPositiveAnnotationsCount()) return false;
-    if (getBoundingBoxesCount()
-        != other.getBoundingBoxesCount()) return false;
+    if (hasInputsCount() != other.hasInputsCount()) return false;
+    if (hasInputsCount()) {
+      if (!getInputsCount()
+          .equals(other.getInputsCount())) return false;
+    }
+    if (hasUnlabeledInputsCount() != other.hasUnlabeledInputsCount()) return false;
+    if (hasUnlabeledInputsCount()) {
+      if (!getUnlabeledInputsCount()
+          .equals(other.getUnlabeledInputsCount())) return false;
+    }
+    if (hasInputsWithMetadataCount() != other.hasInputsWithMetadataCount()) return false;
+    if (hasInputsWithMetadataCount()) {
+      if (!getInputsWithMetadataCount()
+          .equals(other.getInputsWithMetadataCount())) return false;
+    }
+    if (hasInputsWithGeoCount() != other.hasInputsWithGeoCount()) return false;
+    if (hasInputsWithGeoCount()) {
+      if (!getInputsWithGeoCount()
+          .equals(other.getInputsWithGeoCount())) return false;
+    }
+    if (hasRegionsCount() != other.hasRegionsCount()) return false;
+    if (hasRegionsCount()) {
+      if (!getRegionsCount()
+          .equals(other.getRegionsCount())) return false;
+    }
+    if (hasRegionLocationMatrix() != other.hasRegionLocationMatrix()) return false;
+    if (hasRegionLocationMatrix()) {
+      if (!getRegionLocationMatrix()
+          .equals(other.getRegionLocationMatrix())) return false;
+    }
+    if (hasBoundingBoxesCount() != other.hasBoundingBoxesCount()) return false;
+    if (hasBoundingBoxesCount()) {
+      if (!getBoundingBoxesCount()
+          .equals(other.getBoundingBoxesCount())) return false;
+    }
+    if (hasPolygonsCount() != other.hasPolygonsCount()) return false;
+    if (hasPolygonsCount()) {
+      if (!getPolygonsCount()
+          .equals(other.getPolygonsCount())) return false;
+    }
+    if (hasPointsCount() != other.hasPointsCount()) return false;
+    if (hasPointsCount()) {
+      if (!getPointsCount()
+          .equals(other.getPointsCount())) return false;
+    }
+    if (hasMasksCount() != other.hasMasksCount()) return false;
+    if (hasMasksCount()) {
+      if (!getMasksCount()
+          .equals(other.getMasksCount())) return false;
+    }
+    if (hasRegionInputsCount() != other.hasRegionInputsCount()) return false;
+    if (hasRegionInputsCount()) {
+      if (!getRegionInputsCount()
+          .equals(other.getRegionInputsCount())) return false;
+    }
+    if (hasRegionFramesCount() != other.hasRegionFramesCount()) return false;
+    if (hasRegionFramesCount()) {
+      if (!getRegionFramesCount()
+          .equals(other.getRegionFramesCount())) return false;
+    }
+    if (hasFramesCount() != other.hasFramesCount()) return false;
+    if (hasFramesCount()) {
+      if (!getFramesCount()
+          .equals(other.getFramesCount())) return false;
+    }
+    if (hasFrameInputsCount() != other.hasFrameInputsCount()) return false;
+    if (hasFrameInputsCount()) {
+      if (!getFrameInputsCount()
+          .equals(other.getFrameInputsCount())) return false;
+    }
+    if (hasEmbeddingsCount() != other.hasEmbeddingsCount()) return false;
+    if (hasEmbeddingsCount()) {
+      if (!getEmbeddingsCount()
+          .equals(other.getEmbeddingsCount())) return false;
+    }
+    if (hasPositiveInputTagsCount() != other.hasPositiveInputTagsCount()) return false;
+    if (hasPositiveInputTagsCount()) {
+      if (!getPositiveInputTagsCount()
+          .equals(other.getPositiveInputTagsCount())) return false;
+    }
+    if (hasPositiveRegionTagsCount() != other.hasPositiveRegionTagsCount()) return false;
+    if (hasPositiveRegionTagsCount()) {
+      if (!getPositiveRegionTagsCount()
+          .equals(other.getPositiveRegionTagsCount())) return false;
+    }
+    if (hasPositiveFrameTagsCount() != other.hasPositiveFrameTagsCount()) return false;
+    if (hasPositiveFrameTagsCount()) {
+      if (!getPositiveFrameTagsCount()
+          .equals(other.getPositiveFrameTagsCount())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -201,15 +1286,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INPUTS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getInputsCount());
-    hash = (37 * hash) + POSITIVE_ANNOTATIONS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPositiveAnnotationsCount());
-    hash = (37 * hash) + BOUNDING_BOXES_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBoundingBoxesCount());
+    if (hasInputsCount()) {
+      hash = (37 * hash) + INPUTS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsCount().hashCode();
+    }
+    if (hasUnlabeledInputsCount()) {
+      hash = (37 * hash) + UNLABELED_INPUTS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getUnlabeledInputsCount().hashCode();
+    }
+    if (hasInputsWithMetadataCount()) {
+      hash = (37 * hash) + INPUTS_WITH_METADATA_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsWithMetadataCount().hashCode();
+    }
+    if (hasInputsWithGeoCount()) {
+      hash = (37 * hash) + INPUTS_WITH_GEO_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsWithGeoCount().hashCode();
+    }
+    if (hasRegionsCount()) {
+      hash = (37 * hash) + REGIONS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionsCount().hashCode();
+    }
+    if (hasRegionLocationMatrix()) {
+      hash = (37 * hash) + REGION_LOCATION_MATRIX_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionLocationMatrix().hashCode();
+    }
+    if (hasBoundingBoxesCount()) {
+      hash = (37 * hash) + BOUNDING_BOXES_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getBoundingBoxesCount().hashCode();
+    }
+    if (hasPolygonsCount()) {
+      hash = (37 * hash) + POLYGONS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPolygonsCount().hashCode();
+    }
+    if (hasPointsCount()) {
+      hash = (37 * hash) + POINTS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPointsCount().hashCode();
+    }
+    if (hasMasksCount()) {
+      hash = (37 * hash) + MASKS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getMasksCount().hashCode();
+    }
+    if (hasRegionInputsCount()) {
+      hash = (37 * hash) + REGION_INPUTS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionInputsCount().hashCode();
+    }
+    if (hasRegionFramesCount()) {
+      hash = (37 * hash) + REGION_FRAMES_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionFramesCount().hashCode();
+    }
+    if (hasFramesCount()) {
+      hash = (37 * hash) + FRAMES_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getFramesCount().hashCode();
+    }
+    if (hasFrameInputsCount()) {
+      hash = (37 * hash) + FRAME_INPUTS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getFrameInputsCount().hashCode();
+    }
+    if (hasEmbeddingsCount()) {
+      hash = (37 * hash) + EMBEDDINGS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getEmbeddingsCount().hashCode();
+    }
+    if (hasPositiveInputTagsCount()) {
+      hash = (37 * hash) + POSITIVE_INPUT_TAGS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPositiveInputTagsCount().hashCode();
+    }
+    if (hasPositiveRegionTagsCount()) {
+      hash = (37 * hash) + POSITIVE_REGION_TAGS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPositiveRegionTagsCount().hashCode();
+    }
+    if (hasPositiveFrameTagsCount()) {
+      hash = (37 * hash) + POSITIVE_FRAME_TAGS_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPositiveFrameTagsCount().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,12 +1491,114 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      inputsCount_ = 0L;
-
-      positiveAnnotationsCount_ = 0L;
-
-      boundingBoxesCount_ = 0L;
-
+      if (inputsCountBuilder_ == null) {
+        inputsCount_ = null;
+      } else {
+        inputsCount_ = null;
+        inputsCountBuilder_ = null;
+      }
+      if (unlabeledInputsCountBuilder_ == null) {
+        unlabeledInputsCount_ = null;
+      } else {
+        unlabeledInputsCount_ = null;
+        unlabeledInputsCountBuilder_ = null;
+      }
+      if (inputsWithMetadataCountBuilder_ == null) {
+        inputsWithMetadataCount_ = null;
+      } else {
+        inputsWithMetadataCount_ = null;
+        inputsWithMetadataCountBuilder_ = null;
+      }
+      if (inputsWithGeoCountBuilder_ == null) {
+        inputsWithGeoCount_ = null;
+      } else {
+        inputsWithGeoCount_ = null;
+        inputsWithGeoCountBuilder_ = null;
+      }
+      if (regionsCountBuilder_ == null) {
+        regionsCount_ = null;
+      } else {
+        regionsCount_ = null;
+        regionsCountBuilder_ = null;
+      }
+      if (regionLocationMatrixBuilder_ == null) {
+        regionLocationMatrix_ = null;
+      } else {
+        regionLocationMatrix_ = null;
+        regionLocationMatrixBuilder_ = null;
+      }
+      if (boundingBoxesCountBuilder_ == null) {
+        boundingBoxesCount_ = null;
+      } else {
+        boundingBoxesCount_ = null;
+        boundingBoxesCountBuilder_ = null;
+      }
+      if (polygonsCountBuilder_ == null) {
+        polygonsCount_ = null;
+      } else {
+        polygonsCount_ = null;
+        polygonsCountBuilder_ = null;
+      }
+      if (pointsCountBuilder_ == null) {
+        pointsCount_ = null;
+      } else {
+        pointsCount_ = null;
+        pointsCountBuilder_ = null;
+      }
+      if (masksCountBuilder_ == null) {
+        masksCount_ = null;
+      } else {
+        masksCount_ = null;
+        masksCountBuilder_ = null;
+      }
+      if (regionInputsCountBuilder_ == null) {
+        regionInputsCount_ = null;
+      } else {
+        regionInputsCount_ = null;
+        regionInputsCountBuilder_ = null;
+      }
+      if (regionFramesCountBuilder_ == null) {
+        regionFramesCount_ = null;
+      } else {
+        regionFramesCount_ = null;
+        regionFramesCountBuilder_ = null;
+      }
+      if (framesCountBuilder_ == null) {
+        framesCount_ = null;
+      } else {
+        framesCount_ = null;
+        framesCountBuilder_ = null;
+      }
+      if (frameInputsCountBuilder_ == null) {
+        frameInputsCount_ = null;
+      } else {
+        frameInputsCount_ = null;
+        frameInputsCountBuilder_ = null;
+      }
+      if (embeddingsCountBuilder_ == null) {
+        embeddingsCount_ = null;
+      } else {
+        embeddingsCount_ = null;
+        embeddingsCountBuilder_ = null;
+      }
+      if (positiveInputTagsCountBuilder_ == null) {
+        positiveInputTagsCount_ = null;
+      } else {
+        positiveInputTagsCount_ = null;
+        positiveInputTagsCountBuilder_ = null;
+      }
+      if (positiveRegionTagsCountBuilder_ == null) {
+        positiveRegionTagsCount_ = null;
+      } else {
+        positiveRegionTagsCount_ = null;
+        positiveRegionTagsCountBuilder_ = null;
+      }
+      if (positiveFrameTagsCountBuilder_ == null) {
+        positiveFrameTagsCount_ = null;
+      } else {
+        positiveFrameTagsCount_ = null;
+        positiveFrameTagsCountBuilder_ = null;
+      }
       return this;
     }
 
@@ -375,9 +1625,96 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.DatasetVersionMetrics buildPartial() {
       com.clarifai.grpc.api.DatasetVersionMetrics result = new com.clarifai.grpc.api.DatasetVersionMetrics(this);
-      result.inputsCount_ = inputsCount_;
-      result.positiveAnnotationsCount_ = positiveAnnotationsCount_;
-      result.boundingBoxesCount_ = boundingBoxesCount_;
+      if (inputsCountBuilder_ == null) {
+        result.inputsCount_ = inputsCount_;
+      } else {
+        result.inputsCount_ = inputsCountBuilder_.build();
+      }
+      if (unlabeledInputsCountBuilder_ == null) {
+        result.unlabeledInputsCount_ = unlabeledInputsCount_;
+      } else {
+        result.unlabeledInputsCount_ = unlabeledInputsCountBuilder_.build();
+      }
+      if (inputsWithMetadataCountBuilder_ == null) {
+        result.inputsWithMetadataCount_ = inputsWithMetadataCount_;
+      } else {
+        result.inputsWithMetadataCount_ = inputsWithMetadataCountBuilder_.build();
+      }
+      if (inputsWithGeoCountBuilder_ == null) {
+        result.inputsWithGeoCount_ = inputsWithGeoCount_;
+      } else {
+        result.inputsWithGeoCount_ = inputsWithGeoCountBuilder_.build();
+      }
+      if (regionsCountBuilder_ == null) {
+        result.regionsCount_ = regionsCount_;
+      } else {
+        result.regionsCount_ = regionsCountBuilder_.build();
+      }
+      if (regionLocationMatrixBuilder_ == null) {
+        result.regionLocationMatrix_ = regionLocationMatrix_;
+      } else {
+        result.regionLocationMatrix_ = regionLocationMatrixBuilder_.build();
+      }
+      if (boundingBoxesCountBuilder_ == null) {
+        result.boundingBoxesCount_ = boundingBoxesCount_;
+      } else {
+        result.boundingBoxesCount_ = boundingBoxesCountBuilder_.build();
+      }
+      if (polygonsCountBuilder_ == null) {
+        result.polygonsCount_ = polygonsCount_;
+      } else {
+        result.polygonsCount_ = polygonsCountBuilder_.build();
+      }
+      if (pointsCountBuilder_ == null) {
+        result.pointsCount_ = pointsCount_;
+      } else {
+        result.pointsCount_ = pointsCountBuilder_.build();
+      }
+      if (masksCountBuilder_ == null) {
+        result.masksCount_ = masksCount_;
+      } else {
+        result.masksCount_ = masksCountBuilder_.build();
+      }
+      if (regionInputsCountBuilder_ == null) {
+        result.regionInputsCount_ = regionInputsCount_;
+      } else {
+        result.regionInputsCount_ = regionInputsCountBuilder_.build();
+      }
+      if (regionFramesCountBuilder_ == null) {
+        result.regionFramesCount_ = regionFramesCount_;
+      } else {
+        result.regionFramesCount_ = regionFramesCountBuilder_.build();
+      }
+      if (framesCountBuilder_ == null) {
+        result.framesCount_ = framesCount_;
+      } else {
+        result.framesCount_ = framesCountBuilder_.build();
+      }
+      if (frameInputsCountBuilder_ == null) {
+        result.frameInputsCount_ = frameInputsCount_;
+      } else {
+        result.frameInputsCount_ = frameInputsCountBuilder_.build();
+      }
+      if (embeddingsCountBuilder_ == null) {
+        result.embeddingsCount_ = embeddingsCount_;
+      } else {
+        result.embeddingsCount_ = embeddingsCountBuilder_.build();
+      }
+      if (positiveInputTagsCountBuilder_ == null) {
+        result.positiveInputTagsCount_ = positiveInputTagsCount_;
+      } else {
+        result.positiveInputTagsCount_ = positiveInputTagsCountBuilder_.build();
+      }
+      if (positiveRegionTagsCountBuilder_ == null) {
+        result.positiveRegionTagsCount_ = positiveRegionTagsCount_;
+      } else {
+        result.positiveRegionTagsCount_ = positiveRegionTagsCountBuilder_.build();
+      }
+      if (positiveFrameTagsCountBuilder_ == null) {
+        result.positiveFrameTagsCount_ = positiveFrameTagsCount_;
+      } else {
+        result.positiveFrameTagsCount_ = positiveFrameTagsCountBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -426,14 +1763,59 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.DatasetVersionMetrics other) {
       if (other == com.clarifai.grpc.api.DatasetVersionMetrics.getDefaultInstance()) return this;
-      if (other.getInputsCount() != 0L) {
-        setInputsCount(other.getInputsCount());
+      if (other.hasInputsCount()) {
+        mergeInputsCount(other.getInputsCount());
       }
-      if (other.getPositiveAnnotationsCount() != 0L) {
-        setPositiveAnnotationsCount(other.getPositiveAnnotationsCount());
+      if (other.hasUnlabeledInputsCount()) {
+        mergeUnlabeledInputsCount(other.getUnlabeledInputsCount());
       }
-      if (other.getBoundingBoxesCount() != 0L) {
-        setBoundingBoxesCount(other.getBoundingBoxesCount());
+      if (other.hasInputsWithMetadataCount()) {
+        mergeInputsWithMetadataCount(other.getInputsWithMetadataCount());
+      }
+      if (other.hasInputsWithGeoCount()) {
+        mergeInputsWithGeoCount(other.getInputsWithGeoCount());
+      }
+      if (other.hasRegionsCount()) {
+        mergeRegionsCount(other.getRegionsCount());
+      }
+      if (other.hasRegionLocationMatrix()) {
+        mergeRegionLocationMatrix(other.getRegionLocationMatrix());
+      }
+      if (other.hasBoundingBoxesCount()) {
+        mergeBoundingBoxesCount(other.getBoundingBoxesCount());
+      }
+      if (other.hasPolygonsCount()) {
+        mergePolygonsCount(other.getPolygonsCount());
+      }
+      if (other.hasPointsCount()) {
+        mergePointsCount(other.getPointsCount());
+      }
+      if (other.hasMasksCount()) {
+        mergeMasksCount(other.getMasksCount());
+      }
+      if (other.hasRegionInputsCount()) {
+        mergeRegionInputsCount(other.getRegionInputsCount());
+      }
+      if (other.hasRegionFramesCount()) {
+        mergeRegionFramesCount(other.getRegionFramesCount());
+      }
+      if (other.hasFramesCount()) {
+        mergeFramesCount(other.getFramesCount());
+      }
+      if (other.hasFrameInputsCount()) {
+        mergeFrameInputsCount(other.getFrameInputsCount());
+      }
+      if (other.hasEmbeddingsCount()) {
+        mergeEmbeddingsCount(other.getEmbeddingsCount());
+      }
+      if (other.hasPositiveInputTagsCount()) {
+        mergePositiveInputTagsCount(other.getPositiveInputTagsCount());
+      }
+      if (other.hasPositiveRegionTagsCount()) {
+        mergePositiveRegionTagsCount(other.getPositiveRegionTagsCount());
+      }
+      if (other.hasPositiveFrameTagsCount()) {
+        mergePositiveFrameTagsCount(other.getPositiveFrameTagsCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -464,94 +1846,2857 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long inputsCount_ ;
+    private com.google.protobuf.UInt64Value inputsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> inputsCountBuilder_;
     /**
-     * <code>uint64 inputs_count = 1;</code>
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+     * @return Whether the inputsCount field is set.
+     */
+    public boolean hasInputsCount() {
+      return inputsCountBuilder_ != null || inputsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
      * @return The inputsCount.
      */
-    public long getInputsCount() {
-      return inputsCount_;
+    public com.google.protobuf.UInt64Value getInputsCount() {
+      if (inputsCountBuilder_ == null) {
+        return inputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : inputsCount_;
+      } else {
+        return inputsCountBuilder_.getMessage();
+      }
     }
     /**
-     * <code>uint64 inputs_count = 1;</code>
-     * @param value The inputsCount to set.
-     * @return This builder for chaining.
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
      */
-    public Builder setInputsCount(long value) {
-      
-      inputsCount_ = value;
-      onChanged();
+    public Builder setInputsCount(com.google.protobuf.UInt64Value value) {
+      if (inputsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputsCount_ = value;
+        onChanged();
+      } else {
+        inputsCountBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 inputs_count = 1;</code>
-     * @return This builder for chaining.
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+     */
+    public Builder setInputsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (inputsCountBuilder_ == null) {
+        inputsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+     */
+    public Builder mergeInputsCount(com.google.protobuf.UInt64Value value) {
+      if (inputsCountBuilder_ == null) {
+        if (inputsCount_ != null) {
+          inputsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(inputsCount_).mergeFrom(value).buildPartial();
+        } else {
+          inputsCount_ = value;
+        }
+        onChanged();
+      } else {
+        inputsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
      */
     public Builder clearInputsCount() {
-      
-      inputsCount_ = 0L;
-      onChanged();
+      if (inputsCountBuilder_ == null) {
+        inputsCount_ = null;
+        onChanged();
+      } else {
+        inputsCount_ = null;
+        inputsCountBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getInputsCountBuilder() {
+      
+      onChanged();
+      return getInputsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getInputsCountOrBuilder() {
+      if (inputsCountBuilder_ != null) {
+        return inputsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return inputsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : inputsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_count = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getInputsCountFieldBuilder() {
+      if (inputsCountBuilder_ == null) {
+        inputsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getInputsCount(),
+                getParentForChildren(),
+                isClean());
+        inputsCount_ = null;
+      }
+      return inputsCountBuilder_;
     }
 
-    private long positiveAnnotationsCount_ ;
+    private com.google.protobuf.UInt64Value unlabeledInputsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> unlabeledInputsCountBuilder_;
     /**
-     * <code>uint64 positive_annotations_count = 2;</code>
-     * @return The positiveAnnotationsCount.
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     * @return Whether the unlabeledInputsCount field is set.
      */
-    public long getPositiveAnnotationsCount() {
-      return positiveAnnotationsCount_;
+    public boolean hasUnlabeledInputsCount() {
+      return unlabeledInputsCountBuilder_ != null || unlabeledInputsCount_ != null;
     }
     /**
-     * <code>uint64 positive_annotations_count = 2;</code>
-     * @param value The positiveAnnotationsCount to set.
-     * @return This builder for chaining.
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     * @return The unlabeledInputsCount.
      */
-    public Builder setPositiveAnnotationsCount(long value) {
-      
-      positiveAnnotationsCount_ = value;
-      onChanged();
+    public com.google.protobuf.UInt64Value getUnlabeledInputsCount() {
+      if (unlabeledInputsCountBuilder_ == null) {
+        return unlabeledInputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : unlabeledInputsCount_;
+      } else {
+        return unlabeledInputsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     */
+    public Builder setUnlabeledInputsCount(com.google.protobuf.UInt64Value value) {
+      if (unlabeledInputsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        unlabeledInputsCount_ = value;
+        onChanged();
+      } else {
+        unlabeledInputsCountBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 positive_annotations_count = 2;</code>
-     * @return This builder for chaining.
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
      */
-    public Builder clearPositiveAnnotationsCount() {
-      
-      positiveAnnotationsCount_ = 0L;
-      onChanged();
+    public Builder setUnlabeledInputsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (unlabeledInputsCountBuilder_ == null) {
+        unlabeledInputsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        unlabeledInputsCountBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     */
+    public Builder mergeUnlabeledInputsCount(com.google.protobuf.UInt64Value value) {
+      if (unlabeledInputsCountBuilder_ == null) {
+        if (unlabeledInputsCount_ != null) {
+          unlabeledInputsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(unlabeledInputsCount_).mergeFrom(value).buildPartial();
+        } else {
+          unlabeledInputsCount_ = value;
+        }
+        onChanged();
+      } else {
+        unlabeledInputsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     */
+    public Builder clearUnlabeledInputsCount() {
+      if (unlabeledInputsCountBuilder_ == null) {
+        unlabeledInputsCount_ = null;
+        onChanged();
+      } else {
+        unlabeledInputsCount_ = null;
+        unlabeledInputsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getUnlabeledInputsCountBuilder() {
+      
+      onChanged();
+      return getUnlabeledInputsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getUnlabeledInputsCountOrBuilder() {
+      if (unlabeledInputsCountBuilder_ != null) {
+        return unlabeledInputsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return unlabeledInputsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : unlabeledInputsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of unlabeled inputs
+     * An input is considered unlabeled if it there are no annotations with positive labels for that input.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value unlabeled_inputs_count = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getUnlabeledInputsCountFieldBuilder() {
+      if (unlabeledInputsCountBuilder_ == null) {
+        unlabeledInputsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getUnlabeledInputsCount(),
+                getParentForChildren(),
+                isClean());
+        unlabeledInputsCount_ = null;
+      }
+      return unlabeledInputsCountBuilder_;
     }
 
-    private long boundingBoxesCount_ ;
+    private com.google.protobuf.UInt64Value inputsWithMetadataCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> inputsWithMetadataCountBuilder_;
     /**
-     * <code>uint64 bounding_boxes_count = 3;</code>
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     * @return Whether the inputsWithMetadataCount field is set.
+     */
+    public boolean hasInputsWithMetadataCount() {
+      return inputsWithMetadataCountBuilder_ != null || inputsWithMetadataCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     * @return The inputsWithMetadataCount.
+     */
+    public com.google.protobuf.UInt64Value getInputsWithMetadataCount() {
+      if (inputsWithMetadataCountBuilder_ == null) {
+        return inputsWithMetadataCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : inputsWithMetadataCount_;
+      } else {
+        return inputsWithMetadataCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    public Builder setInputsWithMetadataCount(com.google.protobuf.UInt64Value value) {
+      if (inputsWithMetadataCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputsWithMetadataCount_ = value;
+        onChanged();
+      } else {
+        inputsWithMetadataCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    public Builder setInputsWithMetadataCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (inputsWithMetadataCountBuilder_ == null) {
+        inputsWithMetadataCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputsWithMetadataCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    public Builder mergeInputsWithMetadataCount(com.google.protobuf.UInt64Value value) {
+      if (inputsWithMetadataCountBuilder_ == null) {
+        if (inputsWithMetadataCount_ != null) {
+          inputsWithMetadataCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(inputsWithMetadataCount_).mergeFrom(value).buildPartial();
+        } else {
+          inputsWithMetadataCount_ = value;
+        }
+        onChanged();
+      } else {
+        inputsWithMetadataCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    public Builder clearInputsWithMetadataCount() {
+      if (inputsWithMetadataCountBuilder_ == null) {
+        inputsWithMetadataCount_ = null;
+        onChanged();
+      } else {
+        inputsWithMetadataCount_ = null;
+        inputsWithMetadataCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getInputsWithMetadataCountBuilder() {
+      
+      onChanged();
+      return getInputsWithMetadataCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getInputsWithMetadataCountOrBuilder() {
+      if (inputsWithMetadataCountBuilder_ != null) {
+        return inputsWithMetadataCountBuilder_.getMessageOrBuilder();
+      } else {
+        return inputsWithMetadataCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : inputsWithMetadataCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have metadata
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_metadata_count = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getInputsWithMetadataCountFieldBuilder() {
+      if (inputsWithMetadataCountBuilder_ == null) {
+        inputsWithMetadataCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getInputsWithMetadataCount(),
+                getParentForChildren(),
+                isClean());
+        inputsWithMetadataCount_ = null;
+      }
+      return inputsWithMetadataCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value inputsWithGeoCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> inputsWithGeoCountBuilder_;
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     * @return Whether the inputsWithGeoCount field is set.
+     */
+    public boolean hasInputsWithGeoCount() {
+      return inputsWithGeoCountBuilder_ != null || inputsWithGeoCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     * @return The inputsWithGeoCount.
+     */
+    public com.google.protobuf.UInt64Value getInputsWithGeoCount() {
+      if (inputsWithGeoCountBuilder_ == null) {
+        return inputsWithGeoCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : inputsWithGeoCount_;
+      } else {
+        return inputsWithGeoCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    public Builder setInputsWithGeoCount(com.google.protobuf.UInt64Value value) {
+      if (inputsWithGeoCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputsWithGeoCount_ = value;
+        onChanged();
+      } else {
+        inputsWithGeoCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    public Builder setInputsWithGeoCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (inputsWithGeoCountBuilder_ == null) {
+        inputsWithGeoCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputsWithGeoCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    public Builder mergeInputsWithGeoCount(com.google.protobuf.UInt64Value value) {
+      if (inputsWithGeoCountBuilder_ == null) {
+        if (inputsWithGeoCount_ != null) {
+          inputsWithGeoCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(inputsWithGeoCount_).mergeFrom(value).buildPartial();
+        } else {
+          inputsWithGeoCount_ = value;
+        }
+        onChanged();
+      } else {
+        inputsWithGeoCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    public Builder clearInputsWithGeoCount() {
+      if (inputsWithGeoCountBuilder_ == null) {
+        inputsWithGeoCount_ = null;
+        onChanged();
+      } else {
+        inputsWithGeoCount_ = null;
+        inputsWithGeoCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getInputsWithGeoCountBuilder() {
+      
+      onChanged();
+      return getInputsWithGeoCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getInputsWithGeoCountOrBuilder() {
+      if (inputsWithGeoCountBuilder_ != null) {
+        return inputsWithGeoCountBuilder_.getMessageOrBuilder();
+      } else {
+        return inputsWithGeoCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : inputsWithGeoCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have geo information
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value inputs_with_geo_count = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getInputsWithGeoCountFieldBuilder() {
+      if (inputsWithGeoCountBuilder_ == null) {
+        inputsWithGeoCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getInputsWithGeoCount(),
+                getParentForChildren(),
+                isClean());
+        inputsWithGeoCount_ = null;
+      }
+      return inputsWithGeoCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value regionsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> regionsCountBuilder_;
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     * @return Whether the regionsCount field is set.
+     */
+    public boolean hasRegionsCount() {
+      return regionsCountBuilder_ != null || regionsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     * @return The regionsCount.
+     */
+    public com.google.protobuf.UInt64Value getRegionsCount() {
+      if (regionsCountBuilder_ == null) {
+        return regionsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : regionsCount_;
+      } else {
+        return regionsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    public Builder setRegionsCount(com.google.protobuf.UInt64Value value) {
+      if (regionsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regionsCount_ = value;
+        onChanged();
+      } else {
+        regionsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    public Builder setRegionsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (regionsCountBuilder_ == null) {
+        regionsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        regionsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    public Builder mergeRegionsCount(com.google.protobuf.UInt64Value value) {
+      if (regionsCountBuilder_ == null) {
+        if (regionsCount_ != null) {
+          regionsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(regionsCount_).mergeFrom(value).buildPartial();
+        } else {
+          regionsCount_ = value;
+        }
+        onChanged();
+      } else {
+        regionsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    public Builder clearRegionsCount() {
+      if (regionsCountBuilder_ == null) {
+        regionsCount_ = null;
+        onChanged();
+      } else {
+        regionsCount_ = null;
+        regionsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getRegionsCountBuilder() {
+      
+      onChanged();
+      return getRegionsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getRegionsCountOrBuilder() {
+      if (regionsCountBuilder_ != null) {
+        return regionsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return regionsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : regionsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of regions
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value regions_count = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getRegionsCountFieldBuilder() {
+      if (regionsCountBuilder_ == null) {
+        regionsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getRegionsCount(),
+                getParentForChildren(),
+                isClean());
+        regionsCount_ = null;
+      }
+      return regionsCountBuilder_;
+    }
+
+    private utils.Matrix.MatrixUint64 regionLocationMatrix_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        utils.Matrix.MatrixUint64, utils.Matrix.MatrixUint64.Builder, utils.Matrix.MatrixUint64OrBuilder> regionLocationMatrixBuilder_;
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     * @return Whether the regionLocationMatrix field is set.
+     */
+    public boolean hasRegionLocationMatrix() {
+      return regionLocationMatrixBuilder_ != null || regionLocationMatrix_ != null;
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     * @return The regionLocationMatrix.
+     */
+    public utils.Matrix.MatrixUint64 getRegionLocationMatrix() {
+      if (regionLocationMatrixBuilder_ == null) {
+        return regionLocationMatrix_ == null ? utils.Matrix.MatrixUint64.getDefaultInstance() : regionLocationMatrix_;
+      } else {
+        return regionLocationMatrixBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    public Builder setRegionLocationMatrix(utils.Matrix.MatrixUint64 value) {
+      if (regionLocationMatrixBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regionLocationMatrix_ = value;
+        onChanged();
+      } else {
+        regionLocationMatrixBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    public Builder setRegionLocationMatrix(
+        utils.Matrix.MatrixUint64.Builder builderForValue) {
+      if (regionLocationMatrixBuilder_ == null) {
+        regionLocationMatrix_ = builderForValue.build();
+        onChanged();
+      } else {
+        regionLocationMatrixBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    public Builder mergeRegionLocationMatrix(utils.Matrix.MatrixUint64 value) {
+      if (regionLocationMatrixBuilder_ == null) {
+        if (regionLocationMatrix_ != null) {
+          regionLocationMatrix_ =
+            utils.Matrix.MatrixUint64.newBuilder(regionLocationMatrix_).mergeFrom(value).buildPartial();
+        } else {
+          regionLocationMatrix_ = value;
+        }
+        onChanged();
+      } else {
+        regionLocationMatrixBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    public Builder clearRegionLocationMatrix() {
+      if (regionLocationMatrixBuilder_ == null) {
+        regionLocationMatrix_ = null;
+        onChanged();
+      } else {
+        regionLocationMatrix_ = null;
+        regionLocationMatrixBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    public utils.Matrix.MatrixUint64.Builder getRegionLocationMatrixBuilder() {
+      
+      onChanged();
+      return getRegionLocationMatrixFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    public utils.Matrix.MatrixUint64OrBuilder getRegionLocationMatrixOrBuilder() {
+      if (regionLocationMatrixBuilder_ != null) {
+        return regionLocationMatrixBuilder_.getMessageOrBuilder();
+      } else {
+        return regionLocationMatrix_ == null ?
+            utils.Matrix.MatrixUint64.getDefaultInstance() : regionLocationMatrix_;
+      }
+    }
+    /**
+     * <pre>
+     * The matrix shows where the regions are located.
+     * Example: If the matrix has 2x2 dimensions, then
+     * * region_location_matrix[0][0] = the number of regions that appear in the top left corner, i.e. [0,0]..(0.5,0.5)
+     * * region_location_matrix[0][1] = the number of regions that appear in the top right corner, i.e. [0,0.5]..[0.5,1]
+     * * region_location_matrix[1][0] = the number of regions that appear in the bottom left corner, i.e. [0.5,0]..[1,0.5)
+     * * region_location_matrix[1][1] = the number of regions that appear in the bottom right corner, i.e. [0.5,0.5]..[1,1]
+     * </pre>
+     *
+     * <code>.MatrixUint64 region_location_matrix = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        utils.Matrix.MatrixUint64, utils.Matrix.MatrixUint64.Builder, utils.Matrix.MatrixUint64OrBuilder> 
+        getRegionLocationMatrixFieldBuilder() {
+      if (regionLocationMatrixBuilder_ == null) {
+        regionLocationMatrixBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            utils.Matrix.MatrixUint64, utils.Matrix.MatrixUint64.Builder, utils.Matrix.MatrixUint64OrBuilder>(
+                getRegionLocationMatrix(),
+                getParentForChildren(),
+                isClean());
+        regionLocationMatrix_ = null;
+      }
+      return regionLocationMatrixBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value boundingBoxesCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> boundingBoxesCountBuilder_;
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+     * @return Whether the boundingBoxesCount field is set.
+     */
+    public boolean hasBoundingBoxesCount() {
+      return boundingBoxesCountBuilder_ != null || boundingBoxesCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
      * @return The boundingBoxesCount.
      */
-    public long getBoundingBoxesCount() {
-      return boundingBoxesCount_;
+    public com.google.protobuf.UInt64Value getBoundingBoxesCount() {
+      if (boundingBoxesCountBuilder_ == null) {
+        return boundingBoxesCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : boundingBoxesCount_;
+      } else {
+        return boundingBoxesCountBuilder_.getMessage();
+      }
     }
     /**
-     * <code>uint64 bounding_boxes_count = 3;</code>
-     * @param value The boundingBoxesCount to set.
-     * @return This builder for chaining.
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
      */
-    public Builder setBoundingBoxesCount(long value) {
-      
-      boundingBoxesCount_ = value;
-      onChanged();
+    public Builder setBoundingBoxesCount(com.google.protobuf.UInt64Value value) {
+      if (boundingBoxesCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        boundingBoxesCount_ = value;
+        onChanged();
+      } else {
+        boundingBoxesCountBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 bounding_boxes_count = 3;</code>
-     * @return This builder for chaining.
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+     */
+    public Builder setBoundingBoxesCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (boundingBoxesCountBuilder_ == null) {
+        boundingBoxesCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        boundingBoxesCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+     */
+    public Builder mergeBoundingBoxesCount(com.google.protobuf.UInt64Value value) {
+      if (boundingBoxesCountBuilder_ == null) {
+        if (boundingBoxesCount_ != null) {
+          boundingBoxesCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(boundingBoxesCount_).mergeFrom(value).buildPartial();
+        } else {
+          boundingBoxesCount_ = value;
+        }
+        onChanged();
+      } else {
+        boundingBoxesCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
      */
     public Builder clearBoundingBoxesCount() {
-      
-      boundingBoxesCount_ = 0L;
-      onChanged();
+      if (boundingBoxesCountBuilder_ == null) {
+        boundingBoxesCount_ = null;
+        onChanged();
+      } else {
+        boundingBoxesCount_ = null;
+        boundingBoxesCountBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getBoundingBoxesCountBuilder() {
+      
+      onChanged();
+      return getBoundingBoxesCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getBoundingBoxesCountOrBuilder() {
+      if (boundingBoxesCountBuilder_ != null) {
+        return boundingBoxesCountBuilder_.getMessageOrBuilder();
+      } else {
+        return boundingBoxesCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : boundingBoxesCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of bounding boxes
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value bounding_boxes_count = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getBoundingBoxesCountFieldBuilder() {
+      if (boundingBoxesCountBuilder_ == null) {
+        boundingBoxesCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getBoundingBoxesCount(),
+                getParentForChildren(),
+                isClean());
+        boundingBoxesCount_ = null;
+      }
+      return boundingBoxesCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value polygonsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> polygonsCountBuilder_;
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     * @return Whether the polygonsCount field is set.
+     */
+    public boolean hasPolygonsCount() {
+      return polygonsCountBuilder_ != null || polygonsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     * @return The polygonsCount.
+     */
+    public com.google.protobuf.UInt64Value getPolygonsCount() {
+      if (polygonsCountBuilder_ == null) {
+        return polygonsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : polygonsCount_;
+      } else {
+        return polygonsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    public Builder setPolygonsCount(com.google.protobuf.UInt64Value value) {
+      if (polygonsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        polygonsCount_ = value;
+        onChanged();
+      } else {
+        polygonsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    public Builder setPolygonsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (polygonsCountBuilder_ == null) {
+        polygonsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        polygonsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    public Builder mergePolygonsCount(com.google.protobuf.UInt64Value value) {
+      if (polygonsCountBuilder_ == null) {
+        if (polygonsCount_ != null) {
+          polygonsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(polygonsCount_).mergeFrom(value).buildPartial();
+        } else {
+          polygonsCount_ = value;
+        }
+        onChanged();
+      } else {
+        polygonsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    public Builder clearPolygonsCount() {
+      if (polygonsCountBuilder_ == null) {
+        polygonsCount_ = null;
+        onChanged();
+      } else {
+        polygonsCount_ = null;
+        polygonsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getPolygonsCountBuilder() {
+      
+      onChanged();
+      return getPolygonsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getPolygonsCountOrBuilder() {
+      if (polygonsCountBuilder_ != null) {
+        return polygonsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return polygonsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : polygonsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of polygons
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value polygons_count = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getPolygonsCountFieldBuilder() {
+      if (polygonsCountBuilder_ == null) {
+        polygonsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getPolygonsCount(),
+                getParentForChildren(),
+                isClean());
+        polygonsCount_ = null;
+      }
+      return polygonsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value pointsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> pointsCountBuilder_;
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     * @return Whether the pointsCount field is set.
+     */
+    public boolean hasPointsCount() {
+      return pointsCountBuilder_ != null || pointsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     * @return The pointsCount.
+     */
+    public com.google.protobuf.UInt64Value getPointsCount() {
+      if (pointsCountBuilder_ == null) {
+        return pointsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : pointsCount_;
+      } else {
+        return pointsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    public Builder setPointsCount(com.google.protobuf.UInt64Value value) {
+      if (pointsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pointsCount_ = value;
+        onChanged();
+      } else {
+        pointsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    public Builder setPointsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (pointsCountBuilder_ == null) {
+        pointsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        pointsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    public Builder mergePointsCount(com.google.protobuf.UInt64Value value) {
+      if (pointsCountBuilder_ == null) {
+        if (pointsCount_ != null) {
+          pointsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(pointsCount_).mergeFrom(value).buildPartial();
+        } else {
+          pointsCount_ = value;
+        }
+        onChanged();
+      } else {
+        pointsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    public Builder clearPointsCount() {
+      if (pointsCountBuilder_ == null) {
+        pointsCount_ = null;
+        onChanged();
+      } else {
+        pointsCount_ = null;
+        pointsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getPointsCountBuilder() {
+      
+      onChanged();
+      return getPointsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getPointsCountOrBuilder() {
+      if (pointsCountBuilder_ != null) {
+        return pointsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return pointsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : pointsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of points
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value points_count = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getPointsCountFieldBuilder() {
+      if (pointsCountBuilder_ == null) {
+        pointsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getPointsCount(),
+                getParentForChildren(),
+                isClean());
+        pointsCount_ = null;
+      }
+      return pointsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value masksCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> masksCountBuilder_;
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     * @return Whether the masksCount field is set.
+     */
+    public boolean hasMasksCount() {
+      return masksCountBuilder_ != null || masksCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     * @return The masksCount.
+     */
+    public com.google.protobuf.UInt64Value getMasksCount() {
+      if (masksCountBuilder_ == null) {
+        return masksCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : masksCount_;
+      } else {
+        return masksCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    public Builder setMasksCount(com.google.protobuf.UInt64Value value) {
+      if (masksCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        masksCount_ = value;
+        onChanged();
+      } else {
+        masksCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    public Builder setMasksCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (masksCountBuilder_ == null) {
+        masksCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        masksCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    public Builder mergeMasksCount(com.google.protobuf.UInt64Value value) {
+      if (masksCountBuilder_ == null) {
+        if (masksCount_ != null) {
+          masksCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(masksCount_).mergeFrom(value).buildPartial();
+        } else {
+          masksCount_ = value;
+        }
+        onChanged();
+      } else {
+        masksCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    public Builder clearMasksCount() {
+      if (masksCountBuilder_ == null) {
+        masksCount_ = null;
+        onChanged();
+      } else {
+        masksCount_ = null;
+        masksCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getMasksCountBuilder() {
+      
+      onChanged();
+      return getMasksCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getMasksCountOrBuilder() {
+      if (masksCountBuilder_ != null) {
+        return masksCountBuilder_.getMessageOrBuilder();
+      } else {
+        return masksCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : masksCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of masks
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value masks_count = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getMasksCountFieldBuilder() {
+      if (masksCountBuilder_ == null) {
+        masksCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getMasksCount(),
+                getParentForChildren(),
+                isClean());
+        masksCount_ = null;
+      }
+      return masksCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value regionInputsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> regionInputsCountBuilder_;
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     * @return Whether the regionInputsCount field is set.
+     */
+    public boolean hasRegionInputsCount() {
+      return regionInputsCountBuilder_ != null || regionInputsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     * @return The regionInputsCount.
+     */
+    public com.google.protobuf.UInt64Value getRegionInputsCount() {
+      if (regionInputsCountBuilder_ == null) {
+        return regionInputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : regionInputsCount_;
+      } else {
+        return regionInputsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    public Builder setRegionInputsCount(com.google.protobuf.UInt64Value value) {
+      if (regionInputsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regionInputsCount_ = value;
+        onChanged();
+      } else {
+        regionInputsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    public Builder setRegionInputsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (regionInputsCountBuilder_ == null) {
+        regionInputsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        regionInputsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    public Builder mergeRegionInputsCount(com.google.protobuf.UInt64Value value) {
+      if (regionInputsCountBuilder_ == null) {
+        if (regionInputsCount_ != null) {
+          regionInputsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(regionInputsCount_).mergeFrom(value).buildPartial();
+        } else {
+          regionInputsCount_ = value;
+        }
+        onChanged();
+      } else {
+        regionInputsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    public Builder clearRegionInputsCount() {
+      if (regionInputsCountBuilder_ == null) {
+        regionInputsCount_ = null;
+        onChanged();
+      } else {
+        regionInputsCount_ = null;
+        regionInputsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getRegionInputsCountBuilder() {
+      
+      onChanged();
+      return getRegionInputsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getRegionInputsCountOrBuilder() {
+      if (regionInputsCountBuilder_ != null) {
+        return regionInputsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return regionInputsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : regionInputsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have regions attached
+     * Note that this is not a recursive count: if an input contains frames that contains regions, then the region_frames_count is increased, but region_inputs_count is not increased.
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_inputs_count = 60;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getRegionInputsCountFieldBuilder() {
+      if (regionInputsCountBuilder_ == null) {
+        regionInputsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getRegionInputsCount(),
+                getParentForChildren(),
+                isClean());
+        regionInputsCount_ = null;
+      }
+      return regionInputsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value regionFramesCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> regionFramesCountBuilder_;
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     * @return Whether the regionFramesCount field is set.
+     */
+    public boolean hasRegionFramesCount() {
+      return regionFramesCountBuilder_ != null || regionFramesCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     * @return The regionFramesCount.
+     */
+    public com.google.protobuf.UInt64Value getRegionFramesCount() {
+      if (regionFramesCountBuilder_ == null) {
+        return regionFramesCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : regionFramesCount_;
+      } else {
+        return regionFramesCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    public Builder setRegionFramesCount(com.google.protobuf.UInt64Value value) {
+      if (regionFramesCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regionFramesCount_ = value;
+        onChanged();
+      } else {
+        regionFramesCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    public Builder setRegionFramesCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (regionFramesCountBuilder_ == null) {
+        regionFramesCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        regionFramesCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    public Builder mergeRegionFramesCount(com.google.protobuf.UInt64Value value) {
+      if (regionFramesCountBuilder_ == null) {
+        if (regionFramesCount_ != null) {
+          regionFramesCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(regionFramesCount_).mergeFrom(value).buildPartial();
+        } else {
+          regionFramesCount_ = value;
+        }
+        onChanged();
+      } else {
+        regionFramesCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    public Builder clearRegionFramesCount() {
+      if (regionFramesCountBuilder_ == null) {
+        regionFramesCount_ = null;
+        onChanged();
+      } else {
+        regionFramesCount_ = null;
+        regionFramesCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getRegionFramesCountBuilder() {
+      
+      onChanged();
+      return getRegionFramesCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getRegionFramesCountOrBuilder() {
+      if (regionFramesCountBuilder_ != null) {
+        return regionFramesCountBuilder_.getMessageOrBuilder();
+      } else {
+        return regionFramesCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : regionFramesCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of frames that have regions attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value region_frames_count = 61;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getRegionFramesCountFieldBuilder() {
+      if (regionFramesCountBuilder_ == null) {
+        regionFramesCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getRegionFramesCount(),
+                getParentForChildren(),
+                isClean());
+        regionFramesCount_ = null;
+      }
+      return regionFramesCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value framesCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> framesCountBuilder_;
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     * @return Whether the framesCount field is set.
+     */
+    public boolean hasFramesCount() {
+      return framesCountBuilder_ != null || framesCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     * @return The framesCount.
+     */
+    public com.google.protobuf.UInt64Value getFramesCount() {
+      if (framesCountBuilder_ == null) {
+        return framesCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : framesCount_;
+      } else {
+        return framesCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    public Builder setFramesCount(com.google.protobuf.UInt64Value value) {
+      if (framesCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        framesCount_ = value;
+        onChanged();
+      } else {
+        framesCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    public Builder setFramesCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (framesCountBuilder_ == null) {
+        framesCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        framesCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    public Builder mergeFramesCount(com.google.protobuf.UInt64Value value) {
+      if (framesCountBuilder_ == null) {
+        if (framesCount_ != null) {
+          framesCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(framesCount_).mergeFrom(value).buildPartial();
+        } else {
+          framesCount_ = value;
+        }
+        onChanged();
+      } else {
+        framesCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    public Builder clearFramesCount() {
+      if (framesCountBuilder_ == null) {
+        framesCount_ = null;
+        onChanged();
+      } else {
+        framesCount_ = null;
+        framesCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getFramesCountBuilder() {
+      
+      onChanged();
+      return getFramesCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getFramesCountOrBuilder() {
+      if (framesCountBuilder_ != null) {
+        return framesCountBuilder_.getMessageOrBuilder();
+      } else {
+        return framesCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : framesCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of frames
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frames_count = 30;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getFramesCountFieldBuilder() {
+      if (framesCountBuilder_ == null) {
+        framesCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getFramesCount(),
+                getParentForChildren(),
+                isClean());
+        framesCount_ = null;
+      }
+      return framesCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value frameInputsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> frameInputsCountBuilder_;
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     * @return Whether the frameInputsCount field is set.
+     */
+    public boolean hasFrameInputsCount() {
+      return frameInputsCountBuilder_ != null || frameInputsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     * @return The frameInputsCount.
+     */
+    public com.google.protobuf.UInt64Value getFrameInputsCount() {
+      if (frameInputsCountBuilder_ == null) {
+        return frameInputsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : frameInputsCount_;
+      } else {
+        return frameInputsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    public Builder setFrameInputsCount(com.google.protobuf.UInt64Value value) {
+      if (frameInputsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        frameInputsCount_ = value;
+        onChanged();
+      } else {
+        frameInputsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    public Builder setFrameInputsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (frameInputsCountBuilder_ == null) {
+        frameInputsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        frameInputsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    public Builder mergeFrameInputsCount(com.google.protobuf.UInt64Value value) {
+      if (frameInputsCountBuilder_ == null) {
+        if (frameInputsCount_ != null) {
+          frameInputsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(frameInputsCount_).mergeFrom(value).buildPartial();
+        } else {
+          frameInputsCount_ = value;
+        }
+        onChanged();
+      } else {
+        frameInputsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    public Builder clearFrameInputsCount() {
+      if (frameInputsCountBuilder_ == null) {
+        frameInputsCount_ = null;
+        onChanged();
+      } else {
+        frameInputsCount_ = null;
+        frameInputsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getFrameInputsCountBuilder() {
+      
+      onChanged();
+      return getFrameInputsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getFrameInputsCountOrBuilder() {
+      if (frameInputsCountBuilder_ != null) {
+        return frameInputsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return frameInputsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : frameInputsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of inputs that have frames attached
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value frame_inputs_count = 70;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getFrameInputsCountFieldBuilder() {
+      if (frameInputsCountBuilder_ == null) {
+        frameInputsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getFrameInputsCount(),
+                getParentForChildren(),
+                isClean());
+        frameInputsCount_ = null;
+      }
+      return frameInputsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value embeddingsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> embeddingsCountBuilder_;
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     * @return Whether the embeddingsCount field is set.
+     */
+    public boolean hasEmbeddingsCount() {
+      return embeddingsCountBuilder_ != null || embeddingsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     * @return The embeddingsCount.
+     */
+    public com.google.protobuf.UInt64Value getEmbeddingsCount() {
+      if (embeddingsCountBuilder_ == null) {
+        return embeddingsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : embeddingsCount_;
+      } else {
+        return embeddingsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    public Builder setEmbeddingsCount(com.google.protobuf.UInt64Value value) {
+      if (embeddingsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        embeddingsCount_ = value;
+        onChanged();
+      } else {
+        embeddingsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    public Builder setEmbeddingsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (embeddingsCountBuilder_ == null) {
+        embeddingsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        embeddingsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    public Builder mergeEmbeddingsCount(com.google.protobuf.UInt64Value value) {
+      if (embeddingsCountBuilder_ == null) {
+        if (embeddingsCount_ != null) {
+          embeddingsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(embeddingsCount_).mergeFrom(value).buildPartial();
+        } else {
+          embeddingsCount_ = value;
+        }
+        onChanged();
+      } else {
+        embeddingsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    public Builder clearEmbeddingsCount() {
+      if (embeddingsCountBuilder_ == null) {
+        embeddingsCount_ = null;
+        onChanged();
+      } else {
+        embeddingsCount_ = null;
+        embeddingsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getEmbeddingsCountBuilder() {
+      
+      onChanged();
+      return getEmbeddingsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getEmbeddingsCountOrBuilder() {
+      if (embeddingsCountBuilder_ != null) {
+        return embeddingsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return embeddingsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : embeddingsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of embeddings
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value embeddings_count = 40;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getEmbeddingsCountFieldBuilder() {
+      if (embeddingsCountBuilder_ == null) {
+        embeddingsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getEmbeddingsCount(),
+                getParentForChildren(),
+                isClean());
+        embeddingsCount_ = null;
+      }
+      return embeddingsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value positiveInputTagsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> positiveInputTagsCountBuilder_;
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     * @return Whether the positiveInputTagsCount field is set.
+     */
+    public boolean hasPositiveInputTagsCount() {
+      return positiveInputTagsCountBuilder_ != null || positiveInputTagsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     * @return The positiveInputTagsCount.
+     */
+    public com.google.protobuf.UInt64Value getPositiveInputTagsCount() {
+      if (positiveInputTagsCountBuilder_ == null) {
+        return positiveInputTagsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : positiveInputTagsCount_;
+      } else {
+        return positiveInputTagsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    public Builder setPositiveInputTagsCount(com.google.protobuf.UInt64Value value) {
+      if (positiveInputTagsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        positiveInputTagsCount_ = value;
+        onChanged();
+      } else {
+        positiveInputTagsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    public Builder setPositiveInputTagsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (positiveInputTagsCountBuilder_ == null) {
+        positiveInputTagsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        positiveInputTagsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    public Builder mergePositiveInputTagsCount(com.google.protobuf.UInt64Value value) {
+      if (positiveInputTagsCountBuilder_ == null) {
+        if (positiveInputTagsCount_ != null) {
+          positiveInputTagsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(positiveInputTagsCount_).mergeFrom(value).buildPartial();
+        } else {
+          positiveInputTagsCount_ = value;
+        }
+        onChanged();
+      } else {
+        positiveInputTagsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    public Builder clearPositiveInputTagsCount() {
+      if (positiveInputTagsCountBuilder_ == null) {
+        positiveInputTagsCount_ = null;
+        onChanged();
+      } else {
+        positiveInputTagsCount_ = null;
+        positiveInputTagsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getPositiveInputTagsCountBuilder() {
+      
+      onChanged();
+      return getPositiveInputTagsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getPositiveInputTagsCountOrBuilder() {
+      if (positiveInputTagsCountBuilder_ != null) {
+        return positiveInputTagsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return positiveInputTagsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : positiveInputTagsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at input-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_input_tags_count = 50;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getPositiveInputTagsCountFieldBuilder() {
+      if (positiveInputTagsCountBuilder_ == null) {
+        positiveInputTagsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getPositiveInputTagsCount(),
+                getParentForChildren(),
+                isClean());
+        positiveInputTagsCount_ = null;
+      }
+      return positiveInputTagsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value positiveRegionTagsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> positiveRegionTagsCountBuilder_;
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     * @return Whether the positiveRegionTagsCount field is set.
+     */
+    public boolean hasPositiveRegionTagsCount() {
+      return positiveRegionTagsCountBuilder_ != null || positiveRegionTagsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     * @return The positiveRegionTagsCount.
+     */
+    public com.google.protobuf.UInt64Value getPositiveRegionTagsCount() {
+      if (positiveRegionTagsCountBuilder_ == null) {
+        return positiveRegionTagsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : positiveRegionTagsCount_;
+      } else {
+        return positiveRegionTagsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    public Builder setPositiveRegionTagsCount(com.google.protobuf.UInt64Value value) {
+      if (positiveRegionTagsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        positiveRegionTagsCount_ = value;
+        onChanged();
+      } else {
+        positiveRegionTagsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    public Builder setPositiveRegionTagsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (positiveRegionTagsCountBuilder_ == null) {
+        positiveRegionTagsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        positiveRegionTagsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    public Builder mergePositiveRegionTagsCount(com.google.protobuf.UInt64Value value) {
+      if (positiveRegionTagsCountBuilder_ == null) {
+        if (positiveRegionTagsCount_ != null) {
+          positiveRegionTagsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(positiveRegionTagsCount_).mergeFrom(value).buildPartial();
+        } else {
+          positiveRegionTagsCount_ = value;
+        }
+        onChanged();
+      } else {
+        positiveRegionTagsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    public Builder clearPositiveRegionTagsCount() {
+      if (positiveRegionTagsCountBuilder_ == null) {
+        positiveRegionTagsCount_ = null;
+        onChanged();
+      } else {
+        positiveRegionTagsCount_ = null;
+        positiveRegionTagsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getPositiveRegionTagsCountBuilder() {
+      
+      onChanged();
+      return getPositiveRegionTagsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getPositiveRegionTagsCountOrBuilder() {
+      if (positiveRegionTagsCountBuilder_ != null) {
+        return positiveRegionTagsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return positiveRegionTagsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : positiveRegionTagsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at region-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_region_tags_count = 51;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getPositiveRegionTagsCountFieldBuilder() {
+      if (positiveRegionTagsCountBuilder_ == null) {
+        positiveRegionTagsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getPositiveRegionTagsCount(),
+                getParentForChildren(),
+                isClean());
+        positiveRegionTagsCount_ = null;
+      }
+      return positiveRegionTagsCountBuilder_;
+    }
+
+    private com.google.protobuf.UInt64Value positiveFrameTagsCount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> positiveFrameTagsCountBuilder_;
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     * @return Whether the positiveFrameTagsCount field is set.
+     */
+    public boolean hasPositiveFrameTagsCount() {
+      return positiveFrameTagsCountBuilder_ != null || positiveFrameTagsCount_ != null;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     * @return The positiveFrameTagsCount.
+     */
+    public com.google.protobuf.UInt64Value getPositiveFrameTagsCount() {
+      if (positiveFrameTagsCountBuilder_ == null) {
+        return positiveFrameTagsCount_ == null ? com.google.protobuf.UInt64Value.getDefaultInstance() : positiveFrameTagsCount_;
+      } else {
+        return positiveFrameTagsCountBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    public Builder setPositiveFrameTagsCount(com.google.protobuf.UInt64Value value) {
+      if (positiveFrameTagsCountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        positiveFrameTagsCount_ = value;
+        onChanged();
+      } else {
+        positiveFrameTagsCountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    public Builder setPositiveFrameTagsCount(
+        com.google.protobuf.UInt64Value.Builder builderForValue) {
+      if (positiveFrameTagsCountBuilder_ == null) {
+        positiveFrameTagsCount_ = builderForValue.build();
+        onChanged();
+      } else {
+        positiveFrameTagsCountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    public Builder mergePositiveFrameTagsCount(com.google.protobuf.UInt64Value value) {
+      if (positiveFrameTagsCountBuilder_ == null) {
+        if (positiveFrameTagsCount_ != null) {
+          positiveFrameTagsCount_ =
+            com.google.protobuf.UInt64Value.newBuilder(positiveFrameTagsCount_).mergeFrom(value).buildPartial();
+        } else {
+          positiveFrameTagsCount_ = value;
+        }
+        onChanged();
+      } else {
+        positiveFrameTagsCountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    public Builder clearPositiveFrameTagsCount() {
+      if (positiveFrameTagsCountBuilder_ == null) {
+        positiveFrameTagsCount_ = null;
+        onChanged();
+      } else {
+        positiveFrameTagsCount_ = null;
+        positiveFrameTagsCountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    public com.google.protobuf.UInt64Value.Builder getPositiveFrameTagsCountBuilder() {
+      
+      onChanged();
+      return getPositiveFrameTagsCountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    public com.google.protobuf.UInt64ValueOrBuilder getPositiveFrameTagsCountOrBuilder() {
+      if (positiveFrameTagsCountBuilder_ != null) {
+        return positiveFrameTagsCountBuilder_.getMessageOrBuilder();
+      } else {
+        return positiveFrameTagsCount_ == null ?
+            com.google.protobuf.UInt64Value.getDefaultInstance() : positiveFrameTagsCount_;
+      }
+    }
+    /**
+     * <pre>
+     * Number of positive tags added at frame-level
+     * </pre>
+     *
+     * <code>.google.protobuf.UInt64Value positive_frame_tags_count = 52;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder> 
+        getPositiveFrameTagsCountFieldBuilder() {
+      if (positiveFrameTagsCountBuilder_ == null) {
+        positiveFrameTagsCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.UInt64Value, com.google.protobuf.UInt64Value.Builder, com.google.protobuf.UInt64ValueOrBuilder>(
+                getPositiveFrameTagsCount(),
+                getParentForChildren(),
+                isClean());
+        positiveFrameTagsCount_ = null;
+      }
+      return positiveFrameTagsCountBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

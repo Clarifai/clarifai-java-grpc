@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.LabelOrder}
  */
-public  final class LabelOrder extends
+public final class LabelOrder extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.LabelOrder)
     LabelOrderOrBuilder {
@@ -165,6 +165,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -196,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +219,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -240,6 +244,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -260,6 +265,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -288,6 +294,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 3;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -303,6 +310,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 3;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -317,6 +325,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -331,6 +340,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool auto_release = 4;</code>
    * @return The autoRelease.
    */
+  @java.lang.Override
   public boolean getAutoRelease() {
     return autoRelease_;
   }
@@ -345,6 +355,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool allow_empty_tag = 5;</code>
    * @return The allowEmptyTag.
    */
+  @java.lang.Override
   public boolean getAllowEmptyTag() {
     return allowEmptyTag_;
   }
@@ -359,6 +370,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp desired_fulfill_time = 6;</code>
    * @return Whether the desiredFulfillTime field is set.
    */
+  @java.lang.Override
   public boolean hasDesiredFulfillTime() {
     return desiredFulfillTime_ != null;
   }
@@ -370,6 +382,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp desired_fulfill_time = 6;</code>
    * @return The desiredFulfillTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDesiredFulfillTime() {
     return desiredFulfillTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : desiredFulfillTime_;
   }
@@ -380,6 +393,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp desired_fulfill_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDesiredFulfillTimeOrBuilder() {
     return getDesiredFulfillTime();
   }
@@ -394,6 +408,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp estimate_fulfill_time = 7;</code>
    * @return Whether the estimateFulfillTime field is set.
    */
+  @java.lang.Override
   public boolean hasEstimateFulfillTime() {
     return estimateFulfillTime_ != null;
   }
@@ -405,6 +420,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp estimate_fulfill_time = 7;</code>
    * @return The estimateFulfillTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEstimateFulfillTime() {
     return estimateFulfillTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : estimateFulfillTime_;
   }
@@ -415,6 +431,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp estimate_fulfill_time = 7;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEstimateFulfillTimeOrBuilder() {
     return getEstimateFulfillTime();
   }
@@ -429,6 +446,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Task task = 8;</code>
    * @return Whether the task field is set.
    */
+  @java.lang.Override
   public boolean hasTask() {
     return task_ != null;
   }
@@ -440,6 +458,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Task task = 8;</code>
    * @return The task.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Task getTask() {
     return task_ == null ? com.clarifai.grpc.api.Task.getDefaultInstance() : task_;
   }
@@ -450,6 +469,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Task task = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskOrBuilder getTaskOrBuilder() {
     return getTask();
   }
@@ -466,6 +486,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 9;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -479,6 +500,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 9;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -491,6 +513,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -507,6 +530,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 10;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -520,6 +544,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 10;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -532,6 +557,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -550,10 +576,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (status_ != null) {
@@ -589,10 +615,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (status_ != null) {
@@ -1467,6 +1493,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool auto_release = 4;</code>
      * @return The autoRelease.
      */
+    @java.lang.Override
     public boolean getAutoRelease() {
       return autoRelease_;
     }
@@ -1509,6 +1536,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool allow_empty_tag = 5;</code>
      * @return The allowEmptyTag.
      */
+    @java.lang.Override
     public boolean getAllowEmptyTag() {
       return allowEmptyTag_;
     }

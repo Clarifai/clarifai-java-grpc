@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.NodeInput}
  */
-public  final class NodeInput extends
+public final class NodeInput extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.NodeInput)
     NodeInputOrBuilder {
@@ -70,6 +70,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -101,6 +103,7 @@ private static final long serialVersionUID = 0L;
    * <code>string node_id = 1;</code>
    * @return The nodeId.
    */
+  @java.lang.Override
   public java.lang.String getNodeId() {
     java.lang.Object ref = nodeId_;
     if (ref instanceof java.lang.String) {
@@ -121,6 +124,7 @@ private static final long serialVersionUID = 0L;
    * <code>string node_id = 1;</code>
    * @return The bytes for nodeId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNodeIdBytes() {
     java.lang.Object ref = nodeId_;
@@ -149,7 +153,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNodeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nodeId_);
     }
     unknownFields.writeTo(output);
@@ -161,7 +165,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNodeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nodeId_);
     }
     size += unknownFields.getSerializedSize();

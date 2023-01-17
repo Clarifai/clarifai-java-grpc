@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.AppDuplication}
  */
-public  final class AppDuplication extends
+public final class AppDuplication extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.AppDuplication)
     AppDuplicationOrBuilder {
@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     newAppId_ = "";
     newAppName_ = "";
+    existingAppId_ = "";
+    progress_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -45,6 +47,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -125,6 +128,21 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            existingAppId_ = s;
+            break;
+          }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              progress_ = new java.util.ArrayList<com.clarifai.grpc.api.AppCopyProgress>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            progress_.add(
+                input.readMessage(com.clarifai.grpc.api.AppCopyProgress.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,10 +154,15 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        progress_ = java.util.Collections.unmodifiableList(progress_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -167,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -187,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -205,12 +230,15 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object newAppId_;
   /**
    * <pre>
-   *the id of new app
+   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+   * if new_app_name is empty, the name will be the same as this id.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
    * @return The newAppId.
    */
+  @java.lang.Override
   public java.lang.String getNewAppId() {
     java.lang.Object ref = newAppId_;
     if (ref instanceof java.lang.String) {
@@ -225,12 +253,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the id of new app
+   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+   * if new_app_name is empty, the name will be the same as this id.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
    * @return The bytes for newAppId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNewAppIdBytes() {
     java.lang.Object ref = newAppId_;
@@ -249,12 +280,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object newAppName_;
   /**
    * <pre>
-   *the name of new app
+   *the name of new app. If provided, we will create a new application with this name.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
    * @return The newAppName.
    */
+  @java.lang.Override
   public java.lang.String getNewAppName() {
     java.lang.Object ref = newAppName_;
     if (ref instanceof java.lang.String) {
@@ -269,12 +302,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the name of new app
+   *the name of new app. If provided, we will create a new application with this name.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
    * @return The bytes for newAppName.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNewAppNameBytes() {
     java.lang.Object ref = newAppName_;
@@ -299,6 +334,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 4;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -310,6 +346,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 4;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -320,6 +357,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -334,6 +372,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -345,6 +384,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -355,6 +395,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -369,6 +410,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
    * @return Whether the lastModifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasLastModifiedAt() {
     return lastModifiedAt_ != null;
   }
@@ -380,6 +422,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
    * @return The lastModifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getLastModifiedAt() {
     return lastModifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastModifiedAt_;
   }
@@ -390,6 +433,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastModifiedAtOrBuilder() {
     return getLastModifiedAt();
   }
@@ -404,6 +448,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
    * @return Whether the filter field is set.
    */
+  @java.lang.Override
   public boolean hasFilter() {
     return filter_ != null;
   }
@@ -415,6 +460,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
    * @return The filter.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppDuplicationFilters getFilter() {
     return filter_ == null ? com.clarifai.grpc.api.AppDuplicationFilters.getDefaultInstance() : filter_;
   }
@@ -425,8 +471,119 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppDuplicationFiltersOrBuilder getFilterOrBuilder() {
     return getFilter();
+  }
+
+  public static final int EXISTING_APP_ID_FIELD_NUMBER = 8;
+  private volatile java.lang.Object existingAppId_;
+  /**
+   * <pre>
+   * the id of existing app you want to copy data into.
+   * you can not set this if either new_app_id or new_app_name is set.
+   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The existingAppId.
+   */
+  @java.lang.Override
+  public java.lang.String getExistingAppId() {
+    java.lang.Object ref = existingAppId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      existingAppId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * the id of existing app you want to copy data into.
+   * you can not set this if either new_app_id or new_app_name is set.
+   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The bytes for existingAppId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getExistingAppIdBytes() {
+    java.lang.Object ref = existingAppId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      existingAppId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROGRESS_FIELD_NUMBER = 9;
+  private java.util.List<com.clarifai.grpc.api.AppCopyProgress> progress_;
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.AppCopyProgress> getProgressList() {
+    return progress_;
+  }
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.AppCopyProgressOrBuilder> 
+      getProgressOrBuilderList() {
+    return progress_;
+  }
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  @java.lang.Override
+  public int getProgressCount() {
+    return progress_.size();
+  }
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppCopyProgress getProgress(int index) {
+    return progress_.get(index);
+  }
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppCopyProgressOrBuilder getProgressOrBuilder(
+      int index) {
+    return progress_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -443,13 +600,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNewAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newAppId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, newAppId_);
     }
-    if (!getNewAppNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newAppName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, newAppName_);
     }
     if (status_ != null) {
@@ -464,6 +621,12 @@ private static final long serialVersionUID = 0L;
     if (filter_ != null) {
       output.writeMessage(7, getFilter());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(existingAppId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, existingAppId_);
+    }
+    for (int i = 0; i < progress_.size(); i++) {
+      output.writeMessage(9, progress_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -473,13 +636,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNewAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newAppId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, newAppId_);
     }
-    if (!getNewAppNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newAppName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, newAppName_);
     }
     if (status_ != null) {
@@ -497,6 +660,13 @@ private static final long serialVersionUID = 0L;
     if (filter_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getFilter());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(existingAppId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, existingAppId_);
+    }
+    for (int i = 0; i < progress_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, progress_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -539,6 +709,10 @@ private static final long serialVersionUID = 0L;
       if (!getFilter()
           .equals(other.getFilter())) return false;
     }
+    if (!getExistingAppId()
+        .equals(other.getExistingAppId())) return false;
+    if (!getProgressList()
+        .equals(other.getProgressList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -571,6 +745,12 @@ private static final long serialVersionUID = 0L;
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getFilter().hashCode();
+    }
+    hash = (37 * hash) + EXISTING_APP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getExistingAppId().hashCode();
+    if (getProgressCount() > 0) {
+      hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getProgressList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -704,6 +884,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getProgressFieldBuilder();
       }
     }
     @java.lang.Override
@@ -739,6 +920,14 @@ private static final long serialVersionUID = 0L;
         filter_ = null;
         filterBuilder_ = null;
       }
+      existingAppId_ = "";
+
+      if (progressBuilder_ == null) {
+        progress_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        progressBuilder_.clear();
+      }
       return this;
     }
 
@@ -765,6 +954,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.AppDuplication buildPartial() {
       com.clarifai.grpc.api.AppDuplication result = new com.clarifai.grpc.api.AppDuplication(this);
+      int from_bitField0_ = bitField0_;
       result.id_ = id_;
       result.newAppId_ = newAppId_;
       result.newAppName_ = newAppName_;
@@ -787,6 +977,16 @@ private static final long serialVersionUID = 0L;
         result.filter_ = filter_;
       } else {
         result.filter_ = filterBuilder_.build();
+      }
+      result.existingAppId_ = existingAppId_;
+      if (progressBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          progress_ = java.util.Collections.unmodifiableList(progress_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.progress_ = progress_;
+      } else {
+        result.progress_ = progressBuilder_.build();
       }
       onBuilt();
       return result;
@@ -860,6 +1060,36 @@ private static final long serialVersionUID = 0L;
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
       }
+      if (!other.getExistingAppId().isEmpty()) {
+        existingAppId_ = other.existingAppId_;
+        onChanged();
+      }
+      if (progressBuilder_ == null) {
+        if (!other.progress_.isEmpty()) {
+          if (progress_.isEmpty()) {
+            progress_ = other.progress_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureProgressIsMutable();
+            progress_.addAll(other.progress_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.progress_.isEmpty()) {
+          if (progressBuilder_.isEmpty()) {
+            progressBuilder_.dispose();
+            progressBuilder_ = null;
+            progress_ = other.progress_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            progressBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getProgressFieldBuilder() : null;
+          } else {
+            progressBuilder_.addAllMessages(other.progress_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -888,6 +1118,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
@@ -988,7 +1219,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object newAppId_ = "";
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1008,7 +1241,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1029,7 +1264,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1048,7 +1285,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1062,7 +1301,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of new app
+     * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+     * if new_app_name is empty, the name will be the same as this id.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_id = 2;</code>
@@ -1084,7 +1325,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object newAppName_ = "";
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1104,7 +1346,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1125,7 +1368,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1144,7 +1388,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1158,7 +1403,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app
+     *the name of new app. If provided, we will create a new application with this name.
+     * You can not set this if existing_app_id is set.
      * </pre>
      *
      * <code>string new_app_name = 3;</code>
@@ -1795,6 +2041,424 @@ private static final long serialVersionUID = 0L;
         filter_ = null;
       }
       return filterBuilder_;
+    }
+
+    private java.lang.Object existingAppId_ = "";
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @return The existingAppId.
+     */
+    public java.lang.String getExistingAppId() {
+      java.lang.Object ref = existingAppId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        existingAppId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @return The bytes for existingAppId.
+     */
+    public com.google.protobuf.ByteString
+        getExistingAppIdBytes() {
+      java.lang.Object ref = existingAppId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        existingAppId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @param value The existingAppId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExistingAppId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      existingAppId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearExistingAppId() {
+      
+      existingAppId_ = getDefaultInstance().getExistingAppId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * the id of existing app you want to copy data into.
+     * you can not set this if either new_app_id or new_app_name is set.
+     * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+     * </pre>
+     *
+     * <code>string existing_app_id = 8;</code>
+     * @param value The bytes for existingAppId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExistingAppIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      existingAppId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.AppCopyProgress> progress_ =
+      java.util.Collections.emptyList();
+    private void ensureProgressIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        progress_ = new java.util.ArrayList<com.clarifai.grpc.api.AppCopyProgress>(progress_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.AppCopyProgress, com.clarifai.grpc.api.AppCopyProgress.Builder, com.clarifai.grpc.api.AppCopyProgressOrBuilder> progressBuilder_;
+
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.AppCopyProgress> getProgressList() {
+      if (progressBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(progress_);
+      } else {
+        return progressBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public int getProgressCount() {
+      if (progressBuilder_ == null) {
+        return progress_.size();
+      } else {
+        return progressBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public com.clarifai.grpc.api.AppCopyProgress getProgress(int index) {
+      if (progressBuilder_ == null) {
+        return progress_.get(index);
+      } else {
+        return progressBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder setProgress(
+        int index, com.clarifai.grpc.api.AppCopyProgress value) {
+      if (progressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProgressIsMutable();
+        progress_.set(index, value);
+        onChanged();
+      } else {
+        progressBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder setProgress(
+        int index, com.clarifai.grpc.api.AppCopyProgress.Builder builderForValue) {
+      if (progressBuilder_ == null) {
+        ensureProgressIsMutable();
+        progress_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        progressBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder addProgress(com.clarifai.grpc.api.AppCopyProgress value) {
+      if (progressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProgressIsMutable();
+        progress_.add(value);
+        onChanged();
+      } else {
+        progressBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder addProgress(
+        int index, com.clarifai.grpc.api.AppCopyProgress value) {
+      if (progressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProgressIsMutable();
+        progress_.add(index, value);
+        onChanged();
+      } else {
+        progressBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder addProgress(
+        com.clarifai.grpc.api.AppCopyProgress.Builder builderForValue) {
+      if (progressBuilder_ == null) {
+        ensureProgressIsMutable();
+        progress_.add(builderForValue.build());
+        onChanged();
+      } else {
+        progressBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder addProgress(
+        int index, com.clarifai.grpc.api.AppCopyProgress.Builder builderForValue) {
+      if (progressBuilder_ == null) {
+        ensureProgressIsMutable();
+        progress_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        progressBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder addAllProgress(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.AppCopyProgress> values) {
+      if (progressBuilder_ == null) {
+        ensureProgressIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, progress_);
+        onChanged();
+      } else {
+        progressBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder clearProgress() {
+      if (progressBuilder_ == null) {
+        progress_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        progressBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public Builder removeProgress(int index) {
+      if (progressBuilder_ == null) {
+        ensureProgressIsMutable();
+        progress_.remove(index);
+        onChanged();
+      } else {
+        progressBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public com.clarifai.grpc.api.AppCopyProgress.Builder getProgressBuilder(
+        int index) {
+      return getProgressFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public com.clarifai.grpc.api.AppCopyProgressOrBuilder getProgressOrBuilder(
+        int index) {
+      if (progressBuilder_ == null) {
+        return progress_.get(index);  } else {
+        return progressBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.AppCopyProgressOrBuilder> 
+         getProgressOrBuilderList() {
+      if (progressBuilder_ != null) {
+        return progressBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(progress_);
+      }
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public com.clarifai.grpc.api.AppCopyProgress.Builder addProgressBuilder() {
+      return getProgressFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.AppCopyProgress.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public com.clarifai.grpc.api.AppCopyProgress.Builder addProgressBuilder(
+        int index) {
+      return getProgressFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.AppCopyProgress.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * contains progress for each requested filter
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.AppCopyProgress.Builder> 
+         getProgressBuilderList() {
+      return getProgressFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.AppCopyProgress, com.clarifai.grpc.api.AppCopyProgress.Builder, com.clarifai.grpc.api.AppCopyProgressOrBuilder> 
+        getProgressFieldBuilder() {
+      if (progressBuilder_ == null) {
+        progressBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.AppCopyProgress, com.clarifai.grpc.api.AppCopyProgress.Builder, com.clarifai.grpc.api.AppCopyProgressOrBuilder>(
+                progress_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        progress_ = null;
+      }
+      return progressBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

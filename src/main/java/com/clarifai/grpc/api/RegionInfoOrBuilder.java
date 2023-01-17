@@ -114,4 +114,107 @@ public interface RegionInfoOrBuilder extends
    * <code>.clarifai.api.Point point = 6;</code>
    */
   com.clarifai.grpc.api.PointOrBuilder getPointOrBuilder();
+
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return Whether the span field is set.
+   */
+  boolean hasSpan();
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return The span.
+   */
+  com.clarifai.grpc.api.Span getSpan();
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   */
+  com.clarifai.grpc.api.SpanOrBuilder getSpanOrBuilder();
+
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return Whether the token field is set.
+   */
+  boolean hasToken();
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return The token.
+   */
+  com.clarifai.grpc.api.Token getToken();
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   */
+  com.clarifai.grpc.api.TokenOrBuilder getTokenOrBuilder();
+
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Point> 
+      getKeypointLocationsList();
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  com.clarifai.grpc.api.Point getKeypointLocations(int index);
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  int getKeypointLocationsCount();
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.PointOrBuilder> 
+      getKeypointLocationsOrBuilderList();
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  com.clarifai.grpc.api.PointOrBuilder getKeypointLocationsOrBuilder(
+      int index);
 }

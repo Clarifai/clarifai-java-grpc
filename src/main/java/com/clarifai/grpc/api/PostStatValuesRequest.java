@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostStatValuesRequest}
  */
-public  final class PostStatValuesRequest extends
+public final class PostStatValuesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostStatValuesRequest)
     PostStatValuesRequestOrBuilder {
@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -121,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -132,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
@@ -142,6 +146,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -155,6 +160,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValue stat_values = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.StatValue> getStatValuesList() {
     return statValues_;
   }
@@ -165,6 +171,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValue stat_values = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.StatValueOrBuilder> 
       getStatValuesOrBuilderList() {
     return statValues_;
@@ -176,6 +183,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValue stat_values = 2;</code>
    */
+  @java.lang.Override
   public int getStatValuesCount() {
     return statValues_.size();
   }
@@ -186,6 +194,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValue stat_values = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.StatValue getStatValues(int index) {
     return statValues_.get(index);
   }
@@ -196,6 +205,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.StatValue stat_values = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.StatValueOrBuilder getStatValuesOrBuilder(
       int index) {
     return statValues_.get(index);

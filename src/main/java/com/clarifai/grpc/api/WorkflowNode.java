@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.WorkflowNode}
  */
-public  final class WorkflowNode extends
+public final class WorkflowNode extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.WorkflowNode)
     WorkflowNodeOrBuilder {
@@ -99,6 +99,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -134,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -155,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -180,6 +184,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Model model = 2;</code>
    * @return Whether the model field is set.
    */
+  @java.lang.Override
   public boolean hasModel() {
     return model_ != null;
   }
@@ -192,6 +197,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Model model = 2;</code>
    * @return The model.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
   }
@@ -203,6 +209,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Model model = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
     return getModel();
   }
@@ -217,6 +224,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.NodeInput node_inputs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.NodeInput> getNodeInputsList() {
     return nodeInputs_;
   }
@@ -228,6 +236,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.NodeInput node_inputs = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.NodeInputOrBuilder> 
       getNodeInputsOrBuilderList() {
     return nodeInputs_;
@@ -240,6 +249,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.NodeInput node_inputs = 3;</code>
    */
+  @java.lang.Override
   public int getNodeInputsCount() {
     return nodeInputs_.size();
   }
@@ -251,6 +261,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.NodeInput node_inputs = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.NodeInput getNodeInputs(int index) {
     return nodeInputs_.get(index);
   }
@@ -262,6 +273,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.NodeInput node_inputs = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.NodeInputOrBuilder getNodeInputsOrBuilder(
       int index) {
     return nodeInputs_.get(index);
@@ -277,6 +289,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool suppress_output = 4;</code>
    * @return The suppressOutput.
    */
+  @java.lang.Override
   public boolean getSuppressOutput() {
     return suppressOutput_;
   }
@@ -295,7 +308,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (model_ != null) {
@@ -316,7 +329,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (model_ != null) {
@@ -1296,6 +1309,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool suppress_output = 4;</code>
      * @return The suppressOutput.
      */
+    @java.lang.Override
     public boolean getSuppressOutput() {
       return suppressOutput_;
     }

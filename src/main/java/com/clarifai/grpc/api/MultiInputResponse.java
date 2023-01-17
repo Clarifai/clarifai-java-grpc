@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.MultiInputResponse}
  */
-public  final class MultiInputResponse extends
+public final class MultiInputResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.MultiInputResponse)
     MultiInputResponseOrBuilder {
@@ -76,6 +76,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Input.parser(), extensionRegistry));
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.InputsAddJob.Builder subBuilder = null;
+            if (inputsAddJob_ != null) {
+              subBuilder = inputsAddJob_.toBuilder();
+            }
+            inputsAddJob_ = input.readMessage(com.clarifai.grpc.api.InputsAddJob.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputsAddJob_);
+              inputsAddJob_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -87,6 +100,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -117,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -124,12 +140,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -139,12 +157,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Input> getInputsList() {
     return inputs_;
   }
   /**
    * <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.InputOrBuilder> 
       getInputsOrBuilderList() {
     return inputs_;
@@ -152,21 +172,50 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public int getInputsCount() {
     return inputs_.size();
   }
   /**
    * <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Input getInputs(int index) {
     return inputs_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.Input inputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.InputOrBuilder getInputsOrBuilder(
       int index) {
     return inputs_.get(index);
+  }
+
+  public static final int INPUTS_ADD_JOB_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.InputsAddJob inputsAddJob_;
+  /**
+   * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+   * @return Whether the inputsAddJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputsAddJob() {
+    return inputsAddJob_ != null;
+  }
+  /**
+   * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+   * @return The inputsAddJob.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputsAddJob getInputsAddJob() {
+    return inputsAddJob_ == null ? com.clarifai.grpc.api.InputsAddJob.getDefaultInstance() : inputsAddJob_;
+  }
+  /**
+   * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputsAddJobOrBuilder getInputsAddJobOrBuilder() {
+    return getInputsAddJob();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -189,6 +238,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < inputs_.size(); i++) {
       output.writeMessage(2, inputs_.get(i));
     }
+    if (inputsAddJob_ != null) {
+      output.writeMessage(3, getInputsAddJob());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -205,6 +257,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < inputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, inputs_.get(i));
+    }
+    if (inputsAddJob_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getInputsAddJob());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -228,6 +284,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInputsList()
         .equals(other.getInputsList())) return false;
+    if (hasInputsAddJob() != other.hasInputsAddJob()) return false;
+    if (hasInputsAddJob()) {
+      if (!getInputsAddJob()
+          .equals(other.getInputsAddJob())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -246,6 +307,10 @@ private static final long serialVersionUID = 0L;
     if (getInputsCount() > 0) {
       hash = (37 * hash) + INPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getInputsList().hashCode();
+    }
+    if (hasInputsAddJob()) {
+      hash = (37 * hash) + INPUTS_ADD_JOB_FIELD_NUMBER;
+      hash = (53 * hash) + getInputsAddJob().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -397,6 +462,12 @@ private static final long serialVersionUID = 0L;
       } else {
         inputsBuilder_.clear();
       }
+      if (inputsAddJobBuilder_ == null) {
+        inputsAddJob_ = null;
+      } else {
+        inputsAddJob_ = null;
+        inputsAddJobBuilder_ = null;
+      }
       return this;
     }
 
@@ -437,6 +508,11 @@ private static final long serialVersionUID = 0L;
         result.inputs_ = inputs_;
       } else {
         result.inputs_ = inputsBuilder_.build();
+      }
+      if (inputsAddJobBuilder_ == null) {
+        result.inputsAddJob_ = inputsAddJob_;
+      } else {
+        result.inputsAddJob_ = inputsAddJobBuilder_.build();
       }
       onBuilt();
       return result;
@@ -514,6 +590,9 @@ private static final long serialVersionUID = 0L;
             inputsBuilder_.addAllMessages(other.inputs_);
           }
         }
+      }
+      if (other.hasInputsAddJob()) {
+        mergeInputsAddJob(other.getInputsAddJob());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -902,6 +981,125 @@ private static final long serialVersionUID = 0L;
         inputs_ = null;
       }
       return inputsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.InputsAddJob inputsAddJob_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.InputsAddJob, com.clarifai.grpc.api.InputsAddJob.Builder, com.clarifai.grpc.api.InputsAddJobOrBuilder> inputsAddJobBuilder_;
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     * @return Whether the inputsAddJob field is set.
+     */
+    public boolean hasInputsAddJob() {
+      return inputsAddJobBuilder_ != null || inputsAddJob_ != null;
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     * @return The inputsAddJob.
+     */
+    public com.clarifai.grpc.api.InputsAddJob getInputsAddJob() {
+      if (inputsAddJobBuilder_ == null) {
+        return inputsAddJob_ == null ? com.clarifai.grpc.api.InputsAddJob.getDefaultInstance() : inputsAddJob_;
+      } else {
+        return inputsAddJobBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    public Builder setInputsAddJob(com.clarifai.grpc.api.InputsAddJob value) {
+      if (inputsAddJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputsAddJob_ = value;
+        onChanged();
+      } else {
+        inputsAddJobBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    public Builder setInputsAddJob(
+        com.clarifai.grpc.api.InputsAddJob.Builder builderForValue) {
+      if (inputsAddJobBuilder_ == null) {
+        inputsAddJob_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputsAddJobBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    public Builder mergeInputsAddJob(com.clarifai.grpc.api.InputsAddJob value) {
+      if (inputsAddJobBuilder_ == null) {
+        if (inputsAddJob_ != null) {
+          inputsAddJob_ =
+            com.clarifai.grpc.api.InputsAddJob.newBuilder(inputsAddJob_).mergeFrom(value).buildPartial();
+        } else {
+          inputsAddJob_ = value;
+        }
+        onChanged();
+      } else {
+        inputsAddJobBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    public Builder clearInputsAddJob() {
+      if (inputsAddJobBuilder_ == null) {
+        inputsAddJob_ = null;
+        onChanged();
+      } else {
+        inputsAddJob_ = null;
+        inputsAddJobBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    public com.clarifai.grpc.api.InputsAddJob.Builder getInputsAddJobBuilder() {
+      
+      onChanged();
+      return getInputsAddJobFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    public com.clarifai.grpc.api.InputsAddJobOrBuilder getInputsAddJobOrBuilder() {
+      if (inputsAddJobBuilder_ != null) {
+        return inputsAddJobBuilder_.getMessageOrBuilder();
+      } else {
+        return inputsAddJob_ == null ?
+            com.clarifai.grpc.api.InputsAddJob.getDefaultInstance() : inputsAddJob_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.InputsAddJob inputs_add_job = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.InputsAddJob, com.clarifai.grpc.api.InputsAddJob.Builder, com.clarifai.grpc.api.InputsAddJobOrBuilder> 
+        getInputsAddJobFieldBuilder() {
+      if (inputsAddJobBuilder_ == null) {
+        inputsAddJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.InputsAddJob, com.clarifai.grpc.api.InputsAddJob.Builder, com.clarifai.grpc.api.InputsAddJobOrBuilder>(
+                getInputsAddJob(),
+                getParentForChildren(),
+                isClean());
+        inputsAddJob_ = null;
+      }
+      return inputsAddJobBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

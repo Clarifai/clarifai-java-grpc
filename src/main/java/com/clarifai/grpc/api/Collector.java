@@ -11,7 +11,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Collector}
  */
-public  final class Collector extends
+public final class Collector extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Collector)
     CollectorOrBuilder {
@@ -131,6 +131,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -162,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -182,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -206,6 +210,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 2;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +231,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 2;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -254,6 +260,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -269,6 +276,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -283,6 +291,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -304,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * <code>string pre_queue_workflow_id = 4;</code>
    * @return The preQueueWorkflowId.
    */
+  @java.lang.Override
   public java.lang.String getPreQueueWorkflowId() {
     java.lang.Object ref = preQueueWorkflowId_;
     if (ref instanceof java.lang.String) {
@@ -331,6 +341,7 @@ private static final long serialVersionUID = 0L;
    * <code>string pre_queue_workflow_id = 4;</code>
    * @return The bytes for preQueueWorkflowId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPreQueueWorkflowIdBytes() {
     java.lang.Object ref = preQueueWorkflowId_;
@@ -359,6 +370,7 @@ private static final long serialVersionUID = 0L;
    * <code>string post_queue_workflow_id = 5;</code>
    * @return The postQueueWorkflowId.
    */
+  @java.lang.Override
   public java.lang.String getPostQueueWorkflowId() {
     java.lang.Object ref = postQueueWorkflowId_;
     if (ref instanceof java.lang.String) {
@@ -383,6 +395,7 @@ private static final long serialVersionUID = 0L;
    * <code>string post_queue_workflow_id = 5;</code>
    * @return The bytes for postQueueWorkflowId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPostQueueWorkflowIdBytes() {
     java.lang.Object ref = postQueueWorkflowId_;
@@ -411,6 +424,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.CollectorSource collector_source = 6;</code>
    * @return Whether the collectorSource field is set.
    */
+  @java.lang.Override
   public boolean hasCollectorSource() {
     return collectorSource_ != null;
   }
@@ -426,6 +440,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.CollectorSource collector_source = 6;</code>
    * @return The collectorSource.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.CollectorSource getCollectorSource() {
     return collectorSource_ == null ? com.clarifai.grpc.api.CollectorSource.getDefaultInstance() : collectorSource_;
   }
@@ -440,6 +455,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.CollectorSource collector_source = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.CollectorSourceOrBuilder getCollectorSourceOrBuilder() {
     return getCollectorSource();
   }
@@ -455,6 +471,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 7;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -467,6 +484,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 7;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -478,6 +496,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -496,19 +515,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     if (createdAt_ != null) {
       output.writeMessage(3, getCreatedAt());
     }
-    if (!getPreQueueWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preQueueWorkflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, preQueueWorkflowId_);
     }
-    if (!getPostQueueWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postQueueWorkflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, postQueueWorkflowId_);
     }
     if (collectorSource_ != null) {
@@ -526,20 +545,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCreatedAt());
     }
-    if (!getPreQueueWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preQueueWorkflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, preQueueWorkflowId_);
     }
-    if (!getPostQueueWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postQueueWorkflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, postQueueWorkflowId_);
     }
     if (collectorSource_ != null) {

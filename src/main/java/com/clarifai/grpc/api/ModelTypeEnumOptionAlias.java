@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * Protobuf type {@code clarifai.api.ModelTypeEnumOptionAlias}
  */
-public  final class ModelTypeEnumOptionAlias extends
+public final class ModelTypeEnumOptionAlias extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelTypeEnumOptionAlias)
     ModelTypeEnumOptionAliasOrBuilder {
@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ModelTypeEnumOptionAlias() {
+    wildcardString_ = "";
   }
 
   @java.lang.Override
@@ -53,6 +54,12 @@ private static final long serialVersionUID = 0L;
             idInt_ = input.readInt64();
             break;
           }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            wildcardString_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -64,6 +71,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -95,8 +104,55 @@ private static final long serialVersionUID = 0L;
    * <code>int64 id_int = 1;</code>
    * @return The idInt.
    */
+  @java.lang.Override
   public long getIdInt() {
     return idInt_;
+  }
+
+  public static final int WILDCARD_STRING_FIELD_NUMBER = 2;
+  private volatile java.lang.Object wildcardString_;
+  /**
+   * <pre>
+   * String that can contain wild cards and the regex needs to match.
+   * </pre>
+   *
+   * <code>string wildcard_string = 2;</code>
+   * @return The wildcardString.
+   */
+  @java.lang.Override
+  public java.lang.String getWildcardString() {
+    java.lang.Object ref = wildcardString_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      wildcardString_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * String that can contain wild cards and the regex needs to match.
+   * </pre>
+   *
+   * <code>string wildcard_string = 2;</code>
+   * @return The bytes for wildcardString.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWildcardStringBytes() {
+    java.lang.Object ref = wildcardString_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      wildcardString_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -116,6 +172,9 @@ private static final long serialVersionUID = 0L;
     if (idInt_ != 0L) {
       output.writeInt64(1, idInt_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(wildcardString_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, wildcardString_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -128,6 +187,9 @@ private static final long serialVersionUID = 0L;
     if (idInt_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, idInt_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(wildcardString_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, wildcardString_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -146,6 +208,8 @@ private static final long serialVersionUID = 0L;
 
     if (getIdInt()
         != other.getIdInt()) return false;
+    if (!getWildcardString()
+        .equals(other.getWildcardString())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -160,6 +224,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ID_INT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getIdInt());
+    hash = (37 * hash) + WILDCARD_STRING_FIELD_NUMBER;
+    hash = (53 * hash) + getWildcardString().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -295,6 +361,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       idInt_ = 0L;
 
+      wildcardString_ = "";
+
       return this;
     }
 
@@ -322,6 +390,7 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.ModelTypeEnumOptionAlias buildPartial() {
       com.clarifai.grpc.api.ModelTypeEnumOptionAlias result = new com.clarifai.grpc.api.ModelTypeEnumOptionAlias(this);
       result.idInt_ = idInt_;
+      result.wildcardString_ = wildcardString_;
       onBuilt();
       return result;
     }
@@ -373,6 +442,10 @@ private static final long serialVersionUID = 0L;
       if (other.getIdInt() != 0L) {
         setIdInt(other.getIdInt());
       }
+      if (!other.getWildcardString().isEmpty()) {
+        wildcardString_ = other.wildcardString_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -411,6 +484,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 id_int = 1;</code>
      * @return The idInt.
      */
+    @java.lang.Override
     public long getIdInt() {
       return idInt_;
     }
@@ -440,6 +514,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearIdInt() {
       
       idInt_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object wildcardString_ = "";
+    /**
+     * <pre>
+     * String that can contain wild cards and the regex needs to match.
+     * </pre>
+     *
+     * <code>string wildcard_string = 2;</code>
+     * @return The wildcardString.
+     */
+    public java.lang.String getWildcardString() {
+      java.lang.Object ref = wildcardString_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        wildcardString_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * String that can contain wild cards and the regex needs to match.
+     * </pre>
+     *
+     * <code>string wildcard_string = 2;</code>
+     * @return The bytes for wildcardString.
+     */
+    public com.google.protobuf.ByteString
+        getWildcardStringBytes() {
+      java.lang.Object ref = wildcardString_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        wildcardString_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * String that can contain wild cards and the regex needs to match.
+     * </pre>
+     *
+     * <code>string wildcard_string = 2;</code>
+     * @param value The wildcardString to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWildcardString(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      wildcardString_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * String that can contain wild cards and the regex needs to match.
+     * </pre>
+     *
+     * <code>string wildcard_string = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWildcardString() {
+      
+      wildcardString_ = getDefaultInstance().getWildcardString();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * String that can contain wild cards and the regex needs to match.
+     * </pre>
+     *
+     * <code>string wildcard_string = 2;</code>
+     * @param value The bytes for wildcardString to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWildcardStringBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      wildcardString_ = value;
       onChanged();
       return this;
     }

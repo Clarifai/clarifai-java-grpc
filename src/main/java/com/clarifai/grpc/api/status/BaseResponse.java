@@ -11,7 +11,7 @@ package com.clarifai.grpc.api.status;
  *
  * Protobuf type {@code clarifai.api.status.BaseResponse}
  */
-public  final class BaseResponse extends
+public final class BaseResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.status.BaseResponse)
     BaseResponseOrBuilder {
@@ -77,6 +77,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -104,6 +106,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -111,12 +114,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PatchConceptsRequest}
  */
-public  final class PatchConceptsRequest extends
+public final class PatchConceptsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PatchConceptsRequest)
     PatchConceptsRequestOrBuilder {
@@ -94,6 +94,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -124,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -131,12 +134,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -150,6 +155,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Concept> getConceptsList() {
     return concepts_;
   }
@@ -160,6 +166,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
       getConceptsOrBuilderList() {
     return concepts_;
@@ -171,6 +178,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 2;</code>
    */
+  @java.lang.Override
   public int getConceptsCount() {
     return concepts_.size();
   }
@@ -181,6 +189,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getConcepts(int index) {
     return concepts_.get(index);
   }
@@ -191,6 +200,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getConceptsOrBuilder(
       int index) {
     return concepts_.get(index);
@@ -207,6 +217,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 3;</code>
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -228,6 +239,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 3;</code>
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActionBytes() {
     java.lang.Object ref = action_;
@@ -262,7 +274,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < concepts_.size(); i++) {
       output.writeMessage(2, concepts_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, action_);
     }
     unknownFields.writeTo(output);
@@ -282,7 +294,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, concepts_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, action_);
     }
     size += unknownFields.getSerializedSize();

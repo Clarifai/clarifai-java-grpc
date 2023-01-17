@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Polygon}
  */
-public  final class Polygon extends
+public final class Polygon extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Polygon)
     PolygonOrBuilder {
@@ -74,6 +74,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -107,6 +109,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Point points = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Point> getPointsList() {
     return points_;
   }
@@ -117,6 +120,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Point points = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.PointOrBuilder> 
       getPointsOrBuilderList() {
     return points_;
@@ -128,6 +132,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Point points = 1;</code>
    */
+  @java.lang.Override
   public int getPointsCount() {
     return points_.size();
   }
@@ -138,6 +143,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Point points = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Point getPoints(int index) {
     return points_.get(index);
   }
@@ -148,6 +154,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Point points = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PointOrBuilder getPointsOrBuilder(
       int index) {
     return points_.get(index);

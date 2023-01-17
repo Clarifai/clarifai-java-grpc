@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.LOPQEvalResult}
  */
-public  final class LOPQEvalResult extends
+public final class LOPQEvalResult extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.LOPQEvalResult)
     LOPQEvalResultOrBuilder {
@@ -93,6 +93,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -124,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 k = 1;</code>
    * @return The k.
    */
+  @java.lang.Override
   public int getK() {
     return k_;
   }
@@ -138,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The recallVsBruteForce.
    */
+  @java.lang.Override
   public float getRecallVsBruteForce() {
     return recallVsBruteForce_;
   }
@@ -152,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The kendallTauVsBruteForce.
    */
+  @java.lang.Override
   public float getKendallTauVsBruteForce() {
     return kendallTauVsBruteForce_;
   }
@@ -166,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The mostFrequentCodePercent.
    */
+  @java.lang.Override
   public float getMostFrequentCodePercent() {
     return mostFrequentCodePercent_;
   }
@@ -197,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The lopqNdcg.
    */
+  @java.lang.Override
   public float getLopqNdcg() {
     return lopqNdcg_;
   }
@@ -212,6 +219,7 @@ private static final long serialVersionUID = 0L;
    * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The bruteForceNdcg.
    */
+  @java.lang.Override
   public float getBruteForceNdcg() {
     return bruteForceNdcg_;
   }
@@ -233,19 +241,19 @@ private static final long serialVersionUID = 0L;
     if (k_ != 0) {
       output.writeInt32(1, k_);
     }
-    if (recallVsBruteForce_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(recallVsBruteForce_) != 0) {
       output.writeFloat(2, recallVsBruteForce_);
     }
-    if (kendallTauVsBruteForce_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(kendallTauVsBruteForce_) != 0) {
       output.writeFloat(3, kendallTauVsBruteForce_);
     }
-    if (mostFrequentCodePercent_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(mostFrequentCodePercent_) != 0) {
       output.writeFloat(4, mostFrequentCodePercent_);
     }
-    if (lopqNdcg_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(lopqNdcg_) != 0) {
       output.writeFloat(5, lopqNdcg_);
     }
-    if (bruteForceNdcg_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(bruteForceNdcg_) != 0) {
       output.writeFloat(6, bruteForceNdcg_);
     }
     unknownFields.writeTo(output);
@@ -261,23 +269,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, k_);
     }
-    if (recallVsBruteForce_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(recallVsBruteForce_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, recallVsBruteForce_);
     }
-    if (kendallTauVsBruteForce_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(kendallTauVsBruteForce_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, kendallTauVsBruteForce_);
     }
-    if (mostFrequentCodePercent_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(mostFrequentCodePercent_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, mostFrequentCodePercent_);
     }
-    if (lopqNdcg_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(lopqNdcg_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, lopqNdcg_);
     }
-    if (bruteForceNdcg_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(bruteForceNdcg_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(6, bruteForceNdcg_);
     }
@@ -626,6 +634,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 k = 1;</code>
      * @return The k.
      */
+    @java.lang.Override
     public int getK() {
       return k_;
     }
@@ -668,6 +677,7 @@ private static final long serialVersionUID = 0L;
      * <code>float recall_vs_brute_force = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The recallVsBruteForce.
      */
+    @java.lang.Override
     public float getRecallVsBruteForce() {
       return recallVsBruteForce_;
     }
@@ -710,6 +720,7 @@ private static final long serialVersionUID = 0L;
      * <code>float kendall_tau_vs_brute_force = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The kendallTauVsBruteForce.
      */
+    @java.lang.Override
     public float getKendallTauVsBruteForce() {
       return kendallTauVsBruteForce_;
     }
@@ -752,6 +763,7 @@ private static final long serialVersionUID = 0L;
      * <code>float most_frequent_code_percent = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The mostFrequentCodePercent.
      */
+    @java.lang.Override
     public float getMostFrequentCodePercent() {
       return mostFrequentCodePercent_;
     }
@@ -811,6 +823,7 @@ private static final long serialVersionUID = 0L;
      * <code>float lopq_ndcg = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The lopqNdcg.
      */
+    @java.lang.Override
     public float getLopqNdcg() {
       return lopqNdcg_;
     }
@@ -888,6 +901,7 @@ private static final long serialVersionUID = 0L;
      * <code>float brute_force_ndcg = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The bruteForceNdcg.
      */
+    @java.lang.Override
     public float getBruteForceNdcg() {
       return bruteForceNdcg_;
     }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.FieldsValue}
  */
-public  final class FieldsValue extends
+public final class FieldsValue extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.FieldsValue)
     FieldsValueOrBuilder {
@@ -98,6 +98,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -125,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool confusion_matrix = 1;</code>
    * @return The confusionMatrix.
    */
+  @java.lang.Override
   public boolean getConfusionMatrix() {
     return confusionMatrix_;
   }
@@ -135,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool cooccurrence_matrix = 2;</code>
    * @return The cooccurrenceMatrix.
    */
+  @java.lang.Override
   public boolean getCooccurrenceMatrix() {
     return cooccurrenceMatrix_;
   }
@@ -145,6 +149,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool label_counts = 3;</code>
    * @return The labelCounts.
    */
+  @java.lang.Override
   public boolean getLabelCounts() {
     return labelCounts_;
   }
@@ -155,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool binary_metrics = 4;</code>
    * @return The binaryMetrics.
    */
+  @java.lang.Override
   public boolean getBinaryMetrics() {
     return binaryMetrics_;
   }
@@ -165,6 +171,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool test_set = 5;</code>
    * @return The testSet.
    */
+  @java.lang.Override
   public boolean getTestSet() {
     return testSet_;
   }
@@ -175,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool metrics_by_area = 6;</code>
    * @return The metricsByArea.
    */
+  @java.lang.Override
   public boolean getMetricsByArea() {
     return metricsByArea_;
   }
@@ -185,6 +193,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool metrics_by_class = 7;</code>
    * @return The metricsByClass.
    */
+  @java.lang.Override
   public boolean getMetricsByClass() {
     return metricsByClass_;
   }
@@ -609,6 +618,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool confusion_matrix = 1;</code>
      * @return The confusionMatrix.
      */
+    @java.lang.Override
     public boolean getConfusionMatrix() {
       return confusionMatrix_;
     }
@@ -639,6 +649,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool cooccurrence_matrix = 2;</code>
      * @return The cooccurrenceMatrix.
      */
+    @java.lang.Override
     public boolean getCooccurrenceMatrix() {
       return cooccurrenceMatrix_;
     }
@@ -669,6 +680,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool label_counts = 3;</code>
      * @return The labelCounts.
      */
+    @java.lang.Override
     public boolean getLabelCounts() {
       return labelCounts_;
     }
@@ -699,6 +711,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool binary_metrics = 4;</code>
      * @return The binaryMetrics.
      */
+    @java.lang.Override
     public boolean getBinaryMetrics() {
       return binaryMetrics_;
     }
@@ -729,6 +742,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool test_set = 5;</code>
      * @return The testSet.
      */
+    @java.lang.Override
     public boolean getTestSet() {
       return testSet_;
     }
@@ -759,6 +773,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool metrics_by_area = 6;</code>
      * @return The metricsByArea.
      */
+    @java.lang.Override
     public boolean getMetricsByArea() {
       return metricsByArea_;
     }
@@ -789,6 +804,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool metrics_by_class = 7;</code>
      * @return The metricsByClass.
      */
+    @java.lang.Override
     public boolean getMetricsByClass() {
       return metricsByClass_;
     }

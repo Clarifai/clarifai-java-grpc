@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelVersion}
  */
-public  final class ModelVersion extends
+public final class ModelVersion extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelVersion)
     ModelVersionOrBuilder {
@@ -112,6 +112,19 @@ private static final long serialVersionUID = 0L;
             totalInputCount_ = input.readUInt32();
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.PretrainedModelConfig.Builder subBuilder = null;
+            if (pretrainedModelConfig_ != null) {
+              subBuilder = pretrainedModelConfig_.toBuilder();
+            }
+            pretrainedModelConfig_ = input.readMessage(com.clarifai.grpc.api.PretrainedModelConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(pretrainedModelConfig_);
+              pretrainedModelConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 82: {
             com.google.protobuf.Timestamp.Builder subBuilder = null;
             if (completedAt_ != null) {
@@ -201,6 +214,58 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 154: {
+            com.clarifai.grpc.api.OutputInfo.Builder subBuilder = null;
+            if (outputInfo_ != null) {
+              subBuilder = outputInfo_.toBuilder();
+            }
+            outputInfo_ = input.readMessage(com.clarifai.grpc.api.OutputInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(outputInfo_);
+              outputInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 162: {
+            com.clarifai.grpc.api.InputInfo.Builder subBuilder = null;
+            if (inputInfo_ != null) {
+              subBuilder = inputInfo_.toBuilder();
+            }
+            inputInfo_ = input.readMessage(com.clarifai.grpc.api.InputInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputInfo_);
+              inputInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 170: {
+            com.clarifai.grpc.api.TrainInfo.Builder subBuilder = null;
+            if (trainInfo_ != null) {
+              subBuilder = trainInfo_.toBuilder();
+            }
+            trainInfo_ = input.readMessage(com.clarifai.grpc.api.TrainInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(trainInfo_);
+              trainInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 178: {
+            com.clarifai.grpc.api.ImportInfo.Builder subBuilder = null;
+            if (importInfo_ != null) {
+              subBuilder = importInfo_.toBuilder();
+            }
+            importInfo_ = input.readMessage(com.clarifai.grpc.api.ImportInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(importInfo_);
+              importInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -212,6 +277,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -239,6 +306,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -255,6 +323,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -279,6 +348,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -290,6 +360,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -300,6 +371,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -314,6 +386,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 3;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -325,6 +398,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 3;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -335,6 +409,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -345,6 +420,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 active_concept_count = 4;</code>
    * @return The activeConceptCount.
    */
+  @java.lang.Override
   public int getActiveConceptCount() {
     return activeConceptCount_;
   }
@@ -355,6 +431,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
    * @return Whether the metrics field is set.
    */
+  @java.lang.Override
   public boolean hasMetrics() {
     return metrics_ != null;
   }
@@ -362,12 +439,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
    * @return The metrics.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EvalMetrics getMetrics() {
     return metrics_ == null ? com.clarifai.grpc.api.EvalMetrics.getDefaultInstance() : metrics_;
   }
   /**
    * <code>.clarifai.api.EvalMetrics metrics = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EvalMetricsOrBuilder getMetricsOrBuilder() {
     return getMetrics();
   }
@@ -382,8 +461,35 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 total_input_count = 6;</code>
    * @return The totalInputCount.
    */
+  @java.lang.Override
   public int getTotalInputCount() {
     return totalInputCount_;
+  }
+
+  public static final int PRETRAINED_MODEL_CONFIG_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.PretrainedModelConfig pretrainedModelConfig_;
+  /**
+   * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+   * @return Whether the pretrainedModelConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPretrainedModelConfig() {
+    return pretrainedModelConfig_ != null;
+  }
+  /**
+   * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+   * @return The pretrainedModelConfig.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PretrainedModelConfig getPretrainedModelConfig() {
+    return pretrainedModelConfig_ == null ? com.clarifai.grpc.api.PretrainedModelConfig.getDefaultInstance() : pretrainedModelConfig_;
+  }
+  /**
+   * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PretrainedModelConfigOrBuilder getPretrainedModelConfigOrBuilder() {
+    return getPretrainedModelConfig();
   }
 
   public static final int COMPLETED_AT_FIELD_NUMBER = 10;
@@ -396,6 +502,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
    * @return Whether the completedAt field is set.
    */
+  @java.lang.Override
   public boolean hasCompletedAt() {
     return completedAt_ != null;
   }
@@ -407,6 +514,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
    * @return The completedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCompletedAt() {
     return completedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completedAt_;
   }
@@ -417,6 +525,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp completed_at = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCompletedAtOrBuilder() {
     return getCompletedAt();
   }
@@ -431,6 +540,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 11;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -451,6 +561,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 11;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -477,6 +588,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 12;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -490,6 +602,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 12;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -502,6 +615,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 12;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -516,6 +630,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 13;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -536,6 +651,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 13;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -560,6 +676,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 14;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -580,6 +697,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 14;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -604,6 +722,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 15;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -615,6 +734,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 15;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -625,6 +745,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 15;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -640,6 +761,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 16;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -652,6 +774,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 16;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -663,6 +786,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 16;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -673,6 +797,7 @@ private static final long serialVersionUID = 0L;
    * <code>string license = 17;</code>
    * @return The license.
    */
+  @java.lang.Override
   public java.lang.String getLicense() {
     java.lang.Object ref = license_;
     if (ref instanceof java.lang.String) {
@@ -689,6 +814,7 @@ private static final long serialVersionUID = 0L;
    * <code>string license = 17;</code>
    * @return The bytes for license.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLicenseBytes() {
     java.lang.Object ref = license_;
@@ -713,6 +839,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
    * @return Whether the datasetVersion field is set.
    */
+  @java.lang.Override
   public boolean hasDatasetVersion() {
     return datasetVersion_ != null;
   }
@@ -724,6 +851,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
    * @return The datasetVersion.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DatasetVersion getDatasetVersion() {
     return datasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
   }
@@ -734,8 +862,161 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder() {
     return getDatasetVersion();
+  }
+
+  public static final int OUTPUT_INFO_FIELD_NUMBER = 19;
+  private com.clarifai.grpc.api.OutputInfo outputInfo_;
+  /**
+   * <pre>
+   * Info about the model's output and configuration.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+   * @return Whether the outputInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputInfo() {
+    return outputInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Info about the model's output and configuration.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+   * @return The outputInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
+    return outputInfo_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfo_;
+  }
+  /**
+   * <pre>
+   * Info about the model's output and configuration.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder() {
+    return getOutputInfo();
+  }
+
+  public static final int INPUT_INFO_FIELD_NUMBER = 20;
+  private com.clarifai.grpc.api.InputInfo inputInfo_;
+  /**
+   * <pre>
+   * Info about the models' input and configuration of them.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputInfo input_info = 20;</code>
+   * @return Whether the inputInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputInfo() {
+    return inputInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Info about the models' input and configuration of them.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputInfo input_info = 20;</code>
+   * @return The inputInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputInfo getInputInfo() {
+    return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
+  }
+  /**
+   * <pre>
+   * Info about the models' input and configuration of them.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputInfo input_info = 20;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
+    return getInputInfo();
+  }
+
+  public static final int TRAIN_INFO_FIELD_NUMBER = 21;
+  private com.clarifai.grpc.api.TrainInfo trainInfo_;
+  /**
+   * <pre>
+   * Configuration for the training process of this model.
+   * </pre>
+   *
+   * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+   * @return Whether the trainInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrainInfo() {
+    return trainInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Configuration for the training process of this model.
+   * </pre>
+   *
+   * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+   * @return The trainInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
+    return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
+  }
+  /**
+   * <pre>
+   * Configuration for the training process of this model.
+   * </pre>
+   *
+   * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
+    return getTrainInfo();
+  }
+
+  public static final int IMPORT_INFO_FIELD_NUMBER = 22;
+  private com.clarifai.grpc.api.ImportInfo importInfo_;
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * @return Whether the importInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportInfo() {
+    return importInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   * @return The importInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+    return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
+  }
+  /**
+   * <pre>
+   * Configuration used to import model from third-party toolkits
+   * </pre>
+   *
+   * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+    return getImportInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -752,7 +1033,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (createdAt_ != null) {
@@ -770,19 +1051,22 @@ private static final long serialVersionUID = 0L;
     if (totalInputCount_ != 0) {
       output.writeUInt32(6, totalInputCount_);
     }
+    if (pretrainedModelConfig_ != null) {
+      output.writeMessage(7, getPretrainedModelConfig());
+    }
     if (completedAt_ != null) {
       output.writeMessage(10, getCompletedAt());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, description_);
     }
     if (visibility_ != null) {
       output.writeMessage(12, getVisibility());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, appId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, userId_);
     }
     if (modifiedAt_ != null) {
@@ -791,11 +1075,23 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(16, getMetadata());
     }
-    if (!getLicenseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, license_);
     }
     if (datasetVersion_ != null) {
       output.writeMessage(18, getDatasetVersion());
+    }
+    if (outputInfo_ != null) {
+      output.writeMessage(19, getOutputInfo());
+    }
+    if (inputInfo_ != null) {
+      output.writeMessage(20, getInputInfo());
+    }
+    if (trainInfo_ != null) {
+      output.writeMessage(21, getTrainInfo());
+    }
+    if (importInfo_ != null) {
+      output.writeMessage(22, getImportInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -806,7 +1102,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (createdAt_ != null) {
@@ -829,21 +1125,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, totalInputCount_);
     }
+    if (pretrainedModelConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getPretrainedModelConfig());
+    }
     if (completedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getCompletedAt());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, description_);
     }
     if (visibility_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getVisibility());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, appId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, userId_);
     }
     if (modifiedAt_ != null) {
@@ -854,12 +1154,28 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getMetadata());
     }
-    if (!getLicenseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, license_);
     }
     if (datasetVersion_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getDatasetVersion());
+    }
+    if (outputInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getOutputInfo());
+    }
+    if (inputInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getInputInfo());
+    }
+    if (trainInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getTrainInfo());
+    }
+    if (importInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getImportInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -897,6 +1213,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getTotalInputCount()
         != other.getTotalInputCount()) return false;
+    if (hasPretrainedModelConfig() != other.hasPretrainedModelConfig()) return false;
+    if (hasPretrainedModelConfig()) {
+      if (!getPretrainedModelConfig()
+          .equals(other.getPretrainedModelConfig())) return false;
+    }
     if (hasCompletedAt() != other.hasCompletedAt()) return false;
     if (hasCompletedAt()) {
       if (!getCompletedAt()
@@ -930,6 +1251,26 @@ private static final long serialVersionUID = 0L;
       if (!getDatasetVersion()
           .equals(other.getDatasetVersion())) return false;
     }
+    if (hasOutputInfo() != other.hasOutputInfo()) return false;
+    if (hasOutputInfo()) {
+      if (!getOutputInfo()
+          .equals(other.getOutputInfo())) return false;
+    }
+    if (hasInputInfo() != other.hasInputInfo()) return false;
+    if (hasInputInfo()) {
+      if (!getInputInfo()
+          .equals(other.getInputInfo())) return false;
+    }
+    if (hasTrainInfo() != other.hasTrainInfo()) return false;
+    if (hasTrainInfo()) {
+      if (!getTrainInfo()
+          .equals(other.getTrainInfo())) return false;
+    }
+    if (hasImportInfo() != other.hasImportInfo()) return false;
+    if (hasImportInfo()) {
+      if (!getImportInfo()
+          .equals(other.getImportInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -959,6 +1300,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TOTAL_INPUT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTotalInputCount();
+    if (hasPretrainedModelConfig()) {
+      hash = (37 * hash) + PRETRAINED_MODEL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPretrainedModelConfig().hashCode();
+    }
     if (hasCompletedAt()) {
       hash = (37 * hash) + COMPLETED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCompletedAt().hashCode();
@@ -986,6 +1331,22 @@ private static final long serialVersionUID = 0L;
     if (hasDatasetVersion()) {
       hash = (37 * hash) + DATASET_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getDatasetVersion().hashCode();
+    }
+    if (hasOutputInfo()) {
+      hash = (37 * hash) + OUTPUT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputInfo().hashCode();
+    }
+    if (hasInputInfo()) {
+      hash = (37 * hash) + INPUT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getInputInfo().hashCode();
+    }
+    if (hasTrainInfo()) {
+      hash = (37 * hash) + TRAIN_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTrainInfo().hashCode();
+    }
+    if (hasImportInfo()) {
+      hash = (37 * hash) + IMPORT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getImportInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1148,6 +1509,12 @@ private static final long serialVersionUID = 0L;
       }
       totalInputCount_ = 0;
 
+      if (pretrainedModelConfigBuilder_ == null) {
+        pretrainedModelConfig_ = null;
+      } else {
+        pretrainedModelConfig_ = null;
+        pretrainedModelConfigBuilder_ = null;
+      }
       if (completedAtBuilder_ == null) {
         completedAt_ = null;
       } else {
@@ -1185,6 +1552,30 @@ private static final long serialVersionUID = 0L;
       } else {
         datasetVersion_ = null;
         datasetVersionBuilder_ = null;
+      }
+      if (outputInfoBuilder_ == null) {
+        outputInfo_ = null;
+      } else {
+        outputInfo_ = null;
+        outputInfoBuilder_ = null;
+      }
+      if (inputInfoBuilder_ == null) {
+        inputInfo_ = null;
+      } else {
+        inputInfo_ = null;
+        inputInfoBuilder_ = null;
+      }
+      if (trainInfoBuilder_ == null) {
+        trainInfo_ = null;
+      } else {
+        trainInfo_ = null;
+        trainInfoBuilder_ = null;
+      }
+      if (importInfoBuilder_ == null) {
+        importInfo_ = null;
+      } else {
+        importInfo_ = null;
+        importInfoBuilder_ = null;
       }
       return this;
     }
@@ -1230,6 +1621,11 @@ private static final long serialVersionUID = 0L;
         result.metrics_ = metricsBuilder_.build();
       }
       result.totalInputCount_ = totalInputCount_;
+      if (pretrainedModelConfigBuilder_ == null) {
+        result.pretrainedModelConfig_ = pretrainedModelConfig_;
+      } else {
+        result.pretrainedModelConfig_ = pretrainedModelConfigBuilder_.build();
+      }
       if (completedAtBuilder_ == null) {
         result.completedAt_ = completedAt_;
       } else {
@@ -1258,6 +1654,26 @@ private static final long serialVersionUID = 0L;
         result.datasetVersion_ = datasetVersion_;
       } else {
         result.datasetVersion_ = datasetVersionBuilder_.build();
+      }
+      if (outputInfoBuilder_ == null) {
+        result.outputInfo_ = outputInfo_;
+      } else {
+        result.outputInfo_ = outputInfoBuilder_.build();
+      }
+      if (inputInfoBuilder_ == null) {
+        result.inputInfo_ = inputInfo_;
+      } else {
+        result.inputInfo_ = inputInfoBuilder_.build();
+      }
+      if (trainInfoBuilder_ == null) {
+        result.trainInfo_ = trainInfo_;
+      } else {
+        result.trainInfo_ = trainInfoBuilder_.build();
+      }
+      if (importInfoBuilder_ == null) {
+        result.importInfo_ = importInfo_;
+      } else {
+        result.importInfo_ = importInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1326,6 +1742,9 @@ private static final long serialVersionUID = 0L;
       if (other.getTotalInputCount() != 0) {
         setTotalInputCount(other.getTotalInputCount());
       }
+      if (other.hasPretrainedModelConfig()) {
+        mergePretrainedModelConfig(other.getPretrainedModelConfig());
+      }
       if (other.hasCompletedAt()) {
         mergeCompletedAt(other.getCompletedAt());
       }
@@ -1356,6 +1775,18 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDatasetVersion()) {
         mergeDatasetVersion(other.getDatasetVersion());
+      }
+      if (other.hasOutputInfo()) {
+        mergeOutputInfo(other.getOutputInfo());
+      }
+      if (other.hasInputInfo()) {
+        mergeInputInfo(other.getInputInfo());
+      }
+      if (other.hasTrainInfo()) {
+        mergeTrainInfo(other.getTrainInfo());
+      }
+      if (other.hasImportInfo()) {
+        mergeImportInfo(other.getImportInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1777,6 +2208,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 active_concept_count = 4;</code>
      * @return The activeConceptCount.
      */
+    @java.lang.Override
     public int getActiveConceptCount() {
       return activeConceptCount_;
     }
@@ -1930,6 +2362,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 total_input_count = 6;</code>
      * @return The totalInputCount.
      */
+    @java.lang.Override
     public int getTotalInputCount() {
       return totalInputCount_;
     }
@@ -1961,6 +2394,125 @@ private static final long serialVersionUID = 0L;
       totalInputCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.PretrainedModelConfig pretrainedModelConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.PretrainedModelConfig, com.clarifai.grpc.api.PretrainedModelConfig.Builder, com.clarifai.grpc.api.PretrainedModelConfigOrBuilder> pretrainedModelConfigBuilder_;
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     * @return Whether the pretrainedModelConfig field is set.
+     */
+    public boolean hasPretrainedModelConfig() {
+      return pretrainedModelConfigBuilder_ != null || pretrainedModelConfig_ != null;
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     * @return The pretrainedModelConfig.
+     */
+    public com.clarifai.grpc.api.PretrainedModelConfig getPretrainedModelConfig() {
+      if (pretrainedModelConfigBuilder_ == null) {
+        return pretrainedModelConfig_ == null ? com.clarifai.grpc.api.PretrainedModelConfig.getDefaultInstance() : pretrainedModelConfig_;
+      } else {
+        return pretrainedModelConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    public Builder setPretrainedModelConfig(com.clarifai.grpc.api.PretrainedModelConfig value) {
+      if (pretrainedModelConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pretrainedModelConfig_ = value;
+        onChanged();
+      } else {
+        pretrainedModelConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    public Builder setPretrainedModelConfig(
+        com.clarifai.grpc.api.PretrainedModelConfig.Builder builderForValue) {
+      if (pretrainedModelConfigBuilder_ == null) {
+        pretrainedModelConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        pretrainedModelConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    public Builder mergePretrainedModelConfig(com.clarifai.grpc.api.PretrainedModelConfig value) {
+      if (pretrainedModelConfigBuilder_ == null) {
+        if (pretrainedModelConfig_ != null) {
+          pretrainedModelConfig_ =
+            com.clarifai.grpc.api.PretrainedModelConfig.newBuilder(pretrainedModelConfig_).mergeFrom(value).buildPartial();
+        } else {
+          pretrainedModelConfig_ = value;
+        }
+        onChanged();
+      } else {
+        pretrainedModelConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    public Builder clearPretrainedModelConfig() {
+      if (pretrainedModelConfigBuilder_ == null) {
+        pretrainedModelConfig_ = null;
+        onChanged();
+      } else {
+        pretrainedModelConfig_ = null;
+        pretrainedModelConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    public com.clarifai.grpc.api.PretrainedModelConfig.Builder getPretrainedModelConfigBuilder() {
+      
+      onChanged();
+      return getPretrainedModelConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    public com.clarifai.grpc.api.PretrainedModelConfigOrBuilder getPretrainedModelConfigOrBuilder() {
+      if (pretrainedModelConfigBuilder_ != null) {
+        return pretrainedModelConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pretrainedModelConfig_ == null ?
+            com.clarifai.grpc.api.PretrainedModelConfig.getDefaultInstance() : pretrainedModelConfig_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.PretrainedModelConfig pretrained_model_config = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.PretrainedModelConfig, com.clarifai.grpc.api.PretrainedModelConfig.Builder, com.clarifai.grpc.api.PretrainedModelConfigOrBuilder> 
+        getPretrainedModelConfigFieldBuilder() {
+      if (pretrainedModelConfigBuilder_ == null) {
+        pretrainedModelConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.PretrainedModelConfig, com.clarifai.grpc.api.PretrainedModelConfig.Builder, com.clarifai.grpc.api.PretrainedModelConfigOrBuilder>(
+                getPretrainedModelConfig(),
+                getParentForChildren(),
+                isClean());
+        pretrainedModelConfig_ = null;
+      }
+      return pretrainedModelConfigBuilder_;
     }
 
     private com.google.protobuf.Timestamp completedAt_;
@@ -3127,6 +3679,626 @@ private static final long serialVersionUID = 0L;
         datasetVersion_ = null;
       }
       return datasetVersionBuilder_;
+    }
+
+    private com.clarifai.grpc.api.OutputInfo outputInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder> outputInfoBuilder_;
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     * @return Whether the outputInfo field is set.
+     */
+    public boolean hasOutputInfo() {
+      return outputInfoBuilder_ != null || outputInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     * @return The outputInfo.
+     */
+    public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
+      if (outputInfoBuilder_ == null) {
+        return outputInfo_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfo_;
+      } else {
+        return outputInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    public Builder setOutputInfo(com.clarifai.grpc.api.OutputInfo value) {
+      if (outputInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputInfo_ = value;
+        onChanged();
+      } else {
+        outputInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    public Builder setOutputInfo(
+        com.clarifai.grpc.api.OutputInfo.Builder builderForValue) {
+      if (outputInfoBuilder_ == null) {
+        outputInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    public Builder mergeOutputInfo(com.clarifai.grpc.api.OutputInfo value) {
+      if (outputInfoBuilder_ == null) {
+        if (outputInfo_ != null) {
+          outputInfo_ =
+            com.clarifai.grpc.api.OutputInfo.newBuilder(outputInfo_).mergeFrom(value).buildPartial();
+        } else {
+          outputInfo_ = value;
+        }
+        onChanged();
+      } else {
+        outputInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    public Builder clearOutputInfo() {
+      if (outputInfoBuilder_ == null) {
+        outputInfo_ = null;
+        onChanged();
+      } else {
+        outputInfo_ = null;
+        outputInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    public com.clarifai.grpc.api.OutputInfo.Builder getOutputInfoBuilder() {
+      
+      onChanged();
+      return getOutputInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOrBuilder() {
+      if (outputInfoBuilder_ != null) {
+        return outputInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return outputInfo_ == null ?
+            com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Info about the model's output and configuration.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder> 
+        getOutputInfoFieldBuilder() {
+      if (outputInfoBuilder_ == null) {
+        outputInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder>(
+                getOutputInfo(),
+                getParentForChildren(),
+                isClean());
+        outputInfo_ = null;
+      }
+      return outputInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.InputInfo inputInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> inputInfoBuilder_;
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     * @return Whether the inputInfo field is set.
+     */
+    public boolean hasInputInfo() {
+      return inputInfoBuilder_ != null || inputInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     * @return The inputInfo.
+     */
+    public com.clarifai.grpc.api.InputInfo getInputInfo() {
+      if (inputInfoBuilder_ == null) {
+        return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
+      } else {
+        return inputInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    public Builder setInputInfo(com.clarifai.grpc.api.InputInfo value) {
+      if (inputInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputInfo_ = value;
+        onChanged();
+      } else {
+        inputInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    public Builder setInputInfo(
+        com.clarifai.grpc.api.InputInfo.Builder builderForValue) {
+      if (inputInfoBuilder_ == null) {
+        inputInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    public Builder mergeInputInfo(com.clarifai.grpc.api.InputInfo value) {
+      if (inputInfoBuilder_ == null) {
+        if (inputInfo_ != null) {
+          inputInfo_ =
+            com.clarifai.grpc.api.InputInfo.newBuilder(inputInfo_).mergeFrom(value).buildPartial();
+        } else {
+          inputInfo_ = value;
+        }
+        onChanged();
+      } else {
+        inputInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    public Builder clearInputInfo() {
+      if (inputInfoBuilder_ == null) {
+        inputInfo_ = null;
+        onChanged();
+      } else {
+        inputInfo_ = null;
+        inputInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    public com.clarifai.grpc.api.InputInfo.Builder getInputInfoBuilder() {
+      
+      onChanged();
+      return getInputInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
+      if (inputInfoBuilder_ != null) {
+        return inputInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return inputInfo_ == null ?
+            com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Info about the models' input and configuration of them.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputInfo input_info = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> 
+        getInputInfoFieldBuilder() {
+      if (inputInfoBuilder_ == null) {
+        inputInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder>(
+                getInputInfo(),
+                getParentForChildren(),
+                isClean());
+        inputInfo_ = null;
+      }
+      return inputInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.TrainInfo trainInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> trainInfoBuilder_;
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     * @return Whether the trainInfo field is set.
+     */
+    public boolean hasTrainInfo() {
+      return trainInfoBuilder_ != null || trainInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     * @return The trainInfo.
+     */
+    public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
+      if (trainInfoBuilder_ == null) {
+        return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
+      } else {
+        return trainInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    public Builder setTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
+      if (trainInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trainInfo_ = value;
+        onChanged();
+      } else {
+        trainInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    public Builder setTrainInfo(
+        com.clarifai.grpc.api.TrainInfo.Builder builderForValue) {
+      if (trainInfoBuilder_ == null) {
+        trainInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        trainInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    public Builder mergeTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
+      if (trainInfoBuilder_ == null) {
+        if (trainInfo_ != null) {
+          trainInfo_ =
+            com.clarifai.grpc.api.TrainInfo.newBuilder(trainInfo_).mergeFrom(value).buildPartial();
+        } else {
+          trainInfo_ = value;
+        }
+        onChanged();
+      } else {
+        trainInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    public Builder clearTrainInfo() {
+      if (trainInfoBuilder_ == null) {
+        trainInfo_ = null;
+        onChanged();
+      } else {
+        trainInfo_ = null;
+        trainInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    public com.clarifai.grpc.api.TrainInfo.Builder getTrainInfoBuilder() {
+      
+      onChanged();
+      return getTrainInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
+      if (trainInfoBuilder_ != null) {
+        return trainInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return trainInfo_ == null ?
+            com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Configuration for the training process of this model.
+     * </pre>
+     *
+     * <code>.clarifai.api.TrainInfo train_info = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> 
+        getTrainInfoFieldBuilder() {
+      if (trainInfoBuilder_ == null) {
+        trainInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder>(
+                getTrainInfo(),
+                getParentForChildren(),
+                isClean());
+        trainInfo_ = null;
+      }
+      return trainInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.ImportInfo importInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> importInfoBuilder_;
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * @return Whether the importInfo field is set.
+     */
+    public boolean hasImportInfo() {
+      return importInfoBuilder_ != null || importInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     * @return The importInfo.
+     */
+    public com.clarifai.grpc.api.ImportInfo getImportInfo() {
+      if (importInfoBuilder_ == null) {
+        return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
+      } else {
+        return importInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+      if (importInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importInfo_ = value;
+        onChanged();
+      } else {
+        importInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    public Builder setImportInfo(
+        com.clarifai.grpc.api.ImportInfo.Builder builderForValue) {
+      if (importInfoBuilder_ == null) {
+        importInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        importInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
+      if (importInfoBuilder_ == null) {
+        if (importInfo_ != null) {
+          importInfo_ =
+            com.clarifai.grpc.api.ImportInfo.newBuilder(importInfo_).mergeFrom(value).buildPartial();
+        } else {
+          importInfo_ = value;
+        }
+        onChanged();
+      } else {
+        importInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    public Builder clearImportInfo() {
+      if (importInfoBuilder_ == null) {
+        importInfo_ = null;
+        onChanged();
+      } else {
+        importInfo_ = null;
+        importInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
+      
+      onChanged();
+      return getImportInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
+      if (importInfoBuilder_ != null) {
+        return importInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return importInfo_ == null ?
+            com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Configuration used to import model from third-party toolkits
+     * </pre>
+     *
+     * <code>.clarifai.api.ImportInfo import_info = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> 
+        getImportInfoFieldBuilder() {
+      if (importInfoBuilder_ == null) {
+        importInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder>(
+                getImportInfo(),
+                getParentForChildren(),
+                isClean());
+        importInfo_ = null;
+      }
+      return importInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

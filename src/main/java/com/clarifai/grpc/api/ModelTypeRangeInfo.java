@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelTypeRangeInfo}
  */
-public  final class ModelTypeRangeInfo extends
+public final class ModelTypeRangeInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelTypeRangeInfo)
     ModelTypeRangeInfoOrBuilder {
@@ -78,6 +78,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -109,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * <code>float min = 1;</code>
    * @return The min.
    */
+  @java.lang.Override
   public float getMin() {
     return min_;
   }
@@ -123,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>float max = 2;</code>
    * @return The max.
    */
+  @java.lang.Override
   public float getMax() {
     return max_;
   }
@@ -138,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * <code>float step = 3;</code>
    * @return The step.
    */
+  @java.lang.Override
   public float getStep() {
     return step_;
   }
@@ -156,13 +161,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (min_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(min_) != 0) {
       output.writeFloat(1, min_);
     }
-    if (max_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(max_) != 0) {
       output.writeFloat(2, max_);
     }
-    if (step_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(step_) != 0) {
       output.writeFloat(3, step_);
     }
     unknownFields.writeTo(output);
@@ -174,15 +179,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (min_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(min_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, min_);
     }
-    if (max_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(max_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, max_);
     }
-    if (step_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(step_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, step_);
     }
@@ -497,6 +502,7 @@ private static final long serialVersionUID = 0L;
      * <code>float min = 1;</code>
      * @return The min.
      */
+    @java.lang.Override
     public float getMin() {
       return min_;
     }
@@ -539,6 +545,7 @@ private static final long serialVersionUID = 0L;
      * <code>float max = 2;</code>
      * @return The max.
      */
+    @java.lang.Override
     public float getMax() {
       return max_;
     }
@@ -582,6 +589,7 @@ private static final long serialVersionUID = 0L;
      * <code>float step = 3;</code>
      * @return The step.
      */
+    @java.lang.Override
     public float getStep() {
       return step_;
     }

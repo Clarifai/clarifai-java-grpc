@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelVersionUnpublishRequest}
  */
-public  final class ModelVersionUnpublishRequest extends
+public final class ModelVersionUnpublishRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelVersionUnpublishRequest)
     ModelVersionUnpublishRequestOrBuilder {
@@ -70,6 +70,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -97,6 +99,7 @@ private static final long serialVersionUID = 0L;
    * <code>string version_id = 1;</code>
    * @return The versionId.
    */
+  @java.lang.Override
   public java.lang.String getVersionId() {
     java.lang.Object ref = versionId_;
     if (ref instanceof java.lang.String) {
@@ -113,6 +116,7 @@ private static final long serialVersionUID = 0L;
    * <code>string version_id = 1;</code>
    * @return The bytes for versionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getVersionIdBytes() {
     java.lang.Object ref = versionId_;
@@ -141,7 +145,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, versionId_);
     }
     unknownFields.writeTo(output);
@@ -153,7 +157,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, versionId_);
     }
     size += unknownFields.getSerializedSize();

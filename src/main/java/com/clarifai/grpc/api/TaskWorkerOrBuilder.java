@@ -29,43 +29,109 @@ public interface TaskWorkerOrBuilder extends
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @return A list containing the userIds.
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getUserIdsList();
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @return The count of userIds.
    */
-  int getUserIdsCount();
+  @java.lang.Deprecated int getUserIdsCount();
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
-  java.lang.String getUserIds(int index);
+  @java.lang.Deprecated java.lang.String getUserIds(int index);
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getUserIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.User> 
+      getUsersList();
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  com.clarifai.grpc.api.User getUsers(int index);
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  int getUsersCount();
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.UserOrBuilder> 
+      getUsersOrBuilderList();
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  com.clarifai.grpc.api.UserOrBuilder getUsersOrBuilder(
+      int index);
 
   /**
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>

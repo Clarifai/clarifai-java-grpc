@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.DeleteWorkflowsRequest}
  */
-public  final class DeleteWorkflowsRequest extends
+public final class DeleteWorkflowsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.DeleteWorkflowsRequest)
     DeleteWorkflowsRequestOrBuilder {
@@ -92,6 +92,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -122,6 +124,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -129,12 +132,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -180,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool delete_all = 3;</code>
    * @return The deleteAll.
    */
+  @java.lang.Override
   public boolean getDeleteAll() {
     return deleteAll_;
   }
@@ -791,6 +797,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool delete_all = 3;</code>
      * @return The deleteAll.
      */
+    @java.lang.Override
     public boolean getDeleteAll() {
       return deleteAll_;
     }

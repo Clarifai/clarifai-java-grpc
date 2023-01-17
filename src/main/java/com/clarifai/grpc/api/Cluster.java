@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Cluster}
  */
-public  final class Cluster extends
+public final class Cluster extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Cluster)
     ClusterOrBuilder {
@@ -113,6 +113,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -146,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -162,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -186,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 count = 2;</code>
    * @return The count.
    */
+  @java.lang.Override
   public int getCount() {
     return count_;
   }
@@ -194,12 +199,14 @@ private static final long serialVersionUID = 0L;
   private float score_;
   /**
    * <pre>
-   * The score assigned to this cluster
+   * The score assigned to this cluster.
+   * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
    * </pre>
    *
    * <code>float score = 3;</code>
    * @return The score.
    */
+  @java.lang.Override
   public float getScore() {
     return score_;
   }
@@ -213,6 +220,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Hit> getHitsList() {
     return hits_;
   }
@@ -223,6 +231,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.HitOrBuilder> 
       getHitsOrBuilderList() {
     return hits_;
@@ -234,6 +243,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 4;</code>
    */
+  @java.lang.Override
   public int getHitsCount() {
     return hits_.size();
   }
@@ -244,6 +254,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Hit getHits(int index) {
     return hits_.get(index);
   }
@@ -254,6 +265,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
       int index) {
     return hits_.get(index);
@@ -265,6 +277,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float projection = 5;</code>
    * @return A list containing the projection.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getProjectionList() {
     return projection_;
@@ -301,13 +314,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     getSerializedSize();
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (count_ != 0) {
       output.writeUInt32(2, count_);
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       output.writeFloat(3, score_);
     }
     for (int i = 0; i < hits_.size(); i++) {
@@ -329,14 +342,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (count_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, count_);
     }
-    if (score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(score_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, score_);
     }
@@ -812,6 +825,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 count = 2;</code>
      * @return The count.
      */
+    @java.lang.Override
     public int getCount() {
       return count_;
     }
@@ -848,18 +862,21 @@ private static final long serialVersionUID = 0L;
     private float score_ ;
     /**
      * <pre>
-     * The score assigned to this cluster
+     * The score assigned to this cluster.
+     * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      * </pre>
      *
      * <code>float score = 3;</code>
      * @return The score.
      */
+    @java.lang.Override
     public float getScore() {
       return score_;
     }
     /**
      * <pre>
-     * The score assigned to this cluster
+     * The score assigned to this cluster.
+     * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      * </pre>
      *
      * <code>float score = 3;</code>
@@ -874,7 +891,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The score assigned to this cluster
+     * The score assigned to this cluster.
+     * For List Clusters endpoint, this represents percentage of inputs in the app assigned to this cluster.
      * </pre>
      *
      * <code>float score = 3;</code>

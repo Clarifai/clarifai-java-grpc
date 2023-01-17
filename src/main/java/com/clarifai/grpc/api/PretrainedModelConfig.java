@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PretrainedModelConfig}
  */
-public  final class PretrainedModelConfig extends
+public final class PretrainedModelConfig extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PretrainedModelConfig)
     PretrainedModelConfigOrBuilder {
@@ -20,9 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PretrainedModelConfig() {
-    id_ = "";
-    type_ = "";
-    dataProviderParams_ = "";
     modelZipUrl_ = "";
   }
 
@@ -56,18 +53,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            type_ = s;
-            break;
-          }
           case 26: {
             com.google.protobuf.Struct.Builder subBuilder = null;
             if (inputFieldsMap_ != null) {
@@ -94,21 +79,10 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            dataProviderParams_ = s;
-            break;
-          }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
             modelZipUrl_ = s;
-            break;
-          }
-          case 56: {
-
-            overwrite_ = input.readBool();
             break;
           }
           default: {
@@ -122,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -143,125 +119,43 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.PretrainedModelConfig.class, com.clarifai.grpc.api.PretrainedModelConfig.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
-  /**
-   * <pre>
-   * This is the internal id of the pretrained model.
-   * </pre>
-   *
-   * <code>string id = 1;</code>
-   * @return The id.
-   */
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * This is the internal id of the pretrained model.
-   * </pre>
-   *
-   * <code>string id = 1;</code>
-   * @return The bytes for id.
-   */
-  public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
-  /**
-   * <pre>
-   * This is the internal type of the pretrained model.
-   * </pre>
-   *
-   * <code>string type = 2;</code>
-   * @return The type.
-   */
-  public java.lang.String getType() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      type_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * This is the internal type of the pretrained model.
-   * </pre>
-   *
-   * <code>string type = 2;</code>
-   * @return The bytes for type.
-   */
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
-    java.lang.Object ref = type_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      type_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int INPUT_FIELDS_MAP_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct inputFieldsMap_;
   /**
    * <pre>
+   * This is the internal id of the pretrained model.
    * Map from the api.Data field names to the Triton config.pbtxt input.
    * </pre>
    *
    * <code>.google.protobuf.Struct input_fields_map = 3;</code>
    * @return Whether the inputFieldsMap field is set.
    */
+  @java.lang.Override
   public boolean hasInputFieldsMap() {
     return inputFieldsMap_ != null;
   }
   /**
    * <pre>
+   * This is the internal id of the pretrained model.
    * Map from the api.Data field names to the Triton config.pbtxt input.
    * </pre>
    *
    * <code>.google.protobuf.Struct input_fields_map = 3;</code>
    * @return The inputFieldsMap.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getInputFieldsMap() {
     return inputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : inputFieldsMap_;
   }
   /**
    * <pre>
+   * This is the internal id of the pretrained model.
    * Map from the api.Data field names to the Triton config.pbtxt input.
    * </pre>
    *
    * <code>.google.protobuf.Struct input_fields_map = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getInputFieldsMapOrBuilder() {
     return getInputFieldsMap();
   }
@@ -276,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct output_fields_map = 4;</code>
    * @return Whether the outputFieldsMap field is set.
    */
+  @java.lang.Override
   public boolean hasOutputFieldsMap() {
     return outputFieldsMap_ != null;
   }
@@ -287,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct output_fields_map = 4;</code>
    * @return The outputFieldsMap.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getOutputFieldsMap() {
     return outputFieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : outputFieldsMap_;
   }
@@ -297,64 +193,24 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct output_fields_map = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getOutputFieldsMapOrBuilder() {
     return getOutputFieldsMap();
-  }
-
-  public static final int DATA_PROVIDER_PARAMS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object dataProviderParams_;
-  /**
-   * <pre>
-   * Preprocessing steps for the model as a json string
-   * </pre>
-   *
-   * <code>string data_provider_params = 5;</code>
-   * @return The dataProviderParams.
-   */
-  public java.lang.String getDataProviderParams() {
-    java.lang.Object ref = dataProviderParams_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      dataProviderParams_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Preprocessing steps for the model as a json string
-   * </pre>
-   *
-   * <code>string data_provider_params = 5;</code>
-   * @return The bytes for dataProviderParams.
-   */
-  public com.google.protobuf.ByteString
-      getDataProviderParamsBytes() {
-    java.lang.Object ref = dataProviderParams_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      dataProviderParams_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int MODEL_ZIP_URL_FIELD_NUMBER = 6;
   private volatile java.lang.Object modelZipUrl_;
   /**
    * <pre>
-   * Url to a zipped up model in triton format with only version 1
+   * Url to a zipped up model in triton format with the following files and folders at the root:
+   *  config.pbtxt
+   *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
    * </pre>
    *
    * <code>string model_zip_url = 6;</code>
    * @return The modelZipUrl.
    */
+  @java.lang.Override
   public java.lang.String getModelZipUrl() {
     java.lang.Object ref = modelZipUrl_;
     if (ref instanceof java.lang.String) {
@@ -369,12 +225,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Url to a zipped up model in triton format with only version 1
+   * Url to a zipped up model in triton format with the following files and folders at the root:
+   *  config.pbtxt
+   *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
    * </pre>
    *
    * <code>string model_zip_url = 6;</code>
    * @return The bytes for modelZipUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelZipUrlBytes() {
     java.lang.Object ref = modelZipUrl_;
@@ -387,20 +246,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int OVERWRITE_FIELD_NUMBER = 7;
-  private boolean overwrite_;
-  /**
-   * <pre>
-   * Whether to overwrite the model for the existing internal id
-   * </pre>
-   *
-   * <code>bool overwrite = 7;</code>
-   * @return The overwrite.
-   */
-  public boolean getOverwrite() {
-    return overwrite_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -417,26 +262,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
-    }
     if (inputFieldsMap_ != null) {
       output.writeMessage(3, getInputFieldsMap());
     }
     if (outputFieldsMap_ != null) {
       output.writeMessage(4, getOutputFieldsMap());
     }
-    if (!getDataProviderParamsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, dataProviderParams_);
-    }
-    if (!getModelZipUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelZipUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelZipUrl_);
-    }
-    if (overwrite_ != false) {
-      output.writeBool(7, overwrite_);
     }
     unknownFields.writeTo(output);
   }
@@ -447,12 +280,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-    }
-    if (!getTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
-    }
     if (inputFieldsMap_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getInputFieldsMap());
@@ -461,15 +288,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getOutputFieldsMap());
     }
-    if (!getDataProviderParamsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, dataProviderParams_);
-    }
-    if (!getModelZipUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelZipUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelZipUrl_);
-    }
-    if (overwrite_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, overwrite_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -486,10 +306,6 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.PretrainedModelConfig other = (com.clarifai.grpc.api.PretrainedModelConfig) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
-    if (!getType()
-        .equals(other.getType())) return false;
     if (hasInputFieldsMap() != other.hasInputFieldsMap()) return false;
     if (hasInputFieldsMap()) {
       if (!getInputFieldsMap()
@@ -500,12 +316,8 @@ private static final long serialVersionUID = 0L;
       if (!getOutputFieldsMap()
           .equals(other.getOutputFieldsMap())) return false;
     }
-    if (!getDataProviderParams()
-        .equals(other.getDataProviderParams())) return false;
     if (!getModelZipUrl()
         .equals(other.getModelZipUrl())) return false;
-    if (getOverwrite()
-        != other.getOverwrite()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -517,10 +329,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getType().hashCode();
     if (hasInputFieldsMap()) {
       hash = (37 * hash) + INPUT_FIELDS_MAP_FIELD_NUMBER;
       hash = (53 * hash) + getInputFieldsMap().hashCode();
@@ -529,13 +337,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + OUTPUT_FIELDS_MAP_FIELD_NUMBER;
       hash = (53 * hash) + getOutputFieldsMap().hashCode();
     }
-    hash = (37 * hash) + DATA_PROVIDER_PARAMS_FIELD_NUMBER;
-    hash = (53 * hash) + getDataProviderParams().hashCode();
     hash = (37 * hash) + MODEL_ZIP_URL_FIELD_NUMBER;
     hash = (53 * hash) + getModelZipUrl().hashCode();
-    hash = (37 * hash) + OVERWRITE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getOverwrite());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -673,10 +476,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = "";
-
-      type_ = "";
-
       if (inputFieldsMapBuilder_ == null) {
         inputFieldsMap_ = null;
       } else {
@@ -689,11 +488,7 @@ private static final long serialVersionUID = 0L;
         outputFieldsMap_ = null;
         outputFieldsMapBuilder_ = null;
       }
-      dataProviderParams_ = "";
-
       modelZipUrl_ = "";
-
-      overwrite_ = false;
 
       return this;
     }
@@ -721,8 +516,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.PretrainedModelConfig buildPartial() {
       com.clarifai.grpc.api.PretrainedModelConfig result = new com.clarifai.grpc.api.PretrainedModelConfig(this);
-      result.id_ = id_;
-      result.type_ = type_;
       if (inputFieldsMapBuilder_ == null) {
         result.inputFieldsMap_ = inputFieldsMap_;
       } else {
@@ -733,9 +526,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.outputFieldsMap_ = outputFieldsMapBuilder_.build();
       }
-      result.dataProviderParams_ = dataProviderParams_;
       result.modelZipUrl_ = modelZipUrl_;
-      result.overwrite_ = overwrite_;
       onBuilt();
       return result;
     }
@@ -784,30 +575,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.PretrainedModelConfig other) {
       if (other == com.clarifai.grpc.api.PretrainedModelConfig.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
-        onChanged();
-      }
-      if (!other.getType().isEmpty()) {
-        type_ = other.type_;
-        onChanged();
-      }
       if (other.hasInputFieldsMap()) {
         mergeInputFieldsMap(other.getInputFieldsMap());
       }
       if (other.hasOutputFieldsMap()) {
         mergeOutputFieldsMap(other.getOutputFieldsMap());
       }
-      if (!other.getDataProviderParams().isEmpty()) {
-        dataProviderParams_ = other.dataProviderParams_;
-        onChanged();
-      }
       if (!other.getModelZipUrl().isEmpty()) {
         modelZipUrl_ = other.modelZipUrl_;
         onChanged();
-      }
-      if (other.getOverwrite() != false) {
-        setOverwrite(other.getOverwrite());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -838,203 +614,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * This is the internal id of the pretrained model.
-     * </pre>
-     *
-     * <code>string id = 1;</code>
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * This is the internal id of the pretrained model.
-     * </pre>
-     *
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * This is the internal id of the pretrained model.
-     * </pre>
-     *
-     * <code>string id = 1;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * This is the internal id of the pretrained model.
-     * </pre>
-     *
-     * <code>string id = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * This is the internal id of the pretrained model.
-     * </pre>
-     *
-     * <code>string id = 1;</code>
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object type_ = "";
-    /**
-     * <pre>
-     * This is the internal type of the pretrained model.
-     * </pre>
-     *
-     * <code>string type = 2;</code>
-     * @return The type.
-     */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * This is the internal type of the pretrained model.
-     * </pre>
-     *
-     * <code>string type = 2;</code>
-     * @return The bytes for type.
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * This is the internal type of the pretrained model.
-     * </pre>
-     *
-     * <code>string type = 2;</code>
-     * @param value The type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setType(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * This is the internal type of the pretrained model.
-     * </pre>
-     *
-     * <code>string type = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearType() {
-      
-      type_ = getDefaultInstance().getType();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * This is the internal type of the pretrained model.
-     * </pre>
-     *
-     * <code>string type = 2;</code>
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      type_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.Struct inputFieldsMap_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> inputFieldsMapBuilder_;
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1046,6 +631,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1061,6 +647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1081,6 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1099,6 +687,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1121,6 +710,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1139,6 +729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1151,6 +742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1166,6 +758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * This is the internal id of the pretrained model.
      * Map from the api.Data field names to the Triton config.pbtxt input.
      * </pre>
      *
@@ -1340,106 +933,12 @@ private static final long serialVersionUID = 0L;
       return outputFieldsMapBuilder_;
     }
 
-    private java.lang.Object dataProviderParams_ = "";
-    /**
-     * <pre>
-     * Preprocessing steps for the model as a json string
-     * </pre>
-     *
-     * <code>string data_provider_params = 5;</code>
-     * @return The dataProviderParams.
-     */
-    public java.lang.String getDataProviderParams() {
-      java.lang.Object ref = dataProviderParams_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dataProviderParams_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Preprocessing steps for the model as a json string
-     * </pre>
-     *
-     * <code>string data_provider_params = 5;</code>
-     * @return The bytes for dataProviderParams.
-     */
-    public com.google.protobuf.ByteString
-        getDataProviderParamsBytes() {
-      java.lang.Object ref = dataProviderParams_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dataProviderParams_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Preprocessing steps for the model as a json string
-     * </pre>
-     *
-     * <code>string data_provider_params = 5;</code>
-     * @param value The dataProviderParams to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDataProviderParams(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      dataProviderParams_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Preprocessing steps for the model as a json string
-     * </pre>
-     *
-     * <code>string data_provider_params = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDataProviderParams() {
-      
-      dataProviderParams_ = getDefaultInstance().getDataProviderParams();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Preprocessing steps for the model as a json string
-     * </pre>
-     *
-     * <code>string data_provider_params = 5;</code>
-     * @param value The bytes for dataProviderParams to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDataProviderParamsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      dataProviderParams_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object modelZipUrl_ = "";
     /**
      * <pre>
-     * Url to a zipped up model in triton format with only version 1
+     * Url to a zipped up model in triton format with the following files and folders at the root:
+     *  config.pbtxt
+     *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
      * </pre>
      *
      * <code>string model_zip_url = 6;</code>
@@ -1459,7 +958,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Url to a zipped up model in triton format with only version 1
+     * Url to a zipped up model in triton format with the following files and folders at the root:
+     *  config.pbtxt
+     *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
      * </pre>
      *
      * <code>string model_zip_url = 6;</code>
@@ -1480,7 +981,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Url to a zipped up model in triton format with only version 1
+     * Url to a zipped up model in triton format with the following files and folders at the root:
+     *  config.pbtxt
+     *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
      * </pre>
      *
      * <code>string model_zip_url = 6;</code>
@@ -1499,7 +1002,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Url to a zipped up model in triton format with only version 1
+     * Url to a zipped up model in triton format with the following files and folders at the root:
+     *  config.pbtxt
+     *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
      * </pre>
      *
      * <code>string model_zip_url = 6;</code>
@@ -1513,7 +1018,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Url to a zipped up model in triton format with only version 1
+     * Url to a zipped up model in triton format with the following files and folders at the root:
+     *  config.pbtxt
+     *  version 1 folder that contains model files (onnx graph, torch script, python BE model, and etc.)
      * </pre>
      *
      * <code>string model_zip_url = 6;</code>
@@ -1528,48 +1035,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       modelZipUrl_ = value;
-      onChanged();
-      return this;
-    }
-
-    private boolean overwrite_ ;
-    /**
-     * <pre>
-     * Whether to overwrite the model for the existing internal id
-     * </pre>
-     *
-     * <code>bool overwrite = 7;</code>
-     * @return The overwrite.
-     */
-    public boolean getOverwrite() {
-      return overwrite_;
-    }
-    /**
-     * <pre>
-     * Whether to overwrite the model for the existing internal id
-     * </pre>
-     *
-     * <code>bool overwrite = 7;</code>
-     * @param value The overwrite to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOverwrite(boolean value) {
-      
-      overwrite_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Whether to overwrite the model for the existing internal id
-     * </pre>
-     *
-     * <code>bool overwrite = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOverwrite() {
-      
-      overwrite_ = false;
       onChanged();
       return this;
     }

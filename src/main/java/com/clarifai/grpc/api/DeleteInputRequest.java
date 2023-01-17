@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.DeleteInputRequest}
  */
-public  final class DeleteInputRequest extends
+public final class DeleteInputRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.DeleteInputRequest)
     DeleteInputRequestOrBuilder {
@@ -83,6 +83,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -110,6 +112,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -117,12 +120,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -133,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * <code>string input_id = 2;</code>
    * @return The inputId.
    */
+  @java.lang.Override
   public java.lang.String getInputId() {
     java.lang.Object ref = inputId_;
     if (ref instanceof java.lang.String) {
@@ -149,6 +155,7 @@ private static final long serialVersionUID = 0L;
    * <code>string input_id = 2;</code>
    * @return The bytes for inputId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getInputIdBytes() {
     java.lang.Object ref = inputId_;
@@ -180,7 +187,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getInputIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputId_);
     }
     unknownFields.writeTo(output);
@@ -196,7 +203,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getInputIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputId_);
     }
     size += unknownFields.getSerializedSize();

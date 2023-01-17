@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PasswordViolations}
  */
-public  final class PasswordViolations extends
+public final class PasswordViolations extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PasswordViolations)
     PasswordViolationsOrBuilder {
@@ -133,6 +133,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -164,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool minimum_length = 1;</code>
    * @return The minimumLength.
    */
+  @java.lang.Override
   public boolean getMinimumLength() {
     return minimumLength_;
   }
@@ -178,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool maximum_length = 2;</code>
    * @return The maximumLength.
    */
+  @java.lang.Override
   public boolean getMaximumLength() {
     return maximumLength_;
   }
@@ -192,6 +196,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool upper_case_needed = 3;</code>
    * @return The upperCaseNeeded.
    */
+  @java.lang.Override
   public boolean getUpperCaseNeeded() {
     return upperCaseNeeded_;
   }
@@ -206,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool lower_case_needed = 4;</code>
    * @return The lowerCaseNeeded.
    */
+  @java.lang.Override
   public boolean getLowerCaseNeeded() {
     return lowerCaseNeeded_;
   }
@@ -220,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool numeric_needed = 5;</code>
    * @return The numericNeeded.
    */
+  @java.lang.Override
   public boolean getNumericNeeded() {
     return numericNeeded_;
   }
@@ -234,6 +241,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool non_alphanumeric_needed = 6;</code>
    * @return The nonAlphanumericNeeded.
    */
+  @java.lang.Override
   public boolean getNonAlphanumericNeeded() {
     return nonAlphanumericNeeded_;
   }
@@ -248,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool password_reuse = 7;</code>
    * @return The passwordReuse.
    */
+  @java.lang.Override
   public boolean getPasswordReuse() {
     return passwordReuse_;
   }
@@ -262,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool exclude_names = 8;</code>
    * @return The excludeNames.
    */
+  @java.lang.Override
   public boolean getExcludeNames() {
     return excludeNames_;
   }
@@ -276,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool exclude_email = 9;</code>
    * @return The excludeEmail.
    */
+  @java.lang.Override
   public boolean getExcludeEmail() {
     return excludeEmail_;
   }
@@ -290,6 +301,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool no_confusing_letters = 10;</code>
    * @return The noConfusingLetters.
    */
+  @java.lang.Override
   public boolean getNoConfusingLetters() {
     return noConfusingLetters_;
   }
@@ -304,6 +316,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool no_simple_passwords = 11;</code>
    * @return The noSimplePasswords.
    */
+  @java.lang.Override
   public boolean getNoSimplePasswords() {
     return noSimplePasswords_;
   }
@@ -318,6 +331,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool no_common_vocabs = 12;</code>
    * @return The noCommonVocabs.
    */
+  @java.lang.Override
   public boolean getNoCommonVocabs() {
     return noCommonVocabs_;
   }
@@ -332,6 +346,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool no_overlap_with_old = 13;</code>
    * @return The noOverlapWithOld.
    */
+  @java.lang.Override
   public boolean getNoOverlapWithOld() {
     return noOverlapWithOld_;
   }
@@ -346,6 +361,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool password_lifespan = 14;</code>
    * @return The passwordLifespan.
    */
+  @java.lang.Override
   public boolean getPasswordLifespan() {
     return passwordLifespan_;
   }
@@ -900,6 +916,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool minimum_length = 1;</code>
      * @return The minimumLength.
      */
+    @java.lang.Override
     public boolean getMinimumLength() {
       return minimumLength_;
     }
@@ -942,6 +959,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool maximum_length = 2;</code>
      * @return The maximumLength.
      */
+    @java.lang.Override
     public boolean getMaximumLength() {
       return maximumLength_;
     }
@@ -984,6 +1002,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool upper_case_needed = 3;</code>
      * @return The upperCaseNeeded.
      */
+    @java.lang.Override
     public boolean getUpperCaseNeeded() {
       return upperCaseNeeded_;
     }
@@ -1026,6 +1045,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool lower_case_needed = 4;</code>
      * @return The lowerCaseNeeded.
      */
+    @java.lang.Override
     public boolean getLowerCaseNeeded() {
       return lowerCaseNeeded_;
     }
@@ -1068,6 +1088,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool numeric_needed = 5;</code>
      * @return The numericNeeded.
      */
+    @java.lang.Override
     public boolean getNumericNeeded() {
       return numericNeeded_;
     }
@@ -1110,6 +1131,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool non_alphanumeric_needed = 6;</code>
      * @return The nonAlphanumericNeeded.
      */
+    @java.lang.Override
     public boolean getNonAlphanumericNeeded() {
       return nonAlphanumericNeeded_;
     }
@@ -1152,6 +1174,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool password_reuse = 7;</code>
      * @return The passwordReuse.
      */
+    @java.lang.Override
     public boolean getPasswordReuse() {
       return passwordReuse_;
     }
@@ -1194,6 +1217,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool exclude_names = 8;</code>
      * @return The excludeNames.
      */
+    @java.lang.Override
     public boolean getExcludeNames() {
       return excludeNames_;
     }
@@ -1236,6 +1260,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool exclude_email = 9;</code>
      * @return The excludeEmail.
      */
+    @java.lang.Override
     public boolean getExcludeEmail() {
       return excludeEmail_;
     }
@@ -1278,6 +1303,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool no_confusing_letters = 10;</code>
      * @return The noConfusingLetters.
      */
+    @java.lang.Override
     public boolean getNoConfusingLetters() {
       return noConfusingLetters_;
     }
@@ -1320,6 +1346,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool no_simple_passwords = 11;</code>
      * @return The noSimplePasswords.
      */
+    @java.lang.Override
     public boolean getNoSimplePasswords() {
       return noSimplePasswords_;
     }
@@ -1362,6 +1389,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool no_common_vocabs = 12;</code>
      * @return The noCommonVocabs.
      */
+    @java.lang.Override
     public boolean getNoCommonVocabs() {
       return noCommonVocabs_;
     }
@@ -1404,6 +1432,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool no_overlap_with_old = 13;</code>
      * @return The noOverlapWithOld.
      */
+    @java.lang.Override
     public boolean getNoOverlapWithOld() {
       return noOverlapWithOld_;
     }
@@ -1446,6 +1475,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool password_lifespan = 14;</code>
      * @return The passwordLifespan.
      */
+    @java.lang.Override
     public boolean getPasswordLifespan() {
       return passwordLifespan_;
     }

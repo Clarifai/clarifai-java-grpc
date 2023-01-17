@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Text}
  */
-public  final class Text extends
+public final class Text extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Text)
     TextOrBuilder {
@@ -108,6 +108,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -139,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * <code>string raw = 1;</code>
    * @return The raw.
    */
+  @java.lang.Override
   public java.lang.String getRaw() {
     java.lang.Object ref = raw_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * <code>string raw = 1;</code>
    * @return The bytes for raw.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getRawBytes() {
     java.lang.Object ref = raw_;
@@ -183,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * <code>string url = 2;</code>
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -203,6 +208,7 @@ private static final long serialVersionUID = 0L;
    * <code>string url = 2;</code>
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUrlBytes() {
     java.lang.Object ref = url_;
@@ -223,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool allow_duplicate_url = 3;</code>
    * @return The allowDuplicateUrl.
    */
+  @java.lang.Override
   public boolean getAllowDuplicateUrl() {
     return allowDuplicateUrl_;
   }
@@ -238,6 +245,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
    * @return Whether the hosted field is set.
    */
+  @java.lang.Override
   public boolean hasHosted() {
     return hosted_ != null;
   }
@@ -250,6 +258,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
    * @return The hosted.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HostedURL getHosted() {
     return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
   }
@@ -261,6 +270,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.HostedURL hosted = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
     return getHosted();
   }
@@ -275,6 +285,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TextInfo text_info = 5;</code>
    * @return Whether the textInfo field is set.
    */
+  @java.lang.Override
   public boolean hasTextInfo() {
     return textInfo_ != null;
   }
@@ -286,6 +297,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TextInfo text_info = 5;</code>
    * @return The textInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TextInfo getTextInfo() {
     return textInfo_ == null ? com.clarifai.grpc.api.TextInfo.getDefaultInstance() : textInfo_;
   }
@@ -296,6 +308,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.TextInfo text_info = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TextInfoOrBuilder getTextInfoOrBuilder() {
     return getTextInfo();
   }
@@ -314,10 +327,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getRawBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(raw_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, raw_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
     }
     if (allowDuplicateUrl_ != false) {
@@ -338,10 +351,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getRawBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(raw_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, raw_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
     }
     if (allowDuplicateUrl_ != false) {
@@ -898,6 +911,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool allow_duplicate_url = 3;</code>
      * @return The allowDuplicateUrl.
      */
+    @java.lang.Override
     public boolean getAllowDuplicateUrl() {
       return allowDuplicateUrl_;
     }

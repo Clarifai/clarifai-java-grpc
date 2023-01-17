@@ -16,4 +16,24 @@ public interface ModelTypeEnumOptionAliasOrBuilder extends
    * @return The idInt.
    */
   long getIdInt();
+
+  /**
+   * <pre>
+   * String that can contain wild cards and the regex needs to match.
+   * </pre>
+   *
+   * <code>string wildcard_string = 2;</code>
+   * @return The wildcardString.
+   */
+  java.lang.String getWildcardString();
+  /**
+   * <pre>
+   * String that can contain wild cards and the regex needs to match.
+   * </pre>
+   *
+   * <code>string wildcard_string = 2;</code>
+   * @return The bytes for wildcardString.
+   */
+  com.google.protobuf.ByteString
+      getWildcardStringBytes();
 }

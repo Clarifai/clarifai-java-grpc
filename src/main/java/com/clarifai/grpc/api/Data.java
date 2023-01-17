@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Data}
  */
-public  final class Data extends
+public final class Data extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Data)
     DataOrBuilder {
@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     tracks_ = java.util.Collections.emptyList();
     timeSegments_ = java.util.Collections.emptyList();
     hits_ = java.util.Collections.emptyList();
+    heatmaps_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -221,6 +222,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Hit.parser(), extensionRegistry));
             break;
           }
+          case 146: {
+            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              heatmaps_ = new java.util.ArrayList<com.clarifai.grpc.api.Image>();
+              mutable_bitField0_ |= 0x00000200;
+            }
+            heatmaps_.add(
+                input.readMessage(com.clarifai.grpc.api.Image.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -232,6 +242,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -263,6 +275,9 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000100) != 0)) {
         hits_ = java.util.Collections.unmodifiableList(hits_);
       }
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+        heatmaps_ = java.util.Collections.unmodifiableList(heatmaps_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -290,6 +305,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Image image = 1;</code>
    * @return Whether the image field is set.
    */
+  @java.lang.Override
   public boolean hasImage() {
     return image_ != null;
   }
@@ -301,6 +317,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Image image = 1;</code>
    * @return The image.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Image getImage() {
     return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
   }
@@ -311,6 +328,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Image image = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
     return getImage();
   }
@@ -325,6 +343,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Video video = 2;</code>
    * @return Whether the video field is set.
    */
+  @java.lang.Override
   public boolean hasVideo() {
     return video_ != null;
   }
@@ -336,6 +355,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Video video = 2;</code>
    * @return The video.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Video getVideo() {
     return video_ == null ? com.clarifai.grpc.api.Video.getDefaultInstance() : video_;
   }
@@ -346,6 +366,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Video video = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VideoOrBuilder getVideoOrBuilder() {
     return getVideo();
   }
@@ -359,6 +380,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Concept> getConceptsList() {
     return concepts_;
   }
@@ -369,6 +391,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ConceptOrBuilder> 
       getConceptsOrBuilderList() {
     return concepts_;
@@ -380,6 +403,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 3;</code>
    */
+  @java.lang.Override
   public int getConceptsCount() {
     return concepts_.size();
   }
@@ -390,6 +414,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getConcepts(int index) {
     return concepts_.get(index);
   }
@@ -400,6 +425,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Concept concepts = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getConceptsOrBuilder(
       int index) {
     return concepts_.get(index);
@@ -416,6 +442,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -428,6 +455,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -439,6 +467,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -453,6 +482,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Geo geo = 6;</code>
    * @return Whether the geo field is set.
    */
+  @java.lang.Override
   public boolean hasGeo() {
     return geo_ != null;
   }
@@ -464,6 +494,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Geo geo = 6;</code>
    * @return The geo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Geo getGeo() {
     return geo_ == null ? com.clarifai.grpc.api.Geo.getDefaultInstance() : geo_;
   }
@@ -474,6 +505,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Geo geo = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.GeoOrBuilder getGeoOrBuilder() {
     return getGeo();
   }
@@ -487,6 +519,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Color colors = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Color> getColorsList() {
     return colors_;
   }
@@ -497,6 +530,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Color colors = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ColorOrBuilder> 
       getColorsOrBuilderList() {
     return colors_;
@@ -508,6 +542,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Color colors = 7;</code>
    */
+  @java.lang.Override
   public int getColorsCount() {
     return colors_.size();
   }
@@ -518,6 +553,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Color colors = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Color getColors(int index) {
     return colors_.get(index);
   }
@@ -528,6 +564,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Color colors = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ColorOrBuilder getColorsOrBuilder(
       int index) {
     return colors_.get(index);
@@ -542,6 +579,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Cluster clusters = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Cluster> getClustersList() {
     return clusters_;
   }
@@ -552,6 +590,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Cluster clusters = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ClusterOrBuilder> 
       getClustersOrBuilderList() {
     return clusters_;
@@ -563,6 +602,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Cluster clusters = 8;</code>
    */
+  @java.lang.Override
   public int getClustersCount() {
     return clusters_.size();
   }
@@ -573,6 +613,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Cluster clusters = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Cluster getClusters(int index) {
     return clusters_.get(index);
   }
@@ -583,6 +624,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Cluster clusters = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ClusterOrBuilder getClustersOrBuilder(
       int index) {
     return clusters_.get(index);
@@ -597,6 +639,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Embedding embeddings = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Embedding> getEmbeddingsList() {
     return embeddings_;
   }
@@ -607,6 +650,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Embedding embeddings = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.EmbeddingOrBuilder> 
       getEmbeddingsOrBuilderList() {
     return embeddings_;
@@ -618,6 +662,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Embedding embeddings = 9;</code>
    */
+  @java.lang.Override
   public int getEmbeddingsCount() {
     return embeddings_.size();
   }
@@ -628,6 +673,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Embedding embeddings = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Embedding getEmbeddings(int index) {
     return embeddings_.get(index);
   }
@@ -638,6 +684,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Embedding embeddings = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EmbeddingOrBuilder getEmbeddingsOrBuilder(
       int index) {
     return embeddings_.get(index);
@@ -652,6 +699,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Region regions = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Region> getRegionsList() {
     return regions_;
   }
@@ -662,6 +710,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Region regions = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.RegionOrBuilder> 
       getRegionsOrBuilderList() {
     return regions_;
@@ -673,6 +722,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Region regions = 11;</code>
    */
+  @java.lang.Override
   public int getRegionsCount() {
     return regions_.size();
   }
@@ -683,6 +733,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Region regions = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Region getRegions(int index) {
     return regions_.get(index);
   }
@@ -693,6 +744,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Region regions = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.RegionOrBuilder getRegionsOrBuilder(
       int index) {
     return regions_.get(index);
@@ -707,6 +759,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Frame frames = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Frame> getFramesList() {
     return frames_;
   }
@@ -717,6 +770,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Frame frames = 12;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.FrameOrBuilder> 
       getFramesOrBuilderList() {
     return frames_;
@@ -728,6 +782,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Frame frames = 12;</code>
    */
+  @java.lang.Override
   public int getFramesCount() {
     return frames_.size();
   }
@@ -738,6 +793,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Frame frames = 12;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Frame getFrames(int index) {
     return frames_.get(index);
   }
@@ -748,6 +804,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Frame frames = 12;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.FrameOrBuilder getFramesOrBuilder(
       int index) {
     return frames_.get(index);
@@ -757,33 +814,36 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Text text_;
   /**
    * <pre>
-   * Input and output text.
+   * Input, output or annotation text.
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
    * @return Whether the text field is set.
    */
+  @java.lang.Override
   public boolean hasText() {
     return text_ != null;
   }
   /**
    * <pre>
-   * Input and output text.
+   * Input, output or annotation text.
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
    * @return The text.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Text getText() {
     return text_ == null ? com.clarifai.grpc.api.Text.getDefaultInstance() : text_;
   }
   /**
    * <pre>
-   * Input and output text.
+   * Input, output or annotation text.
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TextOrBuilder getTextOrBuilder() {
     return getText();
   }
@@ -798,6 +858,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Audio audio = 14;</code>
    * @return Whether the audio field is set.
    */
+  @java.lang.Override
   public boolean hasAudio() {
     return audio_ != null;
   }
@@ -809,6 +870,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Audio audio = 14;</code>
    * @return The audio.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Audio getAudio() {
     return audio_ == null ? com.clarifai.grpc.api.Audio.getDefaultInstance() : audio_;
   }
@@ -819,6 +881,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Audio audio = 14;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AudioOrBuilder getAudioOrBuilder() {
     return getAudio();
   }
@@ -832,6 +895,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Track tracks = 15;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Track> getTracksList() {
     return tracks_;
   }
@@ -842,6 +906,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Track tracks = 15;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.TrackOrBuilder> 
       getTracksOrBuilderList() {
     return tracks_;
@@ -853,6 +918,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Track tracks = 15;</code>
    */
+  @java.lang.Override
   public int getTracksCount() {
     return tracks_.size();
   }
@@ -863,6 +929,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Track tracks = 15;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Track getTracks(int index) {
     return tracks_.get(index);
   }
@@ -873,6 +940,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Track tracks = 15;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TrackOrBuilder getTracksOrBuilder(
       int index) {
     return tracks_.get(index);
@@ -887,6 +955,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.TimeSegment> getTimeSegmentsList() {
     return timeSegments_;
   }
@@ -897,6 +966,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.TimeSegmentOrBuilder> 
       getTimeSegmentsOrBuilderList() {
     return timeSegments_;
@@ -908,6 +978,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
    */
+  @java.lang.Override
   public int getTimeSegmentsCount() {
     return timeSegments_.size();
   }
@@ -918,6 +989,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TimeSegment getTimeSegments(int index) {
     return timeSegments_.get(index);
   }
@@ -928,6 +1000,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.TimeSegment time_segments = 16;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TimeSegmentOrBuilder getTimeSegmentsOrBuilder(
       int index) {
     return timeSegments_.get(index);
@@ -942,6 +1015,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 17;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Hit> getHitsList() {
     return hits_;
   }
@@ -952,6 +1026,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 17;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.HitOrBuilder> 
       getHitsOrBuilderList() {
     return hits_;
@@ -963,6 +1038,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 17;</code>
    */
+  @java.lang.Override
   public int getHitsCount() {
     return hits_.size();
   }
@@ -973,6 +1049,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 17;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Hit getHits(int index) {
     return hits_.get(index);
   }
@@ -983,9 +1060,70 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 17;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
       int index) {
     return hits_.get(index);
+  }
+
+  public static final int HEATMAPS_FIELD_NUMBER = 18;
+  private java.util.List<com.clarifai.grpc.api.Image> heatmaps_;
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Image> getHeatmapsList() {
+    return heatmaps_;
+  }
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ImageOrBuilder> 
+      getHeatmapsOrBuilderList() {
+    return heatmaps_;
+  }
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  @java.lang.Override
+  public int getHeatmapsCount() {
+    return heatmaps_.size();
+  }
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Image getHeatmaps(int index) {
+    return heatmaps_.get(index);
+  }
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ImageOrBuilder getHeatmapsOrBuilder(
+      int index) {
+    return heatmaps_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1046,6 +1184,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < hits_.size(); i++) {
       output.writeMessage(17, hits_.get(i));
+    }
+    for (int i = 0; i < heatmaps_.size(); i++) {
+      output.writeMessage(18, heatmaps_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1116,6 +1257,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, hits_.get(i));
     }
+    for (int i = 0; i < heatmaps_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, heatmaps_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1179,6 +1324,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTimeSegmentsList())) return false;
     if (!getHitsList()
         .equals(other.getHitsList())) return false;
+    if (!getHeatmapsList()
+        .equals(other.getHeatmapsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1249,6 +1396,10 @@ private static final long serialVersionUID = 0L;
     if (getHitsCount() > 0) {
       hash = (37 * hash) + HITS_FIELD_NUMBER;
       hash = (53 * hash) + getHitsList().hashCode();
+    }
+    if (getHeatmapsCount() > 0) {
+      hash = (37 * hash) + HEATMAPS_FIELD_NUMBER;
+      hash = (53 * hash) + getHeatmapsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1391,6 +1542,7 @@ private static final long serialVersionUID = 0L;
         getTracksFieldBuilder();
         getTimeSegmentsFieldBuilder();
         getHitsFieldBuilder();
+        getHeatmapsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1485,6 +1637,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         hitsBuilder_.clear();
+      }
+      if (heatmapsBuilder_ == null) {
+        heatmaps_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      } else {
+        heatmapsBuilder_.clear();
       }
       return this;
     }
@@ -1623,6 +1781,15 @@ private static final long serialVersionUID = 0L;
         result.hits_ = hits_;
       } else {
         result.hits_ = hitsBuilder_.build();
+      }
+      if (heatmapsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          heatmaps_ = java.util.Collections.unmodifiableList(heatmaps_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.heatmaps_ = heatmaps_;
+      } else {
+        result.heatmaps_ = heatmapsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1921,6 +2088,32 @@ private static final long serialVersionUID = 0L;
                  getHitsFieldBuilder() : null;
           } else {
             hitsBuilder_.addAllMessages(other.hits_);
+          }
+        }
+      }
+      if (heatmapsBuilder_ == null) {
+        if (!other.heatmaps_.isEmpty()) {
+          if (heatmaps_.isEmpty()) {
+            heatmaps_ = other.heatmaps_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureHeatmapsIsMutable();
+            heatmaps_.addAll(other.heatmaps_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.heatmaps_.isEmpty()) {
+          if (heatmapsBuilder_.isEmpty()) {
+            heatmapsBuilder_.dispose();
+            heatmapsBuilder_ = null;
+            heatmaps_ = other.heatmaps_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            heatmapsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getHeatmapsFieldBuilder() : null;
+          } else {
+            heatmapsBuilder_.addAllMessages(other.heatmaps_);
           }
         }
       }
@@ -4460,7 +4653,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Text, com.clarifai.grpc.api.Text.Builder, com.clarifai.grpc.api.TextOrBuilder> textBuilder_;
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4471,7 +4664,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4486,7 +4679,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4506,7 +4699,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4524,7 +4717,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4546,7 +4739,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4564,7 +4757,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4576,7 +4769,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -4591,7 +4784,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input and output text.
+     * Input, output or annotation text.
      * </pre>
      *
      * <code>.clarifai.api.Text text = 13;</code>
@@ -5699,6 +5892,318 @@ private static final long serialVersionUID = 0L;
         hits_ = null;
       }
       return hitsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Image> heatmaps_ =
+      java.util.Collections.emptyList();
+    private void ensureHeatmapsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        heatmaps_ = new java.util.ArrayList<com.clarifai.grpc.api.Image>(heatmaps_);
+        bitField0_ |= 0x00000200;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> heatmapsBuilder_;
+
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Image> getHeatmapsList() {
+      if (heatmapsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(heatmaps_);
+      } else {
+        return heatmapsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public int getHeatmapsCount() {
+      if (heatmapsBuilder_ == null) {
+        return heatmaps_.size();
+      } else {
+        return heatmapsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public com.clarifai.grpc.api.Image getHeatmaps(int index) {
+      if (heatmapsBuilder_ == null) {
+        return heatmaps_.get(index);
+      } else {
+        return heatmapsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder setHeatmaps(
+        int index, com.clarifai.grpc.api.Image value) {
+      if (heatmapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHeatmapsIsMutable();
+        heatmaps_.set(index, value);
+        onChanged();
+      } else {
+        heatmapsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder setHeatmaps(
+        int index, com.clarifai.grpc.api.Image.Builder builderForValue) {
+      if (heatmapsBuilder_ == null) {
+        ensureHeatmapsIsMutable();
+        heatmaps_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        heatmapsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder addHeatmaps(com.clarifai.grpc.api.Image value) {
+      if (heatmapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHeatmapsIsMutable();
+        heatmaps_.add(value);
+        onChanged();
+      } else {
+        heatmapsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder addHeatmaps(
+        int index, com.clarifai.grpc.api.Image value) {
+      if (heatmapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHeatmapsIsMutable();
+        heatmaps_.add(index, value);
+        onChanged();
+      } else {
+        heatmapsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder addHeatmaps(
+        com.clarifai.grpc.api.Image.Builder builderForValue) {
+      if (heatmapsBuilder_ == null) {
+        ensureHeatmapsIsMutable();
+        heatmaps_.add(builderForValue.build());
+        onChanged();
+      } else {
+        heatmapsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder addHeatmaps(
+        int index, com.clarifai.grpc.api.Image.Builder builderForValue) {
+      if (heatmapsBuilder_ == null) {
+        ensureHeatmapsIsMutable();
+        heatmaps_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        heatmapsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder addAllHeatmaps(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Image> values) {
+      if (heatmapsBuilder_ == null) {
+        ensureHeatmapsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, heatmaps_);
+        onChanged();
+      } else {
+        heatmapsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder clearHeatmaps() {
+      if (heatmapsBuilder_ == null) {
+        heatmaps_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        heatmapsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public Builder removeHeatmaps(int index) {
+      if (heatmapsBuilder_ == null) {
+        ensureHeatmapsIsMutable();
+        heatmaps_.remove(index);
+        onChanged();
+      } else {
+        heatmapsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public com.clarifai.grpc.api.Image.Builder getHeatmapsBuilder(
+        int index) {
+      return getHeatmapsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public com.clarifai.grpc.api.ImageOrBuilder getHeatmapsOrBuilder(
+        int index) {
+      if (heatmapsBuilder_ == null) {
+        return heatmaps_.get(index);  } else {
+        return heatmapsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ImageOrBuilder> 
+         getHeatmapsOrBuilderList() {
+      if (heatmapsBuilder_ != null) {
+        return heatmapsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(heatmaps_);
+      }
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public com.clarifai.grpc.api.Image.Builder addHeatmapsBuilder() {
+      return getHeatmapsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Image.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public com.clarifai.grpc.api.Image.Builder addHeatmapsBuilder(
+        int index) {
+      return getHeatmapsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Image.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Heatmap as 2d image
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Image.Builder> 
+         getHeatmapsBuilderList() {
+      return getHeatmapsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> 
+        getHeatmapsFieldBuilder() {
+      if (heatmapsBuilder_ == null) {
+        heatmapsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder>(
+                heatmaps_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        heatmaps_ = null;
+      }
+      return heatmapsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

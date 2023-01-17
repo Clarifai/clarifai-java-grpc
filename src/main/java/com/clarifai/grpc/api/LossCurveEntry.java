@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.LossCurveEntry}
  */
-public  final class LossCurveEntry extends
+public final class LossCurveEntry extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.LossCurveEntry)
     LossCurveEntryOrBuilder {
@@ -78,6 +78,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -109,6 +111,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 epoch = 1;</code>
    * @return The epoch.
    */
+  @java.lang.Override
   public int getEpoch() {
     return epoch_;
   }
@@ -123,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 global_step = 2;</code>
    * @return The globalStep.
    */
+  @java.lang.Override
   public int getGlobalStep() {
     return globalStep_;
   }
@@ -138,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * <code>float cost = 3;</code>
    * @return The cost.
    */
+  @java.lang.Override
   public float getCost() {
     return cost_;
   }
@@ -162,7 +167,7 @@ private static final long serialVersionUID = 0L;
     if (globalStep_ != 0) {
       output.writeUInt32(2, globalStep_);
     }
-    if (cost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(cost_) != 0) {
       output.writeFloat(3, cost_);
     }
     unknownFields.writeTo(output);
@@ -182,7 +187,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, globalStep_);
     }
-    if (cost_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(cost_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, cost_);
     }
@@ -493,6 +498,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 epoch = 1;</code>
      * @return The epoch.
      */
+    @java.lang.Override
     public int getEpoch() {
       return epoch_;
     }
@@ -535,6 +541,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 global_step = 2;</code>
      * @return The globalStep.
      */
+    @java.lang.Override
     public int getGlobalStep() {
       return globalStep_;
     }
@@ -578,6 +585,7 @@ private static final long serialVersionUID = 0L;
      * <code>float cost = 3;</code>
      * @return The cost.
      */
+    @java.lang.Override
     public float getCost() {
       return cost_;
     }

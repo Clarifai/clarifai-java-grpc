@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.EndpointDeps}
  */
-public  final class EndpointDeps extends
+public final class EndpointDeps extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.EndpointDeps)
     EndpointDepsOrBuilder {
@@ -81,6 +81,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * <code>string endpoint = 1;</code>
    * @return The endpoint.
    */
+  @java.lang.Override
   public java.lang.String getEndpoint() {
     java.lang.Object ref = endpoint_;
     if (ref instanceof java.lang.String) {
@@ -135,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * <code>string endpoint = 1;</code>
    * @return The bytes for endpoint.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getEndpointBytes() {
     java.lang.Object ref = endpoint_;
@@ -214,7 +218,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, endpoint_);
     }
     for (int i = 0; i < dependingScopes_.size(); i++) {
@@ -229,7 +233,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEndpointBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, endpoint_);
     }
     {

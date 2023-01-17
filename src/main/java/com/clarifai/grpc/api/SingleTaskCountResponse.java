@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.SingleTaskCountResponse}
  */
-public  final class SingleTaskCountResponse extends
+public final class SingleTaskCountResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.SingleTaskCountResponse)
     SingleTaskCountResponseOrBuilder {
@@ -101,6 +101,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -131,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -138,12 +141,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -154,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 2;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 2;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -190,6 +197,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 3;</code>
    * @return The taskId.
    */
+  @java.lang.Override
   public java.lang.String getTaskId() {
     java.lang.Object ref = taskId_;
     if (ref instanceof java.lang.String) {
@@ -206,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 3;</code>
    * @return The bytes for taskId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTaskIdBytes() {
     java.lang.Object ref = taskId_;
@@ -225,12 +234,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.TaskStatusCountPerUser> getCountsList() {
     return counts_;
   }
   /**
    * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.TaskStatusCountPerUserOrBuilder> 
       getCountsOrBuilderList() {
     return counts_;
@@ -238,18 +249,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
+  @java.lang.Override
   public int getCountsCount() {
     return counts_.size();
   }
   /**
    * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskStatusCountPerUser getCounts(int index) {
     return counts_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.TaskStatusCountPerUser counts = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskStatusCountPerUserOrBuilder getCountsOrBuilder(
       int index) {
     return counts_.get(index);
@@ -272,10 +286,10 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(1, getStatus());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appId_);
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, taskId_);
     }
     for (int i = 0; i < counts_.size(); i++) {
@@ -294,10 +308,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getStatus());
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appId_);
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, taskId_);
     }
     for (int i = 0; i < counts_.size(); i++) {

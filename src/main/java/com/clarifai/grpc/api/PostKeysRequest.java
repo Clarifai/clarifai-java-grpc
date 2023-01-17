@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostKeysRequest}
  */
-public  final class PostKeysRequest extends
+public final class PostKeysRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostKeysRequest)
     PostKeysRequestOrBuilder {
@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -117,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -124,12 +127,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -139,12 +144,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Key keys = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Key> getKeysList() {
     return keys_;
   }
   /**
    * <code>repeated .clarifai.api.Key keys = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.KeyOrBuilder> 
       getKeysOrBuilderList() {
     return keys_;
@@ -152,18 +159,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.Key keys = 2;</code>
    */
+  @java.lang.Override
   public int getKeysCount() {
     return keys_.size();
   }
   /**
    * <code>repeated .clarifai.api.Key keys = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Key getKeys(int index) {
     return keys_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.Key keys = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.KeyOrBuilder getKeysOrBuilder(
       int index) {
     return keys_.get(index);

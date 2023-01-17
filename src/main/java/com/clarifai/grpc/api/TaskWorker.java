@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TaskWorker}
  */
-public  final class TaskWorker extends
+public final class TaskWorker extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TaskWorker)
     TaskWorkerOrBuilder {
@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private TaskWorker() {
     strategy_ = 0;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    users_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -84,6 +85,15 @@ private static final long serialVersionUID = 0L;
             strategyInfoCase_ = 3;
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              users_ = new java.util.ArrayList<com.clarifai.grpc.api.User>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            users_.add(
+                input.readMessage(com.clarifai.grpc.api.User.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,12 +105,17 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         userIds_ = userIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        users_ = java.util.Collections.unmodifiableList(users_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -216,6 +231,10 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -299,7 +318,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
    * @return The enum numeric value on the wire for strategy.
    */
-  public int getStrategyValue() {
+  @java.lang.Override public int getStrategyValue() {
     return strategy_;
   }
   /**
@@ -310,7 +329,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
    * @return The strategy.
    */
-  public com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy getStrategy() {
+  @java.lang.Override public com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy getStrategy() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy result = com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy.valueOf(strategy_);
     return result == null ? com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy.UNRECOGNIZED : result;
@@ -321,50 +340,132 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @return A list containing the userIds.
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getUserIdsList() {
     return userIds_;
   }
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @return The count of userIds.
    */
-  public int getUserIdsCount() {
+  @java.lang.Deprecated public int getUserIdsCount() {
     return userIds_.size();
   }
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
-  public java.lang.String getUserIds(int index) {
+  @java.lang.Deprecated public java.lang.String getUserIds(int index) {
     return userIds_.get(index);
   }
   /**
    * <pre>
    * Who will work on this task.
+   * DEPRECATED: Use users.id instead.
    * </pre>
    *
-   * <code>repeated string user_ids = 2;</code>
+   * <code>repeated string user_ids = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2689
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getUserIdsBytes(int index) {
     return userIds_.getByteString(index);
+  }
+
+  public static final int USERS_FIELD_NUMBER = 4;
+  private java.util.List<com.clarifai.grpc.api.User> users_;
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.User> getUsersList() {
+    return users_;
+  }
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.UserOrBuilder> 
+      getUsersOrBuilderList() {
+    return users_;
+  }
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  @java.lang.Override
+  public int getUsersCount() {
+    return users_.size();
+  }
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.User getUsers(int index) {
+    return users_.get(index);
+  }
+  /**
+   * <pre>
+   * Users who will work on this task.
+   * When the 'worker.users' field is additionally requested, then all user
+   * info is filled for the workers. Otherwise, only the user 'id' is filled.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.User users = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.UserOrBuilder getUsersOrBuilder(
+      int index) {
+    return users_.get(index);
   }
 
   public static final int PARTITIONED_STRATEGY_INFO_FIELD_NUMBER = 3;
@@ -372,6 +473,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
    * @return Whether the partitionedStrategyInfo field is set.
    */
+  @java.lang.Override
   public boolean hasPartitionedStrategyInfo() {
     return strategyInfoCase_ == 3;
   }
@@ -379,6 +481,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
    * @return The partitionedStrategyInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo getPartitionedStrategyInfo() {
     if (strategyInfoCase_ == 3) {
        return (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_;
@@ -388,6 +491,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder getPartitionedStrategyInfoOrBuilder() {
     if (strategyInfoCase_ == 3) {
        return (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_;
@@ -418,6 +522,9 @@ private static final long serialVersionUID = 0L;
     if (strategyInfoCase_ == 3) {
       output.writeMessage(3, (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_);
     }
+    for (int i = 0; i < users_.size(); i++) {
+      output.writeMessage(4, users_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -443,6 +550,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo) strategyInfo_);
     }
+    for (int i = 0; i < users_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, users_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -461,6 +572,8 @@ private static final long serialVersionUID = 0L;
     if (strategy_ != other.strategy_) return false;
     if (!getUserIdsList()
         .equals(other.getUserIdsList())) return false;
+    if (!getUsersList()
+        .equals(other.getUsersList())) return false;
     if (!getStrategyInfoCase().equals(other.getStrategyInfoCase())) return false;
     switch (strategyInfoCase_) {
       case 3:
@@ -486,6 +599,10 @@ private static final long serialVersionUID = 0L;
     if (getUserIdsCount() > 0) {
       hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdsList().hashCode();
+    }
+    if (getUsersCount() > 0) {
+      hash = (37 * hash) + USERS_FIELD_NUMBER;
+      hash = (53 * hash) + getUsersList().hashCode();
     }
     switch (strategyInfoCase_) {
       case 3:
@@ -627,6 +744,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getUsersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -636,6 +754,12 @@ private static final long serialVersionUID = 0L;
 
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (usersBuilder_ == null) {
+        users_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        usersBuilder_.clear();
+      }
       strategyInfoCase_ = 0;
       strategyInfo_ = null;
       return this;
@@ -671,6 +795,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.userIds_ = userIds_;
+      if (usersBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          users_ = java.util.Collections.unmodifiableList(users_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.users_ = users_;
+      } else {
+        result.users_ = usersBuilder_.build();
+      }
       if (strategyInfoCase_ == 3) {
         if (partitionedStrategyInfoBuilder_ == null) {
           result.strategyInfo_ = strategyInfo_;
@@ -740,6 +873,32 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (usersBuilder_ == null) {
+        if (!other.users_.isEmpty()) {
+          if (users_.isEmpty()) {
+            users_ = other.users_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUsersIsMutable();
+            users_.addAll(other.users_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.users_.isEmpty()) {
+          if (usersBuilder_.isEmpty()) {
+            usersBuilder_.dispose();
+            usersBuilder_ = null;
+            users_ = other.users_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            usersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUsersFieldBuilder() : null;
+          } else {
+            usersBuilder_.addAllMessages(other.users_);
+          }
+        }
+      }
       switch (other.getStrategyInfoCase()) {
         case PARTITIONED_STRATEGY_INFO: {
           mergePartitionedStrategyInfo(other.getPartitionedStrategyInfo());
@@ -803,7 +962,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
      * @return The enum numeric value on the wire for strategy.
      */
-    public int getStrategyValue() {
+    @java.lang.Override public int getStrategyValue() {
       return strategy_;
     }
     /**
@@ -816,6 +975,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStrategyValue(int value) {
+      
       strategy_ = value;
       onChanged();
       return this;
@@ -828,6 +988,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskWorker.TaskWorkerStrategy strategy = 1;</code>
      * @return The strategy.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy getStrategy() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy result = com.clarifai.grpc.api.TaskWorker.TaskWorkerStrategy.valueOf(strategy_);
@@ -876,62 +1037,77 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @return A list containing the userIds.
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getUserIdsList() {
       return userIds_.getUnmodifiableView();
     }
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @return The count of userIds.
      */
-    public int getUserIdsCount() {
+    @java.lang.Deprecated public int getUserIdsCount() {
       return userIds_.size();
     }
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
-    public java.lang.String getUserIds(int index) {
+    @java.lang.Deprecated public java.lang.String getUserIds(int index) {
       return userIds_.get(index);
     }
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getUserIdsBytes(int index) {
       return userIds_.getByteString(index);
     }
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @param index The index to set the value at.
      * @param value The userIds to set.
      * @return This builder for chaining.
      */
-    public Builder setUserIds(
+    @java.lang.Deprecated public Builder setUserIds(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -944,13 +1120,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @param value The userIds to add.
      * @return This builder for chaining.
      */
-    public Builder addUserIds(
+    @java.lang.Deprecated public Builder addUserIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -963,13 +1142,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @param values The userIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllUserIds(
+    @java.lang.Deprecated public Builder addAllUserIds(
         java.lang.Iterable<java.lang.String> values) {
       ensureUserIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -980,12 +1162,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @return This builder for chaining.
      */
-    public Builder clearUserIds() {
+    @java.lang.Deprecated public Builder clearUserIds() {
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
@@ -994,13 +1179,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Who will work on this task.
+     * DEPRECATED: Use users.id instead.
      * </pre>
      *
-     * <code>repeated string user_ids = 2;</code>
+     * <code>repeated string user_ids = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2689
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
      */
-    public Builder addUserIdsBytes(
+    @java.lang.Deprecated public Builder addUserIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1012,12 +1200,361 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.util.List<com.clarifai.grpc.api.User> users_ =
+      java.util.Collections.emptyList();
+    private void ensureUsersIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        users_ = new java.util.ArrayList<com.clarifai.grpc.api.User>(users_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> usersBuilder_;
+
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.User> getUsersList() {
+      if (usersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(users_);
+      } else {
+        return usersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public int getUsersCount() {
+      if (usersBuilder_ == null) {
+        return users_.size();
+      } else {
+        return usersBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public com.clarifai.grpc.api.User getUsers(int index) {
+      if (usersBuilder_ == null) {
+        return users_.get(index);
+      } else {
+        return usersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder setUsers(
+        int index, com.clarifai.grpc.api.User value) {
+      if (usersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsersIsMutable();
+        users_.set(index, value);
+        onChanged();
+      } else {
+        usersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder setUsers(
+        int index, com.clarifai.grpc.api.User.Builder builderForValue) {
+      if (usersBuilder_ == null) {
+        ensureUsersIsMutable();
+        users_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        usersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder addUsers(com.clarifai.grpc.api.User value) {
+      if (usersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsersIsMutable();
+        users_.add(value);
+        onChanged();
+      } else {
+        usersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder addUsers(
+        int index, com.clarifai.grpc.api.User value) {
+      if (usersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUsersIsMutable();
+        users_.add(index, value);
+        onChanged();
+      } else {
+        usersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder addUsers(
+        com.clarifai.grpc.api.User.Builder builderForValue) {
+      if (usersBuilder_ == null) {
+        ensureUsersIsMutable();
+        users_.add(builderForValue.build());
+        onChanged();
+      } else {
+        usersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder addUsers(
+        int index, com.clarifai.grpc.api.User.Builder builderForValue) {
+      if (usersBuilder_ == null) {
+        ensureUsersIsMutable();
+        users_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        usersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder addAllUsers(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.User> values) {
+      if (usersBuilder_ == null) {
+        ensureUsersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, users_);
+        onChanged();
+      } else {
+        usersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder clearUsers() {
+      if (usersBuilder_ == null) {
+        users_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        usersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public Builder removeUsers(int index) {
+      if (usersBuilder_ == null) {
+        ensureUsersIsMutable();
+        users_.remove(index);
+        onChanged();
+      } else {
+        usersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public com.clarifai.grpc.api.User.Builder getUsersBuilder(
+        int index) {
+      return getUsersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public com.clarifai.grpc.api.UserOrBuilder getUsersOrBuilder(
+        int index) {
+      if (usersBuilder_ == null) {
+        return users_.get(index);  } else {
+        return usersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.UserOrBuilder> 
+         getUsersOrBuilderList() {
+      if (usersBuilder_ != null) {
+        return usersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(users_);
+      }
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public com.clarifai.grpc.api.User.Builder addUsersBuilder() {
+      return getUsersFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.User.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public com.clarifai.grpc.api.User.Builder addUsersBuilder(
+        int index) {
+      return getUsersFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.User.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Users who will work on this task.
+     * When the 'worker.users' field is additionally requested, then all user
+     * info is filled for the workers. Otherwise, only the user 'id' is filled.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.User users = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.User.Builder> 
+         getUsersBuilderList() {
+      return getUsersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> 
+        getUsersFieldBuilder() {
+      if (usersBuilder_ == null) {
+        usersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder>(
+                users_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        users_ = null;
+      }
+      return usersBuilder_;
+    }
+
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.Builder, com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder> partitionedStrategyInfoBuilder_;
     /**
      * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
      * @return Whether the partitionedStrategyInfo field is set.
      */
+    @java.lang.Override
     public boolean hasPartitionedStrategyInfo() {
       return strategyInfoCase_ == 3;
     }
@@ -1025,6 +1562,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
      * @return The partitionedStrategyInfo.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo getPartitionedStrategyInfo() {
       if (partitionedStrategyInfoBuilder_ == null) {
         if (strategyInfoCase_ == 3) {
@@ -1084,8 +1622,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (strategyInfoCase_ == 3) {
           partitionedStrategyInfoBuilder_.mergeFrom(value);
+        } else {
+          partitionedStrategyInfoBuilder_.setMessage(value);
         }
-        partitionedStrategyInfoBuilder_.setMessage(value);
       }
       strategyInfoCase_ = 3;
       return this;
@@ -1118,6 +1657,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfoOrBuilder getPartitionedStrategyInfoOrBuilder() {
       if ((strategyInfoCase_ == 3) && (partitionedStrategyInfoBuilder_ != null)) {
         return partitionedStrategyInfoBuilder_.getMessageOrBuilder();

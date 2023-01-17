@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.MultiScopeDepsResponse}
  */
-public  final class MultiScopeDepsResponse extends
+public final class MultiScopeDepsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.MultiScopeDepsResponse)
     MultiScopeDepsResponseOrBuilder {
@@ -97,6 +97,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -134,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -145,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -155,6 +159,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -168,6 +173,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ScopeDeps scope_deps = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ScopeDeps> getScopeDepsList() {
     return scopeDeps_;
   }
@@ -178,6 +184,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ScopeDeps scope_deps = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ScopeDepsOrBuilder> 
       getScopeDepsOrBuilderList() {
     return scopeDeps_;
@@ -189,6 +196,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ScopeDeps scope_deps = 2;</code>
    */
+  @java.lang.Override
   public int getScopeDepsCount() {
     return scopeDeps_.size();
   }
@@ -199,6 +207,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ScopeDeps scope_deps = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ScopeDeps getScopeDeps(int index) {
     return scopeDeps_.get(index);
   }
@@ -209,6 +218,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ScopeDeps scope_deps = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ScopeDepsOrBuilder getScopeDepsOrBuilder(
       int index) {
     return scopeDeps_.get(index);
@@ -225,6 +235,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.EndpointDeps endpoint_deps = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.EndpointDeps> getEndpointDepsList() {
     return endpointDeps_;
   }
@@ -237,6 +248,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.EndpointDeps endpoint_deps = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.EndpointDepsOrBuilder> 
       getEndpointDepsOrBuilderList() {
     return endpointDeps_;
@@ -250,6 +262,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.EndpointDeps endpoint_deps = 3;</code>
    */
+  @java.lang.Override
   public int getEndpointDepsCount() {
     return endpointDeps_.size();
   }
@@ -262,6 +275,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.EndpointDeps endpoint_deps = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EndpointDeps getEndpointDeps(int index) {
     return endpointDeps_.get(index);
   }
@@ -274,6 +288,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.EndpointDeps endpoint_deps = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EndpointDepsOrBuilder getEndpointDepsOrBuilder(
       int index) {
     return endpointDeps_.get(index);

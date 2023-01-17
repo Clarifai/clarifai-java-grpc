@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ConceptCount}
  */
-public  final class ConceptCount extends
+public final class ConceptCount extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ConceptCount)
     ConceptCountOrBuilder {
@@ -103,6 +103,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -134,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -154,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -178,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -198,6 +203,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -222,6 +228,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
    * @return Whether the conceptTypeCount field is set.
    */
+  @java.lang.Override
   public boolean hasConceptTypeCount() {
     return conceptTypeCount_ != null;
   }
@@ -233,6 +240,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
    * @return The conceptTypeCount.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptTypeCount getConceptTypeCount() {
     return conceptTypeCount_ == null ? com.clarifai.grpc.api.ConceptTypeCount.getDefaultInstance() : conceptTypeCount_;
   }
@@ -243,6 +251,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ConceptTypeCount concept_type_count = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptTypeCountOrBuilder getConceptTypeCountOrBuilder() {
     return getConceptTypeCount();
   }
@@ -257,6 +266,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
    * @return Whether the detailConceptCount field is set.
    */
+  @java.lang.Override
   public boolean hasDetailConceptCount() {
     return detailConceptCount_ != null;
   }
@@ -268,6 +278,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
    * @return The detailConceptCount.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DetailConceptCount getDetailConceptCount() {
     return detailConceptCount_ == null ? com.clarifai.grpc.api.DetailConceptCount.getDefaultInstance() : detailConceptCount_;
   }
@@ -278,6 +289,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.DetailConceptCount detail_concept_count = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DetailConceptCountOrBuilder getDetailConceptCountOrBuilder() {
     return getDetailConceptCount();
   }
@@ -296,10 +308,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     if (conceptTypeCount_ != null) {
@@ -317,10 +329,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (conceptTypeCount_ != null) {

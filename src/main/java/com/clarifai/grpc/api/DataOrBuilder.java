@@ -384,7 +384,7 @@ public interface DataOrBuilder extends
 
   /**
    * <pre>
-   * Input and output text.
+   * Input, output or annotation text.
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
@@ -393,7 +393,7 @@ public interface DataOrBuilder extends
   boolean hasText();
   /**
    * <pre>
-   * Input and output text.
+   * Input, output or annotation text.
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
@@ -402,7 +402,7 @@ public interface DataOrBuilder extends
   com.clarifai.grpc.api.Text getText();
   /**
    * <pre>
-   * Input and output text.
+   * Input, output or annotation text.
    * </pre>
    *
    * <code>.clarifai.api.Text text = 13;</code>
@@ -566,5 +566,49 @@ public interface DataOrBuilder extends
    * <code>repeated .clarifai.api.Hit hits = 17;</code>
    */
   com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Image> 
+      getHeatmapsList();
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  com.clarifai.grpc.api.Image getHeatmaps(int index);
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  int getHeatmapsCount();
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.ImageOrBuilder> 
+      getHeatmapsOrBuilderList();
+  /**
+   * <pre>
+   * Heatmap as 2d image
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Image heatmaps = 18;</code>
+   */
+  com.clarifai.grpc.api.ImageOrBuilder getHeatmapsOrBuilder(
       int index);
 }

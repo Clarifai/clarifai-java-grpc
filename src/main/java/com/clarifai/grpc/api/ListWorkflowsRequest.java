@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ListWorkflowsRequest}
  */
-public  final class ListWorkflowsRequest extends
+public final class ListWorkflowsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ListWorkflowsRequest)
     ListWorkflowsRequestOrBuilder {
@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     query_ = "";
     id_ = "";
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    searchTerm_ = "";
   }
 
   @java.lang.Override
@@ -91,13 +92,13 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 48: {
-            sortByCase_ = 6;
             sortBy_ = input.readBool();
+            sortByCase_ = 6;
             break;
           }
           case 56: {
-            sortByCase_ = 7;
             sortBy_ = input.readBool();
+            sortByCase_ = 7;
             break;
           }
           case 66: {
@@ -125,6 +126,12 @@ private static final long serialVersionUID = 0L;
             starredOnly_ = input.readBool();
             break;
           }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            searchTerm_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -136,6 +143,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -207,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -214,12 +224,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -235,6 +247,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 page = 2;</code>
    * @return The page.
    */
+  @java.lang.Override
   public int getPage() {
     return page_;
   }
@@ -250,6 +263,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 per_page = 3;</code>
    * @return The perPage.
    */
+  @java.lang.Override
   public int getPerPage() {
     return perPage_;
   }
@@ -265,6 +279,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool sort_ascending = 5;</code>
    * @return The sortAscending.
    */
+  @java.lang.Override
   public boolean getSortAscending() {
     return sortAscending_;
   }
@@ -276,8 +291,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_id = 6;</code>
+   * @return Whether the sortById field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortById() {
+    return sortByCase_ == 6;
+  }
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_id = 6;</code>
    * @return The sortById.
    */
+  @java.lang.Override
   public boolean getSortById() {
     if (sortByCase_ == 6) {
       return (java.lang.Boolean) sortBy_;
@@ -293,8 +321,22 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByModifiedAt() {
+    return sortByCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Whether to order by the modified_at time.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 7;</code>
    * @return The sortByModifiedAt.
    */
+  @java.lang.Override
   public boolean getSortByModifiedAt() {
     if (sortByCase_ == 7) {
       return (java.lang.Boolean) sortBy_;
@@ -312,6 +354,7 @@ private static final long serialVersionUID = 0L;
    * <code>string query = 8;</code>
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -332,6 +375,7 @@ private static final long serialVersionUID = 0L;
    * <code>string query = 8;</code>
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getQueryBytes() {
     java.lang.Object ref = query_;
@@ -355,8 +399,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=5242
    * @return The id.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -376,8 +423,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=5242
    * @return The bytes for id.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -402,6 +452,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool featured_only = 9;</code>
    * @return The featuredOnly.
    */
+  @java.lang.Override
   public boolean getFeaturedOnly() {
     return featuredOnly_;
   }
@@ -416,6 +467,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool starred_only = 11;</code>
    * @return The starredOnly.
    */
+  @java.lang.Override
   public boolean getStarredOnly() {
     return starredOnly_;
   }
@@ -471,6 +523,52 @@ private static final long serialVersionUID = 0L;
     return additionalFields_.getByteString(index);
   }
 
+  public static final int SEARCH_TERM_FIELD_NUMBER = 12;
+  private volatile java.lang.Object searchTerm_;
+  /**
+   * <pre>
+   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * </pre>
+   *
+   * <code>string search_term = 12;</code>
+   * @return The searchTerm.
+   */
+  @java.lang.Override
+  public java.lang.String getSearchTerm() {
+    java.lang.Object ref = searchTerm_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      searchTerm_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * </pre>
+   *
+   * <code>string search_term = 12;</code>
+   * @return The bytes for searchTerm.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchTermBytes() {
+    java.lang.Object ref = searchTerm_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      searchTerm_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -494,7 +592,7 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, id_);
     }
     if (sortAscending_ != false) {
@@ -508,7 +606,7 @@ private static final long serialVersionUID = 0L;
       output.writeBool(
           7, (boolean)((java.lang.Boolean) sortBy_));
     }
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, query_);
     }
     if (featuredOnly_ != false) {
@@ -519,6 +617,9 @@ private static final long serialVersionUID = 0L;
     }
     if (starredOnly_ != false) {
       output.writeBool(11, starredOnly_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchTerm_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, searchTerm_);
     }
     unknownFields.writeTo(output);
   }
@@ -541,7 +642,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, id_);
     }
     if (sortAscending_ != false) {
@@ -558,7 +659,7 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             7, (boolean)((java.lang.Boolean) sortBy_));
     }
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, query_);
     }
     if (featuredOnly_ != false) {
@@ -576,6 +677,9 @@ private static final long serialVersionUID = 0L;
     if (starredOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(11, starredOnly_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchTerm_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, searchTerm_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -613,6 +717,8 @@ private static final long serialVersionUID = 0L;
         != other.getStarredOnly()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
+    if (!getSearchTerm()
+        .equals(other.getSearchTerm())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 6:
@@ -662,6 +768,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
     }
+    hash = (37 * hash) + SEARCH_TERM_FIELD_NUMBER;
+    hash = (53 * hash) + getSearchTerm().hashCode();
     switch (sortByCase_) {
       case 6:
         hash = (37 * hash) + SORT_BY_ID_FIELD_NUMBER;
@@ -835,6 +943,8 @@ private static final long serialVersionUID = 0L;
 
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      searchTerm_ = "";
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -887,6 +997,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.additionalFields_ = additionalFields_;
+      result.searchTerm_ = searchTerm_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -970,6 +1081,10 @@ private static final long serialVersionUID = 0L;
           ensureAdditionalFieldsIsMutable();
           additionalFields_.addAll(other.additionalFields_);
         }
+        onChanged();
+      }
+      if (!other.getSearchTerm().isEmpty()) {
+        searchTerm_ = other.searchTerm_;
         onChanged();
       }
       switch (other.getSortByCase()) {
@@ -1159,6 +1274,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 page = 2;</code>
      * @return The page.
      */
+    @java.lang.Override
     public int getPage() {
       return page_;
     }
@@ -1204,6 +1320,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 per_page = 3;</code>
      * @return The perPage.
      */
+    @java.lang.Override
     public int getPerPage() {
       return perPage_;
     }
@@ -1249,6 +1366,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool sort_ascending = 5;</code>
      * @return The sortAscending.
      */
+    @java.lang.Override
     public boolean getSortAscending() {
       return sortAscending_;
     }
@@ -1284,6 +1402,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_id = 6;</code>
+     * @return Whether the sortById field is set.
+     */
+    public boolean hasSortById() {
+      return sortByCase_ == 6;
+    }
     /**
      * <pre>
      * Whether to order by the name
@@ -1330,6 +1459,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by the modified_at time.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 7;</code>
+     * @return Whether the sortByModifiedAt field is set.
+     */
+    public boolean hasSortByModifiedAt() {
+      return sortByCase_ == 7;
+    }
     /**
      * <pre>
      * Whether to order by the modified_at time.
@@ -1483,6 +1624,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5242
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -1504,6 +1647,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5242
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1526,6 +1671,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5242
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1546,6 +1693,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5242
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -1561,6 +1710,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=5242
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1585,6 +1736,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool featured_only = 9;</code>
      * @return The featuredOnly.
      */
+    @java.lang.Override
     public boolean getFeaturedOnly() {
       return featuredOnly_;
     }
@@ -1627,6 +1779,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool starred_only = 11;</code>
      * @return The starredOnly.
      */
+    @java.lang.Override
     public boolean getStarredOnly() {
       return starredOnly_;
     }
@@ -1802,6 +1955,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAdditionalFieldsIsMutable();
       additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object searchTerm_ = "";
+    /**
+     * <pre>
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * </pre>
+     *
+     * <code>string search_term = 12;</code>
+     * @return The searchTerm.
+     */
+    public java.lang.String getSearchTerm() {
+      java.lang.Object ref = searchTerm_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        searchTerm_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * </pre>
+     *
+     * <code>string search_term = 12;</code>
+     * @return The bytes for searchTerm.
+     */
+    public com.google.protobuf.ByteString
+        getSearchTermBytes() {
+      java.lang.Object ref = searchTerm_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        searchTerm_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * </pre>
+     *
+     * <code>string search_term = 12;</code>
+     * @param value The searchTerm to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchTerm(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      searchTerm_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * </pre>
+     *
+     * <code>string search_term = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchTerm() {
+      
+      searchTerm_ = getDefaultInstance().getSearchTerm();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * </pre>
+     *
+     * <code>string search_term = 12;</code>
+     * @param value The bytes for searchTerm to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchTermBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      searchTerm_ = value;
       onChanged();
       return this;
     }

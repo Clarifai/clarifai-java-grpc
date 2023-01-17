@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Video}
  */
-public  final class Video extends
+public final class Video extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Video)
     VideoOrBuilder {
@@ -114,6 +114,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -146,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * <code>string url = 1;</code>
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -167,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * <code>string url = 1;</code>
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUrlBytes() {
     java.lang.Object ref = url_;
@@ -196,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * <code>bytes base64 = 2;</code>
    * @return The base64.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getBase64() {
     return base64_;
   }
@@ -206,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool allow_duplicate_url = 4;</code>
    * @return The allowDuplicateUrl.
    */
+  @java.lang.Override
   public boolean getAllowDuplicateUrl() {
     return allowDuplicateUrl_;
   }
@@ -221,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * <code>string thumbnail_url = 5;</code>
    * @return The thumbnailUrl.
    */
+  @java.lang.Override
   public java.lang.String getThumbnailUrl() {
     java.lang.Object ref = thumbnailUrl_;
     if (ref instanceof java.lang.String) {
@@ -242,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * <code>string thumbnail_url = 5;</code>
    * @return The bytes for thumbnailUrl.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getThumbnailUrlBytes() {
     java.lang.Object ref = thumbnailUrl_;
@@ -267,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
    * @return Whether the hosted field is set.
    */
+  @java.lang.Override
   public boolean hasHosted() {
     return hosted_ != null;
   }
@@ -279,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
    * @return The hosted.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HostedURL getHosted() {
     return hosted_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hosted_;
   }
@@ -290,6 +300,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
     return getHosted();
   }
@@ -304,6 +315,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.VideoInfo video_info = 7;</code>
    * @return Whether the videoInfo field is set.
    */
+  @java.lang.Override
   public boolean hasVideoInfo() {
     return videoInfo_ != null;
   }
@@ -315,6 +327,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.VideoInfo video_info = 7;</code>
    * @return The videoInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VideoInfo getVideoInfo() {
     return videoInfo_ == null ? com.clarifai.grpc.api.VideoInfo.getDefaultInstance() : videoInfo_;
   }
@@ -325,6 +338,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.VideoInfo video_info = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VideoInfoOrBuilder getVideoInfoOrBuilder() {
     return getVideoInfo();
   }
@@ -343,7 +357,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
     }
     if (!base64_.isEmpty()) {
@@ -352,7 +366,7 @@ private static final long serialVersionUID = 0L;
     if (allowDuplicateUrl_ != false) {
       output.writeBool(4, allowDuplicateUrl_);
     }
-    if (!getThumbnailUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbnailUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, thumbnailUrl_);
     }
     if (hosted_ != null) {
@@ -370,7 +384,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
     }
     if (!base64_.isEmpty()) {
@@ -381,7 +395,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, allowDuplicateUrl_);
     }
-    if (!getThumbnailUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbnailUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, thumbnailUrl_);
     }
     if (hosted_ != null) {
@@ -862,6 +876,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes base64 = 2;</code>
      * @return The base64.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getBase64() {
       return base64_;
     }
@@ -913,6 +928,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool allow_duplicate_url = 4;</code>
      * @return The allowDuplicateUrl.
      */
+    @java.lang.Override
     public boolean getAllowDuplicateUrl() {
       return allowDuplicateUrl_;
     }

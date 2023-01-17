@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.AppDuplicationFilters}
  */
-public  final class AppDuplicationFilters extends
+public final class AppDuplicationFilters extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.AppDuplicationFilters)
     AppDuplicationFiltersOrBuilder {
@@ -88,6 +88,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -113,12 +115,13 @@ private static final long serialVersionUID = 0L;
   private boolean copyInputs_;
   /**
    * <pre>
-   * Copy only inputs and default annotations
+   * Copy inputs what what it depends on: input level annotation and concepts
    * </pre>
    *
    * <code>bool copy_inputs = 1;</code>
    * @return The copyInputs.
    */
+  @java.lang.Override
   public boolean getCopyInputs() {
     return copyInputs_;
   }
@@ -133,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool copy_concepts = 2;</code>
    * @return The copyConcepts.
    */
+  @java.lang.Override
   public boolean getCopyConcepts() {
     return copyConcepts_;
   }
@@ -147,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool copy_annotations = 3;</code>
    * @return The copyAnnotations.
    */
+  @java.lang.Override
   public boolean getCopyAnnotations() {
     return copyAnnotations_;
   }
@@ -161,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool copy_models = 4;</code>
    * @return The copyModels.
    */
+  @java.lang.Override
   public boolean getCopyModels() {
     return copyModels_;
   }
@@ -175,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool copy_workflows = 5;</code>
    * @return The copyWorkflows.
    */
+  @java.lang.Override
   public boolean getCopyWorkflows() {
     return copyWorkflows_;
   }
@@ -561,18 +568,19 @@ private static final long serialVersionUID = 0L;
     private boolean copyInputs_ ;
     /**
      * <pre>
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
      * @return The copyInputs.
      */
+    @java.lang.Override
     public boolean getCopyInputs() {
       return copyInputs_;
     }
     /**
      * <pre>
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -587,7 +595,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy only inputs and default annotations
+     * Copy inputs what what it depends on: input level annotation and concepts
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -609,6 +617,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool copy_concepts = 2;</code>
      * @return The copyConcepts.
      */
+    @java.lang.Override
     public boolean getCopyConcepts() {
       return copyConcepts_;
     }
@@ -651,6 +660,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool copy_annotations = 3;</code>
      * @return The copyAnnotations.
      */
+    @java.lang.Override
     public boolean getCopyAnnotations() {
       return copyAnnotations_;
     }
@@ -693,6 +703,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool copy_models = 4;</code>
      * @return The copyModels.
      */
+    @java.lang.Override
     public boolean getCopyModels() {
       return copyModels_;
     }
@@ -735,6 +746,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool copy_workflows = 5;</code>
      * @return The copyWorkflows.
      */
+    @java.lang.Override
     public boolean getCopyWorkflows() {
       return copyWorkflows_;
     }

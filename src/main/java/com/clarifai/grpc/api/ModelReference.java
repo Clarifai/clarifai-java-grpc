@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelReference}
  */
-public  final class ModelReference extends
+public final class ModelReference extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelReference)
     ModelReferenceOrBuilder {
@@ -104,6 +104,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -135,6 +137,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -155,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -179,6 +183,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 2;</code>
    * @return The modelId.
    */
+  @java.lang.Override
   public java.lang.String getModelId() {
     java.lang.Object ref = modelId_;
     if (ref instanceof java.lang.String) {
@@ -199,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_id = 2;</code>
    * @return The bytes for modelId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelIdBytes() {
     java.lang.Object ref = modelId_;
@@ -223,6 +229,7 @@ private static final long serialVersionUID = 0L;
    * <code>string url = 3;</code>
    * @return The url.
    */
+  @java.lang.Override
   public java.lang.String getUrl() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
@@ -243,6 +250,7 @@ private static final long serialVersionUID = 0L;
    * <code>string url = 3;</code>
    * @return The bytes for url.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUrlBytes() {
     java.lang.Object ref = url_;
@@ -267,6 +275,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 4;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -287,6 +296,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 4;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -312,6 +322,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -324,6 +335,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 5;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -335,6 +347,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -353,16 +366,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, url_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
     if (metadata_ != null) {
@@ -377,16 +390,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getModelIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
     }
-    if (!getUrlBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, url_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
     }
     if (metadata_ != null) {

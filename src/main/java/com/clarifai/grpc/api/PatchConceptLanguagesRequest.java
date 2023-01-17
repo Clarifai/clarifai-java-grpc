@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PatchConceptLanguagesRequest}
  */
-public  final class PatchConceptLanguagesRequest extends
+public final class PatchConceptLanguagesRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PatchConceptLanguagesRequest)
     PatchConceptLanguagesRequestOrBuilder {
@@ -101,6 +101,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -131,6 +133,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -138,12 +141,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -154,6 +159,7 @@ private static final long serialVersionUID = 0L;
    * <code>string concept_id = 2;</code>
    * @return The conceptId.
    */
+  @java.lang.Override
   public java.lang.String getConceptId() {
     java.lang.Object ref = conceptId_;
     if (ref instanceof java.lang.String) {
@@ -170,6 +176,7 @@ private static final long serialVersionUID = 0L;
    * <code>string concept_id = 2;</code>
    * @return The bytes for conceptId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getConceptIdBytes() {
     java.lang.Object ref = conceptId_;
@@ -189,12 +196,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.ConceptLanguage concept_languages = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ConceptLanguage> getConceptLanguagesList() {
     return conceptLanguages_;
   }
   /**
    * <code>repeated .clarifai.api.ConceptLanguage concept_languages = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ConceptLanguageOrBuilder> 
       getConceptLanguagesOrBuilderList() {
     return conceptLanguages_;
@@ -202,18 +211,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.ConceptLanguage concept_languages = 3;</code>
    */
+  @java.lang.Override
   public int getConceptLanguagesCount() {
     return conceptLanguages_.size();
   }
   /**
    * <code>repeated .clarifai.api.ConceptLanguage concept_languages = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptLanguage getConceptLanguages(int index) {
     return conceptLanguages_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.ConceptLanguage concept_languages = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptLanguageOrBuilder getConceptLanguagesOrBuilder(
       int index) {
     return conceptLanguages_.get(index);
@@ -229,6 +241,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 4;</code>
    * @return The action.
    */
+  @java.lang.Override
   public java.lang.String getAction() {
     java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
@@ -249,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * <code>string action = 4;</code>
    * @return The bytes for action.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActionBytes() {
     java.lang.Object ref = action_;
@@ -280,13 +294,13 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getConceptIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conceptId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, conceptId_);
     }
     for (int i = 0; i < conceptLanguages_.size(); i++) {
       output.writeMessage(3, conceptLanguages_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, action_);
     }
     unknownFields.writeTo(output);
@@ -302,14 +316,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getConceptIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conceptId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, conceptId_);
     }
     for (int i = 0; i < conceptLanguages_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, conceptLanguages_.get(i));
     }
-    if (!getActionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, action_);
     }
     size += unknownFields.getSerializedSize();

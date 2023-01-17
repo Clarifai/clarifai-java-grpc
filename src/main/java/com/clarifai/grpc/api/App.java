@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.App}
  */
-public  final class App extends
+public final class App extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.App)
     AppOrBuilder {
@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     description_ = "";
     dataTierId_ = "";
+    notes_ = "";
   }
 
   @java.lang.Override
@@ -173,6 +174,25 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
+          case 170: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notes_ = s;
+            break;
+          }
+          case 178: {
+            com.clarifai.grpc.api.Image.Builder subBuilder = null;
+            if (image_ != null) {
+              subBuilder = image_.toBuilder();
+            }
+            image_ = input.readMessage(com.clarifai.grpc.api.Image.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(image_);
+              image_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -184,6 +204,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -211,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -227,6 +250,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -247,6 +271,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -263,6 +288,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -283,6 +309,7 @@ private static final long serialVersionUID = 0L;
    * <code>string default_language = 3;</code>
    * @return The defaultLanguage.
    */
+  @java.lang.Override
   public java.lang.String getDefaultLanguage() {
     java.lang.Object ref = defaultLanguage_;
     if (ref instanceof java.lang.String) {
@@ -299,6 +326,7 @@ private static final long serialVersionUID = 0L;
    * <code>string default_language = 3;</code>
    * @return The bytes for defaultLanguage.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDefaultLanguageBytes() {
     java.lang.Object ref = defaultLanguage_;
@@ -319,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * <code>string default_workflow_id = 4;</code>
    * @return The defaultWorkflowId.
    */
+  @java.lang.Override
   public java.lang.String getDefaultWorkflowId() {
     java.lang.Object ref = defaultWorkflowId_;
     if (ref instanceof java.lang.String) {
@@ -335,6 +364,7 @@ private static final long serialVersionUID = 0L;
    * <code>string default_workflow_id = 4;</code>
    * @return The bytes for defaultWorkflowId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDefaultWorkflowIdBytes() {
     java.lang.Object ref = defaultWorkflowId_;
@@ -360,6 +390,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 5;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -381,6 +412,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 5;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -409,6 +441,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -424,6 +457,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -438,6 +472,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -452,6 +487,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 17;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -463,6 +499,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 17;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -473,6 +510,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 17;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -487,6 +525,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 legal_consent_status = 7;</code>
    * @return The legalConsentStatus.
    */
+  @java.lang.Override
   public int getLegalConsentStatus() {
     return legalConsentStatus_;
   }
@@ -502,6 +541,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 13;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -514,6 +554,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 13;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -525,6 +566,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 13;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -539,6 +581,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 14;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -559,6 +602,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 14;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -583,6 +627,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 sample_ms = 15;</code>
    * @return The sampleMs.
    */
+  @java.lang.Override
   public int getSampleMs() {
     return sampleMs_;
   }
@@ -599,6 +644,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 16;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -612,6 +658,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 16;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -624,6 +671,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 16;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -638,6 +686,7 @@ private static final long serialVersionUID = 0L;
    * <code>string data_tier_id = 18;</code>
    * @return The dataTierId.
    */
+  @java.lang.Override
   public java.lang.String getDataTierId() {
     java.lang.Object ref = dataTierId_;
     if (ref instanceof java.lang.String) {
@@ -658,6 +707,7 @@ private static final long serialVersionUID = 0L;
    * <code>string data_tier_id = 18;</code>
    * @return The bytes for dataTierId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDataTierIdBytes() {
     java.lang.Object ref = dataTierId_;
@@ -683,6 +733,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool is_starred = 19;</code>
    * @return The isStarred.
    */
+  @java.lang.Override
   public boolean getIsStarred() {
     return isStarred_;
   }
@@ -698,8 +749,95 @@ private static final long serialVersionUID = 0L;
    * <code>int32 star_count = 20;</code>
    * @return The starCount.
    */
+  @java.lang.Override
   public int getStarCount() {
     return starCount_;
+  }
+
+  public static final int NOTES_FIELD_NUMBER = 21;
+  private volatile java.lang.Object notes_;
+  /**
+   * <pre>
+   * Notes for the application
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 21;</code>
+   * @return The notes.
+   */
+  @java.lang.Override
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes for the application
+   * This field should be used for in-depth notes and supports up to 64Kbs.
+   * </pre>
+   *
+   * <code>string notes = 21;</code>
+   * @return The bytes for notes.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGE_FIELD_NUMBER = 22;
+  private com.clarifai.grpc.api.Image image_;
+  /**
+   * <pre>
+   * Representative image for this app
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 22;</code>
+   * @return Whether the image field is set.
+   */
+  @java.lang.Override
+  public boolean hasImage() {
+    return image_ != null;
+  }
+  /**
+   * <pre>
+   * Representative image for this app
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 22;</code>
+   * @return The image.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Image getImage() {
+    return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
+  }
+  /**
+   * <pre>
+   * Representative image for this app
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 22;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
+    return getImage();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -716,19 +854,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getDefaultLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLanguage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultLanguage_);
     }
-    if (!getDefaultWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultWorkflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, defaultWorkflowId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userId_);
     }
     if (createdAt_ != null) {
@@ -740,7 +878,7 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(13, getMetadata());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, description_);
     }
     if (sampleMs_ != 0) {
@@ -752,7 +890,7 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(17, getModifiedAt());
     }
-    if (!getDataTierIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataTierId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, dataTierId_);
     }
     if (isStarred_ != false) {
@@ -760,6 +898,12 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(20, starCount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, notes_);
+    }
+    if (image_ != null) {
+      output.writeMessage(22, getImage());
     }
     unknownFields.writeTo(output);
   }
@@ -770,19 +914,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getDefaultLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLanguage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultLanguage_);
     }
-    if (!getDefaultWorkflowIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultWorkflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, defaultWorkflowId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userId_);
     }
     if (createdAt_ != null) {
@@ -797,7 +941,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getMetadata());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, description_);
     }
     if (sampleMs_ != 0) {
@@ -812,7 +956,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getModifiedAt());
     }
-    if (!getDataTierIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataTierId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, dataTierId_);
     }
     if (isStarred_ != false) {
@@ -822,6 +966,13 @@ private static final long serialVersionUID = 0L;
     if (starCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(20, starCount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, notes_);
+    }
+    if (image_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, getImage());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -880,6 +1031,13 @@ private static final long serialVersionUID = 0L;
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
+    if (!getNotes()
+        .equals(other.getNotes())) return false;
+    if (hasImage() != other.hasImage()) return false;
+    if (hasImage()) {
+      if (!getImage()
+          .equals(other.getImage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -930,6 +1088,12 @@ private static final long serialVersionUID = 0L;
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
+    if (hasImage()) {
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1113,6 +1277,14 @@ private static final long serialVersionUID = 0L;
 
       starCount_ = 0;
 
+      notes_ = "";
+
+      if (imageBuilder_ == null) {
+        image_ = null;
+      } else {
+        image_ = null;
+        imageBuilder_ = null;
+      }
       return this;
     }
 
@@ -1170,6 +1342,12 @@ private static final long serialVersionUID = 0L;
       result.dataTierId_ = dataTierId_;
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
+      result.notes_ = notes_;
+      if (imageBuilder_ == null) {
+        result.image_ = image_;
+      } else {
+        result.image_ = imageBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1269,6 +1447,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
+      }
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
+        onChanged();
+      }
+      if (other.hasImage()) {
+        mergeImage(other.getImage());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2059,6 +2244,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 legal_consent_status = 7;</code>
      * @return The legalConsentStatus.
      */
+    @java.lang.Override
     public int getLegalConsentStatus() {
       return legalConsentStatus_;
     }
@@ -2361,6 +2547,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 sample_ms = 15;</code>
      * @return The sampleMs.
      */
+    @java.lang.Override
     public int getSampleMs() {
       return sampleMs_;
     }
@@ -2673,6 +2860,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_starred = 19;</code>
      * @return The isStarred.
      */
+    @java.lang.Override
     public boolean getIsStarred() {
       return isStarred_;
     }
@@ -2718,6 +2906,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 star_count = 20;</code>
      * @return The starCount.
      */
+    @java.lang.Override
     public int getStarCount() {
       return starCount_;
     }
@@ -2751,6 +2940,262 @@ private static final long serialVersionUID = 0L;
       starCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object notes_ = "";
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString
+        getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      
+      notes_ = getDefaultInstance().getNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for the application
+     * This field should be used for in-depth notes and supports up to 64Kbs.
+     * </pre>
+     *
+     * <code>string notes = 21;</code>
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notes_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.Image image_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> imageBuilder_;
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     * @return Whether the image field is set.
+     */
+    public boolean hasImage() {
+      return imageBuilder_ != null || image_ != null;
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     * @return The image.
+     */
+    public com.clarifai.grpc.api.Image getImage() {
+      if (imageBuilder_ == null) {
+        return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
+      } else {
+        return imageBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    public Builder setImage(com.clarifai.grpc.api.Image value) {
+      if (imageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        image_ = value;
+        onChanged();
+      } else {
+        imageBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    public Builder setImage(
+        com.clarifai.grpc.api.Image.Builder builderForValue) {
+      if (imageBuilder_ == null) {
+        image_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    public Builder mergeImage(com.clarifai.grpc.api.Image value) {
+      if (imageBuilder_ == null) {
+        if (image_ != null) {
+          image_ =
+            com.clarifai.grpc.api.Image.newBuilder(image_).mergeFrom(value).buildPartial();
+        } else {
+          image_ = value;
+        }
+        onChanged();
+      } else {
+        imageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    public Builder clearImage() {
+      if (imageBuilder_ == null) {
+        image_ = null;
+        onChanged();
+      } else {
+        image_ = null;
+        imageBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    public com.clarifai.grpc.api.Image.Builder getImageBuilder() {
+      
+      onChanged();
+      return getImageFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
+      if (imageBuilder_ != null) {
+        return imageBuilder_.getMessageOrBuilder();
+      } else {
+        return image_ == null ?
+            com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
+      }
+    }
+    /**
+     * <pre>
+     * Representative image for this app
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> 
+        getImageFieldBuilder() {
+      if (imageBuilder_ == null) {
+        imageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder>(
+                getImage(),
+                getParentForChildren(),
+                isClean());
+        image_ = null;
+      }
+      return imageBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -96,4 +96,14 @@ public interface GetWorkflowRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * if true will not expand search to clarifai workflows
+   * </pre>
+   *
+   * <code>bool exclude_clarifai_workflows = 5;</code>
+   * @return The excludeClarifaiWorkflows.
+   */
+  boolean getExcludeClarifaiWorkflows();
 }

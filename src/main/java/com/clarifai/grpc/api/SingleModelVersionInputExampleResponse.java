@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.SingleModelVersionInputExampleResponse}
  */
-public  final class SingleModelVersionInputExampleResponse extends
+public final class SingleModelVersionInputExampleResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.SingleModelVersionInputExampleResponse)
     SingleModelVersionInputExampleResponseOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,6 +122,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -131,6 +134,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -141,6 +145,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -155,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ModelVersionInputExample model_version_input_example = 2;</code>
    * @return Whether the modelVersionInputExample field is set.
    */
+  @java.lang.Override
   public boolean hasModelVersionInputExample() {
     return modelVersionInputExample_ != null;
   }
@@ -166,6 +172,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ModelVersionInputExample model_version_input_example = 2;</code>
    * @return The modelVersionInputExample.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelVersionInputExample getModelVersionInputExample() {
     return modelVersionInputExample_ == null ? com.clarifai.grpc.api.ModelVersionInputExample.getDefaultInstance() : modelVersionInputExample_;
   }
@@ -176,6 +183,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.ModelVersionInputExample model_version_input_example = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelVersionInputExampleOrBuilder getModelVersionInputExampleOrBuilder() {
     return getModelVersionInputExample();
   }

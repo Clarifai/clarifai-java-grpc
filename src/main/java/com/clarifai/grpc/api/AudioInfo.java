@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * Protobuf type {@code clarifai.api.AudioInfo}
  */
-public  final class AudioInfo extends
+public final class AudioInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.AudioInfo)
     AudioInfoOrBuilder {
@@ -81,6 +81,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -112,6 +114,7 @@ private static final long serialVersionUID = 0L;
    * <code>string audio_format = 1;</code>
    * @return The audioFormat.
    */
+  @java.lang.Override
   public java.lang.String getAudioFormat() {
     java.lang.Object ref = audioFormat_;
     if (ref instanceof java.lang.String) {
@@ -132,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * <code>string audio_format = 1;</code>
    * @return The bytes for audioFormat.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAudioFormatBytes() {
     java.lang.Object ref = audioFormat_;
@@ -156,6 +160,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 sample_rate = 2;</code>
    * @return The sampleRate.
    */
+  @java.lang.Override
   public int getSampleRate() {
     return sampleRate_;
   }
@@ -170,6 +175,7 @@ private static final long serialVersionUID = 0L;
    * <code>float duration_seconds = 3;</code>
    * @return The durationSeconds.
    */
+  @java.lang.Override
   public float getDurationSeconds() {
     return durationSeconds_;
   }
@@ -184,6 +190,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 bit_rate = 4;</code>
    * @return The bitRate.
    */
+  @java.lang.Override
   public int getBitRate() {
     return bitRate_;
   }
@@ -202,13 +209,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getAudioFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioFormat_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, audioFormat_);
     }
     if (sampleRate_ != 0) {
       output.writeInt32(2, sampleRate_);
     }
-    if (durationSeconds_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(durationSeconds_) != 0) {
       output.writeFloat(3, durationSeconds_);
     }
     if (bitRate_ != 0) {
@@ -223,14 +230,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getAudioFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioFormat_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, audioFormat_);
     }
     if (sampleRate_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, sampleRate_);
     }
-    if (durationSeconds_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(durationSeconds_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, durationSeconds_);
     }
@@ -648,6 +655,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 sample_rate = 2;</code>
      * @return The sampleRate.
      */
+    @java.lang.Override
     public int getSampleRate() {
       return sampleRate_;
     }
@@ -690,6 +698,7 @@ private static final long serialVersionUID = 0L;
      * <code>float duration_seconds = 3;</code>
      * @return The durationSeconds.
      */
+    @java.lang.Override
     public float getDurationSeconds() {
       return durationSeconds_;
     }
@@ -732,6 +741,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 bit_rate = 4;</code>
      * @return The bitRate.
      */
+    @java.lang.Override
     public int getBitRate() {
       return bitRate_;
     }

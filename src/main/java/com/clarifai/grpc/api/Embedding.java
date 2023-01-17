@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Embedding}
  */
-public  final class Embedding extends
+public final class Embedding extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Embedding)
     EmbeddingOrBuilder {
@@ -91,6 +91,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -121,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float vector = 1 [packed = true];</code>
    * @return A list containing the vector.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getVectorList() {
     return vector_;
@@ -148,6 +151,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 num_dimensions = 2;</code>
    * @return The numDimensions.
    */
+  @java.lang.Override
   public int getNumDimensions() {
     return numDimensions_;
   }
@@ -586,6 +590,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 num_dimensions = 2;</code>
      * @return The numDimensions.
      */
+    @java.lang.Override
     public int getNumDimensions() {
       return numDimensions_;
     }

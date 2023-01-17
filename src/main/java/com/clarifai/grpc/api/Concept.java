@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Concept}
  */
-public  final class Concept extends
+public final class Concept extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Concept)
     ConceptOrBuilder {
@@ -132,6 +132,19 @@ private static final long serialVersionUID = 0L;
             userId_ = s;
             break;
           }
+          case 90: {
+            com.clarifai.grpc.api.KeypointInfo.Builder subBuilder = null;
+            if (keypointInfo_ != null) {
+              subBuilder = keypointInfo_.toBuilder();
+            }
+            keypointInfo_ = input.readMessage(com.clarifai.grpc.api.KeypointInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(keypointInfo_);
+              keypointInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -143,6 +156,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -174,6 +189,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -194,6 +210,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -218,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -238,6 +256,7 @@ private static final long serialVersionUID = 0L;
    * <code>string name = 2;</code>
    * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -265,6 +284,7 @@ private static final long serialVersionUID = 0L;
    * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
    * @return The value.
    */
+  @java.lang.Override
   public float getValue() {
     return value_;
   }
@@ -280,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -292,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -303,6 +325,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -320,6 +343,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 5;</code>
    * @return The language.
    */
+  @java.lang.Override
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
@@ -343,6 +367,7 @@ private static final long serialVersionUID = 0L;
    * <code>string language = 5;</code>
    * @return The bytes for language.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLanguageBytes() {
     java.lang.Object ref = language_;
@@ -367,6 +392,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 6;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -387,6 +413,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 6;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -411,6 +438,7 @@ private static final long serialVersionUID = 0L;
    * <code>string definition = 7;</code>
    * @return The definition.
    */
+  @java.lang.Override
   public java.lang.String getDefinition() {
     java.lang.Object ref = definition_;
     if (ref instanceof java.lang.String) {
@@ -431,6 +459,7 @@ private static final long serialVersionUID = 0L;
    * <code>string definition = 7;</code>
    * @return The bytes for definition.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDefinitionBytes() {
     java.lang.Object ref = definition_;
@@ -457,6 +486,7 @@ private static final long serialVersionUID = 0L;
    * <code>string vocab_id = 8;</code>
    * @return The vocabId.
    */
+  @java.lang.Override
   public java.lang.String getVocabId() {
     java.lang.Object ref = vocabId_;
     if (ref instanceof java.lang.String) {
@@ -479,6 +509,7 @@ private static final long serialVersionUID = 0L;
    * <code>string vocab_id = 8;</code>
    * @return The bytes for vocabId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getVocabIdBytes() {
     java.lang.Object ref = vocabId_;
@@ -505,6 +536,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 9;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -518,6 +550,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 9;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -530,6 +563,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -544,6 +578,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 10;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -564,6 +599,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 10;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -576,6 +612,44 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int KEYPOINT_INFO_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.KeypointInfo keypointInfo_;
+  /**
+   * <pre>
+   * Information about keypoints for this concept
+   * </pre>
+   *
+   * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+   * @return Whether the keypointInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeypointInfo() {
+    return keypointInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Information about keypoints for this concept
+   * </pre>
+   *
+   * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+   * @return The keypointInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.KeypointInfo getKeypointInfo() {
+    return keypointInfo_ == null ? com.clarifai.grpc.api.KeypointInfo.getDefaultInstance() : keypointInfo_;
+  }
+  /**
+   * <pre>
+   * Information about keypoints for this concept
+   * </pre>
+   *
+   * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.KeypointInfoOrBuilder getKeypointInfoOrBuilder() {
+    return getKeypointInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -592,35 +666,38 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(3, value_);
     }
     if (createdAt_ != null) {
       output.writeMessage(4, getCreatedAt());
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, language_);
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, appId_);
     }
-    if (!getDefinitionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definition_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, definition_);
     }
-    if (!getVocabIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vocabId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, vocabId_);
     }
     if (visibility_ != null) {
       output.writeMessage(9, getVisibility());
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userId_);
+    }
+    if (keypointInfo_ != null) {
+      output.writeMessage(11, getKeypointInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -631,13 +708,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, value_);
     }
@@ -645,24 +722,28 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getCreatedAt());
     }
-    if (!getLanguageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, language_);
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, appId_);
     }
-    if (!getDefinitionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definition_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, definition_);
     }
-    if (!getVocabIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vocabId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, vocabId_);
     }
     if (visibility_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getVisibility());
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userId_);
+    }
+    if (keypointInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getKeypointInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -706,6 +787,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getUserId()
         .equals(other.getUserId())) return false;
+    if (hasKeypointInfo() != other.hasKeypointInfo()) return false;
+    if (hasKeypointInfo()) {
+      if (!getKeypointInfo()
+          .equals(other.getKeypointInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -742,6 +828,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
+    if (hasKeypointInfo()) {
+      hash = (37 * hash) + KEYPOINT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getKeypointInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -907,6 +997,12 @@ private static final long serialVersionUID = 0L;
       }
       userId_ = "";
 
+      if (keypointInfoBuilder_ == null) {
+        keypointInfo_ = null;
+      } else {
+        keypointInfo_ = null;
+        keypointInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -951,6 +1047,11 @@ private static final long serialVersionUID = 0L;
         result.visibility_ = visibilityBuilder_.build();
       }
       result.userId_ = userId_;
+      if (keypointInfoBuilder_ == null) {
+        result.keypointInfo_ = keypointInfo_;
+      } else {
+        result.keypointInfo_ = keypointInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1035,6 +1136,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
+      }
+      if (other.hasKeypointInfo()) {
+        mergeKeypointInfo(other.getKeypointInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1269,6 +1373,7 @@ private static final long serialVersionUID = 0L;
      * <code>float value = 3 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_default_float) = 1];</code>
      * @return The value.
      */
+    @java.lang.Override
     public float getValue() {
       return value_;
     }
@@ -2148,6 +2253,161 @@ private static final long serialVersionUID = 0L;
       userId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.KeypointInfo keypointInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.KeypointInfo, com.clarifai.grpc.api.KeypointInfo.Builder, com.clarifai.grpc.api.KeypointInfoOrBuilder> keypointInfoBuilder_;
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     * @return Whether the keypointInfo field is set.
+     */
+    public boolean hasKeypointInfo() {
+      return keypointInfoBuilder_ != null || keypointInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     * @return The keypointInfo.
+     */
+    public com.clarifai.grpc.api.KeypointInfo getKeypointInfo() {
+      if (keypointInfoBuilder_ == null) {
+        return keypointInfo_ == null ? com.clarifai.grpc.api.KeypointInfo.getDefaultInstance() : keypointInfo_;
+      } else {
+        return keypointInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    public Builder setKeypointInfo(com.clarifai.grpc.api.KeypointInfo value) {
+      if (keypointInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        keypointInfo_ = value;
+        onChanged();
+      } else {
+        keypointInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    public Builder setKeypointInfo(
+        com.clarifai.grpc.api.KeypointInfo.Builder builderForValue) {
+      if (keypointInfoBuilder_ == null) {
+        keypointInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        keypointInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    public Builder mergeKeypointInfo(com.clarifai.grpc.api.KeypointInfo value) {
+      if (keypointInfoBuilder_ == null) {
+        if (keypointInfo_ != null) {
+          keypointInfo_ =
+            com.clarifai.grpc.api.KeypointInfo.newBuilder(keypointInfo_).mergeFrom(value).buildPartial();
+        } else {
+          keypointInfo_ = value;
+        }
+        onChanged();
+      } else {
+        keypointInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    public Builder clearKeypointInfo() {
+      if (keypointInfoBuilder_ == null) {
+        keypointInfo_ = null;
+        onChanged();
+      } else {
+        keypointInfo_ = null;
+        keypointInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    public com.clarifai.grpc.api.KeypointInfo.Builder getKeypointInfoBuilder() {
+      
+      onChanged();
+      return getKeypointInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    public com.clarifai.grpc.api.KeypointInfoOrBuilder getKeypointInfoOrBuilder() {
+      if (keypointInfoBuilder_ != null) {
+        return keypointInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return keypointInfo_ == null ?
+            com.clarifai.grpc.api.KeypointInfo.getDefaultInstance() : keypointInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Information about keypoints for this concept
+     * </pre>
+     *
+     * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.KeypointInfo, com.clarifai.grpc.api.KeypointInfo.Builder, com.clarifai.grpc.api.KeypointInfoOrBuilder> 
+        getKeypointInfoFieldBuilder() {
+      if (keypointInfoBuilder_ == null) {
+        keypointInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.KeypointInfo, com.clarifai.grpc.api.KeypointInfo.Builder, com.clarifai.grpc.api.KeypointInfoOrBuilder>(
+                getKeypointInfo(),
+                getParentForChildren(),
+                isClean());
+        keypointInfo_ = null;
+      }
+      return keypointInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ConceptRelation}
  */
-public  final class ConceptRelation extends
+public final class ConceptRelation extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ConceptRelation)
     ConceptRelationOrBuilder {
@@ -123,6 +123,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -154,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +177,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -198,6 +202,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Concept subject_concept = 2;</code>
    * @return Whether the subjectConcept field is set.
    */
+  @java.lang.Override
   public boolean hasSubjectConcept() {
     return subjectConcept_ != null;
   }
@@ -209,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Concept subject_concept = 2;</code>
    * @return The subjectConcept.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getSubjectConcept() {
     return subjectConcept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : subjectConcept_;
   }
@@ -219,6 +225,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Concept subject_concept = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getSubjectConceptOrBuilder() {
     return getSubjectConcept();
   }
@@ -233,6 +240,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Concept object_concept = 3;</code>
    * @return Whether the objectConcept field is set.
    */
+  @java.lang.Override
   public boolean hasObjectConcept() {
     return objectConcept_ != null;
   }
@@ -244,6 +252,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Concept object_concept = 3;</code>
    * @return The objectConcept.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Concept getObjectConcept() {
     return objectConcept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : objectConcept_;
   }
@@ -254,6 +263,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Concept object_concept = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConceptOrBuilder getObjectConceptOrBuilder() {
     return getObjectConcept();
   }
@@ -292,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * <code>string predicate = 4;</code>
    * @return The predicate.
    */
+  @java.lang.Override
   public java.lang.String getPredicate() {
     java.lang.Object ref = predicate_;
     if (ref instanceof java.lang.String) {
@@ -336,6 +347,7 @@ private static final long serialVersionUID = 0L;
    * <code>string predicate = 4;</code>
    * @return The bytes for predicate.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPredicateBytes() {
     java.lang.Object ref = predicate_;
@@ -361,6 +373,7 @@ private static final long serialVersionUID = 0L;
    * <code>string knowledge_graph_id = 5;</code>
    * @return The knowledgeGraphId.
    */
+  @java.lang.Override
   public java.lang.String getKnowledgeGraphId() {
     java.lang.Object ref = knowledgeGraphId_;
     if (ref instanceof java.lang.String) {
@@ -382,6 +395,7 @@ private static final long serialVersionUID = 0L;
    * <code>string knowledge_graph_id = 5;</code>
    * @return The bytes for knowledgeGraphId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getKnowledgeGraphIdBytes() {
     java.lang.Object ref = knowledgeGraphId_;
@@ -408,6 +422,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -421,6 +436,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -433,6 +449,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -451,7 +468,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (subjectConcept_ != null) {
@@ -460,10 +477,10 @@ private static final long serialVersionUID = 0L;
     if (objectConcept_ != null) {
       output.writeMessage(3, getObjectConcept());
     }
-    if (!getPredicateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predicate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, predicate_);
     }
-    if (!getKnowledgeGraphIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeGraphId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, knowledgeGraphId_);
     }
     if (visibility_ != null) {
@@ -478,7 +495,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (subjectConcept_ != null) {
@@ -489,10 +506,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getObjectConcept());
     }
-    if (!getPredicateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predicate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, predicate_);
     }
-    if (!getKnowledgeGraphIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeGraphId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, knowledgeGraphId_);
     }
     if (visibility_ != null) {
