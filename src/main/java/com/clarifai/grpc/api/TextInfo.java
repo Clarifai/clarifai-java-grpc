@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * Protobuf type {@code clarifai.api.TextInfo}
  */
-public  final class TextInfo extends
+public final class TextInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TextInfo)
     TextInfoOrBuilder {
@@ -71,6 +71,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -102,6 +104,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 char_count = 1;</code>
    * @return The charCount.
    */
+  @java.lang.Override
   public int getCharCount() {
     return charCount_;
   }
@@ -116,6 +119,7 @@ private static final long serialVersionUID = 0L;
    * <code>string encoding = 2;</code>
    * @return The encoding.
    */
+  @java.lang.Override
   public java.lang.String getEncoding() {
     java.lang.Object ref = encoding_;
     if (ref instanceof java.lang.String) {
@@ -136,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * <code>string encoding = 2;</code>
    * @return The bytes for encoding.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getEncodingBytes() {
     java.lang.Object ref = encoding_;
@@ -167,7 +172,7 @@ private static final long serialVersionUID = 0L;
     if (charCount_ != 0) {
       output.writeInt32(1, charCount_);
     }
-    if (!getEncodingBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, encoding_);
     }
     unknownFields.writeTo(output);
@@ -183,7 +188,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, charCount_);
     }
-    if (!getEncodingBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, encoding_);
     }
     size += unknownFields.getSerializedSize();
@@ -478,6 +483,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 char_count = 1;</code>
      * @return The charCount.
      */
+    @java.lang.Override
     public int getCharCount() {
       return charCount_;
     }

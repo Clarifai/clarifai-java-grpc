@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Region}
  */
-public  final class Region extends
+public final class Region extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Region)
     RegionOrBuilder {
@@ -108,6 +108,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -139,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -159,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -183,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
    * @return Whether the regionInfo field is set.
    */
+  @java.lang.Override
   public boolean hasRegionInfo() {
     return regionInfo_ != null;
   }
@@ -194,6 +199,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
    * @return The regionInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.RegionInfo getRegionInfo() {
     return regionInfo_ == null ? com.clarifai.grpc.api.RegionInfo.getDefaultInstance() : regionInfo_;
   }
@@ -204,6 +210,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.RegionInfo region_info = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.RegionInfoOrBuilder getRegionInfoOrBuilder() {
     return getRegionInfo();
   }
@@ -219,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 3;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -231,6 +239,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 3;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -242,6 +251,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -256,6 +266,7 @@ private static final long serialVersionUID = 0L;
    * <code>float value = 4;</code>
    * @return The value.
    */
+  @java.lang.Override
   public float getValue() {
     return value_;
   }
@@ -270,6 +281,7 @@ private static final long serialVersionUID = 0L;
    * <code>string track_id = 5;</code>
    * @return The trackId.
    */
+  @java.lang.Override
   public java.lang.String getTrackId() {
     java.lang.Object ref = trackId_;
     if (ref instanceof java.lang.String) {
@@ -290,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * <code>string track_id = 5;</code>
    * @return The bytes for trackId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTrackIdBytes() {
     java.lang.Object ref = trackId_;
@@ -318,7 +331,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (regionInfo_ != null) {
@@ -327,10 +340,10 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(3, getData());
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(4, value_);
     }
-    if (!getTrackIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, trackId_);
     }
     unknownFields.writeTo(output);
@@ -342,7 +355,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (regionInfo_ != null) {
@@ -353,11 +366,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getData());
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, value_);
     }
-    if (!getTrackIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, trackId_);
     }
     size += unknownFields.getSerializedSize();
@@ -1130,6 +1143,7 @@ private static final long serialVersionUID = 0L;
      * <code>float value = 4;</code>
      * @return The value.
      */
+    @java.lang.Override
     public float getValue() {
       return value_;
     }

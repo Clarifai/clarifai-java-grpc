@@ -13,6 +13,8 @@ public interface EvalTestSetEntryOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1814
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -22,6 +24,8 @@ public interface EvalTestSetEntryOrBuilder extends
    * </pre>
    *
    * <code>string id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1814
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -29,11 +33,15 @@ public interface EvalTestSetEntryOrBuilder extends
 
   /**
    * <code>string url = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1815
    * @return The url.
    */
   @java.lang.Deprecated java.lang.String getUrl();
   /**
    * <code>string url = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1815
    * @return The bytes for url.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.GetCollectorRequest}
  */
-public  final class GetCollectorRequest extends
+public final class GetCollectorRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.GetCollectorRequest)
     GetCollectorRequestOrBuilder {
@@ -83,6 +83,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -110,6 +112,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -117,12 +120,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -137,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * <code>string collector_id = 2;</code>
    * @return The collectorId.
    */
+  @java.lang.Override
   public java.lang.String getCollectorId() {
     java.lang.Object ref = collectorId_;
     if (ref instanceof java.lang.String) {
@@ -157,6 +163,7 @@ private static final long serialVersionUID = 0L;
    * <code>string collector_id = 2;</code>
    * @return The bytes for collectorId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCollectorIdBytes() {
     java.lang.Object ref = collectorId_;
@@ -188,7 +195,7 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!getCollectorIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collectorId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, collectorId_);
     }
     unknownFields.writeTo(output);
@@ -204,7 +211,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!getCollectorIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collectorId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, collectorId_);
     }
     size += unknownFields.getSerializedSize();

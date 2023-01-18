@@ -16,7 +16,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Visibility}
  */
-public  final class Visibility extends
+public final class Visibility extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Visibility)
     VisibilityOrBuilder {
@@ -76,6 +76,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -225,6 +227,10 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -265,14 +271,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility.Gettable gettable = 1;</code>
    * @return The enum numeric value on the wire for gettable.
    */
-  public int getGettableValue() {
+  @java.lang.Override public int getGettableValue() {
     return gettable_;
   }
   /**
    * <code>.clarifai.api.Visibility.Gettable gettable = 1;</code>
    * @return The gettable.
    */
-  public com.clarifai.grpc.api.Visibility.Gettable getGettable() {
+  @java.lang.Override public com.clarifai.grpc.api.Visibility.Gettable getGettable() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.Visibility.Gettable result = com.clarifai.grpc.api.Visibility.Gettable.valueOf(gettable_);
     return result == null ? com.clarifai.grpc.api.Visibility.Gettable.UNRECOGNIZED : result;
@@ -594,7 +600,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.Visibility.Gettable gettable = 1;</code>
      * @return The enum numeric value on the wire for gettable.
      */
-    public int getGettableValue() {
+    @java.lang.Override public int getGettableValue() {
       return gettable_;
     }
     /**
@@ -603,6 +609,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setGettableValue(int value) {
+      
       gettable_ = value;
       onChanged();
       return this;
@@ -611,6 +618,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.Visibility.Gettable gettable = 1;</code>
      * @return The gettable.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.Visibility.Gettable getGettable() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.Visibility.Gettable result = com.clarifai.grpc.api.Visibility.Gettable.valueOf(gettable_);

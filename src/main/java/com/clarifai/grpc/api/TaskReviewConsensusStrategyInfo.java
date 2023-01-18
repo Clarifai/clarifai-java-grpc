@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TaskReviewConsensusStrategyInfo}
  */
-public  final class TaskReviewConsensusStrategyInfo extends
+public final class TaskReviewConsensusStrategyInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TaskReviewConsensusStrategyInfo)
     TaskReviewConsensusStrategyInfoOrBuilder {
@@ -68,6 +68,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -99,6 +101,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 approval_threshold = 2;</code>
    * @return The approvalThreshold.
    */
+  @java.lang.Override
   public int getApprovalThreshold() {
     return approvalThreshold_;
   }
@@ -418,6 +421,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 approval_threshold = 2;</code>
      * @return The approvalThreshold.
      */
+    @java.lang.Override
     public int getApprovalThreshold() {
       return approvalThreshold_;
     }

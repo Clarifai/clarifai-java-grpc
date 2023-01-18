@@ -232,4 +232,31 @@ public interface ConceptOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdBytes();
+
+  /**
+   * <pre>
+   * Information about keypoints for this concept
+   * </pre>
+   *
+   * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+   * @return Whether the keypointInfo field is set.
+   */
+  boolean hasKeypointInfo();
+  /**
+   * <pre>
+   * Information about keypoints for this concept
+   * </pre>
+   *
+   * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+   * @return The keypointInfo.
+   */
+  com.clarifai.grpc.api.KeypointInfo getKeypointInfo();
+  /**
+   * <pre>
+   * Information about keypoints for this concept
+   * </pre>
+   *
+   * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
+   */
+  com.clarifai.grpc.api.KeypointInfoOrBuilder getKeypointInfoOrBuilder();
 }

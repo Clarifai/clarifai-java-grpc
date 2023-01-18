@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PostModelsRequest}
  */
-public  final class PostModelsRequest extends
+public final class PostModelsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PostModelsRequest)
     PostModelsRequestOrBuilder {
@@ -100,6 +100,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -130,6 +132,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -137,12 +140,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -158,8 +163,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelsRequest.model is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4380
    * @return Whether the model field is set.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean hasModel() {
     return model_ != null;
   }
@@ -172,8 +180,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.PostModelsRequest.model is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4380
    * @return The model.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
   }
@@ -187,6 +198,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
     return getModel();
   }
@@ -200,6 +212,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Model models = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Model> getModelsList() {
     return models_;
   }
@@ -210,6 +223,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Model models = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ModelOrBuilder> 
       getModelsOrBuilderList() {
     return models_;
@@ -221,6 +235,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Model models = 3;</code>
    */
+  @java.lang.Override
   public int getModelsCount() {
     return models_.size();
   }
@@ -231,6 +246,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Model models = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Model getModels(int index) {
     return models_.get(index);
   }
@@ -241,6 +257,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Model models = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelOrBuilder getModelsOrBuilder(
       int index) {
     return models_.get(index);
@@ -783,6 +800,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelsRequest.model is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4380
      * @return Whether the model field is set.
      */
     @java.lang.Deprecated public boolean hasModel() {
@@ -797,6 +816,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.clarifai.api.Model model = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.PostModelsRequest.model is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4380
      * @return The model.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {

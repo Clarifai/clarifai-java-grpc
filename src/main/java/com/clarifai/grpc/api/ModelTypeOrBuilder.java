@@ -269,65 +269,100 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * Can this model be evaluated?
+   * Expected input layers of an uploaded model
    * </pre>
    *
-   * <code>bool evaluable = 13;</code>
-   * @return The evaluable.
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
    */
-  boolean getEvaluable();
+  java.util.List<com.clarifai.grpc.api.ModelLayerInfo> 
+      getExpectedInputLayersList();
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  com.clarifai.grpc.api.ModelLayerInfo getExpectedInputLayers(int index);
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  int getExpectedInputLayersCount();
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+      getExpectedInputLayersOrBuilderList();
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  com.clarifai.grpc.api.ModelLayerInfoOrBuilder getExpectedInputLayersOrBuilder(
+      int index);
 
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+   * Expected output layers of an uploaded model
    * </pre>
    *
-   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-   * @return Whether the expectedPretrainedInputFields field is set.
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
    */
-  boolean hasExpectedPretrainedInputFields();
+  java.util.List<com.clarifai.grpc.api.ModelLayerInfo> 
+      getExpectedOutputLayersList();
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+   * Expected output layers of an uploaded model
    * </pre>
    *
-   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-   * @return The expectedPretrainedInputFields.
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
    */
-  com.google.protobuf.Struct getExpectedPretrainedInputFields();
+  com.clarifai.grpc.api.ModelLayerInfo getExpectedOutputLayers(int index);
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+   * Expected output layers of an uploaded model
    * </pre>
    *
-   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
    */
-  com.google.protobuf.StructOrBuilder getExpectedPretrainedInputFieldsOrBuilder();
+  int getExpectedOutputLayersCount();
+  /**
+   * <pre>
+   * Expected output layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+      getExpectedOutputLayersOrBuilderList();
+  /**
+   * <pre>
+   * Expected output layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+   */
+  com.clarifai.grpc.api.ModelLayerInfoOrBuilder getExpectedOutputLayersOrBuilder(
+      int index);
 
   /**
-   * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-   * @return Whether the expectedPretrainedOutputFields field is set.
+   * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+   * @return The enum numeric value on the wire for evaluationType.
    */
-  boolean hasExpectedPretrainedOutputFields();
+  int getEvaluationTypeValue();
   /**
-   * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-   * @return The expectedPretrainedOutputFields.
+   * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+   * @return The evaluationType.
    */
-  com.google.protobuf.Struct getExpectedPretrainedOutputFields();
-  /**
-   * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-   */
-  com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder();
+  com.clarifai.grpc.api.EvaluationType getEvaluationType();
 }

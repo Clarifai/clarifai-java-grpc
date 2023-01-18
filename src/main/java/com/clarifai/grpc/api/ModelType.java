@@ -12,7 +12,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ModelType}
  */
-public  final class ModelType extends
+public final class ModelType extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ModelType)
     ModelTypeOrBuilder {
@@ -28,6 +28,9 @@ private static final long serialVersionUID = 0L;
     inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     modelTypeFields_ = java.util.Collections.emptyList();
+    expectedInputLayers_ = java.util.Collections.emptyList();
+    expectedOutputLayers_ = java.util.Collections.emptyList();
+    evaluationType_ = 0;
   }
 
   @java.lang.Override
@@ -126,35 +129,28 @@ private static final long serialVersionUID = 0L;
             requiresSequentialFrames_ = input.readBool();
             break;
           }
-          case 104: {
-
-            evaluable_ = input.readBool();
+          case 130: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              expectedInputLayers_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelLayerInfo>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            expectedInputLayers_.add(
+                input.readMessage(com.clarifai.grpc.api.ModelLayerInfo.parser(), extensionRegistry));
             break;
           }
-          case 114: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (expectedPretrainedInputFields_ != null) {
-              subBuilder = expectedPretrainedInputFields_.toBuilder();
+          case 138: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              expectedOutputLayers_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelLayerInfo>();
+              mutable_bitField0_ |= 0x00000010;
             }
-            expectedPretrainedInputFields_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(expectedPretrainedInputFields_);
-              expectedPretrainedInputFields_ = subBuilder.buildPartial();
-            }
-
+            expectedOutputLayers_.add(
+                input.readMessage(com.clarifai.grpc.api.ModelLayerInfo.parser(), extensionRegistry));
             break;
           }
-          case 122: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (expectedPretrainedOutputFields_ != null) {
-              subBuilder = expectedPretrainedOutputFields_.toBuilder();
-            }
-            expectedPretrainedOutputFields_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(expectedPretrainedOutputFields_);
-              expectedPretrainedOutputFields_ = subBuilder.buildPartial();
-            }
+          case 144: {
+            int rawValue = input.readEnum();
 
+            evaluationType_ = rawValue;
             break;
           }
           default: {
@@ -168,6 +164,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -180,6 +178,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         modelTypeFields_ = java.util.Collections.unmodifiableList(modelTypeFields_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        expectedInputLayers_ = java.util.Collections.unmodifiableList(expectedInputLayers_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        expectedOutputLayers_ = java.util.Collections.unmodifiableList(expectedOutputLayers_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -210,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -232,6 +237,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -256,6 +262,7 @@ private static final long serialVersionUID = 0L;
    * <code>string title = 2;</code>
    * @return The title.
    */
+  @java.lang.Override
   public java.lang.String getTitle() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
@@ -276,6 +283,7 @@ private static final long serialVersionUID = 0L;
    * <code>string title = 2;</code>
    * @return The bytes for title.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTitleBytes() {
     java.lang.Object ref = title_;
@@ -300,6 +308,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 3;</code>
    * @return The description.
    */
+  @java.lang.Override
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
@@ -320,6 +329,7 @@ private static final long serialVersionUID = 0L;
    * <code>string description = 3;</code>
    * @return The bytes for description.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
     java.lang.Object ref = description_;
@@ -454,6 +464,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool trainable = 8;</code>
    * @return The trainable.
    */
+  @java.lang.Override
   public boolean getTrainable() {
     return trainable_;
   }
@@ -469,6 +480,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool creatable = 9;</code>
    * @return The creatable.
    */
+  @java.lang.Override
   public boolean getCreatable() {
     return creatable_;
   }
@@ -483,6 +495,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool internal_only = 10;</code>
    * @return The internalOnly.
    */
+  @java.lang.Override
   public boolean getInternalOnly() {
     return internalOnly_;
   }
@@ -500,6 +513,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.ModelTypeField> getModelTypeFieldsList() {
     return modelTypeFields_;
   }
@@ -514,6 +528,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
       getModelTypeFieldsOrBuilderList() {
     return modelTypeFields_;
@@ -529,6 +544,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
    */
+  @java.lang.Override
   public int getModelTypeFieldsCount() {
     return modelTypeFields_.size();
   }
@@ -543,6 +559,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeField getModelTypeFields(int index) {
     return modelTypeFields_.get(index);
   }
@@ -557,6 +574,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelTypeFieldsOrBuilder(
       int index) {
     return modelTypeFields_.get(index);
@@ -573,92 +591,148 @@ private static final long serialVersionUID = 0L;
    * <code>bool requires_sequential_frames = 12;</code>
    * @return The requiresSequentialFrames.
    */
+  @java.lang.Override
   public boolean getRequiresSequentialFrames() {
     return requiresSequentialFrames_;
   }
 
-  public static final int EVALUABLE_FIELD_NUMBER = 13;
-  private boolean evaluable_;
+  public static final int EXPECTED_INPUT_LAYERS_FIELD_NUMBER = 16;
+  private java.util.List<com.clarifai.grpc.api.ModelLayerInfo> expectedInputLayers_;
   /**
    * <pre>
-   * Can this model be evaluated?
+   * Expected input layers of an uploaded model
    * </pre>
    *
-   * <code>bool evaluable = 13;</code>
-   * @return The evaluable.
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
    */
-  public boolean getEvaluable() {
-    return evaluable_;
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.ModelLayerInfo> getExpectedInputLayersList() {
+    return expectedInputLayers_;
+  }
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+      getExpectedInputLayersOrBuilderList() {
+    return expectedInputLayers_;
+  }
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  @java.lang.Override
+  public int getExpectedInputLayersCount() {
+    return expectedInputLayers_.size();
+  }
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelLayerInfo getExpectedInputLayers(int index) {
+    return expectedInputLayers_.get(index);
+  }
+  /**
+   * <pre>
+   * Expected input layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelLayerInfoOrBuilder getExpectedInputLayersOrBuilder(
+      int index) {
+    return expectedInputLayers_.get(index);
   }
 
-  public static final int EXPECTED_PRETRAINED_INPUT_FIELDS_FIELD_NUMBER = 14;
-  private com.google.protobuf.Struct expectedPretrainedInputFields_;
+  public static final int EXPECTED_OUTPUT_LAYERS_FIELD_NUMBER = 17;
+  private java.util.List<com.clarifai.grpc.api.ModelLayerInfo> expectedOutputLayers_;
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+   * Expected output layers of an uploaded model
    * </pre>
    *
-   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-   * @return Whether the expectedPretrainedInputFields field is set.
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
    */
-  public boolean hasExpectedPretrainedInputFields() {
-    return expectedPretrainedInputFields_ != null;
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.ModelLayerInfo> getExpectedOutputLayersList() {
+    return expectedOutputLayers_;
   }
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+   * Expected output layers of an uploaded model
    * </pre>
    *
-   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-   * @return The expectedPretrainedInputFields.
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
    */
-  public com.google.protobuf.Struct getExpectedPretrainedInputFields() {
-    return expectedPretrainedInputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedInputFields_;
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+      getExpectedOutputLayersOrBuilderList() {
+    return expectedOutputLayers_;
   }
   /**
    * <pre>
-   * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+   * Expected output layers of an uploaded model
    * </pre>
    *
-   * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
    */
-  public com.google.protobuf.StructOrBuilder getExpectedPretrainedInputFieldsOrBuilder() {
-    return getExpectedPretrainedInputFields();
+  @java.lang.Override
+  public int getExpectedOutputLayersCount() {
+    return expectedOutputLayers_.size();
+  }
+  /**
+   * <pre>
+   * Expected output layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelLayerInfo getExpectedOutputLayers(int index) {
+    return expectedOutputLayers_.get(index);
+  }
+  /**
+   * <pre>
+   * Expected output layers of an uploaded model
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelLayerInfoOrBuilder getExpectedOutputLayersOrBuilder(
+      int index) {
+    return expectedOutputLayers_.get(index);
   }
 
-  public static final int EXPECTED_PRETRAINED_OUTPUT_FIELDS_FIELD_NUMBER = 15;
-  private com.google.protobuf.Struct expectedPretrainedOutputFields_;
+  public static final int EVALUATION_TYPE_FIELD_NUMBER = 18;
+  private int evaluationType_;
   /**
-   * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-   * @return Whether the expectedPretrainedOutputFields field is set.
+   * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+   * @return The enum numeric value on the wire for evaluationType.
    */
-  public boolean hasExpectedPretrainedOutputFields() {
-    return expectedPretrainedOutputFields_ != null;
+  @java.lang.Override public int getEvaluationTypeValue() {
+    return evaluationType_;
   }
   /**
-   * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-   * @return The expectedPretrainedOutputFields.
+   * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+   * @return The evaluationType.
    */
-  public com.google.protobuf.Struct getExpectedPretrainedOutputFields() {
-    return expectedPretrainedOutputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedOutputFields_;
-  }
-  /**
-   * <pre>
-   * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-   * </pre>
-   *
-   * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-   */
-  public com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder() {
-    return getExpectedPretrainedOutputFields();
+  @java.lang.Override public com.clarifai.grpc.api.EvaluationType getEvaluationType() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.EvaluationType result = com.clarifai.grpc.api.EvaluationType.valueOf(evaluationType_);
+    return result == null ? com.clarifai.grpc.api.EvaluationType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -675,13 +749,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
     for (int i = 0; i < inputFields_.size(); i++) {
@@ -705,14 +779,14 @@ private static final long serialVersionUID = 0L;
     if (requiresSequentialFrames_ != false) {
       output.writeBool(12, requiresSequentialFrames_);
     }
-    if (evaluable_ != false) {
-      output.writeBool(13, evaluable_);
+    for (int i = 0; i < expectedInputLayers_.size(); i++) {
+      output.writeMessage(16, expectedInputLayers_.get(i));
     }
-    if (expectedPretrainedInputFields_ != null) {
-      output.writeMessage(14, getExpectedPretrainedInputFields());
+    for (int i = 0; i < expectedOutputLayers_.size(); i++) {
+      output.writeMessage(17, expectedOutputLayers_.get(i));
     }
-    if (expectedPretrainedOutputFields_ != null) {
-      output.writeMessage(15, getExpectedPretrainedOutputFields());
+    if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Undefined.getNumber()) {
+      output.writeEnum(18, evaluationType_);
     }
     unknownFields.writeTo(output);
   }
@@ -723,13 +797,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     {
@@ -768,17 +842,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(12, requiresSequentialFrames_);
     }
-    if (evaluable_ != false) {
+    for (int i = 0; i < expectedInputLayers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(13, evaluable_);
+        .computeMessageSize(16, expectedInputLayers_.get(i));
     }
-    if (expectedPretrainedInputFields_ != null) {
+    for (int i = 0; i < expectedOutputLayers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getExpectedPretrainedInputFields());
+        .computeMessageSize(17, expectedOutputLayers_.get(i));
     }
-    if (expectedPretrainedOutputFields_ != null) {
+    if (evaluationType_ != com.clarifai.grpc.api.EvaluationType.Undefined.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, getExpectedPretrainedOutputFields());
+        .computeEnumSize(18, evaluationType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -815,18 +889,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelTypeFieldsList())) return false;
     if (getRequiresSequentialFrames()
         != other.getRequiresSequentialFrames()) return false;
-    if (getEvaluable()
-        != other.getEvaluable()) return false;
-    if (hasExpectedPretrainedInputFields() != other.hasExpectedPretrainedInputFields()) return false;
-    if (hasExpectedPretrainedInputFields()) {
-      if (!getExpectedPretrainedInputFields()
-          .equals(other.getExpectedPretrainedInputFields())) return false;
-    }
-    if (hasExpectedPretrainedOutputFields() != other.hasExpectedPretrainedOutputFields()) return false;
-    if (hasExpectedPretrainedOutputFields()) {
-      if (!getExpectedPretrainedOutputFields()
-          .equals(other.getExpectedPretrainedOutputFields())) return false;
-    }
+    if (!getExpectedInputLayersList()
+        .equals(other.getExpectedInputLayersList())) return false;
+    if (!getExpectedOutputLayersList()
+        .equals(other.getExpectedOutputLayersList())) return false;
+    if (evaluationType_ != other.evaluationType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -868,17 +935,16 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + REQUIRES_SEQUENTIAL_FRAMES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getRequiresSequentialFrames());
-    hash = (37 * hash) + EVALUABLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEvaluable());
-    if (hasExpectedPretrainedInputFields()) {
-      hash = (37 * hash) + EXPECTED_PRETRAINED_INPUT_FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getExpectedPretrainedInputFields().hashCode();
+    if (getExpectedInputLayersCount() > 0) {
+      hash = (37 * hash) + EXPECTED_INPUT_LAYERS_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedInputLayersList().hashCode();
     }
-    if (hasExpectedPretrainedOutputFields()) {
-      hash = (37 * hash) + EXPECTED_PRETRAINED_OUTPUT_FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getExpectedPretrainedOutputFields().hashCode();
+    if (getExpectedOutputLayersCount() > 0) {
+      hash = (37 * hash) + EXPECTED_OUTPUT_LAYERS_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectedOutputLayersList().hashCode();
     }
+    hash = (37 * hash) + EVALUATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + evaluationType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1014,6 +1080,8 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getModelTypeFieldsFieldBuilder();
+        getExpectedInputLayersFieldBuilder();
+        getExpectedOutputLayersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1043,20 +1111,20 @@ private static final long serialVersionUID = 0L;
       }
       requiresSequentialFrames_ = false;
 
-      evaluable_ = false;
+      if (expectedInputLayersBuilder_ == null) {
+        expectedInputLayers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        expectedInputLayersBuilder_.clear();
+      }
+      if (expectedOutputLayersBuilder_ == null) {
+        expectedOutputLayers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        expectedOutputLayersBuilder_.clear();
+      }
+      evaluationType_ = 0;
 
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        expectedPretrainedInputFields_ = null;
-      } else {
-        expectedPretrainedInputFields_ = null;
-        expectedPretrainedInputFieldsBuilder_ = null;
-      }
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        expectedPretrainedOutputFields_ = null;
-      } else {
-        expectedPretrainedOutputFields_ = null;
-        expectedPretrainedOutputFieldsBuilder_ = null;
-      }
       return this;
     }
 
@@ -1110,17 +1178,25 @@ private static final long serialVersionUID = 0L;
         result.modelTypeFields_ = modelTypeFieldsBuilder_.build();
       }
       result.requiresSequentialFrames_ = requiresSequentialFrames_;
-      result.evaluable_ = evaluable_;
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        result.expectedPretrainedInputFields_ = expectedPretrainedInputFields_;
+      if (expectedInputLayersBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          expectedInputLayers_ = java.util.Collections.unmodifiableList(expectedInputLayers_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.expectedInputLayers_ = expectedInputLayers_;
       } else {
-        result.expectedPretrainedInputFields_ = expectedPretrainedInputFieldsBuilder_.build();
+        result.expectedInputLayers_ = expectedInputLayersBuilder_.build();
       }
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        result.expectedPretrainedOutputFields_ = expectedPretrainedOutputFields_;
+      if (expectedOutputLayersBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          expectedOutputLayers_ = java.util.Collections.unmodifiableList(expectedOutputLayers_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.expectedOutputLayers_ = expectedOutputLayers_;
       } else {
-        result.expectedPretrainedOutputFields_ = expectedPretrainedOutputFieldsBuilder_.build();
+        result.expectedOutputLayers_ = expectedOutputLayersBuilder_.build();
       }
+      result.evaluationType_ = evaluationType_;
       onBuilt();
       return result;
     }
@@ -1239,14 +1315,60 @@ private static final long serialVersionUID = 0L;
       if (other.getRequiresSequentialFrames() != false) {
         setRequiresSequentialFrames(other.getRequiresSequentialFrames());
       }
-      if (other.getEvaluable() != false) {
-        setEvaluable(other.getEvaluable());
+      if (expectedInputLayersBuilder_ == null) {
+        if (!other.expectedInputLayers_.isEmpty()) {
+          if (expectedInputLayers_.isEmpty()) {
+            expectedInputLayers_ = other.expectedInputLayers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureExpectedInputLayersIsMutable();
+            expectedInputLayers_.addAll(other.expectedInputLayers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.expectedInputLayers_.isEmpty()) {
+          if (expectedInputLayersBuilder_.isEmpty()) {
+            expectedInputLayersBuilder_.dispose();
+            expectedInputLayersBuilder_ = null;
+            expectedInputLayers_ = other.expectedInputLayers_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            expectedInputLayersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExpectedInputLayersFieldBuilder() : null;
+          } else {
+            expectedInputLayersBuilder_.addAllMessages(other.expectedInputLayers_);
+          }
+        }
       }
-      if (other.hasExpectedPretrainedInputFields()) {
-        mergeExpectedPretrainedInputFields(other.getExpectedPretrainedInputFields());
+      if (expectedOutputLayersBuilder_ == null) {
+        if (!other.expectedOutputLayers_.isEmpty()) {
+          if (expectedOutputLayers_.isEmpty()) {
+            expectedOutputLayers_ = other.expectedOutputLayers_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureExpectedOutputLayersIsMutable();
+            expectedOutputLayers_.addAll(other.expectedOutputLayers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.expectedOutputLayers_.isEmpty()) {
+          if (expectedOutputLayersBuilder_.isEmpty()) {
+            expectedOutputLayersBuilder_.dispose();
+            expectedOutputLayersBuilder_ = null;
+            expectedOutputLayers_ = other.expectedOutputLayers_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            expectedOutputLayersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExpectedOutputLayersFieldBuilder() : null;
+          } else {
+            expectedOutputLayersBuilder_.addAllMessages(other.expectedOutputLayers_);
+          }
+        }
       }
-      if (other.hasExpectedPretrainedOutputFields()) {
-        mergeExpectedPretrainedOutputFields(other.getExpectedPretrainedOutputFields());
+      if (other.evaluationType_ != 0) {
+        setEvaluationTypeValue(other.getEvaluationTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1895,6 +2017,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool trainable = 8;</code>
      * @return The trainable.
      */
+    @java.lang.Override
     public boolean getTrainable() {
       return trainable_;
     }
@@ -1938,6 +2061,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool creatable = 9;</code>
      * @return The creatable.
      */
+    @java.lang.Override
     public boolean getCreatable() {
       return creatable_;
     }
@@ -1982,6 +2106,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool internal_only = 10;</code>
      * @return The internalOnly.
      */
+    @java.lang.Override
     public boolean getInternalOnly() {
       return internalOnly_;
     }
@@ -2409,6 +2534,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool requires_sequential_frames = 12;</code>
      * @return The requiresSequentialFrames.
      */
+    @java.lang.Override
     public boolean getRequiresSequentialFrames() {
       return requiresSequentialFrames_;
     }
@@ -2444,356 +2570,682 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean evaluable_ ;
-    /**
-     * <pre>
-     * Can this model be evaluated?
-     * </pre>
-     *
-     * <code>bool evaluable = 13;</code>
-     * @return The evaluable.
-     */
-    public boolean getEvaluable() {
-      return evaluable_;
-    }
-    /**
-     * <pre>
-     * Can this model be evaluated?
-     * </pre>
-     *
-     * <code>bool evaluable = 13;</code>
-     * @param value The evaluable to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEvaluable(boolean value) {
-      
-      evaluable_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Can this model be evaluated?
-     * </pre>
-     *
-     * <code>bool evaluable = 13;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEvaluable() {
-      
-      evaluable_ = false;
-      onChanged();
-      return this;
+    private java.util.List<com.clarifai.grpc.api.ModelLayerInfo> expectedInputLayers_ =
+      java.util.Collections.emptyList();
+    private void ensureExpectedInputLayersIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        expectedInputLayers_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelLayerInfo>(expectedInputLayers_);
+        bitField0_ |= 0x00000008;
+       }
     }
 
-    private com.google.protobuf.Struct expectedPretrainedInputFields_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> expectedPretrainedInputFieldsBuilder_;
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelLayerInfo, com.clarifai.grpc.api.ModelLayerInfo.Builder, com.clarifai.grpc.api.ModelLayerInfoOrBuilder> expectedInputLayersBuilder_;
+
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     * @return Whether the expectedPretrainedInputFields field is set.
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public boolean hasExpectedPretrainedInputFields() {
-      return expectedPretrainedInputFieldsBuilder_ != null || expectedPretrainedInputFields_ != null;
-    }
-    /**
-     * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     * @return The expectedPretrainedInputFields.
-     */
-    public com.google.protobuf.Struct getExpectedPretrainedInputFields() {
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        return expectedPretrainedInputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedInputFields_;
+    public java.util.List<com.clarifai.grpc.api.ModelLayerInfo> getExpectedInputLayersList() {
+      if (expectedInputLayersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(expectedInputLayers_);
       } else {
-        return expectedPretrainedInputFieldsBuilder_.getMessage();
+        return expectedInputLayersBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public Builder setExpectedPretrainedInputFields(com.google.protobuf.Struct value) {
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
+    public int getExpectedInputLayersCount() {
+      if (expectedInputLayersBuilder_ == null) {
+        return expectedInputLayers_.size();
+      } else {
+        return expectedInputLayersBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo getExpectedInputLayers(int index) {
+      if (expectedInputLayersBuilder_ == null) {
+        return expectedInputLayers_.get(index);
+      } else {
+        return expectedInputLayersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public Builder setExpectedInputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo value) {
+      if (expectedInputLayersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        expectedPretrainedInputFields_ = value;
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.set(index, value);
         onChanged();
       } else {
-        expectedPretrainedInputFieldsBuilder_.setMessage(value);
+        expectedInputLayersBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public Builder setExpectedPretrainedInputFields(
-        com.google.protobuf.Struct.Builder builderForValue) {
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        expectedPretrainedInputFields_ = builderForValue.build();
+    public Builder setExpectedInputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo.Builder builderForValue) {
+      if (expectedInputLayersBuilder_ == null) {
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.set(index, builderForValue.build());
         onChanged();
       } else {
-        expectedPretrainedInputFieldsBuilder_.setMessage(builderForValue.build());
+        expectedInputLayersBuilder_.setMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
      * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public Builder mergeExpectedPretrainedInputFields(com.google.protobuf.Struct value) {
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        if (expectedPretrainedInputFields_ != null) {
-          expectedPretrainedInputFields_ =
-            com.google.protobuf.Struct.newBuilder(expectedPretrainedInputFields_).mergeFrom(value).buildPartial();
-        } else {
-          expectedPretrainedInputFields_ = value;
-        }
-        onChanged();
-      } else {
-        expectedPretrainedInputFieldsBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     */
-    public Builder clearExpectedPretrainedInputFields() {
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        expectedPretrainedInputFields_ = null;
-        onChanged();
-      } else {
-        expectedPretrainedInputFields_ = null;
-        expectedPretrainedInputFieldsBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     */
-    public com.google.protobuf.Struct.Builder getExpectedPretrainedInputFieldsBuilder() {
-      
-      onChanged();
-      return getExpectedPretrainedInputFieldsFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     */
-    public com.google.protobuf.StructOrBuilder getExpectedPretrainedInputFieldsOrBuilder() {
-      if (expectedPretrainedInputFieldsBuilder_ != null) {
-        return expectedPretrainedInputFieldsBuilder_.getMessageOrBuilder();
-      } else {
-        return expectedPretrainedInputFields_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedInputFields_;
-      }
-    }
-    /**
-     * <pre>
-     * Maps input_fields to the more granular data fields needed to parse a triton models inputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_input_fields = 14;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
-        getExpectedPretrainedInputFieldsFieldBuilder() {
-      if (expectedPretrainedInputFieldsBuilder_ == null) {
-        expectedPretrainedInputFieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getExpectedPretrainedInputFields(),
-                getParentForChildren(),
-                isClean());
-        expectedPretrainedInputFields_ = null;
-      }
-      return expectedPretrainedInputFieldsBuilder_;
-    }
-
-    private com.google.protobuf.Struct expectedPretrainedOutputFields_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> expectedPretrainedOutputFieldsBuilder_;
-    /**
-     * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-     * @return Whether the expectedPretrainedOutputFields field is set.
-     */
-    public boolean hasExpectedPretrainedOutputFields() {
-      return expectedPretrainedOutputFieldsBuilder_ != null || expectedPretrainedOutputFields_ != null;
-    }
-    /**
-     * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-     * @return The expectedPretrainedOutputFields.
-     */
-    public com.google.protobuf.Struct getExpectedPretrainedOutputFields() {
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        return expectedPretrainedOutputFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedOutputFields_;
-      } else {
-        return expectedPretrainedOutputFieldsBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-     */
-    public Builder setExpectedPretrainedOutputFields(com.google.protobuf.Struct value) {
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
+    public Builder addExpectedInputLayers(com.clarifai.grpc.api.ModelLayerInfo value) {
+      if (expectedInputLayersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        expectedPretrainedOutputFields_ = value;
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.add(value);
         onChanged();
       } else {
-        expectedPretrainedOutputFieldsBuilder_.setMessage(value);
+        expectedInputLayersBuilder_.addMessage(value);
       }
-
       return this;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public Builder setExpectedPretrainedOutputFields(
-        com.google.protobuf.Struct.Builder builderForValue) {
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        expectedPretrainedOutputFields_ = builderForValue.build();
-        onChanged();
-      } else {
-        expectedPretrainedOutputFieldsBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
-     * </pre>
-     *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
-     */
-    public Builder mergeExpectedPretrainedOutputFields(com.google.protobuf.Struct value) {
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        if (expectedPretrainedOutputFields_ != null) {
-          expectedPretrainedOutputFields_ =
-            com.google.protobuf.Struct.newBuilder(expectedPretrainedOutputFields_).mergeFrom(value).buildPartial();
-        } else {
-          expectedPretrainedOutputFields_ = value;
+    public Builder addExpectedInputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo value) {
+      if (expectedInputLayersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.add(index, value);
         onChanged();
       } else {
-        expectedPretrainedOutputFieldsBuilder_.mergeFrom(value);
+        expectedInputLayersBuilder_.addMessage(index, value);
       }
-
       return this;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public Builder clearExpectedPretrainedOutputFields() {
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        expectedPretrainedOutputFields_ = null;
+    public Builder addExpectedInputLayers(
+        com.clarifai.grpc.api.ModelLayerInfo.Builder builderForValue) {
+      if (expectedInputLayersBuilder_ == null) {
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.add(builderForValue.build());
         onChanged();
       } else {
-        expectedPretrainedOutputFields_ = null;
-        expectedPretrainedOutputFieldsBuilder_ = null;
+        expectedInputLayersBuilder_.addMessage(builderForValue.build());
       }
-
       return this;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public com.google.protobuf.Struct.Builder getExpectedPretrainedOutputFieldsBuilder() {
-      
-      onChanged();
-      return getExpectedPretrainedOutputFieldsFieldBuilder().getBuilder();
+    public Builder addExpectedInputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo.Builder builderForValue) {
+      if (expectedInputLayersBuilder_ == null) {
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        expectedInputLayersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    public com.google.protobuf.StructOrBuilder getExpectedPretrainedOutputFieldsOrBuilder() {
-      if (expectedPretrainedOutputFieldsBuilder_ != null) {
-        return expectedPretrainedOutputFieldsBuilder_.getMessageOrBuilder();
+    public Builder addAllExpectedInputLayers(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelLayerInfo> values) {
+      if (expectedInputLayersBuilder_ == null) {
+        ensureExpectedInputLayersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, expectedInputLayers_);
+        onChanged();
       } else {
-        return expectedPretrainedOutputFields_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : expectedPretrainedOutputFields_;
+        expectedInputLayersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public Builder clearExpectedInputLayers() {
+      if (expectedInputLayersBuilder_ == null) {
+        expectedInputLayers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        expectedInputLayersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public Builder removeExpectedInputLayers(int index) {
+      if (expectedInputLayersBuilder_ == null) {
+        ensureExpectedInputLayersIsMutable();
+        expectedInputLayers_.remove(index);
+        onChanged();
+      } else {
+        expectedInputLayersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo.Builder getExpectedInputLayersBuilder(
+        int index) {
+      return getExpectedInputLayersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfoOrBuilder getExpectedInputLayersOrBuilder(
+        int index) {
+      if (expectedInputLayersBuilder_ == null) {
+        return expectedInputLayers_.get(index);  } else {
+        return expectedInputLayersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * Maps output_fields to the more granular data fields needed to parse a triton models outputs
+     * Expected input layers of an uploaded model
      * </pre>
      *
-     * <code>.google.protobuf.Struct expected_pretrained_output_fields = 15;</code>
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
-        getExpectedPretrainedOutputFieldsFieldBuilder() {
-      if (expectedPretrainedOutputFieldsBuilder_ == null) {
-        expectedPretrainedOutputFieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getExpectedPretrainedOutputFields(),
+    public java.util.List<? extends com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+         getExpectedInputLayersOrBuilderList() {
+      if (expectedInputLayersBuilder_ != null) {
+        return expectedInputLayersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(expectedInputLayers_);
+      }
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo.Builder addExpectedInputLayersBuilder() {
+      return getExpectedInputLayersFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.ModelLayerInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo.Builder addExpectedInputLayersBuilder(
+        int index) {
+      return getExpectedInputLayersFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.ModelLayerInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Expected input layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelLayerInfo.Builder> 
+         getExpectedInputLayersBuilderList() {
+      return getExpectedInputLayersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelLayerInfo, com.clarifai.grpc.api.ModelLayerInfo.Builder, com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+        getExpectedInputLayersFieldBuilder() {
+      if (expectedInputLayersBuilder_ == null) {
+        expectedInputLayersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.ModelLayerInfo, com.clarifai.grpc.api.ModelLayerInfo.Builder, com.clarifai.grpc.api.ModelLayerInfoOrBuilder>(
+                expectedInputLayers_,
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
-        expectedPretrainedOutputFields_ = null;
+        expectedInputLayers_ = null;
       }
-      return expectedPretrainedOutputFieldsBuilder_;
+      return expectedInputLayersBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.ModelLayerInfo> expectedOutputLayers_ =
+      java.util.Collections.emptyList();
+    private void ensureExpectedOutputLayersIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        expectedOutputLayers_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelLayerInfo>(expectedOutputLayers_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelLayerInfo, com.clarifai.grpc.api.ModelLayerInfo.Builder, com.clarifai.grpc.api.ModelLayerInfoOrBuilder> expectedOutputLayersBuilder_;
+
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelLayerInfo> getExpectedOutputLayersList() {
+      if (expectedOutputLayersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(expectedOutputLayers_);
+      } else {
+        return expectedOutputLayersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public int getExpectedOutputLayersCount() {
+      if (expectedOutputLayersBuilder_ == null) {
+        return expectedOutputLayers_.size();
+      } else {
+        return expectedOutputLayersBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo getExpectedOutputLayers(int index) {
+      if (expectedOutputLayersBuilder_ == null) {
+        return expectedOutputLayers_.get(index);
+      } else {
+        return expectedOutputLayersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder setExpectedOutputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo value) {
+      if (expectedOutputLayersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.set(index, value);
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder setExpectedOutputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo.Builder builderForValue) {
+      if (expectedOutputLayersBuilder_ == null) {
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder addExpectedOutputLayers(com.clarifai.grpc.api.ModelLayerInfo value) {
+      if (expectedOutputLayersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.add(value);
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder addExpectedOutputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo value) {
+      if (expectedOutputLayersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.add(index, value);
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder addExpectedOutputLayers(
+        com.clarifai.grpc.api.ModelLayerInfo.Builder builderForValue) {
+      if (expectedOutputLayersBuilder_ == null) {
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder addExpectedOutputLayers(
+        int index, com.clarifai.grpc.api.ModelLayerInfo.Builder builderForValue) {
+      if (expectedOutputLayersBuilder_ == null) {
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder addAllExpectedOutputLayers(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelLayerInfo> values) {
+      if (expectedOutputLayersBuilder_ == null) {
+        ensureExpectedOutputLayersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, expectedOutputLayers_);
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder clearExpectedOutputLayers() {
+      if (expectedOutputLayersBuilder_ == null) {
+        expectedOutputLayers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public Builder removeExpectedOutputLayers(int index) {
+      if (expectedOutputLayersBuilder_ == null) {
+        ensureExpectedOutputLayersIsMutable();
+        expectedOutputLayers_.remove(index);
+        onChanged();
+      } else {
+        expectedOutputLayersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo.Builder getExpectedOutputLayersBuilder(
+        int index) {
+      return getExpectedOutputLayersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfoOrBuilder getExpectedOutputLayersOrBuilder(
+        int index) {
+      if (expectedOutputLayersBuilder_ == null) {
+        return expectedOutputLayers_.get(index);  } else {
+        return expectedOutputLayersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+         getExpectedOutputLayersOrBuilderList() {
+      if (expectedOutputLayersBuilder_ != null) {
+        return expectedOutputLayersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(expectedOutputLayers_);
+      }
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo.Builder addExpectedOutputLayersBuilder() {
+      return getExpectedOutputLayersFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.ModelLayerInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public com.clarifai.grpc.api.ModelLayerInfo.Builder addExpectedOutputLayersBuilder(
+        int index) {
+      return getExpectedOutputLayersFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.ModelLayerInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Expected output layers of an uploaded model
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.ModelLayerInfo expected_output_layers = 17;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelLayerInfo.Builder> 
+         getExpectedOutputLayersBuilderList() {
+      return getExpectedOutputLayersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelLayerInfo, com.clarifai.grpc.api.ModelLayerInfo.Builder, com.clarifai.grpc.api.ModelLayerInfoOrBuilder> 
+        getExpectedOutputLayersFieldBuilder() {
+      if (expectedOutputLayersBuilder_ == null) {
+        expectedOutputLayersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.ModelLayerInfo, com.clarifai.grpc.api.ModelLayerInfo.Builder, com.clarifai.grpc.api.ModelLayerInfoOrBuilder>(
+                expectedOutputLayers_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        expectedOutputLayers_ = null;
+      }
+      return expectedOutputLayersBuilder_;
+    }
+
+    private int evaluationType_ = 0;
+    /**
+     * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @return The enum numeric value on the wire for evaluationType.
+     */
+    @java.lang.Override public int getEvaluationTypeValue() {
+      return evaluationType_;
+    }
+    /**
+     * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @param value The enum numeric value on the wire for evaluationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationTypeValue(int value) {
+      
+      evaluationType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @return The evaluationType.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.EvaluationType getEvaluationType() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.EvaluationType result = com.clarifai.grpc.api.EvaluationType.valueOf(evaluationType_);
+      return result == null ? com.clarifai.grpc.api.EvaluationType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @param value The evaluationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationType(com.clarifai.grpc.api.EvaluationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      evaluationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationType() {
+      
+      evaluationType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

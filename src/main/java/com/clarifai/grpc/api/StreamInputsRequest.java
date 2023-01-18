@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.StreamInputsRequest}
  */
-public  final class StreamInputsRequest extends
+public final class StreamInputsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.StreamInputsRequest)
     StreamInputsRequestOrBuilder {
@@ -82,6 +82,11 @@ private static final long serialVersionUID = 0L;
             descending_ = input.readBool();
             break;
           }
+          case 40: {
+
+            orderById_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -93,6 +98,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -120,6 +127,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -127,12 +135,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -148,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 per_page = 2;</code>
    * @return The perPage.
    */
+  @java.lang.Override
   public int getPerPage() {
     return perPage_;
   }
@@ -158,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * <code>string last_id = 3;</code>
    * @return The lastId.
    */
+  @java.lang.Override
   public java.lang.String getLastId() {
     java.lang.Object ref = lastId_;
     if (ref instanceof java.lang.String) {
@@ -174,6 +186,7 @@ private static final long serialVersionUID = 0L;
    * <code>string last_id = 3;</code>
    * @return The bytes for lastId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLastIdBytes() {
     java.lang.Object ref = lastId_;
@@ -188,12 +201,29 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ORDER_BY_ID_FIELD_NUMBER = 5;
+  private boolean orderById_;
+  /**
+   * <pre>
+   * By default, the endpoint return inputs by the time when it is added.
+   * If this is set to true, we will return inputs by id.
+   * </pre>
+   *
+   * <code>bool order_by_id = 5;</code>
+   * @return The orderById.
+   */
+  @java.lang.Override
+  public boolean getOrderById() {
+    return orderById_;
+  }
+
   public static final int DESCENDING_FIELD_NUMBER = 4;
   private boolean descending_;
   /**
    * <code>bool descending = 4;</code>
    * @return The descending.
    */
+  @java.lang.Override
   public boolean getDescending() {
     return descending_;
   }
@@ -218,11 +248,14 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(2, perPage_);
     }
-    if (!getLastIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastId_);
     }
     if (descending_ != false) {
       output.writeBool(4, descending_);
+    }
+    if (orderById_ != false) {
+      output.writeBool(5, orderById_);
     }
     unknownFields.writeTo(output);
   }
@@ -241,12 +274,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, perPage_);
     }
-    if (!getLastIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastId_);
     }
     if (descending_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, descending_);
+    }
+    if (orderById_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, orderById_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -272,6 +309,8 @@ private static final long serialVersionUID = 0L;
         != other.getPerPage()) return false;
     if (!getLastId()
         .equals(other.getLastId())) return false;
+    if (getOrderById()
+        != other.getOrderById()) return false;
     if (getDescending()
         != other.getDescending()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -293,6 +332,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPerPage();
     hash = (37 * hash) + LAST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getLastId().hashCode();
+    hash = (37 * hash) + ORDER_BY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getOrderById());
     hash = (37 * hash) + DESCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDescending());
@@ -443,6 +485,8 @@ private static final long serialVersionUID = 0L;
 
       lastId_ = "";
 
+      orderById_ = false;
+
       descending_ = false;
 
       return this;
@@ -478,6 +522,7 @@ private static final long serialVersionUID = 0L;
       }
       result.perPage_ = perPage_;
       result.lastId_ = lastId_;
+      result.orderById_ = orderById_;
       result.descending_ = descending_;
       onBuilt();
       return result;
@@ -536,6 +581,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getLastId().isEmpty()) {
         lastId_ = other.lastId_;
         onChanged();
+      }
+      if (other.getOrderById() != false) {
+        setOrderById(other.getOrderById());
       }
       if (other.getDescending() != false) {
         setDescending(other.getDescending());
@@ -698,6 +746,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 per_page = 2;</code>
      * @return The perPage.
      */
+    @java.lang.Override
     public int getPerPage() {
       return perPage_;
     }
@@ -809,11 +858,58 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean orderById_ ;
+    /**
+     * <pre>
+     * By default, the endpoint return inputs by the time when it is added.
+     * If this is set to true, we will return inputs by id.
+     * </pre>
+     *
+     * <code>bool order_by_id = 5;</code>
+     * @return The orderById.
+     */
+    @java.lang.Override
+    public boolean getOrderById() {
+      return orderById_;
+    }
+    /**
+     * <pre>
+     * By default, the endpoint return inputs by the time when it is added.
+     * If this is set to true, we will return inputs by id.
+     * </pre>
+     *
+     * <code>bool order_by_id = 5;</code>
+     * @param value The orderById to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderById(boolean value) {
+      
+      orderById_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * By default, the endpoint return inputs by the time when it is added.
+     * If this is set to true, we will return inputs by id.
+     * </pre>
+     *
+     * <code>bool order_by_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderById() {
+      
+      orderById_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean descending_ ;
     /**
      * <code>bool descending = 4;</code>
      * @return The descending.
      */
+    @java.lang.Override
     public boolean getDescending() {
       return descending_;
     }

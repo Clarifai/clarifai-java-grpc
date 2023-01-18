@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.MultiSearchResponse}
  */
-public  final class MultiSearchResponse extends
+public final class MultiSearchResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.MultiSearchResponse)
     MultiSearchResponseOrBuilder {
@@ -117,6 +117,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -154,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -165,6 +168,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -175,6 +179,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -189,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -209,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 2;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -232,6 +239,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Hit> getHitsList() {
     return hits_;
   }
@@ -242,6 +250,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.HitOrBuilder> 
       getHitsOrBuilderList() {
     return hits_;
@@ -253,6 +262,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public int getHitsCount() {
     return hits_.size();
   }
@@ -263,6 +273,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Hit getHits(int index) {
     return hits_.get(index);
   }
@@ -273,6 +284,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Hit hits = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.HitOrBuilder getHitsOrBuilder(
       int index) {
     return hits_.get(index);
@@ -288,6 +300,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Query query = 4;</code>
    * @return Whether the query field is set.
    */
+  @java.lang.Override
   public boolean hasQuery() {
     return query_ != null;
   }
@@ -299,6 +312,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Query query = 4;</code>
    * @return The query.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Query getQuery() {
     return query_ == null ? com.clarifai.grpc.api.Query.getDefaultInstance() : query_;
   }
@@ -309,6 +323,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Query query = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.QueryOrBuilder getQueryOrBuilder() {
     return getQuery();
   }
@@ -322,6 +337,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Search searches = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.Search> getSearchesList() {
     return searches_;
   }
@@ -332,6 +348,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Search searches = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.SearchOrBuilder> 
       getSearchesOrBuilderList() {
     return searches_;
@@ -343,6 +360,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Search searches = 5;</code>
    */
+  @java.lang.Override
   public int getSearchesCount() {
     return searches_.size();
   }
@@ -353,6 +371,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Search searches = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Search getSearches(int index) {
     return searches_.get(index);
   }
@@ -363,6 +382,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .clarifai.api.Search searches = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.SearchOrBuilder getSearchesOrBuilder(
       int index) {
     return searches_.get(index);
@@ -385,7 +405,7 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(1, getStatus());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
     }
     for (int i = 0; i < hits_.size(); i++) {
@@ -410,7 +430,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getStatus());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     for (int i = 0; i < hits_.size(); i++) {

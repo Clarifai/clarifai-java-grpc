@@ -6,7 +6,7 @@ package com.clarifai.grpc.api.utils;
 /**
  * Protobuf type {@code clarifai.api.utils.TestProto}
  */
-public  final class TestProto extends
+public final class TestProto extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.utils.TestProto)
     TestProtoOrBuilder {
@@ -80,8 +80,8 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 48: {
-            oneOfFieldCase_ = 6;
             oneOfField_ = input.readBool();
+            oneOfFieldCase_ = 6;
             break;
           }
           case 58: {
@@ -109,6 +109,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -179,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -195,6 +198,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -215,6 +219,7 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
    * @return The message.
    */
+  @java.lang.Override
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +236,7 @@ private static final long serialVersionUID = 0L;
    * <code>string message = 2 [(.clarifai.api.utils.cl_show_if_empty) = true, (.clarifai.api.utils.cl_moretags) = "protos are cool"];</code>
    * @return The bytes for message.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getMessageBytes() {
     java.lang.Object ref = message_;
@@ -251,6 +257,7 @@ private static final long serialVersionUID = 0L;
    * <code>double value = 3 [(.clarifai.api.utils.cl_default_float) = 1];</code>
    * @return The value.
    */
+  @java.lang.Override
   public double getValue() {
     return value_;
   }
@@ -261,11 +268,19 @@ private static final long serialVersionUID = 0L;
    * <code>bytes image_bytes = 4;</code>
    * @return The imageBytes.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString getImageBytes() {
     return imageBytes_;
   }
 
   public static final int STRING_ONEOF_FIELD_NUMBER = 5;
+  /**
+   * <code>string string_oneof = 5;</code>
+   * @return Whether the stringOneof field is set.
+   */
+  public boolean hasStringOneof() {
+    return oneOfFieldCase_ == 5;
+  }
   /**
    * <code>string string_oneof = 5;</code>
    * @return The stringOneof.
@@ -313,8 +328,17 @@ private static final long serialVersionUID = 0L;
   public static final int BOOL_ONEOF_FIELD_NUMBER = 6;
   /**
    * <code>bool bool_oneof = 6;</code>
+   * @return Whether the boolOneof field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoolOneof() {
+    return oneOfFieldCase_ == 6;
+  }
+  /**
+   * <code>bool bool_oneof = 6;</code>
    * @return The boolOneof.
    */
+  @java.lang.Override
   public boolean getBoolOneof() {
     if (oneOfFieldCase_ == 6) {
       return (java.lang.Boolean) oneOfField_;
@@ -327,6 +351,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
    * @return Whether the messageOneof field is set.
    */
+  @java.lang.Override
   public boolean hasMessageOneof() {
     return oneOfFieldCase_ == 7;
   }
@@ -334,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
    * @return The messageOneof.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.utils.TestProto2 getMessageOneof() {
     if (oneOfFieldCase_ == 7) {
        return (com.clarifai.grpc.api.utils.TestProto2) oneOfField_;
@@ -343,6 +369,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.utils.TestProto2OrBuilder getMessageOneofOrBuilder() {
     if (oneOfFieldCase_ == 7) {
        return (com.clarifai.grpc.api.utils.TestProto2) oneOfField_;
@@ -364,13 +391,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       output.writeDouble(3, value_);
     }
     if (!imageBytes_.isEmpty()) {
@@ -395,13 +422,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, value_);
     }
@@ -968,6 +995,7 @@ private static final long serialVersionUID = 0L;
      * <code>double value = 3 [(.clarifai.api.utils.cl_default_float) = 1];</code>
      * @return The value.
      */
+    @java.lang.Override
     public double getValue() {
       return value_;
     }
@@ -998,6 +1026,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes image_bytes = 4;</code>
      * @return The imageBytes.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getImageBytes() {
       return imageBytes_;
     }
@@ -1028,8 +1057,17 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>string string_oneof = 5;</code>
+     * @return Whether the stringOneof field is set.
+     */
+    @java.lang.Override
+    public boolean hasStringOneof() {
+      return oneOfFieldCase_ == 5;
+    }
+    /**
+     * <code>string string_oneof = 5;</code>
      * @return The stringOneof.
      */
+    @java.lang.Override
     public java.lang.String getStringOneof() {
       java.lang.Object ref = "";
       if (oneOfFieldCase_ == 5) {
@@ -1051,6 +1089,7 @@ private static final long serialVersionUID = 0L;
      * <code>string string_oneof = 5;</code>
      * @return The bytes for stringOneof.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getStringOneofBytes() {
       java.lang.Object ref = "";
@@ -1115,6 +1154,13 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <code>bool bool_oneof = 6;</code>
+     * @return Whether the boolOneof field is set.
+     */
+    public boolean hasBoolOneof() {
+      return oneOfFieldCase_ == 6;
+    }
+    /**
+     * <code>bool bool_oneof = 6;</code>
      * @return The boolOneof.
      */
     public boolean getBoolOneof() {
@@ -1153,6 +1199,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
      * @return Whether the messageOneof field is set.
      */
+    @java.lang.Override
     public boolean hasMessageOneof() {
       return oneOfFieldCase_ == 7;
     }
@@ -1160,6 +1207,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
      * @return The messageOneof.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.utils.TestProto2 getMessageOneof() {
       if (messageOneofBuilder_ == null) {
         if (oneOfFieldCase_ == 7) {
@@ -1219,8 +1267,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (oneOfFieldCase_ == 7) {
           messageOneofBuilder_.mergeFrom(value);
+        } else {
+          messageOneofBuilder_.setMessage(value);
         }
-        messageOneofBuilder_.setMessage(value);
       }
       oneOfFieldCase_ = 7;
       return this;
@@ -1253,6 +1302,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.clarifai.api.utils.TestProto2 message_oneof = 7;</code>
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.utils.TestProto2OrBuilder getMessageOneofOrBuilder() {
       if ((oneOfFieldCase_ == 7) && (messageOneofBuilder_ != null)) {
         return messageOneofBuilder_.getMessageOrBuilder();

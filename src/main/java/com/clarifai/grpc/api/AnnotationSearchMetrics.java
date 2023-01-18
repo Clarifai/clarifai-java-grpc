@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.AnnotationSearchMetrics}
  */
-public  final class AnnotationSearchMetrics extends
+public final class AnnotationSearchMetrics extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.AnnotationSearchMetrics)
     AnnotationSearchMetricsOrBuilder {
@@ -133,6 +133,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -164,6 +166,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search ground_truth = 1;</code>
    * @return Whether the groundTruth field is set.
    */
+  @java.lang.Override
   public boolean hasGroundTruth() {
     return groundTruth_ != null;
   }
@@ -175,6 +178,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search ground_truth = 1;</code>
    * @return The groundTruth.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Search getGroundTruth() {
     return groundTruth_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : groundTruth_;
   }
@@ -185,6 +189,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Search ground_truth = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.SearchOrBuilder getGroundTruthOrBuilder() {
     return getGroundTruth();
   }
@@ -199,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search search_to_eval = 2;</code>
    * @return Whether the searchToEval field is set.
    */
+  @java.lang.Override
   public boolean hasSearchToEval() {
     return searchToEval_ != null;
   }
@@ -210,6 +216,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Search search_to_eval = 2;</code>
    * @return The searchToEval.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Search getSearchToEval() {
     return searchToEval_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : searchToEval_;
   }
@@ -220,6 +227,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Search search_to_eval = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.SearchOrBuilder getSearchToEvalOrBuilder() {
     return getSearchToEval();
   }
@@ -234,6 +242,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.EvalMetrics metrics = 3;</code>
    * @return Whether the metrics field is set.
    */
+  @java.lang.Override
   public boolean hasMetrics() {
     return metrics_ != null;
   }
@@ -245,6 +254,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.EvalMetrics metrics = 3;</code>
    * @return The metrics.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EvalMetrics getMetrics() {
     return metrics_ == null ? com.clarifai.grpc.api.EvalMetrics.getDefaultInstance() : metrics_;
   }
@@ -255,6 +265,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.EvalMetrics metrics = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EvalMetricsOrBuilder getMetricsOrBuilder() {
     return getMetrics();
   }
@@ -269,6 +280,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 4;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -280,6 +292,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 4;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -290,6 +303,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -304,6 +318,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 active_concept_count = 5;</code>
    * @return The activeConceptCount.
    */
+  @java.lang.Override
   public int getActiveConceptCount() {
     return activeConceptCount_;
   }
@@ -320,6 +335,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    * @return Whether the visibility field is set.
    */
+  @java.lang.Override
   public boolean hasVisibility() {
     return visibility_ != null;
   }
@@ -333,6 +349,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    * @return The visibility.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Visibility getVisibility() {
     return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
   }
@@ -345,6 +362,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Visibility visibility = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
     return getVisibility();
   }
@@ -1434,6 +1452,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 active_concept_count = 5;</code>
      * @return The activeConceptCount.
      */
+    @java.lang.Override
     public int getActiveConceptCount() {
       return activeConceptCount_;
     }

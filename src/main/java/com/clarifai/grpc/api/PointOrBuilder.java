@@ -38,4 +38,15 @@ public interface PointOrBuilder extends
    * @return The z.
    */
   float getZ();
+
+  /**
+   * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+   * @return The enum numeric value on the wire for visibility.
+   */
+  int getVisibilityValue();
+  /**
+   * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Point.Visibility getVisibility();
 }

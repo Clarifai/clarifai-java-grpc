@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Collaboration}
  */
-public  final class Collaboration extends
+public final class Collaboration extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Collaboration)
     CollaborationOrBuilder {
@@ -123,6 +123,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -160,6 +162,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.App app = 1;</code>
    * @return Whether the app field is set.
    */
+  @java.lang.Override
   public boolean hasApp() {
     return app_ != null;
   }
@@ -171,6 +174,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.App app = 1;</code>
    * @return The app.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.App getApp() {
     return app_ == null ? com.clarifai.grpc.api.App.getDefaultInstance() : app_;
   }
@@ -181,6 +185,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.App app = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.AppOrBuilder getAppOrBuilder() {
     return getApp();
   }
@@ -195,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.User app_owner = 2;</code>
    * @return Whether the appOwner field is set.
    */
+  @java.lang.Override
   public boolean hasAppOwner() {
     return appOwner_ != null;
   }
@@ -206,6 +212,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.User app_owner = 2;</code>
    * @return The appOwner.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.User getAppOwner() {
     return appOwner_ == null ? com.clarifai.grpc.api.User.getDefaultInstance() : appOwner_;
   }
@@ -216,6 +223,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserOrBuilder getAppOwnerOrBuilder() {
     return getAppOwner();
   }
@@ -332,6 +340,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -343,6 +352,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -353,6 +363,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }

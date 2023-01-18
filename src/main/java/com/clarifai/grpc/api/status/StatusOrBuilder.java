@@ -170,4 +170,31 @@ public interface StatusOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInternalDetailsBytes();
+
+  /**
+   * <pre>
+   * Resource location info for redirect, when resource location has been changed.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return Whether the redirectInfo field is set.
+   */
+  boolean hasRedirectInfo();
+  /**
+   * <pre>
+   * Resource location info for redirect, when resource location has been changed.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   * @return The redirectInfo.
+   */
+  com.clarifai.grpc.api.status.RedirectInfo getRedirectInfo();
+  /**
+   * <pre>
+   * Resource location info for redirect, when resource location has been changed.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
+   */
+  com.clarifai.grpc.api.status.RedirectInfoOrBuilder getRedirectInfoOrBuilder();
 }

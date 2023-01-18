@@ -213,4 +213,19 @@ public interface EvalMetricsOrBuilder extends
    */
   com.clarifai.grpc.api.TrackerMetricsOrBuilder getTrackerMetricsOrBuilder(
       int index);
+
+  /**
+   * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+   * @return Whether the evalInfo field is set.
+   */
+  boolean hasEvalInfo();
+  /**
+   * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+   * @return The evalInfo.
+   */
+  com.clarifai.grpc.api.EvalInfo getEvalInfo();
+  /**
+   * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+   */
+  com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder();
 }

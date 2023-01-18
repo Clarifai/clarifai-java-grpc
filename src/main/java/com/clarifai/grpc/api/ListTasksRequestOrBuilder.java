@@ -128,11 +128,98 @@ public interface ListTasksRequestOrBuilder extends
 
   /**
    * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @return A list containing the labelOrderIds.
+   */
+  java.util.List<java.lang.String>
+      getLabelOrderIdsList();
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @return The count of labelOrderIds.
+   */
+  int getLabelOrderIdsCount();
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @param index The index of the element to return.
+   * @return The labelOrderIds at the given index.
+   */
+  java.lang.String getLabelOrderIds(int index);
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the labelOrderIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getLabelOrderIdsBytes(int index);
+
+  /**
+   * <pre>
    * Get label order tasks as well
+   * It is automatically set to true if label_order_ids is set.
    * </pre>
    *
    * <code>bool including_label_order_tasks = 6;</code>
    * @return The includingLabelOrderTasks.
    */
   boolean getIncludingLabelOrderTasks();
+
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
 }

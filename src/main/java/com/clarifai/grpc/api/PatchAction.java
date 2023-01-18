@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.PatchAction}
  */
-public  final class PatchAction extends
+public final class PatchAction extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.PatchAction)
     PatchActionOrBuilder {
@@ -84,6 +84,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -116,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * <code>string op = 1;</code>
    * @return The op.
    */
+  @java.lang.Override
   public java.lang.String getOp() {
     java.lang.Object ref = op_;
     if (ref instanceof java.lang.String) {
@@ -137,6 +140,7 @@ private static final long serialVersionUID = 0L;
    * <code>string op = 1;</code>
    * @return The bytes for op.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getOpBytes() {
     java.lang.Object ref = op_;
@@ -223,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * <code>string merge_conflict_resolution = 2;</code>
    * @return The mergeConflictResolution.
    */
+  @java.lang.Override
   public java.lang.String getMergeConflictResolution() {
     java.lang.Object ref = mergeConflictResolution_;
     if (ref instanceof java.lang.String) {
@@ -305,6 +310,7 @@ private static final long serialVersionUID = 0L;
    * <code>string merge_conflict_resolution = 2;</code>
    * @return The bytes for mergeConflictResolution.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getMergeConflictResolutionBytes() {
     java.lang.Object ref = mergeConflictResolution_;
@@ -330,6 +336,7 @@ private static final long serialVersionUID = 0L;
    * <code>string path = 3;</code>
    * @return The path.
    */
+  @java.lang.Override
   public java.lang.String getPath() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
@@ -351,6 +358,7 @@ private static final long serialVersionUID = 0L;
    * <code>string path = 3;</code>
    * @return The bytes for path.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPathBytes() {
     java.lang.Object ref = path_;
@@ -379,13 +387,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getOpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(op_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, op_);
     }
-    if (!getMergeConflictResolutionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mergeConflictResolution_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mergeConflictResolution_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
     }
     unknownFields.writeTo(output);
@@ -397,13 +405,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getOpBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(op_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, op_);
     }
-    if (!getMergeConflictResolutionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mergeConflictResolution_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mergeConflictResolution_);
     }
-    if (!getPathBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
     }
     size += unknownFields.getSerializedSize();

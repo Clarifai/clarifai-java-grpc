@@ -6,7 +6,7 @@ package com.clarifai.grpc.auth.scope;
 /**
  * Protobuf type {@code clarifai.auth.scope.ScopeList}
  */
-public  final class ScopeList extends
+public final class ScopeList extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.auth.scope.ScopeList)
     ScopeListOrBuilder {
@@ -94,6 +94,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -141,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
    * @return A list containing the scopes.
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.auth.scope.S> getScopesList() {
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.clarifai.grpc.auth.scope.S>(scopes_, scopes_converter_);
@@ -153,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
    * @return The count of scopes.
    */
+  @java.lang.Override
   public int getScopesCount() {
     return scopes_.size();
   }
@@ -165,6 +169,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
+  @java.lang.Override
   public com.clarifai.grpc.auth.scope.S getScopes(int index) {
     return scopes_converter_.convert(scopes_.get(index));
   }
@@ -176,6 +181,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
    * @return A list containing the enum numeric values on the wire for scopes.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Integer>
   getScopesValueList() {
     return scopes_;
@@ -189,6 +195,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of scopes at the given index.
    */
+  @java.lang.Override
   public int getScopesValue(int index) {
     return scopes_.get(index);
   }
@@ -751,8 +758,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated .clarifai.auth.scope.S scopes = 1;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of scopes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for scopes to set.
      * @return This builder for chaining.
      */
     public Builder setScopesValue(

@@ -247,7 +247,7 @@ public interface WorkflowOrBuilder extends
 
   /**
    * <pre>
-   * Info about the workflow version
+   * Info about the workflow version used to return the latest version when listing Workflows.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -256,7 +256,7 @@ public interface WorkflowOrBuilder extends
   boolean hasVersion();
   /**
    * <pre>
-   * Info about the workflow version
+   * Info about the workflow version used to return the latest version when listing Workflows.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -265,7 +265,7 @@ public interface WorkflowOrBuilder extends
   com.clarifai.grpc.api.WorkflowVersion getVersion();
   /**
    * <pre>
-   * Info about the workflow version
+   * Info about the workflow version used to return the latest version when listing Workflows.
    * </pre>
    *
    * <code>.clarifai.api.WorkflowVersion version = 9;</code>
@@ -376,4 +376,45 @@ public interface WorkflowOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUseCasesBytes(int index);
+
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return A list containing the checkConsents.
+   */
+  java.util.List<java.lang.String>
+      getCheckConsentsList();
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @return The count of checkConsents.
+   */
+  int getCheckConsentsCount();
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the element to return.
+   * @return The checkConsents at the given index.
+   */
+  java.lang.String getCheckConsents(int index);
+  /**
+   * <pre>
+   * Tags for check consents
+   * </pre>
+   *
+   * <code>repeated string check_consents = 15 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the checkConsents at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCheckConsentsBytes(int index);
 }

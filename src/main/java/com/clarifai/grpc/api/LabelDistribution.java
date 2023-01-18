@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.LabelDistribution}
  */
-public  final class LabelDistribution extends
+public final class LabelDistribution extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.LabelDistribution)
     LabelDistributionOrBuilder {
@@ -74,6 +74,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -103,12 +105,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.LabelCount positive_label_counts = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.LabelCount> getPositiveLabelCountsList() {
     return positiveLabelCounts_;
   }
   /**
    * <code>repeated .clarifai.api.LabelCount positive_label_counts = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.LabelCountOrBuilder> 
       getPositiveLabelCountsOrBuilderList() {
     return positiveLabelCounts_;
@@ -116,18 +120,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.LabelCount positive_label_counts = 1;</code>
    */
+  @java.lang.Override
   public int getPositiveLabelCountsCount() {
     return positiveLabelCounts_.size();
   }
   /**
    * <code>repeated .clarifai.api.LabelCount positive_label_counts = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LabelCount getPositiveLabelCounts(int index) {
     return positiveLabelCounts_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.LabelCount positive_label_counts = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LabelCountOrBuilder getPositiveLabelCountsOrBuilder(
       int index) {
     return positiveLabelCounts_.get(index);

@@ -45,6 +45,11 @@ public interface TestProtoOrBuilder extends
 
   /**
    * <code>string string_oneof = 5;</code>
+   * @return Whether the stringOneof field is set.
+   */
+  boolean hasStringOneof();
+  /**
+   * <code>string string_oneof = 5;</code>
    * @return The stringOneof.
    */
   java.lang.String getStringOneof();
@@ -55,6 +60,11 @@ public interface TestProtoOrBuilder extends
   com.google.protobuf.ByteString
       getStringOneofBytes();
 
+  /**
+   * <code>bool bool_oneof = 6;</code>
+   * @return Whether the boolOneof field is set.
+   */
+  boolean hasBoolOneof();
   /**
    * <code>bool bool_oneof = 6;</code>
    * @return The boolOneof.

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Frame}
  */
-public  final class Frame extends
+public final class Frame extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Frame)
     FrameOrBuilder {
@@ -96,6 +96,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -127,6 +129,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
    * @return Whether the frameInfo field is set.
    */
+  @java.lang.Override
   public boolean hasFrameInfo() {
     return frameInfo_ != null;
   }
@@ -138,6 +141,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
    * @return The frameInfo.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.FrameInfo getFrameInfo() {
     return frameInfo_ == null ? com.clarifai.grpc.api.FrameInfo.getDefaultInstance() : frameInfo_;
   }
@@ -148,6 +152,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.FrameInfo frame_info = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.FrameInfoOrBuilder getFrameInfoOrBuilder() {
     return getFrameInfo();
   }
@@ -165,6 +170,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 2;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -179,6 +185,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 2;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -192,6 +199,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -206,6 +214,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 3;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -226,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 3;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -260,7 +270,7 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(2, getData());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
     }
     unknownFields.writeTo(output);
@@ -280,7 +290,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getData());
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
     }
     size += unknownFields.getSerializedSize();

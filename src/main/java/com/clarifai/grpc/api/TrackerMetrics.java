@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TrackerMetrics}
  */
-public  final class TrackerMetrics extends
+public final class TrackerMetrics extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TrackerMetrics)
     TrackerMetricsOrBuilder {
@@ -95,6 +95,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -126,6 +128,7 @@ private static final long serialVersionUID = 0L;
    * <code>float mot_mota = 1;</code>
    * @return The motMota.
    */
+  @java.lang.Override
   public float getMotMota() {
     return motMota_;
   }
@@ -140,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 mot_num_switches = 2;</code>
    * @return The motNumSwitches.
    */
+  @java.lang.Override
   public int getMotNumSwitches() {
     return motNumSwitches_;
   }
@@ -154,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>float morse_frag = 3;</code>
    * @return The morseFrag.
    */
+  @java.lang.Override
   public float getMorseFrag() {
     return morseFrag_;
   }
@@ -168,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * <code>float avg_precision = 4;</code>
    * @return The avgPrecision.
    */
+  @java.lang.Override
   public float getAvgPrecision() {
     return avgPrecision_;
   }
@@ -182,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * <code>string aiid = 5;</code>
    * @return The aiid.
    */
+  @java.lang.Override
   public java.lang.String getAiid() {
     java.lang.Object ref = aiid_;
     if (ref instanceof java.lang.String) {
@@ -202,6 +209,7 @@ private static final long serialVersionUID = 0L;
    * <code>string aiid = 5;</code>
    * @return The bytes for aiid.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAiidBytes() {
     java.lang.Object ref = aiid_;
@@ -226,6 +234,7 @@ private static final long serialVersionUID = 0L;
    * <code>float unique_switch_rate = 6;</code>
    * @return The uniqueSwitchRate.
    */
+  @java.lang.Override
   public float getUniqueSwitchRate() {
     return uniqueSwitchRate_;
   }
@@ -244,22 +253,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (motMota_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(motMota_) != 0) {
       output.writeFloat(1, motMota_);
     }
     if (motNumSwitches_ != 0) {
       output.writeInt32(2, motNumSwitches_);
     }
-    if (morseFrag_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(morseFrag_) != 0) {
       output.writeFloat(3, morseFrag_);
     }
-    if (avgPrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(avgPrecision_) != 0) {
       output.writeFloat(4, avgPrecision_);
     }
-    if (!getAiidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aiid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, aiid_);
     }
-    if (uniqueSwitchRate_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(uniqueSwitchRate_) != 0) {
       output.writeFloat(6, uniqueSwitchRate_);
     }
     unknownFields.writeTo(output);
@@ -271,7 +280,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (motMota_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(motMota_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, motMota_);
     }
@@ -279,18 +288,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, motNumSwitches_);
     }
-    if (morseFrag_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(morseFrag_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, morseFrag_);
     }
-    if (avgPrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(avgPrecision_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, avgPrecision_);
     }
-    if (!getAiidBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aiid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, aiid_);
     }
-    if (uniqueSwitchRate_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(uniqueSwitchRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(6, uniqueSwitchRate_);
     }
@@ -638,6 +647,7 @@ private static final long serialVersionUID = 0L;
      * <code>float mot_mota = 1;</code>
      * @return The motMota.
      */
+    @java.lang.Override
     public float getMotMota() {
       return motMota_;
     }
@@ -680,6 +690,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 mot_num_switches = 2;</code>
      * @return The motNumSwitches.
      */
+    @java.lang.Override
     public int getMotNumSwitches() {
       return motNumSwitches_;
     }
@@ -722,6 +733,7 @@ private static final long serialVersionUID = 0L;
      * <code>float morse_frag = 3;</code>
      * @return The morseFrag.
      */
+    @java.lang.Override
     public float getMorseFrag() {
       return morseFrag_;
     }
@@ -764,6 +776,7 @@ private static final long serialVersionUID = 0L;
      * <code>float avg_precision = 4;</code>
      * @return The avgPrecision.
      */
+    @java.lang.Override
     public float getAvgPrecision() {
       return avgPrecision_;
     }
@@ -902,6 +915,7 @@ private static final long serialVersionUID = 0L;
      * <code>float unique_switch_rate = 6;</code>
      * @return The uniqueSwitchRate.
      */
+    @java.lang.Override
     public float getUniqueSwitchRate() {
       return uniqueSwitchRate_;
     }

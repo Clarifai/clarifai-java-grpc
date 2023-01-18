@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.RegionInfo}
  */
-public  final class RegionInfo extends
+public final class RegionInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.RegionInfo)
     RegionInfoOrBuilder {
@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RegionInfo() {
+    keypointLocations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -42,6 +43,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -104,6 +106,41 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.Span.Builder subBuilder = null;
+            if (span_ != null) {
+              subBuilder = span_.toBuilder();
+            }
+            span_ = input.readMessage(com.clarifai.grpc.api.Span.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(span_);
+              span_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 66: {
+            com.clarifai.grpc.api.Token.Builder subBuilder = null;
+            if (token_ != null) {
+              subBuilder = token_.toBuilder();
+            }
+            token_ = input.readMessage(com.clarifai.grpc.api.Token.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(token_);
+              token_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              keypointLocations_ = new java.util.ArrayList<com.clarifai.grpc.api.Point>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            keypointLocations_.add(
+                input.readMessage(com.clarifai.grpc.api.Point.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -115,10 +152,15 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        keypointLocations_ = java.util.Collections.unmodifiableList(keypointLocations_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -146,6 +188,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
    * @return Whether the boundingBox field is set.
    */
+  @java.lang.Override
   public boolean hasBoundingBox() {
     return boundingBox_ != null;
   }
@@ -157,6 +200,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
    * @return The boundingBox.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BoundingBox getBoundingBox() {
     return boundingBox_ == null ? com.clarifai.grpc.api.BoundingBox.getDefaultInstance() : boundingBox_;
   }
@@ -167,6 +211,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.BoundingBox bounding_box = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BoundingBoxOrBuilder getBoundingBoxOrBuilder() {
     return getBoundingBox();
   }
@@ -181,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Mask mask = 4;</code>
    * @return Whether the mask field is set.
    */
+  @java.lang.Override
   public boolean hasMask() {
     return mask_ != null;
   }
@@ -192,6 +238,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Mask mask = 4;</code>
    * @return The mask.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Mask getMask() {
     return mask_ == null ? com.clarifai.grpc.api.Mask.getDefaultInstance() : mask_;
   }
@@ -202,6 +249,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Mask mask = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.MaskOrBuilder getMaskOrBuilder() {
     return getMask();
   }
@@ -216,6 +264,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Polygon polygon = 5;</code>
    * @return Whether the polygon field is set.
    */
+  @java.lang.Override
   public boolean hasPolygon() {
     return polygon_ != null;
   }
@@ -227,6 +276,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Polygon polygon = 5;</code>
    * @return The polygon.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Polygon getPolygon() {
     return polygon_ == null ? com.clarifai.grpc.api.Polygon.getDefaultInstance() : polygon_;
   }
@@ -237,6 +287,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Polygon polygon = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PolygonOrBuilder getPolygonOrBuilder() {
     return getPolygon();
   }
@@ -251,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Point point = 6;</code>
    * @return Whether the point field is set.
    */
+  @java.lang.Override
   public boolean hasPoint() {
     return point_ != null;
   }
@@ -262,6 +314,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Point point = 6;</code>
    * @return The point.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Point getPoint() {
     return point_ == null ? com.clarifai.grpc.api.Point.getDefaultInstance() : point_;
   }
@@ -272,8 +325,150 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Point point = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.PointOrBuilder getPointOrBuilder() {
     return getPoint();
+  }
+
+  public static final int SPAN_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.Span span_;
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return Whether the span field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpan() {
+    return span_ != null;
+  }
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   * @return The span.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Span getSpan() {
+    return span_ == null ? com.clarifai.grpc.api.Span.getDefaultInstance() : span_;
+  }
+  /**
+   * <pre>
+   * Span char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Span span = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SpanOrBuilder getSpanOrBuilder() {
+    return getSpan();
+  }
+
+  public static final int TOKEN_FIELD_NUMBER = 8;
+  private com.clarifai.grpc.api.Token token_;
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return Whether the token field is set.
+   */
+  @java.lang.Override
+  public boolean hasToken() {
+    return token_ != null;
+  }
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   * @return The token.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Token getToken() {
+    return token_ == null ? com.clarifai.grpc.api.Token.getDefaultInstance() : token_;
+  }
+  /**
+   * <pre>
+   * Token char sequence for NLP.
+   * </pre>
+   *
+   * <code>.clarifai.api.Token token = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TokenOrBuilder getTokenOrBuilder() {
+    return getToken();
+  }
+
+  public static final int KEYPOINT_LOCATIONS_FIELD_NUMBER = 9;
+  private java.util.List<com.clarifai.grpc.api.Point> keypointLocations_;
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Point> getKeypointLocationsList() {
+    return keypointLocations_;
+  }
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.PointOrBuilder> 
+      getKeypointLocationsOrBuilderList() {
+    return keypointLocations_;
+  }
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  @java.lang.Override
+  public int getKeypointLocationsCount() {
+    return keypointLocations_.size();
+  }
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Point getKeypointLocations(int index) {
+    return keypointLocations_.get(index);
+  }
+  /**
+   * <pre>
+   * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+   * These will be in the same order as the respective keypoint_names inside the concept.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PointOrBuilder getKeypointLocationsOrBuilder(
+      int index) {
+    return keypointLocations_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -302,6 +497,15 @@ private static final long serialVersionUID = 0L;
     if (point_ != null) {
       output.writeMessage(6, getPoint());
     }
+    if (span_ != null) {
+      output.writeMessage(7, getSpan());
+    }
+    if (token_ != null) {
+      output.writeMessage(8, getToken());
+    }
+    for (int i = 0; i < keypointLocations_.size(); i++) {
+      output.writeMessage(9, keypointLocations_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -326,6 +530,18 @@ private static final long serialVersionUID = 0L;
     if (point_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getPoint());
+    }
+    if (span_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getSpan());
+    }
+    if (token_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getToken());
+    }
+    for (int i = 0; i < keypointLocations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, keypointLocations_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -362,6 +578,18 @@ private static final long serialVersionUID = 0L;
       if (!getPoint()
           .equals(other.getPoint())) return false;
     }
+    if (hasSpan() != other.hasSpan()) return false;
+    if (hasSpan()) {
+      if (!getSpan()
+          .equals(other.getSpan())) return false;
+    }
+    if (hasToken() != other.hasToken()) return false;
+    if (hasToken()) {
+      if (!getToken()
+          .equals(other.getToken())) return false;
+    }
+    if (!getKeypointLocationsList()
+        .equals(other.getKeypointLocationsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -388,6 +616,18 @@ private static final long serialVersionUID = 0L;
     if (hasPoint()) {
       hash = (37 * hash) + POINT_FIELD_NUMBER;
       hash = (53 * hash) + getPoint().hashCode();
+    }
+    if (hasSpan()) {
+      hash = (37 * hash) + SPAN_FIELD_NUMBER;
+      hash = (53 * hash) + getSpan().hashCode();
+    }
+    if (hasToken()) {
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+    }
+    if (getKeypointLocationsCount() > 0) {
+      hash = (37 * hash) + KEYPOINT_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getKeypointLocationsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -521,6 +761,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getKeypointLocationsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -550,6 +791,24 @@ private static final long serialVersionUID = 0L;
         point_ = null;
         pointBuilder_ = null;
       }
+      if (spanBuilder_ == null) {
+        span_ = null;
+      } else {
+        span_ = null;
+        spanBuilder_ = null;
+      }
+      if (tokenBuilder_ == null) {
+        token_ = null;
+      } else {
+        token_ = null;
+        tokenBuilder_ = null;
+      }
+      if (keypointLocationsBuilder_ == null) {
+        keypointLocations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        keypointLocationsBuilder_.clear();
+      }
       return this;
     }
 
@@ -576,6 +835,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.RegionInfo buildPartial() {
       com.clarifai.grpc.api.RegionInfo result = new com.clarifai.grpc.api.RegionInfo(this);
+      int from_bitField0_ = bitField0_;
       if (boundingBoxBuilder_ == null) {
         result.boundingBox_ = boundingBox_;
       } else {
@@ -595,6 +855,25 @@ private static final long serialVersionUID = 0L;
         result.point_ = point_;
       } else {
         result.point_ = pointBuilder_.build();
+      }
+      if (spanBuilder_ == null) {
+        result.span_ = span_;
+      } else {
+        result.span_ = spanBuilder_.build();
+      }
+      if (tokenBuilder_ == null) {
+        result.token_ = token_;
+      } else {
+        result.token_ = tokenBuilder_.build();
+      }
+      if (keypointLocationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          keypointLocations_ = java.util.Collections.unmodifiableList(keypointLocations_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.keypointLocations_ = keypointLocations_;
+      } else {
+        result.keypointLocations_ = keypointLocationsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -656,6 +935,38 @@ private static final long serialVersionUID = 0L;
       if (other.hasPoint()) {
         mergePoint(other.getPoint());
       }
+      if (other.hasSpan()) {
+        mergeSpan(other.getSpan());
+      }
+      if (other.hasToken()) {
+        mergeToken(other.getToken());
+      }
+      if (keypointLocationsBuilder_ == null) {
+        if (!other.keypointLocations_.isEmpty()) {
+          if (keypointLocations_.isEmpty()) {
+            keypointLocations_ = other.keypointLocations_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKeypointLocationsIsMutable();
+            keypointLocations_.addAll(other.keypointLocations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.keypointLocations_.isEmpty()) {
+          if (keypointLocationsBuilder_.isEmpty()) {
+            keypointLocationsBuilder_.dispose();
+            keypointLocationsBuilder_ = null;
+            keypointLocations_ = other.keypointLocations_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            keypointLocationsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getKeypointLocationsFieldBuilder() : null;
+          } else {
+            keypointLocationsBuilder_.addAllMessages(other.keypointLocations_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -684,6 +995,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.BoundingBox boundingBox_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1303,6 +1615,646 @@ private static final long serialVersionUID = 0L;
         point_ = null;
       }
       return pointBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Span span_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Span, com.clarifai.grpc.api.Span.Builder, com.clarifai.grpc.api.SpanOrBuilder> spanBuilder_;
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     * @return Whether the span field is set.
+     */
+    public boolean hasSpan() {
+      return spanBuilder_ != null || span_ != null;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     * @return The span.
+     */
+    public com.clarifai.grpc.api.Span getSpan() {
+      if (spanBuilder_ == null) {
+        return span_ == null ? com.clarifai.grpc.api.Span.getDefaultInstance() : span_;
+      } else {
+        return spanBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder setSpan(com.clarifai.grpc.api.Span value) {
+      if (spanBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        span_ = value;
+        onChanged();
+      } else {
+        spanBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder setSpan(
+        com.clarifai.grpc.api.Span.Builder builderForValue) {
+      if (spanBuilder_ == null) {
+        span_ = builderForValue.build();
+        onChanged();
+      } else {
+        spanBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder mergeSpan(com.clarifai.grpc.api.Span value) {
+      if (spanBuilder_ == null) {
+        if (span_ != null) {
+          span_ =
+            com.clarifai.grpc.api.Span.newBuilder(span_).mergeFrom(value).buildPartial();
+        } else {
+          span_ = value;
+        }
+        onChanged();
+      } else {
+        spanBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public Builder clearSpan() {
+      if (spanBuilder_ == null) {
+        span_ = null;
+        onChanged();
+      } else {
+        span_ = null;
+        spanBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public com.clarifai.grpc.api.Span.Builder getSpanBuilder() {
+      
+      onChanged();
+      return getSpanFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    public com.clarifai.grpc.api.SpanOrBuilder getSpanOrBuilder() {
+      if (spanBuilder_ != null) {
+        return spanBuilder_.getMessageOrBuilder();
+      } else {
+        return span_ == null ?
+            com.clarifai.grpc.api.Span.getDefaultInstance() : span_;
+      }
+    }
+    /**
+     * <pre>
+     * Span char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Span span = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Span, com.clarifai.grpc.api.Span.Builder, com.clarifai.grpc.api.SpanOrBuilder> 
+        getSpanFieldBuilder() {
+      if (spanBuilder_ == null) {
+        spanBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Span, com.clarifai.grpc.api.Span.Builder, com.clarifai.grpc.api.SpanOrBuilder>(
+                getSpan(),
+                getParentForChildren(),
+                isClean());
+        span_ = null;
+      }
+      return spanBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Token token_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Token, com.clarifai.grpc.api.Token.Builder, com.clarifai.grpc.api.TokenOrBuilder> tokenBuilder_;
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     * @return Whether the token field is set.
+     */
+    public boolean hasToken() {
+      return tokenBuilder_ != null || token_ != null;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     * @return The token.
+     */
+    public com.clarifai.grpc.api.Token getToken() {
+      if (tokenBuilder_ == null) {
+        return token_ == null ? com.clarifai.grpc.api.Token.getDefaultInstance() : token_;
+      } else {
+        return tokenBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder setToken(com.clarifai.grpc.api.Token value) {
+      if (tokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        token_ = value;
+        onChanged();
+      } else {
+        tokenBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder setToken(
+        com.clarifai.grpc.api.Token.Builder builderForValue) {
+      if (tokenBuilder_ == null) {
+        token_ = builderForValue.build();
+        onChanged();
+      } else {
+        tokenBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder mergeToken(com.clarifai.grpc.api.Token value) {
+      if (tokenBuilder_ == null) {
+        if (token_ != null) {
+          token_ =
+            com.clarifai.grpc.api.Token.newBuilder(token_).mergeFrom(value).buildPartial();
+        } else {
+          token_ = value;
+        }
+        onChanged();
+      } else {
+        tokenBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public Builder clearToken() {
+      if (tokenBuilder_ == null) {
+        token_ = null;
+        onChanged();
+      } else {
+        token_ = null;
+        tokenBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public com.clarifai.grpc.api.Token.Builder getTokenBuilder() {
+      
+      onChanged();
+      return getTokenFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    public com.clarifai.grpc.api.TokenOrBuilder getTokenOrBuilder() {
+      if (tokenBuilder_ != null) {
+        return tokenBuilder_.getMessageOrBuilder();
+      } else {
+        return token_ == null ?
+            com.clarifai.grpc.api.Token.getDefaultInstance() : token_;
+      }
+    }
+    /**
+     * <pre>
+     * Token char sequence for NLP.
+     * </pre>
+     *
+     * <code>.clarifai.api.Token token = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Token, com.clarifai.grpc.api.Token.Builder, com.clarifai.grpc.api.TokenOrBuilder> 
+        getTokenFieldBuilder() {
+      if (tokenBuilder_ == null) {
+        tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Token, com.clarifai.grpc.api.Token.Builder, com.clarifai.grpc.api.TokenOrBuilder>(
+                getToken(),
+                getParentForChildren(),
+                isClean());
+        token_ = null;
+      }
+      return tokenBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Point> keypointLocations_ =
+      java.util.Collections.emptyList();
+    private void ensureKeypointLocationsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        keypointLocations_ = new java.util.ArrayList<com.clarifai.grpc.api.Point>(keypointLocations_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Point, com.clarifai.grpc.api.Point.Builder, com.clarifai.grpc.api.PointOrBuilder> keypointLocationsBuilder_;
+
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Point> getKeypointLocationsList() {
+      if (keypointLocationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(keypointLocations_);
+      } else {
+        return keypointLocationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public int getKeypointLocationsCount() {
+      if (keypointLocationsBuilder_ == null) {
+        return keypointLocations_.size();
+      } else {
+        return keypointLocationsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public com.clarifai.grpc.api.Point getKeypointLocations(int index) {
+      if (keypointLocationsBuilder_ == null) {
+        return keypointLocations_.get(index);
+      } else {
+        return keypointLocationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder setKeypointLocations(
+        int index, com.clarifai.grpc.api.Point value) {
+      if (keypointLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.set(index, value);
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder setKeypointLocations(
+        int index, com.clarifai.grpc.api.Point.Builder builderForValue) {
+      if (keypointLocationsBuilder_ == null) {
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder addKeypointLocations(com.clarifai.grpc.api.Point value) {
+      if (keypointLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.add(value);
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder addKeypointLocations(
+        int index, com.clarifai.grpc.api.Point value) {
+      if (keypointLocationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.add(index, value);
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder addKeypointLocations(
+        com.clarifai.grpc.api.Point.Builder builderForValue) {
+      if (keypointLocationsBuilder_ == null) {
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder addKeypointLocations(
+        int index, com.clarifai.grpc.api.Point.Builder builderForValue) {
+      if (keypointLocationsBuilder_ == null) {
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder addAllKeypointLocations(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Point> values) {
+      if (keypointLocationsBuilder_ == null) {
+        ensureKeypointLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, keypointLocations_);
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder clearKeypointLocations() {
+      if (keypointLocationsBuilder_ == null) {
+        keypointLocations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public Builder removeKeypointLocations(int index) {
+      if (keypointLocationsBuilder_ == null) {
+        ensureKeypointLocationsIsMutable();
+        keypointLocations_.remove(index);
+        onChanged();
+      } else {
+        keypointLocationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public com.clarifai.grpc.api.Point.Builder getKeypointLocationsBuilder(
+        int index) {
+      return getKeypointLocationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public com.clarifai.grpc.api.PointOrBuilder getKeypointLocationsOrBuilder(
+        int index) {
+      if (keypointLocationsBuilder_ == null) {
+        return keypointLocations_.get(index);  } else {
+        return keypointLocationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.PointOrBuilder> 
+         getKeypointLocationsOrBuilderList() {
+      if (keypointLocationsBuilder_ != null) {
+        return keypointLocationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(keypointLocations_);
+      }
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public com.clarifai.grpc.api.Point.Builder addKeypointLocationsBuilder() {
+      return getKeypointLocationsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Point.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public com.clarifai.grpc.api.Point.Builder addKeypointLocationsBuilder(
+        int index) {
+      return getKeypointLocationsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Point.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The locations of detected keypoints, which are to be used in conjunction with the detected concept's skeleton to connect the keypoint locations.
+     * These will be in the same order as the respective keypoint_names inside the concept.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Point keypoint_locations = 9;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Point.Builder> 
+         getKeypointLocationsBuilderList() {
+      return getKeypointLocationsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Point, com.clarifai.grpc.api.Point.Builder, com.clarifai.grpc.api.PointOrBuilder> 
+        getKeypointLocationsFieldBuilder() {
+      if (keypointLocationsBuilder_ == null) {
+        keypointLocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Point, com.clarifai.grpc.api.Point.Builder, com.clarifai.grpc.api.PointOrBuilder>(
+                keypointLocations_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        keypointLocations_ = null;
+      }
+      return keypointLocationsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

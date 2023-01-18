@@ -61,10 +61,29 @@ public interface ListAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>bool sort_by_name = 6;</code>
+   * @return Whether the sortByName field is set.
+   */
+  boolean hasSortByName();
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_name = 6;</code>
    * @return The sortByName.
    */
   boolean getSortByName();
 
+  /**
+   * <pre>
+   * Whether to order by the modified_at time.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 7;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  boolean hasSortByModifiedAt();
   /**
    * <pre>
    * Whether to order by the modified_at time.
@@ -105,6 +124,8 @@ public interface ListAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3260
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -115,6 +136,8 @@ public interface ListAppsRequestOrBuilder extends
    * </pre>
    *
    * <code>string name = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3260
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

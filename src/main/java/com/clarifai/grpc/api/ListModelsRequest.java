@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ListModelsRequest}
  */
-public  final class ListModelsRequest extends
+public final class ListModelsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ListModelsRequest)
     ListModelsRequestOrBuilder {
@@ -127,18 +127,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 88: {
-            sortByCase_ = 11;
             sortBy_ = input.readBool();
+            sortByCase_ = 11;
             break;
           }
           case 96: {
-            sortByCase_ = 12;
             sortBy_ = input.readBool();
+            sortByCase_ = 12;
             break;
           }
           case 104: {
-            sortByCase_ = 13;
             sortBy_ = input.readBool();
+            sortByCase_ = 13;
             break;
           }
           case 114: {
@@ -199,6 +199,16 @@ private static final long serialVersionUID = 0L;
             languages_.add(s);
             break;
           }
+          case 176: {
+
+            filterByUserId_ = input.readBool();
+            break;
+          }
+          case 184: {
+
+            dontFetchFromMain_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -210,6 +220,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -298,6 +310,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -305,12 +318,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -326,6 +341,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 page = 2;</code>
    * @return The page.
    */
+  @java.lang.Override
   public int getPage() {
     return page_;
   }
@@ -341,6 +357,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 per_page = 3;</code>
    * @return The perPage.
    */
+  @java.lang.Override
   public int getPerPage() {
     return perPage_;
   }
@@ -356,6 +373,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool sort_ascending = 10;</code>
    * @return The sortAscending.
    */
+  @java.lang.Override
   public boolean getSortAscending() {
     return sortAscending_;
   }
@@ -367,8 +385,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_name = 11;</code>
+   * @return Whether the sortByName field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByName() {
+    return sortByCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_name = 11;</code>
    * @return The sortByName.
    */
+  @java.lang.Override
   public boolean getSortByName() {
     if (sortByCase_ == 11) {
       return (java.lang.Boolean) sortBy_;
@@ -383,8 +414,21 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_num_inputs = 12;</code>
+   * @return Whether the sortByNumInputs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByNumInputs() {
+    return sortByCase_ == 12;
+  }
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 12;</code>
    * @return The sortByNumInputs.
    */
+  @java.lang.Override
   public boolean getSortByNumInputs() {
     if (sortByCase_ == 12) {
       return (java.lang.Boolean) sortBy_;
@@ -400,8 +444,22 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool sort_by_modified_at = 13;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByModifiedAt() {
+    return sortByCase_ == 13;
+  }
+  /**
+   * <pre>
+   * Whether to order by the modified_at time of the latest model version.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 13;</code>
    * @return The sortByModifiedAt.
    */
+  @java.lang.Override
   public boolean getSortByModifiedAt() {
     if (sortByCase_ == 13) {
       return (java.lang.Boolean) sortBy_;
@@ -420,6 +478,7 @@ private static final long serialVersionUID = 0L;
    * <code>string query = 14;</code>
    * @return The query.
    */
+  @java.lang.Override
   public java.lang.String getQuery() {
     java.lang.Object ref = query_;
     if (ref instanceof java.lang.String) {
@@ -441,6 +500,7 @@ private static final long serialVersionUID = 0L;
    * <code>string query = 14;</code>
    * @return The bytes for query.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getQueryBytes() {
     java.lang.Object ref = query_;
@@ -459,14 +519,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
-   * <code>string name = 5 [deprecated = true];</code>
+   * <code>string name = 5;</code>
    * @return The name.
    */
-  @java.lang.Deprecated public java.lang.String getName() {
+  @java.lang.Override
+  public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -480,14 +540,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
-   * <code>string name = 5 [deprecated = true];</code>
+   * <code>string name = 5;</code>
    * @return The bytes for name.
    */
-  @java.lang.Deprecated public com.google.protobuf.ByteString
+  @java.lang.Override
+  public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -501,6 +561,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FILTER_BY_USER_ID_FIELD_NUMBER = 22;
+  private boolean filterByUserId_;
+  /**
+   * <pre>
+   * Extends the name filter to include the user_id of the application owner that the model belongs to.
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 22;</code>
+   * @return The filterByUserId.
+   */
+  @java.lang.Override
+  public boolean getFilterByUserId() {
+    return filterByUserId_;
+  }
+
   public static final int MODEL_TYPE_ID_FIELD_NUMBER = 6;
   private volatile java.lang.Object modelTypeId_;
   /**
@@ -512,6 +587,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_type_id = 6;</code>
    * @return The modelTypeId.
    */
+  @java.lang.Override
   public java.lang.String getModelTypeId() {
     java.lang.Object ref = modelTypeId_;
     if (ref instanceof java.lang.String) {
@@ -533,6 +609,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_type_id = 6;</code>
    * @return The bytes for modelTypeId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelTypeIdBytes() {
     java.lang.Object ref = modelTypeId_;
@@ -557,6 +634,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool trained_only = 7;</code>
    * @return The trainedOnly.
    */
+  @java.lang.Override
   public boolean getTrainedOnly() {
     return trainedOnly_;
   }
@@ -681,6 +759,7 @@ private static final long serialVersionUID = 0L;
    * <code>string license = 15;</code>
    * @return The license.
    */
+  @java.lang.Override
   public java.lang.String getLicense() {
     java.lang.Object ref = license_;
     if (ref instanceof java.lang.String) {
@@ -701,6 +780,7 @@ private static final long serialVersionUID = 0L;
    * <code>string license = 15;</code>
    * @return The bytes for license.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getLicenseBytes() {
     java.lang.Object ref = license_;
@@ -725,6 +805,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool featured_only = 16;</code>
    * @return The featuredOnly.
    */
+  @java.lang.Override
   public boolean getFeaturedOnly() {
     return featuredOnly_;
   }
@@ -739,6 +820,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool starred_only = 20;</code>
    * @return The starredOnly.
    */
+  @java.lang.Override
   public boolean getStarredOnly() {
     return starredOnly_;
   }
@@ -900,7 +982,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -912,7 +994,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -923,7 +1005,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -935,7 +1017,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -945,6 +1027,22 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index) {
     return additionalFields_.getByteString(index);
+  }
+
+  public static final int DONT_FETCH_FROM_MAIN_FIELD_NUMBER = 23;
+  private boolean dontFetchFromMain_;
+  /**
+   * <pre>
+   * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+   * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+   * </pre>
+   *
+   * <code>bool dont_fetch_from_main = 23;</code>
+   * @return The dontFetchFromMain.
+   */
+  @java.lang.Override
+  public boolean getDontFetchFromMain() {
+    return dontFetchFromMain_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -970,10 +1068,10 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
     }
-    if (!getModelTypeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelTypeId_);
     }
     if (trainedOnly_ != false) {
@@ -1000,10 +1098,10 @@ private static final long serialVersionUID = 0L;
       output.writeBool(
           13, (boolean)((java.lang.Boolean) sortBy_));
     }
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, query_);
     }
-    if (!getLicenseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, license_);
     }
     if (featuredOnly_ != false) {
@@ -1023,6 +1121,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < languages_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, languages_.getRaw(i));
+    }
+    if (filterByUserId_ != false) {
+      output.writeBool(22, filterByUserId_);
+    }
+    if (dontFetchFromMain_ != false) {
+      output.writeBool(23, dontFetchFromMain_);
     }
     unknownFields.writeTo(output);
   }
@@ -1045,10 +1149,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
     }
-    if (!getModelTypeIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelTypeId_);
     }
     if (trainedOnly_ != false) {
@@ -1090,10 +1194,10 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             13, (boolean)((java.lang.Boolean) sortBy_));
     }
-    if (!getQueryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, query_);
     }
-    if (!getLicenseBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, license_);
     }
     if (featuredOnly_ != false) {
@@ -1136,6 +1240,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 2 * getLanguagesList().size();
     }
+    if (filterByUserId_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(22, filterByUserId_);
+    }
+    if (dontFetchFromMain_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(23, dontFetchFromMain_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1166,6 +1278,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getQuery())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getFilterByUserId()
+        != other.getFilterByUserId()) return false;
     if (!getModelTypeId()
         .equals(other.getModelTypeId())) return false;
     if (getTrainedOnly()
@@ -1188,6 +1302,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguagesList())) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
+    if (getDontFetchFromMain()
+        != other.getDontFetchFromMain()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -1231,6 +1347,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFilterByUserId());
     hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelTypeId().hashCode();
     hash = (37 * hash) + TRAINED_ONLY_FIELD_NUMBER;
@@ -1268,6 +1387,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
     }
+    hash = (37 * hash) + DONT_FETCH_FROM_MAIN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDontFetchFromMain());
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -1440,6 +1562,8 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      filterByUserId_ = false;
+
       modelTypeId_ = "";
 
       trainedOnly_ = false;
@@ -1462,6 +1586,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
+      dontFetchFromMain_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -1510,6 +1636,7 @@ private static final long serialVersionUID = 0L;
       }
       result.query_ = query_;
       result.name_ = name_;
+      result.filterByUserId_ = filterByUserId_;
       result.modelTypeId_ = modelTypeId_;
       result.trainedOnly_ = trainedOnly_;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -1545,6 +1672,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.additionalFields_ = additionalFields_;
+      result.dontFetchFromMain_ = dontFetchFromMain_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1613,6 +1741,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getFilterByUserId() != false) {
+        setFilterByUserId(other.getFilterByUserId());
       }
       if (!other.getModelTypeId().isEmpty()) {
         modelTypeId_ = other.modelTypeId_;
@@ -1690,6 +1821,9 @@ private static final long serialVersionUID = 0L;
           additionalFields_.addAll(other.additionalFields_);
         }
         onChanged();
+      }
+      if (other.getDontFetchFromMain() != false) {
+        setDontFetchFromMain(other.getDontFetchFromMain());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -1882,6 +2016,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 page = 2;</code>
      * @return The page.
      */
+    @java.lang.Override
     public int getPage() {
       return page_;
     }
@@ -1927,6 +2062,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 per_page = 3;</code>
      * @return The perPage.
      */
+    @java.lang.Override
     public int getPerPage() {
       return perPage_;
     }
@@ -1972,6 +2108,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool sort_ascending = 10;</code>
      * @return The sortAscending.
      */
+    @java.lang.Override
     public boolean getSortAscending() {
       return sortAscending_;
     }
@@ -2007,6 +2144,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by the name
+     * </pre>
+     *
+     * <code>bool sort_by_name = 11;</code>
+     * @return Whether the sortByName field is set.
+     */
+    public boolean hasSortByName() {
+      return sortByCase_ == 11;
+    }
     /**
      * <pre>
      * Whether to order by the name
@@ -2059,6 +2207,17 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool sort_by_num_inputs = 12;</code>
+     * @return Whether the sortByNumInputs field is set.
+     */
+    public boolean hasSortByNumInputs() {
+      return sortByCase_ == 12;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 12;</code>
      * @return The sortByNumInputs.
      */
     public boolean getSortByNumInputs() {
@@ -2099,6 +2258,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Whether to order by the modified_at time of the latest model version.
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 13;</code>
+     * @return Whether the sortByModifiedAt field is set.
+     */
+    public boolean hasSortByModifiedAt() {
+      return sortByCase_ == 13;
+    }
     /**
      * <pre>
      * Whether to order by the modified_at time of the latest model version.
@@ -2252,14 +2423,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
-     * <code>string name = 5 [deprecated = true];</code>
+     * <code>string name = 5;</code>
      * @return The name.
      */
-    @java.lang.Deprecated public java.lang.String getName() {
+    public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -2273,14 +2443,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
-     * <code>string name = 5 [deprecated = true];</code>
+     * <code>string name = 5;</code>
      * @return The bytes for name.
      */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
+    public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
@@ -2295,15 +2464,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
-     * <code>string name = 5 [deprecated = true];</code>
+     * <code>string name = 5;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setName(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2315,14 +2483,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
-     * <code>string name = 5 [deprecated = true];</code>
+     * <code>string name = 5;</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearName() {
+    public Builder clearName() {
       
       name_ = getDefaultInstance().getName();
       onChanged();
@@ -2330,15 +2497,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * Deprecated in favor of query
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
      * </pre>
      *
-     * <code>string name = 5 [deprecated = true];</code>
+     * <code>string name = 5;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setNameBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2346,6 +2512,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean filterByUserId_ ;
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22;</code>
+     * @return The filterByUserId.
+     */
+    @java.lang.Override
+    public boolean getFilterByUserId() {
+      return filterByUserId_;
+    }
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22;</code>
+     * @param value The filterByUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterByUserId(boolean value) {
+      
+      filterByUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilterByUserId() {
+      
+      filterByUserId_ = false;
       onChanged();
       return this;
     }
@@ -2460,6 +2669,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool trained_only = 7;</code>
      * @return The trainedOnly.
      */
+    @java.lang.Override
     public boolean getTrainedOnly() {
       return trainedOnly_;
     }
@@ -2908,6 +3118,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool featured_only = 16;</code>
      * @return The featuredOnly.
      */
+    @java.lang.Override
     public boolean getFeaturedOnly() {
       return featuredOnly_;
     }
@@ -2950,6 +3161,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool starred_only = 20;</code>
      * @return The starredOnly.
      */
+    @java.lang.Override
     public boolean getStarredOnly() {
       return starredOnly_;
     }
@@ -3430,7 +3642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3442,7 +3654,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3453,7 +3665,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3465,7 +3677,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3478,7 +3690,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3498,7 +3710,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3517,7 +3729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3534,7 +3746,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3548,7 +3760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
      * </pre>
      *
      * <code>repeated string additional_fields = 19;</code>
@@ -3563,6 +3775,52 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAdditionalFieldsIsMutable();
       additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean dontFetchFromMain_ ;
+    /**
+     * <pre>
+     * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     * </pre>
+     *
+     * <code>bool dont_fetch_from_main = 23;</code>
+     * @return The dontFetchFromMain.
+     */
+    @java.lang.Override
+    public boolean getDontFetchFromMain() {
+      return dontFetchFromMain_;
+    }
+    /**
+     * <pre>
+     * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     * </pre>
+     *
+     * <code>bool dont_fetch_from_main = 23;</code>
+     * @param value The dontFetchFromMain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDontFetchFromMain(boolean value) {
+      
+      dontFetchFromMain_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+     * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+     * </pre>
+     *
+     * <code>bool dont_fetch_from_main = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDontFetchFromMain() {
+      
+      dontFetchFromMain_ = false;
       onChanged();
       return this;
     }

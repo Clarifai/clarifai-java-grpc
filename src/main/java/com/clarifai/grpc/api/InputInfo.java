@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.InputInfo}
  */
-public  final class InputInfo extends
+public final class InputInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.InputInfo)
     InputInfoOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -121,6 +123,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct fields_map = 1;</code>
    * @return Whether the fieldsMap field is set.
    */
+  @java.lang.Override
   public boolean hasFieldsMap() {
     return fieldsMap_ != null;
   }
@@ -133,6 +136,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct fields_map = 1;</code>
    * @return The fieldsMap.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getFieldsMap() {
     return fieldsMap_ == null ? com.google.protobuf.Struct.getDefaultInstance() : fieldsMap_;
   }
@@ -144,6 +148,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct fields_map = 1;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getFieldsMapOrBuilder() {
     return getFieldsMap();
   }
@@ -160,6 +165,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct params = 2;</code>
    * @return Whether the params field is set.
    */
+  @java.lang.Override
   public boolean hasParams() {
     return params_ != null;
   }
@@ -173,6 +179,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct params = 2;</code>
    * @return The params.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
@@ -185,6 +192,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct params = 2;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParamsOrBuilder() {
     return getParams();
   }

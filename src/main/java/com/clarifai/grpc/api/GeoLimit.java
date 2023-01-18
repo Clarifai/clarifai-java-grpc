@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.GeoLimit}
  */
-public  final class GeoLimit extends
+public final class GeoLimit extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.GeoLimit)
     GeoLimitOrBuilder {
@@ -75,6 +75,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -102,6 +104,7 @@ private static final long serialVersionUID = 0L;
    * <code>string type = 1;</code>
    * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -118,6 +121,7 @@ private static final long serialVersionUID = 0L;
    * <code>string type = 1;</code>
    * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTypeBytes() {
     java.lang.Object ref = type_;
@@ -138,6 +142,7 @@ private static final long serialVersionUID = 0L;
    * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The value.
    */
+  @java.lang.Override
   public float getValue() {
     return value_;
   }
@@ -156,10 +161,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(2, value_);
     }
     unknownFields.writeTo(output);
@@ -171,10 +176,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
-    if (value_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, value_);
     }
@@ -548,6 +553,7 @@ private static final long serialVersionUID = 0L;
      * <code>float value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The value.
      */
+    @java.lang.Override
     public float getValue() {
       return value_;
     }

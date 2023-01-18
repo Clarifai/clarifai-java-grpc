@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ListTasksRequest}
  */
-public  final class ListTasksRequest extends
+public final class ListTasksRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ListTasksRequest)
     ListTasksRequestOrBuilder {
@@ -22,6 +22,8 @@ private static final long serialVersionUID = 0L;
   private ListTasksRequest() {
     workerUserIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     reviewUserIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    labelOrderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -101,6 +103,24 @@ private static final long serialVersionUID = 0L;
             includingLabelOrderTasks_ = input.readBool();
             break;
           }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              additionalFields_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            additionalFields_.add(s);
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              labelOrderIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            labelOrderIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -112,6 +132,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -121,6 +143,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         reviewUserIds_ = reviewUserIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        labelOrderIds_ = labelOrderIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -145,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
+  @java.lang.Override
   public boolean hasUserAppId() {
     return userAppId_ != null;
   }
@@ -152,12 +181,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSet getUserAppId() {
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
     return getUserAppId();
   }
@@ -173,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 page = 2;</code>
    * @return The page.
    */
+  @java.lang.Override
   public int getPage() {
     return page_;
   }
@@ -188,6 +220,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 per_page = 3;</code>
    * @return The perPage.
    */
+  @java.lang.Override
   public int getPerPage() {
     return perPage_;
   }
@@ -294,18 +327,126 @@ private static final long serialVersionUID = 0L;
     return reviewUserIds_.getByteString(index);
   }
 
+  public static final int LABEL_ORDER_IDS_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList labelOrderIds_;
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @return A list containing the labelOrderIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getLabelOrderIdsList() {
+    return labelOrderIds_;
+  }
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @return The count of labelOrderIds.
+   */
+  public int getLabelOrderIdsCount() {
+    return labelOrderIds_.size();
+  }
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @param index The index of the element to return.
+   * @return The labelOrderIds at the given index.
+   */
+  public java.lang.String getLabelOrderIds(int index) {
+    return labelOrderIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Get tasks that are associated to ANY label order from this list.
+   * </pre>
+   *
+   * <code>repeated string label_order_ids = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the labelOrderIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getLabelOrderIdsBytes(int index) {
+    return labelOrderIds_.getByteString(index);
+  }
+
   public static final int INCLUDING_LABEL_ORDER_TASKS_FIELD_NUMBER = 6;
   private boolean includingLabelOrderTasks_;
   /**
    * <pre>
    * Get label order tasks as well
+   * It is automatically set to true if label_order_ids is set.
    * </pre>
    *
    * <code>bool including_label_order_tasks = 6;</code>
    * @return The includingLabelOrderTasks.
    */
+  @java.lang.Override
   public boolean getIncludingLabelOrderTasks() {
     return includingLabelOrderTasks_;
+  }
+
+  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList additionalFields_;
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @return A list containing the additionalFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAdditionalFieldsList() {
+    return additionalFields_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @return The count of additionalFields.
+   */
+  public int getAdditionalFieldsCount() {
+    return additionalFields_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  public java.lang.String getAdditionalFields(int index) {
+    return additionalFields_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response.
+   * Currently supported: all, worker.users, review.users.
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index) {
+    return additionalFields_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -339,6 +480,12 @@ private static final long serialVersionUID = 0L;
     }
     if (includingLabelOrderTasks_ != false) {
       output.writeBool(6, includingLabelOrderTasks_);
+    }
+    for (int i = 0; i < additionalFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, additionalFields_.getRaw(i));
+    }
+    for (int i = 0; i < labelOrderIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, labelOrderIds_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -381,6 +528,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, includingLabelOrderTasks_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdditionalFieldsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < labelOrderIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(labelOrderIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLabelOrderIdsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -409,8 +572,12 @@ private static final long serialVersionUID = 0L;
         .equals(other.getWorkerUserIdsList())) return false;
     if (!getReviewUserIdsList()
         .equals(other.getReviewUserIdsList())) return false;
+    if (!getLabelOrderIdsList()
+        .equals(other.getLabelOrderIdsList())) return false;
     if (getIncludingLabelOrderTasks()
         != other.getIncludingLabelOrderTasks()) return false;
+    if (!getAdditionalFieldsList()
+        .equals(other.getAdditionalFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -438,9 +605,17 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REVIEW_USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getReviewUserIdsList().hashCode();
     }
+    if (getLabelOrderIdsCount() > 0) {
+      hash = (37 * hash) + LABEL_ORDER_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelOrderIdsList().hashCode();
+    }
     hash = (37 * hash) + INCLUDING_LABEL_ORDER_TASKS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIncludingLabelOrderTasks());
+    if (getAdditionalFieldsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -592,8 +767,12 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       reviewUserIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      labelOrderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       includingLabelOrderTasks_ = false;
 
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -638,7 +817,17 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.reviewUserIds_ = reviewUserIds_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        labelOrderIds_ = labelOrderIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.labelOrderIds_ = labelOrderIds_;
       result.includingLabelOrderTasks_ = includingLabelOrderTasks_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.additionalFields_ = additionalFields_;
       onBuilt();
       return result;
     }
@@ -716,8 +905,28 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.labelOrderIds_.isEmpty()) {
+        if (labelOrderIds_.isEmpty()) {
+          labelOrderIds_ = other.labelOrderIds_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureLabelOrderIdsIsMutable();
+          labelOrderIds_.addAll(other.labelOrderIds_);
+        }
+        onChanged();
+      }
       if (other.getIncludingLabelOrderTasks() != false) {
         setIncludingLabelOrderTasks(other.getIncludingLabelOrderTasks());
+      }
+      if (!other.additionalFields_.isEmpty()) {
+        if (additionalFields_.isEmpty()) {
+          additionalFields_ = other.additionalFields_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureAdditionalFieldsIsMutable();
+          additionalFields_.addAll(other.additionalFields_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -878,6 +1087,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 page = 2;</code>
      * @return The page.
      */
+    @java.lang.Override
     public int getPage() {
       return page_;
     }
@@ -923,6 +1133,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 per_page = 3;</code>
      * @return The perPage.
      */
+    @java.lang.Override
     public int getPerPage() {
       return perPage_;
     }
@@ -1250,21 +1461,170 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList labelOrderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureLabelOrderIdsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        labelOrderIds_ = new com.google.protobuf.LazyStringArrayList(labelOrderIds_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @return A list containing the labelOrderIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getLabelOrderIdsList() {
+      return labelOrderIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @return The count of labelOrderIds.
+     */
+    public int getLabelOrderIdsCount() {
+      return labelOrderIds_.size();
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @param index The index of the element to return.
+     * @return The labelOrderIds at the given index.
+     */
+    public java.lang.String getLabelOrderIds(int index) {
+      return labelOrderIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the labelOrderIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getLabelOrderIdsBytes(int index) {
+      return labelOrderIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The labelOrderIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelOrderIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLabelOrderIdsIsMutable();
+      labelOrderIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @param value The labelOrderIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLabelOrderIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureLabelOrderIdsIsMutable();
+      labelOrderIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @param values The labelOrderIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLabelOrderIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureLabelOrderIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, labelOrderIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLabelOrderIds() {
+      labelOrderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Get tasks that are associated to ANY label order from this list.
+     * </pre>
+     *
+     * <code>repeated string label_order_ids = 8;</code>
+     * @param value The bytes of the labelOrderIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLabelOrderIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureLabelOrderIdsIsMutable();
+      labelOrderIds_.add(value);
+      onChanged();
+      return this;
+    }
+
     private boolean includingLabelOrderTasks_ ;
     /**
      * <pre>
      * Get label order tasks as well
+     * It is automatically set to true if label_order_ids is set.
      * </pre>
      *
      * <code>bool including_label_order_tasks = 6;</code>
      * @return The includingLabelOrderTasks.
      */
+    @java.lang.Override
     public boolean getIncludingLabelOrderTasks() {
       return includingLabelOrderTasks_;
     }
     /**
      * <pre>
      * Get label order tasks as well
+     * It is automatically set to true if label_order_ids is set.
      * </pre>
      *
      * <code>bool including_label_order_tasks = 6;</code>
@@ -1280,6 +1640,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Get label order tasks as well
+     * It is automatically set to true if label_order_ids is set.
      * </pre>
      *
      * <code>bool including_label_order_tasks = 6;</code>
@@ -1288,6 +1649,161 @@ private static final long serialVersionUID = 0L;
     public Builder clearIncludingLabelOrderTasks() {
       
       includingLabelOrderTasks_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAdditionalFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @return A list containing the additionalFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAdditionalFieldsList() {
+      return additionalFields_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @return The count of additionalFields.
+     */
+    public int getAdditionalFieldsCount() {
+      return additionalFields_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @param index The index of the element to return.
+     * @return The additionalFields at the given index.
+     */
+    public java.lang.String getAdditionalFields(int index) {
+      return additionalFields_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalFieldsBytes(int index) {
+      return additionalFields_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The additionalFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @param value The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @param values The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, additionalFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalFields() {
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response.
+     * Currently supported: all, worker.users, review.users.
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 7;</code>
+     * @param value The bytes of the additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
       onChanged();
       return this;
     }

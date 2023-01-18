@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.StatValueAggregateQuery}
  */
-public  final class StatValueAggregateQuery extends
+public final class StatValueAggregateQuery extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.StatValueAggregateQuery)
     StatValueAggregateQueryOrBuilder {
@@ -124,6 +124,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -308,7 +310,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.StatValueAggType stat_value_agg_type = 3;</code>
    * @return The enum numeric value on the wire for statValueAggType.
    */
-  public int getStatValueAggTypeValue() {
+  @java.lang.Override public int getStatValueAggTypeValue() {
     return statValueAggType_;
   }
   /**
@@ -320,7 +322,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.StatValueAggType stat_value_agg_type = 3;</code>
    * @return The statValueAggType.
    */
-  public com.clarifai.grpc.api.StatValueAggType getStatValueAggType() {
+  @java.lang.Override public com.clarifai.grpc.api.StatValueAggType getStatValueAggType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.StatValueAggType result = com.clarifai.grpc.api.StatValueAggType.valueOf(statValueAggType_);
     return result == null ? com.clarifai.grpc.api.StatValueAggType.UNRECOGNIZED : result;
@@ -338,7 +340,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.StatTimeAggType stat_time_agg_type = 4;</code>
    * @return The enum numeric value on the wire for statTimeAggType.
    */
-  public int getStatTimeAggTypeValue() {
+  @java.lang.Override public int getStatTimeAggTypeValue() {
     return statTimeAggType_;
   }
   /**
@@ -351,7 +353,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.StatTimeAggType stat_time_agg_type = 4;</code>
    * @return The statTimeAggType.
    */
-  public com.clarifai.grpc.api.StatTimeAggType getStatTimeAggType() {
+  @java.lang.Override public com.clarifai.grpc.api.StatTimeAggType getStatTimeAggType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.StatTimeAggType result = com.clarifai.grpc.api.StatTimeAggType.valueOf(statTimeAggType_);
     return result == null ? com.clarifai.grpc.api.StatTimeAggType.UNRECOGNIZED : result;
@@ -368,6 +370,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp start_time = 5;</code>
    * @return Whether the startTime field is set.
    */
+  @java.lang.Override
   public boolean hasStartTime() {
     return startTime_ != null;
   }
@@ -380,6 +383,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp start_time = 5;</code>
    * @return The startTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
@@ -391,6 +395,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp start_time = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
@@ -406,6 +411,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
    * @return Whether the endTime field is set.
    */
+  @java.lang.Override
   public boolean hasEndTime() {
     return endTime_ != null;
   }
@@ -418,6 +424,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
    * @return The endTime.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
@@ -429,6 +436,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp end_time = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
@@ -1285,7 +1293,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.StatValueAggType stat_value_agg_type = 3;</code>
      * @return The enum numeric value on the wire for statValueAggType.
      */
-    public int getStatValueAggTypeValue() {
+    @java.lang.Override public int getStatValueAggTypeValue() {
       return statValueAggType_;
     }
     /**
@@ -1299,6 +1307,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStatValueAggTypeValue(int value) {
+      
       statValueAggType_ = value;
       onChanged();
       return this;
@@ -1312,6 +1321,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.StatValueAggType stat_value_agg_type = 3;</code>
      * @return The statValueAggType.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.StatValueAggType getStatValueAggType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.StatValueAggType result = com.clarifai.grpc.api.StatValueAggType.valueOf(statValueAggType_);
@@ -1363,7 +1373,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.StatTimeAggType stat_time_agg_type = 4;</code>
      * @return The enum numeric value on the wire for statTimeAggType.
      */
-    public int getStatTimeAggTypeValue() {
+    @java.lang.Override public int getStatTimeAggTypeValue() {
       return statTimeAggType_;
     }
     /**
@@ -1378,6 +1388,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStatTimeAggTypeValue(int value) {
+      
       statTimeAggType_ = value;
       onChanged();
       return this;
@@ -1392,6 +1403,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.StatTimeAggType stat_time_agg_type = 4;</code>
      * @return The statTimeAggType.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.StatTimeAggType getStatTimeAggType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.StatTimeAggType result = com.clarifai.grpc.api.StatTimeAggType.valueOf(statTimeAggType_);

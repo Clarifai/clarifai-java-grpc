@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ConceptMappingJob}
  */
-public  final class ConceptMappingJob extends
+public final class ConceptMappingJob extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ConceptMappingJob)
     ConceptMappingJobOrBuilder {
@@ -81,6 +81,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,6 +117,7 @@ private static final long serialVersionUID = 0L;
    * <code>string knowledge_graph_id = 1;</code>
    * @return The knowledgeGraphId.
    */
+  @java.lang.Override
   public java.lang.String getKnowledgeGraphId() {
     java.lang.Object ref = knowledgeGraphId_;
     if (ref instanceof java.lang.String) {
@@ -135,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * <code>string knowledge_graph_id = 1;</code>
    * @return The bytes for knowledgeGraphId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getKnowledgeGraphIdBytes() {
     java.lang.Object ref = knowledgeGraphId_;
@@ -214,7 +218,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getKnowledgeGraphIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeGraphId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, knowledgeGraphId_);
     }
     for (int i = 0; i < conceptIds_.size(); i++) {
@@ -229,7 +233,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getKnowledgeGraphIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(knowledgeGraphId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, knowledgeGraphId_);
     }
     {

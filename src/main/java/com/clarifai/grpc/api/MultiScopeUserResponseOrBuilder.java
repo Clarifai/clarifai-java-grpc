@@ -115,4 +115,16 @@ public interface MultiScopeUserResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getEndpointsBytes(int index);
+
+  /**
+   * <code>string user_feature_flags = 5;</code>
+   * @return The userFeatureFlags.
+   */
+  java.lang.String getUserFeatureFlags();
+  /**
+   * <code>string user_feature_flags = 5;</code>
+   * @return The bytes for userFeatureFlags.
+   */
+  com.google.protobuf.ByteString
+      getUserFeatureFlagsBytes();
 }

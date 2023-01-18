@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.EvalMetrics}
  */
-public  final class EvalMetrics extends
+public final class EvalMetrics extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.EvalMetrics)
     EvalMetricsOrBuilder {
@@ -175,6 +175,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.TrackerMetrics.parser(), extensionRegistry));
             break;
           }
+          case 98: {
+            com.clarifai.grpc.api.EvalInfo.Builder subBuilder = null;
+            if (evalInfo_ != null) {
+              subBuilder = evalInfo_.toBuilder();
+            }
+            evalInfo_ = input.readMessage(com.clarifai.grpc.api.EvalInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(evalInfo_);
+              evalInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -186,6 +199,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -228,6 +243,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -235,12 +251,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 1;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
   /**
    * <code>.clarifai.api.status.Status status = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -251,6 +269,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 10;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -267,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 10;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -287,6 +307,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
    * @return Whether the summary field is set.
    */
+  @java.lang.Override
   public boolean hasSummary() {
     return summary_ != null;
   }
@@ -294,12 +315,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
    * @return The summary.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.MetricsSummary getSummary() {
     return summary_ == null ? com.clarifai.grpc.api.MetricsSummary.getDefaultInstance() : summary_;
   }
   /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.MetricsSummaryOrBuilder getSummaryOrBuilder() {
     return getSummary();
   }
@@ -310,6 +333,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
    * @return Whether the confusionMatrix field is set.
    */
+  @java.lang.Override
   public boolean hasConfusionMatrix() {
     return confusionMatrix_ != null;
   }
@@ -317,12 +341,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
    * @return The confusionMatrix.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConfusionMatrix getConfusionMatrix() {
     return confusionMatrix_ == null ? com.clarifai.grpc.api.ConfusionMatrix.getDefaultInstance() : confusionMatrix_;
   }
   /**
    * <code>.clarifai.api.ConfusionMatrix confusion_matrix = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.ConfusionMatrixOrBuilder getConfusionMatrixOrBuilder() {
     return getConfusionMatrix();
   }
@@ -333,6 +359,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
    * @return Whether the cooccurrenceMatrix field is set.
    */
+  @java.lang.Override
   public boolean hasCooccurrenceMatrix() {
     return cooccurrenceMatrix_ != null;
   }
@@ -340,12 +367,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
    * @return The cooccurrenceMatrix.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.CooccurrenceMatrix getCooccurrenceMatrix() {
     return cooccurrenceMatrix_ == null ? com.clarifai.grpc.api.CooccurrenceMatrix.getDefaultInstance() : cooccurrenceMatrix_;
   }
   /**
    * <code>.clarifai.api.CooccurrenceMatrix cooccurrence_matrix = 4;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.CooccurrenceMatrixOrBuilder getCooccurrenceMatrixOrBuilder() {
     return getCooccurrenceMatrix();
   }
@@ -356,6 +385,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
    * @return Whether the labelCounts field is set.
    */
+  @java.lang.Override
   public boolean hasLabelCounts() {
     return labelCounts_ != null;
   }
@@ -363,12 +393,14 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
    * @return The labelCounts.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LabelDistribution getLabelCounts() {
     return labelCounts_ == null ? com.clarifai.grpc.api.LabelDistribution.getDefaultInstance() : labelCounts_;
   }
   /**
    * <code>.clarifai.api.LabelDistribution label_counts = 5;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LabelDistributionOrBuilder getLabelCountsOrBuilder() {
     return getLabelCounts();
   }
@@ -378,12 +410,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.BinaryMetrics binary_metrics = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.BinaryMetrics> getBinaryMetricsList() {
     return binaryMetrics_;
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics binary_metrics = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.BinaryMetricsOrBuilder> 
       getBinaryMetricsOrBuilderList() {
     return binaryMetrics_;
@@ -391,18 +425,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.BinaryMetrics binary_metrics = 6;</code>
    */
+  @java.lang.Override
   public int getBinaryMetricsCount() {
     return binaryMetrics_.size();
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics binary_metrics = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BinaryMetrics getBinaryMetrics(int index) {
     return binaryMetrics_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics binary_metrics = 6;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BinaryMetricsOrBuilder getBinaryMetricsOrBuilder(
       int index) {
     return binaryMetrics_.get(index);
@@ -413,12 +450,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.EvalTestSetEntry test_set = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.EvalTestSetEntry> getTestSetList() {
     return testSet_;
   }
   /**
    * <code>repeated .clarifai.api.EvalTestSetEntry test_set = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.EvalTestSetEntryOrBuilder> 
       getTestSetOrBuilderList() {
     return testSet_;
@@ -426,18 +465,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.EvalTestSetEntry test_set = 7;</code>
    */
+  @java.lang.Override
   public int getTestSetCount() {
     return testSet_.size();
   }
   /**
    * <code>repeated .clarifai.api.EvalTestSetEntry test_set = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EvalTestSetEntry getTestSet(int index) {
     return testSet_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.EvalTestSetEntry test_set = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EvalTestSetEntryOrBuilder getTestSetOrBuilder(
       int index) {
     return testSet_.get(index);
@@ -448,12 +490,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_area = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.BinaryMetrics> getMetricsByAreaList() {
     return metricsByArea_;
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_area = 8;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.BinaryMetricsOrBuilder> 
       getMetricsByAreaOrBuilderList() {
     return metricsByArea_;
@@ -461,18 +505,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_area = 8;</code>
    */
+  @java.lang.Override
   public int getMetricsByAreaCount() {
     return metricsByArea_.size();
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_area = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BinaryMetrics getMetricsByArea(int index) {
     return metricsByArea_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_area = 8;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BinaryMetricsOrBuilder getMetricsByAreaOrBuilder(
       int index) {
     return metricsByArea_.get(index);
@@ -483,12 +530,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.BinaryMetrics> getMetricsByClassList() {
     return metricsByClass_;
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.BinaryMetricsOrBuilder> 
       getMetricsByClassOrBuilderList() {
     return metricsByClass_;
@@ -496,18 +545,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
    */
+  @java.lang.Override
   public int getMetricsByClassCount() {
     return metricsByClass_.size();
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BinaryMetrics getMetricsByClass(int index) {
     return metricsByClass_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.BinaryMetrics metrics_by_class = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.BinaryMetricsOrBuilder getMetricsByClassOrBuilder(
       int index) {
     return metricsByClass_.get(index);
@@ -518,12 +570,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.TrackerMetrics> getTrackerMetricsList() {
     return trackerMetrics_;
   }
   /**
    * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.TrackerMetricsOrBuilder> 
       getTrackerMetricsOrBuilderList() {
     return trackerMetrics_;
@@ -531,21 +585,50 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
    */
+  @java.lang.Override
   public int getTrackerMetricsCount() {
     return trackerMetrics_.size();
   }
   /**
    * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TrackerMetrics getTrackerMetrics(int index) {
     return trackerMetrics_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.TrackerMetrics tracker_metrics = 11;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.TrackerMetricsOrBuilder getTrackerMetricsOrBuilder(
       int index) {
     return trackerMetrics_.get(index);
+  }
+
+  public static final int EVAL_INFO_FIELD_NUMBER = 12;
+  private com.clarifai.grpc.api.EvalInfo evalInfo_;
+  /**
+   * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+   * @return Whether the evalInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvalInfo() {
+    return evalInfo_ != null;
+  }
+  /**
+   * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+   * @return The evalInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalInfo getEvalInfo() {
+    return evalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
+  }
+  /**
+   * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder() {
+    return getEvalInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -589,11 +672,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < metricsByClass_.size(); i++) {
       output.writeMessage(9, metricsByClass_.get(i));
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
     }
     for (int i = 0; i < trackerMetrics_.size(); i++) {
       output.writeMessage(11, trackerMetrics_.get(i));
+    }
+    if (evalInfo_ != null) {
+      output.writeMessage(12, getEvalInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -640,12 +726,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, metricsByClass_.get(i));
     }
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
     }
     for (int i = 0; i < trackerMetrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, trackerMetrics_.get(i));
+    }
+    if (evalInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getEvalInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -699,6 +789,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMetricsByClassList())) return false;
     if (!getTrackerMetricsList()
         .equals(other.getTrackerMetricsList())) return false;
+    if (hasEvalInfo() != other.hasEvalInfo()) return false;
+    if (hasEvalInfo()) {
+      if (!getEvalInfo()
+          .equals(other.getEvalInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -751,6 +846,10 @@ private static final long serialVersionUID = 0L;
     if (getTrackerMetricsCount() > 0) {
       hash = (37 * hash) + TRACKER_METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getTrackerMetricsList().hashCode();
+    }
+    if (hasEvalInfo()) {
+      hash = (37 * hash) + EVAL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getEvalInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -956,6 +1055,12 @@ private static final long serialVersionUID = 0L;
       } else {
         trackerMetricsBuilder_.clear();
       }
+      if (evalInfoBuilder_ == null) {
+        evalInfo_ = null;
+      } else {
+        evalInfo_ = null;
+        evalInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1053,6 +1158,11 @@ private static final long serialVersionUID = 0L;
         result.trackerMetrics_ = trackerMetrics_;
       } else {
         result.trackerMetrics_ = trackerMetricsBuilder_.build();
+      }
+      if (evalInfoBuilder_ == null) {
+        result.evalInfo_ = evalInfo_;
+      } else {
+        result.evalInfo_ = evalInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1250,6 +1360,9 @@ private static final long serialVersionUID = 0L;
             trackerMetricsBuilder_.addAllMessages(other.trackerMetrics_);
           }
         }
+      }
+      if (other.hasEvalInfo()) {
+        mergeEvalInfo(other.getEvalInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3150,6 +3263,125 @@ private static final long serialVersionUID = 0L;
         trackerMetrics_ = null;
       }
       return trackerMetricsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.EvalInfo evalInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> evalInfoBuilder_;
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     * @return Whether the evalInfo field is set.
+     */
+    public boolean hasEvalInfo() {
+      return evalInfoBuilder_ != null || evalInfo_ != null;
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     * @return The evalInfo.
+     */
+    public com.clarifai.grpc.api.EvalInfo getEvalInfo() {
+      if (evalInfoBuilder_ == null) {
+        return evalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
+      } else {
+        return evalInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    public Builder setEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
+      if (evalInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evalInfo_ = value;
+        onChanged();
+      } else {
+        evalInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    public Builder setEvalInfo(
+        com.clarifai.grpc.api.EvalInfo.Builder builderForValue) {
+      if (evalInfoBuilder_ == null) {
+        evalInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        evalInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    public Builder mergeEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
+      if (evalInfoBuilder_ == null) {
+        if (evalInfo_ != null) {
+          evalInfo_ =
+            com.clarifai.grpc.api.EvalInfo.newBuilder(evalInfo_).mergeFrom(value).buildPartial();
+        } else {
+          evalInfo_ = value;
+        }
+        onChanged();
+      } else {
+        evalInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    public Builder clearEvalInfo() {
+      if (evalInfoBuilder_ == null) {
+        evalInfo_ = null;
+        onChanged();
+      } else {
+        evalInfo_ = null;
+        evalInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    public com.clarifai.grpc.api.EvalInfo.Builder getEvalInfoBuilder() {
+      
+      onChanged();
+      return getEvalInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    public com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder() {
+      if (evalInfoBuilder_ != null) {
+        return evalInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return evalInfo_ == null ?
+            com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> 
+        getEvalInfoFieldBuilder() {
+      if (evalInfoBuilder_ == null) {
+        evalInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder>(
+                getEvalInfo(),
+                getParentForChildren(),
+                isClean());
+        evalInfo_ = null;
+      }
+      return evalInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.EmailAddress}
  */
-public  final class EmailAddress extends
+public final class EmailAddress extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.EmailAddress)
     EmailAddressOrBuilder {
@@ -80,6 +80,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -107,6 +109,7 @@ private static final long serialVersionUID = 0L;
    * <code>string email = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The email.
    */
+  @java.lang.Override
   public java.lang.String getEmail() {
     java.lang.Object ref = email_;
     if (ref instanceof java.lang.String) {
@@ -123,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * <code>string email = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The bytes for email.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getEmailBytes() {
     java.lang.Object ref = email_;
@@ -143,6 +147,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool primary = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The primary.
    */
+  @java.lang.Override
   public boolean getPrimary() {
     return primary_;
   }
@@ -153,6 +158,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool verified = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The verified.
    */
+  @java.lang.Override
   public boolean getVerified() {
     return verified_;
   }
@@ -171,7 +177,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
     }
     if (primary_ != false) {
@@ -189,7 +195,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
     }
     if (primary_ != false) {
@@ -580,6 +586,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool primary = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The primary.
      */
+    @java.lang.Override
     public boolean getPrimary() {
       return primary_;
     }
@@ -610,6 +617,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool verified = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The verified.
      */
+    @java.lang.Override
     public boolean getVerified() {
       return verified_;
     }

@@ -61,6 +61,15 @@ public interface ListModelsRequestOrBuilder extends
    * </pre>
    *
    * <code>bool sort_by_name = 11;</code>
+   * @return Whether the sortByName field is set.
+   */
+  boolean hasSortByName();
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_name = 11;</code>
    * @return The sortByName.
    */
   boolean getSortByName();
@@ -71,10 +80,29 @@ public interface ListModelsRequestOrBuilder extends
    * </pre>
    *
    * <code>bool sort_by_num_inputs = 12;</code>
+   * @return Whether the sortByNumInputs field is set.
+   */
+  boolean hasSortByNumInputs();
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 12;</code>
    * @return The sortByNumInputs.
    */
   boolean getSortByNumInputs();
 
+  /**
+   * <pre>
+   * Whether to order by the modified_at time of the latest model version.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 13;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  boolean hasSortByModifiedAt();
   /**
    * <pre>
    * Whether to order by the modified_at time of the latest model version.
@@ -110,25 +138,33 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
-   * <code>string name = 5 [deprecated = true];</code>
+   * <code>string name = 5;</code>
    * @return The name.
    */
-  @java.lang.Deprecated java.lang.String getName();
+  java.lang.String getName();
   /**
    * <pre>
-   * Filter by the name, description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
    * </pre>
    *
-   * <code>string name = 5 [deprecated = true];</code>
+   * <code>string name = 5;</code>
    * @return The bytes for name.
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
+  com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * Extends the name filter to include the user_id of the application owner that the model belongs to.
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 22;</code>
+   * @return The filterByUserId.
+   */
+  boolean getFilterByUserId();
 
   /**
    * <pre>
@@ -417,7 +453,7 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -427,7 +463,7 @@ public interface ListModelsRequestOrBuilder extends
       getAdditionalFieldsList();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -436,7 +472,7 @@ public interface ListModelsRequestOrBuilder extends
   int getAdditionalFieldsCount();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -446,7 +482,7 @@ public interface ListModelsRequestOrBuilder extends
   java.lang.String getAdditionalFields(int index);
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
    * </pre>
    *
    * <code>repeated string additional_fields = 19;</code>
@@ -455,6 +491,17 @@ public interface ListModelsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
+   * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
+   * </pre>
+   *
+   * <code>bool dont_fetch_from_main = 23;</code>
+   * @return The dontFetchFromMain.
+   */
+  boolean getDontFetchFromMain();
 
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

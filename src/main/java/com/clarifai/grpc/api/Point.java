@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Point}
  */
-public  final class Point extends
+public final class Point extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Point)
     PointOrBuilder {
@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Point() {
+    visibility_ = 0;
   }
 
   @java.lang.Override
@@ -67,6 +68,12 @@ private static final long serialVersionUID = 0L;
             z_ = input.readFloat();
             break;
           }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            visibility_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -78,6 +85,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -99,6 +108,168 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.Point.class, com.clarifai.grpc.api.Point.Builder.class);
   }
 
+  /**
+   * <pre>
+   * Whether this point is visible or occluded
+   * </pre>
+   *
+   * Protobuf enum {@code clarifai.api.Point.Visibility}
+   */
+  public enum Visibility
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Visibility of the point is not set
+     * </pre>
+     *
+     * <code>NOT_SET = 0;</code>
+     */
+    NOT_SET(0),
+    /**
+     * <pre>
+     * Point is visible
+     * </pre>
+     *
+     * <code>VISIBLE = 1;</code>
+     */
+    VISIBLE(1),
+    /**
+     * <pre>
+     * Point is occluded
+     * </pre>
+     *
+     * <code>NOT_VISIBLE = 2;</code>
+     */
+    NOT_VISIBLE(2),
+    /**
+     * <pre>
+     * Point is not in the image
+     * </pre>
+     *
+     * <code>NOT_PRESENT = 3;</code>
+     */
+    NOT_PRESENT(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Visibility of the point is not set
+     * </pre>
+     *
+     * <code>NOT_SET = 0;</code>
+     */
+    public static final int NOT_SET_VALUE = 0;
+    /**
+     * <pre>
+     * Point is visible
+     * </pre>
+     *
+     * <code>VISIBLE = 1;</code>
+     */
+    public static final int VISIBLE_VALUE = 1;
+    /**
+     * <pre>
+     * Point is occluded
+     * </pre>
+     *
+     * <code>NOT_VISIBLE = 2;</code>
+     */
+    public static final int NOT_VISIBLE_VALUE = 2;
+    /**
+     * <pre>
+     * Point is not in the image
+     * </pre>
+     *
+     * <code>NOT_PRESENT = 3;</code>
+     */
+    public static final int NOT_PRESENT_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Visibility valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Visibility forNumber(int value) {
+      switch (value) {
+        case 0: return NOT_SET;
+        case 1: return VISIBLE;
+        case 2: return NOT_VISIBLE;
+        case 3: return NOT_PRESENT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Visibility>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Visibility> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Visibility>() {
+            public Visibility findValueByNumber(int number) {
+              return Visibility.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Point.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Visibility[] VALUES = values();
+
+    public static Visibility valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Visibility(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Point.Visibility)
+  }
+
   public static final int ROW_FIELD_NUMBER = 1;
   private float row_;
   /**
@@ -110,6 +281,7 @@ private static final long serialVersionUID = 0L;
    * <code>float row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The row.
    */
+  @java.lang.Override
   public float getRow() {
     return row_;
   }
@@ -125,6 +297,7 @@ private static final long serialVersionUID = 0L;
    * <code>float col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The col.
    */
+  @java.lang.Override
   public float getCol() {
     return col_;
   }
@@ -139,8 +312,28 @@ private static final long serialVersionUID = 0L;
    * <code>float z = 3;</code>
    * @return The z.
    */
+  @java.lang.Override
   public float getZ() {
     return z_;
+  }
+
+  public static final int VISIBILITY_FIELD_NUMBER = 4;
+  private int visibility_;
+  /**
+   * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+   * @return The enum numeric value on the wire for visibility.
+   */
+  @java.lang.Override public int getVisibilityValue() {
+    return visibility_;
+  }
+  /**
+   * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+   * @return The visibility.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Point.Visibility getVisibility() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Point.Visibility result = com.clarifai.grpc.api.Point.Visibility.valueOf(visibility_);
+    return result == null ? com.clarifai.grpc.api.Point.Visibility.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -157,14 +350,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (row_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(row_) != 0) {
       output.writeFloat(1, row_);
     }
-    if (col_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(col_) != 0) {
       output.writeFloat(2, col_);
     }
-    if (z_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(z_) != 0) {
       output.writeFloat(3, z_);
+    }
+    if (visibility_ != com.clarifai.grpc.api.Point.Visibility.NOT_SET.getNumber()) {
+      output.writeEnum(4, visibility_);
     }
     unknownFields.writeTo(output);
   }
@@ -175,17 +371,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (row_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(row_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, row_);
     }
-    if (col_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(col_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, col_);
     }
-    if (z_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(z_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, z_);
+    }
+    if (visibility_ != com.clarifai.grpc.api.Point.Visibility.NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, visibility_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -211,6 +411,7 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getZ())
         != java.lang.Float.floatToIntBits(
             other.getZ())) return false;
+    if (visibility_ != other.visibility_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -231,6 +432,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + Z_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getZ());
+    hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+    hash = (53 * hash) + visibility_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -374,6 +577,8 @@ private static final long serialVersionUID = 0L;
 
       z_ = 0F;
 
+      visibility_ = 0;
+
       return this;
     }
 
@@ -403,6 +608,7 @@ private static final long serialVersionUID = 0L;
       result.row_ = row_;
       result.col_ = col_;
       result.z_ = z_;
+      result.visibility_ = visibility_;
       onBuilt();
       return result;
     }
@@ -460,6 +666,9 @@ private static final long serialVersionUID = 0L;
       if (other.getZ() != 0F) {
         setZ(other.getZ());
       }
+      if (other.visibility_ != 0) {
+        setVisibilityValue(other.getVisibilityValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -499,6 +708,7 @@ private static final long serialVersionUID = 0L;
      * <code>float row = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The row.
      */
+    @java.lang.Override
     public float getRow() {
       return row_;
     }
@@ -544,6 +754,7 @@ private static final long serialVersionUID = 0L;
      * <code>float col = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The col.
      */
+    @java.lang.Override
     public float getCol() {
       return col_;
     }
@@ -588,6 +799,7 @@ private static final long serialVersionUID = 0L;
      * <code>float z = 3;</code>
      * @return The z.
      */
+    @java.lang.Override
     public float getZ() {
       return z_;
     }
@@ -617,6 +829,60 @@ private static final long serialVersionUID = 0L;
     public Builder clearZ() {
       
       z_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int visibility_ = 0;
+    /**
+     * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @return The enum numeric value on the wire for visibility.
+     */
+    @java.lang.Override public int getVisibilityValue() {
+      return visibility_;
+    }
+    /**
+     * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @param value The enum numeric value on the wire for visibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVisibilityValue(int value) {
+      
+      visibility_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @return The visibility.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Point.Visibility getVisibility() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Point.Visibility result = com.clarifai.grpc.api.Point.Visibility.valueOf(visibility_);
+      return result == null ? com.clarifai.grpc.api.Point.Visibility.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @param value The visibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Point.Visibility value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      visibility_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Point.Visibility visibility = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVisibility() {
+      
+      visibility_ = 0;
       onChanged();
       return this;
     }

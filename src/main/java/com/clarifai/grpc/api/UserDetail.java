@@ -11,7 +11,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.UserDetail}
  */
-public  final class UserDetail extends
+public final class UserDetail extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.UserDetail)
     UserDetailOrBuilder {
@@ -132,11 +132,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.EmailAddress.parser(), extensionRegistry));
             break;
           }
-          case 64: {
-
-            isOrgAdmin_ = input.readBool();
-            break;
-          }
           case 72: {
 
             twoFactorAuthEnabled_ = input.readBool();
@@ -159,6 +154,19 @@ private static final long serialVersionUID = 0L;
             state_ = s;
             break;
           }
+          case 106: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (datePiiConsent_ != null) {
+              subBuilder = datePiiConsent_.toBuilder();
+            }
+            datePiiConsent_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(datePiiConsent_);
+              datePiiConsent_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -170,6 +178,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -200,6 +210,7 @@ private static final long serialVersionUID = 0L;
    * <code>string primary_email = 1;</code>
    * @return The primaryEmail.
    */
+  @java.lang.Override
   public java.lang.String getPrimaryEmail() {
     java.lang.Object ref = primaryEmail_;
     if (ref instanceof java.lang.String) {
@@ -216,6 +227,7 @@ private static final long serialVersionUID = 0L;
    * <code>string primary_email = 1;</code>
    * @return The bytes for primaryEmail.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getPrimaryEmailBytes() {
     java.lang.Object ref = primaryEmail_;
@@ -236,6 +248,7 @@ private static final long serialVersionUID = 0L;
    * <code>string bill_type = 2;</code>
    * @return The billType.
    */
+  @java.lang.Override
   public java.lang.String getBillType() {
     java.lang.Object ref = billType_;
     if (ref instanceof java.lang.String) {
@@ -252,6 +265,7 @@ private static final long serialVersionUID = 0L;
    * <code>string bill_type = 2;</code>
    * @return The bytes for billType.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getBillTypeBytes() {
     java.lang.Object ref = billType_;
@@ -272,6 +286,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 3;</code>
    * @return Whether the dateGdprConsent field is set.
    */
+  @java.lang.Override
   public boolean hasDateGdprConsent() {
     return dateGdprConsent_ != null;
   }
@@ -279,12 +294,14 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 3;</code>
    * @return The dateGdprConsent.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDateGdprConsent() {
     return dateGdprConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateGdprConsent_;
   }
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDateGdprConsentOrBuilder() {
     return getDateGdprConsent();
   }
@@ -295,6 +312,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp date_tos_consent = 4;</code>
    * @return Whether the dateTosConsent field is set.
    */
+  @java.lang.Override
   public boolean hasDateTosConsent() {
     return dateTosConsent_ != null;
   }
@@ -302,12 +320,14 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp date_tos_consent = 4;</code>
    * @return The dateTosConsent.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDateTosConsent() {
     return dateTosConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateTosConsent_;
   }
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDateTosConsentOrBuilder() {
     return getDateTosConsent();
   }
@@ -318,6 +338,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp date_marketing_consent = 5;</code>
    * @return Whether the dateMarketingConsent field is set.
    */
+  @java.lang.Override
   public boolean hasDateMarketingConsent() {
     return dateMarketingConsent_ != null;
   }
@@ -325,14 +346,42 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp date_marketing_consent = 5;</code>
    * @return The dateMarketingConsent.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getDateMarketingConsent() {
     return dateMarketingConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dateMarketingConsent_;
   }
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 5;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDateMarketingConsentOrBuilder() {
     return getDateMarketingConsent();
+  }
+
+  public static final int DATE_PII_CONSENT_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp datePiiConsent_;
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+   * @return Whether the datePiiConsent field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatePiiConsent() {
+    return datePiiConsent_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+   * @return The datePiiConsent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDatePiiConsent() {
+    return datePiiConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : datePiiConsent_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDatePiiConsentOrBuilder() {
+    return getDatePiiConsent();
   }
 
   public static final int METADATA_FIELD_NUMBER = 6;
@@ -346,6 +395,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 6;</code>
    * @return Whether the metadata field is set.
    */
+  @java.lang.Override
   public boolean hasMetadata() {
     return metadata_ != null;
   }
@@ -358,6 +408,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct metadata = 6;</code>
    * @return The metadata.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
@@ -369,6 +420,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 6;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
     return getMetadata();
   }
@@ -378,12 +430,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.EmailAddress> getEmailAddressesList() {
     return emailAddresses_;
   }
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 7;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.EmailAddressOrBuilder> 
       getEmailAddressesOrBuilderList() {
     return emailAddresses_;
@@ -391,31 +445,24 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 7;</code>
    */
+  @java.lang.Override
   public int getEmailAddressesCount() {
     return emailAddresses_.size();
   }
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EmailAddress getEmailAddresses(int index) {
     return emailAddresses_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.EmailAddress email_addresses = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.EmailAddressOrBuilder getEmailAddressesOrBuilder(
       int index) {
     return emailAddresses_.get(index);
-  }
-
-  public static final int IS_ORG_ADMIN_FIELD_NUMBER = 8;
-  private boolean isOrgAdmin_;
-  /**
-   * <code>bool is_org_admin = 8;</code>
-   * @return The isOrgAdmin.
-   */
-  public boolean getIsOrgAdmin() {
-    return isOrgAdmin_;
   }
 
   public static final int TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER = 9;
@@ -424,6 +471,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool two_factor_auth_enabled = 9;</code>
    * @return The twoFactorAuthEnabled.
    */
+  @java.lang.Override
   public boolean getTwoFactorAuthEnabled() {
     return twoFactorAuthEnabled_;
   }
@@ -434,6 +482,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint32 teams_count = 10;</code>
    * @return The teamsCount.
    */
+  @java.lang.Override
   public int getTeamsCount() {
     return teamsCount_;
   }
@@ -444,6 +493,7 @@ private static final long serialVersionUID = 0L;
    * <code>string country = 11;</code>
    * @return The country.
    */
+  @java.lang.Override
   public java.lang.String getCountry() {
     java.lang.Object ref = country_;
     if (ref instanceof java.lang.String) {
@@ -460,6 +510,7 @@ private static final long serialVersionUID = 0L;
    * <code>string country = 11;</code>
    * @return The bytes for country.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getCountryBytes() {
     java.lang.Object ref = country_;
@@ -480,6 +531,7 @@ private static final long serialVersionUID = 0L;
    * <code>string state = 12;</code>
    * @return The state.
    */
+  @java.lang.Override
   public java.lang.String getState() {
     java.lang.Object ref = state_;
     if (ref instanceof java.lang.String) {
@@ -496,6 +548,7 @@ private static final long serialVersionUID = 0L;
    * <code>string state = 12;</code>
    * @return The bytes for state.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getStateBytes() {
     java.lang.Object ref = state_;
@@ -524,10 +577,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getPrimaryEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, primaryEmail_);
     }
-    if (!getBillTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, billType_);
     }
     if (dateGdprConsent_ != null) {
@@ -545,20 +598,20 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < emailAddresses_.size(); i++) {
       output.writeMessage(7, emailAddresses_.get(i));
     }
-    if (isOrgAdmin_ != false) {
-      output.writeBool(8, isOrgAdmin_);
-    }
     if (twoFactorAuthEnabled_ != false) {
       output.writeBool(9, twoFactorAuthEnabled_);
     }
     if (teamsCount_ != 0) {
       output.writeUInt32(10, teamsCount_);
     }
-    if (!getCountryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(country_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, country_);
     }
-    if (!getStateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, state_);
+    }
+    if (datePiiConsent_ != null) {
+      output.writeMessage(13, getDatePiiConsent());
     }
     unknownFields.writeTo(output);
   }
@@ -569,10 +622,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getPrimaryEmailBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(primaryEmail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, primaryEmail_);
     }
-    if (!getBillTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, billType_);
     }
     if (dateGdprConsent_ != null) {
@@ -595,10 +648,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, emailAddresses_.get(i));
     }
-    if (isOrgAdmin_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, isOrgAdmin_);
-    }
     if (twoFactorAuthEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(9, twoFactorAuthEnabled_);
@@ -607,11 +656,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(10, teamsCount_);
     }
-    if (!getCountryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(country_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, country_);
     }
-    if (!getStateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, state_);
+    }
+    if (datePiiConsent_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getDatePiiConsent());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -647,6 +700,11 @@ private static final long serialVersionUID = 0L;
       if (!getDateMarketingConsent()
           .equals(other.getDateMarketingConsent())) return false;
     }
+    if (hasDatePiiConsent() != other.hasDatePiiConsent()) return false;
+    if (hasDatePiiConsent()) {
+      if (!getDatePiiConsent()
+          .equals(other.getDatePiiConsent())) return false;
+    }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
       if (!getMetadata()
@@ -654,8 +712,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEmailAddressesList()
         .equals(other.getEmailAddressesList())) return false;
-    if (getIsOrgAdmin()
-        != other.getIsOrgAdmin()) return false;
     if (getTwoFactorAuthEnabled()
         != other.getTwoFactorAuthEnabled()) return false;
     if (getTeamsCount()
@@ -691,6 +747,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATE_MARKETING_CONSENT_FIELD_NUMBER;
       hash = (53 * hash) + getDateMarketingConsent().hashCode();
     }
+    if (hasDatePiiConsent()) {
+      hash = (37 * hash) + DATE_PII_CONSENT_FIELD_NUMBER;
+      hash = (53 * hash) + getDatePiiConsent().hashCode();
+    }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
@@ -699,9 +759,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EMAIL_ADDRESSES_FIELD_NUMBER;
       hash = (53 * hash) + getEmailAddressesList().hashCode();
     }
-    hash = (37 * hash) + IS_ORG_ADMIN_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsOrgAdmin());
     hash = (37 * hash) + TWO_FACTOR_AUTH_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getTwoFactorAuthEnabled());
@@ -872,6 +929,12 @@ private static final long serialVersionUID = 0L;
         dateMarketingConsent_ = null;
         dateMarketingConsentBuilder_ = null;
       }
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsent_ = null;
+      } else {
+        datePiiConsent_ = null;
+        datePiiConsentBuilder_ = null;
+      }
       if (metadataBuilder_ == null) {
         metadata_ = null;
       } else {
@@ -884,8 +947,6 @@ private static final long serialVersionUID = 0L;
       } else {
         emailAddressesBuilder_.clear();
       }
-      isOrgAdmin_ = false;
-
       twoFactorAuthEnabled_ = false;
 
       teamsCount_ = 0;
@@ -938,6 +999,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.dateMarketingConsent_ = dateMarketingConsentBuilder_.build();
       }
+      if (datePiiConsentBuilder_ == null) {
+        result.datePiiConsent_ = datePiiConsent_;
+      } else {
+        result.datePiiConsent_ = datePiiConsentBuilder_.build();
+      }
       if (metadataBuilder_ == null) {
         result.metadata_ = metadata_;
       } else {
@@ -952,7 +1018,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.emailAddresses_ = emailAddressesBuilder_.build();
       }
-      result.isOrgAdmin_ = isOrgAdmin_;
       result.twoFactorAuthEnabled_ = twoFactorAuthEnabled_;
       result.teamsCount_ = teamsCount_;
       result.country_ = country_;
@@ -1022,6 +1087,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasDateMarketingConsent()) {
         mergeDateMarketingConsent(other.getDateMarketingConsent());
       }
+      if (other.hasDatePiiConsent()) {
+        mergeDatePiiConsent(other.getDatePiiConsent());
+      }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
@@ -1050,9 +1118,6 @@ private static final long serialVersionUID = 0L;
             emailAddressesBuilder_.addAllMessages(other.emailAddresses_);
           }
         }
-      }
-      if (other.getIsOrgAdmin() != false) {
-        setIsOrgAdmin(other.getIsOrgAdmin());
       }
       if (other.getTwoFactorAuthEnabled() != false) {
         setTwoFactorAuthEnabled(other.getTwoFactorAuthEnabled());
@@ -1607,6 +1672,125 @@ private static final long serialVersionUID = 0L;
       return dateMarketingConsentBuilder_;
     }
 
+    private com.google.protobuf.Timestamp datePiiConsent_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> datePiiConsentBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     * @return Whether the datePiiConsent field is set.
+     */
+    public boolean hasDatePiiConsent() {
+      return datePiiConsentBuilder_ != null || datePiiConsent_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     * @return The datePiiConsent.
+     */
+    public com.google.protobuf.Timestamp getDatePiiConsent() {
+      if (datePiiConsentBuilder_ == null) {
+        return datePiiConsent_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : datePiiConsent_;
+      } else {
+        return datePiiConsentBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    public Builder setDatePiiConsent(com.google.protobuf.Timestamp value) {
+      if (datePiiConsentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datePiiConsent_ = value;
+        onChanged();
+      } else {
+        datePiiConsentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    public Builder setDatePiiConsent(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsent_ = builderForValue.build();
+        onChanged();
+      } else {
+        datePiiConsentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    public Builder mergeDatePiiConsent(com.google.protobuf.Timestamp value) {
+      if (datePiiConsentBuilder_ == null) {
+        if (datePiiConsent_ != null) {
+          datePiiConsent_ =
+            com.google.protobuf.Timestamp.newBuilder(datePiiConsent_).mergeFrom(value).buildPartial();
+        } else {
+          datePiiConsent_ = value;
+        }
+        onChanged();
+      } else {
+        datePiiConsentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    public Builder clearDatePiiConsent() {
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsent_ = null;
+        onChanged();
+      } else {
+        datePiiConsent_ = null;
+        datePiiConsentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDatePiiConsentBuilder() {
+      
+      onChanged();
+      return getDatePiiConsentFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDatePiiConsentOrBuilder() {
+      if (datePiiConsentBuilder_ != null) {
+        return datePiiConsentBuilder_.getMessageOrBuilder();
+      } else {
+        return datePiiConsent_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : datePiiConsent_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp date_pii_consent = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getDatePiiConsentFieldBuilder() {
+      if (datePiiConsentBuilder_ == null) {
+        datePiiConsentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getDatePiiConsent(),
+                getParentForChildren(),
+                isClean());
+        datePiiConsent_ = null;
+      }
+      return datePiiConsentBuilder_;
+    }
+
     private com.google.protobuf.Struct metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
@@ -2011,41 +2195,12 @@ private static final long serialVersionUID = 0L;
       return emailAddressesBuilder_;
     }
 
-    private boolean isOrgAdmin_ ;
-    /**
-     * <code>bool is_org_admin = 8;</code>
-     * @return The isOrgAdmin.
-     */
-    public boolean getIsOrgAdmin() {
-      return isOrgAdmin_;
-    }
-    /**
-     * <code>bool is_org_admin = 8;</code>
-     * @param value The isOrgAdmin to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsOrgAdmin(boolean value) {
-      
-      isOrgAdmin_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool is_org_admin = 8;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIsOrgAdmin() {
-      
-      isOrgAdmin_ = false;
-      onChanged();
-      return this;
-    }
-
     private boolean twoFactorAuthEnabled_ ;
     /**
      * <code>bool two_factor_auth_enabled = 9;</code>
      * @return The twoFactorAuthEnabled.
      */
+    @java.lang.Override
     public boolean getTwoFactorAuthEnabled() {
       return twoFactorAuthEnabled_;
     }
@@ -2076,6 +2231,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint32 teams_count = 10;</code>
      * @return The teamsCount.
      */
+    @java.lang.Override
     public int getTeamsCount() {
       return teamsCount_;
     }

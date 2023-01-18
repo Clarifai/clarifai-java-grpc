@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.CooccurrenceMatrix}
  */
-public  final class CooccurrenceMatrix extends
+public final class CooccurrenceMatrix extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.CooccurrenceMatrix)
     CooccurrenceMatrixOrBuilder {
@@ -84,6 +84,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -116,12 +118,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.CooccurrenceMatrixEntry matrix = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.CooccurrenceMatrixEntry> getMatrixList() {
     return matrix_;
   }
   /**
    * <code>repeated .clarifai.api.CooccurrenceMatrixEntry matrix = 1;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.CooccurrenceMatrixEntryOrBuilder> 
       getMatrixOrBuilderList() {
     return matrix_;
@@ -129,18 +133,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.CooccurrenceMatrixEntry matrix = 1;</code>
    */
+  @java.lang.Override
   public int getMatrixCount() {
     return matrix_.size();
   }
   /**
    * <code>repeated .clarifai.api.CooccurrenceMatrixEntry matrix = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.CooccurrenceMatrixEntry getMatrix(int index) {
     return matrix_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.CooccurrenceMatrixEntry matrix = 1;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.CooccurrenceMatrixEntryOrBuilder getMatrixOrBuilder(
       int index) {
     return matrix_.get(index);

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TrendingMetric}
  */
-public  final class TrendingMetric extends
+public final class TrendingMetric extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TrendingMetric)
     TrendingMetricOrBuilder {
@@ -89,6 +89,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -116,6 +118,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 1;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -132,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 1;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -152,6 +156,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 2;</code>
    * @return The appId.
    */
+  @java.lang.Override
   public java.lang.String getAppId() {
     java.lang.Object ref = appId_;
     if (ref instanceof java.lang.String) {
@@ -168,6 +173,7 @@ private static final long serialVersionUID = 0L;
    * <code>string app_id = 2;</code>
    * @return The bytes for appId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getAppIdBytes() {
     java.lang.Object ref = appId_;
@@ -188,6 +194,7 @@ private static final long serialVersionUID = 0L;
    * <code>string object_id = 3;</code>
    * @return The objectId.
    */
+  @java.lang.Override
   public java.lang.String getObjectId() {
     java.lang.Object ref = objectId_;
     if (ref instanceof java.lang.String) {
@@ -204,6 +211,7 @@ private static final long serialVersionUID = 0L;
    * <code>string object_id = 3;</code>
    * @return The bytes for objectId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getObjectIdBytes() {
     java.lang.Object ref = objectId_;
@@ -224,6 +232,7 @@ private static final long serialVersionUID = 0L;
    * <code>uint64 view_count = 4;</code>
    * @return The viewCount.
    */
+  @java.lang.Override
   public long getViewCount() {
     return viewCount_;
   }
@@ -242,13 +251,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appId_);
     }
-    if (!getObjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(objectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, objectId_);
     }
     if (viewCount_ != 0L) {
@@ -263,13 +272,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
     }
-    if (!getAppIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appId_);
     }
-    if (!getObjectIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(objectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, objectId_);
     }
     if (viewCount_ != 0L) {
@@ -819,6 +828,7 @@ private static final long serialVersionUID = 0L;
      * <code>uint64 view_count = 4;</code>
      * @return The viewCount.
      */
+    @java.lang.Override
     public long getViewCount() {
       return viewCount_;
     }

@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.MetricsSummary}
  */
-public  final class MetricsSummary extends
+public final class MetricsSummary extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.MetricsSummary)
     MetricsSummaryOrBuilder {
@@ -124,6 +124,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -152,8 +154,11 @@ private static final long serialVersionUID = 0L;
   private float top1Accuracy_;
   /**
    * <code>float top1_accuracy = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1867
    * @return The top1Accuracy.
    */
+  @java.lang.Override
   @java.lang.Deprecated public float getTop1Accuracy() {
     return top1Accuracy_;
   }
@@ -162,8 +167,11 @@ private static final long serialVersionUID = 0L;
   private float top5Accuracy_;
   /**
    * <code>float top5_accuracy = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1868
    * @return The top5Accuracy.
    */
+  @java.lang.Override
   @java.lang.Deprecated public float getTop5Accuracy() {
     return top5Accuracy_;
   }
@@ -174,6 +182,7 @@ private static final long serialVersionUID = 0L;
    * <code>float macro_avg_roc_auc = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The macroAvgRocAuc.
    */
+  @java.lang.Override
   public float getMacroAvgRocAuc() {
     return macroAvgRocAuc_;
   }
@@ -184,6 +193,7 @@ private static final long serialVersionUID = 0L;
    * <code>float macro_std_roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The macroStdRocAuc.
    */
+  @java.lang.Override
   public float getMacroStdRocAuc() {
     return macroStdRocAuc_;
   }
@@ -194,6 +204,7 @@ private static final long serialVersionUID = 0L;
    * <code>float macro_avg_f1_score = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The macroAvgF1Score.
    */
+  @java.lang.Override
   public float getMacroAvgF1Score() {
     return macroAvgF1Score_;
   }
@@ -204,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * <code>float macro_std_f1_score = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The macroStdF1Score.
    */
+  @java.lang.Override
   public float getMacroStdF1Score() {
     return macroStdF1Score_;
   }
@@ -214,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * <code>float macro_avg_precision = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The macroAvgPrecision.
    */
+  @java.lang.Override
   public float getMacroAvgPrecision() {
     return macroAvgPrecision_;
   }
@@ -224,6 +237,7 @@ private static final long serialVersionUID = 0L;
    * <code>float macro_avg_recall = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The macroAvgRecall.
    */
+  @java.lang.Override
   public float getMacroAvgRecall() {
     return macroAvgRecall_;
   }
@@ -234,6 +248,7 @@ private static final long serialVersionUID = 0L;
    * <code>float mean_avg_precision_iou_50 = 10;</code>
    * @return The meanAvgPrecisionIou50.
    */
+  @java.lang.Override
   public float getMeanAvgPrecisionIou50() {
     return meanAvgPrecisionIou50_;
   }
@@ -244,6 +259,7 @@ private static final long serialVersionUID = 0L;
    * <code>float mean_avg_precision_iou_range = 11;</code>
    * @return The meanAvgPrecisionIouRange.
    */
+  @java.lang.Override
   public float getMeanAvgPrecisionIouRange() {
     return meanAvgPrecisionIouRange_;
   }
@@ -253,12 +269,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.LOPQEvalResult> getLopqMetricsList() {
     return lopqMetrics_;
   }
   /**
    * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.LOPQEvalResultOrBuilder> 
       getLopqMetricsOrBuilderList() {
     return lopqMetrics_;
@@ -266,18 +284,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
    */
+  @java.lang.Override
   public int getLopqMetricsCount() {
     return lopqMetrics_.size();
   }
   /**
    * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LOPQEvalResult getLopqMetrics(int index) {
     return lopqMetrics_.get(index);
   }
   /**
    * <code>repeated .clarifai.api.LOPQEvalResult lopq_metrics = 9;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.LOPQEvalResultOrBuilder getLopqMetricsOrBuilder(
       int index) {
     return lopqMetrics_.get(index);
@@ -297,37 +318,37 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (top1Accuracy_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(top1Accuracy_) != 0) {
       output.writeFloat(1, top1Accuracy_);
     }
-    if (top5Accuracy_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(top5Accuracy_) != 0) {
       output.writeFloat(2, top5Accuracy_);
     }
-    if (macroAvgRocAuc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgRocAuc_) != 0) {
       output.writeFloat(3, macroAvgRocAuc_);
     }
-    if (macroStdRocAuc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroStdRocAuc_) != 0) {
       output.writeFloat(4, macroStdRocAuc_);
     }
-    if (macroAvgF1Score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgF1Score_) != 0) {
       output.writeFloat(5, macroAvgF1Score_);
     }
-    if (macroStdF1Score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroStdF1Score_) != 0) {
       output.writeFloat(6, macroStdF1Score_);
     }
-    if (macroAvgPrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgPrecision_) != 0) {
       output.writeFloat(7, macroAvgPrecision_);
     }
-    if (macroAvgRecall_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgRecall_) != 0) {
       output.writeFloat(8, macroAvgRecall_);
     }
     for (int i = 0; i < lopqMetrics_.size(); i++) {
       output.writeMessage(9, lopqMetrics_.get(i));
     }
-    if (meanAvgPrecisionIou50_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAvgPrecisionIou50_) != 0) {
       output.writeFloat(10, meanAvgPrecisionIou50_);
     }
-    if (meanAvgPrecisionIouRange_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAvgPrecisionIouRange_) != 0) {
       output.writeFloat(11, meanAvgPrecisionIouRange_);
     }
     unknownFields.writeTo(output);
@@ -339,35 +360,35 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (top1Accuracy_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(top1Accuracy_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, top1Accuracy_);
     }
-    if (top5Accuracy_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(top5Accuracy_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, top5Accuracy_);
     }
-    if (macroAvgRocAuc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgRocAuc_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, macroAvgRocAuc_);
     }
-    if (macroStdRocAuc_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroStdRocAuc_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, macroStdRocAuc_);
     }
-    if (macroAvgF1Score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgF1Score_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(5, macroAvgF1Score_);
     }
-    if (macroStdF1Score_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroStdF1Score_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(6, macroStdF1Score_);
     }
-    if (macroAvgPrecision_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgPrecision_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(7, macroAvgPrecision_);
     }
-    if (macroAvgRecall_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(macroAvgRecall_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(8, macroAvgRecall_);
     }
@@ -375,11 +396,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, lopqMetrics_.get(i));
     }
-    if (meanAvgPrecisionIou50_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAvgPrecisionIou50_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(10, meanAvgPrecisionIou50_);
     }
-    if (meanAvgPrecisionIouRange_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(meanAvgPrecisionIouRange_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(11, meanAvgPrecisionIouRange_);
     }
@@ -822,13 +843,18 @@ private static final long serialVersionUID = 0L;
     private float top1Accuracy_ ;
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1867
      * @return The top1Accuracy.
      */
+    @java.lang.Override
     @java.lang.Deprecated public float getTop1Accuracy() {
       return top1Accuracy_;
     }
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1867
      * @param value The top1Accuracy to set.
      * @return This builder for chaining.
      */
@@ -840,6 +866,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float top1_accuracy = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.MetricsSummary.top1_accuracy is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1867
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop1Accuracy() {
@@ -852,13 +880,18 @@ private static final long serialVersionUID = 0L;
     private float top5Accuracy_ ;
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1868
      * @return The top5Accuracy.
      */
+    @java.lang.Override
     @java.lang.Deprecated public float getTop5Accuracy() {
       return top5Accuracy_;
     }
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1868
      * @param value The top5Accuracy to set.
      * @return This builder for chaining.
      */
@@ -870,6 +903,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>float top5_accuracy = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.MetricsSummary.top5_accuracy is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1868
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTop5Accuracy() {
@@ -884,6 +919,7 @@ private static final long serialVersionUID = 0L;
      * <code>float macro_avg_roc_auc = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The macroAvgRocAuc.
      */
+    @java.lang.Override
     public float getMacroAvgRocAuc() {
       return macroAvgRocAuc_;
     }
@@ -914,6 +950,7 @@ private static final long serialVersionUID = 0L;
      * <code>float macro_std_roc_auc = 4 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The macroStdRocAuc.
      */
+    @java.lang.Override
     public float getMacroStdRocAuc() {
       return macroStdRocAuc_;
     }
@@ -944,6 +981,7 @@ private static final long serialVersionUID = 0L;
      * <code>float macro_avg_f1_score = 5 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The macroAvgF1Score.
      */
+    @java.lang.Override
     public float getMacroAvgF1Score() {
       return macroAvgF1Score_;
     }
@@ -974,6 +1012,7 @@ private static final long serialVersionUID = 0L;
      * <code>float macro_std_f1_score = 6 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The macroStdF1Score.
      */
+    @java.lang.Override
     public float getMacroStdF1Score() {
       return macroStdF1Score_;
     }
@@ -1004,6 +1043,7 @@ private static final long serialVersionUID = 0L;
      * <code>float macro_avg_precision = 7 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The macroAvgPrecision.
      */
+    @java.lang.Override
     public float getMacroAvgPrecision() {
       return macroAvgPrecision_;
     }
@@ -1034,6 +1074,7 @@ private static final long serialVersionUID = 0L;
      * <code>float macro_avg_recall = 8 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The macroAvgRecall.
      */
+    @java.lang.Override
     public float getMacroAvgRecall() {
       return macroAvgRecall_;
     }
@@ -1064,6 +1105,7 @@ private static final long serialVersionUID = 0L;
      * <code>float mean_avg_precision_iou_50 = 10;</code>
      * @return The meanAvgPrecisionIou50.
      */
+    @java.lang.Override
     public float getMeanAvgPrecisionIou50() {
       return meanAvgPrecisionIou50_;
     }
@@ -1094,6 +1136,7 @@ private static final long serialVersionUID = 0L;
      * <code>float mean_avg_precision_iou_range = 11;</code>
      * @return The meanAvgPrecisionIouRange.
      */
+    @java.lang.Override
     public float getMeanAvgPrecisionIouRange() {
       return meanAvgPrecisionIouRange_;
     }

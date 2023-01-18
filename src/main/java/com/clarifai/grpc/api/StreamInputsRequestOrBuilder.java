@@ -46,6 +46,17 @@ public interface StreamInputsRequestOrBuilder extends
       getLastIdBytes();
 
   /**
+   * <pre>
+   * By default, the endpoint return inputs by the time when it is added.
+   * If this is set to true, we will return inputs by id.
+   * </pre>
+   *
+   * <code>bool order_by_id = 5;</code>
+   * @return The orderById.
+   */
+  boolean getOrderById();
+
+  /**
    * <code>bool descending = 4;</code>
    * @return The descending.
    */

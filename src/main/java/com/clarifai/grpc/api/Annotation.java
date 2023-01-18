@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.Annotation}
  */
-public  final class Annotation extends
+public final class Annotation extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.Annotation)
     AnnotationOrBuilder {
@@ -193,6 +193,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -224,6 +226,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -244,6 +247,7 @@ private static final long serialVersionUID = 0L;
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -268,6 +272,7 @@ private static final long serialVersionUID = 0L;
    * <code>string input_id = 2;</code>
    * @return The inputId.
    */
+  @java.lang.Override
   public java.lang.String getInputId() {
     java.lang.Object ref = inputId_;
     if (ref instanceof java.lang.String) {
@@ -288,6 +293,7 @@ private static final long serialVersionUID = 0L;
    * <code>string input_id = 2;</code>
    * @return The bytes for inputId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getInputIdBytes() {
     java.lang.Object ref = inputId_;
@@ -312,6 +318,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 3;</code>
    * @return Whether the data field is set.
    */
+  @java.lang.Override
   public boolean hasData() {
     return data_ != null;
   }
@@ -323,6 +330,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.Data data = 3;</code>
    * @return The data.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.Data getData() {
     return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
   }
@@ -333,6 +341,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Data data = 3;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
     return getData();
   }
@@ -347,6 +356,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    * @return Whether the annotationInfo field is set.
    */
+  @java.lang.Override
   public boolean hasAnnotationInfo() {
     return annotationInfo_ != null;
   }
@@ -358,6 +368,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    * @return The annotationInfo.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getAnnotationInfo() {
     return annotationInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : annotationInfo_;
   }
@@ -368,6 +379,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct annotation_info = 13;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getAnnotationInfoOrBuilder() {
     return getAnnotationInfo();
   }
@@ -382,6 +394,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 15;</code>
    * @return The userId.
    */
+  @java.lang.Override
   public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -402,6 +415,7 @@ private static final long serialVersionUID = 0L;
    * <code>string user_id = 15;</code>
    * @return The bytes for userId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
@@ -426,6 +440,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_version_id = 16;</code>
    * @return The modelVersionId.
    */
+  @java.lang.Override
   public java.lang.String getModelVersionId() {
     java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
@@ -446,6 +461,7 @@ private static final long serialVersionUID = 0L;
    * <code>string model_version_id = 16;</code>
    * @return The bytes for modelVersionId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getModelVersionIdBytes() {
     java.lang.Object ref = modelVersionId_;
@@ -468,8 +484,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=43
    * @return The embedModelVersionId.
    */
+  @java.lang.Override
   @java.lang.Deprecated public java.lang.String getEmbedModelVersionId() {
     java.lang.Object ref = embedModelVersionId_;
     if (ref instanceof java.lang.String) {
@@ -488,8 +507,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=43
    * @return The bytes for embedModelVersionId.
    */
+  @java.lang.Override
   @java.lang.Deprecated public com.google.protobuf.ByteString
       getEmbedModelVersionIdBytes() {
     java.lang.Object ref = embedModelVersionId_;
@@ -514,6 +536,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 7;</code>
    * @return Whether the status field is set.
    */
+  @java.lang.Override
   public boolean hasStatus() {
     return status_ != null;
   }
@@ -525,6 +548,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.status.Status status = 7;</code>
    * @return The status.
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.Status getStatus() {
     return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
   }
@@ -535,6 +559,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.status.Status status = 7;</code>
    */
+  @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
   }
@@ -553,6 +578,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
    * @return Whether the createdAt field is set.
    */
+  @java.lang.Override
   public boolean hasCreatedAt() {
     return createdAt_ != null;
   }
@@ -568,6 +594,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
    * @return The createdAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getCreatedAt() {
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
@@ -582,6 +609,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp created_at = 8;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
     return getCreatedAt();
   }
@@ -596,6 +624,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
    * @return Whether the modifiedAt field is set.
    */
+  @java.lang.Override
   public boolean hasModifiedAt() {
     return modifiedAt_ != null;
   }
@@ -607,6 +636,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
    * @return The modifiedAt.
    */
+  @java.lang.Override
   public com.google.protobuf.Timestamp getModifiedAt() {
     return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
   }
@@ -617,6 +647,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Timestamp modified_at = 9;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
     return getModifiedAt();
   }
@@ -630,8 +661,11 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool trusted = 10 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.trusted is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=60
    * @return The trusted.
    */
+  @java.lang.Override
   @java.lang.Deprecated public boolean getTrusted() {
     return trusted_;
   }
@@ -646,6 +680,7 @@ private static final long serialVersionUID = 0L;
    * <code>bool input_level = 17;</code>
    * @return The inputLevel.
    */
+  @java.lang.Override
   public boolean getInputLevel() {
     return inputLevel_;
   }
@@ -662,6 +697,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct consensus_info = 18;</code>
    * @return Whether the consensusInfo field is set.
    */
+  @java.lang.Override
   public boolean hasConsensusInfo() {
     return consensusInfo_ != null;
   }
@@ -675,6 +711,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct consensus_info = 18;</code>
    * @return The consensusInfo.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getConsensusInfo() {
     return consensusInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : consensusInfo_;
   }
@@ -687,6 +724,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct consensus_info = 18;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getConsensusInfoOrBuilder() {
     return getConsensusInfo();
   }
@@ -701,6 +739,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 19;</code>
    * @return The taskId.
    */
+  @java.lang.Override
   public java.lang.String getTaskId() {
     java.lang.Object ref = taskId_;
     if (ref instanceof java.lang.String) {
@@ -721,6 +760,7 @@ private static final long serialVersionUID = 0L;
    * <code>string task_id = 19;</code>
    * @return The bytes for taskId.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTaskIdBytes() {
     java.lang.Object ref = taskId_;
@@ -749,10 +789,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getInputIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inputId_);
     }
     if (data_ != null) {
@@ -773,13 +813,13 @@ private static final long serialVersionUID = 0L;
     if (annotationInfo_ != null) {
       output.writeMessage(13, getAnnotationInfo());
     }
-    if (!getEmbedModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embedModelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, embedModelVersionId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userId_);
     }
-    if (!getModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, modelVersionId_);
     }
     if (inputLevel_ != false) {
@@ -788,7 +828,7 @@ private static final long serialVersionUID = 0L;
     if (consensusInfo_ != null) {
       output.writeMessage(18, getConsensusInfo());
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, taskId_);
     }
     unknownFields.writeTo(output);
@@ -800,10 +840,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getInputIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inputId_);
     }
     if (data_ != null) {
@@ -830,13 +870,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getAnnotationInfo());
     }
-    if (!getEmbedModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(embedModelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, embedModelVersionId_);
     }
-    if (!getUserIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userId_);
     }
-    if (!getModelVersionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, modelVersionId_);
     }
     if (inputLevel_ != false) {
@@ -847,7 +887,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getConsensusInfo());
     }
-    if (!getTaskIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, taskId_);
     }
     size += unknownFields.getSerializedSize();
@@ -2043,6 +2083,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=43
      * @return The embedModelVersionId.
      */
     @java.lang.Deprecated public java.lang.String getEmbedModelVersionId() {
@@ -2063,6 +2105,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=43
      * @return The bytes for embedModelVersionId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2084,6 +2128,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=43
      * @param value The embedModelVersionId to set.
      * @return This builder for chaining.
      */
@@ -2103,6 +2149,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=43
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearEmbedModelVersionId() {
@@ -2117,6 +2165,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=43
      * @param value The bytes for embedModelVersionId to set.
      * @return This builder for chaining.
      */
@@ -2641,8 +2691,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.trusted is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=60
      * @return The trusted.
      */
+    @java.lang.Override
     @java.lang.Deprecated public boolean getTrusted() {
       return trusted_;
     }
@@ -2653,6 +2706,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.trusted is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=60
      * @param value The trusted to set.
      * @return This builder for chaining.
      */
@@ -2669,6 +2724,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.trusted is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=60
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTrusted() {
@@ -2687,6 +2744,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool input_level = 17;</code>
      * @return The inputLevel.
      */
+    @java.lang.Override
     public boolean getInputLevel() {
       return inputLevel_;
     }

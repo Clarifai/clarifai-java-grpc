@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.ROC}
  */
-public  final class ROC extends
+public final class ROC extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.ROC)
     ROCOrBuilder {
@@ -174,6 +174,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -216,6 +218,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float fpr = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return A list containing the fpr.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getFprList() {
     return fpr_;
@@ -243,6 +246,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float tpr = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return A list containing the tpr.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getTprList() {
     return tpr_;
@@ -270,6 +274,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float thresholds = 3 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return A list containing the thresholds.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getThresholdsList() {
     return thresholds_;
@@ -297,6 +302,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float fpr_per_image = 4;</code>
    * @return A list containing the fprPerImage.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getFprPerImageList() {
     return fprPerImage_;
@@ -324,6 +330,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated float fpr_per_object = 5;</code>
    * @return A list containing the fprPerObject.
    */
+  @java.lang.Override
   public java.util.List<java.lang.Float>
       getFprPerObjectList() {
     return fprPerObject_;

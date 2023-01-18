@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TaskReviewManualStrategyInfo}
  */
-public  final class TaskReviewManualStrategyInfo extends
+public final class TaskReviewManualStrategyInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TaskReviewManualStrategyInfo)
     TaskReviewManualStrategyInfoOrBuilder {
@@ -68,6 +68,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -99,6 +101,7 @@ private static final long serialVersionUID = 0L;
    * <code>float sample_percentage = 1;</code>
    * @return The samplePercentage.
    */
+  @java.lang.Override
   public float getSamplePercentage() {
     return samplePercentage_;
   }
@@ -117,7 +120,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (samplePercentage_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(samplePercentage_) != 0) {
       output.writeFloat(1, samplePercentage_);
     }
     unknownFields.writeTo(output);
@@ -129,7 +132,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (samplePercentage_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(samplePercentage_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, samplePercentage_);
     }
@@ -420,6 +423,7 @@ private static final long serialVersionUID = 0L;
      * <code>float sample_percentage = 1;</code>
      * @return The samplePercentage.
      */
+    @java.lang.Override
     public float getSamplePercentage() {
       return samplePercentage_;
     }

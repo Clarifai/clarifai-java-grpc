@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.AiAssistParameters}
  */
-public  final class AiAssistParameters extends
+public final class AiAssistParameters extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.AiAssistParameters)
     AiAssistParametersOrBuilder {
@@ -84,6 +84,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -118,6 +120,7 @@ private static final long serialVersionUID = 0L;
    * <code>float min_threshold = 1;</code>
    * @return The minThreshold.
    */
+  @java.lang.Override
   public float getMinThreshold() {
     return minThreshold_;
   }
@@ -128,6 +131,7 @@ private static final long serialVersionUID = 0L;
    * <code>float max_threshold = 2;</code>
    * @return The maxThreshold.
    */
+  @java.lang.Override
   public float getMaxThreshold() {
     return maxThreshold_;
   }
@@ -197,10 +201,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (minThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(minThreshold_) != 0) {
       output.writeFloat(1, minThreshold_);
     }
-    if (maxThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(maxThreshold_) != 0) {
       output.writeFloat(2, maxThreshold_);
     }
     for (int i = 0; i < conceptRelationIds_.size(); i++) {
@@ -215,11 +219,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (minThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(minThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, minThreshold_);
     }
-    if (maxThreshold_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(maxThreshold_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(2, maxThreshold_);
     }
@@ -555,6 +559,7 @@ private static final long serialVersionUID = 0L;
      * <code>float min_threshold = 1;</code>
      * @return The minThreshold.
      */
+    @java.lang.Override
     public float getMinThreshold() {
       return minThreshold_;
     }
@@ -593,6 +598,7 @@ private static final long serialVersionUID = 0L;
      * <code>float max_threshold = 2;</code>
      * @return The maxThreshold.
      */
+    @java.lang.Override
     public float getMaxThreshold() {
       return maxThreshold_;
     }

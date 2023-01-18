@@ -153,7 +153,10 @@ public interface InputOrBuilder extends
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -164,7 +167,10 @@ public interface InputOrBuilder extends
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -174,7 +180,10 @@ public interface InputOrBuilder extends
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>
@@ -185,7 +194,10 @@ public interface InputOrBuilder extends
   /**
    * <pre>
    * List of dataset IDs that this input is part of
-   * Currently, this field is ONLY used in search.
+   * Currently, this field is ONLY used to
+   * * search inputs part of dataset(s), e.g. in `PostSearches`, `PostInputsSearches` and `PostAnnotationsSearches` endpoints, and
+   * * to add inputs to dataset(s) in `PostInputs` endpoint.
+   * Note that this field is ignored for other endpoints, e.g. `GetInput`, `ListInputs` and `PatchInputs`.
    * </pre>
    *
    * <code>repeated string dataset_ids = 7;</code>

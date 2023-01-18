@@ -29,7 +29,9 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *the id of new app
+   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+   * if new_app_name is empty, the name will be the same as this id.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
@@ -38,7 +40,9 @@ public interface AppDuplicationOrBuilder extends
   java.lang.String getNewAppId();
   /**
    * <pre>
-   *the id of new app
+   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
+   * if new_app_name is empty, the name will be the same as this id.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
@@ -49,7 +53,8 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *the name of new app
+   *the name of new app. If provided, we will create a new application with this name.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
@@ -58,7 +63,8 @@ public interface AppDuplicationOrBuilder extends
   java.lang.String getNewAppName();
   /**
    * <pre>
-   *the name of new app
+   *the name of new app. If provided, we will create a new application with this name.
+   * You can not set this if existing_app_id is set.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
@@ -174,4 +180,72 @@ public interface AppDuplicationOrBuilder extends
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
    */
   com.clarifai.grpc.api.AppDuplicationFiltersOrBuilder getFilterOrBuilder();
+
+  /**
+   * <pre>
+   * the id of existing app you want to copy data into.
+   * you can not set this if either new_app_id or new_app_name is set.
+   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The existingAppId.
+   */
+  java.lang.String getExistingAppId();
+  /**
+   * <pre>
+   * the id of existing app you want to copy data into.
+   * you can not set this if either new_app_id or new_app_name is set.
+   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The bytes for existingAppId.
+   */
+  com.google.protobuf.ByteString
+      getExistingAppIdBytes();
+
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.AppCopyProgress> 
+      getProgressList();
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  com.clarifai.grpc.api.AppCopyProgress getProgress(int index);
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  int getProgressCount();
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.AppCopyProgressOrBuilder> 
+      getProgressOrBuilderList();
+  /**
+   * <pre>
+   * contains progress for each requested filter
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
+   */
+  com.clarifai.grpc.api.AppCopyProgressOrBuilder getProgressOrBuilder(
+      int index);
 }

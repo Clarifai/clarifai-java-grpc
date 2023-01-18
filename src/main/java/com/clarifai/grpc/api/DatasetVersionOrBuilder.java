@@ -155,30 +155,57 @@ public interface DatasetVersionOrBuilder extends
 
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-   * @return Whether the datasetFilterConfig field is set.
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+   * @return Whether the annotationFilterConfig field is set.
    */
-  boolean hasDatasetFilterConfig();
+  boolean hasAnnotationFilterConfig();
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
-   * @return The datasetFilterConfig.
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
+   * @return The annotationFilterConfig.
    */
-  com.clarifai.grpc.api.DatasetVersionDatasetFilterConfig getDatasetFilterConfig();
+  com.clarifai.grpc.api.AnnotationFilterConfig getAnnotationFilterConfig();
   /**
    * <pre>
-   * The dataset version will be generated based on a single dataset filter.
+   * The dataset version will be generated based on a single annotation filter.
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionDatasetFilterConfig dataset_filter_config = 7;</code>
+   * <code>.clarifai.api.AnnotationFilterConfig annotation_filter_config = 15;</code>
    */
-  com.clarifai.grpc.api.DatasetVersionDatasetFilterConfigOrBuilder getDatasetFilterConfigOrBuilder();
+  com.clarifai.grpc.api.AnnotationFilterConfigOrBuilder getAnnotationFilterConfigOrBuilder();
+
+  /**
+   * <pre>
+   * The dataset version will be generated based on model version inferences.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelPredictConfig model_predict_config = 18;</code>
+   * @return Whether the modelPredictConfig field is set.
+   */
+  boolean hasModelPredictConfig();
+  /**
+   * <pre>
+   * The dataset version will be generated based on model version inferences.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelPredictConfig model_predict_config = 18;</code>
+   * @return The modelPredictConfig.
+   */
+  com.clarifai.grpc.api.ModelPredictConfig getModelPredictConfig();
+  /**
+   * <pre>
+   * The dataset version will be generated based on model version inferences.
+   * </pre>
+   *
+   * <code>.clarifai.api.ModelPredictConfig model_predict_config = 18;</code>
+   */
+  com.clarifai.grpc.api.ModelPredictConfigOrBuilder getModelPredictConfigOrBuilder();
 
   /**
    * <pre>
@@ -232,27 +259,83 @@ public interface DatasetVersionOrBuilder extends
    * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
-   * @return Whether the metrics field is set.
+   * <code>map&lt;string, .clarifai.api.DatasetVersionMetrics&gt; metrics = 16;</code>
    */
-  boolean hasMetrics();
+  int getMetricsCount();
   /**
    * <pre>
    * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
-   * @return The metrics.
+   * <code>map&lt;string, .clarifai.api.DatasetVersionMetrics&gt; metrics = 16;</code>
    */
-  com.clarifai.grpc.api.DatasetVersionMetrics getMetrics();
+  boolean containsMetrics(
+      java.lang.String key);
+  /**
+   * Use {@link #getMetricsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.clarifai.grpc.api.DatasetVersionMetrics>
+  getMetrics();
   /**
    * <pre>
    * Dataset version metrics
    * </pre>
    *
-   * <code>.clarifai.api.DatasetVersionMetrics metrics = 11;</code>
+   * <code>map&lt;string, .clarifai.api.DatasetVersionMetrics&gt; metrics = 16;</code>
    */
-  com.clarifai.grpc.api.DatasetVersionMetricsOrBuilder getMetricsOrBuilder();
+  java.util.Map<java.lang.String, com.clarifai.grpc.api.DatasetVersionMetrics>
+  getMetricsMap();
+  /**
+   * <pre>
+   * Dataset version metrics
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.DatasetVersionMetrics&gt; metrics = 16;</code>
+   */
+
+  /* nullable */
+com.clarifai.grpc.api.DatasetVersionMetrics getMetricsOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.clarifai.grpc.api.DatasetVersionMetrics defaultValue);
+  /**
+   * <pre>
+   * Dataset version metrics
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.DatasetVersionMetrics&gt; metrics = 16;</code>
+   */
+
+  com.clarifai.grpc.api.DatasetVersionMetrics getMetricsOrThrow(
+      java.lang.String key);
+
+  /**
+   * <pre>
+   * Dataset version exports
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionExportInfo export_info = 17;</code>
+   * @return Whether the exportInfo field is set.
+   */
+  boolean hasExportInfo();
+  /**
+   * <pre>
+   * Dataset version exports
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionExportInfo export_info = 17;</code>
+   * @return The exportInfo.
+   */
+  com.clarifai.grpc.api.DatasetVersionExportInfo getExportInfo();
+  /**
+   * <pre>
+   * Dataset version exports
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionExportInfo export_info = 17;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionExportInfoOrBuilder getExportInfoOrBuilder();
 
   /**
    * <pre>

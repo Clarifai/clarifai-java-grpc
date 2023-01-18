@@ -61,10 +61,29 @@ public interface ListWorkflowsRequestOrBuilder extends
    * </pre>
    *
    * <code>bool sort_by_id = 6;</code>
+   * @return Whether the sortById field is set.
+   */
+  boolean hasSortById();
+  /**
+   * <pre>
+   * Whether to order by the name
+   * </pre>
+   *
+   * <code>bool sort_by_id = 6;</code>
    * @return The sortById.
    */
   boolean getSortById();
 
+  /**
+   * <pre>
+   * Whether to order by the modified_at time.
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 7;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  boolean hasSortByModifiedAt();
   /**
    * <pre>
    * Whether to order by the modified_at time.
@@ -103,6 +122,8 @@ public interface ListWorkflowsRequestOrBuilder extends
    * </pre>
    *
    * <code>string id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=5242
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -113,6 +134,8 @@ public interface ListWorkflowsRequestOrBuilder extends
    * </pre>
    *
    * <code>string id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=5242
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -178,6 +201,26 @@ public interface ListWorkflowsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * </pre>
+   *
+   * <code>string search_term = 12;</code>
+   * @return The searchTerm.
+   */
+  java.lang.String getSearchTerm();
+  /**
+   * <pre>
+   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * </pre>
+   *
+   * <code>string search_term = 12;</code>
+   * @return The bytes for searchTerm.
+   */
+  com.google.protobuf.ByteString
+      getSearchTermBytes();
 
   public com.clarifai.grpc.api.ListWorkflowsRequest.SortByCase getSortByCase();
 }

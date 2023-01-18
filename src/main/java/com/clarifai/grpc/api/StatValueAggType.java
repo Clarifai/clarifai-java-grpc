@@ -73,6 +73,10 @@ public enum StatValueAggType
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor
       getValueDescriptor() {
+    if (this == UNRECOGNIZED) {
+      throw new java.lang.IllegalStateException(
+          "Can't get the descriptor of an unrecognized enum value.");
+    }
     return getDescriptor().getValues().get(ordinal());
   }
   public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -81,7 +85,7 @@ public enum StatValueAggType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(8);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(10);
   }
 
   private static final StatValueAggType[] VALUES = values();

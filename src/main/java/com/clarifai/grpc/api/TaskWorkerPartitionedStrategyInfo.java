@@ -10,7 +10,7 @@ package com.clarifai.grpc.api;
  *
  * Protobuf type {@code clarifai.api.TaskWorkerPartitionedStrategyInfo}
  */
-public  final class TaskWorkerPartitionedStrategyInfo extends
+public final class TaskWorkerPartitionedStrategyInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:clarifai.api.TaskWorkerPartitionedStrategyInfo)
     TaskWorkerPartitionedStrategyInfoOrBuilder {
@@ -88,6 +88,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -206,6 +208,10 @@ private static final long serialVersionUID = 0L;
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -250,7 +256,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy type = 1;</code>
    * @return The enum numeric value on the wire for type.
    */
-  public int getTypeValue() {
+  @java.lang.Override public int getTypeValue() {
     return type_;
   }
   /**
@@ -261,7 +267,7 @@ private static final long serialVersionUID = 0L;
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy type = 1;</code>
    * @return The type.
    */
-  public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy getType() {
+  @java.lang.Override public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy getType() {
     @SuppressWarnings("deprecation")
     com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy result = com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy.valueOf(type_);
     return result == null ? com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy.UNRECOGNIZED : result;
@@ -277,6 +283,7 @@ private static final long serialVersionUID = 0L;
    * <code>int32 workers_per_input = 2;</code>
    * @return The workersPerInput.
    */
+  @java.lang.Override
   public int getWorkersPerInput() {
     return workersPerInput_;
   }
@@ -310,6 +317,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct weights = 3;</code>
    * @return Whether the weights field is set.
    */
+  @java.lang.Override
   public boolean hasWeights() {
     return weights_ != null;
   }
@@ -340,6 +348,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Struct weights = 3;</code>
    * @return The weights.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getWeights() {
     return weights_ == null ? com.google.protobuf.Struct.getDefaultInstance() : weights_;
   }
@@ -369,6 +378,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct weights = 3;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getWeightsOrBuilder() {
     return getWeights();
   }
@@ -734,7 +744,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    public int getTypeValue() {
+    @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -747,6 +757,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
+      
       type_ = value;
       onChanged();
       return this;
@@ -759,6 +770,7 @@ private static final long serialVersionUID = 0L;
      * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy type = 1;</code>
      * @return The type.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy getType() {
       @SuppressWarnings("deprecation")
       com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy result = com.clarifai.grpc.api.TaskWorkerPartitionedStrategyInfo.TaskWorkerPartitionedStrategy.valueOf(type_);
@@ -806,6 +818,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 workers_per_input = 2;</code>
      * @return The workersPerInput.
      */
+    @java.lang.Override
     public int getWorkersPerInput() {
       return workersPerInput_;
     }

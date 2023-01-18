@@ -31,7 +31,7 @@ public class JsonChannelIntTest {
             .build()
     );
 
-    Assert.assertEquals("general", response.getModel().getName());
+    Assert.assertEquals("Image Recognition", response.getModel().getName());
   }
 
   @Test
