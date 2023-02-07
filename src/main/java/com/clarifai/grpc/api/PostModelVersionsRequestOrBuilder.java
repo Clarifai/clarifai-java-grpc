@@ -66,7 +66,7 @@ public interface PostModelVersionsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4511
+   *     See proto/clarifai/api/service.proto;l=4567
    * @return Whether the search field is set.
    */
   @java.lang.Deprecated boolean hasSearch();
@@ -78,7 +78,7 @@ public interface PostModelVersionsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Search search = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelVersionsRequest.search is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4511
+   *     See proto/clarifai/api/service.proto;l=4567
    * @return The search.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Search getSearch();
@@ -100,7 +100,7 @@ public interface PostModelVersionsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4514
+   *     See proto/clarifai/api/service.proto;l=4570
    * @return Whether the trainSearch field is set.
    */
   @java.lang.Deprecated boolean hasTrainSearch();
@@ -112,7 +112,7 @@ public interface PostModelVersionsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Search train_search = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelVersionsRequest.train_search is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4514
+   *     See proto/clarifai/api/service.proto;l=4570
    * @return The trainSearch.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Search getTrainSearch();
@@ -134,7 +134,7 @@ public interface PostModelVersionsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4517
+   *     See proto/clarifai/api/service.proto;l=4573
    * @return Whether the testSearch field is set.
    */
   @java.lang.Deprecated boolean hasTestSearch();
@@ -146,7 +146,7 @@ public interface PostModelVersionsRequestOrBuilder extends
    *
    * <code>.clarifai.api.Search test_search = 6 [deprecated = true];</code>
    * @deprecated clarifai.api.PostModelVersionsRequest.test_search is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4517
+   *     See proto/clarifai/api/service.proto;l=4573
    * @return The testSearch.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Search getTestSearch();

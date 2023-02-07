@@ -5,31 +5,31 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * Get the already computed evaluation metrics for this model
- * version.
+ * Evaluate this model vesion
  * </pre>
  *
- * Protobuf type {@code clarifai.api.GetModelVersionMetricsRequest}
+ * Protobuf type {@code clarifai.api.PostModelVersionEvaluationsRequest}
  */
-public final class GetModelVersionMetricsRequest extends
+public final class PostModelVersionEvaluationsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetModelVersionMetricsRequest)
-    GetModelVersionMetricsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PostModelVersionEvaluationsRequest)
+    PostModelVersionEvaluationsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetModelVersionMetricsRequest.newBuilder() to construct.
-  private GetModelVersionMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PostModelVersionEvaluationsRequest.newBuilder() to construct.
+  private PostModelVersionEvaluationsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetModelVersionMetricsRequest() {
+  private PostModelVersionEvaluationsRequest() {
     modelId_ = "";
-    versionId_ = "";
+    modelVersionId_ = "";
+    evalMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetModelVersionMetricsRequest();
+    return new PostModelVersionEvaluationsRequest();
   }
 
   @java.lang.Override
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetModelVersionMetricsRequest(
+  private PostModelVersionEvaluationsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -45,6 +45,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -77,20 +78,16 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            versionId_ = s;
+            modelVersionId_ = s;
             break;
           }
           case 34: {
-            com.clarifai.grpc.api.FieldsValue.Builder subBuilder = null;
-            if (fields_ != null) {
-              subBuilder = fields_.toBuilder();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              evalMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.EvalMetrics>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            fields_ = input.readMessage(com.clarifai.grpc.api.FieldsValue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(fields_);
-              fields_ = subBuilder.buildPartial();
-            }
-
+            evalMetrics_.add(
+                input.readMessage(com.clarifai.grpc.api.EvalMetrics.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -110,21 +107,24 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        evalMetrics_ = java.util.Collections.unmodifiableList(evalMetrics_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostModelVersionEvaluationsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostModelVersionEvaluationsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetModelVersionMetricsRequest.class, com.clarifai.grpc.api.GetModelVersionMetricsRequest.Builder.class);
+            com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.class, com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -191,83 +191,102 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VERSION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object versionId_;
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object modelVersionId_;
   /**
-   * <code>string version_id = 3;</code>
-   * @return The versionId.
+   * <code>string model_version_id = 3;</code>
+   * @return The modelVersionId.
    */
   @java.lang.Override
-  public java.lang.String getVersionId() {
-    java.lang.Object ref = versionId_;
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      versionId_ = s;
+      modelVersionId_ = s;
       return s;
     }
   }
   /**
-   * <code>string version_id = 3;</code>
-   * @return The bytes for versionId.
+   * <code>string model_version_id = 3;</code>
+   * @return The bytes for modelVersionId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getVersionIdBytes() {
-    java.lang.Object ref = versionId_;
+      getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      versionId_ = b;
+      modelVersionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int FIELDS_FIELD_NUMBER = 4;
-  private com.clarifai.grpc.api.FieldsValue fields_;
+  public static final int EVAL_METRICS_FIELD_NUMBER = 4;
+  private java.util.List<com.clarifai.grpc.api.EvalMetrics> evalMetrics_;
   /**
    * <pre>
-   * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * EvalInfo and ID will be used when creating the evaluation
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
-   * @return Whether the fields field is set.
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
    */
   @java.lang.Override
-  public boolean hasFields() {
-    return fields_ != null;
+  public java.util.List<com.clarifai.grpc.api.EvalMetrics> getEvalMetricsList() {
+    return evalMetrics_;
   }
   /**
    * <pre>
-   * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * EvalInfo and ID will be used when creating the evaluation
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
-   * @return The fields.
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.FieldsValue getFields() {
-    return fields_ == null ? com.clarifai.grpc.api.FieldsValue.getDefaultInstance() : fields_;
+  public java.util.List<? extends com.clarifai.grpc.api.EvalMetricsOrBuilder> 
+      getEvalMetricsOrBuilderList() {
+    return evalMetrics_;
   }
   /**
    * <pre>
-   * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * EvalInfo and ID will be used when creating the evaluation
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.FieldsValueOrBuilder getFieldsOrBuilder() {
-    return getFields();
+  public int getEvalMetricsCount() {
+    return evalMetrics_.size();
+  }
+  /**
+   * <pre>
+   * EvalInfo and ID will be used when creating the evaluation
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalMetrics getEvalMetrics(int index) {
+    return evalMetrics_.get(index);
+  }
+  /**
+   * <pre>
+   * EvalInfo and ID will be used when creating the evaluation
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.EvalMetricsOrBuilder getEvalMetricsOrBuilder(
+      int index) {
+    return evalMetrics_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -290,11 +309,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelVersionId_);
     }
-    if (fields_ != null) {
-      output.writeMessage(4, getFields());
+    for (int i = 0; i < evalMetrics_.size(); i++) {
+      output.writeMessage(4, evalMetrics_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -312,12 +331,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelVersionId_);
     }
-    if (fields_ != null) {
+    for (int i = 0; i < evalMetrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getFields());
+        .computeMessageSize(4, evalMetrics_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -329,10 +348,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetModelVersionMetricsRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PostModelVersionEvaluationsRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetModelVersionMetricsRequest other = (com.clarifai.grpc.api.GetModelVersionMetricsRequest) obj;
+    com.clarifai.grpc.api.PostModelVersionEvaluationsRequest other = (com.clarifai.grpc.api.PostModelVersionEvaluationsRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
@@ -341,13 +360,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelId()
         .equals(other.getModelId())) return false;
-    if (!getVersionId()
-        .equals(other.getVersionId())) return false;
-    if (hasFields() != other.hasFields()) return false;
-    if (hasFields()) {
-      if (!getFields()
-          .equals(other.getFields())) return false;
-    }
+    if (!getModelVersionId()
+        .equals(other.getModelVersionId())) return false;
+    if (!getEvalMetricsList()
+        .equals(other.getEvalMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -365,80 +381,80 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelId().hashCode();
-    hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVersionId().hashCode();
-    if (hasFields()) {
-      hash = (37 * hash) + FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getFields().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
+    if (getEvalMetricsCount() > 0) {
+      hash = (37 * hash) + EVAL_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvalMetricsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -451,7 +467,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetModelVersionMetricsRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PostModelVersionEvaluationsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -468,30 +484,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Get the already computed evaluation metrics for this model
-   * version.
+   * Evaluate this model vesion
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.GetModelVersionMetricsRequest}
+   * Protobuf type {@code clarifai.api.PostModelVersionEvaluationsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetModelVersionMetricsRequest)
-      com.clarifai.grpc.api.GetModelVersionMetricsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PostModelVersionEvaluationsRequest)
+      com.clarifai.grpc.api.PostModelVersionEvaluationsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostModelVersionEvaluationsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostModelVersionEvaluationsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetModelVersionMetricsRequest.class, com.clarifai.grpc.api.GetModelVersionMetricsRequest.Builder.class);
+              com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.class, com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetModelVersionMetricsRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -504,6 +519,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getEvalMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -517,13 +533,13 @@ private static final long serialVersionUID = 0L;
       }
       modelId_ = "";
 
-      versionId_ = "";
+      modelVersionId_ = "";
 
-      if (fieldsBuilder_ == null) {
-        fields_ = null;
+      if (evalMetricsBuilder_ == null) {
+        evalMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        fields_ = null;
-        fieldsBuilder_ = null;
+        evalMetricsBuilder_.clear();
       }
       return this;
     }
@@ -531,17 +547,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostModelVersionEvaluationsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetModelVersionMetricsRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetModelVersionMetricsRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PostModelVersionEvaluationsRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetModelVersionMetricsRequest build() {
-      com.clarifai.grpc.api.GetModelVersionMetricsRequest result = buildPartial();
+    public com.clarifai.grpc.api.PostModelVersionEvaluationsRequest build() {
+      com.clarifai.grpc.api.PostModelVersionEvaluationsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -549,19 +565,24 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetModelVersionMetricsRequest buildPartial() {
-      com.clarifai.grpc.api.GetModelVersionMetricsRequest result = new com.clarifai.grpc.api.GetModelVersionMetricsRequest(this);
+    public com.clarifai.grpc.api.PostModelVersionEvaluationsRequest buildPartial() {
+      com.clarifai.grpc.api.PostModelVersionEvaluationsRequest result = new com.clarifai.grpc.api.PostModelVersionEvaluationsRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.modelId_ = modelId_;
-      result.versionId_ = versionId_;
-      if (fieldsBuilder_ == null) {
-        result.fields_ = fields_;
+      result.modelVersionId_ = modelVersionId_;
+      if (evalMetricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          evalMetrics_ = java.util.Collections.unmodifiableList(evalMetrics_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.evalMetrics_ = evalMetrics_;
       } else {
-        result.fields_ = fieldsBuilder_.build();
+        result.evalMetrics_ = evalMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -601,16 +622,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetModelVersionMetricsRequest) {
-        return mergeFrom((com.clarifai.grpc.api.GetModelVersionMetricsRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PostModelVersionEvaluationsRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PostModelVersionEvaluationsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetModelVersionMetricsRequest other) {
-      if (other == com.clarifai.grpc.api.GetModelVersionMetricsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PostModelVersionEvaluationsRequest other) {
+      if (other == com.clarifai.grpc.api.PostModelVersionEvaluationsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
@@ -618,12 +639,35 @@ private static final long serialVersionUID = 0L;
         modelId_ = other.modelId_;
         onChanged();
       }
-      if (!other.getVersionId().isEmpty()) {
-        versionId_ = other.versionId_;
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
         onChanged();
       }
-      if (other.hasFields()) {
-        mergeFields(other.getFields());
+      if (evalMetricsBuilder_ == null) {
+        if (!other.evalMetrics_.isEmpty()) {
+          if (evalMetrics_.isEmpty()) {
+            evalMetrics_ = other.evalMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureEvalMetricsIsMutable();
+            evalMetrics_.addAll(other.evalMetrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.evalMetrics_.isEmpty()) {
+          if (evalMetricsBuilder_.isEmpty()) {
+            evalMetricsBuilder_.dispose();
+            evalMetricsBuilder_ = null;
+            evalMetrics_ = other.evalMetrics_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            evalMetricsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getEvalMetricsFieldBuilder() : null;
+          } else {
+            evalMetricsBuilder_.addAllMessages(other.evalMetrics_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -640,11 +684,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetModelVersionMetricsRequest parsedMessage = null;
+      com.clarifai.grpc.api.PostModelVersionEvaluationsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetModelVersionMetricsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PostModelVersionEvaluationsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -653,6 +697,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -849,244 +894,392 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object versionId_ = "";
+    private java.lang.Object modelVersionId_ = "";
     /**
-     * <code>string version_id = 3;</code>
-     * @return The versionId.
+     * <code>string model_version_id = 3;</code>
+     * @return The modelVersionId.
      */
-    public java.lang.String getVersionId() {
-      java.lang.Object ref = versionId_;
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        versionId_ = s;
+        modelVersionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string version_id = 3;</code>
-     * @return The bytes for versionId.
+     * <code>string model_version_id = 3;</code>
+     * @return The bytes for modelVersionId.
      */
     public com.google.protobuf.ByteString
-        getVersionIdBytes() {
-      java.lang.Object ref = versionId_;
+        getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        versionId_ = b;
+        modelVersionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string version_id = 3;</code>
-     * @param value The versionId to set.
+     * <code>string model_version_id = 3;</code>
+     * @param value The modelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionId(
+    public Builder setModelVersionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      versionId_ = value;
+      modelVersionId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string version_id = 3;</code>
+     * <code>string model_version_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearVersionId() {
+    public Builder clearModelVersionId() {
       
-      versionId_ = getDefaultInstance().getVersionId();
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
       onChanged();
       return this;
     }
     /**
-     * <code>string version_id = 3;</code>
-     * @param value The bytes for versionId to set.
+     * <code>string model_version_id = 3;</code>
+     * @param value The bytes for modelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionIdBytes(
+    public Builder setModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      versionId_ = value;
+      modelVersionId_ = value;
       onChanged();
       return this;
     }
 
-    private com.clarifai.grpc.api.FieldsValue fields_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.FieldsValue, com.clarifai.grpc.api.FieldsValue.Builder, com.clarifai.grpc.api.FieldsValueOrBuilder> fieldsBuilder_;
-    /**
-     * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
-     * </pre>
-     *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
-     * @return Whether the fields field is set.
-     */
-    public boolean hasFields() {
-      return fieldsBuilder_ != null || fields_ != null;
+    private java.util.List<com.clarifai.grpc.api.EvalMetrics> evalMetrics_ =
+      java.util.Collections.emptyList();
+    private void ensureEvalMetricsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        evalMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.EvalMetrics>(evalMetrics_);
+        bitField0_ |= 0x00000001;
+       }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder> evalMetricsBuilder_;
+
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
-     * @return The fields.
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public com.clarifai.grpc.api.FieldsValue getFields() {
-      if (fieldsBuilder_ == null) {
-        return fields_ == null ? com.clarifai.grpc.api.FieldsValue.getDefaultInstance() : fields_;
+    public java.util.List<com.clarifai.grpc.api.EvalMetrics> getEvalMetricsList() {
+      if (evalMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(evalMetrics_);
       } else {
-        return fieldsBuilder_.getMessage();
+        return evalMetricsBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public Builder setFields(com.clarifai.grpc.api.FieldsValue value) {
-      if (fieldsBuilder_ == null) {
+    public int getEvalMetricsCount() {
+      if (evalMetricsBuilder_ == null) {
+        return evalMetrics_.size();
+      } else {
+        return evalMetricsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.EvalMetrics getEvalMetrics(int index) {
+      if (evalMetricsBuilder_ == null) {
+        return evalMetrics_.get(index);
+      } else {
+        return evalMetricsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public Builder setEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics value) {
+      if (evalMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        fields_ = value;
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.set(index, value);
         onChanged();
       } else {
-        fieldsBuilder_.setMessage(value);
+        evalMetricsBuilder_.setMessage(index, value);
       }
-
       return this;
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public Builder setFields(
-        com.clarifai.grpc.api.FieldsValue.Builder builderForValue) {
-      if (fieldsBuilder_ == null) {
-        fields_ = builderForValue.build();
+    public Builder setEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics.Builder builderForValue) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.set(index, builderForValue.build());
         onChanged();
       } else {
-        fieldsBuilder_.setMessage(builderForValue.build());
+        evalMetricsBuilder_.setMessage(index, builderForValue.build());
       }
-
       return this;
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public Builder mergeFields(com.clarifai.grpc.api.FieldsValue value) {
-      if (fieldsBuilder_ == null) {
-        if (fields_ != null) {
-          fields_ =
-            com.clarifai.grpc.api.FieldsValue.newBuilder(fields_).mergeFrom(value).buildPartial();
-        } else {
-          fields_ = value;
+    public Builder addEvalMetrics(com.clarifai.grpc.api.EvalMetrics value) {
+      if (evalMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(value);
         onChanged();
       } else {
-        fieldsBuilder_.mergeFrom(value);
+        evalMetricsBuilder_.addMessage(value);
       }
-
       return this;
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public Builder clearFields() {
-      if (fieldsBuilder_ == null) {
-        fields_ = null;
+    public Builder addEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics value) {
+      if (evalMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(index, value);
         onChanged();
       } else {
-        fields_ = null;
-        fieldsBuilder_ = null;
+        evalMetricsBuilder_.addMessage(index, value);
       }
-
       return this;
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public com.clarifai.grpc.api.FieldsValue.Builder getFieldsBuilder() {
-      
-      onChanged();
-      return getFieldsFieldBuilder().getBuilder();
+    public Builder addEvalMetrics(
+        com.clarifai.grpc.api.EvalMetrics.Builder builderForValue) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        evalMetricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    public com.clarifai.grpc.api.FieldsValueOrBuilder getFieldsOrBuilder() {
-      if (fieldsBuilder_ != null) {
-        return fieldsBuilder_.getMessageOrBuilder();
+    public Builder addEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics.Builder builderForValue) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(index, builderForValue.build());
+        onChanged();
       } else {
-        return fields_ == null ?
-            com.clarifai.grpc.api.FieldsValue.getDefaultInstance() : fields_;
+        evalMetricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public Builder addAllEvalMetrics(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.EvalMetrics> values) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, evalMetrics_);
+        onChanged();
+      } else {
+        evalMetricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public Builder clearEvalMetrics() {
+      if (evalMetricsBuilder_ == null) {
+        evalMetrics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        evalMetricsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public Builder removeEvalMetrics(int index) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.remove(index);
+        onChanged();
+      } else {
+        evalMetricsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.EvalMetrics.Builder getEvalMetricsBuilder(
+        int index) {
+      return getEvalMetricsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.EvalMetricsOrBuilder getEvalMetricsOrBuilder(
+        int index) {
+      if (evalMetricsBuilder_ == null) {
+        return evalMetrics_.get(index);  } else {
+        return evalMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * EvalInfo and ID will be used when creating the evaluation
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.FieldsValue, com.clarifai.grpc.api.FieldsValue.Builder, com.clarifai.grpc.api.FieldsValueOrBuilder> 
-        getFieldsFieldBuilder() {
-      if (fieldsBuilder_ == null) {
-        fieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.FieldsValue, com.clarifai.grpc.api.FieldsValue.Builder, com.clarifai.grpc.api.FieldsValueOrBuilder>(
-                getFields(),
+    public java.util.List<? extends com.clarifai.grpc.api.EvalMetricsOrBuilder> 
+         getEvalMetricsOrBuilderList() {
+      if (evalMetricsBuilder_ != null) {
+        return evalMetricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(evalMetrics_);
+      }
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.EvalMetrics.Builder addEvalMetricsBuilder() {
+      return getEvalMetricsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.EvalMetrics.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public com.clarifai.grpc.api.EvalMetrics.Builder addEvalMetricsBuilder(
+        int index) {
+      return getEvalMetricsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.EvalMetrics.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * EvalInfo and ID will be used when creating the evaluation
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.EvalMetrics.Builder> 
+         getEvalMetricsBuilderList() {
+      return getEvalMetricsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder> 
+        getEvalMetricsFieldBuilder() {
+      if (evalMetricsBuilder_ == null) {
+        evalMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder>(
+                evalMetrics_,
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        fields_ = null;
+        evalMetrics_ = null;
       }
-      return fieldsBuilder_;
+      return evalMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1101,41 +1294,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetModelVersionMetricsRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PostModelVersionEvaluationsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetModelVersionMetricsRequest)
-  private static final com.clarifai.grpc.api.GetModelVersionMetricsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PostModelVersionEvaluationsRequest)
+  private static final com.clarifai.grpc.api.PostModelVersionEvaluationsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetModelVersionMetricsRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostModelVersionEvaluationsRequest();
   }
 
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PostModelVersionEvaluationsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetModelVersionMetricsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetModelVersionMetricsRequest>() {
+  private static final com.google.protobuf.Parser<PostModelVersionEvaluationsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PostModelVersionEvaluationsRequest>() {
     @java.lang.Override
-    public GetModelVersionMetricsRequest parsePartialFrom(
+    public PostModelVersionEvaluationsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetModelVersionMetricsRequest(input, extensionRegistry);
+      return new PostModelVersionEvaluationsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetModelVersionMetricsRequest> parser() {
+  public static com.google.protobuf.Parser<PostModelVersionEvaluationsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetModelVersionMetricsRequest> getParserForType() {
+  public com.google.protobuf.Parser<PostModelVersionEvaluationsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetModelVersionMetricsRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PostModelVersionEvaluationsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
