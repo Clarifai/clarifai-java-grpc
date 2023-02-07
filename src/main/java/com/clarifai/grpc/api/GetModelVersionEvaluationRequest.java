@@ -4,32 +4,28 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * Get the already computed evaluation metrics for this model
- * version.
- * </pre>
- *
- * Protobuf type {@code clarifai.api.GetModelVersionMetricsRequest}
+ * Protobuf type {@code clarifai.api.GetModelVersionEvaluationRequest}
  */
-public final class GetModelVersionMetricsRequest extends
+public final class GetModelVersionEvaluationRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetModelVersionMetricsRequest)
-    GetModelVersionMetricsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.GetModelVersionEvaluationRequest)
+    GetModelVersionEvaluationRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetModelVersionMetricsRequest.newBuilder() to construct.
-  private GetModelVersionMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GetModelVersionEvaluationRequest.newBuilder() to construct.
+  private GetModelVersionEvaluationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetModelVersionMetricsRequest() {
+  private GetModelVersionEvaluationRequest() {
     modelId_ = "";
-    versionId_ = "";
+    modelVersionId_ = "";
+    evaluationId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetModelVersionMetricsRequest();
+    return new GetModelVersionEvaluationRequest();
   }
 
   @java.lang.Override
@@ -37,7 +33,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetModelVersionMetricsRequest(
+  private GetModelVersionEvaluationRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -77,10 +73,16 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            versionId_ = s;
+            modelVersionId_ = s;
             break;
           }
           case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            evaluationId_ = s;
+            break;
+          }
+          case 42: {
             com.clarifai.grpc.api.FieldsValue.Builder subBuilder = null;
             if (fields_ != null) {
               subBuilder = fields_.toBuilder();
@@ -116,15 +118,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionEvaluationRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionEvaluationRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetModelVersionMetricsRequest.class, com.clarifai.grpc.api.GetModelVersionMetricsRequest.Builder.class);
+            com.clarifai.grpc.api.GetModelVersionEvaluationRequest.class, com.clarifai.grpc.api.GetModelVersionEvaluationRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -191,53 +193,91 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VERSION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object versionId_;
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object modelVersionId_;
   /**
-   * <code>string version_id = 3;</code>
-   * @return The versionId.
+   * <code>string model_version_id = 3;</code>
+   * @return The modelVersionId.
    */
   @java.lang.Override
-  public java.lang.String getVersionId() {
-    java.lang.Object ref = versionId_;
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      versionId_ = s;
+      modelVersionId_ = s;
       return s;
     }
   }
   /**
-   * <code>string version_id = 3;</code>
-   * @return The bytes for versionId.
+   * <code>string model_version_id = 3;</code>
+   * @return The bytes for modelVersionId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getVersionIdBytes() {
-    java.lang.Object ref = versionId_;
+      getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      versionId_ = b;
+      modelVersionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int FIELDS_FIELD_NUMBER = 4;
+  public static final int EVALUATION_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object evaluationId_;
+  /**
+   * <code>string evaluation_id = 4;</code>
+   * @return The evaluationId.
+   */
+  @java.lang.Override
+  public java.lang.String getEvaluationId() {
+    java.lang.Object ref = evaluationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      evaluationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string evaluation_id = 4;</code>
+   * @return The bytes for evaluationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEvaluationIdBytes() {
+    java.lang.Object ref = evaluationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      evaluationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FIELDS_FIELD_NUMBER = 5;
   private com.clarifai.grpc.api.FieldsValue fields_;
   /**
    * <pre>
    * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * By default, only the summary is returned.
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>.clarifai.api.FieldsValue fields = 5;</code>
    * @return Whether the fields field is set.
    */
   @java.lang.Override
@@ -247,10 +287,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * By default, only the summary is returned.
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>.clarifai.api.FieldsValue fields = 5;</code>
    * @return The fields.
    */
   @java.lang.Override
@@ -260,10 +300,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * By default, only the summary is returned.
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>.clarifai.api.FieldsValue fields = 5;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.FieldsValueOrBuilder getFieldsOrBuilder() {
@@ -290,11 +330,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelVersionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluationId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, evaluationId_);
     }
     if (fields_ != null) {
-      output.writeMessage(4, getFields());
+      output.writeMessage(5, getFields());
     }
     unknownFields.writeTo(output);
   }
@@ -312,12 +355,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelVersionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(evaluationId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, evaluationId_);
     }
     if (fields_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getFields());
+        .computeMessageSize(5, getFields());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -329,10 +375,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetModelVersionMetricsRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.GetModelVersionEvaluationRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetModelVersionMetricsRequest other = (com.clarifai.grpc.api.GetModelVersionMetricsRequest) obj;
+    com.clarifai.grpc.api.GetModelVersionEvaluationRequest other = (com.clarifai.grpc.api.GetModelVersionEvaluationRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
@@ -341,8 +387,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getModelId()
         .equals(other.getModelId())) return false;
-    if (!getVersionId()
-        .equals(other.getVersionId())) return false;
+    if (!getModelVersionId()
+        .equals(other.getModelVersionId())) return false;
+    if (!getEvaluationId()
+        .equals(other.getEvaluationId())) return false;
     if (hasFields() != other.hasFields()) return false;
     if (hasFields()) {
       if (!getFields()
@@ -365,8 +413,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelId().hashCode();
-    hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getVersionId().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
+    hash = (37 * hash) + EVALUATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluationId().hashCode();
     if (hasFields()) {
       hash = (37 * hash) + FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getFields().hashCode();
@@ -376,69 +426,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest parseFrom(
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -451,7 +501,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetModelVersionMetricsRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.GetModelVersionEvaluationRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -467,31 +517,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Get the already computed evaluation metrics for this model
-   * version.
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.GetModelVersionMetricsRequest}
+   * Protobuf type {@code clarifai.api.GetModelVersionEvaluationRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetModelVersionMetricsRequest)
-      com.clarifai.grpc.api.GetModelVersionMetricsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.GetModelVersionEvaluationRequest)
+      com.clarifai.grpc.api.GetModelVersionEvaluationRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionEvaluationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionEvaluationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetModelVersionMetricsRequest.class, com.clarifai.grpc.api.GetModelVersionMetricsRequest.Builder.class);
+              com.clarifai.grpc.api.GetModelVersionEvaluationRequest.class, com.clarifai.grpc.api.GetModelVersionEvaluationRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetModelVersionMetricsRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.GetModelVersionEvaluationRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -517,7 +562,9 @@ private static final long serialVersionUID = 0L;
       }
       modelId_ = "";
 
-      versionId_ = "";
+      modelVersionId_ = "";
+
+      evaluationId_ = "";
 
       if (fieldsBuilder_ == null) {
         fields_ = null;
@@ -531,17 +578,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionMetricsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetModelVersionEvaluationRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetModelVersionMetricsRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetModelVersionMetricsRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.GetModelVersionEvaluationRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.GetModelVersionEvaluationRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetModelVersionMetricsRequest build() {
-      com.clarifai.grpc.api.GetModelVersionMetricsRequest result = buildPartial();
+    public com.clarifai.grpc.api.GetModelVersionEvaluationRequest build() {
+      com.clarifai.grpc.api.GetModelVersionEvaluationRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -549,15 +596,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetModelVersionMetricsRequest buildPartial() {
-      com.clarifai.grpc.api.GetModelVersionMetricsRequest result = new com.clarifai.grpc.api.GetModelVersionMetricsRequest(this);
+    public com.clarifai.grpc.api.GetModelVersionEvaluationRequest buildPartial() {
+      com.clarifai.grpc.api.GetModelVersionEvaluationRequest result = new com.clarifai.grpc.api.GetModelVersionEvaluationRequest(this);
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.modelId_ = modelId_;
-      result.versionId_ = versionId_;
+      result.modelVersionId_ = modelVersionId_;
+      result.evaluationId_ = evaluationId_;
       if (fieldsBuilder_ == null) {
         result.fields_ = fields_;
       } else {
@@ -601,16 +649,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetModelVersionMetricsRequest) {
-        return mergeFrom((com.clarifai.grpc.api.GetModelVersionMetricsRequest)other);
+      if (other instanceof com.clarifai.grpc.api.GetModelVersionEvaluationRequest) {
+        return mergeFrom((com.clarifai.grpc.api.GetModelVersionEvaluationRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetModelVersionMetricsRequest other) {
-      if (other == com.clarifai.grpc.api.GetModelVersionMetricsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.GetModelVersionEvaluationRequest other) {
+      if (other == com.clarifai.grpc.api.GetModelVersionEvaluationRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
@@ -618,8 +666,12 @@ private static final long serialVersionUID = 0L;
         modelId_ = other.modelId_;
         onChanged();
       }
-      if (!other.getVersionId().isEmpty()) {
-        versionId_ = other.versionId_;
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
+        onChanged();
+      }
+      if (!other.getEvaluationId().isEmpty()) {
+        evaluationId_ = other.evaluationId_;
         onChanged();
       }
       if (other.hasFields()) {
@@ -640,11 +692,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetModelVersionMetricsRequest parsedMessage = null;
+      com.clarifai.grpc.api.GetModelVersionEvaluationRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetModelVersionMetricsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.GetModelVersionEvaluationRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -849,78 +901,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object versionId_ = "";
+    private java.lang.Object modelVersionId_ = "";
     /**
-     * <code>string version_id = 3;</code>
-     * @return The versionId.
+     * <code>string model_version_id = 3;</code>
+     * @return The modelVersionId.
      */
-    public java.lang.String getVersionId() {
-      java.lang.Object ref = versionId_;
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        versionId_ = s;
+        modelVersionId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string version_id = 3;</code>
-     * @return The bytes for versionId.
+     * <code>string model_version_id = 3;</code>
+     * @return The bytes for modelVersionId.
      */
     public com.google.protobuf.ByteString
-        getVersionIdBytes() {
-      java.lang.Object ref = versionId_;
+        getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        versionId_ = b;
+        modelVersionId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string version_id = 3;</code>
-     * @param value The versionId to set.
+     * <code>string model_version_id = 3;</code>
+     * @param value The modelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionId(
+    public Builder setModelVersionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      versionId_ = value;
+      modelVersionId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string version_id = 3;</code>
+     * <code>string model_version_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearVersionId() {
+    public Builder clearModelVersionId() {
       
-      versionId_ = getDefaultInstance().getVersionId();
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
       onChanged();
       return this;
     }
     /**
-     * <code>string version_id = 3;</code>
-     * @param value The bytes for versionId to set.
+     * <code>string model_version_id = 3;</code>
+     * @param value The bytes for modelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionIdBytes(
+    public Builder setModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      versionId_ = value;
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object evaluationId_ = "";
+    /**
+     * <code>string evaluation_id = 4;</code>
+     * @return The evaluationId.
+     */
+    public java.lang.String getEvaluationId() {
+      java.lang.Object ref = evaluationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        evaluationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string evaluation_id = 4;</code>
+     * @return The bytes for evaluationId.
+     */
+    public com.google.protobuf.ByteString
+        getEvaluationIdBytes() {
+      java.lang.Object ref = evaluationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        evaluationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string evaluation_id = 4;</code>
+     * @param value The evaluationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      evaluationId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluation_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationId() {
+      
+      evaluationId_ = getDefaultInstance().getEvaluationId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string evaluation_id = 4;</code>
+     * @param value The bytes for evaluationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      evaluationId_ = value;
       onChanged();
       return this;
     }
@@ -931,10 +1059,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      * @return Whether the fields field is set.
      */
     public boolean hasFields() {
@@ -943,10 +1071,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      * @return The fields.
      */
     public com.clarifai.grpc.api.FieldsValue getFields() {
@@ -959,10 +1087,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     public Builder setFields(com.clarifai.grpc.api.FieldsValue value) {
       if (fieldsBuilder_ == null) {
@@ -980,10 +1108,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     public Builder setFields(
         com.clarifai.grpc.api.FieldsValue.Builder builderForValue) {
@@ -999,10 +1127,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     public Builder mergeFields(com.clarifai.grpc.api.FieldsValue value) {
       if (fieldsBuilder_ == null) {
@@ -1022,10 +1150,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
@@ -1041,10 +1169,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     public com.clarifai.grpc.api.FieldsValue.Builder getFieldsBuilder() {
       
@@ -1054,10 +1182,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     public com.clarifai.grpc.api.FieldsValueOrBuilder getFieldsOrBuilder() {
       if (fieldsBuilder_ != null) {
@@ -1070,10 +1198,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Any of the fields you wish to return from multiclass_metrics
-     * By default, only the summary will be returned
+     * By default, only the summary is returned.
      * </pre>
      *
-     * <code>.clarifai.api.FieldsValue fields = 4;</code>
+     * <code>.clarifai.api.FieldsValue fields = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.FieldsValue, com.clarifai.grpc.api.FieldsValue.Builder, com.clarifai.grpc.api.FieldsValueOrBuilder> 
@@ -1101,41 +1229,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetModelVersionMetricsRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.GetModelVersionEvaluationRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetModelVersionMetricsRequest)
-  private static final com.clarifai.grpc.api.GetModelVersionMetricsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.GetModelVersionEvaluationRequest)
+  private static final com.clarifai.grpc.api.GetModelVersionEvaluationRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetModelVersionMetricsRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetModelVersionEvaluationRequest();
   }
 
-  public static com.clarifai.grpc.api.GetModelVersionMetricsRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.GetModelVersionEvaluationRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetModelVersionMetricsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetModelVersionMetricsRequest>() {
+  private static final com.google.protobuf.Parser<GetModelVersionEvaluationRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetModelVersionEvaluationRequest>() {
     @java.lang.Override
-    public GetModelVersionMetricsRequest parsePartialFrom(
+    public GetModelVersionEvaluationRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetModelVersionMetricsRequest(input, extensionRegistry);
+      return new GetModelVersionEvaluationRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetModelVersionMetricsRequest> parser() {
+  public static com.google.protobuf.Parser<GetModelVersionEvaluationRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetModelVersionMetricsRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetModelVersionEvaluationRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetModelVersionMetricsRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.GetModelVersionEvaluationRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

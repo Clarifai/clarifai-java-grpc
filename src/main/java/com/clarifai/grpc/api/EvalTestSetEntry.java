@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1815
+   *     See proto/clarifai/api/resources.proto;l=1820
    * @return The id.
    */
   @java.lang.Override
@@ -185,7 +185,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1815
+   *     See proto/clarifai/api/resources.proto;l=1820
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string url = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1816
+   *     See proto/clarifai/api/resources.proto;l=1821
    * @return The url.
    */
   @java.lang.Override
@@ -227,7 +227,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string url = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1816
+   *     See proto/clarifai/api/resources.proto;l=1821
    * @return The bytes for url.
    */
   @java.lang.Override
@@ -930,7 +930,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1815
+     *     See proto/clarifai/api/resources.proto;l=1820
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1815
+     *     See proto/clarifai/api/resources.proto;l=1820
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -975,7 +975,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1815
+     *     See proto/clarifai/api/resources.proto;l=1820
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -996,7 +996,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1815
+     *     See proto/clarifai/api/resources.proto;l=1820
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -1012,7 +1012,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1815
+     *     See proto/clarifai/api/resources.proto;l=1820
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1032,7 +1032,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string url = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1816
+     *     See proto/clarifai/api/resources.proto;l=1821
      * @return The url.
      */
     @java.lang.Deprecated public java.lang.String getUrl() {
@@ -1050,7 +1050,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string url = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1816
+     *     See proto/clarifai/api/resources.proto;l=1821
      * @return The bytes for url.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1069,7 +1069,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string url = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1816
+     *     See proto/clarifai/api/resources.proto;l=1821
      * @param value The url to set.
      * @return This builder for chaining.
      */
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string url = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1816
+     *     See proto/clarifai/api/resources.proto;l=1821
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUrl() {
@@ -1098,7 +1098,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string url = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1816
+     *     See proto/clarifai/api/resources.proto;l=1821
      * @param value The bytes for url to set.
      * @return This builder for chaining.
      */

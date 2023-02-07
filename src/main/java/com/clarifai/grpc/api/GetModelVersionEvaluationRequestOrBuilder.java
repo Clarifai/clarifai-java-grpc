@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface GetModelVersionMetricsRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.GetModelVersionMetricsRequest)
+public interface GetModelVersionEvaluationRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.GetModelVersionEvaluationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -35,44 +35,56 @@ public interface GetModelVersionMetricsRequestOrBuilder extends
       getModelIdBytes();
 
   /**
-   * <code>string version_id = 3;</code>
-   * @return The versionId.
+   * <code>string model_version_id = 3;</code>
+   * @return The modelVersionId.
    */
-  java.lang.String getVersionId();
+  java.lang.String getModelVersionId();
   /**
-   * <code>string version_id = 3;</code>
-   * @return The bytes for versionId.
+   * <code>string model_version_id = 3;</code>
+   * @return The bytes for modelVersionId.
    */
   com.google.protobuf.ByteString
-      getVersionIdBytes();
+      getModelVersionIdBytes();
+
+  /**
+   * <code>string evaluation_id = 4;</code>
+   * @return The evaluationId.
+   */
+  java.lang.String getEvaluationId();
+  /**
+   * <code>string evaluation_id = 4;</code>
+   * @return The bytes for evaluationId.
+   */
+  com.google.protobuf.ByteString
+      getEvaluationIdBytes();
 
   /**
    * <pre>
    * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * By default, only the summary is returned.
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>.clarifai.api.FieldsValue fields = 5;</code>
    * @return Whether the fields field is set.
    */
   boolean hasFields();
   /**
    * <pre>
    * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * By default, only the summary is returned.
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>.clarifai.api.FieldsValue fields = 5;</code>
    * @return The fields.
    */
   com.clarifai.grpc.api.FieldsValue getFields();
   /**
    * <pre>
    * Any of the fields you wish to return from multiclass_metrics
-   * By default, only the summary will be returned
+   * By default, only the summary is returned.
    * </pre>
    *
-   * <code>.clarifai.api.FieldsValue fields = 4;</code>
+   * <code>.clarifai.api.FieldsValue fields = 5;</code>
    */
   com.clarifai.grpc.api.FieldsValueOrBuilder getFieldsOrBuilder();
 }
