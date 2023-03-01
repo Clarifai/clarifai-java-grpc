@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     callBackUrl_ = "";
     appPat_ = "";
     extractionJobs_ = java.util.Collections.emptyList();
+    uploads_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -126,6 +127,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.InputsExtractionJob.parser(), extensionRegistry));
             break;
           }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              uploads_ = new java.util.ArrayList<com.clarifai.grpc.api.Upload>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            uploads_.add(
+                input.readMessage(com.clarifai.grpc.api.Upload.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +155,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         extractionJobs_ = java.util.Collections.unmodifiableList(extractionJobs_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        uploads_ = java.util.Collections.unmodifiableList(uploads_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -535,6 +548,66 @@ private static final long serialVersionUID = 0L;
     return extractionJobs_.get(index);
   }
 
+  public static final int UPLOADS_FIELD_NUMBER = 11;
+  private java.util.List<com.clarifai.grpc.api.Upload> uploads_;
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Upload> getUploadsList() {
+    return uploads_;
+  }
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.UploadOrBuilder> 
+      getUploadsOrBuilderList() {
+    return uploads_;
+  }
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  @java.lang.Override
+  public int getUploadsCount() {
+    return uploads_.size();
+  }
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Upload getUploads(int index) {
+    return uploads_.get(index);
+  }
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.UploadOrBuilder getUploadsOrBuilder(
+      int index) {
+    return uploads_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -573,6 +646,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < extractionJobs_.size(); i++) {
       output.writeMessage(10, extractionJobs_.get(i));
     }
+    for (int i = 0; i < uploads_.size(); i++) {
+      output.writeMessage(11, uploads_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -609,6 +685,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < extractionJobs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, extractionJobs_.get(i));
+    }
+    for (int i = 0; i < uploads_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, uploads_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -650,6 +730,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getExtractionJobsList()
         .equals(other.getExtractionJobsList())) return false;
+    if (!getUploadsList()
+        .equals(other.getUploadsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -684,6 +766,10 @@ private static final long serialVersionUID = 0L;
     if (getExtractionJobsCount() > 0) {
       hash = (37 * hash) + EXTRACTION_JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getExtractionJobsList().hashCode();
+    }
+    if (getUploadsCount() > 0) {
+      hash = (37 * hash) + UPLOADS_FIELD_NUMBER;
+      hash = (53 * hash) + getUploadsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -814,6 +900,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getExtractionJobsFieldBuilder();
+        getUploadsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -850,6 +937,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         extractionJobsBuilder_.clear();
+      }
+      if (uploadsBuilder_ == null) {
+        uploads_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        uploadsBuilder_.clear();
       }
       return this;
     }
@@ -905,6 +998,15 @@ private static final long serialVersionUID = 0L;
         result.extractionJobs_ = extractionJobs_;
       } else {
         result.extractionJobs_ = extractionJobsBuilder_.build();
+      }
+      if (uploadsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          uploads_ = java.util.Collections.unmodifiableList(uploads_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.uploads_ = uploads_;
+      } else {
+        result.uploads_ = uploadsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1002,6 +1104,32 @@ private static final long serialVersionUID = 0L;
                  getExtractionJobsFieldBuilder() : null;
           } else {
             extractionJobsBuilder_.addAllMessages(other.extractionJobs_);
+          }
+        }
+      }
+      if (uploadsBuilder_ == null) {
+        if (!other.uploads_.isEmpty()) {
+          if (uploads_.isEmpty()) {
+            uploads_ = other.uploads_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUploadsIsMutable();
+            uploads_.addAll(other.uploads_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.uploads_.isEmpty()) {
+          if (uploadsBuilder_.isEmpty()) {
+            uploadsBuilder_.dispose();
+            uploadsBuilder_ = null;
+            uploads_ = other.uploads_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            uploadsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getUploadsFieldBuilder() : null;
+          } else {
+            uploadsBuilder_.addAllMessages(other.uploads_);
           }
         }
       }
@@ -2235,6 +2363,318 @@ private static final long serialVersionUID = 0L;
         extractionJobs_ = null;
       }
       return extractionJobsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Upload> uploads_ =
+      java.util.Collections.emptyList();
+    private void ensureUploadsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        uploads_ = new java.util.ArrayList<com.clarifai.grpc.api.Upload>(uploads_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Upload, com.clarifai.grpc.api.Upload.Builder, com.clarifai.grpc.api.UploadOrBuilder> uploadsBuilder_;
+
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Upload> getUploadsList() {
+      if (uploadsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(uploads_);
+      } else {
+        return uploadsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public int getUploadsCount() {
+      if (uploadsBuilder_ == null) {
+        return uploads_.size();
+      } else {
+        return uploadsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public com.clarifai.grpc.api.Upload getUploads(int index) {
+      if (uploadsBuilder_ == null) {
+        return uploads_.get(index);
+      } else {
+        return uploadsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder setUploads(
+        int index, com.clarifai.grpc.api.Upload value) {
+      if (uploadsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUploadsIsMutable();
+        uploads_.set(index, value);
+        onChanged();
+      } else {
+        uploadsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder setUploads(
+        int index, com.clarifai.grpc.api.Upload.Builder builderForValue) {
+      if (uploadsBuilder_ == null) {
+        ensureUploadsIsMutable();
+        uploads_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        uploadsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder addUploads(com.clarifai.grpc.api.Upload value) {
+      if (uploadsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUploadsIsMutable();
+        uploads_.add(value);
+        onChanged();
+      } else {
+        uploadsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder addUploads(
+        int index, com.clarifai.grpc.api.Upload value) {
+      if (uploadsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUploadsIsMutable();
+        uploads_.add(index, value);
+        onChanged();
+      } else {
+        uploadsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder addUploads(
+        com.clarifai.grpc.api.Upload.Builder builderForValue) {
+      if (uploadsBuilder_ == null) {
+        ensureUploadsIsMutable();
+        uploads_.add(builderForValue.build());
+        onChanged();
+      } else {
+        uploadsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder addUploads(
+        int index, com.clarifai.grpc.api.Upload.Builder builderForValue) {
+      if (uploadsBuilder_ == null) {
+        ensureUploadsIsMutable();
+        uploads_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        uploadsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder addAllUploads(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Upload> values) {
+      if (uploadsBuilder_ == null) {
+        ensureUploadsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, uploads_);
+        onChanged();
+      } else {
+        uploadsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder clearUploads() {
+      if (uploadsBuilder_ == null) {
+        uploads_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        uploadsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public Builder removeUploads(int index) {
+      if (uploadsBuilder_ == null) {
+        ensureUploadsIsMutable();
+        uploads_.remove(index);
+        onChanged();
+      } else {
+        uploadsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public com.clarifai.grpc.api.Upload.Builder getUploadsBuilder(
+        int index) {
+      return getUploadsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public com.clarifai.grpc.api.UploadOrBuilder getUploadsOrBuilder(
+        int index) {
+      if (uploadsBuilder_ == null) {
+        return uploads_.get(index);  } else {
+        return uploadsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.UploadOrBuilder> 
+         getUploadsOrBuilderList() {
+      if (uploadsBuilder_ != null) {
+        return uploadsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(uploads_);
+      }
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public com.clarifai.grpc.api.Upload.Builder addUploadsBuilder() {
+      return getUploadsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Upload.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public com.clarifai.grpc.api.Upload.Builder addUploadsBuilder(
+        int index) {
+      return getUploadsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Upload.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Archive uploads
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Upload.Builder> 
+         getUploadsBuilderList() {
+      return getUploadsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Upload, com.clarifai.grpc.api.Upload.Builder, com.clarifai.grpc.api.UploadOrBuilder> 
+        getUploadsFieldBuilder() {
+      if (uploadsBuilder_ == null) {
+        uploadsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Upload, com.clarifai.grpc.api.Upload.Builder, com.clarifai.grpc.api.UploadOrBuilder>(
+                uploads_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        uploads_ = null;
+      }
+      return uploadsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

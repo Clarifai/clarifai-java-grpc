@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *collaboration includes an app you're invited to work on.
+ * collaboration includes an app you're invited to work on.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Collaboration}
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.App app_;
   /**
    * <pre>
-   *the application
+   * the application
    * </pre>
    *
    * <code>.clarifai.api.App app = 1;</code>
@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the application
+   * the application
    * </pre>
    *
    * <code>.clarifai.api.App app = 1;</code>
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the application
+   * the application
    * </pre>
    *
    * <code>.clarifai.api.App app = 1;</code>
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.User appOwner_;
   /**
    * <pre>
-   *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+   * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
    * </pre>
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+   * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
    * </pre>
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+   * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
    * </pre>
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList scopes_;
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList endpoints_;
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   *when is the collaboration created
+   * when is the collaboration created
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -346,7 +346,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *when is the collaboration created
+   * when is the collaboration created
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -358,7 +358,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *when is the collaboration created
+   * when is the collaboration created
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *collaboration includes an app you're invited to work on.
+   * collaboration includes an app you're invited to work on.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Collaboration}
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> appBuilder_;
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -868,7 +868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -886,7 +886,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -926,7 +926,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -938,7 +938,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -953,7 +953,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the application
+     * the application
      * </pre>
      *
      * <code>.clarifai.api.App app = 1;</code>
@@ -977,7 +977,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> appOwnerBuilder_;
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -988,7 +988,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1003,7 +1003,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1023,7 +1023,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1041,7 +1041,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1063,7 +1063,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1081,7 +1081,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1093,7 +1093,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1108,7 +1108,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+     * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
      * </pre>
      *
      * <code>.clarifai.api.User app_owner = 2;</code>
@@ -1136,7 +1136,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1148,7 +1148,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1159,7 +1159,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1171,7 +1171,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1184,7 +1184,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1204,7 +1204,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1223,7 +1223,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1240,7 +1240,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1254,7 +1254,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the low-level scope users are shared with for this collaboration
+     * the low-level scope users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string scopes = 3;</code>
@@ -1282,7 +1282,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1294,7 +1294,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1305,7 +1305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1317,7 +1317,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1330,7 +1330,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1350,7 +1350,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1369,7 +1369,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1386,7 +1386,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1400,7 +1400,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the endpoint-level scopes users are shared with for this collaboration
+     * the endpoint-level scopes users are shared with for this collaboration
      * </pre>
      *
      * <code>repeated string endpoints = 4;</code>
@@ -1424,7 +1424,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1435,7 +1435,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1450,7 +1450,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1470,7 +1470,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1488,7 +1488,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1510,7 +1510,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1528,7 +1528,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1540,7 +1540,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1555,7 +1555,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the collaboration created
+     * when is the collaboration created
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>

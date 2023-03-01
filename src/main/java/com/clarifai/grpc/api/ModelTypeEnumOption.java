@@ -393,7 +393,7 @@ private static final long serialVersionUID = 0L;
   private boolean recommended_;
   /**
    * <pre>
-   * Whether this is the recommended enum option. Set to `true` when there 
+   * Whether this is the recommended enum option. Set to `true` when there
    * are multiple options, and one is shown to be better than the others.
    * </pre>
    *
@@ -1828,7 +1828,7 @@ private static final long serialVersionUID = 0L;
     private boolean recommended_ ;
     /**
      * <pre>
-     * Whether this is the recommended enum option. Set to `true` when there 
+     * Whether this is the recommended enum option. Set to `true` when there
      * are multiple options, and one is shown to be better than the others.
      * </pre>
      *
@@ -1841,7 +1841,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether this is the recommended enum option. Set to `true` when there 
+     * Whether this is the recommended enum option. Set to `true` when there
      * are multiple options, and one is shown to be better than the others.
      * </pre>
      *
@@ -1857,7 +1857,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether this is the recommended enum option. Set to `true` when there 
+     * Whether this is the recommended enum option. Set to `true` when there
      * are multiple options, and one is shown to be better than the others.
      * </pre>
      *

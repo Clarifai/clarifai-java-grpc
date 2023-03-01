@@ -172,7 +172,7 @@ public interface ModelTypeEnumOptionOrBuilder extends
 
   /**
    * <pre>
-   * Whether this is the recommended enum option. Set to `true` when there 
+   * Whether this is the recommended enum option. Set to `true` when there
    * are multiple options, and one is shown to be better than the others.
    * </pre>
    *

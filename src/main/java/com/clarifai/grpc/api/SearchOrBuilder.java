@@ -283,4 +283,15 @@ public interface SearchOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 12;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Search.Metric metric = 13;</code>
+   * @return The enum numeric value on the wire for metric.
+   */
+  int getMetricValue();
+  /**
+   * <code>.clarifai.api.Search.Metric metric = 13;</code>
+   * @return The metric.
+   */
+  com.clarifai.grpc.api.Search.Metric getMetric();
 }

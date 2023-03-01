@@ -61,6 +61,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 16: {
+
+            ignoreEmptyInputs_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -98,6 +103,10 @@ private static final long serialVersionUID = 0L;
   public static final int ANNOTATION_FILTER_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.AnnotationFilter annotationFilter_;
   /**
+   * <pre>
+   * The annotation filter that is used.
+   * </pre>
+   *
    * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
    * @return Whether the annotationFilter field is set.
    */
@@ -106,6 +115,10 @@ private static final long serialVersionUID = 0L;
     return annotationFilter_ != null;
   }
   /**
+   * <pre>
+   * The annotation filter that is used.
+   * </pre>
+   *
    * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
    * @return The annotationFilter.
    */
@@ -114,11 +127,32 @@ private static final long serialVersionUID = 0L;
     return annotationFilter_ == null ? com.clarifai.grpc.api.AnnotationFilter.getDefaultInstance() : annotationFilter_;
   }
   /**
+   * <pre>
+   * The annotation filter that is used.
+   * </pre>
+   *
    * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.AnnotationFilterOrBuilder getAnnotationFilterOrBuilder() {
     return getAnnotationFilter();
+  }
+
+  public static final int IGNORE_EMPTY_INPUTS_FIELD_NUMBER = 2;
+  private boolean ignoreEmptyInputs_;
+  /**
+   * <pre>
+   * If true, empty inputs are not included in the dataset version.
+   * If false, empty inputs are included in the dataset version.
+   * We define an empty input as an input without any annotations after annotation filter is applied.
+   * </pre>
+   *
+   * <code>bool ignore_empty_inputs = 2;</code>
+   * @return The ignoreEmptyInputs.
+   */
+  @java.lang.Override
+  public boolean getIgnoreEmptyInputs() {
+    return ignoreEmptyInputs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -138,6 +172,9 @@ private static final long serialVersionUID = 0L;
     if (annotationFilter_ != null) {
       output.writeMessage(1, getAnnotationFilter());
     }
+    if (ignoreEmptyInputs_ != false) {
+      output.writeBool(2, ignoreEmptyInputs_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -150,6 +187,10 @@ private static final long serialVersionUID = 0L;
     if (annotationFilter_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getAnnotationFilter());
+    }
+    if (ignoreEmptyInputs_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, ignoreEmptyInputs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,6 +212,8 @@ private static final long serialVersionUID = 0L;
       if (!getAnnotationFilter()
           .equals(other.getAnnotationFilter())) return false;
     }
+    if (getIgnoreEmptyInputs()
+        != other.getIgnoreEmptyInputs()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -186,6 +229,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ANNOTATION_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotationFilter().hashCode();
     }
+    hash = (37 * hash) + IGNORE_EMPTY_INPUTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIgnoreEmptyInputs());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -325,6 +371,8 @@ private static final long serialVersionUID = 0L;
         annotationFilter_ = null;
         annotationFilterBuilder_ = null;
       }
+      ignoreEmptyInputs_ = false;
+
       return this;
     }
 
@@ -356,6 +404,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.annotationFilter_ = annotationFilterBuilder_.build();
       }
+      result.ignoreEmptyInputs_ = ignoreEmptyInputs_;
       onBuilt();
       return result;
     }
@@ -407,6 +456,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasAnnotationFilter()) {
         mergeAnnotationFilter(other.getAnnotationFilter());
       }
+      if (other.getIgnoreEmptyInputs() != false) {
+        setIgnoreEmptyInputs(other.getIgnoreEmptyInputs());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -440,6 +492,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.AnnotationFilter, com.clarifai.grpc.api.AnnotationFilter.Builder, com.clarifai.grpc.api.AnnotationFilterOrBuilder> annotationFilterBuilder_;
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      * @return Whether the annotationFilter field is set.
      */
@@ -447,6 +503,10 @@ private static final long serialVersionUID = 0L;
       return annotationFilterBuilder_ != null || annotationFilter_ != null;
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      * @return The annotationFilter.
      */
@@ -458,6 +518,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     public Builder setAnnotationFilter(com.clarifai.grpc.api.AnnotationFilter value) {
@@ -474,6 +538,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     public Builder setAnnotationFilter(
@@ -488,6 +556,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     public Builder mergeAnnotationFilter(com.clarifai.grpc.api.AnnotationFilter value) {
@@ -506,6 +578,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     public Builder clearAnnotationFilter() {
@@ -520,6 +596,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     public com.clarifai.grpc.api.AnnotationFilter.Builder getAnnotationFilterBuilder() {
@@ -528,6 +608,10 @@ private static final long serialVersionUID = 0L;
       return getAnnotationFilterFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     public com.clarifai.grpc.api.AnnotationFilterOrBuilder getAnnotationFilterOrBuilder() {
@@ -539,6 +623,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The annotation filter that is used.
+     * </pre>
+     *
      * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -553,6 +641,55 @@ private static final long serialVersionUID = 0L;
         annotationFilter_ = null;
       }
       return annotationFilterBuilder_;
+    }
+
+    private boolean ignoreEmptyInputs_ ;
+    /**
+     * <pre>
+     * If true, empty inputs are not included in the dataset version.
+     * If false, empty inputs are included in the dataset version.
+     * We define an empty input as an input without any annotations after annotation filter is applied.
+     * </pre>
+     *
+     * <code>bool ignore_empty_inputs = 2;</code>
+     * @return The ignoreEmptyInputs.
+     */
+    @java.lang.Override
+    public boolean getIgnoreEmptyInputs() {
+      return ignoreEmptyInputs_;
+    }
+    /**
+     * <pre>
+     * If true, empty inputs are not included in the dataset version.
+     * If false, empty inputs are included in the dataset version.
+     * We define an empty input as an input without any annotations after annotation filter is applied.
+     * </pre>
+     *
+     * <code>bool ignore_empty_inputs = 2;</code>
+     * @param value The ignoreEmptyInputs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreEmptyInputs(boolean value) {
+      
+      ignoreEmptyInputs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, empty inputs are not included in the dataset version.
+     * If false, empty inputs are included in the dataset version.
+     * We define an empty input as an input without any annotations after annotation filter is applied.
+     * </pre>
+     *
+     * <code>bool ignore_empty_inputs = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreEmptyInputs() {
+      
+      ignoreEmptyInputs_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -184,7 +184,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   *the id of app duplication
+   * the id of app duplication
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the id of app duplication
+   * the id of app duplication
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object newAppName_;
   /**
    * <pre>
-   *the name of new app. If provided, we will create a new application with this name.
+   * the name of new app. If provided, we will create a new application with this name.
    * You can not set this if existing_app_id is set.
    * </pre>
    *
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the name of new app. If provided, we will create a new application with this name.
+   * the name of new app. If provided, we will create a new application with this name.
    * You can not set this if existing_app_id is set.
    * </pre>
    *
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <pre>
-   *the status of app duplication
+   * the status of app duplication
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -340,7 +340,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the status of app duplication
+   * the status of app duplication
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -352,7 +352,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the status of app duplication
+   * the status of app duplication
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -366,7 +366,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   *when is the app duplication triggered
+   * when is the app duplication triggered
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *when is the app duplication triggered
+   * when is the app duplication triggered
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *when is the app duplication triggered
+   * when is the app duplication triggered
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp lastModifiedAt_;
   /**
    * <pre>
-   *The last time when is the status got updated
+   * The last time when is the status got updated
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *The last time when is the status got updated
+   * The last time when is the status got updated
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -428,7 +428,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *The last time when is the status got updated
+   * The last time when is the status got updated
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1123,7 +1123,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     *the id of app duplication
+     * the id of app duplication
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1143,7 +1143,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of app duplication
+     * the id of app duplication
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1164,7 +1164,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of app duplication
+     * the id of app duplication
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1183,7 +1183,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of app duplication
+     * the id of app duplication
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1197,7 +1197,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the id of app duplication
+     * the id of app duplication
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1325,7 +1325,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object newAppName_ = "";
     /**
      * <pre>
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      * </pre>
      *
@@ -1346,7 +1346,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      * </pre>
      *
@@ -1368,7 +1368,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      * </pre>
      *
@@ -1388,7 +1388,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      * </pre>
      *
@@ -1403,7 +1403,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the name of new app. If provided, we will create a new application with this name.
+     * the name of new app. If provided, we will create a new application with this name.
      * You can not set this if existing_app_id is set.
      * </pre>
      *
@@ -1428,7 +1428,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1439,7 +1439,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1454,7 +1454,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1474,7 +1474,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1492,7 +1492,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1532,7 +1532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1544,7 +1544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1559,7 +1559,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the status of app duplication
+     * the status of app duplication
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1583,7 +1583,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1594,7 +1594,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1609,7 +1609,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1629,7 +1629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1647,7 +1647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1669,7 +1669,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1687,7 +1687,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1699,7 +1699,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1714,7 +1714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *when is the app duplication triggered
+     * when is the app duplication triggered
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1738,7 +1738,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastModifiedAtBuilder_;
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1749,7 +1749,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1764,7 +1764,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1784,7 +1784,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1802,7 +1802,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1824,7 +1824,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1842,7 +1842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1854,7 +1854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -1869,7 +1869,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *The last time when is the status got updated
+     * The last time when is the status got updated
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>

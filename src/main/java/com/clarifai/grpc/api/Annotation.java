@@ -485,7 +485,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=43
+   *     See proto/clarifai/api/resources.proto;l=41
    * @return The embedModelVersionId.
    */
   @java.lang.Override
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=43
+   *     See proto/clarifai/api/resources.proto;l=41
    * @return The bytes for embedModelVersionId.
    */
   @java.lang.Override
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool trusted = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.trusted is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=60
+   *     See proto/clarifai/api/resources.proto;l=58
    * @return The trusted.
    */
   @java.lang.Override
@@ -2084,7 +2084,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=43
+     *     See proto/clarifai/api/resources.proto;l=41
      * @return The embedModelVersionId.
      */
     @java.lang.Deprecated public java.lang.String getEmbedModelVersionId() {
@@ -2106,7 +2106,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=43
+     *     See proto/clarifai/api/resources.proto;l=41
      * @return The bytes for embedModelVersionId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2129,7 +2129,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=43
+     *     See proto/clarifai/api/resources.proto;l=41
      * @param value The embedModelVersionId to set.
      * @return This builder for chaining.
      */
@@ -2150,7 +2150,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=43
+     *     See proto/clarifai/api/resources.proto;l=41
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearEmbedModelVersionId() {
@@ -2166,7 +2166,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=43
+     *     See proto/clarifai/api/resources.proto;l=41
      * @param value The bytes for embedModelVersionId to set.
      * @return This builder for chaining.
      */
@@ -2692,7 +2692,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.trusted is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=60
+     *     See proto/clarifai/api/resources.proto;l=58
      * @return The trusted.
      */
     @java.lang.Override
@@ -2707,7 +2707,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.trusted is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=60
+     *     See proto/clarifai/api/resources.proto;l=58
      * @param value The trusted to set.
      * @return This builder for chaining.
      */
@@ -2725,7 +2725,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.trusted is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=60
+     *     See proto/clarifai/api/resources.proto;l=58
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTrusted() {

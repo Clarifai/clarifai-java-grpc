@@ -225,4 +225,48 @@ public interface InputsAddJobOrBuilder extends
    */
   com.clarifai.grpc.api.InputsExtractionJobOrBuilder getExtractionJobsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Upload> 
+      getUploadsList();
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  com.clarifai.grpc.api.Upload getUploads(int index);
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  int getUploadsCount();
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.UploadOrBuilder> 
+      getUploadsOrBuilderList();
+  /**
+   * <pre>
+   * Archive uploads
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Upload uploads = 11;</code>
+   */
+  com.clarifai.grpc.api.UploadOrBuilder getUploadsOrBuilder(
+      int index);
 }

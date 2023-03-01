@@ -310,6 +310,8 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <pre>
+   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+   * and provide the dataset version ID in the train_info.params.
    * Dataset version used to create this model version.
    * </pre>
    *
@@ -319,6 +321,8 @@ public interface ModelVersionOrBuilder extends
   boolean hasDatasetVersion();
   /**
    * <pre>
+   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+   * and provide the dataset version ID in the train_info.params.
    * Dataset version used to create this model version.
    * </pre>
    *
@@ -328,6 +332,8 @@ public interface ModelVersionOrBuilder extends
   com.clarifai.grpc.api.DatasetVersion getDatasetVersion();
   /**
    * <pre>
+   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+   * and provide the dataset version ID in the train_info.params.
    * Dataset version used to create this model version.
    * </pre>
    *
@@ -442,4 +448,16 @@ public interface ModelVersionOrBuilder extends
    * <code>.clarifai.api.ImportInfo import_info = 22;</code>
    */
   com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
+
+  /**
+   * <code>string train_log = 23;</code>
+   * @return The trainLog.
+   */
+  java.lang.String getTrainLog();
+  /**
+   * <code>string train_log = 23;</code>
+   * @return The bytes for trainLog.
+   */
+  com.google.protobuf.ByteString
+      getTrainLogBytes();
 }

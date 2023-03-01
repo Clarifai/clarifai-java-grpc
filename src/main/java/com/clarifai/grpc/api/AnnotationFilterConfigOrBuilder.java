@@ -8,17 +8,41 @@ public interface AnnotationFilterConfigOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The annotation filter that is used.
+   * </pre>
+   *
    * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
    * @return Whether the annotationFilter field is set.
    */
   boolean hasAnnotationFilter();
   /**
+   * <pre>
+   * The annotation filter that is used.
+   * </pre>
+   *
    * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
    * @return The annotationFilter.
    */
   com.clarifai.grpc.api.AnnotationFilter getAnnotationFilter();
   /**
+   * <pre>
+   * The annotation filter that is used.
+   * </pre>
+   *
    * <code>.clarifai.api.AnnotationFilter annotation_filter = 1;</code>
    */
   com.clarifai.grpc.api.AnnotationFilterOrBuilder getAnnotationFilterOrBuilder();
+
+  /**
+   * <pre>
+   * If true, empty inputs are not included in the dataset version.
+   * If false, empty inputs are included in the dataset version.
+   * We define an empty input as an input without any annotations after annotation filter is applied.
+   * </pre>
+   *
+   * <code>bool ignore_empty_inputs = 2;</code>
+   * @return The ignoreEmptyInputs.
+   */
+  boolean getIgnoreEmptyInputs();
 }
