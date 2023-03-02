@@ -772,10 +772,6 @@ public enum StatusCode
    */
   BULK_OPERATION_UNEXPECTED_ERROR(25406),
   /**
-   * <code>BULK_OPERATION_DELETED = 25407;</code>
-   */
-  BULK_OPERATION_DELETED(25407),
-  /**
    * <pre>
    * Input:Image related 30xxx
    * </pre>
@@ -1071,6 +1067,10 @@ public enum StatusCode
    * <code>EXTERNAL_CONNECTION_ERROR = 40034;</code>
    */
   EXTERNAL_CONNECTION_ERROR(40034),
+  /**
+   * <code>QUERY_INVALID_SYNTAX = 40050;</code>
+   */
+  QUERY_INVALID_SYNTAX(40050),
   /**
    * <pre>
    * Queue related errors 41xxx
@@ -1582,6 +1582,46 @@ public enum StatusCode
    * <code>DATASET_INPUT_DUPLICATE = 64101;</code>
    */
   DATASET_INPUT_DUPLICATE(64101),
+  /**
+   * <pre>
+   * The dataset version export is completed.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_SUCCESS = 64200;</code>
+   */
+  DATASET_VERSION_EXPORT_SUCCESS(64200),
+  /**
+   * <pre>
+   * The dataset version is pending to be exported.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_PENDING = 64201;</code>
+   */
+  DATASET_VERSION_EXPORT_PENDING(64201),
+  /**
+   * <pre>
+   * An error occurred during the dataset version export.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_FAILED = 64202;</code>
+   */
+  DATASET_VERSION_EXPORT_FAILED(64202),
+  /**
+   * <pre>
+   * The dataset version is currently being exported.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_IN_PROGRESS = 64203;</code>
+   */
+  DATASET_VERSION_EXPORT_IN_PROGRESS(64203),
+  /**
+   * <pre>
+   * An unexpected error occurred during the dataset version export.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_UNEXPECTED_ERROR = 64204;</code>
+   */
+  DATASET_VERSION_EXPORT_UNEXPECTED_ERROR(64204),
   /**
    * <pre>
    * Generic Job status codes
@@ -2518,10 +2558,6 @@ public enum StatusCode
    */
   public static final int BULK_OPERATION_UNEXPECTED_ERROR_VALUE = 25406;
   /**
-   * <code>BULK_OPERATION_DELETED = 25407;</code>
-   */
-  public static final int BULK_OPERATION_DELETED_VALUE = 25407;
-  /**
    * <pre>
    * Input:Image related 30xxx
    * </pre>
@@ -2817,6 +2853,10 @@ public enum StatusCode
    * <code>EXTERNAL_CONNECTION_ERROR = 40034;</code>
    */
   public static final int EXTERNAL_CONNECTION_ERROR_VALUE = 40034;
+  /**
+   * <code>QUERY_INVALID_SYNTAX = 40050;</code>
+   */
+  public static final int QUERY_INVALID_SYNTAX_VALUE = 40050;
   /**
    * <pre>
    * Queue related errors 41xxx
@@ -3330,6 +3370,46 @@ public enum StatusCode
   public static final int DATASET_INPUT_DUPLICATE_VALUE = 64101;
   /**
    * <pre>
+   * The dataset version export is completed.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_SUCCESS = 64200;</code>
+   */
+  public static final int DATASET_VERSION_EXPORT_SUCCESS_VALUE = 64200;
+  /**
+   * <pre>
+   * The dataset version is pending to be exported.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_PENDING = 64201;</code>
+   */
+  public static final int DATASET_VERSION_EXPORT_PENDING_VALUE = 64201;
+  /**
+   * <pre>
+   * An error occurred during the dataset version export.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_FAILED = 64202;</code>
+   */
+  public static final int DATASET_VERSION_EXPORT_FAILED_VALUE = 64202;
+  /**
+   * <pre>
+   * The dataset version is currently being exported.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_IN_PROGRESS = 64203;</code>
+   */
+  public static final int DATASET_VERSION_EXPORT_IN_PROGRESS_VALUE = 64203;
+  /**
+   * <pre>
+   * An unexpected error occurred during the dataset version export.
+   * </pre>
+   *
+   * <code>DATASET_VERSION_EXPORT_UNEXPECTED_ERROR = 64204;</code>
+   */
+  public static final int DATASET_VERSION_EXPORT_UNEXPECTED_ERROR_VALUE = 64204;
+  /**
+   * <pre>
    * Generic Job status codes
    * </pre>
    *
@@ -3657,7 +3737,6 @@ public enum StatusCode
       case 25404: return BULK_OPERATION_INVALID_REQUEST;
       case 25405: return BULK_OPERATION_CANCELLED;
       case 25406: return BULK_OPERATION_UNEXPECTED_ERROR;
-      case 25407: return BULK_OPERATION_DELETED;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;
@@ -3725,6 +3804,7 @@ public enum StatusCode
       case 40037: return REQUEST_CANCELED_BY_USER;
       case 43040: return CLUSTER_INTERNAL_FAILURE;
       case 40034: return EXTERNAL_CONNECTION_ERROR;
+      case 40050: return QUERY_INVALID_SYNTAX;
       case 41000: return QUEUE_CONN_ERROR;
       case 41002: return QUEUE_CLOSE_REQUEST_TIMEOUT;
       case 41003: return QUEUE_CONN_CLOSED;
@@ -3817,6 +3897,11 @@ public enum StatusCode
       case 64030: return DATASET_VERSION_CONFLICT;
       case 64100: return DATASET_INPUT_SUCCESS;
       case 64101: return DATASET_INPUT_DUPLICATE;
+      case 64200: return DATASET_VERSION_EXPORT_SUCCESS;
+      case 64201: return DATASET_VERSION_EXPORT_PENDING;
+      case 64202: return DATASET_VERSION_EXPORT_FAILED;
+      case 64203: return DATASET_VERSION_EXPORT_IN_PROGRESS;
+      case 64204: return DATASET_VERSION_EXPORT_UNEXPECTED_ERROR;
       case 64000: return JOB_QUEUED;
       case 64001: return JOB_RUNNING;
       case 64002: return JOB_COMPLETED;

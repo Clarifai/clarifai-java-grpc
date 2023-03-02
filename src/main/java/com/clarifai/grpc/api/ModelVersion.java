@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     appId_ = "";
     userId_ = "";
     license_ = "";
+    trainLog_ = "";
   }
 
   @java.lang.Override
@@ -264,6 +265,12 @@ private static final long serialVersionUID = 0L;
               importInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 186: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            trainLog_ = s;
             break;
           }
           default: {
@@ -833,6 +840,8 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.DatasetVersion datasetVersion_;
   /**
    * <pre>
+   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+   * and provide the dataset version ID in the train_info.params.
    * Dataset version used to create this model version.
    * </pre>
    *
@@ -845,6 +854,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+   * and provide the dataset version ID in the train_info.params.
    * Dataset version used to create this model version.
    * </pre>
    *
@@ -857,6 +868,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+   * and provide the dataset version ID in the train_info.params.
    * Dataset version used to create this model version.
    * </pre>
    *
@@ -1019,6 +1032,44 @@ private static final long serialVersionUID = 0L;
     return getImportInfo();
   }
 
+  public static final int TRAIN_LOG_FIELD_NUMBER = 23;
+  private volatile java.lang.Object trainLog_;
+  /**
+   * <code>string train_log = 23;</code>
+   * @return The trainLog.
+   */
+  @java.lang.Override
+  public java.lang.String getTrainLog() {
+    java.lang.Object ref = trainLog_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      trainLog_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string train_log = 23;</code>
+   * @return The bytes for trainLog.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTrainLogBytes() {
+    java.lang.Object ref = trainLog_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      trainLog_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1092,6 +1143,9 @@ private static final long serialVersionUID = 0L;
     }
     if (importInfo_ != null) {
       output.writeMessage(22, getImportInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trainLog_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, trainLog_);
     }
     unknownFields.writeTo(output);
   }
@@ -1176,6 +1230,9 @@ private static final long serialVersionUID = 0L;
     if (importInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, getImportInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trainLog_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, trainLog_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1271,6 +1328,8 @@ private static final long serialVersionUID = 0L;
       if (!getImportInfo()
           .equals(other.getImportInfo())) return false;
     }
+    if (!getTrainLog()
+        .equals(other.getTrainLog())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1348,6 +1407,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IMPORT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getImportInfo().hashCode();
     }
+    hash = (37 * hash) + TRAIN_LOG_FIELD_NUMBER;
+    hash = (53 * hash) + getTrainLog().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1577,6 +1638,8 @@ private static final long serialVersionUID = 0L;
         importInfo_ = null;
         importInfoBuilder_ = null;
       }
+      trainLog_ = "";
+
       return this;
     }
 
@@ -1675,6 +1738,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.importInfo_ = importInfoBuilder_.build();
       }
+      result.trainLog_ = trainLog_;
       onBuilt();
       return result;
     }
@@ -1787,6 +1851,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasImportInfo()) {
         mergeImportInfo(other.getImportInfo());
+      }
+      if (!other.getTrainLog().isEmpty()) {
+        trainLog_ = other.trainLog_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3531,6 +3599,8 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> datasetVersionBuilder_;
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3542,6 +3612,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3557,6 +3629,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3577,6 +3651,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3595,6 +3671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3617,6 +3695,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3635,6 +3715,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3647,6 +3729,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -3662,6 +3746,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
+     * and provide the dataset version ID in the train_info.params.
      * Dataset version used to create this model version.
      * </pre>
      *
@@ -4299,6 +4385,82 @@ private static final long serialVersionUID = 0L;
         importInfo_ = null;
       }
       return importInfoBuilder_;
+    }
+
+    private java.lang.Object trainLog_ = "";
+    /**
+     * <code>string train_log = 23;</code>
+     * @return The trainLog.
+     */
+    public java.lang.String getTrainLog() {
+      java.lang.Object ref = trainLog_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trainLog_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string train_log = 23;</code>
+     * @return The bytes for trainLog.
+     */
+    public com.google.protobuf.ByteString
+        getTrainLogBytes() {
+      java.lang.Object ref = trainLog_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        trainLog_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string train_log = 23;</code>
+     * @param value The trainLog to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainLog(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      trainLog_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string train_log = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrainLog() {
+      
+      trainLog_ = getDefaultInstance().getTrainLog();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string train_log = 23;</code>
+     * @param value The bytes for trainLog to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainLogBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      trainLog_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

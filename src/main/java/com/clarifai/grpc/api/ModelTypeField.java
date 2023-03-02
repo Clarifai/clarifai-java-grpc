@@ -265,8 +265,8 @@ private static final long serialVersionUID = 0L;
     ARRAY_OF_STRINGS(13),
     /**
      * <pre>
-     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
-     * for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
+     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and
+     * description for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
      * </pre>
      *
      * <code>RECURSIVE_ENUM = 14;</code>
@@ -391,8 +391,8 @@ private static final long serialVersionUID = 0L;
     public static final int ARRAY_OF_STRINGS_VALUE = 13;
     /**
      * <pre>
-     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and description
-     * for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
+     * If RECURSIVE_ENUM is used then the "enum_options" field should also be filled in with the respective ID and
+     * description for the different RECURSIVE_ENUM options, as well as model_type_fields for each enum choice.
      * </pre>
      *
      * <code>RECURSIVE_ENUM = 14;</code>

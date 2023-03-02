@@ -3,14 +3,13 @@
 
 package com.clarifai.grpc.api;
 
-public interface InputsDataSourceOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.InputsDataSource)
+public interface InputsUploadOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.InputsUpload)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
    * Collect statistics about created inputs in job with given ID.
-   * On Post call:
    * * If job ID is empty, then job is automatically created with random ID.
    * * If job ID is non-empty, then a new job will be created with given ID.
    * </pre>
@@ -22,7 +21,6 @@ public interface InputsDataSourceOrBuilder extends
   /**
    * <pre>
    * Collect statistics about created inputs in job with given ID.
-   * On Post call:
    * * If job ID is empty, then job is automatically created with random ID.
    * * If job ID is non-empty, then a new job will be created with given ID.
    * </pre>
@@ -34,17 +32,37 @@ public interface InputsDataSourceOrBuilder extends
       getInputsAddJobIdBytes();
 
   /**
-   * <code>.clarifai.api.DataSourceURL url = 2;</code>
-   * @return Whether the url field is set.
+   * <pre>
+   * Personal Access Token to the application to which inputs are added
+   * </pre>
+   *
+   * <code>string app_pat = 2;</code>
+   * @return The appPat.
    */
-  boolean hasUrl();
+  java.lang.String getAppPat();
   /**
-   * <code>.clarifai.api.DataSourceURL url = 2;</code>
-   * @return The url.
+   * <pre>
+   * Personal Access Token to the application to which inputs are added
+   * </pre>
+   *
+   * <code>string app_pat = 2;</code>
+   * @return The bytes for appPat.
    */
-  com.clarifai.grpc.api.DataSourceURL getUrl();
+  com.google.protobuf.ByteString
+      getAppPatBytes();
+
   /**
-   * <code>.clarifai.api.DataSourceURL url = 2;</code>
+   * <code>.clarifai.api.Upload upload = 3;</code>
+   * @return Whether the upload field is set.
    */
-  com.clarifai.grpc.api.DataSourceURLOrBuilder getUrlOrBuilder();
+  boolean hasUpload();
+  /**
+   * <code>.clarifai.api.Upload upload = 3;</code>
+   * @return The upload.
+   */
+  com.clarifai.grpc.api.Upload getUpload();
+  /**
+   * <code>.clarifai.api.Upload upload = 3;</code>
+   */
+  com.clarifai.grpc.api.UploadOrBuilder getUploadOrBuilder();
 }

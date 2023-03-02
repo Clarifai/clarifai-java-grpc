@@ -189,7 +189,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   *id of this collaborator
+   * id of this collaborator
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *id of this collaborator
+   * id of this collaborator
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.App app_;
   /**
    * <pre>
-   *the app this collaborator has access to
+   * the app this collaborator has access to
    * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
@@ -248,7 +248,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the app this collaborator has access to
+   * the app this collaborator has access to
    * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
@@ -261,7 +261,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the app this collaborator has access to
+   * the app this collaborator has access to
    * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.User user_;
   /**
    * <pre>
-   *who is this collaborator
+   * who is this collaborator
    * </pre>
    *
    * <code>.clarifai.api.User user = 3;</code>
@@ -288,7 +288,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *who is this collaborator
+   * who is this collaborator
    * </pre>
    *
    * <code>.clarifai.api.User user = 3;</code>
@@ -300,7 +300,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *who is this collaborator
+   * who is this collaborator
    * </pre>
    *
    * <code>.clarifai.api.User user = 3;</code>
@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList scopes_;
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -349,7 +349,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     *id of this collaborator
+     * id of this collaborator
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1071,7 +1071,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *id of this collaborator
+     * id of this collaborator
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1092,7 +1092,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *id of this collaborator
+     * id of this collaborator
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1111,7 +1111,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *id of this collaborator
+     * id of this collaborator
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1125,7 +1125,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *id of this collaborator
+     * id of this collaborator
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1149,7 +1149,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> appBuilder_;
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1161,7 +1161,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1177,7 +1177,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1198,7 +1198,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1217,7 +1217,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1240,7 +1240,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1259,7 +1259,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1272,7 +1272,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1288,7 +1288,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the app this collaborator has access to
+     * the app this collaborator has access to
      * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
      * </pre>
      *
@@ -1313,7 +1313,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> userBuilder_;
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1324,7 +1324,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1359,7 +1359,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1377,7 +1377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1399,7 +1399,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1417,7 +1417,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1429,7 +1429,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1444,7 +1444,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *who is this collaborator
+     * who is this collaborator
      * </pre>
      *
      * <code>.clarifai.api.User user = 3;</code>
@@ -1472,7 +1472,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1484,7 +1484,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1495,7 +1495,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1507,7 +1507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1520,7 +1520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1540,7 +1540,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1559,7 +1559,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1576,7 +1576,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>
@@ -1590,7 +1590,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *the permission this collaborator
+     * the permission this collaborator
      * </pre>
      *
      * <code>repeated string scopes = 4;</code>

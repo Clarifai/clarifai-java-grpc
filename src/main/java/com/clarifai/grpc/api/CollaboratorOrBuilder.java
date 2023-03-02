@@ -9,7 +9,7 @@ public interface CollaboratorOrBuilder extends
 
   /**
    * <pre>
-   *id of this collaborator
+   * id of this collaborator
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -18,7 +18,7 @@ public interface CollaboratorOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   *id of this collaborator
+   * id of this collaborator
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -29,7 +29,7 @@ public interface CollaboratorOrBuilder extends
 
   /**
    * <pre>
-   *the app this collaborator has access to
+   * the app this collaborator has access to
    * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
@@ -39,7 +39,7 @@ public interface CollaboratorOrBuilder extends
   boolean hasApp();
   /**
    * <pre>
-   *the app this collaborator has access to
+   * the app this collaborator has access to
    * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
@@ -49,7 +49,7 @@ public interface CollaboratorOrBuilder extends
   com.clarifai.grpc.api.App getApp();
   /**
    * <pre>
-   *the app this collaborator has access to
+   * the app this collaborator has access to
    * FIXME(zeiler): this should be in the user_app_id.app_id already from the endpoint.
    * </pre>
    *
@@ -59,7 +59,7 @@ public interface CollaboratorOrBuilder extends
 
   /**
    * <pre>
-   *who is this collaborator
+   * who is this collaborator
    * </pre>
    *
    * <code>.clarifai.api.User user = 3;</code>
@@ -68,7 +68,7 @@ public interface CollaboratorOrBuilder extends
   boolean hasUser();
   /**
    * <pre>
-   *who is this collaborator
+   * who is this collaborator
    * </pre>
    *
    * <code>.clarifai.api.User user = 3;</code>
@@ -77,7 +77,7 @@ public interface CollaboratorOrBuilder extends
   com.clarifai.grpc.api.User getUser();
   /**
    * <pre>
-   *who is this collaborator
+   * who is this collaborator
    * </pre>
    *
    * <code>.clarifai.api.User user = 3;</code>
@@ -86,7 +86,7 @@ public interface CollaboratorOrBuilder extends
 
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -96,7 +96,7 @@ public interface CollaboratorOrBuilder extends
       getScopesList();
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -105,7 +105,7 @@ public interface CollaboratorOrBuilder extends
   int getScopesCount();
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>
@@ -115,7 +115,7 @@ public interface CollaboratorOrBuilder extends
   java.lang.String getScopes(int index);
   /**
    * <pre>
-   *the permission this collaborator
+   * the permission this collaborator
    * </pre>
    *
    * <code>repeated string scopes = 4;</code>

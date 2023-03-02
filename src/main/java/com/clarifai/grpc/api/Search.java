@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     gitHash_ = "";
     algorithm_ = "";
+    metric_ = 0;
   }
 
   @java.lang.Override
@@ -162,6 +163,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 104: {
+            int rawValue = input.readEnum();
+
+            metric_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -194,6 +201,128 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Search_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Search.class, com.clarifai.grpc.api.Search.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Metric used for search. Can be EUCLIDEAN_DISTANCE (default) or COSINE_DISTANCE. 
+   * Currently only brute force search supports non-eudlicean metrics.
+   * </pre>
+   *
+   * Protobuf enum {@code clarifai.api.Search.Metric}
+   */
+  public enum Metric
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>METRIC_NOT_SET = 0;</code>
+     */
+    METRIC_NOT_SET(0),
+    /**
+     * <code>EUCLIDEAN_DISTANCE = 1;</code>
+     */
+    EUCLIDEAN_DISTANCE(1),
+    /**
+     * <code>COSINE_DISTANCE = 2;</code>
+     */
+    COSINE_DISTANCE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>METRIC_NOT_SET = 0;</code>
+     */
+    public static final int METRIC_NOT_SET_VALUE = 0;
+    /**
+     * <code>EUCLIDEAN_DISTANCE = 1;</code>
+     */
+    public static final int EUCLIDEAN_DISTANCE_VALUE = 1;
+    /**
+     * <code>COSINE_DISTANCE = 2;</code>
+     */
+    public static final int COSINE_DISTANCE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Metric valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Metric forNumber(int value) {
+      switch (value) {
+        case 0: return METRIC_NOT_SET;
+        case 1: return EUCLIDEAN_DISTANCE;
+        case 2: return COSINE_DISTANCE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Metric>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Metric> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Metric>() {
+            public Metric findValueByNumber(int number) {
+              return Metric.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Search.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Metric[] VALUES = values();
+
+    public static Metric valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Metric(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Search.Metric)
   }
 
   public static final int QUERY_FIELD_NUMBER = 1;
@@ -668,6 +797,25 @@ private static final long serialVersionUID = 0L;
     return getVisibility();
   }
 
+  public static final int METRIC_FIELD_NUMBER = 13;
+  private int metric_;
+  /**
+   * <code>.clarifai.api.Search.Metric metric = 13;</code>
+   * @return The enum numeric value on the wire for metric.
+   */
+  @java.lang.Override public int getMetricValue() {
+    return metric_;
+  }
+  /**
+   * <code>.clarifai.api.Search.Metric metric = 13;</code>
+   * @return The metric.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Search.Metric getMetric() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Search.Metric result = com.clarifai.grpc.api.Search.Metric.valueOf(metric_);
+    return result == null ? com.clarifai.grpc.api.Search.Metric.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -717,6 +865,9 @@ private static final long serialVersionUID = 0L;
     }
     if (visibility_ != null) {
       output.writeMessage(12, getVisibility());
+    }
+    if (metric_ != com.clarifai.grpc.api.Search.Metric.METRIC_NOT_SET.getNumber()) {
+      output.writeEnum(13, metric_);
     }
     unknownFields.writeTo(output);
   }
@@ -769,6 +920,10 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getVisibility());
+    }
+    if (metric_ != com.clarifai.grpc.api.Search.Metric.METRIC_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(13, metric_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -825,6 +980,7 @@ private static final long serialVersionUID = 0L;
       if (!getVisibility()
           .equals(other.getVisibility())) return false;
     }
+    if (metric_ != other.metric_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -872,6 +1028,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
     }
+    hash = (37 * hash) + METRIC_FIELD_NUMBER;
+    hash = (53 * hash) + metric_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1053,6 +1211,8 @@ private static final long serialVersionUID = 0L;
         visibility_ = null;
         visibilityBuilder_ = null;
       }
+      metric_ = 0;
+
       return this;
     }
 
@@ -1111,6 +1271,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.visibility_ = visibilityBuilder_.build();
       }
+      result.metric_ = metric_;
       onBuilt();
       return result;
     }
@@ -1199,6 +1360,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasVisibility()) {
         mergeVisibility(other.getVisibility());
+      }
+      if (other.metric_ != 0) {
+        setMetricValue(other.getMetricValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2629,6 +2793,60 @@ private static final long serialVersionUID = 0L;
         visibility_ = null;
       }
       return visibilityBuilder_;
+    }
+
+    private int metric_ = 0;
+    /**
+     * <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @return The enum numeric value on the wire for metric.
+     */
+    @java.lang.Override public int getMetricValue() {
+      return metric_;
+    }
+    /**
+     * <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @param value The enum numeric value on the wire for metric to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetricValue(int value) {
+      
+      metric_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @return The metric.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Search.Metric getMetric() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Search.Metric result = com.clarifai.grpc.api.Search.Metric.valueOf(metric_);
+      return result == null ? com.clarifai.grpc.api.Search.Metric.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @param value The metric to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetric(com.clarifai.grpc.api.Search.Metric value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      metric_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Search.Metric metric = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetric() {
+      
+      metric_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

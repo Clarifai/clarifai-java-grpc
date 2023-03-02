@@ -6122,6 +6122,68 @@ public final class V2Grpc {
     return getListInputsExtractionJobsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.CancelInputsExtractionJobsRequest,
+      com.clarifai.grpc.api.MultiInputsExtractionJobResponse> getCancelInputsExtractionJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelInputsExtractionJobs",
+      requestType = com.clarifai.grpc.api.CancelInputsExtractionJobsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiInputsExtractionJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.CancelInputsExtractionJobsRequest,
+      com.clarifai.grpc.api.MultiInputsExtractionJobResponse> getCancelInputsExtractionJobsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.CancelInputsExtractionJobsRequest, com.clarifai.grpc.api.MultiInputsExtractionJobResponse> getCancelInputsExtractionJobsMethod;
+    if ((getCancelInputsExtractionJobsMethod = V2Grpc.getCancelInputsExtractionJobsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getCancelInputsExtractionJobsMethod = V2Grpc.getCancelInputsExtractionJobsMethod) == null) {
+          V2Grpc.getCancelInputsExtractionJobsMethod = getCancelInputsExtractionJobsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.CancelInputsExtractionJobsRequest, com.clarifai.grpc.api.MultiInputsExtractionJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelInputsExtractionJobs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.CancelInputsExtractionJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiInputsExtractionJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("CancelInputsExtractionJobs"))
+              .build();
+        }
+      }
+    }
+    return getCancelInputsExtractionJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInputsUploadsRequest,
+      com.clarifai.grpc.api.MultiInputsAddJobResponse> getPostInputsUploadsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostInputsUploads",
+      requestType = com.clarifai.grpc.api.PostInputsUploadsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiInputsAddJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInputsUploadsRequest,
+      com.clarifai.grpc.api.MultiInputsAddJobResponse> getPostInputsUploadsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostInputsUploadsRequest, com.clarifai.grpc.api.MultiInputsAddJobResponse> getPostInputsUploadsMethod;
+    if ((getPostInputsUploadsMethod = V2Grpc.getPostInputsUploadsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostInputsUploadsMethod = V2Grpc.getPostInputsUploadsMethod) == null) {
+          V2Grpc.getPostInputsUploadsMethod = getPostInputsUploadsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostInputsUploadsRequest, com.clarifai.grpc.api.MultiInputsAddJobResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostInputsUploads"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostInputsUploadsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiInputsAddJobResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostInputsUploads"))
+              .build();
+        }
+      }
+    }
+    return getPostInputsUploadsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8154,6 +8216,20 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListInputsExtractionJobsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void cancelInputsExtractionJobs(com.clarifai.grpc.api.CancelInputsExtractionJobsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsExtractionJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelInputsExtractionJobsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostInputsUploadsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -9535,6 +9611,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.ListInputsExtractionJobsRequest,
                 com.clarifai.grpc.api.MultiInputsExtractionJobResponse>(
                   this, METHODID_LIST_INPUTS_EXTRACTION_JOBS)))
+          .addMethod(
+            getCancelInputsExtractionJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.CancelInputsExtractionJobsRequest,
+                com.clarifai.grpc.api.MultiInputsExtractionJobResponse>(
+                  this, METHODID_CANCEL_INPUTS_EXTRACTION_JOBS)))
+          .addMethod(
+            getPostInputsUploadsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostInputsUploadsRequest,
+                com.clarifai.grpc.api.MultiInputsAddJobResponse>(
+                  this, METHODID_POST_INPUTS_UPLOADS)))
           .build();
     }
   }
@@ -11733,6 +11823,22 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListInputsExtractionJobsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void cancelInputsExtractionJobs(com.clarifai.grpc.api.CancelInputsExtractionJobsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsExtractionJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelInputsExtractionJobsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostInputsUploadsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -13731,6 +13837,20 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiInputsExtractionJobResponse listInputsExtractionJobs(com.clarifai.grpc.api.ListInputsExtractionJobsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListInputsExtractionJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiInputsExtractionJobResponse cancelInputsExtractionJobs(com.clarifai.grpc.api.CancelInputsExtractionJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelInputsExtractionJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiInputsAddJobResponse postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostInputsUploadsMethod(), getCallOptions(), request);
     }
   }
 
@@ -15928,6 +16048,22 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListInputsExtractionJobsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputsExtractionJobResponse> cancelInputsExtractionJobs(
+        com.clarifai.grpc.api.CancelInputsExtractionJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelInputsExtractionJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputsAddJobResponse> postInputsUploads(
+        com.clarifai.grpc.api.PostInputsUploadsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostInputsUploadsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -16127,6 +16263,8 @@ public final class V2Grpc {
   private static final int METHODID_POST_INPUTS_DATA_SOURCES = 194;
   private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 195;
   private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 196;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 197;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 198;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -16933,6 +17071,14 @@ public final class V2Grpc {
           serviceImpl.listInputsExtractionJobs((com.clarifai.grpc.api.ListInputsExtractionJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsExtractionJobResponse>) responseObserver);
           break;
+        case METHODID_CANCEL_INPUTS_EXTRACTION_JOBS:
+          serviceImpl.cancelInputsExtractionJobs((com.clarifai.grpc.api.CancelInputsExtractionJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsExtractionJobResponse>) responseObserver);
+          break;
+        case METHODID_POST_INPUTS_UPLOADS:
+          serviceImpl.postInputsUploads((com.clarifai.grpc.api.PostInputsUploadsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -17191,6 +17337,8 @@ public final class V2Grpc {
               .addMethod(getPostInputsDataSourcesMethod())
               .addMethod(getGetInputsExtractionJobMethod())
               .addMethod(getListInputsExtractionJobsMethod())
+              .addMethod(getCancelInputsExtractionJobsMethod())
+              .addMethod(getPostInputsUploadsMethod())
               .build();
         }
       }

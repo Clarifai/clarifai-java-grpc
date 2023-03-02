@@ -9,7 +9,7 @@ public interface CollaborationOrBuilder extends
 
   /**
    * <pre>
-   *the application
+   * the application
    * </pre>
    *
    * <code>.clarifai.api.App app = 1;</code>
@@ -18,7 +18,7 @@ public interface CollaborationOrBuilder extends
   boolean hasApp();
   /**
    * <pre>
-   *the application
+   * the application
    * </pre>
    *
    * <code>.clarifai.api.App app = 1;</code>
@@ -27,7 +27,7 @@ public interface CollaborationOrBuilder extends
   com.clarifai.grpc.api.App getApp();
   /**
    * <pre>
-   *the application
+   * the application
    * </pre>
    *
    * <code>.clarifai.api.App app = 1;</code>
@@ -36,7 +36,7 @@ public interface CollaborationOrBuilder extends
 
   /**
    * <pre>
-   *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+   * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
    * </pre>
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
@@ -45,7 +45,7 @@ public interface CollaborationOrBuilder extends
   boolean hasAppOwner();
   /**
    * <pre>
-   *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+   * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
    * </pre>
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
@@ -54,7 +54,7 @@ public interface CollaborationOrBuilder extends
   com.clarifai.grpc.api.User getAppOwner();
   /**
    * <pre>
-   *the app owner's info(including user_unique_id, first_name, last_name, primary_email)
+   * the app owner's info(including user_unique_id, first_name, last_name, primary_email)
    * </pre>
    *
    * <code>.clarifai.api.User app_owner = 2;</code>
@@ -63,7 +63,7 @@ public interface CollaborationOrBuilder extends
 
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -73,7 +73,7 @@ public interface CollaborationOrBuilder extends
       getScopesList();
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -82,7 +82,7 @@ public interface CollaborationOrBuilder extends
   int getScopesCount();
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -92,7 +92,7 @@ public interface CollaborationOrBuilder extends
   java.lang.String getScopes(int index);
   /**
    * <pre>
-   *the low-level scope users are shared with for this collaboration
+   * the low-level scope users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string scopes = 3;</code>
@@ -104,7 +104,7 @@ public interface CollaborationOrBuilder extends
 
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -114,7 +114,7 @@ public interface CollaborationOrBuilder extends
       getEndpointsList();
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -123,7 +123,7 @@ public interface CollaborationOrBuilder extends
   int getEndpointsCount();
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -133,7 +133,7 @@ public interface CollaborationOrBuilder extends
   java.lang.String getEndpoints(int index);
   /**
    * <pre>
-   *the endpoint-level scopes users are shared with for this collaboration
+   * the endpoint-level scopes users are shared with for this collaboration
    * </pre>
    *
    * <code>repeated string endpoints = 4;</code>
@@ -145,7 +145,7 @@ public interface CollaborationOrBuilder extends
 
   /**
    * <pre>
-   *when is the collaboration created
+   * when is the collaboration created
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -154,7 +154,7 @@ public interface CollaborationOrBuilder extends
   boolean hasCreatedAt();
   /**
    * <pre>
-   *when is the collaboration created
+   * when is the collaboration created
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -163,7 +163,7 @@ public interface CollaborationOrBuilder extends
   com.google.protobuf.Timestamp getCreatedAt();
   /**
    * <pre>
-   *when is the collaboration created
+   * when is the collaboration created
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>

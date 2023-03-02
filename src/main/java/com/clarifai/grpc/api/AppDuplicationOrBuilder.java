@@ -9,7 +9,7 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *the id of app duplication
+   * the id of app duplication
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -18,7 +18,7 @@ public interface AppDuplicationOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   *the id of app duplication
+   * the id of app duplication
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -53,7 +53,7 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *the name of new app. If provided, we will create a new application with this name.
+   * the name of new app. If provided, we will create a new application with this name.
    * You can not set this if existing_app_id is set.
    * </pre>
    *
@@ -63,7 +63,7 @@ public interface AppDuplicationOrBuilder extends
   java.lang.String getNewAppName();
   /**
    * <pre>
-   *the name of new app. If provided, we will create a new application with this name.
+   * the name of new app. If provided, we will create a new application with this name.
    * You can not set this if existing_app_id is set.
    * </pre>
    *
@@ -75,7 +75,7 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *the status of app duplication
+   * the status of app duplication
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -84,7 +84,7 @@ public interface AppDuplicationOrBuilder extends
   boolean hasStatus();
   /**
    * <pre>
-   *the status of app duplication
+   * the status of app duplication
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -93,7 +93,7 @@ public interface AppDuplicationOrBuilder extends
   com.clarifai.grpc.api.status.Status getStatus();
   /**
    * <pre>
-   *the status of app duplication
+   * the status of app duplication
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -102,7 +102,7 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *when is the app duplication triggered
+   * when is the app duplication triggered
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -111,7 +111,7 @@ public interface AppDuplicationOrBuilder extends
   boolean hasCreatedAt();
   /**
    * <pre>
-   *when is the app duplication triggered
+   * when is the app duplication triggered
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -120,7 +120,7 @@ public interface AppDuplicationOrBuilder extends
   com.google.protobuf.Timestamp getCreatedAt();
   /**
    * <pre>
-   *when is the app duplication triggered
+   * when is the app duplication triggered
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -129,7 +129,7 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   *The last time when is the status got updated
+   * The last time when is the status got updated
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -138,7 +138,7 @@ public interface AppDuplicationOrBuilder extends
   boolean hasLastModifiedAt();
   /**
    * <pre>
-   *The last time when is the status got updated
+   * The last time when is the status got updated
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -147,7 +147,7 @@ public interface AppDuplicationOrBuilder extends
   com.google.protobuf.Timestamp getLastModifiedAt();
   /**
    * <pre>
-   *The last time when is the status got updated
+   * The last time when is the status got updated
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>

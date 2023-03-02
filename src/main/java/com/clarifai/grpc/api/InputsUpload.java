@@ -4,26 +4,27 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf type {@code clarifai.api.InputsDataSource}
+ * Protobuf type {@code clarifai.api.InputsUpload}
  */
-public final class InputsDataSource extends
+public final class InputsUpload extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.InputsDataSource)
-    InputsDataSourceOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.InputsUpload)
+    InputsUploadOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use InputsDataSource.newBuilder() to construct.
-  private InputsDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use InputsUpload.newBuilder() to construct.
+  private InputsUpload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private InputsDataSource() {
+  private InputsUpload() {
     inputsAddJobId_ = "";
+    appPat_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new InputsDataSource();
+    return new InputsUpload();
   }
 
   @java.lang.Override
@@ -31,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private InputsDataSource(
+  private InputsUpload(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -56,14 +57,20 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.clarifai.grpc.api.DataSourceURL.Builder subBuilder = null;
-            if (url_ != null) {
-              subBuilder = url_.toBuilder();
+            java.lang.String s = input.readStringRequireUtf8();
+
+            appPat_ = s;
+            break;
+          }
+          case 26: {
+            com.clarifai.grpc.api.Upload.Builder subBuilder = null;
+            if (upload_ != null) {
+              subBuilder = upload_.toBuilder();
             }
-            url_ = input.readMessage(com.clarifai.grpc.api.DataSourceURL.parser(), extensionRegistry);
+            upload_ = input.readMessage(com.clarifai.grpc.api.Upload.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(url_);
-              url_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(upload_);
+              upload_ = subBuilder.buildPartial();
             }
 
             break;
@@ -91,15 +98,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsDataSource_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsUpload_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsDataSource_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsUpload_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.InputsDataSource.class, com.clarifai.grpc.api.InputsDataSource.Builder.class);
+            com.clarifai.grpc.api.InputsUpload.class, com.clarifai.grpc.api.InputsUpload.Builder.class);
   }
 
   public static final int INPUTS_ADD_JOB_ID_FIELD_NUMBER = 1;
@@ -107,7 +114,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Collect statistics about created inputs in job with given ID.
-   * On Post call:
    * * If job ID is empty, then job is automatically created with random ID.
    * * If job ID is non-empty, then a new job will be created with given ID.
    * </pre>
@@ -131,7 +137,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Collect statistics about created inputs in job with given ID.
-   * On Post call:
    * * If job ID is empty, then job is automatically created with random ID.
    * * If job ID is non-empty, then a new job will be created with given ID.
    * </pre>
@@ -154,30 +159,76 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int URL_FIELD_NUMBER = 2;
-  private com.clarifai.grpc.api.DataSourceURL url_;
+  public static final int APP_PAT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object appPat_;
   /**
-   * <code>.clarifai.api.DataSourceURL url = 2;</code>
-   * @return Whether the url field is set.
+   * <pre>
+   * Personal Access Token to the application to which inputs are added
+   * </pre>
+   *
+   * <code>string app_pat = 2;</code>
+   * @return The appPat.
    */
   @java.lang.Override
-  public boolean hasUrl() {
-    return url_ != null;
+  public java.lang.String getAppPat() {
+    java.lang.Object ref = appPat_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appPat_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.clarifai.api.DataSourceURL url = 2;</code>
-   * @return The url.
+   * <pre>
+   * Personal Access Token to the application to which inputs are added
+   * </pre>
+   *
+   * <code>string app_pat = 2;</code>
+   * @return The bytes for appPat.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.DataSourceURL getUrl() {
-    return url_ == null ? com.clarifai.grpc.api.DataSourceURL.getDefaultInstance() : url_;
+  public com.google.protobuf.ByteString
+      getAppPatBytes() {
+    java.lang.Object ref = appPat_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      appPat_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UPLOAD_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.Upload upload_;
+  /**
+   * <code>.clarifai.api.Upload upload = 3;</code>
+   * @return Whether the upload field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpload() {
+    return upload_ != null;
   }
   /**
-   * <code>.clarifai.api.DataSourceURL url = 2;</code>
+   * <code>.clarifai.api.Upload upload = 3;</code>
+   * @return The upload.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.DataSourceURLOrBuilder getUrlOrBuilder() {
-    return getUrl();
+  public com.clarifai.grpc.api.Upload getUpload() {
+    return upload_ == null ? com.clarifai.grpc.api.Upload.getDefaultInstance() : upload_;
+  }
+  /**
+   * <code>.clarifai.api.Upload upload = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.UploadOrBuilder getUploadOrBuilder() {
+    return getUpload();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -197,8 +248,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputsAddJobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputsAddJobId_);
     }
-    if (url_ != null) {
-      output.writeMessage(2, getUrl());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appPat_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appPat_);
+    }
+    if (upload_ != null) {
+      output.writeMessage(3, getUpload());
     }
     unknownFields.writeTo(output);
   }
@@ -212,9 +266,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputsAddJobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputsAddJobId_);
     }
-    if (url_ != null) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appPat_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appPat_);
+    }
+    if (upload_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUrl());
+        .computeMessageSize(3, getUpload());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,17 +283,19 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.InputsDataSource)) {
+    if (!(obj instanceof com.clarifai.grpc.api.InputsUpload)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.InputsDataSource other = (com.clarifai.grpc.api.InputsDataSource) obj;
+    com.clarifai.grpc.api.InputsUpload other = (com.clarifai.grpc.api.InputsUpload) obj;
 
     if (!getInputsAddJobId()
         .equals(other.getInputsAddJobId())) return false;
-    if (hasUrl() != other.hasUrl()) return false;
-    if (hasUrl()) {
-      if (!getUrl()
-          .equals(other.getUrl())) return false;
+    if (!getAppPat()
+        .equals(other.getAppPat())) return false;
+    if (hasUpload() != other.hasUpload()) return false;
+    if (hasUpload()) {
+      if (!getUpload()
+          .equals(other.getUpload())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -251,78 +310,80 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + INPUTS_ADD_JOB_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInputsAddJobId().hashCode();
-    if (hasUrl()) {
-      hash = (37 * hash) + URL_FIELD_NUMBER;
-      hash = (53 * hash) + getUrl().hashCode();
+    hash = (37 * hash) + APP_PAT_FIELD_NUMBER;
+    hash = (53 * hash) + getAppPat().hashCode();
+    if (hasUpload()) {
+      hash = (37 * hash) + UPLOAD_FIELD_NUMBER;
+      hash = (53 * hash) + getUpload().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.InputsUpload parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseDelimitedFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.InputsDataSource parseFrom(
+  public static com.clarifai.grpc.api.InputsUpload parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -335,7 +396,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.InputsDataSource prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.InputsUpload prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -351,26 +412,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code clarifai.api.InputsDataSource}
+   * Protobuf type {@code clarifai.api.InputsUpload}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.InputsDataSource)
-      com.clarifai.grpc.api.InputsDataSourceOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.InputsUpload)
+      com.clarifai.grpc.api.InputsUploadOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsDataSource_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsUpload_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsDataSource_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsUpload_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.InputsDataSource.class, com.clarifai.grpc.api.InputsDataSource.Builder.class);
+              com.clarifai.grpc.api.InputsUpload.class, com.clarifai.grpc.api.InputsUpload.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.InputsDataSource.newBuilder()
+    // Construct using com.clarifai.grpc.api.InputsUpload.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -390,11 +451,13 @@ private static final long serialVersionUID = 0L;
       super.clear();
       inputsAddJobId_ = "";
 
-      if (urlBuilder_ == null) {
-        url_ = null;
+      appPat_ = "";
+
+      if (uploadBuilder_ == null) {
+        upload_ = null;
       } else {
-        url_ = null;
-        urlBuilder_ = null;
+        upload_ = null;
+        uploadBuilder_ = null;
       }
       return this;
     }
@@ -402,17 +465,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsDataSource_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsUpload_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.InputsDataSource getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.InputsDataSource.getDefaultInstance();
+    public com.clarifai.grpc.api.InputsUpload getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.InputsUpload.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.InputsDataSource build() {
-      com.clarifai.grpc.api.InputsDataSource result = buildPartial();
+    public com.clarifai.grpc.api.InputsUpload build() {
+      com.clarifai.grpc.api.InputsUpload result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -420,13 +483,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.InputsDataSource buildPartial() {
-      com.clarifai.grpc.api.InputsDataSource result = new com.clarifai.grpc.api.InputsDataSource(this);
+    public com.clarifai.grpc.api.InputsUpload buildPartial() {
+      com.clarifai.grpc.api.InputsUpload result = new com.clarifai.grpc.api.InputsUpload(this);
       result.inputsAddJobId_ = inputsAddJobId_;
-      if (urlBuilder_ == null) {
-        result.url_ = url_;
+      result.appPat_ = appPat_;
+      if (uploadBuilder_ == null) {
+        result.upload_ = upload_;
       } else {
-        result.url_ = urlBuilder_.build();
+        result.upload_ = uploadBuilder_.build();
       }
       onBuilt();
       return result;
@@ -466,22 +530,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.InputsDataSource) {
-        return mergeFrom((com.clarifai.grpc.api.InputsDataSource)other);
+      if (other instanceof com.clarifai.grpc.api.InputsUpload) {
+        return mergeFrom((com.clarifai.grpc.api.InputsUpload)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.InputsDataSource other) {
-      if (other == com.clarifai.grpc.api.InputsDataSource.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.InputsUpload other) {
+      if (other == com.clarifai.grpc.api.InputsUpload.getDefaultInstance()) return this;
       if (!other.getInputsAddJobId().isEmpty()) {
         inputsAddJobId_ = other.inputsAddJobId_;
         onChanged();
       }
-      if (other.hasUrl()) {
-        mergeUrl(other.getUrl());
+      if (!other.getAppPat().isEmpty()) {
+        appPat_ = other.appPat_;
+        onChanged();
+      }
+      if (other.hasUpload()) {
+        mergeUpload(other.getUpload());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -498,11 +566,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.InputsDataSource parsedMessage = null;
+      com.clarifai.grpc.api.InputsUpload parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.InputsDataSource) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.InputsUpload) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -516,7 +584,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      * </pre>
@@ -539,7 +606,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      * </pre>
@@ -563,7 +629,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      * </pre>
@@ -585,7 +650,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      * </pre>
@@ -602,7 +666,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Collect statistics about created inputs in job with given ID.
-     * On Post call:
      * * If job ID is empty, then job is automatically created with random ID.
      * * If job ID is non-empty, then a new job will be created with given ID.
      * </pre>
@@ -623,123 +686,219 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.DataSourceURL url_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DataSourceURL, com.clarifai.grpc.api.DataSourceURL.Builder, com.clarifai.grpc.api.DataSourceURLOrBuilder> urlBuilder_;
+    private java.lang.Object appPat_ = "";
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
-     * @return Whether the url field is set.
+     * <pre>
+     * Personal Access Token to the application to which inputs are added
+     * </pre>
+     *
+     * <code>string app_pat = 2;</code>
+     * @return The appPat.
      */
-    public boolean hasUrl() {
-      return urlBuilder_ != null || url_ != null;
-    }
-    /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
-     * @return The url.
-     */
-    public com.clarifai.grpc.api.DataSourceURL getUrl() {
-      if (urlBuilder_ == null) {
-        return url_ == null ? com.clarifai.grpc.api.DataSourceURL.getDefaultInstance() : url_;
+    public java.lang.String getAppPat() {
+      java.lang.Object ref = appPat_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appPat_ = s;
+        return s;
       } else {
-        return urlBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <pre>
+     * Personal Access Token to the application to which inputs are added
+     * </pre>
+     *
+     * <code>string app_pat = 2;</code>
+     * @return The bytes for appPat.
      */
-    public Builder setUrl(com.clarifai.grpc.api.DataSourceURL value) {
-      if (urlBuilder_ == null) {
+    public com.google.protobuf.ByteString
+        getAppPatBytes() {
+      java.lang.Object ref = appPat_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appPat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Personal Access Token to the application to which inputs are added
+     * </pre>
+     *
+     * <code>string app_pat = 2;</code>
+     * @param value The appPat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppPat(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appPat_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Personal Access Token to the application to which inputs are added
+     * </pre>
+     *
+     * <code>string app_pat = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAppPat() {
+      
+      appPat_ = getDefaultInstance().getAppPat();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Personal Access Token to the application to which inputs are added
+     * </pre>
+     *
+     * <code>string app_pat = 2;</code>
+     * @param value The bytes for appPat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppPatBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appPat_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.Upload upload_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Upload, com.clarifai.grpc.api.Upload.Builder, com.clarifai.grpc.api.UploadOrBuilder> uploadBuilder_;
+    /**
+     * <code>.clarifai.api.Upload upload = 3;</code>
+     * @return Whether the upload field is set.
+     */
+    public boolean hasUpload() {
+      return uploadBuilder_ != null || upload_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Upload upload = 3;</code>
+     * @return The upload.
+     */
+    public com.clarifai.grpc.api.Upload getUpload() {
+      if (uploadBuilder_ == null) {
+        return upload_ == null ? com.clarifai.grpc.api.Upload.getDefaultInstance() : upload_;
+      } else {
+        return uploadBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Upload upload = 3;</code>
+     */
+    public Builder setUpload(com.clarifai.grpc.api.Upload value) {
+      if (uploadBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        url_ = value;
+        upload_ = value;
         onChanged();
       } else {
-        urlBuilder_.setMessage(value);
+        uploadBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <code>.clarifai.api.Upload upload = 3;</code>
      */
-    public Builder setUrl(
-        com.clarifai.grpc.api.DataSourceURL.Builder builderForValue) {
-      if (urlBuilder_ == null) {
-        url_ = builderForValue.build();
+    public Builder setUpload(
+        com.clarifai.grpc.api.Upload.Builder builderForValue) {
+      if (uploadBuilder_ == null) {
+        upload_ = builderForValue.build();
         onChanged();
       } else {
-        urlBuilder_.setMessage(builderForValue.build());
+        uploadBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <code>.clarifai.api.Upload upload = 3;</code>
      */
-    public Builder mergeUrl(com.clarifai.grpc.api.DataSourceURL value) {
-      if (urlBuilder_ == null) {
-        if (url_ != null) {
-          url_ =
-            com.clarifai.grpc.api.DataSourceURL.newBuilder(url_).mergeFrom(value).buildPartial();
+    public Builder mergeUpload(com.clarifai.grpc.api.Upload value) {
+      if (uploadBuilder_ == null) {
+        if (upload_ != null) {
+          upload_ =
+            com.clarifai.grpc.api.Upload.newBuilder(upload_).mergeFrom(value).buildPartial();
         } else {
-          url_ = value;
+          upload_ = value;
         }
         onChanged();
       } else {
-        urlBuilder_.mergeFrom(value);
+        uploadBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <code>.clarifai.api.Upload upload = 3;</code>
      */
-    public Builder clearUrl() {
-      if (urlBuilder_ == null) {
-        url_ = null;
+    public Builder clearUpload() {
+      if (uploadBuilder_ == null) {
+        upload_ = null;
         onChanged();
       } else {
-        url_ = null;
-        urlBuilder_ = null;
+        upload_ = null;
+        uploadBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <code>.clarifai.api.Upload upload = 3;</code>
      */
-    public com.clarifai.grpc.api.DataSourceURL.Builder getUrlBuilder() {
+    public com.clarifai.grpc.api.Upload.Builder getUploadBuilder() {
       
       onChanged();
-      return getUrlFieldBuilder().getBuilder();
+      return getUploadFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <code>.clarifai.api.Upload upload = 3;</code>
      */
-    public com.clarifai.grpc.api.DataSourceURLOrBuilder getUrlOrBuilder() {
-      if (urlBuilder_ != null) {
-        return urlBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.UploadOrBuilder getUploadOrBuilder() {
+      if (uploadBuilder_ != null) {
+        return uploadBuilder_.getMessageOrBuilder();
       } else {
-        return url_ == null ?
-            com.clarifai.grpc.api.DataSourceURL.getDefaultInstance() : url_;
+        return upload_ == null ?
+            com.clarifai.grpc.api.Upload.getDefaultInstance() : upload_;
       }
     }
     /**
-     * <code>.clarifai.api.DataSourceURL url = 2;</code>
+     * <code>.clarifai.api.Upload upload = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DataSourceURL, com.clarifai.grpc.api.DataSourceURL.Builder, com.clarifai.grpc.api.DataSourceURLOrBuilder> 
-        getUrlFieldBuilder() {
-      if (urlBuilder_ == null) {
-        urlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.DataSourceURL, com.clarifai.grpc.api.DataSourceURL.Builder, com.clarifai.grpc.api.DataSourceURLOrBuilder>(
-                getUrl(),
+        com.clarifai.grpc.api.Upload, com.clarifai.grpc.api.Upload.Builder, com.clarifai.grpc.api.UploadOrBuilder> 
+        getUploadFieldBuilder() {
+      if (uploadBuilder_ == null) {
+        uploadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Upload, com.clarifai.grpc.api.Upload.Builder, com.clarifai.grpc.api.UploadOrBuilder>(
+                getUpload(),
                 getParentForChildren(),
                 isClean());
-        url_ = null;
+        upload_ = null;
       }
-      return urlBuilder_;
+      return uploadBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -754,41 +913,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.InputsDataSource)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.InputsUpload)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.InputsDataSource)
-  private static final com.clarifai.grpc.api.InputsDataSource DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.InputsUpload)
+  private static final com.clarifai.grpc.api.InputsUpload DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.InputsDataSource();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.InputsUpload();
   }
 
-  public static com.clarifai.grpc.api.InputsDataSource getDefaultInstance() {
+  public static com.clarifai.grpc.api.InputsUpload getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InputsDataSource>
-      PARSER = new com.google.protobuf.AbstractParser<InputsDataSource>() {
+  private static final com.google.protobuf.Parser<InputsUpload>
+      PARSER = new com.google.protobuf.AbstractParser<InputsUpload>() {
     @java.lang.Override
-    public InputsDataSource parsePartialFrom(
+    public InputsUpload parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InputsDataSource(input, extensionRegistry);
+      return new InputsUpload(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<InputsDataSource> parser() {
+  public static com.google.protobuf.Parser<InputsUpload> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<InputsDataSource> getParserForType() {
+  public com.google.protobuf.Parser<InputsUpload> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.InputsDataSource getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.InputsUpload getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
