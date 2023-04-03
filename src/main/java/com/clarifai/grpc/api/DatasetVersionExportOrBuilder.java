@@ -82,4 +82,14 @@ public interface DatasetVersionExportOrBuilder extends
    * @return The size.
    */
   long getSize();
+
+  /**
+   * <pre>
+   * whether to include embeddings in the export or not.
+   * </pre>
+   *
+   * <code>bool include_embeddings = 5;</code>
+   * @return The includeEmbeddings.
+   */
+  boolean getIncludeEmbeddings();
 }

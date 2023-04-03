@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private MultiModelTypeResponse() {
     modelTypes_ = java.util.Collections.emptyList();
+    tritonCondaEnvsInfo_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -89,6 +90,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              tritonCondaEnvsInfo_ = new java.util.ArrayList<com.clarifai.grpc.api.TritonCondaEnvInfo>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            tritonCondaEnvsInfo_.add(
+                input.readMessage(com.clarifai.grpc.api.TritonCondaEnvInfo.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -108,6 +118,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         modelTypes_ = java.util.Collections.unmodifiableList(modelTypes_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        tritonCondaEnvsInfo_ = java.util.Collections.unmodifiableList(tritonCondaEnvsInfo_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -262,6 +275,66 @@ private static final long serialVersionUID = 0L;
     return getModelImporters();
   }
 
+  public static final int TRITON_CONDA_ENVS_INFO_FIELD_NUMBER = 4;
+  private java.util.List<com.clarifai.grpc.api.TritonCondaEnvInfo> tritonCondaEnvsInfo_;
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.TritonCondaEnvInfo> getTritonCondaEnvsInfoList() {
+    return tritonCondaEnvsInfo_;
+  }
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder> 
+      getTritonCondaEnvsInfoOrBuilderList() {
+    return tritonCondaEnvsInfo_;
+  }
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  @java.lang.Override
+  public int getTritonCondaEnvsInfoCount() {
+    return tritonCondaEnvsInfo_.size();
+  }
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TritonCondaEnvInfo getTritonCondaEnvsInfo(int index) {
+    return tritonCondaEnvsInfo_.get(index);
+  }
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder getTritonCondaEnvsInfoOrBuilder(
+      int index) {
+    return tritonCondaEnvsInfo_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -285,6 +358,9 @@ private static final long serialVersionUID = 0L;
     if (modelImporters_ != null) {
       output.writeMessage(3, getModelImporters());
     }
+    for (int i = 0; i < tritonCondaEnvsInfo_.size(); i++) {
+      output.writeMessage(4, tritonCondaEnvsInfo_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -305,6 +381,10 @@ private static final long serialVersionUID = 0L;
     if (modelImporters_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getModelImporters());
+    }
+    for (int i = 0; i < tritonCondaEnvsInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, tritonCondaEnvsInfo_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -333,6 +413,8 @@ private static final long serialVersionUID = 0L;
       if (!getModelImporters()
           .equals(other.getModelImporters())) return false;
     }
+    if (!getTritonCondaEnvsInfoList()
+        .equals(other.getTritonCondaEnvsInfoList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -355,6 +437,10 @@ private static final long serialVersionUID = 0L;
     if (hasModelImporters()) {
       hash = (37 * hash) + MODEL_IMPORTERS_FIELD_NUMBER;
       hash = (53 * hash) + getModelImporters().hashCode();
+    }
+    if (getTritonCondaEnvsInfoCount() > 0) {
+      hash = (37 * hash) + TRITON_CONDA_ENVS_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTritonCondaEnvsInfoList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -489,6 +575,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getModelTypesFieldBuilder();
+        getTritonCondaEnvsInfoFieldBuilder();
       }
     }
     @java.lang.Override
@@ -511,6 +598,12 @@ private static final long serialVersionUID = 0L;
       } else {
         modelImporters_ = null;
         modelImportersBuilder_ = null;
+      }
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        tritonCondaEnvsInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        tritonCondaEnvsInfoBuilder_.clear();
       }
       return this;
     }
@@ -557,6 +650,15 @@ private static final long serialVersionUID = 0L;
         result.modelImporters_ = modelImporters_;
       } else {
         result.modelImporters_ = modelImportersBuilder_.build();
+      }
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          tritonCondaEnvsInfo_ = java.util.Collections.unmodifiableList(tritonCondaEnvsInfo_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.tritonCondaEnvsInfo_ = tritonCondaEnvsInfo_;
+      } else {
+        result.tritonCondaEnvsInfo_ = tritonCondaEnvsInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -637,6 +739,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModelImporters()) {
         mergeModelImporters(other.getModelImporters());
+      }
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        if (!other.tritonCondaEnvsInfo_.isEmpty()) {
+          if (tritonCondaEnvsInfo_.isEmpty()) {
+            tritonCondaEnvsInfo_ = other.tritonCondaEnvsInfo_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureTritonCondaEnvsInfoIsMutable();
+            tritonCondaEnvsInfo_.addAll(other.tritonCondaEnvsInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tritonCondaEnvsInfo_.isEmpty()) {
+          if (tritonCondaEnvsInfoBuilder_.isEmpty()) {
+            tritonCondaEnvsInfoBuilder_.dispose();
+            tritonCondaEnvsInfoBuilder_ = null;
+            tritonCondaEnvsInfo_ = other.tritonCondaEnvsInfo_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            tritonCondaEnvsInfoBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getTritonCondaEnvsInfoFieldBuilder() : null;
+          } else {
+            tritonCondaEnvsInfoBuilder_.addAllMessages(other.tritonCondaEnvsInfo_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1288,6 +1416,318 @@ private static final long serialVersionUID = 0L;
         modelImporters_ = null;
       }
       return modelImportersBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.TritonCondaEnvInfo> tritonCondaEnvsInfo_ =
+      java.util.Collections.emptyList();
+    private void ensureTritonCondaEnvsInfoIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        tritonCondaEnvsInfo_ = new java.util.ArrayList<com.clarifai.grpc.api.TritonCondaEnvInfo>(tritonCondaEnvsInfo_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.TritonCondaEnvInfo, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder, com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder> tritonCondaEnvsInfoBuilder_;
+
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.TritonCondaEnvInfo> getTritonCondaEnvsInfoList() {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tritonCondaEnvsInfo_);
+      } else {
+        return tritonCondaEnvsInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public int getTritonCondaEnvsInfoCount() {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        return tritonCondaEnvsInfo_.size();
+      } else {
+        return tritonCondaEnvsInfoBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TritonCondaEnvInfo getTritonCondaEnvsInfo(int index) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        return tritonCondaEnvsInfo_.get(index);
+      } else {
+        return tritonCondaEnvsInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder setTritonCondaEnvsInfo(
+        int index, com.clarifai.grpc.api.TritonCondaEnvInfo value) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.set(index, value);
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder setTritonCondaEnvsInfo(
+        int index, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder builderForValue) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder addTritonCondaEnvsInfo(com.clarifai.grpc.api.TritonCondaEnvInfo value) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.add(value);
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder addTritonCondaEnvsInfo(
+        int index, com.clarifai.grpc.api.TritonCondaEnvInfo value) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.add(index, value);
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder addTritonCondaEnvsInfo(
+        com.clarifai.grpc.api.TritonCondaEnvInfo.Builder builderForValue) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder addTritonCondaEnvsInfo(
+        int index, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder builderForValue) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder addAllTritonCondaEnvsInfo(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.TritonCondaEnvInfo> values) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        ensureTritonCondaEnvsInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tritonCondaEnvsInfo_);
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder clearTritonCondaEnvsInfo() {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        tritonCondaEnvsInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public Builder removeTritonCondaEnvsInfo(int index) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        ensureTritonCondaEnvsInfoIsMutable();
+        tritonCondaEnvsInfo_.remove(index);
+        onChanged();
+      } else {
+        tritonCondaEnvsInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TritonCondaEnvInfo.Builder getTritonCondaEnvsInfoBuilder(
+        int index) {
+      return getTritonCondaEnvsInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder getTritonCondaEnvsInfoOrBuilder(
+        int index) {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        return tritonCondaEnvsInfo_.get(index);  } else {
+        return tritonCondaEnvsInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder> 
+         getTritonCondaEnvsInfoOrBuilderList() {
+      if (tritonCondaEnvsInfoBuilder_ != null) {
+        return tritonCondaEnvsInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tritonCondaEnvsInfo_);
+      }
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TritonCondaEnvInfo.Builder addTritonCondaEnvsInfoBuilder() {
+      return getTritonCondaEnvsInfoFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.TritonCondaEnvInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.TritonCondaEnvInfo.Builder addTritonCondaEnvsInfoBuilder(
+        int index) {
+      return getTritonCondaEnvsInfoFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.TritonCondaEnvInfo.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Triton model envs that can be used for model upload
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.TritonCondaEnvInfo.Builder> 
+         getTritonCondaEnvsInfoBuilderList() {
+      return getTritonCondaEnvsInfoFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.TritonCondaEnvInfo, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder, com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder> 
+        getTritonCondaEnvsInfoFieldBuilder() {
+      if (tritonCondaEnvsInfoBuilder_ == null) {
+        tritonCondaEnvsInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.TritonCondaEnvInfo, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder, com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder>(
+                tritonCondaEnvsInfo_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        tritonCondaEnvsInfo_ = null;
+      }
+      return tritonCondaEnvsInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

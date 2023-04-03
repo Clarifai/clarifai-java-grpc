@@ -67,10 +67,18 @@ private static final long serialVersionUID = 0L;
             credentialsCase_ = 2;
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            credentialsCase_ = 3;
-            credentials_ = s;
+          case 34: {
+            com.clarifai.grpc.api.AzureBlobCreds.Builder subBuilder = null;
+            if (credentialsCase_ == 4) {
+              subBuilder = ((com.clarifai.grpc.api.AzureBlobCreds) credentials_).toBuilder();
+            }
+            credentials_ =
+                input.readMessage(com.clarifai.grpc.api.AzureBlobCreds.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.AzureBlobCreds) credentials_);
+              credentials_ = subBuilder.buildPartial();
+            }
+            credentialsCase_ = 4;
             break;
           }
           default: {
@@ -114,7 +122,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     S3_CREDS(1),
     GCP_CREDS(2),
-    AZURE_BLOB_CREDS(3),
+    AZURE_BLOB_CREDS(4),
     CREDENTIALS_NOT_SET(0);
     private final int value;
     private CredentialsCase(int value) {
@@ -134,7 +142,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 1: return S3_CREDS;
         case 2: return GCP_CREDS;
-        case 3: return AZURE_BLOB_CREDS;
+        case 4: return AZURE_BLOB_CREDS;
         case 0: return CREDENTIALS_NOT_SET;
         default: return null;
       }
@@ -153,7 +161,7 @@ private static final long serialVersionUID = 0L;
   public static final int S3_CREDS_FIELD_NUMBER = 1;
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 credentials for authentication.
    * </pre>
    *
    * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -165,7 +173,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 credentials for authentication.
    * </pre>
    *
    * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -180,7 +188,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 credentials for authentication.
    * </pre>
    *
    * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -222,68 +230,47 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.ByteString.EMPTY;
   }
 
-  public static final int AZURE_BLOB_CREDS_FIELD_NUMBER = 3;
+  public static final int AZURE_BLOB_CREDS_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+   * Azure Blob credentials for authentication.
    * </pre>
    *
-   * <code>string azure_blob_creds = 3;</code>
+   * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
    * @return Whether the azureBlobCreds field is set.
    */
+  @java.lang.Override
   public boolean hasAzureBlobCreds() {
-    return credentialsCase_ == 3;
+    return credentialsCase_ == 4;
   }
   /**
    * <pre>
-   * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+   * Azure Blob credentials for authentication.
    * </pre>
    *
-   * <code>string azure_blob_creds = 3;</code>
+   * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
    * @return The azureBlobCreds.
    */
-  public java.lang.String getAzureBlobCreds() {
-    java.lang.Object ref = "";
-    if (credentialsCase_ == 3) {
-      ref = credentials_;
+  @java.lang.Override
+  public com.clarifai.grpc.api.AzureBlobCreds getAzureBlobCreds() {
+    if (credentialsCase_ == 4) {
+       return (com.clarifai.grpc.api.AzureBlobCreds) credentials_;
     }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (credentialsCase_ == 3) {
-        credentials_ = s;
-      }
-      return s;
-    }
+    return com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance();
   }
   /**
    * <pre>
-   * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+   * Azure Blob credentials for authentication.
    * </pre>
    *
-   * <code>string azure_blob_creds = 3;</code>
-   * @return The bytes for azureBlobCreds.
+   * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getAzureBlobCredsBytes() {
-    java.lang.Object ref = "";
-    if (credentialsCase_ == 3) {
-      ref = credentials_;
+  @java.lang.Override
+  public com.clarifai.grpc.api.AzureBlobCredsOrBuilder getAzureBlobCredsOrBuilder() {
+    if (credentialsCase_ == 4) {
+       return (com.clarifai.grpc.api.AzureBlobCreds) credentials_;
     }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (credentialsCase_ == 3) {
-        credentials_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+    return com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -307,8 +294,8 @@ private static final long serialVersionUID = 0L;
       output.writeBytes(
           2, (com.google.protobuf.ByteString) credentials_);
     }
-    if (credentialsCase_ == 3) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, credentials_);
+    if (credentialsCase_ == 4) {
+      output.writeMessage(4, (com.clarifai.grpc.api.AzureBlobCreds) credentials_);
     }
     unknownFields.writeTo(output);
   }
@@ -328,8 +315,9 @@ private static final long serialVersionUID = 0L;
         .computeBytesSize(
             2, (com.google.protobuf.ByteString) credentials_);
     }
-    if (credentialsCase_ == 3) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, credentials_);
+    if (credentialsCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (com.clarifai.grpc.api.AzureBlobCreds) credentials_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -356,7 +344,7 @@ private static final long serialVersionUID = 0L;
         if (!getGcpCreds()
             .equals(other.getGcpCreds())) return false;
         break;
-      case 3:
+      case 4:
         if (!getAzureBlobCreds()
             .equals(other.getAzureBlobCreds())) return false;
         break;
@@ -383,7 +371,7 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + GCP_CREDS_FIELD_NUMBER;
         hash = (53 * hash) + getGcpCreds().hashCode();
         break;
-      case 3:
+      case 4:
         hash = (37 * hash) + AZURE_BLOB_CREDS_FIELD_NUMBER;
         hash = (53 * hash) + getAzureBlobCreds().hashCode();
         break;
@@ -561,8 +549,12 @@ private static final long serialVersionUID = 0L;
       if (credentialsCase_ == 2) {
         result.credentials_ = credentials_;
       }
-      if (credentialsCase_ == 3) {
-        result.credentials_ = credentials_;
+      if (credentialsCase_ == 4) {
+        if (azureBlobCredsBuilder_ == null) {
+          result.credentials_ = credentials_;
+        } else {
+          result.credentials_ = azureBlobCredsBuilder_.build();
+        }
       }
       result.credentialsCase_ = credentialsCase_;
       onBuilt();
@@ -623,9 +615,7 @@ private static final long serialVersionUID = 0L;
           break;
         }
         case AZURE_BLOB_CREDS: {
-          credentialsCase_ = 3;
-          credentials_ = other.credentials_;
-          onChanged();
+          mergeAzureBlobCreds(other.getAzureBlobCreds());
           break;
         }
         case CREDENTIALS_NOT_SET: {
@@ -680,7 +670,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.AWSCreds, com.clarifai.grpc.api.AWSCreds.Builder, com.clarifai.grpc.api.AWSCredsOrBuilder> s3CredsBuilder_;
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -692,7 +682,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -714,7 +704,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -734,7 +724,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -752,7 +742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -779,7 +769,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -802,7 +792,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -812,7 +802,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -830,7 +820,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+     * AWS S3 credentials for authentication.
      * </pre>
      *
      * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -914,125 +904,182 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AzureBlobCreds, com.clarifai.grpc.api.AzureBlobCreds.Builder, com.clarifai.grpc.api.AzureBlobCredsOrBuilder> azureBlobCredsBuilder_;
     /**
      * <pre>
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      * </pre>
      *
-     * <code>string azure_blob_creds = 3;</code>
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
      * @return Whether the azureBlobCreds field is set.
      */
     @java.lang.Override
     public boolean hasAzureBlobCreds() {
-      return credentialsCase_ == 3;
+      return credentialsCase_ == 4;
     }
     /**
      * <pre>
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      * </pre>
      *
-     * <code>string azure_blob_creds = 3;</code>
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
      * @return The azureBlobCreds.
      */
     @java.lang.Override
-    public java.lang.String getAzureBlobCreds() {
-      java.lang.Object ref = "";
-      if (credentialsCase_ == 3) {
-        ref = credentials_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (credentialsCase_ == 3) {
-          credentials_ = s;
+    public com.clarifai.grpc.api.AzureBlobCreds getAzureBlobCreds() {
+      if (azureBlobCredsBuilder_ == null) {
+        if (credentialsCase_ == 4) {
+          return (com.clarifai.grpc.api.AzureBlobCreds) credentials_;
         }
-        return s;
+        return com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
+        if (credentialsCase_ == 4) {
+          return azureBlobCredsBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      * </pre>
      *
-     * <code>string azure_blob_creds = 3;</code>
-     * @return The bytes for azureBlobCreds.
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAzureBlobCredsBytes() {
-      java.lang.Object ref = "";
-      if (credentialsCase_ == 3) {
-        ref = credentials_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (credentialsCase_ == 3) {
-          credentials_ = b;
+    public Builder setAzureBlobCreds(com.clarifai.grpc.api.AzureBlobCreds value) {
+      if (azureBlobCredsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-        return b;
+        credentials_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        azureBlobCredsBuilder_.setMessage(value);
       }
+      credentialsCase_ = 4;
+      return this;
     }
     /**
      * <pre>
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      * </pre>
      *
-     * <code>string azure_blob_creds = 3;</code>
-     * @param value The azureBlobCreds to set.
-     * @return This builder for chaining.
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
      */
     public Builder setAzureBlobCreds(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  credentialsCase_ = 3;
-      credentials_ = value;
-      onChanged();
+        com.clarifai.grpc.api.AzureBlobCreds.Builder builderForValue) {
+      if (azureBlobCredsBuilder_ == null) {
+        credentials_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureBlobCredsBuilder_.setMessage(builderForValue.build());
+      }
+      credentialsCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      * </pre>
      *
-     * <code>string azure_blob_creds = 3;</code>
-     * @return This builder for chaining.
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
+     */
+    public Builder mergeAzureBlobCreds(com.clarifai.grpc.api.AzureBlobCreds value) {
+      if (azureBlobCredsBuilder_ == null) {
+        if (credentialsCase_ == 4 &&
+            credentials_ != com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance()) {
+          credentials_ = com.clarifai.grpc.api.AzureBlobCreds.newBuilder((com.clarifai.grpc.api.AzureBlobCreds) credentials_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          credentials_ = value;
+        }
+        onChanged();
+      } else {
+        if (credentialsCase_ == 4) {
+          azureBlobCredsBuilder_.mergeFrom(value);
+        } else {
+          azureBlobCredsBuilder_.setMessage(value);
+        }
+      }
+      credentialsCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Azure Blob credentials for authentication.
+     * </pre>
+     *
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
      */
     public Builder clearAzureBlobCreds() {
-      if (credentialsCase_ == 3) {
-        credentialsCase_ = 0;
-        credentials_ = null;
-        onChanged();
+      if (azureBlobCredsBuilder_ == null) {
+        if (credentialsCase_ == 4) {
+          credentialsCase_ = 0;
+          credentials_ = null;
+          onChanged();
+        }
+      } else {
+        if (credentialsCase_ == 4) {
+          credentialsCase_ = 0;
+          credentials_ = null;
+        }
+        azureBlobCredsBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+     * Azure Blob credentials for authentication.
      * </pre>
      *
-     * <code>string azure_blob_creds = 3;</code>
-     * @param value The bytes for azureBlobCreds to set.
-     * @return This builder for chaining.
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
      */
-    public Builder setAzureBlobCredsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      credentialsCase_ = 3;
-      credentials_ = value;
-      onChanged();
-      return this;
+    public com.clarifai.grpc.api.AzureBlobCreds.Builder getAzureBlobCredsBuilder() {
+      return getAzureBlobCredsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Azure Blob credentials for authentication.
+     * </pre>
+     *
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.AzureBlobCredsOrBuilder getAzureBlobCredsOrBuilder() {
+      if ((credentialsCase_ == 4) && (azureBlobCredsBuilder_ != null)) {
+        return azureBlobCredsBuilder_.getMessageOrBuilder();
+      } else {
+        if (credentialsCase_ == 4) {
+          return (com.clarifai.grpc.api.AzureBlobCreds) credentials_;
+        }
+        return com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Azure Blob credentials for authentication.
+     * </pre>
+     *
+     * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AzureBlobCreds, com.clarifai.grpc.api.AzureBlobCreds.Builder, com.clarifai.grpc.api.AzureBlobCredsOrBuilder> 
+        getAzureBlobCredsFieldBuilder() {
+      if (azureBlobCredsBuilder_ == null) {
+        if (!(credentialsCase_ == 4)) {
+          credentials_ = com.clarifai.grpc.api.AzureBlobCreds.getDefaultInstance();
+        }
+        azureBlobCredsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AzureBlobCreds, com.clarifai.grpc.api.AzureBlobCreds.Builder, com.clarifai.grpc.api.AzureBlobCredsOrBuilder>(
+                (com.clarifai.grpc.api.AzureBlobCreds) credentials_,
+                getParentForChildren(),
+                isClean());
+        credentials_ = null;
+      }
+      credentialsCase_ = 4;
+      onChanged();;
+      return azureBlobCredsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

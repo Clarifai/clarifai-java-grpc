@@ -97,5 +97,20 @@ public interface OperationOrBuilder extends
    */
   com.clarifai.grpc.api.DeleteGeoOrBuilder getDeleteGeoOrBuilder();
 
+  /**
+   * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+   * @return Whether the deleteFromDataset field is set.
+   */
+  boolean hasDeleteFromDataset();
+  /**
+   * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+   * @return The deleteFromDataset.
+   */
+  com.clarifai.grpc.api.DeleteFromDataset getDeleteFromDataset();
+  /**
+   * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+   */
+  com.clarifai.grpc.api.DeleteFromDatasetOrBuilder getDeleteFromDatasetOrBuilder();
+
   public com.clarifai.grpc.api.Operation.OperationCase getOperationCase();
 }

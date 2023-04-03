@@ -310,39 +310,6 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <pre>
-   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-   * and provide the dataset version ID in the train_info.params.
-   * Dataset version used to create this model version.
-   * </pre>
-   *
-   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-   * @return Whether the datasetVersion field is set.
-   */
-  boolean hasDatasetVersion();
-  /**
-   * <pre>
-   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-   * and provide the dataset version ID in the train_info.params.
-   * Dataset version used to create this model version.
-   * </pre>
-   *
-   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-   * @return The datasetVersion.
-   */
-  com.clarifai.grpc.api.DatasetVersion getDatasetVersion();
-  /**
-   * <pre>
-   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-   * and provide the dataset version ID in the train_info.params.
-   * Dataset version used to create this model version.
-   * </pre>
-   *
-   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-   */
-  com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder();
-
-  /**
-   * <pre>
    * Info about the model's output and configuration.
    * </pre>
    *

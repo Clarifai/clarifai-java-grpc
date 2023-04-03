@@ -84,6 +84,11 @@ private static final long serialVersionUID = 0L;
             size_ = input.readUInt64();
             break;
           }
+          case 40: {
+
+            includeEmbeddings_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -244,6 +249,21 @@ private static final long serialVersionUID = 0L;
     return size_;
   }
 
+  public static final int INCLUDE_EMBEDDINGS_FIELD_NUMBER = 5;
+  private boolean includeEmbeddings_;
+  /**
+   * <pre>
+   * whether to include embeddings in the export or not.
+   * </pre>
+   *
+   * <code>bool include_embeddings = 5;</code>
+   * @return The includeEmbeddings.
+   */
+  @java.lang.Override
+  public boolean getIncludeEmbeddings() {
+    return includeEmbeddings_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -270,6 +290,9 @@ private static final long serialVersionUID = 0L;
     if (size_ != 0L) {
       output.writeUInt64(4, size_);
     }
+    if (includeEmbeddings_ != false) {
+      output.writeBool(5, includeEmbeddings_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -293,6 +316,10 @@ private static final long serialVersionUID = 0L;
     if (size_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(4, size_);
+    }
+    if (includeEmbeddings_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, includeEmbeddings_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -319,6 +346,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUrl())) return false;
     if (getSize()
         != other.getSize()) return false;
+    if (getIncludeEmbeddings()
+        != other.getIncludeEmbeddings()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -341,6 +370,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getSize());
+    hash = (37 * hash) + INCLUDE_EMBEDDINGS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIncludeEmbeddings());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -490,6 +522,8 @@ private static final long serialVersionUID = 0L;
 
       size_ = 0L;
 
+      includeEmbeddings_ = false;
+
       return this;
     }
 
@@ -524,6 +558,7 @@ private static final long serialVersionUID = 0L;
       }
       result.url_ = url_;
       result.size_ = size_;
+      result.includeEmbeddings_ = includeEmbeddings_;
       onBuilt();
       return result;
     }
@@ -584,6 +619,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSize() != 0L) {
         setSize(other.getSize());
+      }
+      if (other.getIncludeEmbeddings() != false) {
+        setIncludeEmbeddings(other.getIncludeEmbeddings());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -978,6 +1016,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearSize() {
       
       size_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeEmbeddings_ ;
+    /**
+     * <pre>
+     * whether to include embeddings in the export or not.
+     * </pre>
+     *
+     * <code>bool include_embeddings = 5;</code>
+     * @return The includeEmbeddings.
+     */
+    @java.lang.Override
+    public boolean getIncludeEmbeddings() {
+      return includeEmbeddings_;
+    }
+    /**
+     * <pre>
+     * whether to include embeddings in the export or not.
+     * </pre>
+     *
+     * <code>bool include_embeddings = 5;</code>
+     * @param value The includeEmbeddings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeEmbeddings(boolean value) {
+      
+      includeEmbeddings_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * whether to include embeddings in the export or not.
+     * </pre>
+     *
+     * <code>bool include_embeddings = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeEmbeddings() {
+      
+      includeEmbeddings_ = false;
       onChanged();
       return this;
     }

@@ -43,4 +43,60 @@ public interface ListKeysRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <code>bool not_expired = 4;</code>
+   * @return The notExpired.
+   */
+  boolean getNotExpired();
+
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @return A list containing the scopes.
+   */
+  java.util.List<java.lang.String>
+      getScopesList();
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @return The count of scopes.
+   */
+  int getScopesCount();
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  java.lang.String getScopes(int index);
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getScopesBytes(int index);
+
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @return A list containing the endpoints.
+   */
+  java.util.List<java.lang.String>
+      getEndpointsList();
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @return The count of endpoints.
+   */
+  int getEndpointsCount();
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @param index The index of the element to return.
+   * @return The endpoints at the given index.
+   */
+  java.lang.String getEndpoints(int index);
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the endpoints at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEndpointsBytes(int index);
 }

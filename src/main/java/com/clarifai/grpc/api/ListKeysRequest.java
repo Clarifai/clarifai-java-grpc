@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListKeysRequest() {
+    scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -42,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,6 +78,29 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 32: {
+
+            notExpired_ = input.readBool();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              scopes_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            scopes_.add(s);
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              endpoints_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            endpoints_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -92,6 +118,12 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        scopes_ = scopes_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        endpoints_ = endpoints_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -167,6 +199,87 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int NOT_EXPIRED_FIELD_NUMBER = 4;
+  private boolean notExpired_;
+  /**
+   * <code>bool not_expired = 4;</code>
+   * @return The notExpired.
+   */
+  @java.lang.Override
+  public boolean getNotExpired() {
+    return notExpired_;
+  }
+
+  public static final int SCOPES_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList scopes_;
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @return A list containing the scopes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getScopesList() {
+    return scopes_;
+  }
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @return The count of scopes.
+   */
+  public int getScopesCount() {
+    return scopes_.size();
+  }
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  public java.lang.String getScopes(int index) {
+    return scopes_.get(index);
+  }
+  /**
+   * <code>repeated string scopes = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getScopesBytes(int index) {
+    return scopes_.getByteString(index);
+  }
+
+  public static final int ENDPOINTS_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList endpoints_;
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @return A list containing the endpoints.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEndpointsList() {
+    return endpoints_;
+  }
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @return The count of endpoints.
+   */
+  public int getEndpointsCount() {
+    return endpoints_.size();
+  }
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @param index The index of the element to return.
+   * @return The endpoints at the given index.
+   */
+  public java.lang.String getEndpoints(int index) {
+    return endpoints_.get(index);
+  }
+  /**
+   * <code>repeated string endpoints = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the endpoints at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEndpointsBytes(int index) {
+    return endpoints_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +303,15 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
+    if (notExpired_ != false) {
+      output.writeBool(4, notExpired_);
+    }
+    for (int i = 0; i < scopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, scopes_.getRaw(i));
+    }
+    for (int i = 0; i < endpoints_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, endpoints_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +332,26 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
+    }
+    if (notExpired_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, notExpired_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < scopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getScopesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < endpoints_.size(); i++) {
+        dataSize += computeStringSizeNoTag(endpoints_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEndpointsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,6 +377,12 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (getNotExpired()
+        != other.getNotExpired()) return false;
+    if (!getScopesList()
+        .equals(other.getScopesList())) return false;
+    if (!getEndpointsList()
+        .equals(other.getEndpointsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -254,6 +402,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + NOT_EXPIRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getNotExpired());
+    if (getScopesCount() > 0) {
+      hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getScopesList().hashCode();
+    }
+    if (getEndpointsCount() > 0) {
+      hash = (37 * hash) + ENDPOINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -401,6 +560,12 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      notExpired_ = false;
+
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -427,6 +592,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.ListKeysRequest buildPartial() {
       com.clarifai.grpc.api.ListKeysRequest result = new com.clarifai.grpc.api.ListKeysRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
@@ -434,6 +600,17 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.notExpired_ = notExpired_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        scopes_ = scopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.scopes_ = scopes_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        endpoints_ = endpoints_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.endpoints_ = endpoints_;
       onBuilt();
       return result;
     }
@@ -491,6 +668,29 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (other.getNotExpired() != false) {
+        setNotExpired(other.getNotExpired());
+      }
+      if (!other.scopes_.isEmpty()) {
+        if (scopes_.isEmpty()) {
+          scopes_ = other.scopes_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureScopesIsMutable();
+          scopes_.addAll(other.scopes_);
+        }
+        onChanged();
+      }
+      if (!other.endpoints_.isEmpty()) {
+        if (endpoints_.isEmpty()) {
+          endpoints_ = other.endpoints_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureEndpointsIsMutable();
+          endpoints_.addAll(other.endpoints_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -519,6 +719,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -727,6 +928,257 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean notExpired_ ;
+    /**
+     * <code>bool not_expired = 4;</code>
+     * @return The notExpired.
+     */
+    @java.lang.Override
+    public boolean getNotExpired() {
+      return notExpired_;
+    }
+    /**
+     * <code>bool not_expired = 4;</code>
+     * @param value The notExpired to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotExpired(boolean value) {
+      
+      notExpired_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool not_expired = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotExpired() {
+      
+      notExpired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureScopesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @return A list containing the scopes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getScopesList() {
+      return scopes_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @return The count of scopes.
+     */
+    public int getScopesCount() {
+      return scopes_.size();
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
+     */
+    public java.lang.String getScopes(int index) {
+      return scopes_.get(index);
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getScopesBytes(int index) {
+      return scopes_.getByteString(index);
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopes(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureScopesIsMutable();
+      scopes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @param value The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureScopesIsMutable();
+      scopes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @param values The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllScopes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, scopes_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearScopes() {
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string scopes = 5;</code>
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureScopesIsMutable();
+      scopes_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEndpointsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        endpoints_ = new com.google.protobuf.LazyStringArrayList(endpoints_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @return A list containing the endpoints.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEndpointsList() {
+      return endpoints_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @return The count of endpoints.
+     */
+    public int getEndpointsCount() {
+      return endpoints_.size();
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @param index The index of the element to return.
+     * @return The endpoints at the given index.
+     */
+    public java.lang.String getEndpoints(int index) {
+      return endpoints_.get(index);
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the endpoints at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEndpointsBytes(int index) {
+      return endpoints_.getByteString(index);
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The endpoints to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpoints(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEndpointsIsMutable();
+      endpoints_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @param value The endpoints to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEndpoints(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEndpointsIsMutable();
+      endpoints_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @param values The endpoints to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEndpoints(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEndpointsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, endpoints_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpoints() {
+      endpoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string endpoints = 6;</code>
+     * @param value The bytes of the endpoints to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEndpointsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEndpointsIsMutable();
+      endpoints_.add(value);
       onChanged();
       return this;
     }

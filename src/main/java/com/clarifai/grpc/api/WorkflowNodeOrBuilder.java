@@ -117,4 +117,34 @@ public interface WorkflowNodeOrBuilder extends
    * @return The suppressOutput.
    */
   boolean getSuppressOutput();
+
+  /**
+   * <pre>
+   * Used to override the output_info.data and output_info.params of the model specified by the node.
+   * Values for fields_map, message, and output_config are ignored.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+   * @return Whether the outputInfoOverride field is set.
+   */
+  boolean hasOutputInfoOverride();
+  /**
+   * <pre>
+   * Used to override the output_info.data and output_info.params of the model specified by the node.
+   * Values for fields_map, message, and output_config are ignored.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+   * @return The outputInfoOverride.
+   */
+  com.clarifai.grpc.api.OutputInfo getOutputInfoOverride();
+  /**
+   * <pre>
+   * Used to override the output_info.data and output_info.params of the model specified by the node.
+   * Values for fields_map, message, and output_config are ignored.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+   */
+  com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOverrideOrBuilder();
 }

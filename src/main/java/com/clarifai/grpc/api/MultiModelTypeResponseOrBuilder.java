@@ -104,4 +104,48 @@ public interface MultiModelTypeResponseOrBuilder extends
    * <code>.clarifai.api.ModelTypeField model_importers = 3;</code>
    */
   com.clarifai.grpc.api.ModelTypeFieldOrBuilder getModelImportersOrBuilder();
+
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.TritonCondaEnvInfo> 
+      getTritonCondaEnvsInfoList();
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  com.clarifai.grpc.api.TritonCondaEnvInfo getTritonCondaEnvsInfo(int index);
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  int getTritonCondaEnvsInfoCount();
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder> 
+      getTritonCondaEnvsInfoOrBuilderList();
+  /**
+   * <pre>
+   * Triton model envs that can be used for model upload
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.TritonCondaEnvInfo triton_conda_envs_info = 4;</code>
+   */
+  com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder getTritonCondaEnvsInfoOrBuilder(
+      int index);
 }

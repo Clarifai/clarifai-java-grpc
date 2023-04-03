@@ -202,19 +202,6 @@ private static final long serialVersionUID = 0L;
             license_ = s;
             break;
           }
-          case 146: {
-            com.clarifai.grpc.api.DatasetVersion.Builder subBuilder = null;
-            if (datasetVersion_ != null) {
-              subBuilder = datasetVersion_.toBuilder();
-            }
-            datasetVersion_ = input.readMessage(com.clarifai.grpc.api.DatasetVersion.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(datasetVersion_);
-              datasetVersion_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 154: {
             com.clarifai.grpc.api.OutputInfo.Builder subBuilder = null;
             if (outputInfo_ != null) {
@@ -836,50 +823,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DATASET_VERSION_FIELD_NUMBER = 18;
-  private com.clarifai.grpc.api.DatasetVersion datasetVersion_;
-  /**
-   * <pre>
-   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-   * and provide the dataset version ID in the train_info.params.
-   * Dataset version used to create this model version.
-   * </pre>
-   *
-   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-   * @return Whether the datasetVersion field is set.
-   */
-  @java.lang.Override
-  public boolean hasDatasetVersion() {
-    return datasetVersion_ != null;
-  }
-  /**
-   * <pre>
-   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-   * and provide the dataset version ID in the train_info.params.
-   * Dataset version used to create this model version.
-   * </pre>
-   *
-   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-   * @return The datasetVersion.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.DatasetVersion getDatasetVersion() {
-    return datasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
-  }
-  /**
-   * <pre>
-   * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-   * and provide the dataset version ID in the train_info.params.
-   * Dataset version used to create this model version.
-   * </pre>
-   *
-   * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder() {
-    return getDatasetVersion();
-  }
-
   public static final int OUTPUT_INFO_FIELD_NUMBER = 19;
   private com.clarifai.grpc.api.OutputInfo outputInfo_;
   /**
@@ -1129,9 +1072,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, license_);
     }
-    if (datasetVersion_ != null) {
-      output.writeMessage(18, getDatasetVersion());
-    }
     if (outputInfo_ != null) {
       output.writeMessage(19, getOutputInfo());
     }
@@ -1210,10 +1150,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(license_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, license_);
-    }
-    if (datasetVersion_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getDatasetVersion());
     }
     if (outputInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -1303,11 +1239,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getLicense()
         .equals(other.getLicense())) return false;
-    if (hasDatasetVersion() != other.hasDatasetVersion()) return false;
-    if (hasDatasetVersion()) {
-      if (!getDatasetVersion()
-          .equals(other.getDatasetVersion())) return false;
-    }
     if (hasOutputInfo() != other.hasOutputInfo()) return false;
     if (hasOutputInfo()) {
       if (!getOutputInfo()
@@ -1387,10 +1318,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + LICENSE_FIELD_NUMBER;
     hash = (53 * hash) + getLicense().hashCode();
-    if (hasDatasetVersion()) {
-      hash = (37 * hash) + DATASET_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getDatasetVersion().hashCode();
-    }
     if (hasOutputInfo()) {
       hash = (37 * hash) + OUTPUT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getOutputInfo().hashCode();
@@ -1608,12 +1535,6 @@ private static final long serialVersionUID = 0L;
       }
       license_ = "";
 
-      if (datasetVersionBuilder_ == null) {
-        datasetVersion_ = null;
-      } else {
-        datasetVersion_ = null;
-        datasetVersionBuilder_ = null;
-      }
       if (outputInfoBuilder_ == null) {
         outputInfo_ = null;
       } else {
@@ -1713,11 +1634,6 @@ private static final long serialVersionUID = 0L;
         result.metadata_ = metadataBuilder_.build();
       }
       result.license_ = license_;
-      if (datasetVersionBuilder_ == null) {
-        result.datasetVersion_ = datasetVersion_;
-      } else {
-        result.datasetVersion_ = datasetVersionBuilder_.build();
-      }
       if (outputInfoBuilder_ == null) {
         result.outputInfo_ = outputInfo_;
       } else {
@@ -1836,9 +1752,6 @@ private static final long serialVersionUID = 0L;
       if (!other.getLicense().isEmpty()) {
         license_ = other.license_;
         onChanged();
-      }
-      if (other.hasDatasetVersion()) {
-        mergeDatasetVersion(other.getDatasetVersion());
       }
       if (other.hasOutputInfo()) {
         mergeOutputInfo(other.getOutputInfo());
@@ -3592,179 +3505,6 @@ private static final long serialVersionUID = 0L;
       license_ = value;
       onChanged();
       return this;
-    }
-
-    private com.clarifai.grpc.api.DatasetVersion datasetVersion_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> datasetVersionBuilder_;
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     * @return Whether the datasetVersion field is set.
-     */
-    public boolean hasDatasetVersion() {
-      return datasetVersionBuilder_ != null || datasetVersion_ != null;
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     * @return The datasetVersion.
-     */
-    public com.clarifai.grpc.api.DatasetVersion getDatasetVersion() {
-      if (datasetVersionBuilder_ == null) {
-        return datasetVersion_ == null ? com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
-      } else {
-        return datasetVersionBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    public Builder setDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
-      if (datasetVersionBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        datasetVersion_ = value;
-        onChanged();
-      } else {
-        datasetVersionBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    public Builder setDatasetVersion(
-        com.clarifai.grpc.api.DatasetVersion.Builder builderForValue) {
-      if (datasetVersionBuilder_ == null) {
-        datasetVersion_ = builderForValue.build();
-        onChanged();
-      } else {
-        datasetVersionBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    public Builder mergeDatasetVersion(com.clarifai.grpc.api.DatasetVersion value) {
-      if (datasetVersionBuilder_ == null) {
-        if (datasetVersion_ != null) {
-          datasetVersion_ =
-            com.clarifai.grpc.api.DatasetVersion.newBuilder(datasetVersion_).mergeFrom(value).buildPartial();
-        } else {
-          datasetVersion_ = value;
-        }
-        onChanged();
-      } else {
-        datasetVersionBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    public Builder clearDatasetVersion() {
-      if (datasetVersionBuilder_ == null) {
-        datasetVersion_ = null;
-        onChanged();
-      } else {
-        datasetVersion_ = null;
-        datasetVersionBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    public com.clarifai.grpc.api.DatasetVersion.Builder getDatasetVersionBuilder() {
-      
-      onChanged();
-      return getDatasetVersionFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    public com.clarifai.grpc.api.DatasetVersionOrBuilder getDatasetVersionOrBuilder() {
-      if (datasetVersionBuilder_ != null) {
-        return datasetVersionBuilder_.getMessageOrBuilder();
-      } else {
-        return datasetVersion_ == null ?
-            com.clarifai.grpc.api.DatasetVersion.getDefaultInstance() : datasetVersion_;
-      }
-    }
-    /**
-     * <pre>
-     * Deprecated: For explicit dataset versions, please use PostDatasetVersions 
-     * and provide the dataset version ID in the train_info.params.
-     * Dataset version used to create this model version.
-     * </pre>
-     *
-     * <code>.clarifai.api.DatasetVersion dataset_version = 18;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder> 
-        getDatasetVersionFieldBuilder() {
-      if (datasetVersionBuilder_ == null) {
-        datasetVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.DatasetVersion, com.clarifai.grpc.api.DatasetVersion.Builder, com.clarifai.grpc.api.DatasetVersionOrBuilder>(
-                getDatasetVersion(),
-                getParentForChildren(),
-                isClean());
-        datasetVersion_ = null;
-      }
-      return datasetVersionBuilder_;
     }
 
     private com.clarifai.grpc.api.OutputInfo outputInfo_;

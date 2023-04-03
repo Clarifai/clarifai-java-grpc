@@ -8,18 +8,6 @@ public interface AWSCredsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string creds = 1;</code>
-   * @return The creds.
-   */
-  java.lang.String getCreds();
-  /**
-   * <code>string creds = 1;</code>
-   * @return The bytes for creds.
-   */
-  com.google.protobuf.ByteString
-      getCredsBytes();
-
-  /**
    * <code>string region = 2;</code>
    * @return The region.
    */
@@ -30,4 +18,40 @@ public interface AWSCredsOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRegionBytes();
+
+  /**
+   * <code>string id = 3;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 3;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <code>string secret = 4;</code>
+   * @return The secret.
+   */
+  java.lang.String getSecret();
+  /**
+   * <code>string secret = 4;</code>
+   * @return The bytes for secret.
+   */
+  com.google.protobuf.ByteString
+      getSecretBytes();
+
+  /**
+   * <code>string token = 5;</code>
+   * @return The token.
+   */
+  java.lang.String getToken();
+  /**
+   * <code>string token = 5;</code>
+   * @return The bytes for token.
+   */
+  com.google.protobuf.ByteString
+      getTokenBytes();
 }
