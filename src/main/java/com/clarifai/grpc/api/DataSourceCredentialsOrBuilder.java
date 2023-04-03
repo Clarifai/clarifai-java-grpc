@@ -9,7 +9,7 @@ public interface DataSourceCredentialsOrBuilder extends
 
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 credentials for authentication.
    * </pre>
    *
    * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -18,7 +18,7 @@ public interface DataSourceCredentialsOrBuilder extends
   boolean hasS3Creds();
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 credentials for authentication.
    * </pre>
    *
    * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -27,7 +27,7 @@ public interface DataSourceCredentialsOrBuilder extends
   com.clarifai.grpc.api.AWSCreds getS3Creds();
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 credentials for authentication.
    * </pre>
    *
    * <code>.clarifai.api.AWSCreds s3_creds = 1;</code>
@@ -55,32 +55,30 @@ public interface DataSourceCredentialsOrBuilder extends
 
   /**
    * <pre>
-   * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+   * Azure Blob credentials for authentication.
    * </pre>
    *
-   * <code>string azure_blob_creds = 3;</code>
+   * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
    * @return Whether the azureBlobCreds field is set.
    */
   boolean hasAzureBlobCreds();
   /**
    * <pre>
-   * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+   * Azure Blob credentials for authentication.
    * </pre>
    *
-   * <code>string azure_blob_creds = 3;</code>
+   * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
    * @return The azureBlobCreds.
    */
-  java.lang.String getAzureBlobCreds();
+  com.clarifai.grpc.api.AzureBlobCreds getAzureBlobCreds();
   /**
    * <pre>
-   * Azure Blob storage uses creds: “{storageAccount}:{storageKey}” for authentication.
+   * Azure Blob credentials for authentication.
    * </pre>
    *
-   * <code>string azure_blob_creds = 3;</code>
-   * @return The bytes for azureBlobCreds.
+   * <code>.clarifai.api.AzureBlobCreds azure_blob_creds = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getAzureBlobCredsBytes();
+  com.clarifai.grpc.api.AzureBlobCredsOrBuilder getAzureBlobCredsOrBuilder();
 
   public com.clarifai.grpc.api.DataSourceCredentials.CredentialsCase getCredentialsCase();
 }

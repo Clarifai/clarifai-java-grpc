@@ -17,7 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private InputsAddJob() {
     id_ = "";
-    cloudStorageUrl_ = "";
     callBackUrl_ = "";
     appPat_ = "";
     extractionJobs_ = java.util.Collections.emptyList();
@@ -59,12 +58,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            cloudStorageUrl_ = s;
             break;
           }
           case 26: {
@@ -216,54 +209,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CLOUD_STORAGE_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cloudStorageUrl_;
-  /**
-   * <pre>
-   * Cloud storage url from which the inputs can be accessed.
-   * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-   * </pre>
-   *
-   * <code>string cloud_storage_url = 2;</code>
-   * @return The cloudStorageUrl.
-   */
-  @java.lang.Override
-  public java.lang.String getCloudStorageUrl() {
-    java.lang.Object ref = cloudStorageUrl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      cloudStorageUrl_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Cloud storage url from which the inputs can be accessed.
-   * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-   * </pre>
-   *
-   * <code>string cloud_storage_url = 2;</code>
-   * @return The bytes for cloudStorageUrl.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCloudStorageUrlBytes() {
-    java.lang.Object ref = cloudStorageUrl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      cloudStorageUrl_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -625,9 +570,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudStorageUrl_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cloudStorageUrl_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(callBackUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, callBackUrl_);
     }
@@ -660,9 +602,6 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudStorageUrl_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cloudStorageUrl_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(callBackUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, callBackUrl_);
@@ -707,8 +646,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (!getCloudStorageUrl()
-        .equals(other.getCloudStorageUrl())) return false;
     if (!getCallBackUrl()
         .equals(other.getCallBackUrl())) return false;
     if (!getAppPat()
@@ -745,8 +682,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + CLOUD_STORAGE_URL_FIELD_NUMBER;
-    hash = (53 * hash) + getCloudStorageUrl().hashCode();
     hash = (37 * hash) + CALL_BACK_URL_FIELD_NUMBER;
     hash = (53 * hash) + getCallBackUrl().hashCode();
     hash = (37 * hash) + APP_PAT_FIELD_NUMBER;
@@ -908,8 +843,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      cloudStorageUrl_ = "";
-
       callBackUrl_ = "";
 
       appPat_ = "";
@@ -972,7 +905,6 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.InputsAddJob result = new com.clarifai.grpc.api.InputsAddJob(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
-      result.cloudStorageUrl_ = cloudStorageUrl_;
       result.callBackUrl_ = callBackUrl_;
       result.appPat_ = appPat_;
       if (progressBuilder_ == null) {
@@ -1058,10 +990,6 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.InputsAddJob.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
-        onChanged();
-      }
-      if (!other.getCloudStorageUrl().isEmpty()) {
-        cloudStorageUrl_ = other.cloudStorageUrl_;
         onChanged();
       }
       if (!other.getCallBackUrl().isEmpty()) {
@@ -1255,107 +1183,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       id_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object cloudStorageUrl_ = "";
-    /**
-     * <pre>
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     * </pre>
-     *
-     * <code>string cloud_storage_url = 2;</code>
-     * @return The cloudStorageUrl.
-     */
-    public java.lang.String getCloudStorageUrl() {
-      java.lang.Object ref = cloudStorageUrl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cloudStorageUrl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     * </pre>
-     *
-     * <code>string cloud_storage_url = 2;</code>
-     * @return The bytes for cloudStorageUrl.
-     */
-    public com.google.protobuf.ByteString
-        getCloudStorageUrlBytes() {
-      java.lang.Object ref = cloudStorageUrl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cloudStorageUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     * </pre>
-     *
-     * <code>string cloud_storage_url = 2;</code>
-     * @param value The cloudStorageUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCloudStorageUrl(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      cloudStorageUrl_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     * </pre>
-     *
-     * <code>string cloud_storage_url = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCloudStorageUrl() {
-      
-      cloudStorageUrl_ = getDefaultInstance().getCloudStorageUrl();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Cloud storage url from which the inputs can be accessed.
-     * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-     * </pre>
-     *
-     * <code>string cloud_storage_url = 2;</code>
-     * @param value The bytes for cloudStorageUrl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCloudStorageUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      cloudStorageUrl_ = value;
       onChanged();
       return this;
     }

@@ -29,28 +29,6 @@ public interface InputsAddJobOrBuilder extends
 
   /**
    * <pre>
-   * Cloud storage url from which the inputs can be accessed.
-   * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-   * </pre>
-   *
-   * <code>string cloud_storage_url = 2;</code>
-   * @return The cloudStorageUrl.
-   */
-  java.lang.String getCloudStorageUrl();
-  /**
-   * <pre>
-   * Cloud storage url from which the inputs can be accessed.
-   * Supported providers are AWS S3, Azure blob, GCP cloud storage.
-   * </pre>
-   *
-   * <code>string cloud_storage_url = 2;</code>
-   * @return The bytes for cloudStorageUrl.
-   */
-  com.google.protobuf.ByteString
-      getCloudStorageUrlBytes();
-
-  /**
-   * <pre>
    * If call back url is set, we will send a Post request to this endpoint with job status.
    * </pre>
    *

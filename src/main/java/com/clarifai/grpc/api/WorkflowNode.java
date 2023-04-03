@@ -88,6 +88,19 @@ private static final long serialVersionUID = 0L;
             suppressOutput_ = input.readBool();
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.OutputInfo.Builder subBuilder = null;
+            if (outputInfoOverride_ != null) {
+              subBuilder = outputInfoOverride_.toBuilder();
+            }
+            outputInfoOverride_ = input.readMessage(com.clarifai.grpc.api.OutputInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(outputInfoOverride_);
+              outputInfoOverride_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -294,6 +307,47 @@ private static final long serialVersionUID = 0L;
     return suppressOutput_;
   }
 
+  public static final int OUTPUT_INFO_OVERRIDE_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.OutputInfo outputInfoOverride_;
+  /**
+   * <pre>
+   * Used to override the output_info.data and output_info.params of the model specified by the node.
+   * Values for fields_map, message, and output_config are ignored.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+   * @return Whether the outputInfoOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputInfoOverride() {
+    return outputInfoOverride_ != null;
+  }
+  /**
+   * <pre>
+   * Used to override the output_info.data and output_info.params of the model specified by the node.
+   * Values for fields_map, message, and output_config are ignored.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+   * @return The outputInfoOverride.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OutputInfo getOutputInfoOverride() {
+    return outputInfoOverride_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfoOverride_;
+  }
+  /**
+   * <pre>
+   * Used to override the output_info.data and output_info.params of the model specified by the node.
+   * Values for fields_map, message, and output_config are ignored.
+   * </pre>
+   *
+   * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOverrideOrBuilder() {
+    return getOutputInfoOverride();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -320,6 +374,9 @@ private static final long serialVersionUID = 0L;
     if (suppressOutput_ != false) {
       output.writeBool(4, suppressOutput_);
     }
+    if (outputInfoOverride_ != null) {
+      output.writeMessage(5, getOutputInfoOverride());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -343,6 +400,10 @@ private static final long serialVersionUID = 0L;
     if (suppressOutput_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, suppressOutput_);
+    }
+    if (outputInfoOverride_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getOutputInfoOverride());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -370,6 +431,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNodeInputsList())) return false;
     if (getSuppressOutput()
         != other.getSuppressOutput()) return false;
+    if (hasOutputInfoOverride() != other.hasOutputInfoOverride()) return false;
+    if (hasOutputInfoOverride()) {
+      if (!getOutputInfoOverride()
+          .equals(other.getOutputInfoOverride())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -394,6 +460,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SUPPRESS_OUTPUT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSuppressOutput());
+    if (hasOutputInfoOverride()) {
+      hash = (37 * hash) + OUTPUT_INFO_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputInfoOverride().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -548,6 +618,12 @@ private static final long serialVersionUID = 0L;
       }
       suppressOutput_ = false;
 
+      if (outputInfoOverrideBuilder_ == null) {
+        outputInfoOverride_ = null;
+      } else {
+        outputInfoOverride_ = null;
+        outputInfoOverrideBuilder_ = null;
+      }
       return this;
     }
 
@@ -591,6 +667,11 @@ private static final long serialVersionUID = 0L;
         result.nodeInputs_ = nodeInputsBuilder_.build();
       }
       result.suppressOutput_ = suppressOutput_;
+      if (outputInfoOverrideBuilder_ == null) {
+        result.outputInfoOverride_ = outputInfoOverride_;
+      } else {
+        result.outputInfoOverride_ = outputInfoOverrideBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -674,6 +755,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSuppressOutput() != false) {
         setSuppressOutput(other.getSuppressOutput());
+      }
+      if (other.hasOutputInfoOverride()) {
+        mergeOutputInfoOverride(other.getOutputInfoOverride());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1341,6 +1425,170 @@ private static final long serialVersionUID = 0L;
       suppressOutput_ = false;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.OutputInfo outputInfoOverride_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder> outputInfoOverrideBuilder_;
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     * @return Whether the outputInfoOverride field is set.
+     */
+    public boolean hasOutputInfoOverride() {
+      return outputInfoOverrideBuilder_ != null || outputInfoOverride_ != null;
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     * @return The outputInfoOverride.
+     */
+    public com.clarifai.grpc.api.OutputInfo getOutputInfoOverride() {
+      if (outputInfoOverrideBuilder_ == null) {
+        return outputInfoOverride_ == null ? com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfoOverride_;
+      } else {
+        return outputInfoOverrideBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    public Builder setOutputInfoOverride(com.clarifai.grpc.api.OutputInfo value) {
+      if (outputInfoOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputInfoOverride_ = value;
+        onChanged();
+      } else {
+        outputInfoOverrideBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    public Builder setOutputInfoOverride(
+        com.clarifai.grpc.api.OutputInfo.Builder builderForValue) {
+      if (outputInfoOverrideBuilder_ == null) {
+        outputInfoOverride_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputInfoOverrideBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    public Builder mergeOutputInfoOverride(com.clarifai.grpc.api.OutputInfo value) {
+      if (outputInfoOverrideBuilder_ == null) {
+        if (outputInfoOverride_ != null) {
+          outputInfoOverride_ =
+            com.clarifai.grpc.api.OutputInfo.newBuilder(outputInfoOverride_).mergeFrom(value).buildPartial();
+        } else {
+          outputInfoOverride_ = value;
+        }
+        onChanged();
+      } else {
+        outputInfoOverrideBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    public Builder clearOutputInfoOverride() {
+      if (outputInfoOverrideBuilder_ == null) {
+        outputInfoOverride_ = null;
+        onChanged();
+      } else {
+        outputInfoOverride_ = null;
+        outputInfoOverrideBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    public com.clarifai.grpc.api.OutputInfo.Builder getOutputInfoOverrideBuilder() {
+      
+      onChanged();
+      return getOutputInfoOverrideFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    public com.clarifai.grpc.api.OutputInfoOrBuilder getOutputInfoOverrideOrBuilder() {
+      if (outputInfoOverrideBuilder_ != null) {
+        return outputInfoOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return outputInfoOverride_ == null ?
+            com.clarifai.grpc.api.OutputInfo.getDefaultInstance() : outputInfoOverride_;
+      }
+    }
+    /**
+     * <pre>
+     * Used to override the output_info.data and output_info.params of the model specified by the node.
+     * Values for fields_map, message, and output_config are ignored.
+     * </pre>
+     *
+     * <code>.clarifai.api.OutputInfo output_info_override = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder> 
+        getOutputInfoOverrideFieldBuilder() {
+      if (outputInfoOverrideBuilder_ == null) {
+        outputInfoOverrideBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder>(
+                getOutputInfoOverride(),
+                getParentForChildren(),
+                isClean());
+        outputInfoOverride_ = null;
+      }
+      return outputInfoOverrideBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

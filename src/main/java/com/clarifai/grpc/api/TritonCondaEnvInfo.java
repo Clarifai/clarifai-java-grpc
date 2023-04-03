@@ -4,30 +4,27 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * WaitlistEmail is an e-mail address on a feature waiting list.
- * </pre>
- *
- * Protobuf type {@code clarifai.api.WaitlistEmail}
+ * Protobuf type {@code clarifai.api.TritonCondaEnvInfo}
  */
-public final class WaitlistEmail extends
+public final class TritonCondaEnvInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.WaitlistEmail)
-    WaitlistEmailOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.TritonCondaEnvInfo)
+    TritonCondaEnvInfoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use WaitlistEmail.newBuilder() to construct.
-  private WaitlistEmail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TritonCondaEnvInfo.newBuilder() to construct.
+  private TritonCondaEnvInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private WaitlistEmail() {
-    email_ = "";
+  private TritonCondaEnvInfo() {
+    condaPackUrl_ = "";
+    condaYamlUrl_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new WaitlistEmail();
+    return new TritonCondaEnvInfo();
   }
 
   @java.lang.Override
@@ -35,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private WaitlistEmail(
+  private TritonCondaEnvInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -56,7 +53,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            email_ = s;
+            condaPackUrl_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            condaYamlUrl_ = s;
             break;
           }
           default: {
@@ -82,49 +85,87 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_WaitlistEmail_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TritonCondaEnvInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_WaitlistEmail_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TritonCondaEnvInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.WaitlistEmail.class, com.clarifai.grpc.api.WaitlistEmail.Builder.class);
+            com.clarifai.grpc.api.TritonCondaEnvInfo.class, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder.class);
   }
 
-  public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object email_;
+  public static final int CONDA_PACK_URL_FIELD_NUMBER = 1;
+  private volatile java.lang.Object condaPackUrl_;
   /**
-   * <code>string email = 1;</code>
-   * @return The email.
+   * <code>string conda_pack_url = 1;</code>
+   * @return The condaPackUrl.
    */
   @java.lang.Override
-  public java.lang.String getEmail() {
-    java.lang.Object ref = email_;
+  public java.lang.String getCondaPackUrl() {
+    java.lang.Object ref = condaPackUrl_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      email_ = s;
+      condaPackUrl_ = s;
       return s;
     }
   }
   /**
-   * <code>string email = 1;</code>
-   * @return The bytes for email.
+   * <code>string conda_pack_url = 1;</code>
+   * @return The bytes for condaPackUrl.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getEmailBytes() {
-    java.lang.Object ref = email_;
+      getCondaPackUrlBytes() {
+    java.lang.Object ref = condaPackUrl_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      email_ = b;
+      condaPackUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONDA_YAML_URL_FIELD_NUMBER = 2;
+  private volatile java.lang.Object condaYamlUrl_;
+  /**
+   * <code>string conda_yaml_url = 2;</code>
+   * @return The condaYamlUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getCondaYamlUrl() {
+    java.lang.Object ref = condaYamlUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      condaYamlUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string conda_yaml_url = 2;</code>
+   * @return The bytes for condaYamlUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCondaYamlUrlBytes() {
+    java.lang.Object ref = condaYamlUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      condaYamlUrl_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -145,8 +186,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condaPackUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, condaPackUrl_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condaYamlUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, condaYamlUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -157,8 +201,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condaPackUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, condaPackUrl_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(condaYamlUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, condaYamlUrl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -170,13 +217,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.WaitlistEmail)) {
+    if (!(obj instanceof com.clarifai.grpc.api.TritonCondaEnvInfo)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.WaitlistEmail other = (com.clarifai.grpc.api.WaitlistEmail) obj;
+    com.clarifai.grpc.api.TritonCondaEnvInfo other = (com.clarifai.grpc.api.TritonCondaEnvInfo) obj;
 
-    if (!getEmail()
-        .equals(other.getEmail())) return false;
+    if (!getCondaPackUrl()
+        .equals(other.getCondaPackUrl())) return false;
+    if (!getCondaYamlUrl()
+        .equals(other.getCondaYamlUrl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -188,76 +237,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + CONDA_PACK_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getCondaPackUrl().hashCode();
+    hash = (37 * hash) + CONDA_YAML_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getCondaYamlUrl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseDelimitedFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.WaitlistEmail parseFrom(
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -270,7 +321,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.WaitlistEmail prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.TritonCondaEnvInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -286,30 +337,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * WaitlistEmail is an e-mail address on a feature waiting list.
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.WaitlistEmail}
+   * Protobuf type {@code clarifai.api.TritonCondaEnvInfo}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.WaitlistEmail)
-      com.clarifai.grpc.api.WaitlistEmailOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.TritonCondaEnvInfo)
+      com.clarifai.grpc.api.TritonCondaEnvInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_WaitlistEmail_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TritonCondaEnvInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_WaitlistEmail_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TritonCondaEnvInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.WaitlistEmail.class, com.clarifai.grpc.api.WaitlistEmail.Builder.class);
+              com.clarifai.grpc.api.TritonCondaEnvInfo.class, com.clarifai.grpc.api.TritonCondaEnvInfo.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.WaitlistEmail.newBuilder()
+    // Construct using com.clarifai.grpc.api.TritonCondaEnvInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -327,7 +374,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      email_ = "";
+      condaPackUrl_ = "";
+
+      condaYamlUrl_ = "";
 
       return this;
     }
@@ -335,17 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_WaitlistEmail_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TritonCondaEnvInfo_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.WaitlistEmail getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.WaitlistEmail.getDefaultInstance();
+    public com.clarifai.grpc.api.TritonCondaEnvInfo getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.TritonCondaEnvInfo.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.WaitlistEmail build() {
-      com.clarifai.grpc.api.WaitlistEmail result = buildPartial();
+    public com.clarifai.grpc.api.TritonCondaEnvInfo build() {
+      com.clarifai.grpc.api.TritonCondaEnvInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -353,9 +402,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.WaitlistEmail buildPartial() {
-      com.clarifai.grpc.api.WaitlistEmail result = new com.clarifai.grpc.api.WaitlistEmail(this);
-      result.email_ = email_;
+    public com.clarifai.grpc.api.TritonCondaEnvInfo buildPartial() {
+      com.clarifai.grpc.api.TritonCondaEnvInfo result = new com.clarifai.grpc.api.TritonCondaEnvInfo(this);
+      result.condaPackUrl_ = condaPackUrl_;
+      result.condaYamlUrl_ = condaYamlUrl_;
       onBuilt();
       return result;
     }
@@ -394,18 +444,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.WaitlistEmail) {
-        return mergeFrom((com.clarifai.grpc.api.WaitlistEmail)other);
+      if (other instanceof com.clarifai.grpc.api.TritonCondaEnvInfo) {
+        return mergeFrom((com.clarifai.grpc.api.TritonCondaEnvInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.WaitlistEmail other) {
-      if (other == com.clarifai.grpc.api.WaitlistEmail.getDefaultInstance()) return this;
-      if (!other.getEmail().isEmpty()) {
-        email_ = other.email_;
+    public Builder mergeFrom(com.clarifai.grpc.api.TritonCondaEnvInfo other) {
+      if (other == com.clarifai.grpc.api.TritonCondaEnvInfo.getDefaultInstance()) return this;
+      if (!other.getCondaPackUrl().isEmpty()) {
+        condaPackUrl_ = other.condaPackUrl_;
+        onChanged();
+      }
+      if (!other.getCondaYamlUrl().isEmpty()) {
+        condaYamlUrl_ = other.condaYamlUrl_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -423,11 +477,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.WaitlistEmail parsedMessage = null;
+      com.clarifai.grpc.api.TritonCondaEnvInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.WaitlistEmail) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.TritonCondaEnvInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -437,78 +491,154 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object email_ = "";
+    private java.lang.Object condaPackUrl_ = "";
     /**
-     * <code>string email = 1;</code>
-     * @return The email.
+     * <code>string conda_pack_url = 1;</code>
+     * @return The condaPackUrl.
      */
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
+    public java.lang.String getCondaPackUrl() {
+      java.lang.Object ref = condaPackUrl_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        email_ = s;
+        condaPackUrl_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string email = 1;</code>
-     * @return The bytes for email.
+     * <code>string conda_pack_url = 1;</code>
+     * @return The bytes for condaPackUrl.
      */
     public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
+        getCondaPackUrlBytes() {
+      java.lang.Object ref = condaPackUrl_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        email_ = b;
+        condaPackUrl_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string email = 1;</code>
-     * @param value The email to set.
+     * <code>string conda_pack_url = 1;</code>
+     * @param value The condaPackUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setEmail(
+    public Builder setCondaPackUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      email_ = value;
+      condaPackUrl_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 1;</code>
+     * <code>string conda_pack_url = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEmail() {
+    public Builder clearCondaPackUrl() {
       
-      email_ = getDefaultInstance().getEmail();
+      condaPackUrl_ = getDefaultInstance().getCondaPackUrl();
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 1;</code>
-     * @param value The bytes for email to set.
+     * <code>string conda_pack_url = 1;</code>
+     * @param value The bytes for condaPackUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setEmailBytes(
+    public Builder setCondaPackUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      email_ = value;
+      condaPackUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object condaYamlUrl_ = "";
+    /**
+     * <code>string conda_yaml_url = 2;</code>
+     * @return The condaYamlUrl.
+     */
+    public java.lang.String getCondaYamlUrl() {
+      java.lang.Object ref = condaYamlUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        condaYamlUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string conda_yaml_url = 2;</code>
+     * @return The bytes for condaYamlUrl.
+     */
+    public com.google.protobuf.ByteString
+        getCondaYamlUrlBytes() {
+      java.lang.Object ref = condaYamlUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        condaYamlUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string conda_yaml_url = 2;</code>
+     * @param value The condaYamlUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCondaYamlUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      condaYamlUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string conda_yaml_url = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCondaYamlUrl() {
+      
+      condaYamlUrl_ = getDefaultInstance().getCondaYamlUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string conda_yaml_url = 2;</code>
+     * @param value The bytes for condaYamlUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCondaYamlUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      condaYamlUrl_ = value;
       onChanged();
       return this;
     }
@@ -525,41 +655,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.WaitlistEmail)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.TritonCondaEnvInfo)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.WaitlistEmail)
-  private static final com.clarifai.grpc.api.WaitlistEmail DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.TritonCondaEnvInfo)
+  private static final com.clarifai.grpc.api.TritonCondaEnvInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.WaitlistEmail();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.TritonCondaEnvInfo();
   }
 
-  public static com.clarifai.grpc.api.WaitlistEmail getDefaultInstance() {
+  public static com.clarifai.grpc.api.TritonCondaEnvInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WaitlistEmail>
-      PARSER = new com.google.protobuf.AbstractParser<WaitlistEmail>() {
+  private static final com.google.protobuf.Parser<TritonCondaEnvInfo>
+      PARSER = new com.google.protobuf.AbstractParser<TritonCondaEnvInfo>() {
     @java.lang.Override
-    public WaitlistEmail parsePartialFrom(
+    public TritonCondaEnvInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new WaitlistEmail(input, extensionRegistry);
+      return new TritonCondaEnvInfo(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<WaitlistEmail> parser() {
+  public static com.google.protobuf.Parser<TritonCondaEnvInfo> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<WaitlistEmail> getParserForType() {
+  public com.google.protobuf.Parser<TritonCondaEnvInfo> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.WaitlistEmail getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.TritonCondaEnvInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

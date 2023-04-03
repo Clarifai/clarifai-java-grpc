@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+ * AWS S3 storage credentials.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.AWSCreds}
@@ -20,8 +20,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AWSCreds() {
-    creds_ = "";
     region_ = "";
+    id_ = "";
+    secret_ = "";
+    token_ = "";
   }
 
   @java.lang.Override
@@ -54,16 +56,28 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            creds_ = s;
-            break;
-          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             region_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            id_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            secret_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            token_ = s;
             break;
           }
           default: {
@@ -98,44 +112,6 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_AWSCreds_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.AWSCreds.class, com.clarifai.grpc.api.AWSCreds.Builder.class);
-  }
-
-  public static final int CREDS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object creds_;
-  /**
-   * <code>string creds = 1;</code>
-   * @return The creds.
-   */
-  @java.lang.Override
-  public java.lang.String getCreds() {
-    java.lang.Object ref = creds_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      creds_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string creds = 1;</code>
-   * @return The bytes for creds.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCredsBytes() {
-    java.lang.Object ref = creds_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      creds_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int REGION_FIELD_NUMBER = 2;
@@ -176,6 +152,120 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object id_;
+  /**
+   * <code>string id = 3;</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 3;</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECRET_FIELD_NUMBER = 4;
+  private volatile java.lang.Object secret_;
+  /**
+   * <code>string secret = 4;</code>
+   * @return The secret.
+   */
+  @java.lang.Override
+  public java.lang.String getSecret() {
+    java.lang.Object ref = secret_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secret_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string secret = 4;</code>
+   * @return The bytes for secret.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSecretBytes() {
+    java.lang.Object ref = secret_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      secret_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TOKEN_FIELD_NUMBER = 5;
+  private volatile java.lang.Object token_;
+  /**
+   * <code>string token = 5;</code>
+   * @return The token.
+   */
+  @java.lang.Override
+  public java.lang.String getToken() {
+    java.lang.Object ref = token_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      token_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string token = 5;</code>
+   * @return The bytes for token.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTokenBytes() {
+    java.lang.Object ref = token_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      token_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,11 +280,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creds_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, creds_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, region_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secret_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, secret_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, token_);
     }
     unknownFields.writeTo(output);
   }
@@ -205,11 +301,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creds_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, creds_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, region_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secret_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, secret_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, token_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,10 +328,14 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.AWSCreds other = (com.clarifai.grpc.api.AWSCreds) obj;
 
-    if (!getCreds()
-        .equals(other.getCreds())) return false;
     if (!getRegion()
         .equals(other.getRegion())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getSecret()
+        .equals(other.getSecret())) return false;
+    if (!getToken()
+        .equals(other.getToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -241,10 +347,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CREDS_FIELD_NUMBER;
-    hash = (53 * hash) + getCreds().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + SECRET_FIELD_NUMBER;
+    hash = (53 * hash) + getSecret().hashCode();
+    hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -342,7 +452,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * AWS S3 uses creds: “{accessKey}:{secretKey}” and “region” for authentication.
+   * AWS S3 storage credentials.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.AWSCreds}
@@ -382,9 +492,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      creds_ = "";
-
       region_ = "";
+
+      id_ = "";
+
+      secret_ = "";
+
+      token_ = "";
 
       return this;
     }
@@ -412,8 +526,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.AWSCreds buildPartial() {
       com.clarifai.grpc.api.AWSCreds result = new com.clarifai.grpc.api.AWSCreds(this);
-      result.creds_ = creds_;
       result.region_ = region_;
+      result.id_ = id_;
+      result.secret_ = secret_;
+      result.token_ = token_;
       onBuilt();
       return result;
     }
@@ -462,12 +578,20 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.AWSCreds other) {
       if (other == com.clarifai.grpc.api.AWSCreds.getDefaultInstance()) return this;
-      if (!other.getCreds().isEmpty()) {
-        creds_ = other.creds_;
-        onChanged();
-      }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        onChanged();
+      }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
+      }
+      if (!other.getSecret().isEmpty()) {
+        secret_ = other.secret_;
+        onChanged();
+      }
+      if (!other.getToken().isEmpty()) {
+        token_ = other.token_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -496,82 +620,6 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private java.lang.Object creds_ = "";
-    /**
-     * <code>string creds = 1;</code>
-     * @return The creds.
-     */
-    public java.lang.String getCreds() {
-      java.lang.Object ref = creds_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        creds_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string creds = 1;</code>
-     * @return The bytes for creds.
-     */
-    public com.google.protobuf.ByteString
-        getCredsBytes() {
-      java.lang.Object ref = creds_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        creds_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string creds = 1;</code>
-     * @param value The creds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCreds(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      creds_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string creds = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCreds() {
-      
-      creds_ = getDefaultInstance().getCreds();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string creds = 1;</code>
-     * @param value The bytes for creds to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCredsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      creds_ = value;
-      onChanged();
       return this;
     }
 
@@ -647,6 +695,234 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       region_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object id_ = "";
+    /**
+     * <code>string id = 3;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string id = 3;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 3;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 3;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object secret_ = "";
+    /**
+     * <code>string secret = 4;</code>
+     * @return The secret.
+     */
+    public java.lang.String getSecret() {
+      java.lang.Object ref = secret_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secret_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string secret = 4;</code>
+     * @return The bytes for secret.
+     */
+    public com.google.protobuf.ByteString
+        getSecretBytes() {
+      java.lang.Object ref = secret_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secret_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string secret = 4;</code>
+     * @param value The secret to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecret(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      secret_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string secret = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSecret() {
+      
+      secret_ = getDefaultInstance().getSecret();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string secret = 4;</code>
+     * @param value The bytes for secret to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecretBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      secret_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object token_ = "";
+    /**
+     * <code>string token = 5;</code>
+     * @return The token.
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string token = 5;</code>
+     * @return The bytes for token.
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string token = 5;</code>
+     * @param value The token to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      token_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string token = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearToken() {
+      
+      token_ = getDefaultInstance().getToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string token = 5;</code>
+     * @param value The bytes for token to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      token_ = value;
       onChanged();
       return this;
     }

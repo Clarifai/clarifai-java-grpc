@@ -132,6 +132,20 @@ private static final long serialVersionUID = 0L;
             operationCase_ = 6;
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.DeleteFromDataset.Builder subBuilder = null;
+            if (operationCase_ == 7) {
+              subBuilder = ((com.clarifai.grpc.api.DeleteFromDataset) operation_).toBuilder();
+            }
+            operation_ =
+                input.readMessage(com.clarifai.grpc.api.DeleteFromDataset.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.DeleteFromDataset) operation_);
+              operation_ = subBuilder.buildPartial();
+            }
+            operationCase_ = 7;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -177,6 +191,7 @@ private static final long serialVersionUID = 0L;
     DELETE_METADATA(4),
     OVERWRITE_GEO(5),
     DELETE_GEO(6),
+    DELETE_FROM_DATASET(7),
     OPERATION_NOT_SET(0);
     private final int value;
     private OperationCase(int value) {
@@ -200,6 +215,7 @@ private static final long serialVersionUID = 0L;
         case 4: return DELETE_METADATA;
         case 5: return OVERWRITE_GEO;
         case 6: return DELETE_GEO;
+        case 7: return DELETE_FROM_DATASET;
         case 0: return OPERATION_NOT_SET;
         default: return null;
       }
@@ -401,6 +417,37 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.DeleteGeo.getDefaultInstance();
   }
 
+  public static final int DELETE_FROM_DATASET_FIELD_NUMBER = 7;
+  /**
+   * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+   * @return Whether the deleteFromDataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteFromDataset() {
+    return operationCase_ == 7;
+  }
+  /**
+   * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+   * @return The deleteFromDataset.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeleteFromDataset getDeleteFromDataset() {
+    if (operationCase_ == 7) {
+       return (com.clarifai.grpc.api.DeleteFromDataset) operation_;
+    }
+    return com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DeleteFromDatasetOrBuilder getDeleteFromDatasetOrBuilder() {
+    if (operationCase_ == 7) {
+       return (com.clarifai.grpc.api.DeleteFromDataset) operation_;
+    }
+    return com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -432,6 +479,9 @@ private static final long serialVersionUID = 0L;
     }
     if (operationCase_ == 6) {
       output.writeMessage(6, (com.clarifai.grpc.api.DeleteGeo) operation_);
+    }
+    if (operationCase_ == 7) {
+      output.writeMessage(7, (com.clarifai.grpc.api.DeleteFromDataset) operation_);
     }
     unknownFields.writeTo(output);
   }
@@ -465,6 +515,10 @@ private static final long serialVersionUID = 0L;
     if (operationCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.clarifai.grpc.api.DeleteGeo) operation_);
+    }
+    if (operationCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.clarifai.grpc.api.DeleteFromDataset) operation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -507,6 +561,10 @@ private static final long serialVersionUID = 0L;
         if (!getDeleteGeo()
             .equals(other.getDeleteGeo())) return false;
         break;
+      case 7:
+        if (!getDeleteFromDataset()
+            .equals(other.getDeleteFromDataset())) return false;
+        break;
       case 0:
       default:
     }
@@ -545,6 +603,10 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + DELETE_GEO_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteGeo().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + DELETE_FROM_DATASET_FIELD_NUMBER;
+        hash = (53 * hash) + getDeleteFromDataset().hashCode();
         break;
       case 0:
       default:
@@ -752,6 +814,13 @@ private static final long serialVersionUID = 0L;
           result.operation_ = deleteGeoBuilder_.build();
         }
       }
+      if (operationCase_ == 7) {
+        if (deleteFromDatasetBuilder_ == null) {
+          result.operation_ = operation_;
+        } else {
+          result.operation_ = deleteFromDatasetBuilder_.build();
+        }
+      }
       result.operationCase_ = operationCase_;
       onBuilt();
       return result;
@@ -824,6 +893,10 @@ private static final long serialVersionUID = 0L;
         }
         case DELETE_GEO: {
           mergeDeleteGeo(other.getDeleteGeo());
+          break;
+        }
+        case DELETE_FROM_DATASET: {
+          mergeDeleteFromDataset(other.getDeleteFromDataset());
           break;
         }
         case OPERATION_NOT_SET: {
@@ -1724,6 +1797,148 @@ private static final long serialVersionUID = 0L;
       operationCase_ = 6;
       onChanged();;
       return deleteGeoBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeleteFromDataset, com.clarifai.grpc.api.DeleteFromDataset.Builder, com.clarifai.grpc.api.DeleteFromDatasetOrBuilder> deleteFromDatasetBuilder_;
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     * @return Whether the deleteFromDataset field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeleteFromDataset() {
+      return operationCase_ == 7;
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     * @return The deleteFromDataset.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DeleteFromDataset getDeleteFromDataset() {
+      if (deleteFromDatasetBuilder_ == null) {
+        if (operationCase_ == 7) {
+          return (com.clarifai.grpc.api.DeleteFromDataset) operation_;
+        }
+        return com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
+      } else {
+        if (operationCase_ == 7) {
+          return deleteFromDatasetBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    public Builder setDeleteFromDataset(com.clarifai.grpc.api.DeleteFromDataset value) {
+      if (deleteFromDatasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operation_ = value;
+        onChanged();
+      } else {
+        deleteFromDatasetBuilder_.setMessage(value);
+      }
+      operationCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    public Builder setDeleteFromDataset(
+        com.clarifai.grpc.api.DeleteFromDataset.Builder builderForValue) {
+      if (deleteFromDatasetBuilder_ == null) {
+        operation_ = builderForValue.build();
+        onChanged();
+      } else {
+        deleteFromDatasetBuilder_.setMessage(builderForValue.build());
+      }
+      operationCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    public Builder mergeDeleteFromDataset(com.clarifai.grpc.api.DeleteFromDataset value) {
+      if (deleteFromDatasetBuilder_ == null) {
+        if (operationCase_ == 7 &&
+            operation_ != com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance()) {
+          operation_ = com.clarifai.grpc.api.DeleteFromDataset.newBuilder((com.clarifai.grpc.api.DeleteFromDataset) operation_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          operation_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationCase_ == 7) {
+          deleteFromDatasetBuilder_.mergeFrom(value);
+        } else {
+          deleteFromDatasetBuilder_.setMessage(value);
+        }
+      }
+      operationCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    public Builder clearDeleteFromDataset() {
+      if (deleteFromDatasetBuilder_ == null) {
+        if (operationCase_ == 7) {
+          operationCase_ = 0;
+          operation_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationCase_ == 7) {
+          operationCase_ = 0;
+          operation_ = null;
+        }
+        deleteFromDatasetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    public com.clarifai.grpc.api.DeleteFromDataset.Builder getDeleteFromDatasetBuilder() {
+      return getDeleteFromDatasetFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DeleteFromDatasetOrBuilder getDeleteFromDatasetOrBuilder() {
+      if ((operationCase_ == 7) && (deleteFromDatasetBuilder_ != null)) {
+        return deleteFromDatasetBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationCase_ == 7) {
+          return (com.clarifai.grpc.api.DeleteFromDataset) operation_;
+        }
+        return com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.DeleteFromDataset delete_from_dataset = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DeleteFromDataset, com.clarifai.grpc.api.DeleteFromDataset.Builder, com.clarifai.grpc.api.DeleteFromDatasetOrBuilder> 
+        getDeleteFromDatasetFieldBuilder() {
+      if (deleteFromDatasetBuilder_ == null) {
+        if (!(operationCase_ == 7)) {
+          operation_ = com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
+        }
+        deleteFromDatasetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DeleteFromDataset, com.clarifai.grpc.api.DeleteFromDataset.Builder, com.clarifai.grpc.api.DeleteFromDatasetOrBuilder>(
+                (com.clarifai.grpc.api.DeleteFromDataset) operation_,
+                getParentForChildren(),
+                isClean());
+        operation_ = null;
+      }
+      operationCase_ = 7;
+      onChanged();;
+      return deleteFromDatasetBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
