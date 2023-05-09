@@ -1024,6 +1024,10 @@ public enum StatusCode
    */
   DATABASE_CONSTRAINT_VIOLATED(40017),
   /**
+   * <code>DATABASE_CANCELED = 40021;</code>
+   */
+  DATABASE_CANCELED(40021),
+  /**
    * <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
    */
   ASYNC_WORKER_MULTI_ERRORS(40020),
@@ -1159,6 +1163,10 @@ public enum StatusCode
    * <code>SAVED_SEARCH_MODIFY_FAILED = 43005;</code>
    */
   SAVED_SEARCH_MODIFY_FAILED(43005),
+  /**
+   * <code>SEARCH_COUNTS_UNAVAILABLE = 43006;</code>
+   */
+  SEARCH_COUNTS_UNAVAILABLE(43006),
   /**
    * <pre>
    * Workflow evaluation err code
@@ -2810,6 +2818,10 @@ public enum StatusCode
    */
   public static final int DATABASE_CONSTRAINT_VIOLATED_VALUE = 40017;
   /**
+   * <code>DATABASE_CANCELED = 40021;</code>
+   */
+  public static final int DATABASE_CANCELED_VALUE = 40021;
+  /**
    * <code>ASYNC_WORKER_MULTI_ERRORS = 40020;</code>
    */
   public static final int ASYNC_WORKER_MULTI_ERRORS_VALUE = 40020;
@@ -2945,6 +2957,10 @@ public enum StatusCode
    * <code>SAVED_SEARCH_MODIFY_FAILED = 43005;</code>
    */
   public static final int SAVED_SEARCH_MODIFY_FAILED_VALUE = 43005;
+  /**
+   * <code>SEARCH_COUNTS_UNAVAILABLE = 43006;</code>
+   */
+  public static final int SEARCH_COUNTS_UNAVAILABLE_VALUE = 43006;
   /**
    * <pre>
    * Workflow evaluation err code
@@ -3794,6 +3810,7 @@ public enum StatusCode
       case 40015: return DATABASE_FAIL_TO_GET_CONNECTIONS;
       case 40016: return DATABASE_TOO_MANY_CLIENTS;
       case 40017: return DATABASE_CONSTRAINT_VIOLATED;
+      case 40021: return DATABASE_CANCELED;
       case 40020: return ASYNC_WORKER_MULTI_ERRORS;
       case 40030: return RPC_REQUEST_QUEUE_FULL;
       case 40031: return RPC_SERVER_UNAVAILABLE;
@@ -3824,6 +3841,7 @@ public enum StatusCode
       case 43003: return SEARCH_PREDICTION_FAILURE;
       case 43004: return SEARCH_BY_NOT_FULLY_INDEXED_INPUT;
       case 43005: return SAVED_SEARCH_MODIFY_FAILED;
+      case 43006: return SEARCH_COUNTS_UNAVAILABLE;
       case 43100: return EVALUATION_QUEUED;
       case 43101: return EVALUATION_IN_PROGRESS;
       case 43102: return EVALUATION_SUCCESS;

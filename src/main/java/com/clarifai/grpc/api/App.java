@@ -193,6 +193,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 186: {
+            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
+            if (defaultWorkflow_ != null) {
+              subBuilder = defaultWorkflow_.toBuilder();
+            }
+            defaultWorkflow_ = input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(defaultWorkflow_);
+              defaultWorkflow_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -344,6 +357,10 @@ private static final long serialVersionUID = 0L;
   public static final int DEFAULT_WORKFLOW_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object defaultWorkflowId_;
   /**
+   * <pre>
+   * Default workflow id deprecated in favor of default_workflow
+   * </pre>
+   *
    * <code>string default_workflow_id = 4;</code>
    * @return The defaultWorkflowId.
    */
@@ -361,6 +378,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Default workflow id deprecated in favor of default_workflow
+   * </pre>
+   *
    * <code>string default_workflow_id = 4;</code>
    * @return The bytes for defaultWorkflowId.
    */
@@ -377,6 +398,32 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DEFAULT_WORKFLOW_FIELD_NUMBER = 23;
+  private com.clarifai.grpc.api.Workflow defaultWorkflow_;
+  /**
+   * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+   * @return Whether the defaultWorkflow field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultWorkflow() {
+    return defaultWorkflow_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+   * @return The defaultWorkflow.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Workflow getDefaultWorkflow() {
+    return defaultWorkflow_ == null ? com.clarifai.grpc.api.Workflow.getDefaultInstance() : defaultWorkflow_;
+  }
+  /**
+   * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowOrBuilder getDefaultWorkflowOrBuilder() {
+    return getDefaultWorkflow();
   }
 
   public static final int USER_ID_FIELD_NUMBER = 5;
@@ -907,6 +954,9 @@ private static final long serialVersionUID = 0L;
     if (image_ != null) {
       output.writeMessage(22, getImage());
     }
+    if (defaultWorkflow_ != null) {
+      output.writeMessage(23, getDefaultWorkflow());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -976,6 +1026,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(22, getImage());
     }
+    if (defaultWorkflow_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(23, getDefaultWorkflow());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -999,6 +1053,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDefaultLanguage())) return false;
     if (!getDefaultWorkflowId()
         .equals(other.getDefaultWorkflowId())) return false;
+    if (hasDefaultWorkflow() != other.hasDefaultWorkflow()) return false;
+    if (hasDefaultWorkflow()) {
+      if (!getDefaultWorkflow()
+          .equals(other.getDefaultWorkflow())) return false;
+    }
     if (!getUserId()
         .equals(other.getUserId())) return false;
     if (hasCreatedAt() != other.hasCreatedAt()) return false;
@@ -1059,6 +1118,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDefaultLanguage().hashCode();
     hash = (37 * hash) + DEFAULT_WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultWorkflowId().hashCode();
+    if (hasDefaultWorkflow()) {
+      hash = (37 * hash) + DEFAULT_WORKFLOW_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultWorkflow().hashCode();
+    }
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
     if (hasCreatedAt()) {
@@ -1241,6 +1304,12 @@ private static final long serialVersionUID = 0L;
 
       defaultWorkflowId_ = "";
 
+      if (defaultWorkflowBuilder_ == null) {
+        defaultWorkflow_ = null;
+      } else {
+        defaultWorkflow_ = null;
+        defaultWorkflowBuilder_ = null;
+      }
       userId_ = "";
 
       if (createdAtBuilder_ == null) {
@@ -1317,6 +1386,11 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.defaultLanguage_ = defaultLanguage_;
       result.defaultWorkflowId_ = defaultWorkflowId_;
+      if (defaultWorkflowBuilder_ == null) {
+        result.defaultWorkflow_ = defaultWorkflow_;
+      } else {
+        result.defaultWorkflow_ = defaultWorkflowBuilder_.build();
+      }
       result.userId_ = userId_;
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
@@ -1413,6 +1487,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDefaultWorkflowId().isEmpty()) {
         defaultWorkflowId_ = other.defaultWorkflowId_;
         onChanged();
+      }
+      if (other.hasDefaultWorkflow()) {
+        mergeDefaultWorkflow(other.getDefaultWorkflow());
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
@@ -1716,6 +1793,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object defaultWorkflowId_ = "";
     /**
+     * <pre>
+     * Default workflow id deprecated in favor of default_workflow
+     * </pre>
+     *
      * <code>string default_workflow_id = 4;</code>
      * @return The defaultWorkflowId.
      */
@@ -1732,6 +1813,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Default workflow id deprecated in favor of default_workflow
+     * </pre>
+     *
      * <code>string default_workflow_id = 4;</code>
      * @return The bytes for defaultWorkflowId.
      */
@@ -1749,6 +1834,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Default workflow id deprecated in favor of default_workflow
+     * </pre>
+     *
      * <code>string default_workflow_id = 4;</code>
      * @param value The defaultWorkflowId to set.
      * @return This builder for chaining.
@@ -1764,6 +1853,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Default workflow id deprecated in favor of default_workflow
+     * </pre>
+     *
      * <code>string default_workflow_id = 4;</code>
      * @return This builder for chaining.
      */
@@ -1774,6 +1867,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Default workflow id deprecated in favor of default_workflow
+     * </pre>
+     *
      * <code>string default_workflow_id = 4;</code>
      * @param value The bytes for defaultWorkflowId to set.
      * @return This builder for chaining.
@@ -1788,6 +1885,125 @@ private static final long serialVersionUID = 0L;
       defaultWorkflowId_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Workflow defaultWorkflow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> defaultWorkflowBuilder_;
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     * @return Whether the defaultWorkflow field is set.
+     */
+    public boolean hasDefaultWorkflow() {
+      return defaultWorkflowBuilder_ != null || defaultWorkflow_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     * @return The defaultWorkflow.
+     */
+    public com.clarifai.grpc.api.Workflow getDefaultWorkflow() {
+      if (defaultWorkflowBuilder_ == null) {
+        return defaultWorkflow_ == null ? com.clarifai.grpc.api.Workflow.getDefaultInstance() : defaultWorkflow_;
+      } else {
+        return defaultWorkflowBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    public Builder setDefaultWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (defaultWorkflowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultWorkflow_ = value;
+        onChanged();
+      } else {
+        defaultWorkflowBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    public Builder setDefaultWorkflow(
+        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (defaultWorkflowBuilder_ == null) {
+        defaultWorkflow_ = builderForValue.build();
+        onChanged();
+      } else {
+        defaultWorkflowBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    public Builder mergeDefaultWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (defaultWorkflowBuilder_ == null) {
+        if (defaultWorkflow_ != null) {
+          defaultWorkflow_ =
+            com.clarifai.grpc.api.Workflow.newBuilder(defaultWorkflow_).mergeFrom(value).buildPartial();
+        } else {
+          defaultWorkflow_ = value;
+        }
+        onChanged();
+      } else {
+        defaultWorkflowBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    public Builder clearDefaultWorkflow() {
+      if (defaultWorkflowBuilder_ == null) {
+        defaultWorkflow_ = null;
+        onChanged();
+      } else {
+        defaultWorkflow_ = null;
+        defaultWorkflowBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder getDefaultWorkflowBuilder() {
+      
+      onChanged();
+      return getDefaultWorkflowFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowOrBuilder getDefaultWorkflowOrBuilder() {
+      if (defaultWorkflowBuilder_ != null) {
+        return defaultWorkflowBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultWorkflow_ == null ?
+            com.clarifai.grpc.api.Workflow.getDefaultInstance() : defaultWorkflow_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
+        getDefaultWorkflowFieldBuilder() {
+      if (defaultWorkflowBuilder_ == null) {
+        defaultWorkflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
+                getDefaultWorkflow(),
+                getParentForChildren(),
+                isClean());
+        defaultWorkflow_ = null;
+      }
+      return defaultWorkflowBuilder_;
     }
 
     private java.lang.Object userId_ = "";

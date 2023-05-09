@@ -3735,6 +3735,37 @@ public final class V2Grpc {
     return getPostAppsSearchesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetUserRequest,
+      com.clarifai.grpc.api.SingleUserResponse> getGetUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUser",
+      requestType = com.clarifai.grpc.api.GetUserRequest.class,
+      responseType = com.clarifai.grpc.api.SingleUserResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetUserRequest,
+      com.clarifai.grpc.api.SingleUserResponse> getGetUserMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetUserRequest, com.clarifai.grpc.api.SingleUserResponse> getGetUserMethod;
+    if ((getGetUserMethod = V2Grpc.getGetUserMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetUserMethod = V2Grpc.getGetUserMethod) == null) {
+          V2Grpc.getGetUserMethod = getGetUserMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetUserRequest, com.clarifai.grpc.api.SingleUserResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUser"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleUserResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetUser"))
+              .build();
+        }
+      }
+    }
+    return getGetUserMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostValidatePasswordRequest,
       com.clarifai.grpc.api.SinglePasswordValidationResponse> getPostValidatePasswordMethod;
 
@@ -5812,6 +5843,68 @@ public final class V2Grpc {
     return getGetDatasetInputsSearchAddJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNextTaskAssignmentsRequest,
+      com.clarifai.grpc.api.MultiInputResponse> getListNextTaskAssignmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNextTaskAssignments",
+      requestType = com.clarifai.grpc.api.ListNextTaskAssignmentsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiInputResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNextTaskAssignmentsRequest,
+      com.clarifai.grpc.api.MultiInputResponse> getListNextTaskAssignmentsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNextTaskAssignmentsRequest, com.clarifai.grpc.api.MultiInputResponse> getListNextTaskAssignmentsMethod;
+    if ((getListNextTaskAssignmentsMethod = V2Grpc.getListNextTaskAssignmentsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListNextTaskAssignmentsMethod = V2Grpc.getListNextTaskAssignmentsMethod) == null) {
+          V2Grpc.getListNextTaskAssignmentsMethod = getListNextTaskAssignmentsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListNextTaskAssignmentsRequest, com.clarifai.grpc.api.MultiInputResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNextTaskAssignments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListNextTaskAssignmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiInputResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListNextTaskAssignments"))
+              .build();
+        }
+      }
+    }
+    return getListNextTaskAssignmentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PutTaskAssignmentsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPutTaskAssignmentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PutTaskAssignments",
+      requestType = com.clarifai.grpc.api.PutTaskAssignmentsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PutTaskAssignmentsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getPutTaskAssignmentsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PutTaskAssignmentsRequest, com.clarifai.grpc.api.status.BaseResponse> getPutTaskAssignmentsMethod;
+    if ((getPutTaskAssignmentsMethod = V2Grpc.getPutTaskAssignmentsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPutTaskAssignmentsMethod = V2Grpc.getPutTaskAssignmentsMethod) == null) {
+          V2Grpc.getPutTaskAssignmentsMethod = getPutTaskAssignmentsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PutTaskAssignmentsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutTaskAssignments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PutTaskAssignmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PutTaskAssignments"))
+              .build();
+        }
+      }
+    }
+    return getPutTaskAssignmentsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInputsAddJobsRequest,
       com.clarifai.grpc.api.MultiInputsAddJobResponse> getListInputsAddJobsMethod;
 
@@ -7451,6 +7544,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get user information
+     * </pre>
+     */
+    public void getUser(com.clarifai.grpc.api.GetUserRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleUserResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Validate new password in real-time for a user
      * </pre>
      */
@@ -8136,6 +8239,26 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List next non-labeled and unassigned inputs from task's dataset
+     * </pre>
+     */
+    public void listNextTaskAssignments(com.clarifai.grpc.api.ListNextTaskAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNextTaskAssignmentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * </pre>
+     */
+    public void putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutTaskAssignmentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * List all the inputs add jobs
      * </pre>
      */
@@ -8162,6 +8285,10 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Upload a part of a multipart upload.
+     * Behaviour on completion depends on the endpoint that was used to initiate the upload.
+     * </pre>
      */
     public void putUploadContentParts(com.clarifai.grpc.api.PutUploadContentPartsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleUploadResponse> responseObserver) {
@@ -8190,6 +8317,19 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Initiates retrieval of inputs from cloud storage from a user provided data source.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Archives will be extracted and their contents will be processed as inputs.
+     * The cloud URL will be treated as a filter prefix. For example s3:/bucket/images_folder/abc will process
+     * files in the images_folder beginning with abc or in a subfolder beginning with abc.
+     * For example:
+     * bucket/images_folder/abcImage.png
+     * bucket/images_folder/abc-1/Data.zip
+     * If given URL is for a private bucket or file, then credentials should be provided to access the bucket.
+     * Credentials should include rights to list the objects in the bucket, except when pointed directly at a file archive,
+     * in which case it only requires rights to access that particular file.
+     * </pre>
      */
     public void postInputsDataSources(com.clarifai.grpc.api.PostInputsDataSourcesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse> responseObserver) {
@@ -8224,6 +8364,12 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Start uploading a file archive containing inputs.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+     * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+     * </pre>
      */
     public void postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse> responseObserver) {
@@ -9073,6 +9219,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.MultiAppResponse>(
                   this, METHODID_POST_APPS_SEARCHES)))
           .addMethod(
+            getGetUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetUserRequest,
+                com.clarifai.grpc.api.SingleUserResponse>(
+                  this, METHODID_GET_USER)))
+          .addMethod(
             getPostValidatePasswordMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -9541,6 +9694,20 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest,
                 com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse>(
                   this, METHODID_GET_DATASET_INPUTS_SEARCH_ADD_JOB)))
+          .addMethod(
+            getListNextTaskAssignmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListNextTaskAssignmentsRequest,
+                com.clarifai.grpc.api.MultiInputResponse>(
+                  this, METHODID_LIST_NEXT_TASK_ASSIGNMENTS)))
+          .addMethod(
+            getPutTaskAssignmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PutTaskAssignmentsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_PUT_TASK_ASSIGNMENTS)))
           .addMethod(
             getListInputsAddJobsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -10982,6 +11149,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get user information
+     * </pre>
+     */
+    public void getUser(com.clarifai.grpc.api.GetUserRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleUserResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Validate new password in real-time for a user
      * </pre>
      */
@@ -11734,6 +11912,28 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List next non-labeled and unassigned inputs from task's dataset
+     * </pre>
+     */
+    public void listNextTaskAssignments(com.clarifai.grpc.api.ListNextTaskAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNextTaskAssignmentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * </pre>
+     */
+    public void putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPutTaskAssignmentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * List all the inputs add jobs
      * </pre>
      */
@@ -11763,6 +11963,10 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Upload a part of a multipart upload.
+     * Behaviour on completion depends on the endpoint that was used to initiate the upload.
+     * </pre>
      */
     public void putUploadContentParts(com.clarifai.grpc.api.PutUploadContentPartsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleUploadResponse> responseObserver) {
@@ -11795,6 +11999,19 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Initiates retrieval of inputs from cloud storage from a user provided data source.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Archives will be extracted and their contents will be processed as inputs.
+     * The cloud URL will be treated as a filter prefix. For example s3:/bucket/images_folder/abc will process
+     * files in the images_folder beginning with abc or in a subfolder beginning with abc.
+     * For example:
+     * bucket/images_folder/abcImage.png
+     * bucket/images_folder/abc-1/Data.zip
+     * If given URL is for a private bucket or file, then credentials should be provided to access the bucket.
+     * Credentials should include rights to list the objects in the bucket, except when pointed directly at a file archive,
+     * in which case it only requires rights to access that particular file.
+     * </pre>
      */
     public void postInputsDataSources(com.clarifai.grpc.api.PostInputsDataSourcesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse> responseObserver) {
@@ -11833,6 +12050,12 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Start uploading a file archive containing inputs.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+     * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+     * </pre>
      */
     public void postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse> responseObserver) {
@@ -13074,6 +13297,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get user information
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleUserResponse getUser(com.clarifai.grpc.api.GetUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Validate new password in real-time for a user
      * </pre>
      */
@@ -13759,6 +13992,26 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List next non-labeled and unassigned inputs from task's dataset
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiInputResponse listNextTaskAssignments(com.clarifai.grpc.api.ListNextTaskAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNextTaskAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPutTaskAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * List all the inputs add jobs
      * </pre>
      */
@@ -13785,6 +14038,10 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Upload a part of a multipart upload.
+     * Behaviour on completion depends on the endpoint that was used to initiate the upload.
+     * </pre>
      */
     public com.clarifai.grpc.api.SingleUploadResponse putUploadContentParts(com.clarifai.grpc.api.PutUploadContentPartsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -13813,6 +14070,19 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Initiates retrieval of inputs from cloud storage from a user provided data source.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Archives will be extracted and their contents will be processed as inputs.
+     * The cloud URL will be treated as a filter prefix. For example s3:/bucket/images_folder/abc will process
+     * files in the images_folder beginning with abc or in a subfolder beginning with abc.
+     * For example:
+     * bucket/images_folder/abcImage.png
+     * bucket/images_folder/abc-1/Data.zip
+     * If given URL is for a private bucket or file, then credentials should be provided to access the bucket.
+     * Credentials should include rights to list the objects in the bucket, except when pointed directly at a file archive,
+     * in which case it only requires rights to access that particular file.
+     * </pre>
      */
     public com.clarifai.grpc.api.MultiInputsAddJobResponse postInputsDataSources(com.clarifai.grpc.api.PostInputsDataSourcesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -13847,6 +14117,12 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Start uploading a file archive containing inputs.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+     * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+     * </pre>
      */
     public com.clarifai.grpc.api.MultiInputsAddJobResponse postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -15207,6 +15483,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get user information
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleUserResponse> getUser(
+        com.clarifai.grpc.api.GetUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Validate new password in real-time for a user
      * </pre>
      */
@@ -15959,6 +16246,28 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * List next non-labeled and unassigned inputs from task's dataset
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputResponse> listNextTaskAssignments(
+        com.clarifai.grpc.api.ListNextTaskAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNextTaskAssignmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> putTaskAssignments(
+        com.clarifai.grpc.api.PutTaskAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPutTaskAssignmentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * List all the inputs add jobs
      * </pre>
      */
@@ -15988,6 +16297,10 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Upload a part of a multipart upload.
+     * Behaviour on completion depends on the endpoint that was used to initiate the upload.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleUploadResponse> putUploadContentParts(
         com.clarifai.grpc.api.PutUploadContentPartsRequest request) {
@@ -16020,6 +16333,19 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Initiates retrieval of inputs from cloud storage from a user provided data source.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Archives will be extracted and their contents will be processed as inputs.
+     * The cloud URL will be treated as a filter prefix. For example s3:/bucket/images_folder/abc will process
+     * files in the images_folder beginning with abc or in a subfolder beginning with abc.
+     * For example:
+     * bucket/images_folder/abcImage.png
+     * bucket/images_folder/abc-1/Data.zip
+     * If given URL is for a private bucket or file, then credentials should be provided to access the bucket.
+     * Credentials should include rights to list the objects in the bucket, except when pointed directly at a file archive,
+     * in which case it only requires rights to access that particular file.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputsAddJobResponse> postInputsDataSources(
         com.clarifai.grpc.api.PostInputsDataSourcesRequest request) {
@@ -16058,6 +16384,12 @@ public final class V2Grpc {
     }
 
     /**
+     * <pre>
+     * Start uploading a file archive containing inputs.
+     * Will create and return an inputs-add-job for tracking progress.
+     * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+     * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputsAddJobResponse> postInputsUploads(
         com.clarifai.grpc.api.PostInputsUploadsRequest request) {
@@ -16186,85 +16518,88 @@ public final class V2Grpc {
   private static final int METHODID_PATCH_APPS_IDS = 117;
   private static final int METHODID_PATCH_APP = 118;
   private static final int METHODID_POST_APPS_SEARCHES = 119;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 120;
-  private static final int METHODID_GET_SEARCH = 121;
-  private static final int METHODID_LIST_SEARCHES = 122;
-  private static final int METHODID_PATCH_SEARCHES = 123;
-  private static final int METHODID_POST_SEARCHES = 124;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 125;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 126;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 127;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 128;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 129;
-  private static final int METHODID_DELETE_SEARCH = 130;
-  private static final int METHODID_LIST_ANNOTATION_FILTERS = 131;
-  private static final int METHODID_GET_ANNOTATION_FILTER = 132;
-  private static final int METHODID_POST_ANNOTATION_FILTERS = 133;
-  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 134;
-  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 135;
-  private static final int METHODID_LIST_STATUS_CODES = 136;
-  private static final int METHODID_GET_STATUS_CODE = 137;
-  private static final int METHODID_LIST_COLLABORATORS = 138;
-  private static final int METHODID_POST_COLLABORATORS = 139;
-  private static final int METHODID_PATCH_COLLABORATORS = 140;
-  private static final int METHODID_DELETE_COLLABORATORS = 141;
-  private static final int METHODID_LIST_COLLABORATIONS = 142;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 143;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 144;
-  private static final int METHODID_GET_APP_DUPLICATION = 145;
-  private static final int METHODID_POST_TASKS = 146;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 147;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 148;
-  private static final int METHODID_GET_TASK = 149;
-  private static final int METHODID_LIST_TASKS = 150;
-  private static final int METHODID_PATCH_TASKS = 151;
-  private static final int METHODID_DELETE_TASKS = 152;
-  private static final int METHODID_POST_LABEL_ORDERS = 153;
-  private static final int METHODID_GET_LABEL_ORDER = 154;
-  private static final int METHODID_LIST_LABEL_ORDERS = 155;
-  private static final int METHODID_PATCH_LABEL_ORDERS = 156;
-  private static final int METHODID_DELETE_LABEL_ORDERS = 157;
-  private static final int METHODID_POST_COLLECTORS = 158;
-  private static final int METHODID_GET_COLLECTOR = 159;
-  private static final int METHODID_LIST_COLLECTORS = 160;
-  private static final int METHODID_PATCH_COLLECTORS = 161;
-  private static final int METHODID_DELETE_COLLECTORS = 162;
-  private static final int METHODID_POST_STAT_VALUES = 163;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 164;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 165;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 166;
-  private static final int METHODID_GET_MODULE = 167;
-  private static final int METHODID_LIST_MODULES = 168;
-  private static final int METHODID_POST_MODULES = 169;
-  private static final int METHODID_PATCH_MODULES = 170;
-  private static final int METHODID_DELETE_MODULES = 171;
-  private static final int METHODID_GET_MODULE_VERSION = 172;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 173;
-  private static final int METHODID_POST_MODULE_VERSIONS = 174;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 175;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 176;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 177;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 178;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 179;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 180;
-  private static final int METHODID_POST_BULK_OPERATIONS = 181;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 182;
-  private static final int METHODID_GET_BULK_OPERATION = 183;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 184;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 185;
-  private static final int METHODID_GET_DATASET_INPUTS_SEARCH_ADD_JOB = 186;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 187;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 188;
-  private static final int METHODID_POST_UPLOADS = 189;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 190;
-  private static final int METHODID_GET_UPLOAD = 191;
-  private static final int METHODID_LIST_UPLOADS = 192;
-  private static final int METHODID_DELETE_UPLOADS = 193;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 194;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 195;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 196;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 197;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 198;
+  private static final int METHODID_GET_USER = 120;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 121;
+  private static final int METHODID_GET_SEARCH = 122;
+  private static final int METHODID_LIST_SEARCHES = 123;
+  private static final int METHODID_PATCH_SEARCHES = 124;
+  private static final int METHODID_POST_SEARCHES = 125;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 126;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 127;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 128;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 129;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 130;
+  private static final int METHODID_DELETE_SEARCH = 131;
+  private static final int METHODID_LIST_ANNOTATION_FILTERS = 132;
+  private static final int METHODID_GET_ANNOTATION_FILTER = 133;
+  private static final int METHODID_POST_ANNOTATION_FILTERS = 134;
+  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 135;
+  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 136;
+  private static final int METHODID_LIST_STATUS_CODES = 137;
+  private static final int METHODID_GET_STATUS_CODE = 138;
+  private static final int METHODID_LIST_COLLABORATORS = 139;
+  private static final int METHODID_POST_COLLABORATORS = 140;
+  private static final int METHODID_PATCH_COLLABORATORS = 141;
+  private static final int METHODID_DELETE_COLLABORATORS = 142;
+  private static final int METHODID_LIST_COLLABORATIONS = 143;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 144;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 145;
+  private static final int METHODID_GET_APP_DUPLICATION = 146;
+  private static final int METHODID_POST_TASKS = 147;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 148;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 149;
+  private static final int METHODID_GET_TASK = 150;
+  private static final int METHODID_LIST_TASKS = 151;
+  private static final int METHODID_PATCH_TASKS = 152;
+  private static final int METHODID_DELETE_TASKS = 153;
+  private static final int METHODID_POST_LABEL_ORDERS = 154;
+  private static final int METHODID_GET_LABEL_ORDER = 155;
+  private static final int METHODID_LIST_LABEL_ORDERS = 156;
+  private static final int METHODID_PATCH_LABEL_ORDERS = 157;
+  private static final int METHODID_DELETE_LABEL_ORDERS = 158;
+  private static final int METHODID_POST_COLLECTORS = 159;
+  private static final int METHODID_GET_COLLECTOR = 160;
+  private static final int METHODID_LIST_COLLECTORS = 161;
+  private static final int METHODID_PATCH_COLLECTORS = 162;
+  private static final int METHODID_DELETE_COLLECTORS = 163;
+  private static final int METHODID_POST_STAT_VALUES = 164;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 165;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 166;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 167;
+  private static final int METHODID_GET_MODULE = 168;
+  private static final int METHODID_LIST_MODULES = 169;
+  private static final int METHODID_POST_MODULES = 170;
+  private static final int METHODID_PATCH_MODULES = 171;
+  private static final int METHODID_DELETE_MODULES = 172;
+  private static final int METHODID_GET_MODULE_VERSION = 173;
+  private static final int METHODID_LIST_MODULE_VERSIONS = 174;
+  private static final int METHODID_POST_MODULE_VERSIONS = 175;
+  private static final int METHODID_DELETE_MODULE_VERSIONS = 176;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 177;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 178;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 179;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 180;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 181;
+  private static final int METHODID_POST_BULK_OPERATIONS = 182;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 183;
+  private static final int METHODID_GET_BULK_OPERATION = 184;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 185;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 186;
+  private static final int METHODID_GET_DATASET_INPUTS_SEARCH_ADD_JOB = 187;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 188;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 189;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 190;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 191;
+  private static final int METHODID_POST_UPLOADS = 192;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 193;
+  private static final int METHODID_GET_UPLOAD = 194;
+  private static final int METHODID_LIST_UPLOADS = 195;
+  private static final int METHODID_DELETE_UPLOADS = 196;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 197;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 198;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 199;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 200;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 201;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -16763,6 +17098,10 @@ public final class V2Grpc {
           serviceImpl.postAppsSearches((com.clarifai.grpc.api.PostAppsSearchesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAppResponse>) responseObserver);
           break;
+        case METHODID_GET_USER:
+          serviceImpl.getUser((com.clarifai.grpc.api.GetUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleUserResponse>) responseObserver);
+          break;
         case METHODID_POST_VALIDATE_PASSWORD:
           serviceImpl.postValidatePassword((com.clarifai.grpc.api.PostValidatePasswordRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SinglePasswordValidationResponse>) responseObserver);
@@ -17031,6 +17370,14 @@ public final class V2Grpc {
           serviceImpl.getDatasetInputsSearchAddJob((com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse>) responseObserver);
           break;
+        case METHODID_LIST_NEXT_TASK_ASSIGNMENTS:
+          serviceImpl.listNextTaskAssignments((com.clarifai.grpc.api.ListNextTaskAssignmentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse>) responseObserver);
+          break;
+        case METHODID_PUT_TASK_ASSIGNMENTS:
+          serviceImpl.putTaskAssignments((com.clarifai.grpc.api.PutTaskAssignmentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         case METHODID_LIST_INPUTS_ADD_JOBS:
           serviceImpl.listInputsAddJobs((com.clarifai.grpc.api.ListInputsAddJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse>) responseObserver);
@@ -17260,6 +17607,7 @@ public final class V2Grpc {
               .addMethod(getPatchAppsIdsMethod())
               .addMethod(getPatchAppMethod())
               .addMethod(getPostAppsSearchesMethod())
+              .addMethod(getGetUserMethod())
               .addMethod(getPostValidatePasswordMethod())
               .addMethod(getGetSearchMethod())
               .addMethod(getListSearchesMethod())
@@ -17327,6 +17675,8 @@ public final class V2Grpc {
               .addMethod(getCancelBulkOperationsMethod())
               .addMethod(getDeleteBulkOperationsMethod())
               .addMethod(getGetDatasetInputsSearchAddJobMethod())
+              .addMethod(getListNextTaskAssignmentsMethod())
+              .addMethod(getPutTaskAssignmentsMethod())
               .addMethod(getListInputsAddJobsMethod())
               .addMethod(getGetInputsAddJobMethod())
               .addMethod(getPostUploadsMethod())

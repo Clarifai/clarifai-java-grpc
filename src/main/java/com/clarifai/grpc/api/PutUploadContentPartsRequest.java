@@ -5,7 +5,8 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * Upload part of multipart upload
+ * Upload a part of a multipart upload.
+ * Behaviour on completion depends on the endpoint that was used to initiate the upload.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.PutUploadContentPartsRequest}
@@ -409,7 +410,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Upload part of multipart upload
+   * Upload a part of a multipart upload.
+   * Behaviour on completion depends on the endpoint that was used to initiate the upload.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.PutUploadContentPartsRequest}

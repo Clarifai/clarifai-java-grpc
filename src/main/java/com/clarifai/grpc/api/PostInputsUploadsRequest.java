@@ -4,6 +4,13 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * Start uploading a file archive containing inputs.
+ * Will create and return an inputs-add-job for tracking progress.
+ * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+ * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.PostInputsUploadsRequest}
  */
 public final class PostInputsUploadsRequest extends
@@ -349,6 +356,13 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Start uploading a file archive containing inputs.
+   * Will create and return an inputs-add-job for tracking progress.
+   * Associated inputs-add-job contains an upload id which should be completed through `PutUploadContentParts` endpoint.
+   * Completing the upload will automatically begin unpacking the archive and uploading the contents as inputs.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.PostInputsUploadsRequest}
    */
   public static final class Builder extends

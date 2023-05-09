@@ -112,5 +112,20 @@ public interface OperationOrBuilder extends
    */
   com.clarifai.grpc.api.DeleteFromDatasetOrBuilder getDeleteFromDatasetOrBuilder();
 
+  /**
+   * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+   * @return Whether the addToDataset field is set.
+   */
+  boolean hasAddToDataset();
+  /**
+   * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+   * @return The addToDataset.
+   */
+  com.clarifai.grpc.api.AddToDataset getAddToDataset();
+  /**
+   * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+   */
+  com.clarifai.grpc.api.AddToDatasetOrBuilder getAddToDatasetOrBuilder();
+
   public com.clarifai.grpc.api.Operation.OperationCase getOperationCase();
 }

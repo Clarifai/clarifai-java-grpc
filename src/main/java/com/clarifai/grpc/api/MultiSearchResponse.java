@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     hits_ = java.util.Collections.emptyList();
     searches_ = java.util.Collections.emptyList();
+    hitCounts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -106,6 +107,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry));
             break;
           }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              hitCounts_ = new java.util.ArrayList<com.clarifai.grpc.api.HitCount>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            hitCounts_.add(
+                input.readMessage(com.clarifai.grpc.api.HitCount.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +138,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         searches_ = java.util.Collections.unmodifiableList(searches_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        hitCounts_ = java.util.Collections.unmodifiableList(hitCounts_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -388,6 +401,71 @@ private static final long serialVersionUID = 0L;
     return searches_.get(index);
   }
 
+  public static final int HIT_COUNTS_FIELD_NUMBER = 6;
+  private java.util.List<com.clarifai.grpc.api.HitCount> hitCounts_;
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.HitCount> getHitCountsList() {
+    return hitCounts_;
+  }
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.HitCountOrBuilder> 
+      getHitCountsOrBuilderList() {
+    return hitCounts_;
+  }
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  @java.lang.Override
+  public int getHitCountsCount() {
+    return hitCounts_.size();
+  }
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.HitCount getHitCounts(int index) {
+    return hitCounts_.get(index);
+  }
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.HitCountOrBuilder getHitCountsOrBuilder(
+      int index) {
+    return hitCounts_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -417,6 +495,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < searches_.size(); i++) {
       output.writeMessage(5, searches_.get(i));
     }
+    for (int i = 0; i < hitCounts_.size(); i++) {
+      output.writeMessage(6, hitCounts_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -444,6 +525,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < searches_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, searches_.get(i));
+    }
+    for (int i = 0; i < hitCounts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, hitCounts_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -476,6 +561,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getSearchesList()
         .equals(other.getSearchesList())) return false;
+    if (!getHitCountsList()
+        .equals(other.getHitCountsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -504,6 +591,10 @@ private static final long serialVersionUID = 0L;
     if (getSearchesCount() > 0) {
       hash = (37 * hash) + SEARCHES_FIELD_NUMBER;
       hash = (53 * hash) + getSearchesList().hashCode();
+    }
+    if (getHitCountsCount() > 0) {
+      hash = (37 * hash) + HIT_COUNTS_FIELD_NUMBER;
+      hash = (53 * hash) + getHitCountsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -639,6 +730,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getHitsFieldBuilder();
         getSearchesFieldBuilder();
+        getHitCountsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -669,6 +761,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         searchesBuilder_.clear();
+      }
+      if (hitCountsBuilder_ == null) {
+        hitCounts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        hitCountsBuilder_.clear();
       }
       return this;
     }
@@ -725,6 +823,15 @@ private static final long serialVersionUID = 0L;
         result.searches_ = searches_;
       } else {
         result.searches_ = searchesBuilder_.build();
+      }
+      if (hitCountsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          hitCounts_ = java.util.Collections.unmodifiableList(hitCounts_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.hitCounts_ = hitCounts_;
+      } else {
+        result.hitCounts_ = hitCountsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -833,6 +940,32 @@ private static final long serialVersionUID = 0L;
                  getSearchesFieldBuilder() : null;
           } else {
             searchesBuilder_.addAllMessages(other.searches_);
+          }
+        }
+      }
+      if (hitCountsBuilder_ == null) {
+        if (!other.hitCounts_.isEmpty()) {
+          if (hitCounts_.isEmpty()) {
+            hitCounts_ = other.hitCounts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureHitCountsIsMutable();
+            hitCounts_.addAll(other.hitCounts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.hitCounts_.isEmpty()) {
+          if (hitCountsBuilder_.isEmpty()) {
+            hitCountsBuilder_.dispose();
+            hitCountsBuilder_ = null;
+            hitCounts_ = other.hitCounts_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            hitCountsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getHitCountsFieldBuilder() : null;
+          } else {
+            hitCountsBuilder_.addAllMessages(other.hitCounts_);
           }
         }
       }
@@ -1894,6 +2027,336 @@ private static final long serialVersionUID = 0L;
         searches_ = null;
       }
       return searchesBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.HitCount> hitCounts_ =
+      java.util.Collections.emptyList();
+    private void ensureHitCountsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        hitCounts_ = new java.util.ArrayList<com.clarifai.grpc.api.HitCount>(hitCounts_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.HitCount, com.clarifai.grpc.api.HitCount.Builder, com.clarifai.grpc.api.HitCountOrBuilder> hitCountsBuilder_;
+
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.HitCount> getHitCountsList() {
+      if (hitCountsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(hitCounts_);
+      } else {
+        return hitCountsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public int getHitCountsCount() {
+      if (hitCountsBuilder_ == null) {
+        return hitCounts_.size();
+      } else {
+        return hitCountsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public com.clarifai.grpc.api.HitCount getHitCounts(int index) {
+      if (hitCountsBuilder_ == null) {
+        return hitCounts_.get(index);
+      } else {
+        return hitCountsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder setHitCounts(
+        int index, com.clarifai.grpc.api.HitCount value) {
+      if (hitCountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHitCountsIsMutable();
+        hitCounts_.set(index, value);
+        onChanged();
+      } else {
+        hitCountsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder setHitCounts(
+        int index, com.clarifai.grpc.api.HitCount.Builder builderForValue) {
+      if (hitCountsBuilder_ == null) {
+        ensureHitCountsIsMutable();
+        hitCounts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        hitCountsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder addHitCounts(com.clarifai.grpc.api.HitCount value) {
+      if (hitCountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHitCountsIsMutable();
+        hitCounts_.add(value);
+        onChanged();
+      } else {
+        hitCountsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder addHitCounts(
+        int index, com.clarifai.grpc.api.HitCount value) {
+      if (hitCountsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHitCountsIsMutable();
+        hitCounts_.add(index, value);
+        onChanged();
+      } else {
+        hitCountsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder addHitCounts(
+        com.clarifai.grpc.api.HitCount.Builder builderForValue) {
+      if (hitCountsBuilder_ == null) {
+        ensureHitCountsIsMutable();
+        hitCounts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        hitCountsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder addHitCounts(
+        int index, com.clarifai.grpc.api.HitCount.Builder builderForValue) {
+      if (hitCountsBuilder_ == null) {
+        ensureHitCountsIsMutable();
+        hitCounts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        hitCountsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder addAllHitCounts(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.HitCount> values) {
+      if (hitCountsBuilder_ == null) {
+        ensureHitCountsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, hitCounts_);
+        onChanged();
+      } else {
+        hitCountsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder clearHitCounts() {
+      if (hitCountsBuilder_ == null) {
+        hitCounts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        hitCountsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public Builder removeHitCounts(int index) {
+      if (hitCountsBuilder_ == null) {
+        ensureHitCountsIsMutable();
+        hitCounts_.remove(index);
+        onChanged();
+      } else {
+        hitCountsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public com.clarifai.grpc.api.HitCount.Builder getHitCountsBuilder(
+        int index) {
+      return getHitCountsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public com.clarifai.grpc.api.HitCountOrBuilder getHitCountsOrBuilder(
+        int index) {
+      if (hitCountsBuilder_ == null) {
+        return hitCounts_.get(index);  } else {
+        return hitCountsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.HitCountOrBuilder> 
+         getHitCountsOrBuilderList() {
+      if (hitCountsBuilder_ != null) {
+        return hitCountsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(hitCounts_);
+      }
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public com.clarifai.grpc.api.HitCount.Builder addHitCountsBuilder() {
+      return getHitCountsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.HitCount.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public com.clarifai.grpc.api.HitCount.Builder addHitCountsBuilder(
+        int index) {
+      return getHitCountsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.HitCount.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * The counts of hits for each search, in the same order as searches.
+     * Only returned if the request set only_count.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.HitCount.Builder> 
+         getHitCountsBuilderList() {
+      return getHitCountsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.HitCount, com.clarifai.grpc.api.HitCount.Builder, com.clarifai.grpc.api.HitCountOrBuilder> 
+        getHitCountsFieldBuilder() {
+      if (hitCountsBuilder_ == null) {
+        hitCountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.HitCount, com.clarifai.grpc.api.HitCount.Builder, com.clarifai.grpc.api.HitCountOrBuilder>(
+                hitCounts_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        hitCounts_ = null;
+      }
+      return hitCountsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

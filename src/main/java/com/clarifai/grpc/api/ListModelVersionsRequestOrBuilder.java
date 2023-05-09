@@ -58,6 +58,7 @@ public interface ListModelVersionsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -68,6 +69,7 @@ public interface ListModelVersionsRequestOrBuilder extends
       getConceptIdsList();
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -77,6 +79,7 @@ public interface ListModelVersionsRequestOrBuilder extends
   int getConceptIdsCount();
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -87,6 +90,7 @@ public interface ListModelVersionsRequestOrBuilder extends
   java.lang.String getConceptIds(int index);
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -96,4 +100,105 @@ public interface ListModelVersionsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getConceptIdsBytes(int index);
+
+  /**
+   * <pre>
+   * To list only the model versions that have been trained.
+   * </pre>
+   *
+   * <code>bool trained_only = 6;</code>
+   * @return The trainedOnly.
+   */
+  boolean getTrainedOnly();
+
+  /**
+   * <pre>
+   * Sorting options:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 7;</code>
+   * @return The sortAscending.
+   */
+  boolean getSortAscending();
+
+  /**
+   * <pre>
+   * Whether to order by the status code
+   * </pre>
+   *
+   * <code>bool sort_by_status_code = 8;</code>
+   * @return Whether the sortByStatusCode field is set.
+   */
+  boolean hasSortByStatusCode();
+  /**
+   * <pre>
+   * Whether to order by the status code
+   * </pre>
+   *
+   * <code>bool sort_by_status_code = 8;</code>
+   * @return The sortByStatusCode.
+   */
+  boolean getSortByStatusCode();
+
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 9;</code>
+   * @return Whether the sortByNumInputs field is set.
+   */
+  boolean hasSortByNumInputs();
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 9;</code>
+   * @return The sortByNumInputs.
+   */
+  boolean getSortByNumInputs();
+
+  /**
+   * <pre>
+   * Whether to sort by the description
+   * </pre>
+   *
+   * <code>bool sort_by_description = 10;</code>
+   * @return Whether the sortByDescription field is set.
+   */
+  boolean hasSortByDescription();
+  /**
+   * <pre>
+   * Whether to sort by the description
+   * </pre>
+   *
+   * <code>bool sort_by_description = 10;</code>
+   * @return The sortByDescription.
+   */
+  boolean getSortByDescription();
+
+  /**
+   * <pre>
+   * Whether to order by the created_at time
+   * If neither sort option is set to true, will sort by created_at.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 11;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  boolean hasSortByCreatedAt();
+  /**
+   * <pre>
+   * Whether to order by the created_at time
+   * If neither sort option is set to true, will sort by created_at.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 11;</code>
+   * @return The sortByCreatedAt.
+   */
+  boolean getSortByCreatedAt();
+
+  public com.clarifai.grpc.api.ListModelVersionsRequest.SortByCase getSortByCase();
 }
