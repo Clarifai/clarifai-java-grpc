@@ -123,7 +123,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5365
+   *     See proto/clarifai/api/service.proto;l=5462
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -135,7 +135,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5365
+   *     See proto/clarifai/api/service.proto;l=5462
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

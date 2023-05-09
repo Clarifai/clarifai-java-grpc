@@ -44,16 +44,39 @@ public interface AppOrBuilder extends
       getDefaultLanguageBytes();
 
   /**
+   * <pre>
+   * Default workflow id deprecated in favor of default_workflow
+   * </pre>
+   *
    * <code>string default_workflow_id = 4;</code>
    * @return The defaultWorkflowId.
    */
   java.lang.String getDefaultWorkflowId();
   /**
+   * <pre>
+   * Default workflow id deprecated in favor of default_workflow
+   * </pre>
+   *
    * <code>string default_workflow_id = 4;</code>
    * @return The bytes for defaultWorkflowId.
    */
   com.google.protobuf.ByteString
       getDefaultWorkflowIdBytes();
+
+  /**
+   * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+   * @return Whether the defaultWorkflow field is set.
+   */
+  boolean hasDefaultWorkflow();
+  /**
+   * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+   * @return The defaultWorkflow.
+   */
+  com.clarifai.grpc.api.Workflow getDefaultWorkflow();
+  /**
+   * <code>.clarifai.api.Workflow default_workflow = 23;</code>
+   */
+  com.clarifai.grpc.api.WorkflowOrBuilder getDefaultWorkflowOrBuilder();
 
   /**
    * <pre>

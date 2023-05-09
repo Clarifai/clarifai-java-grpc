@@ -36,4 +36,28 @@ public interface InputsExtractionJobProgressOrBuilder extends
    * @return The textInputsCount.
    */
   long getTextInputsCount();
+
+  /**
+   * <code>uint64 pending_archives_count = 6;</code>
+   * @return The pendingArchivesCount.
+   */
+  long getPendingArchivesCount();
+
+  /**
+   * <code>uint64 in_progress_archives_count = 7;</code>
+   * @return The inProgressArchivesCount.
+   */
+  long getInProgressArchivesCount();
+
+  /**
+   * <code>uint64 completed_archives_count = 8;</code>
+   * @return The completedArchivesCount.
+   */
+  long getCompletedArchivesCount();
+
+  /**
+   * <code>uint64 failed_archives_count = 9;</code>
+   * @return The failedArchivesCount.
+   */
+  long getFailedArchivesCount();
 }

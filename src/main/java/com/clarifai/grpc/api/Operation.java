@@ -146,6 +146,20 @@ private static final long serialVersionUID = 0L;
             operationCase_ = 7;
             break;
           }
+          case 66: {
+            com.clarifai.grpc.api.AddToDataset.Builder subBuilder = null;
+            if (operationCase_ == 8) {
+              subBuilder = ((com.clarifai.grpc.api.AddToDataset) operation_).toBuilder();
+            }
+            operation_ =
+                input.readMessage(com.clarifai.grpc.api.AddToDataset.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.AddToDataset) operation_);
+              operation_ = subBuilder.buildPartial();
+            }
+            operationCase_ = 8;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -192,6 +206,7 @@ private static final long serialVersionUID = 0L;
     OVERWRITE_GEO(5),
     DELETE_GEO(6),
     DELETE_FROM_DATASET(7),
+    ADD_TO_DATASET(8),
     OPERATION_NOT_SET(0);
     private final int value;
     private OperationCase(int value) {
@@ -216,6 +231,7 @@ private static final long serialVersionUID = 0L;
         case 5: return OVERWRITE_GEO;
         case 6: return DELETE_GEO;
         case 7: return DELETE_FROM_DATASET;
+        case 8: return ADD_TO_DATASET;
         case 0: return OPERATION_NOT_SET;
         default: return null;
       }
@@ -448,6 +464,37 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.DeleteFromDataset.getDefaultInstance();
   }
 
+  public static final int ADD_TO_DATASET_FIELD_NUMBER = 8;
+  /**
+   * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+   * @return Whether the addToDataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasAddToDataset() {
+    return operationCase_ == 8;
+  }
+  /**
+   * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+   * @return The addToDataset.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AddToDataset getAddToDataset() {
+    if (operationCase_ == 8) {
+       return (com.clarifai.grpc.api.AddToDataset) operation_;
+    }
+    return com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AddToDatasetOrBuilder getAddToDatasetOrBuilder() {
+    if (operationCase_ == 8) {
+       return (com.clarifai.grpc.api.AddToDataset) operation_;
+    }
+    return com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -482,6 +529,9 @@ private static final long serialVersionUID = 0L;
     }
     if (operationCase_ == 7) {
       output.writeMessage(7, (com.clarifai.grpc.api.DeleteFromDataset) operation_);
+    }
+    if (operationCase_ == 8) {
+      output.writeMessage(8, (com.clarifai.grpc.api.AddToDataset) operation_);
     }
     unknownFields.writeTo(output);
   }
@@ -519,6 +569,10 @@ private static final long serialVersionUID = 0L;
     if (operationCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (com.clarifai.grpc.api.DeleteFromDataset) operation_);
+    }
+    if (operationCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.clarifai.grpc.api.AddToDataset) operation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -565,6 +619,10 @@ private static final long serialVersionUID = 0L;
         if (!getDeleteFromDataset()
             .equals(other.getDeleteFromDataset())) return false;
         break;
+      case 8:
+        if (!getAddToDataset()
+            .equals(other.getAddToDataset())) return false;
+        break;
       case 0:
       default:
     }
@@ -607,6 +665,10 @@ private static final long serialVersionUID = 0L;
       case 7:
         hash = (37 * hash) + DELETE_FROM_DATASET_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteFromDataset().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + ADD_TO_DATASET_FIELD_NUMBER;
+        hash = (53 * hash) + getAddToDataset().hashCode();
         break;
       case 0:
       default:
@@ -821,6 +883,13 @@ private static final long serialVersionUID = 0L;
           result.operation_ = deleteFromDatasetBuilder_.build();
         }
       }
+      if (operationCase_ == 8) {
+        if (addToDatasetBuilder_ == null) {
+          result.operation_ = operation_;
+        } else {
+          result.operation_ = addToDatasetBuilder_.build();
+        }
+      }
       result.operationCase_ = operationCase_;
       onBuilt();
       return result;
@@ -897,6 +966,10 @@ private static final long serialVersionUID = 0L;
         }
         case DELETE_FROM_DATASET: {
           mergeDeleteFromDataset(other.getDeleteFromDataset());
+          break;
+        }
+        case ADD_TO_DATASET: {
+          mergeAddToDataset(other.getAddToDataset());
           break;
         }
         case OPERATION_NOT_SET: {
@@ -1939,6 +2012,148 @@ private static final long serialVersionUID = 0L;
       operationCase_ = 7;
       onChanged();;
       return deleteFromDatasetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AddToDataset, com.clarifai.grpc.api.AddToDataset.Builder, com.clarifai.grpc.api.AddToDatasetOrBuilder> addToDatasetBuilder_;
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     * @return Whether the addToDataset field is set.
+     */
+    @java.lang.Override
+    public boolean hasAddToDataset() {
+      return operationCase_ == 8;
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     * @return The addToDataset.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.AddToDataset getAddToDataset() {
+      if (addToDatasetBuilder_ == null) {
+        if (operationCase_ == 8) {
+          return (com.clarifai.grpc.api.AddToDataset) operation_;
+        }
+        return com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
+      } else {
+        if (operationCase_ == 8) {
+          return addToDatasetBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    public Builder setAddToDataset(com.clarifai.grpc.api.AddToDataset value) {
+      if (addToDatasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operation_ = value;
+        onChanged();
+      } else {
+        addToDatasetBuilder_.setMessage(value);
+      }
+      operationCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    public Builder setAddToDataset(
+        com.clarifai.grpc.api.AddToDataset.Builder builderForValue) {
+      if (addToDatasetBuilder_ == null) {
+        operation_ = builderForValue.build();
+        onChanged();
+      } else {
+        addToDatasetBuilder_.setMessage(builderForValue.build());
+      }
+      operationCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    public Builder mergeAddToDataset(com.clarifai.grpc.api.AddToDataset value) {
+      if (addToDatasetBuilder_ == null) {
+        if (operationCase_ == 8 &&
+            operation_ != com.clarifai.grpc.api.AddToDataset.getDefaultInstance()) {
+          operation_ = com.clarifai.grpc.api.AddToDataset.newBuilder((com.clarifai.grpc.api.AddToDataset) operation_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          operation_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationCase_ == 8) {
+          addToDatasetBuilder_.mergeFrom(value);
+        } else {
+          addToDatasetBuilder_.setMessage(value);
+        }
+      }
+      operationCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    public Builder clearAddToDataset() {
+      if (addToDatasetBuilder_ == null) {
+        if (operationCase_ == 8) {
+          operationCase_ = 0;
+          operation_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationCase_ == 8) {
+          operationCase_ = 0;
+          operation_ = null;
+        }
+        addToDatasetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    public com.clarifai.grpc.api.AddToDataset.Builder getAddToDatasetBuilder() {
+      return getAddToDatasetFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.AddToDatasetOrBuilder getAddToDatasetOrBuilder() {
+      if ((operationCase_ == 8) && (addToDatasetBuilder_ != null)) {
+        return addToDatasetBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationCase_ == 8) {
+          return (com.clarifai.grpc.api.AddToDataset) operation_;
+        }
+        return com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.AddToDataset add_to_dataset = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AddToDataset, com.clarifai.grpc.api.AddToDataset.Builder, com.clarifai.grpc.api.AddToDatasetOrBuilder> 
+        getAddToDatasetFieldBuilder() {
+      if (addToDatasetBuilder_ == null) {
+        if (!(operationCase_ == 8)) {
+          operation_ = com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
+        }
+        addToDatasetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AddToDataset, com.clarifai.grpc.api.AddToDataset.Builder, com.clarifai.grpc.api.AddToDatasetOrBuilder>(
+                (com.clarifai.grpc.api.AddToDataset) operation_,
+                getParentForChildren(),
+                isClean());
+        operation_ = null;
+      }
+      operationCase_ = 8;
+      onChanged();;
+      return addToDatasetBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

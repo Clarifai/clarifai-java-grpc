@@ -104,4 +104,15 @@ public interface PostInputsSearchesRequestOrBuilder extends
    * <code>.clarifai.api.Pagination pagination = 3;</code>
    */
   com.clarifai.grpc.api.PaginationOrBuilder getPaginationOrBuilder();
+
+  /**
+   * <pre>
+   * If only_count is set, then the response will not contain hits,
+   * but hit_counts instead.
+   * </pre>
+   *
+   * <code>bool only_count = 4;</code>
+   * @return The onlyCount.
+   */
+  boolean getOnlyCount();
 }

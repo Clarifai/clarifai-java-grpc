@@ -73,6 +73,26 @@ private static final long serialVersionUID = 0L;
             textInputsCount_ = input.readUInt64();
             break;
           }
+          case 48: {
+
+            pendingArchivesCount_ = input.readUInt64();
+            break;
+          }
+          case 56: {
+
+            inProgressArchivesCount_ = input.readUInt64();
+            break;
+          }
+          case 64: {
+
+            completedArchivesCount_ = input.readUInt64();
+            break;
+          }
+          case 72: {
+
+            failedArchivesCount_ = input.readUInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +182,50 @@ private static final long serialVersionUID = 0L;
     return textInputsCount_;
   }
 
+  public static final int PENDING_ARCHIVES_COUNT_FIELD_NUMBER = 6;
+  private long pendingArchivesCount_;
+  /**
+   * <code>uint64 pending_archives_count = 6;</code>
+   * @return The pendingArchivesCount.
+   */
+  @java.lang.Override
+  public long getPendingArchivesCount() {
+    return pendingArchivesCount_;
+  }
+
+  public static final int IN_PROGRESS_ARCHIVES_COUNT_FIELD_NUMBER = 7;
+  private long inProgressArchivesCount_;
+  /**
+   * <code>uint64 in_progress_archives_count = 7;</code>
+   * @return The inProgressArchivesCount.
+   */
+  @java.lang.Override
+  public long getInProgressArchivesCount() {
+    return inProgressArchivesCount_;
+  }
+
+  public static final int COMPLETED_ARCHIVES_COUNT_FIELD_NUMBER = 8;
+  private long completedArchivesCount_;
+  /**
+   * <code>uint64 completed_archives_count = 8;</code>
+   * @return The completedArchivesCount.
+   */
+  @java.lang.Override
+  public long getCompletedArchivesCount() {
+    return completedArchivesCount_;
+  }
+
+  public static final int FAILED_ARCHIVES_COUNT_FIELD_NUMBER = 9;
+  private long failedArchivesCount_;
+  /**
+   * <code>uint64 failed_archives_count = 9;</code>
+   * @return The failedArchivesCount.
+   */
+  @java.lang.Override
+  public long getFailedArchivesCount() {
+    return failedArchivesCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +254,18 @@ private static final long serialVersionUID = 0L;
     }
     if (textInputsCount_ != 0L) {
       output.writeUInt64(5, textInputsCount_);
+    }
+    if (pendingArchivesCount_ != 0L) {
+      output.writeUInt64(6, pendingArchivesCount_);
+    }
+    if (inProgressArchivesCount_ != 0L) {
+      output.writeUInt64(7, inProgressArchivesCount_);
+    }
+    if (completedArchivesCount_ != 0L) {
+      output.writeUInt64(8, completedArchivesCount_);
+    }
+    if (failedArchivesCount_ != 0L) {
+      output.writeUInt64(9, failedArchivesCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -220,6 +296,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(5, textInputsCount_);
     }
+    if (pendingArchivesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(6, pendingArchivesCount_);
+    }
+    if (inProgressArchivesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(7, inProgressArchivesCount_);
+    }
+    if (completedArchivesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(8, completedArchivesCount_);
+    }
+    if (failedArchivesCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(9, failedArchivesCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -245,6 +337,14 @@ private static final long serialVersionUID = 0L;
         != other.getVideoInputsCount()) return false;
     if (getTextInputsCount()
         != other.getTextInputsCount()) return false;
+    if (getPendingArchivesCount()
+        != other.getPendingArchivesCount()) return false;
+    if (getInProgressArchivesCount()
+        != other.getInProgressArchivesCount()) return false;
+    if (getCompletedArchivesCount()
+        != other.getCompletedArchivesCount()) return false;
+    if (getFailedArchivesCount()
+        != other.getFailedArchivesCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -271,6 +371,18 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TEXT_INPUTS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTextInputsCount());
+    hash = (37 * hash) + PENDING_ARCHIVES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPendingArchivesCount());
+    hash = (37 * hash) + IN_PROGRESS_ARCHIVES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getInProgressArchivesCount());
+    hash = (37 * hash) + COMPLETED_ARCHIVES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCompletedArchivesCount());
+    hash = (37 * hash) + FAILED_ARCHIVES_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getFailedArchivesCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +526,14 @@ private static final long serialVersionUID = 0L;
 
       textInputsCount_ = 0L;
 
+      pendingArchivesCount_ = 0L;
+
+      inProgressArchivesCount_ = 0L;
+
+      completedArchivesCount_ = 0L;
+
+      failedArchivesCount_ = 0L;
+
       return this;
     }
 
@@ -445,6 +565,10 @@ private static final long serialVersionUID = 0L;
       result.imageInputsCount_ = imageInputsCount_;
       result.videoInputsCount_ = videoInputsCount_;
       result.textInputsCount_ = textInputsCount_;
+      result.pendingArchivesCount_ = pendingArchivesCount_;
+      result.inProgressArchivesCount_ = inProgressArchivesCount_;
+      result.completedArchivesCount_ = completedArchivesCount_;
+      result.failedArchivesCount_ = failedArchivesCount_;
       onBuilt();
       return result;
     }
@@ -507,6 +631,18 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTextInputsCount() != 0L) {
         setTextInputsCount(other.getTextInputsCount());
+      }
+      if (other.getPendingArchivesCount() != 0L) {
+        setPendingArchivesCount(other.getPendingArchivesCount());
+      }
+      if (other.getInProgressArchivesCount() != 0L) {
+        setInProgressArchivesCount(other.getInProgressArchivesCount());
+      }
+      if (other.getCompletedArchivesCount() != 0L) {
+        setCompletedArchivesCount(other.getCompletedArchivesCount());
+      }
+      if (other.getFailedArchivesCount() != 0L) {
+        setFailedArchivesCount(other.getFailedArchivesCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -688,6 +824,130 @@ private static final long serialVersionUID = 0L;
     public Builder clearTextInputsCount() {
       
       textInputsCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long pendingArchivesCount_ ;
+    /**
+     * <code>uint64 pending_archives_count = 6;</code>
+     * @return The pendingArchivesCount.
+     */
+    @java.lang.Override
+    public long getPendingArchivesCount() {
+      return pendingArchivesCount_;
+    }
+    /**
+     * <code>uint64 pending_archives_count = 6;</code>
+     * @param value The pendingArchivesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPendingArchivesCount(long value) {
+      
+      pendingArchivesCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 pending_archives_count = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPendingArchivesCount() {
+      
+      pendingArchivesCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long inProgressArchivesCount_ ;
+    /**
+     * <code>uint64 in_progress_archives_count = 7;</code>
+     * @return The inProgressArchivesCount.
+     */
+    @java.lang.Override
+    public long getInProgressArchivesCount() {
+      return inProgressArchivesCount_;
+    }
+    /**
+     * <code>uint64 in_progress_archives_count = 7;</code>
+     * @param value The inProgressArchivesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInProgressArchivesCount(long value) {
+      
+      inProgressArchivesCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 in_progress_archives_count = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInProgressArchivesCount() {
+      
+      inProgressArchivesCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long completedArchivesCount_ ;
+    /**
+     * <code>uint64 completed_archives_count = 8;</code>
+     * @return The completedArchivesCount.
+     */
+    @java.lang.Override
+    public long getCompletedArchivesCount() {
+      return completedArchivesCount_;
+    }
+    /**
+     * <code>uint64 completed_archives_count = 8;</code>
+     * @param value The completedArchivesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompletedArchivesCount(long value) {
+      
+      completedArchivesCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 completed_archives_count = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCompletedArchivesCount() {
+      
+      completedArchivesCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long failedArchivesCount_ ;
+    /**
+     * <code>uint64 failed_archives_count = 9;</code>
+     * @return The failedArchivesCount.
+     */
+    @java.lang.Override
+    public long getFailedArchivesCount() {
+      return failedArchivesCount_;
+    }
+    /**
+     * <code>uint64 failed_archives_count = 9;</code>
+     * @param value The failedArchivesCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailedArchivesCount(long value) {
+      
+      failedArchivesCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 failed_archives_count = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFailedArchivesCount() {
+      
+      failedArchivesCount_ = 0L;
       onChanged();
       return this;
     }

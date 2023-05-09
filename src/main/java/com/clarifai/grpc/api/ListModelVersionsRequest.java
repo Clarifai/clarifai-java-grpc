@@ -93,6 +93,36 @@ private static final long serialVersionUID = 0L;
             conceptIds_.add(s);
             break;
           }
+          case 48: {
+
+            trainedOnly_ = input.readBool();
+            break;
+          }
+          case 56: {
+
+            sortAscending_ = input.readBool();
+            break;
+          }
+          case 64: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 8;
+            break;
+          }
+          case 72: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 9;
+            break;
+          }
+          case 80: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 10;
+            break;
+          }
+          case 88: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 11;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +158,51 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModelVersionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.ListModelVersionsRequest.class, com.clarifai.grpc.api.ListModelVersionsRequest.Builder.class);
+  }
+
+  private int sortByCase_ = 0;
+  private java.lang.Object sortBy_;
+  public enum SortByCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SORT_BY_STATUS_CODE(8),
+    SORT_BY_NUM_INPUTS(9),
+    SORT_BY_DESCRIPTION(10),
+    SORT_BY_CREATED_AT(11),
+    SORTBY_NOT_SET(0);
+    private final int value;
+    private SortByCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortByCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SortByCase forNumber(int value) {
+      switch (value) {
+        case 8: return SORT_BY_STATUS_CODE;
+        case 9: return SORT_BY_NUM_INPUTS;
+        case 10: return SORT_BY_DESCRIPTION;
+        case 11: return SORT_BY_CREATED_AT;
+        case 0: return SORTBY_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SortByCase
+  getSortByCase() {
+    return SortByCase.forNumber(
+        sortByCase_);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -230,6 +305,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList conceptIds_;
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -242,6 +318,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -253,6 +330,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -265,6 +343,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Filtering options:
    * To list only the model versions that have these concept ids present in them.
    * </pre>
    *
@@ -275,6 +354,155 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getConceptIdsBytes(int index) {
     return conceptIds_.getByteString(index);
+  }
+
+  public static final int TRAINED_ONLY_FIELD_NUMBER = 6;
+  private boolean trainedOnly_;
+  /**
+   * <pre>
+   * To list only the model versions that have been trained.
+   * </pre>
+   *
+   * <code>bool trained_only = 6;</code>
+   * @return The trainedOnly.
+   */
+  @java.lang.Override
+  public boolean getTrainedOnly() {
+    return trainedOnly_;
+  }
+
+  public static final int SORT_ASCENDING_FIELD_NUMBER = 7;
+  private boolean sortAscending_;
+  /**
+   * <pre>
+   * Sorting options:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 7;</code>
+   * @return The sortAscending.
+   */
+  @java.lang.Override
+  public boolean getSortAscending() {
+    return sortAscending_;
+  }
+
+  public static final int SORT_BY_STATUS_CODE_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Whether to order by the status code
+   * </pre>
+   *
+   * <code>bool sort_by_status_code = 8;</code>
+   * @return Whether the sortByStatusCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByStatusCode() {
+    return sortByCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Whether to order by the status code
+   * </pre>
+   *
+   * <code>bool sort_by_status_code = 8;</code>
+   * @return The sortByStatusCode.
+   */
+  @java.lang.Override
+  public boolean getSortByStatusCode() {
+    if (sortByCase_ == 8) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_NUM_INPUTS_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 9;</code>
+   * @return Whether the sortByNumInputs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByNumInputs() {
+    return sortByCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Whether to order by the number of training inputs
+   * </pre>
+   *
+   * <code>bool sort_by_num_inputs = 9;</code>
+   * @return The sortByNumInputs.
+   */
+  @java.lang.Override
+  public boolean getSortByNumInputs() {
+    if (sortByCase_ == 9) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_DESCRIPTION_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Whether to sort by the description
+   * </pre>
+   *
+   * <code>bool sort_by_description = 10;</code>
+   * @return Whether the sortByDescription field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByDescription() {
+    return sortByCase_ == 10;
+  }
+  /**
+   * <pre>
+   * Whether to sort by the description
+   * </pre>
+   *
+   * <code>bool sort_by_description = 10;</code>
+   * @return The sortByDescription.
+   */
+  @java.lang.Override
+  public boolean getSortByDescription() {
+    if (sortByCase_ == 10) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_CREATED_AT_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * Whether to order by the created_at time
+   * If neither sort option is set to true, will sort by created_at.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 11;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByCreatedAt() {
+    return sortByCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Whether to order by the created_at time
+   * If neither sort option is set to true, will sort by created_at.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 11;</code>
+   * @return The sortByCreatedAt.
+   */
+  @java.lang.Override
+  public boolean getSortByCreatedAt() {
+    if (sortByCase_ == 11) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -305,6 +533,28 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < conceptIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, conceptIds_.getRaw(i));
+    }
+    if (trainedOnly_ != false) {
+      output.writeBool(6, trainedOnly_);
+    }
+    if (sortAscending_ != false) {
+      output.writeBool(7, sortAscending_);
+    }
+    if (sortByCase_ == 8) {
+      output.writeBool(
+          8, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 9) {
+      output.writeBool(
+          9, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 10) {
+      output.writeBool(
+          10, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 11) {
+      output.writeBool(
+          11, (boolean)((java.lang.Boolean) sortBy_));
     }
     unknownFields.writeTo(output);
   }
@@ -338,6 +588,34 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getConceptIdsList().size();
     }
+    if (trainedOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, trainedOnly_);
+    }
+    if (sortAscending_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, sortAscending_);
+    }
+    if (sortByCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            8, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            9, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            10, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            11, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -366,6 +644,31 @@ private static final long serialVersionUID = 0L;
         != other.getPerPage()) return false;
     if (!getConceptIdsList()
         .equals(other.getConceptIdsList())) return false;
+    if (getTrainedOnly()
+        != other.getTrainedOnly()) return false;
+    if (getSortAscending()
+        != other.getSortAscending()) return false;
+    if (!getSortByCase().equals(other.getSortByCase())) return false;
+    switch (sortByCase_) {
+      case 8:
+        if (getSortByStatusCode()
+            != other.getSortByStatusCode()) return false;
+        break;
+      case 9:
+        if (getSortByNumInputs()
+            != other.getSortByNumInputs()) return false;
+        break;
+      case 10:
+        if (getSortByDescription()
+            != other.getSortByDescription()) return false;
+        break;
+      case 11:
+        if (getSortByCreatedAt()
+            != other.getSortByCreatedAt()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -390,6 +693,36 @@ private static final long serialVersionUID = 0L;
     if (getConceptIdsCount() > 0) {
       hash = (37 * hash) + CONCEPT_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getConceptIdsList().hashCode();
+    }
+    hash = (37 * hash) + TRAINED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTrainedOnly());
+    hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSortAscending());
+    switch (sortByCase_) {
+      case 8:
+        hash = (37 * hash) + SORT_BY_STATUS_CODE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByStatusCode());
+        break;
+      case 9:
+        hash = (37 * hash) + SORT_BY_NUM_INPUTS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByNumInputs());
+        break;
+      case 10:
+        hash = (37 * hash) + SORT_BY_DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByDescription());
+        break;
+      case 11:
+        hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByCreatedAt());
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -542,6 +875,12 @@ private static final long serialVersionUID = 0L;
 
       conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      trainedOnly_ = false;
+
+      sortAscending_ = false;
+
+      sortByCase_ = 0;
+      sortBy_ = null;
       return this;
     }
 
@@ -582,6 +921,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.conceptIds_ = conceptIds_;
+      result.trainedOnly_ = trainedOnly_;
+      result.sortAscending_ = sortAscending_;
+      if (sortByCase_ == 8) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 9) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 10) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 11) {
+        result.sortBy_ = sortBy_;
+      }
+      result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
     }
@@ -653,6 +1007,33 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.getTrainedOnly() != false) {
+        setTrainedOnly(other.getTrainedOnly());
+      }
+      if (other.getSortAscending() != false) {
+        setSortAscending(other.getSortAscending());
+      }
+      switch (other.getSortByCase()) {
+        case SORT_BY_STATUS_CODE: {
+          setSortByStatusCode(other.getSortByStatusCode());
+          break;
+        }
+        case SORT_BY_NUM_INPUTS: {
+          setSortByNumInputs(other.getSortByNumInputs());
+          break;
+        }
+        case SORT_BY_DESCRIPTION: {
+          setSortByDescription(other.getSortByDescription());
+          break;
+        }
+        case SORT_BY_CREATED_AT: {
+          setSortByCreatedAt(other.getSortByCreatedAt());
+          break;
+        }
+        case SORTBY_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -681,6 +1062,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int sortByCase_ = 0;
+    private java.lang.Object sortBy_;
+    public SortByCase
+        getSortByCase() {
+      return SortByCase.forNumber(
+          sortByCase_);
+    }
+
+    public Builder clearSortBy() {
+      sortByCase_ = 0;
+      sortBy_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
@@ -979,6 +1375,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -991,6 +1388,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1002,6 +1400,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1014,6 +1413,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1027,6 +1427,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1047,6 +1448,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1066,6 +1468,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1083,6 +1486,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1097,6 +1501,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * To list only the model versions that have these concept ids present in them.
      * </pre>
      *
@@ -1113,6 +1518,327 @@ private static final long serialVersionUID = 0L;
       ensureConceptIdsIsMutable();
       conceptIds_.add(value);
       onChanged();
+      return this;
+    }
+
+    private boolean trainedOnly_ ;
+    /**
+     * <pre>
+     * To list only the model versions that have been trained.
+     * </pre>
+     *
+     * <code>bool trained_only = 6;</code>
+     * @return The trainedOnly.
+     */
+    @java.lang.Override
+    public boolean getTrainedOnly() {
+      return trainedOnly_;
+    }
+    /**
+     * <pre>
+     * To list only the model versions that have been trained.
+     * </pre>
+     *
+     * <code>bool trained_only = 6;</code>
+     * @param value The trainedOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainedOnly(boolean value) {
+      
+      trainedOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * To list only the model versions that have been trained.
+     * </pre>
+     *
+     * <code>bool trained_only = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrainedOnly() {
+      
+      trainedOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean sortAscending_ ;
+    /**
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 7;</code>
+     * @return The sortAscending.
+     */
+    @java.lang.Override
+    public boolean getSortAscending() {
+      return sortAscending_;
+    }
+    /**
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 7;</code>
+     * @param value The sortAscending to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortAscending(boolean value) {
+      
+      sortAscending_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Sorting options:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortAscending() {
+      
+      sortAscending_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the status code
+     * </pre>
+     *
+     * <code>bool sort_by_status_code = 8;</code>
+     * @return Whether the sortByStatusCode field is set.
+     */
+    public boolean hasSortByStatusCode() {
+      return sortByCase_ == 8;
+    }
+    /**
+     * <pre>
+     * Whether to order by the status code
+     * </pre>
+     *
+     * <code>bool sort_by_status_code = 8;</code>
+     * @return The sortByStatusCode.
+     */
+    public boolean getSortByStatusCode() {
+      if (sortByCase_ == 8) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the status code
+     * </pre>
+     *
+     * <code>bool sort_by_status_code = 8;</code>
+     * @param value The sortByStatusCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByStatusCode(boolean value) {
+      sortByCase_ = 8;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the status code
+     * </pre>
+     *
+     * <code>bool sort_by_status_code = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByStatusCode() {
+      if (sortByCase_ == 8) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 9;</code>
+     * @return Whether the sortByNumInputs field is set.
+     */
+    public boolean hasSortByNumInputs() {
+      return sortByCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 9;</code>
+     * @return The sortByNumInputs.
+     */
+    public boolean getSortByNumInputs() {
+      if (sortByCase_ == 9) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 9;</code>
+     * @param value The sortByNumInputs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByNumInputs(boolean value) {
+      sortByCase_ = 9;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of training inputs
+     * </pre>
+     *
+     * <code>bool sort_by_num_inputs = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByNumInputs() {
+      if (sortByCase_ == 9) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to sort by the description
+     * </pre>
+     *
+     * <code>bool sort_by_description = 10;</code>
+     * @return Whether the sortByDescription field is set.
+     */
+    public boolean hasSortByDescription() {
+      return sortByCase_ == 10;
+    }
+    /**
+     * <pre>
+     * Whether to sort by the description
+     * </pre>
+     *
+     * <code>bool sort_by_description = 10;</code>
+     * @return The sortByDescription.
+     */
+    public boolean getSortByDescription() {
+      if (sortByCase_ == 10) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to sort by the description
+     * </pre>
+     *
+     * <code>bool sort_by_description = 10;</code>
+     * @param value The sortByDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByDescription(boolean value) {
+      sortByCase_ = 10;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to sort by the description
+     * </pre>
+     *
+     * <code>bool sort_by_description = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByDescription() {
+      if (sortByCase_ == 10) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the created_at time
+     * If neither sort option is set to true, will sort by created_at.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 11;</code>
+     * @return Whether the sortByCreatedAt field is set.
+     */
+    public boolean hasSortByCreatedAt() {
+      return sortByCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time
+     * If neither sort option is set to true, will sort by created_at.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 11;</code>
+     * @return The sortByCreatedAt.
+     */
+    public boolean getSortByCreatedAt() {
+      if (sortByCase_ == 11) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time
+     * If neither sort option is set to true, will sort by created_at.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 11;</code>
+     * @param value The sortByCreatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByCreatedAt(boolean value) {
+      sortByCase_ = 11;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time
+     * If neither sort option is set to true, will sort by created_at.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByCreatedAt() {
+      if (sortByCase_ == 11) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
       return this;
     }
     @java.lang.Override

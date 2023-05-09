@@ -168,4 +168,53 @@ public interface MultiSearchResponseOrBuilder extends
    */
   com.clarifai.grpc.api.SearchOrBuilder getSearchesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.HitCount> 
+      getHitCountsList();
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  com.clarifai.grpc.api.HitCount getHitCounts(int index);
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  int getHitCountsCount();
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.HitCountOrBuilder> 
+      getHitCountsOrBuilderList();
+  /**
+   * <pre>
+   * The counts of hits for each search, in the same order as searches.
+   * Only returned if the request set only_count.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.HitCount hit_counts = 6;</code>
+   */
+  com.clarifai.grpc.api.HitCountOrBuilder getHitCountsOrBuilder(
+      int index);
 }
