@@ -20,8 +20,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EvalTestSetEntry() {
-    id_ = "";
-    url_ = "";
     predictedConcepts_ = java.util.Collections.emptyList();
     groundTruthConcepts_ = java.util.Collections.emptyList();
   }
@@ -57,18 +55,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            url_ = s;
-            break;
-          }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               predictedConcepts_ = new java.util.ArrayList<com.clarifai.grpc.api.Concept>();
@@ -151,98 +137,6 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_EvalTestSetEntry_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.EvalTestSetEntry.class, com.clarifai.grpc.api.EvalTestSetEntry.Builder.class);
-  }
-
-  public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
-  /**
-   * <pre>
-   * Input CFID
-   * </pre>
-   *
-   * <code>string id = 1 [deprecated = true];</code>
-   * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1823
-   * @return The id.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Input CFID
-   * </pre>
-   *
-   * <code>string id = 1 [deprecated = true];</code>
-   * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1823
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object url_;
-  /**
-   * <code>string url = 2 [deprecated = true];</code>
-   * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1824
-   * @return The url.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getUrl() {
-    java.lang.Object ref = url_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      url_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string url = 2 [deprecated = true];</code>
-   * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1824
-   * @return The bytes for url.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
-      getUrlBytes() {
-    java.lang.Object ref = url_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      url_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   public static final int INPUT_FIELD_NUMBER = 6;
@@ -441,12 +335,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
-    }
     for (int i = 0; i < predictedConcepts_.size(); i++) {
       output.writeMessage(3, predictedConcepts_.get(i));
     }
@@ -468,12 +356,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
-    }
     for (int i = 0; i < predictedConcepts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, predictedConcepts_.get(i));
@@ -505,10 +387,6 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.EvalTestSetEntry other = (com.clarifai.grpc.api.EvalTestSetEntry) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
-    if (!getUrl()
-        .equals(other.getUrl())) return false;
     if (hasInput() != other.hasInput()) return false;
     if (hasInput()) {
       if (!getInput()
@@ -534,10 +412,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + URL_FIELD_NUMBER;
-    hash = (53 * hash) + getUrl().hashCode();
     if (hasInput()) {
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getInput().hashCode();
@@ -693,10 +567,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = "";
-
-      url_ = "";
-
       if (inputBuilder_ == null) {
         input_ = null;
       } else {
@@ -748,8 +618,6 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.EvalTestSetEntry buildPartial() {
       com.clarifai.grpc.api.EvalTestSetEntry result = new com.clarifai.grpc.api.EvalTestSetEntry(this);
       int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.url_ = url_;
       if (inputBuilder_ == null) {
         result.input_ = input_;
       } else {
@@ -826,14 +694,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.EvalTestSetEntry other) {
       if (other == com.clarifai.grpc.api.EvalTestSetEntry.getDefaultInstance()) return this;
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
-        onChanged();
-      }
-      if (!other.getUrl().isEmpty()) {
-        url_ = other.url_;
-        onChanged();
-      }
       if (other.hasInput()) {
         mergeInput(other.getInput());
       }
@@ -921,198 +781,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
-
-    private java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * Input CFID
-     * </pre>
-     *
-     * <code>string id = 1 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1823
-     * @return The id.
-     */
-    @java.lang.Deprecated public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Input CFID
-     * </pre>
-     *
-     * <code>string id = 1 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1823
-     * @return The bytes for id.
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Input CFID
-     * </pre>
-     *
-     * <code>string id = 1 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1823
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Input CFID
-     * </pre>
-     *
-     * <code>string id = 1 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1823
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearId() {
-      
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Input CFID
-     * </pre>
-     *
-     * <code>string id = 1 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1823
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object url_ = "";
-    /**
-     * <code>string url = 2 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1824
-     * @return The url.
-     */
-    @java.lang.Deprecated public java.lang.String getUrl() {
-      java.lang.Object ref = url_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        url_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string url = 2 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1824
-     * @return The bytes for url.
-     */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getUrlBytes() {
-      java.lang.Object ref = url_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        url_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string url = 2 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1824
-     * @param value The url to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setUrl(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      url_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string url = 2 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1824
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder clearUrl() {
-      
-      url_ = getDefaultInstance().getUrl();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string url = 2 [deprecated = true];</code>
-     * @deprecated clarifai.api.EvalTestSetEntry.url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1824
-     * @param value The bytes for url to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated public Builder setUrlBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      url_ = value;
-      onChanged();
-      return this;
-    }
 
     private com.clarifai.grpc.api.Input input_;
     private com.google.protobuf.SingleFieldBuilderV3<

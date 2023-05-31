@@ -162,6 +162,20 @@ private static final long serialVersionUID = 0L;
             inputSourceCase_ = 10;
             break;
           }
+          case 90: {
+            com.clarifai.grpc.api.Dataset.Builder subBuilder = null;
+            if (inputSourceCase_ == 11) {
+              subBuilder = ((com.clarifai.grpc.api.Dataset) inputSource_).toBuilder();
+            }
+            inputSource_ =
+                input.readMessage(com.clarifai.grpc.api.Dataset.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Dataset) inputSource_);
+              inputSource_ = subBuilder.buildPartial();
+            }
+            inputSourceCase_ = 11;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -203,6 +217,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INPUT_IDS(2),
     SEARCH(10),
+    DATASET(11),
     INPUTSOURCE_NOT_SET(0);
     private final int value;
     private InputSourceCase(int value) {
@@ -222,6 +237,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 2: return INPUT_IDS;
         case 10: return SEARCH;
+        case 11: return DATASET;
         case 0: return INPUTSOURCE_NOT_SET;
         default: return null;
       }
@@ -343,6 +359,37 @@ private static final long serialVersionUID = 0L;
        return (com.clarifai.grpc.api.Search) inputSource_;
     }
     return com.clarifai.grpc.api.Search.getDefaultInstance();
+  }
+
+  public static final int DATASET_FIELD_NUMBER = 11;
+  /**
+   * <code>.clarifai.api.Dataset dataset = 11;</code>
+   * @return Whether the dataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataset() {
+    return inputSourceCase_ == 11;
+  }
+  /**
+   * <code>.clarifai.api.Dataset dataset = 11;</code>
+   * @return The dataset.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Dataset getDataset() {
+    if (inputSourceCase_ == 11) {
+       return (com.clarifai.grpc.api.Dataset) inputSource_;
+    }
+    return com.clarifai.grpc.api.Dataset.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Dataset dataset = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder() {
+    if (inputSourceCase_ == 11) {
+       return (com.clarifai.grpc.api.Dataset) inputSource_;
+    }
+    return com.clarifai.grpc.api.Dataset.getDefaultInstance();
   }
 
   public static final int OPERATION_FIELD_NUMBER = 3;
@@ -683,6 +730,9 @@ private static final long serialVersionUID = 0L;
     if (inputSourceCase_ == 10) {
       output.writeMessage(10, (com.clarifai.grpc.api.Search) inputSource_);
     }
+    if (inputSourceCase_ == 11) {
+      output.writeMessage(11, (com.clarifai.grpc.api.Dataset) inputSource_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -728,6 +778,10 @@ private static final long serialVersionUID = 0L;
     if (inputSourceCase_ == 10) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, (com.clarifai.grpc.api.Search) inputSource_);
+    }
+    if (inputSourceCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, (com.clarifai.grpc.api.Dataset) inputSource_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -785,6 +839,10 @@ private static final long serialVersionUID = 0L;
         if (!getSearch()
             .equals(other.getSearch())) return false;
         break;
+      case 11:
+        if (!getDataset()
+            .equals(other.getDataset())) return false;
+        break;
       case 0:
       default:
     }
@@ -833,6 +891,10 @@ private static final long serialVersionUID = 0L;
       case 10:
         hash = (37 * hash) + SEARCH_FIELD_NUMBER;
         hash = (53 * hash) + getSearch().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + DATASET_FIELD_NUMBER;
+        hash = (53 * hash) + getDataset().hashCode();
         break;
       case 0:
       default:
@@ -1049,6 +1111,13 @@ private static final long serialVersionUID = 0L;
           result.inputSource_ = searchBuilder_.build();
         }
       }
+      if (inputSourceCase_ == 11) {
+        if (datasetBuilder_ == null) {
+          result.inputSource_ = inputSource_;
+        } else {
+          result.inputSource_ = datasetBuilder_.build();
+        }
+      }
       if (operationBuilder_ == null) {
         result.operation_ = operation_;
       } else {
@@ -1159,6 +1228,10 @@ private static final long serialVersionUID = 0L;
         }
         case SEARCH: {
           mergeSearch(other.getSearch());
+          break;
+        }
+        case DATASET: {
+          mergeDataset(other.getDataset());
           break;
         }
         case INPUTSOURCE_NOT_SET: {
@@ -1587,6 +1660,148 @@ private static final long serialVersionUID = 0L;
       inputSourceCase_ = 10;
       onChanged();;
       return searchBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> datasetBuilder_;
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     * @return Whether the dataset field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataset() {
+      return inputSourceCase_ == 11;
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     * @return The dataset.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Dataset getDataset() {
+      if (datasetBuilder_ == null) {
+        if (inputSourceCase_ == 11) {
+          return (com.clarifai.grpc.api.Dataset) inputSource_;
+        }
+        return com.clarifai.grpc.api.Dataset.getDefaultInstance();
+      } else {
+        if (inputSourceCase_ == 11) {
+          return datasetBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Dataset.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    public Builder setDataset(com.clarifai.grpc.api.Dataset value) {
+      if (datasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputSource_ = value;
+        onChanged();
+      } else {
+        datasetBuilder_.setMessage(value);
+      }
+      inputSourceCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    public Builder setDataset(
+        com.clarifai.grpc.api.Dataset.Builder builderForValue) {
+      if (datasetBuilder_ == null) {
+        inputSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        datasetBuilder_.setMessage(builderForValue.build());
+      }
+      inputSourceCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    public Builder mergeDataset(com.clarifai.grpc.api.Dataset value) {
+      if (datasetBuilder_ == null) {
+        if (inputSourceCase_ == 11 &&
+            inputSource_ != com.clarifai.grpc.api.Dataset.getDefaultInstance()) {
+          inputSource_ = com.clarifai.grpc.api.Dataset.newBuilder((com.clarifai.grpc.api.Dataset) inputSource_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          inputSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputSourceCase_ == 11) {
+          datasetBuilder_.mergeFrom(value);
+        } else {
+          datasetBuilder_.setMessage(value);
+        }
+      }
+      inputSourceCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    public Builder clearDataset() {
+      if (datasetBuilder_ == null) {
+        if (inputSourceCase_ == 11) {
+          inputSourceCase_ = 0;
+          inputSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputSourceCase_ == 11) {
+          inputSourceCase_ = 0;
+          inputSource_ = null;
+        }
+        datasetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    public com.clarifai.grpc.api.Dataset.Builder getDatasetBuilder() {
+      return getDatasetFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder() {
+      if ((inputSourceCase_ == 11) && (datasetBuilder_ != null)) {
+        return datasetBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputSourceCase_ == 11) {
+          return (com.clarifai.grpc.api.Dataset) inputSource_;
+        }
+        return com.clarifai.grpc.api.Dataset.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Dataset dataset = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> 
+        getDatasetFieldBuilder() {
+      if (datasetBuilder_ == null) {
+        if (!(inputSourceCase_ == 11)) {
+          inputSource_ = com.clarifai.grpc.api.Dataset.getDefaultInstance();
+        }
+        datasetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder>(
+                (com.clarifai.grpc.api.Dataset) inputSource_,
+                getParentForChildren(),
+                isClean());
+        inputSource_ = null;
+      }
+      inputSourceCase_ = 11;
+      onChanged();;
+      return datasetBuilder_;
     }
 
     private com.clarifai.grpc.api.Operation operation_;

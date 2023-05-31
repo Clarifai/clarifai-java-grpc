@@ -130,7 +130,7 @@ public enum StatTimeAggType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(11);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(12);
   }
 
   private static final StatTimeAggType[] VALUES = values();

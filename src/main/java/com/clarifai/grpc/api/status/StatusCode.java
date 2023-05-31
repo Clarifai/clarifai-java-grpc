@@ -668,8 +668,13 @@ public enum StatusCode
    */
   DATA_DUMP_IN_PROGRESS(25153),
   /**
-   * <code>DATA_DUMP_NO_DATA = 25154;</code>
+   * <pre>
+   * DEPRECATED: Not used anymore. Now for an empty data dump, DATA_DUMP_SUCCESS is returned. To detect an empty data dump, check if the inptus count is 0.
+   * </pre>
+   *
+   * <code>DATA_DUMP_NO_DATA = 25154 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   DATA_DUMP_NO_DATA(25154),
   /**
    * <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
@@ -960,8 +965,13 @@ public enum StatusCode
    */
   REQUEST_DISABLED_FOR_MAINTENANCE(39997),
   /**
-   * <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998;</code>
+   * <pre>
+   * deprecate this one. Use REQUEST_DISABLED_FOR_MAINTENANCE
+   * </pre>
+   *
+   * <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   INPUT_WRITES_DISABLED_FOR_MAINTENANCE(39998),
   /**
    * <code>INPUT_INVALID_REQUEST = 39999;</code>
@@ -2462,9 +2472,13 @@ public enum StatusCode
    */
   public static final int DATA_DUMP_IN_PROGRESS_VALUE = 25153;
   /**
-   * <code>DATA_DUMP_NO_DATA = 25154;</code>
+   * <pre>
+   * DEPRECATED: Not used anymore. Now for an empty data dump, DATA_DUMP_SUCCESS is returned. To detect an empty data dump, check if the inptus count is 0.
+   * </pre>
+   *
+   * <code>DATA_DUMP_NO_DATA = 25154 [deprecated = true];</code>
    */
-  public static final int DATA_DUMP_NO_DATA_VALUE = 25154;
+  @java.lang.Deprecated public static final int DATA_DUMP_NO_DATA_VALUE = 25154;
   /**
    * <code>DATA_DUMP_UNEXPECTED_ERROR = 25155;</code>
    */
@@ -2754,9 +2768,13 @@ public enum StatusCode
    */
   public static final int REQUEST_DISABLED_FOR_MAINTENANCE_VALUE = 39997;
   /**
-   * <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998;</code>
+   * <pre>
+   * deprecate this one. Use REQUEST_DISABLED_FOR_MAINTENANCE
+   * </pre>
+   *
+   * <code>INPUT_WRITES_DISABLED_FOR_MAINTENANCE = 39998 [deprecated = true];</code>
    */
-  public static final int INPUT_WRITES_DISABLED_FOR_MAINTENANCE_VALUE = 39998;
+  @java.lang.Deprecated public static final int INPUT_WRITES_DISABLED_FOR_MAINTENANCE_VALUE = 39998;
   /**
    * <code>INPUT_INVALID_REQUEST = 39999;</code>
    */

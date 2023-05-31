@@ -160,6 +160,20 @@ private static final long serialVersionUID = 0L;
             operationCase_ = 8;
             break;
           }
+          case 74: {
+            com.clarifai.grpc.api.SplitIntoDatasets.Builder subBuilder = null;
+            if (operationCase_ == 9) {
+              subBuilder = ((com.clarifai.grpc.api.SplitIntoDatasets) operation_).toBuilder();
+            }
+            operation_ =
+                input.readMessage(com.clarifai.grpc.api.SplitIntoDatasets.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.SplitIntoDatasets) operation_);
+              operation_ = subBuilder.buildPartial();
+            }
+            operationCase_ = 9;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -207,6 +221,7 @@ private static final long serialVersionUID = 0L;
     DELETE_GEO(6),
     DELETE_FROM_DATASET(7),
     ADD_TO_DATASET(8),
+    SPLIT_INTO_DATASETS(9),
     OPERATION_NOT_SET(0);
     private final int value;
     private OperationCase(int value) {
@@ -232,6 +247,7 @@ private static final long serialVersionUID = 0L;
         case 6: return DELETE_GEO;
         case 7: return DELETE_FROM_DATASET;
         case 8: return ADD_TO_DATASET;
+        case 9: return SPLIT_INTO_DATASETS;
         case 0: return OPERATION_NOT_SET;
         default: return null;
       }
@@ -495,6 +511,37 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.AddToDataset.getDefaultInstance();
   }
 
+  public static final int SPLIT_INTO_DATASETS_FIELD_NUMBER = 9;
+  /**
+   * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+   * @return Whether the splitIntoDatasets field is set.
+   */
+  @java.lang.Override
+  public boolean hasSplitIntoDatasets() {
+    return operationCase_ == 9;
+  }
+  /**
+   * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+   * @return The splitIntoDatasets.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SplitIntoDatasets getSplitIntoDatasets() {
+    if (operationCase_ == 9) {
+       return (com.clarifai.grpc.api.SplitIntoDatasets) operation_;
+    }
+    return com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder getSplitIntoDatasetsOrBuilder() {
+    if (operationCase_ == 9) {
+       return (com.clarifai.grpc.api.SplitIntoDatasets) operation_;
+    }
+    return com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -532,6 +579,9 @@ private static final long serialVersionUID = 0L;
     }
     if (operationCase_ == 8) {
       output.writeMessage(8, (com.clarifai.grpc.api.AddToDataset) operation_);
+    }
+    if (operationCase_ == 9) {
+      output.writeMessage(9, (com.clarifai.grpc.api.SplitIntoDatasets) operation_);
     }
     unknownFields.writeTo(output);
   }
@@ -573,6 +623,10 @@ private static final long serialVersionUID = 0L;
     if (operationCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, (com.clarifai.grpc.api.AddToDataset) operation_);
+    }
+    if (operationCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.clarifai.grpc.api.SplitIntoDatasets) operation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -623,6 +677,10 @@ private static final long serialVersionUID = 0L;
         if (!getAddToDataset()
             .equals(other.getAddToDataset())) return false;
         break;
+      case 9:
+        if (!getSplitIntoDatasets()
+            .equals(other.getSplitIntoDatasets())) return false;
+        break;
       case 0:
       default:
     }
@@ -669,6 +727,10 @@ private static final long serialVersionUID = 0L;
       case 8:
         hash = (37 * hash) + ADD_TO_DATASET_FIELD_NUMBER;
         hash = (53 * hash) + getAddToDataset().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + SPLIT_INTO_DATASETS_FIELD_NUMBER;
+        hash = (53 * hash) + getSplitIntoDatasets().hashCode();
         break;
       case 0:
       default:
@@ -890,6 +952,13 @@ private static final long serialVersionUID = 0L;
           result.operation_ = addToDatasetBuilder_.build();
         }
       }
+      if (operationCase_ == 9) {
+        if (splitIntoDatasetsBuilder_ == null) {
+          result.operation_ = operation_;
+        } else {
+          result.operation_ = splitIntoDatasetsBuilder_.build();
+        }
+      }
       result.operationCase_ = operationCase_;
       onBuilt();
       return result;
@@ -970,6 +1039,10 @@ private static final long serialVersionUID = 0L;
         }
         case ADD_TO_DATASET: {
           mergeAddToDataset(other.getAddToDataset());
+          break;
+        }
+        case SPLIT_INTO_DATASETS: {
+          mergeSplitIntoDatasets(other.getSplitIntoDatasets());
           break;
         }
         case OPERATION_NOT_SET: {
@@ -2154,6 +2227,148 @@ private static final long serialVersionUID = 0L;
       operationCase_ = 8;
       onChanged();;
       return addToDatasetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.SplitIntoDatasets, com.clarifai.grpc.api.SplitIntoDatasets.Builder, com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder> splitIntoDatasetsBuilder_;
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     * @return Whether the splitIntoDatasets field is set.
+     */
+    @java.lang.Override
+    public boolean hasSplitIntoDatasets() {
+      return operationCase_ == 9;
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     * @return The splitIntoDatasets.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.SplitIntoDatasets getSplitIntoDatasets() {
+      if (splitIntoDatasetsBuilder_ == null) {
+        if (operationCase_ == 9) {
+          return (com.clarifai.grpc.api.SplitIntoDatasets) operation_;
+        }
+        return com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
+      } else {
+        if (operationCase_ == 9) {
+          return splitIntoDatasetsBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    public Builder setSplitIntoDatasets(com.clarifai.grpc.api.SplitIntoDatasets value) {
+      if (splitIntoDatasetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operation_ = value;
+        onChanged();
+      } else {
+        splitIntoDatasetsBuilder_.setMessage(value);
+      }
+      operationCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    public Builder setSplitIntoDatasets(
+        com.clarifai.grpc.api.SplitIntoDatasets.Builder builderForValue) {
+      if (splitIntoDatasetsBuilder_ == null) {
+        operation_ = builderForValue.build();
+        onChanged();
+      } else {
+        splitIntoDatasetsBuilder_.setMessage(builderForValue.build());
+      }
+      operationCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    public Builder mergeSplitIntoDatasets(com.clarifai.grpc.api.SplitIntoDatasets value) {
+      if (splitIntoDatasetsBuilder_ == null) {
+        if (operationCase_ == 9 &&
+            operation_ != com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance()) {
+          operation_ = com.clarifai.grpc.api.SplitIntoDatasets.newBuilder((com.clarifai.grpc.api.SplitIntoDatasets) operation_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          operation_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationCase_ == 9) {
+          splitIntoDatasetsBuilder_.mergeFrom(value);
+        } else {
+          splitIntoDatasetsBuilder_.setMessage(value);
+        }
+      }
+      operationCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    public Builder clearSplitIntoDatasets() {
+      if (splitIntoDatasetsBuilder_ == null) {
+        if (operationCase_ == 9) {
+          operationCase_ = 0;
+          operation_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationCase_ == 9) {
+          operationCase_ = 0;
+          operation_ = null;
+        }
+        splitIntoDatasetsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    public com.clarifai.grpc.api.SplitIntoDatasets.Builder getSplitIntoDatasetsBuilder() {
+      return getSplitIntoDatasetsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder getSplitIntoDatasetsOrBuilder() {
+      if ((operationCase_ == 9) && (splitIntoDatasetsBuilder_ != null)) {
+        return splitIntoDatasetsBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationCase_ == 9) {
+          return (com.clarifai.grpc.api.SplitIntoDatasets) operation_;
+        }
+        return com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.SplitIntoDatasets, com.clarifai.grpc.api.SplitIntoDatasets.Builder, com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder> 
+        getSplitIntoDatasetsFieldBuilder() {
+      if (splitIntoDatasetsBuilder_ == null) {
+        if (!(operationCase_ == 9)) {
+          operation_ = com.clarifai.grpc.api.SplitIntoDatasets.getDefaultInstance();
+        }
+        splitIntoDatasetsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.SplitIntoDatasets, com.clarifai.grpc.api.SplitIntoDatasets.Builder, com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder>(
+                (com.clarifai.grpc.api.SplitIntoDatasets) operation_,
+                getParentForChildren(),
+                isClean());
+        operation_ = null;
+      }
+      operationCase_ = 9;
+      onChanged();;
+      return splitIntoDatasetsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

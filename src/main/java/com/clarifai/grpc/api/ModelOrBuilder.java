@@ -34,7 +34,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1189
+   *     See proto/clarifai/api/resources.proto;l=1190
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -45,7 +45,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1189
+   *     See proto/clarifai/api/resources.proto;l=1190
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -145,7 +145,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1202
+   *     See proto/clarifai/api/resources.proto;l=1203
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Deprecated boolean hasOutputInfo();
@@ -157,7 +157,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1202
+   *     See proto/clarifai/api/resources.proto;l=1203
    * @return The outputInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.OutputInfo getOutputInfo();
@@ -208,7 +208,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1207
+   *     See proto/clarifai/api/resources.proto;l=1208
    * @return The displayName.
    */
   @java.lang.Deprecated java.lang.String getDisplayName();
@@ -219,7 +219,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1207
+   *     See proto/clarifai/api/resources.proto;l=1208
    * @return The bytes for displayName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -253,7 +253,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.input_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1212
+   *     See proto/clarifai/api/resources.proto;l=1213
    * @return Whether the inputInfo field is set.
    */
   @java.lang.Deprecated boolean hasInputInfo();
@@ -265,7 +265,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.input_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1212
+   *     See proto/clarifai/api/resources.proto;l=1213
    * @return The inputInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.InputInfo getInputInfo();
@@ -287,7 +287,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.train_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1215
+   *     See proto/clarifai/api/resources.proto;l=1216
    * @return Whether the trainInfo field is set.
    */
   @java.lang.Deprecated boolean hasTrainInfo();
@@ -299,7 +299,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.train_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1215
+   *     See proto/clarifai/api/resources.proto;l=1216
    * @return The trainInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.TrainInfo getTrainInfo();
@@ -724,7 +724,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1262
+   *     See proto/clarifai/api/resources.proto;l=1263
    * @return Whether the importInfo field is set.
    */
   @java.lang.Deprecated boolean hasImportInfo();
@@ -736,7 +736,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1262
+   *     See proto/clarifai/api/resources.proto;l=1263
    * @return The importInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.ImportInfo getImportInfo();

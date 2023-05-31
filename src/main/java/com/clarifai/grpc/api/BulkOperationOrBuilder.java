@@ -58,6 +58,21 @@ public interface BulkOperationOrBuilder extends
   com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder();
 
   /**
+   * <code>.clarifai.api.Dataset dataset = 11;</code>
+   * @return Whether the dataset field is set.
+   */
+  boolean hasDataset();
+  /**
+   * <code>.clarifai.api.Dataset dataset = 11;</code>
+   * @return The dataset.
+   */
+  com.clarifai.grpc.api.Dataset getDataset();
+  /**
+   * <code>.clarifai.api.Dataset dataset = 11;</code>
+   */
+  com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder();
+
+  /**
    * <pre>
    * Operation to perform
    * </pre>

@@ -4,29 +4,61 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.StatValueAggType}
+ * Protobuf enum {@code clarifai.api.AnnotationDataType}
  */
-public enum StatValueAggType
+public enum AnnotationDataType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>SUM = 0;</code>
+   * <code>ANNOTATION_DATA_TYPE_NOT_SET = 0;</code>
    */
-  SUM(0),
+  ANNOTATION_DATA_TYPE_NOT_SET(0),
   /**
-   * <code>AVG = 1;</code>
+   * <code>BOUNDING_BOX = 1;</code>
    */
-  AVG(1),
+  BOUNDING_BOX(1),
+  /**
+   * <code>POLYGON = 2;</code>
+   */
+  POLYGON(2),
+  /**
+   * <code>POINT = 4;</code>
+   */
+  POINT(4),
+  /**
+   * <code>SPAN = 8;</code>
+   */
+  SPAN(8),
+  /**
+   * <code>MASK = 16;</code>
+   */
+  MASK(16),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>SUM = 0;</code>
+   * <code>ANNOTATION_DATA_TYPE_NOT_SET = 0;</code>
    */
-  public static final int SUM_VALUE = 0;
+  public static final int ANNOTATION_DATA_TYPE_NOT_SET_VALUE = 0;
   /**
-   * <code>AVG = 1;</code>
+   * <code>BOUNDING_BOX = 1;</code>
    */
-  public static final int AVG_VALUE = 1;
+  public static final int BOUNDING_BOX_VALUE = 1;
+  /**
+   * <code>POLYGON = 2;</code>
+   */
+  public static final int POLYGON_VALUE = 2;
+  /**
+   * <code>POINT = 4;</code>
+   */
+  public static final int POINT_VALUE = 4;
+  /**
+   * <code>SPAN = 8;</code>
+   */
+  public static final int SPAN_VALUE = 8;
+  /**
+   * <code>MASK = 16;</code>
+   */
+  public static final int MASK_VALUE = 16;
 
 
   public final int getNumber() {
@@ -43,7 +75,7 @@ public enum StatValueAggType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static StatValueAggType valueOf(int value) {
+  public static AnnotationDataType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -51,23 +83,27 @@ public enum StatValueAggType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static StatValueAggType forNumber(int value) {
+  public static AnnotationDataType forNumber(int value) {
     switch (value) {
-      case 0: return SUM;
-      case 1: return AVG;
+      case 0: return ANNOTATION_DATA_TYPE_NOT_SET;
+      case 1: return BOUNDING_BOX;
+      case 2: return POLYGON;
+      case 4: return POINT;
+      case 8: return SPAN;
+      case 16: return MASK;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<StatValueAggType>
+  public static com.google.protobuf.Internal.EnumLiteMap<AnnotationDataType>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      StatValueAggType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<StatValueAggType>() {
-          public StatValueAggType findValueByNumber(int number) {
-            return StatValueAggType.forNumber(number);
+      AnnotationDataType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AnnotationDataType>() {
+          public AnnotationDataType findValueByNumber(int number) {
+            return AnnotationDataType.forNumber(number);
           }
         };
 
@@ -85,12 +121,12 @@ public enum StatValueAggType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(11);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(9);
   }
 
-  private static final StatValueAggType[] VALUES = values();
+  private static final AnnotationDataType[] VALUES = values();
 
-  public static StatValueAggType valueOf(
+  public static AnnotationDataType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -104,10 +140,10 @@ public enum StatValueAggType
 
   private final int value;
 
-  private StatValueAggType(int value) {
+  private AnnotationDataType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.StatValueAggType)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.AnnotationDataType)
 }
 
