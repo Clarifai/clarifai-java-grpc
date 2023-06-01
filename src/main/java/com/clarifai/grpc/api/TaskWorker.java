@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     strategy_ = 0;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     users_ = java.util.Collections.emptyList();
+    models_ = java.util.Collections.emptyList();
+    workflows_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -94,6 +96,24 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.User.parser(), extensionRegistry));
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              models_ = new java.util.ArrayList<com.clarifai.grpc.api.Model>();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            models_.add(
+                input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry));
+            break;
+          }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              workflows_ = new java.util.ArrayList<com.clarifai.grpc.api.Workflow>();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            workflows_.add(
+                input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -116,6 +136,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         users_ = java.util.Collections.unmodifiableList(users_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        models_ = java.util.Collections.unmodifiableList(models_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        workflows_ = java.util.Collections.unmodifiableList(workflows_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -345,7 +371,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2710
+   *     See proto/clarifai/api/resources.proto;l=2716
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -360,7 +386,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2710
+   *     See proto/clarifai/api/resources.proto;l=2716
    * @return The count of userIds.
    */
   @java.lang.Deprecated public int getUserIdsCount() {
@@ -374,7 +400,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2710
+   *     See proto/clarifai/api/resources.proto;l=2716
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -389,7 +415,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2710
+   *     See proto/clarifai/api/resources.proto;l=2716
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -468,6 +494,126 @@ private static final long serialVersionUID = 0L;
     return users_.get(index);
   }
 
+  public static final int MODELS_FIELD_NUMBER = 5;
+  private java.util.List<com.clarifai.grpc.api.Model> models_;
+  /**
+   * <pre>
+   * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Model models = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Model> getModelsList() {
+    return models_;
+  }
+  /**
+   * <pre>
+   * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Model models = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ModelOrBuilder> 
+      getModelsOrBuilderList() {
+    return models_;
+  }
+  /**
+   * <pre>
+   * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Model models = 5;</code>
+   */
+  @java.lang.Override
+  public int getModelsCount() {
+    return models_.size();
+  }
+  /**
+   * <pre>
+   * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Model models = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getModels(int index) {
+    return models_.get(index);
+  }
+  /**
+   * <pre>
+   * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Model models = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getModelsOrBuilder(
+      int index) {
+    return models_.get(index);
+  }
+
+  public static final int WORKFLOWS_FIELD_NUMBER = 6;
+  private java.util.List<com.clarifai.grpc.api.Workflow> workflows_;
+  /**
+   * <pre>
+   * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Workflow> getWorkflowsList() {
+    return workflows_;
+  }
+  /**
+   * <pre>
+   * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.WorkflowOrBuilder> 
+      getWorkflowsOrBuilderList() {
+    return workflows_;
+  }
+  /**
+   * <pre>
+   * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+   */
+  @java.lang.Override
+  public int getWorkflowsCount() {
+    return workflows_.size();
+  }
+  /**
+   * <pre>
+   * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Workflow getWorkflows(int index) {
+    return workflows_.get(index);
+  }
+  /**
+   * <pre>
+   * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowsOrBuilder(
+      int index) {
+    return workflows_.get(index);
+  }
+
   public static final int PARTITIONED_STRATEGY_INFO_FIELD_NUMBER = 3;
   /**
    * <code>.clarifai.api.TaskWorkerPartitionedStrategyInfo partitioned_strategy_info = 3;</code>
@@ -525,6 +671,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < users_.size(); i++) {
       output.writeMessage(4, users_.get(i));
     }
+    for (int i = 0; i < models_.size(); i++) {
+      output.writeMessage(5, models_.get(i));
+    }
+    for (int i = 0; i < workflows_.size(); i++) {
+      output.writeMessage(6, workflows_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -554,6 +706,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, users_.get(i));
     }
+    for (int i = 0; i < models_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, models_.get(i));
+    }
+    for (int i = 0; i < workflows_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, workflows_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -574,6 +734,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserIdsList())) return false;
     if (!getUsersList()
         .equals(other.getUsersList())) return false;
+    if (!getModelsList()
+        .equals(other.getModelsList())) return false;
+    if (!getWorkflowsList()
+        .equals(other.getWorkflowsList())) return false;
     if (!getStrategyInfoCase().equals(other.getStrategyInfoCase())) return false;
     switch (strategyInfoCase_) {
       case 3:
@@ -603,6 +767,14 @@ private static final long serialVersionUID = 0L;
     if (getUsersCount() > 0) {
       hash = (37 * hash) + USERS_FIELD_NUMBER;
       hash = (53 * hash) + getUsersList().hashCode();
+    }
+    if (getModelsCount() > 0) {
+      hash = (37 * hash) + MODELS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelsList().hashCode();
+    }
+    if (getWorkflowsCount() > 0) {
+      hash = (37 * hash) + WORKFLOWS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowsList().hashCode();
     }
     switch (strategyInfoCase_) {
       case 3:
@@ -745,6 +917,8 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getUsersFieldBuilder();
+        getModelsFieldBuilder();
+        getWorkflowsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -759,6 +933,18 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         usersBuilder_.clear();
+      }
+      if (modelsBuilder_ == null) {
+        models_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        modelsBuilder_.clear();
+      }
+      if (workflowsBuilder_ == null) {
+        workflows_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        workflowsBuilder_.clear();
       }
       strategyInfoCase_ = 0;
       strategyInfo_ = null;
@@ -803,6 +989,24 @@ private static final long serialVersionUID = 0L;
         result.users_ = users_;
       } else {
         result.users_ = usersBuilder_.build();
+      }
+      if (modelsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          models_ = java.util.Collections.unmodifiableList(models_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.models_ = models_;
+      } else {
+        result.models_ = modelsBuilder_.build();
+      }
+      if (workflowsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          workflows_ = java.util.Collections.unmodifiableList(workflows_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.workflows_ = workflows_;
+      } else {
+        result.workflows_ = workflowsBuilder_.build();
       }
       if (strategyInfoCase_ == 3) {
         if (partitionedStrategyInfoBuilder_ == null) {
@@ -896,6 +1100,58 @@ private static final long serialVersionUID = 0L;
                  getUsersFieldBuilder() : null;
           } else {
             usersBuilder_.addAllMessages(other.users_);
+          }
+        }
+      }
+      if (modelsBuilder_ == null) {
+        if (!other.models_.isEmpty()) {
+          if (models_.isEmpty()) {
+            models_ = other.models_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureModelsIsMutable();
+            models_.addAll(other.models_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.models_.isEmpty()) {
+          if (modelsBuilder_.isEmpty()) {
+            modelsBuilder_.dispose();
+            modelsBuilder_ = null;
+            models_ = other.models_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            modelsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getModelsFieldBuilder() : null;
+          } else {
+            modelsBuilder_.addAllMessages(other.models_);
+          }
+        }
+      }
+      if (workflowsBuilder_ == null) {
+        if (!other.workflows_.isEmpty()) {
+          if (workflows_.isEmpty()) {
+            workflows_ = other.workflows_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureWorkflowsIsMutable();
+            workflows_.addAll(other.workflows_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.workflows_.isEmpty()) {
+          if (workflowsBuilder_.isEmpty()) {
+            workflowsBuilder_.dispose();
+            workflowsBuilder_ = null;
+            workflows_ = other.workflows_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            workflowsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getWorkflowsFieldBuilder() : null;
+          } else {
+            workflowsBuilder_.addAllMessages(other.workflows_);
           }
         }
       }
@@ -1042,7 +1298,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @return A list containing the userIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -1057,7 +1313,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @return The count of userIds.
      */
     @java.lang.Deprecated public int getUserIdsCount() {
@@ -1071,7 +1327,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -1086,7 +1342,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -1102,7 +1358,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @param index The index to set the value at.
      * @param value The userIds to set.
      * @return This builder for chaining.
@@ -1125,7 +1381,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @param value The userIds to add.
      * @return This builder for chaining.
      */
@@ -1147,7 +1403,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @param values The userIds to add.
      * @return This builder for chaining.
      */
@@ -1167,7 +1423,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUserIds() {
@@ -1184,7 +1440,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2710
+     *     See proto/clarifai/api/resources.proto;l=2716
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
      */
@@ -1546,6 +1802,630 @@ private static final long serialVersionUID = 0L;
         users_ = null;
       }
       return usersBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Model> models_ =
+      java.util.Collections.emptyList();
+    private void ensureModelsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        models_ = new java.util.ArrayList<com.clarifai.grpc.api.Model>(models_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelsBuilder_;
+
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Model> getModelsList() {
+      if (modelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(models_);
+      } else {
+        return modelsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public int getModelsCount() {
+      if (modelsBuilder_ == null) {
+        return models_.size();
+      } else {
+        return modelsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public com.clarifai.grpc.api.Model getModels(int index) {
+      if (modelsBuilder_ == null) {
+        return models_.get(index);
+      } else {
+        return modelsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder setModels(
+        int index, com.clarifai.grpc.api.Model value) {
+      if (modelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModelsIsMutable();
+        models_.set(index, value);
+        onChanged();
+      } else {
+        modelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder setModels(
+        int index, com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        modelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder addModels(com.clarifai.grpc.api.Model value) {
+      if (modelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModelsIsMutable();
+        models_.add(value);
+        onChanged();
+      } else {
+        modelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder addModels(
+        int index, com.clarifai.grpc.api.Model value) {
+      if (modelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModelsIsMutable();
+        models_.add(index, value);
+        onChanged();
+      } else {
+        modelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder addModels(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.add(builderForValue.build());
+        onChanged();
+      } else {
+        modelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder addModels(
+        int index, com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        modelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder addAllModels(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Model> values) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, models_);
+        onChanged();
+      } else {
+        modelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder clearModels() {
+      if (modelsBuilder_ == null) {
+        models_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        modelsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public Builder removeModels(int index) {
+      if (modelsBuilder_ == null) {
+        ensureModelsIsMutable();
+        models_.remove(index);
+        onChanged();
+      } else {
+        modelsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getModelsBuilder(
+        int index) {
+      return getModelsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public com.clarifai.grpc.api.ModelOrBuilder getModelsOrBuilder(
+        int index) {
+      if (modelsBuilder_ == null) {
+        return models_.get(index);  } else {
+        return modelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ModelOrBuilder> 
+         getModelsOrBuilderList() {
+      if (modelsBuilder_ != null) {
+        return modelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(models_);
+      }
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder addModelsBuilder() {
+      return getModelsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Model.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder addModelsBuilder(
+        int index) {
+      return getModelsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Model.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Models that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Model models = 5;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Model.Builder> 
+         getModelsBuilderList() {
+      return getModelsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getModelsFieldBuilder() {
+      if (modelsBuilder_ == null) {
+        modelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                models_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        models_ = null;
+      }
+      return modelsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Workflow> workflows_ =
+      java.util.Collections.emptyList();
+    private void ensureWorkflowsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        workflows_ = new java.util.ArrayList<com.clarifai.grpc.api.Workflow>(workflows_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowsBuilder_;
+
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Workflow> getWorkflowsList() {
+      if (workflowsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(workflows_);
+      } else {
+        return workflowsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public int getWorkflowsCount() {
+      if (workflowsBuilder_ == null) {
+        return workflows_.size();
+      } else {
+        return workflowsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public com.clarifai.grpc.api.Workflow getWorkflows(int index) {
+      if (workflowsBuilder_ == null) {
+        return workflows_.get(index);
+      } else {
+        return workflowsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder setWorkflows(
+        int index, com.clarifai.grpc.api.Workflow value) {
+      if (workflowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkflowsIsMutable();
+        workflows_.set(index, value);
+        onChanged();
+      } else {
+        workflowsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder setWorkflows(
+        int index, com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowsBuilder_ == null) {
+        ensureWorkflowsIsMutable();
+        workflows_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        workflowsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder addWorkflows(com.clarifai.grpc.api.Workflow value) {
+      if (workflowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkflowsIsMutable();
+        workflows_.add(value);
+        onChanged();
+      } else {
+        workflowsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder addWorkflows(
+        int index, com.clarifai.grpc.api.Workflow value) {
+      if (workflowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWorkflowsIsMutable();
+        workflows_.add(index, value);
+        onChanged();
+      } else {
+        workflowsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder addWorkflows(
+        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowsBuilder_ == null) {
+        ensureWorkflowsIsMutable();
+        workflows_.add(builderForValue.build());
+        onChanged();
+      } else {
+        workflowsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder addWorkflows(
+        int index, com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowsBuilder_ == null) {
+        ensureWorkflowsIsMutable();
+        workflows_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        workflowsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder addAllWorkflows(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Workflow> values) {
+      if (workflowsBuilder_ == null) {
+        ensureWorkflowsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, workflows_);
+        onChanged();
+      } else {
+        workflowsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder clearWorkflows() {
+      if (workflowsBuilder_ == null) {
+        workflows_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        workflowsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public Builder removeWorkflows(int index) {
+      if (workflowsBuilder_ == null) {
+        ensureWorkflowsIsMutable();
+        workflows_.remove(index);
+        onChanged();
+      } else {
+        workflowsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder getWorkflowsBuilder(
+        int index) {
+      return getWorkflowsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowsOrBuilder(
+        int index) {
+      if (workflowsBuilder_ == null) {
+        return workflows_.get(index);  } else {
+        return workflowsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.WorkflowOrBuilder> 
+         getWorkflowsOrBuilderList() {
+      if (workflowsBuilder_ != null) {
+        return workflowsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(workflows_);
+      }
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder addWorkflowsBuilder() {
+      return getWorkflowsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Workflow.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder addWorkflowsBuilder(
+        int index) {
+      return getWorkflowsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Workflow.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Workflows that will work on this task. For Auto Annotation Tasks. Currently only supports 1 entry.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Workflow workflows = 6;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Workflow.Builder> 
+         getWorkflowsBuilderList() {
+      return getWorkflowsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
+        getWorkflowsFieldBuilder() {
+      if (workflowsBuilder_ == null) {
+        workflowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
+                workflows_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        workflows_ = null;
+      }
+      return workflowsBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

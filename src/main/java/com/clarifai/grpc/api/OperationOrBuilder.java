@@ -127,5 +127,20 @@ public interface OperationOrBuilder extends
    */
   com.clarifai.grpc.api.AddToDatasetOrBuilder getAddToDatasetOrBuilder();
 
+  /**
+   * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+   * @return Whether the splitIntoDatasets field is set.
+   */
+  boolean hasSplitIntoDatasets();
+  /**
+   * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+   * @return The splitIntoDatasets.
+   */
+  com.clarifai.grpc.api.SplitIntoDatasets getSplitIntoDatasets();
+  /**
+   * <code>.clarifai.api.SplitIntoDatasets split_into_datasets = 9;</code>
+   */
+  com.clarifai.grpc.api.SplitIntoDatasetsOrBuilder getSplitIntoDatasetsOrBuilder();
+
   public com.clarifai.grpc.api.Operation.OperationCase getOperationCase();
 }
