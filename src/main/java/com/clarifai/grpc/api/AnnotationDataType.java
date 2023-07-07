@@ -13,25 +13,29 @@ public enum AnnotationDataType
    */
   ANNOTATION_DATA_TYPE_NOT_SET(0),
   /**
-   * <code>BOUNDING_BOX = 1;</code>
+   * <code>TAG = 1;</code>
    */
-  BOUNDING_BOX(1),
+  TAG(1),
   /**
-   * <code>POLYGON = 2;</code>
+   * <code>BOUNDING_BOX = 2;</code>
    */
-  POLYGON(2),
+  BOUNDING_BOX(2),
   /**
-   * <code>POINT = 4;</code>
+   * <code>POLYGON = 4;</code>
    */
-  POINT(4),
+  POLYGON(4),
   /**
-   * <code>SPAN = 8;</code>
+   * <code>POINT = 8;</code>
    */
-  SPAN(8),
+  POINT(8),
   /**
-   * <code>MASK = 16;</code>
+   * <code>SPAN = 16;</code>
    */
-  MASK(16),
+  SPAN(16),
+  /**
+   * <code>MASK = 32;</code>
+   */
+  MASK(32),
   UNRECOGNIZED(-1),
   ;
 
@@ -40,25 +44,29 @@ public enum AnnotationDataType
    */
   public static final int ANNOTATION_DATA_TYPE_NOT_SET_VALUE = 0;
   /**
-   * <code>BOUNDING_BOX = 1;</code>
+   * <code>TAG = 1;</code>
    */
-  public static final int BOUNDING_BOX_VALUE = 1;
+  public static final int TAG_VALUE = 1;
   /**
-   * <code>POLYGON = 2;</code>
+   * <code>BOUNDING_BOX = 2;</code>
    */
-  public static final int POLYGON_VALUE = 2;
+  public static final int BOUNDING_BOX_VALUE = 2;
   /**
-   * <code>POINT = 4;</code>
+   * <code>POLYGON = 4;</code>
    */
-  public static final int POINT_VALUE = 4;
+  public static final int POLYGON_VALUE = 4;
   /**
-   * <code>SPAN = 8;</code>
+   * <code>POINT = 8;</code>
    */
-  public static final int SPAN_VALUE = 8;
+  public static final int POINT_VALUE = 8;
   /**
-   * <code>MASK = 16;</code>
+   * <code>SPAN = 16;</code>
    */
-  public static final int MASK_VALUE = 16;
+  public static final int SPAN_VALUE = 16;
+  /**
+   * <code>MASK = 32;</code>
+   */
+  public static final int MASK_VALUE = 32;
 
 
   public final int getNumber() {
@@ -86,11 +94,12 @@ public enum AnnotationDataType
   public static AnnotationDataType forNumber(int value) {
     switch (value) {
       case 0: return ANNOTATION_DATA_TYPE_NOT_SET;
-      case 1: return BOUNDING_BOX;
-      case 2: return POLYGON;
-      case 4: return POINT;
-      case 8: return SPAN;
-      case 16: return MASK;
+      case 1: return TAG;
+      case 2: return BOUNDING_BOX;
+      case 4: return POLYGON;
+      case 8: return POINT;
+      case 16: return SPAN;
+      case 32: return MASK;
       default: return null;
     }
   }

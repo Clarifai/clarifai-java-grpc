@@ -21,6 +21,18 @@ public interface RankOrBuilder extends
   /**
    * <pre>
    * RANK by annotation information.
+   * ########## Supported fields ##########
+   *  - data.concepts[].id
+   *  - data.concepts[].name
+   *  - data.concepts[].value
+   *  - data.embeddings[].num_dimensions
+   *  - data.embeddings[].vector[]
+   *  - data.image.base64[]
+   *  - data.image.url
+   *  - data.lopq_code[]
+   *  - data.text.raw
+   *  - input_id
+   *  - model_version_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -30,6 +42,18 @@ public interface RankOrBuilder extends
   /**
    * <pre>
    * RANK by annotation information.
+   * ########## Supported fields ##########
+   *  - data.concepts[].id
+   *  - data.concepts[].name
+   *  - data.concepts[].value
+   *  - data.embeddings[].num_dimensions
+   *  - data.embeddings[].vector[]
+   *  - data.image.base64[]
+   *  - data.image.url
+   *  - data.lopq_code[]
+   *  - data.text.raw
+   *  - input_id
+   *  - model_version_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -39,6 +63,18 @@ public interface RankOrBuilder extends
   /**
    * <pre>
    * RANK by annotation information.
+   * ########## Supported fields ##########
+   *  - data.concepts[].id
+   *  - data.concepts[].name
+   *  - data.concepts[].value
+   *  - data.embeddings[].num_dimensions
+   *  - data.embeddings[].vector[]
+   *  - data.image.base64[]
+   *  - data.image.url
+   *  - data.lopq_code[]
+   *  - data.text.raw
+   *  - input_id
+   *  - model_version_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>

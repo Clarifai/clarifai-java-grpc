@@ -957,6 +957,30 @@ public enum StatusCode
    */
   ALL_INPUT_VIDEOS_INVALID_BYTES(31300),
   /**
+   * <code>INPUT_VIDEO_PROCESSING_SUCCESS = 31400;</code>
+   */
+  INPUT_VIDEO_PROCESSING_SUCCESS(31400),
+  /**
+   * <code>INPUT_VIDEO_PROCESSING_PENDING = 31410;</code>
+   */
+  INPUT_VIDEO_PROCESSING_PENDING(31410),
+  /**
+   * <code>INPUT_VIDEO_PROCESSING_FAILED = 31420;</code>
+   */
+  INPUT_VIDEO_PROCESSING_FAILED(31420),
+  /**
+   * <code>INPUT_VIDEO_STORAGE_INCONSISTENCY = 31430;</code>
+   */
+  INPUT_VIDEO_STORAGE_INCONSISTENCY(31430),
+  /**
+   * <code>INPUT_VIDEO_STORAGE_FAILURE = 31440;</code>
+   */
+  INPUT_VIDEO_STORAGE_FAILURE(31440),
+  /**
+   * <code>INPUT_VIDEO_URL_GENERATION_FAILURE = 31450;</code>
+   */
+  INPUT_VIDEO_URL_GENERATION_FAILURE(31450),
+  /**
    * <code>INPUT_CONNECTION_FAILED = 39996;</code>
    */
   INPUT_CONNECTION_FAILED(39996),
@@ -1669,6 +1693,10 @@ public enum StatusCode
    */
   JOB_UNEXPECTED_ERROR(64006),
   /**
+   * <code>JOB_CONFLICT = 64007;</code>
+   */
+  JOB_CONFLICT(64007),
+  /**
    * <pre>
    *auth issues
    * </pre>
@@ -1708,6 +1736,14 @@ public enum StatusCode
    * <code>UPLOAD_EXPIRED = 68004;</code>
    */
   UPLOAD_EXPIRED(68004),
+  /**
+   * <code>UPLOAD_CANCELED = 68005;</code>
+   */
+  UPLOAD_CANCELED(68005),
+  /**
+   * <code>UPLOAD_CONFLICT = 68006;</code>
+   */
+  UPLOAD_CONFLICT(68006),
   /**
    * <pre>
    * Billing related issues: 69xxx
@@ -2760,6 +2796,30 @@ public enum StatusCode
    */
   public static final int ALL_INPUT_VIDEOS_INVALID_BYTES_VALUE = 31300;
   /**
+   * <code>INPUT_VIDEO_PROCESSING_SUCCESS = 31400;</code>
+   */
+  public static final int INPUT_VIDEO_PROCESSING_SUCCESS_VALUE = 31400;
+  /**
+   * <code>INPUT_VIDEO_PROCESSING_PENDING = 31410;</code>
+   */
+  public static final int INPUT_VIDEO_PROCESSING_PENDING_VALUE = 31410;
+  /**
+   * <code>INPUT_VIDEO_PROCESSING_FAILED = 31420;</code>
+   */
+  public static final int INPUT_VIDEO_PROCESSING_FAILED_VALUE = 31420;
+  /**
+   * <code>INPUT_VIDEO_STORAGE_INCONSISTENCY = 31430;</code>
+   */
+  public static final int INPUT_VIDEO_STORAGE_INCONSISTENCY_VALUE = 31430;
+  /**
+   * <code>INPUT_VIDEO_STORAGE_FAILURE = 31440;</code>
+   */
+  public static final int INPUT_VIDEO_STORAGE_FAILURE_VALUE = 31440;
+  /**
+   * <code>INPUT_VIDEO_URL_GENERATION_FAILURE = 31450;</code>
+   */
+  public static final int INPUT_VIDEO_URL_GENERATION_FAILURE_VALUE = 31450;
+  /**
    * <code>INPUT_CONNECTION_FAILED = 39996;</code>
    */
   public static final int INPUT_CONNECTION_FAILED_VALUE = 39996;
@@ -3471,6 +3531,10 @@ public enum StatusCode
    */
   public static final int JOB_UNEXPECTED_ERROR_VALUE = 64006;
   /**
+   * <code>JOB_CONFLICT = 64007;</code>
+   */
+  public static final int JOB_CONFLICT_VALUE = 64007;
+  /**
    * <pre>
    *auth issues
    * </pre>
@@ -3510,6 +3574,14 @@ public enum StatusCode
    * <code>UPLOAD_EXPIRED = 68004;</code>
    */
   public static final int UPLOAD_EXPIRED_VALUE = 68004;
+  /**
+   * <code>UPLOAD_CANCELED = 68005;</code>
+   */
+  public static final int UPLOAD_CANCELED_VALUE = 68005;
+  /**
+   * <code>UPLOAD_CONFLICT = 68006;</code>
+   */
+  public static final int UPLOAD_CONFLICT_VALUE = 68006;
   /**
    * <pre>
    * Billing related issues: 69xxx
@@ -3812,6 +3884,12 @@ public enum StatusCode
       case 31203: return INPUT_VIDEO_MODIFY_FAILED;
       case 31210: return INPUT_VIDEO_STORAGE_HOST_FAILED;
       case 31300: return ALL_INPUT_VIDEOS_INVALID_BYTES;
+      case 31400: return INPUT_VIDEO_PROCESSING_SUCCESS;
+      case 31410: return INPUT_VIDEO_PROCESSING_PENDING;
+      case 31420: return INPUT_VIDEO_PROCESSING_FAILED;
+      case 31430: return INPUT_VIDEO_STORAGE_INCONSISTENCY;
+      case 31440: return INPUT_VIDEO_STORAGE_FAILURE;
+      case 31450: return INPUT_VIDEO_URL_GENERATION_FAILURE;
       case 39996: return INPUT_CONNECTION_FAILED;
       case 39997: return REQUEST_DISABLED_FOR_MAINTENANCE;
       case 39998: return INPUT_WRITES_DISABLED_FOR_MAINTENANCE;
@@ -3944,6 +4022,7 @@ public enum StatusCode
       case 64003: return JOB_FAILED;
       case 64004: return JOB_CANCELLED;
       case 64006: return JOB_UNEXPECTED_ERROR;
+      case 64007: return JOB_CONFLICT;
       case 65000: return AUTH_MISSING_IDP_ASSOC;
       case 66000: return LIST_OBJECTS_FAILED;
       case 67000: return ARCHIVE_EXTRACT_FAILED;
@@ -3952,6 +4031,8 @@ public enum StatusCode
       case 68002: return UPLOAD_FAILED;
       case 68003: return UPLOAD_UNEXPECTED_ERROR;
       case 68004: return UPLOAD_EXPIRED;
+      case 68005: return UPLOAD_CANCELED;
+      case 68006: return UPLOAD_CONFLICT;
       case 69000: return BILLING_INVALID_INFO;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;

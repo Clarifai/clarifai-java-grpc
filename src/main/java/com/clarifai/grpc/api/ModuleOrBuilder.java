@@ -239,4 +239,26 @@ public interface ModuleOrBuilder extends
    * <code>.clarifai.api.ModuleVersion module_version = 11;</code>
    */
   com.clarifai.grpc.api.ModuleVersionOrBuilder getModuleVersionOrBuilder();
+
+  /**
+   * <pre>
+   * Is starred by the requesting user (only showed on get/list requests)
+   * Please use PostModuleStars/DeleteModuleStars endpoints to star/unstar a module
+   * </pre>
+   *
+   * <code>bool is_starred = 12;</code>
+   * @return The isStarred.
+   */
+  boolean getIsStarred();
+
+  /**
+   * <pre>
+   * How many users have starred the module (only showed on get/list requests)
+   * Computed value, not editable
+   * </pre>
+   *
+   * <code>int32 star_count = 13;</code>
+   * @return The starCount.
+   */
+  int getStarCount();
 }

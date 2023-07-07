@@ -10,7 +10,7 @@ public interface TaskConceptAutoAnnotationConfigOrBuilder extends
   /**
    * <pre>
    * Filter anontations by their annotation data type.
-   * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox. 
+   * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
    * </pre>
    *
    * <code>uint32 annotation_data_types = 1;</code>

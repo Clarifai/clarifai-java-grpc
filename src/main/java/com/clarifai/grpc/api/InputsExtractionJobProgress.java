@@ -48,11 +48,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            readObjectsCount_ = input.readUInt64();
-            break;
-          }
           case 16: {
 
             audioInputsCount_ = input.readUInt64();
@@ -125,17 +120,6 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_InputsExtractionJobProgress_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.InputsExtractionJobProgress.class, com.clarifai.grpc.api.InputsExtractionJobProgress.Builder.class);
-  }
-
-  public static final int READ_OBJECTS_COUNT_FIELD_NUMBER = 1;
-  private long readObjectsCount_;
-  /**
-   * <code>uint64 read_objects_count = 1;</code>
-   * @return The readObjectsCount.
-   */
-  @java.lang.Override
-  public long getReadObjectsCount() {
-    return readObjectsCount_;
   }
 
   public static final int AUDIO_INPUTS_COUNT_FIELD_NUMBER = 2;
@@ -240,9 +224,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (readObjectsCount_ != 0L) {
-      output.writeUInt64(1, readObjectsCount_);
-    }
     if (audioInputsCount_ != 0L) {
       output.writeUInt64(2, audioInputsCount_);
     }
@@ -276,10 +257,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (readObjectsCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(1, readObjectsCount_);
-    }
     if (audioInputsCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(2, audioInputsCount_);
@@ -327,8 +304,6 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.InputsExtractionJobProgress other = (com.clarifai.grpc.api.InputsExtractionJobProgress) obj;
 
-    if (getReadObjectsCount()
-        != other.getReadObjectsCount()) return false;
     if (getAudioInputsCount()
         != other.getAudioInputsCount()) return false;
     if (getImageInputsCount()
@@ -356,9 +331,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + READ_OBJECTS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getReadObjectsCount());
     hash = (37 * hash) + AUDIO_INPUTS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAudioInputsCount());
@@ -516,8 +488,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      readObjectsCount_ = 0L;
-
       audioInputsCount_ = 0L;
 
       imageInputsCount_ = 0L;
@@ -560,7 +530,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.InputsExtractionJobProgress buildPartial() {
       com.clarifai.grpc.api.InputsExtractionJobProgress result = new com.clarifai.grpc.api.InputsExtractionJobProgress(this);
-      result.readObjectsCount_ = readObjectsCount_;
       result.audioInputsCount_ = audioInputsCount_;
       result.imageInputsCount_ = imageInputsCount_;
       result.videoInputsCount_ = videoInputsCount_;
@@ -617,9 +586,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.InputsExtractionJobProgress other) {
       if (other == com.clarifai.grpc.api.InputsExtractionJobProgress.getDefaultInstance()) return this;
-      if (other.getReadObjectsCount() != 0L) {
-        setReadObjectsCount(other.getReadObjectsCount());
-      }
       if (other.getAudioInputsCount() != 0L) {
         setAudioInputsCount(other.getAudioInputsCount());
       }
@@ -670,37 +636,6 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private long readObjectsCount_ ;
-    /**
-     * <code>uint64 read_objects_count = 1;</code>
-     * @return The readObjectsCount.
-     */
-    @java.lang.Override
-    public long getReadObjectsCount() {
-      return readObjectsCount_;
-    }
-    /**
-     * <code>uint64 read_objects_count = 1;</code>
-     * @param value The readObjectsCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReadObjectsCount(long value) {
-      
-      readObjectsCount_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint64 read_objects_count = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearReadObjectsCount() {
-      
-      readObjectsCount_ = 0L;
-      onChanged();
       return this;
     }
 

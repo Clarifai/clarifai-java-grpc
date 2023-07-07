@@ -129,6 +129,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Upload.parser(), extensionRegistry));
             break;
           }
+          case 98: {
+            com.clarifai.grpc.api.status.Status.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
+            }
+            status_ = input.readMessage(com.clarifai.grpc.api.status.Status.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -553,6 +566,44 @@ private static final long serialVersionUID = 0L;
     return uploads_.get(index);
   }
 
+  public static final int STATUS_FIELD_NUMBER = 12;
+  private com.clarifai.grpc.api.status.Status status_;
+  /**
+   * <pre>
+   * Status of the job
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 12;</code>
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return status_ != null;
+  }
+  /**
+   * <pre>
+   * Status of the job
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 12;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.Status getStatus() {
+    return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
+  }
+  /**
+   * <pre>
+   * Status of the job
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -591,6 +642,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < uploads_.size(); i++) {
       output.writeMessage(11, uploads_.get(i));
     }
+    if (status_ != null) {
+      output.writeMessage(12, getStatus());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -628,6 +682,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < uploads_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, uploads_.get(i));
+    }
+    if (status_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -669,6 +727,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExtractionJobsList())) return false;
     if (!getUploadsList()
         .equals(other.getUploadsList())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -705,6 +768,10 @@ private static final long serialVersionUID = 0L;
     if (getUploadsCount() > 0) {
       hash = (37 * hash) + UPLOADS_FIELD_NUMBER;
       hash = (53 * hash) + getUploadsList().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -877,6 +944,12 @@ private static final long serialVersionUID = 0L;
       } else {
         uploadsBuilder_.clear();
       }
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
       return this;
     }
 
@@ -939,6 +1012,11 @@ private static final long serialVersionUID = 0L;
         result.uploads_ = uploads_;
       } else {
         result.uploads_ = uploadsBuilder_.build();
+      }
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1060,6 +1138,9 @@ private static final long serialVersionUID = 0L;
             uploadsBuilder_.addAllMessages(other.uploads_);
           }
         }
+      }
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2502,6 +2583,161 @@ private static final long serialVersionUID = 0L;
         uploads_ = null;
       }
       return uploadsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.status.Status status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     * @return The status.
+     */
+    public com.clarifai.grpc.api.status.Status getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    public Builder setStatus(com.clarifai.grpc.api.status.Status value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    public Builder setStatus(
+        com.clarifai.grpc.api.status.Status.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    public Builder mergeStatus(com.clarifai.grpc.api.status.Status value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            com.clarifai.grpc.api.status.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    public com.clarifai.grpc.api.status.Status.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
+      }
+    }
+    /**
+     * <pre>
+     * Status of the job
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

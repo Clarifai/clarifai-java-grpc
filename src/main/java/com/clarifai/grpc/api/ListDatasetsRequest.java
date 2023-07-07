@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListDatasetsRequest() {
+    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -42,6 +43,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -75,6 +77,20 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 32: {
+
+            starredOnly_ = input.readBool();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              additionalFields_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            additionalFields_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -92,6 +108,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -167,6 +186,52 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int STARRED_ONLY_FIELD_NUMBER = 4;
+  private boolean starredOnly_;
+  /**
+   * <code>bool starred_only = 4;</code>
+   * @return The starredOnly.
+   */
+  @java.lang.Override
+  public boolean getStarredOnly() {
+    return starredOnly_;
+  }
+
+  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList additionalFields_;
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @return A list containing the additionalFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAdditionalFieldsList() {
+    return additionalFields_;
+  }
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @return The count of additionalFields.
+   */
+  public int getAdditionalFieldsCount() {
+    return additionalFields_.size();
+  }
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  public java.lang.String getAdditionalFields(int index) {
+    return additionalFields_.get(index);
+  }
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index) {
+    return additionalFields_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +255,12 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
+    if (starredOnly_ != false) {
+      output.writeBool(4, starredOnly_);
+    }
+    for (int i = 0; i < additionalFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, additionalFields_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +281,18 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
+    }
+    if (starredOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, starredOnly_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdditionalFieldsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,6 +318,10 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (getStarredOnly()
+        != other.getStarredOnly()) return false;
+    if (!getAdditionalFieldsList()
+        .equals(other.getAdditionalFieldsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -254,6 +341,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getStarredOnly());
+    if (getAdditionalFieldsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -401,6 +495,10 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      starredOnly_ = false;
+
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -427,6 +525,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.ListDatasetsRequest buildPartial() {
       com.clarifai.grpc.api.ListDatasetsRequest result = new com.clarifai.grpc.api.ListDatasetsRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
@@ -434,6 +533,12 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.starredOnly_ = starredOnly_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.additionalFields_ = additionalFields_;
       onBuilt();
       return result;
     }
@@ -491,6 +596,19 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (other.getStarredOnly() != false) {
+        setStarredOnly(other.getStarredOnly());
+      }
+      if (!other.additionalFields_.isEmpty()) {
+        if (additionalFields_.isEmpty()) {
+          additionalFields_ = other.additionalFields_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureAdditionalFieldsIsMutable();
+          additionalFields_.addAll(other.additionalFields_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -519,6 +637,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -727,6 +846,147 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean starredOnly_ ;
+    /**
+     * <code>bool starred_only = 4;</code>
+     * @return The starredOnly.
+     */
+    @java.lang.Override
+    public boolean getStarredOnly() {
+      return starredOnly_;
+    }
+    /**
+     * <code>bool starred_only = 4;</code>
+     * @param value The starredOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarredOnly(boolean value) {
+      
+      starredOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool starred_only = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarredOnly() {
+      
+      starredOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAdditionalFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @return A list containing the additionalFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAdditionalFieldsList() {
+      return additionalFields_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @return The count of additionalFields.
+     */
+    public int getAdditionalFieldsCount() {
+      return additionalFields_.size();
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @param index The index of the element to return.
+     * @return The additionalFields at the given index.
+     */
+    public java.lang.String getAdditionalFields(int index) {
+      return additionalFields_.get(index);
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalFieldsBytes(int index) {
+      return additionalFields_.getByteString(index);
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The additionalFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @param value The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @param values The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, additionalFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalFields() {
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string additional_fields = 5;</code>
+     * @param value The bytes of the additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
       onChanged();
       return this;
     }

@@ -256,6 +256,33 @@ public interface DatasetVersionOrBuilder extends
 
   /**
    * <pre>
+   * Dataset version processing
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+   * @return Whether the processingInfo field is set.
+   */
+  boolean hasProcessingInfo();
+  /**
+   * <pre>
+   * Dataset version processing
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+   * @return The processingInfo.
+   */
+  com.clarifai.grpc.api.DatasetVersionProcessingInfo getProcessingInfo();
+  /**
+   * <pre>
+   * Dataset version processing
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder getProcessingInfoOrBuilder();
+
+  /**
+   * <pre>
    * Dataset version metrics
    * </pre>
    *

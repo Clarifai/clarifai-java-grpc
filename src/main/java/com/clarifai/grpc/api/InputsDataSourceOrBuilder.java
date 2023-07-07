@@ -47,4 +47,23 @@ public interface InputsDataSourceOrBuilder extends
    * <code>.clarifai.api.DataSourceURL url = 2;</code>
    */
   com.clarifai.grpc.api.DataSourceURLOrBuilder getUrlOrBuilder();
+
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 3;</code>
+   * @return The enum numeric value on the wire for inputIdConflictResolution.
+   */
+  int getInputIdConflictResolutionValue();
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 3;</code>
+   * @return The inputIdConflictResolution.
+   */
+  com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution();
 }

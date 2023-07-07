@@ -67,4 +67,16 @@ public interface PatchAnnotationsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getActionBytes();
+
+  /**
+   * <pre>
+   * If the request is a "remove" action and the annotation is left with empty data,
+   * then setting delete_if_empty_data to true will delete the annotation,
+   * if possible (for example, will not delete an input-level annotation).
+   * </pre>
+   *
+   * <code>bool delete_if_empty_data = 4;</code>
+   * @return The deleteIfEmptyData.
+   */
+  boolean getDeleteIfEmptyData();
 }

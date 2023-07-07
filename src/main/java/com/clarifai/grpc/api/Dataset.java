@@ -165,6 +165,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 112: {
+
+            isStarred_ = input.readBool();
+            break;
+          }
+          case 120: {
+
+            starCount_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -683,6 +693,36 @@ private static final long serialVersionUID = 0L;
     return getVersion();
   }
 
+  public static final int IS_STARRED_FIELD_NUMBER = 14;
+  private boolean isStarred_;
+  /**
+   * <pre>
+   * Whether the dataset is starred by the requesting user.
+   * </pre>
+   *
+   * <code>bool is_starred = 14;</code>
+   * @return The isStarred.
+   */
+  @java.lang.Override
+  public boolean getIsStarred() {
+    return isStarred_;
+  }
+
+  public static final int STAR_COUNT_FIELD_NUMBER = 15;
+  private int starCount_;
+  /**
+   * <pre>
+   * Number of users that starred this dataset.
+   * </pre>
+   *
+   * <code>int32 star_count = 15;</code>
+   * @return The starCount.
+   */
+  @java.lang.Override
+  public int getStarCount() {
+    return starCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -729,6 +769,12 @@ private static final long serialVersionUID = 0L;
     }
     if (version_ != null) {
       output.writeMessage(13, getVersion());
+    }
+    if (isStarred_ != false) {
+      output.writeBool(14, isStarred_);
+    }
+    if (starCount_ != 0) {
+      output.writeInt32(15, starCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -777,6 +823,14 @@ private static final long serialVersionUID = 0L;
     if (version_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getVersion());
+    }
+    if (isStarred_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(14, isStarred_);
+    }
+    if (starCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(15, starCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -833,6 +887,10 @@ private static final long serialVersionUID = 0L;
       if (!getVersion()
           .equals(other.getVersion())) return false;
     }
+    if (getIsStarred()
+        != other.getIsStarred()) return false;
+    if (getStarCount()
+        != other.getStarCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -878,6 +936,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
     }
+    hash = (37 * hash) + IS_STARRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsStarred());
+    hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getStarCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1061,6 +1124,10 @@ private static final long serialVersionUID = 0L;
         version_ = null;
         versionBuilder_ = null;
       }
+      isStarred_ = false;
+
+      starCount_ = 0;
+
       return this;
     }
 
@@ -1122,6 +1189,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.version_ = versionBuilder_.build();
       }
+      result.isStarred_ = isStarred_;
+      result.starCount_ = starCount_;
       onBuilt();
       return result;
     }
@@ -1207,6 +1276,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasVersion()) {
         mergeVersion(other.getVersion());
+      }
+      if (other.getIsStarred() != false) {
+        setIsStarred(other.getIsStarred());
+      }
+      if (other.getStarCount() != 0) {
+        setStarCount(other.getStarCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2722,6 +2797,92 @@ private static final long serialVersionUID = 0L;
         version_ = null;
       }
       return versionBuilder_;
+    }
+
+    private boolean isStarred_ ;
+    /**
+     * <pre>
+     * Whether the dataset is starred by the requesting user.
+     * </pre>
+     *
+     * <code>bool is_starred = 14;</code>
+     * @return The isStarred.
+     */
+    @java.lang.Override
+    public boolean getIsStarred() {
+      return isStarred_;
+    }
+    /**
+     * <pre>
+     * Whether the dataset is starred by the requesting user.
+     * </pre>
+     *
+     * <code>bool is_starred = 14;</code>
+     * @param value The isStarred to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsStarred(boolean value) {
+      
+      isStarred_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the dataset is starred by the requesting user.
+     * </pre>
+     *
+     * <code>bool is_starred = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsStarred() {
+      
+      isStarred_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int starCount_ ;
+    /**
+     * <pre>
+     * Number of users that starred this dataset.
+     * </pre>
+     *
+     * <code>int32 star_count = 15;</code>
+     * @return The starCount.
+     */
+    @java.lang.Override
+    public int getStarCount() {
+      return starCount_;
+    }
+    /**
+     * <pre>
+     * Number of users that starred this dataset.
+     * </pre>
+     *
+     * <code>int32 star_count = 15;</code>
+     * @param value The starCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarCount(int value) {
+      
+      starCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of users that starred this dataset.
+     * </pre>
+     *
+     * <code>int32 star_count = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarCount() {
+      
+      starCount_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
