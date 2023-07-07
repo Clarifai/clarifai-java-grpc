@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private InputsExtractionJob() {
     id_ = "";
     url_ = "";
+    inputIdConflictResolution_ = 0;
   }
 
   @java.lang.Override
@@ -112,6 +113,12 @@ private static final long serialVersionUID = 0L;
               modifiedAt_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 56: {
+            int rawValue = input.readEnum();
+
+            inputIdConflictResolution_ = rawValue;
             break;
           }
           default: {
@@ -392,6 +399,33 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
+  public static final int INPUT_ID_CONFLICT_RESOLUTION_FIELD_NUMBER = 7;
+  private int inputIdConflictResolution_;
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+   * @return The enum numeric value on the wire for inputIdConflictResolution.
+   */
+  @java.lang.Override public int getInputIdConflictResolutionValue() {
+    return inputIdConflictResolution_;
+  }
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+   * @return The inputIdConflictResolution.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.InputIDConflictResolution result = com.clarifai.grpc.api.InputIDConflictResolution.valueOf(inputIdConflictResolution_);
+    return result == null ? com.clarifai.grpc.api.InputIDConflictResolution.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -424,6 +458,9 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(6, getModifiedAt());
     }
+    if (inputIdConflictResolution_ != com.clarifai.grpc.api.InputIDConflictResolution.INPUT_ID_CONFLICT_RESOLUTION_NOT_SET.getNumber()) {
+      output.writeEnum(7, inputIdConflictResolution_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -454,6 +491,10 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getModifiedAt());
+    }
+    if (inputIdConflictResolution_ != com.clarifai.grpc.api.InputIDConflictResolution.INPUT_ID_CONFLICT_RESOLUTION_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, inputIdConflictResolution_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -494,6 +535,7 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
+    if (inputIdConflictResolution_ != other.inputIdConflictResolution_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -525,6 +567,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
     }
+    hash = (37 * hash) + INPUT_ID_CONFLICT_RESOLUTION_FIELD_NUMBER;
+    hash = (53 * hash) + inputIdConflictResolution_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -686,6 +730,8 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
+      inputIdConflictResolution_ = 0;
+
       return this;
     }
 
@@ -734,6 +780,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
+      result.inputIdConflictResolution_ = inputIdConflictResolution_;
       onBuilt();
       return result;
     }
@@ -801,6 +848,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
+      }
+      if (other.inputIdConflictResolution_ != 0) {
+        setInputIdConflictResolutionValue(other.getInputIdConflictResolutionValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1641,6 +1691,80 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
+    }
+
+    private int inputIdConflictResolution_ = 0;
+    /**
+     * <pre>
+     * How to handle input ID conflicts.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @return The enum numeric value on the wire for inputIdConflictResolution.
+     */
+    @java.lang.Override public int getInputIdConflictResolutionValue() {
+      return inputIdConflictResolution_;
+    }
+    /**
+     * <pre>
+     * How to handle input ID conflicts.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @param value The enum numeric value on the wire for inputIdConflictResolution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputIdConflictResolutionValue(int value) {
+      
+      inputIdConflictResolution_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * How to handle input ID conflicts.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @return The inputIdConflictResolution.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.InputIDConflictResolution result = com.clarifai.grpc.api.InputIDConflictResolution.valueOf(inputIdConflictResolution_);
+      return result == null ? com.clarifai.grpc.api.InputIDConflictResolution.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * How to handle input ID conflicts.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @param value The inputIdConflictResolution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputIdConflictResolution(com.clarifai.grpc.api.InputIDConflictResolution value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      inputIdConflictResolution_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * How to handle input ID conflicts.
+     * </pre>
+     *
+     * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputIdConflictResolution() {
+      
+      inputIdConflictResolution_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

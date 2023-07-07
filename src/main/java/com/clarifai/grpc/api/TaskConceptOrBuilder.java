@@ -9,7 +9,7 @@ public interface TaskConceptOrBuilder extends
 
   /**
    * <pre>
-   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 1;</code>
@@ -18,7 +18,7 @@ public interface TaskConceptOrBuilder extends
   boolean hasConcept();
   /**
    * <pre>
-   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 1;</code>
@@ -27,7 +27,7 @@ public interface TaskConceptOrBuilder extends
   com.clarifai.grpc.api.Concept getConcept();
   /**
    * <pre>
-   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 1;</code>

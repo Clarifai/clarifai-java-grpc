@@ -23,16 +23,118 @@ public interface EvalMetricsOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   * <pre>
+   * user id that owns this evaluation
+   * </pre>
+   *
+   * <code>string user_id = 15;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * user id that owns this evaluation
+   * </pre>
+   *
+   * <code>string user_id = 15;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
+  /**
+   * <pre>
+   * app id that owns this evaluation
+   * </pre>
+   *
+   * <code>string app_id = 16;</code>
+   * @return The appId.
+   */
+  java.lang.String getAppId();
+  /**
+   * <pre>
+   * app id that owns this evaluation
+   * </pre>
+   *
+   * <code>string app_id = 16;</code>
+   * @return The bytes for appId.
+   */
+  com.google.protobuf.ByteString
+      getAppIdBytes();
+
+  /**
+   * <pre>
+   * Id of this evaluation
+   * </pre>
+   *
    * <code>string id = 10;</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
+   * <pre>
+   * Id of this evaluation
+   * </pre>
+   *
    * <code>string id = 10;</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
+
+  /**
+   * <pre>
+   * Model to evaluate
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 13;</code>
+   * @return Whether the model field is set.
+   */
+  boolean hasModel();
+  /**
+   * <pre>
+   * Model to evaluate
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 13;</code>
+   * @return The model.
+   */
+  com.clarifai.grpc.api.Model getModel();
+  /**
+   * <pre>
+   * Model to evaluate
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 13;</code>
+   */
+  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   * <pre>
+   * The ground truth dataset
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+   * @return Whether the groundTruthDataset field is set.
+   */
+  boolean hasGroundTruthDataset();
+  /**
+   * <pre>
+   * The ground truth dataset
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+   * @return The groundTruthDataset.
+   */
+  com.clarifai.grpc.api.Dataset getGroundTruthDataset();
+  /**
+   * <pre>
+   * The ground truth dataset
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+   */
+  com.clarifai.grpc.api.DatasetOrBuilder getGroundTruthDatasetOrBuilder();
 
   /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
@@ -215,16 +317,31 @@ public interface EvalMetricsOrBuilder extends
       int index);
 
   /**
+   * <pre>
+   * Evaluation parameters to pass. Expected to match what
+   * is defined in the model type for the respective model.
+   * </pre>
+   *
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    * @return Whether the evalInfo field is set.
    */
   boolean hasEvalInfo();
   /**
+   * <pre>
+   * Evaluation parameters to pass. Expected to match what
+   * is defined in the model type for the respective model.
+   * </pre>
+   *
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    * @return The evalInfo.
    */
   com.clarifai.grpc.api.EvalInfo getEvalInfo();
   /**
+   * <pre>
+   * Evaluation parameters to pass. Expected to match what
+   * is defined in the model type for the respective model.
+   * </pre>
+   *
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    */
   com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder();

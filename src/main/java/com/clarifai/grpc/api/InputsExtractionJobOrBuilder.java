@@ -154,4 +154,23 @@ public interface InputsExtractionJobOrBuilder extends
    * <code>.google.protobuf.Timestamp modified_at = 6;</code>
    */
   com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+   * @return The enum numeric value on the wire for inputIdConflictResolution.
+   */
+  int getInputIdConflictResolutionValue();
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 7;</code>
+   * @return The inputIdConflictResolution.
+   */
+  com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution();
 }

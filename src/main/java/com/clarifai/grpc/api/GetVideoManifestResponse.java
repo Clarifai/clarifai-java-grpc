@@ -131,6 +131,12 @@ private static final long serialVersionUID = 0L;
   public static final int MANIFEST_URL_FIELD_NUMBER = 2;
   private volatile java.lang.Object manifestUrl_;
   /**
+   * <pre>
+   * MPEG-dash manifest as data-URI, base64-encoded
+   * Can be empty if status is FAILED
+   * Can be fallback manifest if status is MIXED_STATUS
+   * </pre>
+   *
    * <code>string manifest_url = 2;</code>
    * @return The manifestUrl.
    */
@@ -148,6 +154,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * MPEG-dash manifest as data-URI, base64-encoded
+   * Can be empty if status is FAILED
+   * Can be fallback manifest if status is MIXED_STATUS
+   * </pre>
+   *
    * <code>string manifest_url = 2;</code>
    * @return The bytes for manifestUrl.
    */
@@ -619,6 +631,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object manifestUrl_ = "";
     /**
+     * <pre>
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     * </pre>
+     *
      * <code>string manifest_url = 2;</code>
      * @return The manifestUrl.
      */
@@ -635,6 +653,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     * </pre>
+     *
      * <code>string manifest_url = 2;</code>
      * @return The bytes for manifestUrl.
      */
@@ -652,6 +676,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     * </pre>
+     *
      * <code>string manifest_url = 2;</code>
      * @param value The manifestUrl to set.
      * @return This builder for chaining.
@@ -667,6 +697,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     * </pre>
+     *
      * <code>string manifest_url = 2;</code>
      * @return This builder for chaining.
      */
@@ -677,6 +713,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * MPEG-dash manifest as data-URI, base64-encoded
+     * Can be empty if status is FAILED
+     * Can be fallback manifest if status is MIXED_STATUS
+     * </pre>
+     *
      * <code>string manifest_url = 2;</code>
      * @param value The bytes for manifestUrl to set.
      * @return This builder for chaining.

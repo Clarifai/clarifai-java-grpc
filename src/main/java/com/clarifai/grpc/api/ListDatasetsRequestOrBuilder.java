@@ -43,4 +43,35 @@ public interface ListDatasetsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <code>bool starred_only = 4;</code>
+   * @return The starredOnly.
+   */
+  boolean getStarredOnly();
+
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <code>repeated string additional_fields = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
 }

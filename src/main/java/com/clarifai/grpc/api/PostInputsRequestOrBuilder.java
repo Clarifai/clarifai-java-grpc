@@ -111,4 +111,23 @@ public interface PostInputsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInputsAddJobIdBytes();
+
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+   * @return The enum numeric value on the wire for inputIdConflictResolution.
+   */
+  int getInputIdConflictResolutionValue();
+  /**
+   * <pre>
+   * How to handle input ID conflicts.
+   * </pre>
+   *
+   * <code>.clarifai.api.InputIDConflictResolution input_id_conflict_resolution = 4;</code>
+   * @return The inputIdConflictResolution.
+   */
+  com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution();
 }

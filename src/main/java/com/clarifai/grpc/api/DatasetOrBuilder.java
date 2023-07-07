@@ -294,4 +294,24 @@ public interface DatasetOrBuilder extends
    * <code>.clarifai.api.DatasetVersion version = 13;</code>
    */
   com.clarifai.grpc.api.DatasetVersionOrBuilder getVersionOrBuilder();
+
+  /**
+   * <pre>
+   * Whether the dataset is starred by the requesting user.
+   * </pre>
+   *
+   * <code>bool is_starred = 14;</code>
+   * @return The isStarred.
+   */
+  boolean getIsStarred();
+
+  /**
+   * <pre>
+   * Number of users that starred this dataset.
+   * </pre>
+   *
+   * <code>int32 star_count = 15;</code>
+   * @return The starCount.
+   */
+  int getStarCount();
 }

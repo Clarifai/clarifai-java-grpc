@@ -23,11 +23,23 @@ public interface GetVideoManifestResponseOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   * <pre>
+   * MPEG-dash manifest as data-URI, base64-encoded
+   * Can be empty if status is FAILED
+   * Can be fallback manifest if status is MIXED_STATUS
+   * </pre>
+   *
    * <code>string manifest_url = 2;</code>
    * @return The manifestUrl.
    */
   java.lang.String getManifestUrl();
   /**
+   * <pre>
+   * MPEG-dash manifest as data-URI, base64-encoded
+   * Can be empty if status is FAILED
+   * Can be fallback manifest if status is MIXED_STATUS
+   * </pre>
+   *
    * <code>string manifest_url = 2;</code>
    * @return The bytes for manifestUrl.
    */
