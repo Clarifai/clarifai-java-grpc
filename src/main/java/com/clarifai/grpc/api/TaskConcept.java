@@ -112,7 +112,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Concept concept_;
   /**
    * <pre>
-   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 1;</code>
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 1;</code>
@@ -136,7 +136,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+   * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
    * </pre>
    *
    * <code>.clarifai.api.Concept concept = 1;</code>
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> conceptBuilder_;
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -533,7 +533,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -608,7 +608,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required. 
+     * For auto annotation, id/name and value, user + app id must be specified. For other tasks, only the id field is required.
      * </pre>
      *
      * <code>.clarifai.api.Concept concept = 1;</code>

@@ -5,30 +5,29 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * PatchDatasetIdsRequest
+ * Evaluate this model vesion
  * </pre>
  *
- * Protobuf type {@code clarifai.api.PatchDatasetIdsRequest}
+ * Protobuf type {@code clarifai.api.PostEvaluationsRequest}
  */
-public final class PatchDatasetIdsRequest extends
+public final class PostEvaluationsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.PatchDatasetIdsRequest)
-    PatchDatasetIdsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PostEvaluationsRequest)
+    PostEvaluationsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PatchDatasetIdsRequest.newBuilder() to construct.
-  private PatchDatasetIdsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PostEvaluationsRequest.newBuilder() to construct.
+  private PostEvaluationsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PatchDatasetIdsRequest() {
-    ids_ = java.util.Collections.emptyList();
-    action_ = "";
+  private PostEvaluationsRequest() {
+    evalMetrics_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PatchDatasetIdsRequest();
+    return new PostEvaluationsRequest();
   }
 
   @java.lang.Override
@@ -36,7 +35,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PatchDatasetIdsRequest(
+  private PostEvaluationsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -68,19 +67,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 26: {
+          case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              ids_ = new java.util.ArrayList<com.clarifai.grpc.api.IdUpdateSource>();
+              evalMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.EvalMetrics>();
               mutable_bitField0_ |= 0x00000001;
             }
-            ids_.add(
-                input.readMessage(com.clarifai.grpc.api.IdUpdateSource.parser(), extensionRegistry));
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            action_ = s;
+            evalMetrics_.add(
+                input.readMessage(com.clarifai.grpc.api.EvalMetrics.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -101,7 +94,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        ids_ = java.util.Collections.unmodifiableList(ids_);
+        evalMetrics_ = java.util.Collections.unmodifiableList(evalMetrics_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -109,15 +102,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchDatasetIdsRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostEvaluationsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchDatasetIdsRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostEvaluationsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.PatchDatasetIdsRequest.class, com.clarifai.grpc.api.PatchDatasetIdsRequest.Builder.class);
+            com.clarifai.grpc.api.PostEvaluationsRequest.class, com.clarifai.grpc.api.PostEvaluationsRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -146,112 +139,69 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int IDS_FIELD_NUMBER = 3;
-  private java.util.List<com.clarifai.grpc.api.IdUpdateSource> ids_;
+  public static final int EVAL_METRICS_FIELD_NUMBER = 2;
+  private java.util.List<com.clarifai.grpc.api.EvalMetrics> evalMetrics_;
   /**
    * <pre>
-   * Array containing 1 entry
+   * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+   * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
    * </pre>
    *
-   * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.IdUpdateSource> getIdsList() {
-    return ids_;
+  public java.util.List<com.clarifai.grpc.api.EvalMetrics> getEvalMetricsList() {
+    return evalMetrics_;
   }
   /**
    * <pre>
-   * Array containing 1 entry
+   * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+   * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
    * </pre>
    *
-   * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.clarifai.grpc.api.IdUpdateSourceOrBuilder> 
-      getIdsOrBuilderList() {
-    return ids_;
+  public java.util.List<? extends com.clarifai.grpc.api.EvalMetricsOrBuilder> 
+      getEvalMetricsOrBuilderList() {
+    return evalMetrics_;
   }
   /**
    * <pre>
-   * Array containing 1 entry
+   * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+   * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
    * </pre>
    *
-   * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
    */
   @java.lang.Override
-  public int getIdsCount() {
-    return ids_.size();
+  public int getEvalMetricsCount() {
+    return evalMetrics_.size();
   }
   /**
    * <pre>
-   * Array containing 1 entry
+   * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+   * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
    * </pre>
    *
-   * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.IdUpdateSource getIds(int index) {
-    return ids_.get(index);
+  public com.clarifai.grpc.api.EvalMetrics getEvalMetrics(int index) {
+    return evalMetrics_.get(index);
   }
   /**
    * <pre>
-   * Array containing 1 entry
+   * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+   * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
    * </pre>
    *
-   * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+   * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.IdUpdateSourceOrBuilder getIdsOrBuilder(
+  public com.clarifai.grpc.api.EvalMetricsOrBuilder getEvalMetricsOrBuilder(
       int index) {
-    return ids_.get(index);
-  }
-
-  public static final int ACTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object action_;
-  /**
-   * <pre>
-   * The action to perform on the patched objects
-   * Only 'overwrite' is supported
-   * </pre>
-   *
-   * <code>string action = 4;</code>
-   * @return The action.
-   */
-  @java.lang.Override
-  public java.lang.String getAction() {
-    java.lang.Object ref = action_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      action_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The action to perform on the patched objects
-   * Only 'overwrite' is supported
-   * </pre>
-   *
-   * <code>string action = 4;</code>
-   * @return The bytes for action.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getActionBytes() {
-    java.lang.Object ref = action_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      action_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+    return evalMetrics_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -271,11 +221,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    for (int i = 0; i < ids_.size(); i++) {
-      output.writeMessage(3, ids_.get(i));
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, action_);
+    for (int i = 0; i < evalMetrics_.size(); i++) {
+      output.writeMessage(2, evalMetrics_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -290,12 +237,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    for (int i = 0; i < ids_.size(); i++) {
+    for (int i = 0; i < evalMetrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, ids_.get(i));
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, action_);
+        .computeMessageSize(2, evalMetrics_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -307,20 +251,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.PatchDatasetIdsRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PostEvaluationsRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.PatchDatasetIdsRequest other = (com.clarifai.grpc.api.PatchDatasetIdsRequest) obj;
+    com.clarifai.grpc.api.PostEvaluationsRequest other = (com.clarifai.grpc.api.PostEvaluationsRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getIdsList()
-        .equals(other.getIdsList())) return false;
-    if (!getAction()
-        .equals(other.getAction())) return false;
+    if (!getEvalMetricsList()
+        .equals(other.getEvalMetricsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -336,80 +278,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (getIdsCount() > 0) {
-      hash = (37 * hash) + IDS_FIELD_NUMBER;
-      hash = (53 * hash) + getIdsList().hashCode();
+    if (getEvalMetricsCount() > 0) {
+      hash = (37 * hash) + EVAL_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvalMetricsList().hashCode();
     }
-    hash = (37 * hash) + ACTION_FIELD_NUMBER;
-    hash = (53 * hash) + getAction().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostEvaluationsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -422,7 +362,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.PatchDatasetIdsRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PostEvaluationsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -439,29 +379,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * PatchDatasetIdsRequest
+   * Evaluate this model vesion
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.PatchDatasetIdsRequest}
+   * Protobuf type {@code clarifai.api.PostEvaluationsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.PatchDatasetIdsRequest)
-      com.clarifai.grpc.api.PatchDatasetIdsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PostEvaluationsRequest)
+      com.clarifai.grpc.api.PostEvaluationsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchDatasetIdsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostEvaluationsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchDatasetIdsRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostEvaluationsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.PatchDatasetIdsRequest.class, com.clarifai.grpc.api.PatchDatasetIdsRequest.Builder.class);
+              com.clarifai.grpc.api.PostEvaluationsRequest.class, com.clarifai.grpc.api.PostEvaluationsRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.PatchDatasetIdsRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PostEvaluationsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -474,7 +414,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getIdsFieldBuilder();
+        getEvalMetricsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -486,31 +426,29 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      if (idsBuilder_ == null) {
-        ids_ = java.util.Collections.emptyList();
+      if (evalMetricsBuilder_ == null) {
+        evalMetrics_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        idsBuilder_.clear();
+        evalMetricsBuilder_.clear();
       }
-      action_ = "";
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchDatasetIdsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostEvaluationsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PatchDatasetIdsRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.PatchDatasetIdsRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PostEvaluationsRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PostEvaluationsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PatchDatasetIdsRequest build() {
-      com.clarifai.grpc.api.PatchDatasetIdsRequest result = buildPartial();
+    public com.clarifai.grpc.api.PostEvaluationsRequest build() {
+      com.clarifai.grpc.api.PostEvaluationsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -518,24 +456,23 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PatchDatasetIdsRequest buildPartial() {
-      com.clarifai.grpc.api.PatchDatasetIdsRequest result = new com.clarifai.grpc.api.PatchDatasetIdsRequest(this);
+    public com.clarifai.grpc.api.PostEvaluationsRequest buildPartial() {
+      com.clarifai.grpc.api.PostEvaluationsRequest result = new com.clarifai.grpc.api.PostEvaluationsRequest(this);
       int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      if (idsBuilder_ == null) {
+      if (evalMetricsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          ids_ = java.util.Collections.unmodifiableList(ids_);
+          evalMetrics_ = java.util.Collections.unmodifiableList(evalMetrics_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.ids_ = ids_;
+        result.evalMetrics_ = evalMetrics_;
       } else {
-        result.ids_ = idsBuilder_.build();
+        result.evalMetrics_ = evalMetricsBuilder_.build();
       }
-      result.action_ = action_;
       onBuilt();
       return result;
     }
@@ -574,48 +511,44 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.PatchDatasetIdsRequest) {
-        return mergeFrom((com.clarifai.grpc.api.PatchDatasetIdsRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PostEvaluationsRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PostEvaluationsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.PatchDatasetIdsRequest other) {
-      if (other == com.clarifai.grpc.api.PatchDatasetIdsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PostEvaluationsRequest other) {
+      if (other == com.clarifai.grpc.api.PostEvaluationsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (idsBuilder_ == null) {
-        if (!other.ids_.isEmpty()) {
-          if (ids_.isEmpty()) {
-            ids_ = other.ids_;
+      if (evalMetricsBuilder_ == null) {
+        if (!other.evalMetrics_.isEmpty()) {
+          if (evalMetrics_.isEmpty()) {
+            evalMetrics_ = other.evalMetrics_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureIdsIsMutable();
-            ids_.addAll(other.ids_);
+            ensureEvalMetricsIsMutable();
+            evalMetrics_.addAll(other.evalMetrics_);
           }
           onChanged();
         }
       } else {
-        if (!other.ids_.isEmpty()) {
-          if (idsBuilder_.isEmpty()) {
-            idsBuilder_.dispose();
-            idsBuilder_ = null;
-            ids_ = other.ids_;
+        if (!other.evalMetrics_.isEmpty()) {
+          if (evalMetricsBuilder_.isEmpty()) {
+            evalMetricsBuilder_.dispose();
+            evalMetricsBuilder_ = null;
+            evalMetrics_ = other.evalMetrics_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            idsBuilder_ = 
+            evalMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getIdsFieldBuilder() : null;
+                 getEvalMetricsFieldBuilder() : null;
           } else {
-            idsBuilder_.addAllMessages(other.ids_);
+            evalMetricsBuilder_.addAllMessages(other.evalMetrics_);
           }
         }
-      }
-      if (!other.getAction().isEmpty()) {
-        action_ = other.action_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -632,11 +565,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.PatchDatasetIdsRequest parsedMessage = null;
+      com.clarifai.grpc.api.PostEvaluationsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.PatchDatasetIdsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PostEvaluationsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -766,417 +699,334 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.IdUpdateSource> ids_ =
+    private java.util.List<com.clarifai.grpc.api.EvalMetrics> evalMetrics_ =
       java.util.Collections.emptyList();
-    private void ensureIdsIsMutable() {
+    private void ensureEvalMetricsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        ids_ = new java.util.ArrayList<com.clarifai.grpc.api.IdUpdateSource>(ids_);
+        evalMetrics_ = new java.util.ArrayList<com.clarifai.grpc.api.EvalMetrics>(evalMetrics_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.IdUpdateSource, com.clarifai.grpc.api.IdUpdateSource.Builder, com.clarifai.grpc.api.IdUpdateSourceOrBuilder> idsBuilder_;
+        com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder> evalMetricsBuilder_;
 
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.IdUpdateSource> getIdsList() {
-      if (idsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(ids_);
+    public java.util.List<com.clarifai.grpc.api.EvalMetrics> getEvalMetricsList() {
+      if (evalMetricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(evalMetrics_);
       } else {
-        return idsBuilder_.getMessageList();
+        return evalMetricsBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public int getIdsCount() {
-      if (idsBuilder_ == null) {
-        return ids_.size();
+    public int getEvalMetricsCount() {
+      if (evalMetricsBuilder_ == null) {
+        return evalMetrics_.size();
       } else {
-        return idsBuilder_.getCount();
+        return evalMetricsBuilder_.getCount();
       }
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.IdUpdateSource getIds(int index) {
-      if (idsBuilder_ == null) {
-        return ids_.get(index);
+    public com.clarifai.grpc.api.EvalMetrics getEvalMetrics(int index) {
+      if (evalMetricsBuilder_ == null) {
+        return evalMetrics_.get(index);
       } else {
-        return idsBuilder_.getMessage(index);
+        return evalMetricsBuilder_.getMessage(index);
       }
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder setIds(
-        int index, com.clarifai.grpc.api.IdUpdateSource value) {
-      if (idsBuilder_ == null) {
+    public Builder setEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics value) {
+      if (evalMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureIdsIsMutable();
-        ids_.set(index, value);
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.set(index, value);
         onChanged();
       } else {
-        idsBuilder_.setMessage(index, value);
+        evalMetricsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder setIds(
-        int index, com.clarifai.grpc.api.IdUpdateSource.Builder builderForValue) {
-      if (idsBuilder_ == null) {
-        ensureIdsIsMutable();
-        ids_.set(index, builderForValue.build());
+    public Builder setEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics.Builder builderForValue) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.set(index, builderForValue.build());
         onChanged();
       } else {
-        idsBuilder_.setMessage(index, builderForValue.build());
+        evalMetricsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder addIds(com.clarifai.grpc.api.IdUpdateSource value) {
-      if (idsBuilder_ == null) {
+    public Builder addEvalMetrics(com.clarifai.grpc.api.EvalMetrics value) {
+      if (evalMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureIdsIsMutable();
-        ids_.add(value);
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(value);
         onChanged();
       } else {
-        idsBuilder_.addMessage(value);
+        evalMetricsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder addIds(
-        int index, com.clarifai.grpc.api.IdUpdateSource value) {
-      if (idsBuilder_ == null) {
+    public Builder addEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics value) {
+      if (evalMetricsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureIdsIsMutable();
-        ids_.add(index, value);
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(index, value);
         onChanged();
       } else {
-        idsBuilder_.addMessage(index, value);
+        evalMetricsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder addIds(
-        com.clarifai.grpc.api.IdUpdateSource.Builder builderForValue) {
-      if (idsBuilder_ == null) {
-        ensureIdsIsMutable();
-        ids_.add(builderForValue.build());
+    public Builder addEvalMetrics(
+        com.clarifai.grpc.api.EvalMetrics.Builder builderForValue) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(builderForValue.build());
         onChanged();
       } else {
-        idsBuilder_.addMessage(builderForValue.build());
+        evalMetricsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder addIds(
-        int index, com.clarifai.grpc.api.IdUpdateSource.Builder builderForValue) {
-      if (idsBuilder_ == null) {
-        ensureIdsIsMutable();
-        ids_.add(index, builderForValue.build());
+    public Builder addEvalMetrics(
+        int index, com.clarifai.grpc.api.EvalMetrics.Builder builderForValue) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.add(index, builderForValue.build());
         onChanged();
       } else {
-        idsBuilder_.addMessage(index, builderForValue.build());
+        evalMetricsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder addAllIds(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.IdUpdateSource> values) {
-      if (idsBuilder_ == null) {
-        ensureIdsIsMutable();
+    public Builder addAllEvalMetrics(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.EvalMetrics> values) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, ids_);
+            values, evalMetrics_);
         onChanged();
       } else {
-        idsBuilder_.addAllMessages(values);
+        evalMetricsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder clearIds() {
-      if (idsBuilder_ == null) {
-        ids_ = java.util.Collections.emptyList();
+    public Builder clearEvalMetrics() {
+      if (evalMetricsBuilder_ == null) {
+        evalMetrics_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        idsBuilder_.clear();
+        evalMetricsBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public Builder removeIds(int index) {
-      if (idsBuilder_ == null) {
-        ensureIdsIsMutable();
-        ids_.remove(index);
+    public Builder removeEvalMetrics(int index) {
+      if (evalMetricsBuilder_ == null) {
+        ensureEvalMetricsIsMutable();
+        evalMetrics_.remove(index);
         onChanged();
       } else {
-        idsBuilder_.remove(index);
+        evalMetricsBuilder_.remove(index);
       }
       return this;
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.IdUpdateSource.Builder getIdsBuilder(
+    public com.clarifai.grpc.api.EvalMetrics.Builder getEvalMetricsBuilder(
         int index) {
-      return getIdsFieldBuilder().getBuilder(index);
+      return getEvalMetricsFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.IdUpdateSourceOrBuilder getIdsOrBuilder(
+    public com.clarifai.grpc.api.EvalMetricsOrBuilder getEvalMetricsOrBuilder(
         int index) {
-      if (idsBuilder_ == null) {
-        return ids_.get(index);  } else {
-        return idsBuilder_.getMessageOrBuilder(index);
+      if (evalMetricsBuilder_ == null) {
+        return evalMetrics_.get(index);  } else {
+        return evalMetricsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.IdUpdateSourceOrBuilder> 
-         getIdsOrBuilderList() {
-      if (idsBuilder_ != null) {
-        return idsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.clarifai.grpc.api.EvalMetricsOrBuilder> 
+         getEvalMetricsOrBuilderList() {
+      if (evalMetricsBuilder_ != null) {
+        return evalMetricsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(ids_);
+        return java.util.Collections.unmodifiableList(evalMetrics_);
       }
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.IdUpdateSource.Builder addIdsBuilder() {
-      return getIdsFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.IdUpdateSource.getDefaultInstance());
+    public com.clarifai.grpc.api.EvalMetrics.Builder addEvalMetricsBuilder() {
+      return getEvalMetricsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.EvalMetrics.getDefaultInstance());
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public com.clarifai.grpc.api.IdUpdateSource.Builder addIdsBuilder(
+    public com.clarifai.grpc.api.EvalMetrics.Builder addEvalMetricsBuilder(
         int index) {
-      return getIdsFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.IdUpdateSource.getDefaultInstance());
+      return getEvalMetricsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.EvalMetrics.getDefaultInstance());
     }
     /**
      * <pre>
-     * Array containing 1 entry
+     * eval_info, id, model, and ground_truth_dataset will be used when creating the evaluation
+     * If no dataset is provided, all app data that is annotated with concepts from the model will be used.
      * </pre>
      *
-     * <code>repeated .clarifai.api.IdUpdateSource ids = 3;</code>
+     * <code>repeated .clarifai.api.EvalMetrics eval_metrics = 2;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.IdUpdateSource.Builder> 
-         getIdsBuilderList() {
-      return getIdsFieldBuilder().getBuilderList();
+    public java.util.List<com.clarifai.grpc.api.EvalMetrics.Builder> 
+         getEvalMetricsBuilderList() {
+      return getEvalMetricsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.IdUpdateSource, com.clarifai.grpc.api.IdUpdateSource.Builder, com.clarifai.grpc.api.IdUpdateSourceOrBuilder> 
-        getIdsFieldBuilder() {
-      if (idsBuilder_ == null) {
-        idsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.clarifai.grpc.api.IdUpdateSource, com.clarifai.grpc.api.IdUpdateSource.Builder, com.clarifai.grpc.api.IdUpdateSourceOrBuilder>(
-                ids_,
+        com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder> 
+        getEvalMetricsFieldBuilder() {
+      if (evalMetricsBuilder_ == null) {
+        evalMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.EvalMetrics, com.clarifai.grpc.api.EvalMetrics.Builder, com.clarifai.grpc.api.EvalMetricsOrBuilder>(
+                evalMetrics_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        ids_ = null;
+        evalMetrics_ = null;
       }
-      return idsBuilder_;
-    }
-
-    private java.lang.Object action_ = "";
-    /**
-     * <pre>
-     * The action to perform on the patched objects
-     * Only 'overwrite' is supported
-     * </pre>
-     *
-     * <code>string action = 4;</code>
-     * @return The action.
-     */
-    public java.lang.String getAction() {
-      java.lang.Object ref = action_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        action_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The action to perform on the patched objects
-     * Only 'overwrite' is supported
-     * </pre>
-     *
-     * <code>string action = 4;</code>
-     * @return The bytes for action.
-     */
-    public com.google.protobuf.ByteString
-        getActionBytes() {
-      java.lang.Object ref = action_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        action_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The action to perform on the patched objects
-     * Only 'overwrite' is supported
-     * </pre>
-     *
-     * <code>string action = 4;</code>
-     * @param value The action to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAction(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      action_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The action to perform on the patched objects
-     * Only 'overwrite' is supported
-     * </pre>
-     *
-     * <code>string action = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAction() {
-      
-      action_ = getDefaultInstance().getAction();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The action to perform on the patched objects
-     * Only 'overwrite' is supported
-     * </pre>
-     *
-     * <code>string action = 4;</code>
-     * @param value The bytes for action to set.
-     * @return This builder for chaining.
-     */
-    public Builder setActionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      action_ = value;
-      onChanged();
-      return this;
+      return evalMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1191,41 +1041,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.PatchDatasetIdsRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PostEvaluationsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.PatchDatasetIdsRequest)
-  private static final com.clarifai.grpc.api.PatchDatasetIdsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PostEvaluationsRequest)
+  private static final com.clarifai.grpc.api.PostEvaluationsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PatchDatasetIdsRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostEvaluationsRequest();
   }
 
-  public static com.clarifai.grpc.api.PatchDatasetIdsRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PostEvaluationsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PatchDatasetIdsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<PatchDatasetIdsRequest>() {
+  private static final com.google.protobuf.Parser<PostEvaluationsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PostEvaluationsRequest>() {
     @java.lang.Override
-    public PatchDatasetIdsRequest parsePartialFrom(
+    public PostEvaluationsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PatchDatasetIdsRequest(input, extensionRegistry);
+      return new PostEvaluationsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<PatchDatasetIdsRequest> parser() {
+  public static com.google.protobuf.Parser<PostEvaluationsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PatchDatasetIdsRequest> getParserForType() {
+  public com.google.protobuf.Parser<PostEvaluationsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.PatchDatasetIdsRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PostEvaluationsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

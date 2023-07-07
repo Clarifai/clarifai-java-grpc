@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private EvalMetrics() {
+    userId_ = "";
+    appId_ = "";
     id_ = "";
     binaryMetrics_ = java.util.Collections.emptyList();
     testSet_ = java.util.Collections.emptyList();
@@ -188,6 +190,44 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 106: {
+            com.clarifai.grpc.api.Model.Builder subBuilder = null;
+            if (model_ != null) {
+              subBuilder = model_.toBuilder();
+            }
+            model_ = input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(model_);
+              model_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 114: {
+            com.clarifai.grpc.api.Dataset.Builder subBuilder = null;
+            if (groundTruthDataset_ != null) {
+              subBuilder = groundTruthDataset_.toBuilder();
+            }
+            groundTruthDataset_ = input.readMessage(com.clarifai.grpc.api.Dataset.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(groundTruthDataset_);
+              groundTruthDataset_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId_ = s;
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            appId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -263,9 +303,105 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
+  public static final int USER_ID_FIELD_NUMBER = 15;
+  private volatile java.lang.Object userId_;
+  /**
+   * <pre>
+   * user id that owns this evaluation
+   * </pre>
+   *
+   * <code>string user_id = 15;</code>
+   * @return The userId.
+   */
+  @java.lang.Override
+  public java.lang.String getUserId() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * user id that owns this evaluation
+   * </pre>
+   *
+   * <code>string user_id = 15;</code>
+   * @return The bytes for userId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = userId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      userId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APP_ID_FIELD_NUMBER = 16;
+  private volatile java.lang.Object appId_;
+  /**
+   * <pre>
+   * app id that owns this evaluation
+   * </pre>
+   *
+   * <code>string app_id = 16;</code>
+   * @return The appId.
+   */
+  @java.lang.Override
+  public java.lang.String getAppId() {
+    java.lang.Object ref = appId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * app id that owns this evaluation
+   * </pre>
+   *
+   * <code>string app_id = 16;</code>
+   * @return The bytes for appId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAppIdBytes() {
+    java.lang.Object ref = appId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      appId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ID_FIELD_NUMBER = 10;
   private volatile java.lang.Object id_;
   /**
+   * <pre>
+   * Id of this evaluation
+   * </pre>
+   *
    * <code>string id = 10;</code>
    * @return The id.
    */
@@ -283,6 +419,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Id of this evaluation
+   * </pre>
+   *
    * <code>string id = 10;</code>
    * @return The bytes for id.
    */
@@ -299,6 +439,82 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int MODEL_FIELD_NUMBER = 13;
+  private com.clarifai.grpc.api.Model model_;
+  /**
+   * <pre>
+   * Model to evaluate
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 13;</code>
+   * @return Whether the model field is set.
+   */
+  @java.lang.Override
+  public boolean hasModel() {
+    return model_ != null;
+  }
+  /**
+   * <pre>
+   * Model to evaluate
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 13;</code>
+   * @return The model.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getModel() {
+    return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
+  }
+  /**
+   * <pre>
+   * Model to evaluate
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 13;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+    return getModel();
+  }
+
+  public static final int GROUND_TRUTH_DATASET_FIELD_NUMBER = 14;
+  private com.clarifai.grpc.api.Dataset groundTruthDataset_;
+  /**
+   * <pre>
+   * The ground truth dataset
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+   * @return Whether the groundTruthDataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroundTruthDataset() {
+    return groundTruthDataset_ != null;
+  }
+  /**
+   * <pre>
+   * The ground truth dataset
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+   * @return The groundTruthDataset.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Dataset getGroundTruthDataset() {
+    return groundTruthDataset_ == null ? com.clarifai.grpc.api.Dataset.getDefaultInstance() : groundTruthDataset_;
+  }
+  /**
+   * <pre>
+   * The ground truth dataset
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetOrBuilder getGroundTruthDatasetOrBuilder() {
+    return getGroundTruthDataset();
   }
 
   public static final int SUMMARY_FIELD_NUMBER = 2;
@@ -608,6 +824,11 @@ private static final long serialVersionUID = 0L;
   public static final int EVAL_INFO_FIELD_NUMBER = 12;
   private com.clarifai.grpc.api.EvalInfo evalInfo_;
   /**
+   * <pre>
+   * Evaluation parameters to pass. Expected to match what
+   * is defined in the model type for the respective model.
+   * </pre>
+   *
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    * @return Whether the evalInfo field is set.
    */
@@ -616,6 +837,11 @@ private static final long serialVersionUID = 0L;
     return evalInfo_ != null;
   }
   /**
+   * <pre>
+   * Evaluation parameters to pass. Expected to match what
+   * is defined in the model type for the respective model.
+   * </pre>
+   *
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    * @return The evalInfo.
    */
@@ -624,6 +850,11 @@ private static final long serialVersionUID = 0L;
     return evalInfo_ == null ? com.clarifai.grpc.api.EvalInfo.getDefaultInstance() : evalInfo_;
   }
   /**
+   * <pre>
+   * Evaluation parameters to pass. Expected to match what
+   * is defined in the model type for the respective model.
+   * </pre>
+   *
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    */
   @java.lang.Override
@@ -681,6 +912,18 @@ private static final long serialVersionUID = 0L;
     if (evalInfo_ != null) {
       output.writeMessage(12, getEvalInfo());
     }
+    if (model_ != null) {
+      output.writeMessage(13, getModel());
+    }
+    if (groundTruthDataset_ != null) {
+      output.writeMessage(14, getGroundTruthDataset());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, userId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, appId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -737,6 +980,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getEvalInfo());
     }
+    if (model_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getModel());
+    }
+    if (groundTruthDataset_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getGroundTruthDataset());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, userId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, appId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -757,8 +1014,22 @@ private static final long serialVersionUID = 0L;
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
+    if (!getUserId()
+        .equals(other.getUserId())) return false;
+    if (!getAppId()
+        .equals(other.getAppId())) return false;
     if (!getId()
         .equals(other.getId())) return false;
+    if (hasModel() != other.hasModel()) return false;
+    if (hasModel()) {
+      if (!getModel()
+          .equals(other.getModel())) return false;
+    }
+    if (hasGroundTruthDataset() != other.hasGroundTruthDataset()) return false;
+    if (hasGroundTruthDataset()) {
+      if (!getGroundTruthDataset()
+          .equals(other.getGroundTruthDataset())) return false;
+    }
     if (hasSummary() != other.hasSummary()) return false;
     if (hasSummary()) {
       if (!getSummary()
@@ -809,8 +1080,20 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
+    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getUserId().hashCode();
+    hash = (37 * hash) + APP_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAppId().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    if (hasModel()) {
+      hash = (37 * hash) + MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getModel().hashCode();
+    }
+    if (hasGroundTruthDataset()) {
+      hash = (37 * hash) + GROUND_TRUTH_DATASET_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundTruthDataset().hashCode();
+    }
     if (hasSummary()) {
       hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getSummary().hashCode();
@@ -999,8 +1282,24 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
+      userId_ = "";
+
+      appId_ = "";
+
       id_ = "";
 
+      if (modelBuilder_ == null) {
+        model_ = null;
+      } else {
+        model_ = null;
+        modelBuilder_ = null;
+      }
+      if (groundTruthDatasetBuilder_ == null) {
+        groundTruthDataset_ = null;
+      } else {
+        groundTruthDataset_ = null;
+        groundTruthDatasetBuilder_ = null;
+      }
       if (summaryBuilder_ == null) {
         summary_ = null;
       } else {
@@ -1093,7 +1392,19 @@ private static final long serialVersionUID = 0L;
       } else {
         result.status_ = statusBuilder_.build();
       }
+      result.userId_ = userId_;
+      result.appId_ = appId_;
       result.id_ = id_;
+      if (modelBuilder_ == null) {
+        result.model_ = model_;
+      } else {
+        result.model_ = modelBuilder_.build();
+      }
+      if (groundTruthDatasetBuilder_ == null) {
+        result.groundTruthDataset_ = groundTruthDataset_;
+      } else {
+        result.groundTruthDataset_ = groundTruthDatasetBuilder_.build();
+      }
       if (summaryBuilder_ == null) {
         result.summary_ = summary_;
       } else {
@@ -1215,9 +1526,23 @@ private static final long serialVersionUID = 0L;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
+      if (!other.getUserId().isEmpty()) {
+        userId_ = other.userId_;
+        onChanged();
+      }
+      if (!other.getAppId().isEmpty()) {
+        appId_ = other.appId_;
+        onChanged();
+      }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
+      }
+      if (other.hasModel()) {
+        mergeModel(other.getModel());
+      }
+      if (other.hasGroundTruthDataset()) {
+        mergeGroundTruthDataset(other.getGroundTruthDataset());
       }
       if (other.hasSummary()) {
         mergeSummary(other.getSummary());
@@ -1513,8 +1838,204 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_;
     }
 
+    private java.lang.Object userId_ = "";
+    /**
+     * <pre>
+     * user id that owns this evaluation
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     * @return The userId.
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * user id that owns this evaluation
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     * @return The bytes for userId.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * user id that owns this evaluation
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * user id that owns this evaluation
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      
+      userId_ = getDefaultInstance().getUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * user id that owns this evaluation
+     * </pre>
+     *
+     * <code>string user_id = 15;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      userId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object appId_ = "";
+    /**
+     * <pre>
+     * app id that owns this evaluation
+     * </pre>
+     *
+     * <code>string app_id = 16;</code>
+     * @return The appId.
+     */
+    public java.lang.String getAppId() {
+      java.lang.Object ref = appId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * app id that owns this evaluation
+     * </pre>
+     *
+     * <code>string app_id = 16;</code>
+     * @return The bytes for appId.
+     */
+    public com.google.protobuf.ByteString
+        getAppIdBytes() {
+      java.lang.Object ref = appId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * app id that owns this evaluation
+     * </pre>
+     *
+     * <code>string app_id = 16;</code>
+     * @param value The appId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      appId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * app id that owns this evaluation
+     * </pre>
+     *
+     * <code>string app_id = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAppId() {
+      
+      appId_ = getDefaultInstance().getAppId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * app id that owns this evaluation
+     * </pre>
+     *
+     * <code>string app_id = 16;</code>
+     * @param value The bytes for appId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      appId_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object id_ = "";
     /**
+     * <pre>
+     * Id of this evaluation
+     * </pre>
+     *
      * <code>string id = 10;</code>
      * @return The id.
      */
@@ -1531,6 +2052,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Id of this evaluation
+     * </pre>
+     *
      * <code>string id = 10;</code>
      * @return The bytes for id.
      */
@@ -1548,6 +2073,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Id of this evaluation
+     * </pre>
+     *
      * <code>string id = 10;</code>
      * @param value The id to set.
      * @return This builder for chaining.
@@ -1563,6 +2092,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Id of this evaluation
+     * </pre>
+     *
      * <code>string id = 10;</code>
      * @return This builder for chaining.
      */
@@ -1573,6 +2106,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Id of this evaluation
+     * </pre>
+     *
      * <code>string id = 10;</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -1587,6 +2124,316 @@ private static final long serialVersionUID = 0L;
       id_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Model model_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     * @return Whether the model field is set.
+     */
+    public boolean hasModel() {
+      return modelBuilder_ != null || model_ != null;
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     * @return The model.
+     */
+    public com.clarifai.grpc.api.Model getModel() {
+      if (modelBuilder_ == null) {
+        return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
+      } else {
+        return modelBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    public Builder setModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        model_ = value;
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    public Builder setModel(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelBuilder_ == null) {
+        model_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (model_ != null) {
+          model_ =
+            com.clarifai.grpc.api.Model.newBuilder(model_).mergeFrom(value).buildPartial();
+        } else {
+          model_ = value;
+        }
+        onChanged();
+      } else {
+        modelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    public Builder clearModel() {
+      if (modelBuilder_ == null) {
+        model_ = null;
+        onChanged();
+      } else {
+        model_ = null;
+        modelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
+      
+      onChanged();
+      return getModelFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+      if (modelBuilder_ != null) {
+        return modelBuilder_.getMessageOrBuilder();
+      } else {
+        return model_ == null ?
+            com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
+      }
+    }
+    /**
+     * <pre>
+     * Model to evaluate
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getModelFieldBuilder() {
+      if (modelBuilder_ == null) {
+        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                getModel(),
+                getParentForChildren(),
+                isClean());
+        model_ = null;
+      }
+      return modelBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Dataset groundTruthDataset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> groundTruthDatasetBuilder_;
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     * @return Whether the groundTruthDataset field is set.
+     */
+    public boolean hasGroundTruthDataset() {
+      return groundTruthDatasetBuilder_ != null || groundTruthDataset_ != null;
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     * @return The groundTruthDataset.
+     */
+    public com.clarifai.grpc.api.Dataset getGroundTruthDataset() {
+      if (groundTruthDatasetBuilder_ == null) {
+        return groundTruthDataset_ == null ? com.clarifai.grpc.api.Dataset.getDefaultInstance() : groundTruthDataset_;
+      } else {
+        return groundTruthDatasetBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    public Builder setGroundTruthDataset(com.clarifai.grpc.api.Dataset value) {
+      if (groundTruthDatasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        groundTruthDataset_ = value;
+        onChanged();
+      } else {
+        groundTruthDatasetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    public Builder setGroundTruthDataset(
+        com.clarifai.grpc.api.Dataset.Builder builderForValue) {
+      if (groundTruthDatasetBuilder_ == null) {
+        groundTruthDataset_ = builderForValue.build();
+        onChanged();
+      } else {
+        groundTruthDatasetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    public Builder mergeGroundTruthDataset(com.clarifai.grpc.api.Dataset value) {
+      if (groundTruthDatasetBuilder_ == null) {
+        if (groundTruthDataset_ != null) {
+          groundTruthDataset_ =
+            com.clarifai.grpc.api.Dataset.newBuilder(groundTruthDataset_).mergeFrom(value).buildPartial();
+        } else {
+          groundTruthDataset_ = value;
+        }
+        onChanged();
+      } else {
+        groundTruthDatasetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    public Builder clearGroundTruthDataset() {
+      if (groundTruthDatasetBuilder_ == null) {
+        groundTruthDataset_ = null;
+        onChanged();
+      } else {
+        groundTruthDataset_ = null;
+        groundTruthDatasetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    public com.clarifai.grpc.api.Dataset.Builder getGroundTruthDatasetBuilder() {
+      
+      onChanged();
+      return getGroundTruthDatasetFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    public com.clarifai.grpc.api.DatasetOrBuilder getGroundTruthDatasetOrBuilder() {
+      if (groundTruthDatasetBuilder_ != null) {
+        return groundTruthDatasetBuilder_.getMessageOrBuilder();
+      } else {
+        return groundTruthDataset_ == null ?
+            com.clarifai.grpc.api.Dataset.getDefaultInstance() : groundTruthDataset_;
+      }
+    }
+    /**
+     * <pre>
+     * The ground truth dataset
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset ground_truth_dataset = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> 
+        getGroundTruthDatasetFieldBuilder() {
+      if (groundTruthDatasetBuilder_ == null) {
+        groundTruthDatasetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder>(
+                getGroundTruthDataset(),
+                getParentForChildren(),
+                isClean());
+        groundTruthDataset_ = null;
+      }
+      return groundTruthDatasetBuilder_;
     }
 
     private com.clarifai.grpc.api.MetricsSummary summary_;
@@ -3269,6 +4116,11 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.EvalInfo, com.clarifai.grpc.api.EvalInfo.Builder, com.clarifai.grpc.api.EvalInfoOrBuilder> evalInfoBuilder_;
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      * @return Whether the evalInfo field is set.
      */
@@ -3276,6 +4128,11 @@ private static final long serialVersionUID = 0L;
       return evalInfoBuilder_ != null || evalInfo_ != null;
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      * @return The evalInfo.
      */
@@ -3287,6 +4144,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     public Builder setEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
@@ -3303,6 +4165,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     public Builder setEvalInfo(
@@ -3317,6 +4184,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     public Builder mergeEvalInfo(com.clarifai.grpc.api.EvalInfo value) {
@@ -3335,6 +4207,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     public Builder clearEvalInfo() {
@@ -3349,6 +4226,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     public com.clarifai.grpc.api.EvalInfo.Builder getEvalInfoBuilder() {
@@ -3357,6 +4239,11 @@ private static final long serialVersionUID = 0L;
       return getEvalInfoFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     public com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder() {
@@ -3368,6 +4255,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Evaluation parameters to pass. Expected to match what
+     * is defined in the model type for the respective model.
+     * </pre>
+     *
      * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

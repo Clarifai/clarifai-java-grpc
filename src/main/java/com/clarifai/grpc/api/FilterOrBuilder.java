@@ -21,6 +21,39 @@ public interface FilterOrBuilder extends
   /**
    * <pre>
    * FILTER by annotation information.
+   * ########## Supported fields ##########
+   *  - annotation_info - allows searching by empty annotation info
+   *    note that searching by empty annotation info will actually not influence the search results.
+   *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+   *  - annotation_info.fields - filter by annotation info
+   *  - data.clusters[].id
+   *  - data.concepts[].id
+   *  - data.concepts[].name
+   *  - data.concepts[].value
+   *  - data.frames[].frame_info - filter by frame annotations
+   *  - data.geo.geo_box[].geo_point.latitude
+   *  - data.geo.geo_box[].geo_point.longitude
+   *  - data.geo.geo_limit.type
+   *  - data.geo.geo_limit.value
+   *  - data.geo.geo_point.latitude
+   *  - data.geo.geo_point.longitude
+   *  - data.metadata - allow search with empty metadata
+   *    note that searching by empty metadata will actually not influence the search results.
+   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
+   *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
+   *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
+   *  - data.regions[].region_info.mask - filter by mask annotations
+   *  - data.regions[].region_info.point - filter by point annotations
+   *  - data.regions[].region_info.polygon - filter by polygon annotations
+   *  - data.regions[].region_info.span - filter by span annotations
+   *  - data.text - filter by text annotations
+   *  - data.time_segments[].time_info - filter by time-segment annotations
+   *  - id
+   *  - input_id
+   *  - input_level
+   *  - status.code
+   *  - task_id
+   *  - user_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -30,6 +63,39 @@ public interface FilterOrBuilder extends
   /**
    * <pre>
    * FILTER by annotation information.
+   * ########## Supported fields ##########
+   *  - annotation_info - allows searching by empty annotation info
+   *    note that searching by empty annotation info will actually not influence the search results.
+   *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+   *  - annotation_info.fields - filter by annotation info
+   *  - data.clusters[].id
+   *  - data.concepts[].id
+   *  - data.concepts[].name
+   *  - data.concepts[].value
+   *  - data.frames[].frame_info - filter by frame annotations
+   *  - data.geo.geo_box[].geo_point.latitude
+   *  - data.geo.geo_box[].geo_point.longitude
+   *  - data.geo.geo_limit.type
+   *  - data.geo.geo_limit.value
+   *  - data.geo.geo_point.latitude
+   *  - data.geo.geo_point.longitude
+   *  - data.metadata - allow search with empty metadata
+   *    note that searching by empty metadata will actually not influence the search results.
+   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
+   *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
+   *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
+   *  - data.regions[].region_info.mask - filter by mask annotations
+   *  - data.regions[].region_info.point - filter by point annotations
+   *  - data.regions[].region_info.polygon - filter by polygon annotations
+   *  - data.regions[].region_info.span - filter by span annotations
+   *  - data.text - filter by text annotations
+   *  - data.time_segments[].time_info - filter by time-segment annotations
+   *  - id
+   *  - input_id
+   *  - input_level
+   *  - status.code
+   *  - task_id
+   *  - user_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -39,6 +105,39 @@ public interface FilterOrBuilder extends
   /**
    * <pre>
    * FILTER by annotation information.
+   * ########## Supported fields ##########
+   *  - annotation_info - allows searching by empty annotation info
+   *    note that searching by empty annotation info will actually not influence the search results.
+   *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
+   *  - annotation_info.fields - filter by annotation info
+   *  - data.clusters[].id
+   *  - data.concepts[].id
+   *  - data.concepts[].name
+   *  - data.concepts[].value
+   *  - data.frames[].frame_info - filter by frame annotations
+   *  - data.geo.geo_box[].geo_point.latitude
+   *  - data.geo.geo_box[].geo_point.longitude
+   *  - data.geo.geo_limit.type
+   *  - data.geo.geo_limit.value
+   *  - data.geo.geo_point.latitude
+   *  - data.geo.geo_point.longitude
+   *  - data.metadata - allow search with empty metadata
+   *    note that searching by empty metadata will actually not influence the search results.
+   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
+   *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
+   *  - data.regions[].region_info.bounding_box - filter by bounding box annotations
+   *  - data.regions[].region_info.mask - filter by mask annotations
+   *  - data.regions[].region_info.point - filter by point annotations
+   *  - data.regions[].region_info.polygon - filter by polygon annotations
+   *  - data.regions[].region_info.span - filter by span annotations
+   *  - data.text - filter by text annotations
+   *  - data.time_segments[].time_info - filter by time-segment annotations
+   *  - id
+   *  - input_id
+   *  - input_level
+   *  - status.code
+   *  - task_id
+   *  - user_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -48,7 +147,13 @@ public interface FilterOrBuilder extends
   /**
    * <pre>
    * FILTER by input information.
-   * For example you can filter inputs by status,
+   * ########## Supported fields ##########
+   *  - data.audio - filter audio inputs
+   *  - data.image - filter image inputs
+   *  - data.text - filter text inputs
+   *  - data.video - filter video inputs
+   *  - dataset_ids[] - filter by dataset IDs
+   *  - status.code - filter by input status
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>
@@ -58,7 +163,13 @@ public interface FilterOrBuilder extends
   /**
    * <pre>
    * FILTER by input information.
-   * For example you can filter inputs by status,
+   * ########## Supported fields ##########
+   *  - data.audio - filter audio inputs
+   *  - data.image - filter image inputs
+   *  - data.text - filter text inputs
+   *  - data.video - filter video inputs
+   *  - dataset_ids[] - filter by dataset IDs
+   *  - status.code - filter by input status
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>
@@ -68,7 +179,13 @@ public interface FilterOrBuilder extends
   /**
    * <pre>
    * FILTER by input information.
-   * For example you can filter inputs by status,
+   * ########## Supported fields ##########
+   *  - data.audio - filter audio inputs
+   *  - data.image - filter image inputs
+   *  - data.text - filter text inputs
+   *  - data.video - filter video inputs
+   *  - dataset_ids[] - filter by dataset IDs
+   *  - status.code - filter by input status
    * </pre>
    *
    * <code>.clarifai.api.Input input = 5;</code>

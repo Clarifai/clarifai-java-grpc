@@ -83,6 +83,11 @@ private static final long serialVersionUID = 0L;
             action_ = s;
             break;
           }
+          case 32: {
+
+            deleteIfEmptyData_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -234,6 +239,23 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DELETE_IF_EMPTY_DATA_FIELD_NUMBER = 4;
+  private boolean deleteIfEmptyData_;
+  /**
+   * <pre>
+   * If the request is a "remove" action and the annotation is left with empty data,
+   * then setting delete_if_empty_data to true will delete the annotation,
+   * if possible (for example, will not delete an input-level annotation).
+   * </pre>
+   *
+   * <code>bool delete_if_empty_data = 4;</code>
+   * @return The deleteIfEmptyData.
+   */
+  @java.lang.Override
+  public boolean getDeleteIfEmptyData() {
+    return deleteIfEmptyData_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -257,6 +279,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, action_);
     }
+    if (deleteIfEmptyData_ != false) {
+      output.writeBool(4, deleteIfEmptyData_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -276,6 +301,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, action_);
+    }
+    if (deleteIfEmptyData_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, deleteIfEmptyData_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -301,6 +330,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAnnotationsList())) return false;
     if (!getAction()
         .equals(other.getAction())) return false;
+    if (getDeleteIfEmptyData()
+        != other.getDeleteIfEmptyData()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -322,6 +353,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getAction().hashCode();
+    hash = (37 * hash) + DELETE_IF_EMPTY_DATA_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getDeleteIfEmptyData());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -474,6 +508,8 @@ private static final long serialVersionUID = 0L;
       }
       action_ = "";
 
+      deleteIfEmptyData_ = false;
+
       return this;
     }
 
@@ -516,6 +552,7 @@ private static final long serialVersionUID = 0L;
         result.annotations_ = annotationsBuilder_.build();
       }
       result.action_ = action_;
+      result.deleteIfEmptyData_ = deleteIfEmptyData_;
       onBuilt();
       return result;
     }
@@ -596,6 +633,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
         onChanged();
+      }
+      if (other.getDeleteIfEmptyData() != false) {
+        setDeleteIfEmptyData(other.getDeleteIfEmptyData());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1083,6 +1123,55 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       action_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean deleteIfEmptyData_ ;
+    /**
+     * <pre>
+     * If the request is a "remove" action and the annotation is left with empty data,
+     * then setting delete_if_empty_data to true will delete the annotation,
+     * if possible (for example, will not delete an input-level annotation).
+     * </pre>
+     *
+     * <code>bool delete_if_empty_data = 4;</code>
+     * @return The deleteIfEmptyData.
+     */
+    @java.lang.Override
+    public boolean getDeleteIfEmptyData() {
+      return deleteIfEmptyData_;
+    }
+    /**
+     * <pre>
+     * If the request is a "remove" action and the annotation is left with empty data,
+     * then setting delete_if_empty_data to true will delete the annotation,
+     * if possible (for example, will not delete an input-level annotation).
+     * </pre>
+     *
+     * <code>bool delete_if_empty_data = 4;</code>
+     * @param value The deleteIfEmptyData to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeleteIfEmptyData(boolean value) {
+      
+      deleteIfEmptyData_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If the request is a "remove" action and the annotation is left with empty data,
+     * then setting delete_if_empty_data to true will delete the annotation,
+     * if possible (for example, will not delete an input-level annotation).
+     * </pre>
+     *
+     * <code>bool delete_if_empty_data = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeleteIfEmptyData() {
+      
+      deleteIfEmptyData_ = false;
       onChanged();
       return this;
     }

@@ -8,12 +8,6 @@ public interface InputsExtractionJobProgressOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint64 read_objects_count = 1;</code>
-   * @return The readObjectsCount.
-   */
-  long getReadObjectsCount();
-
-  /**
    * <code>uint64 audio_inputs_count = 2;</code>
    * @return The audioInputsCount.
    */

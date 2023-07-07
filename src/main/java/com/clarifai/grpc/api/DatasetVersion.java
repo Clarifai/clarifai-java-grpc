@@ -217,6 +217,19 @@ private static final long serialVersionUID = 0L;
             dataConfigCase_ = 18;
             break;
           }
+          case 154: {
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder subBuilder = null;
+            if (processingInfo_ != null) {
+              subBuilder = processingInfo_.toBuilder();
+            }
+            processingInfo_ = input.readMessage(com.clarifai.grpc.api.DatasetVersionProcessingInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(processingInfo_);
+              processingInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -749,6 +762,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PROCESSING_INFO_FIELD_NUMBER = 19;
+  private com.clarifai.grpc.api.DatasetVersionProcessingInfo processingInfo_;
+  /**
+   * <pre>
+   * Dataset version processing
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+   * @return Whether the processingInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessingInfo() {
+    return processingInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Dataset version processing
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+   * @return The processingInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionProcessingInfo getProcessingInfo() {
+    return processingInfo_ == null ? com.clarifai.grpc.api.DatasetVersionProcessingInfo.getDefaultInstance() : processingInfo_;
+  }
+  /**
+   * <pre>
+   * Dataset version processing
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder getProcessingInfoOrBuilder() {
+    return getProcessingInfo();
+  }
+
   public static final int METRICS_FIELD_NUMBER = 16;
   private static final class MetricsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
@@ -1082,6 +1133,9 @@ private static final long serialVersionUID = 0L;
     if (dataConfigCase_ == 18) {
       output.writeMessage(18, (com.clarifai.grpc.api.ModelPredictConfig) dataConfig_);
     }
+    if (processingInfo_ != null) {
+      output.writeMessage(19, getProcessingInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1156,6 +1210,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, (com.clarifai.grpc.api.ModelPredictConfig) dataConfig_);
     }
+    if (processingInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, getProcessingInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1196,6 +1254,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (hasProcessingInfo() != other.hasProcessingInfo()) return false;
+    if (hasProcessingInfo()) {
+      if (!getProcessingInfo()
+          .equals(other.getProcessingInfo())) return false;
+    }
     if (!internalGetMetrics().equals(
         other.internalGetMetrics())) return false;
     if (hasExportInfo() != other.hasExportInfo()) return false;
@@ -1261,6 +1324,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasProcessingInfo()) {
+      hash = (37 * hash) + PROCESSING_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessingInfo().hashCode();
+    }
     if (!internalGetMetrics().getMap().isEmpty()) {
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetrics().hashCode();
@@ -1480,6 +1547,12 @@ private static final long serialVersionUID = 0L;
       }
       description_ = "";
 
+      if (processingInfoBuilder_ == null) {
+        processingInfo_ = null;
+      } else {
+        processingInfo_ = null;
+        processingInfoBuilder_ = null;
+      }
       internalGetMutableMetrics().clear();
       if (exportInfoBuilder_ == null) {
         exportInfo_ = null;
@@ -1564,6 +1637,11 @@ private static final long serialVersionUID = 0L;
         result.status_ = statusBuilder_.build();
       }
       result.description_ = description_;
+      if (processingInfoBuilder_ == null) {
+        result.processingInfo_ = processingInfo_;
+      } else {
+        result.processingInfo_ = processingInfoBuilder_.build();
+      }
       result.metrics_ = internalGetMetrics();
       result.metrics_.makeImmutable();
       if (exportInfoBuilder_ == null) {
@@ -1663,6 +1741,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
+      }
+      if (other.hasProcessingInfo()) {
+        mergeProcessingInfo(other.getProcessingInfo());
       }
       internalGetMutableMetrics().mergeFrom(
           other.internalGetMetrics());
@@ -3078,6 +3159,161 @@ private static final long serialVersionUID = 0L;
       description_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.DatasetVersionProcessingInfo processingInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder> processingInfoBuilder_;
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     * @return Whether the processingInfo field is set.
+     */
+    public boolean hasProcessingInfo() {
+      return processingInfoBuilder_ != null || processingInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     * @return The processingInfo.
+     */
+    public com.clarifai.grpc.api.DatasetVersionProcessingInfo getProcessingInfo() {
+      if (processingInfoBuilder_ == null) {
+        return processingInfo_ == null ? com.clarifai.grpc.api.DatasetVersionProcessingInfo.getDefaultInstance() : processingInfo_;
+      } else {
+        return processingInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    public Builder setProcessingInfo(com.clarifai.grpc.api.DatasetVersionProcessingInfo value) {
+      if (processingInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processingInfo_ = value;
+        onChanged();
+      } else {
+        processingInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    public Builder setProcessingInfo(
+        com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder builderForValue) {
+      if (processingInfoBuilder_ == null) {
+        processingInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        processingInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    public Builder mergeProcessingInfo(com.clarifai.grpc.api.DatasetVersionProcessingInfo value) {
+      if (processingInfoBuilder_ == null) {
+        if (processingInfo_ != null) {
+          processingInfo_ =
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo.newBuilder(processingInfo_).mergeFrom(value).buildPartial();
+        } else {
+          processingInfo_ = value;
+        }
+        onChanged();
+      } else {
+        processingInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    public Builder clearProcessingInfo() {
+      if (processingInfoBuilder_ == null) {
+        processingInfo_ = null;
+        onChanged();
+      } else {
+        processingInfo_ = null;
+        processingInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder getProcessingInfoBuilder() {
+      
+      onChanged();
+      return getProcessingInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder getProcessingInfoOrBuilder() {
+      if (processingInfoBuilder_ != null) {
+        return processingInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return processingInfo_ == null ?
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo.getDefaultInstance() : processingInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Dataset version processing
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder> 
+        getProcessingInfoFieldBuilder() {
+      if (processingInfoBuilder_ == null) {
+        processingInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder>(
+                getProcessingInfo(),
+                getParentForChildren(),
+                isClean());
+        processingInfo_ = null;
+      }
+      return processingInfoBuilder_;
     }
 
     private com.google.protobuf.MapField<

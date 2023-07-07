@@ -247,4 +247,31 @@ public interface InputsAddJobOrBuilder extends
    */
   com.clarifai.grpc.api.UploadOrBuilder getUploadsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Status of the job
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 12;</code>
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   * <pre>
+   * Status of the job
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 12;</code>
+   * @return The status.
+   */
+  com.clarifai.grpc.api.status.Status getStatus();
+  /**
+   * <pre>
+   * Status of the job
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 12;</code>
+   */
+  com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 }
