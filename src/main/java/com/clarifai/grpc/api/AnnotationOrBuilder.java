@@ -333,4 +333,24 @@ public interface AnnotationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTaskIdBytes();
+
+  /**
+   * <pre>
+   * ID of the workflow version this annotation is created by
+   * </pre>
+   *
+   * <code>string workflow_version_id = 20;</code>
+   * @return The workflowVersionId.
+   */
+  java.lang.String getWorkflowVersionId();
+  /**
+   * <pre>
+   * ID of the workflow version this annotation is created by
+   * </pre>
+   *
+   * <code>string workflow_version_id = 20;</code>
+   * @return The bytes for workflowVersionId.
+   */
+  com.google.protobuf.ByteString
+      getWorkflowVersionIdBytes();
 }

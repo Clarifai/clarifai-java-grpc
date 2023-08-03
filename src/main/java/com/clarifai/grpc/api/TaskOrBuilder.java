@@ -161,43 +161,55 @@ public interface TaskOrBuilder extends
 
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @return A list containing the conceptIds.
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getConceptIdsList();
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @return The count of conceptIds.
    */
-  int getConceptIdsCount();
+  @java.lang.Deprecated int getConceptIdsCount();
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
-  java.lang.String getConceptIds(int index);
+  @java.lang.Deprecated java.lang.String getConceptIds(int index);
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getConceptIdsBytes(int index);
 
   /**

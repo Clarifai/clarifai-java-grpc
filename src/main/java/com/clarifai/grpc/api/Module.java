@@ -155,6 +155,19 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
+          case 114: {
+            com.clarifai.grpc.api.BookmarkOrigin.Builder subBuilder = null;
+            if (bookmarkOrigin_ != null) {
+              subBuilder = bookmarkOrigin_.toBuilder();
+            }
+            bookmarkOrigin_ = input.readMessage(com.clarifai.grpc.api.BookmarkOrigin.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(bookmarkOrigin_);
+              bookmarkOrigin_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -613,6 +626,47 @@ private static final long serialVersionUID = 0L;
     return starCount_;
   }
 
+  public static final int BOOKMARK_ORIGIN_FIELD_NUMBER = 14;
+  private com.clarifai.grpc.api.BookmarkOrigin bookmarkOrigin_;
+  /**
+   * <pre>
+   * bookmark info. When set, this module is a bookmarked module of this app.
+   * Info in this field will allow you to find/access original module.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+   * @return Whether the bookmarkOrigin field is set.
+   */
+  @java.lang.Override
+  public boolean hasBookmarkOrigin() {
+    return bookmarkOrigin_ != null;
+  }
+  /**
+   * <pre>
+   * bookmark info. When set, this module is a bookmarked module of this app.
+   * Info in this field will allow you to find/access original module.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+   * @return The bookmarkOrigin.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin() {
+    return bookmarkOrigin_ == null ? com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+  }
+  /**
+   * <pre>
+   * bookmark info. When set, this module is a bookmarked module of this app.
+   * Info in this field will allow you to find/access original module.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder() {
+    return getBookmarkOrigin();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -659,6 +713,9 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(13, starCount_);
+    }
+    if (bookmarkOrigin_ != null) {
+      output.writeMessage(14, getBookmarkOrigin());
     }
     unknownFields.writeTo(output);
   }
@@ -708,6 +765,10 @@ private static final long serialVersionUID = 0L;
     if (starCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(13, starCount_);
+    }
+    if (bookmarkOrigin_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getBookmarkOrigin());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -761,6 +822,11 @@ private static final long serialVersionUID = 0L;
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
+    if (hasBookmarkOrigin() != other.hasBookmarkOrigin()) return false;
+    if (hasBookmarkOrigin()) {
+      if (!getBookmarkOrigin()
+          .equals(other.getBookmarkOrigin())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -805,6 +871,10 @@ private static final long serialVersionUID = 0L;
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
+    if (hasBookmarkOrigin()) {
+      hash = (37 * hash) + BOOKMARK_ORIGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getBookmarkOrigin().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -984,6 +1054,12 @@ private static final long serialVersionUID = 0L;
 
       starCount_ = 0;
 
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = null;
+      } else {
+        bookmarkOrigin_ = null;
+        bookmarkOriginBuilder_ = null;
+      }
       return this;
     }
 
@@ -1041,6 +1117,11 @@ private static final long serialVersionUID = 0L;
       }
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
+      if (bookmarkOriginBuilder_ == null) {
+        result.bookmarkOrigin_ = bookmarkOrigin_;
+      } else {
+        result.bookmarkOrigin_ = bookmarkOriginBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1125,6 +1206,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
+      }
+      if (other.hasBookmarkOrigin()) {
+        mergeBookmarkOrigin(other.getBookmarkOrigin());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2458,6 +2542,170 @@ private static final long serialVersionUID = 0L;
       starCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.BookmarkOrigin bookmarkOrigin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder> bookmarkOriginBuilder_;
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     * @return Whether the bookmarkOrigin field is set.
+     */
+    public boolean hasBookmarkOrigin() {
+      return bookmarkOriginBuilder_ != null || bookmarkOrigin_ != null;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     * @return The bookmarkOrigin.
+     */
+    public com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin() {
+      if (bookmarkOriginBuilder_ == null) {
+        return bookmarkOrigin_ == null ? com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+      } else {
+        return bookmarkOriginBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    public Builder setBookmarkOrigin(com.clarifai.grpc.api.BookmarkOrigin value) {
+      if (bookmarkOriginBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bookmarkOrigin_ = value;
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    public Builder setBookmarkOrigin(
+        com.clarifai.grpc.api.BookmarkOrigin.Builder builderForValue) {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = builderForValue.build();
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    public Builder mergeBookmarkOrigin(com.clarifai.grpc.api.BookmarkOrigin value) {
+      if (bookmarkOriginBuilder_ == null) {
+        if (bookmarkOrigin_ != null) {
+          bookmarkOrigin_ =
+            com.clarifai.grpc.api.BookmarkOrigin.newBuilder(bookmarkOrigin_).mergeFrom(value).buildPartial();
+        } else {
+          bookmarkOrigin_ = value;
+        }
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    public Builder clearBookmarkOrigin() {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = null;
+        onChanged();
+      } else {
+        bookmarkOrigin_ = null;
+        bookmarkOriginBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    public com.clarifai.grpc.api.BookmarkOrigin.Builder getBookmarkOriginBuilder() {
+      
+      onChanged();
+      return getBookmarkOriginFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    public com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder() {
+      if (bookmarkOriginBuilder_ != null) {
+        return bookmarkOriginBuilder_.getMessageOrBuilder();
+      } else {
+        return bookmarkOrigin_ == null ?
+            com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+      }
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this module is a bookmarked module of this app.
+     * Info in this field will allow you to find/access original module.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder> 
+        getBookmarkOriginFieldBuilder() {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOriginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder>(
+                getBookmarkOrigin(),
+                getParentForChildren(),
+                isClean());
+        bookmarkOrigin_ = null;
+      }
+      return bookmarkOriginBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

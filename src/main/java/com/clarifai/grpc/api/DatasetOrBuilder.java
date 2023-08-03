@@ -245,6 +245,33 @@ public interface DatasetOrBuilder extends
 
   /**
    * <pre>
+   * Default processing info used for this dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+   * @return Whether the defaultProcessingInfo field is set.
+   */
+  boolean hasDefaultProcessingInfo();
+  /**
+   * <pre>
+   * Default processing info used for this dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+   * @return The defaultProcessingInfo.
+   */
+  com.clarifai.grpc.api.DatasetVersionProcessingInfo getDefaultProcessingInfo();
+  /**
+   * <pre>
+   * Default processing info used for this dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+   */
+  com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder getDefaultProcessingInfoOrBuilder();
+
+  /**
+   * <pre>
    * Notes for the dataset
    * This field should be used for in-depth notes and supports up to 64Kbs.
    * </pre>
@@ -314,4 +341,34 @@ public interface DatasetOrBuilder extends
    * @return The starCount.
    */
   int getStarCount();
+
+  /**
+   * <pre>
+   * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+   * Info in this field will allow you to find/access original dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+   * @return Whether the bookmarkOrigin field is set.
+   */
+  boolean hasBookmarkOrigin();
+  /**
+   * <pre>
+   * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+   * Info in this field will allow you to find/access original dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+   * @return The bookmarkOrigin.
+   */
+  com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin();
+  /**
+   * <pre>
+   * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+   * Info in this field will allow you to find/access original dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+   */
+  com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder();
 }

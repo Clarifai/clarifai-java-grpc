@@ -69,4 +69,31 @@ public interface InputInfoOrBuilder extends
    * <code>.google.protobuf.Struct params = 2;</code>
    */
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
+
+  /**
+   * <pre>
+   * For base model to get embeddings from for transfer learned models.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model base_embed_model = 3;</code>
+   * @return Whether the baseEmbedModel field is set.
+   */
+  boolean hasBaseEmbedModel();
+  /**
+   * <pre>
+   * For base model to get embeddings from for transfer learned models.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model base_embed_model = 3;</code>
+   * @return The baseEmbedModel.
+   */
+  com.clarifai.grpc.api.Model getBaseEmbedModel();
+  /**
+   * <pre>
+   * For base model to get embeddings from for transfer learned models.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model base_embed_model = 3;</code>
+   */
+  com.clarifai.grpc.api.ModelOrBuilder getBaseEmbedModelOrBuilder();
 }

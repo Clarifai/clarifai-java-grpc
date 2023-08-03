@@ -78,6 +78,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.Model.Builder subBuilder = null;
+            if (baseEmbedModel_ != null) {
+              subBuilder = baseEmbedModel_.toBuilder();
+            }
+            baseEmbedModel_ = input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(baseEmbedModel_);
+              baseEmbedModel_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -197,6 +210,44 @@ private static final long serialVersionUID = 0L;
     return getParams();
   }
 
+  public static final int BASE_EMBED_MODEL_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.Model baseEmbedModel_;
+  /**
+   * <pre>
+   * For base model to get embeddings from for transfer learned models.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model base_embed_model = 3;</code>
+   * @return Whether the baseEmbedModel field is set.
+   */
+  @java.lang.Override
+  public boolean hasBaseEmbedModel() {
+    return baseEmbedModel_ != null;
+  }
+  /**
+   * <pre>
+   * For base model to get embeddings from for transfer learned models.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model base_embed_model = 3;</code>
+   * @return The baseEmbedModel.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getBaseEmbedModel() {
+    return baseEmbedModel_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : baseEmbedModel_;
+  }
+  /**
+   * <pre>
+   * For base model to get embeddings from for transfer learned models.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model base_embed_model = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getBaseEmbedModelOrBuilder() {
+    return getBaseEmbedModel();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -217,6 +268,9 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       output.writeMessage(2, getParams());
     }
+    if (baseEmbedModel_ != null) {
+      output.writeMessage(3, getBaseEmbedModel());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -233,6 +287,10 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getParams());
+    }
+    if (baseEmbedModel_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getBaseEmbedModel());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -259,6 +317,11 @@ private static final long serialVersionUID = 0L;
       if (!getParams()
           .equals(other.getParams())) return false;
     }
+    if (hasBaseEmbedModel() != other.hasBaseEmbedModel()) return false;
+    if (hasBaseEmbedModel()) {
+      if (!getBaseEmbedModel()
+          .equals(other.getBaseEmbedModel())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -277,6 +340,10 @@ private static final long serialVersionUID = 0L;
     if (hasParams()) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getParams().hashCode();
+    }
+    if (hasBaseEmbedModel()) {
+      hash = (37 * hash) + BASE_EMBED_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseEmbedModel().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -427,6 +494,12 @@ private static final long serialVersionUID = 0L;
         params_ = null;
         paramsBuilder_ = null;
       }
+      if (baseEmbedModelBuilder_ == null) {
+        baseEmbedModel_ = null;
+      } else {
+        baseEmbedModel_ = null;
+        baseEmbedModelBuilder_ = null;
+      }
       return this;
     }
 
@@ -462,6 +535,11 @@ private static final long serialVersionUID = 0L;
         result.params_ = params_;
       } else {
         result.params_ = paramsBuilder_.build();
+      }
+      if (baseEmbedModelBuilder_ == null) {
+        result.baseEmbedModel_ = baseEmbedModel_;
+      } else {
+        result.baseEmbedModel_ = baseEmbedModelBuilder_.build();
       }
       onBuilt();
       return result;
@@ -516,6 +594,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasParams()) {
         mergeParams(other.getParams());
+      }
+      if (other.hasBaseEmbedModel()) {
+        mergeBaseEmbedModel(other.getBaseEmbedModel());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -881,6 +962,161 @@ private static final long serialVersionUID = 0L;
         params_ = null;
       }
       return paramsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Model baseEmbedModel_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> baseEmbedModelBuilder_;
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     * @return Whether the baseEmbedModel field is set.
+     */
+    public boolean hasBaseEmbedModel() {
+      return baseEmbedModelBuilder_ != null || baseEmbedModel_ != null;
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     * @return The baseEmbedModel.
+     */
+    public com.clarifai.grpc.api.Model getBaseEmbedModel() {
+      if (baseEmbedModelBuilder_ == null) {
+        return baseEmbedModel_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : baseEmbedModel_;
+      } else {
+        return baseEmbedModelBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    public Builder setBaseEmbedModel(com.clarifai.grpc.api.Model value) {
+      if (baseEmbedModelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        baseEmbedModel_ = value;
+        onChanged();
+      } else {
+        baseEmbedModelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    public Builder setBaseEmbedModel(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (baseEmbedModelBuilder_ == null) {
+        baseEmbedModel_ = builderForValue.build();
+        onChanged();
+      } else {
+        baseEmbedModelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    public Builder mergeBaseEmbedModel(com.clarifai.grpc.api.Model value) {
+      if (baseEmbedModelBuilder_ == null) {
+        if (baseEmbedModel_ != null) {
+          baseEmbedModel_ =
+            com.clarifai.grpc.api.Model.newBuilder(baseEmbedModel_).mergeFrom(value).buildPartial();
+        } else {
+          baseEmbedModel_ = value;
+        }
+        onChanged();
+      } else {
+        baseEmbedModelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    public Builder clearBaseEmbedModel() {
+      if (baseEmbedModelBuilder_ == null) {
+        baseEmbedModel_ = null;
+        onChanged();
+      } else {
+        baseEmbedModel_ = null;
+        baseEmbedModelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getBaseEmbedModelBuilder() {
+      
+      onChanged();
+      return getBaseEmbedModelFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    public com.clarifai.grpc.api.ModelOrBuilder getBaseEmbedModelOrBuilder() {
+      if (baseEmbedModelBuilder_ != null) {
+        return baseEmbedModelBuilder_.getMessageOrBuilder();
+      } else {
+        return baseEmbedModel_ == null ?
+            com.clarifai.grpc.api.Model.getDefaultInstance() : baseEmbedModel_;
+      }
+    }
+    /**
+     * <pre>
+     * For base model to get embeddings from for transfer learned models.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model base_embed_model = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getBaseEmbedModelFieldBuilder() {
+      if (baseEmbedModelBuilder_ == null) {
+        baseEmbedModelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                getBaseEmbedModel(),
+                getParentForChildren(),
+                isClean());
+        baseEmbedModel_ = null;
+      }
+      return baseEmbedModelBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

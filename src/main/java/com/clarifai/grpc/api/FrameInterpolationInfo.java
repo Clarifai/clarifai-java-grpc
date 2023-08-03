@@ -98,7 +98,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * sample_ms is the sampling rate at which frame annotations are interpolated.
-   * If zero, then the input frame prediction sampling rate is used.
+   * If sample_ms is zero, then the dataset default_processing_info value is used.
+   * If the dataset default is zero or not set, then the input frame prediction
+   * sampling rate is used.
    * </pre>
    *
    * <code>uint32 sample_ms = 1;</code>
@@ -421,7 +423,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * sample_ms is the sampling rate at which frame annotations are interpolated.
-     * If zero, then the input frame prediction sampling rate is used.
+     * If sample_ms is zero, then the dataset default_processing_info value is used.
+     * If the dataset default is zero or not set, then the input frame prediction
+     * sampling rate is used.
      * </pre>
      *
      * <code>uint32 sample_ms = 1;</code>
@@ -434,7 +438,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * sample_ms is the sampling rate at which frame annotations are interpolated.
-     * If zero, then the input frame prediction sampling rate is used.
+     * If sample_ms is zero, then the dataset default_processing_info value is used.
+     * If the dataset default is zero or not set, then the input frame prediction
+     * sampling rate is used.
      * </pre>
      *
      * <code>uint32 sample_ms = 1;</code>
@@ -450,7 +456,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * sample_ms is the sampling rate at which frame annotations are interpolated.
-     * If zero, then the input frame prediction sampling rate is used.
+     * If sample_ms is zero, then the dataset default_processing_info value is used.
+     * If the dataset default is zero or not set, then the input frame prediction
+     * sampling rate is used.
      * </pre>
      *
      * <code>uint32 sample_ms = 1;</code>

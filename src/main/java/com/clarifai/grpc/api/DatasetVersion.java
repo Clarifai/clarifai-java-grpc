@@ -766,7 +766,9 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.DatasetVersionProcessingInfo processingInfo_;
   /**
    * <pre>
-   * Dataset version processing
+   * Dataset version processing. If this is not set when the dataset version is
+   * created, then the dataset default_processing_info is copied instead. Later
+   * updates to default_processing_info will not apply to existing versions.
    * </pre>
    *
    * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -778,7 +780,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Dataset version processing
+   * Dataset version processing. If this is not set when the dataset version is
+   * created, then the dataset default_processing_info is copied instead. Later
+   * updates to default_processing_info will not apply to existing versions.
    * </pre>
    *
    * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -790,7 +794,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Dataset version processing
+   * Dataset version processing. If this is not set when the dataset version is
+   * created, then the dataset default_processing_info is copied instead. Later
+   * updates to default_processing_info will not apply to existing versions.
    * </pre>
    *
    * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3166,7 +3172,9 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder> processingInfoBuilder_;
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3177,7 +3185,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3192,7 +3202,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3212,7 +3224,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3230,7 +3244,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3252,7 +3268,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3270,7 +3288,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3282,7 +3302,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -3297,7 +3319,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Dataset version processing
+     * Dataset version processing. If this is not set when the dataset version is
+     * created, then the dataset default_processing_info is copied instead. Later
+     * updates to default_processing_info will not apply to existing versions.
      * </pre>
      *
      * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>

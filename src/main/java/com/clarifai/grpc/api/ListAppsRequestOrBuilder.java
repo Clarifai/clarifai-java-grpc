@@ -77,7 +77,7 @@ public interface ListAppsRequestOrBuilder extends
   /**
    * <pre>
    * Whether to order by the modified_at time.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
@@ -87,13 +87,51 @@ public interface ListAppsRequestOrBuilder extends
   /**
    * <pre>
    * Whether to order by the modified_at time.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
    * @return The sortByModifiedAt.
    */
   boolean getSortByModifiedAt();
+
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 12;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  boolean hasSortByCreatedAt();
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 12;</code>
+   * @return The sortByCreatedAt.
+   */
+  boolean getSortByCreatedAt();
+
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the app
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 13;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  boolean hasSortByStarCount();
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the app
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 13;</code>
+   * @return The sortByStarCount.
+   */
+  boolean getSortByStarCount();
 
   /**
    * <pre>
@@ -125,7 +163,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3688
+   *     See proto/clarifai/api/service.proto;l=3766
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -137,7 +175,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3688
+   *     See proto/clarifai/api/service.proto;l=3766
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

@@ -96,7 +96,7 @@ public interface ListModelsRequestOrBuilder extends
   /**
    * <pre>
    * Whether to order by the modified_at time of the latest model version.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 13;</code>
@@ -106,13 +106,51 @@ public interface ListModelsRequestOrBuilder extends
   /**
    * <pre>
    * Whether to order by the modified_at time of the latest model version.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 13;</code>
    * @return The sortByModifiedAt.
    */
   boolean getSortByModifiedAt();
+
+  /**
+   * <pre>
+   * Whether to order by the created_at
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 24;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  boolean hasSortByCreatedAt();
+  /**
+   * <pre>
+   * Whether to order by the created_at
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 24;</code>
+   * @return The sortByCreatedAt.
+   */
+  boolean getSortByCreatedAt();
+
+  /**
+   * <pre>
+   * Whether to order by count of stars
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 25;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  boolean hasSortByStarCount();
+  /**
+   * <pre>
+   * Whether to order by count of stars
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 25;</code>
+   * @return The sortByStarCount.
+   */
+  boolean getSortByStarCount();
 
   /**
    * <pre>
@@ -502,6 +540,18 @@ public interface ListModelsRequestOrBuilder extends
    * @return The dontFetchFromMain.
    */
   boolean getDontFetchFromMain();
+
+  /**
+   * <pre>
+   * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+   * Note: you can not filter `trained_only` and bookmark at the same time.
+   * When filter by bookmark, we will return trained and untrained models.
+   * </pre>
+   *
+   * <code>bool bookmark = 26;</code>
+   * @return The bookmark.
+   */
+  boolean getBookmark();
 
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

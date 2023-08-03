@@ -43,4 +43,149 @@ public interface ListEvaluationsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * If true, sort in ascending order, otherwise sort in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 4;</code>
+   * @return The sortAscending.
+   */
+  boolean getSortAscending();
+
+  /**
+   * <pre>
+   * Whether to order by application id
+   * </pre>
+   *
+   * <code>bool sort_by_app_id = 5;</code>
+   * @return Whether the sortByAppId field is set.
+   */
+  boolean hasSortByAppId();
+  /**
+   * <pre>
+   * Whether to order by application id
+   * </pre>
+   *
+   * <code>bool sort_by_app_id = 5;</code>
+   * @return The sortByAppId.
+   */
+  boolean getSortByAppId();
+
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_roc_auc
+   * </pre>
+   *
+   * <code>bool sort_by_roc_auc = 6;</code>
+   * @return Whether the sortByRocAuc field is set.
+   */
+  boolean hasSortByRocAuc();
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_roc_auc
+   * </pre>
+   *
+   * <code>bool sort_by_roc_auc = 6;</code>
+   * @return The sortByRocAuc.
+   */
+  boolean getSortByRocAuc();
+
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.f1
+   * </pre>
+   *
+   * <code>bool sort_by_f1 = 7;</code>
+   * @return Whether the sortByF1 field is set.
+   */
+  boolean hasSortByF1();
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.f1
+   * </pre>
+   *
+   * <code>bool sort_by_f1 = 7;</code>
+   * @return The sortByF1.
+   */
+  boolean getSortByF1();
+
+  /**
+   * <pre>
+   * Whether to order by when the metric was created
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 8;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  boolean hasSortByCreatedAt();
+  /**
+   * <pre>
+   * Whether to order by when the metric was created
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 8;</code>
+   * @return The sortByCreatedAt.
+   */
+  boolean getSortByCreatedAt();
+
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.mean_avg_precision_iou_50
+   * </pre>
+   *
+   * <code>bool sort_by_mean_avg_precision = 9;</code>
+   * @return Whether the sortByMeanAvgPrecision field is set.
+   */
+  boolean hasSortByMeanAvgPrecision();
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.mean_avg_precision_iou_50
+   * </pre>
+   *
+   * <code>bool sort_by_mean_avg_precision = 9;</code>
+   * @return The sortByMeanAvgPrecision.
+   */
+  boolean getSortByMeanAvgPrecision();
+
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_precision
+   * </pre>
+   *
+   * <code>bool sort_by_precision = 10;</code>
+   * @return Whether the sortByPrecision field is set.
+   */
+  boolean hasSortByPrecision();
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_precision
+   * </pre>
+   *
+   * <code>bool sort_by_precision = 10;</code>
+   * @return The sortByPrecision.
+   */
+  boolean getSortByPrecision();
+
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_recall
+   * </pre>
+   *
+   * <code>bool sort_by_recall = 11;</code>
+   * @return Whether the sortByRecall field is set.
+   */
+  boolean hasSortByRecall();
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_recall
+   * </pre>
+   *
+   * <code>bool sort_by_recall = 11;</code>
+   * @return The sortByRecall.
+   */
+  boolean getSortByRecall();
+
+  public com.clarifai.grpc.api.ListEvaluationsRequest.SortByCase getSortByCase();
 }

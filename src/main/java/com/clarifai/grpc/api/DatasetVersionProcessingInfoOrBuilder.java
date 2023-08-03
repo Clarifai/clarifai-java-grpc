@@ -11,6 +11,9 @@ public interface DatasetVersionProcessingInfoOrBuilder extends
    * <pre>
    * If frame_interpolation_info is set, then these settings are used to
    * interpolate new frame annotation from other video annotations.
+   * If frame_interpolation_info is set in the dataset default_processing_info,
+   * then it can be disabled for a single dataset version by setting
+   * processing_info but not setting processing_info.frame_interpolation_info.
    * </pre>
    *
    * <code>.clarifai.api.FrameInterpolationInfo frame_interpolation_info = 1;</code>
@@ -21,6 +24,9 @@ public interface DatasetVersionProcessingInfoOrBuilder extends
    * <pre>
    * If frame_interpolation_info is set, then these settings are used to
    * interpolate new frame annotation from other video annotations.
+   * If frame_interpolation_info is set in the dataset default_processing_info,
+   * then it can be disabled for a single dataset version by setting
+   * processing_info but not setting processing_info.frame_interpolation_info.
    * </pre>
    *
    * <code>.clarifai.api.FrameInterpolationInfo frame_interpolation_info = 1;</code>
@@ -31,6 +37,9 @@ public interface DatasetVersionProcessingInfoOrBuilder extends
    * <pre>
    * If frame_interpolation_info is set, then these settings are used to
    * interpolate new frame annotation from other video annotations.
+   * If frame_interpolation_info is set in the dataset default_processing_info,
+   * then it can be disabled for a single dataset version by setting
+   * processing_info but not setting processing_info.frame_interpolation_info.
    * </pre>
    *
    * <code>.clarifai.api.FrameInterpolationInfo frame_interpolation_info = 1;</code>

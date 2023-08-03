@@ -71,6 +71,46 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 32: {
+
+            sortAscending_ = input.readBool();
+            break;
+          }
+          case 40: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 5;
+            break;
+          }
+          case 48: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 6;
+            break;
+          }
+          case 56: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 7;
+            break;
+          }
+          case 64: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 8;
+            break;
+          }
+          case 72: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 9;
+            break;
+          }
+          case 80: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 10;
+            break;
+          }
+          case 88: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 11;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -103,6 +143,57 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListEvaluationsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.ListEvaluationsRequest.class, com.clarifai.grpc.api.ListEvaluationsRequest.Builder.class);
+  }
+
+  private int sortByCase_ = 0;
+  private java.lang.Object sortBy_;
+  public enum SortByCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SORT_BY_APP_ID(5),
+    SORT_BY_ROC_AUC(6),
+    SORT_BY_F1(7),
+    SORT_BY_CREATED_AT(8),
+    SORT_BY_MEAN_AVG_PRECISION(9),
+    SORT_BY_PRECISION(10),
+    SORT_BY_RECALL(11),
+    SORTBY_NOT_SET(0);
+    private final int value;
+    private SortByCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortByCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SortByCase forNumber(int value) {
+      switch (value) {
+        case 5: return SORT_BY_APP_ID;
+        case 6: return SORT_BY_ROC_AUC;
+        case 7: return SORT_BY_F1;
+        case 8: return SORT_BY_CREATED_AT;
+        case 9: return SORT_BY_MEAN_AVG_PRECISION;
+        case 10: return SORT_BY_PRECISION;
+        case 11: return SORT_BY_RECALL;
+        case 0: return SORTBY_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SortByCase
+  getSortByCase() {
+    return SortByCase.forNumber(
+        sortByCase_);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -163,6 +254,224 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int SORT_ASCENDING_FIELD_NUMBER = 4;
+  private boolean sortAscending_;
+  /**
+   * <pre>
+   * If true, sort in ascending order, otherwise sort in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 4;</code>
+   * @return The sortAscending.
+   */
+  @java.lang.Override
+  public boolean getSortAscending() {
+    return sortAscending_;
+  }
+
+  public static final int SORT_BY_APP_ID_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Whether to order by application id
+   * </pre>
+   *
+   * <code>bool sort_by_app_id = 5;</code>
+   * @return Whether the sortByAppId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByAppId() {
+    return sortByCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Whether to order by application id
+   * </pre>
+   *
+   * <code>bool sort_by_app_id = 5;</code>
+   * @return The sortByAppId.
+   */
+  @java.lang.Override
+  public boolean getSortByAppId() {
+    if (sortByCase_ == 5) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_ROC_AUC_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_roc_auc
+   * </pre>
+   *
+   * <code>bool sort_by_roc_auc = 6;</code>
+   * @return Whether the sortByRocAuc field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByRocAuc() {
+    return sortByCase_ == 6;
+  }
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_roc_auc
+   * </pre>
+   *
+   * <code>bool sort_by_roc_auc = 6;</code>
+   * @return The sortByRocAuc.
+   */
+  @java.lang.Override
+  public boolean getSortByRocAuc() {
+    if (sortByCase_ == 6) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_F1_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.f1
+   * </pre>
+   *
+   * <code>bool sort_by_f1 = 7;</code>
+   * @return Whether the sortByF1 field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByF1() {
+    return sortByCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.f1
+   * </pre>
+   *
+   * <code>bool sort_by_f1 = 7;</code>
+   * @return The sortByF1.
+   */
+  @java.lang.Override
+  public boolean getSortByF1() {
+    if (sortByCase_ == 7) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_CREATED_AT_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Whether to order by when the metric was created
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 8;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByCreatedAt() {
+    return sortByCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Whether to order by when the metric was created
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 8;</code>
+   * @return The sortByCreatedAt.
+   */
+  @java.lang.Override
+  public boolean getSortByCreatedAt() {
+    if (sortByCase_ == 8) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_MEAN_AVG_PRECISION_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.mean_avg_precision_iou_50
+   * </pre>
+   *
+   * <code>bool sort_by_mean_avg_precision = 9;</code>
+   * @return Whether the sortByMeanAvgPrecision field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByMeanAvgPrecision() {
+    return sortByCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.mean_avg_precision_iou_50
+   * </pre>
+   *
+   * <code>bool sort_by_mean_avg_precision = 9;</code>
+   * @return The sortByMeanAvgPrecision.
+   */
+  @java.lang.Override
+  public boolean getSortByMeanAvgPrecision() {
+    if (sortByCase_ == 9) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_PRECISION_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_precision
+   * </pre>
+   *
+   * <code>bool sort_by_precision = 10;</code>
+   * @return Whether the sortByPrecision field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByPrecision() {
+    return sortByCase_ == 10;
+  }
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_precision
+   * </pre>
+   *
+   * <code>bool sort_by_precision = 10;</code>
+   * @return The sortByPrecision.
+   */
+  @java.lang.Override
+  public boolean getSortByPrecision() {
+    if (sortByCase_ == 10) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_RECALL_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_recall
+   * </pre>
+   *
+   * <code>bool sort_by_recall = 11;</code>
+   * @return Whether the sortByRecall field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByRecall() {
+    return sortByCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Whether to order by eval metric summary.macro_avg_recall
+   * </pre>
+   *
+   * <code>bool sort_by_recall = 11;</code>
+   * @return The sortByRecall.
+   */
+  @java.lang.Override
+  public boolean getSortByRecall() {
+    if (sortByCase_ == 11) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -186,6 +495,37 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
+    if (sortAscending_ != false) {
+      output.writeBool(4, sortAscending_);
+    }
+    if (sortByCase_ == 5) {
+      output.writeBool(
+          5, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 6) {
+      output.writeBool(
+          6, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 7) {
+      output.writeBool(
+          7, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 8) {
+      output.writeBool(
+          8, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 9) {
+      output.writeBool(
+          9, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 10) {
+      output.writeBool(
+          10, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 11) {
+      output.writeBool(
+          11, (boolean)((java.lang.Boolean) sortBy_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -206,6 +546,45 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
+    }
+    if (sortAscending_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, sortAscending_);
+    }
+    if (sortByCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            5, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            6, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            7, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            8, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            9, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            10, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            11, (boolean)((java.lang.Boolean) sortBy_));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,6 +610,41 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (getSortAscending()
+        != other.getSortAscending()) return false;
+    if (!getSortByCase().equals(other.getSortByCase())) return false;
+    switch (sortByCase_) {
+      case 5:
+        if (getSortByAppId()
+            != other.getSortByAppId()) return false;
+        break;
+      case 6:
+        if (getSortByRocAuc()
+            != other.getSortByRocAuc()) return false;
+        break;
+      case 7:
+        if (getSortByF1()
+            != other.getSortByF1()) return false;
+        break;
+      case 8:
+        if (getSortByCreatedAt()
+            != other.getSortByCreatedAt()) return false;
+        break;
+      case 9:
+        if (getSortByMeanAvgPrecision()
+            != other.getSortByMeanAvgPrecision()) return false;
+        break;
+      case 10:
+        if (getSortByPrecision()
+            != other.getSortByPrecision()) return false;
+        break;
+      case 11:
+        if (getSortByRecall()
+            != other.getSortByRecall()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -250,6 +664,48 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSortAscending());
+    switch (sortByCase_) {
+      case 5:
+        hash = (37 * hash) + SORT_BY_APP_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByAppId());
+        break;
+      case 6:
+        hash = (37 * hash) + SORT_BY_ROC_AUC_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByRocAuc());
+        break;
+      case 7:
+        hash = (37 * hash) + SORT_BY_F1_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByF1());
+        break;
+      case 8:
+        hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByCreatedAt());
+        break;
+      case 9:
+        hash = (37 * hash) + SORT_BY_MEAN_AVG_PRECISION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByMeanAvgPrecision());
+        break;
+      case 10:
+        hash = (37 * hash) + SORT_BY_PRECISION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByPrecision());
+        break;
+      case 11:
+        hash = (37 * hash) + SORT_BY_RECALL_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByRecall());
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -393,6 +849,10 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      sortAscending_ = false;
+
+      sortByCase_ = 0;
+      sortBy_ = null;
       return this;
     }
 
@@ -426,6 +886,29 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.sortAscending_ = sortAscending_;
+      if (sortByCase_ == 5) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 6) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 7) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 8) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 9) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 10) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 11) {
+        result.sortBy_ = sortBy_;
+      }
+      result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
     }
@@ -483,6 +966,42 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (other.getSortAscending() != false) {
+        setSortAscending(other.getSortAscending());
+      }
+      switch (other.getSortByCase()) {
+        case SORT_BY_APP_ID: {
+          setSortByAppId(other.getSortByAppId());
+          break;
+        }
+        case SORT_BY_ROC_AUC: {
+          setSortByRocAuc(other.getSortByRocAuc());
+          break;
+        }
+        case SORT_BY_F1: {
+          setSortByF1(other.getSortByF1());
+          break;
+        }
+        case SORT_BY_CREATED_AT: {
+          setSortByCreatedAt(other.getSortByCreatedAt());
+          break;
+        }
+        case SORT_BY_MEAN_AVG_PRECISION: {
+          setSortByMeanAvgPrecision(other.getSortByMeanAvgPrecision());
+          break;
+        }
+        case SORT_BY_PRECISION: {
+          setSortByPrecision(other.getSortByPrecision());
+          break;
+        }
+        case SORT_BY_RECALL: {
+          setSortByRecall(other.getSortByRecall());
+          break;
+        }
+        case SORTBY_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -511,6 +1030,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int sortByCase_ = 0;
+    private java.lang.Object sortBy_;
+    public SortByCase
+        getSortByCase() {
+      return SortByCase.forNumber(
+          sortByCase_);
+    }
+
+    public Builder clearSortBy() {
+      sortByCase_ = 0;
+      sortBy_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -720,6 +1254,448 @@ private static final long serialVersionUID = 0L;
       
       perPage_ = 0;
       onChanged();
+      return this;
+    }
+
+    private boolean sortAscending_ ;
+    /**
+     * <pre>
+     * If true, sort in ascending order, otherwise sort in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 4;</code>
+     * @return The sortAscending.
+     */
+    @java.lang.Override
+    public boolean getSortAscending() {
+      return sortAscending_;
+    }
+    /**
+     * <pre>
+     * If true, sort in ascending order, otherwise sort in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 4;</code>
+     * @param value The sortAscending to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortAscending(boolean value) {
+      
+      sortAscending_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, sort in ascending order, otherwise sort in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortAscending() {
+      
+      sortAscending_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by application id
+     * </pre>
+     *
+     * <code>bool sort_by_app_id = 5;</code>
+     * @return Whether the sortByAppId field is set.
+     */
+    public boolean hasSortByAppId() {
+      return sortByCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Whether to order by application id
+     * </pre>
+     *
+     * <code>bool sort_by_app_id = 5;</code>
+     * @return The sortByAppId.
+     */
+    public boolean getSortByAppId() {
+      if (sortByCase_ == 5) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by application id
+     * </pre>
+     *
+     * <code>bool sort_by_app_id = 5;</code>
+     * @param value The sortByAppId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByAppId(boolean value) {
+      sortByCase_ = 5;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by application id
+     * </pre>
+     *
+     * <code>bool sort_by_app_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByAppId() {
+      if (sortByCase_ == 5) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_roc_auc
+     * </pre>
+     *
+     * <code>bool sort_by_roc_auc = 6;</code>
+     * @return Whether the sortByRocAuc field is set.
+     */
+    public boolean hasSortByRocAuc() {
+      return sortByCase_ == 6;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_roc_auc
+     * </pre>
+     *
+     * <code>bool sort_by_roc_auc = 6;</code>
+     * @return The sortByRocAuc.
+     */
+    public boolean getSortByRocAuc() {
+      if (sortByCase_ == 6) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_roc_auc
+     * </pre>
+     *
+     * <code>bool sort_by_roc_auc = 6;</code>
+     * @param value The sortByRocAuc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByRocAuc(boolean value) {
+      sortByCase_ = 6;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_roc_auc
+     * </pre>
+     *
+     * <code>bool sort_by_roc_auc = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByRocAuc() {
+      if (sortByCase_ == 6) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.f1
+     * </pre>
+     *
+     * <code>bool sort_by_f1 = 7;</code>
+     * @return Whether the sortByF1 field is set.
+     */
+    public boolean hasSortByF1() {
+      return sortByCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.f1
+     * </pre>
+     *
+     * <code>bool sort_by_f1 = 7;</code>
+     * @return The sortByF1.
+     */
+    public boolean getSortByF1() {
+      if (sortByCase_ == 7) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.f1
+     * </pre>
+     *
+     * <code>bool sort_by_f1 = 7;</code>
+     * @param value The sortByF1 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByF1(boolean value) {
+      sortByCase_ = 7;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.f1
+     * </pre>
+     *
+     * <code>bool sort_by_f1 = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByF1() {
+      if (sortByCase_ == 7) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by when the metric was created
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 8;</code>
+     * @return Whether the sortByCreatedAt field is set.
+     */
+    public boolean hasSortByCreatedAt() {
+      return sortByCase_ == 8;
+    }
+    /**
+     * <pre>
+     * Whether to order by when the metric was created
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 8;</code>
+     * @return The sortByCreatedAt.
+     */
+    public boolean getSortByCreatedAt() {
+      if (sortByCase_ == 8) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by when the metric was created
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 8;</code>
+     * @param value The sortByCreatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByCreatedAt(boolean value) {
+      sortByCase_ = 8;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by when the metric was created
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByCreatedAt() {
+      if (sortByCase_ == 8) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.mean_avg_precision_iou_50
+     * </pre>
+     *
+     * <code>bool sort_by_mean_avg_precision = 9;</code>
+     * @return Whether the sortByMeanAvgPrecision field is set.
+     */
+    public boolean hasSortByMeanAvgPrecision() {
+      return sortByCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.mean_avg_precision_iou_50
+     * </pre>
+     *
+     * <code>bool sort_by_mean_avg_precision = 9;</code>
+     * @return The sortByMeanAvgPrecision.
+     */
+    public boolean getSortByMeanAvgPrecision() {
+      if (sortByCase_ == 9) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.mean_avg_precision_iou_50
+     * </pre>
+     *
+     * <code>bool sort_by_mean_avg_precision = 9;</code>
+     * @param value The sortByMeanAvgPrecision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByMeanAvgPrecision(boolean value) {
+      sortByCase_ = 9;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.mean_avg_precision_iou_50
+     * </pre>
+     *
+     * <code>bool sort_by_mean_avg_precision = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByMeanAvgPrecision() {
+      if (sortByCase_ == 9) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_precision
+     * </pre>
+     *
+     * <code>bool sort_by_precision = 10;</code>
+     * @return Whether the sortByPrecision field is set.
+     */
+    public boolean hasSortByPrecision() {
+      return sortByCase_ == 10;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_precision
+     * </pre>
+     *
+     * <code>bool sort_by_precision = 10;</code>
+     * @return The sortByPrecision.
+     */
+    public boolean getSortByPrecision() {
+      if (sortByCase_ == 10) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_precision
+     * </pre>
+     *
+     * <code>bool sort_by_precision = 10;</code>
+     * @param value The sortByPrecision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByPrecision(boolean value) {
+      sortByCase_ = 10;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_precision
+     * </pre>
+     *
+     * <code>bool sort_by_precision = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByPrecision() {
+      if (sortByCase_ == 10) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_recall
+     * </pre>
+     *
+     * <code>bool sort_by_recall = 11;</code>
+     * @return Whether the sortByRecall field is set.
+     */
+    public boolean hasSortByRecall() {
+      return sortByCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_recall
+     * </pre>
+     *
+     * <code>bool sort_by_recall = 11;</code>
+     * @return The sortByRecall.
+     */
+    public boolean getSortByRecall() {
+      if (sortByCase_ == 11) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_recall
+     * </pre>
+     *
+     * <code>bool sort_by_recall = 11;</code>
+     * @param value The sortByRecall to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByRecall(boolean value) {
+      sortByCase_ = 11;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by eval metric summary.macro_avg_recall
+     * </pre>
+     *
+     * <code>bool sort_by_recall = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByRecall() {
+      if (sortByCase_ == 11) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
       return this;
     }
     @java.lang.Override

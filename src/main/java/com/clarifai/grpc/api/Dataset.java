@@ -175,6 +175,32 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
+          case 130: {
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder subBuilder = null;
+            if (defaultProcessingInfo_ != null) {
+              subBuilder = defaultProcessingInfo_.toBuilder();
+            }
+            defaultProcessingInfo_ = input.readMessage(com.clarifai.grpc.api.DatasetVersionProcessingInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(defaultProcessingInfo_);
+              defaultProcessingInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 138: {
+            com.clarifai.grpc.api.BookmarkOrigin.Builder subBuilder = null;
+            if (bookmarkOrigin_ != null) {
+              subBuilder = bookmarkOrigin_.toBuilder();
+            }
+            bookmarkOrigin_ = input.readMessage(com.clarifai.grpc.api.BookmarkOrigin.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(bookmarkOrigin_);
+              bookmarkOrigin_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -604,6 +630,44 @@ private static final long serialVersionUID = 0L;
     return getDefaultAnnotationFilter();
   }
 
+  public static final int DEFAULT_PROCESSING_INFO_FIELD_NUMBER = 16;
+  private com.clarifai.grpc.api.DatasetVersionProcessingInfo defaultProcessingInfo_;
+  /**
+   * <pre>
+   * Default processing info used for this dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+   * @return Whether the defaultProcessingInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultProcessingInfo() {
+    return defaultProcessingInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Default processing info used for this dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+   * @return The defaultProcessingInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionProcessingInfo getDefaultProcessingInfo() {
+    return defaultProcessingInfo_ == null ? com.clarifai.grpc.api.DatasetVersionProcessingInfo.getDefaultInstance() : defaultProcessingInfo_;
+  }
+  /**
+   * <pre>
+   * Default processing info used for this dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder getDefaultProcessingInfoOrBuilder() {
+    return getDefaultProcessingInfo();
+  }
+
   public static final int NOTES_FIELD_NUMBER = 11;
   private volatile java.lang.Object notes_;
   /**
@@ -723,6 +787,47 @@ private static final long serialVersionUID = 0L;
     return starCount_;
   }
 
+  public static final int BOOKMARK_ORIGIN_FIELD_NUMBER = 17;
+  private com.clarifai.grpc.api.BookmarkOrigin bookmarkOrigin_;
+  /**
+   * <pre>
+   * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+   * Info in this field will allow you to find/access original dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+   * @return Whether the bookmarkOrigin field is set.
+   */
+  @java.lang.Override
+  public boolean hasBookmarkOrigin() {
+    return bookmarkOrigin_ != null;
+  }
+  /**
+   * <pre>
+   * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+   * Info in this field will allow you to find/access original dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+   * @return The bookmarkOrigin.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin() {
+    return bookmarkOrigin_ == null ? com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+  }
+  /**
+   * <pre>
+   * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+   * Info in this field will allow you to find/access original dataset.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder() {
+    return getBookmarkOrigin();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -775,6 +880,12 @@ private static final long serialVersionUID = 0L;
     }
     if (starCount_ != 0) {
       output.writeInt32(15, starCount_);
+    }
+    if (defaultProcessingInfo_ != null) {
+      output.writeMessage(16, getDefaultProcessingInfo());
+    }
+    if (bookmarkOrigin_ != null) {
+      output.writeMessage(17, getBookmarkOrigin());
     }
     unknownFields.writeTo(output);
   }
@@ -832,6 +943,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(15, starCount_);
     }
+    if (defaultProcessingInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getDefaultProcessingInfo());
+    }
+    if (bookmarkOrigin_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getBookmarkOrigin());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -880,6 +999,11 @@ private static final long serialVersionUID = 0L;
       if (!getDefaultAnnotationFilter()
           .equals(other.getDefaultAnnotationFilter())) return false;
     }
+    if (hasDefaultProcessingInfo() != other.hasDefaultProcessingInfo()) return false;
+    if (hasDefaultProcessingInfo()) {
+      if (!getDefaultProcessingInfo()
+          .equals(other.getDefaultProcessingInfo())) return false;
+    }
     if (!getNotes()
         .equals(other.getNotes())) return false;
     if (hasVersion() != other.hasVersion()) return false;
@@ -891,6 +1015,11 @@ private static final long serialVersionUID = 0L;
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
+    if (hasBookmarkOrigin() != other.hasBookmarkOrigin()) return false;
+    if (hasBookmarkOrigin()) {
+      if (!getBookmarkOrigin()
+          .equals(other.getBookmarkOrigin())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -930,6 +1059,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DEFAULT_ANNOTATION_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultAnnotationFilter().hashCode();
     }
+    if (hasDefaultProcessingInfo()) {
+      hash = (37 * hash) + DEFAULT_PROCESSING_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultProcessingInfo().hashCode();
+    }
     hash = (37 * hash) + NOTES_FIELD_NUMBER;
     hash = (53 * hash) + getNotes().hashCode();
     if (hasVersion()) {
@@ -941,6 +1074,10 @@ private static final long serialVersionUID = 0L;
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
+    if (hasBookmarkOrigin()) {
+      hash = (37 * hash) + BOOKMARK_ORIGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getBookmarkOrigin().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1116,6 +1253,12 @@ private static final long serialVersionUID = 0L;
         defaultAnnotationFilter_ = null;
         defaultAnnotationFilterBuilder_ = null;
       }
+      if (defaultProcessingInfoBuilder_ == null) {
+        defaultProcessingInfo_ = null;
+      } else {
+        defaultProcessingInfo_ = null;
+        defaultProcessingInfoBuilder_ = null;
+      }
       notes_ = "";
 
       if (versionBuilder_ == null) {
@@ -1128,6 +1271,12 @@ private static final long serialVersionUID = 0L;
 
       starCount_ = 0;
 
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = null;
+      } else {
+        bookmarkOrigin_ = null;
+        bookmarkOriginBuilder_ = null;
+      }
       return this;
     }
 
@@ -1183,6 +1332,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.defaultAnnotationFilter_ = defaultAnnotationFilterBuilder_.build();
       }
+      if (defaultProcessingInfoBuilder_ == null) {
+        result.defaultProcessingInfo_ = defaultProcessingInfo_;
+      } else {
+        result.defaultProcessingInfo_ = defaultProcessingInfoBuilder_.build();
+      }
       result.notes_ = notes_;
       if (versionBuilder_ == null) {
         result.version_ = version_;
@@ -1191,6 +1345,11 @@ private static final long serialVersionUID = 0L;
       }
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
+      if (bookmarkOriginBuilder_ == null) {
+        result.bookmarkOrigin_ = bookmarkOrigin_;
+      } else {
+        result.bookmarkOrigin_ = bookmarkOriginBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1270,6 +1429,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasDefaultAnnotationFilter()) {
         mergeDefaultAnnotationFilter(other.getDefaultAnnotationFilter());
       }
+      if (other.hasDefaultProcessingInfo()) {
+        mergeDefaultProcessingInfo(other.getDefaultProcessingInfo());
+      }
       if (!other.getNotes().isEmpty()) {
         notes_ = other.notes_;
         onChanged();
@@ -1282,6 +1444,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
+      }
+      if (other.hasBookmarkOrigin()) {
+        mergeBookmarkOrigin(other.getBookmarkOrigin());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2534,6 +2699,161 @@ private static final long serialVersionUID = 0L;
       return defaultAnnotationFilterBuilder_;
     }
 
+    private com.clarifai.grpc.api.DatasetVersionProcessingInfo defaultProcessingInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder> defaultProcessingInfoBuilder_;
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     * @return Whether the defaultProcessingInfo field is set.
+     */
+    public boolean hasDefaultProcessingInfo() {
+      return defaultProcessingInfoBuilder_ != null || defaultProcessingInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     * @return The defaultProcessingInfo.
+     */
+    public com.clarifai.grpc.api.DatasetVersionProcessingInfo getDefaultProcessingInfo() {
+      if (defaultProcessingInfoBuilder_ == null) {
+        return defaultProcessingInfo_ == null ? com.clarifai.grpc.api.DatasetVersionProcessingInfo.getDefaultInstance() : defaultProcessingInfo_;
+      } else {
+        return defaultProcessingInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    public Builder setDefaultProcessingInfo(com.clarifai.grpc.api.DatasetVersionProcessingInfo value) {
+      if (defaultProcessingInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultProcessingInfo_ = value;
+        onChanged();
+      } else {
+        defaultProcessingInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    public Builder setDefaultProcessingInfo(
+        com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder builderForValue) {
+      if (defaultProcessingInfoBuilder_ == null) {
+        defaultProcessingInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        defaultProcessingInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    public Builder mergeDefaultProcessingInfo(com.clarifai.grpc.api.DatasetVersionProcessingInfo value) {
+      if (defaultProcessingInfoBuilder_ == null) {
+        if (defaultProcessingInfo_ != null) {
+          defaultProcessingInfo_ =
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo.newBuilder(defaultProcessingInfo_).mergeFrom(value).buildPartial();
+        } else {
+          defaultProcessingInfo_ = value;
+        }
+        onChanged();
+      } else {
+        defaultProcessingInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    public Builder clearDefaultProcessingInfo() {
+      if (defaultProcessingInfoBuilder_ == null) {
+        defaultProcessingInfo_ = null;
+        onChanged();
+      } else {
+        defaultProcessingInfo_ = null;
+        defaultProcessingInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder getDefaultProcessingInfoBuilder() {
+      
+      onChanged();
+      return getDefaultProcessingInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    public com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder getDefaultProcessingInfoOrBuilder() {
+      if (defaultProcessingInfoBuilder_ != null) {
+        return defaultProcessingInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultProcessingInfo_ == null ?
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo.getDefaultInstance() : defaultProcessingInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Default processing info used for this dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionProcessingInfo default_processing_info = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder> 
+        getDefaultProcessingInfoFieldBuilder() {
+      if (defaultProcessingInfoBuilder_ == null) {
+        defaultProcessingInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.DatasetVersionProcessingInfo, com.clarifai.grpc.api.DatasetVersionProcessingInfo.Builder, com.clarifai.grpc.api.DatasetVersionProcessingInfoOrBuilder>(
+                getDefaultProcessingInfo(),
+                getParentForChildren(),
+                isClean());
+        defaultProcessingInfo_ = null;
+      }
+      return defaultProcessingInfoBuilder_;
+    }
+
     private java.lang.Object notes_ = "";
     /**
      * <pre>
@@ -2883,6 +3203,170 @@ private static final long serialVersionUID = 0L;
       starCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.BookmarkOrigin bookmarkOrigin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder> bookmarkOriginBuilder_;
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     * @return Whether the bookmarkOrigin field is set.
+     */
+    public boolean hasBookmarkOrigin() {
+      return bookmarkOriginBuilder_ != null || bookmarkOrigin_ != null;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     * @return The bookmarkOrigin.
+     */
+    public com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin() {
+      if (bookmarkOriginBuilder_ == null) {
+        return bookmarkOrigin_ == null ? com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+      } else {
+        return bookmarkOriginBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    public Builder setBookmarkOrigin(com.clarifai.grpc.api.BookmarkOrigin value) {
+      if (bookmarkOriginBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bookmarkOrigin_ = value;
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    public Builder setBookmarkOrigin(
+        com.clarifai.grpc.api.BookmarkOrigin.Builder builderForValue) {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = builderForValue.build();
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    public Builder mergeBookmarkOrigin(com.clarifai.grpc.api.BookmarkOrigin value) {
+      if (bookmarkOriginBuilder_ == null) {
+        if (bookmarkOrigin_ != null) {
+          bookmarkOrigin_ =
+            com.clarifai.grpc.api.BookmarkOrigin.newBuilder(bookmarkOrigin_).mergeFrom(value).buildPartial();
+        } else {
+          bookmarkOrigin_ = value;
+        }
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    public Builder clearBookmarkOrigin() {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = null;
+        onChanged();
+      } else {
+        bookmarkOrigin_ = null;
+        bookmarkOriginBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    public com.clarifai.grpc.api.BookmarkOrigin.Builder getBookmarkOriginBuilder() {
+      
+      onChanged();
+      return getBookmarkOriginFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    public com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder() {
+      if (bookmarkOriginBuilder_ != null) {
+        return bookmarkOriginBuilder_.getMessageOrBuilder();
+      } else {
+        return bookmarkOrigin_ == null ?
+            com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+      }
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this dataset is a bookmarked dataset of this app.
+     * Info in this field will allow you to find/access original dataset.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder> 
+        getBookmarkOriginFieldBuilder() {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOriginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder>(
+                getBookmarkOrigin(),
+                getParentForChildren(),
+                isClean());
+        bookmarkOrigin_ = null;
+      }
+      return bookmarkOriginBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

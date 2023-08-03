@@ -6432,6 +6432,192 @@ public final class V2Grpc {
     return getPostInputsUploadsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetRunnerRequest,
+      com.clarifai.grpc.api.SingleRunnerResponse> getGetRunnerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRunner",
+      requestType = com.clarifai.grpc.api.GetRunnerRequest.class,
+      responseType = com.clarifai.grpc.api.SingleRunnerResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetRunnerRequest,
+      com.clarifai.grpc.api.SingleRunnerResponse> getGetRunnerMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetRunnerRequest, com.clarifai.grpc.api.SingleRunnerResponse> getGetRunnerMethod;
+    if ((getGetRunnerMethod = V2Grpc.getGetRunnerMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetRunnerMethod = V2Grpc.getGetRunnerMethod) == null) {
+          V2Grpc.getGetRunnerMethod = getGetRunnerMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetRunnerRequest, com.clarifai.grpc.api.SingleRunnerResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRunner"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetRunnerRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleRunnerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetRunner"))
+              .build();
+        }
+      }
+    }
+    return getGetRunnerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListRunnersRequest,
+      com.clarifai.grpc.api.MultiRunnerResponse> getListRunnersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRunners",
+      requestType = com.clarifai.grpc.api.ListRunnersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiRunnerResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListRunnersRequest,
+      com.clarifai.grpc.api.MultiRunnerResponse> getListRunnersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListRunnersRequest, com.clarifai.grpc.api.MultiRunnerResponse> getListRunnersMethod;
+    if ((getListRunnersMethod = V2Grpc.getListRunnersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListRunnersMethod = V2Grpc.getListRunnersMethod) == null) {
+          V2Grpc.getListRunnersMethod = getListRunnersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListRunnersRequest, com.clarifai.grpc.api.MultiRunnerResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRunners"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListRunnersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiRunnerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListRunners"))
+              .build();
+        }
+      }
+    }
+    return getListRunnersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnersRequest,
+      com.clarifai.grpc.api.MultiRunnerResponse> getPostRunnersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostRunners",
+      requestType = com.clarifai.grpc.api.PostRunnersRequest.class,
+      responseType = com.clarifai.grpc.api.MultiRunnerResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnersRequest,
+      com.clarifai.grpc.api.MultiRunnerResponse> getPostRunnersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnersRequest, com.clarifai.grpc.api.MultiRunnerResponse> getPostRunnersMethod;
+    if ((getPostRunnersMethod = V2Grpc.getPostRunnersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostRunnersMethod = V2Grpc.getPostRunnersMethod) == null) {
+          V2Grpc.getPostRunnersMethod = getPostRunnersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostRunnersRequest, com.clarifai.grpc.api.MultiRunnerResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostRunners"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostRunnersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiRunnerResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostRunners"))
+              .build();
+        }
+      }
+    }
+    return getPostRunnersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteRunnersRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteRunnersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRunners",
+      requestType = com.clarifai.grpc.api.DeleteRunnersRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteRunnersRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteRunnersMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteRunnersRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteRunnersMethod;
+    if ((getDeleteRunnersMethod = V2Grpc.getDeleteRunnersMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteRunnersMethod = V2Grpc.getDeleteRunnersMethod) == null) {
+          V2Grpc.getDeleteRunnersMethod = getDeleteRunnersMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteRunnersRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteRunners"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteRunnersRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteRunners"))
+              .build();
+        }
+      }
+    }
+    return getDeleteRunnersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListRunnerItemsRequest,
+      com.clarifai.grpc.api.MultiRunnerItemResponse> getListRunnerItemsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRunnerItems",
+      requestType = com.clarifai.grpc.api.ListRunnerItemsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiRunnerItemResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListRunnerItemsRequest,
+      com.clarifai.grpc.api.MultiRunnerItemResponse> getListRunnerItemsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListRunnerItemsRequest, com.clarifai.grpc.api.MultiRunnerItemResponse> getListRunnerItemsMethod;
+    if ((getListRunnerItemsMethod = V2Grpc.getListRunnerItemsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListRunnerItemsMethod = V2Grpc.getListRunnerItemsMethod) == null) {
+          V2Grpc.getListRunnerItemsMethod = getListRunnerItemsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListRunnerItemsRequest, com.clarifai.grpc.api.MultiRunnerItemResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRunnerItems"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListRunnerItemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiRunnerItemResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListRunnerItems"))
+              .build();
+        }
+      }
+    }
+    return getListRunnerItemsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnerItemOutputsRequest,
+      com.clarifai.grpc.api.MultiRunnerItemOutputResponse> getPostRunnerItemOutputsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostRunnerItemOutputs",
+      requestType = com.clarifai.grpc.api.PostRunnerItemOutputsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiRunnerItemOutputResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnerItemOutputsRequest,
+      com.clarifai.grpc.api.MultiRunnerItemOutputResponse> getPostRunnerItemOutputsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostRunnerItemOutputsRequest, com.clarifai.grpc.api.MultiRunnerItemOutputResponse> getPostRunnerItemOutputsMethod;
+    if ((getPostRunnerItemOutputsMethod = V2Grpc.getPostRunnerItemOutputsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostRunnerItemOutputsMethod = V2Grpc.getPostRunnerItemOutputsMethod) == null) {
+          V2Grpc.getPostRunnerItemOutputsMethod = getPostRunnerItemOutputsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostRunnerItemOutputsRequest, com.clarifai.grpc.api.MultiRunnerItemOutputResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostRunnerItemOutputs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostRunnerItemOutputsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiRunnerItemOutputResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostRunnerItemOutputs"))
+              .build();
+        }
+      }
+    }
+    return getPostRunnerItemOutputsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8576,6 +8762,66 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostInputsUploadsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Get a specific runner from an app.
+     * </pre>
+     */
+    public void getRunner(com.clarifai.grpc.api.GetRunnerRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleRunnerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRunnerMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the runners in community, by user or by app.
+     * </pre>
+     */
+    public void listRunners(com.clarifai.grpc.api.ListRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRunnersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add a runners to an app.
+     * </pre>
+     */
+    public void postRunners(com.clarifai.grpc.api.PostRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostRunnersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple runners in one request.
+     * </pre>
+     */
+    public void deleteRunners(com.clarifai.grpc.api.DeleteRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRunnersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List items for the remote runner to work on.
+     * </pre>
+     */
+    public void listRunnerItems(com.clarifai.grpc.api.ListRunnerItemsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRunnerItemsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post back outputs from remote runners
+     * </pre>
+     */
+    public void postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemOutputResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostRunnerItemOutputsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -10027,6 +10273,48 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostInputsUploadsRequest,
                 com.clarifai.grpc.api.MultiInputsAddJobResponse>(
                   this, METHODID_POST_INPUTS_UPLOADS)))
+          .addMethod(
+            getGetRunnerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetRunnerRequest,
+                com.clarifai.grpc.api.SingleRunnerResponse>(
+                  this, METHODID_GET_RUNNER)))
+          .addMethod(
+            getListRunnersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListRunnersRequest,
+                com.clarifai.grpc.api.MultiRunnerResponse>(
+                  this, METHODID_LIST_RUNNERS)))
+          .addMethod(
+            getPostRunnersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostRunnersRequest,
+                com.clarifai.grpc.api.MultiRunnerResponse>(
+                  this, METHODID_POST_RUNNERS)))
+          .addMethod(
+            getDeleteRunnersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteRunnersRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_RUNNERS)))
+          .addMethod(
+            getListRunnerItemsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListRunnerItemsRequest,
+                com.clarifai.grpc.api.MultiRunnerItemResponse>(
+                  this, METHODID_LIST_RUNNER_ITEMS)))
+          .addMethod(
+            getPostRunnerItemOutputsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostRunnerItemOutputsRequest,
+                com.clarifai.grpc.api.MultiRunnerItemOutputResponse>(
+                  this, METHODID_POST_RUNNER_ITEM_OUTPUTS)))
           .build();
     }
   }
@@ -12347,6 +12635,72 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostInputsUploadsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Get a specific runner from an app.
+     * </pre>
+     */
+    public void getRunner(com.clarifai.grpc.api.GetRunnerRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleRunnerResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRunnerMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the runners in community, by user or by app.
+     * </pre>
+     */
+    public void listRunners(com.clarifai.grpc.api.ListRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRunnersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Add a runners to an app.
+     * </pre>
+     */
+    public void postRunners(com.clarifai.grpc.api.PostRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostRunnersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple runners in one request.
+     * </pre>
+     */
+    public void deleteRunners(com.clarifai.grpc.api.DeleteRunnersRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRunnersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List items for the remote runner to work on.
+     * </pre>
+     */
+    public void listRunnerItems(com.clarifai.grpc.api.ListRunnerItemsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRunnerItemsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Post back outputs from remote runners
+     * </pre>
+     */
+    public void postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemOutputResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostRunnerItemOutputsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -14457,6 +14811,66 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiInputsAddJobResponse postInputsUploads(com.clarifai.grpc.api.PostInputsUploadsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostInputsUploadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a specific runner from an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleRunnerResponse getRunner(com.clarifai.grpc.api.GetRunnerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRunnerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all the runners in community, by user or by app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiRunnerResponse listRunners(com.clarifai.grpc.api.ListRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRunnersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Add a runners to an app.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiRunnerResponse postRunners(com.clarifai.grpc.api.PostRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostRunnersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple runners in one request.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteRunners(com.clarifai.grpc.api.DeleteRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRunnersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List items for the remote runner to work on.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiRunnerItemResponse listRunnerItems(com.clarifai.grpc.api.ListRunnerItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRunnerItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Post back outputs from remote runners
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiRunnerItemOutputResponse postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostRunnerItemOutputsMethod(), getCallOptions(), request);
     }
   }
 
@@ -16776,6 +17190,72 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostInputsUploadsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Get a specific runner from an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleRunnerResponse> getRunner(
+        com.clarifai.grpc.api.GetRunnerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRunnerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all the runners in community, by user or by app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerResponse> listRunners(
+        com.clarifai.grpc.api.ListRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRunnersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Add a runners to an app.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerResponse> postRunners(
+        com.clarifai.grpc.api.PostRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostRunnersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple runners in one request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteRunners(
+        com.clarifai.grpc.api.DeleteRunnersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRunnersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List items for the remote runner to work on.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerItemResponse> listRunnerItems(
+        com.clarifai.grpc.api.ListRunnerItemsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRunnerItemsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Post back outputs from remote runners
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerItemOutputResponse> postRunnerItemOutputs(
+        com.clarifai.grpc.api.PostRunnerItemOutputsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostRunnerItemOutputsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -16985,6 +17465,12 @@ public final class V2Grpc {
   private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 204;
   private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 205;
   private static final int METHODID_POST_INPUTS_UPLOADS = 206;
+  private static final int METHODID_GET_RUNNER = 207;
+  private static final int METHODID_LIST_RUNNERS = 208;
+  private static final int METHODID_POST_RUNNERS = 209;
+  private static final int METHODID_DELETE_RUNNERS = 210;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 211;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 212;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -17831,6 +18317,30 @@ public final class V2Grpc {
           serviceImpl.postInputsUploads((com.clarifai.grpc.api.PostInputsUploadsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputsAddJobResponse>) responseObserver);
           break;
+        case METHODID_GET_RUNNER:
+          serviceImpl.getRunner((com.clarifai.grpc.api.GetRunnerRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleRunnerResponse>) responseObserver);
+          break;
+        case METHODID_LIST_RUNNERS:
+          serviceImpl.listRunners((com.clarifai.grpc.api.ListRunnersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse>) responseObserver);
+          break;
+        case METHODID_POST_RUNNERS:
+          serviceImpl.postRunners((com.clarifai.grpc.api.PostRunnersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_RUNNERS:
+          serviceImpl.deleteRunners((com.clarifai.grpc.api.DeleteRunnersRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
+        case METHODID_LIST_RUNNER_ITEMS:
+          serviceImpl.listRunnerItems((com.clarifai.grpc.api.ListRunnerItemsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemResponse>) responseObserver);
+          break;
+        case METHODID_POST_RUNNER_ITEM_OUTPUTS:
+          serviceImpl.postRunnerItemOutputs((com.clarifai.grpc.api.PostRunnerItemOutputsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemOutputResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -18099,6 +18609,12 @@ public final class V2Grpc {
               .addMethod(getListInputsExtractionJobsMethod())
               .addMethod(getCancelInputsExtractionJobsMethod())
               .addMethod(getPostInputsUploadsMethod())
+              .addMethod(getGetRunnerMethod())
+              .addMethod(getListRunnersMethod())
+              .addMethod(getPostRunnersMethod())
+              .addMethod(getDeleteRunnersMethod())
+              .addMethod(getListRunnerItemsMethod())
+              .addMethod(getPostRunnerItemOutputsMethod())
               .build();
         }
       }

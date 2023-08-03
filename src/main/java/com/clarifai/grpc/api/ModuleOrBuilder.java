@@ -261,4 +261,34 @@ public interface ModuleOrBuilder extends
    * @return The starCount.
    */
   int getStarCount();
+
+  /**
+   * <pre>
+   * bookmark info. When set, this module is a bookmarked module of this app.
+   * Info in this field will allow you to find/access original module.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+   * @return Whether the bookmarkOrigin field is set.
+   */
+  boolean hasBookmarkOrigin();
+  /**
+   * <pre>
+   * bookmark info. When set, this module is a bookmarked module of this app.
+   * Info in this field will allow you to find/access original module.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+   * @return The bookmarkOrigin.
+   */
+  com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin();
+  /**
+   * <pre>
+   * bookmark info. When set, this module is a bookmarked module of this app.
+   * Info in this field will allow you to find/access original module.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
+   */
+  com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder();
 }
