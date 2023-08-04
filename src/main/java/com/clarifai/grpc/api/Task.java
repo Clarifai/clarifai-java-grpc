@@ -688,49 +688,61 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList conceptIds_;
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @return A list containing the conceptIds.
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getConceptIdsList() {
     return conceptIds_;
   }
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @return The count of conceptIds.
    */
-  public int getConceptIdsCount() {
+  @java.lang.Deprecated public int getConceptIdsCount() {
     return conceptIds_.size();
   }
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
-  public java.lang.String getConceptIds(int index) {
+  @java.lang.Deprecated public java.lang.String getConceptIds(int index) {
     return conceptIds_.get(index);
   }
   /**
    * <pre>
-   * List of concept ids used in the work of this task if label type is classification.
+   * List of concept ids used in the work of this task.
+   * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
-   * <code>repeated string concept_ids = 7;</code>
+   * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Task.concept_ids is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2808
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getConceptIdsBytes(int index) {
     return conceptIds_.getByteString(index);
   }
@@ -2811,63 +2823,78 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @return A list containing the conceptIds.
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getConceptIdsList() {
       return conceptIds_.getUnmodifiableView();
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @return The count of conceptIds.
      */
-    public int getConceptIdsCount() {
+    @java.lang.Deprecated public int getConceptIdsCount() {
       return conceptIds_.size();
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @param index The index of the element to return.
      * @return The conceptIds at the given index.
      */
-    public java.lang.String getConceptIds(int index) {
+    @java.lang.Deprecated public java.lang.String getConceptIds(int index) {
       return conceptIds_.get(index);
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @param index The index of the value to return.
      * @return The bytes of the conceptIds at the given index.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getConceptIdsBytes(int index) {
       return conceptIds_.getByteString(index);
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @param index The index to set the value at.
      * @param value The conceptIds to set.
      * @return This builder for chaining.
      */
-    public Builder setConceptIds(
+    @java.lang.Deprecated public Builder setConceptIds(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2879,14 +2906,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @param value The conceptIds to add.
      * @return This builder for chaining.
      */
-    public Builder addConceptIds(
+    @java.lang.Deprecated public Builder addConceptIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2898,14 +2928,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @param values The conceptIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllConceptIds(
+    @java.lang.Deprecated public Builder addAllConceptIds(
         java.lang.Iterable<java.lang.String> values) {
       ensureConceptIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2915,13 +2948,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @return This builder for chaining.
      */
-    public Builder clearConceptIds() {
+    @java.lang.Deprecated public Builder clearConceptIds() {
       conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
@@ -2929,14 +2965,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of concept ids used in the work of this task if label type is classification.
+     * List of concept ids used in the work of this task.
+     * DEPRECATED: Use task.concepts instead.
      * </pre>
      *
-     * <code>repeated string concept_ids = 7;</code>
+     * <code>repeated string concept_ids = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Task.concept_ids is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2808
      * @param value The bytes of the conceptIds to add.
      * @return This builder for chaining.
      */
-    public Builder addConceptIdsBytes(
+    @java.lang.Deprecated public Builder addConceptIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

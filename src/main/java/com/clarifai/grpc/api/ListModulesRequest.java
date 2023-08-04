@@ -91,6 +91,31 @@ private static final long serialVersionUID = 0L;
             additionalFields_.add(s);
             break;
           }
+          case 48: {
+
+            sortAscending_ = input.readBool();
+            break;
+          }
+          case 56: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 7;
+            break;
+          }
+          case 64: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 8;
+            break;
+          }
+          case 72: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 9;
+            break;
+          }
+          case 80: {
+
+            bookmark_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -126,6 +151,49 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_ListModulesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.ListModulesRequest.class, com.clarifai.grpc.api.ListModulesRequest.Builder.class);
+  }
+
+  private int sortByCase_ = 0;
+  private java.lang.Object sortBy_;
+  public enum SortByCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SORT_BY_CREATED_AT(7),
+    SORT_BY_STAR_COUNT(8),
+    SORT_BY_MODIFIED_AT(9),
+    SORTBY_NOT_SET(0);
+    private final int value;
+    private SortByCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SortByCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SortByCase forNumber(int value) {
+      switch (value) {
+        case 7: return SORT_BY_CREATED_AT;
+        case 8: return SORT_BY_STAR_COUNT;
+        case 9: return SORT_BY_MODIFIED_AT;
+        case 0: return SORTBY_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SortByCase
+  getSortByCase() {
+    return SortByCase.forNumber(
+        sortByCase_);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -232,6 +300,124 @@ private static final long serialVersionUID = 0L;
     return additionalFields_.getByteString(index);
   }
 
+  public static final int SORT_ASCENDING_FIELD_NUMBER = 6;
+  private boolean sortAscending_;
+  /**
+   * <pre>
+   * Sorting opitons:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 6;</code>
+   * @return The sortAscending.
+   */
+  @java.lang.Override
+  public boolean getSortAscending() {
+    return sortAscending_;
+  }
+
+  public static final int SORT_BY_CREATED_AT_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 7;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByCreatedAt() {
+    return sortByCase_ == 7;
+  }
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 7;</code>
+   * @return The sortByCreatedAt.
+   */
+  @java.lang.Override
+  public boolean getSortByCreatedAt() {
+    if (sortByCase_ == 7) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_STAR_COUNT_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the app
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 8;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByStarCount() {
+    return sortByCase_ == 8;
+  }
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the app
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 8;</code>
+   * @return The sortByStarCount.
+   */
+  @java.lang.Override
+  public boolean getSortByStarCount() {
+    if (sortByCase_ == 8) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_MODIFIED_AT_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 9;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByModifiedAt() {
+    return sortByCase_ == 9;
+  }
+  /**
+   * <pre>
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 9;</code>
+   * @return The sortByModifiedAt.
+   */
+  @java.lang.Override
+  public boolean getSortByModifiedAt() {
+    if (sortByCase_ == 9) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int BOOKMARK_FIELD_NUMBER = 10;
+  private boolean bookmark_;
+  /**
+   * <pre>
+   * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+   * </pre>
+   *
+   * <code>bool bookmark = 10;</code>
+   * @return The bookmark.
+   */
+  @java.lang.Override
+  public boolean getBookmark() {
+    return bookmark_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -260,6 +446,24 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < additionalFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, additionalFields_.getRaw(i));
+    }
+    if (sortAscending_ != false) {
+      output.writeBool(6, sortAscending_);
+    }
+    if (sortByCase_ == 7) {
+      output.writeBool(
+          7, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 8) {
+      output.writeBool(
+          8, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 9) {
+      output.writeBool(
+          9, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (bookmark_ != false) {
+      output.writeBool(10, bookmark_);
     }
     unknownFields.writeTo(output);
   }
@@ -294,6 +498,29 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAdditionalFieldsList().size();
     }
+    if (sortAscending_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, sortAscending_);
+    }
+    if (sortByCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            7, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            8, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            9, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (bookmark_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, bookmark_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -322,6 +549,27 @@ private static final long serialVersionUID = 0L;
         != other.getStarredOnly()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
+    if (getSortAscending()
+        != other.getSortAscending()) return false;
+    if (getBookmark()
+        != other.getBookmark()) return false;
+    if (!getSortByCase().equals(other.getSortByCase())) return false;
+    switch (sortByCase_) {
+      case 7:
+        if (getSortByCreatedAt()
+            != other.getSortByCreatedAt()) return false;
+        break;
+      case 8:
+        if (getSortByStarCount()
+            != other.getSortByStarCount()) return false;
+        break;
+      case 9:
+        if (getSortByModifiedAt()
+            != other.getSortByModifiedAt()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -347,6 +595,31 @@ private static final long serialVersionUID = 0L;
     if (getAdditionalFieldsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
+    hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSortAscending());
+    hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBookmark());
+    switch (sortByCase_) {
+      case 7:
+        hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByCreatedAt());
+        break;
+      case 8:
+        hash = (37 * hash) + SORT_BY_STAR_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByStarCount());
+        break;
+      case 9:
+        hash = (37 * hash) + SORT_BY_MODIFIED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByModifiedAt());
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -499,6 +772,12 @@ private static final long serialVersionUID = 0L;
 
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      sortAscending_ = false;
+
+      bookmark_ = false;
+
+      sortByCase_ = 0;
+      sortBy_ = null;
       return this;
     }
 
@@ -539,6 +818,18 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.additionalFields_ = additionalFields_;
+      result.sortAscending_ = sortAscending_;
+      if (sortByCase_ == 7) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 8) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 9) {
+        result.sortBy_ = sortBy_;
+      }
+      result.bookmark_ = bookmark_;
+      result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
     }
@@ -609,6 +900,29 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.getSortAscending() != false) {
+        setSortAscending(other.getSortAscending());
+      }
+      if (other.getBookmark() != false) {
+        setBookmark(other.getBookmark());
+      }
+      switch (other.getSortByCase()) {
+        case SORT_BY_CREATED_AT: {
+          setSortByCreatedAt(other.getSortByCreatedAt());
+          break;
+        }
+        case SORT_BY_STAR_COUNT: {
+          setSortByStarCount(other.getSortByStarCount());
+          break;
+        }
+        case SORT_BY_MODIFIED_AT: {
+          setSortByModifiedAt(other.getSortByModifiedAt());
+          break;
+        }
+        case SORTBY_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -637,6 +951,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int sortByCase_ = 0;
+    private java.lang.Object sortBy_;
+    public SortByCase
+        getSortByCase() {
+      return SortByCase.forNumber(
+          sortByCase_);
+    }
+
+    public Builder clearSortBy() {
+      sortByCase_ = 0;
+      sortBy_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
@@ -987,6 +1316,266 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAdditionalFieldsIsMutable();
       additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean sortAscending_ ;
+    /**
+     * <pre>
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 6;</code>
+     * @return The sortAscending.
+     */
+    @java.lang.Override
+    public boolean getSortAscending() {
+      return sortAscending_;
+    }
+    /**
+     * <pre>
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 6;</code>
+     * @param value The sortAscending to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortAscending(boolean value) {
+      
+      sortAscending_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Sorting opitons:
+     * Whether to sort in ascending order. If false, will order in descending order.
+     * </pre>
+     *
+     * <code>bool sort_ascending = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortAscending() {
+      
+      sortAscending_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 7;</code>
+     * @return Whether the sortByCreatedAt field is set.
+     */
+    public boolean hasSortByCreatedAt() {
+      return sortByCase_ == 7;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 7;</code>
+     * @return The sortByCreatedAt.
+     */
+    public boolean getSortByCreatedAt() {
+      if (sortByCase_ == 7) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 7;</code>
+     * @param value The sortByCreatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByCreatedAt(boolean value) {
+      sortByCase_ = 7;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByCreatedAt() {
+      if (sortByCase_ == 7) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the app
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 8;</code>
+     * @return Whether the sortByStarCount field is set.
+     */
+    public boolean hasSortByStarCount() {
+      return sortByCase_ == 8;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the app
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 8;</code>
+     * @return The sortByStarCount.
+     */
+    public boolean getSortByStarCount() {
+      if (sortByCase_ == 8) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the app
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 8;</code>
+     * @param value The sortByStarCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByStarCount(boolean value) {
+      sortByCase_ = 8;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the app
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByStarCount() {
+      if (sortByCase_ == 8) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 9;</code>
+     * @return Whether the sortByModifiedAt field is set.
+     */
+    public boolean hasSortByModifiedAt() {
+      return sortByCase_ == 9;
+    }
+    /**
+     * <pre>
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 9;</code>
+     * @return The sortByModifiedAt.
+     */
+    public boolean getSortByModifiedAt() {
+      if (sortByCase_ == 9) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 9;</code>
+     * @param value The sortByModifiedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByModifiedAt(boolean value) {
+      sortByCase_ = 9;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If neither sort option is set to true, will sort by modified_at.
+     * </pre>
+     *
+     * <code>bool sort_by_modified_at = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByModifiedAt() {
+      if (sortByCase_ == 9) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private boolean bookmark_ ;
+    /**
+     * <pre>
+     * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     * </pre>
+     *
+     * <code>bool bookmark = 10;</code>
+     * @return The bookmark.
+     */
+    @java.lang.Override
+    public boolean getBookmark() {
+      return bookmark_;
+    }
+    /**
+     * <pre>
+     * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     * </pre>
+     *
+     * <code>bool bookmark = 10;</code>
+     * @param value The bookmark to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBookmark(boolean value) {
+      
+      bookmark_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+     * </pre>
+     *
+     * <code>bool bookmark = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBookmark() {
+      
+      bookmark_ = false;
       onChanged();
       return this;
     }

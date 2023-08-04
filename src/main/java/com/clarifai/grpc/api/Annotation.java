@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     modelVersionId_ = "";
     embedModelVersionId_ = "";
     taskId_ = "";
+    workflowVersionId_ = "";
   }
 
   @java.lang.Override
@@ -180,6 +181,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             taskId_ = s;
+            break;
+          }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            workflowVersionId_ = s;
             break;
           }
           default: {
@@ -775,6 +782,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int WORKFLOW_VERSION_ID_FIELD_NUMBER = 20;
+  private volatile java.lang.Object workflowVersionId_;
+  /**
+   * <pre>
+   * ID of the workflow version this annotation is created by
+   * </pre>
+   *
+   * <code>string workflow_version_id = 20;</code>
+   * @return The workflowVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkflowVersionId() {
+    java.lang.Object ref = workflowVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workflowVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * ID of the workflow version this annotation is created by
+   * </pre>
+   *
+   * <code>string workflow_version_id = 20;</code>
+   * @return The bytes for workflowVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWorkflowVersionIdBytes() {
+    java.lang.Object ref = workflowVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      workflowVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -830,6 +883,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, taskId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, workflowVersionId_);
     }
     unknownFields.writeTo(output);
   }
@@ -889,6 +945,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, taskId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, workflowVersionId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -951,6 +1010,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTaskId()
         .equals(other.getTaskId())) return false;
+    if (!getWorkflowVersionId()
+        .equals(other.getWorkflowVersionId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1004,6 +1065,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTaskId().hashCode();
+    hash = (37 * hash) + WORKFLOW_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkflowVersionId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1193,6 +1256,8 @@ private static final long serialVersionUID = 0L;
       }
       taskId_ = "";
 
+      workflowVersionId_ = "";
+
       return this;
     }
 
@@ -1257,6 +1322,7 @@ private static final long serialVersionUID = 0L;
         result.consensusInfo_ = consensusInfoBuilder_.build();
       }
       result.taskId_ = taskId_;
+      result.workflowVersionId_ = workflowVersionId_;
       onBuilt();
       return result;
     }
@@ -1351,6 +1417,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTaskId().isEmpty()) {
         taskId_ = other.taskId_;
+        onChanged();
+      }
+      if (!other.getWorkflowVersionId().isEmpty()) {
+        workflowVersionId_ = other.workflowVersionId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -3043,6 +3113,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       taskId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object workflowVersionId_ = "";
+    /**
+     * <pre>
+     * ID of the workflow version this annotation is created by
+     * </pre>
+     *
+     * <code>string workflow_version_id = 20;</code>
+     * @return The workflowVersionId.
+     */
+    public java.lang.String getWorkflowVersionId() {
+      java.lang.Object ref = workflowVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workflowVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the workflow version this annotation is created by
+     * </pre>
+     *
+     * <code>string workflow_version_id = 20;</code>
+     * @return The bytes for workflowVersionId.
+     */
+    public com.google.protobuf.ByteString
+        getWorkflowVersionIdBytes() {
+      java.lang.Object ref = workflowVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workflowVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * ID of the workflow version this annotation is created by
+     * </pre>
+     *
+     * <code>string workflow_version_id = 20;</code>
+     * @param value The workflowVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowVersionId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      workflowVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ID of the workflow version this annotation is created by
+     * </pre>
+     *
+     * <code>string workflow_version_id = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflowVersionId() {
+      
+      workflowVersionId_ = getDefaultInstance().getWorkflowVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * ID of the workflow version this annotation is created by
+     * </pre>
+     *
+     * <code>string workflow_version_id = 20;</code>
+     * @param value The bytes for workflowVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowVersionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      workflowVersionId_ = value;
       onChanged();
       return this;
     }

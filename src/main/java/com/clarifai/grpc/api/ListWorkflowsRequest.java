@@ -132,6 +132,21 @@ private static final long serialVersionUID = 0L;
             searchTerm_ = s;
             break;
           }
+          case 104: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 13;
+            break;
+          }
+          case 112: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 14;
+            break;
+          }
+          case 120: {
+
+            bookmark_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -176,6 +191,8 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SORT_BY_ID(6),
     SORT_BY_MODIFIED_AT(7),
+    SORT_BY_CREATED_AT(13),
+    SORT_BY_STAR_COUNT(14),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -195,6 +212,8 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 6: return SORT_BY_ID;
         case 7: return SORT_BY_MODIFIED_AT;
+        case 13: return SORT_BY_CREATED_AT;
+        case 14: return SORT_BY_STAR_COUNT;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -317,7 +336,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Whether to order by the modified_at time.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
@@ -330,7 +349,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Whether to order by the modified_at time.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
@@ -339,6 +358,64 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getSortByModifiedAt() {
     if (sortByCase_ == 7) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_CREATED_AT_FIELD_NUMBER = 13;
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 13;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByCreatedAt() {
+    return sortByCase_ == 13;
+  }
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 13;</code>
+   * @return The sortByCreatedAt.
+   */
+  @java.lang.Override
+  public boolean getSortByCreatedAt() {
+    if (sortByCase_ == 13) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_STAR_COUNT_FIELD_NUMBER = 14;
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the workflow
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 14;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByStarCount() {
+    return sortByCase_ == 14;
+  }
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the workflow
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 14;</code>
+   * @return The sortByStarCount.
+   */
+  @java.lang.Override
+  public boolean getSortByStarCount() {
+    if (sortByCase_ == 14) {
       return (java.lang.Boolean) sortBy_;
     }
     return false;
@@ -400,7 +477,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5790
+   *     See proto/clarifai/api/service.proto;l=5912
    * @return The id.
    */
   @java.lang.Override
@@ -424,7 +501,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5790
+   *     See proto/clarifai/api/service.proto;l=5912
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -569,6 +646,21 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BOOKMARK_FIELD_NUMBER = 15;
+  private boolean bookmark_;
+  /**
+   * <pre>
+   * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+   * </pre>
+   *
+   * <code>bool bookmark = 15;</code>
+   * @return The bookmark.
+   */
+  @java.lang.Override
+  public boolean getBookmark() {
+    return bookmark_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -620,6 +712,17 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchTerm_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, searchTerm_);
+    }
+    if (sortByCase_ == 13) {
+      output.writeBool(
+          13, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 14) {
+      output.writeBool(
+          14, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (bookmark_ != false) {
+      output.writeBool(15, bookmark_);
     }
     unknownFields.writeTo(output);
   }
@@ -681,6 +784,20 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchTerm_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, searchTerm_);
     }
+    if (sortByCase_ == 13) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            13, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 14) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            14, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (bookmark_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(15, bookmark_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -719,6 +836,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAdditionalFieldsList())) return false;
     if (!getSearchTerm()
         .equals(other.getSearchTerm())) return false;
+    if (getBookmark()
+        != other.getBookmark()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 6:
@@ -728,6 +847,14 @@ private static final long serialVersionUID = 0L;
       case 7:
         if (getSortByModifiedAt()
             != other.getSortByModifiedAt()) return false;
+        break;
+      case 13:
+        if (getSortByCreatedAt()
+            != other.getSortByCreatedAt()) return false;
+        break;
+      case 14:
+        if (getSortByStarCount()
+            != other.getSortByStarCount()) return false;
         break;
       case 0:
       default:
@@ -770,6 +897,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + SEARCH_TERM_FIELD_NUMBER;
     hash = (53 * hash) + getSearchTerm().hashCode();
+    hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBookmark());
     switch (sortByCase_) {
       case 6:
         hash = (37 * hash) + SORT_BY_ID_FIELD_NUMBER;
@@ -780,6 +910,16 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_MODIFIED_AT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByModifiedAt());
+        break;
+      case 13:
+        hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByCreatedAt());
+        break;
+      case 14:
+        hash = (37 * hash) + SORT_BY_STAR_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByStarCount());
         break;
       case 0:
       default:
@@ -945,6 +1085,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       searchTerm_ = "";
 
+      bookmark_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -988,6 +1130,12 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 7) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 13) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 14) {
+        result.sortBy_ = sortBy_;
+      }
       result.query_ = query_;
       result.id_ = id_;
       result.featuredOnly_ = featuredOnly_;
@@ -998,6 +1146,7 @@ private static final long serialVersionUID = 0L;
       }
       result.additionalFields_ = additionalFields_;
       result.searchTerm_ = searchTerm_;
+      result.bookmark_ = bookmark_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1087,6 +1236,9 @@ private static final long serialVersionUID = 0L;
         searchTerm_ = other.searchTerm_;
         onChanged();
       }
+      if (other.getBookmark() != false) {
+        setBookmark(other.getBookmark());
+      }
       switch (other.getSortByCase()) {
         case SORT_BY_ID: {
           setSortById(other.getSortById());
@@ -1094,6 +1246,14 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_MODIFIED_AT: {
           setSortByModifiedAt(other.getSortByModifiedAt());
+          break;
+        }
+        case SORT_BY_CREATED_AT: {
+          setSortByCreatedAt(other.getSortByCreatedAt());
+          break;
+        }
+        case SORT_BY_STAR_COUNT: {
+          setSortByStarCount(other.getSortByStarCount());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -1462,7 +1622,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 7;</code>
@@ -1474,7 +1634,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 7;</code>
@@ -1489,7 +1649,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 7;</code>
@@ -1505,7 +1665,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 7;</code>
@@ -1513,6 +1673,120 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortByModifiedAt() {
       if (sortByCase_ == 7) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 13;</code>
+     * @return Whether the sortByCreatedAt field is set.
+     */
+    public boolean hasSortByCreatedAt() {
+      return sortByCase_ == 13;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 13;</code>
+     * @return The sortByCreatedAt.
+     */
+    public boolean getSortByCreatedAt() {
+      if (sortByCase_ == 13) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 13;</code>
+     * @param value The sortByCreatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByCreatedAt(boolean value) {
+      sortByCase_ = 13;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at time.
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByCreatedAt() {
+      if (sortByCase_ == 13) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the workflow
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 14;</code>
+     * @return Whether the sortByStarCount field is set.
+     */
+    public boolean hasSortByStarCount() {
+      return sortByCase_ == 14;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the workflow
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 14;</code>
+     * @return The sortByStarCount.
+     */
+    public boolean getSortByStarCount() {
+      if (sortByCase_ == 14) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the workflow
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 14;</code>
+     * @param value The sortByStarCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByStarCount(boolean value) {
+      sortByCase_ = 14;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the number of users stared the workflow
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByStarCount() {
+      if (sortByCase_ == 14) {
         sortByCase_ = 0;
         sortBy_ = null;
         onChanged();
@@ -1625,7 +1899,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5790
+     *     See proto/clarifai/api/service.proto;l=5912
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -1648,7 +1922,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5790
+     *     See proto/clarifai/api/service.proto;l=5912
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1672,7 +1946,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5790
+     *     See proto/clarifai/api/service.proto;l=5912
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1694,7 +1968,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5790
+     *     See proto/clarifai/api/service.proto;l=5912
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -1711,7 +1985,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5790
+     *     See proto/clarifai/api/service.proto;l=5912
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -2051,6 +2325,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       searchTerm_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean bookmark_ ;
+    /**
+     * <pre>
+     * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     * </pre>
+     *
+     * <code>bool bookmark = 15;</code>
+     * @return The bookmark.
+     */
+    @java.lang.Override
+    public boolean getBookmark() {
+      return bookmark_;
+    }
+    /**
+     * <pre>
+     * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     * </pre>
+     *
+     * <code>bool bookmark = 15;</code>
+     * @param value The bookmark to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBookmark(boolean value) {
+      
+      bookmark_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+     * </pre>
+     *
+     * <code>bool bookmark = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBookmark() {
+      
+      bookmark_ = false;
       onChanged();
       return this;
     }

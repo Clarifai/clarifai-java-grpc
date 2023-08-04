@@ -256,7 +256,9 @@ public interface DatasetVersionOrBuilder extends
 
   /**
    * <pre>
-   * Dataset version processing
+   * Dataset version processing. If this is not set when the dataset version is
+   * created, then the dataset default_processing_info is copied instead. Later
+   * updates to default_processing_info will not apply to existing versions.
    * </pre>
    *
    * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -265,7 +267,9 @@ public interface DatasetVersionOrBuilder extends
   boolean hasProcessingInfo();
   /**
    * <pre>
-   * Dataset version processing
+   * Dataset version processing. If this is not set when the dataset version is
+   * created, then the dataset default_processing_info is copied instead. Later
+   * updates to default_processing_info will not apply to existing versions.
    * </pre>
    *
    * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>
@@ -274,7 +278,9 @@ public interface DatasetVersionOrBuilder extends
   com.clarifai.grpc.api.DatasetVersionProcessingInfo getProcessingInfo();
   /**
    * <pre>
-   * Dataset version processing
+   * Dataset version processing. If this is not set when the dataset version is
+   * created, then the dataset default_processing_info is copied instead. Later
+   * updates to default_processing_info will not apply to existing versions.
    * </pre>
    *
    * <code>.clarifai.api.DatasetVersionProcessingInfo processing_info = 19;</code>

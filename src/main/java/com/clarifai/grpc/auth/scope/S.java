@@ -662,6 +662,30 @@ public enum S
    * <code>Uploads_Delete = 130 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Add];</code>
    */
   Uploads_Delete(130),
+  /**
+   * <pre>
+   * To read allo control over remote runners
+   * </pre>
+   *
+   * <code>Runners_Get = 131 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Runners_Get(131),
+  /**
+   * <code>Runners_Add = 132 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Get];</code>
+   */
+  Runners_Add(132),
+  /**
+   * <code>Runners_Delete = 133 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Add];</code>
+   */
+  Runners_Delete(133),
+  /**
+   * <code>RunnerItems_Get = 134 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  RunnerItems_Get(134),
+  /**
+   * <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
+   */
+  RunnerItems_Add(135),
   UNRECOGNIZED(-1),
   ;
 
@@ -1286,6 +1310,30 @@ public enum S
    * <code>Uploads_Delete = 130 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Uploads_Add];</code>
    */
   public static final int Uploads_Delete_VALUE = 130;
+  /**
+   * <pre>
+   * To read allo control over remote runners
+   * </pre>
+   *
+   * <code>Runners_Get = 131 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Runners_Get_VALUE = 131;
+  /**
+   * <code>Runners_Add = 132 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Get];</code>
+   */
+  public static final int Runners_Add_VALUE = 132;
+  /**
+   * <code>Runners_Delete = 133 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Runners_Add];</code>
+   */
+  public static final int Runners_Delete_VALUE = 133;
+  /**
+   * <code>RunnerItems_Get = 134 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int RunnerItems_Get_VALUE = 134;
+  /**
+   * <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
+   */
+  public static final int RunnerItems_Add_VALUE = 135;
 
 
   public final int getNumber() {
@@ -1395,6 +1443,11 @@ public enum S
       case 128: return Uploads_Get;
       case 129: return Uploads_Add;
       case 130: return Uploads_Delete;
+      case 131: return Runners_Get;
+      case 132: return Runners_Add;
+      case 133: return Runners_Delete;
+      case 134: return RunnerItems_Get;
+      case 135: return RunnerItems_Add;
       default: return null;
     }
   }

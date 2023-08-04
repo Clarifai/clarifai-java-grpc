@@ -77,7 +77,7 @@ public interface ListWorkflowsRequestOrBuilder extends
   /**
    * <pre>
    * Whether to order by the modified_at time.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
@@ -87,13 +87,51 @@ public interface ListWorkflowsRequestOrBuilder extends
   /**
    * <pre>
    * Whether to order by the modified_at time.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 7;</code>
    * @return The sortByModifiedAt.
    */
   boolean getSortByModifiedAt();
+
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 13;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  boolean hasSortByCreatedAt();
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 13;</code>
+   * @return The sortByCreatedAt.
+   */
+  boolean getSortByCreatedAt();
+
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the workflow
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 14;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  boolean hasSortByStarCount();
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the workflow
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 14;</code>
+   * @return The sortByStarCount.
+   */
+  boolean getSortByStarCount();
 
   /**
    * <pre>
@@ -123,7 +161,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5790
+   *     See proto/clarifai/api/service.proto;l=5912
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -135,7 +173,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5790
+   *     See proto/clarifai/api/service.proto;l=5912
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -221,6 +259,16 @@ public interface ListWorkflowsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSearchTermBytes();
+
+  /**
+   * <pre>
+   * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
+   * </pre>
+   *
+   * <code>bool bookmark = 15;</code>
+   * @return The bookmark.
+   */
+  boolean getBookmark();
 
   public com.clarifai.grpc.api.ListWorkflowsRequest.SortByCase getSortByCase();
 }

@@ -51,9 +51,11 @@ public interface FilterOrBuilder extends
    *  - id
    *  - input_id
    *  - input_level
+   *  - model_version_id
    *  - status.code
    *  - task_id
    *  - user_id
+   *  - workflow_version_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -93,9 +95,11 @@ public interface FilterOrBuilder extends
    *  - id
    *  - input_id
    *  - input_level
+   *  - model_version_id
    *  - status.code
    *  - task_id
    *  - user_id
+   *  - workflow_version_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>
@@ -135,9 +139,11 @@ public interface FilterOrBuilder extends
    *  - id
    *  - input_id
    *  - input_level
+   *  - model_version_id
    *  - status.code
    *  - task_id
    *  - user_id
+   *  - workflow_version_id
    * </pre>
    *
    * <code>.clarifai.api.Annotation annotation = 4;</code>

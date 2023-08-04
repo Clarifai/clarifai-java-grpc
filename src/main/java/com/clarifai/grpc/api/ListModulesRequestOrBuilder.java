@@ -74,4 +74,84 @@ public interface ListModulesRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * Sorting opitons:
+   * Whether to sort in ascending order. If false, will order in descending order.
+   * </pre>
+   *
+   * <code>bool sort_ascending = 6;</code>
+   * @return The sortAscending.
+   */
+  boolean getSortAscending();
+
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 7;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  boolean hasSortByCreatedAt();
+  /**
+   * <pre>
+   * Whether to order by the created_at time.
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 7;</code>
+   * @return The sortByCreatedAt.
+   */
+  boolean getSortByCreatedAt();
+
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the app
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 8;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  boolean hasSortByStarCount();
+  /**
+   * <pre>
+   * Whether to order by the number of users stared the app
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 8;</code>
+   * @return The sortByStarCount.
+   */
+  boolean getSortByStarCount();
+
+  /**
+   * <pre>
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 9;</code>
+   * @return Whether the sortByModifiedAt field is set.
+   */
+  boolean hasSortByModifiedAt();
+  /**
+   * <pre>
+   * If neither sort option is set to true, will sort by modified_at.
+   * </pre>
+   *
+   * <code>bool sort_by_modified_at = 9;</code>
+   * @return The sortByModifiedAt.
+   */
+  boolean getSortByModifiedAt();
+
+  /**
+   * <pre>
+   * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
+   * </pre>
+   *
+   * <code>bool bookmark = 10;</code>
+   * @return The bookmark.
+   */
+  boolean getBookmark();
+
+  public com.clarifai.grpc.api.ListModulesRequest.SortByCase getSortByCase();
 }

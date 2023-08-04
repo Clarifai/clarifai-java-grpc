@@ -209,6 +209,21 @@ private static final long serialVersionUID = 0L;
             dontFetchFromMain_ = input.readBool();
             break;
           }
+          case 192: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 24;
+            break;
+          }
+          case 200: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 25;
+            break;
+          }
+          case 208: {
+
+            bookmark_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -269,6 +284,8 @@ private static final long serialVersionUID = 0L;
     SORT_BY_NAME(11),
     SORT_BY_NUM_INPUTS(12),
     SORT_BY_MODIFIED_AT(13),
+    SORT_BY_CREATED_AT(24),
+    SORT_BY_STAR_COUNT(25),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -289,6 +306,8 @@ private static final long serialVersionUID = 0L;
         case 11: return SORT_BY_NAME;
         case 12: return SORT_BY_NUM_INPUTS;
         case 13: return SORT_BY_MODIFIED_AT;
+        case 24: return SORT_BY_CREATED_AT;
+        case 25: return SORT_BY_STAR_COUNT;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -440,7 +459,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Whether to order by the modified_at time of the latest model version.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 13;</code>
@@ -453,7 +472,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Whether to order by the modified_at time of the latest model version.
-   * If neither sort option is set to true, will sort by modified_at.
+   * If none of the sort options is set to true, will sort by modified_at.
    * </pre>
    *
    * <code>bool sort_by_modified_at = 13;</code>
@@ -462,6 +481,64 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getSortByModifiedAt() {
     if (sortByCase_ == 13) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_CREATED_AT_FIELD_NUMBER = 24;
+  /**
+   * <pre>
+   * Whether to order by the created_at
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 24;</code>
+   * @return Whether the sortByCreatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByCreatedAt() {
+    return sortByCase_ == 24;
+  }
+  /**
+   * <pre>
+   * Whether to order by the created_at
+   * </pre>
+   *
+   * <code>bool sort_by_created_at = 24;</code>
+   * @return The sortByCreatedAt.
+   */
+  @java.lang.Override
+  public boolean getSortByCreatedAt() {
+    if (sortByCase_ == 24) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_STAR_COUNT_FIELD_NUMBER = 25;
+  /**
+   * <pre>
+   * Whether to order by count of stars
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 25;</code>
+   * @return Whether the sortByStarCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByStarCount() {
+    return sortByCase_ == 25;
+  }
+  /**
+   * <pre>
+   * Whether to order by count of stars
+   * </pre>
+   *
+   * <code>bool sort_by_star_count = 25;</code>
+   * @return The sortByStarCount.
+   */
+  @java.lang.Override
+  public boolean getSortByStarCount() {
+    if (sortByCase_ == 25) {
       return (java.lang.Boolean) sortBy_;
     }
     return false;
@@ -1045,6 +1122,23 @@ private static final long serialVersionUID = 0L;
     return dontFetchFromMain_;
   }
 
+  public static final int BOOKMARK_FIELD_NUMBER = 26;
+  private boolean bookmark_;
+  /**
+   * <pre>
+   * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+   * Note: you can not filter `trained_only` and bookmark at the same time.
+   * When filter by bookmark, we will return trained and untrained models.
+   * </pre>
+   *
+   * <code>bool bookmark = 26;</code>
+   * @return The bookmark.
+   */
+  @java.lang.Override
+  public boolean getBookmark() {
+    return bookmark_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1127,6 +1221,17 @@ private static final long serialVersionUID = 0L;
     }
     if (dontFetchFromMain_ != false) {
       output.writeBool(23, dontFetchFromMain_);
+    }
+    if (sortByCase_ == 24) {
+      output.writeBool(
+          24, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 25) {
+      output.writeBool(
+          25, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (bookmark_ != false) {
+      output.writeBool(26, bookmark_);
     }
     unknownFields.writeTo(output);
   }
@@ -1248,6 +1353,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(23, dontFetchFromMain_);
     }
+    if (sortByCase_ == 24) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            24, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 25) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            25, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (bookmark_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(26, bookmark_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1304,6 +1423,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAdditionalFieldsList())) return false;
     if (getDontFetchFromMain()
         != other.getDontFetchFromMain()) return false;
+    if (getBookmark()
+        != other.getBookmark()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -1317,6 +1438,14 @@ private static final long serialVersionUID = 0L;
       case 13:
         if (getSortByModifiedAt()
             != other.getSortByModifiedAt()) return false;
+        break;
+      case 24:
+        if (getSortByCreatedAt()
+            != other.getSortByCreatedAt()) return false;
+        break;
+      case 25:
+        if (getSortByStarCount()
+            != other.getSortByStarCount()) return false;
         break;
       case 0:
       default:
@@ -1390,6 +1519,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DONT_FETCH_FROM_MAIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDontFetchFromMain());
+    hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getBookmark());
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -1405,6 +1537,16 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_MODIFIED_AT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByModifiedAt());
+        break;
+      case 24:
+        hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByCreatedAt());
+        break;
+      case 25:
+        hash = (37 * hash) + SORT_BY_STAR_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByStarCount());
         break;
       case 0:
       default:
@@ -1588,6 +1730,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
       dontFetchFromMain_ = false;
 
+      bookmark_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -1634,6 +1778,12 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 13) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 24) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 25) {
+        result.sortBy_ = sortBy_;
+      }
       result.query_ = query_;
       result.name_ = name_;
       result.filterByUserId_ = filterByUserId_;
@@ -1673,6 +1823,7 @@ private static final long serialVersionUID = 0L;
       }
       result.additionalFields_ = additionalFields_;
       result.dontFetchFromMain_ = dontFetchFromMain_;
+      result.bookmark_ = bookmark_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1825,6 +1976,9 @@ private static final long serialVersionUID = 0L;
       if (other.getDontFetchFromMain() != false) {
         setDontFetchFromMain(other.getDontFetchFromMain());
       }
+      if (other.getBookmark() != false) {
+        setBookmark(other.getBookmark());
+      }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
           setSortByName(other.getSortByName());
@@ -1836,6 +1990,14 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_MODIFIED_AT: {
           setSortByModifiedAt(other.getSortByModifiedAt());
+          break;
+        }
+        case SORT_BY_CREATED_AT: {
+          setSortByCreatedAt(other.getSortByCreatedAt());
+          break;
+        }
+        case SORT_BY_STAR_COUNT: {
+          setSortByStarCount(other.getSortByStarCount());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -2261,7 +2423,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time of the latest model version.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 13;</code>
@@ -2273,7 +2435,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time of the latest model version.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 13;</code>
@@ -2288,7 +2450,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time of the latest model version.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 13;</code>
@@ -2304,7 +2466,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Whether to order by the modified_at time of the latest model version.
-     * If neither sort option is set to true, will sort by modified_at.
+     * If none of the sort options is set to true, will sort by modified_at.
      * </pre>
      *
      * <code>bool sort_by_modified_at = 13;</code>
@@ -2312,6 +2474,120 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortByModifiedAt() {
       if (sortByCase_ == 13) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the created_at
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 24;</code>
+     * @return Whether the sortByCreatedAt field is set.
+     */
+    public boolean hasSortByCreatedAt() {
+      return sortByCase_ == 24;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 24;</code>
+     * @return The sortByCreatedAt.
+     */
+    public boolean getSortByCreatedAt() {
+      if (sortByCase_ == 24) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 24;</code>
+     * @param value The sortByCreatedAt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByCreatedAt(boolean value) {
+      sortByCase_ = 24;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the created_at
+     * </pre>
+     *
+     * <code>bool sort_by_created_at = 24;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByCreatedAt() {
+      if (sortByCase_ == 24) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by count of stars
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 25;</code>
+     * @return Whether the sortByStarCount field is set.
+     */
+    public boolean hasSortByStarCount() {
+      return sortByCase_ == 25;
+    }
+    /**
+     * <pre>
+     * Whether to order by count of stars
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 25;</code>
+     * @return The sortByStarCount.
+     */
+    public boolean getSortByStarCount() {
+      if (sortByCase_ == 25) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by count of stars
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 25;</code>
+     * @param value The sortByStarCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByStarCount(boolean value) {
+      sortByCase_ = 25;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by count of stars
+     * </pre>
+     *
+     * <code>bool sort_by_star_count = 25;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByStarCount() {
+      if (sortByCase_ == 25) {
         sortByCase_ = 0;
         sortBy_ = null;
         onChanged();
@@ -3821,6 +4097,55 @@ private static final long serialVersionUID = 0L;
     public Builder clearDontFetchFromMain() {
       
       dontFetchFromMain_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean bookmark_ ;
+    /**
+     * <pre>
+     * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     * Note: you can not filter `trained_only` and bookmark at the same time.
+     * When filter by bookmark, we will return trained and untrained models.
+     * </pre>
+     *
+     * <code>bool bookmark = 26;</code>
+     * @return The bookmark.
+     */
+    @java.lang.Override
+    public boolean getBookmark() {
+      return bookmark_;
+    }
+    /**
+     * <pre>
+     * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     * Note: you can not filter `trained_only` and bookmark at the same time.
+     * When filter by bookmark, we will return trained and untrained models.
+     * </pre>
+     *
+     * <code>bool bookmark = 26;</code>
+     * @param value The bookmark to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBookmark(boolean value) {
+      
+      bookmark_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter models by bookmark. If set, only return bookmarked models. Otherwise none bookmarked models only.
+     * Note: you can not filter `trained_only` and bookmark at the same time.
+     * When filter by bookmark, we will return trained and untrained models.
+     * </pre>
+     *
+     * <code>bool bookmark = 26;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBookmark() {
+      
+      bookmark_ = false;
       onChanged();
       return this;
     }

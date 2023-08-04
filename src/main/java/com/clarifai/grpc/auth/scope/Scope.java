@@ -66,7 +66,7 @@ public final class Scope {
       "\023clarifai.auth.scope\032 google/protobuf/de" +
       "scriptor.proto\"F\n\tScopeList\022&\n\006scopes\030\001 " +
       "\003(\0162\026.clarifai.auth.scope.S\022\021\n\tendpoints" +
-      "\030\002 \003(\t*\346\024\n\001S\022\t\n\005undef\020\000\022\r\n\003All\020\001\032\004\360\233\'\001\022\021" +
+      "\030\002 \003(\t*\375\025\n\001S\022\t\n\005undef\020\000\022\r\n\003All\020\001\032\004\360\233\'\001\022\021" +
       "\n\007Predict\020\002\032\004\360\233\'\001\022\030\n\nInputs_Add\020\004\032\010\360\233\'\001\370" +
       "\233\'\005\022\024\n\nInputs_Get\020\005\032\004\360\233\'\001\022 \n\014Inputs_Patc" +
       "h\020\007\032\016\010\001\360\233\'\001\370\233\'\004\370\233\'\005\022\037\n\rInputs_Delete\020\010\032\014" +
@@ -131,15 +131,19 @@ public final class Scope {
       "lkOperation_Delete\020{\032\014\360\233\'\001\370\233\'y\370\233\'z\022\027\n\023Hi" +
       "storicalUsage_Get\020|\022\026\n\013Uploads_Get\020\200\001\032\004\360" +
       "\233\'\001\022\033\n\013Uploads_Add\020\201\001\032\t\360\233\'\001\370\233\'\200\001\022#\n\016Uplo" +
-      "ads_Delete\020\202\001\032\016\360\233\'\001\370\233\'\200\001\370\233\'\201\001\"\004\010\036\020\036\"\004\010\037\020" +
-      "\037\"\004\010 \020 \"\004\010!\020!\"\004\010\"\020\"\"\004\010}\020}\"\004\010~\020~:<\n\017clarf" +
-      "ai_exposed\022!.google.protobuf.EnumValueOp" +
-      "tions\030\276\363\004 \001(\010:^\n\031clarifai_depending_scop" +
-      "es\022!.google.protobuf.EnumValueOptions\030\277\363" +
-      "\004 \003(\0162\026.clarifai.auth.scope.SBg\n\034com.cla" +
-      "rifai.grpc.auth.scopeP\001Z>github.com/Clar" +
-      "ifai/clarifai-go-grpc/proto/clarifai/aut" +
-      "h/scope\242\002\004CAIPb\006proto3"
+      "ads_Delete\020\202\001\032\016\360\233\'\001\370\233\'\200\001\370\233\'\201\001\022\026\n\013Runners" +
+      "_Get\020\203\001\032\004\360\233\'\001\022\033\n\013Runners_Add\020\204\001\032\t\360\233\'\001\370\233\'" +
+      "\203\001\022#\n\016Runners_Delete\020\205\001\032\016\360\233\'\001\370\233\'\203\001\370\233\'\204\001\022" +
+      "\032\n\017RunnerItems_Get\020\206\001\032\004\360\233\'\001\022\037\n\017RunnerIte" +
+      "ms_Add\020\207\001\032\t\360\233\'\001\370\233\'\206\001\"\004\010\036\020\036\"\004\010\037\020\037\"\004\010 \020 \"\004" +
+      "\010!\020!\"\004\010\"\020\"\"\004\010}\020}\"\004\010~\020~:<\n\017clarfai_expose" +
+      "d\022!.google.protobuf.EnumValueOptions\030\276\363\004" +
+      " \001(\010:^\n\031clarifai_depending_scopes\022!.goog" +
+      "le.protobuf.EnumValueOptions\030\277\363\004 \003(\0162\026.c" +
+      "larifai.auth.scope.SBg\n\034com.clarifai.grp" +
+      "c.auth.scopeP\001Z>github.com/Clarifai/clar" +
+      "ifai-go-grpc/proto/clarifai/auth/scope\242\002" +
+      "\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

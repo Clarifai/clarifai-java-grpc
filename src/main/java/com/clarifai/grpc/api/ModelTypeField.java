@@ -296,6 +296,14 @@ private static final long serialVersionUID = 0L;
      * <code>DATASET_VERSION_ID = 17;</code>
      */
     DATASET_VERSION_ID(17),
+    /**
+     * <pre>
+     * For auto-completing to concepts in the model.
+     * </pre>
+     *
+     * <code>ARRAY_OF_MODEL_CONCEPTS = 18;</code>
+     */
+    ARRAY_OF_MODEL_CONCEPTS(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -422,6 +430,14 @@ private static final long serialVersionUID = 0L;
      * <code>DATASET_VERSION_ID = 17;</code>
      */
     public static final int DATASET_VERSION_ID_VALUE = 17;
+    /**
+     * <pre>
+     * For auto-completing to concepts in the model.
+     * </pre>
+     *
+     * <code>ARRAY_OF_MODEL_CONCEPTS = 18;</code>
+     */
+    public static final int ARRAY_OF_MODEL_CONCEPTS_VALUE = 18;
 
 
     public final int getNumber() {
@@ -465,6 +481,7 @@ private static final long serialVersionUID = 0L;
         case 15: return PYTHON_CODE;
         case 16: return DATASET_ID;
         case 17: return DATASET_VERSION_ID;
+        case 18: return ARRAY_OF_MODEL_CONCEPTS;
         default: return null;
       }
     }

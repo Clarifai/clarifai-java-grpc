@@ -146,32 +146,6 @@ private static final long serialVersionUID = 0L;
             userId_ = s;
             break;
           }
-          case 98: {
-            com.clarifai.grpc.api.InputInfo.Builder subBuilder = null;
-            if (inputInfo_ != null) {
-              subBuilder = inputInfo_.toBuilder();
-            }
-            inputInfo_ = input.readMessage(com.clarifai.grpc.api.InputInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(inputInfo_);
-              inputInfo_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 106: {
-            com.clarifai.grpc.api.TrainInfo.Builder subBuilder = null;
-            if (trainInfo_ != null) {
-              subBuilder = trainInfo_.toBuilder();
-            }
-            trainInfo_ = input.readMessage(com.clarifai.grpc.api.TrainInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(trainInfo_);
-              trainInfo_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 114: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -257,19 +231,6 @@ private static final long serialVersionUID = 0L;
             starCount_ = input.readInt32();
             break;
           }
-          case 194: {
-            com.clarifai.grpc.api.ImportInfo.Builder subBuilder = null;
-            if (importInfo_ != null) {
-              subBuilder = importInfo_.toBuilder();
-            }
-            importInfo_ = input.readMessage(com.clarifai.grpc.api.ImportInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(importInfo_);
-              importInfo_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 202: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -340,6 +301,19 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000010;
             }
             checkConsents_.add(s);
+            break;
+          }
+          case 266: {
+            com.clarifai.grpc.api.BookmarkOrigin.Builder subBuilder = null;
+            if (bookmarkOrigin_ != null) {
+              subBuilder = bookmarkOrigin_.toBuilder();
+            }
+            bookmarkOrigin_ = input.readMessage(com.clarifai.grpc.api.BookmarkOrigin.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(bookmarkOrigin_);
+              bookmarkOrigin_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -446,7 +420,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1215
+   *     See proto/clarifai/api/resources.proto;l=1232
    * @return The name.
    */
   @java.lang.Override
@@ -469,7 +443,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1215
+   *     See proto/clarifai/api/resources.proto;l=1232
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -631,7 +605,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1228
+   *     See proto/clarifai/api/resources.proto;l=1245
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Override
@@ -646,7 +620,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1228
+   *     See proto/clarifai/api/resources.proto;l=1245
    * @return The outputInfo.
    */
   @java.lang.Override
@@ -716,7 +690,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1233
+   *     See proto/clarifai/api/resources.proto;l=1250
    * @return The displayName.
    */
   @java.lang.Override
@@ -739,7 +713,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1233
+   *     See proto/clarifai/api/resources.proto;l=1250
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -801,96 +775,6 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int INPUT_INFO_FIELD_NUMBER = 12;
-  private com.clarifai.grpc.api.InputInfo inputInfo_;
-  /**
-   * <pre>
-   * Info about the models' input and configuration of them.
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-   * @deprecated clarifai.api.Model.input_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1238
-   * @return Whether the inputInfo field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasInputInfo() {
-    return inputInfo_ != null;
-  }
-  /**
-   * <pre>
-   * Info about the models' input and configuration of them.
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-   * @deprecated clarifai.api.Model.input_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1238
-   * @return The inputInfo.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.InputInfo getInputInfo() {
-    return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
-  }
-  /**
-   * <pre>
-   * Info about the models' input and configuration of them.
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
-    return getInputInfo();
-  }
-
-  public static final int TRAIN_INFO_FIELD_NUMBER = 13;
-  private com.clarifai.grpc.api.TrainInfo trainInfo_;
-  /**
-   * <pre>
-   * Configuration for the training process of this model.
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-   * @deprecated clarifai.api.Model.train_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1241
-   * @return Whether the trainInfo field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasTrainInfo() {
-    return trainInfo_ != null;
-  }
-  /**
-   * <pre>
-   * Configuration for the training process of this model.
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-   * @deprecated clarifai.api.Model.train_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1241
-   * @return The trainInfo.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
-    return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
-  }
-  /**
-   * <pre>
-   * Configuration for the training process of this model.
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
-    return getTrainInfo();
   }
 
   public static final int DEFAULT_EVAL_INFO_FIELD_NUMBER = 30;
@@ -1510,51 +1394,6 @@ private static final long serialVersionUID = 0L;
     return starCount_;
   }
 
-  public static final int IMPORT_INFO_FIELD_NUMBER = 24;
-  private com.clarifai.grpc.api.ImportInfo importInfo_;
-  /**
-   * <pre>
-   * Configuration used to import model from third-party toolkits
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-   * @deprecated clarifai.api.Model.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1288
-   * @return Whether the importInfo field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasImportInfo() {
-    return importInfo_ != null;
-  }
-  /**
-   * <pre>
-   * Configuration used to import model from third-party toolkits
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-   * @deprecated clarifai.api.Model.import_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1288
-   * @return The importInfo.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
-    return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
-  }
-  /**
-   * <pre>
-   * Configuration used to import model from third-party toolkits
-   * DEPRECATED: Will be moved to model version
-   * </pre>
-   *
-   * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
-    return getImportInfo();
-  }
-
   public static final int WORKFLOW_RECOMMENDED_FIELD_NUMBER = 29;
   private com.google.protobuf.BoolValue workflowRecommended_;
   /**
@@ -1591,6 +1430,47 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getWorkflowRecommendedOrBuilder() {
     return getWorkflowRecommended();
+  }
+
+  public static final int BOOKMARK_ORIGIN_FIELD_NUMBER = 33;
+  private com.clarifai.grpc.api.BookmarkOrigin bookmarkOrigin_;
+  /**
+   * <pre>
+   * bookmark info. When set, this model is a bookmarked model of this app.
+   * Info in this field will allow you to find/access original model.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+   * @return Whether the bookmarkOrigin field is set.
+   */
+  @java.lang.Override
+  public boolean hasBookmarkOrigin() {
+    return bookmarkOrigin_ != null;
+  }
+  /**
+   * <pre>
+   * bookmark info. When set, this model is a bookmarked model of this app.
+   * Info in this field will allow you to find/access original model.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+   * @return The bookmarkOrigin.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin() {
+    return bookmarkOrigin_ == null ? com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+  }
+  /**
+   * <pre>
+   * bookmark info. When set, this model is a bookmarked model of this app.
+   * Info in this field will allow you to find/access original model.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder() {
+    return getBookmarkOrigin();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1631,12 +1511,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
     }
-    if (inputInfo_ != null) {
-      output.writeMessage(12, getInputInfo());
-    }
-    if (trainInfo_ != null) {
-      output.writeMessage(13, getTrainInfo());
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, modelTypeId_);
     }
@@ -1667,9 +1541,6 @@ private static final long serialVersionUID = 0L;
     if (starCount_ != 0) {
       output.writeInt32(23, starCount_);
     }
-    if (importInfo_ != null) {
-      output.writeMessage(24, getImportInfo());
-    }
     for (int i = 0; i < languages_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, languages_.getRaw(i));
     }
@@ -1690,6 +1561,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < checkConsents_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 32, checkConsents_.getRaw(i));
+    }
+    if (bookmarkOrigin_ != null) {
+      output.writeMessage(33, getBookmarkOrigin());
     }
     unknownFields.writeTo(output);
   }
@@ -1726,14 +1600,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
-    }
-    if (inputInfo_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getInputInfo());
-    }
-    if (trainInfo_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getTrainInfo());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, modelTypeId_);
@@ -1780,10 +1646,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(23, starCount_);
     }
-    if (importInfo_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(24, getImportInfo());
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < languages_.size(); i++) {
@@ -1818,6 +1680,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 2 * getCheckConsentsList().size();
+    }
+    if (bookmarkOrigin_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(33, getBookmarkOrigin());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1864,16 +1730,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getUserId()
         .equals(other.getUserId())) return false;
-    if (hasInputInfo() != other.hasInputInfo()) return false;
-    if (hasInputInfo()) {
-      if (!getInputInfo()
-          .equals(other.getInputInfo())) return false;
-    }
-    if (hasTrainInfo() != other.hasTrainInfo()) return false;
-    if (hasTrainInfo()) {
-      if (!getTrainInfo()
-          .equals(other.getTrainInfo())) return false;
-    }
     if (hasDefaultEvalInfo() != other.hasDefaultEvalInfo()) return false;
     if (hasDefaultEvalInfo()) {
       if (!getDefaultEvalInfo()
@@ -1916,15 +1772,15 @@ private static final long serialVersionUID = 0L;
         != other.getIsStarred()) return false;
     if (getStarCount()
         != other.getStarCount()) return false;
-    if (hasImportInfo() != other.hasImportInfo()) return false;
-    if (hasImportInfo()) {
-      if (!getImportInfo()
-          .equals(other.getImportInfo())) return false;
-    }
     if (hasWorkflowRecommended() != other.hasWorkflowRecommended()) return false;
     if (hasWorkflowRecommended()) {
       if (!getWorkflowRecommended()
           .equals(other.getWorkflowRecommended())) return false;
+    }
+    if (hasBookmarkOrigin() != other.hasBookmarkOrigin()) return false;
+    if (hasBookmarkOrigin()) {
+      if (!getBookmarkOrigin()
+          .equals(other.getBookmarkOrigin())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1963,14 +1819,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
-    if (hasInputInfo()) {
-      hash = (37 * hash) + INPUT_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getInputInfo().hashCode();
-    }
-    if (hasTrainInfo()) {
-      hash = (37 * hash) + TRAIN_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getTrainInfo().hashCode();
-    }
     if (hasDefaultEvalInfo()) {
       hash = (37 * hash) + DEFAULT_EVAL_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultEvalInfo().hashCode();
@@ -2020,13 +1868,13 @@ private static final long serialVersionUID = 0L;
         getIsStarred());
     hash = (37 * hash) + STAR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getStarCount();
-    if (hasImportInfo()) {
-      hash = (37 * hash) + IMPORT_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getImportInfo().hashCode();
-    }
     if (hasWorkflowRecommended()) {
       hash = (37 * hash) + WORKFLOW_RECOMMENDED_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflowRecommended().hashCode();
+    }
+    if (hasBookmarkOrigin()) {
+      hash = (37 * hash) + BOOKMARK_ORIGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getBookmarkOrigin().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2210,18 +2058,6 @@ private static final long serialVersionUID = 0L;
 
       userId_ = "";
 
-      if (inputInfoBuilder_ == null) {
-        inputInfo_ = null;
-      } else {
-        inputInfo_ = null;
-        inputInfoBuilder_ = null;
-      }
-      if (trainInfoBuilder_ == null) {
-        trainInfo_ = null;
-      } else {
-        trainInfo_ = null;
-        trainInfoBuilder_ = null;
-      }
       if (defaultEvalInfoBuilder_ == null) {
         defaultEvalInfo_ = null;
       } else {
@@ -2272,17 +2108,17 @@ private static final long serialVersionUID = 0L;
 
       starCount_ = 0;
 
-      if (importInfoBuilder_ == null) {
-        importInfo_ = null;
-      } else {
-        importInfo_ = null;
-        importInfoBuilder_ = null;
-      }
       if (workflowRecommendedBuilder_ == null) {
         workflowRecommended_ = null;
       } else {
         workflowRecommended_ = null;
         workflowRecommendedBuilder_ = null;
+      }
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = null;
+      } else {
+        bookmarkOrigin_ = null;
+        bookmarkOriginBuilder_ = null;
       }
       return this;
     }
@@ -2336,16 +2172,6 @@ private static final long serialVersionUID = 0L;
       }
       result.displayName_ = displayName_;
       result.userId_ = userId_;
-      if (inputInfoBuilder_ == null) {
-        result.inputInfo_ = inputInfo_;
-      } else {
-        result.inputInfo_ = inputInfoBuilder_.build();
-      }
-      if (trainInfoBuilder_ == null) {
-        result.trainInfo_ = trainInfo_;
-      } else {
-        result.trainInfo_ = trainInfoBuilder_.build();
-      }
       if (defaultEvalInfoBuilder_ == null) {
         result.defaultEvalInfo_ = defaultEvalInfo_;
       } else {
@@ -2401,15 +2227,15 @@ private static final long serialVersionUID = 0L;
       result.checkConsents_ = checkConsents_;
       result.isStarred_ = isStarred_;
       result.starCount_ = starCount_;
-      if (importInfoBuilder_ == null) {
-        result.importInfo_ = importInfo_;
-      } else {
-        result.importInfo_ = importInfoBuilder_.build();
-      }
       if (workflowRecommendedBuilder_ == null) {
         result.workflowRecommended_ = workflowRecommended_;
       } else {
         result.workflowRecommended_ = workflowRecommendedBuilder_.build();
+      }
+      if (bookmarkOriginBuilder_ == null) {
+        result.bookmarkOrigin_ = bookmarkOrigin_;
+      } else {
+        result.bookmarkOrigin_ = bookmarkOriginBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2490,12 +2316,6 @@ private static final long serialVersionUID = 0L;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
-      }
-      if (other.hasInputInfo()) {
-        mergeInputInfo(other.getInputInfo());
-      }
-      if (other.hasTrainInfo()) {
-        mergeTrainInfo(other.getTrainInfo());
       }
       if (other.hasDefaultEvalInfo()) {
         mergeDefaultEvalInfo(other.getDefaultEvalInfo());
@@ -2597,11 +2417,11 @@ private static final long serialVersionUID = 0L;
       if (other.getStarCount() != 0) {
         setStarCount(other.getStarCount());
       }
-      if (other.hasImportInfo()) {
-        mergeImportInfo(other.getImportInfo());
-      }
       if (other.hasWorkflowRecommended()) {
         mergeWorkflowRecommended(other.getWorkflowRecommended());
+      }
+      if (other.hasBookmarkOrigin()) {
+        mergeBookmarkOrigin(other.getBookmarkOrigin());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2737,7 +2557,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1215
+     *     See proto/clarifai/api/resources.proto;l=1232
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2759,7 +2579,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1215
+     *     See proto/clarifai/api/resources.proto;l=1232
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2782,7 +2602,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1215
+     *     See proto/clarifai/api/resources.proto;l=1232
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2803,7 +2623,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1215
+     *     See proto/clarifai/api/resources.proto;l=1232
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2819,7 +2639,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1215
+     *     See proto/clarifai/api/resources.proto;l=1232
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -3288,7 +3108,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1228
+     *     See proto/clarifai/api/resources.proto;l=1245
      * @return Whether the outputInfo field is set.
      */
     @java.lang.Deprecated public boolean hasOutputInfo() {
@@ -3302,7 +3122,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1228
+     *     See proto/clarifai/api/resources.proto;l=1245
      * @return The outputInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
@@ -3617,7 +3437,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1233
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @return The displayName.
      */
     @java.lang.Deprecated public java.lang.String getDisplayName() {
@@ -3639,7 +3459,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1233
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3662,7 +3482,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1233
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -3683,7 +3503,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1233
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDisplayName() {
@@ -3699,7 +3519,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1233
+     *     See proto/clarifai/api/resources.proto;l=1250
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -3809,342 +3629,6 @@ private static final long serialVersionUID = 0L;
       userId_ = value;
       onChanged();
       return this;
-    }
-
-    private com.clarifai.grpc.api.InputInfo inputInfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> inputInfoBuilder_;
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     * @deprecated clarifai.api.Model.input_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1238
-     * @return Whether the inputInfo field is set.
-     */
-    @java.lang.Deprecated public boolean hasInputInfo() {
-      return inputInfoBuilder_ != null || inputInfo_ != null;
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     * @deprecated clarifai.api.Model.input_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1238
-     * @return The inputInfo.
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.InputInfo getInputInfo() {
-      if (inputInfoBuilder_ == null) {
-        return inputInfo_ == null ? com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
-      } else {
-        return inputInfoBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setInputInfo(com.clarifai.grpc.api.InputInfo value) {
-      if (inputInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        inputInfo_ = value;
-        onChanged();
-      } else {
-        inputInfoBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setInputInfo(
-        com.clarifai.grpc.api.InputInfo.Builder builderForValue) {
-      if (inputInfoBuilder_ == null) {
-        inputInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        inputInfoBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeInputInfo(com.clarifai.grpc.api.InputInfo value) {
-      if (inputInfoBuilder_ == null) {
-        if (inputInfo_ != null) {
-          inputInfo_ =
-            com.clarifai.grpc.api.InputInfo.newBuilder(inputInfo_).mergeFrom(value).buildPartial();
-        } else {
-          inputInfo_ = value;
-        }
-        onChanged();
-      } else {
-        inputInfoBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearInputInfo() {
-      if (inputInfoBuilder_ == null) {
-        inputInfo_ = null;
-        onChanged();
-      } else {
-        inputInfo_ = null;
-        inputInfoBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.InputInfo.Builder getInputInfoBuilder() {
-      
-      onChanged();
-      return getInputInfoFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.InputInfoOrBuilder getInputInfoOrBuilder() {
-      if (inputInfoBuilder_ != null) {
-        return inputInfoBuilder_.getMessageOrBuilder();
-      } else {
-        return inputInfo_ == null ?
-            com.clarifai.grpc.api.InputInfo.getDefaultInstance() : inputInfo_;
-      }
-    }
-    /**
-     * <pre>
-     * Info about the models' input and configuration of them.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.InputInfo input_info = 12 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> 
-        getInputInfoFieldBuilder() {
-      if (inputInfoBuilder_ == null) {
-        inputInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder>(
-                getInputInfo(),
-                getParentForChildren(),
-                isClean());
-        inputInfo_ = null;
-      }
-      return inputInfoBuilder_;
-    }
-
-    private com.clarifai.grpc.api.TrainInfo trainInfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> trainInfoBuilder_;
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     * @deprecated clarifai.api.Model.train_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1241
-     * @return Whether the trainInfo field is set.
-     */
-    @java.lang.Deprecated public boolean hasTrainInfo() {
-      return trainInfoBuilder_ != null || trainInfo_ != null;
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     * @deprecated clarifai.api.Model.train_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1241
-     * @return The trainInfo.
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfo getTrainInfo() {
-      if (trainInfoBuilder_ == null) {
-        return trainInfo_ == null ? com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
-      } else {
-        return trainInfoBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
-      if (trainInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        trainInfo_ = value;
-        onChanged();
-      } else {
-        trainInfoBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setTrainInfo(
-        com.clarifai.grpc.api.TrainInfo.Builder builderForValue) {
-      if (trainInfoBuilder_ == null) {
-        trainInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        trainInfoBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeTrainInfo(com.clarifai.grpc.api.TrainInfo value) {
-      if (trainInfoBuilder_ == null) {
-        if (trainInfo_ != null) {
-          trainInfo_ =
-            com.clarifai.grpc.api.TrainInfo.newBuilder(trainInfo_).mergeFrom(value).buildPartial();
-        } else {
-          trainInfo_ = value;
-        }
-        onChanged();
-      } else {
-        trainInfoBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearTrainInfo() {
-      if (trainInfoBuilder_ == null) {
-        trainInfo_ = null;
-        onChanged();
-      } else {
-        trainInfo_ = null;
-        trainInfoBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfo.Builder getTrainInfoBuilder() {
-      
-      onChanged();
-      return getTrainInfoFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.TrainInfoOrBuilder getTrainInfoOrBuilder() {
-      if (trainInfoBuilder_ != null) {
-        return trainInfoBuilder_.getMessageOrBuilder();
-      } else {
-        return trainInfo_ == null ?
-            com.clarifai.grpc.api.TrainInfo.getDefaultInstance() : trainInfo_;
-      }
-    }
-    /**
-     * <pre>
-     * Configuration for the training process of this model.
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.TrainInfo train_info = 13 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> 
-        getTrainInfoFieldBuilder() {
-      if (trainInfoBuilder_ == null) {
-        trainInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder>(
-                getTrainInfo(),
-                getParentForChildren(),
-                isClean());
-        trainInfo_ = null;
-      }
-      return trainInfoBuilder_;
     }
 
     private com.clarifai.grpc.api.EvalInfo defaultEvalInfo_;
@@ -6104,174 +5588,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.ImportInfo importInfo_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> importInfoBuilder_;
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     * @deprecated clarifai.api.Model.import_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1288
-     * @return Whether the importInfo field is set.
-     */
-    @java.lang.Deprecated public boolean hasImportInfo() {
-      return importInfoBuilder_ != null || importInfo_ != null;
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     * @deprecated clarifai.api.Model.import_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1288
-     * @return The importInfo.
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo getImportInfo() {
-      if (importInfoBuilder_ == null) {
-        return importInfo_ == null ? com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
-      } else {
-        return importInfoBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setImportInfo(com.clarifai.grpc.api.ImportInfo value) {
-      if (importInfoBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        importInfo_ = value;
-        onChanged();
-      } else {
-        importInfoBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setImportInfo(
-        com.clarifai.grpc.api.ImportInfo.Builder builderForValue) {
-      if (importInfoBuilder_ == null) {
-        importInfo_ = builderForValue.build();
-        onChanged();
-      } else {
-        importInfoBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeImportInfo(com.clarifai.grpc.api.ImportInfo value) {
-      if (importInfoBuilder_ == null) {
-        if (importInfo_ != null) {
-          importInfo_ =
-            com.clarifai.grpc.api.ImportInfo.newBuilder(importInfo_).mergeFrom(value).buildPartial();
-        } else {
-          importInfo_ = value;
-        }
-        onChanged();
-      } else {
-        importInfoBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearImportInfo() {
-      if (importInfoBuilder_ == null) {
-        importInfo_ = null;
-        onChanged();
-      } else {
-        importInfo_ = null;
-        importInfoBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfo.Builder getImportInfoBuilder() {
-      
-      onChanged();
-      return getImportInfoFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder() {
-      if (importInfoBuilder_ != null) {
-        return importInfoBuilder_.getMessageOrBuilder();
-      } else {
-        return importInfo_ == null ?
-            com.clarifai.grpc.api.ImportInfo.getDefaultInstance() : importInfo_;
-      }
-    }
-    /**
-     * <pre>
-     * Configuration used to import model from third-party toolkits
-     * DEPRECATED: Will be moved to model version
-     * </pre>
-     *
-     * <code>.clarifai.api.ImportInfo import_info = 24 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder> 
-        getImportInfoFieldBuilder() {
-      if (importInfoBuilder_ == null) {
-        importInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.ImportInfo, com.clarifai.grpc.api.ImportInfo.Builder, com.clarifai.grpc.api.ImportInfoOrBuilder>(
-                getImportInfo(),
-                getParentForChildren(),
-                isClean());
-        importInfo_ = null;
-      }
-      return importInfoBuilder_;
-    }
-
     private com.google.protobuf.BoolValue workflowRecommended_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> workflowRecommendedBuilder_;
@@ -6425,6 +5741,170 @@ private static final long serialVersionUID = 0L;
         workflowRecommended_ = null;
       }
       return workflowRecommendedBuilder_;
+    }
+
+    private com.clarifai.grpc.api.BookmarkOrigin bookmarkOrigin_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder> bookmarkOriginBuilder_;
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     * @return Whether the bookmarkOrigin field is set.
+     */
+    public boolean hasBookmarkOrigin() {
+      return bookmarkOriginBuilder_ != null || bookmarkOrigin_ != null;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     * @return The bookmarkOrigin.
+     */
+    public com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin() {
+      if (bookmarkOriginBuilder_ == null) {
+        return bookmarkOrigin_ == null ? com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+      } else {
+        return bookmarkOriginBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    public Builder setBookmarkOrigin(com.clarifai.grpc.api.BookmarkOrigin value) {
+      if (bookmarkOriginBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bookmarkOrigin_ = value;
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    public Builder setBookmarkOrigin(
+        com.clarifai.grpc.api.BookmarkOrigin.Builder builderForValue) {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = builderForValue.build();
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    public Builder mergeBookmarkOrigin(com.clarifai.grpc.api.BookmarkOrigin value) {
+      if (bookmarkOriginBuilder_ == null) {
+        if (bookmarkOrigin_ != null) {
+          bookmarkOrigin_ =
+            com.clarifai.grpc.api.BookmarkOrigin.newBuilder(bookmarkOrigin_).mergeFrom(value).buildPartial();
+        } else {
+          bookmarkOrigin_ = value;
+        }
+        onChanged();
+      } else {
+        bookmarkOriginBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    public Builder clearBookmarkOrigin() {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOrigin_ = null;
+        onChanged();
+      } else {
+        bookmarkOrigin_ = null;
+        bookmarkOriginBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    public com.clarifai.grpc.api.BookmarkOrigin.Builder getBookmarkOriginBuilder() {
+      
+      onChanged();
+      return getBookmarkOriginFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    public com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder() {
+      if (bookmarkOriginBuilder_ != null) {
+        return bookmarkOriginBuilder_.getMessageOrBuilder();
+      } else {
+        return bookmarkOrigin_ == null ?
+            com.clarifai.grpc.api.BookmarkOrigin.getDefaultInstance() : bookmarkOrigin_;
+      }
+    }
+    /**
+     * <pre>
+     * bookmark info. When set, this model is a bookmarked model of this app.
+     * Info in this field will allow you to find/access original model.
+     * </pre>
+     *
+     * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 33;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder> 
+        getBookmarkOriginFieldBuilder() {
+      if (bookmarkOriginBuilder_ == null) {
+        bookmarkOriginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.BookmarkOrigin, com.clarifai.grpc.api.BookmarkOrigin.Builder, com.clarifai.grpc.api.BookmarkOriginOrBuilder>(
+                getBookmarkOrigin(),
+                getParentForChildren(),
+                isClean());
+        bookmarkOrigin_ = null;
+      }
+      return bookmarkOriginBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

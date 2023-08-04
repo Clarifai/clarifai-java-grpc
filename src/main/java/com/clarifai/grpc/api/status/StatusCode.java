@@ -778,6 +778,30 @@ public enum StatusCode
   BULK_OPERATION_UNEXPECTED_ERROR(25406),
   /**
    * <pre>
+   * Runner related codes 256xx
+   * </pre>
+   *
+   * <code>RUNNER_DOES_NOT_EXIST = 25600;</code>
+   */
+  RUNNER_DOES_NOT_EXIST(25600),
+  /**
+   * <code>RUNNER_PERMISSION_DENIED = 25601;</code>
+   */
+  RUNNER_PERMISSION_DENIED(25601),
+  /**
+   * <code>RUNNER_INVALID_ARGUMENT = 25602;</code>
+   */
+  RUNNER_INVALID_ARGUMENT(25602),
+  /**
+   * <code>RUNNER_INVALID_REQUEST = 25603;</code>
+   */
+  RUNNER_INVALID_REQUEST(25603),
+  /**
+   * <code>RUNNER_NEEDS_RETRY = 25604;</code>
+   */
+  RUNNER_NEEDS_RETRY(25604),
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -1428,12 +1452,20 @@ public enum StatusCode
   TASK_WONT_DO(54003),
   /**
    * <pre>
-   * An error occurred during add-task-annotations pipeline.
+   * An error occurred during add-task-annotations or add-auto-annotations pipeline.
    * </pre>
    *
-   * <code>TASK_ADD_ANNOTATIONS_FAILURE = 54005;</code>
+   * <code>TASK_FAILED = 54005;</code>
    */
-  TASK_ADD_ANNOTATIONS_FAILURE(54005),
+  TASK_FAILED(54005),
+  /**
+   * <pre>
+   * When an Auto Annotation task job has finished processing its last batch and is waiting for more dataset assets.
+   * </pre>
+   *
+   * <code>TASK_IDLE = 54006;</code>
+   */
+  TASK_IDLE(54006),
   /**
    * <pre>
    * The task operation is in conflict with the current state of the server.
@@ -2617,6 +2649,30 @@ public enum StatusCode
   public static final int BULK_OPERATION_UNEXPECTED_ERROR_VALUE = 25406;
   /**
    * <pre>
+   * Runner related codes 256xx
+   * </pre>
+   *
+   * <code>RUNNER_DOES_NOT_EXIST = 25600;</code>
+   */
+  public static final int RUNNER_DOES_NOT_EXIST_VALUE = 25600;
+  /**
+   * <code>RUNNER_PERMISSION_DENIED = 25601;</code>
+   */
+  public static final int RUNNER_PERMISSION_DENIED_VALUE = 25601;
+  /**
+   * <code>RUNNER_INVALID_ARGUMENT = 25602;</code>
+   */
+  public static final int RUNNER_INVALID_ARGUMENT_VALUE = 25602;
+  /**
+   * <code>RUNNER_INVALID_REQUEST = 25603;</code>
+   */
+  public static final int RUNNER_INVALID_REQUEST_VALUE = 25603;
+  /**
+   * <code>RUNNER_NEEDS_RETRY = 25604;</code>
+   */
+  public static final int RUNNER_NEEDS_RETRY_VALUE = 25604;
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -3266,12 +3322,20 @@ public enum StatusCode
   public static final int TASK_WONT_DO_VALUE = 54003;
   /**
    * <pre>
-   * An error occurred during add-task-annotations pipeline.
+   * An error occurred during add-task-annotations or add-auto-annotations pipeline.
    * </pre>
    *
-   * <code>TASK_ADD_ANNOTATIONS_FAILURE = 54005;</code>
+   * <code>TASK_FAILED = 54005;</code>
    */
-  public static final int TASK_ADD_ANNOTATIONS_FAILURE_VALUE = 54005;
+  public static final int TASK_FAILED_VALUE = 54005;
+  /**
+   * <pre>
+   * When an Auto Annotation task job has finished processing its last batch and is waiting for more dataset assets.
+   * </pre>
+   *
+   * <code>TASK_IDLE = 54006;</code>
+   */
+  public static final int TASK_IDLE_VALUE = 54006;
   /**
    * <pre>
    * The task operation is in conflict with the current state of the server.
@@ -3843,6 +3907,11 @@ public enum StatusCode
       case 25404: return BULK_OPERATION_INVALID_REQUEST;
       case 25405: return BULK_OPERATION_CANCELLED;
       case 25406: return BULK_OPERATION_UNEXPECTED_ERROR;
+      case 25600: return RUNNER_DOES_NOT_EXIST;
+      case 25601: return RUNNER_PERMISSION_DENIED;
+      case 25602: return RUNNER_INVALID_ARGUMENT;
+      case 25603: return RUNNER_INVALID_REQUEST;
+      case 25604: return RUNNER_NEEDS_RETRY;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;
@@ -3980,7 +4049,8 @@ public enum StatusCode
       case 54001: return TASK_IN_PROGRESS;
       case 54002: return TASK_DONE;
       case 54003: return TASK_WONT_DO;
-      case 54005: return TASK_ADD_ANNOTATIONS_FAILURE;
+      case 54005: return TASK_FAILED;
+      case 54006: return TASK_IDLE;
       case 54100: return TASK_CONFLICT;
       case 54101: return TASK_NOT_IMPLEMENTED;
       case 54102: return TASK_MISSING;

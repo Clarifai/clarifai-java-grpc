@@ -417,4 +417,34 @@ public interface WorkflowOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCheckConsentsBytes(int index);
+
+  /**
+   * <pre>
+   * bookmark info. When set, this workflow is a bookmarked workflow of this app.
+   * Info in this field will allow you to find/access original workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
+   * @return Whether the bookmarkOrigin field is set.
+   */
+  boolean hasBookmarkOrigin();
+  /**
+   * <pre>
+   * bookmark info. When set, this workflow is a bookmarked workflow of this app.
+   * Info in this field will allow you to find/access original workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
+   * @return The bookmarkOrigin.
+   */
+  com.clarifai.grpc.api.BookmarkOrigin getBookmarkOrigin();
+  /**
+   * <pre>
+   * bookmark info. When set, this workflow is a bookmarked workflow of this app.
+   * Info in this field will allow you to find/access original workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 16;</code>
+   */
+  com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder();
 }
