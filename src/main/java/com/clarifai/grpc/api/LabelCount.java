@@ -64,6 +64,19 @@ private static final long serialVersionUID = 0L;
             count_ = input.readUInt32();
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.Concept.Builder subBuilder = null;
+            if (concept_ != null) {
+              subBuilder = concept_.toBuilder();
+            }
+            concept_ = input.readMessage(com.clarifai.grpc.api.Concept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(concept_);
+              concept_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -101,16 +114,13 @@ private static final long serialVersionUID = 0L;
   public static final int CONCEPT_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object conceptName_;
   /**
-   * <pre>
-   * FIXME: should move to Concept object and return the whole thing (including name and id)
-   * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-   * </pre>
-   *
-   * <code>string concept_name = 1;</code>
+   * <code>string concept_name = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1769
    * @return The conceptName.
    */
   @java.lang.Override
-  public java.lang.String getConceptName() {
+  @java.lang.Deprecated public java.lang.String getConceptName() {
     java.lang.Object ref = conceptName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -123,16 +133,13 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   * FIXME: should move to Concept object and return the whole thing (including name and id)
-   * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-   * </pre>
-   *
-   * <code>string concept_name = 1;</code>
+   * <code>string concept_name = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1769
    * @return The bytes for conceptName.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getConceptNameBytes() {
     java.lang.Object ref = conceptName_;
     if (ref instanceof java.lang.String) {
@@ -157,6 +164,32 @@ private static final long serialVersionUID = 0L;
     return count_;
   }
 
+  public static final int CONCEPT_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.Concept concept_;
+  /**
+   * <code>.clarifai.api.Concept concept = 3;</code>
+   * @return Whether the concept field is set.
+   */
+  @java.lang.Override
+  public boolean hasConcept() {
+    return concept_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Concept concept = 3;</code>
+   * @return The concept.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Concept getConcept() {
+    return concept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : concept_;
+  }
+  /**
+   * <code>.clarifai.api.Concept concept = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ConceptOrBuilder getConceptOrBuilder() {
+    return getConcept();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -177,6 +210,9 @@ private static final long serialVersionUID = 0L;
     if (count_ != 0) {
       output.writeUInt32(2, count_);
     }
+    if (concept_ != null) {
+      output.writeMessage(3, getConcept());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -192,6 +228,10 @@ private static final long serialVersionUID = 0L;
     if (count_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, count_);
+    }
+    if (concept_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getConcept());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,6 +252,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConceptName())) return false;
     if (getCount()
         != other.getCount()) return false;
+    if (hasConcept() != other.hasConcept()) return false;
+    if (hasConcept()) {
+      if (!getConcept()
+          .equals(other.getConcept())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -227,6 +272,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getConceptName().hashCode();
     hash = (37 * hash) + COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getCount();
+    if (hasConcept()) {
+      hash = (37 * hash) + CONCEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getConcept().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -368,6 +417,12 @@ private static final long serialVersionUID = 0L;
 
       count_ = 0;
 
+      if (conceptBuilder_ == null) {
+        concept_ = null;
+      } else {
+        concept_ = null;
+        conceptBuilder_ = null;
+      }
       return this;
     }
 
@@ -396,6 +451,11 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.LabelCount result = new com.clarifai.grpc.api.LabelCount(this);
       result.conceptName_ = conceptName_;
       result.count_ = count_;
+      if (conceptBuilder_ == null) {
+        result.concept_ = concept_;
+      } else {
+        result.concept_ = conceptBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -451,6 +511,9 @@ private static final long serialVersionUID = 0L;
       if (other.getCount() != 0) {
         setCount(other.getCount());
       }
+      if (other.hasConcept()) {
+        mergeConcept(other.getConcept());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -482,15 +545,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object conceptName_ = "";
     /**
-     * <pre>
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     * </pre>
-     *
-     * <code>string concept_name = 1;</code>
+     * <code>string concept_name = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1769
      * @return The conceptName.
      */
-    public java.lang.String getConceptName() {
+    @java.lang.Deprecated public java.lang.String getConceptName() {
       java.lang.Object ref = conceptName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -503,15 +563,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     * </pre>
-     *
-     * <code>string concept_name = 1;</code>
+     * <code>string concept_name = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1769
      * @return The bytes for conceptName.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getConceptNameBytes() {
       java.lang.Object ref = conceptName_;
       if (ref instanceof String) {
@@ -525,16 +582,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     * </pre>
-     *
-     * <code>string concept_name = 1;</code>
+     * <code>string concept_name = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1769
      * @param value The conceptName to set.
      * @return This builder for chaining.
      */
-    public Builder setConceptName(
+    @java.lang.Deprecated public Builder setConceptName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -545,31 +599,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     * </pre>
-     *
-     * <code>string concept_name = 1;</code>
+     * <code>string concept_name = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1769
      * @return This builder for chaining.
      */
-    public Builder clearConceptName() {
+    @java.lang.Deprecated public Builder clearConceptName() {
       
       conceptName_ = getDefaultInstance().getConceptName();
       onChanged();
       return this;
     }
     /**
-     * <pre>
-     * FIXME: should move to Concept object and return the whole thing (including name and id)
-     * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-     * </pre>
-     *
-     * <code>string concept_name = 1;</code>
+     * <code>string concept_name = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1769
      * @param value The bytes for conceptName to set.
      * @return This builder for chaining.
      */
-    public Builder setConceptNameBytes(
+    @java.lang.Deprecated public Builder setConceptNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -610,6 +658,125 @@ private static final long serialVersionUID = 0L;
       count_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Concept concept_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> conceptBuilder_;
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     * @return Whether the concept field is set.
+     */
+    public boolean hasConcept() {
+      return conceptBuilder_ != null || concept_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     * @return The concept.
+     */
+    public com.clarifai.grpc.api.Concept getConcept() {
+      if (conceptBuilder_ == null) {
+        return concept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : concept_;
+      } else {
+        return conceptBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    public Builder setConcept(com.clarifai.grpc.api.Concept value) {
+      if (conceptBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        concept_ = value;
+        onChanged();
+      } else {
+        conceptBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    public Builder setConcept(
+        com.clarifai.grpc.api.Concept.Builder builderForValue) {
+      if (conceptBuilder_ == null) {
+        concept_ = builderForValue.build();
+        onChanged();
+      } else {
+        conceptBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    public Builder mergeConcept(com.clarifai.grpc.api.Concept value) {
+      if (conceptBuilder_ == null) {
+        if (concept_ != null) {
+          concept_ =
+            com.clarifai.grpc.api.Concept.newBuilder(concept_).mergeFrom(value).buildPartial();
+        } else {
+          concept_ = value;
+        }
+        onChanged();
+      } else {
+        conceptBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    public Builder clearConcept() {
+      if (conceptBuilder_ == null) {
+        concept_ = null;
+        onChanged();
+      } else {
+        concept_ = null;
+        conceptBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    public com.clarifai.grpc.api.Concept.Builder getConceptBuilder() {
+      
+      onChanged();
+      return getConceptFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    public com.clarifai.grpc.api.ConceptOrBuilder getConceptOrBuilder() {
+      if (conceptBuilder_ != null) {
+        return conceptBuilder_.getMessageOrBuilder();
+      } else {
+        return concept_ == null ?
+            com.clarifai.grpc.api.Concept.getDefaultInstance() : concept_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Concept concept = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> 
+        getConceptFieldBuilder() {
+      if (conceptBuilder_ == null) {
+        conceptBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder>(
+                getConcept(),
+                getParentForChildren(),
+                isClean());
+        concept_ = null;
+      }
+      return conceptBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
