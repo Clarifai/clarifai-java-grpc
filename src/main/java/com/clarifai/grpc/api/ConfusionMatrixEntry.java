@@ -71,6 +71,32 @@ private static final long serialVersionUID = 0L;
             value_ = input.readFloat();
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.Concept.Builder subBuilder = null;
+            if (predictedConcept_ != null) {
+              subBuilder = predictedConcept_.toBuilder();
+            }
+            predictedConcept_ = input.readMessage(com.clarifai.grpc.api.Concept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(predictedConcept_);
+              predictedConcept_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 50: {
+            com.clarifai.grpc.api.Concept.Builder subBuilder = null;
+            if (actualConcept_ != null) {
+              subBuilder = actualConcept_.toBuilder();
+            }
+            actualConcept_ = input.readMessage(com.clarifai.grpc.api.Concept.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(actualConcept_);
+              actualConcept_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -192,6 +218,58 @@ private static final long serialVersionUID = 0L;
     return value_;
   }
 
+  public static final int PREDICTED_CONCEPT_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.Concept predictedConcept_;
+  /**
+   * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+   * @return Whether the predictedConcept field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredictedConcept() {
+    return predictedConcept_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+   * @return The predictedConcept.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Concept getPredictedConcept() {
+    return predictedConcept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : predictedConcept_;
+  }
+  /**
+   * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ConceptOrBuilder getPredictedConceptOrBuilder() {
+    return getPredictedConcept();
+  }
+
+  public static final int ACTUAL_CONCEPT_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.Concept actualConcept_;
+  /**
+   * <code>.clarifai.api.Concept actual_concept = 6;</code>
+   * @return Whether the actualConcept field is set.
+   */
+  @java.lang.Override
+  public boolean hasActualConcept() {
+    return actualConcept_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Concept actual_concept = 6;</code>
+   * @return The actualConcept.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Concept getActualConcept() {
+    return actualConcept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : actualConcept_;
+  }
+  /**
+   * <code>.clarifai.api.Concept actual_concept = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ConceptOrBuilder getActualConceptOrBuilder() {
+    return getActualConcept();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -215,6 +293,12 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       output.writeFloat(4, value_);
     }
+    if (predictedConcept_ != null) {
+      output.writeMessage(5, getPredictedConcept());
+    }
+    if (actualConcept_ != null) {
+      output.writeMessage(6, getActualConcept());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -233,6 +317,14 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(4, value_);
+    }
+    if (predictedConcept_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getPredictedConcept());
+    }
+    if (actualConcept_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getActualConcept());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -256,6 +348,16 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getValue())
         != java.lang.Float.floatToIntBits(
             other.getValue())) return false;
+    if (hasPredictedConcept() != other.hasPredictedConcept()) return false;
+    if (hasPredictedConcept()) {
+      if (!getPredictedConcept()
+          .equals(other.getPredictedConcept())) return false;
+    }
+    if (hasActualConcept() != other.hasActualConcept()) return false;
+    if (hasActualConcept()) {
+      if (!getActualConcept()
+          .equals(other.getActualConcept())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -274,6 +376,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getValue());
+    if (hasPredictedConcept()) {
+      hash = (37 * hash) + PREDICTED_CONCEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictedConcept().hashCode();
+    }
+    if (hasActualConcept()) {
+      hash = (37 * hash) + ACTUAL_CONCEPT_FIELD_NUMBER;
+      hash = (53 * hash) + getActualConcept().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -417,6 +527,18 @@ private static final long serialVersionUID = 0L;
 
       value_ = 0F;
 
+      if (predictedConceptBuilder_ == null) {
+        predictedConcept_ = null;
+      } else {
+        predictedConcept_ = null;
+        predictedConceptBuilder_ = null;
+      }
+      if (actualConceptBuilder_ == null) {
+        actualConcept_ = null;
+      } else {
+        actualConcept_ = null;
+        actualConceptBuilder_ = null;
+      }
       return this;
     }
 
@@ -446,6 +568,16 @@ private static final long serialVersionUID = 0L;
       result.predicted_ = predicted_;
       result.actual_ = actual_;
       result.value_ = value_;
+      if (predictedConceptBuilder_ == null) {
+        result.predictedConcept_ = predictedConcept_;
+      } else {
+        result.predictedConcept_ = predictedConceptBuilder_.build();
+      }
+      if (actualConceptBuilder_ == null) {
+        result.actualConcept_ = actualConcept_;
+      } else {
+        result.actualConcept_ = actualConceptBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -504,6 +636,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getValue() != 0F) {
         setValue(other.getValue());
+      }
+      if (other.hasPredictedConcept()) {
+        mergePredictedConcept(other.getPredictedConcept());
+      }
+      if (other.hasActualConcept()) {
+        mergeActualConcept(other.getActualConcept());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -715,6 +853,244 @@ private static final long serialVersionUID = 0L;
       value_ = 0F;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Concept predictedConcept_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> predictedConceptBuilder_;
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     * @return Whether the predictedConcept field is set.
+     */
+    public boolean hasPredictedConcept() {
+      return predictedConceptBuilder_ != null || predictedConcept_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     * @return The predictedConcept.
+     */
+    public com.clarifai.grpc.api.Concept getPredictedConcept() {
+      if (predictedConceptBuilder_ == null) {
+        return predictedConcept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : predictedConcept_;
+      } else {
+        return predictedConceptBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    public Builder setPredictedConcept(com.clarifai.grpc.api.Concept value) {
+      if (predictedConceptBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predictedConcept_ = value;
+        onChanged();
+      } else {
+        predictedConceptBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    public Builder setPredictedConcept(
+        com.clarifai.grpc.api.Concept.Builder builderForValue) {
+      if (predictedConceptBuilder_ == null) {
+        predictedConcept_ = builderForValue.build();
+        onChanged();
+      } else {
+        predictedConceptBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    public Builder mergePredictedConcept(com.clarifai.grpc.api.Concept value) {
+      if (predictedConceptBuilder_ == null) {
+        if (predictedConcept_ != null) {
+          predictedConcept_ =
+            com.clarifai.grpc.api.Concept.newBuilder(predictedConcept_).mergeFrom(value).buildPartial();
+        } else {
+          predictedConcept_ = value;
+        }
+        onChanged();
+      } else {
+        predictedConceptBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    public Builder clearPredictedConcept() {
+      if (predictedConceptBuilder_ == null) {
+        predictedConcept_ = null;
+        onChanged();
+      } else {
+        predictedConcept_ = null;
+        predictedConceptBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    public com.clarifai.grpc.api.Concept.Builder getPredictedConceptBuilder() {
+      
+      onChanged();
+      return getPredictedConceptFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    public com.clarifai.grpc.api.ConceptOrBuilder getPredictedConceptOrBuilder() {
+      if (predictedConceptBuilder_ != null) {
+        return predictedConceptBuilder_.getMessageOrBuilder();
+      } else {
+        return predictedConcept_ == null ?
+            com.clarifai.grpc.api.Concept.getDefaultInstance() : predictedConcept_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> 
+        getPredictedConceptFieldBuilder() {
+      if (predictedConceptBuilder_ == null) {
+        predictedConceptBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder>(
+                getPredictedConcept(),
+                getParentForChildren(),
+                isClean());
+        predictedConcept_ = null;
+      }
+      return predictedConceptBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Concept actualConcept_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> actualConceptBuilder_;
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     * @return Whether the actualConcept field is set.
+     */
+    public boolean hasActualConcept() {
+      return actualConceptBuilder_ != null || actualConcept_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     * @return The actualConcept.
+     */
+    public com.clarifai.grpc.api.Concept getActualConcept() {
+      if (actualConceptBuilder_ == null) {
+        return actualConcept_ == null ? com.clarifai.grpc.api.Concept.getDefaultInstance() : actualConcept_;
+      } else {
+        return actualConceptBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    public Builder setActualConcept(com.clarifai.grpc.api.Concept value) {
+      if (actualConceptBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actualConcept_ = value;
+        onChanged();
+      } else {
+        actualConceptBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    public Builder setActualConcept(
+        com.clarifai.grpc.api.Concept.Builder builderForValue) {
+      if (actualConceptBuilder_ == null) {
+        actualConcept_ = builderForValue.build();
+        onChanged();
+      } else {
+        actualConceptBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    public Builder mergeActualConcept(com.clarifai.grpc.api.Concept value) {
+      if (actualConceptBuilder_ == null) {
+        if (actualConcept_ != null) {
+          actualConcept_ =
+            com.clarifai.grpc.api.Concept.newBuilder(actualConcept_).mergeFrom(value).buildPartial();
+        } else {
+          actualConcept_ = value;
+        }
+        onChanged();
+      } else {
+        actualConceptBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    public Builder clearActualConcept() {
+      if (actualConceptBuilder_ == null) {
+        actualConcept_ = null;
+        onChanged();
+      } else {
+        actualConcept_ = null;
+        actualConceptBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    public com.clarifai.grpc.api.Concept.Builder getActualConceptBuilder() {
+      
+      onChanged();
+      return getActualConceptFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    public com.clarifai.grpc.api.ConceptOrBuilder getActualConceptOrBuilder() {
+      if (actualConceptBuilder_ != null) {
+        return actualConceptBuilder_.getMessageOrBuilder();
+      } else {
+        return actualConcept_ == null ?
+            com.clarifai.grpc.api.Concept.getDefaultInstance() : actualConcept_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Concept actual_concept = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder> 
+        getActualConceptFieldBuilder() {
+      if (actualConceptBuilder_ == null) {
+        actualConceptBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Concept, com.clarifai.grpc.api.Concept.Builder, com.clarifai.grpc.api.ConceptOrBuilder>(
+                getActualConcept(),
+                getParentForChildren(),
+                isClean());
+        actualConcept_ = null;
+      }
+      return actualConceptBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

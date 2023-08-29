@@ -187,5 +187,181 @@ public interface ListEvaluationsRequestOrBuilder extends
    */
   boolean getSortByRecall();
 
+  /**
+   * <code>bool sort_by_model_id = 16;</code>
+   * @return Whether the sortByModelId field is set.
+   */
+  boolean hasSortByModelId();
+  /**
+   * <code>bool sort_by_model_id = 16;</code>
+   * @return The sortByModelId.
+   */
+  boolean getSortByModelId();
+
+  /**
+   * <code>bool sort_by_eval_dataset_id = 17;</code>
+   * @return Whether the sortByEvalDatasetId field is set.
+   */
+  boolean hasSortByEvalDatasetId();
+  /**
+   * <code>bool sort_by_eval_dataset_id = 17;</code>
+   * @return The sortByEvalDatasetId.
+   */
+  boolean getSortByEvalDatasetId();
+
+  /**
+   * <code>bool sort_by_train_dataset_id = 18;</code>
+   * @return Whether the sortByTrainDatasetId field is set.
+   */
+  boolean hasSortByTrainDatasetId();
+  /**
+   * <code>bool sort_by_train_dataset_id = 18;</code>
+   * @return The sortByTrainDatasetId.
+   */
+  boolean getSortByTrainDatasetId();
+
+  /**
+   * <pre>
+   * Filter on model type id
+   * </pre>
+   *
+   * <code>string model_type_id = 12;</code>
+   * @return The modelTypeId.
+   */
+  java.lang.String getModelTypeId();
+  /**
+   * <pre>
+   * Filter on model type id
+   * </pre>
+   *
+   * <code>string model_type_id = 12;</code>
+   * @return The bytes for modelTypeId.
+   */
+  com.google.protobuf.ByteString
+      getModelTypeIdBytes();
+
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @return A list containing the evalDatasetIds.
+   */
+  java.util.List<java.lang.String>
+      getEvalDatasetIdsList();
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @return The count of evalDatasetIds.
+   */
+  int getEvalDatasetIdsCount();
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @param index The index of the element to return.
+   * @return The evalDatasetIds at the given index.
+   */
+  java.lang.String getEvalDatasetIds(int index);
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the evalDatasetIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEvalDatasetIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @return A list containing the trainDatasetIds.
+   */
+  java.util.List<java.lang.String>
+      getTrainDatasetIdsList();
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @return The count of trainDatasetIds.
+   */
+  int getTrainDatasetIdsCount();
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @param index The index of the element to return.
+   * @return The trainDatasetIds at the given index.
+   */
+  java.lang.String getTrainDatasetIds(int index);
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the trainDatasetIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTrainDatasetIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @return A list containing the conceptIds.
+   */
+  java.util.List<java.lang.String>
+      getConceptIdsList();
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @return The count of conceptIds.
+   */
+  int getConceptIdsCount();
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @param index The index of the element to return.
+   * @return The conceptIds at the given index.
+   */
+  java.lang.String getConceptIds(int index);
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the conceptIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getConceptIdsBytes(int index);
+
   public com.clarifai.grpc.api.ListEvaluationsRequest.SortByCase getSortByCase();
 }

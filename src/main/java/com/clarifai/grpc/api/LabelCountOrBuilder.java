@@ -8,25 +8,19 @@ public interface LabelCountOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <pre>
-   * FIXME: should move to Concept object and return the whole thing (including name and id)
-   * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-   * </pre>
-   *
-   * <code>string concept_name = 1;</code>
+   * <code>string concept_name = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1769
    * @return The conceptName.
    */
-  java.lang.String getConceptName();
+  @java.lang.Deprecated java.lang.String getConceptName();
   /**
-   * <pre>
-   * FIXME: should move to Concept object and return the whole thing (including name and id)
-   * otherwise if two concepts have same name then you won't tell them apart in confusion matrix.
-   * </pre>
-   *
-   * <code>string concept_name = 1;</code>
+   * <code>string concept_name = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.LabelCount.concept_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1769
    * @return The bytes for conceptName.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getConceptNameBytes();
 
   /**
@@ -34,4 +28,19 @@ public interface LabelCountOrBuilder extends
    * @return The count.
    */
   int getCount();
+
+  /**
+   * <code>.clarifai.api.Concept concept = 3;</code>
+   * @return Whether the concept field is set.
+   */
+  boolean hasConcept();
+  /**
+   * <code>.clarifai.api.Concept concept = 3;</code>
+   * @return The concept.
+   */
+  com.clarifai.grpc.api.Concept getConcept();
+  /**
+   * <code>.clarifai.api.Concept concept = 3;</code>
+   */
+  com.clarifai.grpc.api.ConceptOrBuilder getConceptOrBuilder();
 }

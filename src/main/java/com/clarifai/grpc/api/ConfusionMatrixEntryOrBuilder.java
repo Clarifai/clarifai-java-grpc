@@ -36,4 +36,34 @@ public interface ConfusionMatrixEntryOrBuilder extends
    * @return The value.
    */
   float getValue();
+
+  /**
+   * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+   * @return Whether the predictedConcept field is set.
+   */
+  boolean hasPredictedConcept();
+  /**
+   * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+   * @return The predictedConcept.
+   */
+  com.clarifai.grpc.api.Concept getPredictedConcept();
+  /**
+   * <code>.clarifai.api.Concept predicted_concept = 5;</code>
+   */
+  com.clarifai.grpc.api.ConceptOrBuilder getPredictedConceptOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Concept actual_concept = 6;</code>
+   * @return Whether the actualConcept field is set.
+   */
+  boolean hasActualConcept();
+  /**
+   * <code>.clarifai.api.Concept actual_concept = 6;</code>
+   * @return The actualConcept.
+   */
+  com.clarifai.grpc.api.Concept getActualConcept();
+  /**
+   * <code>.clarifai.api.Concept actual_concept = 6;</code>
+   */
+  com.clarifai.grpc.api.ConceptOrBuilder getActualConceptOrBuilder();
 }

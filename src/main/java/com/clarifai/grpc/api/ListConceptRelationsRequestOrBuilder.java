@@ -42,11 +42,11 @@ public interface ListConceptRelationsRequestOrBuilder extends
    * with the predicate acting on the subject and not the inverse like is done when providing a
    * concept_id so that we can return a reliable page size always.
    * When providing a concept_id, if a hyponym is present in the DB such as:
-   * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+   * 'honey' (subject), 'hyponym' (predicate for "is a kind of"), 'food' (object)
    * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
    * object.
    * But you can also list the concept relations for 'food' and it will return the same hyponym
-   * relationship with 'honey' as subject and 'food' as predicate.
+   * relationship with 'honey' as object and 'hypernym' as predicate.
    * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
    * when listing the relations.
    * </pre>
@@ -63,11 +63,11 @@ public interface ListConceptRelationsRequestOrBuilder extends
    * with the predicate acting on the subject and not the inverse like is done when providing a
    * concept_id so that we can return a reliable page size always.
    * When providing a concept_id, if a hyponym is present in the DB such as:
-   * 'honey' (subject), 'hyponym' (predict for "is a kind of"), 'food' (object)
+   * 'honey' (subject), 'hyponym' (predicate for "is a kind of"), 'food' (object)
    * then you can list the concept relations for 'honey' and get hyponym predicate with 'food'
    * object.
    * But you can also list the concept relations for 'food' and it will return the same hyponym
-   * relationship with 'honey' as subject and 'food' as predicate.
+   * relationship with 'honey' as object and 'hypernym' as predicate.
    * Synonyms by nature are symmetrical relationships so either side can be the concept_id (subject)
    * when listing the relations.
    * </pre>
@@ -80,10 +80,14 @@ public interface ListConceptRelationsRequestOrBuilder extends
 
   /**
    * <pre>
-   * This is part of the url so we can extend to multiple link types in the future.
+   * If predicate is provided then only list relations with that predicate.
+   * Note that if no subject is set in concept_id and predicate is set to
+   * 'hypernym', then it will return any stored hyponyms as hypernyms with
+   * just the subject and object swapped since they are reversed relations.
    * Valid predicates are:
-   * 'hypernyms'
-   * 'hyponyms'
+   * - 'hypernym'
+   * - 'hyponym'
+   * - 'synonym'
    * </pre>
    *
    * <code>string predicate = 3;</code>
@@ -92,10 +96,14 @@ public interface ListConceptRelationsRequestOrBuilder extends
   java.lang.String getPredicate();
   /**
    * <pre>
-   * This is part of the url so we can extend to multiple link types in the future.
+   * If predicate is provided then only list relations with that predicate.
+   * Note that if no subject is set in concept_id and predicate is set to
+   * 'hypernym', then it will return any stored hyponyms as hypernyms with
+   * just the subject and object swapped since they are reversed relations.
    * Valid predicates are:
-   * 'hypernyms'
-   * 'hyponyms'
+   * - 'hypernym'
+   * - 'hyponym'
+   * - 'synonym'
    * </pre>
    *
    * <code>string predicate = 3;</code>

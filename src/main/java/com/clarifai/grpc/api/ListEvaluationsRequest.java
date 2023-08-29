@@ -16,6 +16,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListEvaluationsRequest() {
+    modelTypeId_ = "";
+    evalDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    trainDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -38,6 +42,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -111,6 +116,54 @@ private static final long serialVersionUID = 0L;
             sortByCase_ = 11;
             break;
           }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            modelTypeId_ = s;
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              evalDatasetIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            evalDatasetIds_.add(s);
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              trainDatasetIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            trainDatasetIds_.add(s);
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              conceptIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            conceptIds_.add(s);
+            break;
+          }
+          case 128: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 16;
+            break;
+          }
+          case 136: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 17;
+            break;
+          }
+          case 144: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 18;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,6 +181,15 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        evalDatasetIds_ = evalDatasetIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        trainDatasetIds_ = trainDatasetIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        conceptIds_ = conceptIds_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -157,6 +219,9 @@ private static final long serialVersionUID = 0L;
     SORT_BY_MEAN_AVG_PRECISION(9),
     SORT_BY_PRECISION(10),
     SORT_BY_RECALL(11),
+    SORT_BY_MODEL_ID(16),
+    SORT_BY_EVAL_DATASET_ID(17),
+    SORT_BY_TRAIN_DATASET_ID(18),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -181,6 +246,9 @@ private static final long serialVersionUID = 0L;
         case 9: return SORT_BY_MEAN_AVG_PRECISION;
         case 10: return SORT_BY_PRECISION;
         case 11: return SORT_BY_RECALL;
+        case 16: return SORT_BY_MODEL_ID;
+        case 17: return SORT_BY_EVAL_DATASET_ID;
+        case 18: return SORT_BY_TRAIN_DATASET_ID;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -472,6 +540,268 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
+  public static final int SORT_BY_MODEL_ID_FIELD_NUMBER = 16;
+  /**
+   * <code>bool sort_by_model_id = 16;</code>
+   * @return Whether the sortByModelId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByModelId() {
+    return sortByCase_ == 16;
+  }
+  /**
+   * <code>bool sort_by_model_id = 16;</code>
+   * @return The sortByModelId.
+   */
+  @java.lang.Override
+  public boolean getSortByModelId() {
+    if (sortByCase_ == 16) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_EVAL_DATASET_ID_FIELD_NUMBER = 17;
+  /**
+   * <code>bool sort_by_eval_dataset_id = 17;</code>
+   * @return Whether the sortByEvalDatasetId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByEvalDatasetId() {
+    return sortByCase_ == 17;
+  }
+  /**
+   * <code>bool sort_by_eval_dataset_id = 17;</code>
+   * @return The sortByEvalDatasetId.
+   */
+  @java.lang.Override
+  public boolean getSortByEvalDatasetId() {
+    if (sortByCase_ == 17) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int SORT_BY_TRAIN_DATASET_ID_FIELD_NUMBER = 18;
+  /**
+   * <code>bool sort_by_train_dataset_id = 18;</code>
+   * @return Whether the sortByTrainDatasetId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortByTrainDatasetId() {
+    return sortByCase_ == 18;
+  }
+  /**
+   * <code>bool sort_by_train_dataset_id = 18;</code>
+   * @return The sortByTrainDatasetId.
+   */
+  @java.lang.Override
+  public boolean getSortByTrainDatasetId() {
+    if (sortByCase_ == 18) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
+  public static final int MODEL_TYPE_ID_FIELD_NUMBER = 12;
+  private volatile java.lang.Object modelTypeId_;
+  /**
+   * <pre>
+   * Filter on model type id
+   * </pre>
+   *
+   * <code>string model_type_id = 12;</code>
+   * @return The modelTypeId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelTypeId() {
+    java.lang.Object ref = modelTypeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelTypeId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter on model type id
+   * </pre>
+   *
+   * <code>string model_type_id = 12;</code>
+   * @return The bytes for modelTypeId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModelTypeIdBytes() {
+    java.lang.Object ref = modelTypeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      modelTypeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVAL_DATASET_IDS_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList evalDatasetIds_;
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @return A list containing the evalDatasetIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEvalDatasetIdsList() {
+    return evalDatasetIds_;
+  }
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @return The count of evalDatasetIds.
+   */
+  public int getEvalDatasetIdsCount() {
+    return evalDatasetIds_.size();
+  }
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @param index The index of the element to return.
+   * @return The evalDatasetIds at the given index.
+   */
+  public java.lang.String getEvalDatasetIds(int index) {
+    return evalDatasetIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified in the metric version
+   * </pre>
+   *
+   * <code>repeated string eval_dataset_ids = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the evalDatasetIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEvalDatasetIdsBytes(int index) {
+    return evalDatasetIds_.getByteString(index);
+  }
+
+  public static final int TRAIN_DATASET_IDS_FIELD_NUMBER = 14;
+  private com.google.protobuf.LazyStringList trainDatasetIds_;
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @return A list containing the trainDatasetIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getTrainDatasetIdsList() {
+    return trainDatasetIds_;
+  }
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @return The count of trainDatasetIds.
+   */
+  public int getTrainDatasetIdsCount() {
+    return trainDatasetIds_.size();
+  }
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @param index The index of the element to return.
+   * @return The trainDatasetIds at the given index.
+   */
+  public java.lang.String getTrainDatasetIds(int index) {
+    return trainDatasetIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Filter on dataset ID of the dataset version specified by the model version
+   * </pre>
+   *
+   * <code>repeated string train_dataset_ids = 14;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the trainDatasetIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getTrainDatasetIdsBytes(int index) {
+    return trainDatasetIds_.getByteString(index);
+  }
+
+  public static final int CONCEPT_IDS_FIELD_NUMBER = 15;
+  private com.google.protobuf.LazyStringList conceptIds_;
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @return A list containing the conceptIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getConceptIdsList() {
+    return conceptIds_;
+  }
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @return The count of conceptIds.
+   */
+  public int getConceptIdsCount() {
+    return conceptIds_.size();
+  }
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @param index The index of the element to return.
+   * @return The conceptIds at the given index.
+   */
+  public java.lang.String getConceptIds(int index) {
+    return conceptIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Filter on concept IDs specified in the modele version's output_info
+   * </pre>
+   *
+   * <code>repeated string concept_ids = 15;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the conceptIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getConceptIdsBytes(int index) {
+    return conceptIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -525,6 +855,30 @@ private static final long serialVersionUID = 0L;
     if (sortByCase_ == 11) {
       output.writeBool(
           11, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, modelTypeId_);
+    }
+    for (int i = 0; i < evalDatasetIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, evalDatasetIds_.getRaw(i));
+    }
+    for (int i = 0; i < trainDatasetIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, trainDatasetIds_.getRaw(i));
+    }
+    for (int i = 0; i < conceptIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, conceptIds_.getRaw(i));
+    }
+    if (sortByCase_ == 16) {
+      output.writeBool(
+          16, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 17) {
+      output.writeBool(
+          17, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 18) {
+      output.writeBool(
+          18, (boolean)((java.lang.Boolean) sortBy_));
     }
     unknownFields.writeTo(output);
   }
@@ -586,6 +940,48 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             11, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelTypeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, modelTypeId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < evalDatasetIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(evalDatasetIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEvalDatasetIdsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < trainDatasetIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(trainDatasetIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTrainDatasetIdsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < conceptIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(conceptIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getConceptIdsList().size();
+    }
+    if (sortByCase_ == 16) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            16, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 17) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            17, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (sortByCase_ == 18) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            18, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -612,6 +1008,14 @@ private static final long serialVersionUID = 0L;
         != other.getPerPage()) return false;
     if (getSortAscending()
         != other.getSortAscending()) return false;
+    if (!getModelTypeId()
+        .equals(other.getModelTypeId())) return false;
+    if (!getEvalDatasetIdsList()
+        .equals(other.getEvalDatasetIdsList())) return false;
+    if (!getTrainDatasetIdsList()
+        .equals(other.getTrainDatasetIdsList())) return false;
+    if (!getConceptIdsList()
+        .equals(other.getConceptIdsList())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 5:
@@ -642,6 +1046,18 @@ private static final long serialVersionUID = 0L;
         if (getSortByRecall()
             != other.getSortByRecall()) return false;
         break;
+      case 16:
+        if (getSortByModelId()
+            != other.getSortByModelId()) return false;
+        break;
+      case 17:
+        if (getSortByEvalDatasetId()
+            != other.getSortByEvalDatasetId()) return false;
+        break;
+      case 18:
+        if (getSortByTrainDatasetId()
+            != other.getSortByTrainDatasetId()) return false;
+        break;
       case 0:
       default:
     }
@@ -667,6 +1083,20 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSortAscending());
+    hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelTypeId().hashCode();
+    if (getEvalDatasetIdsCount() > 0) {
+      hash = (37 * hash) + EVAL_DATASET_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvalDatasetIdsList().hashCode();
+    }
+    if (getTrainDatasetIdsCount() > 0) {
+      hash = (37 * hash) + TRAIN_DATASET_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getTrainDatasetIdsList().hashCode();
+    }
+    if (getConceptIdsCount() > 0) {
+      hash = (37 * hash) + CONCEPT_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getConceptIdsList().hashCode();
+    }
     switch (sortByCase_) {
       case 5:
         hash = (37 * hash) + SORT_BY_APP_ID_FIELD_NUMBER;
@@ -702,6 +1132,21 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_RECALL_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByRecall());
+        break;
+      case 16:
+        hash = (37 * hash) + SORT_BY_MODEL_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByModelId());
+        break;
+      case 17:
+        hash = (37 * hash) + SORT_BY_EVAL_DATASET_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByEvalDatasetId());
+        break;
+      case 18:
+        hash = (37 * hash) + SORT_BY_TRAIN_DATASET_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortByTrainDatasetId());
         break;
       case 0:
       default:
@@ -851,6 +1296,14 @@ private static final long serialVersionUID = 0L;
 
       sortAscending_ = false;
 
+      modelTypeId_ = "";
+
+      evalDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      trainDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -879,6 +1332,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.ListEvaluationsRequest buildPartial() {
       com.clarifai.grpc.api.ListEvaluationsRequest result = new com.clarifai.grpc.api.ListEvaluationsRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
@@ -908,6 +1362,31 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 16) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 17) {
+        result.sortBy_ = sortBy_;
+      }
+      if (sortByCase_ == 18) {
+        result.sortBy_ = sortBy_;
+      }
+      result.modelTypeId_ = modelTypeId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        evalDatasetIds_ = evalDatasetIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.evalDatasetIds_ = evalDatasetIds_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        trainDatasetIds_ = trainDatasetIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.trainDatasetIds_ = trainDatasetIds_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        conceptIds_ = conceptIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.conceptIds_ = conceptIds_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -969,6 +1448,40 @@ private static final long serialVersionUID = 0L;
       if (other.getSortAscending() != false) {
         setSortAscending(other.getSortAscending());
       }
+      if (!other.getModelTypeId().isEmpty()) {
+        modelTypeId_ = other.modelTypeId_;
+        onChanged();
+      }
+      if (!other.evalDatasetIds_.isEmpty()) {
+        if (evalDatasetIds_.isEmpty()) {
+          evalDatasetIds_ = other.evalDatasetIds_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureEvalDatasetIdsIsMutable();
+          evalDatasetIds_.addAll(other.evalDatasetIds_);
+        }
+        onChanged();
+      }
+      if (!other.trainDatasetIds_.isEmpty()) {
+        if (trainDatasetIds_.isEmpty()) {
+          trainDatasetIds_ = other.trainDatasetIds_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureTrainDatasetIdsIsMutable();
+          trainDatasetIds_.addAll(other.trainDatasetIds_);
+        }
+        onChanged();
+      }
+      if (!other.conceptIds_.isEmpty()) {
+        if (conceptIds_.isEmpty()) {
+          conceptIds_ = other.conceptIds_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureConceptIdsIsMutable();
+          conceptIds_.addAll(other.conceptIds_);
+        }
+        onChanged();
+      }
       switch (other.getSortByCase()) {
         case SORT_BY_APP_ID: {
           setSortByAppId(other.getSortByAppId());
@@ -996,6 +1509,18 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_RECALL: {
           setSortByRecall(other.getSortByRecall());
+          break;
+        }
+        case SORT_BY_MODEL_ID: {
+          setSortByModelId(other.getSortByModelId());
+          break;
+        }
+        case SORT_BY_EVAL_DATASET_ID: {
+          setSortByEvalDatasetId(other.getSortByEvalDatasetId());
+          break;
+        }
+        case SORT_BY_TRAIN_DATASET_ID: {
+          setSortByTrainDatasetId(other.getSortByTrainDatasetId());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -1045,6 +1570,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1696,6 +2222,663 @@ private static final long serialVersionUID = 0L;
         sortBy_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    /**
+     * <code>bool sort_by_model_id = 16;</code>
+     * @return Whether the sortByModelId field is set.
+     */
+    public boolean hasSortByModelId() {
+      return sortByCase_ == 16;
+    }
+    /**
+     * <code>bool sort_by_model_id = 16;</code>
+     * @return The sortByModelId.
+     */
+    public boolean getSortByModelId() {
+      if (sortByCase_ == 16) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <code>bool sort_by_model_id = 16;</code>
+     * @param value The sortByModelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByModelId(boolean value) {
+      sortByCase_ = 16;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool sort_by_model_id = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByModelId() {
+      if (sortByCase_ == 16) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>bool sort_by_eval_dataset_id = 17;</code>
+     * @return Whether the sortByEvalDatasetId field is set.
+     */
+    public boolean hasSortByEvalDatasetId() {
+      return sortByCase_ == 17;
+    }
+    /**
+     * <code>bool sort_by_eval_dataset_id = 17;</code>
+     * @return The sortByEvalDatasetId.
+     */
+    public boolean getSortByEvalDatasetId() {
+      if (sortByCase_ == 17) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <code>bool sort_by_eval_dataset_id = 17;</code>
+     * @param value The sortByEvalDatasetId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByEvalDatasetId(boolean value) {
+      sortByCase_ = 17;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool sort_by_eval_dataset_id = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByEvalDatasetId() {
+      if (sortByCase_ == 17) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>bool sort_by_train_dataset_id = 18;</code>
+     * @return Whether the sortByTrainDatasetId field is set.
+     */
+    public boolean hasSortByTrainDatasetId() {
+      return sortByCase_ == 18;
+    }
+    /**
+     * <code>bool sort_by_train_dataset_id = 18;</code>
+     * @return The sortByTrainDatasetId.
+     */
+    public boolean getSortByTrainDatasetId() {
+      if (sortByCase_ == 18) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <code>bool sort_by_train_dataset_id = 18;</code>
+     * @param value The sortByTrainDatasetId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortByTrainDatasetId(boolean value) {
+      sortByCase_ = 18;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool sort_by_train_dataset_id = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortByTrainDatasetId() {
+      if (sortByCase_ == 18) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private java.lang.Object modelTypeId_ = "";
+    /**
+     * <pre>
+     * Filter on model type id
+     * </pre>
+     *
+     * <code>string model_type_id = 12;</code>
+     * @return The modelTypeId.
+     */
+    public java.lang.String getModelTypeId() {
+      java.lang.Object ref = modelTypeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelTypeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter on model type id
+     * </pre>
+     *
+     * <code>string model_type_id = 12;</code>
+     * @return The bytes for modelTypeId.
+     */
+    public com.google.protobuf.ByteString
+        getModelTypeIdBytes() {
+      java.lang.Object ref = modelTypeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        modelTypeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter on model type id
+     * </pre>
+     *
+     * <code>string model_type_id = 12;</code>
+     * @param value The modelTypeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on model type id
+     * </pre>
+     *
+     * <code>string model_type_id = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelTypeId() {
+      
+      modelTypeId_ = getDefaultInstance().getModelTypeId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on model type id
+     * </pre>
+     *
+     * <code>string model_type_id = 12;</code>
+     * @param value The bytes for modelTypeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelTypeIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      modelTypeId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList evalDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEvalDatasetIdsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        evalDatasetIds_ = new com.google.protobuf.LazyStringArrayList(evalDatasetIds_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @return A list containing the evalDatasetIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEvalDatasetIdsList() {
+      return evalDatasetIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @return The count of evalDatasetIds.
+     */
+    public int getEvalDatasetIdsCount() {
+      return evalDatasetIds_.size();
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @param index The index of the element to return.
+     * @return The evalDatasetIds at the given index.
+     */
+    public java.lang.String getEvalDatasetIds(int index) {
+      return evalDatasetIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the evalDatasetIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEvalDatasetIdsBytes(int index) {
+      return evalDatasetIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @param index The index to set the value at.
+     * @param value The evalDatasetIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvalDatasetIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEvalDatasetIdsIsMutable();
+      evalDatasetIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @param value The evalDatasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEvalDatasetIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEvalDatasetIdsIsMutable();
+      evalDatasetIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @param values The evalDatasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEvalDatasetIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEvalDatasetIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, evalDatasetIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvalDatasetIds() {
+      evalDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified in the metric version
+     * </pre>
+     *
+     * <code>repeated string eval_dataset_ids = 13;</code>
+     * @param value The bytes of the evalDatasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEvalDatasetIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEvalDatasetIdsIsMutable();
+      evalDatasetIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList trainDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTrainDatasetIdsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        trainDatasetIds_ = new com.google.protobuf.LazyStringArrayList(trainDatasetIds_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @return A list containing the trainDatasetIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTrainDatasetIdsList() {
+      return trainDatasetIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @return The count of trainDatasetIds.
+     */
+    public int getTrainDatasetIdsCount() {
+      return trainDatasetIds_.size();
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @param index The index of the element to return.
+     * @return The trainDatasetIds at the given index.
+     */
+    public java.lang.String getTrainDatasetIds(int index) {
+      return trainDatasetIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the trainDatasetIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTrainDatasetIdsBytes(int index) {
+      return trainDatasetIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @param index The index to set the value at.
+     * @param value The trainDatasetIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrainDatasetIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTrainDatasetIdsIsMutable();
+      trainDatasetIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @param value The trainDatasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTrainDatasetIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTrainDatasetIdsIsMutable();
+      trainDatasetIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @param values The trainDatasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTrainDatasetIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTrainDatasetIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, trainDatasetIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTrainDatasetIds() {
+      trainDatasetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on dataset ID of the dataset version specified by the model version
+     * </pre>
+     *
+     * <code>repeated string train_dataset_ids = 14;</code>
+     * @param value The bytes of the trainDatasetIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTrainDatasetIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureTrainDatasetIdsIsMutable();
+      trainDatasetIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureConceptIdsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        conceptIds_ = new com.google.protobuf.LazyStringArrayList(conceptIds_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @return A list containing the conceptIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getConceptIdsList() {
+      return conceptIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @return The count of conceptIds.
+     */
+    public int getConceptIdsCount() {
+      return conceptIds_.size();
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @param index The index of the element to return.
+     * @return The conceptIds at the given index.
+     */
+    public java.lang.String getConceptIds(int index) {
+      return conceptIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the conceptIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getConceptIdsBytes(int index) {
+      return conceptIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @param index The index to set the value at.
+     * @param value The conceptIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConceptIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureConceptIdsIsMutable();
+      conceptIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @param value The conceptIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConceptIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureConceptIdsIsMutable();
+      conceptIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @param values The conceptIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllConceptIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureConceptIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, conceptIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConceptIds() {
+      conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter on concept IDs specified in the modele version's output_info
+     * </pre>
+     *
+     * <code>repeated string concept_ids = 15;</code>
+     * @param value The bytes of the conceptIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConceptIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureConceptIdsIsMutable();
+      conceptIds_.add(value);
+      onChanged();
       return this;
     }
     @java.lang.Override
