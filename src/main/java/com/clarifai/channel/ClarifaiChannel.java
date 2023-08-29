@@ -14,6 +14,8 @@ public enum ClarifaiChannel {
 
   INSTANCE;
 
+  public static final int MAX_MESSAGE_LENGTH = 128 * 1024 * 1024; // 128MB
+
   private enum MarshallerType {
     PROTO,
     JSON,
@@ -33,6 +35,7 @@ public enum ClarifaiChannel {
       marshallerType = MarshallerType.PROTO;
       return NettyChannelBuilder
           .forAddress(base, 443)
+          .maxInboundMessageSize(MAX_MESSAGE_LENGTH)
           .sslContext(
               GrpcSslContexts.forClient()
                   .trustManager(InsecureTrustManagerFactory.INSTANCE)
@@ -50,6 +53,7 @@ public enum ClarifaiChannel {
     return NettyChannelBuilder
         .forAddress("api-grpc.clarifai.com", 18080)
         .usePlaintext()
+        .maxInboundMessageSize(MAX_MESSAGE_LENGTH)
         .build();
   }
 
