@@ -145,6 +145,25 @@ public interface ListDatasetsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Whether to order by the external id
+   * </pre>
+   *
+   * <code>bool sort_by_id = 11;</code>
+   * @return Whether the sortById field is set.
+   */
+  boolean hasSortById();
+  /**
+   * <pre>
+   * Whether to order by the external id
+   * </pre>
+   *
+   * <code>bool sort_by_id = 11;</code>
+   * @return The sortById.
+   */
+  boolean getSortById();
+
+  /**
+   * <pre>
    * Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
    * </pre>
    *

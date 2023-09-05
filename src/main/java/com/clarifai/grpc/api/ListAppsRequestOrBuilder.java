@@ -183,6 +183,26 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string id = 14;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <pre>
+   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string id = 14;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <pre>
    * If true, we only return apps that are handpicked by clarifai staff
    * </pre>
    *

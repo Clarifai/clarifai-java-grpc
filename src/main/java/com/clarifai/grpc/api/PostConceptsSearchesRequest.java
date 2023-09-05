@@ -91,6 +91,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.clarifai.grpc.api.ConceptExtraInfoRequest.Builder subBuilder = null;
+            if (extraInfo_ != null) {
+              subBuilder = extraInfo_.toBuilder();
+            }
+            extraInfo_ = input.readMessage(com.clarifai.grpc.api.ConceptExtraInfoRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(extraInfo_);
+              extraInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -201,6 +214,44 @@ private static final long serialVersionUID = 0L;
     return getConceptQuery();
   }
 
+  public static final int EXTRA_INFO_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.ConceptExtraInfoRequest extraInfo_;
+  /**
+   * <pre>
+   * Request additional info to be retrieved for each concept in the response.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+   * @return Whether the extraInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasExtraInfo() {
+    return extraInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Request additional info to be retrieved for each concept in the response.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+   * @return The extraInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ConceptExtraInfoRequest getExtraInfo() {
+    return extraInfo_ == null ? com.clarifai.grpc.api.ConceptExtraInfoRequest.getDefaultInstance() : extraInfo_;
+  }
+  /**
+   * <pre>
+   * Request additional info to be retrieved for each concept in the response.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ConceptExtraInfoRequestOrBuilder getExtraInfoOrBuilder() {
+    return getExtraInfo();
+  }
+
   public static final int PAGINATION_FIELD_NUMBER = 3;
   private com.clarifai.grpc.api.Pagination pagination_;
   /**
@@ -265,6 +316,9 @@ private static final long serialVersionUID = 0L;
     if (pagination_ != null) {
       output.writeMessage(3, getPagination());
     }
+    if (extraInfo_ != null) {
+      output.writeMessage(4, getExtraInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -285,6 +339,10 @@ private static final long serialVersionUID = 0L;
     if (pagination_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getPagination());
+    }
+    if (extraInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getExtraInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,6 +369,11 @@ private static final long serialVersionUID = 0L;
       if (!getConceptQuery()
           .equals(other.getConceptQuery())) return false;
     }
+    if (hasExtraInfo() != other.hasExtraInfo()) return false;
+    if (hasExtraInfo()) {
+      if (!getExtraInfo()
+          .equals(other.getExtraInfo())) return false;
+    }
     if (hasPagination() != other.hasPagination()) return false;
     if (hasPagination()) {
       if (!getPagination()
@@ -334,6 +397,10 @@ private static final long serialVersionUID = 0L;
     if (hasConceptQuery()) {
       hash = (37 * hash) + CONCEPT_QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getConceptQuery().hashCode();
+    }
+    if (hasExtraInfo()) {
+      hash = (37 * hash) + EXTRA_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getExtraInfo().hashCode();
     }
     if (hasPagination()) {
       hash = (37 * hash) + PAGINATION_FIELD_NUMBER;
@@ -488,6 +555,12 @@ private static final long serialVersionUID = 0L;
         conceptQuery_ = null;
         conceptQueryBuilder_ = null;
       }
+      if (extraInfoBuilder_ == null) {
+        extraInfo_ = null;
+      } else {
+        extraInfo_ = null;
+        extraInfoBuilder_ = null;
+      }
       if (paginationBuilder_ == null) {
         pagination_ = null;
       } else {
@@ -529,6 +602,11 @@ private static final long serialVersionUID = 0L;
         result.conceptQuery_ = conceptQuery_;
       } else {
         result.conceptQuery_ = conceptQueryBuilder_.build();
+      }
+      if (extraInfoBuilder_ == null) {
+        result.extraInfo_ = extraInfo_;
+      } else {
+        result.extraInfo_ = extraInfoBuilder_.build();
       }
       if (paginationBuilder_ == null) {
         result.pagination_ = pagination_;
@@ -588,6 +666,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasConceptQuery()) {
         mergeConceptQuery(other.getConceptQuery());
+      }
+      if (other.hasExtraInfo()) {
+        mergeExtraInfo(other.getExtraInfo());
       }
       if (other.hasPagination()) {
         mergePagination(other.getPagination());
@@ -929,6 +1010,161 @@ private static final long serialVersionUID = 0L;
         conceptQuery_ = null;
       }
       return conceptQueryBuilder_;
+    }
+
+    private com.clarifai.grpc.api.ConceptExtraInfoRequest extraInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ConceptExtraInfoRequest, com.clarifai.grpc.api.ConceptExtraInfoRequest.Builder, com.clarifai.grpc.api.ConceptExtraInfoRequestOrBuilder> extraInfoBuilder_;
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     * @return Whether the extraInfo field is set.
+     */
+    public boolean hasExtraInfo() {
+      return extraInfoBuilder_ != null || extraInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     * @return The extraInfo.
+     */
+    public com.clarifai.grpc.api.ConceptExtraInfoRequest getExtraInfo() {
+      if (extraInfoBuilder_ == null) {
+        return extraInfo_ == null ? com.clarifai.grpc.api.ConceptExtraInfoRequest.getDefaultInstance() : extraInfo_;
+      } else {
+        return extraInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    public Builder setExtraInfo(com.clarifai.grpc.api.ConceptExtraInfoRequest value) {
+      if (extraInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extraInfo_ = value;
+        onChanged();
+      } else {
+        extraInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    public Builder setExtraInfo(
+        com.clarifai.grpc.api.ConceptExtraInfoRequest.Builder builderForValue) {
+      if (extraInfoBuilder_ == null) {
+        extraInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        extraInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    public Builder mergeExtraInfo(com.clarifai.grpc.api.ConceptExtraInfoRequest value) {
+      if (extraInfoBuilder_ == null) {
+        if (extraInfo_ != null) {
+          extraInfo_ =
+            com.clarifai.grpc.api.ConceptExtraInfoRequest.newBuilder(extraInfo_).mergeFrom(value).buildPartial();
+        } else {
+          extraInfo_ = value;
+        }
+        onChanged();
+      } else {
+        extraInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    public Builder clearExtraInfo() {
+      if (extraInfoBuilder_ == null) {
+        extraInfo_ = null;
+        onChanged();
+      } else {
+        extraInfo_ = null;
+        extraInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.ConceptExtraInfoRequest.Builder getExtraInfoBuilder() {
+      
+      onChanged();
+      return getExtraInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    public com.clarifai.grpc.api.ConceptExtraInfoRequestOrBuilder getExtraInfoOrBuilder() {
+      if (extraInfoBuilder_ != null) {
+        return extraInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return extraInfo_ == null ?
+            com.clarifai.grpc.api.ConceptExtraInfoRequest.getDefaultInstance() : extraInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Request additional info to be retrieved for each concept in the response.
+     * </pre>
+     *
+     * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ConceptExtraInfoRequest, com.clarifai.grpc.api.ConceptExtraInfoRequest.Builder, com.clarifai.grpc.api.ConceptExtraInfoRequestOrBuilder> 
+        getExtraInfoFieldBuilder() {
+      if (extraInfoBuilder_ == null) {
+        extraInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ConceptExtraInfoRequest, com.clarifai.grpc.api.ConceptExtraInfoRequest.Builder, com.clarifai.grpc.api.ConceptExtraInfoRequestOrBuilder>(
+                getExtraInfo(),
+                getParentForChildren(),
+                isClean());
+        extraInfo_ = null;
+      }
+      return extraInfoBuilder_;
     }
 
     private com.clarifai.grpc.api.Pagination pagination_;

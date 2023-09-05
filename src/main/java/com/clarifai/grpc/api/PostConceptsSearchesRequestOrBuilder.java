@@ -63,6 +63,33 @@ public interface PostConceptsSearchesRequestOrBuilder extends
 
   /**
    * <pre>
+   * Request additional info to be retrieved for each concept in the response.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+   * @return Whether the extraInfo field is set.
+   */
+  boolean hasExtraInfo();
+  /**
+   * <pre>
+   * Request additional info to be retrieved for each concept in the response.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+   * @return The extraInfo.
+   */
+  com.clarifai.grpc.api.ConceptExtraInfoRequest getExtraInfo();
+  /**
+   * <pre>
+   * Request additional info to be retrieved for each concept in the response.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfoRequest extra_info = 4;</code>
+   */
+  com.clarifai.grpc.api.ConceptExtraInfoRequestOrBuilder getExtraInfoOrBuilder();
+
+  /**
+   * <pre>
    * Pagination parameters here since there are no url args in this
    * POST request.
    * </pre>

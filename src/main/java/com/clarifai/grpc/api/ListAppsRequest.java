@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListAppsRequest() {
     query_ = "";
     name_ = "";
+    id_ = "";
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -133,6 +134,12 @@ private static final long serialVersionUID = 0L;
           case 104: {
             sortBy_ = input.readBool();
             sortByCase_ = 13;
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            id_ = s;
             break;
           }
           default: {
@@ -509,6 +516,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ID_FIELD_NUMBER = 14;
+  private volatile java.lang.Object id_;
+  /**
+   * <pre>
+   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string id = 14;</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string id = 14;</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FEATURED_ONLY_FIELD_NUMBER = 9;
   private boolean featuredOnly_;
   /**
@@ -647,6 +700,9 @@ private static final long serialVersionUID = 0L;
       output.writeBool(
           13, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, id_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -714,6 +770,9 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             13, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, id_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -744,6 +803,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getQuery())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
     if (getFeaturedOnly()
         != other.getFeaturedOnly()) return false;
     if (getStarredOnly()
@@ -797,6 +858,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + FEATURED_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFeaturedOnly());
@@ -984,6 +1047,8 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      id_ = "";
+
       featuredOnly_ = false;
 
       starredOnly_ = false;
@@ -1041,6 +1106,7 @@ private static final long serialVersionUID = 0L;
       }
       result.query_ = query_;
       result.name_ = name_;
+      result.id_ = id_;
       result.featuredOnly_ = featuredOnly_;
       result.starredOnly_ = starredOnly_;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -1115,6 +1181,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
         onChanged();
       }
       if (other.getFeaturedOnly() != false) {
@@ -1896,6 +1966,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object id_ = "";
+    /**
+     * <pre>
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string id = 14;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string id = 14;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string id = 14;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string id = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string id = 14;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
       onChanged();
       return this;
     }

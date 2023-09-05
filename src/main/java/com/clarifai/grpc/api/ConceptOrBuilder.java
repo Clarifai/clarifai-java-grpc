@@ -259,4 +259,31 @@ public interface ConceptOrBuilder extends
    * <code>.clarifai.api.KeypointInfo keypoint_info = 11;</code>
    */
   com.clarifai.grpc.api.KeypointInfoOrBuilder getKeypointInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Optional extra info.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
+   * @return Whether the extraInfo field is set.
+   */
+  boolean hasExtraInfo();
+  /**
+   * <pre>
+   * Optional extra info.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
+   * @return The extraInfo.
+   */
+  com.clarifai.grpc.api.ConceptExtraInfo getExtraInfo();
+  /**
+   * <pre>
+   * Optional extra info.
+   * </pre>
+   *
+   * <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
+   */
+  com.clarifai.grpc.api.ConceptExtraInfoOrBuilder getExtraInfoOrBuilder();
 }

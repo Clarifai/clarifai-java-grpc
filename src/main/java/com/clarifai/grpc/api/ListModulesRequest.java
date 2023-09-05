@@ -116,6 +116,11 @@ private static final long serialVersionUID = 0L;
             bookmark_ = input.readBool();
             break;
           }
+          case 88: {
+            sortBy_ = input.readBool();
+            sortByCase_ = 11;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -161,6 +166,7 @@ private static final long serialVersionUID = 0L;
     SORT_BY_CREATED_AT(7),
     SORT_BY_STAR_COUNT(8),
     SORT_BY_MODIFIED_AT(9),
+    SORT_BY_ID(11),
     SORTBY_NOT_SET(0);
     private final int value;
     private SortByCase(int value) {
@@ -181,6 +187,7 @@ private static final long serialVersionUID = 0L;
         case 7: return SORT_BY_CREATED_AT;
         case 8: return SORT_BY_STAR_COUNT;
         case 9: return SORT_BY_MODIFIED_AT;
+        case 11: return SORT_BY_ID;
         case 0: return SORTBY_NOT_SET;
         default: return null;
       }
@@ -403,6 +410,35 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
+  public static final int SORT_BY_ID_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * Whether to order by the external id
+   * </pre>
+   *
+   * <code>bool sort_by_id = 11;</code>
+   * @return Whether the sortById field is set.
+   */
+  @java.lang.Override
+  public boolean hasSortById() {
+    return sortByCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Whether to order by the external id
+   * </pre>
+   *
+   * <code>bool sort_by_id = 11;</code>
+   * @return The sortById.
+   */
+  @java.lang.Override
+  public boolean getSortById() {
+    if (sortByCase_ == 11) {
+      return (java.lang.Boolean) sortBy_;
+    }
+    return false;
+  }
+
   public static final int BOOKMARK_FIELD_NUMBER = 10;
   private boolean bookmark_;
   /**
@@ -465,6 +501,10 @@ private static final long serialVersionUID = 0L;
     if (bookmark_ != false) {
       output.writeBool(10, bookmark_);
     }
+    if (sortByCase_ == 11) {
+      output.writeBool(
+          11, (boolean)((java.lang.Boolean) sortBy_));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -521,6 +561,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(10, bookmark_);
     }
+    if (sortByCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(
+            11, (boolean)((java.lang.Boolean) sortBy_));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -566,6 +611,10 @@ private static final long serialVersionUID = 0L;
       case 9:
         if (getSortByModifiedAt()
             != other.getSortByModifiedAt()) return false;
+        break;
+      case 11:
+        if (getSortById()
+            != other.getSortById()) return false;
         break;
       case 0:
       default:
@@ -617,6 +666,11 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + SORT_BY_MODIFIED_AT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getSortByModifiedAt());
+        break;
+      case 11:
+        hash = (37 * hash) + SORT_BY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSortById());
         break;
       case 0:
       default:
@@ -828,6 +882,9 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 9) {
         result.sortBy_ = sortBy_;
       }
+      if (sortByCase_ == 11) {
+        result.sortBy_ = sortBy_;
+      }
       result.bookmark_ = bookmark_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
@@ -917,6 +974,10 @@ private static final long serialVersionUID = 0L;
         }
         case SORT_BY_MODIFIED_AT: {
           setSortByModifiedAt(other.getSortByModifiedAt());
+          break;
+        }
+        case SORT_BY_ID: {
+          setSortById(other.getSortById());
           break;
         }
         case SORTBY_NOT_SET: {
@@ -1530,6 +1591,63 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSortByModifiedAt() {
       if (sortByCase_ == 9) {
+        sortByCase_ = 0;
+        sortBy_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Whether to order by the external id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 11;</code>
+     * @return Whether the sortById field is set.
+     */
+    public boolean hasSortById() {
+      return sortByCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Whether to order by the external id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 11;</code>
+     * @return The sortById.
+     */
+    public boolean getSortById() {
+      if (sortByCase_ == 11) {
+        return (java.lang.Boolean) sortBy_;
+      }
+      return false;
+    }
+    /**
+     * <pre>
+     * Whether to order by the external id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 11;</code>
+     * @param value The sortById to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSortById(boolean value) {
+      sortByCase_ = 11;
+      sortBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to order by the external id
+     * </pre>
+     *
+     * <code>bool sort_by_id = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSortById() {
+      if (sortByCase_ == 11) {
         sortByCase_ = 0;
         sortBy_ = null;
         onChanged();
