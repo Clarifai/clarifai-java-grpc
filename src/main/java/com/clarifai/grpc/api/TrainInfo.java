@@ -61,6 +61,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            com.clarifai.grpc.api.Dataset.Builder subBuilder = null;
+            if (dataset_ != null) {
+              subBuilder = dataset_.toBuilder();
+            }
+            dataset_ = input.readMessage(com.clarifai.grpc.api.Dataset.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(dataset_);
+              dataset_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -139,6 +152,44 @@ private static final long serialVersionUID = 0L;
     return getParams();
   }
 
+  public static final int DATASET_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.Dataset dataset_;
+  /**
+   * <pre>
+   * The dataset and dataset version this model version was or will be trained on
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset dataset = 2;</code>
+   * @return Whether the dataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataset() {
+    return dataset_ != null;
+  }
+  /**
+   * <pre>
+   * The dataset and dataset version this model version was or will be trained on
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset dataset = 2;</code>
+   * @return The dataset.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Dataset getDataset() {
+    return dataset_ == null ? com.clarifai.grpc.api.Dataset.getDefaultInstance() : dataset_;
+  }
+  /**
+   * <pre>
+   * The dataset and dataset version this model version was or will be trained on
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset dataset = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder() {
+    return getDataset();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -156,6 +207,9 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       output.writeMessage(1, getParams());
     }
+    if (dataset_ != null) {
+      output.writeMessage(2, getDataset());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -168,6 +222,10 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getParams());
+    }
+    if (dataset_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getDataset());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -189,6 +247,11 @@ private static final long serialVersionUID = 0L;
       if (!getParams()
           .equals(other.getParams())) return false;
     }
+    if (hasDataset() != other.hasDataset()) return false;
+    if (hasDataset()) {
+      if (!getDataset()
+          .equals(other.getDataset())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -203,6 +266,10 @@ private static final long serialVersionUID = 0L;
     if (hasParams()) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getParams().hashCode();
+    }
+    if (hasDataset()) {
+      hash = (37 * hash) + DATASET_FIELD_NUMBER;
+      hash = (53 * hash) + getDataset().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -343,6 +410,12 @@ private static final long serialVersionUID = 0L;
         params_ = null;
         paramsBuilder_ = null;
       }
+      if (datasetBuilder_ == null) {
+        dataset_ = null;
+      } else {
+        dataset_ = null;
+        datasetBuilder_ = null;
+      }
       return this;
     }
 
@@ -373,6 +446,11 @@ private static final long serialVersionUID = 0L;
         result.params_ = params_;
       } else {
         result.params_ = paramsBuilder_.build();
+      }
+      if (datasetBuilder_ == null) {
+        result.dataset_ = dataset_;
+      } else {
+        result.dataset_ = datasetBuilder_.build();
       }
       onBuilt();
       return result;
@@ -424,6 +502,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.TrainInfo.getDefaultInstance()) return this;
       if (other.hasParams()) {
         mergeParams(other.getParams());
+      }
+      if (other.hasDataset()) {
+        mergeDataset(other.getDataset());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -625,6 +706,161 @@ private static final long serialVersionUID = 0L;
         params_ = null;
       }
       return paramsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Dataset dataset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> datasetBuilder_;
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     * @return Whether the dataset field is set.
+     */
+    public boolean hasDataset() {
+      return datasetBuilder_ != null || dataset_ != null;
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     * @return The dataset.
+     */
+    public com.clarifai.grpc.api.Dataset getDataset() {
+      if (datasetBuilder_ == null) {
+        return dataset_ == null ? com.clarifai.grpc.api.Dataset.getDefaultInstance() : dataset_;
+      } else {
+        return datasetBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    public Builder setDataset(com.clarifai.grpc.api.Dataset value) {
+      if (datasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataset_ = value;
+        onChanged();
+      } else {
+        datasetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    public Builder setDataset(
+        com.clarifai.grpc.api.Dataset.Builder builderForValue) {
+      if (datasetBuilder_ == null) {
+        dataset_ = builderForValue.build();
+        onChanged();
+      } else {
+        datasetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    public Builder mergeDataset(com.clarifai.grpc.api.Dataset value) {
+      if (datasetBuilder_ == null) {
+        if (dataset_ != null) {
+          dataset_ =
+            com.clarifai.grpc.api.Dataset.newBuilder(dataset_).mergeFrom(value).buildPartial();
+        } else {
+          dataset_ = value;
+        }
+        onChanged();
+      } else {
+        datasetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    public Builder clearDataset() {
+      if (datasetBuilder_ == null) {
+        dataset_ = null;
+        onChanged();
+      } else {
+        dataset_ = null;
+        datasetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    public com.clarifai.grpc.api.Dataset.Builder getDatasetBuilder() {
+      
+      onChanged();
+      return getDatasetFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    public com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder() {
+      if (datasetBuilder_ != null) {
+        return datasetBuilder_.getMessageOrBuilder();
+      } else {
+        return dataset_ == null ?
+            com.clarifai.grpc.api.Dataset.getDefaultInstance() : dataset_;
+      }
+    }
+    /**
+     * <pre>
+     * The dataset and dataset version this model version was or will be trained on
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset dataset = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> 
+        getDatasetFieldBuilder() {
+      if (datasetBuilder_ == null) {
+        datasetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder>(
+                getDataset(),
+                getParentForChildren(),
+                isClean());
+        dataset_ = null;
+      }
+      return datasetBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

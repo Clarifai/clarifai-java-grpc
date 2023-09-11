@@ -978,6 +978,10 @@ private static final long serialVersionUID = 0L;
   public static final int TRAIN_LOG_FIELD_NUMBER = 23;
   private volatile java.lang.Object trainLog_;
   /**
+   * <pre>
+   * Contains the training logs if available
+   * </pre>
+   *
    * <code>string train_log = 23;</code>
    * @return The trainLog.
    */
@@ -995,6 +999,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Contains the training logs if available
+   * </pre>
+   *
    * <code>string train_log = 23;</code>
    * @return The bytes for trainLog.
    */
@@ -4129,6 +4137,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object trainLog_ = "";
     /**
+     * <pre>
+     * Contains the training logs if available
+     * </pre>
+     *
      * <code>string train_log = 23;</code>
      * @return The trainLog.
      */
@@ -4145,6 +4157,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Contains the training logs if available
+     * </pre>
+     *
      * <code>string train_log = 23;</code>
      * @return The bytes for trainLog.
      */
@@ -4162,6 +4178,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Contains the training logs if available
+     * </pre>
+     *
      * <code>string train_log = 23;</code>
      * @param value The trainLog to set.
      * @return This builder for chaining.
@@ -4177,6 +4197,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Contains the training logs if available
+     * </pre>
+     *
      * <code>string train_log = 23;</code>
      * @return This builder for chaining.
      */
@@ -4187,6 +4211,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Contains the training logs if available
+     * </pre>
+     *
      * <code>string train_log = 23;</code>
      * @param value The bytes for trainLog to set.
      * @return This builder for chaining.

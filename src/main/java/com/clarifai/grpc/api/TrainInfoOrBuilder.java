@@ -39,4 +39,31 @@ public interface TrainInfoOrBuilder extends
    * <code>.google.protobuf.Struct params = 1;</code>
    */
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
+
+  /**
+   * <pre>
+   * The dataset and dataset version this model version was or will be trained on
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset dataset = 2;</code>
+   * @return Whether the dataset field is set.
+   */
+  boolean hasDataset();
+  /**
+   * <pre>
+   * The dataset and dataset version this model version was or will be trained on
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset dataset = 2;</code>
+   * @return The dataset.
+   */
+  com.clarifai.grpc.api.Dataset getDataset();
+  /**
+   * <pre>
+   * The dataset and dataset version this model version was or will be trained on
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset dataset = 2;</code>
+   */
+  com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder();
 }

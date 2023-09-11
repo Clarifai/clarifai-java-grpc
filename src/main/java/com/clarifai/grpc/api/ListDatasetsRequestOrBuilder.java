@@ -172,5 +172,25 @@ public interface ListDatasetsRequestOrBuilder extends
    */
   boolean getBookmark();
 
+  /**
+   * <pre>
+   * Fuzzy filter on dataset ID
+   * </pre>
+   *
+   * <code>string id = 12;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <pre>
+   * Fuzzy filter on dataset ID
+   * </pre>
+   *
+   * <code>string id = 12;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
+
   public com.clarifai.grpc.api.ListDatasetsRequest.SortByCase getSortByCase();
 }
