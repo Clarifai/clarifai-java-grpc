@@ -114,4 +114,26 @@ public interface APIPostModelOutputsCollectorSourceOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPostInputsKeyIdBytes();
+
+  /**
+   * <pre>
+   * This is a private field that defaults to the app owner for public users.
+   * If this is left blank then this collector will collect from ALL users calling the given model.
+   * </pre>
+   *
+   * <code>string caller_user_id = 6;</code>
+   * @return The callerUserId.
+   */
+  java.lang.String getCallerUserId();
+  /**
+   * <pre>
+   * This is a private field that defaults to the app owner for public users.
+   * If this is left blank then this collector will collect from ALL users calling the given model.
+   * </pre>
+   *
+   * <code>string caller_user_id = 6;</code>
+   * @return The bytes for callerUserId.
+   */
+  com.google.protobuf.ByteString
+      getCallerUserIdBytes();
 }

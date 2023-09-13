@@ -417,11 +417,19 @@ public interface ModelVersionOrBuilder extends
   com.clarifai.grpc.api.ImportInfoOrBuilder getImportInfoOrBuilder();
 
   /**
+   * <pre>
+   * Contains the training logs if available
+   * </pre>
+   *
    * <code>string train_log = 23;</code>
    * @return The trainLog.
    */
   java.lang.String getTrainLog();
   /**
+   * <pre>
+   * Contains the training logs if available
+   * </pre>
+   *
    * <code>string train_log = 23;</code>
    * @return The bytes for trainLog.
    */

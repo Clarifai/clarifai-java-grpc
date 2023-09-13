@@ -304,6 +304,22 @@ private static final long serialVersionUID = 0L;
      * <code>ARRAY_OF_MODEL_CONCEPTS = 18;</code>
      */
     ARRAY_OF_MODEL_CONCEPTS(18),
+    /**
+     * <pre>
+     * For selecting a dataset
+     * </pre>
+     *
+     * <code>DATASET = 19;</code>
+     */
+    DATASET(19),
+    /**
+     * <pre>
+     * For selecting a dataset version
+     * </pre>
+     *
+     * <code>DATASET_VERSION = 20;</code>
+     */
+    DATASET_VERSION(20),
     UNRECOGNIZED(-1),
     ;
 
@@ -438,6 +454,22 @@ private static final long serialVersionUID = 0L;
      * <code>ARRAY_OF_MODEL_CONCEPTS = 18;</code>
      */
     public static final int ARRAY_OF_MODEL_CONCEPTS_VALUE = 18;
+    /**
+     * <pre>
+     * For selecting a dataset
+     * </pre>
+     *
+     * <code>DATASET = 19;</code>
+     */
+    public static final int DATASET_VALUE = 19;
+    /**
+     * <pre>
+     * For selecting a dataset version
+     * </pre>
+     *
+     * <code>DATASET_VERSION = 20;</code>
+     */
+    public static final int DATASET_VERSION_VALUE = 20;
 
 
     public final int getNumber() {
@@ -482,6 +514,8 @@ private static final long serialVersionUID = 0L;
         case 16: return DATASET_ID;
         case 17: return DATASET_VERSION_ID;
         case 18: return ARRAY_OF_MODEL_CONCEPTS;
+        case 19: return DATASET;
+        case 20: return DATASET_VERSION;
         default: return null;
       }
     }

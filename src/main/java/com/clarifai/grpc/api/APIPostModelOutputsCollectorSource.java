@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     modelId_ = "";
     modelVersionId_ = "";
     postInputsKeyId_ = "";
+    callerUserId_ = "";
   }
 
   @java.lang.Override
@@ -86,6 +87,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             postInputsKeyId_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            callerUserId_ = s;
             break;
           }
           default: {
@@ -360,6 +367,54 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CALLER_USER_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object callerUserId_;
+  /**
+   * <pre>
+   * This is a private field that defaults to the app owner for public users.
+   * If this is left blank then this collector will collect from ALL users calling the given model.
+   * </pre>
+   *
+   * <code>string caller_user_id = 6;</code>
+   * @return The callerUserId.
+   */
+  @java.lang.Override
+  public java.lang.String getCallerUserId() {
+    java.lang.Object ref = callerUserId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      callerUserId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * This is a private field that defaults to the app owner for public users.
+   * If this is left blank then this collector will collect from ALL users calling the given model.
+   * </pre>
+   *
+   * <code>string caller_user_id = 6;</code>
+   * @return The bytes for callerUserId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCallerUserIdBytes() {
+    java.lang.Object ref = callerUserId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      callerUserId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -389,6 +444,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postInputsKeyId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, postInputsKeyId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(callerUserId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, callerUserId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -412,6 +470,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postInputsKeyId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, postInputsKeyId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(callerUserId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, callerUserId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -438,6 +499,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getModelVersionId())) return false;
     if (!getPostInputsKeyId()
         .equals(other.getPostInputsKeyId())) return false;
+    if (!getCallerUserId()
+        .equals(other.getCallerUserId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -459,6 +522,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (37 * hash) + POST_INPUTS_KEY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPostInputsKeyId().hashCode();
+    hash = (37 * hash) + CALLER_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCallerUserId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -607,6 +672,8 @@ private static final long serialVersionUID = 0L;
 
       postInputsKeyId_ = "";
 
+      callerUserId_ = "";
+
       return this;
     }
 
@@ -638,6 +705,7 @@ private static final long serialVersionUID = 0L;
       result.modelId_ = modelId_;
       result.modelVersionId_ = modelVersionId_;
       result.postInputsKeyId_ = postInputsKeyId_;
+      result.callerUserId_ = callerUserId_;
       onBuilt();
       return result;
     }
@@ -704,6 +772,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getPostInputsKeyId().isEmpty()) {
         postInputsKeyId_ = other.postInputsKeyId_;
+        onChanged();
+      }
+      if (!other.getCallerUserId().isEmpty()) {
+        callerUserId_ = other.callerUserId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1231,6 +1303,107 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       postInputsKeyId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object callerUserId_ = "";
+    /**
+     * <pre>
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     * </pre>
+     *
+     * <code>string caller_user_id = 6;</code>
+     * @return The callerUserId.
+     */
+    public java.lang.String getCallerUserId() {
+      java.lang.Object ref = callerUserId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        callerUserId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     * </pre>
+     *
+     * <code>string caller_user_id = 6;</code>
+     * @return The bytes for callerUserId.
+     */
+    public com.google.protobuf.ByteString
+        getCallerUserIdBytes() {
+      java.lang.Object ref = callerUserId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        callerUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     * </pre>
+     *
+     * <code>string caller_user_id = 6;</code>
+     * @param value The callerUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallerUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      callerUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     * </pre>
+     *
+     * <code>string caller_user_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCallerUserId() {
+      
+      callerUserId_ = getDefaultInstance().getCallerUserId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This is a private field that defaults to the app owner for public users.
+     * If this is left blank then this collector will collect from ALL users calling the given model.
+     * </pre>
+     *
+     * <code>string caller_user_id = 6;</code>
+     * @param value The bytes for callerUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallerUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      callerUserId_ = value;
       onChanged();
       return this;
     }

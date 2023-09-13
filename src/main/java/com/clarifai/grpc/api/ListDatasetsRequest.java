@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListDatasetsRequest() {
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    id_ = "";
   }
 
   @java.lang.Override
@@ -119,6 +120,12 @@ private static final long serialVersionUID = 0L;
           case 88: {
             sortBy_ = input.readBool();
             sortByCase_ = 11;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            id_ = s;
             break;
           }
           default: {
@@ -454,6 +461,52 @@ private static final long serialVersionUID = 0L;
     return bookmark_;
   }
 
+  public static final int ID_FIELD_NUMBER = 12;
+  private volatile java.lang.Object id_;
+  /**
+   * <pre>
+   * Fuzzy filter on dataset ID
+   * </pre>
+   *
+   * <code>string id = 12;</code>
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Fuzzy filter on dataset ID
+   * </pre>
+   *
+   * <code>string id = 12;</code>
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -504,6 +557,9 @@ private static final long serialVersionUID = 0L;
     if (sortByCase_ == 11) {
       output.writeBool(
           11, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, id_);
     }
     unknownFields.writeTo(output);
   }
@@ -566,6 +622,9 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             11, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, id_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -598,6 +657,8 @@ private static final long serialVersionUID = 0L;
         != other.getSortAscending()) return false;
     if (getBookmark()
         != other.getBookmark()) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 7:
@@ -651,6 +712,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBookmark());
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     switch (sortByCase_) {
       case 7:
         hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
@@ -830,6 +893,8 @@ private static final long serialVersionUID = 0L;
 
       bookmark_ = false;
 
+      id_ = "";
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -886,6 +951,7 @@ private static final long serialVersionUID = 0L;
         result.sortBy_ = sortBy_;
       }
       result.bookmark_ = bookmark_;
+      result.id_ = id_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -962,6 +1028,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBookmark() != false) {
         setBookmark(other.getBookmark());
+      }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
       }
       switch (other.getSortByCase()) {
         case SORT_BY_CREATED_AT: {
@@ -1694,6 +1764,102 @@ private static final long serialVersionUID = 0L;
     public Builder clearBookmark() {
       
       bookmark_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object id_ = "";
+    /**
+     * <pre>
+     * Fuzzy filter on dataset ID
+     * </pre>
+     *
+     * <code>string id = 12;</code>
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Fuzzy filter on dataset ID
+     * </pre>
+     *
+     * <code>string id = 12;</code>
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Fuzzy filter on dataset ID
+     * </pre>
+     *
+     * <code>string id = 12;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      id_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Fuzzy filter on dataset ID
+     * </pre>
+     *
+     * <code>string id = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Fuzzy filter on dataset ID
+     * </pre>
+     *
+     * <code>string id = 12;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      id_ = value;
       onChanged();
       return this;
     }

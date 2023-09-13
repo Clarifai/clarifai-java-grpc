@@ -43,4 +43,24 @@ public interface ListConceptsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Fuzzy match on concept ID
+   * </pre>
+   *
+   * <code>string id = 4;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <pre>
+   * Fuzzy match on concept ID
+   * </pre>
+   *
+   * <code>string id = 4;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 }
