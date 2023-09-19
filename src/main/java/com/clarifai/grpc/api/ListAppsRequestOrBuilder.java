@@ -163,7 +163,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3766
+   *     See proto/clarifai/api/service.proto;l=3809
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -175,7 +175,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3766
+   *     See proto/clarifai/api/service.proto;l=3809
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

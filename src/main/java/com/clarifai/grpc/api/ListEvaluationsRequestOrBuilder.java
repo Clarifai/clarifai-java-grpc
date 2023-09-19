@@ -363,5 +363,15 @@ public interface ListEvaluationsRequestOrBuilder extends
   com.google.protobuf.ByteString
       getConceptIdsBytes(int index);
 
+  /**
+   * <pre>
+   * Whether to show failed metrics, defaults to false
+   * </pre>
+   *
+   * <code>bool show_failed_metrics = 19;</code>
+   * @return The showFailedMetrics.
+   */
+  boolean getShowFailedMetrics();
+
   public com.clarifai.grpc.api.ListEvaluationsRequest.SortByCase getSortByCase();
 }

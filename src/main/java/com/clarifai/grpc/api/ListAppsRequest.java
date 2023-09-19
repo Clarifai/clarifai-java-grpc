@@ -474,7 +474,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3766
+   *     See proto/clarifai/api/service.proto;l=3809
    * @return The name.
    */
   @java.lang.Override
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3766
+   *     See proto/clarifai/api/service.proto;l=3809
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -1868,7 +1868,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3766
+     *     See proto/clarifai/api/service.proto;l=3809
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -1891,7 +1891,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3766
+     *     See proto/clarifai/api/service.proto;l=3809
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1915,7 +1915,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3766
+     *     See proto/clarifai/api/service.proto;l=3809
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1937,7 +1937,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3766
+     *     See proto/clarifai/api/service.proto;l=3809
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -1954,7 +1954,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3766
+     *     See proto/clarifai/api/service.proto;l=3809
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */

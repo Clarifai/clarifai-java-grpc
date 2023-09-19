@@ -164,6 +164,11 @@ private static final long serialVersionUID = 0L;
             sortByCase_ = 18;
             break;
           }
+          case 152: {
+
+            showFailedMetrics_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -802,6 +807,21 @@ private static final long serialVersionUID = 0L;
     return conceptIds_.getByteString(index);
   }
 
+  public static final int SHOW_FAILED_METRICS_FIELD_NUMBER = 19;
+  private boolean showFailedMetrics_;
+  /**
+   * <pre>
+   * Whether to show failed metrics, defaults to false
+   * </pre>
+   *
+   * <code>bool show_failed_metrics = 19;</code>
+   * @return The showFailedMetrics.
+   */
+  @java.lang.Override
+  public boolean getShowFailedMetrics() {
+    return showFailedMetrics_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -879,6 +899,9 @@ private static final long serialVersionUID = 0L;
     if (sortByCase_ == 18) {
       output.writeBool(
           18, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (showFailedMetrics_ != false) {
+      output.writeBool(19, showFailedMetrics_);
     }
     unknownFields.writeTo(output);
   }
@@ -982,6 +1005,10 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             18, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (showFailedMetrics_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(19, showFailedMetrics_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1016,6 +1043,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTrainDatasetIdsList())) return false;
     if (!getConceptIdsList()
         .equals(other.getConceptIdsList())) return false;
+    if (getShowFailedMetrics()
+        != other.getShowFailedMetrics()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 5:
@@ -1097,6 +1126,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CONCEPT_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getConceptIdsList().hashCode();
     }
+    hash = (37 * hash) + SHOW_FAILED_METRICS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getShowFailedMetrics());
     switch (sortByCase_) {
       case 5:
         hash = (37 * hash) + SORT_BY_APP_ID_FIELD_NUMBER;
@@ -1304,6 +1336,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       conceptIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      showFailedMetrics_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -1387,6 +1421,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.conceptIds_ = conceptIds_;
+      result.showFailedMetrics_ = showFailedMetrics_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1481,6 +1516,9 @@ private static final long serialVersionUID = 0L;
           conceptIds_.addAll(other.conceptIds_);
         }
         onChanged();
+      }
+      if (other.getShowFailedMetrics() != false) {
+        setShowFailedMetrics(other.getShowFailedMetrics());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_APP_ID: {
@@ -2878,6 +2916,49 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureConceptIdsIsMutable();
       conceptIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean showFailedMetrics_ ;
+    /**
+     * <pre>
+     * Whether to show failed metrics, defaults to false
+     * </pre>
+     *
+     * <code>bool show_failed_metrics = 19;</code>
+     * @return The showFailedMetrics.
+     */
+    @java.lang.Override
+    public boolean getShowFailedMetrics() {
+      return showFailedMetrics_;
+    }
+    /**
+     * <pre>
+     * Whether to show failed metrics, defaults to false
+     * </pre>
+     *
+     * <code>bool show_failed_metrics = 19;</code>
+     * @param value The showFailedMetrics to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShowFailedMetrics(boolean value) {
+      
+      showFailedMetrics_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to show failed metrics, defaults to false
+     * </pre>
+     *
+     * <code>bool show_failed_metrics = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearShowFailedMetrics() {
+      
+      showFailedMetrics_ = false;
       onChanged();
       return this;
     }

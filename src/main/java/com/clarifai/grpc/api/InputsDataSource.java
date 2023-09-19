@@ -75,6 +75,19 @@ private static final long serialVersionUID = 0L;
             inputIdConflictResolution_ = rawValue;
             break;
           }
+          case 34: {
+            com.clarifai.grpc.api.Input.Builder subBuilder = null;
+            if (inputTemplate_ != null) {
+              subBuilder = inputTemplate_.toBuilder();
+            }
+            inputTemplate_ = input.readMessage(com.clarifai.grpc.api.Input.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputTemplate_);
+              inputTemplate_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -214,6 +227,44 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.clarifai.grpc.api.InputIDConflictResolution.UNRECOGNIZED : result;
   }
 
+  public static final int INPUT_TEMPLATE_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.Input inputTemplate_;
+  /**
+   * <pre>
+   * Fields set in the template will also be added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 4;</code>
+   * @return Whether the inputTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputTemplate() {
+    return inputTemplate_ != null;
+  }
+  /**
+   * <pre>
+   * Fields set in the template will also be added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 4;</code>
+   * @return The inputTemplate.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Input getInputTemplate() {
+    return inputTemplate_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : inputTemplate_;
+  }
+  /**
+   * <pre>
+   * Fields set in the template will also be added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.InputOrBuilder getInputTemplateOrBuilder() {
+    return getInputTemplate();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -237,6 +288,9 @@ private static final long serialVersionUID = 0L;
     if (inputIdConflictResolution_ != com.clarifai.grpc.api.InputIDConflictResolution.INPUT_ID_CONFLICT_RESOLUTION_NOT_SET.getNumber()) {
       output.writeEnum(3, inputIdConflictResolution_);
     }
+    if (inputTemplate_ != null) {
+      output.writeMessage(4, getInputTemplate());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +310,10 @@ private static final long serialVersionUID = 0L;
     if (inputIdConflictResolution_ != com.clarifai.grpc.api.InputIDConflictResolution.INPUT_ID_CONFLICT_RESOLUTION_NOT_SET.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, inputIdConflictResolution_);
+    }
+    if (inputTemplate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getInputTemplate());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -280,6 +338,11 @@ private static final long serialVersionUID = 0L;
           .equals(other.getUrl())) return false;
     }
     if (inputIdConflictResolution_ != other.inputIdConflictResolution_) return false;
+    if (hasInputTemplate() != other.hasInputTemplate()) return false;
+    if (hasInputTemplate()) {
+      if (!getInputTemplate()
+          .equals(other.getInputTemplate())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -299,6 +362,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + INPUT_ID_CONFLICT_RESOLUTION_FIELD_NUMBER;
     hash = (53 * hash) + inputIdConflictResolution_;
+    if (hasInputTemplate()) {
+      hash = (37 * hash) + INPUT_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getInputTemplate().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -442,6 +509,12 @@ private static final long serialVersionUID = 0L;
       }
       inputIdConflictResolution_ = 0;
 
+      if (inputTemplateBuilder_ == null) {
+        inputTemplate_ = null;
+      } else {
+        inputTemplate_ = null;
+        inputTemplateBuilder_ = null;
+      }
       return this;
     }
 
@@ -475,6 +548,11 @@ private static final long serialVersionUID = 0L;
         result.url_ = urlBuilder_.build();
       }
       result.inputIdConflictResolution_ = inputIdConflictResolution_;
+      if (inputTemplateBuilder_ == null) {
+        result.inputTemplate_ = inputTemplate_;
+      } else {
+        result.inputTemplate_ = inputTemplateBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -532,6 +610,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.inputIdConflictResolution_ != 0) {
         setInputIdConflictResolutionValue(other.getInputIdConflictResolutionValue());
+      }
+      if (other.hasInputTemplate()) {
+        mergeInputTemplate(other.getInputTemplate());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -864,6 +945,161 @@ private static final long serialVersionUID = 0L;
       inputIdConflictResolution_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Input inputTemplate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> inputTemplateBuilder_;
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     * @return Whether the inputTemplate field is set.
+     */
+    public boolean hasInputTemplate() {
+      return inputTemplateBuilder_ != null || inputTemplate_ != null;
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     * @return The inputTemplate.
+     */
+    public com.clarifai.grpc.api.Input getInputTemplate() {
+      if (inputTemplateBuilder_ == null) {
+        return inputTemplate_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : inputTemplate_;
+      } else {
+        return inputTemplateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    public Builder setInputTemplate(com.clarifai.grpc.api.Input value) {
+      if (inputTemplateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputTemplate_ = value;
+        onChanged();
+      } else {
+        inputTemplateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    public Builder setInputTemplate(
+        com.clarifai.grpc.api.Input.Builder builderForValue) {
+      if (inputTemplateBuilder_ == null) {
+        inputTemplate_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputTemplateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    public Builder mergeInputTemplate(com.clarifai.grpc.api.Input value) {
+      if (inputTemplateBuilder_ == null) {
+        if (inputTemplate_ != null) {
+          inputTemplate_ =
+            com.clarifai.grpc.api.Input.newBuilder(inputTemplate_).mergeFrom(value).buildPartial();
+        } else {
+          inputTemplate_ = value;
+        }
+        onChanged();
+      } else {
+        inputTemplateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    public Builder clearInputTemplate() {
+      if (inputTemplateBuilder_ == null) {
+        inputTemplate_ = null;
+        onChanged();
+      } else {
+        inputTemplate_ = null;
+        inputTemplateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    public com.clarifai.grpc.api.Input.Builder getInputTemplateBuilder() {
+      
+      onChanged();
+      return getInputTemplateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    public com.clarifai.grpc.api.InputOrBuilder getInputTemplateOrBuilder() {
+      if (inputTemplateBuilder_ != null) {
+        return inputTemplateBuilder_.getMessageOrBuilder();
+      } else {
+        return inputTemplate_ == null ?
+            com.clarifai.grpc.api.Input.getDefaultInstance() : inputTemplate_;
+      }
+    }
+    /**
+     * <pre>
+     * Fields set in the template will also be added to all generated inputs
+     * </pre>
+     *
+     * <code>.clarifai.api.Input input_template = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> 
+        getInputTemplateFieldBuilder() {
+      if (inputTemplateBuilder_ == null) {
+        inputTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder>(
+                getInputTemplate(),
+                getParentForChildren(),
+                isClean());
+        inputTemplate_ = null;
+      }
+      return inputTemplateBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -84,4 +84,31 @@ public interface InputsUploadOrBuilder extends
    * @return The inputIdConflictResolution.
    */
   com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution();
+
+  /**
+   * <pre>
+   * Fields set in the template will also be added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 5;</code>
+   * @return Whether the inputTemplate field is set.
+   */
+  boolean hasInputTemplate();
+  /**
+   * <pre>
+   * Fields set in the template will also be added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 5;</code>
+   * @return The inputTemplate.
+   */
+  com.clarifai.grpc.api.Input getInputTemplate();
+  /**
+   * <pre>
+   * Fields set in the template will also be added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 5;</code>
+   */
+  com.clarifai.grpc.api.InputOrBuilder getInputTemplateOrBuilder();
 }

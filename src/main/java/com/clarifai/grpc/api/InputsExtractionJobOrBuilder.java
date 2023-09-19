@@ -173,4 +173,31 @@ public interface InputsExtractionJobOrBuilder extends
    * @return The inputIdConflictResolution.
    */
   com.clarifai.grpc.api.InputIDConflictResolution getInputIdConflictResolution();
+
+  /**
+   * <pre>
+   * Fields set in the template are added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 8;</code>
+   * @return Whether the inputTemplate field is set.
+   */
+  boolean hasInputTemplate();
+  /**
+   * <pre>
+   * Fields set in the template are added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 8;</code>
+   * @return The inputTemplate.
+   */
+  com.clarifai.grpc.api.Input getInputTemplate();
+  /**
+   * <pre>
+   * Fields set in the template are added to all generated inputs
+   * </pre>
+   *
+   * <code>.clarifai.api.Input input_template = 8;</code>
+   */
+  com.clarifai.grpc.api.InputOrBuilder getInputTemplateOrBuilder();
 }
