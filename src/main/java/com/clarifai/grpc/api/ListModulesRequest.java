@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListModulesRequest() {
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    name_ = "";
   }
 
   @java.lang.Override
@@ -119,6 +120,17 @@ private static final long serialVersionUID = 0L;
           case 88: {
             sortBy_ = input.readBool();
             sortByCase_ = 11;
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 104: {
+
+            filterByUserId_ = input.readBool();
             break;
           }
           default: {
@@ -454,6 +466,67 @@ private static final long serialVersionUID = 0L;
     return bookmark_;
   }
 
+  public static final int NAME_FIELD_NUMBER = 12;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_BY_USER_ID_FIELD_NUMBER = 13;
+  private boolean filterByUserId_;
+  /**
+   * <pre>
+   * Filter by the application owner whose this module belongs to
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 13;</code>
+   * @return The filterByUserId.
+   */
+  @java.lang.Override
+  public boolean getFilterByUserId() {
+    return filterByUserId_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -504,6 +577,12 @@ private static final long serialVersionUID = 0L;
     if (sortByCase_ == 11) {
       output.writeBool(
           11, (boolean)((java.lang.Boolean) sortBy_));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, name_);
+    }
+    if (filterByUserId_ != false) {
+      output.writeBool(13, filterByUserId_);
     }
     unknownFields.writeTo(output);
   }
@@ -566,6 +645,13 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(
             11, (boolean)((java.lang.Boolean) sortBy_));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, name_);
+    }
+    if (filterByUserId_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, filterByUserId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -598,6 +684,10 @@ private static final long serialVersionUID = 0L;
         != other.getSortAscending()) return false;
     if (getBookmark()
         != other.getBookmark()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (getFilterByUserId()
+        != other.getFilterByUserId()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 7:
@@ -651,6 +741,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBookmark());
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFilterByUserId());
     switch (sortByCase_) {
       case 7:
         hash = (37 * hash) + SORT_BY_CREATED_AT_FIELD_NUMBER;
@@ -830,6 +925,10 @@ private static final long serialVersionUID = 0L;
 
       bookmark_ = false;
 
+      name_ = "";
+
+      filterByUserId_ = false;
+
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -886,6 +985,8 @@ private static final long serialVersionUID = 0L;
         result.sortBy_ = sortBy_;
       }
       result.bookmark_ = bookmark_;
+      result.name_ = name_;
+      result.filterByUserId_ = filterByUserId_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -962,6 +1063,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBookmark() != false) {
         setBookmark(other.getBookmark());
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (other.getFilterByUserId() != false) {
+        setFilterByUserId(other.getFilterByUserId());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_CREATED_AT: {
@@ -1694,6 +1802,145 @@ private static final long serialVersionUID = 0L;
     public Builder clearBookmark() {
       
       bookmark_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean filterByUserId_ ;
+    /**
+     * <pre>
+     * Filter by the application owner whose this module belongs to
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 13;</code>
+     * @return The filterByUserId.
+     */
+    @java.lang.Override
+    public boolean getFilterByUserId() {
+      return filterByUserId_;
+    }
+    /**
+     * <pre>
+     * Filter by the application owner whose this module belongs to
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 13;</code>
+     * @param value The filterByUserId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterByUserId(boolean value) {
+      
+      filterByUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the application owner whose this module belongs to
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilterByUserId() {
+      
+      filterByUserId_ = false;
       onChanged();
       return this;
     }

@@ -172,5 +172,35 @@ public interface ListModulesRequestOrBuilder extends
    */
   boolean getBookmark();
 
+  /**
+   * <pre>
+   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * Filter by the application owner whose this module belongs to
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 13;</code>
+   * @return The filterByUserId.
+   */
+  boolean getFilterByUserId();
+
   public com.clarifai.grpc.api.ListModulesRequest.SortByCase getSortByCase();
 }

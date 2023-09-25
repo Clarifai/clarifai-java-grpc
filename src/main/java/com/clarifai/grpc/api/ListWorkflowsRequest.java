@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object query_;
   /**
    * <pre>
-   * Query various text fields that can contain the words in the query string.
+   * Query various text fields (id, description and notes) that can contain the words in the query string.
    * </pre>
    *
    * <code>string query = 8;</code>
@@ -446,7 +446,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Query various text fields that can contain the words in the query string.
+   * Query various text fields (id, description and notes) that can contain the words in the query string.
    * </pre>
    *
    * <code>string query = 8;</code>
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5997
+   *     See proto/clarifai/api/service.proto;l=6000
    * @return The id.
    */
   @java.lang.Override
@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5997
+   *     See proto/clarifai/api/service.proto;l=6000
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object searchTerm_;
   /**
    * <pre>
-   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
    * </pre>
    *
    * <code>string search_term = 12;</code>
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
    * </pre>
    *
    * <code>string search_term = 12;</code>
@@ -1797,7 +1797,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object query_ = "";
     /**
      * <pre>
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      * </pre>
      *
      * <code>string query = 8;</code>
@@ -1817,7 +1817,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      * </pre>
      *
      * <code>string query = 8;</code>
@@ -1838,7 +1838,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      * </pre>
      *
      * <code>string query = 8;</code>
@@ -1857,7 +1857,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      * </pre>
      *
      * <code>string query = 8;</code>
@@ -1871,7 +1871,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Query various text fields that can contain the words in the query string.
+     * Query various text fields (id, description and notes) that can contain the words in the query string.
      * </pre>
      *
      * <code>string query = 8;</code>
@@ -1899,7 +1899,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5997
+     *     See proto/clarifai/api/service.proto;l=6000
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -1922,7 +1922,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5997
+     *     See proto/clarifai/api/service.proto;l=6000
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1946,7 +1946,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5997
+     *     See proto/clarifai/api/service.proto;l=6000
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1968,7 +1968,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5997
+     *     See proto/clarifai/api/service.proto;l=6000
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -1985,7 +1985,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5997
+     *     See proto/clarifai/api/service.proto;l=6000
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -2236,7 +2236,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object searchTerm_ = "";
     /**
      * <pre>
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      * </pre>
      *
      * <code>string search_term = 12;</code>
@@ -2256,7 +2256,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      * </pre>
      *
      * <code>string search_term = 12;</code>
@@ -2277,7 +2277,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      * </pre>
      *
      * <code>string search_term = 12;</code>
@@ -2296,7 +2296,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      * </pre>
      *
      * <code>string search_term = 12;</code>
@@ -2310,7 +2310,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+     * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
      * </pre>
      *
      * <code>string search_term = 12;</code>

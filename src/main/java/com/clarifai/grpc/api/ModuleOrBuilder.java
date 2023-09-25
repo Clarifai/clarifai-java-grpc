@@ -291,4 +291,31 @@ public interface ModuleOrBuilder extends
    * <code>.clarifai.api.BookmarkOrigin bookmark_origin = 14;</code>
    */
   com.clarifai.grpc.api.BookmarkOriginOrBuilder getBookmarkOriginOrBuilder();
+
+  /**
+   * <pre>
+   * Representative image for this module
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 15;</code>
+   * @return Whether the image field is set.
+   */
+  boolean hasImage();
+  /**
+   * <pre>
+   * Representative image for this module
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 15;</code>
+   * @return The image.
+   */
+  com.clarifai.grpc.api.Image getImage();
+  /**
+   * <pre>
+   * Representative image for this module
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 15;</code>
+   */
+  com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder();
 }

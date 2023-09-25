@@ -320,6 +320,14 @@ private static final long serialVersionUID = 0L;
      * <code>DATASET_VERSION = 20;</code>
      */
     DATASET_VERSION(20),
+    /**
+     * <pre>
+     * To pass a string downstream, that is encrypted in the DB and API.
+     * </pre>
+     *
+     * <code>ENCRYPTED_STRING = 21;</code>
+     */
+    ENCRYPTED_STRING(21),
     UNRECOGNIZED(-1),
     ;
 
@@ -470,6 +478,14 @@ private static final long serialVersionUID = 0L;
      * <code>DATASET_VERSION = 20;</code>
      */
     public static final int DATASET_VERSION_VALUE = 20;
+    /**
+     * <pre>
+     * To pass a string downstream, that is encrypted in the DB and API.
+     * </pre>
+     *
+     * <code>ENCRYPTED_STRING = 21;</code>
+     */
+    public static final int ENCRYPTED_STRING_VALUE = 21;
 
 
     public final int getNumber() {
@@ -516,6 +532,7 @@ private static final long serialVersionUID = 0L;
         case 18: return ARRAY_OF_MODEL_CONCEPTS;
         case 19: return DATASET;
         case 20: return DATASET_VERSION;
+        case 21: return ENCRYPTED_STRING;
         default: return null;
       }
     }

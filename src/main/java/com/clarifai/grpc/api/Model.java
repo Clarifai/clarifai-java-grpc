@@ -316,6 +316,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 274: {
+            com.clarifai.grpc.api.Image.Builder subBuilder = null;
+            if (image_ != null) {
+              subBuilder = image_.toBuilder();
+            }
+            image_ = input.readMessage(com.clarifai.grpc.api.Image.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(image_);
+              image_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -420,7 +433,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1259
+   *     See proto/clarifai/api/resources.proto;l=1261
    * @return The name.
    */
   @java.lang.Override
@@ -443,7 +456,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1259
+   *     See proto/clarifai/api/resources.proto;l=1261
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -605,7 +618,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1272
+   *     See proto/clarifai/api/resources.proto;l=1274
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Override
@@ -620,7 +633,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1272
+   *     See proto/clarifai/api/resources.proto;l=1274
    * @return The outputInfo.
    */
   @java.lang.Override
@@ -690,7 +703,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1277
+   *     See proto/clarifai/api/resources.proto;l=1279
    * @return The displayName.
    */
   @java.lang.Override
@@ -713,7 +726,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1277
+   *     See proto/clarifai/api/resources.proto;l=1279
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -1473,6 +1486,44 @@ private static final long serialVersionUID = 0L;
     return getBookmarkOrigin();
   }
 
+  public static final int IMAGE_FIELD_NUMBER = 34;
+  private com.clarifai.grpc.api.Image image_;
+  /**
+   * <pre>
+   * Representative image for this model
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 34;</code>
+   * @return Whether the image field is set.
+   */
+  @java.lang.Override
+  public boolean hasImage() {
+    return image_ != null;
+  }
+  /**
+   * <pre>
+   * Representative image for this model
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 34;</code>
+   * @return The image.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Image getImage() {
+    return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
+  }
+  /**
+   * <pre>
+   * Representative image for this model
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 34;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
+    return getImage();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1564,6 +1615,9 @@ private static final long serialVersionUID = 0L;
     }
     if (bookmarkOrigin_ != null) {
       output.writeMessage(33, getBookmarkOrigin());
+    }
+    if (image_ != null) {
+      output.writeMessage(34, getImage());
     }
     unknownFields.writeTo(output);
   }
@@ -1685,6 +1739,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(33, getBookmarkOrigin());
     }
+    if (image_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(34, getImage());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1782,6 +1840,11 @@ private static final long serialVersionUID = 0L;
       if (!getBookmarkOrigin()
           .equals(other.getBookmarkOrigin())) return false;
     }
+    if (hasImage() != other.hasImage()) return false;
+    if (hasImage()) {
+      if (!getImage()
+          .equals(other.getImage())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1875,6 +1938,10 @@ private static final long serialVersionUID = 0L;
     if (hasBookmarkOrigin()) {
       hash = (37 * hash) + BOOKMARK_ORIGIN_FIELD_NUMBER;
       hash = (53 * hash) + getBookmarkOrigin().hashCode();
+    }
+    if (hasImage()) {
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2120,6 +2187,12 @@ private static final long serialVersionUID = 0L;
         bookmarkOrigin_ = null;
         bookmarkOriginBuilder_ = null;
       }
+      if (imageBuilder_ == null) {
+        image_ = null;
+      } else {
+        image_ = null;
+        imageBuilder_ = null;
+      }
       return this;
     }
 
@@ -2236,6 +2309,11 @@ private static final long serialVersionUID = 0L;
         result.bookmarkOrigin_ = bookmarkOrigin_;
       } else {
         result.bookmarkOrigin_ = bookmarkOriginBuilder_.build();
+      }
+      if (imageBuilder_ == null) {
+        result.image_ = image_;
+      } else {
+        result.image_ = imageBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2423,6 +2501,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasBookmarkOrigin()) {
         mergeBookmarkOrigin(other.getBookmarkOrigin());
       }
+      if (other.hasImage()) {
+        mergeImage(other.getImage());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2557,7 +2638,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1259
+     *     See proto/clarifai/api/resources.proto;l=1261
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2579,7 +2660,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1259
+     *     See proto/clarifai/api/resources.proto;l=1261
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2602,7 +2683,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1259
+     *     See proto/clarifai/api/resources.proto;l=1261
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2623,7 +2704,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1259
+     *     See proto/clarifai/api/resources.proto;l=1261
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2639,7 +2720,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1259
+     *     See proto/clarifai/api/resources.proto;l=1261
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -3108,7 +3189,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1272
+     *     See proto/clarifai/api/resources.proto;l=1274
      * @return Whether the outputInfo field is set.
      */
     @java.lang.Deprecated public boolean hasOutputInfo() {
@@ -3122,7 +3203,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1272
+     *     See proto/clarifai/api/resources.proto;l=1274
      * @return The outputInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
@@ -3437,7 +3518,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1277
+     *     See proto/clarifai/api/resources.proto;l=1279
      * @return The displayName.
      */
     @java.lang.Deprecated public java.lang.String getDisplayName() {
@@ -3459,7 +3540,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1277
+     *     See proto/clarifai/api/resources.proto;l=1279
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3482,7 +3563,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1277
+     *     See proto/clarifai/api/resources.proto;l=1279
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -3503,7 +3584,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1277
+     *     See proto/clarifai/api/resources.proto;l=1279
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDisplayName() {
@@ -3519,7 +3600,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1277
+     *     See proto/clarifai/api/resources.proto;l=1279
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -5905,6 +5986,161 @@ private static final long serialVersionUID = 0L;
         bookmarkOrigin_ = null;
       }
       return bookmarkOriginBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Image image_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> imageBuilder_;
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     * @return Whether the image field is set.
+     */
+    public boolean hasImage() {
+      return imageBuilder_ != null || image_ != null;
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     * @return The image.
+     */
+    public com.clarifai.grpc.api.Image getImage() {
+      if (imageBuilder_ == null) {
+        return image_ == null ? com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
+      } else {
+        return imageBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    public Builder setImage(com.clarifai.grpc.api.Image value) {
+      if (imageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        image_ = value;
+        onChanged();
+      } else {
+        imageBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    public Builder setImage(
+        com.clarifai.grpc.api.Image.Builder builderForValue) {
+      if (imageBuilder_ == null) {
+        image_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    public Builder mergeImage(com.clarifai.grpc.api.Image value) {
+      if (imageBuilder_ == null) {
+        if (image_ != null) {
+          image_ =
+            com.clarifai.grpc.api.Image.newBuilder(image_).mergeFrom(value).buildPartial();
+        } else {
+          image_ = value;
+        }
+        onChanged();
+      } else {
+        imageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    public Builder clearImage() {
+      if (imageBuilder_ == null) {
+        image_ = null;
+        onChanged();
+      } else {
+        image_ = null;
+        imageBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    public com.clarifai.grpc.api.Image.Builder getImageBuilder() {
+      
+      onChanged();
+      return getImageFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    public com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder() {
+      if (imageBuilder_ != null) {
+        return imageBuilder_.getMessageOrBuilder();
+      } else {
+        return image_ == null ?
+            com.clarifai.grpc.api.Image.getDefaultInstance() : image_;
+      }
+    }
+    /**
+     * <pre>
+     * Representative image for this model
+     * </pre>
+     *
+     * <code>.clarifai.api.Image image = 34;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> 
+        getImageFieldBuilder() {
+      if (imageBuilder_ == null) {
+        imageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder>(
+                getImage(),
+                getParentForChildren(),
+                isClean());
+        image_ = null;
+      }
+      return imageBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

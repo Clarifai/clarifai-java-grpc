@@ -135,7 +135,7 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Query various text fields that can contain the words in the query string.
+   * Query various text fields (id, description and notes) that can contain the words in the query string.
    * </pre>
    *
    * <code>string query = 8;</code>
@@ -144,7 +144,7 @@ public interface ListWorkflowsRequestOrBuilder extends
   java.lang.String getQuery();
   /**
    * <pre>
-   * Query various text fields that can contain the words in the query string.
+   * Query various text fields (id, description and notes) that can contain the words in the query string.
    * </pre>
    *
    * <code>string query = 8;</code>
@@ -161,7 +161,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5997
+   *     See proto/clarifai/api/service.proto;l=6000
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -173,7 +173,7 @@ public interface ListWorkflowsRequestOrBuilder extends
    *
    * <code>string id = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5997
+   *     See proto/clarifai/api/service.proto;l=6000
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -242,7 +242,7 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
    * </pre>
    *
    * <code>string search_term = 12;</code>
@@ -251,7 +251,7 @@ public interface ListWorkflowsRequestOrBuilder extends
   java.lang.String getSearchTerm();
   /**
    * <pre>
-   * (optional) search_term. Full text and prefix matching on description, id, owner id. Searchable fields may be added
+   * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
    * </pre>
    *
    * <code>string search_term = 12;</code>

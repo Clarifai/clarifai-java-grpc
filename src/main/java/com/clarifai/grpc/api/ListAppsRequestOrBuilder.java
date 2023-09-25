@@ -136,7 +136,7 @@ public interface ListAppsRequestOrBuilder extends
   /**
    * <pre>
    * Filtering options:
-   * Query various text fields that can contain the words in the query string
+   * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
    * </pre>
    *
    * <code>string query = 8;</code>
@@ -146,7 +146,7 @@ public interface ListAppsRequestOrBuilder extends
   /**
    * <pre>
    * Filtering options:
-   * Query various text fields that can contain the words in the query string
+   * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
    * </pre>
    *
    * <code>string query = 8;</code>
@@ -157,25 +157,25 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3809
+   *     See proto/clarifai/api/service.proto;l=3810
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
   /**
    * <pre>
-   * Filter by the name of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
    * Deprecated in favor of query
    * </pre>
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3809
+   *     See proto/clarifai/api/service.proto;l=3810
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
