@@ -146,4 +146,28 @@ public interface OutputInfoOrBuilder extends
    * <code>.google.protobuf.Struct params = 7;</code>
    */
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
+
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.ModelTypeField> 
+      getParamsSpecsList();
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeField getParamsSpecs(int index);
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  int getParamsSpecsCount();
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+      getParamsSpecsOrBuilderList();
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  com.clarifai.grpc.api.ModelTypeFieldOrBuilder getParamsSpecsOrBuilder(
+      int index);
 }

@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
   }
   private OutputInfo() {
     message_ = "";
+    paramsSpecs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -50,6 +51,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -118,6 +120,15 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              paramsSpecs_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeField>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            paramsSpecs_.add(
+                input.readMessage(com.clarifai.grpc.api.ModelTypeField.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -135,6 +146,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        paramsSpecs_ = java.util.Collections.unmodifiableList(paramsSpecs_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -362,6 +376,46 @@ private static final long serialVersionUID = 0L;
     return getParams();
   }
 
+  public static final int PARAMS_SPECS_FIELD_NUMBER = 8;
+  private java.util.List<com.clarifai.grpc.api.ModelTypeField> paramsSpecs_;
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.ModelTypeField> getParamsSpecsList() {
+    return paramsSpecs_;
+  }
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+      getParamsSpecsOrBuilderList() {
+    return paramsSpecs_;
+  }
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  @java.lang.Override
+  public int getParamsSpecsCount() {
+    return paramsSpecs_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelTypeField getParamsSpecs(int index) {
+    return paramsSpecs_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getParamsSpecsOrBuilder(
+      int index) {
+    return paramsSpecs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -391,6 +445,9 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       output.writeMessage(7, getParams());
     }
+    for (int i = 0; i < paramsSpecs_.size(); i++) {
+      output.writeMessage(8, paramsSpecs_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -418,6 +475,10 @@ private static final long serialVersionUID = 0L;
     if (params_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getParams());
+    }
+    for (int i = 0; i < paramsSpecs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, paramsSpecs_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -456,6 +517,8 @@ private static final long serialVersionUID = 0L;
       if (!getParams()
           .equals(other.getParams())) return false;
     }
+    if (!getParamsSpecsList()
+        .equals(other.getParamsSpecsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -484,6 +547,10 @@ private static final long serialVersionUID = 0L;
     if (hasParams()) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getParams().hashCode();
+    }
+    if (getParamsSpecsCount() > 0) {
+      hash = (37 * hash) + PARAMS_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getParamsSpecsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -624,6 +691,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getParamsSpecsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -655,6 +723,12 @@ private static final long serialVersionUID = 0L;
         params_ = null;
         paramsBuilder_ = null;
       }
+      if (paramsSpecsBuilder_ == null) {
+        paramsSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        paramsSpecsBuilder_.clear();
+      }
       return this;
     }
 
@@ -681,6 +755,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.OutputInfo buildPartial() {
       com.clarifai.grpc.api.OutputInfo result = new com.clarifai.grpc.api.OutputInfo(this);
+      int from_bitField0_ = bitField0_;
       if (dataBuilder_ == null) {
         result.data_ = data_;
       } else {
@@ -701,6 +776,15 @@ private static final long serialVersionUID = 0L;
         result.params_ = params_;
       } else {
         result.params_ = paramsBuilder_.build();
+      }
+      if (paramsSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          paramsSpecs_ = java.util.Collections.unmodifiableList(paramsSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.paramsSpecs_ = paramsSpecs_;
+      } else {
+        result.paramsSpecs_ = paramsSpecsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -766,6 +850,32 @@ private static final long serialVersionUID = 0L;
       if (other.hasParams()) {
         mergeParams(other.getParams());
       }
+      if (paramsSpecsBuilder_ == null) {
+        if (!other.paramsSpecs_.isEmpty()) {
+          if (paramsSpecs_.isEmpty()) {
+            paramsSpecs_ = other.paramsSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureParamsSpecsIsMutable();
+            paramsSpecs_.addAll(other.paramsSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.paramsSpecs_.isEmpty()) {
+          if (paramsSpecsBuilder_.isEmpty()) {
+            paramsSpecsBuilder_.dispose();
+            paramsSpecsBuilder_ = null;
+            paramsSpecs_ = other.paramsSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            paramsSpecsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getParamsSpecsFieldBuilder() : null;
+          } else {
+            paramsSpecsBuilder_.addAllMessages(other.paramsSpecs_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -794,6 +904,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.Data data_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1545,6 +1656,246 @@ private static final long serialVersionUID = 0L;
         params_ = null;
       }
       return paramsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.ModelTypeField> paramsSpecs_ =
+      java.util.Collections.emptyList();
+    private void ensureParamsSpecsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        paramsSpecs_ = new java.util.ArrayList<com.clarifai.grpc.api.ModelTypeField>(paramsSpecs_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> paramsSpecsBuilder_;
+
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelTypeField> getParamsSpecsList() {
+      if (paramsSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(paramsSpecs_);
+      } else {
+        return paramsSpecsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public int getParamsSpecsCount() {
+      if (paramsSpecsBuilder_ == null) {
+        return paramsSpecs_.size();
+      } else {
+        return paramsSpecsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField getParamsSpecs(int index) {
+      if (paramsSpecsBuilder_ == null) {
+        return paramsSpecs_.get(index);
+      } else {
+        return paramsSpecsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder setParamsSpecs(
+        int index, com.clarifai.grpc.api.ModelTypeField value) {
+      if (paramsSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.set(index, value);
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder setParamsSpecs(
+        int index, com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (paramsSpecsBuilder_ == null) {
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder addParamsSpecs(com.clarifai.grpc.api.ModelTypeField value) {
+      if (paramsSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.add(value);
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder addParamsSpecs(
+        int index, com.clarifai.grpc.api.ModelTypeField value) {
+      if (paramsSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.add(index, value);
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder addParamsSpecs(
+        com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (paramsSpecsBuilder_ == null) {
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder addParamsSpecs(
+        int index, com.clarifai.grpc.api.ModelTypeField.Builder builderForValue) {
+      if (paramsSpecsBuilder_ == null) {
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder addAllParamsSpecs(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.ModelTypeField> values) {
+      if (paramsSpecsBuilder_ == null) {
+        ensureParamsSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, paramsSpecs_);
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder clearParamsSpecs() {
+      if (paramsSpecsBuilder_ == null) {
+        paramsSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public Builder removeParamsSpecs(int index) {
+      if (paramsSpecsBuilder_ == null) {
+        ensureParamsSpecsIsMutable();
+        paramsSpecs_.remove(index);
+        onChanged();
+      } else {
+        paramsSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder getParamsSpecsBuilder(
+        int index) {
+      return getParamsSpecsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeFieldOrBuilder getParamsSpecsOrBuilder(
+        int index) {
+      if (paramsSpecsBuilder_ == null) {
+        return paramsSpecs_.get(index);  } else {
+        return paramsSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+         getParamsSpecsOrBuilderList() {
+      if (paramsSpecsBuilder_ != null) {
+        return paramsSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(paramsSpecs_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder addParamsSpecsBuilder() {
+      return getParamsSpecsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.ModelTypeField.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public com.clarifai.grpc.api.ModelTypeField.Builder addParamsSpecsBuilder(
+        int index) {
+      return getParamsSpecsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.ModelTypeField.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.ModelTypeField params_specs = 8;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.ModelTypeField.Builder> 
+         getParamsSpecsBuilderList() {
+      return getParamsSpecsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder> 
+        getParamsSpecsFieldBuilder() {
+      if (paramsSpecsBuilder_ == null) {
+        paramsSpecsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.ModelTypeField, com.clarifai.grpc.api.ModelTypeField.Builder, com.clarifai.grpc.api.ModelTypeFieldOrBuilder>(
+                paramsSpecs_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        paramsSpecs_ = null;
+      }
+      return paramsSpecsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

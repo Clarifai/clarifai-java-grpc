@@ -57,14 +57,14 @@ private static final long serialVersionUID = 0L;
             numFrames_ = input.readUInt32();
             break;
           }
-          case 16: {
+          case 37: {
 
-            beginTime_ = input.readUInt32();
+            beginTime_ = input.readFloat();
             break;
           }
-          case 24: {
+          case 45: {
 
-            endTime_ = input.readUInt32();
+            endTime_ = input.readFloat();
             break;
           }
           default: {
@@ -116,33 +116,33 @@ private static final long serialVersionUID = 0L;
     return numFrames_;
   }
 
-  public static final int BEGIN_TIME_FIELD_NUMBER = 2;
-  private int beginTime_;
+  public static final int BEGIN_TIME_FIELD_NUMBER = 4;
+  private float beginTime_;
   /**
    * <pre>
    * Timestamp where track begins.
    * </pre>
    *
-   * <code>uint32 begin_time = 2;</code>
+   * <code>float begin_time = 4;</code>
    * @return The beginTime.
    */
   @java.lang.Override
-  public int getBeginTime() {
+  public float getBeginTime() {
     return beginTime_;
   }
 
-  public static final int END_TIME_FIELD_NUMBER = 3;
-  private int endTime_;
+  public static final int END_TIME_FIELD_NUMBER = 5;
+  private float endTime_;
   /**
    * <pre>
    * Timestamp where track ends.
    * </pre>
    *
-   * <code>uint32 end_time = 3;</code>
+   * <code>float end_time = 5;</code>
    * @return The endTime.
    */
   @java.lang.Override
-  public int getEndTime() {
+  public float getEndTime() {
     return endTime_;
   }
 
@@ -163,11 +163,11 @@ private static final long serialVersionUID = 0L;
     if (numFrames_ != 0) {
       output.writeUInt32(1, numFrames_);
     }
-    if (beginTime_ != 0) {
-      output.writeUInt32(2, beginTime_);
+    if (java.lang.Float.floatToRawIntBits(beginTime_) != 0) {
+      output.writeFloat(4, beginTime_);
     }
-    if (endTime_ != 0) {
-      output.writeUInt32(3, endTime_);
+    if (java.lang.Float.floatToRawIntBits(endTime_) != 0) {
+      output.writeFloat(5, endTime_);
     }
     unknownFields.writeTo(output);
   }
@@ -182,13 +182,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(1, numFrames_);
     }
-    if (beginTime_ != 0) {
+    if (java.lang.Float.floatToRawIntBits(beginTime_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, beginTime_);
+        .computeFloatSize(4, beginTime_);
     }
-    if (endTime_ != 0) {
+    if (java.lang.Float.floatToRawIntBits(endTime_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, endTime_);
+        .computeFloatSize(5, endTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -207,10 +207,12 @@ private static final long serialVersionUID = 0L;
 
     if (getNumFrames()
         != other.getNumFrames()) return false;
-    if (getBeginTime()
-        != other.getBeginTime()) return false;
-    if (getEndTime()
-        != other.getEndTime()) return false;
+    if (java.lang.Float.floatToIntBits(getBeginTime())
+        != java.lang.Float.floatToIntBits(
+            other.getBeginTime())) return false;
+    if (java.lang.Float.floatToIntBits(getEndTime())
+        != java.lang.Float.floatToIntBits(
+            other.getEndTime())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -225,9 +227,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NUM_FRAMES_FIELD_NUMBER;
     hash = (53 * hash) + getNumFrames();
     hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getBeginTime();
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getBeginTime());
     hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getEndTime();
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getEndTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -367,9 +371,9 @@ private static final long serialVersionUID = 0L;
       super.clear();
       numFrames_ = 0;
 
-      beginTime_ = 0;
+      beginTime_ = 0F;
 
-      endTime_ = 0;
+      endTime_ = 0F;
 
       return this;
     }
@@ -451,10 +455,10 @@ private static final long serialVersionUID = 0L;
       if (other.getNumFrames() != 0) {
         setNumFrames(other.getNumFrames());
       }
-      if (other.getBeginTime() != 0) {
+      if (other.getBeginTime() != 0F) {
         setBeginTime(other.getBeginTime());
       }
-      if (other.getEndTime() != 0) {
+      if (other.getEndTime() != 0F) {
         setEndTime(other.getEndTime());
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -529,17 +533,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int beginTime_ ;
+    private float beginTime_ ;
     /**
      * <pre>
      * Timestamp where track begins.
      * </pre>
      *
-     * <code>uint32 begin_time = 2;</code>
+     * <code>float begin_time = 4;</code>
      * @return The beginTime.
      */
     @java.lang.Override
-    public int getBeginTime() {
+    public float getBeginTime() {
       return beginTime_;
     }
     /**
@@ -547,11 +551,11 @@ private static final long serialVersionUID = 0L;
      * Timestamp where track begins.
      * </pre>
      *
-     * <code>uint32 begin_time = 2;</code>
+     * <code>float begin_time = 4;</code>
      * @param value The beginTime to set.
      * @return This builder for chaining.
      */
-    public Builder setBeginTime(int value) {
+    public Builder setBeginTime(float value) {
       
       beginTime_ = value;
       onChanged();
@@ -562,27 +566,27 @@ private static final long serialVersionUID = 0L;
      * Timestamp where track begins.
      * </pre>
      *
-     * <code>uint32 begin_time = 2;</code>
+     * <code>float begin_time = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearBeginTime() {
       
-      beginTime_ = 0;
+      beginTime_ = 0F;
       onChanged();
       return this;
     }
 
-    private int endTime_ ;
+    private float endTime_ ;
     /**
      * <pre>
      * Timestamp where track ends.
      * </pre>
      *
-     * <code>uint32 end_time = 3;</code>
+     * <code>float end_time = 5;</code>
      * @return The endTime.
      */
     @java.lang.Override
-    public int getEndTime() {
+    public float getEndTime() {
       return endTime_;
     }
     /**
@@ -590,11 +594,11 @@ private static final long serialVersionUID = 0L;
      * Timestamp where track ends.
      * </pre>
      *
-     * <code>uint32 end_time = 3;</code>
+     * <code>float end_time = 5;</code>
      * @param value The endTime to set.
      * @return This builder for chaining.
      */
-    public Builder setEndTime(int value) {
+    public Builder setEndTime(float value) {
       
       endTime_ = value;
       onChanged();
@@ -605,12 +609,12 @@ private static final long serialVersionUID = 0L;
      * Timestamp where track ends.
      * </pre>
      *
-     * <code>uint32 end_time = 3;</code>
+     * <code>float end_time = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearEndTime() {
       
-      endTime_ = 0;
+      endTime_ = 0F;
       onChanged();
       return this;
     }

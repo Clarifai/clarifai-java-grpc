@@ -22,18 +22,18 @@ public interface TimeInfoOrBuilder extends
    * Timestamp where track begins.
    * </pre>
    *
-   * <code>uint32 begin_time = 2;</code>
+   * <code>float begin_time = 4;</code>
    * @return The beginTime.
    */
-  int getBeginTime();
+  float getBeginTime();
 
   /**
    * <pre>
    * Timestamp where track ends.
    * </pre>
    *
-   * <code>uint32 end_time = 3;</code>
+   * <code>float end_time = 5;</code>
    * @return The endTime.
    */
-  int getEndTime();
+  float getEndTime();
 }
