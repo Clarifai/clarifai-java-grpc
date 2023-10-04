@@ -361,4 +361,19 @@ public interface AppOrBuilder extends
    * <code>.clarifai.api.Image image = 22;</code>
    */
   com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder();
+
+  /**
+   * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+   * @return Whether the extraInfo field is set.
+   */
+  boolean hasExtraInfo();
+  /**
+   * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+   * @return The extraInfo.
+   */
+  com.clarifai.grpc.api.AppExtraInfo getExtraInfo();
+  /**
+   * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+   */
+  com.clarifai.grpc.api.AppExtraInfoOrBuilder getExtraInfoOrBuilder();
 }

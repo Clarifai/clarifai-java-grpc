@@ -206,6 +206,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 194: {
+            com.clarifai.grpc.api.AppExtraInfo.Builder subBuilder = null;
+            if (extraInfo_ != null) {
+              subBuilder = extraInfo_.toBuilder();
+            }
+            extraInfo_ = input.readMessage(com.clarifai.grpc.api.AppExtraInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(extraInfo_);
+              extraInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -889,6 +902,32 @@ private static final long serialVersionUID = 0L;
     return getImage();
   }
 
+  public static final int EXTRA_INFO_FIELD_NUMBER = 24;
+  private com.clarifai.grpc.api.AppExtraInfo extraInfo_;
+  /**
+   * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+   * @return Whether the extraInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasExtraInfo() {
+    return extraInfo_ != null;
+  }
+  /**
+   * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+   * @return The extraInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppExtraInfo getExtraInfo() {
+    return extraInfo_ == null ? com.clarifai.grpc.api.AppExtraInfo.getDefaultInstance() : extraInfo_;
+  }
+  /**
+   * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppExtraInfoOrBuilder getExtraInfoOrBuilder() {
+    return getExtraInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -956,6 +995,9 @@ private static final long serialVersionUID = 0L;
     }
     if (defaultWorkflow_ != null) {
       output.writeMessage(23, getDefaultWorkflow());
+    }
+    if (extraInfo_ != null) {
+      output.writeMessage(24, getExtraInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -1030,6 +1072,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getDefaultWorkflow());
     }
+    if (extraInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getExtraInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1099,6 +1145,11 @@ private static final long serialVersionUID = 0L;
       if (!getImage()
           .equals(other.getImage())) return false;
     }
+    if (hasExtraInfo() != other.hasExtraInfo()) return false;
+    if (hasExtraInfo()) {
+      if (!getExtraInfo()
+          .equals(other.getExtraInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1158,6 +1209,10 @@ private static final long serialVersionUID = 0L;
     if (hasImage()) {
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
+    }
+    if (hasExtraInfo()) {
+      hash = (37 * hash) + EXTRA_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getExtraInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1356,6 +1411,12 @@ private static final long serialVersionUID = 0L;
         image_ = null;
         imageBuilder_ = null;
       }
+      if (extraInfoBuilder_ == null) {
+        extraInfo_ = null;
+      } else {
+        extraInfo_ = null;
+        extraInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1423,6 +1484,11 @@ private static final long serialVersionUID = 0L;
         result.image_ = image_;
       } else {
         result.image_ = imageBuilder_.build();
+      }
+      if (extraInfoBuilder_ == null) {
+        result.extraInfo_ = extraInfo_;
+      } else {
+        result.extraInfo_ = extraInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1533,6 +1599,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasImage()) {
         mergeImage(other.getImage());
+      }
+      if (other.hasExtraInfo()) {
+        mergeExtraInfo(other.getExtraInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3419,6 +3488,125 @@ private static final long serialVersionUID = 0L;
         image_ = null;
       }
       return imageBuilder_;
+    }
+
+    private com.clarifai.grpc.api.AppExtraInfo extraInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AppExtraInfo, com.clarifai.grpc.api.AppExtraInfo.Builder, com.clarifai.grpc.api.AppExtraInfoOrBuilder> extraInfoBuilder_;
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     * @return Whether the extraInfo field is set.
+     */
+    public boolean hasExtraInfo() {
+      return extraInfoBuilder_ != null || extraInfo_ != null;
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     * @return The extraInfo.
+     */
+    public com.clarifai.grpc.api.AppExtraInfo getExtraInfo() {
+      if (extraInfoBuilder_ == null) {
+        return extraInfo_ == null ? com.clarifai.grpc.api.AppExtraInfo.getDefaultInstance() : extraInfo_;
+      } else {
+        return extraInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    public Builder setExtraInfo(com.clarifai.grpc.api.AppExtraInfo value) {
+      if (extraInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extraInfo_ = value;
+        onChanged();
+      } else {
+        extraInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    public Builder setExtraInfo(
+        com.clarifai.grpc.api.AppExtraInfo.Builder builderForValue) {
+      if (extraInfoBuilder_ == null) {
+        extraInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        extraInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    public Builder mergeExtraInfo(com.clarifai.grpc.api.AppExtraInfo value) {
+      if (extraInfoBuilder_ == null) {
+        if (extraInfo_ != null) {
+          extraInfo_ =
+            com.clarifai.grpc.api.AppExtraInfo.newBuilder(extraInfo_).mergeFrom(value).buildPartial();
+        } else {
+          extraInfo_ = value;
+        }
+        onChanged();
+      } else {
+        extraInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    public Builder clearExtraInfo() {
+      if (extraInfoBuilder_ == null) {
+        extraInfo_ = null;
+        onChanged();
+      } else {
+        extraInfo_ = null;
+        extraInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    public com.clarifai.grpc.api.AppExtraInfo.Builder getExtraInfoBuilder() {
+      
+      onChanged();
+      return getExtraInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    public com.clarifai.grpc.api.AppExtraInfoOrBuilder getExtraInfoOrBuilder() {
+      if (extraInfoBuilder_ != null) {
+        return extraInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return extraInfo_ == null ?
+            com.clarifai.grpc.api.AppExtraInfo.getDefaultInstance() : extraInfo_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AppExtraInfo, com.clarifai.grpc.api.AppExtraInfo.Builder, com.clarifai.grpc.api.AppExtraInfoOrBuilder> 
+        getExtraInfoFieldBuilder() {
+      if (extraInfoBuilder_ == null) {
+        extraInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AppExtraInfo, com.clarifai.grpc.api.AppExtraInfo.Builder, com.clarifai.grpc.api.AppExtraInfoOrBuilder>(
+                getExtraInfo(),
+                getParentForChildren(),
+                isClean());
+        extraInfo_ = null;
+      }
+      return extraInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
