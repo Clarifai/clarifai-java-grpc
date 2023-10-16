@@ -184,6 +184,7 @@ private static final long serialVersionUID = 0L;
    *  - model_version_id
    *  - status.code
    *  - task_id
+   *  - trusted
    *  - user_id
    *  - workflow_version_id
    * </pre>
@@ -231,6 +232,7 @@ private static final long serialVersionUID = 0L;
    *  - model_version_id
    *  - status.code
    *  - task_id
+   *  - trusted
    *  - user_id
    *  - workflow_version_id
    * </pre>
@@ -278,6 +280,7 @@ private static final long serialVersionUID = 0L;
    *  - model_version_id
    *  - status.code
    *  - task_id
+   *  - trusted
    *  - user_id
    *  - workflow_version_id
    * </pre>
@@ -868,6 +871,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -914,6 +918,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -964,6 +969,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -1019,6 +1025,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -1072,6 +1079,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -1129,6 +1137,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -1182,6 +1191,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -1229,6 +1239,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
@@ -1279,6 +1290,7 @@ private static final long serialVersionUID = 0L;
      *  - model_version_id
      *  - status.code
      *  - task_id
+     *  - trusted
      *  - user_id
      *  - workflow_version_id
      * </pre>
