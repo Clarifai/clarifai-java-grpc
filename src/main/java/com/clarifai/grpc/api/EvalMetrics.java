@@ -228,6 +228,19 @@ private static final long serialVersionUID = 0L;
             appId_ = s;
             break;
           }
+          case 138: {
+            com.clarifai.grpc.api.ExtendedMetrics.Builder subBuilder = null;
+            if (extendedMetrics_ != null) {
+              subBuilder = extendedMetrics_.toBuilder();
+            }
+            extendedMetrics_ = input.readMessage(com.clarifai.grpc.api.ExtendedMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(extendedMetrics_);
+              extendedMetrics_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -862,6 +875,32 @@ private static final long serialVersionUID = 0L;
     return getEvalInfo();
   }
 
+  public static final int EXTENDED_METRICS_FIELD_NUMBER = 17;
+  private com.clarifai.grpc.api.ExtendedMetrics extendedMetrics_;
+  /**
+   * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+   * @return Whether the extendedMetrics field is set.
+   */
+  @java.lang.Override
+  public boolean hasExtendedMetrics() {
+    return extendedMetrics_ != null;
+  }
+  /**
+   * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+   * @return The extendedMetrics.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ExtendedMetrics getExtendedMetrics() {
+    return extendedMetrics_ == null ? com.clarifai.grpc.api.ExtendedMetrics.getDefaultInstance() : extendedMetrics_;
+  }
+  /**
+   * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ExtendedMetricsOrBuilder getExtendedMetricsOrBuilder() {
+    return getExtendedMetrics();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -923,6 +962,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, appId_);
+    }
+    if (extendedMetrics_ != null) {
+      output.writeMessage(17, getExtendedMetrics());
     }
     unknownFields.writeTo(output);
   }
@@ -993,6 +1035,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, appId_);
+    }
+    if (extendedMetrics_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, getExtendedMetrics());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1065,6 +1111,11 @@ private static final long serialVersionUID = 0L;
       if (!getEvalInfo()
           .equals(other.getEvalInfo())) return false;
     }
+    if (hasExtendedMetrics() != other.hasExtendedMetrics()) return false;
+    if (hasExtendedMetrics()) {
+      if (!getExtendedMetrics()
+          .equals(other.getExtendedMetrics())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1133,6 +1184,10 @@ private static final long serialVersionUID = 0L;
     if (hasEvalInfo()) {
       hash = (37 * hash) + EVAL_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getEvalInfo().hashCode();
+    }
+    if (hasExtendedMetrics()) {
+      hash = (37 * hash) + EXTENDED_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtendedMetrics().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1360,6 +1415,12 @@ private static final long serialVersionUID = 0L;
         evalInfo_ = null;
         evalInfoBuilder_ = null;
       }
+      if (extendedMetricsBuilder_ == null) {
+        extendedMetrics_ = null;
+      } else {
+        extendedMetrics_ = null;
+        extendedMetricsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1474,6 +1535,11 @@ private static final long serialVersionUID = 0L;
         result.evalInfo_ = evalInfo_;
       } else {
         result.evalInfo_ = evalInfoBuilder_.build();
+      }
+      if (extendedMetricsBuilder_ == null) {
+        result.extendedMetrics_ = extendedMetrics_;
+      } else {
+        result.extendedMetrics_ = extendedMetricsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1688,6 +1754,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasEvalInfo()) {
         mergeEvalInfo(other.getEvalInfo());
+      }
+      if (other.hasExtendedMetrics()) {
+        mergeExtendedMetrics(other.getExtendedMetrics());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4274,6 +4343,125 @@ private static final long serialVersionUID = 0L;
         evalInfo_ = null;
       }
       return evalInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.ExtendedMetrics extendedMetrics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ExtendedMetrics, com.clarifai.grpc.api.ExtendedMetrics.Builder, com.clarifai.grpc.api.ExtendedMetricsOrBuilder> extendedMetricsBuilder_;
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     * @return Whether the extendedMetrics field is set.
+     */
+    public boolean hasExtendedMetrics() {
+      return extendedMetricsBuilder_ != null || extendedMetrics_ != null;
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     * @return The extendedMetrics.
+     */
+    public com.clarifai.grpc.api.ExtendedMetrics getExtendedMetrics() {
+      if (extendedMetricsBuilder_ == null) {
+        return extendedMetrics_ == null ? com.clarifai.grpc.api.ExtendedMetrics.getDefaultInstance() : extendedMetrics_;
+      } else {
+        return extendedMetricsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    public Builder setExtendedMetrics(com.clarifai.grpc.api.ExtendedMetrics value) {
+      if (extendedMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        extendedMetrics_ = value;
+        onChanged();
+      } else {
+        extendedMetricsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    public Builder setExtendedMetrics(
+        com.clarifai.grpc.api.ExtendedMetrics.Builder builderForValue) {
+      if (extendedMetricsBuilder_ == null) {
+        extendedMetrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        extendedMetricsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    public Builder mergeExtendedMetrics(com.clarifai.grpc.api.ExtendedMetrics value) {
+      if (extendedMetricsBuilder_ == null) {
+        if (extendedMetrics_ != null) {
+          extendedMetrics_ =
+            com.clarifai.grpc.api.ExtendedMetrics.newBuilder(extendedMetrics_).mergeFrom(value).buildPartial();
+        } else {
+          extendedMetrics_ = value;
+        }
+        onChanged();
+      } else {
+        extendedMetricsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    public Builder clearExtendedMetrics() {
+      if (extendedMetricsBuilder_ == null) {
+        extendedMetrics_ = null;
+        onChanged();
+      } else {
+        extendedMetrics_ = null;
+        extendedMetricsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    public com.clarifai.grpc.api.ExtendedMetrics.Builder getExtendedMetricsBuilder() {
+      
+      onChanged();
+      return getExtendedMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    public com.clarifai.grpc.api.ExtendedMetricsOrBuilder getExtendedMetricsOrBuilder() {
+      if (extendedMetricsBuilder_ != null) {
+        return extendedMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        return extendedMetrics_ == null ?
+            com.clarifai.grpc.api.ExtendedMetrics.getDefaultInstance() : extendedMetrics_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ExtendedMetrics, com.clarifai.grpc.api.ExtendedMetrics.Builder, com.clarifai.grpc.api.ExtendedMetricsOrBuilder> 
+        getExtendedMetricsFieldBuilder() {
+      if (extendedMetricsBuilder_ == null) {
+        extendedMetricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ExtendedMetrics, com.clarifai.grpc.api.ExtendedMetrics.Builder, com.clarifai.grpc.api.ExtendedMetricsOrBuilder>(
+                getExtendedMetrics(),
+                getParentForChildren(),
+                isClean());
+        extendedMetrics_ = null;
+      }
+      return extendedMetricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

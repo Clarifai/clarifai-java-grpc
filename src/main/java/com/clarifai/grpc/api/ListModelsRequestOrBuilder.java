@@ -46,6 +46,47 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
    * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
@@ -155,57 +196,6 @@ public interface ListModelsRequestOrBuilder extends
   /**
    * <pre>
    * Filtering options:
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * </pre>
-   *
-   * <code>string query = 14;</code>
-   * @return The query.
-   */
-  java.lang.String getQuery();
-  /**
-   * <pre>
-   * Filtering options:
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * </pre>
-   *
-   * <code>string query = 14;</code>
-   * @return The bytes for query.
-   */
-  com.google.protobuf.ByteString
-      getQueryBytes();
-
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string name = 5;</code>
-   * @return The name.
-   */
-  java.lang.String getName();
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string name = 5;</code>
-   * @return The bytes for name.
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
-   * Extends the name filter to include the user_id of the application owner that the model belongs to.
-   * </pre>
-   *
-   * <code>bool filter_by_user_id = 22;</code>
-   * @return The filterByUserId.
-   */
-  boolean getFilterByUserId();
-
-  /**
-   * <pre>
    * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
    * supported.
    * </pre>
@@ -216,6 +206,7 @@ public interface ListModelsRequestOrBuilder extends
   java.lang.String getModelTypeId();
   /**
    * <pre>
+   * Filtering options:
    * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
    * supported.
    * </pre>
@@ -491,47 +482,6 @@ public interface ListModelsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @return A list containing the additionalFields.
-   */
-  java.util.List<java.lang.String>
-      getAdditionalFieldsList();
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @return The count of additionalFields.
-   */
-  int getAdditionalFieldsCount();
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @param index The index of the element to return.
-   * @return The additionalFields at the given index.
-   */
-  java.lang.String getAdditionalFields(int index);
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the additionalFields at the given index.
-   */
-  com.google.protobuf.ByteString
-      getAdditionalFieldsBytes(int index);
-
-  /**
-   * <pre>
    * Old API behavior resulted in returning clarifai main models when calling ListModels while scoped to an app. While we transition
    * away from that, we can use this flag to not always fetch clarifai main models, unless that is the app we are explicitly listing for.
    * </pre>
@@ -552,6 +502,113 @@ public interface ListModelsRequestOrBuilder extends
    * @return The bookmark.
    */
   boolean getBookmark();
+
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The search.
+   */
+  java.lang.String getSearch();
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The bytes for search.
+   */
+  com.google.protobuf.ByteString
+      getSearchBytes();
+
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4982
+   * @return The query.
+   */
+  @java.lang.Deprecated java.lang.String getQuery();
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4982
+   * @return The bytes for query.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getQueryBytes();
+
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4985
+   * @return The name.
+   */
+  @java.lang.Deprecated java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4985
+   * @return The bytes for name.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * Extends the name filter to include the user_id of the application owner that the model belongs to.
+   * Deprecated: use search instead of name.
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4988
+   * @return The filterByUserId.
+   */
+  @java.lang.Deprecated boolean getFilterByUserId();
 
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

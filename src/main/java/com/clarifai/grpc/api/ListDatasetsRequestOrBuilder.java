@@ -45,12 +45,6 @@ public interface ListDatasetsRequestOrBuilder extends
   int getPerPage();
 
   /**
-   * <code>bool starred_only = 4;</code>
-   * @return The starredOnly.
-   */
-  boolean getStarredOnly();
-
-  /**
    * <code>repeated string additional_fields = 5;</code>
    * @return A list containing the additionalFields.
    */
@@ -77,7 +71,7 @@ public interface ListDatasetsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Sorting opitons:
+   * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
    *
@@ -164,6 +158,16 @@ public interface ListDatasetsRequestOrBuilder extends
 
   /**
    * <pre>
+   * Filtering options:
+   * </pre>
+   *
+   * <code>bool starred_only = 4;</code>
+   * @return The starredOnly.
+   */
+  boolean getStarredOnly();
+
+  /**
+   * <pre>
    * Filter datasets by bookmark. If set, only return bookmarked datasets. Otherwise none bookmarked datasets only.
    * </pre>
    *
@@ -174,22 +178,68 @@ public interface ListDatasetsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Fuzzy filter on dataset ID
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the dataset:
+   *   - id
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
    * </pre>
    *
-   * <code>string id = 12;</code>
-   * @return The id.
+   * <code>string search = 13;</code>
+   * @return The search.
    */
-  java.lang.String getId();
+  java.lang.String getSearch();
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the dataset:
+   *   - id
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 13;</code>
+   * @return The bytes for search.
+   */
+  com.google.protobuf.ByteString
+      getSearchBytes();
+
   /**
    * <pre>
    * Fuzzy filter on dataset ID
+   * Deprecated: use search instead.
    * </pre>
    *
-   * <code>string id = 12;</code>
+   * <code>string id = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListDatasetsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4539
+   * @return The id.
+   */
+  @java.lang.Deprecated java.lang.String getId();
+  /**
+   * <pre>
+   * Fuzzy filter on dataset ID
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string id = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListDatasetsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4539
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getIdBytes();
 
   public com.clarifai.grpc.api.ListDatasetsRequest.SortByCase getSortByCase();

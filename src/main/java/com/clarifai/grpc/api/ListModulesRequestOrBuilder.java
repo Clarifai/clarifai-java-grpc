@@ -45,12 +45,6 @@ public interface ListModulesRequestOrBuilder extends
   int getPerPage();
 
   /**
-   * <code>bool starred_only = 4;</code>
-   * @return The starredOnly.
-   */
-  boolean getStarredOnly();
-
-  /**
    * <code>repeated string additional_fields = 5;</code>
    * @return A list containing the additionalFields.
    */
@@ -77,7 +71,7 @@ public interface ListModulesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Sorting opitons:
+   * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
    *
@@ -164,6 +158,16 @@ public interface ListModulesRequestOrBuilder extends
 
   /**
    * <pre>
+   * Filtering options:
+   * </pre>
+   *
+   * <code>bool starred_only = 4;</code>
+   * @return The starredOnly.
+   */
+  boolean getStarredOnly();
+
+  /**
+   * <pre>
    * Filter modules by bookmark. If set, only return bookmarked modules. Otherwise none bookmarked modules only.
    * </pre>
    *
@@ -174,33 +178,80 @@ public interface ListModulesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the module:
+   *   - id
+   *   - description
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
    * </pre>
    *
-   * <code>string name = 12;</code>
-   * @return The name.
+   * <code>string search = 14;</code>
+   * @return The search.
    */
-  java.lang.String getName();
+  java.lang.String getSearch();
   /**
    * <pre>
-   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the module:
+   *   - id
+   *   - description
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
    * </pre>
    *
-   * <code>string name = 12;</code>
-   * @return The bytes for name.
+   * <code>string search = 14;</code>
+   * @return The bytes for search.
    */
   com.google.protobuf.ByteString
+      getSearchBytes();
+
+  /**
+   * <pre>
+   * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6700
+   * @return The name.
+   */
+  @java.lang.Deprecated java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6700
+   * @return The bytes for name.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getNameBytes();
 
   /**
    * <pre>
    * Filter by the application owner whose this module belongs to
+   * Deprecated: use search instead of name.
    * </pre>
    *
-   * <code>bool filter_by_user_id = 13;</code>
+   * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6703
    * @return The filterByUserId.
    */
-  boolean getFilterByUserId();
+  @java.lang.Deprecated boolean getFilterByUserId();
 
   public com.clarifai.grpc.api.ListModulesRequest.SortByCase getSortByCase();
 }

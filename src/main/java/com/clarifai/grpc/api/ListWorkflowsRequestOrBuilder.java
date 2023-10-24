@@ -46,6 +46,47 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
    * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
@@ -135,52 +176,7 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Query various text fields (id, description and notes) that can contain the words in the query string.
-   * </pre>
-   *
-   * <code>string query = 8;</code>
-   * @return The query.
-   */
-  java.lang.String getQuery();
-  /**
-   * <pre>
-   * Query various text fields (id, description and notes) that can contain the words in the query string.
-   * </pre>
-   *
-   * <code>string query = 8;</code>
-   * @return The bytes for query.
-   */
-  com.google.protobuf.ByteString
-      getQueryBytes();
-
-  /**
-   * <pre>
-   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
-   * </pre>
-   *
-   * <code>string id = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6000
-   * @return The id.
-   */
-  @java.lang.Deprecated java.lang.String getId();
-  /**
-   * <pre>
-   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
-   * </pre>
-   *
-   * <code>string id = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=6000
-   * @return The bytes for id.
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getIdBytes();
-
-  /**
-   * <pre>
+   * Filtering options:
    * If true, we only return workflows that are handpicked by clarifai staff
    * </pre>
    *
@@ -201,67 +197,6 @@ public interface ListWorkflowsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 10;</code>
-   * @return A list containing the additionalFields.
-   */
-  java.util.List<java.lang.String>
-      getAdditionalFieldsList();
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 10;</code>
-   * @return The count of additionalFields.
-   */
-  int getAdditionalFieldsCount();
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 10;</code>
-   * @param index The index of the element to return.
-   * @return The additionalFields at the given index.
-   */
-  java.lang.String getAdditionalFields(int index);
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 10;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the additionalFields at the given index.
-   */
-  com.google.protobuf.ByteString
-      getAdditionalFieldsBytes(int index);
-
-  /**
-   * <pre>
-   * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
-   * </pre>
-   *
-   * <code>string search_term = 12;</code>
-   * @return The searchTerm.
-   */
-  java.lang.String getSearchTerm();
-  /**
-   * <pre>
-   * (optional) search_term. Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
-   * </pre>
-   *
-   * <code>string search_term = 12;</code>
-   * @return The bytes for searchTerm.
-   */
-  com.google.protobuf.ByteString
-      getSearchTermBytes();
-
-  /**
-   * <pre>
    * Filter workflows by bookmark. If set, only return bookmarked workflows. Otherwise none bookmarked workflows only.
    * </pre>
    *
@@ -269,6 +204,124 @@ public interface ListWorkflowsRequestOrBuilder extends
    * @return The bookmark.
    */
   boolean getBookmark();
+
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the workflow:
+   *   - id
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 16;</code>
+   * @return The search.
+   */
+  java.lang.String getSearch();
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the workflow:
+   *   - id
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 16;</code>
+   * @return The bytes for search.
+   */
+  com.google.protobuf.ByteString
+      getSearchBytes();
+
+  /**
+   * <pre>
+   * Query various text fields (id, description and notes) that can contain the words in the query string.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6094
+   * @return The query.
+   */
+  @java.lang.Deprecated java.lang.String getQuery();
+  /**
+   * <pre>
+   * Query various text fields (id, description and notes) that can contain the words in the query string.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6094
+   * @return The bytes for query.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getQueryBytes();
+
+  /**
+   * <pre>
+   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6097
+   * @return The id.
+   */
+  @java.lang.Deprecated java.lang.String getId();
+  /**
+   * <pre>
+   * Filter by the id of the workflow. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string id = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6097
+   * @return The bytes for id.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getIdBytes();
+
+  /**
+   * <pre>
+   * Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string search_term = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6100
+   * @return The searchTerm.
+   */
+  @java.lang.Deprecated java.lang.String getSearchTerm();
+  /**
+   * <pre>
+   * Full text and prefix matching on id, owner id, description and notes. Searchable fields may be added
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string search_term = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListWorkflowsRequest.search_term is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6100
+   * @return The bytes for searchTerm.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getSearchTermBytes();
 
   public com.clarifai.grpc.api.ListWorkflowsRequest.SortByCase getSortByCase();
 }

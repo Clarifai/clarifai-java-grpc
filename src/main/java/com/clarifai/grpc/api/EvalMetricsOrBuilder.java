@@ -345,4 +345,19 @@ public interface EvalMetricsOrBuilder extends
    * <code>.clarifai.api.EvalInfo eval_info = 12;</code>
    */
   com.clarifai.grpc.api.EvalInfoOrBuilder getEvalInfoOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+   * @return Whether the extendedMetrics field is set.
+   */
+  boolean hasExtendedMetrics();
+  /**
+   * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+   * @return The extendedMetrics.
+   */
+  com.clarifai.grpc.api.ExtendedMetrics getExtendedMetrics();
+  /**
+   * <code>.clarifai.api.ExtendedMetrics extended_metrics = 17;</code>
+   */
+  com.clarifai.grpc.api.ExtendedMetricsOrBuilder getExtendedMetricsOrBuilder();
 }

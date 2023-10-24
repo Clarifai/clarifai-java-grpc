@@ -20,8 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListModelsRequest() {
-    query_ = "";
-    name_ = "";
+    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     modelTypeId_ = "";
     inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -29,7 +28,9 @@ private static final long serialVersionUID = 0L;
     toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    search_ = "";
+    query_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -105,18 +106,18 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               inputFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
+              mutable_bitField0_ |= 0x00000002;
             }
             inputFields_.add(s);
             break;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               outputFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000004;
             }
             outputFields_.add(s);
             break;
@@ -160,27 +161,27 @@ private static final long serialVersionUID = 0L;
           }
           case 138: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               toolkits_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000008;
             }
             toolkits_.add(s);
             break;
           }
           case 146: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               useCases_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000010;
             }
             useCases_.add(s);
             break;
           }
           case 154: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               additionalFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000001;
             }
             additionalFields_.add(s);
             break;
@@ -192,9 +193,9 @@ private static final long serialVersionUID = 0L;
           }
           case 170: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               languages_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             languages_.add(s);
             break;
@@ -224,6 +225,12 @@ private static final long serialVersionUID = 0L;
             bookmark_ = input.readBool();
             break;
           }
+          case 218: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            search_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -241,22 +248,22 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         inputFields_ = inputFields_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         outputFields_ = outputFields_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         toolkits_ = toolkits_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         useCases_ = useCases_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         additionalFields_ = additionalFields_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         languages_ = languages_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -379,6 +386,57 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public int getPerPage() {
     return perPage_;
+  }
+
+  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 19;
+  private com.google.protobuf.LazyStringList additionalFields_;
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return A list containing the additionalFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAdditionalFieldsList() {
+    return additionalFields_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @return The count of additionalFields.
+   */
+  public int getAdditionalFieldsCount() {
+    return additionalFields_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  public java.lang.String getAdditionalFields(int index) {
+    return additionalFields_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 19;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index) {
+    return additionalFields_.getByteString(index);
   }
 
   public static final int SORT_ASCENDING_FIELD_NUMBER = 10;
@@ -544,119 +602,11 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
-  public static final int QUERY_FIELD_NUMBER = 14;
-  private volatile java.lang.Object query_;
-  /**
-   * <pre>
-   * Filtering options:
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * </pre>
-   *
-   * <code>string query = 14;</code>
-   * @return The query.
-   */
-  @java.lang.Override
-  public java.lang.String getQuery() {
-    java.lang.Object ref = query_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      query_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Filtering options:
-   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-   * </pre>
-   *
-   * <code>string query = 14;</code>
-   * @return The bytes for query.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getQueryBytes() {
-    java.lang.Object ref = query_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      query_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object name_;
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string name = 5;</code>
-   * @return The name.
-   */
-  @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      name_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string name = 5;</code>
-   * @return The bytes for name.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FILTER_BY_USER_ID_FIELD_NUMBER = 22;
-  private boolean filterByUserId_;
-  /**
-   * <pre>
-   * Extends the name filter to include the user_id of the application owner that the model belongs to.
-   * </pre>
-   *
-   * <code>bool filter_by_user_id = 22;</code>
-   * @return The filterByUserId.
-   */
-  @java.lang.Override
-  public boolean getFilterByUserId() {
-    return filterByUserId_;
-  }
-
   public static final int MODEL_TYPE_ID_FIELD_NUMBER = 6;
   private volatile java.lang.Object modelTypeId_;
   /**
    * <pre>
+   * Filtering options:
    * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
    * supported.
    * </pre>
@@ -679,6 +629,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Filtering options:
    * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
    * supported.
    * </pre>
@@ -1055,57 +1006,6 @@ private static final long serialVersionUID = 0L;
     return languages_.getByteString(index);
   }
 
-  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 19;
-  private com.google.protobuf.LazyStringList additionalFields_;
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @return A list containing the additionalFields.
-   */
-  public com.google.protobuf.ProtocolStringList
-      getAdditionalFieldsList() {
-    return additionalFields_;
-  }
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @return The count of additionalFields.
-   */
-  public int getAdditionalFieldsCount() {
-    return additionalFields_.size();
-  }
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @param index The index of the element to return.
-   * @return The additionalFields at the given index.
-   */
-  public java.lang.String getAdditionalFields(int index) {
-    return additionalFields_.get(index);
-  }
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 19;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the additionalFields at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getAdditionalFieldsBytes(int index) {
-    return additionalFields_.getByteString(index);
-  }
-
   public static final int DONT_FETCH_FROM_MAIN_FIELD_NUMBER = 23;
   private boolean dontFetchFromMain_;
   /**
@@ -1137,6 +1037,196 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getBookmark() {
     return bookmark_;
+  }
+
+  public static final int SEARCH_FIELD_NUMBER = 27;
+  private volatile java.lang.Object search_;
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The search.
+   */
+  @java.lang.Override
+  public java.lang.String getSearch() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      search_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the model:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 27;</code>
+   * @return The bytes for search.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchBytes() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      search_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUERY_FIELD_NUMBER = 14;
+  private volatile java.lang.Object query_;
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4982
+   * @return The query.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getQuery() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      query_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4982
+   * @return The bytes for query.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getQueryBytes() {
+    java.lang.Object ref = query_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      query_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object name_;
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4985
+   * @return The name.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4985
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FILTER_BY_USER_ID_FIELD_NUMBER = 22;
+  private boolean filterByUserId_;
+  /**
+   * <pre>
+   * Extends the name filter to include the user_id of the application owner that the model belongs to.
+   * Deprecated: use search instead of name.
+   * </pre>
+   *
+   * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=4988
+   * @return The filterByUserId.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated public boolean getFilterByUserId() {
+    return filterByUserId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1232,6 +1322,9 @@ private static final long serialVersionUID = 0L;
     }
     if (bookmark_ != false) {
       output.writeBool(26, bookmark_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, search_);
     }
     unknownFields.writeTo(output);
   }
@@ -1367,6 +1460,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(26, bookmark_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, search_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1391,14 +1487,10 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (!getAdditionalFieldsList()
+        .equals(other.getAdditionalFieldsList())) return false;
     if (getSortAscending()
         != other.getSortAscending()) return false;
-    if (!getQuery()
-        .equals(other.getQuery())) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (getFilterByUserId()
-        != other.getFilterByUserId()) return false;
     if (!getModelTypeId()
         .equals(other.getModelTypeId())) return false;
     if (getTrainedOnly()
@@ -1419,12 +1511,18 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUseCasesList())) return false;
     if (!getLanguagesList()
         .equals(other.getLanguagesList())) return false;
-    if (!getAdditionalFieldsList()
-        .equals(other.getAdditionalFieldsList())) return false;
     if (getDontFetchFromMain()
         != other.getDontFetchFromMain()) return false;
     if (getBookmark()
         != other.getBookmark()) return false;
+    if (!getSearch()
+        .equals(other.getSearch())) return false;
+    if (!getQuery()
+        .equals(other.getQuery())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (getFilterByUserId()
+        != other.getFilterByUserId()) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -1469,16 +1567,13 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    if (getAdditionalFieldsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSortAscending());
-    hash = (37 * hash) + QUERY_FIELD_NUMBER;
-    hash = (53 * hash) + getQuery().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFilterByUserId());
     hash = (37 * hash) + MODEL_TYPE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getModelTypeId().hashCode();
     hash = (37 * hash) + TRAINED_ONLY_FIELD_NUMBER;
@@ -1512,16 +1607,21 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LANGUAGES_FIELD_NUMBER;
       hash = (53 * hash) + getLanguagesList().hashCode();
     }
-    if (getAdditionalFieldsCount() > 0) {
-      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
-    }
     hash = (37 * hash) + DONT_FETCH_FROM_MAIN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDontFetchFromMain());
     hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBookmark());
+    hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + getSearch().hashCode();
+    hash = (37 * hash) + QUERY_FIELD_NUMBER;
+    hash = (53 * hash) + getQuery().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getFilterByUserId());
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -1698,22 +1798,18 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       sortAscending_ = false;
-
-      query_ = "";
-
-      name_ = "";
-
-      filterByUserId_ = false;
 
       modelTypeId_ = "";
 
       trainedOnly_ = false;
 
       inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       license_ = "";
 
       featuredOnly_ = false;
@@ -1721,16 +1817,22 @@ private static final long serialVersionUID = 0L;
       starredOnly_ = false;
 
       toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
       dontFetchFromMain_ = false;
 
       bookmark_ = false;
+
+      search_ = "";
+
+      query_ = "";
+
+      name_ = "";
+
+      filterByUserId_ = false;
 
       sortByCase_ = 0;
       sortBy_ = null;
@@ -1768,6 +1870,11 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = additionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.additionalFields_ = additionalFields_;
       result.sortAscending_ = sortAscending_;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
@@ -1784,46 +1891,42 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 25) {
         result.sortBy_ = sortBy_;
       }
-      result.query_ = query_;
-      result.name_ = name_;
-      result.filterByUserId_ = filterByUserId_;
       result.modelTypeId_ = modelTypeId_;
       result.trainedOnly_ = trainedOnly_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         inputFields_ = inputFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.inputFields_ = inputFields_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         outputFields_ = outputFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.outputFields_ = outputFields_;
       result.license_ = license_;
       result.featuredOnly_ = featuredOnly_;
       result.starredOnly_ = starredOnly_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        toolkits_ = toolkits_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.toolkits_ = toolkits_;
       if (((bitField0_ & 0x00000008) != 0)) {
-        useCases_ = useCases_.getUnmodifiableView();
+        toolkits_ = toolkits_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
-      result.useCases_ = useCases_;
+      result.toolkits_ = toolkits_;
       if (((bitField0_ & 0x00000010) != 0)) {
-        languages_ = languages_.getUnmodifiableView();
+        useCases_ = useCases_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
       }
-      result.languages_ = languages_;
+      result.useCases_ = useCases_;
       if (((bitField0_ & 0x00000020) != 0)) {
-        additionalFields_ = additionalFields_.getUnmodifiableView();
+        languages_ = languages_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
-      result.additionalFields_ = additionalFields_;
+      result.languages_ = languages_;
       result.dontFetchFromMain_ = dontFetchFromMain_;
       result.bookmark_ = bookmark_;
+      result.search_ = search_;
+      result.query_ = query_;
+      result.name_ = name_;
+      result.filterByUserId_ = filterByUserId_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -1882,19 +1985,18 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (!other.additionalFields_.isEmpty()) {
+        if (additionalFields_.isEmpty()) {
+          additionalFields_ = other.additionalFields_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureAdditionalFieldsIsMutable();
+          additionalFields_.addAll(other.additionalFields_);
+        }
+        onChanged();
+      }
       if (other.getSortAscending() != false) {
         setSortAscending(other.getSortAscending());
-      }
-      if (!other.getQuery().isEmpty()) {
-        query_ = other.query_;
-        onChanged();
-      }
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
-        onChanged();
-      }
-      if (other.getFilterByUserId() != false) {
-        setFilterByUserId(other.getFilterByUserId());
       }
       if (!other.getModelTypeId().isEmpty()) {
         modelTypeId_ = other.modelTypeId_;
@@ -1906,7 +2008,7 @@ private static final long serialVersionUID = 0L;
       if (!other.inputFields_.isEmpty()) {
         if (inputFields_.isEmpty()) {
           inputFields_ = other.inputFields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureInputFieldsIsMutable();
           inputFields_.addAll(other.inputFields_);
@@ -1916,7 +2018,7 @@ private static final long serialVersionUID = 0L;
       if (!other.outputFields_.isEmpty()) {
         if (outputFields_.isEmpty()) {
           outputFields_ = other.outputFields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureOutputFieldsIsMutable();
           outputFields_.addAll(other.outputFields_);
@@ -1936,7 +2038,7 @@ private static final long serialVersionUID = 0L;
       if (!other.toolkits_.isEmpty()) {
         if (toolkits_.isEmpty()) {
           toolkits_ = other.toolkits_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureToolkitsIsMutable();
           toolkits_.addAll(other.toolkits_);
@@ -1946,7 +2048,7 @@ private static final long serialVersionUID = 0L;
       if (!other.useCases_.isEmpty()) {
         if (useCases_.isEmpty()) {
           useCases_ = other.useCases_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureUseCasesIsMutable();
           useCases_.addAll(other.useCases_);
@@ -1956,20 +2058,10 @@ private static final long serialVersionUID = 0L;
       if (!other.languages_.isEmpty()) {
         if (languages_.isEmpty()) {
           languages_ = other.languages_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureLanguagesIsMutable();
           languages_.addAll(other.languages_);
-        }
-        onChanged();
-      }
-      if (!other.additionalFields_.isEmpty()) {
-        if (additionalFields_.isEmpty()) {
-          additionalFields_ = other.additionalFields_;
-          bitField0_ = (bitField0_ & ~0x00000020);
-        } else {
-          ensureAdditionalFieldsIsMutable();
-          additionalFields_.addAll(other.additionalFields_);
         }
         onChanged();
       }
@@ -1978,6 +2070,21 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getBookmark() != false) {
         setBookmark(other.getBookmark());
+      }
+      if (!other.getSearch().isEmpty()) {
+        search_ = other.search_;
+        onChanged();
+      }
+      if (!other.getQuery().isEmpty()) {
+        query_ = other.query_;
+        onChanged();
+      }
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (other.getFilterByUserId() != false) {
+        setFilterByUserId(other.getFilterByUserId());
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -2256,6 +2363,152 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureAdditionalFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @return A list containing the additionalFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAdditionalFieldsList() {
+      return additionalFields_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @return The count of additionalFields.
+     */
+    public int getAdditionalFieldsCount() {
+      return additionalFields_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param index The index of the element to return.
+     * @return The additionalFields at the given index.
+     */
+    public java.lang.String getAdditionalFields(int index) {
+      return additionalFields_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalFieldsBytes(int index) {
+      return additionalFields_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param index The index to set the value at.
+     * @param value The additionalFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalFields(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param value The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFields(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param values The additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, additionalFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalFields() {
+      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
+     * </pre>
+     *
+     * <code>repeated string additional_fields = 19;</code>
+     * @param value The bytes of the additionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdditionalFieldsIsMutable();
+      additionalFields_.add(value);
       onChanged();
       return this;
     }
@@ -2595,249 +2848,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object query_ = "";
-    /**
-     * <pre>
-     * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * </pre>
-     *
-     * <code>string query = 14;</code>
-     * @return The query.
-     */
-    public java.lang.String getQuery() {
-      java.lang.Object ref = query_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        query_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * </pre>
-     *
-     * <code>string query = 14;</code>
-     * @return The bytes for query.
-     */
-    public com.google.protobuf.ByteString
-        getQueryBytes() {
-      java.lang.Object ref = query_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        query_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * </pre>
-     *
-     * <code>string query = 14;</code>
-     * @param value The query to set.
-     * @return This builder for chaining.
-     */
-    public Builder setQuery(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      query_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * </pre>
-     *
-     * <code>string query = 14;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearQuery() {
-      
-      query_ = getDefaultInstance().getQuery();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filtering options:
-     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
-     * </pre>
-     *
-     * <code>string query = 14;</code>
-     * @param value The bytes for query to set.
-     * @return This builder for chaining.
-     */
-    public Builder setQueryBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      query_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object name_ = "";
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string name = 5;</code>
-     * @return The name.
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string name = 5;</code>
-     * @return The bytes for name.
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string name = 5;</code>
-     * @param value The name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      name_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string name = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearName() {
-      
-      name_ = getDefaultInstance().getName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
-     * </pre>
-     *
-     * <code>string name = 5;</code>
-     * @param value The bytes for name to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private boolean filterByUserId_ ;
-    /**
-     * <pre>
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     * </pre>
-     *
-     * <code>bool filter_by_user_id = 22;</code>
-     * @return The filterByUserId.
-     */
-    @java.lang.Override
-    public boolean getFilterByUserId() {
-      return filterByUserId_;
-    }
-    /**
-     * <pre>
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     * </pre>
-     *
-     * <code>bool filter_by_user_id = 22;</code>
-     * @param value The filterByUserId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFilterByUserId(boolean value) {
-      
-      filterByUserId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Extends the name filter to include the user_id of the application owner that the model belongs to.
-     * </pre>
-     *
-     * <code>bool filter_by_user_id = 22;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearFilterByUserId() {
-      
-      filterByUserId_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object modelTypeId_ = "";
     /**
      * <pre>
+     * Filtering options:
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      * </pre>
@@ -2859,6 +2873,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      * </pre>
@@ -2881,6 +2896,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      * </pre>
@@ -2901,6 +2917,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      * </pre>
@@ -2916,6 +2933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Filtering options:
      * Filter models by the specific model_type_id. See ListModelTypes for the list of ModelType.Id's
      * supported.
      * </pre>
@@ -2981,9 +2999,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInputFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         inputFields_ = new com.google.protobuf.LazyStringArrayList(inputFields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -3108,7 +3126,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearInputFields() {
       inputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3136,9 +3154,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureOutputFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         outputFields_ = new com.google.protobuf.LazyStringArrayList(outputFields_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
     /**
@@ -3263,7 +3281,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearOutputFields() {
       outputFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3473,9 +3491,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureToolkitsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         toolkits_ = new com.google.protobuf.LazyStringArrayList(toolkits_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
@@ -3592,7 +3610,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearToolkits() {
       toolkits_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3619,9 +3637,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureUseCasesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         useCases_ = new com.google.protobuf.LazyStringArrayList(useCases_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
        }
     }
     /**
@@ -3738,7 +3756,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUseCases() {
       useCases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3765,9 +3783,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureLanguagesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
     /**
@@ -3884,7 +3902,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearLanguages() {
       languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3905,152 +3923,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureLanguagesIsMutable();
       languages_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureAdditionalFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
-        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
-        bitField0_ |= 0x00000020;
-       }
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @return A list containing the additionalFields.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getAdditionalFieldsList() {
-      return additionalFields_.getUnmodifiableView();
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @return The count of additionalFields.
-     */
-    public int getAdditionalFieldsCount() {
-      return additionalFields_.size();
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @param index The index of the element to return.
-     * @return The additionalFields at the given index.
-     */
-    public java.lang.String getAdditionalFields(int index) {
-      return additionalFields_.get(index);
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the additionalFields at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getAdditionalFieldsBytes(int index) {
-      return additionalFields_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @param index The index to set the value at.
-     * @param value The additionalFields to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdditionalFields(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAdditionalFieldsIsMutable();
-      additionalFields_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @param value The additionalFields to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAdditionalFields(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAdditionalFieldsIsMutable();
-      additionalFields_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @param values The additionalFields to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllAdditionalFields(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureAdditionalFieldsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, additionalFields_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAdditionalFields() {
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, outputs, presets
-     * </pre>
-     *
-     * <code>repeated string additional_fields = 19;</code>
-     * @param value The bytes of the additionalFields to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAdditionalFieldsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureAdditionalFieldsIsMutable();
-      additionalFields_.add(value);
       onChanged();
       return this;
     }
@@ -4146,6 +4018,431 @@ private static final long serialVersionUID = 0L;
     public Builder clearBookmark() {
       
       bookmark_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object search_ = "";
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @return The search.
+     */
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @return The bytes for search.
+     */
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @param value The search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearch(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      search_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearch() {
+      
+      search_ = getDefaultInstance().getSearch();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the model:
+     *   - id
+     *   - name
+     *   - description
+     *   - notes
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 27;</code>
+     * @param value The bytes for search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      search_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object query_ = "";
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4982
+     * @return The query.
+     */
+    @java.lang.Deprecated public java.lang.String getQuery() {
+      java.lang.Object ref = query_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        query_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4982
+     * @return The bytes for query.
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getQueryBytes() {
+      java.lang.Object ref = query_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        query_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4982
+     * @param value The query to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setQuery(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      query_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4982
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearQuery() {
+      
+      query_ = getDefaultInstance().getQuery();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Query name, description and id fields, that can contain the words in the query string. Does NOT support wildcards - full words only. Supports operators "OR" and "-" as NOT.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string query = 14 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.query is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4982
+     * @param value The bytes for query to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setQueryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      query_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4985
+     * @return The name.
+     */
+    @java.lang.Deprecated public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4985
+     * @return The bytes for name.
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4985
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4985
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the description and id of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
+     * </pre>
+     *
+     * <code>string name = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4985
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean filterByUserId_ ;
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4988
+     * @return The filterByUserId.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public boolean getFilterByUserId() {
+      return filterByUserId_;
+    }
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4988
+     * @param value The filterByUserId to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder setFilterByUserId(boolean value) {
+      
+      filterByUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Extends the name filter to include the user_id of the application owner that the model belongs to.
+     * Deprecated: use search instead of name.
+     * </pre>
+     *
+     * <code>bool filter_by_user_id = 22 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModelsRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=4988
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated public Builder clearFilterByUserId() {
+      
+      filterByUserId_ = false;
       onChanged();
       return this;
     }

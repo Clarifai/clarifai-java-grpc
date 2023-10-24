@@ -6649,6 +6649,37 @@ public final class V2Grpc {
     return getPostRunnerItemOutputsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest,
+      com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse> getPostModelVersionsTrainingTimeEstimateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostModelVersionsTrainingTimeEstimate",
+      requestType = com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest.class,
+      responseType = com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest,
+      com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse> getPostModelVersionsTrainingTimeEstimateMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest, com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse> getPostModelVersionsTrainingTimeEstimateMethod;
+    if ((getPostModelVersionsTrainingTimeEstimateMethod = V2Grpc.getPostModelVersionsTrainingTimeEstimateMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostModelVersionsTrainingTimeEstimateMethod = V2Grpc.getPostModelVersionsTrainingTimeEstimateMethod) == null) {
+          V2Grpc.getPostModelVersionsTrainingTimeEstimateMethod = getPostModelVersionsTrainingTimeEstimateMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest, com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostModelVersionsTrainingTimeEstimate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostModelVersionsTrainingTimeEstimate"))
+              .build();
+        }
+      }
+    }
+    return getPostModelVersionsTrainingTimeEstimateMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -8864,6 +8895,13 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostRunnerItemOutputsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void postModelVersionsTrainingTimeEstimate(com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostModelVersionsTrainingTimeEstimateMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -10364,6 +10402,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostRunnerItemOutputsRequest,
                 com.clarifai.grpc.api.MultiRunnerItemOutputResponse>(
                   this, METHODID_POST_RUNNER_ITEM_OUTPUTS)))
+          .addMethod(
+            getPostModelVersionsTrainingTimeEstimateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest,
+                com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>(
+                  this, METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE)))
           .build();
     }
   }
@@ -12762,6 +12807,14 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostRunnerItemOutputsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void postModelVersionsTrainingTimeEstimate(com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -14943,6 +14996,13 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiRunnerItemOutputResponse postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostRunnerItemOutputsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse postModelVersionsTrainingTimeEstimate(com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions(), request);
     }
   }
 
@@ -17340,6 +17400,14 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostRunnerItemOutputsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse> postModelVersionsTrainingTimeEstimate(
+        com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -17556,6 +17624,7 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_RUNNERS = 211;
   private static final int METHODID_LIST_RUNNER_ITEMS = 212;
   private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 213;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 214;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18430,6 +18499,10 @@ public final class V2Grpc {
           serviceImpl.postRunnerItemOutputs((com.clarifai.grpc.api.PostRunnerItemOutputsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiRunnerItemOutputResponse>) responseObserver);
           break;
+        case METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE:
+          serviceImpl.postModelVersionsTrainingTimeEstimate((com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -18705,6 +18778,7 @@ public final class V2Grpc {
               .addMethod(getDeleteRunnersMethod())
               .addMethod(getListRunnerItemsMethod())
               .addMethod(getPostRunnerItemOutputsMethod())
+              .addMethod(getPostModelVersionsTrainingTimeEstimateMethod())
               .build();
         }
       }

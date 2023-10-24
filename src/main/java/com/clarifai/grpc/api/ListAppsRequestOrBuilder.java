@@ -46,7 +46,48 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Sorting opitons:
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @return A list containing the additionalFields.
+   */
+  java.util.List<java.lang.String>
+      getAdditionalFieldsList();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @return The count of additionalFields.
+   */
+  int getAdditionalFieldsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @param index The index of the element to return.
+   * @return The additionalFields at the given index.
+   */
+  java.lang.String getAdditionalFields(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * </pre>
+   *
+   * <code>repeated string additional_fields = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
    *
@@ -136,73 +177,6 @@ public interface ListAppsRequestOrBuilder extends
   /**
    * <pre>
    * Filtering options:
-   * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
-   * </pre>
-   *
-   * <code>string query = 8;</code>
-   * @return The query.
-   */
-  java.lang.String getQuery();
-  /**
-   * <pre>
-   * Filtering options:
-   * Query various text fields ( id, name, description, and notes) that can contain the words in the query string
-   * </pre>
-   *
-   * <code>string query = 8;</code>
-   * @return The bytes for query.
-   */
-  com.google.protobuf.ByteString
-      getQueryBytes();
-
-  /**
-   * <pre>
-   * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
-   * </pre>
-   *
-   * <code>string name = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3810
-   * @return The name.
-   */
-  @java.lang.Deprecated java.lang.String getName();
-  /**
-   * <pre>
-   * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-   * Deprecated in favor of query
-   * </pre>
-   *
-   * <code>string name = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3810
-   * @return The bytes for name.
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getNameBytes();
-
-  /**
-   * <pre>
-   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string id = 14;</code>
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   * <pre>
-   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
-   * </pre>
-   *
-   * <code>string id = 14;</code>
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString
-      getIdBytes();
-
-  /**
-   * <pre>
    * If true, we only return apps that are handpicked by clarifai staff
    * </pre>
    *
@@ -223,44 +197,123 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the application:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
    * </pre>
    *
-   * <code>repeated string additional_fields = 10;</code>
-   * @return A list containing the additionalFields.
+   * <code>string search = 15;</code>
+   * @return The search.
    */
-  java.util.List<java.lang.String>
-      getAdditionalFieldsList();
+  java.lang.String getSearch();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the application:
+   *   - id
+   *   - name
+   *   - description
+   *   - notes
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
    * </pre>
    *
-   * <code>repeated string additional_fields = 10;</code>
-   * @return The count of additionalFields.
-   */
-  int getAdditionalFieldsCount();
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 10;</code>
-   * @param index The index of the element to return.
-   * @return The additionalFields at the given index.
-   */
-  java.lang.String getAdditionalFields(int index);
-  /**
-   * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
-   * </pre>
-   *
-   * <code>repeated string additional_fields = 10;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the additionalFields at the given index.
+   * <code>string search = 15;</code>
+   * @return The bytes for search.
    */
   com.google.protobuf.ByteString
-      getAdditionalFieldsBytes(int index);
+      getSearchBytes();
+
+  /**
+   * <pre>
+   * Query various text fields (id, name, description, and notes) that can contain the words in the query string
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3844
+   * @return The query.
+   */
+  @java.lang.Deprecated java.lang.String getQuery();
+  /**
+   * <pre>
+   * Query various text fields (id, name, description, and notes) that can contain the words in the query string
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string query = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3844
+   * @return The bytes for query.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getQueryBytes();
+
+  /**
+   * <pre>
+   * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3847
+   * @return The name.
+   */
+  @java.lang.Deprecated java.lang.String getName();
+  /**
+   * <pre>
+   * Filter by the id, name and notes of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string name = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3847
+   * @return The bytes for name.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <pre>
+   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string id = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3850
+   * @return The id.
+   */
+  @java.lang.Deprecated java.lang.String getId();
+  /**
+   * <pre>
+   * Filter by the user-unique-id of the app. This supports wilcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
+   * </pre>
+   *
+   * <code>string id = 14 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=3850
+   * @return The bytes for id.
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getIdBytes();
 
   public com.clarifai.grpc.api.ListAppsRequest.SortByCase getSortByCase();
 }

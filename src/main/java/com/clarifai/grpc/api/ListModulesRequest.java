@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListModulesRequest() {
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    search_ = "";
     name_ = "";
   }
 
@@ -131,6 +132,12 @@ private static final long serialVersionUID = 0L;
           case 104: {
 
             filterByUserId_ = input.readBool();
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            search_ = s;
             break;
           }
           default: {
@@ -273,17 +280,6 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
-  public static final int STARRED_ONLY_FIELD_NUMBER = 4;
-  private boolean starredOnly_;
-  /**
-   * <code>bool starred_only = 4;</code>
-   * @return The starredOnly.
-   */
-  @java.lang.Override
-  public boolean getStarredOnly() {
-    return starredOnly_;
-  }
-
   public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
@@ -323,7 +319,7 @@ private static final long serialVersionUID = 0L;
   private boolean sortAscending_;
   /**
    * <pre>
-   * Sorting opitons:
+   * Sorting options:
    * Whether to sort in ascending order. If false, will order in descending order.
    * </pre>
    *
@@ -451,6 +447,21 @@ private static final long serialVersionUID = 0L;
     return false;
   }
 
+  public static final int STARRED_ONLY_FIELD_NUMBER = 4;
+  private boolean starredOnly_;
+  /**
+   * <pre>
+   * Filtering options:
+   * </pre>
+   *
+   * <code>bool starred_only = 4;</code>
+   * @return The starredOnly.
+   */
+  @java.lang.Override
+  public boolean getStarredOnly() {
+    return starredOnly_;
+  }
+
   public static final int BOOKMARK_FIELD_NUMBER = 10;
   private boolean bookmark_;
   /**
@@ -466,18 +477,85 @@ private static final long serialVersionUID = 0L;
     return bookmark_;
   }
 
+  public static final int SEARCH_FIELD_NUMBER = 14;
+  private volatile java.lang.Object search_;
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the module:
+   *   - id
+   *   - description
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 14;</code>
+   * @return The search.
+   */
+  @java.lang.Override
+  public java.lang.String getSearch() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      search_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the module:
+   *   - id
+   *   - description
+   *   - user_id (unless user_app_id.user_id is already set)
+   * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+   * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 14;</code>
+   * @return The bytes for search.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchBytes() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      search_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 12;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
    * </pre>
    *
-   * <code>string name = 12;</code>
+   * <code>string name = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6700
    * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getName() {
+  @java.lang.Deprecated public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -491,14 +569,17 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+   * Deprecated: use search instead.
    * </pre>
    *
-   * <code>string name = 12;</code>
+   * <code>string name = 12 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6700
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -517,13 +598,16 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Filter by the application owner whose this module belongs to
+   * Deprecated: use search instead of name.
    * </pre>
    *
-   * <code>bool filter_by_user_id = 13;</code>
+   * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
+   * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
+   *     See proto/clarifai/api/service.proto;l=6703
    * @return The filterByUserId.
    */
   @java.lang.Override
-  public boolean getFilterByUserId() {
+  @java.lang.Deprecated public boolean getFilterByUserId() {
     return filterByUserId_;
   }
 
@@ -583,6 +667,9 @@ private static final long serialVersionUID = 0L;
     }
     if (filterByUserId_ != false) {
       output.writeBool(13, filterByUserId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, search_);
     }
     unknownFields.writeTo(output);
   }
@@ -652,6 +739,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(13, filterByUserId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, search_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -676,14 +766,16 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
-    if (getStarredOnly()
-        != other.getStarredOnly()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
     if (getSortAscending()
         != other.getSortAscending()) return false;
+    if (getStarredOnly()
+        != other.getStarredOnly()) return false;
     if (getBookmark()
         != other.getBookmark()) return false;
+    if (!getSearch()
+        .equals(other.getSearch())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (getFilterByUserId()
@@ -728,9 +820,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
-    hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getStarredOnly());
     if (getAdditionalFieldsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
@@ -738,9 +827,14 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSortAscending());
+    hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getStarredOnly());
     hash = (37 * hash) + BOOKMARK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getBookmark());
+    hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + getSearch().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
@@ -917,13 +1011,15 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
-      starredOnly_ = false;
-
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       sortAscending_ = false;
 
+      starredOnly_ = false;
+
       bookmark_ = false;
+
+      search_ = "";
 
       name_ = "";
 
@@ -965,7 +1061,6 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
-      result.starredOnly_ = starredOnly_;
       if (((bitField0_ & 0x00000001) != 0)) {
         additionalFields_ = additionalFields_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -984,7 +1079,9 @@ private static final long serialVersionUID = 0L;
       if (sortByCase_ == 11) {
         result.sortBy_ = sortBy_;
       }
+      result.starredOnly_ = starredOnly_;
       result.bookmark_ = bookmark_;
+      result.search_ = search_;
       result.name_ = name_;
       result.filterByUserId_ = filterByUserId_;
       result.sortByCase_ = sortByCase_;
@@ -1045,9 +1142,6 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
-      if (other.getStarredOnly() != false) {
-        setStarredOnly(other.getStarredOnly());
-      }
       if (!other.additionalFields_.isEmpty()) {
         if (additionalFields_.isEmpty()) {
           additionalFields_ = other.additionalFields_;
@@ -1061,8 +1155,15 @@ private static final long serialVersionUID = 0L;
       if (other.getSortAscending() != false) {
         setSortAscending(other.getSortAscending());
       }
+      if (other.getStarredOnly() != false) {
+        setStarredOnly(other.getStarredOnly());
+      }
       if (other.getBookmark() != false) {
         setBookmark(other.getBookmark());
+      }
+      if (!other.getSearch().isEmpty()) {
+        search_ = other.search_;
+        onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -1348,37 +1449,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean starredOnly_ ;
-    /**
-     * <code>bool starred_only = 4;</code>
-     * @return The starredOnly.
-     */
-    @java.lang.Override
-    public boolean getStarredOnly() {
-      return starredOnly_;
-    }
-    /**
-     * <code>bool starred_only = 4;</code>
-     * @param value The starredOnly to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStarredOnly(boolean value) {
-      
-      starredOnly_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>bool starred_only = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStarredOnly() {
-      
-      starredOnly_ = false;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAdditionalFieldsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -1492,7 +1562,7 @@ private static final long serialVersionUID = 0L;
     private boolean sortAscending_ ;
     /**
      * <pre>
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      * </pre>
      *
@@ -1505,7 +1575,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      * </pre>
      *
@@ -1521,7 +1591,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Sorting opitons:
+     * Sorting options:
      * Whether to sort in ascending order. If false, will order in descending order.
      * </pre>
      *
@@ -1763,6 +1833,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean starredOnly_ ;
+    /**
+     * <pre>
+     * Filtering options:
+     * </pre>
+     *
+     * <code>bool starred_only = 4;</code>
+     * @return The starredOnly.
+     */
+    @java.lang.Override
+    public boolean getStarredOnly() {
+      return starredOnly_;
+    }
+    /**
+     * <pre>
+     * Filtering options:
+     * </pre>
+     *
+     * <code>bool starred_only = 4;</code>
+     * @param value The starredOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStarredOnly(boolean value) {
+      
+      starredOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filtering options:
+     * </pre>
+     *
+     * <code>bool starred_only = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStarredOnly() {
+      
+      starredOnly_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean bookmark_ ;
     /**
      * <pre>
@@ -1806,16 +1919,160 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object search_ = "";
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 14;</code>
+     * @return The search.
+     */
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 14;</code>
+     * @return The bytes for search.
+     */
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 14;</code>
+     * @param value The search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearch(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      search_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearch() {
+      
+      search_ = getDefaultInstance().getSearch();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the module:
+     *   - id
+     *   - description
+     *   - user_id (unless user_app_id.user_id is already set)
+     * Keywords are both normalized for search (so searching for "satisfy" matches "satisfied")
+     * and used for partial prefix-matching (so searching for "clari" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 14;</code>
+     * @param value The bytes for search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      search_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
      * </pre>
      *
-     * <code>string name = 12;</code>
+     * <code>string name = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6700
      * @return The name.
      */
-    public java.lang.String getName() {
+    @java.lang.Deprecated public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1829,13 +2086,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
      * </pre>
      *
-     * <code>string name = 12;</code>
+     * <code>string name = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6700
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
@@ -1850,14 +2110,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
      * </pre>
      *
-     * <code>string name = 12;</code>
+     * <code>string name = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6700
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
+    @java.lang.Deprecated public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1869,13 +2132,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
      * </pre>
      *
-     * <code>string name = 12;</code>
+     * <code>string name = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6700
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    @java.lang.Deprecated public Builder clearName() {
       
       name_ = getDefaultInstance().getName();
       onChanged();
@@ -1883,14 +2149,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter by the description and name of the model. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Filter by the id and description of the module. This supports wildcard queries like "gen*" to match "general" as an example.
+     * Deprecated: use search instead.
      * </pre>
      *
-     * <code>string name = 12;</code>
+     * <code>string name = 12 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.name is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6700
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
+    @java.lang.Deprecated public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1906,25 +2175,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the application owner whose this module belongs to
+     * Deprecated: use search instead of name.
      * </pre>
      *
-     * <code>bool filter_by_user_id = 13;</code>
+     * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6703
      * @return The filterByUserId.
      */
     @java.lang.Override
-    public boolean getFilterByUserId() {
+    @java.lang.Deprecated public boolean getFilterByUserId() {
       return filterByUserId_;
     }
     /**
      * <pre>
      * Filter by the application owner whose this module belongs to
+     * Deprecated: use search instead of name.
      * </pre>
      *
-     * <code>bool filter_by_user_id = 13;</code>
+     * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6703
      * @param value The filterByUserId to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterByUserId(boolean value) {
+    @java.lang.Deprecated public Builder setFilterByUserId(boolean value) {
       
       filterByUserId_ = value;
       onChanged();
@@ -1933,12 +2208,15 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Filter by the application owner whose this module belongs to
+     * Deprecated: use search instead of name.
      * </pre>
      *
-     * <code>bool filter_by_user_id = 13;</code>
+     * <code>bool filter_by_user_id = 13 [deprecated = true];</code>
+     * @deprecated clarifai.api.ListModulesRequest.filter_by_user_id is deprecated.
+     *     See proto/clarifai/api/service.proto;l=6703
      * @return This builder for chaining.
      */
-    public Builder clearFilterByUserId() {
+    @java.lang.Deprecated public Builder clearFilterByUserId() {
       
       filterByUserId_ = false;
       onChanged();
