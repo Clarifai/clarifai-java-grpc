@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     companyName_ = "";
     jobTitle_ = "";
     jobRole_ = "";
+    intention_ = "";
     billType_ = "";
     emailAddresses_ = java.util.Collections.emptyList();
   }
@@ -241,6 +242,12 @@ private static final long serialVersionUID = 0L;
               datePiiConsent_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 194: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            intention_ = s;
             break;
           }
           default: {
@@ -550,12 +557,58 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int INTENTION_FIELD_NUMBER = 24;
+  private volatile java.lang.Object intention_;
+  /**
+   * <pre>
+   * This specifies user intent when registering on clarifai
+   * </pre>
+   *
+   * <code>string intention = 24;</code>
+   * @return The intention.
+   */
+  @java.lang.Override
+  public java.lang.String getIntention() {
+    java.lang.Object ref = intention_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      intention_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * This specifies user intent when registering on clarifai
+   * </pre>
+   *
+   * <code>string intention = 24;</code>
+   * @return The bytes for intention.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIntentionBytes() {
+    java.lang.Object ref = intention_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      intention_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int BILL_TYPE_FIELD_NUMBER = 7;
   private volatile java.lang.Object billType_;
   /**
    * <code>string bill_type = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.User.bill_type is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2447
+   *     See proto/clarifai/api/resources.proto;l=2448
    * @return The billType.
    */
   @java.lang.Override
@@ -574,7 +627,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>string bill_type = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.User.bill_type is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2447
+   *     See proto/clarifai/api/resources.proto;l=2448
    * @return The bytes for billType.
    */
   @java.lang.Override
@@ -647,7 +700,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2455
+   *     See proto/clarifai/api/resources.proto;l=2456
    * @return Whether the dateGdprConsent field is set.
    */
   @java.lang.Override
@@ -657,7 +710,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2455
+   *     See proto/clarifai/api/resources.proto;l=2456
    * @return The dateGdprConsent.
    */
   @java.lang.Override
@@ -677,7 +730,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_tos_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2456
+   *     See proto/clarifai/api/resources.proto;l=2457
    * @return Whether the dateTosConsent field is set.
    */
   @java.lang.Override
@@ -687,7 +740,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_tos_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2456
+   *     See proto/clarifai/api/resources.proto;l=2457
    * @return The dateTosConsent.
    */
   @java.lang.Override
@@ -707,7 +760,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2457
+   *     See proto/clarifai/api/resources.proto;l=2458
    * @return Whether the dateMarketingConsent field is set.
    */
   @java.lang.Override
@@ -717,7 +770,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2457
+   *     See proto/clarifai/api/resources.proto;l=2458
    * @return The dateMarketingConsent.
    */
   @java.lang.Override
@@ -737,7 +790,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_pii_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2458
+   *     See proto/clarifai/api/resources.proto;l=2459
    * @return Whether the datePiiConsent field is set.
    */
   @java.lang.Override
@@ -747,7 +800,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_pii_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2458
+   *     See proto/clarifai/api/resources.proto;l=2459
    * @return The datePiiConsent.
    */
   @java.lang.Override
@@ -772,7 +825,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @deprecated clarifai.api.User.metadata is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2462
+   *     See proto/clarifai/api/resources.proto;l=2463
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -787,7 +840,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @deprecated clarifai.api.User.metadata is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2462
+   *     See proto/clarifai/api/resources.proto;l=2463
    * @return The metadata.
    */
   @java.lang.Override
@@ -852,7 +905,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
    * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2465
+   *     See proto/clarifai/api/resources.proto;l=2466
    * @return The twoFactorAuthEnabled.
    */
   @java.lang.Override
@@ -865,7 +918,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>uint32 teams_count = 16 [deprecated = true];</code>
    * @deprecated clarifai.api.User.teams_count is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2466
+   *     See proto/clarifai/api/resources.proto;l=2467
    * @return The teamsCount.
    */
   @java.lang.Override
@@ -1070,6 +1123,9 @@ private static final long serialVersionUID = 0L;
     if (datePiiConsent_ != null) {
       output.writeMessage(23, getDatePiiConsent());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(intention_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, intention_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1155,6 +1211,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getDatePiiConsent());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(intention_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, intention_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1184,6 +1243,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getJobTitle())) return false;
     if (!getJobRole()
         .equals(other.getJobRole())) return false;
+    if (!getIntention()
+        .equals(other.getIntention())) return false;
     if (!getBillType()
         .equals(other.getBillType())) return false;
     if (hasCreatedAt() != other.hasCreatedAt()) return false;
@@ -1261,6 +1322,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getJobTitle().hashCode();
     hash = (37 * hash) + JOB_ROLE_FIELD_NUMBER;
     hash = (53 * hash) + getJobRole().hashCode();
+    hash = (37 * hash) + INTENTION_FIELD_NUMBER;
+    hash = (53 * hash) + getIntention().hashCode();
     hash = (37 * hash) + BILL_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getBillType().hashCode();
     if (hasCreatedAt()) {
@@ -1461,6 +1524,8 @@ private static final long serialVersionUID = 0L;
 
       jobRole_ = "";
 
+      intention_ = "";
+
       billType_ = "";
 
       if (createdAtBuilder_ == null) {
@@ -1559,6 +1624,7 @@ private static final long serialVersionUID = 0L;
       result.companyName_ = companyName_;
       result.jobTitle_ = jobTitle_;
       result.jobRole_ = jobRole_;
+      result.intention_ = intention_;
       result.billType_ = billType_;
       if (createdAtBuilder_ == null) {
         result.createdAt_ = createdAt_;
@@ -1687,6 +1753,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getJobRole().isEmpty()) {
         jobRole_ = other.jobRole_;
+        onChanged();
+      }
+      if (!other.getIntention().isEmpty()) {
+        intention_ = other.intention_;
         onChanged();
       }
       if (!other.getBillType().isEmpty()) {
@@ -2327,11 +2397,107 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object intention_ = "";
+    /**
+     * <pre>
+     * This specifies user intent when registering on clarifai
+     * </pre>
+     *
+     * <code>string intention = 24;</code>
+     * @return The intention.
+     */
+    public java.lang.String getIntention() {
+      java.lang.Object ref = intention_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        intention_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This specifies user intent when registering on clarifai
+     * </pre>
+     *
+     * <code>string intention = 24;</code>
+     * @return The bytes for intention.
+     */
+    public com.google.protobuf.ByteString
+        getIntentionBytes() {
+      java.lang.Object ref = intention_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        intention_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This specifies user intent when registering on clarifai
+     * </pre>
+     *
+     * <code>string intention = 24;</code>
+     * @param value The intention to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntention(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      intention_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This specifies user intent when registering on clarifai
+     * </pre>
+     *
+     * <code>string intention = 24;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIntention() {
+      
+      intention_ = getDefaultInstance().getIntention();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This specifies user intent when registering on clarifai
+     * </pre>
+     *
+     * <code>string intention = 24;</code>
+     * @param value The bytes for intention to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntentionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      intention_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object billType_ = "";
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.User.bill_type is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2447
+     *     See proto/clarifai/api/resources.proto;l=2448
      * @return The billType.
      */
     @java.lang.Deprecated public java.lang.String getBillType() {
@@ -2349,7 +2515,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.User.bill_type is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2447
+     *     See proto/clarifai/api/resources.proto;l=2448
      * @return The bytes for billType.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2368,7 +2534,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.User.bill_type is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2447
+     *     See proto/clarifai/api/resources.proto;l=2448
      * @param value The billType to set.
      * @return This builder for chaining.
      */
@@ -2385,7 +2551,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.User.bill_type is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2447
+     *     See proto/clarifai/api/resources.proto;l=2448
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearBillType() {
@@ -2397,7 +2563,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>string bill_type = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.User.bill_type is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2447
+     *     See proto/clarifai/api/resources.proto;l=2448
      * @param value The bytes for billType to set.
      * @return This builder for chaining.
      */
@@ -2610,7 +2776,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2455
+     *     See proto/clarifai/api/resources.proto;l=2456
      * @return Whether the dateGdprConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDateGdprConsent() {
@@ -2619,7 +2785,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2455
+     *     See proto/clarifai/api/resources.proto;l=2456
      * @return The dateGdprConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDateGdprConsent() {
@@ -2733,7 +2899,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_tos_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2456
+     *     See proto/clarifai/api/resources.proto;l=2457
      * @return Whether the dateTosConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDateTosConsent() {
@@ -2742,7 +2908,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_tos_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2456
+     *     See proto/clarifai/api/resources.proto;l=2457
      * @return The dateTosConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDateTosConsent() {
@@ -2856,7 +3022,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2457
+     *     See proto/clarifai/api/resources.proto;l=2458
      * @return Whether the dateMarketingConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDateMarketingConsent() {
@@ -2865,7 +3031,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2457
+     *     See proto/clarifai/api/resources.proto;l=2458
      * @return The dateMarketingConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDateMarketingConsent() {
@@ -2979,7 +3145,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_pii_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2458
+     *     See proto/clarifai/api/resources.proto;l=2459
      * @return Whether the datePiiConsent field is set.
      */
     @java.lang.Deprecated public boolean hasDatePiiConsent() {
@@ -2988,7 +3154,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
      * @deprecated clarifai.api.User.date_pii_consent is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2458
+     *     See proto/clarifai/api/resources.proto;l=2459
      * @return The datePiiConsent.
      */
     @java.lang.Deprecated public com.google.protobuf.Timestamp getDatePiiConsent() {
@@ -3107,7 +3273,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @deprecated clarifai.api.User.metadata is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2462
+     *     See proto/clarifai/api/resources.proto;l=2463
      * @return Whether the metadata field is set.
      */
     @java.lang.Deprecated public boolean hasMetadata() {
@@ -3121,7 +3287,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
      * @deprecated clarifai.api.User.metadata is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2462
+     *     See proto/clarifai/api/resources.proto;l=2463
      * @return The metadata.
      */
     @java.lang.Deprecated public com.google.protobuf.Struct getMetadata() {
@@ -3508,7 +3674,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2465
+     *     See proto/clarifai/api/resources.proto;l=2466
      * @return The twoFactorAuthEnabled.
      */
     @java.lang.Override
@@ -3518,7 +3684,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2465
+     *     See proto/clarifai/api/resources.proto;l=2466
      * @param value The twoFactorAuthEnabled to set.
      * @return This builder for chaining.
      */
@@ -3531,7 +3697,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
      * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2465
+     *     See proto/clarifai/api/resources.proto;l=2466
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTwoFactorAuthEnabled() {
@@ -3545,7 +3711,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @deprecated clarifai.api.User.teams_count is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2466
+     *     See proto/clarifai/api/resources.proto;l=2467
      * @return The teamsCount.
      */
     @java.lang.Override
@@ -3555,7 +3721,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @deprecated clarifai.api.User.teams_count is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2466
+     *     See proto/clarifai/api/resources.proto;l=2467
      * @param value The teamsCount to set.
      * @return This builder for chaining.
      */
@@ -3568,7 +3734,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>uint32 teams_count = 16 [deprecated = true];</code>
      * @deprecated clarifai.api.User.teams_count is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2466
+     *     See proto/clarifai/api/resources.proto;l=2467
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTeamsCount() {

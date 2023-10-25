@@ -96,16 +96,36 @@ public interface UserOrBuilder extends
       getJobRoleBytes();
 
   /**
+   * <pre>
+   * This specifies user intent when registering on clarifai
+   * </pre>
+   *
+   * <code>string intention = 24;</code>
+   * @return The intention.
+   */
+  java.lang.String getIntention();
+  /**
+   * <pre>
+   * This specifies user intent when registering on clarifai
+   * </pre>
+   *
+   * <code>string intention = 24;</code>
+   * @return The bytes for intention.
+   */
+  com.google.protobuf.ByteString
+      getIntentionBytes();
+
+  /**
    * <code>string bill_type = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.User.bill_type is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2447
+   *     See proto/clarifai/api/resources.proto;l=2448
    * @return The billType.
    */
   @java.lang.Deprecated java.lang.String getBillType();
   /**
    * <code>string bill_type = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.User.bill_type is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2447
+   *     See proto/clarifai/api/resources.proto;l=2448
    * @return The bytes for billType.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -153,14 +173,14 @@ public interface UserOrBuilder extends
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2455
+   *     See proto/clarifai/api/resources.proto;l=2456
    * @return Whether the dateGdprConsent field is set.
    */
   @java.lang.Deprecated boolean hasDateGdprConsent();
   /**
    * <code>.google.protobuf.Timestamp date_gdpr_consent = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_gdpr_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2455
+   *     See proto/clarifai/api/resources.proto;l=2456
    * @return The dateGdprConsent.
    */
   @java.lang.Deprecated com.google.protobuf.Timestamp getDateGdprConsent();
@@ -172,14 +192,14 @@ public interface UserOrBuilder extends
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_tos_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2456
+   *     See proto/clarifai/api/resources.proto;l=2457
    * @return Whether the dateTosConsent field is set.
    */
   @java.lang.Deprecated boolean hasDateTosConsent();
   /**
    * <code>.google.protobuf.Timestamp date_tos_consent = 9 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_tos_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2456
+   *     See proto/clarifai/api/resources.proto;l=2457
    * @return The dateTosConsent.
    */
   @java.lang.Deprecated com.google.protobuf.Timestamp getDateTosConsent();
@@ -191,14 +211,14 @@ public interface UserOrBuilder extends
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2457
+   *     See proto/clarifai/api/resources.proto;l=2458
    * @return Whether the dateMarketingConsent field is set.
    */
   @java.lang.Deprecated boolean hasDateMarketingConsent();
   /**
    * <code>.google.protobuf.Timestamp date_marketing_consent = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_marketing_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2457
+   *     See proto/clarifai/api/resources.proto;l=2458
    * @return The dateMarketingConsent.
    */
   @java.lang.Deprecated com.google.protobuf.Timestamp getDateMarketingConsent();
@@ -210,14 +230,14 @@ public interface UserOrBuilder extends
   /**
    * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_pii_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2458
+   *     See proto/clarifai/api/resources.proto;l=2459
    * @return Whether the datePiiConsent field is set.
    */
   @java.lang.Deprecated boolean hasDatePiiConsent();
   /**
    * <code>.google.protobuf.Timestamp date_pii_consent = 23 [deprecated = true];</code>
    * @deprecated clarifai.api.User.date_pii_consent is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2458
+   *     See proto/clarifai/api/resources.proto;l=2459
    * @return The datePiiConsent.
    */
   @java.lang.Deprecated com.google.protobuf.Timestamp getDatePiiConsent();
@@ -234,7 +254,7 @@ public interface UserOrBuilder extends
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @deprecated clarifai.api.User.metadata is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2462
+   *     See proto/clarifai/api/resources.proto;l=2463
    * @return Whether the metadata field is set.
    */
   @java.lang.Deprecated boolean hasMetadata();
@@ -246,7 +266,7 @@ public interface UserOrBuilder extends
    *
    * <code>.google.protobuf.Struct metadata = 11 [deprecated = true];</code>
    * @deprecated clarifai.api.User.metadata is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2462
+   *     See proto/clarifai/api/resources.proto;l=2463
    * @return The metadata.
    */
   @java.lang.Deprecated com.google.protobuf.Struct getMetadata();
@@ -287,7 +307,7 @@ public interface UserOrBuilder extends
   /**
    * <code>bool two_factor_auth_enabled = 15 [deprecated = true];</code>
    * @deprecated clarifai.api.User.two_factor_auth_enabled is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2465
+   *     See proto/clarifai/api/resources.proto;l=2466
    * @return The twoFactorAuthEnabled.
    */
   @java.lang.Deprecated boolean getTwoFactorAuthEnabled();
@@ -295,7 +315,7 @@ public interface UserOrBuilder extends
   /**
    * <code>uint32 teams_count = 16 [deprecated = true];</code>
    * @deprecated clarifai.api.User.teams_count is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2466
+   *     See proto/clarifai/api/resources.proto;l=2467
    * @return The teamsCount.
    */
   @java.lang.Deprecated int getTeamsCount();
