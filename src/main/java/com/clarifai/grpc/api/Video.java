@@ -103,6 +103,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 66: {
+            com.clarifai.grpc.api.HostedURL.Builder subBuilder = null;
+            if (hostedThumbnail_ != null) {
+              subBuilder = hostedThumbnail_.toBuilder();
+            }
+            hostedThumbnail_ = input.readMessage(com.clarifai.grpc.api.HostedURL.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(hostedThumbnail_);
+              hostedThumbnail_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -222,13 +235,16 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
    * used only in response.
+   * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
    * </pre>
    *
-   * <code>string thumbnail_url = 5;</code>
+   * <code>string thumbnail_url = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2575
    * @return The thumbnailUrl.
    */
   @java.lang.Override
-  public java.lang.String getThumbnailUrl() {
+  @java.lang.Deprecated public java.lang.String getThumbnailUrl() {
     java.lang.Object ref = thumbnailUrl_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -244,13 +260,16 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
    * used only in response.
+   * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
    * </pre>
    *
-   * <code>string thumbnail_url = 5;</code>
+   * <code>string thumbnail_url = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2575
    * @return The bytes for thumbnailUrl.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getThumbnailUrlBytes() {
     java.lang.Object ref = thumbnailUrl_;
     if (ref instanceof java.lang.String) {
@@ -303,6 +322,47 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder() {
     return getHosted();
+  }
+
+  public static final int HOSTED_THUMBNAIL_FIELD_NUMBER = 8;
+  private com.clarifai.grpc.api.HostedURL hostedThumbnail_;
+  /**
+   * <pre>
+   * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+   * This field is currently used only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+   * @return Whether the hostedThumbnail field is set.
+   */
+  @java.lang.Override
+  public boolean hasHostedThumbnail() {
+    return hostedThumbnail_ != null;
+  }
+  /**
+   * <pre>
+   * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+   * This field is currently used only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+   * @return The hostedThumbnail.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.HostedURL getHostedThumbnail() {
+    return hostedThumbnail_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hostedThumbnail_;
+  }
+  /**
+   * <pre>
+   * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+   * This field is currently used only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.HostedURLOrBuilder getHostedThumbnailOrBuilder() {
+    return getHostedThumbnail();
   }
 
   public static final int VIDEO_INFO_FIELD_NUMBER = 7;
@@ -375,6 +435,9 @@ private static final long serialVersionUID = 0L;
     if (videoInfo_ != null) {
       output.writeMessage(7, getVideoInfo());
     }
+    if (hostedThumbnail_ != null) {
+      output.writeMessage(8, getHostedThumbnail());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -406,6 +469,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getVideoInfo());
     }
+    if (hostedThumbnail_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getHostedThumbnail());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -433,6 +500,11 @@ private static final long serialVersionUID = 0L;
     if (hasHosted()) {
       if (!getHosted()
           .equals(other.getHosted())) return false;
+    }
+    if (hasHostedThumbnail() != other.hasHostedThumbnail()) return false;
+    if (hasHostedThumbnail()) {
+      if (!getHostedThumbnail()
+          .equals(other.getHostedThumbnail())) return false;
     }
     if (hasVideoInfo() != other.hasVideoInfo()) return false;
     if (hasVideoInfo()) {
@@ -462,6 +534,10 @@ private static final long serialVersionUID = 0L;
     if (hasHosted()) {
       hash = (37 * hash) + HOSTED_FIELD_NUMBER;
       hash = (53 * hash) + getHosted().hashCode();
+    }
+    if (hasHostedThumbnail()) {
+      hash = (37 * hash) + HOSTED_THUMBNAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getHostedThumbnail().hashCode();
     }
     if (hasVideoInfo()) {
       hash = (37 * hash) + VIDEO_INFO_FIELD_NUMBER;
@@ -618,6 +694,12 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
         hostedBuilder_ = null;
       }
+      if (hostedThumbnailBuilder_ == null) {
+        hostedThumbnail_ = null;
+      } else {
+        hostedThumbnail_ = null;
+        hostedThumbnailBuilder_ = null;
+      }
       if (videoInfoBuilder_ == null) {
         videoInfo_ = null;
       } else {
@@ -658,6 +740,11 @@ private static final long serialVersionUID = 0L;
         result.hosted_ = hosted_;
       } else {
         result.hosted_ = hostedBuilder_.build();
+      }
+      if (hostedThumbnailBuilder_ == null) {
+        result.hostedThumbnail_ = hostedThumbnail_;
+      } else {
+        result.hostedThumbnail_ = hostedThumbnailBuilder_.build();
       }
       if (videoInfoBuilder_ == null) {
         result.videoInfo_ = videoInfo_;
@@ -728,6 +815,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasHosted()) {
         mergeHosted(other.getHosted());
+      }
+      if (other.hasHostedThumbnail()) {
+        mergeHostedThumbnail(other.getHostedThumbnail());
       }
       if (other.hasVideoInfo()) {
         mergeVideoInfo(other.getVideoInfo());
@@ -959,12 +1049,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      * </pre>
      *
-     * <code>string thumbnail_url = 5;</code>
+     * <code>string thumbnail_url = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2575
      * @return The thumbnailUrl.
      */
-    public java.lang.String getThumbnailUrl() {
+    @java.lang.Deprecated public java.lang.String getThumbnailUrl() {
       java.lang.Object ref = thumbnailUrl_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -980,12 +1073,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      * </pre>
      *
-     * <code>string thumbnail_url = 5;</code>
+     * <code>string thumbnail_url = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2575
      * @return The bytes for thumbnailUrl.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getThumbnailUrlBytes() {
       java.lang.Object ref = thumbnailUrl_;
       if (ref instanceof String) {
@@ -1002,13 +1098,16 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      * </pre>
      *
-     * <code>string thumbnail_url = 5;</code>
+     * <code>string thumbnail_url = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2575
      * @param value The thumbnailUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setThumbnailUrl(
+    @java.lang.Deprecated public Builder setThumbnailUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1022,12 +1121,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      * </pre>
      *
-     * <code>string thumbnail_url = 5;</code>
+     * <code>string thumbnail_url = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2575
      * @return This builder for chaining.
      */
-    public Builder clearThumbnailUrl() {
+    @java.lang.Deprecated public Builder clearThumbnailUrl() {
       
       thumbnailUrl_ = getDefaultInstance().getThumbnailUrl();
       onChanged();
@@ -1037,13 +1139,16 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
      * used only in response.
+     * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
      * </pre>
      *
-     * <code>string thumbnail_url = 5;</code>
+     * <code>string thumbnail_url = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2575
      * @param value The bytes for thumbnailUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setThumbnailUrlBytes(
+    @java.lang.Deprecated public Builder setThumbnailUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1217,6 +1322,170 @@ private static final long serialVersionUID = 0L;
         hosted_ = null;
       }
       return hostedBuilder_;
+    }
+
+    private com.clarifai.grpc.api.HostedURL hostedThumbnail_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder> hostedThumbnailBuilder_;
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     * @return Whether the hostedThumbnail field is set.
+     */
+    public boolean hasHostedThumbnail() {
+      return hostedThumbnailBuilder_ != null || hostedThumbnail_ != null;
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     * @return The hostedThumbnail.
+     */
+    public com.clarifai.grpc.api.HostedURL getHostedThumbnail() {
+      if (hostedThumbnailBuilder_ == null) {
+        return hostedThumbnail_ == null ? com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hostedThumbnail_;
+      } else {
+        return hostedThumbnailBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    public Builder setHostedThumbnail(com.clarifai.grpc.api.HostedURL value) {
+      if (hostedThumbnailBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hostedThumbnail_ = value;
+        onChanged();
+      } else {
+        hostedThumbnailBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    public Builder setHostedThumbnail(
+        com.clarifai.grpc.api.HostedURL.Builder builderForValue) {
+      if (hostedThumbnailBuilder_ == null) {
+        hostedThumbnail_ = builderForValue.build();
+        onChanged();
+      } else {
+        hostedThumbnailBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    public Builder mergeHostedThumbnail(com.clarifai.grpc.api.HostedURL value) {
+      if (hostedThumbnailBuilder_ == null) {
+        if (hostedThumbnail_ != null) {
+          hostedThumbnail_ =
+            com.clarifai.grpc.api.HostedURL.newBuilder(hostedThumbnail_).mergeFrom(value).buildPartial();
+        } else {
+          hostedThumbnail_ = value;
+        }
+        onChanged();
+      } else {
+        hostedThumbnailBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    public Builder clearHostedThumbnail() {
+      if (hostedThumbnailBuilder_ == null) {
+        hostedThumbnail_ = null;
+        onChanged();
+      } else {
+        hostedThumbnail_ = null;
+        hostedThumbnailBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    public com.clarifai.grpc.api.HostedURL.Builder getHostedThumbnailBuilder() {
+      
+      onChanged();
+      return getHostedThumbnailFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    public com.clarifai.grpc.api.HostedURLOrBuilder getHostedThumbnailOrBuilder() {
+      if (hostedThumbnailBuilder_ != null) {
+        return hostedThumbnailBuilder_.getMessageOrBuilder();
+      } else {
+        return hostedThumbnail_ == null ?
+            com.clarifai.grpc.api.HostedURL.getDefaultInstance() : hostedThumbnail_;
+      }
+    }
+    /**
+     * <pre>
+     * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+     * This field is currently used only in response.
+     * </pre>
+     *
+     * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder> 
+        getHostedThumbnailFieldBuilder() {
+      if (hostedThumbnailBuilder_ == null) {
+        hostedThumbnailBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.HostedURL, com.clarifai.grpc.api.HostedURL.Builder, com.clarifai.grpc.api.HostedURLOrBuilder>(
+                getHostedThumbnail(),
+                getParentForChildren(),
+                isClean());
+        hostedThumbnail_ = null;
+      }
+      return hostedThumbnailBuilder_;
     }
 
     private com.clarifai.grpc.api.VideoInfo videoInfo_;

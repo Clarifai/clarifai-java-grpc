@@ -54,22 +54,28 @@ public interface VideoOrBuilder extends
    * <pre>
    * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
    * used only in response.
+   * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
    * </pre>
    *
-   * <code>string thumbnail_url = 5;</code>
+   * <code>string thumbnail_url = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2575
    * @return The thumbnailUrl.
    */
-  java.lang.String getThumbnailUrl();
+  @java.lang.Deprecated java.lang.String getThumbnailUrl();
   /**
    * <pre>
    * URL of thumbnail image, which is currently frame at position of 1s. This field is currently
    * used only in response.
+   * Deprecated in favour of thumbnail_hosted, which also contains alternate sizes of thumbnail
    * </pre>
    *
-   * <code>string thumbnail_url = 5;</code>
+   * <code>string thumbnail_url = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2575
    * @return The bytes for thumbnailUrl.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getThumbnailUrlBytes();
 
   /**
@@ -101,6 +107,36 @@ public interface VideoOrBuilder extends
    * <code>.clarifai.api.HostedURL hosted = 6;</code>
    */
   com.clarifai.grpc.api.HostedURLOrBuilder getHostedOrBuilder();
+
+  /**
+   * <pre>
+   * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+   * This field is currently used only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+   * @return Whether the hostedThumbnail field is set.
+   */
+  boolean hasHostedThumbnail();
+  /**
+   * <pre>
+   * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+   * This field is currently used only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+   * @return The hostedThumbnail.
+   */
+  com.clarifai.grpc.api.HostedURL getHostedThumbnail();
+  /**
+   * <pre>
+   * The hosted field lists various sizes of the vide thumbnail hosted in Clarifai storage, with 'thumbnail' as the full size
+   * This field is currently used only in response.
+   * </pre>
+   *
+   * <code>.clarifai.api.HostedURL hosted_thumbnail = 8;</code>
+   */
+  com.clarifai.grpc.api.HostedURLOrBuilder getHostedThumbnailOrBuilder();
 
   /**
    * <pre>
