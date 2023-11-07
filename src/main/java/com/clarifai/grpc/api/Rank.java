@@ -133,7 +133,6 @@ private static final long serialVersionUID = 0L;
    *  - data.embeddings[].vector[]
    *  - data.image.base64[]
    *  - data.image.url
-   *  - data.lopq_code[]
    *  - data.text.raw
    *  - input_id
    *  - model_version_id
@@ -157,7 +156,6 @@ private static final long serialVersionUID = 0L;
    *  - data.embeddings[].vector[]
    *  - data.image.base64[]
    *  - data.image.url
-   *  - data.lopq_code[]
    *  - data.text.raw
    *  - input_id
    *  - model_version_id
@@ -181,7 +179,6 @@ private static final long serialVersionUID = 0L;
    *  - data.embeddings[].vector[]
    *  - data.image.base64[]
    *  - data.image.url
-   *  - data.lopq_code[]
    *  - data.text.raw
    *  - input_id
    *  - model_version_id
@@ -591,7 +588,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -614,7 +610,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -641,7 +636,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -673,7 +667,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -703,7 +696,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -737,7 +729,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -767,7 +758,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -791,7 +781,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id
@@ -818,7 +807,6 @@ private static final long serialVersionUID = 0L;
      *  - data.embeddings[].vector[]
      *  - data.image.base64[]
      *  - data.image.url
-     *  - data.lopq_code[]
      *  - data.text.raw
      *  - input_id
      *  - model_version_id

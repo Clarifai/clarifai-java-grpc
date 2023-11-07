@@ -29,7 +29,6 @@ public interface RankOrBuilder extends
    *  - data.embeddings[].vector[]
    *  - data.image.base64[]
    *  - data.image.url
-   *  - data.lopq_code[]
    *  - data.text.raw
    *  - input_id
    *  - model_version_id
@@ -50,7 +49,6 @@ public interface RankOrBuilder extends
    *  - data.embeddings[].vector[]
    *  - data.image.base64[]
    *  - data.image.url
-   *  - data.lopq_code[]
    *  - data.text.raw
    *  - input_id
    *  - model_version_id
@@ -71,7 +69,6 @@ public interface RankOrBuilder extends
    *  - data.embeddings[].vector[]
    *  - data.image.base64[]
    *  - data.image.url
-   *  - data.lopq_code[]
    *  - data.text.raw
    *  - input_id
    *  - model_version_id

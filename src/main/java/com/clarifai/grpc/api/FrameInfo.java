@@ -100,15 +100,19 @@ private static final long serialVersionUID = 0L;
   private int index_;
   /**
    * <pre>
-   * The index of the frame. Keep in mind that this depends on the sampling rate used during
-   * processing.
+   * Deprecated. Use Time instead.
+   * The index of the frame, informational and optional.
+   * Depends on the sampling rate used during processing
+   * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
    * </pre>
    *
-   * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * @deprecated clarifai.api.FrameInfo.index is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=665
    * @return The index.
    */
   @java.lang.Override
-  public int getIndex() {
+  @java.lang.Deprecated public int getIndex() {
     return index_;
   }
 
@@ -454,28 +458,36 @@ private static final long serialVersionUID = 0L;
     private int index_ ;
     /**
      * <pre>
-     * The index of the frame. Keep in mind that this depends on the sampling rate used during
-     * processing.
+     * Deprecated. Use Time instead.
+     * The index of the frame, informational and optional.
+     * Depends on the sampling rate used during processing
+     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      * </pre>
      *
-     * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.FrameInfo.index is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=665
      * @return The index.
      */
     @java.lang.Override
-    public int getIndex() {
+    @java.lang.Deprecated public int getIndex() {
       return index_;
     }
     /**
      * <pre>
-     * The index of the frame. Keep in mind that this depends on the sampling rate used during
-     * processing.
+     * Deprecated. Use Time instead.
+     * The index of the frame, informational and optional.
+     * Depends on the sampling rate used during processing
+     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      * </pre>
      *
-     * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.FrameInfo.index is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=665
      * @param value The index to set.
      * @return This builder for chaining.
      */
-    public Builder setIndex(int value) {
+    @java.lang.Deprecated public Builder setIndex(int value) {
       
       index_ = value;
       onChanged();
@@ -483,14 +495,18 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The index of the frame. Keep in mind that this depends on the sampling rate used during
-     * processing.
+     * Deprecated. Use Time instead.
+     * The index of the frame, informational and optional.
+     * Depends on the sampling rate used during processing
+     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
      * </pre>
      *
-     * <code>uint32 index = 1 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
+     * @deprecated clarifai.api.FrameInfo.index is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=665
      * @return This builder for chaining.
      */
-    public Builder clearIndex() {
+    @java.lang.Deprecated public Builder clearIndex() {
       
       index_ = 0;
       onChanged();
