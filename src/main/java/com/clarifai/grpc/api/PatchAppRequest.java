@@ -194,7 +194,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The action to perform on the patched App object except App.Metadata
-   * For now only action 'overwrite' is supported
+   * Supported values: 'overwrite' and 'remove'.
+   * Note that 'remove' can only be used to remove the app image by setting
+   * 'image.url' in the request to the current value returned for the app.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -216,7 +218,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The action to perform on the patched App object except App.Metadata
-   * For now only action 'overwrite' is supported
+   * Supported values: 'overwrite' and 'remove'.
+   * Note that 'remove' can only be used to remove the app image by setting
+   * 'image.url' in the request to the current value returned for the app.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -946,7 +950,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched App object except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for the app.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -967,7 +973,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched App object except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for the app.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -989,7 +997,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched App object except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for the app.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1009,7 +1019,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched App object except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for the app.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1024,7 +1036,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched App object except App.Metadata
-     * For now only action 'overwrite' is supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for the app.
      * </pre>
      *
      * <code>string action = 3;</code>

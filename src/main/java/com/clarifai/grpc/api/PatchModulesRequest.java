@@ -191,7 +191,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The action to perform on the patched objects
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
+   * Supported values: 'overwrite' and 'remove'.
+   * Note that 'remove' can only be used to remove the module image by setting
+   * 'image.url' in the request to the current value returned for that module.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -213,7 +215,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The action to perform on the patched objects
-   * For now actions 'merge', 'overwrite', and 'remove' are supported
+   * Supported values: 'overwrite' and 'remove'.
+   * Note that 'remove' can only be used to remove the module image by setting
+   * 'image.url' in the request to the current value returned for that module.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -990,7 +994,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1011,7 +1017,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1033,7 +1041,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1053,7 +1063,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      * </pre>
      *
      * <code>string action = 3;</code>
@@ -1068,7 +1080,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The action to perform on the patched objects
-     * For now actions 'merge', 'overwrite', and 'remove' are supported
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the module image by setting
+     * 'image.url' in the request to the current value returned for that module.
      * </pre>
      *
      * <code>string action = 3;</code>

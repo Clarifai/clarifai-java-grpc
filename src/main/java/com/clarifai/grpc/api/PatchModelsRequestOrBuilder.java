@@ -50,6 +50,9 @@ public interface PatchModelsRequestOrBuilder extends
    * <pre>
    * The action to perform on the patched objects
    * For now actions 'merge', 'overwrite', and 'remove' are supported
+   * Note that 'remove' can be used to remove the model image by setting
+   * 'image.url' in the request to the current value returned for that model.
+   * This cannot be used in a request that is patching other fields as well.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -60,6 +63,9 @@ public interface PatchModelsRequestOrBuilder extends
    * <pre>
    * The action to perform on the patched objects
    * For now actions 'merge', 'overwrite', and 'remove' are supported
+   * Note that 'remove' can be used to remove the model image by setting
+   * 'image.url' in the request to the current value returned for that model.
+   * This cannot be used in a request that is patching other fields as well.
    * </pre>
    *
    * <code>string action = 3;</code>

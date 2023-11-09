@@ -69,7 +69,9 @@ public interface PatchDatasetsRequestOrBuilder extends
   /**
    * <pre>
    * The action to perform on the patched objects
-   * Supported values: 'overwrite' and 'merge'
+   * Supported values: 'overwrite', 'merge', and 'remove'.
+   * Note that 'remove' can only be used to remove the dataset image by setting
+   * 'image.url' in the request to the current value returned for that dataset.
    * </pre>
    *
    * <code>string action = 3;</code>
@@ -79,7 +81,9 @@ public interface PatchDatasetsRequestOrBuilder extends
   /**
    * <pre>
    * The action to perform on the patched objects
-   * Supported values: 'overwrite' and 'merge'
+   * Supported values: 'overwrite', 'merge', and 'remove'.
+   * Note that 'remove' can only be used to remove the dataset image by setting
+   * 'image.url' in the request to the current value returned for that dataset.
    * </pre>
    *
    * <code>string action = 3;</code>
