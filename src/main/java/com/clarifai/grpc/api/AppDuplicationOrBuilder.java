@@ -29,9 +29,33 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
-   * if new_app_name is empty, the name will be the same as this id.
-   * You can not set this if existing_app_id is set.
+   * The ID of an existing app you want to copy data into.
+   * If not provided, then we will create a new application as the destination instead.
+   * The various new_app_* fields can be used to set fields of this new application.
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The existingAppId.
+   */
+  java.lang.String getExistingAppId();
+  /**
+   * <pre>
+   * The ID of an existing app you want to copy data into.
+   * If not provided, then we will create a new application as the destination instead.
+   * The various new_app_* fields can be used to set fields of this new application.
+   * </pre>
+   *
+   * <code>string existing_app_id = 8;</code>
+   * @return The bytes for existingAppId.
+   */
+  com.google.protobuf.ByteString
+      getExistingAppIdBytes();
+
+  /**
+   * <pre>
+   * The ID to use when creating a new application.
+   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+   * If not provided, then it will be generated automatically.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
@@ -40,9 +64,9 @@ public interface AppDuplicationOrBuilder extends
   java.lang.String getNewAppId();
   /**
    * <pre>
-   * the id of new app. If provided, we will create a new application with this id. If the app id exists, we will return err.
-   * if new_app_name is empty, the name will be the same as this id.
-   * You can not set this if existing_app_id is set.
+   * The ID to use when creating a new application.
+   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+   * If not provided, then it will be generated automatically.
    * </pre>
    *
    * <code>string new_app_id = 2;</code>
@@ -53,8 +77,9 @@ public interface AppDuplicationOrBuilder extends
 
   /**
    * <pre>
-   * the name of new app. If provided, we will create a new application with this name.
-   * You can not set this if existing_app_id is set.
+   * The name to use when creating a new application.
+   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+   * If not provided, then the ID of the new application is also used as the name.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
@@ -63,8 +88,9 @@ public interface AppDuplicationOrBuilder extends
   java.lang.String getNewAppName();
   /**
    * <pre>
-   * the name of new app. If provided, we will create a new application with this name.
-   * You can not set this if existing_app_id is set.
+   * The name to use when creating a new application.
+   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+   * If not provided, then the ID of the new application is also used as the name.
    * </pre>
    *
    * <code>string new_app_name = 3;</code>
@@ -72,6 +98,30 @@ public interface AppDuplicationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNewAppNameBytes();
+
+  /**
+   * <pre>
+   * The description to use when creating a new application.
+   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+   * If not provided, then the description of the source application is copied.
+   * </pre>
+   *
+   * <code>string new_app_description = 10;</code>
+   * @return The newAppDescription.
+   */
+  java.lang.String getNewAppDescription();
+  /**
+   * <pre>
+   * The description to use when creating a new application.
+   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
+   * If not provided, then the description of the source application is copied.
+   * </pre>
+   *
+   * <code>string new_app_description = 10;</code>
+   * @return The bytes for newAppDescription.
+   */
+  com.google.protobuf.ByteString
+      getNewAppDescriptionBytes();
 
   /**
    * <pre>
@@ -180,30 +230,6 @@ public interface AppDuplicationOrBuilder extends
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
    */
   com.clarifai.grpc.api.AppDuplicationFiltersOrBuilder getFilterOrBuilder();
-
-  /**
-   * <pre>
-   * the id of existing app you want to copy data into.
-   * you can not set this if either new_app_id or new_app_name is set.
-   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
-   * </pre>
-   *
-   * <code>string existing_app_id = 8;</code>
-   * @return The existingAppId.
-   */
-  java.lang.String getExistingAppId();
-  /**
-   * <pre>
-   * the id of existing app you want to copy data into.
-   * you can not set this if either new_app_id or new_app_name is set.
-   * if new_app_id, new_app_name and existing_app_id are all empty, we will create a new app with random app id/name
-   * </pre>
-   *
-   * <code>string existing_app_id = 8;</code>
-   * @return The bytes for existingAppId.
-   */
-  com.google.protobuf.ByteString
-      getExistingAppIdBytes();
 
   /**
    * <pre>

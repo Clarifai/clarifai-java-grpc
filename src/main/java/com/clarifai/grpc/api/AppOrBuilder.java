@@ -363,6 +363,36 @@ public interface AppOrBuilder extends
   com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder();
 
   /**
+   * <pre>
+   * An app marked as a template can be duplicated by any user that can see it,
+   * including all visible resources within it.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue is_template = 25;</code>
+   * @return Whether the isTemplate field is set.
+   */
+  boolean hasIsTemplate();
+  /**
+   * <pre>
+   * An app marked as a template can be duplicated by any user that can see it,
+   * including all visible resources within it.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue is_template = 25;</code>
+   * @return The isTemplate.
+   */
+  com.google.protobuf.BoolValue getIsTemplate();
+  /**
+   * <pre>
+   * An app marked as a template can be duplicated by any user that can see it,
+   * including all visible resources within it.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue is_template = 25;</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getIsTemplateOrBuilder();
+
+  /**
    * <code>.clarifai.api.AppExtraInfo extra_info = 24;</code>
    * @return Whether the extraInfo field is set.
    */

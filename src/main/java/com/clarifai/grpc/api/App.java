@@ -219,6 +219,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 202: {
+            com.google.protobuf.BoolValue.Builder subBuilder = null;
+            if (isTemplate_ != null) {
+              subBuilder = isTemplate_.toBuilder();
+            }
+            isTemplate_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(isTemplate_);
+              isTemplate_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -902,6 +915,47 @@ private static final long serialVersionUID = 0L;
     return getImage();
   }
 
+  public static final int IS_TEMPLATE_FIELD_NUMBER = 25;
+  private com.google.protobuf.BoolValue isTemplate_;
+  /**
+   * <pre>
+   * An app marked as a template can be duplicated by any user that can see it,
+   * including all visible resources within it.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue is_template = 25;</code>
+   * @return Whether the isTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsTemplate() {
+    return isTemplate_ != null;
+  }
+  /**
+   * <pre>
+   * An app marked as a template can be duplicated by any user that can see it,
+   * including all visible resources within it.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue is_template = 25;</code>
+   * @return The isTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getIsTemplate() {
+    return isTemplate_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isTemplate_;
+  }
+  /**
+   * <pre>
+   * An app marked as a template can be duplicated by any user that can see it,
+   * including all visible resources within it.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue is_template = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getIsTemplateOrBuilder() {
+    return getIsTemplate();
+  }
+
   public static final int EXTRA_INFO_FIELD_NUMBER = 24;
   private com.clarifai.grpc.api.AppExtraInfo extraInfo_;
   /**
@@ -999,6 +1053,9 @@ private static final long serialVersionUID = 0L;
     if (extraInfo_ != null) {
       output.writeMessage(24, getExtraInfo());
     }
+    if (isTemplate_ != null) {
+      output.writeMessage(25, getIsTemplate());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1076,6 +1133,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(24, getExtraInfo());
     }
+    if (isTemplate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, getIsTemplate());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1145,6 +1206,11 @@ private static final long serialVersionUID = 0L;
       if (!getImage()
           .equals(other.getImage())) return false;
     }
+    if (hasIsTemplate() != other.hasIsTemplate()) return false;
+    if (hasIsTemplate()) {
+      if (!getIsTemplate()
+          .equals(other.getIsTemplate())) return false;
+    }
     if (hasExtraInfo() != other.hasExtraInfo()) return false;
     if (hasExtraInfo()) {
       if (!getExtraInfo()
@@ -1209,6 +1275,10 @@ private static final long serialVersionUID = 0L;
     if (hasImage()) {
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
+    }
+    if (hasIsTemplate()) {
+      hash = (37 * hash) + IS_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getIsTemplate().hashCode();
     }
     if (hasExtraInfo()) {
       hash = (37 * hash) + EXTRA_INFO_FIELD_NUMBER;
@@ -1411,6 +1481,12 @@ private static final long serialVersionUID = 0L;
         image_ = null;
         imageBuilder_ = null;
       }
+      if (isTemplateBuilder_ == null) {
+        isTemplate_ = null;
+      } else {
+        isTemplate_ = null;
+        isTemplateBuilder_ = null;
+      }
       if (extraInfoBuilder_ == null) {
         extraInfo_ = null;
       } else {
@@ -1484,6 +1560,11 @@ private static final long serialVersionUID = 0L;
         result.image_ = image_;
       } else {
         result.image_ = imageBuilder_.build();
+      }
+      if (isTemplateBuilder_ == null) {
+        result.isTemplate_ = isTemplate_;
+      } else {
+        result.isTemplate_ = isTemplateBuilder_.build();
       }
       if (extraInfoBuilder_ == null) {
         result.extraInfo_ = extraInfo_;
@@ -1599,6 +1680,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasImage()) {
         mergeImage(other.getImage());
+      }
+      if (other.hasIsTemplate()) {
+        mergeIsTemplate(other.getIsTemplate());
       }
       if (other.hasExtraInfo()) {
         mergeExtraInfo(other.getExtraInfo());
@@ -3488,6 +3572,170 @@ private static final long serialVersionUID = 0L;
         image_ = null;
       }
       return imageBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue isTemplate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> isTemplateBuilder_;
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     * @return Whether the isTemplate field is set.
+     */
+    public boolean hasIsTemplate() {
+      return isTemplateBuilder_ != null || isTemplate_ != null;
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     * @return The isTemplate.
+     */
+    public com.google.protobuf.BoolValue getIsTemplate() {
+      if (isTemplateBuilder_ == null) {
+        return isTemplate_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isTemplate_;
+      } else {
+        return isTemplateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    public Builder setIsTemplate(com.google.protobuf.BoolValue value) {
+      if (isTemplateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        isTemplate_ = value;
+        onChanged();
+      } else {
+        isTemplateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    public Builder setIsTemplate(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (isTemplateBuilder_ == null) {
+        isTemplate_ = builderForValue.build();
+        onChanged();
+      } else {
+        isTemplateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    public Builder mergeIsTemplate(com.google.protobuf.BoolValue value) {
+      if (isTemplateBuilder_ == null) {
+        if (isTemplate_ != null) {
+          isTemplate_ =
+            com.google.protobuf.BoolValue.newBuilder(isTemplate_).mergeFrom(value).buildPartial();
+        } else {
+          isTemplate_ = value;
+        }
+        onChanged();
+      } else {
+        isTemplateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    public Builder clearIsTemplate() {
+      if (isTemplateBuilder_ == null) {
+        isTemplate_ = null;
+        onChanged();
+      } else {
+        isTemplate_ = null;
+        isTemplateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getIsTemplateBuilder() {
+      
+      onChanged();
+      return getIsTemplateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getIsTemplateOrBuilder() {
+      if (isTemplateBuilder_ != null) {
+        return isTemplateBuilder_.getMessageOrBuilder();
+      } else {
+        return isTemplate_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : isTemplate_;
+      }
+    }
+    /**
+     * <pre>
+     * An app marked as a template can be duplicated by any user that can see it,
+     * including all visible resources within it.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue is_template = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getIsTemplateFieldBuilder() {
+      if (isTemplateBuilder_ == null) {
+        isTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getIsTemplate(),
+                getParentForChildren(),
+                isClean());
+        isTemplate_ = null;
+      }
+      return isTemplateBuilder_;
     }
 
     private com.clarifai.grpc.api.AppExtraInfo extraInfo_;

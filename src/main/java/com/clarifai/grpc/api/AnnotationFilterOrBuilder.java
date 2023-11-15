@@ -135,28 +135,28 @@ public interface AnnotationFilterOrBuilder extends
 
   /**
    * <pre>
-   * The saved search that this filter uses.
+   * The search that this filter uses.
    * </pre>
    *
-   * <code>.clarifai.api.Search saved_search = 8;</code>
-   * @return Whether the savedSearch field is set.
+   * <code>.clarifai.api.Search search = 9;</code>
+   * @return Whether the search field is set.
    */
-  boolean hasSavedSearch();
+  boolean hasSearch();
   /**
    * <pre>
-   * The saved search that this filter uses.
+   * The search that this filter uses.
    * </pre>
    *
-   * <code>.clarifai.api.Search saved_search = 8;</code>
-   * @return The savedSearch.
+   * <code>.clarifai.api.Search search = 9;</code>
+   * @return The search.
    */
-  com.clarifai.grpc.api.Search getSavedSearch();
+  com.clarifai.grpc.api.Search getSearch();
   /**
    * <pre>
-   * The saved search that this filter uses.
+   * The search that this filter uses.
    * </pre>
    *
-   * <code>.clarifai.api.Search saved_search = 8;</code>
+   * <code>.clarifai.api.Search search = 9;</code>
    */
-  com.clarifai.grpc.api.SearchOrBuilder getSavedSearchOrBuilder();
+  com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder();
 }

@@ -101,15 +101,15 @@ private static final long serialVersionUID = 0L;
             appId_ = s;
             break;
           }
-          case 66: {
+          case 74: {
             com.clarifai.grpc.api.Search.Builder subBuilder = null;
-            if (savedSearch_ != null) {
-              subBuilder = savedSearch_.toBuilder();
+            if (search_ != null) {
+              subBuilder = search_.toBuilder();
             }
-            savedSearch_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
+            search_ = input.readMessage(com.clarifai.grpc.api.Search.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(savedSearch_);
-              savedSearch_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(search_);
+              search_ = subBuilder.buildPartial();
             }
 
             break;
@@ -374,42 +374,42 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SAVED_SEARCH_FIELD_NUMBER = 8;
-  private com.clarifai.grpc.api.Search savedSearch_;
+  public static final int SEARCH_FIELD_NUMBER = 9;
+  private com.clarifai.grpc.api.Search search_;
   /**
    * <pre>
-   * The saved search that this filter uses.
+   * The search that this filter uses.
    * </pre>
    *
-   * <code>.clarifai.api.Search saved_search = 8;</code>
-   * @return Whether the savedSearch field is set.
+   * <code>.clarifai.api.Search search = 9;</code>
+   * @return Whether the search field is set.
    */
   @java.lang.Override
-  public boolean hasSavedSearch() {
-    return savedSearch_ != null;
+  public boolean hasSearch() {
+    return search_ != null;
   }
   /**
    * <pre>
-   * The saved search that this filter uses.
+   * The search that this filter uses.
    * </pre>
    *
-   * <code>.clarifai.api.Search saved_search = 8;</code>
-   * @return The savedSearch.
+   * <code>.clarifai.api.Search search = 9;</code>
+   * @return The search.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Search getSavedSearch() {
-    return savedSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : savedSearch_;
+  public com.clarifai.grpc.api.Search getSearch() {
+    return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
   }
   /**
    * <pre>
-   * The saved search that this filter uses.
+   * The search that this filter uses.
    * </pre>
    *
-   * <code>.clarifai.api.Search saved_search = 8;</code>
+   * <code>.clarifai.api.Search search = 9;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.SearchOrBuilder getSavedSearchOrBuilder() {
-    return getSavedSearch();
+  public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
+    return getSearch();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,8 +441,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appId_);
     }
-    if (savedSearch_ != null) {
-      output.writeMessage(8, getSavedSearch());
+    if (search_ != null) {
+      output.writeMessage(9, getSearch());
     }
     unknownFields.writeTo(output);
   }
@@ -470,9 +470,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appId_);
     }
-    if (savedSearch_ != null) {
+    if (search_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getSavedSearch());
+        .computeMessageSize(9, getSearch());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -505,10 +505,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getAppId()
         .equals(other.getAppId())) return false;
-    if (hasSavedSearch() != other.hasSavedSearch()) return false;
-    if (hasSavedSearch()) {
-      if (!getSavedSearch()
-          .equals(other.getSavedSearch())) return false;
+    if (hasSearch() != other.hasSearch()) return false;
+    if (hasSearch()) {
+      if (!getSearch()
+          .equals(other.getSearch())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -535,9 +535,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + APP_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppId().hashCode();
-    if (hasSavedSearch()) {
-      hash = (37 * hash) + SAVED_SEARCH_FIELD_NUMBER;
-      hash = (53 * hash) + getSavedSearch().hashCode();
+    if (hasSearch()) {
+      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getSearch().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -696,11 +696,11 @@ private static final long serialVersionUID = 0L;
 
       appId_ = "";
 
-      if (savedSearchBuilder_ == null) {
-        savedSearch_ = null;
+      if (searchBuilder_ == null) {
+        search_ = null;
       } else {
-        savedSearch_ = null;
-        savedSearchBuilder_ = null;
+        search_ = null;
+        searchBuilder_ = null;
       }
       return this;
     }
@@ -741,10 +741,10 @@ private static final long serialVersionUID = 0L;
       }
       result.userId_ = userId_;
       result.appId_ = appId_;
-      if (savedSearchBuilder_ == null) {
-        result.savedSearch_ = savedSearch_;
+      if (searchBuilder_ == null) {
+        result.search_ = search_;
       } else {
-        result.savedSearch_ = savedSearchBuilder_.build();
+        result.search_ = searchBuilder_.build();
       }
       onBuilt();
       return result;
@@ -812,8 +812,8 @@ private static final long serialVersionUID = 0L;
         appId_ = other.appId_;
         onChanged();
       }
-      if (other.hasSavedSearch()) {
-        mergeSavedSearch(other.getSavedSearch());
+      if (other.hasSearch()) {
+        mergeSearch(other.getSearch());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1478,159 +1478,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.Search savedSearch_;
+    private com.clarifai.grpc.api.Search search_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> savedSearchBuilder_;
+        com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> searchBuilder_;
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
-     * @return Whether the savedSearch field is set.
+     * <code>.clarifai.api.Search search = 9;</code>
+     * @return Whether the search field is set.
      */
-    public boolean hasSavedSearch() {
-      return savedSearchBuilder_ != null || savedSearch_ != null;
+    public boolean hasSearch() {
+      return searchBuilder_ != null || search_ != null;
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
-     * @return The savedSearch.
+     * <code>.clarifai.api.Search search = 9;</code>
+     * @return The search.
      */
-    public com.clarifai.grpc.api.Search getSavedSearch() {
-      if (savedSearchBuilder_ == null) {
-        return savedSearch_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : savedSearch_;
+    public com.clarifai.grpc.api.Search getSearch() {
+      if (searchBuilder_ == null) {
+        return search_ == null ? com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
       } else {
-        return savedSearchBuilder_.getMessage();
+        return searchBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
-    public Builder setSavedSearch(com.clarifai.grpc.api.Search value) {
-      if (savedSearchBuilder_ == null) {
+    public Builder setSearch(com.clarifai.grpc.api.Search value) {
+      if (searchBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        savedSearch_ = value;
+        search_ = value;
         onChanged();
       } else {
-        savedSearchBuilder_.setMessage(value);
+        searchBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
-    public Builder setSavedSearch(
+    public Builder setSearch(
         com.clarifai.grpc.api.Search.Builder builderForValue) {
-      if (savedSearchBuilder_ == null) {
-        savedSearch_ = builderForValue.build();
+      if (searchBuilder_ == null) {
+        search_ = builderForValue.build();
         onChanged();
       } else {
-        savedSearchBuilder_.setMessage(builderForValue.build());
+        searchBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
-    public Builder mergeSavedSearch(com.clarifai.grpc.api.Search value) {
-      if (savedSearchBuilder_ == null) {
-        if (savedSearch_ != null) {
-          savedSearch_ =
-            com.clarifai.grpc.api.Search.newBuilder(savedSearch_).mergeFrom(value).buildPartial();
+    public Builder mergeSearch(com.clarifai.grpc.api.Search value) {
+      if (searchBuilder_ == null) {
+        if (search_ != null) {
+          search_ =
+            com.clarifai.grpc.api.Search.newBuilder(search_).mergeFrom(value).buildPartial();
         } else {
-          savedSearch_ = value;
+          search_ = value;
         }
         onChanged();
       } else {
-        savedSearchBuilder_.mergeFrom(value);
+        searchBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
-    public Builder clearSavedSearch() {
-      if (savedSearchBuilder_ == null) {
-        savedSearch_ = null;
+    public Builder clearSearch() {
+      if (searchBuilder_ == null) {
+        search_ = null;
         onChanged();
       } else {
-        savedSearch_ = null;
-        savedSearchBuilder_ = null;
+        search_ = null;
+        searchBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
-    public com.clarifai.grpc.api.Search.Builder getSavedSearchBuilder() {
+    public com.clarifai.grpc.api.Search.Builder getSearchBuilder() {
       
       onChanged();
-      return getSavedSearchFieldBuilder().getBuilder();
+      return getSearchFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
-    public com.clarifai.grpc.api.SearchOrBuilder getSavedSearchOrBuilder() {
-      if (savedSearchBuilder_ != null) {
-        return savedSearchBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.SearchOrBuilder getSearchOrBuilder() {
+      if (searchBuilder_ != null) {
+        return searchBuilder_.getMessageOrBuilder();
       } else {
-        return savedSearch_ == null ?
-            com.clarifai.grpc.api.Search.getDefaultInstance() : savedSearch_;
+        return search_ == null ?
+            com.clarifai.grpc.api.Search.getDefaultInstance() : search_;
       }
     }
     /**
      * <pre>
-     * The saved search that this filter uses.
+     * The search that this filter uses.
      * </pre>
      *
-     * <code>.clarifai.api.Search saved_search = 8;</code>
+     * <code>.clarifai.api.Search search = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder> 
-        getSavedSearchFieldBuilder() {
-      if (savedSearchBuilder_ == null) {
-        savedSearchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getSearchFieldBuilder() {
+      if (searchBuilder_ == null) {
+        searchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.Search, com.clarifai.grpc.api.Search.Builder, com.clarifai.grpc.api.SearchOrBuilder>(
-                getSavedSearch(),
+                getSearch(),
                 getParentForChildren(),
                 isClean());
-        savedSearch_ = null;
+        search_ = null;
       }
-      return savedSearchBuilder_;
+      return searchBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
