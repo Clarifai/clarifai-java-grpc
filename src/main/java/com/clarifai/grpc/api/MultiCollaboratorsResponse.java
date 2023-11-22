@@ -76,6 +76,19 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Collaborator.parser(), extensionRegistry));
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.User.Builder subBuilder = null;
+            if (appOwner_ != null) {
+              subBuilder = appOwner_.toBuilder();
+            }
+            appOwner_ = input.readMessage(com.clarifai.grpc.api.User.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(appOwner_);
+              appOwner_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -179,6 +192,59 @@ private static final long serialVersionUID = 0L;
     return collaborators_.get(index);
   }
 
+  public static final int APP_OWNER_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.User appOwner_;
+  /**
+   * <pre>
+   * The owner of the application.
+   * When listing users that have access to the application, i.e. collaborators,
+   * it is often relevant to also include the application owner, so return
+   * their information here for convenience.
+   * Note: app_owner is only returned by ListCollaborators and only if the
+   * owner is a regular user, not an organization.
+   * </pre>
+   *
+   * <code>.clarifai.api.User app_owner = 3;</code>
+   * @return Whether the appOwner field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppOwner() {
+    return appOwner_ != null;
+  }
+  /**
+   * <pre>
+   * The owner of the application.
+   * When listing users that have access to the application, i.e. collaborators,
+   * it is often relevant to also include the application owner, so return
+   * their information here for convenience.
+   * Note: app_owner is only returned by ListCollaborators and only if the
+   * owner is a regular user, not an organization.
+   * </pre>
+   *
+   * <code>.clarifai.api.User app_owner = 3;</code>
+   * @return The appOwner.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.User getAppOwner() {
+    return appOwner_ == null ? com.clarifai.grpc.api.User.getDefaultInstance() : appOwner_;
+  }
+  /**
+   * <pre>
+   * The owner of the application.
+   * When listing users that have access to the application, i.e. collaborators,
+   * it is often relevant to also include the application owner, so return
+   * their information here for convenience.
+   * Note: app_owner is only returned by ListCollaborators and only if the
+   * owner is a regular user, not an organization.
+   * </pre>
+   *
+   * <code>.clarifai.api.User app_owner = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.UserOrBuilder getAppOwnerOrBuilder() {
+    return getAppOwner();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -199,6 +265,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < collaborators_.size(); i++) {
       output.writeMessage(2, collaborators_.get(i));
     }
+    if (appOwner_ != null) {
+      output.writeMessage(3, getAppOwner());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -215,6 +284,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < collaborators_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, collaborators_.get(i));
+    }
+    if (appOwner_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getAppOwner());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -238,6 +311,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCollaboratorsList()
         .equals(other.getCollaboratorsList())) return false;
+    if (hasAppOwner() != other.hasAppOwner()) return false;
+    if (hasAppOwner()) {
+      if (!getAppOwner()
+          .equals(other.getAppOwner())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -256,6 +334,10 @@ private static final long serialVersionUID = 0L;
     if (getCollaboratorsCount() > 0) {
       hash = (37 * hash) + COLLABORATORS_FIELD_NUMBER;
       hash = (53 * hash) + getCollaboratorsList().hashCode();
+    }
+    if (hasAppOwner()) {
+      hash = (37 * hash) + APP_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getAppOwner().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -407,6 +489,12 @@ private static final long serialVersionUID = 0L;
       } else {
         collaboratorsBuilder_.clear();
       }
+      if (appOwnerBuilder_ == null) {
+        appOwner_ = null;
+      } else {
+        appOwner_ = null;
+        appOwnerBuilder_ = null;
+      }
       return this;
     }
 
@@ -447,6 +535,11 @@ private static final long serialVersionUID = 0L;
         result.collaborators_ = collaborators_;
       } else {
         result.collaborators_ = collaboratorsBuilder_.build();
+      }
+      if (appOwnerBuilder_ == null) {
+        result.appOwner_ = appOwner_;
+      } else {
+        result.appOwner_ = appOwnerBuilder_.build();
       }
       onBuilt();
       return result;
@@ -524,6 +617,9 @@ private static final long serialVersionUID = 0L;
             collaboratorsBuilder_.addAllMessages(other.collaborators_);
           }
         }
+      }
+      if (other.hasAppOwner()) {
+        mergeAppOwner(other.getAppOwner());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -912,6 +1008,206 @@ private static final long serialVersionUID = 0L;
         collaborators_ = null;
       }
       return collaboratorsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.User appOwner_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> appOwnerBuilder_;
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     * @return Whether the appOwner field is set.
+     */
+    public boolean hasAppOwner() {
+      return appOwnerBuilder_ != null || appOwner_ != null;
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     * @return The appOwner.
+     */
+    public com.clarifai.grpc.api.User getAppOwner() {
+      if (appOwnerBuilder_ == null) {
+        return appOwner_ == null ? com.clarifai.grpc.api.User.getDefaultInstance() : appOwner_;
+      } else {
+        return appOwnerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    public Builder setAppOwner(com.clarifai.grpc.api.User value) {
+      if (appOwnerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appOwner_ = value;
+        onChanged();
+      } else {
+        appOwnerBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    public Builder setAppOwner(
+        com.clarifai.grpc.api.User.Builder builderForValue) {
+      if (appOwnerBuilder_ == null) {
+        appOwner_ = builderForValue.build();
+        onChanged();
+      } else {
+        appOwnerBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    public Builder mergeAppOwner(com.clarifai.grpc.api.User value) {
+      if (appOwnerBuilder_ == null) {
+        if (appOwner_ != null) {
+          appOwner_ =
+            com.clarifai.grpc.api.User.newBuilder(appOwner_).mergeFrom(value).buildPartial();
+        } else {
+          appOwner_ = value;
+        }
+        onChanged();
+      } else {
+        appOwnerBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    public Builder clearAppOwner() {
+      if (appOwnerBuilder_ == null) {
+        appOwner_ = null;
+        onChanged();
+      } else {
+        appOwner_ = null;
+        appOwnerBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    public com.clarifai.grpc.api.User.Builder getAppOwnerBuilder() {
+      
+      onChanged();
+      return getAppOwnerFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    public com.clarifai.grpc.api.UserOrBuilder getAppOwnerOrBuilder() {
+      if (appOwnerBuilder_ != null) {
+        return appOwnerBuilder_.getMessageOrBuilder();
+      } else {
+        return appOwner_ == null ?
+            com.clarifai.grpc.api.User.getDefaultInstance() : appOwner_;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of the application.
+     * When listing users that have access to the application, i.e. collaborators,
+     * it is often relevant to also include the application owner, so return
+     * their information here for convenience.
+     * Note: app_owner is only returned by ListCollaborators and only if the
+     * owner is a regular user, not an organization.
+     * </pre>
+     *
+     * <code>.clarifai.api.User app_owner = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder> 
+        getAppOwnerFieldBuilder() {
+      if (appOwnerBuilder_ == null) {
+        appOwnerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.User, com.clarifai.grpc.api.User.Builder, com.clarifai.grpc.api.UserOrBuilder>(
+                getAppOwner(),
+                getParentForChildren(),
+                isClean());
+        appOwner_ = null;
+      }
+      return appOwnerBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

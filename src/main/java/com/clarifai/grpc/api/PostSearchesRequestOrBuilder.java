@@ -42,7 +42,7 @@ public interface PostSearchesRequestOrBuilder extends
    *
    * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.PostSearchesRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5645
+   *     See proto/clarifai/api/service.proto;l=5667
    * @return Whether the query field is set.
    */
   @java.lang.Deprecated boolean hasQuery();
@@ -54,7 +54,7 @@ public interface PostSearchesRequestOrBuilder extends
    *
    * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.PostSearchesRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5645
+   *     See proto/clarifai/api/service.proto;l=5667
    * @return The query.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Query getQuery();

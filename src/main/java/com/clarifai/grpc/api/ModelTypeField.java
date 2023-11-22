@@ -249,7 +249,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For selecting the embed_model_version_id for context based models.
-     * This is a string type in the API request.
      * </pre>
      *
      * <code>WORKFLOW_EMBED_MODELS = 12;</code>
@@ -328,6 +327,14 @@ private static final long serialVersionUID = 0L;
      * <code>ENCRYPTED_STRING = 21;</code>
      */
     ENCRYPTED_STRING(21),
+    /**
+     * <pre>
+     * For selecting a model version of the same model type to resume training from. 
+     * </pre>
+     *
+     * <code>CHECKPOINT_MODEL = 22;</code>
+     */
+    CHECKPOINT_MODEL(22),
     UNRECOGNIZED(-1),
     ;
 
@@ -407,7 +414,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * For selecting the embed_model_version_id for context based models.
-     * This is a string type in the API request.
      * </pre>
      *
      * <code>WORKFLOW_EMBED_MODELS = 12;</code>
@@ -486,6 +492,14 @@ private static final long serialVersionUID = 0L;
      * <code>ENCRYPTED_STRING = 21;</code>
      */
     public static final int ENCRYPTED_STRING_VALUE = 21;
+    /**
+     * <pre>
+     * For selecting a model version of the same model type to resume training from. 
+     * </pre>
+     *
+     * <code>CHECKPOINT_MODEL = 22;</code>
+     */
+    public static final int CHECKPOINT_MODEL_VALUE = 22;
 
 
     public final int getNumber() {
@@ -533,6 +547,7 @@ private static final long serialVersionUID = 0L;
         case 19: return DATASET;
         case 20: return DATASET_VERSION;
         case 21: return ENCRYPTED_STRING;
+        case 22: return CHECKPOINT_MODEL;
         default: return null;
       }
     }

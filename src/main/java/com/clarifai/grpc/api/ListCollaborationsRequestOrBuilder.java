@@ -43,4 +43,15 @@ public interface ListCollaborationsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Filtering options:
+   * If true, we only return collaborations on apps that are marked as a template by the app owner.
+   * </pre>
+   *
+   * <code>bool template_only = 4;</code>
+   * @return The templateOnly.
+   */
+  boolean getTemplateOnly();
 }

@@ -66,4 +66,31 @@ public interface TrainInfoOrBuilder extends
    * <code>.clarifai.api.Dataset dataset = 2;</code>
    */
   com.clarifai.grpc.api.DatasetOrBuilder getDatasetOrBuilder();
+
+  /**
+   * <pre>
+   * The model to resume training from.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model resume_from_model = 3;</code>
+   * @return Whether the resumeFromModel field is set.
+   */
+  boolean hasResumeFromModel();
+  /**
+   * <pre>
+   * The model to resume training from.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model resume_from_model = 3;</code>
+   * @return The resumeFromModel.
+   */
+  com.clarifai.grpc.api.Model getResumeFromModel();
+  /**
+   * <pre>
+   * The model to resume training from.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model resume_from_model = 3;</code>
+   */
+  com.clarifai.grpc.api.ModelOrBuilder getResumeFromModelOrBuilder();
 }

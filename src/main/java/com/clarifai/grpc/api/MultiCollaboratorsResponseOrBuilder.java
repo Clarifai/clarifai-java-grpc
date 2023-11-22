@@ -45,4 +45,46 @@ public interface MultiCollaboratorsResponseOrBuilder extends
    */
   com.clarifai.grpc.api.CollaboratorOrBuilder getCollaboratorsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The owner of the application.
+   * When listing users that have access to the application, i.e. collaborators,
+   * it is often relevant to also include the application owner, so return
+   * their information here for convenience.
+   * Note: app_owner is only returned by ListCollaborators and only if the
+   * owner is a regular user, not an organization.
+   * </pre>
+   *
+   * <code>.clarifai.api.User app_owner = 3;</code>
+   * @return Whether the appOwner field is set.
+   */
+  boolean hasAppOwner();
+  /**
+   * <pre>
+   * The owner of the application.
+   * When listing users that have access to the application, i.e. collaborators,
+   * it is often relevant to also include the application owner, so return
+   * their information here for convenience.
+   * Note: app_owner is only returned by ListCollaborators and only if the
+   * owner is a regular user, not an organization.
+   * </pre>
+   *
+   * <code>.clarifai.api.User app_owner = 3;</code>
+   * @return The appOwner.
+   */
+  com.clarifai.grpc.api.User getAppOwner();
+  /**
+   * <pre>
+   * The owner of the application.
+   * When listing users that have access to the application, i.e. collaborators,
+   * it is often relevant to also include the application owner, so return
+   * their information here for convenience.
+   * Note: app_owner is only returned by ListCollaborators and only if the
+   * owner is a regular user, not an organization.
+   * </pre>
+   *
+   * <code>.clarifai.api.User app_owner = 3;</code>
+   */
+  com.clarifai.grpc.api.UserOrBuilder getAppOwnerOrBuilder();
 }

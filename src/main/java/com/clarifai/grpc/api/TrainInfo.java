@@ -74,6 +74,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.Model.Builder subBuilder = null;
+            if (resumeFromModel_ != null) {
+              subBuilder = resumeFromModel_.toBuilder();
+            }
+            resumeFromModel_ = input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(resumeFromModel_);
+              resumeFromModel_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -190,6 +203,44 @@ private static final long serialVersionUID = 0L;
     return getDataset();
   }
 
+  public static final int RESUME_FROM_MODEL_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.Model resumeFromModel_;
+  /**
+   * <pre>
+   * The model to resume training from.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model resume_from_model = 3;</code>
+   * @return Whether the resumeFromModel field is set.
+   */
+  @java.lang.Override
+  public boolean hasResumeFromModel() {
+    return resumeFromModel_ != null;
+  }
+  /**
+   * <pre>
+   * The model to resume training from.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model resume_from_model = 3;</code>
+   * @return The resumeFromModel.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getResumeFromModel() {
+    return resumeFromModel_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : resumeFromModel_;
+  }
+  /**
+   * <pre>
+   * The model to resume training from.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model resume_from_model = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getResumeFromModelOrBuilder() {
+    return getResumeFromModel();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -210,6 +261,9 @@ private static final long serialVersionUID = 0L;
     if (dataset_ != null) {
       output.writeMessage(2, getDataset());
     }
+    if (resumeFromModel_ != null) {
+      output.writeMessage(3, getResumeFromModel());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -226,6 +280,10 @@ private static final long serialVersionUID = 0L;
     if (dataset_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getDataset());
+    }
+    if (resumeFromModel_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getResumeFromModel());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -252,6 +310,11 @@ private static final long serialVersionUID = 0L;
       if (!getDataset()
           .equals(other.getDataset())) return false;
     }
+    if (hasResumeFromModel() != other.hasResumeFromModel()) return false;
+    if (hasResumeFromModel()) {
+      if (!getResumeFromModel()
+          .equals(other.getResumeFromModel())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -270,6 +333,10 @@ private static final long serialVersionUID = 0L;
     if (hasDataset()) {
       hash = (37 * hash) + DATASET_FIELD_NUMBER;
       hash = (53 * hash) + getDataset().hashCode();
+    }
+    if (hasResumeFromModel()) {
+      hash = (37 * hash) + RESUME_FROM_MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + getResumeFromModel().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -416,6 +483,12 @@ private static final long serialVersionUID = 0L;
         dataset_ = null;
         datasetBuilder_ = null;
       }
+      if (resumeFromModelBuilder_ == null) {
+        resumeFromModel_ = null;
+      } else {
+        resumeFromModel_ = null;
+        resumeFromModelBuilder_ = null;
+      }
       return this;
     }
 
@@ -451,6 +524,11 @@ private static final long serialVersionUID = 0L;
         result.dataset_ = dataset_;
       } else {
         result.dataset_ = datasetBuilder_.build();
+      }
+      if (resumeFromModelBuilder_ == null) {
+        result.resumeFromModel_ = resumeFromModel_;
+      } else {
+        result.resumeFromModel_ = resumeFromModelBuilder_.build();
       }
       onBuilt();
       return result;
@@ -505,6 +583,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDataset()) {
         mergeDataset(other.getDataset());
+      }
+      if (other.hasResumeFromModel()) {
+        mergeResumeFromModel(other.getResumeFromModel());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -861,6 +942,161 @@ private static final long serialVersionUID = 0L;
         dataset_ = null;
       }
       return datasetBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Model resumeFromModel_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> resumeFromModelBuilder_;
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     * @return Whether the resumeFromModel field is set.
+     */
+    public boolean hasResumeFromModel() {
+      return resumeFromModelBuilder_ != null || resumeFromModel_ != null;
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     * @return The resumeFromModel.
+     */
+    public com.clarifai.grpc.api.Model getResumeFromModel() {
+      if (resumeFromModelBuilder_ == null) {
+        return resumeFromModel_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : resumeFromModel_;
+      } else {
+        return resumeFromModelBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    public Builder setResumeFromModel(com.clarifai.grpc.api.Model value) {
+      if (resumeFromModelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resumeFromModel_ = value;
+        onChanged();
+      } else {
+        resumeFromModelBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    public Builder setResumeFromModel(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (resumeFromModelBuilder_ == null) {
+        resumeFromModel_ = builderForValue.build();
+        onChanged();
+      } else {
+        resumeFromModelBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    public Builder mergeResumeFromModel(com.clarifai.grpc.api.Model value) {
+      if (resumeFromModelBuilder_ == null) {
+        if (resumeFromModel_ != null) {
+          resumeFromModel_ =
+            com.clarifai.grpc.api.Model.newBuilder(resumeFromModel_).mergeFrom(value).buildPartial();
+        } else {
+          resumeFromModel_ = value;
+        }
+        onChanged();
+      } else {
+        resumeFromModelBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    public Builder clearResumeFromModel() {
+      if (resumeFromModelBuilder_ == null) {
+        resumeFromModel_ = null;
+        onChanged();
+      } else {
+        resumeFromModel_ = null;
+        resumeFromModelBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getResumeFromModelBuilder() {
+      
+      onChanged();
+      return getResumeFromModelFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    public com.clarifai.grpc.api.ModelOrBuilder getResumeFromModelOrBuilder() {
+      if (resumeFromModelBuilder_ != null) {
+        return resumeFromModelBuilder_.getMessageOrBuilder();
+      } else {
+        return resumeFromModel_ == null ?
+            com.clarifai.grpc.api.Model.getDefaultInstance() : resumeFromModel_;
+      }
+    }
+    /**
+     * <pre>
+     * The model to resume training from.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model resume_from_model = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getResumeFromModelFieldBuilder() {
+      if (resumeFromModelBuilder_ == null) {
+        resumeFromModelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                getResumeFromModel(),
+                getParentForChildren(),
+                isClean());
+        resumeFromModel_ = null;
+      }
+      return resumeFromModelBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

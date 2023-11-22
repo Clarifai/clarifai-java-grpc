@@ -197,6 +197,16 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
+   * If true, we only return apps that are marked as a template by the app owner.
+   * </pre>
+   *
+   * <code>bool template_only = 16;</code>
+   * @return The templateOnly.
+   */
+  boolean getTemplateOnly();
+
+  /**
+   * <pre>
    * Searching options:
    * Specify a search parameter in order to perform keyword search on the
    * following fields of the application:
@@ -245,7 +255,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3845
+   *     See proto/clarifai/api/service.proto;l=3852
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -257,7 +267,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3845
+   *     See proto/clarifai/api/service.proto;l=3852
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -271,7 +281,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3848
+   *     See proto/clarifai/api/service.proto;l=3855
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -283,7 +293,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3848
+   *     See proto/clarifai/api/service.proto;l=3855
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -297,7 +307,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3851
+   *     See proto/clarifai/api/service.proto;l=3858
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -309,7 +319,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3851
+   *     See proto/clarifai/api/service.proto;l=3858
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

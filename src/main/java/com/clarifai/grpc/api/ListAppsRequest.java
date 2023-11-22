@@ -149,6 +149,11 @@ private static final long serialVersionUID = 0L;
             search_ = s;
             break;
           }
+          case 128: {
+
+            templateOnly_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -505,6 +510,21 @@ private static final long serialVersionUID = 0L;
     return starredOnly_;
   }
 
+  public static final int TEMPLATE_ONLY_FIELD_NUMBER = 16;
+  private boolean templateOnly_;
+  /**
+   * <pre>
+   * If true, we only return apps that are marked as a template by the app owner.
+   * </pre>
+   *
+   * <code>bool template_only = 16;</code>
+   * @return The templateOnly.
+   */
+  @java.lang.Override
+  public boolean getTemplateOnly() {
+    return templateOnly_;
+  }
+
   public static final int SEARCH_FIELD_NUMBER = 15;
   private volatile java.lang.Object search_;
   /**
@@ -583,7 +603,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3845
+   *     See proto/clarifai/api/service.proto;l=3852
    * @return The query.
    */
   @java.lang.Override
@@ -607,7 +627,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3845
+   *     See proto/clarifai/api/service.proto;l=3852
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -635,7 +655,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3848
+   *     See proto/clarifai/api/service.proto;l=3855
    * @return The name.
    */
   @java.lang.Override
@@ -659,7 +679,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3848
+   *     See proto/clarifai/api/service.proto;l=3855
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -687,7 +707,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3851
+   *     See proto/clarifai/api/service.proto;l=3858
    * @return The id.
    */
   @java.lang.Override
@@ -711,7 +731,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=3851
+   *     See proto/clarifai/api/service.proto;l=3858
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -792,6 +812,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, search_);
     }
+    if (templateOnly_ != false) {
+      output.writeBool(16, templateOnly_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -865,6 +888,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, search_);
     }
+    if (templateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(16, templateOnly_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -897,6 +924,8 @@ private static final long serialVersionUID = 0L;
         != other.getFeaturedOnly()) return false;
     if (getStarredOnly()
         != other.getStarredOnly()) return false;
+    if (getTemplateOnly()
+        != other.getTemplateOnly()) return false;
     if (!getSearch()
         .equals(other.getSearch())) return false;
     if (!getQuery()
@@ -958,6 +987,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STARRED_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getStarredOnly());
+    hash = (37 * hash) + TEMPLATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTemplateOnly());
     hash = (37 * hash) + SEARCH_FIELD_NUMBER;
     hash = (53 * hash) + getSearch().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
@@ -1145,6 +1177,8 @@ private static final long serialVersionUID = 0L;
 
       starredOnly_ = false;
 
+      templateOnly_ = false;
+
       search_ = "";
 
       query_ = "";
@@ -1209,6 +1243,7 @@ private static final long serialVersionUID = 0L;
       }
       result.featuredOnly_ = featuredOnly_;
       result.starredOnly_ = starredOnly_;
+      result.templateOnly_ = templateOnly_;
       result.search_ = search_;
       result.query_ = query_;
       result.name_ = name_;
@@ -1289,6 +1324,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStarredOnly() != false) {
         setStarredOnly(other.getStarredOnly());
+      }
+      if (other.getTemplateOnly() != false) {
+        setTemplateOnly(other.getTemplateOnly());
       }
       if (!other.getSearch().isEmpty()) {
         search_ = other.search_;
@@ -2096,6 +2134,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean templateOnly_ ;
+    /**
+     * <pre>
+     * If true, we only return apps that are marked as a template by the app owner.
+     * </pre>
+     *
+     * <code>bool template_only = 16;</code>
+     * @return The templateOnly.
+     */
+    @java.lang.Override
+    public boolean getTemplateOnly() {
+      return templateOnly_;
+    }
+    /**
+     * <pre>
+     * If true, we only return apps that are marked as a template by the app owner.
+     * </pre>
+     *
+     * <code>bool template_only = 16;</code>
+     * @param value The templateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemplateOnly(boolean value) {
+      
+      templateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, we only return apps that are marked as a template by the app owner.
+     * </pre>
+     *
+     * <code>bool template_only = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTemplateOnly() {
+      
+      templateOnly_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object search_ = "";
     /**
      * <pre>
@@ -2256,7 +2337,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3845
+     *     See proto/clarifai/api/service.proto;l=3852
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -2279,7 +2360,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3845
+     *     See proto/clarifai/api/service.proto;l=3852
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2303,7 +2384,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3845
+     *     See proto/clarifai/api/service.proto;l=3852
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -2325,7 +2406,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3845
+     *     See proto/clarifai/api/service.proto;l=3852
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -2342,7 +2423,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3845
+     *     See proto/clarifai/api/service.proto;l=3852
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -2367,7 +2448,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3848
+     *     See proto/clarifai/api/service.proto;l=3855
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2390,7 +2471,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3848
+     *     See proto/clarifai/api/service.proto;l=3855
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2414,7 +2495,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3848
+     *     See proto/clarifai/api/service.proto;l=3855
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2436,7 +2517,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3848
+     *     See proto/clarifai/api/service.proto;l=3855
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2453,7 +2534,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3848
+     *     See proto/clarifai/api/service.proto;l=3855
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2478,7 +2559,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3851
+     *     See proto/clarifai/api/service.proto;l=3858
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -2501,7 +2582,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3851
+     *     See proto/clarifai/api/service.proto;l=3858
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2525,7 +2606,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3851
+     *     See proto/clarifai/api/service.proto;l=3858
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -2547,7 +2628,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3851
+     *     See proto/clarifai/api/service.proto;l=3858
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -2564,7 +2645,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=3851
+     *     See proto/clarifai/api/service.proto;l=3858
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

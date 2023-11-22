@@ -85,6 +85,11 @@ private static final long serialVersionUID = 0L;
             modules_ = input.readInt64();
             break;
           }
+          case 48: {
+
+            inputs_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -189,6 +194,17 @@ private static final long serialVersionUID = 0L;
     return modules_;
   }
 
+  public static final int INPUTS_FIELD_NUMBER = 6;
+  private long inputs_;
+  /**
+   * <code>int64 inputs = 6;</code>
+   * @return The inputs.
+   */
+  @java.lang.Override
+  public long getInputs() {
+    return inputs_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -217,6 +233,9 @@ private static final long serialVersionUID = 0L;
     }
     if (modules_ != 0L) {
       output.writeInt64(5, modules_);
+    }
+    if (inputs_ != 0L) {
+      output.writeInt64(6, inputs_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,6 +266,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(5, modules_);
     }
+    if (inputs_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, inputs_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -275,6 +298,8 @@ private static final long serialVersionUID = 0L;
         != other.getWorkflows()) return false;
     if (getModules()
         != other.getModules()) return false;
+    if (getInputs()
+        != other.getInputs()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -302,6 +327,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MODULES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getModules());
+    hash = (37 * hash) + INPUTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getInputs());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -453,6 +481,8 @@ private static final long serialVersionUID = 0L;
 
       modules_ = 0L;
 
+      inputs_ = 0L;
+
       return this;
     }
 
@@ -488,6 +518,7 @@ private static final long serialVersionUID = 0L;
       result.models_ = models_;
       result.workflows_ = workflows_;
       result.modules_ = modules_;
+      result.inputs_ = inputs_;
       onBuilt();
       return result;
     }
@@ -550,6 +581,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getModules() != 0L) {
         setModules(other.getModules());
+      }
+      if (other.getInputs() != 0L) {
+        setInputs(other.getInputs());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -819,6 +853,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearModules() {
       
       modules_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long inputs_ ;
+    /**
+     * <code>int64 inputs = 6;</code>
+     * @return The inputs.
+     */
+    @java.lang.Override
+    public long getInputs() {
+      return inputs_;
+    }
+    /**
+     * <code>int64 inputs = 6;</code>
+     * @param value The inputs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputs(long value) {
+      
+      inputs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int64 inputs = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInputs() {
+      
+      inputs_ = 0L;
       onChanged();
       return this;
     }

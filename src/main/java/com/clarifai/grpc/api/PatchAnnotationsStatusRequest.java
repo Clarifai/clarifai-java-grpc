@@ -20,10 +20,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PatchAnnotationsStatusRequest() {
-    statusCode_ = 0;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     taskId_ = "";
+    statusCodes_ = java.util.Collections.emptyList();
     action_ = "";
+    statusCode_ = 0;
   }
 
   @java.lang.Override
@@ -97,6 +98,29 @@ private static final long serialVersionUID = 0L;
             action_ = s;
             break;
           }
+          case 48: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              statusCodes_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            statusCodes_.add(rawValue);
+            break;
+          }
+          case 50: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                statusCodes_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              statusCodes_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -116,6 +140,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         userIds_ = userIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        statusCodes_ = java.util.Collections.unmodifiableList(statusCodes_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -160,36 +187,13 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int STATUS_CODE_FIELD_NUMBER = 2;
-  private int statusCode_;
-  /**
-   * <pre>
-   * Annotation Status code
-   * </pre>
-   *
-   * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-   * @return The enum numeric value on the wire for statusCode.
-   */
-  @java.lang.Override public int getStatusCodeValue() {
-    return statusCode_;
-  }
-  /**
-   * <pre>
-   * Annotation Status code
-   * </pre>
-   *
-   * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-   * @return The statusCode.
-   */
-  @java.lang.Override public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
-    @SuppressWarnings("deprecation")
-    com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
-    return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
-  }
-
   public static final int USER_IDS_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList userIds_;
   /**
+   * <pre>
+   * Filter by user IDs
+   * </pre>
+   *
    * <code>repeated string user_ids = 3;</code>
    * @return A list containing the userIds.
    */
@@ -198,6 +202,10 @@ private static final long serialVersionUID = 0L;
     return userIds_;
   }
   /**
+   * <pre>
+   * Filter by user IDs
+   * </pre>
+   *
    * <code>repeated string user_ids = 3;</code>
    * @return The count of userIds.
    */
@@ -205,6 +213,10 @@ private static final long serialVersionUID = 0L;
     return userIds_.size();
   }
   /**
+   * <pre>
+   * Filter by user IDs
+   * </pre>
+   *
    * <code>repeated string user_ids = 3;</code>
    * @param index The index of the element to return.
    * @return The userIds at the given index.
@@ -213,6 +225,10 @@ private static final long serialVersionUID = 0L;
     return userIds_.get(index);
   }
   /**
+   * <pre>
+   * Filter by user IDs
+   * </pre>
+   *
    * <code>repeated string user_ids = 3;</code>
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
@@ -225,6 +241,10 @@ private static final long serialVersionUID = 0L;
   public static final int TASK_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object taskId_;
   /**
+   * <pre>
+   * Filter by task ID
+   * </pre>
+   *
    * <code>string task_id = 4;</code>
    * @return The taskId.
    */
@@ -242,6 +262,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Filter by task ID
+   * </pre>
+   *
    * <code>string task_id = 4;</code>
    * @return The bytes for taskId.
    */
@@ -259,6 +283,84 @@ private static final long serialVersionUID = 0L;
       return (com.google.protobuf.ByteString) ref;
     }
   }
+
+  public static final int STATUS_CODES_FIELD_NUMBER = 6;
+  private java.util.List<java.lang.Integer> statusCodes_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, com.clarifai.grpc.api.status.StatusCode> statusCodes_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.clarifai.grpc.api.status.StatusCode>() {
+            public com.clarifai.grpc.api.status.StatusCode convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(from);
+              return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * Filter by Status codes
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+   * @return A list containing the statusCodes.
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.status.StatusCode> getStatusCodesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.clarifai.grpc.api.status.StatusCode>(statusCodes_, statusCodes_converter_);
+  }
+  /**
+   * <pre>
+   * Filter by Status codes
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+   * @return The count of statusCodes.
+   */
+  @java.lang.Override
+  public int getStatusCodesCount() {
+    return statusCodes_.size();
+  }
+  /**
+   * <pre>
+   * Filter by Status codes
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+   * @param index The index of the element to return.
+   * @return The statusCodes at the given index.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.StatusCode getStatusCodes(int index) {
+    return statusCodes_converter_.convert(statusCodes_.get(index));
+  }
+  /**
+   * <pre>
+   * Filter by Status codes
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+   * @return A list containing the enum numeric values on the wire for statusCodes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getStatusCodesValueList() {
+    return statusCodes_;
+  }
+  /**
+   * <pre>
+   * Filter by Status codes
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of statusCodes at the given index.
+   */
+  @java.lang.Override
+  public int getStatusCodesValue(int index) {
+    return statusCodes_.get(index);
+  }
+  private int statusCodesMemoizedSerializedSize;
 
   public static final int ACTION_FIELD_NUMBER = 5;
   private volatile java.lang.Object action_;
@@ -306,6 +408,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STATUS_CODE_FIELD_NUMBER = 2;
+  private int statusCode_;
+  /**
+   * <pre>
+   * Update filtered annotations to this status
+   * </pre>
+   *
+   * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+   * @return The enum numeric value on the wire for statusCode.
+   */
+  @java.lang.Override public int getStatusCodeValue() {
+    return statusCode_;
+  }
+  /**
+   * <pre>
+   * Update filtered annotations to this status
+   * </pre>
+   *
+   * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+   * @return The statusCode.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
+    return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -320,6 +449,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
@@ -334,6 +464,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, action_);
+    }
+    if (getStatusCodesList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(statusCodesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < statusCodes_.size(); i++) {
+      output.writeEnumNoTag(statusCodes_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -366,6 +503,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, action_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < statusCodes_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(statusCodes_.get(i));
+      }
+      size += dataSize;
+      if (!getStatusCodesList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }statusCodesMemoizedSerializedSize = dataSize;
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -386,13 +535,14 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (statusCode_ != other.statusCode_) return false;
     if (!getUserIdsList()
         .equals(other.getUserIdsList())) return false;
     if (!getTaskId()
         .equals(other.getTaskId())) return false;
+    if (!statusCodes_.equals(other.statusCodes_)) return false;
     if (!getAction()
         .equals(other.getAction())) return false;
+    if (statusCode_ != other.statusCode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -408,16 +558,20 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + statusCode_;
     if (getUserIdsCount() > 0) {
       hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getUserIdsList().hashCode();
     }
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTaskId().hashCode();
+    if (getStatusCodesCount() > 0) {
+      hash = (37 * hash) + STATUS_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + statusCodes_.hashCode();
+    }
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getAction().hashCode();
+    hash = (37 * hash) + STATUS_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + statusCode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,13 +715,15 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      statusCode_ = 0;
-
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       taskId_ = "";
 
+      statusCodes_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
       action_ = "";
+
+      statusCode_ = 0;
 
       return this;
     }
@@ -601,14 +757,19 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      result.statusCode_ = statusCode_;
       if (((bitField0_ & 0x00000001) != 0)) {
         userIds_ = userIds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.userIds_ = userIds_;
       result.taskId_ = taskId_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        statusCodes_ = java.util.Collections.unmodifiableList(statusCodes_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.statusCodes_ = statusCodes_;
       result.action_ = action_;
+      result.statusCode_ = statusCode_;
       onBuilt();
       return result;
     }
@@ -660,9 +821,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (other.statusCode_ != 0) {
-        setStatusCodeValue(other.getStatusCodeValue());
-      }
       if (!other.userIds_.isEmpty()) {
         if (userIds_.isEmpty()) {
           userIds_ = other.userIds_;
@@ -677,9 +835,22 @@ private static final long serialVersionUID = 0L;
         taskId_ = other.taskId_;
         onChanged();
       }
+      if (!other.statusCodes_.isEmpty()) {
+        if (statusCodes_.isEmpty()) {
+          statusCodes_ = other.statusCodes_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureStatusCodesIsMutable();
+          statusCodes_.addAll(other.statusCodes_);
+        }
+        onChanged();
+      }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
         onChanged();
+      }
+      if (other.statusCode_ != 0) {
+        setStatusCodeValue(other.getStatusCodeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -830,80 +1001,6 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private int statusCode_ = 0;
-    /**
-     * <pre>
-     * Annotation Status code
-     * </pre>
-     *
-     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @return The enum numeric value on the wire for statusCode.
-     */
-    @java.lang.Override public int getStatusCodeValue() {
-      return statusCode_;
-    }
-    /**
-     * <pre>
-     * Annotation Status code
-     * </pre>
-     *
-     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @param value The enum numeric value on the wire for statusCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusCodeValue(int value) {
-      
-      statusCode_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Annotation Status code
-     * </pre>
-     *
-     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @return The statusCode.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
-      @SuppressWarnings("deprecation")
-      com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
-      return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Annotation Status code
-     * </pre>
-     *
-     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @param value The statusCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatusCode(com.clarifai.grpc.api.status.StatusCode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      statusCode_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Annotation Status code
-     * </pre>
-     *
-     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearStatusCode() {
-      
-      statusCode_ = 0;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureUserIdsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -912,6 +1009,10 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @return A list containing the userIds.
      */
@@ -920,6 +1021,10 @@ private static final long serialVersionUID = 0L;
       return userIds_.getUnmodifiableView();
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @return The count of userIds.
      */
@@ -927,6 +1032,10 @@ private static final long serialVersionUID = 0L;
       return userIds_.size();
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @param index The index of the element to return.
      * @return The userIds at the given index.
@@ -935,6 +1044,10 @@ private static final long serialVersionUID = 0L;
       return userIds_.get(index);
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
@@ -944,6 +1057,10 @@ private static final long serialVersionUID = 0L;
       return userIds_.getByteString(index);
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @param index The index to set the value at.
      * @param value The userIds to set.
@@ -960,6 +1077,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @param value The userIds to add.
      * @return This builder for chaining.
@@ -975,6 +1096,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @param values The userIds to add.
      * @return This builder for chaining.
@@ -988,6 +1113,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @return This builder for chaining.
      */
@@ -998,6 +1127,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filter by user IDs
+     * </pre>
+     *
      * <code>repeated string user_ids = 3;</code>
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
@@ -1016,6 +1149,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object taskId_ = "";
     /**
+     * <pre>
+     * Filter by task ID
+     * </pre>
+     *
      * <code>string task_id = 4;</code>
      * @return The taskId.
      */
@@ -1032,6 +1169,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Filter by task ID
+     * </pre>
+     *
      * <code>string task_id = 4;</code>
      * @return The bytes for taskId.
      */
@@ -1049,6 +1190,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Filter by task ID
+     * </pre>
+     *
      * <code>string task_id = 4;</code>
      * @param value The taskId to set.
      * @return This builder for chaining.
@@ -1064,6 +1209,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filter by task ID
+     * </pre>
+     *
      * <code>string task_id = 4;</code>
      * @return This builder for chaining.
      */
@@ -1074,6 +1223,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Filter by task ID
+     * </pre>
+     *
      * <code>string task_id = 4;</code>
      * @param value The bytes for taskId to set.
      * @return This builder for chaining.
@@ -1086,6 +1239,194 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       taskId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> statusCodes_ =
+      java.util.Collections.emptyList();
+    private void ensureStatusCodesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        statusCodes_ = new java.util.ArrayList<java.lang.Integer>(statusCodes_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @return A list containing the statusCodes.
+     */
+    public java.util.List<com.clarifai.grpc.api.status.StatusCode> getStatusCodesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.clarifai.grpc.api.status.StatusCode>(statusCodes_, statusCodes_converter_);
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @return The count of statusCodes.
+     */
+    public int getStatusCodesCount() {
+      return statusCodes_.size();
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param index The index of the element to return.
+     * @return The statusCodes at the given index.
+     */
+    public com.clarifai.grpc.api.status.StatusCode getStatusCodes(int index) {
+      return statusCodes_converter_.convert(statusCodes_.get(index));
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The statusCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusCodes(
+        int index, com.clarifai.grpc.api.status.StatusCode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStatusCodesIsMutable();
+      statusCodes_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param value The statusCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStatusCodes(com.clarifai.grpc.api.status.StatusCode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureStatusCodesIsMutable();
+      statusCodes_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param values The statusCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllStatusCodes(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.status.StatusCode> values) {
+      ensureStatusCodesIsMutable();
+      for (com.clarifai.grpc.api.status.StatusCode value : values) {
+        statusCodes_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusCodes() {
+      statusCodes_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @return A list containing the enum numeric values on the wire for statusCodes.
+     */
+    public java.util.List<java.lang.Integer>
+    getStatusCodesValueList() {
+      return java.util.Collections.unmodifiableList(statusCodes_);
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of statusCodes at the given index.
+     */
+    public int getStatusCodesValue(int index) {
+      return statusCodes_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for statusCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusCodesValue(
+        int index, int value) {
+      ensureStatusCodesIsMutable();
+      statusCodes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param value The enum numeric value on the wire for statusCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addStatusCodesValue(int value) {
+      ensureStatusCodesIsMutable();
+      statusCodes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by Status codes
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.status.StatusCode status_codes = 6;</code>
+     * @param values The enum numeric values on the wire for statusCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllStatusCodesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureStatusCodesIsMutable();
+      for (int value : values) {
+        statusCodes_.add(value);
+      }
       onChanged();
       return this;
     }
@@ -1182,6 +1523,80 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       action_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int statusCode_ = 0;
+    /**
+     * <pre>
+     * Update filtered annotations to this status
+     * </pre>
+     *
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @return The enum numeric value on the wire for statusCode.
+     */
+    @java.lang.Override public int getStatusCodeValue() {
+      return statusCode_;
+    }
+    /**
+     * <pre>
+     * Update filtered annotations to this status
+     * </pre>
+     *
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @param value The enum numeric value on the wire for statusCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusCodeValue(int value) {
+      
+      statusCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Update filtered annotations to this status
+     * </pre>
+     *
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @return The statusCode.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.status.StatusCode getStatusCode() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.status.StatusCode result = com.clarifai.grpc.api.status.StatusCode.valueOf(statusCode_);
+      return result == null ? com.clarifai.grpc.api.status.StatusCode.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Update filtered annotations to this status
+     * </pre>
+     *
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @param value The statusCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusCode(com.clarifai.grpc.api.status.StatusCode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      statusCode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Update filtered annotations to this status
+     * </pre>
+     *
+     * <code>.clarifai.api.status.StatusCode status_code = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusCode() {
+      
+      statusCode_ = 0;
       onChanged();
       return this;
     }

@@ -75,6 +75,11 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 32: {
+
+            templateOnly_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +172,22 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int TEMPLATE_ONLY_FIELD_NUMBER = 4;
+  private boolean templateOnly_;
+  /**
+   * <pre>
+   * Filtering options:
+   * If true, we only return collaborations on apps that are marked as a template by the app owner.
+   * </pre>
+   *
+   * <code>bool template_only = 4;</code>
+   * @return The templateOnly.
+   */
+  @java.lang.Override
+  public boolean getTemplateOnly() {
+    return templateOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +211,9 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(3, perPage_);
     }
+    if (templateOnly_ != false) {
+      output.writeBool(4, templateOnly_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +234,10 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(3, perPage_);
+    }
+    if (templateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, templateOnly_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -235,6 +263,8 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (getTemplateOnly()
+        != other.getTemplateOnly()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -254,6 +284,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + TEMPLATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTemplateOnly());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -401,6 +434,8 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      templateOnly_ = false;
+
       return this;
     }
 
@@ -434,6 +469,7 @@ private static final long serialVersionUID = 0L;
       }
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.templateOnly_ = templateOnly_;
       onBuilt();
       return result;
     }
@@ -490,6 +526,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
+      }
+      if (other.getTemplateOnly() != false) {
+        setTemplateOnly(other.getTemplateOnly());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -727,6 +766,52 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean templateOnly_ ;
+    /**
+     * <pre>
+     * Filtering options:
+     * If true, we only return collaborations on apps that are marked as a template by the app owner.
+     * </pre>
+     *
+     * <code>bool template_only = 4;</code>
+     * @return The templateOnly.
+     */
+    @java.lang.Override
+    public boolean getTemplateOnly() {
+      return templateOnly_;
+    }
+    /**
+     * <pre>
+     * Filtering options:
+     * If true, we only return collaborations on apps that are marked as a template by the app owner.
+     * </pre>
+     *
+     * <code>bool template_only = 4;</code>
+     * @param value The templateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemplateOnly(boolean value) {
+      
+      templateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filtering options:
+     * If true, we only return collaborations on apps that are marked as a template by the app owner.
+     * </pre>
+     *
+     * <code>bool template_only = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTemplateOnly() {
+      
+      templateOnly_ = false;
       onChanged();
       return this;
     }
