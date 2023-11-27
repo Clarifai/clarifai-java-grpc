@@ -41,21 +41,22 @@ public final class StatusOuterClass {
       "\n&proto/clarifai/api/status/status.proto" +
       "\022\023clarifai.api.status\032(proto/clarifai/au" +
       "th/util/extension.proto\032+proto/clarifai/" +
-      "api/status/status_code.proto\"\233\002\n\006Status\022" +
+      "api/status/status_code.proto\"\264\002\n\006Status\022" +
       "-\n\004code\030\001 \001(\0162\037.clarifai.api.status.Stat" +
       "usCode\022\023\n\013description\030\002 \001(\t\022\017\n\007details\030\003" +
       " \001(\t\022\031\n\013stack_trace\030\004 \003(\tB\004\200\234\'\001\022\031\n\021perce" +
       "nt_completed\030\005 \001(\r\022\026\n\016time_remaining\030\006 \001" +
       "(\r\022\016\n\006req_id\030\007 \001(\t\022\036\n\020internal_details\030\010" +
       " \001(\tB\004\200\234\'\001\022>\n\rredirect_info\030\t \001(\0132!.clar" +
-      "ifai.api.status.RedirectInfoB\004\200\234\'\001\"d\n\014Re" +
-      "directInfo\022\013\n\003url\030\001 \001(\t\022\025\n\rresource_type" +
-      "\030\002 \001(\t\022\027\n\017old_resource_id\030\003 \001(\t\022\027\n\017new_r" +
-      "esource_id\030\004 \001(\t\";\n\014BaseResponse\022+\n\006stat" +
-      "us\030\001 \001(\0132\033.clarifai.api.status.StatusBg\n" +
-      "\034com.clarifai.grpc.api.statusP\001Z>github." +
-      "com/Clarifai/clarifai-go-grpc/proto/clar" +
-      "ifai/api/status\242\002\004CAIPb\006proto3"
+      "ifai.api.status.RedirectInfoB\004\200\234\'\001\022\027\n\017de" +
+      "veloper_notes\030\n \001(\t\"d\n\014RedirectInfo\022\013\n\003u" +
+      "rl\030\001 \001(\t\022\025\n\rresource_type\030\002 \001(\t\022\027\n\017old_r" +
+      "esource_id\030\003 \001(\t\022\027\n\017new_resource_id\030\004 \001(" +
+      "\t\";\n\014BaseResponse\022+\n\006status\030\001 \001(\0132\033.clar" +
+      "ifai.api.status.StatusBg\n\034com.clarifai.g" +
+      "rpc.api.statusP\001Z>github.com/Clarifai/cl" +
+      "arifai-go-grpc/proto/clarifai/api/status" +
+      "\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -68,7 +69,7 @@ public final class StatusOuterClass {
     internal_static_clarifai_api_status_Status_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_status_Status_descriptor,
-        new java.lang.String[] { "Code", "Description", "Details", "StackTrace", "PercentCompleted", "TimeRemaining", "ReqId", "InternalDetails", "RedirectInfo", });
+        new java.lang.String[] { "Code", "Description", "Details", "StackTrace", "PercentCompleted", "TimeRemaining", "ReqId", "InternalDetails", "RedirectInfo", "DeveloperNotes", });
     internal_static_clarifai_api_status_RedirectInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_clarifai_api_status_RedirectInfo_fieldAccessorTable = new

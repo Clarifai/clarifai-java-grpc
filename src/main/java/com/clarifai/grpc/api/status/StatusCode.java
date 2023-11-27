@@ -50,6 +50,15 @@ public enum StatusCode
   MOVED(10050),
   /**
    * <pre>
+   *SUCCESS_WARNING_API_DEPRECATED = 10001;
+   *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
+   * </pre>
+   *
+   * <code>TEAPOT = 10060;</code>
+   */
+  TEAPOT(10060),
+  /**
+   * <pre>
    * Clarifai Connection Codes: 11xxx
    * </pre>
    *
@@ -1925,6 +1934,15 @@ public enum StatusCode
   public static final int MOVED_VALUE = 10050;
   /**
    * <pre>
+   *SUCCESS_WARNING_API_DEPRECATED = 10001;
+   *SUCCESS_WARNING_CLIENT_DEPRECATED = 10002;
+   * </pre>
+   *
+   * <code>TEAPOT = 10060;</code>
+   */
+  public static final int TEAPOT_VALUE = 10060;
+  /**
+   * <pre>
    * Clarifai Connection Codes: 11xxx
    * </pre>
    *
@@ -3783,6 +3801,7 @@ public enum StatusCode
       case 10030: return TRY_AGAIN;
       case 10040: return NOT_IMPLEMENTED;
       case 10050: return MOVED;
+      case 10060: return TEAPOT;
       case 11000: return CONN_ACCOUNT_ISSUES;
       case 11001: return CONN_TOKEN_INVALID;
       case 11002: return CONN_CREDENTIALS_INVALID;

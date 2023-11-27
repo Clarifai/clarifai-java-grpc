@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     stackTrace_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     reqId_ = "";
     internalDetails_ = "";
+    developerNotes_ = "";
   }
 
   @java.lang.Override
@@ -115,6 +116,12 @@ private static final long serialVersionUID = 0L;
               redirectInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            developerNotes_ = s;
             break;
           }
           default: {
@@ -488,6 +495,52 @@ private static final long serialVersionUID = 0L;
     return getRedirectInfo();
   }
 
+  public static final int DEVELOPER_NOTES_FIELD_NUMBER = 10;
+  private volatile java.lang.Object developerNotes_;
+  /**
+   * <pre>
+   * Notes for developer.
+   * </pre>
+   *
+   * <code>string developer_notes = 10;</code>
+   * @return The developerNotes.
+   */
+  @java.lang.Override
+  public java.lang.String getDeveloperNotes() {
+    java.lang.Object ref = developerNotes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      developerNotes_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Notes for developer.
+   * </pre>
+   *
+   * <code>string developer_notes = 10;</code>
+   * @return The bytes for developerNotes.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeveloperNotesBytes() {
+    java.lang.Object ref = developerNotes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      developerNotes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -528,6 +581,9 @@ private static final long serialVersionUID = 0L;
     }
     if (redirectInfo_ != null) {
       output.writeMessage(9, getRedirectInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(developerNotes_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, developerNotes_);
     }
     unknownFields.writeTo(output);
   }
@@ -574,6 +630,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getRedirectInfo());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(developerNotes_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, developerNotes_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -609,6 +668,8 @@ private static final long serialVersionUID = 0L;
       if (!getRedirectInfo()
           .equals(other.getRedirectInfo())) return false;
     }
+    if (!getDeveloperNotes()
+        .equals(other.getDeveloperNotes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -642,6 +703,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REDIRECT_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getRedirectInfo().hashCode();
     }
+    hash = (37 * hash) + DEVELOPER_NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getDeveloperNotes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -797,6 +860,8 @@ private static final long serialVersionUID = 0L;
         redirectInfo_ = null;
         redirectInfoBuilder_ = null;
       }
+      developerNotes_ = "";
+
       return this;
     }
 
@@ -841,6 +906,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.redirectInfo_ = redirectInfoBuilder_.build();
       }
+      result.developerNotes_ = developerNotes_;
       onBuilt();
       return result;
     }
@@ -926,6 +992,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasRedirectInfo()) {
         mergeRedirectInfo(other.getRedirectInfo());
+      }
+      if (!other.getDeveloperNotes().isEmpty()) {
+        developerNotes_ = other.developerNotes_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1809,6 +1879,102 @@ private static final long serialVersionUID = 0L;
         redirectInfo_ = null;
       }
       return redirectInfoBuilder_;
+    }
+
+    private java.lang.Object developerNotes_ = "";
+    /**
+     * <pre>
+     * Notes for developer.
+     * </pre>
+     *
+     * <code>string developer_notes = 10;</code>
+     * @return The developerNotes.
+     */
+    public java.lang.String getDeveloperNotes() {
+      java.lang.Object ref = developerNotes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        developerNotes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for developer.
+     * </pre>
+     *
+     * <code>string developer_notes = 10;</code>
+     * @return The bytes for developerNotes.
+     */
+    public com.google.protobuf.ByteString
+        getDeveloperNotesBytes() {
+      java.lang.Object ref = developerNotes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        developerNotes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Notes for developer.
+     * </pre>
+     *
+     * <code>string developer_notes = 10;</code>
+     * @param value The developerNotes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeveloperNotes(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      developerNotes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for developer.
+     * </pre>
+     *
+     * <code>string developer_notes = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeveloperNotes() {
+      
+      developerNotes_ = getDefaultInstance().getDeveloperNotes();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Notes for developer.
+     * </pre>
+     *
+     * <code>string developer_notes = 10;</code>
+     * @param value The bytes for developerNotes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeveloperNotesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      developerNotes_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

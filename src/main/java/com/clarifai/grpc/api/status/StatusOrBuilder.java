@@ -197,4 +197,24 @@ public interface StatusOrBuilder extends
    * <code>.clarifai.api.status.RedirectInfo redirect_info = 9 [(.clarifai.auth.util.cl_private_field) = true];</code>
    */
   com.clarifai.grpc.api.status.RedirectInfoOrBuilder getRedirectInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Notes for developer.
+   * </pre>
+   *
+   * <code>string developer_notes = 10;</code>
+   * @return The developerNotes.
+   */
+  java.lang.String getDeveloperNotes();
+  /**
+   * <pre>
+   * Notes for developer.
+   * </pre>
+   *
+   * <code>string developer_notes = 10;</code>
+   * @return The bytes for developerNotes.
+   */
+  com.google.protobuf.ByteString
+      getDeveloperNotesBytes();
 }
