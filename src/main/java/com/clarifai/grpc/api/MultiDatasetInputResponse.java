@@ -76,15 +76,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.DatasetInput.parser(), extensionRegistry));
             break;
           }
-          case 26: {
-            com.clarifai.grpc.api.DatasetInputsSearchAddJob.Builder subBuilder = null;
-            if (datasetInputsSearchAddJob_ != null) {
-              subBuilder = datasetInputsSearchAddJob_.toBuilder();
+          case 34: {
+            com.clarifai.grpc.api.BulkOperation.Builder subBuilder = null;
+            if (bulkOperation_ != null) {
+              subBuilder = bulkOperation_.toBuilder();
             }
-            datasetInputsSearchAddJob_ = input.readMessage(com.clarifai.grpc.api.DatasetInputsSearchAddJob.parser(), extensionRegistry);
+            bulkOperation_ = input.readMessage(com.clarifai.grpc.api.BulkOperation.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(datasetInputsSearchAddJob_);
-              datasetInputsSearchAddJob_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(bulkOperation_);
+              bulkOperation_ = subBuilder.buildPartial();
             }
 
             break;
@@ -192,30 +192,30 @@ private static final long serialVersionUID = 0L;
     return datasetInputs_.get(index);
   }
 
-  public static final int DATASET_INPUTS_SEARCH_ADD_JOB_FIELD_NUMBER = 3;
-  private com.clarifai.grpc.api.DatasetInputsSearchAddJob datasetInputsSearchAddJob_;
+  public static final int BULK_OPERATION_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.BulkOperation bulkOperation_;
   /**
-   * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-   * @return Whether the datasetInputsSearchAddJob field is set.
+   * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+   * @return Whether the bulkOperation field is set.
    */
   @java.lang.Override
-  public boolean hasDatasetInputsSearchAddJob() {
-    return datasetInputsSearchAddJob_ != null;
+  public boolean hasBulkOperation() {
+    return bulkOperation_ != null;
   }
   /**
-   * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-   * @return The datasetInputsSearchAddJob.
+   * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+   * @return The bulkOperation.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.DatasetInputsSearchAddJob getDatasetInputsSearchAddJob() {
-    return datasetInputsSearchAddJob_ == null ? com.clarifai.grpc.api.DatasetInputsSearchAddJob.getDefaultInstance() : datasetInputsSearchAddJob_;
+  public com.clarifai.grpc.api.BulkOperation getBulkOperation() {
+    return bulkOperation_ == null ? com.clarifai.grpc.api.BulkOperation.getDefaultInstance() : bulkOperation_;
   }
   /**
-   * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+   * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.DatasetInputsSearchAddJobOrBuilder getDatasetInputsSearchAddJobOrBuilder() {
-    return getDatasetInputsSearchAddJob();
+  public com.clarifai.grpc.api.BulkOperationOrBuilder getBulkOperationOrBuilder() {
+    return getBulkOperation();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -238,8 +238,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < datasetInputs_.size(); i++) {
       output.writeMessage(2, datasetInputs_.get(i));
     }
-    if (datasetInputsSearchAddJob_ != null) {
-      output.writeMessage(3, getDatasetInputsSearchAddJob());
+    if (bulkOperation_ != null) {
+      output.writeMessage(4, getBulkOperation());
     }
     unknownFields.writeTo(output);
   }
@@ -258,9 +258,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, datasetInputs_.get(i));
     }
-    if (datasetInputsSearchAddJob_ != null) {
+    if (bulkOperation_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getDatasetInputsSearchAddJob());
+        .computeMessageSize(4, getBulkOperation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -284,10 +284,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDatasetInputsList()
         .equals(other.getDatasetInputsList())) return false;
-    if (hasDatasetInputsSearchAddJob() != other.hasDatasetInputsSearchAddJob()) return false;
-    if (hasDatasetInputsSearchAddJob()) {
-      if (!getDatasetInputsSearchAddJob()
-          .equals(other.getDatasetInputsSearchAddJob())) return false;
+    if (hasBulkOperation() != other.hasBulkOperation()) return false;
+    if (hasBulkOperation()) {
+      if (!getBulkOperation()
+          .equals(other.getBulkOperation())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -308,9 +308,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DATASET_INPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getDatasetInputsList().hashCode();
     }
-    if (hasDatasetInputsSearchAddJob()) {
-      hash = (37 * hash) + DATASET_INPUTS_SEARCH_ADD_JOB_FIELD_NUMBER;
-      hash = (53 * hash) + getDatasetInputsSearchAddJob().hashCode();
+    if (hasBulkOperation()) {
+      hash = (37 * hash) + BULK_OPERATION_FIELD_NUMBER;
+      hash = (53 * hash) + getBulkOperation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -462,11 +462,11 @@ private static final long serialVersionUID = 0L;
       } else {
         datasetInputsBuilder_.clear();
       }
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        datasetInputsSearchAddJob_ = null;
+      if (bulkOperationBuilder_ == null) {
+        bulkOperation_ = null;
       } else {
-        datasetInputsSearchAddJob_ = null;
-        datasetInputsSearchAddJobBuilder_ = null;
+        bulkOperation_ = null;
+        bulkOperationBuilder_ = null;
       }
       return this;
     }
@@ -509,10 +509,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.datasetInputs_ = datasetInputsBuilder_.build();
       }
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        result.datasetInputsSearchAddJob_ = datasetInputsSearchAddJob_;
+      if (bulkOperationBuilder_ == null) {
+        result.bulkOperation_ = bulkOperation_;
       } else {
-        result.datasetInputsSearchAddJob_ = datasetInputsSearchAddJobBuilder_.build();
+        result.bulkOperation_ = bulkOperationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -591,8 +591,8 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (other.hasDatasetInputsSearchAddJob()) {
-        mergeDatasetInputsSearchAddJob(other.getDatasetInputsSearchAddJob());
+      if (other.hasBulkOperation()) {
+        mergeBulkOperation(other.getBulkOperation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -983,123 +983,123 @@ private static final long serialVersionUID = 0L;
       return datasetInputsBuilder_;
     }
 
-    private com.clarifai.grpc.api.DatasetInputsSearchAddJob datasetInputsSearchAddJob_;
+    private com.clarifai.grpc.api.BulkOperation bulkOperation_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetInputsSearchAddJob, com.clarifai.grpc.api.DatasetInputsSearchAddJob.Builder, com.clarifai.grpc.api.DatasetInputsSearchAddJobOrBuilder> datasetInputsSearchAddJobBuilder_;
+        com.clarifai.grpc.api.BulkOperation, com.clarifai.grpc.api.BulkOperation.Builder, com.clarifai.grpc.api.BulkOperationOrBuilder> bulkOperationBuilder_;
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-     * @return Whether the datasetInputsSearchAddJob field is set.
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+     * @return Whether the bulkOperation field is set.
      */
-    public boolean hasDatasetInputsSearchAddJob() {
-      return datasetInputsSearchAddJobBuilder_ != null || datasetInputsSearchAddJob_ != null;
+    public boolean hasBulkOperation() {
+      return bulkOperationBuilder_ != null || bulkOperation_ != null;
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-     * @return The datasetInputsSearchAddJob.
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+     * @return The bulkOperation.
      */
-    public com.clarifai.grpc.api.DatasetInputsSearchAddJob getDatasetInputsSearchAddJob() {
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        return datasetInputsSearchAddJob_ == null ? com.clarifai.grpc.api.DatasetInputsSearchAddJob.getDefaultInstance() : datasetInputsSearchAddJob_;
+    public com.clarifai.grpc.api.BulkOperation getBulkOperation() {
+      if (bulkOperationBuilder_ == null) {
+        return bulkOperation_ == null ? com.clarifai.grpc.api.BulkOperation.getDefaultInstance() : bulkOperation_;
       } else {
-        return datasetInputsSearchAddJobBuilder_.getMessage();
+        return bulkOperationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    public Builder setDatasetInputsSearchAddJob(com.clarifai.grpc.api.DatasetInputsSearchAddJob value) {
-      if (datasetInputsSearchAddJobBuilder_ == null) {
+    public Builder setBulkOperation(com.clarifai.grpc.api.BulkOperation value) {
+      if (bulkOperationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        datasetInputsSearchAddJob_ = value;
+        bulkOperation_ = value;
         onChanged();
       } else {
-        datasetInputsSearchAddJobBuilder_.setMessage(value);
+        bulkOperationBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    public Builder setDatasetInputsSearchAddJob(
-        com.clarifai.grpc.api.DatasetInputsSearchAddJob.Builder builderForValue) {
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        datasetInputsSearchAddJob_ = builderForValue.build();
+    public Builder setBulkOperation(
+        com.clarifai.grpc.api.BulkOperation.Builder builderForValue) {
+      if (bulkOperationBuilder_ == null) {
+        bulkOperation_ = builderForValue.build();
         onChanged();
       } else {
-        datasetInputsSearchAddJobBuilder_.setMessage(builderForValue.build());
+        bulkOperationBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    public Builder mergeDatasetInputsSearchAddJob(com.clarifai.grpc.api.DatasetInputsSearchAddJob value) {
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        if (datasetInputsSearchAddJob_ != null) {
-          datasetInputsSearchAddJob_ =
-            com.clarifai.grpc.api.DatasetInputsSearchAddJob.newBuilder(datasetInputsSearchAddJob_).mergeFrom(value).buildPartial();
+    public Builder mergeBulkOperation(com.clarifai.grpc.api.BulkOperation value) {
+      if (bulkOperationBuilder_ == null) {
+        if (bulkOperation_ != null) {
+          bulkOperation_ =
+            com.clarifai.grpc.api.BulkOperation.newBuilder(bulkOperation_).mergeFrom(value).buildPartial();
         } else {
-          datasetInputsSearchAddJob_ = value;
+          bulkOperation_ = value;
         }
         onChanged();
       } else {
-        datasetInputsSearchAddJobBuilder_.mergeFrom(value);
+        bulkOperationBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    public Builder clearDatasetInputsSearchAddJob() {
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        datasetInputsSearchAddJob_ = null;
+    public Builder clearBulkOperation() {
+      if (bulkOperationBuilder_ == null) {
+        bulkOperation_ = null;
         onChanged();
       } else {
-        datasetInputsSearchAddJob_ = null;
-        datasetInputsSearchAddJobBuilder_ = null;
+        bulkOperation_ = null;
+        bulkOperationBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    public com.clarifai.grpc.api.DatasetInputsSearchAddJob.Builder getDatasetInputsSearchAddJobBuilder() {
+    public com.clarifai.grpc.api.BulkOperation.Builder getBulkOperationBuilder() {
       
       onChanged();
-      return getDatasetInputsSearchAddJobFieldBuilder().getBuilder();
+      return getBulkOperationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
-    public com.clarifai.grpc.api.DatasetInputsSearchAddJobOrBuilder getDatasetInputsSearchAddJobOrBuilder() {
-      if (datasetInputsSearchAddJobBuilder_ != null) {
-        return datasetInputsSearchAddJobBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.BulkOperationOrBuilder getBulkOperationOrBuilder() {
+      if (bulkOperationBuilder_ != null) {
+        return bulkOperationBuilder_.getMessageOrBuilder();
       } else {
-        return datasetInputsSearchAddJob_ == null ?
-            com.clarifai.grpc.api.DatasetInputsSearchAddJob.getDefaultInstance() : datasetInputsSearchAddJob_;
+        return bulkOperation_ == null ?
+            com.clarifai.grpc.api.BulkOperation.getDefaultInstance() : bulkOperation_;
       }
     }
     /**
-     * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+     * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.DatasetInputsSearchAddJob, com.clarifai.grpc.api.DatasetInputsSearchAddJob.Builder, com.clarifai.grpc.api.DatasetInputsSearchAddJobOrBuilder> 
-        getDatasetInputsSearchAddJobFieldBuilder() {
-      if (datasetInputsSearchAddJobBuilder_ == null) {
-        datasetInputsSearchAddJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.DatasetInputsSearchAddJob, com.clarifai.grpc.api.DatasetInputsSearchAddJob.Builder, com.clarifai.grpc.api.DatasetInputsSearchAddJobOrBuilder>(
-                getDatasetInputsSearchAddJob(),
+        com.clarifai.grpc.api.BulkOperation, com.clarifai.grpc.api.BulkOperation.Builder, com.clarifai.grpc.api.BulkOperationOrBuilder> 
+        getBulkOperationFieldBuilder() {
+      if (bulkOperationBuilder_ == null) {
+        bulkOperationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.BulkOperation, com.clarifai.grpc.api.BulkOperation.Builder, com.clarifai.grpc.api.BulkOperationOrBuilder>(
+                getBulkOperation(),
                 getParentForChildren(),
                 isClean());
-        datasetInputsSearchAddJob_ = null;
+        bulkOperation_ = null;
       }
-      return datasetInputsSearchAddJobBuilder_;
+      return bulkOperationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

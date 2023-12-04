@@ -47,17 +47,17 @@ public interface MultiDatasetInputResponseOrBuilder extends
       int index);
 
   /**
-   * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-   * @return Whether the datasetInputsSearchAddJob field is set.
+   * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+   * @return Whether the bulkOperation field is set.
    */
-  boolean hasDatasetInputsSearchAddJob();
+  boolean hasBulkOperation();
   /**
-   * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
-   * @return The datasetInputsSearchAddJob.
+   * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
+   * @return The bulkOperation.
    */
-  com.clarifai.grpc.api.DatasetInputsSearchAddJob getDatasetInputsSearchAddJob();
+  com.clarifai.grpc.api.BulkOperation getBulkOperation();
   /**
-   * <code>.clarifai.api.DatasetInputsSearchAddJob dataset_inputs_search_add_job = 3;</code>
+   * <code>.clarifai.api.BulkOperation bulk_operation = 4;</code>
    */
-  com.clarifai.grpc.api.DatasetInputsSearchAddJobOrBuilder getDatasetInputsSearchAddJobOrBuilder();
+  com.clarifai.grpc.api.BulkOperationOrBuilder getBulkOperationOrBuilder();
 }

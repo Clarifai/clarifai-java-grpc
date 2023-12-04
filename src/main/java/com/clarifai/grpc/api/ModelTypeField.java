@@ -329,7 +329,7 @@ private static final long serialVersionUID = 0L;
     ENCRYPTED_STRING(21),
     /**
      * <pre>
-     * For selecting a model version of the same model type to resume training from. 
+     * For selecting a model version of the same model type to resume training from.
      * </pre>
      *
      * <code>CHECKPOINT_MODEL = 22;</code>
@@ -494,7 +494,7 @@ private static final long serialVersionUID = 0L;
     public static final int ENCRYPTED_STRING_VALUE = 21;
     /**
      * <pre>
-     * For selecting a model version of the same model type to resume training from. 
+     * For selecting a model version of the same model type to resume training from.
      * </pre>
      *
      * <code>CHECKPOINT_MODEL = 22;</code>

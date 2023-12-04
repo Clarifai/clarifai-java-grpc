@@ -5967,37 +5967,6 @@ public final class V2Grpc {
     return getDeleteBulkOperationsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest,
-      com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse> getGetDatasetInputsSearchAddJobMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetDatasetInputsSearchAddJob",
-      requestType = com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest.class,
-      responseType = com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest,
-      com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse> getGetDatasetInputsSearchAddJobMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest, com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse> getGetDatasetInputsSearchAddJobMethod;
-    if ((getGetDatasetInputsSearchAddJobMethod = V2Grpc.getGetDatasetInputsSearchAddJobMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetDatasetInputsSearchAddJobMethod = V2Grpc.getGetDatasetInputsSearchAddJobMethod) == null) {
-          V2Grpc.getGetDatasetInputsSearchAddJobMethod = getGetDatasetInputsSearchAddJobMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest, com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDatasetInputsSearchAddJob"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetDatasetInputsSearchAddJob"))
-              .build();
-        }
-      }
-    }
-    return getGetDatasetInputsSearchAddJobMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNextTaskAssignmentsRequest,
       com.clarifai.grpc.api.MultiInputResponse> getListNextTaskAssignmentsMethod;
 
@@ -8678,16 +8647,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific job.
-     * </pre>
-     */
-    public void getDatasetInputsSearchAddJob(com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDatasetInputsSearchAddJobMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * List next non-labeled and unassigned inputs from task's dataset
      * </pre>
      */
@@ -10248,13 +10207,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteBulkOperationRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_BULK_OPERATIONS)))
-          .addMethod(
-            getGetDatasetInputsSearchAddJobMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest,
-                com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse>(
-                  this, METHODID_GET_DATASET_INPUTS_SEARCH_ADD_JOB)))
           .addMethod(
             getListNextTaskAssignmentsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -12569,17 +12521,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific job.
-     * </pre>
-     */
-    public void getDatasetInputsSearchAddJob(com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetDatasetInputsSearchAddJobMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * List next non-labeled and unassigned inputs from task's dataset
      * </pre>
      */
@@ -14777,16 +14718,6 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteBulkOperations(com.clarifai.grpc.api.DeleteBulkOperationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBulkOperationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Get a specific job.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse getDatasetInputsSearchAddJob(com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetDatasetInputsSearchAddJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -17162,17 +17093,6 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific job.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse> getDatasetInputsSearchAddJob(
-        com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetDatasetInputsSearchAddJobMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * List next non-labeled and unassigned inputs from task's dataset
      * </pre>
      */
@@ -17602,29 +17522,28 @@ public final class V2Grpc {
   private static final int METHODID_GET_BULK_OPERATION = 189;
   private static final int METHODID_CANCEL_BULK_OPERATIONS = 190;
   private static final int METHODID_DELETE_BULK_OPERATIONS = 191;
-  private static final int METHODID_GET_DATASET_INPUTS_SEARCH_ADD_JOB = 192;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 193;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 194;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 195;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 196;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 197;
-  private static final int METHODID_POST_UPLOADS = 198;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 199;
-  private static final int METHODID_GET_UPLOAD = 200;
-  private static final int METHODID_LIST_UPLOADS = 201;
-  private static final int METHODID_DELETE_UPLOADS = 202;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 203;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 204;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 205;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 206;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 207;
-  private static final int METHODID_GET_RUNNER = 208;
-  private static final int METHODID_LIST_RUNNERS = 209;
-  private static final int METHODID_POST_RUNNERS = 210;
-  private static final int METHODID_DELETE_RUNNERS = 211;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 212;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 213;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 214;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 192;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 193;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 194;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 195;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 196;
+  private static final int METHODID_POST_UPLOADS = 197;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 198;
+  private static final int METHODID_GET_UPLOAD = 199;
+  private static final int METHODID_LIST_UPLOADS = 200;
+  private static final int METHODID_DELETE_UPLOADS = 201;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 202;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 203;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 204;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 205;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 206;
+  private static final int METHODID_GET_RUNNER = 207;
+  private static final int METHODID_LIST_RUNNERS = 208;
+  private static final int METHODID_POST_RUNNERS = 209;
+  private static final int METHODID_DELETE_RUNNERS = 210;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 211;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 212;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 213;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18411,10 +18330,6 @@ public final class V2Grpc {
           serviceImpl.deleteBulkOperations((com.clarifai.grpc.api.DeleteBulkOperationRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
-        case METHODID_GET_DATASET_INPUTS_SEARCH_ADD_JOB:
-          serviceImpl.getDatasetInputsSearchAddJob((com.clarifai.grpc.api.GetDatasetInputsSearchAddJobRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDatasetInputsSearchAddJobResponse>) responseObserver);
-          break;
         case METHODID_LIST_NEXT_TASK_ASSIGNMENTS:
           serviceImpl.listNextTaskAssignments((com.clarifai.grpc.api.ListNextTaskAssignmentsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse>) responseObserver);
@@ -18756,7 +18671,6 @@ public final class V2Grpc {
               .addMethod(getGetBulkOperationMethod())
               .addMethod(getCancelBulkOperationsMethod())
               .addMethod(getDeleteBulkOperationsMethod())
-              .addMethod(getGetDatasetInputsSearchAddJobMethod())
               .addMethod(getListNextTaskAssignmentsMethod())
               .addMethod(getPutTaskAssignmentsMethod())
               .addMethod(getListInputsAddJobsMethod())
