@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * A longer description of the error.
+   * A short description of the error.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A longer description of the error.
+   * A short description of the error.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -239,6 +239,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * More details of the given error.
+   * These details may be exposed to non-technical users.
+   * For technical details, try to use developer_notes field.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -260,6 +262,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * More details of the given error.
+   * These details may be exposed to non-technical users.
+   * For technical details, try to use developer_notes field.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -369,7 +373,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object reqId_;
   /**
    * <pre>
-   * If we want to return a request id in the base status field
+   * A request ID may be present, to help monitoring and tracking requests
    * </pre>
    *
    * <code>string req_id = 7;</code>
@@ -390,7 +394,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * If we want to return a request id in the base status field
+   * A request ID may be present, to help monitoring and tracking requests
    * </pre>
    *
    * <code>string req_id = 7;</code>
@@ -500,6 +504,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Notes for developer.
+   * These notes are rather technical details for developers how to interpret the status,
+   * e.g. why an error occurred and how to avoid getting the error.
    * </pre>
    *
    * <code>string developer_notes = 10;</code>
@@ -521,6 +527,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Notes for developer.
+   * These notes are rather technical details for developers how to interpret the status,
+   * e.g. why an error occurred and how to avoid getting the error.
    * </pre>
    *
    * <code>string developer_notes = 10;</code>
@@ -1104,7 +1112,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * A longer description of the error.
+     * A short description of the error.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1124,7 +1132,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A longer description of the error.
+     * A short description of the error.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1145,7 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A longer description of the error.
+     * A short description of the error.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1164,7 +1172,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A longer description of the error.
+     * A short description of the error.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1178,7 +1186,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A longer description of the error.
+     * A short description of the error.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1201,6 +1209,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1221,6 +1231,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1242,6 +1254,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1261,6 +1275,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1275,6 +1291,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * More details of the given error.
+     * These details may be exposed to non-technical users.
+     * For technical details, try to use developer_notes field.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1537,7 +1555,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object reqId_ = "";
     /**
      * <pre>
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      * </pre>
      *
      * <code>string req_id = 7;</code>
@@ -1557,7 +1575,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      * </pre>
      *
      * <code>string req_id = 7;</code>
@@ -1578,7 +1596,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      * </pre>
      *
      * <code>string req_id = 7;</code>
@@ -1597,7 +1615,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      * </pre>
      *
      * <code>string req_id = 7;</code>
@@ -1611,7 +1629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If we want to return a request id in the base status field
+     * A request ID may be present, to help monitoring and tracking requests
      * </pre>
      *
      * <code>string req_id = 7;</code>
@@ -1885,6 +1903,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      * </pre>
      *
      * <code>string developer_notes = 10;</code>
@@ -1905,6 +1925,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      * </pre>
      *
      * <code>string developer_notes = 10;</code>
@@ -1926,6 +1948,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      * </pre>
      *
      * <code>string developer_notes = 10;</code>
@@ -1945,6 +1969,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      * </pre>
      *
      * <code>string developer_notes = 10;</code>
@@ -1959,6 +1985,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Notes for developer.
+     * These notes are rather technical details for developers how to interpret the status,
+     * e.g. why an error occurred and how to avoid getting the error.
      * </pre>
      *
      * <code>string developer_notes = 10;</code>

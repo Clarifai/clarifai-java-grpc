@@ -59,7 +59,7 @@ public interface VideoOrBuilder extends
    *
    * <code>string thumbnail_url = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2584
+   *     See proto/clarifai/api/resources.proto;l=2638
    * @return The thumbnailUrl.
    */
   @java.lang.Deprecated java.lang.String getThumbnailUrl();
@@ -72,7 +72,7 @@ public interface VideoOrBuilder extends
    *
    * <code>string thumbnail_url = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2584
+   *     See proto/clarifai/api/resources.proto;l=2638
    * @return The bytes for thumbnailUrl.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

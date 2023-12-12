@@ -28,7 +28,7 @@ public interface StatusOrBuilder extends
 
   /**
    * <pre>
-   * A longer description of the error.
+   * A short description of the error.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -37,7 +37,7 @@ public interface StatusOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * A longer description of the error.
+   * A short description of the error.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -49,6 +49,8 @@ public interface StatusOrBuilder extends
   /**
    * <pre>
    * More details of the given error.
+   * These details may be exposed to non-technical users.
+   * For technical details, try to use developer_notes field.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -58,6 +60,8 @@ public interface StatusOrBuilder extends
   /**
    * <pre>
    * More details of the given error.
+   * These details may be exposed to non-technical users.
+   * For technical details, try to use developer_notes field.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -133,7 +137,7 @@ public interface StatusOrBuilder extends
 
   /**
    * <pre>
-   * If we want to return a request id in the base status field
+   * A request ID may be present, to help monitoring and tracking requests
    * </pre>
    *
    * <code>string req_id = 7;</code>
@@ -142,7 +146,7 @@ public interface StatusOrBuilder extends
   java.lang.String getReqId();
   /**
    * <pre>
-   * If we want to return a request id in the base status field
+   * A request ID may be present, to help monitoring and tracking requests
    * </pre>
    *
    * <code>string req_id = 7;</code>
@@ -201,6 +205,8 @@ public interface StatusOrBuilder extends
   /**
    * <pre>
    * Notes for developer.
+   * These notes are rather technical details for developers how to interpret the status,
+   * e.g. why an error occurred and how to avoid getting the error.
    * </pre>
    *
    * <code>string developer_notes = 10;</code>
@@ -210,6 +216,8 @@ public interface StatusOrBuilder extends
   /**
    * <pre>
    * Notes for developer.
+   * These notes are rather technical details for developers how to interpret the status,
+   * e.g. why an error occurred and how to avoid getting the error.
    * </pre>
    *
    * <code>string developer_notes = 10;</code>

@@ -135,10 +135,6 @@ private static final long serialVersionUID = 0L;
   public static final int COLLECTOR_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object collectorId_;
   /**
-   * <pre>
-   *The collecgtor id
-   * </pre>
-   *
    * <code>string collector_id = 2;</code>
    * @return The collectorId.
    */
@@ -156,10 +152,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *The collecgtor id
-   * </pre>
-   *
    * <code>string collector_id = 2;</code>
    * @return The bytes for collectorId.
    */
@@ -635,10 +627,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object collectorId_ = "";
     /**
-     * <pre>
-     *The collecgtor id
-     * </pre>
-     *
      * <code>string collector_id = 2;</code>
      * @return The collectorId.
      */
@@ -655,10 +643,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *The collecgtor id
-     * </pre>
-     *
      * <code>string collector_id = 2;</code>
      * @return The bytes for collectorId.
      */
@@ -676,10 +660,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *The collecgtor id
-     * </pre>
-     *
      * <code>string collector_id = 2;</code>
      * @param value The collectorId to set.
      * @return This builder for chaining.
@@ -695,10 +675,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *The collecgtor id
-     * </pre>
-     *
      * <code>string collector_id = 2;</code>
      * @return This builder for chaining.
      */
@@ -709,10 +685,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *The collecgtor id
-     * </pre>
-     *
      * <code>string collector_id = 2;</code>
      * @param value The bytes for collectorId to set.
      * @return This builder for chaining.

@@ -83,4 +83,38 @@ public interface ListModelConceptsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the concept:
+   *   - id
+   *   - name
+   * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 6;</code>
+   * @return The search.
+   */
+  java.lang.String getSearch();
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the concept:
+   *   - id
+   *   - name
+   * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 6;</code>
+   * @return The bytes for search.
+   */
+  com.google.protobuf.ByteString
+      getSearchBytes();
 }

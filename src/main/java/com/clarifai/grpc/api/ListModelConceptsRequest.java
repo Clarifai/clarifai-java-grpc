@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private ListModelConceptsRequest() {
     modelId_ = "";
     versionId_ = "";
+    search_ = "";
   }
 
   @java.lang.Override
@@ -87,6 +88,12 @@ private static final long serialVersionUID = 0L;
           case 40: {
 
             perPage_ = input.readUInt32();
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            search_ = s;
             break;
           }
           default: {
@@ -273,6 +280,66 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int SEARCH_FIELD_NUMBER = 6;
+  private volatile java.lang.Object search_;
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the concept:
+   *   - id
+   *   - name
+   * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 6;</code>
+   * @return The search.
+   */
+  @java.lang.Override
+  public java.lang.String getSearch() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      search_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Searching options:
+   * Specify a search parameter in order to perform keyword search on the
+   * following fields of the concept:
+   *   - id
+   *   - name
+   * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+   * NOTE: Both the list of fields searched and the exact keyword matching
+   * rules are subject to change and not guaranteed to be backwards-compatible.
+   * </pre>
+   *
+   * <code>string search = 6;</code>
+   * @return The bytes for search.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchBytes() {
+    java.lang.Object ref = search_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      search_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -302,6 +369,9 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(5, perPage_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, search_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -328,6 +398,9 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(5, perPage_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, search_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -357,6 +430,8 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (!getSearch()
+        .equals(other.getSearch())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -380,6 +455,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + getSearch().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -531,6 +608,8 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      search_ = "";
+
       return this;
     }
 
@@ -566,6 +645,7 @@ private static final long serialVersionUID = 0L;
       result.versionId_ = versionId_;
       result.page_ = page_;
       result.perPage_ = perPage_;
+      result.search_ = search_;
       onBuilt();
       return result;
     }
@@ -630,6 +710,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
+      }
+      if (!other.getSearch().isEmpty()) {
+        search_ = other.search_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1059,6 +1143,137 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object search_ = "";
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 6;</code>
+     * @return The search.
+     */
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 6;</code>
+     * @return The bytes for search.
+     */
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 6;</code>
+     * @param value The search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearch(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      search_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearch() {
+      
+      search_ = getDefaultInstance().getSearch();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Searching options:
+     * Specify a search parameter in order to perform keyword search on the
+     * following fields of the concept:
+     *   - id
+     *   - name
+     * Keywords are used for partial prefix-matching (so searching for "larif" matches "clarifai").
+     * NOTE: Both the list of fields searched and the exact keyword matching
+     * rules are subject to change and not guaranteed to be backwards-compatible.
+     * </pre>
+     *
+     * <code>string search = 6;</code>
+     * @param value The bytes for search to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      search_ = value;
       onChanged();
       return this;
     }

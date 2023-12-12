@@ -120,6 +120,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 69: {
+
+            preQueueRandomSample_ = input.readFloat();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -308,6 +313,7 @@ private static final long serialVersionUID = 0L;
    * outputs to make deciions (for example: thresholding based on concepts). If the workflow
    * output has any field that is non-empty then the input will be queued for the collector
    * to process with the post_queue_workflow_id.
+   * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
    * </pre>
    *
    * <code>string pre_queue_workflow_id = 4;</code>
@@ -336,6 +342,7 @@ private static final long serialVersionUID = 0L;
    * outputs to make deciions (for example: thresholding based on concepts). If the workflow
    * output has any field that is non-empty then the input will be queued for the collector
    * to process with the post_queue_workflow_id.
+   * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
    * </pre>
    *
    * <code>string pre_queue_workflow_id = 4;</code>
@@ -354,6 +361,23 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PRE_QUEUE_RANDOM_SAMPLE_FIELD_NUMBER = 8;
+  private float preQueueRandomSample_;
+  /**
+   * <pre>
+   * Instead of needing to create a new workflow for pre_queue_workflow_id, if just random sampling
+   * of the model inputs is required, then pre_queue_random_sample can be set to a value from (0-1]
+   * to denote the fraction of inputs to collect.
+   * </pre>
+   *
+   * <code>float pre_queue_random_sample = 8;</code>
+   * @return The preQueueRandomSample.
+   */
+  @java.lang.Override
+  public float getPreQueueRandomSample() {
+    return preQueueRandomSample_;
   }
 
   public static final int POST_QUEUE_WORKFLOW_ID_FIELD_NUMBER = 5;
@@ -536,6 +560,9 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(7, getStatus());
     }
+    if (java.lang.Float.floatToRawIntBits(preQueueRandomSample_) != 0) {
+      output.writeFloat(8, preQueueRandomSample_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -569,6 +596,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getStatus());
     }
+    if (java.lang.Float.floatToRawIntBits(preQueueRandomSample_) != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(8, preQueueRandomSample_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -595,6 +626,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPreQueueWorkflowId()
         .equals(other.getPreQueueWorkflowId())) return false;
+    if (java.lang.Float.floatToIntBits(getPreQueueRandomSample())
+        != java.lang.Float.floatToIntBits(
+            other.getPreQueueRandomSample())) return false;
     if (!getPostQueueWorkflowId()
         .equals(other.getPostQueueWorkflowId())) return false;
     if (hasCollectorSource() != other.hasCollectorSource()) return false;
@@ -628,6 +662,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + PRE_QUEUE_WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPreQueueWorkflowId().hashCode();
+    hash = (37 * hash) + PRE_QUEUE_RANDOM_SAMPLE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getPreQueueRandomSample());
     hash = (37 * hash) + POST_QUEUE_WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPostQueueWorkflowId().hashCode();
     if (hasCollectorSource()) {
@@ -788,6 +825,8 @@ private static final long serialVersionUID = 0L;
       }
       preQueueWorkflowId_ = "";
 
+      preQueueRandomSample_ = 0F;
+
       postQueueWorkflowId_ = "";
 
       if (collectorSourceBuilder_ == null) {
@@ -836,6 +875,7 @@ private static final long serialVersionUID = 0L;
         result.createdAt_ = createdAtBuilder_.build();
       }
       result.preQueueWorkflowId_ = preQueueWorkflowId_;
+      result.preQueueRandomSample_ = preQueueRandomSample_;
       result.postQueueWorkflowId_ = postQueueWorkflowId_;
       if (collectorSourceBuilder_ == null) {
         result.collectorSource_ = collectorSource_;
@@ -909,6 +949,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getPreQueueWorkflowId().isEmpty()) {
         preQueueWorkflowId_ = other.preQueueWorkflowId_;
         onChanged();
+      }
+      if (other.getPreQueueRandomSample() != 0F) {
+        setPreQueueRandomSample(other.getPreQueueRandomSample());
       }
       if (!other.getPostQueueWorkflowId().isEmpty()) {
         postQueueWorkflowId_ = other.postQueueWorkflowId_;
@@ -1343,6 +1386,7 @@ private static final long serialVersionUID = 0L;
      * outputs to make deciions (for example: thresholding based on concepts). If the workflow
      * output has any field that is non-empty then the input will be queued for the collector
      * to process with the post_queue_workflow_id.
+     * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
      * </pre>
      *
      * <code>string pre_queue_workflow_id = 4;</code>
@@ -1370,6 +1414,7 @@ private static final long serialVersionUID = 0L;
      * outputs to make deciions (for example: thresholding based on concepts). If the workflow
      * output has any field that is non-empty then the input will be queued for the collector
      * to process with the post_queue_workflow_id.
+     * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
      * </pre>
      *
      * <code>string pre_queue_workflow_id = 4;</code>
@@ -1398,6 +1443,7 @@ private static final long serialVersionUID = 0L;
      * outputs to make deciions (for example: thresholding based on concepts). If the workflow
      * output has any field that is non-empty then the input will be queued for the collector
      * to process with the post_queue_workflow_id.
+     * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
      * </pre>
      *
      * <code>string pre_queue_workflow_id = 4;</code>
@@ -1424,6 +1470,7 @@ private static final long serialVersionUID = 0L;
      * outputs to make deciions (for example: thresholding based on concepts). If the workflow
      * output has any field that is non-empty then the input will be queued for the collector
      * to process with the post_queue_workflow_id.
+     * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
      * </pre>
      *
      * <code>string pre_queue_workflow_id = 4;</code>
@@ -1445,6 +1492,7 @@ private static final long serialVersionUID = 0L;
      * outputs to make deciions (for example: thresholding based on concepts). If the workflow
      * output has any field that is non-empty then the input will be queued for the collector
      * to process with the post_queue_workflow_id.
+     * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
      * </pre>
      *
      * <code>string pre_queue_workflow_id = 4;</code>
@@ -1459,6 +1507,55 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       preQueueWorkflowId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private float preQueueRandomSample_ ;
+    /**
+     * <pre>
+     * Instead of needing to create a new workflow for pre_queue_workflow_id, if just random sampling
+     * of the model inputs is required, then pre_queue_random_sample can be set to a value from (0-1]
+     * to denote the fraction of inputs to collect.
+     * </pre>
+     *
+     * <code>float pre_queue_random_sample = 8;</code>
+     * @return The preQueueRandomSample.
+     */
+    @java.lang.Override
+    public float getPreQueueRandomSample() {
+      return preQueueRandomSample_;
+    }
+    /**
+     * <pre>
+     * Instead of needing to create a new workflow for pre_queue_workflow_id, if just random sampling
+     * of the model inputs is required, then pre_queue_random_sample can be set to a value from (0-1]
+     * to denote the fraction of inputs to collect.
+     * </pre>
+     *
+     * <code>float pre_queue_random_sample = 8;</code>
+     * @param value The preQueueRandomSample to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreQueueRandomSample(float value) {
+      
+      preQueueRandomSample_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Instead of needing to create a new workflow for pre_queue_workflow_id, if just random sampling
+     * of the model inputs is required, then pre_queue_random_sample can be set to a value from (0-1]
+     * to denote the fraction of inputs to collect.
+     * </pre>
+     *
+     * <code>float pre_queue_random_sample = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPreQueueRandomSample() {
+      
+      preQueueRandomSample_ = 0F;
       onChanged();
       return this;
     }

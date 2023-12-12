@@ -23,19 +23,11 @@ public interface GetCollectorRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <pre>
-   *The collecgtor id
-   * </pre>
-   *
    * <code>string collector_id = 2;</code>
    * @return The collectorId.
    */
   java.lang.String getCollectorId();
   /**
-   * <pre>
-   *The collecgtor id
-   * </pre>
-   *
    * <code>string collector_id = 2;</code>
    * @return The bytes for collectorId.
    */

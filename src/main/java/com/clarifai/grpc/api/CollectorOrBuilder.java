@@ -96,6 +96,7 @@ public interface CollectorOrBuilder extends
    * outputs to make deciions (for example: thresholding based on concepts). If the workflow
    * output has any field that is non-empty then the input will be queued for the collector
    * to process with the post_queue_workflow_id.
+   * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
    * </pre>
    *
    * <code>string pre_queue_workflow_id = 4;</code>
@@ -112,6 +113,7 @@ public interface CollectorOrBuilder extends
    * outputs to make deciions (for example: thresholding based on concepts). If the workflow
    * output has any field that is non-empty then the input will be queued for the collector
    * to process with the post_queue_workflow_id.
+   * As a simpler alternative, pre_queue_random_sample can be set to just use random sampling instead.
    * </pre>
    *
    * <code>string pre_queue_workflow_id = 4;</code>
@@ -119,6 +121,18 @@ public interface CollectorOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPreQueueWorkflowIdBytes();
+
+  /**
+   * <pre>
+   * Instead of needing to create a new workflow for pre_queue_workflow_id, if just random sampling
+   * of the model inputs is required, then pre_queue_random_sample can be set to a value from (0-1]
+   * to denote the fraction of inputs to collect.
+   * </pre>
+   *
+   * <code>float pre_queue_random_sample = 8;</code>
+   * @return The preQueueRandomSample.
+   */
+  float getPreQueueRandomSample();
 
   /**
    * <pre>
