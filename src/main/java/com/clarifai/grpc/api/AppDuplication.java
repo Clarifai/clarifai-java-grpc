@@ -24,7 +24,6 @@ private static final long serialVersionUID = 0L;
     existingAppId_ = "";
     newAppId_ = "";
     newAppName_ = "";
-    newAppDescription_ = "";
     progress_ = java.util.Collections.emptyList();
   }
 
@@ -145,9 +144,16 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.clarifai.grpc.api.App.Builder subBuilder = null;
+            if (destinationApp_ != null) {
+              subBuilder = destinationApp_.toBuilder();
+            }
+            destinationApp_ = input.readMessage(com.clarifai.grpc.api.App.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(destinationApp_);
+              destinationApp_ = subBuilder.buildPartial();
+            }
 
-            newAppDescription_ = s;
             break;
           }
           default: {
@@ -191,7 +197,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * the id of app duplication
+   * The unique identifier of an app duplication job.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -212,7 +218,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * the id of app duplication
+   * The unique identifier of an app duplication job.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -233,6 +239,71 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DESTINATION_APP_FIELD_NUMBER = 10;
+  private com.clarifai.grpc.api.App destinationApp_;
+  /**
+   * <pre>
+   * The destination application where resources are written.
+   * If the destination does not exist, then the fields from the request are
+   * used to create the application. If a field is not set or not supported,
+   * then it will be copied from the source app, unless otherwise noted.
+   * Note: this field can be empty when reading app duplication jobs in cases
+   * where the app has been deleted or is just not visible to the caller.
+   * ########## Supported fields ##########
+   *  - description
+   *  - id      - if not set, then generated automatically
+   *  - user_id - if not set, then the calling user is used as the app owner
+   * </pre>
+   *
+   * <code>.clarifai.api.App destination_app = 10;</code>
+   * @return Whether the destinationApp field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationApp() {
+    return destinationApp_ != null;
+  }
+  /**
+   * <pre>
+   * The destination application where resources are written.
+   * If the destination does not exist, then the fields from the request are
+   * used to create the application. If a field is not set or not supported,
+   * then it will be copied from the source app, unless otherwise noted.
+   * Note: this field can be empty when reading app duplication jobs in cases
+   * where the app has been deleted or is just not visible to the caller.
+   * ########## Supported fields ##########
+   *  - description
+   *  - id      - if not set, then generated automatically
+   *  - user_id - if not set, then the calling user is used as the app owner
+   * </pre>
+   *
+   * <code>.clarifai.api.App destination_app = 10;</code>
+   * @return The destinationApp.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.App getDestinationApp() {
+    return destinationApp_ == null ? com.clarifai.grpc.api.App.getDefaultInstance() : destinationApp_;
+  }
+  /**
+   * <pre>
+   * The destination application where resources are written.
+   * If the destination does not exist, then the fields from the request are
+   * used to create the application. If a field is not set or not supported,
+   * then it will be copied from the source app, unless otherwise noted.
+   * Note: this field can be empty when reading app duplication jobs in cases
+   * where the app has been deleted or is just not visible to the caller.
+   * ########## Supported fields ##########
+   *  - description
+   *  - id      - if not set, then generated automatically
+   *  - user_id - if not set, then the calling user is used as the app owner
+   * </pre>
+   *
+   * <code>.clarifai.api.App destination_app = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppOrBuilder getDestinationAppOrBuilder() {
+    return getDestinationApp();
+  }
+
   public static final int EXISTING_APP_ID_FIELD_NUMBER = 8;
   private volatile java.lang.Object existingAppId_;
   /**
@@ -240,13 +311,16 @@ private static final long serialVersionUID = 0L;
    * The ID of an existing app you want to copy data into.
    * If not provided, then we will create a new application as the destination instead.
    * The various new_app_* fields can be used to set fields of this new application.
+   * Deprecated: Use destination_app.id with an existing ID instead.
    * </pre>
    *
-   * <code>string existing_app_id = 8;</code>
+   * <code>string existing_app_id = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2852
    * @return The existingAppId.
    */
   @java.lang.Override
-  public java.lang.String getExistingAppId() {
+  @java.lang.Deprecated public java.lang.String getExistingAppId() {
     java.lang.Object ref = existingAppId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -263,13 +337,16 @@ private static final long serialVersionUID = 0L;
    * The ID of an existing app you want to copy data into.
    * If not provided, then we will create a new application as the destination instead.
    * The various new_app_* fields can be used to set fields of this new application.
+   * Deprecated: Use destination_app.id with an existing ID instead.
    * </pre>
    *
-   * <code>string existing_app_id = 8;</code>
+   * <code>string existing_app_id = 8 [deprecated = true];</code>
+   * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2852
    * @return The bytes for existingAppId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getExistingAppIdBytes() {
     java.lang.Object ref = existingAppId_;
     if (ref instanceof java.lang.String) {
@@ -290,13 +367,16 @@ private static final long serialVersionUID = 0L;
    * The ID to use when creating a new application.
    * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
    * If not provided, then it will be generated automatically.
+   * Deprecated: Use destination_app.id with a new ID instead.
    * </pre>
    *
-   * <code>string new_app_id = 2;</code>
+   * <code>string new_app_id = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2860
    * @return The newAppId.
    */
   @java.lang.Override
-  public java.lang.String getNewAppId() {
+  @java.lang.Deprecated public java.lang.String getNewAppId() {
     java.lang.Object ref = newAppId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -313,13 +393,16 @@ private static final long serialVersionUID = 0L;
    * The ID to use when creating a new application.
    * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
    * If not provided, then it will be generated automatically.
+   * Deprecated: Use destination_app.id with a new ID instead.
    * </pre>
    *
-   * <code>string new_app_id = 2;</code>
+   * <code>string new_app_id = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2860
    * @return The bytes for newAppId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNewAppIdBytes() {
     java.lang.Object ref = newAppId_;
     if (ref instanceof java.lang.String) {
@@ -340,13 +423,16 @@ private static final long serialVersionUID = 0L;
    * The name to use when creating a new application.
    * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
    * If not provided, then the ID of the new application is also used as the name.
+   * Deprecated: Application names are deprecated, use application IDs instead.
    * </pre>
    *
-   * <code>string new_app_name = 3;</code>
+   * <code>string new_app_name = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2868
    * @return The newAppName.
    */
   @java.lang.Override
-  public java.lang.String getNewAppName() {
+  @java.lang.Deprecated public java.lang.String getNewAppName() {
     java.lang.Object ref = newAppName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -363,13 +449,16 @@ private static final long serialVersionUID = 0L;
    * The name to use when creating a new application.
    * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
    * If not provided, then the ID of the new application is also used as the name.
+   * Deprecated: Application names are deprecated, use application IDs instead.
    * </pre>
    *
-   * <code>string new_app_name = 3;</code>
+   * <code>string new_app_name = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2868
    * @return The bytes for newAppName.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNewAppNameBytes() {
     java.lang.Object ref = newAppName_;
     if (ref instanceof java.lang.String) {
@@ -383,61 +472,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int NEW_APP_DESCRIPTION_FIELD_NUMBER = 10;
-  private volatile java.lang.Object newAppDescription_;
-  /**
-   * <pre>
-   * The description to use when creating a new application.
-   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-   * If not provided, then the description of the source application is copied.
-   * </pre>
-   *
-   * <code>string new_app_description = 10;</code>
-   * @return The newAppDescription.
-   */
-  @java.lang.Override
-  public java.lang.String getNewAppDescription() {
-    java.lang.Object ref = newAppDescription_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      newAppDescription_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The description to use when creating a new application.
-   * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-   * If not provided, then the description of the source application is copied.
-   * </pre>
-   *
-   * <code>string new_app_description = 10;</code>
-   * @return The bytes for newAppDescription.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNewAppDescriptionBytes() {
-    java.lang.Object ref = newAppDescription_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      newAppDescription_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int STATUS_FIELD_NUMBER = 4;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <pre>
-   * the status of app duplication
+   * The status of the app duplication job.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -449,7 +488,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * the status of app duplication
+   * The status of the app duplication job.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -461,7 +500,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * the status of app duplication
+   * The status of the app duplication job.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 4;</code>
@@ -475,7 +514,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   * when is the app duplication triggered
+   * The time when the app duplication job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -487,7 +526,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * when is the app duplication triggered
+   * The time when the app duplication job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -499,7 +538,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * when is the app duplication triggered
+   * The time when the app duplication job was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -513,7 +552,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp lastModifiedAt_;
   /**
    * <pre>
-   * The last time when is the status got updated
+   * The last time when the app duplication job status was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -525,7 +564,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The last time when is the status got updated
+   * The last time when the app duplication job status was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -537,7 +576,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The last time when is the status got updated
+   * The last time when the app duplication job status was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -551,7 +590,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.AppDuplicationFilters filter_;
   /**
    * <pre>
-   * Only copy resources depending on the filters
+   * The filter specifies which resources are copied by the app duplication job.
    * </pre>
    *
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -563,7 +602,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Only copy resources depending on the filters
+   * The filter specifies which resources are copied by the app duplication job.
    * </pre>
    *
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -575,7 +614,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Only copy resources depending on the filters
+   * The filter specifies which resources are copied by the app duplication job.
    * </pre>
    *
    * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -589,7 +628,12 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.clarifai.grpc.api.AppCopyProgress> progress_;
   /**
    * <pre>
-   * contains progress for each requested filter
+   * Copy progress for each resource type requested by the filter. Possible fields:
+   *  - inputs
+   *  - concepts
+   *  - annotations
+   *  - models
+   *  - workflows
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -600,7 +644,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * contains progress for each requested filter
+   * Copy progress for each resource type requested by the filter. Possible fields:
+   *  - inputs
+   *  - concepts
+   *  - annotations
+   *  - models
+   *  - workflows
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -612,7 +661,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * contains progress for each requested filter
+   * Copy progress for each resource type requested by the filter. Possible fields:
+   *  - inputs
+   *  - concepts
+   *  - annotations
+   *  - models
+   *  - workflows
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -623,7 +677,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * contains progress for each requested filter
+   * Copy progress for each resource type requested by the filter. Possible fields:
+   *  - inputs
+   *  - concepts
+   *  - annotations
+   *  - models
+   *  - workflows
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -634,7 +693,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * contains progress for each requested filter
+   * Copy progress for each resource type requested by the filter. Possible fields:
+   *  - inputs
+   *  - concepts
+   *  - annotations
+   *  - models
+   *  - workflows
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -686,8 +750,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < progress_.size(); i++) {
       output.writeMessage(9, progress_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newAppDescription_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, newAppDescription_);
+    if (destinationApp_ != null) {
+      output.writeMessage(10, getDestinationApp());
     }
     unknownFields.writeTo(output);
   }
@@ -730,8 +794,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, progress_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newAppDescription_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, newAppDescription_);
+    if (destinationApp_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getDestinationApp());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -750,14 +815,17 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (hasDestinationApp() != other.hasDestinationApp()) return false;
+    if (hasDestinationApp()) {
+      if (!getDestinationApp()
+          .equals(other.getDestinationApp())) return false;
+    }
     if (!getExistingAppId()
         .equals(other.getExistingAppId())) return false;
     if (!getNewAppId()
         .equals(other.getNewAppId())) return false;
     if (!getNewAppName()
         .equals(other.getNewAppName())) return false;
-    if (!getNewAppDescription()
-        .equals(other.getNewAppDescription())) return false;
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus()
@@ -793,14 +861,16 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    if (hasDestinationApp()) {
+      hash = (37 * hash) + DESTINATION_APP_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationApp().hashCode();
+    }
     hash = (37 * hash) + EXISTING_APP_ID_FIELD_NUMBER;
     hash = (53 * hash) + getExistingAppId().hashCode();
     hash = (37 * hash) + NEW_APP_ID_FIELD_NUMBER;
     hash = (53 * hash) + getNewAppId().hashCode();
     hash = (37 * hash) + NEW_APP_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getNewAppName().hashCode();
-    hash = (37 * hash) + NEW_APP_DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getNewAppDescription().hashCode();
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
@@ -961,13 +1031,17 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
+      if (destinationAppBuilder_ == null) {
+        destinationApp_ = null;
+      } else {
+        destinationApp_ = null;
+        destinationAppBuilder_ = null;
+      }
       existingAppId_ = "";
 
       newAppId_ = "";
 
       newAppName_ = "";
-
-      newAppDescription_ = "";
 
       if (statusBuilder_ == null) {
         status_ = null;
@@ -1027,10 +1101,14 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.AppDuplication result = new com.clarifai.grpc.api.AppDuplication(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
+      if (destinationAppBuilder_ == null) {
+        result.destinationApp_ = destinationApp_;
+      } else {
+        result.destinationApp_ = destinationAppBuilder_.build();
+      }
       result.existingAppId_ = existingAppId_;
       result.newAppId_ = newAppId_;
       result.newAppName_ = newAppName_;
-      result.newAppDescription_ = newAppDescription_;
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
@@ -1112,6 +1190,9 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
+      if (other.hasDestinationApp()) {
+        mergeDestinationApp(other.getDestinationApp());
+      }
       if (!other.getExistingAppId().isEmpty()) {
         existingAppId_ = other.existingAppId_;
         onChanged();
@@ -1122,10 +1203,6 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getNewAppName().isEmpty()) {
         newAppName_ = other.newAppName_;
-        onChanged();
-      }
-      if (!other.getNewAppDescription().isEmpty()) {
-        newAppDescription_ = other.newAppDescription_;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -1199,7 +1276,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1219,7 +1296,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1240,7 +1317,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1259,7 +1336,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1273,7 +1350,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the id of app duplication
+     * The unique identifier of an app duplication job.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1292,18 +1369,257 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.clarifai.grpc.api.App destinationApp_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> destinationAppBuilder_;
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     * @return Whether the destinationApp field is set.
+     */
+    public boolean hasDestinationApp() {
+      return destinationAppBuilder_ != null || destinationApp_ != null;
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     * @return The destinationApp.
+     */
+    public com.clarifai.grpc.api.App getDestinationApp() {
+      if (destinationAppBuilder_ == null) {
+        return destinationApp_ == null ? com.clarifai.grpc.api.App.getDefaultInstance() : destinationApp_;
+      } else {
+        return destinationAppBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    public Builder setDestinationApp(com.clarifai.grpc.api.App value) {
+      if (destinationAppBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destinationApp_ = value;
+        onChanged();
+      } else {
+        destinationAppBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    public Builder setDestinationApp(
+        com.clarifai.grpc.api.App.Builder builderForValue) {
+      if (destinationAppBuilder_ == null) {
+        destinationApp_ = builderForValue.build();
+        onChanged();
+      } else {
+        destinationAppBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    public Builder mergeDestinationApp(com.clarifai.grpc.api.App value) {
+      if (destinationAppBuilder_ == null) {
+        if (destinationApp_ != null) {
+          destinationApp_ =
+            com.clarifai.grpc.api.App.newBuilder(destinationApp_).mergeFrom(value).buildPartial();
+        } else {
+          destinationApp_ = value;
+        }
+        onChanged();
+      } else {
+        destinationAppBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    public Builder clearDestinationApp() {
+      if (destinationAppBuilder_ == null) {
+        destinationApp_ = null;
+        onChanged();
+      } else {
+        destinationApp_ = null;
+        destinationAppBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    public com.clarifai.grpc.api.App.Builder getDestinationAppBuilder() {
+      
+      onChanged();
+      return getDestinationAppFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    public com.clarifai.grpc.api.AppOrBuilder getDestinationAppOrBuilder() {
+      if (destinationAppBuilder_ != null) {
+        return destinationAppBuilder_.getMessageOrBuilder();
+      } else {
+        return destinationApp_ == null ?
+            com.clarifai.grpc.api.App.getDefaultInstance() : destinationApp_;
+      }
+    }
+    /**
+     * <pre>
+     * The destination application where resources are written.
+     * If the destination does not exist, then the fields from the request are
+     * used to create the application. If a field is not set or not supported,
+     * then it will be copied from the source app, unless otherwise noted.
+     * Note: this field can be empty when reading app duplication jobs in cases
+     * where the app has been deleted or is just not visible to the caller.
+     * ########## Supported fields ##########
+     *  - description
+     *  - id      - if not set, then generated automatically
+     *  - user_id - if not set, then the calling user is used as the app owner
+     * </pre>
+     *
+     * <code>.clarifai.api.App destination_app = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> 
+        getDestinationAppFieldBuilder() {
+      if (destinationAppBuilder_ == null) {
+        destinationAppBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder>(
+                getDestinationApp(),
+                getParentForChildren(),
+                isClean());
+        destinationApp_ = null;
+      }
+      return destinationAppBuilder_;
+    }
+
     private java.lang.Object existingAppId_ = "";
     /**
      * <pre>
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      * </pre>
      *
-     * <code>string existing_app_id = 8;</code>
+     * <code>string existing_app_id = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2852
      * @return The existingAppId.
      */
-    public java.lang.String getExistingAppId() {
+    @java.lang.Deprecated public java.lang.String getExistingAppId() {
       java.lang.Object ref = existingAppId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1320,12 +1636,15 @@ private static final long serialVersionUID = 0L;
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      * </pre>
      *
-     * <code>string existing_app_id = 8;</code>
+     * <code>string existing_app_id = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2852
      * @return The bytes for existingAppId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getExistingAppIdBytes() {
       java.lang.Object ref = existingAppId_;
       if (ref instanceof String) {
@@ -1343,13 +1662,16 @@ private static final long serialVersionUID = 0L;
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      * </pre>
      *
-     * <code>string existing_app_id = 8;</code>
+     * <code>string existing_app_id = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2852
      * @param value The existingAppId to set.
      * @return This builder for chaining.
      */
-    public Builder setExistingAppId(
+    @java.lang.Deprecated public Builder setExistingAppId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1364,12 +1686,15 @@ private static final long serialVersionUID = 0L;
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      * </pre>
      *
-     * <code>string existing_app_id = 8;</code>
+     * <code>string existing_app_id = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2852
      * @return This builder for chaining.
      */
-    public Builder clearExistingAppId() {
+    @java.lang.Deprecated public Builder clearExistingAppId() {
       
       existingAppId_ = getDefaultInstance().getExistingAppId();
       onChanged();
@@ -1380,13 +1705,16 @@ private static final long serialVersionUID = 0L;
      * The ID of an existing app you want to copy data into.
      * If not provided, then we will create a new application as the destination instead.
      * The various new_app_* fields can be used to set fields of this new application.
+     * Deprecated: Use destination_app.id with an existing ID instead.
      * </pre>
      *
-     * <code>string existing_app_id = 8;</code>
+     * <code>string existing_app_id = 8 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2852
      * @param value The bytes for existingAppId to set.
      * @return This builder for chaining.
      */
-    public Builder setExistingAppIdBytes(
+    @java.lang.Deprecated public Builder setExistingAppIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1404,12 +1732,15 @@ private static final long serialVersionUID = 0L;
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      * </pre>
      *
-     * <code>string new_app_id = 2;</code>
+     * <code>string new_app_id = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2860
      * @return The newAppId.
      */
-    public java.lang.String getNewAppId() {
+    @java.lang.Deprecated public java.lang.String getNewAppId() {
       java.lang.Object ref = newAppId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1426,12 +1757,15 @@ private static final long serialVersionUID = 0L;
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      * </pre>
      *
-     * <code>string new_app_id = 2;</code>
+     * <code>string new_app_id = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2860
      * @return The bytes for newAppId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNewAppIdBytes() {
       java.lang.Object ref = newAppId_;
       if (ref instanceof String) {
@@ -1449,13 +1783,16 @@ private static final long serialVersionUID = 0L;
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      * </pre>
      *
-     * <code>string new_app_id = 2;</code>
+     * <code>string new_app_id = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2860
      * @param value The newAppId to set.
      * @return This builder for chaining.
      */
-    public Builder setNewAppId(
+    @java.lang.Deprecated public Builder setNewAppId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1470,12 +1807,15 @@ private static final long serialVersionUID = 0L;
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      * </pre>
      *
-     * <code>string new_app_id = 2;</code>
+     * <code>string new_app_id = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2860
      * @return This builder for chaining.
      */
-    public Builder clearNewAppId() {
+    @java.lang.Deprecated public Builder clearNewAppId() {
       
       newAppId_ = getDefaultInstance().getNewAppId();
       onChanged();
@@ -1486,13 +1826,16 @@ private static final long serialVersionUID = 0L;
      * The ID to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then it will be generated automatically.
+     * Deprecated: Use destination_app.id with a new ID instead.
      * </pre>
      *
-     * <code>string new_app_id = 2;</code>
+     * <code>string new_app_id = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2860
      * @param value The bytes for newAppId to set.
      * @return This builder for chaining.
      */
-    public Builder setNewAppIdBytes(
+    @java.lang.Deprecated public Builder setNewAppIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1510,12 +1853,15 @@ private static final long serialVersionUID = 0L;
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      * </pre>
      *
-     * <code>string new_app_name = 3;</code>
+     * <code>string new_app_name = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2868
      * @return The newAppName.
      */
-    public java.lang.String getNewAppName() {
+    @java.lang.Deprecated public java.lang.String getNewAppName() {
       java.lang.Object ref = newAppName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1532,12 +1878,15 @@ private static final long serialVersionUID = 0L;
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      * </pre>
      *
-     * <code>string new_app_name = 3;</code>
+     * <code>string new_app_name = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2868
      * @return The bytes for newAppName.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNewAppNameBytes() {
       java.lang.Object ref = newAppName_;
       if (ref instanceof String) {
@@ -1555,13 +1904,16 @@ private static final long serialVersionUID = 0L;
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      * </pre>
      *
-     * <code>string new_app_name = 3;</code>
+     * <code>string new_app_name = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2868
      * @param value The newAppName to set.
      * @return This builder for chaining.
      */
-    public Builder setNewAppName(
+    @java.lang.Deprecated public Builder setNewAppName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1576,12 +1928,15 @@ private static final long serialVersionUID = 0L;
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      * </pre>
      *
-     * <code>string new_app_name = 3;</code>
+     * <code>string new_app_name = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2868
      * @return This builder for chaining.
      */
-    public Builder clearNewAppName() {
+    @java.lang.Deprecated public Builder clearNewAppName() {
       
       newAppName_ = getDefaultInstance().getNewAppName();
       onChanged();
@@ -1592,13 +1947,16 @@ private static final long serialVersionUID = 0L;
      * The name to use when creating a new application.
      * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
      * If not provided, then the ID of the new application is also used as the name.
+     * Deprecated: Application names are deprecated, use application IDs instead.
      * </pre>
      *
-     * <code>string new_app_name = 3;</code>
+     * <code>string new_app_name = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2868
      * @param value The bytes for newAppName to set.
      * @return This builder for chaining.
      */
-    public Builder setNewAppNameBytes(
+    @java.lang.Deprecated public Builder setNewAppNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1610,118 +1968,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object newAppDescription_ = "";
-    /**
-     * <pre>
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     * </pre>
-     *
-     * <code>string new_app_description = 10;</code>
-     * @return The newAppDescription.
-     */
-    public java.lang.String getNewAppDescription() {
-      java.lang.Object ref = newAppDescription_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        newAppDescription_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     * </pre>
-     *
-     * <code>string new_app_description = 10;</code>
-     * @return The bytes for newAppDescription.
-     */
-    public com.google.protobuf.ByteString
-        getNewAppDescriptionBytes() {
-      java.lang.Object ref = newAppDescription_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        newAppDescription_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     * </pre>
-     *
-     * <code>string new_app_description = 10;</code>
-     * @param value The newAppDescription to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNewAppDescription(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      newAppDescription_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     * </pre>
-     *
-     * <code>string new_app_description = 10;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNewAppDescription() {
-      
-      newAppDescription_ = getDefaultInstance().getNewAppDescription();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The description to use when creating a new application.
-     * You cannot set this field when copying into an existing app, i.e., when existing_app_is is set.
-     * If not provided, then the description of the source application is copied.
-     * </pre>
-     *
-     * <code>string new_app_description = 10;</code>
-     * @param value The bytes for newAppDescription to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNewAppDescriptionBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      newAppDescription_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.clarifai.grpc.api.status.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1732,7 +1984,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1747,7 +1999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1767,7 +2019,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1785,7 +2037,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1807,7 +2059,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1825,7 +2077,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1837,7 +2089,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1852,7 +2104,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * the status of app duplication
+     * The status of the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 4;</code>
@@ -1876,7 +2128,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1887,7 +2139,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1902,7 +2154,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1922,7 +2174,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1940,7 +2192,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1962,7 +2214,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1980,7 +2232,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -1992,7 +2244,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -2007,7 +2259,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * when is the app duplication triggered
+     * The time when the app duplication job was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 5;</code>
@@ -2031,7 +2283,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastModifiedAtBuilder_;
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2042,7 +2294,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2057,7 +2309,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2077,7 +2329,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2095,7 +2347,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2117,7 +2369,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2135,7 +2387,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2147,7 +2399,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2162,7 +2414,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last time when is the status got updated
+     * The last time when the app duplication job status was updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_modified_at = 6;</code>
@@ -2186,7 +2438,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.AppDuplicationFilters, com.clarifai.grpc.api.AppDuplicationFilters.Builder, com.clarifai.grpc.api.AppDuplicationFiltersOrBuilder> filterBuilder_;
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2197,7 +2449,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2212,7 +2464,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2232,7 +2484,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2250,7 +2502,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2272,7 +2524,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2290,7 +2542,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2302,7 +2554,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2317,7 +2569,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Only copy resources depending on the filters
+     * The filter specifies which resources are copied by the app duplication job.
      * </pre>
      *
      * <code>.clarifai.api.AppDuplicationFilters filter = 7;</code>
@@ -2350,7 +2602,12 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2364,7 +2621,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2378,7 +2640,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2392,7 +2659,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2413,7 +2685,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2431,7 +2708,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2451,7 +2733,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2472,7 +2759,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2490,7 +2782,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2508,7 +2805,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2527,7 +2829,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2544,7 +2851,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2561,7 +2873,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2572,7 +2889,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2586,7 +2908,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2601,7 +2928,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2612,7 +2944,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -2624,7 +2961,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * contains progress for each requested filter
+     * Copy progress for each resource type requested by the filter. Possible fields:
+     *  - inputs
+     *  - concepts
+     *  - annotations
+     *  - models
+     *  - workflows
      * </pre>
      *
      * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>

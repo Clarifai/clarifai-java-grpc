@@ -8,16 +8,28 @@ public interface PostAppDuplicationsRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The user and application ID of the source application to duplicate.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
   boolean hasUserAppId();
   /**
+   * <pre>
+   * The user and application ID of the source application to duplicate.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
   com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
+   * <pre>
+   * The user and application ID of the source application to duplicate.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();

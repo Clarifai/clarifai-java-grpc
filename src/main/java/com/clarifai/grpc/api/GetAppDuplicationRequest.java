@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- *Request to check app duplication status
+ * Request to get an app duplication job.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.GetAppDuplicationRequest}
@@ -109,6 +109,10 @@ private static final long serialVersionUID = 0L;
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
+   * <pre>
+   * The ID of the user that created the app duplication job.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
@@ -117,6 +121,10 @@ private static final long serialVersionUID = 0L;
     return userAppId_ != null;
   }
   /**
+   * <pre>
+   * The ID of the user that created the app duplication job.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
@@ -125,6 +133,10 @@ private static final long serialVersionUID = 0L;
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
+   * <pre>
+   * The ID of the user that created the app duplication job.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
   @java.lang.Override
@@ -135,10 +147,6 @@ private static final long serialVersionUID = 0L;
   public static final int APP_DUPLICATION_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object appDuplicationId_;
   /**
-   * <pre>
-   *The app duplication id
-   * </pre>
-   *
    * <code>string app_duplication_id = 2;</code>
    * @return The appDuplicationId.
    */
@@ -156,10 +164,6 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <pre>
-   *The app duplication id
-   * </pre>
-   *
    * <code>string app_duplication_id = 2;</code>
    * @return The bytes for appDuplicationId.
    */
@@ -350,7 +354,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *Request to check app duplication status
+   * Request to get an app duplication job.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.GetAppDuplicationRequest}
@@ -518,6 +522,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return Whether the userAppId field is set.
      */
@@ -525,6 +533,10 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return The userAppId.
      */
@@ -536,6 +548,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder setUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
@@ -552,6 +568,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder setUserAppId(
@@ -566,6 +586,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder mergeUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
@@ -584,6 +608,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder clearUserAppId() {
@@ -598,6 +626,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public com.clarifai.grpc.api.UserAppIDSet.Builder getUserAppIdBuilder() {
@@ -606,6 +638,10 @@ private static final long serialVersionUID = 0L;
       return getUserAppIdFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
@@ -617,6 +653,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The ID of the user that created the app duplication job.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -635,10 +675,6 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object appDuplicationId_ = "";
     /**
-     * <pre>
-     *The app duplication id
-     * </pre>
-     *
      * <code>string app_duplication_id = 2;</code>
      * @return The appDuplicationId.
      */
@@ -655,10 +691,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *The app duplication id
-     * </pre>
-     *
      * <code>string app_duplication_id = 2;</code>
      * @return The bytes for appDuplicationId.
      */
@@ -676,10 +708,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     *The app duplication id
-     * </pre>
-     *
      * <code>string app_duplication_id = 2;</code>
      * @param value The appDuplicationId to set.
      * @return This builder for chaining.
@@ -695,10 +723,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *The app duplication id
-     * </pre>
-     *
      * <code>string app_duplication_id = 2;</code>
      * @return This builder for chaining.
      */
@@ -709,10 +733,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     *The app duplication id
-     * </pre>
-     *
      * <code>string app_duplication_id = 2;</code>
      * @param value The bytes for appDuplicationId to set.
      * @return This builder for chaining.

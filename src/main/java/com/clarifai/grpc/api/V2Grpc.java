@@ -8204,8 +8204,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
-     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * PostAppDuplications starts async app duplication jobs which copy resources
+     * (inputs, annotations, models etc) from one application to another. It can
+     * also create the destination application if it does not exist, with fields
+     * (description, metadata etc) copied from the source application.
+     * A duplication job can be started by any user that can read from the source
+     * application (the target of this call) and can create and write to the
+     * destination application. The duplication is associated with the user that
+     * created it, so in order to read the status and progress of the job, that
+     * user's ID has to be used in the call to GetAppDuplication, which might be
+     * different to the source application owner ID in this call.
      * </pre>
      */
     public void postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request,
@@ -8215,7 +8223,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * list all the app duplications user triggers
+     * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
     public void listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request,
@@ -8225,7 +8233,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * get the app duplication status
+     * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
     public void getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request,
@@ -12035,8 +12043,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
-     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * PostAppDuplications starts async app duplication jobs which copy resources
+     * (inputs, annotations, models etc) from one application to another. It can
+     * also create the destination application if it does not exist, with fields
+     * (description, metadata etc) copied from the source application.
+     * A duplication job can be started by any user that can read from the source
+     * application (the target of this call) and can create and write to the
+     * destination application. The duplication is associated with the user that
+     * created it, so in order to read the status and progress of the job, that
+     * user's ID has to be used in the call to GetAppDuplication, which might be
+     * different to the source application owner ID in this call.
      * </pre>
      */
     public void postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request,
@@ -12047,7 +12063,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * list all the app duplications user triggers
+     * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
     public void listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request,
@@ -12058,7 +12074,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * get the app duplication status
+     * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
     public void getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request,
@@ -14279,8 +14295,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
-     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * PostAppDuplications starts async app duplication jobs which copy resources
+     * (inputs, annotations, models etc) from one application to another. It can
+     * also create the destination application if it does not exist, with fields
+     * (description, metadata etc) copied from the source application.
+     * A duplication job can be started by any user that can read from the source
+     * application (the target of this call) and can create and write to the
+     * destination application. The duplication is associated with the user that
+     * created it, so in order to read the status and progress of the job, that
+     * user's ID has to be used in the call to GetAppDuplication, which might be
+     * different to the source application owner ID in this call.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiAppDuplicationsResponse postAppDuplications(com.clarifai.grpc.api.PostAppDuplicationsRequest request) {
@@ -14290,7 +14314,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * list all the app duplications user triggers
+     * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiAppDuplicationsResponse listAppDuplications(com.clarifai.grpc.api.ListAppDuplicationsRequest request) {
@@ -14300,7 +14324,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * get the app duplication status
+     * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
     public com.clarifai.grpc.api.SingleAppDuplicationResponse getAppDuplication(com.clarifai.grpc.api.GetAppDuplicationRequest request) {
@@ -16607,8 +16631,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * start to duplicate an app which copies all the inputs, annotations, models, concepts etc. to a new app.
-     * this is an async process, you should use ListAppDuplications or GetAppDuplication to check the status.
+     * PostAppDuplications starts async app duplication jobs which copy resources
+     * (inputs, annotations, models etc) from one application to another. It can
+     * also create the destination application if it does not exist, with fields
+     * (description, metadata etc) copied from the source application.
+     * A duplication job can be started by any user that can read from the source
+     * application (the target of this call) and can create and write to the
+     * destination application. The duplication is associated with the user that
+     * created it, so in order to read the status and progress of the job, that
+     * user's ID has to be used in the call to GetAppDuplication, which might be
+     * different to the source application owner ID in this call.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppDuplicationsResponse> postAppDuplications(
@@ -16619,7 +16651,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * list all the app duplications user triggers
+     * ListAppDuplications lists all app duplication jobs created by the user.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAppDuplicationsResponse> listAppDuplications(
@@ -16630,7 +16662,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * get the app duplication status
+     * GetAppDuplication returns an app duplication job created by the user.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleAppDuplicationResponse> getAppDuplication(

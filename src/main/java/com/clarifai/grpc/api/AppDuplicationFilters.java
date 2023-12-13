@@ -115,7 +115,8 @@ private static final long serialVersionUID = 0L;
   private boolean copyInputs_;
   /**
    * <pre>
-   * Copy inputs what what it depends on: input level annotation and concepts
+   * Copy inputs. Requires that copy_concepts is also set.
+   * Note that this will still copy input-level annotations even if copy_annotations is not set.
    * </pre>
    *
    * <code>bool copy_inputs = 1;</code>
@@ -130,7 +131,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyConcepts_;
   /**
    * <pre>
-   * Copy only concepts
+   * Copy concepts.
    * </pre>
    *
    * <code>bool copy_concepts = 2;</code>
@@ -145,7 +146,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyAnnotations_;
   /**
    * <pre>
-   * Copy annotations and what it depends on: inputs and concepts
+   * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
    * </pre>
    *
    * <code>bool copy_annotations = 3;</code>
@@ -160,7 +161,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyModels_;
   /**
    * <pre>
-   * Copy models and what it depends on: concepts
+   * Copy models. Requires that copy_concepts is also set.
    * </pre>
    *
    * <code>bool copy_models = 4;</code>
@@ -175,7 +176,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyWorkflows_;
   /**
    * <pre>
-   * Copy workflows and what it depends on: models and concepts
+   * Copy workflows. Requires that copy_models and copy_concepts are also set.
    * </pre>
    *
    * <code>bool copy_workflows = 5;</code>
@@ -568,7 +569,8 @@ private static final long serialVersionUID = 0L;
     private boolean copyInputs_ ;
     /**
      * <pre>
-     * Copy inputs what what it depends on: input level annotation and concepts
+     * Copy inputs. Requires that copy_concepts is also set.
+     * Note that this will still copy input-level annotations even if copy_annotations is not set.
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -580,7 +582,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy inputs what what it depends on: input level annotation and concepts
+     * Copy inputs. Requires that copy_concepts is also set.
+     * Note that this will still copy input-level annotations even if copy_annotations is not set.
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -595,7 +598,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy inputs what what it depends on: input level annotation and concepts
+     * Copy inputs. Requires that copy_concepts is also set.
+     * Note that this will still copy input-level annotations even if copy_annotations is not set.
      * </pre>
      *
      * <code>bool copy_inputs = 1;</code>
@@ -611,7 +615,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyConcepts_ ;
     /**
      * <pre>
-     * Copy only concepts
+     * Copy concepts.
      * </pre>
      *
      * <code>bool copy_concepts = 2;</code>
@@ -623,7 +627,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy only concepts
+     * Copy concepts.
      * </pre>
      *
      * <code>bool copy_concepts = 2;</code>
@@ -638,7 +642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy only concepts
+     * Copy concepts.
      * </pre>
      *
      * <code>bool copy_concepts = 2;</code>
@@ -654,7 +658,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyAnnotations_ ;
     /**
      * <pre>
-     * Copy annotations and what it depends on: inputs and concepts
+     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      * </pre>
      *
      * <code>bool copy_annotations = 3;</code>
@@ -666,7 +670,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy annotations and what it depends on: inputs and concepts
+     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      * </pre>
      *
      * <code>bool copy_annotations = 3;</code>
@@ -681,7 +685,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy annotations and what it depends on: inputs and concepts
+     * Copy annotations. Requires that copy_inputs and copy_concepts are also set.
      * </pre>
      *
      * <code>bool copy_annotations = 3;</code>
@@ -697,7 +701,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyModels_ ;
     /**
      * <pre>
-     * Copy models and what it depends on: concepts
+     * Copy models. Requires that copy_concepts is also set.
      * </pre>
      *
      * <code>bool copy_models = 4;</code>
@@ -709,7 +713,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy models and what it depends on: concepts
+     * Copy models. Requires that copy_concepts is also set.
      * </pre>
      *
      * <code>bool copy_models = 4;</code>
@@ -724,7 +728,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy models and what it depends on: concepts
+     * Copy models. Requires that copy_concepts is also set.
      * </pre>
      *
      * <code>bool copy_models = 4;</code>
@@ -740,7 +744,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyWorkflows_ ;
     /**
      * <pre>
-     * Copy workflows and what it depends on: models and concepts
+     * Copy workflows. Requires that copy_models and copy_concepts are also set.
      * </pre>
      *
      * <code>bool copy_workflows = 5;</code>
@@ -752,7 +756,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy workflows and what it depends on: models and concepts
+     * Copy workflows. Requires that copy_models and copy_concepts are also set.
      * </pre>
      *
      * <code>bool copy_workflows = 5;</code>
@@ -767,7 +771,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy workflows and what it depends on: models and concepts
+     * Copy workflows. Requires that copy_models and copy_concepts are also set.
      * </pre>
      *
      * <code>bool copy_workflows = 5;</code>
