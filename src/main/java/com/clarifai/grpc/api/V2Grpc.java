@@ -5657,6 +5657,37 @@ public final class V2Grpc {
     return getDeleteModuleVersionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest,
+      com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getGetModuleVersionUsageCountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetModuleVersionUsageCount",
+      requestType = com.clarifai.grpc.api.GetModuleVersionUsageCountRequest.class,
+      responseType = com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest,
+      com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getGetModuleVersionUsageCountMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest, com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getGetModuleVersionUsageCountMethod;
+    if ((getGetModuleVersionUsageCountMethod = V2Grpc.getGetModuleVersionUsageCountMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetModuleVersionUsageCountMethod = V2Grpc.getGetModuleVersionUsageCountMethod) == null) {
+          V2Grpc.getGetModuleVersionUsageCountMethod = getGetModuleVersionUsageCountMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetModuleVersionUsageCountRequest, com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModuleVersionUsageCount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetModuleVersionUsageCountRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetModuleVersionUsageCount"))
+              .build();
+        }
+      }
+    }
+    return getGetModuleVersionUsageCountMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetInstalledModuleVersionRequest,
       com.clarifai.grpc.api.SingleInstalledModuleVersionResponse> getGetInstalledModuleVersionMethod;
 
@@ -8550,6 +8581,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get usage count for specific module version.
+     * </pre>
+     */
+    public void getModuleVersionUsageCount(com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModuleVersionUsageCountMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get installed modules vesrions for an app.
      * </pre>
      */
@@ -10145,6 +10186,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteModuleVersionsRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_MODULE_VERSIONS)))
+          .addMethod(
+            getGetModuleVersionUsageCountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetModuleVersionUsageCountRequest,
+                com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse>(
+                  this, METHODID_GET_MODULE_VERSION_USAGE_COUNT)))
           .addMethod(
             getGetInstalledModuleVersionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -12422,6 +12470,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get usage count for specific module version.
+     * </pre>
+     */
+    public void getModuleVersionUsageCount(com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetModuleVersionUsageCountMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get installed modules vesrions for an app.
      * </pre>
      */
@@ -14637,6 +14696,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteModuleVersions(com.clarifai.grpc.api.DeleteModuleVersionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteModuleVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get usage count for specific module version.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse getModuleVersionUsageCount(com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModuleVersionUsageCountMethod(), getCallOptions(), request);
     }
 
     /**
@@ -17010,6 +17079,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get usage count for specific module version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse> getModuleVersionUsageCount(
+        com.clarifai.grpc.api.GetModuleVersionUsageCountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetModuleVersionUsageCountMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get installed modules vesrions for an app.
      * </pre>
      */
@@ -17544,38 +17624,39 @@ public final class V2Grpc {
   private static final int METHODID_LIST_MODULE_VERSIONS = 179;
   private static final int METHODID_POST_MODULE_VERSIONS = 180;
   private static final int METHODID_DELETE_MODULE_VERSIONS = 181;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 182;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 183;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 184;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 185;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 186;
-  private static final int METHODID_POST_BULK_OPERATIONS = 187;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 188;
-  private static final int METHODID_GET_BULK_OPERATION = 189;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 190;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 191;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 192;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 193;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 194;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 195;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 196;
-  private static final int METHODID_POST_UPLOADS = 197;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 198;
-  private static final int METHODID_GET_UPLOAD = 199;
-  private static final int METHODID_LIST_UPLOADS = 200;
-  private static final int METHODID_DELETE_UPLOADS = 201;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 202;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 203;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 204;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 205;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 206;
-  private static final int METHODID_GET_RUNNER = 207;
-  private static final int METHODID_LIST_RUNNERS = 208;
-  private static final int METHODID_POST_RUNNERS = 209;
-  private static final int METHODID_DELETE_RUNNERS = 210;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 211;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 212;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 213;
+  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 182;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 183;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 184;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 185;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 186;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 187;
+  private static final int METHODID_POST_BULK_OPERATIONS = 188;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 189;
+  private static final int METHODID_GET_BULK_OPERATION = 190;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 191;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 192;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 193;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 194;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 195;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 196;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 197;
+  private static final int METHODID_POST_UPLOADS = 198;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 199;
+  private static final int METHODID_GET_UPLOAD = 200;
+  private static final int METHODID_LIST_UPLOADS = 201;
+  private static final int METHODID_DELETE_UPLOADS = 202;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 203;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 204;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 205;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 206;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 207;
+  private static final int METHODID_GET_RUNNER = 208;
+  private static final int METHODID_LIST_RUNNERS = 209;
+  private static final int METHODID_POST_RUNNERS = 210;
+  private static final int METHODID_DELETE_RUNNERS = 211;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 212;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 213;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 214;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18322,6 +18403,10 @@ public final class V2Grpc {
           serviceImpl.deleteModuleVersions((com.clarifai.grpc.api.DeleteModuleVersionsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
+        case METHODID_GET_MODULE_VERSION_USAGE_COUNT:
+          serviceImpl.getModuleVersionUsageCount((com.clarifai.grpc.api.GetModuleVersionUsageCountRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleModuleVersionUsageCountResponse>) responseObserver);
+          break;
         case METHODID_GET_INSTALLED_MODULE_VERSION:
           serviceImpl.getInstalledModuleVersion((com.clarifai.grpc.api.GetInstalledModuleVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleInstalledModuleVersionResponse>) responseObserver);
@@ -18693,6 +18778,7 @@ public final class V2Grpc {
               .addMethod(getListModuleVersionsMethod())
               .addMethod(getPostModuleVersionsMethod())
               .addMethod(getDeleteModuleVersionsMethod())
+              .addMethod(getGetModuleVersionUsageCountMethod())
               .addMethod(getGetInstalledModuleVersionMethod())
               .addMethod(getListInstalledModuleVersionsMethod())
               .addMethod(getPostInstalledModuleVersionsMethod())
