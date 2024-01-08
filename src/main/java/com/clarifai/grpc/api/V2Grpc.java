@@ -7482,9 +7482,10 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the inputs.
+     * Deprecated: Unmaintained and ideally replaced with usage of datasets
      * </pre>
      */
+    @java.lang.Deprecated
     public void listModelInputs(com.clarifai.grpc.api.ListModelInputsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListModelInputsMethod(), responseObserver);
@@ -11262,9 +11263,10 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the inputs.
+     * Deprecated: Unmaintained and ideally replaced with usage of datasets
      * </pre>
      */
+    @java.lang.Deprecated
     public void listModelInputs(com.clarifai.grpc.api.ListModelInputsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -13601,9 +13603,10 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the inputs.
+     * Deprecated: Unmaintained and ideally replaced with usage of datasets
      * </pre>
      */
+    @java.lang.Deprecated
     public com.clarifai.grpc.api.MultiInputResponse listModelInputs(com.clarifai.grpc.api.ListModelInputsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListModelInputsMethod(), getCallOptions(), request);
@@ -15871,9 +15874,10 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the inputs.
+     * Deprecated: Unmaintained and ideally replaced with usage of datasets
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputResponse> listModelInputs(
         com.clarifai.grpc.api.ListModelInputsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(

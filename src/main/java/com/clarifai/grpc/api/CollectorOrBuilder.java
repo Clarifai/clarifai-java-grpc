@@ -230,4 +230,15 @@ public interface CollectorOrBuilder extends
    * <code>.clarifai.api.status.Status status = 7;</code>
    */
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   * <pre>
+   * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+   * original model predict call will be posted as annotations along with the input with success status.
+   * </pre>
+   *
+   * <code>bool collect_outputs = 9;</code>
+   * @return The collectOutputs.
+   */
+  boolean getCollectOutputs();
 }

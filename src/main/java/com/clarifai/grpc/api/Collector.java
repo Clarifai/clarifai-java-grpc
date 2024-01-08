@@ -125,6 +125,11 @@ private static final long serialVersionUID = 0L;
             preQueueRandomSample_ = input.readFloat();
             break;
           }
+          case 72: {
+
+            collectOutputs_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -525,6 +530,22 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
+  public static final int COLLECT_OUTPUTS_FIELD_NUMBER = 9;
+  private boolean collectOutputs_;
+  /**
+   * <pre>
+   * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+   * original model predict call will be posted as annotations along with the input with success status.
+   * </pre>
+   *
+   * <code>bool collect_outputs = 9;</code>
+   * @return The collectOutputs.
+   */
+  @java.lang.Override
+  public boolean getCollectOutputs() {
+    return collectOutputs_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -563,6 +584,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(preQueueRandomSample_) != 0) {
       output.writeFloat(8, preQueueRandomSample_);
     }
+    if (collectOutputs_ != false) {
+      output.writeBool(9, collectOutputs_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -599,6 +623,10 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(preQueueRandomSample_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(8, preQueueRandomSample_);
+    }
+    if (collectOutputs_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(9, collectOutputs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -641,6 +669,8 @@ private static final long serialVersionUID = 0L;
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
+    if (getCollectOutputs()
+        != other.getCollectOutputs()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -675,6 +705,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
+    hash = (37 * hash) + COLLECT_OUTPUTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCollectOutputs());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -841,6 +874,8 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
+      collectOutputs_ = false;
+
       return this;
     }
 
@@ -887,6 +922,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.status_ = statusBuilder_.build();
       }
+      result.collectOutputs_ = collectOutputs_;
       onBuilt();
       return result;
     }
@@ -962,6 +998,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
+      }
+      if (other.getCollectOutputs() != false) {
+        setCollectOutputs(other.getCollectOutputs());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2029,6 +2068,52 @@ private static final long serialVersionUID = 0L;
         status_ = null;
       }
       return statusBuilder_;
+    }
+
+    private boolean collectOutputs_ ;
+    /**
+     * <pre>
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * original model predict call will be posted as annotations along with the input with success status.
+     * </pre>
+     *
+     * <code>bool collect_outputs = 9;</code>
+     * @return The collectOutputs.
+     */
+    @java.lang.Override
+    public boolean getCollectOutputs() {
+      return collectOutputs_;
+    }
+    /**
+     * <pre>
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * original model predict call will be posted as annotations along with the input with success status.
+     * </pre>
+     *
+     * <code>bool collect_outputs = 9;</code>
+     * @param value The collectOutputs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCollectOutputs(boolean value) {
+      
+      collectOutputs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * original model predict call will be posted as annotations along with the input with success status.
+     * </pre>
+     *
+     * <code>bool collect_outputs = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCollectOutputs() {
+      
+      collectOutputs_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
