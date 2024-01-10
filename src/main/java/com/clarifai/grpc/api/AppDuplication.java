@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string existing_app_id = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2852
+   *     See proto/clarifai/api/resources.proto;l=2858
    * @return The existingAppId.
    */
   @java.lang.Override
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string existing_app_id = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2852
+   *     See proto/clarifai/api/resources.proto;l=2858
    * @return The bytes for existingAppId.
    */
   @java.lang.Override
@@ -372,7 +372,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string new_app_id = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2860
+   *     See proto/clarifai/api/resources.proto;l=2866
    * @return The newAppId.
    */
   @java.lang.Override
@@ -398,7 +398,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string new_app_id = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2860
+   *     See proto/clarifai/api/resources.proto;l=2866
    * @return The bytes for newAppId.
    */
   @java.lang.Override
@@ -428,7 +428,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string new_app_name = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2868
+   *     See proto/clarifai/api/resources.proto;l=2874
    * @return The newAppName.
    */
   @java.lang.Override
@@ -454,7 +454,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string new_app_name = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2868
+   *     See proto/clarifai/api/resources.proto;l=2874
    * @return The bytes for newAppName.
    */
   @java.lang.Override
@@ -1616,7 +1616,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string existing_app_id = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2852
+     *     See proto/clarifai/api/resources.proto;l=2858
      * @return The existingAppId.
      */
     @java.lang.Deprecated public java.lang.String getExistingAppId() {
@@ -1641,7 +1641,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string existing_app_id = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2852
+     *     See proto/clarifai/api/resources.proto;l=2858
      * @return The bytes for existingAppId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1667,7 +1667,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string existing_app_id = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2852
+     *     See proto/clarifai/api/resources.proto;l=2858
      * @param value The existingAppId to set.
      * @return This builder for chaining.
      */
@@ -1691,7 +1691,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string existing_app_id = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2852
+     *     See proto/clarifai/api/resources.proto;l=2858
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearExistingAppId() {
@@ -1710,7 +1710,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string existing_app_id = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2852
+     *     See proto/clarifai/api/resources.proto;l=2858
      * @param value The bytes for existingAppId to set.
      * @return This builder for chaining.
      */
@@ -1737,7 +1737,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_id = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2860
+     *     See proto/clarifai/api/resources.proto;l=2866
      * @return The newAppId.
      */
     @java.lang.Deprecated public java.lang.String getNewAppId() {
@@ -1762,7 +1762,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_id = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2860
+     *     See proto/clarifai/api/resources.proto;l=2866
      * @return The bytes for newAppId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1788,7 +1788,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_id = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2860
+     *     See proto/clarifai/api/resources.proto;l=2866
      * @param value The newAppId to set.
      * @return This builder for chaining.
      */
@@ -1812,7 +1812,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_id = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2860
+     *     See proto/clarifai/api/resources.proto;l=2866
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearNewAppId() {
@@ -1831,7 +1831,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_id = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2860
+     *     See proto/clarifai/api/resources.proto;l=2866
      * @param value The bytes for newAppId to set.
      * @return This builder for chaining.
      */
@@ -1858,7 +1858,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_name = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2868
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @return The newAppName.
      */
     @java.lang.Deprecated public java.lang.String getNewAppName() {
@@ -1883,7 +1883,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_name = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2868
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @return The bytes for newAppName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1909,7 +1909,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_name = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2868
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @param value The newAppName to set.
      * @return This builder for chaining.
      */
@@ -1933,7 +1933,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_name = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2868
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearNewAppName() {
@@ -1952,7 +1952,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string new_app_name = 3 [deprecated = true];</code>
      * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2868
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @param value The bytes for newAppName to set.
      * @return This builder for chaining.
      */

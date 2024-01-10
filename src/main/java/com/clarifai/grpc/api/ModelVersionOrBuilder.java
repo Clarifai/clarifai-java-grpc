@@ -310,7 +310,9 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <pre>
-   * Info about the model's output and configuration.
+   * Info about the model's output. Besides `output_info.data`, these fields should
+   * be reserved for parameters that affect the models outputs when inferencing.
+   * `output_info.data` is used to specify the training concepts for this model version.
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -319,7 +321,9 @@ public interface ModelVersionOrBuilder extends
   boolean hasOutputInfo();
   /**
    * <pre>
-   * Info about the model's output and configuration.
+   * Info about the model's output. Besides `output_info.data`, these fields should
+   * be reserved for parameters that affect the models outputs when inferencing.
+   * `output_info.data` is used to specify the training concepts for this model version.
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -328,7 +332,9 @@ public interface ModelVersionOrBuilder extends
   com.clarifai.grpc.api.OutputInfo getOutputInfo();
   /**
    * <pre>
-   * Info about the model's output and configuration.
+   * Info about the model's output. Besides `output_info.data`, these fields should
+   * be reserved for parameters that affect the models outputs when inferencing.
+   * `output_info.data` is used to specify the training concepts for this model version.
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -337,7 +343,8 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <pre>
-   * Info about the models' input and configuration of them.
+   * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+   * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
    * </pre>
    *
    * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -346,7 +353,8 @@ public interface ModelVersionOrBuilder extends
   boolean hasInputInfo();
   /**
    * <pre>
-   * Info about the models' input and configuration of them.
+   * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+   * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
    * </pre>
    *
    * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -355,7 +363,8 @@ public interface ModelVersionOrBuilder extends
   com.clarifai.grpc.api.InputInfo getInputInfo();
   /**
    * <pre>
-   * Info about the models' input and configuration of them.
+   * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+   * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
    * </pre>
    *
    * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -364,7 +373,7 @@ public interface ModelVersionOrBuilder extends
 
   /**
    * <pre>
-   * Configuration for the training process of this model.
+   * Configuration for the training process of this model version.
    * </pre>
    *
    * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -373,7 +382,7 @@ public interface ModelVersionOrBuilder extends
   boolean hasTrainInfo();
   /**
    * <pre>
-   * Configuration for the training process of this model.
+   * Configuration for the training process of this model version.
    * </pre>
    *
    * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -382,7 +391,7 @@ public interface ModelVersionOrBuilder extends
   com.clarifai.grpc.api.TrainInfo getTrainInfo();
   /**
    * <pre>
-   * Configuration for the training process of this model.
+   * Configuration for the training process of this model version.
    * </pre>
    *
    * <code>.clarifai.api.TrainInfo train_info = 21;</code>

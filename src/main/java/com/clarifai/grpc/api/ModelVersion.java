@@ -827,7 +827,9 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.OutputInfo outputInfo_;
   /**
    * <pre>
-   * Info about the model's output and configuration.
+   * Info about the model's output. Besides `output_info.data`, these fields should
+   * be reserved for parameters that affect the models outputs when inferencing.
+   * `output_info.data` is used to specify the training concepts for this model version.
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -839,7 +841,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Info about the model's output and configuration.
+   * Info about the model's output. Besides `output_info.data`, these fields should
+   * be reserved for parameters that affect the models outputs when inferencing.
+   * `output_info.data` is used to specify the training concepts for this model version.
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -851,7 +855,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Info about the model's output and configuration.
+   * Info about the model's output. Besides `output_info.data`, these fields should
+   * be reserved for parameters that affect the models outputs when inferencing.
+   * `output_info.data` is used to specify the training concepts for this model version.
    * </pre>
    *
    * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -865,7 +871,8 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.InputInfo inputInfo_;
   /**
    * <pre>
-   * Info about the models' input and configuration of them.
+   * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+   * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
    * </pre>
    *
    * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -877,7 +884,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Info about the models' input and configuration of them.
+   * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+   * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
    * </pre>
    *
    * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -889,7 +897,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Info about the models' input and configuration of them.
+   * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+   * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
    * </pre>
    *
    * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -903,7 +912,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.TrainInfo trainInfo_;
   /**
    * <pre>
-   * Configuration for the training process of this model.
+   * Configuration for the training process of this model version.
    * </pre>
    *
    * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -915,7 +924,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for the training process of this model.
+   * Configuration for the training process of this model version.
    * </pre>
    *
    * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -927,7 +936,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for the training process of this model.
+   * Configuration for the training process of this model version.
    * </pre>
    *
    * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3520,7 +3529,9 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.OutputInfo, com.clarifai.grpc.api.OutputInfo.Builder, com.clarifai.grpc.api.OutputInfoOrBuilder> outputInfoBuilder_;
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3531,7 +3542,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3546,7 +3559,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3566,7 +3581,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3584,7 +3601,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3606,7 +3625,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3624,7 +3645,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3636,7 +3659,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3651,7 +3676,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the model's output and configuration.
+     * Info about the model's output. Besides `output_info.data`, these fields should
+     * be reserved for parameters that affect the models outputs when inferencing.
+     * `output_info.data` is used to specify the training concepts for this model version.
      * </pre>
      *
      * <code>.clarifai.api.OutputInfo output_info = 19;</code>
@@ -3675,7 +3702,8 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.InputInfo, com.clarifai.grpc.api.InputInfo.Builder, com.clarifai.grpc.api.InputInfoOrBuilder> inputInfoBuilder_;
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3686,7 +3714,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3701,7 +3730,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3721,7 +3751,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3739,7 +3770,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3761,7 +3793,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3779,7 +3812,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3791,7 +3825,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3806,7 +3841,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Info about the models' input and configuration of them.
+     * Info about preprocessing the models inputs, before they are sent to this model for training or inferencing.
+     * E.g.: `input_info.base_embed_model` lets us know inputs should be ran through a base model before being sent to an embedding-classifier.
      * </pre>
      *
      * <code>.clarifai.api.InputInfo input_info = 20;</code>
@@ -3830,7 +3866,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.TrainInfo, com.clarifai.grpc.api.TrainInfo.Builder, com.clarifai.grpc.api.TrainInfoOrBuilder> trainInfoBuilder_;
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3841,7 +3877,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3856,7 +3892,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3876,7 +3912,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3894,7 +3930,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3916,7 +3952,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3934,7 +3970,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3946,7 +3982,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>
@@ -3961,7 +3997,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for the training process of this model.
+     * Configuration for the training process of this model version.
      * </pre>
      *
      * <code>.clarifai.api.TrainInfo train_info = 21;</code>

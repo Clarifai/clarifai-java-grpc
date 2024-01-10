@@ -608,7 +608,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object path_;
   /**
    * <pre>
-   * The path where the value of the field will be stored.
+   * The path where the value of the field will be stored in the model version object.
    * Example:
    * "output_info.data" would be the Data message in the OutputInfo message.
    * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The path where the value of the field will be stored.
+   * The path where the value of the field will be stored in the model version object.
    * Example:
    * "output_info.data" would be the Data message in the OutputInfo message.
    * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1466,7 +1466,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object path_ = "";
     /**
      * <pre>
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1493,7 +1493,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1521,7 +1521,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1547,7 +1547,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo
@@ -1568,7 +1568,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The path where the value of the field will be stored.
+     * The path where the value of the field will be stored in the model version object.
      * Example:
      * "output_info.data" would be the Data message in the OutputInfo message.
      * "output_info.output_config.language" is in the OutputConfig message within OutputInfo

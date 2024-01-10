@@ -9,9 +9,7 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * A unique identifies for this model type. This is differnt than the 'type' field below because
-   * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-   * unique.
+   * A unique identifier for this model type.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -20,9 +18,7 @@ public interface ModelTypeOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * A unique identifies for this model type. This is differnt than the 'type' field below because
-   * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-   * unique.
+   * A unique identifier for this model type.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -33,7 +29,7 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * title for this model in model gallery
+   * A display title for this model.
    * </pre>
    *
    * <code>string title = 2;</code>
@@ -42,7 +38,7 @@ public interface ModelTypeOrBuilder extends
   java.lang.String getTitle();
   /**
    * <pre>
-   * title for this model in model gallery
+   * A display title for this model.
    * </pre>
    *
    * <code>string title = 2;</code>
@@ -73,8 +69,8 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -84,8 +80,8 @@ public interface ModelTypeOrBuilder extends
       getInputFieldsList();
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -94,8 +90,8 @@ public interface ModelTypeOrBuilder extends
   int getInputFieldsCount();
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -105,8 +101,8 @@ public interface ModelTypeOrBuilder extends
   java.lang.String getInputFields(int index);
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -118,8 +114,7 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -129,8 +124,7 @@ public interface ModelTypeOrBuilder extends
       getOutputFieldsList();
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -139,8 +133,7 @@ public interface ModelTypeOrBuilder extends
   int getOutputFieldsCount();
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -150,8 +143,7 @@ public interface ModelTypeOrBuilder extends
   java.lang.String getOutputFields(int index);
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -195,10 +187,6 @@ public interface ModelTypeOrBuilder extends
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -208,10 +196,6 @@ public interface ModelTypeOrBuilder extends
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -220,10 +204,6 @@ public interface ModelTypeOrBuilder extends
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -232,10 +212,6 @@ public interface ModelTypeOrBuilder extends
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -245,10 +221,6 @@ public interface ModelTypeOrBuilder extends
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -269,7 +241,7 @@ public interface ModelTypeOrBuilder extends
 
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -278,7 +250,7 @@ public interface ModelTypeOrBuilder extends
       getExpectedInputLayersList();
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -286,7 +258,7 @@ public interface ModelTypeOrBuilder extends
   com.clarifai.grpc.api.ModelLayerInfo getExpectedInputLayers(int index);
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -294,7 +266,7 @@ public interface ModelTypeOrBuilder extends
   int getExpectedInputLayersCount();
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -303,7 +275,7 @@ public interface ModelTypeOrBuilder extends
       getExpectedInputLayersOrBuilderList();
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -356,11 +328,19 @@ public interface ModelTypeOrBuilder extends
       int index);
 
   /**
+   * <pre>
+   * What type of evaluation is supported for this model type.
+   * </pre>
+   *
    * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
    * @return The enum numeric value on the wire for evaluationType.
    */
   int getEvaluationTypeValue();
   /**
+   * <pre>
+   * What type of evaluation is supported for this model type.
+   * </pre>
+   *
    * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
    * @return The evaluationType.
    */

@@ -5,9 +5,8 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * ModelSpec is a definition of a Model type. This is used in model mode of portal
- * to list out the possible models that can be created and can be used to understand more about
- * the possible models in our platform.
+ * ModelType is a definition of a set of models that generally have the same input and output fields. 
+ * This is used to understand more about the possible models in our platform.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.ModelType}
@@ -206,9 +205,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * A unique identifies for this model type. This is differnt than the 'type' field below because
-   * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-   * unique.
+   * A unique identifier for this model type.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -229,9 +226,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A unique identifies for this model type. This is differnt than the 'type' field below because
-   * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-   * unique.
+   * A unique identifier for this model type.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -256,7 +251,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object title_;
   /**
    * <pre>
-   * title for this model in model gallery
+   * A display title for this model.
    * </pre>
    *
    * <code>string title = 2;</code>
@@ -277,7 +272,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * title for this model in model gallery
+   * A display title for this model.
    * </pre>
    *
    * <code>string title = 2;</code>
@@ -348,8 +343,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList inputFields_;
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -361,8 +356,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -373,8 +368,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -386,8 +381,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of input fields that this model accepts. These are the keys of the Model's
-   * InputInfo.fields_map
+   * The list of input fields that this model expects as inputs.
+   * Used to validate that request input data has the expected fields.
    * </pre>
    *
    * <code>repeated string input_fields = 5;</code>
@@ -403,8 +398,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList outputFields_;
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -416,8 +410,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -428,8 +421,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -441,8 +433,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The list of output fields that this model accepts. These are the keys of the Model's
-   * OutputInfo.fields_map
+   * The list of output fields that this model accepts.
    * </pre>
    *
    * <code>repeated string output_fields = 6;</code>
@@ -505,10 +496,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -520,10 +507,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -536,10 +519,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -551,10 +530,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -566,10 +541,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The remaining fields are definitions of the configurable fields that exist.
-   * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-   * if it's the Data object within the OutputInfo object. We decided to not break these up
-   * into input_info, train_info and output_info related parameters and instead use the path
-   * so that they are most flexible.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -600,7 +571,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.clarifai.grpc.api.ModelLayerInfo> expectedInputLayers_;
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -611,7 +582,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -623,7 +594,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -634,7 +605,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -645,7 +616,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Expected input layers of an uploaded model
+   * Expected input layers of an uploaded model.
    * </pre>
    *
    * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -719,6 +690,10 @@ private static final long serialVersionUID = 0L;
   public static final int EVALUATION_TYPE_FIELD_NUMBER = 18;
   private int evaluationType_;
   /**
+   * <pre>
+   * What type of evaluation is supported for this model type.
+   * </pre>
+   *
    * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
    * @return The enum numeric value on the wire for evaluationType.
    */
@@ -726,6 +701,10 @@ private static final long serialVersionUID = 0L;
     return evaluationType_;
   }
   /**
+   * <pre>
+   * What type of evaluation is supported for this model type.
+   * </pre>
+   *
    * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
    * @return The evaluationType.
    */
@@ -1042,9 +1021,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ModelSpec is a definition of a Model type. This is used in model mode of portal
-   * to list out the possible models that can be created and can be used to understand more about
-   * the possible models in our platform.
+   * ModelType is a definition of a set of models that generally have the same input and output fields. 
+   * This is used to understand more about the possible models in our platform.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.ModelType}
@@ -1403,9 +1381,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1425,9 +1401,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1448,9 +1422,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1469,9 +1441,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1485,9 +1455,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique identifies for this model type. This is differnt than the 'type' field below because
-     * the 'type' can be re-used for differnet input and output combinations whereas 'id' is always
-     * unique.
+     * A unique identifier for this model type.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1509,7 +1477,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object title_ = "";
     /**
      * <pre>
-     * title for this model in model gallery
+     * A display title for this model.
      * </pre>
      *
      * <code>string title = 2;</code>
@@ -1529,7 +1497,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * title for this model in model gallery
+     * A display title for this model.
      * </pre>
      *
      * <code>string title = 2;</code>
@@ -1550,7 +1518,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * title for this model in model gallery
+     * A display title for this model.
      * </pre>
      *
      * <code>string title = 2;</code>
@@ -1569,7 +1537,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * title for this model in model gallery
+     * A display title for this model.
      * </pre>
      *
      * <code>string title = 2;</code>
@@ -1583,7 +1551,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * title for this model in model gallery
+     * A display title for this model.
      * </pre>
      *
      * <code>string title = 2;</code>
@@ -1707,8 +1675,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1720,8 +1688,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1732,8 +1700,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1745,8 +1713,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1759,8 +1727,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1780,8 +1748,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1800,8 +1768,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1818,8 +1786,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1833,8 +1801,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of input fields that this model accepts. These are the keys of the Model's
-     * InputInfo.fields_map
+     * The list of input fields that this model expects as inputs.
+     * Used to validate that request input data has the expected fields.
      * </pre>
      *
      * <code>repeated string input_fields = 5;</code>
@@ -1862,8 +1830,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1875,8 +1842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1887,8 +1853,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1900,8 +1865,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1914,8 +1878,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1935,8 +1898,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1955,8 +1917,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1973,8 +1934,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -1988,8 +1948,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The list of output fields that this model accepts. These are the keys of the Model's
-     * OutputInfo.fields_map
+     * The list of output fields that this model accepts.
      * </pre>
      *
      * <code>repeated string output_fields = 6;</code>
@@ -2155,10 +2114,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2173,10 +2128,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2191,10 +2142,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2209,10 +2156,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2234,10 +2177,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2256,10 +2195,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2280,10 +2215,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2305,10 +2236,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2327,10 +2254,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2349,10 +2272,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2372,10 +2291,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2393,10 +2308,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2414,10 +2325,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2429,10 +2336,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2447,10 +2350,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2466,10 +2365,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2481,10 +2376,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2497,10 +2388,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The remaining fields are definitions of the configurable fields that exist.
-     * Each field has path into the Model object such as "name" as a top level or "output_info.data"
-     * if it's the Data object within the OutputInfo object. We decided to not break these up
-     * into input_info, train_info and output_info related parameters and instead use the path
-     * so that they are most flexible.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelTypeField model_type_fields = 11;</code>
@@ -2584,7 +2471,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2598,7 +2485,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2612,7 +2499,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2626,7 +2513,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2647,7 +2534,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2665,7 +2552,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2685,7 +2572,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2706,7 +2593,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2724,7 +2611,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2742,7 +2629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2761,7 +2648,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2778,7 +2665,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2795,7 +2682,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2806,7 +2693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2820,7 +2707,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2835,7 +2722,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2846,7 +2733,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -2858,7 +2745,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Expected input layers of an uploaded model
+     * Expected input layers of an uploaded model.
      * </pre>
      *
      * <code>repeated .clarifai.api.ModelLayerInfo expected_input_layers = 16;</code>
@@ -3196,6 +3083,10 @@ private static final long serialVersionUID = 0L;
 
     private int evaluationType_ = 0;
     /**
+     * <pre>
+     * What type of evaluation is supported for this model type.
+     * </pre>
+     *
      * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @return The enum numeric value on the wire for evaluationType.
      */
@@ -3203,6 +3094,10 @@ private static final long serialVersionUID = 0L;
       return evaluationType_;
     }
     /**
+     * <pre>
+     * What type of evaluation is supported for this model type.
+     * </pre>
+     *
      * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @param value The enum numeric value on the wire for evaluationType to set.
      * @return This builder for chaining.
@@ -3214,6 +3109,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * What type of evaluation is supported for this model type.
+     * </pre>
+     *
      * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @return The evaluationType.
      */
@@ -3224,6 +3123,10 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.clarifai.grpc.api.EvaluationType.UNRECOGNIZED : result;
     }
     /**
+     * <pre>
+     * What type of evaluation is supported for this model type.
+     * </pre>
+     *
      * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @param value The evaluationType to set.
      * @return This builder for chaining.
@@ -3238,6 +3141,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * What type of evaluation is supported for this model type.
+     * </pre>
+     *
      * <code>.clarifai.api.EvaluationType evaluation_type = 18;</code>
      * @return This builder for chaining.
      */
