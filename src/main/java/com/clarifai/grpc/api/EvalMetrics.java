@@ -241,6 +241,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 146: {
+            com.clarifai.grpc.api.Dataset.Builder subBuilder = null;
+            if (predictionsDataset_ != null) {
+              subBuilder = predictionsDataset_.toBuilder();
+            }
+            predictionsDataset_ = input.readMessage(com.clarifai.grpc.api.Dataset.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(predictionsDataset_);
+              predictionsDataset_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -528,6 +541,44 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.clarifai.grpc.api.DatasetOrBuilder getGroundTruthDatasetOrBuilder() {
     return getGroundTruthDataset();
+  }
+
+  public static final int PREDICTIONS_DATASET_FIELD_NUMBER = 18;
+  private com.clarifai.grpc.api.Dataset predictionsDataset_;
+  /**
+   * <pre>
+   * The dataset with predictions
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+   * @return Whether the predictionsDataset field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredictionsDataset() {
+    return predictionsDataset_ != null;
+  }
+  /**
+   * <pre>
+   * The dataset with predictions
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+   * @return The predictionsDataset.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Dataset getPredictionsDataset() {
+    return predictionsDataset_ == null ? com.clarifai.grpc.api.Dataset.getDefaultInstance() : predictionsDataset_;
+  }
+  /**
+   * <pre>
+   * The dataset with predictions
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetOrBuilder getPredictionsDatasetOrBuilder() {
+    return getPredictionsDataset();
   }
 
   public static final int SUMMARY_FIELD_NUMBER = 2;
@@ -966,6 +1017,9 @@ private static final long serialVersionUID = 0L;
     if (extendedMetrics_ != null) {
       output.writeMessage(17, getExtendedMetrics());
     }
+    if (predictionsDataset_ != null) {
+      output.writeMessage(18, getPredictionsDataset());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1040,6 +1094,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(17, getExtendedMetrics());
     }
+    if (predictionsDataset_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, getPredictionsDataset());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1075,6 +1133,11 @@ private static final long serialVersionUID = 0L;
     if (hasGroundTruthDataset()) {
       if (!getGroundTruthDataset()
           .equals(other.getGroundTruthDataset())) return false;
+    }
+    if (hasPredictionsDataset() != other.hasPredictionsDataset()) return false;
+    if (hasPredictionsDataset()) {
+      if (!getPredictionsDataset()
+          .equals(other.getPredictionsDataset())) return false;
     }
     if (hasSummary() != other.hasSummary()) return false;
     if (hasSummary()) {
@@ -1144,6 +1207,10 @@ private static final long serialVersionUID = 0L;
     if (hasGroundTruthDataset()) {
       hash = (37 * hash) + GROUND_TRUTH_DATASET_FIELD_NUMBER;
       hash = (53 * hash) + getGroundTruthDataset().hashCode();
+    }
+    if (hasPredictionsDataset()) {
+      hash = (37 * hash) + PREDICTIONS_DATASET_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictionsDataset().hashCode();
     }
     if (hasSummary()) {
       hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
@@ -1355,6 +1422,12 @@ private static final long serialVersionUID = 0L;
         groundTruthDataset_ = null;
         groundTruthDatasetBuilder_ = null;
       }
+      if (predictionsDatasetBuilder_ == null) {
+        predictionsDataset_ = null;
+      } else {
+        predictionsDataset_ = null;
+        predictionsDatasetBuilder_ = null;
+      }
       if (summaryBuilder_ == null) {
         summary_ = null;
       } else {
@@ -1465,6 +1538,11 @@ private static final long serialVersionUID = 0L;
         result.groundTruthDataset_ = groundTruthDataset_;
       } else {
         result.groundTruthDataset_ = groundTruthDatasetBuilder_.build();
+      }
+      if (predictionsDatasetBuilder_ == null) {
+        result.predictionsDataset_ = predictionsDataset_;
+      } else {
+        result.predictionsDataset_ = predictionsDatasetBuilder_.build();
       }
       if (summaryBuilder_ == null) {
         result.summary_ = summary_;
@@ -1609,6 +1687,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasGroundTruthDataset()) {
         mergeGroundTruthDataset(other.getGroundTruthDataset());
+      }
+      if (other.hasPredictionsDataset()) {
+        mergePredictionsDataset(other.getPredictionsDataset());
       }
       if (other.hasSummary()) {
         mergeSummary(other.getSummary());
@@ -2503,6 +2584,161 @@ private static final long serialVersionUID = 0L;
         groundTruthDataset_ = null;
       }
       return groundTruthDatasetBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Dataset predictionsDataset_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> predictionsDatasetBuilder_;
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     * @return Whether the predictionsDataset field is set.
+     */
+    public boolean hasPredictionsDataset() {
+      return predictionsDatasetBuilder_ != null || predictionsDataset_ != null;
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     * @return The predictionsDataset.
+     */
+    public com.clarifai.grpc.api.Dataset getPredictionsDataset() {
+      if (predictionsDatasetBuilder_ == null) {
+        return predictionsDataset_ == null ? com.clarifai.grpc.api.Dataset.getDefaultInstance() : predictionsDataset_;
+      } else {
+        return predictionsDatasetBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    public Builder setPredictionsDataset(com.clarifai.grpc.api.Dataset value) {
+      if (predictionsDatasetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predictionsDataset_ = value;
+        onChanged();
+      } else {
+        predictionsDatasetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    public Builder setPredictionsDataset(
+        com.clarifai.grpc.api.Dataset.Builder builderForValue) {
+      if (predictionsDatasetBuilder_ == null) {
+        predictionsDataset_ = builderForValue.build();
+        onChanged();
+      } else {
+        predictionsDatasetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    public Builder mergePredictionsDataset(com.clarifai.grpc.api.Dataset value) {
+      if (predictionsDatasetBuilder_ == null) {
+        if (predictionsDataset_ != null) {
+          predictionsDataset_ =
+            com.clarifai.grpc.api.Dataset.newBuilder(predictionsDataset_).mergeFrom(value).buildPartial();
+        } else {
+          predictionsDataset_ = value;
+        }
+        onChanged();
+      } else {
+        predictionsDatasetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    public Builder clearPredictionsDataset() {
+      if (predictionsDatasetBuilder_ == null) {
+        predictionsDataset_ = null;
+        onChanged();
+      } else {
+        predictionsDataset_ = null;
+        predictionsDatasetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    public com.clarifai.grpc.api.Dataset.Builder getPredictionsDatasetBuilder() {
+      
+      onChanged();
+      return getPredictionsDatasetFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    public com.clarifai.grpc.api.DatasetOrBuilder getPredictionsDatasetOrBuilder() {
+      if (predictionsDatasetBuilder_ != null) {
+        return predictionsDatasetBuilder_.getMessageOrBuilder();
+      } else {
+        return predictionsDataset_ == null ?
+            com.clarifai.grpc.api.Dataset.getDefaultInstance() : predictionsDataset_;
+      }
+    }
+    /**
+     * <pre>
+     * The dataset with predictions
+     * </pre>
+     *
+     * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder> 
+        getPredictionsDatasetFieldBuilder() {
+      if (predictionsDatasetBuilder_ == null) {
+        predictionsDatasetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Dataset, com.clarifai.grpc.api.Dataset.Builder, com.clarifai.grpc.api.DatasetOrBuilder>(
+                getPredictionsDataset(),
+                getParentForChildren(),
+                isClean());
+        predictionsDataset_ = null;
+      }
+      return predictionsDatasetBuilder_;
     }
 
     private com.clarifai.grpc.api.MetricsSummary summary_;

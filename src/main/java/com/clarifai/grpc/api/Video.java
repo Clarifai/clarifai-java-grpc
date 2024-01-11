@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string thumbnail_url = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2644
+   *     See proto/clarifai/api/resources.proto;l=2646
    * @return The thumbnailUrl.
    */
   @java.lang.Override
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string thumbnail_url = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2644
+   *     See proto/clarifai/api/resources.proto;l=2646
    * @return The bytes for thumbnailUrl.
    */
   @java.lang.Override
@@ -1054,7 +1054,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2644
+     *     See proto/clarifai/api/resources.proto;l=2646
      * @return The thumbnailUrl.
      */
     @java.lang.Deprecated public java.lang.String getThumbnailUrl() {
@@ -1078,7 +1078,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2644
+     *     See proto/clarifai/api/resources.proto;l=2646
      * @return The bytes for thumbnailUrl.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1103,7 +1103,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2644
+     *     See proto/clarifai/api/resources.proto;l=2646
      * @param value The thumbnailUrl to set.
      * @return This builder for chaining.
      */
@@ -1126,7 +1126,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2644
+     *     See proto/clarifai/api/resources.proto;l=2646
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearThumbnailUrl() {
@@ -1144,7 +1144,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string thumbnail_url = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Video.thumbnail_url is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2644
+     *     See proto/clarifai/api/resources.proto;l=2646
      * @param value The bytes for thumbnailUrl to set.
      * @return This builder for chaining.
      */

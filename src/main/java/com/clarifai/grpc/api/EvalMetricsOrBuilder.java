@@ -137,6 +137,33 @@ public interface EvalMetricsOrBuilder extends
   com.clarifai.grpc.api.DatasetOrBuilder getGroundTruthDatasetOrBuilder();
 
   /**
+   * <pre>
+   * The dataset with predictions
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+   * @return Whether the predictionsDataset field is set.
+   */
+  boolean hasPredictionsDataset();
+  /**
+   * <pre>
+   * The dataset with predictions
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+   * @return The predictionsDataset.
+   */
+  com.clarifai.grpc.api.Dataset getPredictionsDataset();
+  /**
+   * <pre>
+   * The dataset with predictions
+   * </pre>
+   *
+   * <code>.clarifai.api.Dataset predictions_dataset = 18;</code>
+   */
+  com.clarifai.grpc.api.DatasetOrBuilder getPredictionsDatasetOrBuilder();
+
+  /**
    * <code>.clarifai.api.MetricsSummary summary = 2;</code>
    * @return Whether the summary field is set.
    */

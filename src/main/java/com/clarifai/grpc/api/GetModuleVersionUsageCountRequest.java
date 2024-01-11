@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * Request to get the number of installations (by all users) for the module version 
+ * Request to get the number of installations (by all users) for the module version
  * </pre>
  *
  * Protobuf type {@code clarifai.api.GetModuleVersionUsageCountRequest}
@@ -397,7 +397,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request to get the number of installations (by all users) for the module version 
+   * Request to get the number of installations (by all users) for the module version
    * </pre>
    *
    * Protobuf type {@code clarifai.api.GetModuleVersionUsageCountRequest}
