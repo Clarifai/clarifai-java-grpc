@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.PostSearchesRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5695
+   *     See proto/clarifai/api/service.proto;l=5688
    * @return Whether the query field is set.
    */
   @java.lang.Override
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.PostSearchesRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=5695
+   *     See proto/clarifai/api/service.proto;l=5688
    * @return The query.
    */
   @java.lang.Override
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.PostSearchesRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5695
+     *     See proto/clarifai/api/service.proto;l=5688
      * @return Whether the query field is set.
      */
     @java.lang.Deprecated public boolean hasQuery() {
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.Query query = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.PostSearchesRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=5695
+     *     See proto/clarifai/api/service.proto;l=5688
      * @return The query.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.Query getQuery() {
