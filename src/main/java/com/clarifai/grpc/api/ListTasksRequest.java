@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     reviewUserIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     labelOrderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -121,6 +122,15 @@ private static final long serialVersionUID = 0L;
             labelOrderIds_.add(s);
             break;
           }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              ids_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            ids_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -149,6 +159,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         labelOrderIds_ = labelOrderIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        ids_ = ids_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -449,6 +462,57 @@ private static final long serialVersionUID = 0L;
     return additionalFields_.getByteString(index);
   }
 
+  public static final int IDS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList ids_;
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @return A list containing the ids.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getIdsList() {
+    return ids_;
+  }
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @return The count of ids.
+   */
+  public int getIdsCount() {
+    return ids_.size();
+  }
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @param index The index of the element to return.
+   * @return The ids at the given index.
+   */
+  public java.lang.String getIds(int index) {
+    return ids_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ids at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getIdsBytes(int index) {
+    return ids_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -486,6 +550,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < labelOrderIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, labelOrderIds_.getRaw(i));
+    }
+    for (int i = 0; i < ids_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, ids_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -544,6 +611,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getLabelOrderIdsList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < ids_.size(); i++) {
+        dataSize += computeStringSizeNoTag(ids_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIdsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -578,6 +653,8 @@ private static final long serialVersionUID = 0L;
         != other.getIncludingLabelOrderTasks()) return false;
     if (!getAdditionalFieldsList()
         .equals(other.getAdditionalFieldsList())) return false;
+    if (!getIdsList()
+        .equals(other.getIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -615,6 +692,10 @@ private static final long serialVersionUID = 0L;
     if (getAdditionalFieldsCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    }
+    if (getIdsCount() > 0) {
+      hash = (37 * hash) + IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -773,6 +854,8 @@ private static final long serialVersionUID = 0L;
 
       additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -828,6 +911,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.additionalFields_ = additionalFields_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        ids_ = ids_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.ids_ = ids_;
       onBuilt();
       return result;
     }
@@ -925,6 +1013,16 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureAdditionalFieldsIsMutable();
           additionalFields_.addAll(other.additionalFields_);
+        }
+        onChanged();
+      }
+      if (!other.ids_.isEmpty()) {
+        if (ids_.isEmpty()) {
+          ids_ = other.ids_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureIdsIsMutable();
+          ids_.addAll(other.ids_);
         }
         onChanged();
       }
@@ -1804,6 +1902,152 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureAdditionalFieldsIsMutable();
       additionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureIdsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @return A list containing the ids.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getIdsList() {
+      return ids_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @return The count of ids.
+     */
+    public int getIdsCount() {
+      return ids_.size();
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @param index The index of the element to return.
+     * @return The ids at the given index.
+     */
+    public java.lang.String getIds(int index) {
+      return ids_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the ids at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getIdsBytes(int index) {
+      return ids_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The ids to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdsIsMutable();
+      ids_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @param value The ids to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureIdsIsMutable();
+      ids_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @param values The ids to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, ids_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIds() {
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional) task IDs to filter on
+     * </pre>
+     *
+     * <code>repeated string ids = 9;</code>
+     * @param value The bytes of the ids to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureIdsIsMutable();
+      ids_.add(value);
       onChanged();
       return this;
     }

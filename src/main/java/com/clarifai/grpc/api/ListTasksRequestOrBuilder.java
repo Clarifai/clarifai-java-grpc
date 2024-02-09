@@ -222,4 +222,45 @@ public interface ListTasksRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAdditionalFieldsBytes(int index);
+
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @return A list containing the ids.
+   */
+  java.util.List<java.lang.String>
+      getIdsList();
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @return The count of ids.
+   */
+  int getIdsCount();
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @param index The index of the element to return.
+   * @return The ids at the given index.
+   */
+  java.lang.String getIds(int index);
+  /**
+   * <pre>
+   * (optional) task IDs to filter on
+   * </pre>
+   *
+   * <code>repeated string ids = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the ids at the given index.
+   */
+  com.google.protobuf.ByteString
+      getIdsBytes(int index);
 }

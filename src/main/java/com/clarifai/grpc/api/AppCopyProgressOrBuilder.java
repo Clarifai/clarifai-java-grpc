@@ -20,7 +20,7 @@ public interface AppCopyProgressOrBuilder extends
       getFieldBytes();
 
   /**
-   * <code>int32 value = 2;</code>
+   * <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The value.
    */
   int getValue();

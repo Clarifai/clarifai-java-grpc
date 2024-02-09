@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
   public static final int VALUE_FIELD_NUMBER = 2;
   private int value_;
   /**
-   * <code>int32 value = 2;</code>
+   * <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    * @return The value.
    */
   @java.lang.Override
@@ -540,7 +540,7 @@ private static final long serialVersionUID = 0L;
 
     private int value_ ;
     /**
-     * <code>int32 value = 2;</code>
+     * <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return The value.
      */
     @java.lang.Override
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return value_;
     }
     /**
-     * <code>int32 value = 2;</code>
+     * <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @param value The value to set.
      * @return This builder for chaining.
      */
@@ -559,7 +559,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 value = 2;</code>
+     * <code>int32 value = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      * @return This builder for chaining.
      */
     public Builder clearValue() {
