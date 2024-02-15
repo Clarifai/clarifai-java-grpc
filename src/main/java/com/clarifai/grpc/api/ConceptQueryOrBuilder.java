@@ -29,7 +29,7 @@ public interface ConceptQueryOrBuilder extends
 
   /**
    * <pre>
-   * (optional) The language of the concept name in a search. Defaults to English.
+   * The language of the concept name in a search. Defaults to English.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -38,7 +38,7 @@ public interface ConceptQueryOrBuilder extends
   java.lang.String getLanguage();
   /**
    * <pre>
-   * (optional) The language of the concept name in a search. Defaults to English.
+   * The language of the concept name in a search. Defaults to English.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -49,7 +49,7 @@ public interface ConceptQueryOrBuilder extends
 
   /**
    * <pre>
-   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * The id of workflow. If no id is provided, then application base workflow is used.
    * </pre>
    *
    * <code>string workflow_id = 3;</code>
@@ -58,7 +58,7 @@ public interface ConceptQueryOrBuilder extends
   java.lang.String getWorkflowId();
   /**
    * <pre>
-   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * The id of workflow. If no id is provided, then application base workflow is used.
    * </pre>
    *
    * <code>string workflow_id = 3;</code>
@@ -66,4 +66,58 @@ public interface ConceptQueryOrBuilder extends
    */
   com.google.protobuf.ByteString
       getWorkflowIdBytes();
+
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @return A list containing the useCases.
+   */
+  java.util.List<com.clarifai.grpc.api.WorkflowModelUseCase> getUseCasesList();
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @return The count of useCases.
+   */
+  int getUseCasesCount();
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  com.clarifai.grpc.api.WorkflowModelUseCase getUseCases(int index);
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @return A list containing the enum numeric values on the wire for useCases.
+   */
+  java.util.List<java.lang.Integer>
+  getUseCasesValueList();
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of useCases at the given index.
+   */
+  int getUseCasesValue(int index);
 }

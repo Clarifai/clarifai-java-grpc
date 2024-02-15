@@ -161,7 +161,7 @@ public enum ValueComparator
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(5);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final ValueComparator[] VALUES = values();

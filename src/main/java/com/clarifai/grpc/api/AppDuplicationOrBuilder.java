@@ -91,7 +91,7 @@ public interface AppDuplicationOrBuilder extends
    *
    * <code>string existing_app_id = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2860
+   *     See proto/clarifai/api/resources.proto;l=2875
    * @return The existingAppId.
    */
   @java.lang.Deprecated java.lang.String getExistingAppId();
@@ -105,7 +105,7 @@ public interface AppDuplicationOrBuilder extends
    *
    * <code>string existing_app_id = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.existing_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2860
+   *     See proto/clarifai/api/resources.proto;l=2875
    * @return The bytes for existingAppId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -121,7 +121,7 @@ public interface AppDuplicationOrBuilder extends
    *
    * <code>string new_app_id = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2868
+   *     See proto/clarifai/api/resources.proto;l=2883
    * @return The newAppId.
    */
   @java.lang.Deprecated java.lang.String getNewAppId();
@@ -135,7 +135,7 @@ public interface AppDuplicationOrBuilder extends
    *
    * <code>string new_app_id = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2868
+   *     See proto/clarifai/api/resources.proto;l=2883
    * @return The bytes for newAppId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -151,7 +151,7 @@ public interface AppDuplicationOrBuilder extends
    *
    * <code>string new_app_name = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2876
+   *     See proto/clarifai/api/resources.proto;l=2891
    * @return The newAppName.
    */
   @java.lang.Deprecated java.lang.String getNewAppName();
@@ -165,7 +165,7 @@ public interface AppDuplicationOrBuilder extends
    *
    * <code>string new_app_name = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.AppDuplication.new_app_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2876
+   *     See proto/clarifai/api/resources.proto;l=2891
    * @return The bytes for newAppName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -287,6 +287,7 @@ public interface AppDuplicationOrBuilder extends
    *  - annotations
    *  - models
    *  - workflows
+   *  - installed_module_versions
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -301,6 +302,7 @@ public interface AppDuplicationOrBuilder extends
    *  - annotations
    *  - models
    *  - workflows
+   *  - installed_module_versions
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -314,6 +316,7 @@ public interface AppDuplicationOrBuilder extends
    *  - annotations
    *  - models
    *  - workflows
+   *  - installed_module_versions
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -327,6 +330,7 @@ public interface AppDuplicationOrBuilder extends
    *  - annotations
    *  - models
    *  - workflows
+   *  - installed_module_versions
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>
@@ -341,6 +345,7 @@ public interface AppDuplicationOrBuilder extends
    *  - annotations
    *  - models
    *  - workflows
+   *  - installed_module_versions
    * </pre>
    *
    * <code>repeated .clarifai.api.AppCopyProgress progress = 9;</code>

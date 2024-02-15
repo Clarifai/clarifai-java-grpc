@@ -14,7 +14,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>bool concepts_mutually_exclusive = 1 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.concepts_mutually_exclusive is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1463
+   *     See proto/clarifai/api/resources.proto;l=1478
    * @return The conceptsMutuallyExclusive.
    */
   @java.lang.Deprecated boolean getConceptsMutuallyExclusive();
@@ -27,7 +27,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1466
+   *     See proto/clarifai/api/resources.proto;l=1481
    * @return The existingModelId.
    */
   @java.lang.Deprecated java.lang.String getExistingModelId();
@@ -39,7 +39,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>string existing_model_id = 3 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.existing_model_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1466
+   *     See proto/clarifai/api/resources.proto;l=1481
    * @return The bytes for existingModelId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -73,7 +73,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1471
+   *     See proto/clarifai/api/resources.proto;l=1486
    * @return The hyperParameters.
    */
   @java.lang.Deprecated java.lang.String getHyperParameters();
@@ -85,7 +85,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>string hyper_parameters = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.hyper_parameters is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1471
+   *     See proto/clarifai/api/resources.proto;l=1486
    * @return The bytes for hyperParameters.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -214,7 +214,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1490
+   *     See proto/clarifai/api/resources.proto;l=1505
    * @return The embedModelVersionId.
    */
   @java.lang.Deprecated java.lang.String getEmbedModelVersionId();
@@ -226,7 +226,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1490
+   *     See proto/clarifai/api/resources.proto;l=1505
    * @return The bytes for embedModelVersionId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -255,7 +255,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.model_metadata is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1500
+   *     See proto/clarifai/api/resources.proto;l=1515
    * @return Whether the modelMetadata field is set.
    */
   @java.lang.Deprecated boolean hasModelMetadata();
@@ -271,7 +271,7 @@ public interface OutputConfigOrBuilder extends
    *
    * <code>.google.protobuf.Struct model_metadata = 17 [deprecated = true];</code>
    * @deprecated clarifai.api.OutputConfig.model_metadata is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1500
+   *     See proto/clarifai/api/resources.proto;l=1515
    * @return The modelMetadata.
    */
   @java.lang.Deprecated com.google.protobuf.Struct getModelMetadata();

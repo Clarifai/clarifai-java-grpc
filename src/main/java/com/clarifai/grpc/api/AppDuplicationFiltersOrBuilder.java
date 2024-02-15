@@ -57,4 +57,14 @@ public interface AppDuplicationFiltersOrBuilder extends
    * @return The copyWorkflows.
    */
   boolean getCopyWorkflows();
+
+  /**
+   * <pre>
+   * Copy installed module versions.
+   * </pre>
+   *
+   * <code>bool copy_installed_module_versions = 6;</code>
+   * @return The copyInstalledModuleVersions.
+   */
+  boolean getCopyInstalledModuleVersions();
 }

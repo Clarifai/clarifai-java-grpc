@@ -251,7 +251,7 @@ public enum DatasetVersionMetricsGroupType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(0);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final DatasetVersionMetricsGroupType[] VALUES = values();

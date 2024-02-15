@@ -103,7 +103,7 @@ public enum ValidationErrorType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(13);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(14);
   }
 
   private static final ValidationErrorType[] VALUES = values();

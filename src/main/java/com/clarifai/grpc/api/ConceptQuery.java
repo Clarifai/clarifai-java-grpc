@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     language_ = "";
     workflowId_ = "";
+    useCases_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -45,6 +46,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -73,6 +75,29 @@ private static final long serialVersionUID = 0L;
             workflowId_ = s;
             break;
           }
+          case 32: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              useCases_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            useCases_.add(rawValue);
+            break;
+          }
+          case 34: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                useCases_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              useCases_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -90,6 +115,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        useCases_ = java.util.Collections.unmodifiableList(useCases_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -157,7 +185,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object language_;
   /**
    * <pre>
-   * (optional) The language of the concept name in a search. Defaults to English.
+   * The language of the concept name in a search. Defaults to English.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -178,7 +206,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional) The language of the concept name in a search. Defaults to English.
+   * The language of the concept name in a search. Defaults to English.
    * </pre>
    *
    * <code>string language = 2;</code>
@@ -203,7 +231,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object workflowId_;
   /**
    * <pre>
-   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * The id of workflow. If no id is provided, then application base workflow is used.
    * </pre>
    *
    * <code>string workflow_id = 3;</code>
@@ -224,7 +252,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+   * The id of workflow. If no id is provided, then application base workflow is used.
    * </pre>
    *
    * <code>string workflow_id = 3;</code>
@@ -245,6 +273,89 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USE_CASES_FIELD_NUMBER = 4;
+  private java.util.List<java.lang.Integer> useCases_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, com.clarifai.grpc.api.WorkflowModelUseCase> useCases_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.clarifai.grpc.api.WorkflowModelUseCase>() {
+            public com.clarifai.grpc.api.WorkflowModelUseCase convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.clarifai.grpc.api.WorkflowModelUseCase result = com.clarifai.grpc.api.WorkflowModelUseCase.valueOf(from);
+              return result == null ? com.clarifai.grpc.api.WorkflowModelUseCase.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @return A list containing the useCases.
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.WorkflowModelUseCase> getUseCasesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.clarifai.grpc.api.WorkflowModelUseCase>(useCases_, useCases_converter_);
+  }
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @return The count of useCases.
+   */
+  @java.lang.Override
+  public int getUseCasesCount() {
+    return useCases_.size();
+  }
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @param index The index of the element to return.
+   * @return The useCases at the given index.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowModelUseCase getUseCases(int index) {
+    return useCases_converter_.convert(useCases_.get(index));
+  }
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @return A list containing the enum numeric values on the wire for useCases.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getUseCasesValueList() {
+    return useCases_;
+  }
+  /**
+   * <pre>
+   * The concepts must belong to workflow models with specified use cases.
+   * Multiple values are joined using an OR condition.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of useCases at the given index.
+   */
+  @java.lang.Override
+  public int getUseCasesValue(int index) {
+    return useCases_.get(index);
+  }
+  private int useCasesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -259,6 +370,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -267,6 +379,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workflowId_);
+    }
+    if (getUseCasesList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(useCasesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < useCases_.size(); i++) {
+      output.writeEnumNoTag(useCases_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -285,6 +404,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workflowId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < useCases_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(useCases_.get(i));
+      }
+      size += dataSize;
+      if (!getUseCasesList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }useCasesMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -307,6 +438,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLanguage())) return false;
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
+    if (!useCases_.equals(other.useCases_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -324,6 +456,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLanguage().hashCode();
     hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowId().hashCode();
+    if (getUseCasesCount() > 0) {
+      hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
+      hash = (53 * hash) + useCases_.hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -467,6 +603,8 @@ private static final long serialVersionUID = 0L;
 
       workflowId_ = "";
 
+      useCases_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -493,9 +631,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.ConceptQuery buildPartial() {
       com.clarifai.grpc.api.ConceptQuery result = new com.clarifai.grpc.api.ConceptQuery(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.language_ = language_;
       result.workflowId_ = workflowId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        useCases_ = java.util.Collections.unmodifiableList(useCases_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.useCases_ = useCases_;
       onBuilt();
       return result;
     }
@@ -556,6 +700,16 @@ private static final long serialVersionUID = 0L;
         workflowId_ = other.workflowId_;
         onChanged();
       }
+      if (!other.useCases_.isEmpty()) {
+        if (useCases_.isEmpty()) {
+          useCases_ = other.useCases_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureUseCasesIsMutable();
+          useCases_.addAll(other.useCases_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -584,6 +738,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -684,7 +839,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object language_ = "";
     /**
      * <pre>
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -704,7 +859,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -725,7 +880,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -744,7 +899,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -758,7 +913,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The language of the concept name in a search. Defaults to English.
+     * The language of the concept name in a search. Defaults to English.
      * </pre>
      *
      * <code>string language = 2;</code>
@@ -780,7 +935,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object workflowId_ = "";
     /**
      * <pre>
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      * </pre>
      *
      * <code>string workflow_id = 3;</code>
@@ -800,7 +955,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      * </pre>
      *
      * <code>string workflow_id = 3;</code>
@@ -821,7 +976,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      * </pre>
      *
      * <code>string workflow_id = 3;</code>
@@ -840,7 +995,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      * </pre>
      *
      * <code>string workflow_id = 3;</code>
@@ -854,7 +1009,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional) The id of workflow. If no id is provided, then application base workflow is used.
+     * The id of workflow. If no id is provided, then application base workflow is used.
      * </pre>
      *
      * <code>string workflow_id = 3;</code>
@@ -869,6 +1024,206 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       workflowId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> useCases_ =
+      java.util.Collections.emptyList();
+    private void ensureUseCasesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        useCases_ = new java.util.ArrayList<java.lang.Integer>(useCases_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @return A list containing the useCases.
+     */
+    public java.util.List<com.clarifai.grpc.api.WorkflowModelUseCase> getUseCasesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.clarifai.grpc.api.WorkflowModelUseCase>(useCases_, useCases_converter_);
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @return The count of useCases.
+     */
+    public int getUseCasesCount() {
+      return useCases_.size();
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param index The index of the element to return.
+     * @return The useCases at the given index.
+     */
+    public com.clarifai.grpc.api.WorkflowModelUseCase getUseCases(int index) {
+      return useCases_converter_.convert(useCases_.get(index));
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The useCases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseCases(
+        int index, com.clarifai.grpc.api.WorkflowModelUseCase value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUseCasesIsMutable();
+      useCases_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param value The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCases(com.clarifai.grpc.api.WorkflowModelUseCase value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUseCasesIsMutable();
+      useCases_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param values The useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUseCases(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.WorkflowModelUseCase> values) {
+      ensureUseCasesIsMutable();
+      for (com.clarifai.grpc.api.WorkflowModelUseCase value : values) {
+        useCases_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUseCases() {
+      useCases_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @return A list containing the enum numeric values on the wire for useCases.
+     */
+    public java.util.List<java.lang.Integer>
+    getUseCasesValueList() {
+      return java.util.Collections.unmodifiableList(useCases_);
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of useCases at the given index.
+     */
+    public int getUseCasesValue(int index) {
+      return useCases_.get(index);
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for useCases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseCasesValue(
+        int index, int value) {
+      ensureUseCasesIsMutable();
+      useCases_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param value The enum numeric value on the wire for useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUseCasesValue(int value) {
+      ensureUseCasesIsMutable();
+      useCases_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The concepts must belong to workflow models with specified use cases.
+     * Multiple values are joined using an OR condition.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.WorkflowModelUseCase use_cases = 4;</code>
+     * @param values The enum numeric values on the wire for useCases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUseCasesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureUseCasesIsMutable();
+      for (int value : values) {
+        useCases_.add(value);
+      }
       onChanged();
       return this;
     }

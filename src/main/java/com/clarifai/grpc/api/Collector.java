@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
   private boolean collectOutputs_;
   /**
    * <pre>
-   * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+   * Whether to collect outputs or not. Default is false. If selected, outputs from the
    * original model predict call will be posted as annotations along with the input with success status.
    * </pre>
    *
@@ -2073,7 +2073,7 @@ private static final long serialVersionUID = 0L;
     private boolean collectOutputs_ ;
     /**
      * <pre>
-     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the
      * original model predict call will be posted as annotations along with the input with success status.
      * </pre>
      *
@@ -2086,7 +2086,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the
      * original model predict call will be posted as annotations along with the input with success status.
      * </pre>
      *
@@ -2102,7 +2102,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+     * Whether to collect outputs or not. Default is false. If selected, outputs from the
      * original model predict call will be posted as annotations along with the input with success status.
      * </pre>
      *

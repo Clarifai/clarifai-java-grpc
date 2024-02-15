@@ -4,69 +4,57 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.EvaluationType}
+ * Protobuf enum {@code clarifai.api.WorkflowModelUseCase}
  */
-public enum EvaluationType
+public enum WorkflowModelUseCase
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Undefined = 0;</code>
+   * <code>WORKFLOW_MODEL_USE_CASE_NOT_SET = 0;</code>
    */
-  Undefined(0),
+  WORKFLOW_MODEL_USE_CASE_NOT_SET(0),
   /**
    * <pre>
-   * default
+   * Classifier models without a detector parent (recursive check) in a workflow
+   * are used for classification.
    * </pre>
    *
-   * <code>Classification = 1;</code>
+   * <code>CLASSIFICATION = 1;</code>
    */
-  Classification(1),
+  CLASSIFICATION(1),
   /**
-   * <code>Detection = 2;</code>
+   * <pre>
+   * Detector models in a workflow are used for detection.
+   * Classifier models that run after a detector model are also used for detection.
+   * </pre>
+   *
+   * <code>DETECTION = 2;</code>
    */
-  Detection(2),
-  /**
-   * <code>Segmentation = 3;</code>
-   */
-  Segmentation(3),
-  /**
-   * <code>Clustering = 4;</code>
-   */
-  Clustering(4),
-  /**
-   * <code>Tracker = 5;</code>
-   */
-  Tracker(5),
+  DETECTION(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Undefined = 0;</code>
+   * <code>WORKFLOW_MODEL_USE_CASE_NOT_SET = 0;</code>
    */
-  public static final int Undefined_VALUE = 0;
+  public static final int WORKFLOW_MODEL_USE_CASE_NOT_SET_VALUE = 0;
   /**
    * <pre>
-   * default
+   * Classifier models without a detector parent (recursive check) in a workflow
+   * are used for classification.
    * </pre>
    *
-   * <code>Classification = 1;</code>
+   * <code>CLASSIFICATION = 1;</code>
    */
-  public static final int Classification_VALUE = 1;
+  public static final int CLASSIFICATION_VALUE = 1;
   /**
-   * <code>Detection = 2;</code>
+   * <pre>
+   * Detector models in a workflow are used for detection.
+   * Classifier models that run after a detector model are also used for detection.
+   * </pre>
+   *
+   * <code>DETECTION = 2;</code>
    */
-  public static final int Detection_VALUE = 2;
-  /**
-   * <code>Segmentation = 3;</code>
-   */
-  public static final int Segmentation_VALUE = 3;
-  /**
-   * <code>Clustering = 4;</code>
-   */
-  public static final int Clustering_VALUE = 4;
-  /**
-   * <code>Tracker = 5;</code>
-   */
-  public static final int Tracker_VALUE = 5;
+  public static final int DETECTION_VALUE = 2;
 
 
   public final int getNumber() {
@@ -83,7 +71,7 @@ public enum EvaluationType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static EvaluationType valueOf(int value) {
+  public static WorkflowModelUseCase valueOf(int value) {
     return forNumber(value);
   }
 
@@ -91,27 +79,24 @@ public enum EvaluationType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static EvaluationType forNumber(int value) {
+  public static WorkflowModelUseCase forNumber(int value) {
     switch (value) {
-      case 0: return Undefined;
-      case 1: return Classification;
-      case 2: return Detection;
-      case 3: return Segmentation;
-      case 4: return Clustering;
-      case 5: return Tracker;
+      case 0: return WORKFLOW_MODEL_USE_CASE_NOT_SET;
+      case 1: return CLASSIFICATION;
+      case 2: return DETECTION;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<EvaluationType>
+  public static com.google.protobuf.Internal.EnumLiteMap<WorkflowModelUseCase>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      EvaluationType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<EvaluationType>() {
-          public EvaluationType findValueByNumber(int number) {
-            return EvaluationType.forNumber(number);
+      WorkflowModelUseCase> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<WorkflowModelUseCase>() {
+          public WorkflowModelUseCase findValueByNumber(int number) {
+            return WorkflowModelUseCase.forNumber(number);
           }
         };
 
@@ -129,12 +114,12 @@ public enum EvaluationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(7);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(0);
   }
 
-  private static final EvaluationType[] VALUES = values();
+  private static final WorkflowModelUseCase[] VALUES = values();
 
-  public static EvaluationType valueOf(
+  public static WorkflowModelUseCase valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -148,10 +133,10 @@ public enum EvaluationType
 
   private final int value;
 
-  private EvaluationType(int value) {
+  private WorkflowModelUseCase(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.EvaluationType)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.WorkflowModelUseCase)
 }
 

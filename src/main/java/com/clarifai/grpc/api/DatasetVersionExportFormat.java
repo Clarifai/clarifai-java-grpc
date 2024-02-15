@@ -139,7 +139,7 @@ public enum DatasetVersionExportFormat
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(1);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DatasetVersionExportFormat[] VALUES = values();

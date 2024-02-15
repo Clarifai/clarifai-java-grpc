@@ -130,7 +130,7 @@ public enum AnnotationDataType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(9);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(10);
   }
 
   private static final AnnotationDataType[] VALUES = values();

@@ -77,6 +77,11 @@ private static final long serialVersionUID = 0L;
             copyWorkflows_ = input.readBool();
             break;
           }
+          case 48: {
+
+            copyInstalledModuleVersions_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -187,6 +192,21 @@ private static final long serialVersionUID = 0L;
     return copyWorkflows_;
   }
 
+  public static final int COPY_INSTALLED_MODULE_VERSIONS_FIELD_NUMBER = 6;
+  private boolean copyInstalledModuleVersions_;
+  /**
+   * <pre>
+   * Copy installed module versions.
+   * </pre>
+   *
+   * <code>bool copy_installed_module_versions = 6;</code>
+   * @return The copyInstalledModuleVersions.
+   */
+  @java.lang.Override
+  public boolean getCopyInstalledModuleVersions() {
+    return copyInstalledModuleVersions_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -215,6 +235,9 @@ private static final long serialVersionUID = 0L;
     }
     if (copyWorkflows_ != false) {
       output.writeBool(5, copyWorkflows_);
+    }
+    if (copyInstalledModuleVersions_ != false) {
+      output.writeBool(6, copyInstalledModuleVersions_);
     }
     unknownFields.writeTo(output);
   }
@@ -245,6 +268,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, copyWorkflows_);
     }
+    if (copyInstalledModuleVersions_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, copyInstalledModuleVersions_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -270,6 +297,8 @@ private static final long serialVersionUID = 0L;
         != other.getCopyModels()) return false;
     if (getCopyWorkflows()
         != other.getCopyWorkflows()) return false;
+    if (getCopyInstalledModuleVersions()
+        != other.getCopyInstalledModuleVersions()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -296,6 +325,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COPY_WORKFLOWS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCopyWorkflows());
+    hash = (37 * hash) + COPY_INSTALLED_MODULE_VERSIONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCopyInstalledModuleVersions());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -443,6 +475,8 @@ private static final long serialVersionUID = 0L;
 
       copyWorkflows_ = false;
 
+      copyInstalledModuleVersions_ = false;
+
       return this;
     }
 
@@ -474,6 +508,7 @@ private static final long serialVersionUID = 0L;
       result.copyAnnotations_ = copyAnnotations_;
       result.copyModels_ = copyModels_;
       result.copyWorkflows_ = copyWorkflows_;
+      result.copyInstalledModuleVersions_ = copyInstalledModuleVersions_;
       onBuilt();
       return result;
     }
@@ -536,6 +571,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getCopyWorkflows() != false) {
         setCopyWorkflows(other.getCopyWorkflows());
+      }
+      if (other.getCopyInstalledModuleVersions() != false) {
+        setCopyInstalledModuleVersions(other.getCopyInstalledModuleVersions());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -780,6 +818,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearCopyWorkflows() {
       
       copyWorkflows_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean copyInstalledModuleVersions_ ;
+    /**
+     * <pre>
+     * Copy installed module versions.
+     * </pre>
+     *
+     * <code>bool copy_installed_module_versions = 6;</code>
+     * @return The copyInstalledModuleVersions.
+     */
+    @java.lang.Override
+    public boolean getCopyInstalledModuleVersions() {
+      return copyInstalledModuleVersions_;
+    }
+    /**
+     * <pre>
+     * Copy installed module versions.
+     * </pre>
+     *
+     * <code>bool copy_installed_module_versions = 6;</code>
+     * @param value The copyInstalledModuleVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCopyInstalledModuleVersions(boolean value) {
+      
+      copyInstalledModuleVersions_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Copy installed module versions.
+     * </pre>
+     *
+     * <code>bool copy_installed_module_versions = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCopyInstalledModuleVersions() {
+      
+      copyInstalledModuleVersions_ = false;
       onChanged();
       return this;
     }

@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * ModelType is a definition of a set of models that generally have the same input and output fields. 
+ * ModelType is a definition of a set of models that generally have the same input and output fields.
  * This is used to understand more about the possible models in our platform.
  * </pre>
  *
@@ -1021,7 +1021,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ModelType is a definition of a set of models that generally have the same input and output fields. 
+   * ModelType is a definition of a set of models that generally have the same input and output fields.
    * This is used to understand more about the possible models in our platform.
    * </pre>
    *

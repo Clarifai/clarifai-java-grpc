@@ -233,7 +233,7 @@ public interface CollectorOrBuilder extends
 
   /**
    * <pre>
-   * Whether to collect outputs or not. Default is false. If selected, outputs from the 
+   * Whether to collect outputs or not. Default is false. If selected, outputs from the
    * original model predict call will be posted as annotations along with the input with success status.
    * </pre>
    *

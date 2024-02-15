@@ -110,7 +110,7 @@ public enum ExpirationAction
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(2);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final ExpirationAction[] VALUES = values();
