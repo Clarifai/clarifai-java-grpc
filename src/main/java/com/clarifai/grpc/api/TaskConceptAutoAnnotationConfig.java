@@ -111,8 +111,10 @@ private static final long serialVersionUID = 0L;
   private int annotationDataTypes_;
   /**
    * <pre>
-   * Filter anontations by their annotation data type.
-   * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
+   * Filter annotations by their annotation data type.
+   * This is a bit-mask field that holds multiple AnnotationDataType values that are combined in an OR fashion.
+   * Example: if annotation_data_types = 34, then we filter annotations that appear as a mask or a bounding box,
+   * because MASK = 32 and BOUNDING_BOX = 2.
    * </pre>
    *
    * <code>uint32 annotation_data_types = 1;</code>
@@ -542,8 +544,10 @@ private static final long serialVersionUID = 0L;
     private int annotationDataTypes_ ;
     /**
      * <pre>
-     * Filter anontations by their annotation data type.
-     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
+     * Filter annotations by their annotation data type.
+     * This is a bit-mask field that holds multiple AnnotationDataType values that are combined in an OR fashion.
+     * Example: if annotation_data_types = 34, then we filter annotations that appear as a mask or a bounding box,
+     * because MASK = 32 and BOUNDING_BOX = 2.
      * </pre>
      *
      * <code>uint32 annotation_data_types = 1;</code>
@@ -555,8 +559,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter anontations by their annotation data type.
-     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
+     * Filter annotations by their annotation data type.
+     * This is a bit-mask field that holds multiple AnnotationDataType values that are combined in an OR fashion.
+     * Example: if annotation_data_types = 34, then we filter annotations that appear as a mask or a bounding box,
+     * because MASK = 32 and BOUNDING_BOX = 2.
      * </pre>
      *
      * <code>uint32 annotation_data_types = 1;</code>
@@ -571,8 +577,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Filter anontations by their annotation data type.
-     * This specifies types in an OR fashion, e.g. a `dog` concept that appears as a mask or a bbox.
+     * Filter annotations by their annotation data type.
+     * This is a bit-mask field that holds multiple AnnotationDataType values that are combined in an OR fashion.
+     * Example: if annotation_data_types = 34, then we filter annotations that appear as a mask or a bounding box,
+     * because MASK = 32 and BOUNDING_BOX = 2.
      * </pre>
      *
      * <code>uint32 annotation_data_types = 1;</code>

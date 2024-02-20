@@ -181,7 +181,7 @@ public interface ListTasksRequestOrBuilder extends
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users.
+   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
    * </pre>
    *
    * <code>repeated string additional_fields = 7;</code>
@@ -192,7 +192,7 @@ public interface ListTasksRequestOrBuilder extends
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users.
+   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
    * </pre>
    *
    * <code>repeated string additional_fields = 7;</code>
@@ -202,7 +202,7 @@ public interface ListTasksRequestOrBuilder extends
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users.
+   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
    * </pre>
    *
    * <code>repeated string additional_fields = 7;</code>
@@ -213,7 +213,7 @@ public interface ListTasksRequestOrBuilder extends
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users.
+   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
    * </pre>
    *
    * <code>repeated string additional_fields = 7;</code>

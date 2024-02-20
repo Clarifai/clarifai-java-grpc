@@ -249,6 +249,19 @@ private static final long serialVersionUID = 0L;
             deletePreviousAnnotations_ = input.readBool();
             break;
           }
+          case 170: {
+            com.clarifai.grpc.api.TaskMetrics.Builder subBuilder = null;
+            if (metrics_ != null) {
+              subBuilder = metrics_.toBuilder();
+            }
+            metrics_ = input.readMessage(com.clarifai.grpc.api.TaskMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metrics_);
+              metrics_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -694,7 +707,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @return A list containing the conceptIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -709,7 +722,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @return The count of conceptIds.
    */
   @java.lang.Deprecated public int getConceptIdsCount() {
@@ -723,7 +736,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
@@ -738,7 +751,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
@@ -1244,6 +1257,44 @@ private static final long serialVersionUID = 0L;
     return deletePreviousAnnotations_;
   }
 
+  public static final int METRICS_FIELD_NUMBER = 21;
+  private com.clarifai.grpc.api.TaskMetrics metrics_;
+  /**
+   * <pre>
+   * Tasks metrics are filled in upon user-request.
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+   * @return Whether the metrics field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetrics() {
+    return metrics_ != null;
+  }
+  /**
+   * <pre>
+   * Tasks metrics are filled in upon user-request.
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+   * @return The metrics.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskMetrics getMetrics() {
+    return metrics_ == null ? com.clarifai.grpc.api.TaskMetrics.getDefaultInstance() : metrics_;
+  }
+  /**
+   * <pre>
+   * Tasks metrics are filled in upon user-request.
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskMetricsOrBuilder getMetricsOrBuilder() {
+    return getMetrics();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1317,6 +1368,9 @@ private static final long serialVersionUID = 0L;
     }
     if (deletePreviousAnnotations_ != false) {
       output.writeBool(20, deletePreviousAnnotations_);
+    }
+    if (metrics_ != null) {
+      output.writeMessage(21, getMetrics());
     }
     unknownFields.writeTo(output);
   }
@@ -1405,6 +1459,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(20, deletePreviousAnnotations_);
     }
+    if (metrics_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getMetrics());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1486,6 +1544,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConceptsList())) return false;
     if (getDeletePreviousAnnotations()
         != other.getDeletePreviousAnnotations()) return false;
+    if (hasMetrics() != other.hasMetrics()) return false;
+    if (hasMetrics()) {
+      if (!getMetrics()
+          .equals(other.getMetrics())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1560,6 +1623,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DELETE_PREVIOUS_ANNOTATIONS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getDeletePreviousAnnotations());
+    if (hasMetrics()) {
+      hash = (37 * hash) + METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetrics().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1778,6 +1845,12 @@ private static final long serialVersionUID = 0L;
       }
       deletePreviousAnnotations_ = false;
 
+      if (metricsBuilder_ == null) {
+        metrics_ = null;
+      } else {
+        metrics_ = null;
+        metricsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1873,6 +1946,11 @@ private static final long serialVersionUID = 0L;
         result.concepts_ = conceptsBuilder_.build();
       }
       result.deletePreviousAnnotations_ = deletePreviousAnnotations_;
+      if (metricsBuilder_ == null) {
+        result.metrics_ = metrics_;
+      } else {
+        result.metrics_ = metricsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2016,6 +2094,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getDeletePreviousAnnotations() != false) {
         setDeletePreviousAnnotations(other.getDeletePreviousAnnotations());
+      }
+      if (other.hasMetrics()) {
+        mergeMetrics(other.getMetrics());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2829,7 +2910,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @return A list containing the conceptIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2844,7 +2925,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @return The count of conceptIds.
      */
     @java.lang.Deprecated public int getConceptIdsCount() {
@@ -2858,7 +2939,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @param index The index of the element to return.
      * @return The conceptIds at the given index.
      */
@@ -2873,7 +2954,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @param index The index of the value to return.
      * @return The bytes of the conceptIds at the given index.
      */
@@ -2889,7 +2970,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @param index The index to set the value at.
      * @param value The conceptIds to set.
      * @return This builder for chaining.
@@ -2912,7 +2993,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @param value The conceptIds to add.
      * @return This builder for chaining.
      */
@@ -2934,7 +3015,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @param values The conceptIds to add.
      * @return This builder for chaining.
      */
@@ -2954,7 +3035,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearConceptIds() {
@@ -2971,7 +3052,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3003
+     *     See proto/clarifai/api/resources.proto;l=3004
      * @param value The bytes of the conceptIds to add.
      * @return This builder for chaining.
      */
@@ -4682,6 +4763,161 @@ private static final long serialVersionUID = 0L;
       deletePreviousAnnotations_ = false;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.TaskMetrics metrics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskMetrics, com.clarifai.grpc.api.TaskMetrics.Builder, com.clarifai.grpc.api.TaskMetricsOrBuilder> metricsBuilder_;
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     * @return Whether the metrics field is set.
+     */
+    public boolean hasMetrics() {
+      return metricsBuilder_ != null || metrics_ != null;
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     * @return The metrics.
+     */
+    public com.clarifai.grpc.api.TaskMetrics getMetrics() {
+      if (metricsBuilder_ == null) {
+        return metrics_ == null ? com.clarifai.grpc.api.TaskMetrics.getDefaultInstance() : metrics_;
+      } else {
+        return metricsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    public Builder setMetrics(com.clarifai.grpc.api.TaskMetrics value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metrics_ = value;
+        onChanged();
+      } else {
+        metricsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    public Builder setMetrics(
+        com.clarifai.grpc.api.TaskMetrics.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        metrics_ = builderForValue.build();
+        onChanged();
+      } else {
+        metricsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    public Builder mergeMetrics(com.clarifai.grpc.api.TaskMetrics value) {
+      if (metricsBuilder_ == null) {
+        if (metrics_ != null) {
+          metrics_ =
+            com.clarifai.grpc.api.TaskMetrics.newBuilder(metrics_).mergeFrom(value).buildPartial();
+        } else {
+          metrics_ = value;
+        }
+        onChanged();
+      } else {
+        metricsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    public Builder clearMetrics() {
+      if (metricsBuilder_ == null) {
+        metrics_ = null;
+        onChanged();
+      } else {
+        metrics_ = null;
+        metricsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    public com.clarifai.grpc.api.TaskMetrics.Builder getMetricsBuilder() {
+      
+      onChanged();
+      return getMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    public com.clarifai.grpc.api.TaskMetricsOrBuilder getMetricsOrBuilder() {
+      if (metricsBuilder_ != null) {
+        return metricsBuilder_.getMessageOrBuilder();
+      } else {
+        return metrics_ == null ?
+            com.clarifai.grpc.api.TaskMetrics.getDefaultInstance() : metrics_;
+      }
+    }
+    /**
+     * <pre>
+     * Tasks metrics are filled in upon user-request.
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskMetrics, com.clarifai.grpc.api.TaskMetrics.Builder, com.clarifai.grpc.api.TaskMetricsOrBuilder> 
+        getMetricsFieldBuilder() {
+      if (metricsBuilder_ == null) {
+        metricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TaskMetrics, com.clarifai.grpc.api.TaskMetrics.Builder, com.clarifai.grpc.api.TaskMetricsOrBuilder>(
+                getMetrics(),
+                getParentForChildren(),
+                isClean());
+        metrics_ = null;
+      }
+      return metricsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

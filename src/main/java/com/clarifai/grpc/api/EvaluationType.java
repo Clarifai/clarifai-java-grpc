@@ -36,6 +36,10 @@ public enum EvaluationType
    * <code>Tracker = 5;</code>
    */
   Tracker(5),
+  /**
+   * <code>Generation = 6;</code>
+   */
+  Generation(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -67,6 +71,10 @@ public enum EvaluationType
    * <code>Tracker = 5;</code>
    */
   public static final int Tracker_VALUE = 5;
+  /**
+   * <code>Generation = 6;</code>
+   */
+  public static final int Generation_VALUE = 6;
 
 
   public final int getNumber() {
@@ -99,6 +107,7 @@ public enum EvaluationType
       case 3: return Segmentation;
       case 4: return Clustering;
       case 5: return Tracker;
+      case 6: return Generation;
       default: return null;
     }
   }

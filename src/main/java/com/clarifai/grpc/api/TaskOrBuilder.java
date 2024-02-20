@@ -167,7 +167,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @return A list containing the conceptIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -180,7 +180,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @return The count of conceptIds.
    */
   @java.lang.Deprecated int getConceptIdsCount();
@@ -192,7 +192,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
@@ -205,7 +205,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3003
+   *     See proto/clarifai/api/resources.proto;l=3004
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
@@ -512,4 +512,31 @@ public interface TaskOrBuilder extends
    * @return The deletePreviousAnnotations.
    */
   boolean getDeletePreviousAnnotations();
+
+  /**
+   * <pre>
+   * Tasks metrics are filled in upon user-request.
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+   * @return Whether the metrics field is set.
+   */
+  boolean hasMetrics();
+  /**
+   * <pre>
+   * Tasks metrics are filled in upon user-request.
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+   * @return The metrics.
+   */
+  com.clarifai.grpc.api.TaskMetrics getMetrics();
+  /**
+   * <pre>
+   * Tasks metrics are filled in upon user-request.
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
+   */
+  com.clarifai.grpc.api.TaskMetricsOrBuilder getMetricsOrBuilder();
 }

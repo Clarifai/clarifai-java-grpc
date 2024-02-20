@@ -1810,6 +1810,10 @@ public enum StatusCode
    */
   INTERNAL_DATABASE_ISSUE(98006),
   /**
+   * <code>INTERNAL_CONTEXT_CANCELED = 98008;</code>
+   */
+  INTERNAL_CONTEXT_CANCELED(98008),
+  /**
    * <code>INTERNAL_UNEXPECTED_TIMEOUT = 98009;</code>
    */
   INTERNAL_UNEXPECTED_TIMEOUT(98009),
@@ -3689,6 +3693,10 @@ public enum StatusCode
    */
   public static final int INTERNAL_DATABASE_ISSUE_VALUE = 98006;
   /**
+   * <code>INTERNAL_CONTEXT_CANCELED = 98008;</code>
+   */
+  public static final int INTERNAL_CONTEXT_CANCELED_VALUE = 98008;
+  /**
    * <code>INTERNAL_UNEXPECTED_TIMEOUT = 98009;</code>
    */
   public static final int INTERNAL_UNEXPECTED_TIMEOUT_VALUE = 98009;
@@ -4126,6 +4134,7 @@ public enum StatusCode
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;
+      case 98008: return INTERNAL_CONTEXT_CANCELED;
       case 98009: return INTERNAL_UNEXPECTED_TIMEOUT;
       case 98010: return INTERNAL_UNEXPECTED_V1;
       case 98011: return INTERNAL_UNEXPECTED_PANIC;
