@@ -74,54 +74,108 @@ public interface WorkflowResultOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>.clarifai.api.Model model = 4;</code>
+   * <pre>
+   * The model that this WorkflowResult is for.
+   * DEPRECATED: not sure why there ever was a model here because each output shows the model
+   * that process this given input.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2835
    * @return Whether the model field is set.
    */
-  boolean hasModel();
+  @java.lang.Deprecated boolean hasModel();
   /**
-   * <code>.clarifai.api.Model model = 4;</code>
+   * <pre>
+   * The model that this WorkflowResult is for.
+   * DEPRECATED: not sure why there ever was a model here because each output shows the model
+   * that process this given input.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2835
    * @return The model.
    */
-  com.clarifai.grpc.api.Model getModel();
+  @java.lang.Deprecated com.clarifai.grpc.api.Model getModel();
   /**
-   * <code>.clarifai.api.Model model = 4;</code>
+   * <pre>
+   * The model that this WorkflowResult is for.
+   * DEPRECATED: not sure why there ever was a model here because each output shows the model
+   * that process this given input.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
 
   /**
+   * <pre>
+   * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+   * </pre>
+   *
    * <code>.clarifai.api.Input input = 5;</code>
    * @return Whether the input field is set.
    */
   boolean hasInput();
   /**
+   * <pre>
+   * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+   * </pre>
+   *
    * <code>.clarifai.api.Input input = 5;</code>
    * @return The input.
    */
   com.clarifai.grpc.api.Input getInput();
   /**
+   * <pre>
+   * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+   * </pre>
+   *
    * <code>.clarifai.api.Input input = 5;</code>
    */
   com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder();
 
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   java.util.List<com.clarifai.grpc.api.Output> 
       getOutputsList();
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   com.clarifai.grpc.api.Output getOutputs(int index);
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   int getOutputsCount();
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.OutputOrBuilder> 
       getOutputsOrBuilderList();
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   com.clarifai.grpc.api.OutputOrBuilder getOutputsOrBuilder(

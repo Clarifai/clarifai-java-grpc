@@ -6,6 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * <pre>
  * WorkflowResult
+ * One result per input in the workflow.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.WorkflowResult}
@@ -281,32 +282,58 @@ private static final long serialVersionUID = 0L;
   public static final int MODEL_FIELD_NUMBER = 4;
   private com.clarifai.grpc.api.Model model_;
   /**
-   * <code>.clarifai.api.Model model = 4;</code>
+   * <pre>
+   * The model that this WorkflowResult is for.
+   * DEPRECATED: not sure why there ever was a model here because each output shows the model
+   * that process this given input.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2835
    * @return Whether the model field is set.
    */
   @java.lang.Override
-  public boolean hasModel() {
+  @java.lang.Deprecated public boolean hasModel() {
     return model_ != null;
   }
   /**
-   * <code>.clarifai.api.Model model = 4;</code>
+   * <pre>
+   * The model that this WorkflowResult is for.
+   * DEPRECATED: not sure why there ever was a model here because each output shows the model
+   * that process this given input.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=2835
    * @return The model.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Model getModel() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
     return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
   }
   /**
-   * <code>.clarifai.api.Model model = 4;</code>
+   * <pre>
+   * The model that this WorkflowResult is for.
+   * DEPRECATED: not sure why there ever was a model here because each output shows the model
+   * that process this given input.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
     return getModel();
   }
 
   public static final int INPUT_FIELD_NUMBER = 5;
   private com.clarifai.grpc.api.Input input_;
   /**
+   * <pre>
+   * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+   * </pre>
+   *
    * <code>.clarifai.api.Input input = 5;</code>
    * @return Whether the input field is set.
    */
@@ -315,6 +342,10 @@ private static final long serialVersionUID = 0L;
     return input_ != null;
   }
   /**
+   * <pre>
+   * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+   * </pre>
+   *
    * <code>.clarifai.api.Input input = 5;</code>
    * @return The input.
    */
@@ -323,6 +354,10 @@ private static final long serialVersionUID = 0L;
     return input_ == null ? com.clarifai.grpc.api.Input.getDefaultInstance() : input_;
   }
   /**
+   * <pre>
+   * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+   * </pre>
+   *
    * <code>.clarifai.api.Input input = 5;</code>
    */
   @java.lang.Override
@@ -333,6 +368,10 @@ private static final long serialVersionUID = 0L;
   public static final int OUTPUTS_FIELD_NUMBER = 6;
   private java.util.List<com.clarifai.grpc.api.Output> outputs_;
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   @java.lang.Override
@@ -340,6 +379,10 @@ private static final long serialVersionUID = 0L;
     return outputs_;
   }
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   @java.lang.Override
@@ -348,6 +391,10 @@ private static final long serialVersionUID = 0L;
     return outputs_;
   }
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   @java.lang.Override
@@ -355,6 +402,10 @@ private static final long serialVersionUID = 0L;
     return outputs_.size();
   }
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   @java.lang.Override
@@ -362,6 +413,10 @@ private static final long serialVersionUID = 0L;
     return outputs_.get(index);
   }
   /**
+   * <pre>
+   * For each model in the workflow we return an Output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 6;</code>
    */
   @java.lang.Override
@@ -631,6 +686,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * WorkflowResult
+   * One result per input in the workflow.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.WorkflowResult}
@@ -1276,17 +1332,33 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.WorkflowResult.model is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2835
      * @return Whether the model field is set.
      */
-    public boolean hasModel() {
+    @java.lang.Deprecated public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
+     * @deprecated clarifai.api.WorkflowResult.model is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=2835
      * @return The model.
      */
-    public com.clarifai.grpc.api.Model getModel() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
       if (modelBuilder_ == null) {
         return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
       } else {
@@ -1294,9 +1366,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
-    public Builder setModel(com.clarifai.grpc.api.Model value) {
+    @java.lang.Deprecated public Builder setModel(com.clarifai.grpc.api.Model value) {
       if (modelBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1310,9 +1388,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
-    public Builder setModel(
+    @java.lang.Deprecated public Builder setModel(
         com.clarifai.grpc.api.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
         model_ = builderForValue.build();
@@ -1324,9 +1408,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
-    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
+    @java.lang.Deprecated public Builder mergeModel(com.clarifai.grpc.api.Model value) {
       if (modelBuilder_ == null) {
         if (model_ != null) {
           model_ =
@@ -1342,9 +1432,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
-    public Builder clearModel() {
+    @java.lang.Deprecated public Builder clearModel() {
       if (modelBuilder_ == null) {
         model_ = null;
         onChanged();
@@ -1356,17 +1452,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
       
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
       if (modelBuilder_ != null) {
         return modelBuilder_.getMessageOrBuilder();
       } else {
@@ -1375,7 +1483,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.clarifai.api.Model model = 4;</code>
+     * <pre>
+     * The model that this WorkflowResult is for.
+     * DEPRECATED: not sure why there ever was a model here because each output shows the model
+     * that process this given input.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
@@ -1395,6 +1509,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Input, com.clarifai.grpc.api.Input.Builder, com.clarifai.grpc.api.InputOrBuilder> inputBuilder_;
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      * @return Whether the input field is set.
      */
@@ -1402,6 +1520,10 @@ private static final long serialVersionUID = 0L;
       return inputBuilder_ != null || input_ != null;
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      * @return The input.
      */
@@ -1413,6 +1535,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     public Builder setInput(com.clarifai.grpc.api.Input value) {
@@ -1429,6 +1555,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     public Builder setInput(
@@ -1443,6 +1573,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     public Builder mergeInput(com.clarifai.grpc.api.Input value) {
@@ -1461,6 +1595,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     public Builder clearInput() {
@@ -1475,6 +1613,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     public com.clarifai.grpc.api.Input.Builder getInputBuilder() {
@@ -1483,6 +1625,10 @@ private static final long serialVersionUID = 0L;
       return getInputFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     public com.clarifai.grpc.api.InputOrBuilder getInputOrBuilder() {
@@ -1494,6 +1640,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The input that ran through the workflow to generate the outputs in this WorkflowResult.
+     * </pre>
+     *
      * <code>.clarifai.api.Input input = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1523,6 +1673,10 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Output, com.clarifai.grpc.api.Output.Builder, com.clarifai.grpc.api.OutputOrBuilder> outputsBuilder_;
 
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public java.util.List<com.clarifai.grpc.api.Output> getOutputsList() {
@@ -1533,6 +1687,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public int getOutputsCount() {
@@ -1543,6 +1701,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public com.clarifai.grpc.api.Output getOutputs(int index) {
@@ -1553,6 +1715,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder setOutputs(
@@ -1570,6 +1736,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder setOutputs(
@@ -1584,6 +1754,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder addOutputs(com.clarifai.grpc.api.Output value) {
@@ -1600,6 +1774,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder addOutputs(
@@ -1617,6 +1795,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder addOutputs(
@@ -1631,6 +1813,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder addOutputs(
@@ -1645,6 +1831,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder addAllOutputs(
@@ -1660,6 +1850,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder clearOutputs() {
@@ -1673,6 +1867,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public Builder removeOutputs(int index) {
@@ -1686,6 +1884,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public com.clarifai.grpc.api.Output.Builder getOutputsBuilder(
@@ -1693,6 +1895,10 @@ private static final long serialVersionUID = 0L;
       return getOutputsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public com.clarifai.grpc.api.OutputOrBuilder getOutputsOrBuilder(
@@ -1703,6 +1909,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.OutputOrBuilder> 
@@ -1714,6 +1924,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public com.clarifai.grpc.api.Output.Builder addOutputsBuilder() {
@@ -1721,6 +1935,10 @@ private static final long serialVersionUID = 0L;
           com.clarifai.grpc.api.Output.getDefaultInstance());
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public com.clarifai.grpc.api.Output.Builder addOutputsBuilder(
@@ -1729,6 +1947,10 @@ private static final long serialVersionUID = 0L;
           index, com.clarifai.grpc.api.Output.getDefaultInstance());
     }
     /**
+     * <pre>
+     * For each model in the workflow we return an Output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 6;</code>
      */
     public java.util.List<com.clarifai.grpc.api.Output.Builder> 

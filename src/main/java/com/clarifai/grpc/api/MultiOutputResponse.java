@@ -142,6 +142,10 @@ private static final long serialVersionUID = 0L;
   public static final int OUTPUTS_FIELD_NUMBER = 2;
   private java.util.List<com.clarifai.grpc.api.Output> outputs_;
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
@@ -149,6 +153,10 @@ private static final long serialVersionUID = 0L;
     return outputs_;
   }
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
@@ -157,6 +165,10 @@ private static final long serialVersionUID = 0L;
     return outputs_;
   }
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
@@ -164,6 +176,10 @@ private static final long serialVersionUID = 0L;
     return outputs_.size();
   }
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
@@ -171,6 +187,10 @@ private static final long serialVersionUID = 0L;
     return outputs_.get(index);
   }
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
@@ -687,6 +707,10 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Output, com.clarifai.grpc.api.Output.Builder, com.clarifai.grpc.api.OutputOrBuilder> outputsBuilder_;
 
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public java.util.List<com.clarifai.grpc.api.Output> getOutputsList() {
@@ -697,6 +721,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public int getOutputsCount() {
@@ -707,6 +735,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public com.clarifai.grpc.api.Output getOutputs(int index) {
@@ -717,6 +749,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder setOutputs(
@@ -734,6 +770,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder setOutputs(
@@ -748,6 +788,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder addOutputs(com.clarifai.grpc.api.Output value) {
@@ -764,6 +808,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder addOutputs(
@@ -781,6 +829,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder addOutputs(
@@ -795,6 +847,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder addOutputs(
@@ -809,6 +865,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder addAllOutputs(
@@ -824,6 +884,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder clearOutputs() {
@@ -837,6 +901,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public Builder removeOutputs(int index) {
@@ -850,6 +918,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public com.clarifai.grpc.api.Output.Builder getOutputsBuilder(
@@ -857,6 +929,10 @@ private static final long serialVersionUID = 0L;
       return getOutputsFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public com.clarifai.grpc.api.OutputOrBuilder getOutputsOrBuilder(
@@ -867,6 +943,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.OutputOrBuilder> 
@@ -878,6 +958,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public com.clarifai.grpc.api.Output.Builder addOutputsBuilder() {
@@ -885,6 +969,10 @@ private static final long serialVersionUID = 0L;
           com.clarifai.grpc.api.Output.getDefaultInstance());
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public com.clarifai.grpc.api.Output.Builder addOutputsBuilder(
@@ -893,6 +981,10 @@ private static final long serialVersionUID = 0L;
           index, com.clarifai.grpc.api.Output.getDefaultInstance());
     }
     /**
+     * <pre>
+     * For each input processed during model prediction we create one output.
+     * </pre>
+     *
      * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
     public java.util.List<com.clarifai.grpc.api.Output.Builder> 

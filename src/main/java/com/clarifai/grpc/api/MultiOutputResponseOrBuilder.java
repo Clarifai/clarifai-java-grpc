@@ -23,24 +23,44 @@ public interface MultiOutputResponseOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   java.util.List<com.clarifai.grpc.api.Output> 
       getOutputsList();
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   com.clarifai.grpc.api.Output getOutputs(int index);
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   int getOutputsCount();
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.OutputOrBuilder> 
       getOutputsOrBuilderList();
   /**
+   * <pre>
+   * For each input processed during model prediction we create one output.
+   * </pre>
+   *
    * <code>repeated .clarifai.api.Output outputs = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   com.clarifai.grpc.api.OutputOrBuilder getOutputsOrBuilder(

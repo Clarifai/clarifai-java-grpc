@@ -7734,6 +7734,11 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a workflow to an app.
+     * Note(zeiler): the order of the workflows that are returned from this endpoint
+     * may be different than the order in which the user provides them. This is because
+     * we reorder by a sort that optimizes for performance of the graph and its dependencies.
+     * When using the workflow in any future call the order returned by this endpoint
+     * will be used.
      * </pre>
      */
     public void postWorkflows(com.clarifai.grpc.api.PostWorkflowsRequest request,
@@ -11555,6 +11560,11 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a workflow to an app.
+     * Note(zeiler): the order of the workflows that are returned from this endpoint
+     * may be different than the order in which the user provides them. This is because
+     * we reorder by a sort that optimizes for performance of the graph and its dependencies.
+     * When using the workflow in any future call the order returned by this endpoint
+     * will be used.
      * </pre>
      */
     public void postWorkflows(com.clarifai.grpc.api.PostWorkflowsRequest request,
@@ -13883,6 +13893,11 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a workflow to an app.
+     * Note(zeiler): the order of the workflows that are returned from this endpoint
+     * may be different than the order in which the user provides them. This is because
+     * we reorder by a sort that optimizes for performance of the graph and its dependencies.
+     * When using the workflow in any future call the order returned by this endpoint
+     * will be used.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiWorkflowResponse postWorkflows(com.clarifai.grpc.api.PostWorkflowsRequest request) {
@@ -16187,6 +16202,11 @@ public final class V2Grpc {
     /**
      * <pre>
      * Add a workflow to an app.
+     * Note(zeiler): the order of the workflows that are returned from this endpoint
+     * may be different than the order in which the user provides them. This is because
+     * we reorder by a sort that optimizes for performance of the graph and its dependencies.
+     * When using the workflow in any future call the order returned by this endpoint
+     * will be used.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiWorkflowResponse> postWorkflows(

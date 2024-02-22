@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3004
+   *     See proto/clarifai/api/resources.proto;l=3008
    * @return A list containing the conceptIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3004
+   *     See proto/clarifai/api/resources.proto;l=3008
    * @return The count of conceptIds.
    */
   @java.lang.Deprecated public int getConceptIdsCount() {
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3004
+   *     See proto/clarifai/api/resources.proto;l=3008
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
@@ -751,7 +751,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3004
+   *     See proto/clarifai/api/resources.proto;l=3008
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
@@ -2910,7 +2910,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @return A list containing the conceptIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2925,7 +2925,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @return The count of conceptIds.
      */
     @java.lang.Deprecated public int getConceptIdsCount() {
@@ -2939,7 +2939,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @param index The index of the element to return.
      * @return The conceptIds at the given index.
      */
@@ -2954,7 +2954,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @param index The index of the value to return.
      * @return The bytes of the conceptIds at the given index.
      */
@@ -2970,7 +2970,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @param index The index to set the value at.
      * @param value The conceptIds to set.
      * @return This builder for chaining.
@@ -2993,7 +2993,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @param value The conceptIds to add.
      * @return This builder for chaining.
      */
@@ -3015,7 +3015,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @param values The conceptIds to add.
      * @return This builder for chaining.
      */
@@ -3035,7 +3035,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearConceptIds() {
@@ -3052,7 +3052,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3004
+     *     See proto/clarifai/api/resources.proto;l=3008
      * @param value The bytes of the conceptIds to add.
      * @return This builder for chaining.
      */
