@@ -470,6 +470,26 @@ public enum StatusCode
   MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT(21420),
   /**
    * <pre>
+   * Model Export status codes
+   * </pre>
+   *
+   * <code>MODEL_EXPORTED = 21500;</code>
+   */
+  MODEL_EXPORTED(21500),
+  /**
+   * <code>MODEL_EXPORTING = 21501;</code>
+   */
+  MODEL_EXPORTING(21501),
+  /**
+   * <code>MODEL_EXPORTING_FAILED = 21502;</code>
+   */
+  MODEL_EXPORTING_FAILED(21502),
+  /**
+   * <code>MODEL_EXPORT_PENDING = 21503;</code>
+   */
+  MODEL_EXPORT_PENDING(21503),
+  /**
+   * <pre>
    * specified model input not in workflow
    * </pre>
    *
@@ -1500,6 +1520,22 @@ public enum StatusCode
    */
   TASK_MISSING(54102),
   /**
+   * <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
+   */
+  TASK_ASSIGNMENT_SUCCESS(54200),
+  /**
+   * <code>TASK_ASSIGNMENT_PENDING = 54201;</code>
+   */
+  TASK_ASSIGNMENT_PENDING(54201),
+  /**
+   * <code>TASK_ASSIGNMENT_AWAITING_REVIEW = 54202;</code>
+   */
+  TASK_ASSIGNMENT_AWAITING_REVIEW(54202),
+  /**
+   * <code>TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW = 54203;</code>
+   */
+  TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW(54203),
+  /**
    * <pre>
    * Label Order Related Status Code 55xxx
    * </pre>
@@ -2353,6 +2389,26 @@ public enum StatusCode
    * <code>MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT = 21420;</code>
    */
   public static final int MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT_VALUE = 21420;
+  /**
+   * <pre>
+   * Model Export status codes
+   * </pre>
+   *
+   * <code>MODEL_EXPORTED = 21500;</code>
+   */
+  public static final int MODEL_EXPORTED_VALUE = 21500;
+  /**
+   * <code>MODEL_EXPORTING = 21501;</code>
+   */
+  public static final int MODEL_EXPORTING_VALUE = 21501;
+  /**
+   * <code>MODEL_EXPORTING_FAILED = 21502;</code>
+   */
+  public static final int MODEL_EXPORTING_FAILED_VALUE = 21502;
+  /**
+   * <code>MODEL_EXPORT_PENDING = 21503;</code>
+   */
+  public static final int MODEL_EXPORT_PENDING_VALUE = 21503;
   /**
    * <pre>
    * specified model input not in workflow
@@ -3383,6 +3439,22 @@ public enum StatusCode
    */
   public static final int TASK_MISSING_VALUE = 54102;
   /**
+   * <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
+   */
+  public static final int TASK_ASSIGNMENT_SUCCESS_VALUE = 54200;
+  /**
+   * <code>TASK_ASSIGNMENT_PENDING = 54201;</code>
+   */
+  public static final int TASK_ASSIGNMENT_PENDING_VALUE = 54201;
+  /**
+   * <code>TASK_ASSIGNMENT_AWAITING_REVIEW = 54202;</code>
+   */
+  public static final int TASK_ASSIGNMENT_AWAITING_REVIEW_VALUE = 54202;
+  /**
+   * <code>TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW = 54203;</code>
+   */
+  public static final int TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW_VALUE = 54203;
+  /**
    * <pre>
    * Label Order Related Status Code 55xxx
    * </pre>
@@ -3868,6 +3940,10 @@ public enum StatusCode
       case 21353: return MODEL_NOT_DEPLOYED;
       case 21400: return MODEL_REFERENCE_INVALID_ARGUMENT;
       case 21420: return MODEL_EXAMPLE_INPUT_INVALID_ARGUMENT;
+      case 21500: return MODEL_EXPORTED;
+      case 21501: return MODEL_EXPORTING;
+      case 21502: return MODEL_EXPORTING_FAILED;
+      case 21503: return MODEL_EXPORT_PENDING;
       case 22001: return WORKFLOW_NO_MATCHING_INPUT;
       case 22002: return WORKFLOW_REQUIRE_TRAINED_MODEL;
       case 22100: return WORKFLOW_DUPLICATE;
@@ -4081,6 +4157,10 @@ public enum StatusCode
       case 54100: return TASK_CONFLICT;
       case 54101: return TASK_NOT_IMPLEMENTED;
       case 54102: return TASK_MISSING;
+      case 54200: return TASK_ASSIGNMENT_SUCCESS;
+      case 54201: return TASK_ASSIGNMENT_PENDING;
+      case 54202: return TASK_ASSIGNMENT_AWAITING_REVIEW;
+      case 54203: return TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW;
       case 55001: return LABEL_ORDER_PENDING;
       case 55002: return LABEL_ORDER_IN_PROGRESS;
       case 55003: return LABEL_ORDER_SUCCESS;

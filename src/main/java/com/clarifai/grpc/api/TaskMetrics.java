@@ -48,9 +48,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 18: {
+            com.clarifai.grpc.api.TaskWorkMetrics.Builder subBuilder = null;
+            if (work_ != null) {
+              subBuilder = work_.toBuilder();
+            }
+            work_ = input.readMessage(com.clarifai.grpc.api.TaskWorkMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(work_);
+              work_ = subBuilder.buildPartial();
+            }
 
-            estimatedLabeledInputsCount_ = input.readUInt64();
             break;
           }
           default: {
@@ -87,15 +95,30 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.TaskMetrics.class, com.clarifai.grpc.api.TaskMetrics.Builder.class);
   }
 
-  public static final int ESTIMATED_LABELED_INPUTS_COUNT_FIELD_NUMBER = 1;
-  private long estimatedLabeledInputsCount_;
+  public static final int WORK_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.TaskWorkMetrics work_;
   /**
-   * <code>uint64 estimated_labeled_inputs_count = 1;</code>
-   * @return The estimatedLabeledInputsCount.
+   * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+   * @return Whether the work field is set.
    */
   @java.lang.Override
-  public long getEstimatedLabeledInputsCount() {
-    return estimatedLabeledInputsCount_;
+  public boolean hasWork() {
+    return work_ != null;
+  }
+  /**
+   * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+   * @return The work.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskWorkMetrics getWork() {
+    return work_ == null ? com.clarifai.grpc.api.TaskWorkMetrics.getDefaultInstance() : work_;
+  }
+  /**
+   * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskWorkMetricsOrBuilder getWorkOrBuilder() {
+    return getWork();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -112,8 +135,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (estimatedLabeledInputsCount_ != 0L) {
-      output.writeUInt64(1, estimatedLabeledInputsCount_);
+    if (work_ != null) {
+      output.writeMessage(2, getWork());
     }
     unknownFields.writeTo(output);
   }
@@ -124,9 +147,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (estimatedLabeledInputsCount_ != 0L) {
+    if (work_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(1, estimatedLabeledInputsCount_);
+        .computeMessageSize(2, getWork());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -143,8 +166,11 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.TaskMetrics other = (com.clarifai.grpc.api.TaskMetrics) obj;
 
-    if (getEstimatedLabeledInputsCount()
-        != other.getEstimatedLabeledInputsCount()) return false;
+    if (hasWork() != other.hasWork()) return false;
+    if (hasWork()) {
+      if (!getWork()
+          .equals(other.getWork())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -156,9 +182,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ESTIMATED_LABELED_INPUTS_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getEstimatedLabeledInputsCount());
+    if (hasWork()) {
+      hash = (37 * hash) + WORK_FIELD_NUMBER;
+      hash = (53 * hash) + getWork().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -292,8 +319,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      estimatedLabeledInputsCount_ = 0L;
-
+      if (workBuilder_ == null) {
+        work_ = null;
+      } else {
+        work_ = null;
+        workBuilder_ = null;
+      }
       return this;
     }
 
@@ -320,7 +351,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.TaskMetrics buildPartial() {
       com.clarifai.grpc.api.TaskMetrics result = new com.clarifai.grpc.api.TaskMetrics(this);
-      result.estimatedLabeledInputsCount_ = estimatedLabeledInputsCount_;
+      if (workBuilder_ == null) {
+        result.work_ = work_;
+      } else {
+        result.work_ = workBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -369,8 +404,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.TaskMetrics other) {
       if (other == com.clarifai.grpc.api.TaskMetrics.getDefaultInstance()) return this;
-      if (other.getEstimatedLabeledInputsCount() != 0L) {
-        setEstimatedLabeledInputsCount(other.getEstimatedLabeledInputsCount());
+      if (other.hasWork()) {
+        mergeWork(other.getWork());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -401,35 +436,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long estimatedLabeledInputsCount_ ;
+    private com.clarifai.grpc.api.TaskWorkMetrics work_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskWorkMetrics, com.clarifai.grpc.api.TaskWorkMetrics.Builder, com.clarifai.grpc.api.TaskWorkMetricsOrBuilder> workBuilder_;
     /**
-     * <code>uint64 estimated_labeled_inputs_count = 1;</code>
-     * @return The estimatedLabeledInputsCount.
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     * @return Whether the work field is set.
      */
-    @java.lang.Override
-    public long getEstimatedLabeledInputsCount() {
-      return estimatedLabeledInputsCount_;
+    public boolean hasWork() {
+      return workBuilder_ != null || work_ != null;
     }
     /**
-     * <code>uint64 estimated_labeled_inputs_count = 1;</code>
-     * @param value The estimatedLabeledInputsCount to set.
-     * @return This builder for chaining.
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     * @return The work.
      */
-    public Builder setEstimatedLabeledInputsCount(long value) {
-      
-      estimatedLabeledInputsCount_ = value;
-      onChanged();
+    public com.clarifai.grpc.api.TaskWorkMetrics getWork() {
+      if (workBuilder_ == null) {
+        return work_ == null ? com.clarifai.grpc.api.TaskWorkMetrics.getDefaultInstance() : work_;
+      } else {
+        return workBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     */
+    public Builder setWork(com.clarifai.grpc.api.TaskWorkMetrics value) {
+      if (workBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        work_ = value;
+        onChanged();
+      } else {
+        workBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 estimated_labeled_inputs_count = 1;</code>
-     * @return This builder for chaining.
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
      */
-    public Builder clearEstimatedLabeledInputsCount() {
-      
-      estimatedLabeledInputsCount_ = 0L;
-      onChanged();
+    public Builder setWork(
+        com.clarifai.grpc.api.TaskWorkMetrics.Builder builderForValue) {
+      if (workBuilder_ == null) {
+        work_ = builderForValue.build();
+        onChanged();
+      } else {
+        workBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     */
+    public Builder mergeWork(com.clarifai.grpc.api.TaskWorkMetrics value) {
+      if (workBuilder_ == null) {
+        if (work_ != null) {
+          work_ =
+            com.clarifai.grpc.api.TaskWorkMetrics.newBuilder(work_).mergeFrom(value).buildPartial();
+        } else {
+          work_ = value;
+        }
+        onChanged();
+      } else {
+        workBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     */
+    public Builder clearWork() {
+      if (workBuilder_ == null) {
+        work_ = null;
+        onChanged();
+      } else {
+        work_ = null;
+        workBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     */
+    public com.clarifai.grpc.api.TaskWorkMetrics.Builder getWorkBuilder() {
+      
+      onChanged();
+      return getWorkFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     */
+    public com.clarifai.grpc.api.TaskWorkMetricsOrBuilder getWorkOrBuilder() {
+      if (workBuilder_ != null) {
+        return workBuilder_.getMessageOrBuilder();
+      } else {
+        return work_ == null ?
+            com.clarifai.grpc.api.TaskWorkMetrics.getDefaultInstance() : work_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskWorkMetrics, com.clarifai.grpc.api.TaskWorkMetrics.Builder, com.clarifai.grpc.api.TaskWorkMetricsOrBuilder> 
+        getWorkFieldBuilder() {
+      if (workBuilder_ == null) {
+        workBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TaskWorkMetrics, com.clarifai.grpc.api.TaskWorkMetrics.Builder, com.clarifai.grpc.api.TaskWorkMetricsOrBuilder>(
+                getWork(),
+                getParentForChildren(),
+                isClean());
+        work_ = null;
+      }
+      return workBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
