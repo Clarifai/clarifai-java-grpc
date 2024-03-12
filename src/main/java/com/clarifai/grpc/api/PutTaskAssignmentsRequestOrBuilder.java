@@ -35,14 +35,64 @@ public interface PutTaskAssignmentsRequestOrBuilder extends
       getTaskIdBytes();
 
   /**
+   * <pre>
+   * Deprecated: use action and action_config instead.
+   * Supported for backwards compatibility: setting this field is equivalent with
+   * * action = LABEL_SUBMIT
+   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * </pre>
+   *
    * <code>string input_id = 3;</code>
    * @return The inputId.
    */
   java.lang.String getInputId();
   /**
+   * <pre>
+   * Deprecated: use action and action_config instead.
+   * Supported for backwards compatibility: setting this field is equivalent with
+   * * action = LABEL_SUBMIT
+   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * </pre>
+   *
    * <code>string input_id = 3;</code>
    * @return The bytes for inputId.
    */
   com.google.protobuf.ByteString
       getInputIdBytes();
+
+  /**
+   * <pre>
+   * Action to perform on selected task.
+   * </pre>
+   *
+   * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+   * @return The enum numeric value on the wire for action.
+   */
+  int getActionValue();
+  /**
+   * <pre>
+   * Action to perform on selected task.
+   * </pre>
+   *
+   * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+   * @return The action.
+   */
+  com.clarifai.grpc.api.PutTaskAssignmentsRequestAction getAction();
+
+  /**
+   * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+   * @return Whether the labelSubmitConfig field is set.
+   */
+  boolean hasLabelSubmitConfig();
+  /**
+   * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+   * @return The labelSubmitConfig.
+   */
+  com.clarifai.grpc.api.LabelSubmitConfig getLabelSubmitConfig();
+  /**
+   * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+   */
+  com.clarifai.grpc.api.LabelSubmitConfigOrBuilder getLabelSubmitConfigOrBuilder();
+
+  public com.clarifai.grpc.api.PutTaskAssignmentsRequest.ActionConfigCase getActionConfigCase();
 }

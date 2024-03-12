@@ -8,8 +8,17 @@ public interface TaskMetricsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint64 estimated_labeled_inputs_count = 1;</code>
-   * @return The estimatedLabeledInputsCount.
+   * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+   * @return Whether the work field is set.
    */
-  long getEstimatedLabeledInputsCount();
+  boolean hasWork();
+  /**
+   * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+   * @return The work.
+   */
+  com.clarifai.grpc.api.TaskWorkMetrics getWork();
+  /**
+   * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
+   */
+  com.clarifai.grpc.api.TaskWorkMetricsOrBuilder getWorkOrBuilder();
 }

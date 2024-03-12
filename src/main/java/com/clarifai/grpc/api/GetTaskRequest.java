@@ -189,7 +189,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+   * Currently supported additional fields:
+   * - all
+   * - worker.users
+   * - review.users
+   * - metrics.work.inputs_count_estimated
+   * - metrics.work.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -202,7 +207,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+   * Currently supported additional fields:
+   * - all
+   * - worker.users
+   * - review.users
+   * - metrics.work.inputs_count_estimated
+   * - metrics.work.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -214,7 +224,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+   * Currently supported additional fields:
+   * - all
+   * - worker.users
+   * - review.users
+   * - metrics.work.inputs_count_estimated
+   * - metrics.work.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -227,7 +242,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+   * Currently supported additional fields:
+   * - all
+   * - worker.users
+   * - review.users
+   * - metrics.work.inputs_count_estimated
+   * - metrics.work.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -816,7 +836,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -829,7 +854,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -841,7 +871,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -854,7 +889,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -868,7 +908,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -889,7 +934,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -909,7 +959,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -927,7 +982,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -942,7 +1002,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported: all, worker.users, review.users, metrics.estimated_labeled_inputs_count.
+     * Currently supported additional fields:
+     * - all
+     * - worker.users
+     * - review.users
+     * - metrics.work.inputs_count_estimated
+     * - metrics.work.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>

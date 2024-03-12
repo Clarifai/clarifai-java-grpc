@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private PutTaskAssignmentsRequest() {
     taskId_ = "";
     inputId_ = "";
+    action_ = 0;
   }
 
   @java.lang.Override
@@ -79,6 +80,26 @@ private static final long serialVersionUID = 0L;
             inputId_ = s;
             break;
           }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            action_ = rawValue;
+            break;
+          }
+          case 50: {
+            com.clarifai.grpc.api.LabelSubmitConfig.Builder subBuilder = null;
+            if (actionConfigCase_ == 6) {
+              subBuilder = ((com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_).toBuilder();
+            }
+            actionConfig_ =
+                input.readMessage(com.clarifai.grpc.api.LabelSubmitConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_);
+              actionConfig_ = subBuilder.buildPartial();
+            }
+            actionConfigCase_ = 6;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -111,6 +132,45 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PutTaskAssignmentsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.PutTaskAssignmentsRequest.class, com.clarifai.grpc.api.PutTaskAssignmentsRequest.Builder.class);
+  }
+
+  private int actionConfigCase_ = 0;
+  private java.lang.Object actionConfig_;
+  public enum ActionConfigCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    LABEL_SUBMIT_CONFIG(6),
+    ACTIONCONFIG_NOT_SET(0);
+    private final int value;
+    private ActionConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ActionConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ActionConfigCase forNumber(int value) {
+      switch (value) {
+        case 6: return LABEL_SUBMIT_CONFIG;
+        case 0: return ACTIONCONFIG_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ActionConfigCase
+  getActionConfigCase() {
+    return ActionConfigCase.forNumber(
+        actionConfigCase_);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -180,6 +240,13 @@ private static final long serialVersionUID = 0L;
   public static final int INPUT_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object inputId_;
   /**
+   * <pre>
+   * Deprecated: use action and action_config instead.
+   * Supported for backwards compatibility: setting this field is equivalent with
+   * * action = LABEL_SUBMIT
+   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * </pre>
+   *
    * <code>string input_id = 3;</code>
    * @return The inputId.
    */
@@ -197,6 +264,13 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Deprecated: use action and action_config instead.
+   * Supported for backwards compatibility: setting this field is equivalent with
+   * * action = LABEL_SUBMIT
+   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * </pre>
+   *
    * <code>string input_id = 3;</code>
    * @return The bytes for inputId.
    */
@@ -213,6 +287,64 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ACTION_FIELD_NUMBER = 4;
+  private int action_;
+  /**
+   * <pre>
+   * Action to perform on selected task.
+   * </pre>
+   *
+   * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+   * @return The enum numeric value on the wire for action.
+   */
+  @java.lang.Override public int getActionValue() {
+    return action_;
+  }
+  /**
+   * <pre>
+   * Action to perform on selected task.
+   * </pre>
+   *
+   * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+   * @return The action.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.PutTaskAssignmentsRequestAction getAction() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.PutTaskAssignmentsRequestAction result = com.clarifai.grpc.api.PutTaskAssignmentsRequestAction.valueOf(action_);
+    return result == null ? com.clarifai.grpc.api.PutTaskAssignmentsRequestAction.UNRECOGNIZED : result;
+  }
+
+  public static final int LABEL_SUBMIT_CONFIG_FIELD_NUMBER = 6;
+  /**
+   * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+   * @return Whether the labelSubmitConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLabelSubmitConfig() {
+    return actionConfigCase_ == 6;
+  }
+  /**
+   * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+   * @return The labelSubmitConfig.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.LabelSubmitConfig getLabelSubmitConfig() {
+    if (actionConfigCase_ == 6) {
+       return (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.LabelSubmitConfigOrBuilder getLabelSubmitConfigOrBuilder() {
+    if (actionConfigCase_ == 6) {
+       return (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -238,6 +370,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, inputId_);
     }
+    if (action_ != com.clarifai.grpc.api.PutTaskAssignmentsRequestAction.PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET.getNumber()) {
+      output.writeEnum(4, action_);
+    }
+    if (actionConfigCase_ == 6) {
+      output.writeMessage(6, (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +394,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, inputId_);
+    }
+    if (action_ != com.clarifai.grpc.api.PutTaskAssignmentsRequestAction.PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, action_);
+    }
+    if (actionConfigCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,6 +427,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTaskId())) return false;
     if (!getInputId()
         .equals(other.getInputId())) return false;
+    if (action_ != other.action_) return false;
+    if (!getActionConfigCase().equals(other.getActionConfigCase())) return false;
+    switch (actionConfigCase_) {
+      case 6:
+        if (!getLabelSubmitConfig()
+            .equals(other.getLabelSubmitConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -300,6 +456,16 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTaskId().hashCode();
     hash = (37 * hash) + INPUT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInputId().hashCode();
+    hash = (37 * hash) + ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + action_;
+    switch (actionConfigCase_) {
+      case 6:
+        hash = (37 * hash) + LABEL_SUBMIT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getLabelSubmitConfig().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -447,6 +613,10 @@ private static final long serialVersionUID = 0L;
 
       inputId_ = "";
 
+      action_ = 0;
+
+      actionConfigCase_ = 0;
+      actionConfig_ = null;
       return this;
     }
 
@@ -480,6 +650,15 @@ private static final long serialVersionUID = 0L;
       }
       result.taskId_ = taskId_;
       result.inputId_ = inputId_;
+      result.action_ = action_;
+      if (actionConfigCase_ == 6) {
+        if (labelSubmitConfigBuilder_ == null) {
+          result.actionConfig_ = actionConfig_;
+        } else {
+          result.actionConfig_ = labelSubmitConfigBuilder_.build();
+        }
+      }
+      result.actionConfigCase_ = actionConfigCase_;
       onBuilt();
       return result;
     }
@@ -539,6 +718,18 @@ private static final long serialVersionUID = 0L;
         inputId_ = other.inputId_;
         onChanged();
       }
+      if (other.action_ != 0) {
+        setActionValue(other.getActionValue());
+      }
+      switch (other.getActionConfigCase()) {
+        case LABEL_SUBMIT_CONFIG: {
+          mergeLabelSubmitConfig(other.getLabelSubmitConfig());
+          break;
+        }
+        case ACTIONCONFIG_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -567,6 +758,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int actionConfigCase_ = 0;
+    private java.lang.Object actionConfig_;
+    public ActionConfigCase
+        getActionConfigCase() {
+      return ActionConfigCase.forNumber(
+          actionConfigCase_);
+    }
+
+    public Builder clearActionConfig() {
+      actionConfigCase_ = 0;
+      actionConfig_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -765,6 +971,13 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object inputId_ = "";
     /**
+     * <pre>
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * </pre>
+     *
      * <code>string input_id = 3;</code>
      * @return The inputId.
      */
@@ -781,6 +994,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * </pre>
+     *
      * <code>string input_id = 3;</code>
      * @return The bytes for inputId.
      */
@@ -798,6 +1018,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * </pre>
+     *
      * <code>string input_id = 3;</code>
      * @param value The inputId to set.
      * @return This builder for chaining.
@@ -813,6 +1040,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * </pre>
+     *
      * <code>string input_id = 3;</code>
      * @return This builder for chaining.
      */
@@ -823,6 +1057,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Deprecated: use action and action_config instead.
+     * Supported for backwards compatibility: setting this field is equivalent with
+     * * action = LABEL_SUBMIT
+     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * </pre>
+     *
      * <code>string input_id = 3;</code>
      * @param value The bytes for inputId to set.
      * @return This builder for chaining.
@@ -837,6 +1078,222 @@ private static final long serialVersionUID = 0L;
       inputId_ = value;
       onChanged();
       return this;
+    }
+
+    private int action_ = 0;
+    /**
+     * <pre>
+     * Action to perform on selected task.
+     * </pre>
+     *
+     * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @return The enum numeric value on the wire for action.
+     */
+    @java.lang.Override public int getActionValue() {
+      return action_;
+    }
+    /**
+     * <pre>
+     * Action to perform on selected task.
+     * </pre>
+     *
+     * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @param value The enum numeric value on the wire for action to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActionValue(int value) {
+      
+      action_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Action to perform on selected task.
+     * </pre>
+     *
+     * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @return The action.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.PutTaskAssignmentsRequestAction getAction() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.PutTaskAssignmentsRequestAction result = com.clarifai.grpc.api.PutTaskAssignmentsRequestAction.valueOf(action_);
+      return result == null ? com.clarifai.grpc.api.PutTaskAssignmentsRequestAction.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Action to perform on selected task.
+     * </pre>
+     *
+     * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @param value The action to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAction(com.clarifai.grpc.api.PutTaskAssignmentsRequestAction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      action_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Action to perform on selected task.
+     * </pre>
+     *
+     * <code>.clarifai.api.PutTaskAssignmentsRequestAction action = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAction() {
+      
+      action_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.LabelSubmitConfig, com.clarifai.grpc.api.LabelSubmitConfig.Builder, com.clarifai.grpc.api.LabelSubmitConfigOrBuilder> labelSubmitConfigBuilder_;
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     * @return Whether the labelSubmitConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasLabelSubmitConfig() {
+      return actionConfigCase_ == 6;
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     * @return The labelSubmitConfig.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.LabelSubmitConfig getLabelSubmitConfig() {
+      if (labelSubmitConfigBuilder_ == null) {
+        if (actionConfigCase_ == 6) {
+          return (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
+      } else {
+        if (actionConfigCase_ == 6) {
+          return labelSubmitConfigBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    public Builder setLabelSubmitConfig(com.clarifai.grpc.api.LabelSubmitConfig value) {
+      if (labelSubmitConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actionConfig_ = value;
+        onChanged();
+      } else {
+        labelSubmitConfigBuilder_.setMessage(value);
+      }
+      actionConfigCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    public Builder setLabelSubmitConfig(
+        com.clarifai.grpc.api.LabelSubmitConfig.Builder builderForValue) {
+      if (labelSubmitConfigBuilder_ == null) {
+        actionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        labelSubmitConfigBuilder_.setMessage(builderForValue.build());
+      }
+      actionConfigCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    public Builder mergeLabelSubmitConfig(com.clarifai.grpc.api.LabelSubmitConfig value) {
+      if (labelSubmitConfigBuilder_ == null) {
+        if (actionConfigCase_ == 6 &&
+            actionConfig_ != com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance()) {
+          actionConfig_ = com.clarifai.grpc.api.LabelSubmitConfig.newBuilder((com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          actionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionConfigCase_ == 6) {
+          labelSubmitConfigBuilder_.mergeFrom(value);
+        } else {
+          labelSubmitConfigBuilder_.setMessage(value);
+        }
+      }
+      actionConfigCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    public Builder clearLabelSubmitConfig() {
+      if (labelSubmitConfigBuilder_ == null) {
+        if (actionConfigCase_ == 6) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionConfigCase_ == 6) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+        }
+        labelSubmitConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    public com.clarifai.grpc.api.LabelSubmitConfig.Builder getLabelSubmitConfigBuilder() {
+      return getLabelSubmitConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.LabelSubmitConfigOrBuilder getLabelSubmitConfigOrBuilder() {
+      if ((actionConfigCase_ == 6) && (labelSubmitConfigBuilder_ != null)) {
+        return labelSubmitConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionConfigCase_ == 6) {
+          return (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.LabelSubmitConfig, com.clarifai.grpc.api.LabelSubmitConfig.Builder, com.clarifai.grpc.api.LabelSubmitConfigOrBuilder> 
+        getLabelSubmitConfigFieldBuilder() {
+      if (labelSubmitConfigBuilder_ == null) {
+        if (!(actionConfigCase_ == 6)) {
+          actionConfig_ = com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
+        }
+        labelSubmitConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.LabelSubmitConfig, com.clarifai.grpc.api.LabelSubmitConfig.Builder, com.clarifai.grpc.api.LabelSubmitConfigOrBuilder>(
+                (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_,
+                getParentForChildren(),
+                isClean());
+        actionConfig_ = null;
+      }
+      actionConfigCase_ = 6;
+      onChanged();;
+      return labelSubmitConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
