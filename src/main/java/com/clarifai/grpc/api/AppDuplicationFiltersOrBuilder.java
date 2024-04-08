@@ -50,7 +50,7 @@ public interface AppDuplicationFiltersOrBuilder extends
 
   /**
    * <pre>
-   * Copy workflows. Requires that copy_models and copy_concepts are also set.
+   * Copy workflows.
    * </pre>
    *
    * <code>bool copy_workflows = 5;</code>

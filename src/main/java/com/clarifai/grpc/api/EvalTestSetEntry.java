@@ -99,6 +99,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.Annotation.Builder subBuilder = null;
+            if (predictedAnnotation_ != null) {
+              subBuilder = predictedAnnotation_.toBuilder();
+            }
+            predictedAnnotation_ = input.readMessage(com.clarifai.grpc.api.Annotation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(predictedAnnotation_);
+              predictedAnnotation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 66: {
+            com.clarifai.grpc.api.Annotation.Builder subBuilder = null;
+            if (groundTruthAnnotation_ != null) {
+              subBuilder = groundTruthAnnotation_.toBuilder();
+            }
+            groundTruthAnnotation_ = input.readMessage(com.clarifai.grpc.api.Annotation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(groundTruthAnnotation_);
+              groundTruthAnnotation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -286,11 +312,13 @@ private static final long serialVersionUID = 0L;
    * And the concepts is in ground_truth_concepts instead of this annotation
    * </pre>
    *
-   * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1981
    * @return Whether the annotation field is set.
    */
   @java.lang.Override
-  public boolean hasAnnotation() {
+  @java.lang.Deprecated public boolean hasAnnotation() {
     return annotation_ != null;
   }
   /**
@@ -300,11 +328,13 @@ private static final long serialVersionUID = 0L;
    * And the concepts is in ground_truth_concepts instead of this annotation
    * </pre>
    *
-   * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1981
    * @return The annotation.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Annotation getAnnotation() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.Annotation getAnnotation() {
     return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
   }
   /**
@@ -314,11 +344,75 @@ private static final long serialVersionUID = 0L;
    * And the concepts is in ground_truth_concepts instead of this annotation
    * </pre>
    *
-   * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
+  @java.lang.Deprecated public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
     return getAnnotation();
+  }
+
+  public static final int PREDICTED_ANNOTATION_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.Annotation predictedAnnotation_;
+  /**
+   * <pre>
+   * For region based models, region and associated concepts are stored together.
+   * </pre>
+   *
+   * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+   * @return Whether the predictedAnnotation field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredictedAnnotation() {
+    return predictedAnnotation_ != null;
+  }
+  /**
+   * <pre>
+   * For region based models, region and associated concepts are stored together.
+   * </pre>
+   *
+   * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+   * @return The predictedAnnotation.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Annotation getPredictedAnnotation() {
+    return predictedAnnotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : predictedAnnotation_;
+  }
+  /**
+   * <pre>
+   * For region based models, region and associated concepts are stored together.
+   * </pre>
+   *
+   * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AnnotationOrBuilder getPredictedAnnotationOrBuilder() {
+    return getPredictedAnnotation();
+  }
+
+  public static final int GROUND_TRUTH_ANNOTATION_FIELD_NUMBER = 8;
+  private com.clarifai.grpc.api.Annotation groundTruthAnnotation_;
+  /**
+   * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+   * @return Whether the groundTruthAnnotation field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroundTruthAnnotation() {
+    return groundTruthAnnotation_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+   * @return The groundTruthAnnotation.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Annotation getGroundTruthAnnotation() {
+    return groundTruthAnnotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : groundTruthAnnotation_;
+  }
+  /**
+   * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AnnotationOrBuilder getGroundTruthAnnotationOrBuilder() {
+    return getGroundTruthAnnotation();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,6 +441,12 @@ private static final long serialVersionUID = 0L;
     if (input_ != null) {
       output.writeMessage(6, getInput());
     }
+    if (predictedAnnotation_ != null) {
+      output.writeMessage(7, getPredictedAnnotation());
+    }
+    if (groundTruthAnnotation_ != null) {
+      output.writeMessage(8, getGroundTruthAnnotation());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -371,6 +471,14 @@ private static final long serialVersionUID = 0L;
     if (input_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getInput());
+    }
+    if (predictedAnnotation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getPredictedAnnotation());
+    }
+    if (groundTruthAnnotation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getGroundTruthAnnotation());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -401,6 +509,16 @@ private static final long serialVersionUID = 0L;
       if (!getAnnotation()
           .equals(other.getAnnotation())) return false;
     }
+    if (hasPredictedAnnotation() != other.hasPredictedAnnotation()) return false;
+    if (hasPredictedAnnotation()) {
+      if (!getPredictedAnnotation()
+          .equals(other.getPredictedAnnotation())) return false;
+    }
+    if (hasGroundTruthAnnotation() != other.hasGroundTruthAnnotation()) return false;
+    if (hasGroundTruthAnnotation()) {
+      if (!getGroundTruthAnnotation()
+          .equals(other.getGroundTruthAnnotation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -427,6 +545,14 @@ private static final long serialVersionUID = 0L;
     if (hasAnnotation()) {
       hash = (37 * hash) + ANNOTATION_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotation().hashCode();
+    }
+    if (hasPredictedAnnotation()) {
+      hash = (37 * hash) + PREDICTED_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPredictedAnnotation().hashCode();
+    }
+    if (hasGroundTruthAnnotation()) {
+      hash = (37 * hash) + GROUND_TRUTH_ANNOTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundTruthAnnotation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -591,6 +717,18 @@ private static final long serialVersionUID = 0L;
         annotation_ = null;
         annotationBuilder_ = null;
       }
+      if (predictedAnnotationBuilder_ == null) {
+        predictedAnnotation_ = null;
+      } else {
+        predictedAnnotation_ = null;
+        predictedAnnotationBuilder_ = null;
+      }
+      if (groundTruthAnnotationBuilder_ == null) {
+        groundTruthAnnotation_ = null;
+      } else {
+        groundTruthAnnotation_ = null;
+        groundTruthAnnotationBuilder_ = null;
+      }
       return this;
     }
 
@@ -645,6 +783,16 @@ private static final long serialVersionUID = 0L;
         result.annotation_ = annotation_;
       } else {
         result.annotation_ = annotationBuilder_.build();
+      }
+      if (predictedAnnotationBuilder_ == null) {
+        result.predictedAnnotation_ = predictedAnnotation_;
+      } else {
+        result.predictedAnnotation_ = predictedAnnotationBuilder_.build();
+      }
+      if (groundTruthAnnotationBuilder_ == null) {
+        result.groundTruthAnnotation_ = groundTruthAnnotation_;
+      } else {
+        result.groundTruthAnnotation_ = groundTruthAnnotationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -751,6 +899,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasAnnotation()) {
         mergeAnnotation(other.getAnnotation());
+      }
+      if (other.hasPredictedAnnotation()) {
+        mergePredictedAnnotation(other.getPredictedAnnotation());
+      }
+      if (other.hasGroundTruthAnnotation()) {
+        mergeGroundTruthAnnotation(other.getGroundTruthAnnotation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1499,10 +1653,12 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1981
      * @return Whether the annotation field is set.
      */
-    public boolean hasAnnotation() {
+    @java.lang.Deprecated public boolean hasAnnotation() {
       return annotationBuilder_ != null || annotation_ != null;
     }
     /**
@@ -1512,10 +1668,12 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+     * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=1981
      * @return The annotation.
      */
-    public com.clarifai.grpc.api.Annotation getAnnotation() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Annotation getAnnotation() {
       if (annotationBuilder_ == null) {
         return annotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : annotation_;
       } else {
@@ -1529,9 +1687,9 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
-    public Builder setAnnotation(com.clarifai.grpc.api.Annotation value) {
+    @java.lang.Deprecated public Builder setAnnotation(com.clarifai.grpc.api.Annotation value) {
       if (annotationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1551,9 +1709,9 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
-    public Builder setAnnotation(
+    @java.lang.Deprecated public Builder setAnnotation(
         com.clarifai.grpc.api.Annotation.Builder builderForValue) {
       if (annotationBuilder_ == null) {
         annotation_ = builderForValue.build();
@@ -1571,9 +1729,9 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
-    public Builder mergeAnnotation(com.clarifai.grpc.api.Annotation value) {
+    @java.lang.Deprecated public Builder mergeAnnotation(com.clarifai.grpc.api.Annotation value) {
       if (annotationBuilder_ == null) {
         if (annotation_ != null) {
           annotation_ =
@@ -1595,9 +1753,9 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
-    public Builder clearAnnotation() {
+    @java.lang.Deprecated public Builder clearAnnotation() {
       if (annotationBuilder_ == null) {
         annotation_ = null;
         onChanged();
@@ -1615,9 +1773,9 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.Annotation.Builder getAnnotationBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.Annotation.Builder getAnnotationBuilder() {
       
       onChanged();
       return getAnnotationFieldBuilder().getBuilder();
@@ -1629,9 +1787,9 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
-    public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
+    @java.lang.Deprecated public com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder() {
       if (annotationBuilder_ != null) {
         return annotationBuilder_.getMessageOrBuilder();
       } else {
@@ -1646,7 +1804,7 @@ private static final long serialVersionUID = 0L;
      * And the concepts is in ground_truth_concepts instead of this annotation
      * </pre>
      *
-     * <code>.clarifai.api.Annotation annotation = 5;</code>
+     * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> 
@@ -1660,6 +1818,280 @@ private static final long serialVersionUID = 0L;
         annotation_ = null;
       }
       return annotationBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Annotation predictedAnnotation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> predictedAnnotationBuilder_;
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     * @return Whether the predictedAnnotation field is set.
+     */
+    public boolean hasPredictedAnnotation() {
+      return predictedAnnotationBuilder_ != null || predictedAnnotation_ != null;
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     * @return The predictedAnnotation.
+     */
+    public com.clarifai.grpc.api.Annotation getPredictedAnnotation() {
+      if (predictedAnnotationBuilder_ == null) {
+        return predictedAnnotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : predictedAnnotation_;
+      } else {
+        return predictedAnnotationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    public Builder setPredictedAnnotation(com.clarifai.grpc.api.Annotation value) {
+      if (predictedAnnotationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predictedAnnotation_ = value;
+        onChanged();
+      } else {
+        predictedAnnotationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    public Builder setPredictedAnnotation(
+        com.clarifai.grpc.api.Annotation.Builder builderForValue) {
+      if (predictedAnnotationBuilder_ == null) {
+        predictedAnnotation_ = builderForValue.build();
+        onChanged();
+      } else {
+        predictedAnnotationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    public Builder mergePredictedAnnotation(com.clarifai.grpc.api.Annotation value) {
+      if (predictedAnnotationBuilder_ == null) {
+        if (predictedAnnotation_ != null) {
+          predictedAnnotation_ =
+            com.clarifai.grpc.api.Annotation.newBuilder(predictedAnnotation_).mergeFrom(value).buildPartial();
+        } else {
+          predictedAnnotation_ = value;
+        }
+        onChanged();
+      } else {
+        predictedAnnotationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    public Builder clearPredictedAnnotation() {
+      if (predictedAnnotationBuilder_ == null) {
+        predictedAnnotation_ = null;
+        onChanged();
+      } else {
+        predictedAnnotation_ = null;
+        predictedAnnotationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    public com.clarifai.grpc.api.Annotation.Builder getPredictedAnnotationBuilder() {
+      
+      onChanged();
+      return getPredictedAnnotationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    public com.clarifai.grpc.api.AnnotationOrBuilder getPredictedAnnotationOrBuilder() {
+      if (predictedAnnotationBuilder_ != null) {
+        return predictedAnnotationBuilder_.getMessageOrBuilder();
+      } else {
+        return predictedAnnotation_ == null ?
+            com.clarifai.grpc.api.Annotation.getDefaultInstance() : predictedAnnotation_;
+      }
+    }
+    /**
+     * <pre>
+     * For region based models, region and associated concepts are stored together.
+     * </pre>
+     *
+     * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> 
+        getPredictedAnnotationFieldBuilder() {
+      if (predictedAnnotationBuilder_ == null) {
+        predictedAnnotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder>(
+                getPredictedAnnotation(),
+                getParentForChildren(),
+                isClean());
+        predictedAnnotation_ = null;
+      }
+      return predictedAnnotationBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Annotation groundTruthAnnotation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> groundTruthAnnotationBuilder_;
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     * @return Whether the groundTruthAnnotation field is set.
+     */
+    public boolean hasGroundTruthAnnotation() {
+      return groundTruthAnnotationBuilder_ != null || groundTruthAnnotation_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     * @return The groundTruthAnnotation.
+     */
+    public com.clarifai.grpc.api.Annotation getGroundTruthAnnotation() {
+      if (groundTruthAnnotationBuilder_ == null) {
+        return groundTruthAnnotation_ == null ? com.clarifai.grpc.api.Annotation.getDefaultInstance() : groundTruthAnnotation_;
+      } else {
+        return groundTruthAnnotationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    public Builder setGroundTruthAnnotation(com.clarifai.grpc.api.Annotation value) {
+      if (groundTruthAnnotationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        groundTruthAnnotation_ = value;
+        onChanged();
+      } else {
+        groundTruthAnnotationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    public Builder setGroundTruthAnnotation(
+        com.clarifai.grpc.api.Annotation.Builder builderForValue) {
+      if (groundTruthAnnotationBuilder_ == null) {
+        groundTruthAnnotation_ = builderForValue.build();
+        onChanged();
+      } else {
+        groundTruthAnnotationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    public Builder mergeGroundTruthAnnotation(com.clarifai.grpc.api.Annotation value) {
+      if (groundTruthAnnotationBuilder_ == null) {
+        if (groundTruthAnnotation_ != null) {
+          groundTruthAnnotation_ =
+            com.clarifai.grpc.api.Annotation.newBuilder(groundTruthAnnotation_).mergeFrom(value).buildPartial();
+        } else {
+          groundTruthAnnotation_ = value;
+        }
+        onChanged();
+      } else {
+        groundTruthAnnotationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    public Builder clearGroundTruthAnnotation() {
+      if (groundTruthAnnotationBuilder_ == null) {
+        groundTruthAnnotation_ = null;
+        onChanged();
+      } else {
+        groundTruthAnnotation_ = null;
+        groundTruthAnnotationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    public com.clarifai.grpc.api.Annotation.Builder getGroundTruthAnnotationBuilder() {
+      
+      onChanged();
+      return getGroundTruthAnnotationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    public com.clarifai.grpc.api.AnnotationOrBuilder getGroundTruthAnnotationOrBuilder() {
+      if (groundTruthAnnotationBuilder_ != null) {
+        return groundTruthAnnotationBuilder_.getMessageOrBuilder();
+      } else {
+        return groundTruthAnnotation_ == null ?
+            com.clarifai.grpc.api.Annotation.getDefaultInstance() : groundTruthAnnotation_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder> 
+        getGroundTruthAnnotationFieldBuilder() {
+      if (groundTruthAnnotationBuilder_ == null) {
+        groundTruthAnnotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Annotation, com.clarifai.grpc.api.Annotation.Builder, com.clarifai.grpc.api.AnnotationOrBuilder>(
+                getGroundTruthAnnotation(),
+                getParentForChildren(),
+                isClean());
+        groundTruthAnnotation_ = null;
+      }
+      return groundTruthAnnotationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

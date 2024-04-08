@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
   private boolean copyWorkflows_;
   /**
    * <pre>
-   * Copy workflows. Requires that copy_models and copy_concepts are also set.
+   * Copy workflows.
    * </pre>
    *
    * <code>bool copy_workflows = 5;</code>
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
     private boolean copyWorkflows_ ;
     /**
      * <pre>
-     * Copy workflows. Requires that copy_models and copy_concepts are also set.
+     * Copy workflows.
      * </pre>
      *
      * <code>bool copy_workflows = 5;</code>
@@ -794,7 +794,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy workflows. Requires that copy_models and copy_concepts are also set.
+     * Copy workflows.
      * </pre>
      *
      * <code>bool copy_workflows = 5;</code>
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Copy workflows. Requires that copy_models and copy_concepts are also set.
+     * Copy workflows.
      * </pre>
      *
      * <code>bool copy_workflows = 5;</code>

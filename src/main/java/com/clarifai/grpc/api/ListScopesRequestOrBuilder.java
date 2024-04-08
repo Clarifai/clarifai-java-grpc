@@ -10,7 +10,7 @@ public interface ListScopesRequestOrBuilder extends
   /**
    * <pre>
    * If "personal_access_token" include scopes and endpoints available to personal access tokens.
-   * If "api_key" include scopes and endpoints available to app-specific keys. (default)
+   * If "app_specific_key" include scopes and endpoints available to app-specific keys. (default)
    * </pre>
    *
    * <code>string key_type = 1;</code>
@@ -20,7 +20,7 @@ public interface ListScopesRequestOrBuilder extends
   /**
    * <pre>
    * If "personal_access_token" include scopes and endpoints available to personal access tokens.
-   * If "api_key" include scopes and endpoints available to app-specific keys. (default)
+   * If "app_specific_key" include scopes and endpoints available to app-specific keys. (default)
    * </pre>
    *
    * <code>string key_type = 1;</code>

@@ -106,6 +106,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.clarifai.grpc.api.RunnerSelector.Builder subBuilder = null;
+            if (runnerSelector_ != null) {
+              subBuilder = runnerSelector_.toBuilder();
+            }
+            runnerSelector_ = input.readMessage(com.clarifai.grpc.api.RunnerSelector.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(runnerSelector_);
+              runnerSelector_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -326,6 +339,44 @@ private static final long serialVersionUID = 0L;
     return getModel();
   }
 
+  public static final int RUNNER_SELECTOR_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.RunnerSelector runnerSelector_;
+  /**
+   * <pre>
+   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+   * @return Whether the runnerSelector field is set.
+   */
+  @java.lang.Override
+  public boolean hasRunnerSelector() {
+    return runnerSelector_ != null;
+  }
+  /**
+   * <pre>
+   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+   * @return The runnerSelector.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerSelector getRunnerSelector() {
+    return runnerSelector_ == null ? com.clarifai.grpc.api.RunnerSelector.getDefaultInstance() : runnerSelector_;
+  }
+  /**
+   * <pre>
+   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorOrBuilder() {
+    return getRunnerSelector();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -355,6 +406,9 @@ private static final long serialVersionUID = 0L;
     if (model_ != null) {
       output.writeMessage(5, getModel());
     }
+    if (runnerSelector_ != null) {
+      output.writeMessage(6, getRunnerSelector());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -381,6 +435,10 @@ private static final long serialVersionUID = 0L;
     if (model_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getModel());
+    }
+    if (runnerSelector_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getRunnerSelector());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -413,6 +471,11 @@ private static final long serialVersionUID = 0L;
       if (!getModel()
           .equals(other.getModel())) return false;
     }
+    if (hasRunnerSelector() != other.hasRunnerSelector()) return false;
+    if (hasRunnerSelector()) {
+      if (!getRunnerSelector()
+          .equals(other.getRunnerSelector())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -439,6 +502,10 @@ private static final long serialVersionUID = 0L;
     if (hasModel()) {
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
+    }
+    if (hasRunnerSelector()) {
+      hash = (37 * hash) + RUNNER_SELECTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getRunnerSelector().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -603,6 +670,12 @@ private static final long serialVersionUID = 0L;
         model_ = null;
         modelBuilder_ = null;
       }
+      if (runnerSelectorBuilder_ == null) {
+        runnerSelector_ = null;
+      } else {
+        runnerSelector_ = null;
+        runnerSelectorBuilder_ = null;
+      }
       return this;
     }
 
@@ -650,6 +723,11 @@ private static final long serialVersionUID = 0L;
         result.model_ = model_;
       } else {
         result.model_ = modelBuilder_.build();
+      }
+      if (runnerSelectorBuilder_ == null) {
+        result.runnerSelector_ = runnerSelector_;
+      } else {
+        result.runnerSelector_ = runnerSelectorBuilder_.build();
       }
       onBuilt();
       return result;
@@ -738,6 +816,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModel()) {
         mergeModel(other.getModel());
+      }
+      if (other.hasRunnerSelector()) {
+        mergeRunnerSelector(other.getRunnerSelector());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1442,6 +1523,161 @@ private static final long serialVersionUID = 0L;
         model_ = null;
       }
       return modelBuilder_;
+    }
+
+    private com.clarifai.grpc.api.RunnerSelector runnerSelector_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> runnerSelectorBuilder_;
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     * @return Whether the runnerSelector field is set.
+     */
+    public boolean hasRunnerSelector() {
+      return runnerSelectorBuilder_ != null || runnerSelector_ != null;
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     * @return The runnerSelector.
+     */
+    public com.clarifai.grpc.api.RunnerSelector getRunnerSelector() {
+      if (runnerSelectorBuilder_ == null) {
+        return runnerSelector_ == null ? com.clarifai.grpc.api.RunnerSelector.getDefaultInstance() : runnerSelector_;
+      } else {
+        return runnerSelectorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    public Builder setRunnerSelector(com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runnerSelector_ = value;
+        onChanged();
+      } else {
+        runnerSelectorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    public Builder setRunnerSelector(
+        com.clarifai.grpc.api.RunnerSelector.Builder builderForValue) {
+      if (runnerSelectorBuilder_ == null) {
+        runnerSelector_ = builderForValue.build();
+        onChanged();
+      } else {
+        runnerSelectorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    public Builder mergeRunnerSelector(com.clarifai.grpc.api.RunnerSelector value) {
+      if (runnerSelectorBuilder_ == null) {
+        if (runnerSelector_ != null) {
+          runnerSelector_ =
+            com.clarifai.grpc.api.RunnerSelector.newBuilder(runnerSelector_).mergeFrom(value).buildPartial();
+        } else {
+          runnerSelector_ = value;
+        }
+        onChanged();
+      } else {
+        runnerSelectorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    public Builder clearRunnerSelector() {
+      if (runnerSelectorBuilder_ == null) {
+        runnerSelector_ = null;
+        onChanged();
+      } else {
+        runnerSelector_ = null;
+        runnerSelectorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelector.Builder getRunnerSelectorBuilder() {
+      
+      onChanged();
+      return getRunnerSelectorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    public com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorOrBuilder() {
+      if (runnerSelectorBuilder_ != null) {
+        return runnerSelectorBuilder_.getMessageOrBuilder();
+      } else {
+        return runnerSelector_ == null ?
+            com.clarifai.grpc.api.RunnerSelector.getDefaultInstance() : runnerSelector_;
+      }
+    }
+    /**
+     * <pre>
+     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * </pre>
+     *
+     * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> 
+        getRunnerSelectorFieldBuilder() {
+      if (runnerSelectorBuilder_ == null) {
+        runnerSelectorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder>(
+                getRunnerSelector(),
+                getParentForChildren(),
+                isClean());
+        runnerSelector_ = null;
+      }
+      return runnerSelectorBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

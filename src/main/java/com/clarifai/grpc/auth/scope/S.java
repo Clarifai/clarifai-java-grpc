@@ -188,6 +188,22 @@ public enum S
   Models_Sync(27),
   /**
    * <pre>
+   * To get model version export
+   * </pre>
+   *
+   * <code>ModelExports_Get = 142 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  ModelExports_Get(142),
+  /**
+   * <pre>
+   * To create model version export
+   * </pre>
+   *
+   * <code>ModelExports_Add = 143 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ModelExports_Get];</code>
+   */
+  ModelExports_Add(143),
+  /**
+   * <pre>
    * Write to the workflows DB table.
    * </pre>
    *
@@ -664,7 +680,7 @@ public enum S
   Uploads_Delete(130),
   /**
    * <pre>
-   * To read allo control over remote runners
+   * To control remote runners
    * </pre>
    *
    * <code>Runners_Get = 131 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -838,6 +854,22 @@ public enum S
    * <code>Models_Sync = 27 [(.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
    */
   public static final int Models_Sync_VALUE = 27;
+  /**
+   * <pre>
+   * To get model version export
+   * </pre>
+   *
+   * <code>ModelExports_Get = 142 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int ModelExports_Get_VALUE = 142;
+  /**
+   * <pre>
+   * To create model version export
+   * </pre>
+   *
+   * <code>ModelExports_Add = 143 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ModelExports_Get];</code>
+   */
+  public static final int ModelExports_Add_VALUE = 143;
   /**
    * <pre>
    * Write to the workflows DB table.
@@ -1312,7 +1344,7 @@ public enum S
   public static final int Uploads_Delete_VALUE = 130;
   /**
    * <pre>
-   * To read allo control over remote runners
+   * To control remote runners
    * </pre>
    *
    * <code>Runners_Get = 131 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
@@ -1378,6 +1410,8 @@ public enum S
       case 17: return Models_Delete;
       case 26: return Models_Train;
       case 27: return Models_Sync;
+      case 142: return ModelExports_Get;
+      case 143: return ModelExports_Add;
       case 18: return Workflows_Add;
       case 19: return Workflows_Get;
       case 20: return Workflows_Patch;

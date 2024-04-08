@@ -100,6 +100,48 @@ private static final long serialVersionUID = 0L;
             actionConfigCase_ = 6;
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.ReviewApproveConfig.Builder subBuilder = null;
+            if (actionConfigCase_ == 7) {
+              subBuilder = ((com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_).toBuilder();
+            }
+            actionConfig_ =
+                input.readMessage(com.clarifai.grpc.api.ReviewApproveConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_);
+              actionConfig_ = subBuilder.buildPartial();
+            }
+            actionConfigCase_ = 7;
+            break;
+          }
+          case 66: {
+            com.clarifai.grpc.api.ReviewRequestChangesConfig.Builder subBuilder = null;
+            if (actionConfigCase_ == 8) {
+              subBuilder = ((com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_).toBuilder();
+            }
+            actionConfig_ =
+                input.readMessage(com.clarifai.grpc.api.ReviewRequestChangesConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_);
+              actionConfig_ = subBuilder.buildPartial();
+            }
+            actionConfigCase_ = 8;
+            break;
+          }
+          case 74: {
+            com.clarifai.grpc.api.ReviewRejectConfig.Builder subBuilder = null;
+            if (actionConfigCase_ == 9) {
+              subBuilder = ((com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_).toBuilder();
+            }
+            actionConfig_ =
+                input.readMessage(com.clarifai.grpc.api.ReviewRejectConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_);
+              actionConfig_ = subBuilder.buildPartial();
+            }
+            actionConfigCase_ = 9;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -140,6 +182,9 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LABEL_SUBMIT_CONFIG(6),
+    REVIEW_APPROVE_CONFIG(7),
+    REVIEW_REQUEST_CHANGES_CONFIG(8),
+    REVIEW_REJECT_CONFIG(9),
     ACTIONCONFIG_NOT_SET(0);
     private final int value;
     private ActionConfigCase(int value) {
@@ -158,6 +203,9 @@ private static final long serialVersionUID = 0L;
     public static ActionConfigCase forNumber(int value) {
       switch (value) {
         case 6: return LABEL_SUBMIT_CONFIG;
+        case 7: return REVIEW_APPROVE_CONFIG;
+        case 8: return REVIEW_REQUEST_CHANGES_CONFIG;
+        case 9: return REVIEW_REJECT_CONFIG;
         case 0: return ACTIONCONFIG_NOT_SET;
         default: return null;
       }
@@ -244,7 +292,7 @@ private static final long serialVersionUID = 0L;
    * Deprecated: use action and action_config instead.
    * Supported for backwards compatibility: setting this field is equivalent with
    * * action = LABEL_SUBMIT
-   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
    * </pre>
    *
    * <code>string input_id = 3;</code>
@@ -268,7 +316,7 @@ private static final long serialVersionUID = 0L;
    * Deprecated: use action and action_config instead.
    * Supported for backwards compatibility: setting this field is equivalent with
    * * action = LABEL_SUBMIT
-   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
    * </pre>
    *
    * <code>string input_id = 3;</code>
@@ -347,6 +395,99 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
   }
 
+  public static final int REVIEW_APPROVE_CONFIG_FIELD_NUMBER = 7;
+  /**
+   * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+   * @return Whether the reviewApproveConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasReviewApproveConfig() {
+    return actionConfigCase_ == 7;
+  }
+  /**
+   * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+   * @return The reviewApproveConfig.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewApproveConfig getReviewApproveConfig() {
+    if (actionConfigCase_ == 7) {
+       return (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewApproveConfigOrBuilder getReviewApproveConfigOrBuilder() {
+    if (actionConfigCase_ == 7) {
+       return (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance();
+  }
+
+  public static final int REVIEW_REQUEST_CHANGES_CONFIG_FIELD_NUMBER = 8;
+  /**
+   * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+   * @return Whether the reviewRequestChangesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasReviewRequestChangesConfig() {
+    return actionConfigCase_ == 8;
+  }
+  /**
+   * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+   * @return The reviewRequestChangesConfig.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewRequestChangesConfig getReviewRequestChangesConfig() {
+    if (actionConfigCase_ == 8) {
+       return (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewRequestChangesConfigOrBuilder getReviewRequestChangesConfigOrBuilder() {
+    if (actionConfigCase_ == 8) {
+       return (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance();
+  }
+
+  public static final int REVIEW_REJECT_CONFIG_FIELD_NUMBER = 9;
+  /**
+   * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+   * @return Whether the reviewRejectConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasReviewRejectConfig() {
+    return actionConfigCase_ == 9;
+  }
+  /**
+   * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+   * @return The reviewRejectConfig.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewRejectConfig getReviewRejectConfig() {
+    if (actionConfigCase_ == 9) {
+       return (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewRejectConfigOrBuilder getReviewRejectConfigOrBuilder() {
+    if (actionConfigCase_ == 9) {
+       return (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -376,6 +517,15 @@ private static final long serialVersionUID = 0L;
     if (actionConfigCase_ == 6) {
       output.writeMessage(6, (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_);
     }
+    if (actionConfigCase_ == 7) {
+      output.writeMessage(7, (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_);
+    }
+    if (actionConfigCase_ == 8) {
+      output.writeMessage(8, (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_);
+    }
+    if (actionConfigCase_ == 9) {
+      output.writeMessage(9, (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -402,6 +552,18 @@ private static final long serialVersionUID = 0L;
     if (actionConfigCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_);
+    }
+    if (actionConfigCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_);
+    }
+    if (actionConfigCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_);
+    }
+    if (actionConfigCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -434,6 +596,18 @@ private static final long serialVersionUID = 0L;
         if (!getLabelSubmitConfig()
             .equals(other.getLabelSubmitConfig())) return false;
         break;
+      case 7:
+        if (!getReviewApproveConfig()
+            .equals(other.getReviewApproveConfig())) return false;
+        break;
+      case 8:
+        if (!getReviewRequestChangesConfig()
+            .equals(other.getReviewRequestChangesConfig())) return false;
+        break;
+      case 9:
+        if (!getReviewRejectConfig()
+            .equals(other.getReviewRejectConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -462,6 +636,18 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + LABEL_SUBMIT_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getLabelSubmitConfig().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + REVIEW_APPROVE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReviewApproveConfig().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + REVIEW_REQUEST_CHANGES_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReviewRequestChangesConfig().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + REVIEW_REJECT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReviewRejectConfig().hashCode();
         break;
       case 0:
       default:
@@ -658,6 +844,27 @@ private static final long serialVersionUID = 0L;
           result.actionConfig_ = labelSubmitConfigBuilder_.build();
         }
       }
+      if (actionConfigCase_ == 7) {
+        if (reviewApproveConfigBuilder_ == null) {
+          result.actionConfig_ = actionConfig_;
+        } else {
+          result.actionConfig_ = reviewApproveConfigBuilder_.build();
+        }
+      }
+      if (actionConfigCase_ == 8) {
+        if (reviewRequestChangesConfigBuilder_ == null) {
+          result.actionConfig_ = actionConfig_;
+        } else {
+          result.actionConfig_ = reviewRequestChangesConfigBuilder_.build();
+        }
+      }
+      if (actionConfigCase_ == 9) {
+        if (reviewRejectConfigBuilder_ == null) {
+          result.actionConfig_ = actionConfig_;
+        } else {
+          result.actionConfig_ = reviewRejectConfigBuilder_.build();
+        }
+      }
       result.actionConfigCase_ = actionConfigCase_;
       onBuilt();
       return result;
@@ -724,6 +931,18 @@ private static final long serialVersionUID = 0L;
       switch (other.getActionConfigCase()) {
         case LABEL_SUBMIT_CONFIG: {
           mergeLabelSubmitConfig(other.getLabelSubmitConfig());
+          break;
+        }
+        case REVIEW_APPROVE_CONFIG: {
+          mergeReviewApproveConfig(other.getReviewApproveConfig());
+          break;
+        }
+        case REVIEW_REQUEST_CHANGES_CONFIG: {
+          mergeReviewRequestChangesConfig(other.getReviewRequestChangesConfig());
+          break;
+        }
+        case REVIEW_REJECT_CONFIG: {
+          mergeReviewRejectConfig(other.getReviewRejectConfig());
           break;
         }
         case ACTIONCONFIG_NOT_SET: {
@@ -975,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
      * </pre>
      *
      * <code>string input_id = 3;</code>
@@ -998,7 +1217,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
      * </pre>
      *
      * <code>string input_id = 3;</code>
@@ -1022,7 +1241,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
      * </pre>
      *
      * <code>string input_id = 3;</code>
@@ -1044,7 +1263,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
      * </pre>
      *
      * <code>string input_id = 3;</code>
@@ -1061,7 +1280,7 @@ private static final long serialVersionUID = 0L;
      * Deprecated: use action and action_config instead.
      * Supported for backwards compatibility: setting this field is equivalent with
      * * action = LABEL_SUBMIT
-     * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+     * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
      * </pre>
      *
      * <code>string input_id = 3;</code>
@@ -1294,6 +1513,432 @@ private static final long serialVersionUID = 0L;
       actionConfigCase_ = 6;
       onChanged();;
       return labelSubmitConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewApproveConfig, com.clarifai.grpc.api.ReviewApproveConfig.Builder, com.clarifai.grpc.api.ReviewApproveConfigOrBuilder> reviewApproveConfigBuilder_;
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     * @return Whether the reviewApproveConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasReviewApproveConfig() {
+      return actionConfigCase_ == 7;
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     * @return The reviewApproveConfig.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewApproveConfig getReviewApproveConfig() {
+      if (reviewApproveConfigBuilder_ == null) {
+        if (actionConfigCase_ == 7) {
+          return (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance();
+      } else {
+        if (actionConfigCase_ == 7) {
+          return reviewApproveConfigBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    public Builder setReviewApproveConfig(com.clarifai.grpc.api.ReviewApproveConfig value) {
+      if (reviewApproveConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actionConfig_ = value;
+        onChanged();
+      } else {
+        reviewApproveConfigBuilder_.setMessage(value);
+      }
+      actionConfigCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    public Builder setReviewApproveConfig(
+        com.clarifai.grpc.api.ReviewApproveConfig.Builder builderForValue) {
+      if (reviewApproveConfigBuilder_ == null) {
+        actionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        reviewApproveConfigBuilder_.setMessage(builderForValue.build());
+      }
+      actionConfigCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    public Builder mergeReviewApproveConfig(com.clarifai.grpc.api.ReviewApproveConfig value) {
+      if (reviewApproveConfigBuilder_ == null) {
+        if (actionConfigCase_ == 7 &&
+            actionConfig_ != com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance()) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewApproveConfig.newBuilder((com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          actionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionConfigCase_ == 7) {
+          reviewApproveConfigBuilder_.mergeFrom(value);
+        } else {
+          reviewApproveConfigBuilder_.setMessage(value);
+        }
+      }
+      actionConfigCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    public Builder clearReviewApproveConfig() {
+      if (reviewApproveConfigBuilder_ == null) {
+        if (actionConfigCase_ == 7) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionConfigCase_ == 7) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+        }
+        reviewApproveConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    public com.clarifai.grpc.api.ReviewApproveConfig.Builder getReviewApproveConfigBuilder() {
+      return getReviewApproveConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewApproveConfigOrBuilder getReviewApproveConfigOrBuilder() {
+      if ((actionConfigCase_ == 7) && (reviewApproveConfigBuilder_ != null)) {
+        return reviewApproveConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionConfigCase_ == 7) {
+          return (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewApproveConfig, com.clarifai.grpc.api.ReviewApproveConfig.Builder, com.clarifai.grpc.api.ReviewApproveConfigOrBuilder> 
+        getReviewApproveConfigFieldBuilder() {
+      if (reviewApproveConfigBuilder_ == null) {
+        if (!(actionConfigCase_ == 7)) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewApproveConfig.getDefaultInstance();
+        }
+        reviewApproveConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ReviewApproveConfig, com.clarifai.grpc.api.ReviewApproveConfig.Builder, com.clarifai.grpc.api.ReviewApproveConfigOrBuilder>(
+                (com.clarifai.grpc.api.ReviewApproveConfig) actionConfig_,
+                getParentForChildren(),
+                isClean());
+        actionConfig_ = null;
+      }
+      actionConfigCase_ = 7;
+      onChanged();;
+      return reviewApproveConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewRequestChangesConfig, com.clarifai.grpc.api.ReviewRequestChangesConfig.Builder, com.clarifai.grpc.api.ReviewRequestChangesConfigOrBuilder> reviewRequestChangesConfigBuilder_;
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     * @return Whether the reviewRequestChangesConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasReviewRequestChangesConfig() {
+      return actionConfigCase_ == 8;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     * @return The reviewRequestChangesConfig.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewRequestChangesConfig getReviewRequestChangesConfig() {
+      if (reviewRequestChangesConfigBuilder_ == null) {
+        if (actionConfigCase_ == 8) {
+          return (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance();
+      } else {
+        if (actionConfigCase_ == 8) {
+          return reviewRequestChangesConfigBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    public Builder setReviewRequestChangesConfig(com.clarifai.grpc.api.ReviewRequestChangesConfig value) {
+      if (reviewRequestChangesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actionConfig_ = value;
+        onChanged();
+      } else {
+        reviewRequestChangesConfigBuilder_.setMessage(value);
+      }
+      actionConfigCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    public Builder setReviewRequestChangesConfig(
+        com.clarifai.grpc.api.ReviewRequestChangesConfig.Builder builderForValue) {
+      if (reviewRequestChangesConfigBuilder_ == null) {
+        actionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        reviewRequestChangesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      actionConfigCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    public Builder mergeReviewRequestChangesConfig(com.clarifai.grpc.api.ReviewRequestChangesConfig value) {
+      if (reviewRequestChangesConfigBuilder_ == null) {
+        if (actionConfigCase_ == 8 &&
+            actionConfig_ != com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance()) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewRequestChangesConfig.newBuilder((com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          actionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionConfigCase_ == 8) {
+          reviewRequestChangesConfigBuilder_.mergeFrom(value);
+        } else {
+          reviewRequestChangesConfigBuilder_.setMessage(value);
+        }
+      }
+      actionConfigCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    public Builder clearReviewRequestChangesConfig() {
+      if (reviewRequestChangesConfigBuilder_ == null) {
+        if (actionConfigCase_ == 8) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionConfigCase_ == 8) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+        }
+        reviewRequestChangesConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    public com.clarifai.grpc.api.ReviewRequestChangesConfig.Builder getReviewRequestChangesConfigBuilder() {
+      return getReviewRequestChangesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewRequestChangesConfigOrBuilder getReviewRequestChangesConfigOrBuilder() {
+      if ((actionConfigCase_ == 8) && (reviewRequestChangesConfigBuilder_ != null)) {
+        return reviewRequestChangesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionConfigCase_ == 8) {
+          return (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewRequestChangesConfig, com.clarifai.grpc.api.ReviewRequestChangesConfig.Builder, com.clarifai.grpc.api.ReviewRequestChangesConfigOrBuilder> 
+        getReviewRequestChangesConfigFieldBuilder() {
+      if (reviewRequestChangesConfigBuilder_ == null) {
+        if (!(actionConfigCase_ == 8)) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewRequestChangesConfig.getDefaultInstance();
+        }
+        reviewRequestChangesConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ReviewRequestChangesConfig, com.clarifai.grpc.api.ReviewRequestChangesConfig.Builder, com.clarifai.grpc.api.ReviewRequestChangesConfigOrBuilder>(
+                (com.clarifai.grpc.api.ReviewRequestChangesConfig) actionConfig_,
+                getParentForChildren(),
+                isClean());
+        actionConfig_ = null;
+      }
+      actionConfigCase_ = 8;
+      onChanged();;
+      return reviewRequestChangesConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewRejectConfig, com.clarifai.grpc.api.ReviewRejectConfig.Builder, com.clarifai.grpc.api.ReviewRejectConfigOrBuilder> reviewRejectConfigBuilder_;
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     * @return Whether the reviewRejectConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasReviewRejectConfig() {
+      return actionConfigCase_ == 9;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     * @return The reviewRejectConfig.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewRejectConfig getReviewRejectConfig() {
+      if (reviewRejectConfigBuilder_ == null) {
+        if (actionConfigCase_ == 9) {
+          return (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance();
+      } else {
+        if (actionConfigCase_ == 9) {
+          return reviewRejectConfigBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    public Builder setReviewRejectConfig(com.clarifai.grpc.api.ReviewRejectConfig value) {
+      if (reviewRejectConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actionConfig_ = value;
+        onChanged();
+      } else {
+        reviewRejectConfigBuilder_.setMessage(value);
+      }
+      actionConfigCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    public Builder setReviewRejectConfig(
+        com.clarifai.grpc.api.ReviewRejectConfig.Builder builderForValue) {
+      if (reviewRejectConfigBuilder_ == null) {
+        actionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        reviewRejectConfigBuilder_.setMessage(builderForValue.build());
+      }
+      actionConfigCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    public Builder mergeReviewRejectConfig(com.clarifai.grpc.api.ReviewRejectConfig value) {
+      if (reviewRejectConfigBuilder_ == null) {
+        if (actionConfigCase_ == 9 &&
+            actionConfig_ != com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance()) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewRejectConfig.newBuilder((com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          actionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionConfigCase_ == 9) {
+          reviewRejectConfigBuilder_.mergeFrom(value);
+        } else {
+          reviewRejectConfigBuilder_.setMessage(value);
+        }
+      }
+      actionConfigCase_ = 9;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    public Builder clearReviewRejectConfig() {
+      if (reviewRejectConfigBuilder_ == null) {
+        if (actionConfigCase_ == 9) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionConfigCase_ == 9) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+        }
+        reviewRejectConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    public com.clarifai.grpc.api.ReviewRejectConfig.Builder getReviewRejectConfigBuilder() {
+      return getReviewRejectConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewRejectConfigOrBuilder getReviewRejectConfigOrBuilder() {
+      if ((actionConfigCase_ == 9) && (reviewRejectConfigBuilder_ != null)) {
+        return reviewRejectConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionConfigCase_ == 9) {
+          return (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewRejectConfig, com.clarifai.grpc.api.ReviewRejectConfig.Builder, com.clarifai.grpc.api.ReviewRejectConfigOrBuilder> 
+        getReviewRejectConfigFieldBuilder() {
+      if (reviewRejectConfigBuilder_ == null) {
+        if (!(actionConfigCase_ == 9)) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewRejectConfig.getDefaultInstance();
+        }
+        reviewRejectConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ReviewRejectConfig, com.clarifai.grpc.api.ReviewRejectConfig.Builder, com.clarifai.grpc.api.ReviewRejectConfigOrBuilder>(
+                (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_,
+                getParentForChildren(),
+                isClean());
+        actionConfig_ = null;
+      }
+      actionConfigCase_ = 9;
+      onChanged();;
+      return reviewRejectConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

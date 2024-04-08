@@ -99,4 +99,31 @@ public interface PostModelOutputsRequestOrBuilder extends
    * <code>.clarifai.api.Model model = 5;</code>
    */
   com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   * <pre>
+   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+   * @return Whether the runnerSelector field is set.
+   */
+  boolean hasRunnerSelector();
+  /**
+   * <pre>
+   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+   * @return The runnerSelector.
+   */
+  com.clarifai.grpc.api.RunnerSelector getRunnerSelector();
+  /**
+   * <pre>
+   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * </pre>
+   *
+   * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
+   */
+  com.clarifai.grpc.api.RunnerSelectorOrBuilder getRunnerSelectorOrBuilder();
 }

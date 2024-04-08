@@ -260,6 +260,32 @@ private static final long serialVersionUID = 0L;
             trainLog_ = s;
             break;
           }
+          case 194: {
+            com.clarifai.grpc.api.ComputeInfo.Builder subBuilder = null;
+            if (inferenceComputeInfo_ != null) {
+              subBuilder = inferenceComputeInfo_.toBuilder();
+            }
+            inferenceComputeInfo_ = input.readMessage(com.clarifai.grpc.api.ComputeInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inferenceComputeInfo_);
+              inferenceComputeInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 202: {
+            com.clarifai.grpc.api.BuildInfo.Builder subBuilder = null;
+            if (buildInfo_ != null) {
+              subBuilder = buildInfo_.toBuilder();
+            }
+            buildInfo_ = input.readMessage(com.clarifai.grpc.api.BuildInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(buildInfo_);
+              buildInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1030,6 +1056,82 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int INFERENCE_COMPUTE_INFO_FIELD_NUMBER = 24;
+  private com.clarifai.grpc.api.ComputeInfo inferenceComputeInfo_;
+  /**
+   * <pre>
+   * The minimum required compute resource for this model for inference.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+   * @return Whether the inferenceComputeInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasInferenceComputeInfo() {
+    return inferenceComputeInfo_ != null;
+  }
+  /**
+   * <pre>
+   * The minimum required compute resource for this model for inference.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+   * @return The inferenceComputeInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeInfo getInferenceComputeInfo() {
+    return inferenceComputeInfo_ == null ? com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : inferenceComputeInfo_;
+  }
+  /**
+   * <pre>
+   * The minimum required compute resource for this model for inference.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeInfoOrBuilder getInferenceComputeInfoOrBuilder() {
+    return getInferenceComputeInfo();
+  }
+
+  public static final int BUILD_INFO_FIELD_NUMBER = 25;
+  private com.clarifai.grpc.api.BuildInfo buildInfo_;
+  /**
+   * <pre>
+   * Build information for the model version
+   * </pre>
+   *
+   * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+   * @return Whether the buildInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuildInfo() {
+    return buildInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Build information for the model version
+   * </pre>
+   *
+   * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+   * @return The buildInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BuildInfo getBuildInfo() {
+    return buildInfo_ == null ? com.clarifai.grpc.api.BuildInfo.getDefaultInstance() : buildInfo_;
+  }
+  /**
+   * <pre>
+   * Build information for the model version
+   * </pre>
+   *
+   * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.BuildInfoOrBuilder getBuildInfoOrBuilder() {
+    return getBuildInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1103,6 +1205,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trainLog_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, trainLog_);
+    }
+    if (inferenceComputeInfo_ != null) {
+      output.writeMessage(24, getInferenceComputeInfo());
+    }
+    if (buildInfo_ != null) {
+      output.writeMessage(25, getBuildInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -1186,6 +1294,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trainLog_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, trainLog_);
+    }
+    if (inferenceComputeInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getInferenceComputeInfo());
+    }
+    if (buildInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(25, getBuildInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1278,6 +1394,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTrainLog()
         .equals(other.getTrainLog())) return false;
+    if (hasInferenceComputeInfo() != other.hasInferenceComputeInfo()) return false;
+    if (hasInferenceComputeInfo()) {
+      if (!getInferenceComputeInfo()
+          .equals(other.getInferenceComputeInfo())) return false;
+    }
+    if (hasBuildInfo() != other.hasBuildInfo()) return false;
+    if (hasBuildInfo()) {
+      if (!getBuildInfo()
+          .equals(other.getBuildInfo())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1353,6 +1479,14 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TRAIN_LOG_FIELD_NUMBER;
     hash = (53 * hash) + getTrainLog().hashCode();
+    if (hasInferenceComputeInfo()) {
+      hash = (37 * hash) + INFERENCE_COMPUTE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getInferenceComputeInfo().hashCode();
+    }
+    if (hasBuildInfo()) {
+      hash = (37 * hash) + BUILD_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getBuildInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1578,6 +1712,18 @@ private static final long serialVersionUID = 0L;
       }
       trainLog_ = "";
 
+      if (inferenceComputeInfoBuilder_ == null) {
+        inferenceComputeInfo_ = null;
+      } else {
+        inferenceComputeInfo_ = null;
+        inferenceComputeInfoBuilder_ = null;
+      }
+      if (buildInfoBuilder_ == null) {
+        buildInfo_ = null;
+      } else {
+        buildInfo_ = null;
+        buildInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1672,6 +1818,16 @@ private static final long serialVersionUID = 0L;
         result.importInfo_ = importInfoBuilder_.build();
       }
       result.trainLog_ = trainLog_;
+      if (inferenceComputeInfoBuilder_ == null) {
+        result.inferenceComputeInfo_ = inferenceComputeInfo_;
+      } else {
+        result.inferenceComputeInfo_ = inferenceComputeInfoBuilder_.build();
+      }
+      if (buildInfoBuilder_ == null) {
+        result.buildInfo_ = buildInfo_;
+      } else {
+        result.buildInfo_ = buildInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1785,6 +1941,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getTrainLog().isEmpty()) {
         trainLog_ = other.trainLog_;
         onChanged();
+      }
+      if (other.hasInferenceComputeInfo()) {
+        mergeInferenceComputeInfo(other.getInferenceComputeInfo());
+      }
+      if (other.hasBuildInfo()) {
+        mergeBuildInfo(other.getBuildInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4265,6 +4427,316 @@ private static final long serialVersionUID = 0L;
       trainLog_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.ComputeInfo inferenceComputeInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> inferenceComputeInfoBuilder_;
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     * @return Whether the inferenceComputeInfo field is set.
+     */
+    public boolean hasInferenceComputeInfo() {
+      return inferenceComputeInfoBuilder_ != null || inferenceComputeInfo_ != null;
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     * @return The inferenceComputeInfo.
+     */
+    public com.clarifai.grpc.api.ComputeInfo getInferenceComputeInfo() {
+      if (inferenceComputeInfoBuilder_ == null) {
+        return inferenceComputeInfo_ == null ? com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : inferenceComputeInfo_;
+      } else {
+        return inferenceComputeInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    public Builder setInferenceComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
+      if (inferenceComputeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inferenceComputeInfo_ = value;
+        onChanged();
+      } else {
+        inferenceComputeInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    public Builder setInferenceComputeInfo(
+        com.clarifai.grpc.api.ComputeInfo.Builder builderForValue) {
+      if (inferenceComputeInfoBuilder_ == null) {
+        inferenceComputeInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        inferenceComputeInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    public Builder mergeInferenceComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
+      if (inferenceComputeInfoBuilder_ == null) {
+        if (inferenceComputeInfo_ != null) {
+          inferenceComputeInfo_ =
+            com.clarifai.grpc.api.ComputeInfo.newBuilder(inferenceComputeInfo_).mergeFrom(value).buildPartial();
+        } else {
+          inferenceComputeInfo_ = value;
+        }
+        onChanged();
+      } else {
+        inferenceComputeInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    public Builder clearInferenceComputeInfo() {
+      if (inferenceComputeInfoBuilder_ == null) {
+        inferenceComputeInfo_ = null;
+        onChanged();
+      } else {
+        inferenceComputeInfo_ = null;
+        inferenceComputeInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    public com.clarifai.grpc.api.ComputeInfo.Builder getInferenceComputeInfoBuilder() {
+      
+      onChanged();
+      return getInferenceComputeInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    public com.clarifai.grpc.api.ComputeInfoOrBuilder getInferenceComputeInfoOrBuilder() {
+      if (inferenceComputeInfoBuilder_ != null) {
+        return inferenceComputeInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return inferenceComputeInfo_ == null ?
+            com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : inferenceComputeInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * The minimum required compute resource for this model for inference.
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> 
+        getInferenceComputeInfoFieldBuilder() {
+      if (inferenceComputeInfoBuilder_ == null) {
+        inferenceComputeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder>(
+                getInferenceComputeInfo(),
+                getParentForChildren(),
+                isClean());
+        inferenceComputeInfo_ = null;
+      }
+      return inferenceComputeInfoBuilder_;
+    }
+
+    private com.clarifai.grpc.api.BuildInfo buildInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BuildInfo, com.clarifai.grpc.api.BuildInfo.Builder, com.clarifai.grpc.api.BuildInfoOrBuilder> buildInfoBuilder_;
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     * @return Whether the buildInfo field is set.
+     */
+    public boolean hasBuildInfo() {
+      return buildInfoBuilder_ != null || buildInfo_ != null;
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     * @return The buildInfo.
+     */
+    public com.clarifai.grpc.api.BuildInfo getBuildInfo() {
+      if (buildInfoBuilder_ == null) {
+        return buildInfo_ == null ? com.clarifai.grpc.api.BuildInfo.getDefaultInstance() : buildInfo_;
+      } else {
+        return buildInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    public Builder setBuildInfo(com.clarifai.grpc.api.BuildInfo value) {
+      if (buildInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buildInfo_ = value;
+        onChanged();
+      } else {
+        buildInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    public Builder setBuildInfo(
+        com.clarifai.grpc.api.BuildInfo.Builder builderForValue) {
+      if (buildInfoBuilder_ == null) {
+        buildInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        buildInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    public Builder mergeBuildInfo(com.clarifai.grpc.api.BuildInfo value) {
+      if (buildInfoBuilder_ == null) {
+        if (buildInfo_ != null) {
+          buildInfo_ =
+            com.clarifai.grpc.api.BuildInfo.newBuilder(buildInfo_).mergeFrom(value).buildPartial();
+        } else {
+          buildInfo_ = value;
+        }
+        onChanged();
+      } else {
+        buildInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    public Builder clearBuildInfo() {
+      if (buildInfoBuilder_ == null) {
+        buildInfo_ = null;
+        onChanged();
+      } else {
+        buildInfo_ = null;
+        buildInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    public com.clarifai.grpc.api.BuildInfo.Builder getBuildInfoBuilder() {
+      
+      onChanged();
+      return getBuildInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    public com.clarifai.grpc.api.BuildInfoOrBuilder getBuildInfoOrBuilder() {
+      if (buildInfoBuilder_ != null) {
+        return buildInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return buildInfo_ == null ?
+            com.clarifai.grpc.api.BuildInfo.getDefaultInstance() : buildInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Build information for the model version
+     * </pre>
+     *
+     * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.BuildInfo, com.clarifai.grpc.api.BuildInfo.Builder, com.clarifai.grpc.api.BuildInfoOrBuilder> 
+        getBuildInfoFieldBuilder() {
+      if (buildInfoBuilder_ == null) {
+        buildInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.BuildInfo, com.clarifai.grpc.api.BuildInfo.Builder, com.clarifai.grpc.api.BuildInfoOrBuilder>(
+                getBuildInfo(),
+                getParentForChildren(),
+                isClean());
+        buildInfo_ = null;
+      }
+      return buildInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

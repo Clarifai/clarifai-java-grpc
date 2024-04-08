@@ -10,6 +10,7 @@ public interface RunnerOrBuilder extends
   /**
    * <pre>
    * A unique ID for this app module.
+   * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -19,6 +20,7 @@ public interface RunnerOrBuilder extends
   /**
    * <pre>
    * A unique ID for this app module.
+   * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -136,7 +138,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * The creator of the app module.
+   * The owner of the runner. Runners belong to a user/org account.
    * </pre>
    *
    * <code>string user_id = 6;</code>
@@ -145,7 +147,7 @@ public interface RunnerOrBuilder extends
   java.lang.String getUserId();
   /**
    * <pre>
-   * The creator of the app module.
+   * The owner of the runner. Runners belong to a user/org account.
    * </pre>
    *
    * <code>string user_id = 6;</code>
@@ -156,42 +158,187 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @return A list containing the labels.
    */
-  java.util.List<java.lang.String>
+  @java.lang.Deprecated java.util.List<java.lang.String>
       getLabelsList();
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @return The count of labels.
    */
-  int getLabelsCount();
+  @java.lang.Deprecated int getLabelsCount();
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
-  java.lang.String getLabels(int index);
+  @java.lang.Deprecated java.lang.String getLabels(int index);
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getLabelsBytes(int index);
+
+  /**
+   * <pre>
+   * Model: match work to only a specific model.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return Whether the model field is set.
+   */
+  boolean hasModel();
+  /**
+   * <pre>
+   * Model: match work to only a specific model.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return The model.
+   */
+  com.clarifai.grpc.api.Model getModel();
+  /**
+   * <pre>
+   * Model: match work to only a specific model.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 9;</code>
+   */
+  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   * <pre>
+   * Workflow: match work to only a specific workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.Workflow workflow = 10;</code>
+   * @return Whether the workflow field is set.
+   */
+  boolean hasWorkflow();
+  /**
+   * <pre>
+   * Workflow: match work to only a specific workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.Workflow workflow = 10;</code>
+   * @return The workflow.
+   */
+  com.clarifai.grpc.api.Workflow getWorkflow();
+  /**
+   * <pre>
+   * Workflow: match work to only a specific workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.Workflow workflow = 10;</code>
+   */
+  com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
+
+  /**
+   * <pre>
+   * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+   * to be provided when creating a Runner.
+   * This nodepool must be accessible to you or an org you are part of.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return Whether the nodepool field is set.
+   */
+  boolean hasNodepool();
+  /**
+   * <pre>
+   * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+   * to be provided when creating a Runner.
+   * This nodepool must be accessible to you or an org you are part of.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return The nodepool.
+   */
+  com.clarifai.grpc.api.Nodepool getNodepool();
+  /**
+   * <pre>
+   * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+   * to be provided when creating a Runner.
+   * This nodepool must be accessible to you or an org you are part of.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   */
+  com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder();
+
+  /**
+   * <pre>
+   *&#47;/////////////////////////
+   * Need resources on the runner so we can schedule this Runner into the Nodepool.
+   * If this runner is being orchestrated for a model then the orchestrator will set this to the
+   * model resource requirements. If a workflow then it'll compute those requirements and set
+   * populate this resource field.
+   * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+   * requirements on those object, which may be less than what the Runner allocates (as a safety
+   * margin for the runner to for sure run the resource).
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * @return Whether the computeInfo field is set.
+   */
+  boolean hasComputeInfo();
+  /**
+   * <pre>
+   *&#47;/////////////////////////
+   * Need resources on the runner so we can schedule this Runner into the Nodepool.
+   * If this runner is being orchestrated for a model then the orchestrator will set this to the
+   * model resource requirements. If a workflow then it'll compute those requirements and set
+   * populate this resource field.
+   * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+   * requirements on those object, which may be less than what the Runner allocates (as a safety
+   * margin for the runner to for sure run the resource).
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * @return The computeInfo.
+   */
+  com.clarifai.grpc.api.ComputeInfo getComputeInfo();
+  /**
+   * <pre>
+   *&#47;/////////////////////////
+   * Need resources on the runner so we can schedule this Runner into the Nodepool.
+   * If this runner is being orchestrated for a model then the orchestrator will set this to the
+   * model resource requirements. If a workflow then it'll compute those requirements and set
+   * populate this resource field.
+   * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+   * requirements on those object, which may be less than what the Runner allocates (as a safety
+   * margin for the runner to for sure run the resource).
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   */
+  com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder();
+
+  public com.clarifai.grpc.api.Runner.ObjectCase getObjectCase();
 }

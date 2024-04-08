@@ -13,25 +13,91 @@ public enum PutTaskAssignmentsRequestAction
    */
   PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET(0),
   /**
+   * <pre>
+   * Create a list of task assignments for labeler =&gt; 10 inputs are assigned to the labeler.
+   * This is a fully sync action.
+   * If task assignments already exist, then return existing task assignments.
+   * </pre>
+   *
    * <code>LABEL_START = 1;</code>
    */
   LABEL_START(1),
   /**
+   * <pre>
+   * Submit task assignments =&gt; mark task assignment work as completed.
+   * This is a partially sync action.
+   * Sync: task assignments are updated as follows:
+   * * when review_strategy is NONE, then task assignment status is updated to SUCCESS.
+   * * when review strategy is CONSENSUS, then task assignment status is updated to AWAITING_CONSENSUS_REVIEW.
+   * * when review strategy is MANUAL, then task assignment status is updated to AWAITING_REVIEW.
+   * If task assignments are already submitted, then no update is performed on them.
+   * Async: annotations added for the same input as the task assignment are updated as follows:
+   * * when review_strategy is NONE, then annotation status is updated to SUCCESS.
+   * * when review strategy is CONSENSUS, then annotation status is updated to SUCCESS (if it reaches consensus) or AWAITING_REVIEW (if it does not reach consensus).
+   * * when review strategy is MANUAL, then annotation status is updated to AWAITING_REVIEW.
+   * </pre>
+   *
    * <code>LABEL_SUBMIT = 2;</code>
    */
   LABEL_SUBMIT(2),
   /**
+   * <pre>
+   * Return a list of task assignments for reviewer to review =&gt; 10 inputs are assigned to the reviewer.
+   * This is a fully sync action.
+   * NOT idempotent:
+   *  In the current implementation, we don't actually store the reviewer in the task assignment,
+   *  as the task assignment still stays assigned to the labeler.
+   *  Therefore, multiple calls to this endpoint may result in different set of task assignments to review.
+   *  For now, this action is practically not idempotent.
+   *  In the future, we could however store the reviewer in the task assignment and
+   *  return existing task assignments already assigned to the reviewer =&gt; this will make this action idempotent.
+   * </pre>
+   *
    * <code>REVIEW_START = 10;</code>
    */
   REVIEW_START(10),
   /**
+   * <pre>
+   * Approve task assignments.
+   * There are two types of configurations:
+   * * Batch approve: approve a list of task assignment IDs;
+   * * Bulk approve: approve all task assignments from a list of workers.
+   * This is a partially sync action.
+   * Sync: task assignments are updated to SUCCESS
+   * Async: annotations added for the same input as the task assignment are updated to SUCCESS
+   * </pre>
+   *
    * <code>REVIEW_APPROVE = 11;</code>
    */
   REVIEW_APPROVE(11),
   /**
+   * <pre>
+   * Request changes for task assignments.
+   * There are two types of configurations:
+   * * Batch request changes: request changes for a list of task assignment IDs;
+   * * Bulk request changes: request changes for all task assignments from a list of workers.
+   * This is a partially sync action.
+   * Sync: task assignments are updated to PENDING
+   * Async: annotations added for the same input as the task assignment are updated to PENDING
+   * </pre>
+   *
    * <code>REVIEW_REQUEST_CHANGES = 12;</code>
    */
   REVIEW_REQUEST_CHANGES(12),
+  /**
+   * <pre>
+   * Reject task assignments.
+   * There are two types of configurations:
+   * * Batch reject: reject a list of task assignment IDs;
+   * * Bulk reject: reject all task assignments from a list of workers.
+   * This is a partially sync action.
+   * Sync: task assignments are updated to REVIEW_DENIED
+   * Async: annotations added for the same input as the task assignment are updated to REVIEW_DENIED
+   * </pre>
+   *
+   * <code>REVIEW_REJECT = 13;</code>
+   */
+  REVIEW_REJECT(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -40,25 +106,91 @@ public enum PutTaskAssignmentsRequestAction
    */
   public static final int PUT_TASK_ASSIGNMENTS_REQUEST_ACTION_NOT_SET_VALUE = 0;
   /**
+   * <pre>
+   * Create a list of task assignments for labeler =&gt; 10 inputs are assigned to the labeler.
+   * This is a fully sync action.
+   * If task assignments already exist, then return existing task assignments.
+   * </pre>
+   *
    * <code>LABEL_START = 1;</code>
    */
   public static final int LABEL_START_VALUE = 1;
   /**
+   * <pre>
+   * Submit task assignments =&gt; mark task assignment work as completed.
+   * This is a partially sync action.
+   * Sync: task assignments are updated as follows:
+   * * when review_strategy is NONE, then task assignment status is updated to SUCCESS.
+   * * when review strategy is CONSENSUS, then task assignment status is updated to AWAITING_CONSENSUS_REVIEW.
+   * * when review strategy is MANUAL, then task assignment status is updated to AWAITING_REVIEW.
+   * If task assignments are already submitted, then no update is performed on them.
+   * Async: annotations added for the same input as the task assignment are updated as follows:
+   * * when review_strategy is NONE, then annotation status is updated to SUCCESS.
+   * * when review strategy is CONSENSUS, then annotation status is updated to SUCCESS (if it reaches consensus) or AWAITING_REVIEW (if it does not reach consensus).
+   * * when review strategy is MANUAL, then annotation status is updated to AWAITING_REVIEW.
+   * </pre>
+   *
    * <code>LABEL_SUBMIT = 2;</code>
    */
   public static final int LABEL_SUBMIT_VALUE = 2;
   /**
+   * <pre>
+   * Return a list of task assignments for reviewer to review =&gt; 10 inputs are assigned to the reviewer.
+   * This is a fully sync action.
+   * NOT idempotent:
+   *  In the current implementation, we don't actually store the reviewer in the task assignment,
+   *  as the task assignment still stays assigned to the labeler.
+   *  Therefore, multiple calls to this endpoint may result in different set of task assignments to review.
+   *  For now, this action is practically not idempotent.
+   *  In the future, we could however store the reviewer in the task assignment and
+   *  return existing task assignments already assigned to the reviewer =&gt; this will make this action idempotent.
+   * </pre>
+   *
    * <code>REVIEW_START = 10;</code>
    */
   public static final int REVIEW_START_VALUE = 10;
   /**
+   * <pre>
+   * Approve task assignments.
+   * There are two types of configurations:
+   * * Batch approve: approve a list of task assignment IDs;
+   * * Bulk approve: approve all task assignments from a list of workers.
+   * This is a partially sync action.
+   * Sync: task assignments are updated to SUCCESS
+   * Async: annotations added for the same input as the task assignment are updated to SUCCESS
+   * </pre>
+   *
    * <code>REVIEW_APPROVE = 11;</code>
    */
   public static final int REVIEW_APPROVE_VALUE = 11;
   /**
+   * <pre>
+   * Request changes for task assignments.
+   * There are two types of configurations:
+   * * Batch request changes: request changes for a list of task assignment IDs;
+   * * Bulk request changes: request changes for all task assignments from a list of workers.
+   * This is a partially sync action.
+   * Sync: task assignments are updated to PENDING
+   * Async: annotations added for the same input as the task assignment are updated to PENDING
+   * </pre>
+   *
    * <code>REVIEW_REQUEST_CHANGES = 12;</code>
    */
   public static final int REVIEW_REQUEST_CHANGES_VALUE = 12;
+  /**
+   * <pre>
+   * Reject task assignments.
+   * There are two types of configurations:
+   * * Batch reject: reject a list of task assignment IDs;
+   * * Bulk reject: reject all task assignments from a list of workers.
+   * This is a partially sync action.
+   * Sync: task assignments are updated to REVIEW_DENIED
+   * Async: annotations added for the same input as the task assignment are updated to REVIEW_DENIED
+   * </pre>
+   *
+   * <code>REVIEW_REJECT = 13;</code>
+   */
+  public static final int REVIEW_REJECT_VALUE = 13;
 
 
   public final int getNumber() {
@@ -91,6 +223,7 @@ public enum PutTaskAssignmentsRequestAction
       case 10: return REVIEW_START;
       case 11: return REVIEW_APPROVE;
       case 12: return REVIEW_REQUEST_CHANGES;
+      case 13: return REVIEW_REJECT;
       default: return null;
     }
   }

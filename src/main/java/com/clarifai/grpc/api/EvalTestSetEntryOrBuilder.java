@@ -109,10 +109,12 @@ public interface EvalTestSetEntryOrBuilder extends
    * And the concepts is in ground_truth_concepts instead of this annotation
    * </pre>
    *
-   * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1981
    * @return Whether the annotation field is set.
    */
-  boolean hasAnnotation();
+  @java.lang.Deprecated boolean hasAnnotation();
   /**
    * <pre>
    * Only region-based/frame-based app contains this annotation
@@ -120,10 +122,12 @@ public interface EvalTestSetEntryOrBuilder extends
    * And the concepts is in ground_truth_concepts instead of this annotation
    * </pre>
    *
-   * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
+   * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=1981
    * @return The annotation.
    */
-  com.clarifai.grpc.api.Annotation getAnnotation();
+  @java.lang.Deprecated com.clarifai.grpc.api.Annotation getAnnotation();
   /**
    * <pre>
    * Only region-based/frame-based app contains this annotation
@@ -131,7 +135,49 @@ public interface EvalTestSetEntryOrBuilder extends
    * And the concepts is in ground_truth_concepts instead of this annotation
    * </pre>
    *
-   * <code>.clarifai.api.Annotation annotation = 5;</code>
+   * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
    */
-  com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder();
+  @java.lang.Deprecated com.clarifai.grpc.api.AnnotationOrBuilder getAnnotationOrBuilder();
+
+  /**
+   * <pre>
+   * For region based models, region and associated concepts are stored together.
+   * </pre>
+   *
+   * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+   * @return Whether the predictedAnnotation field is set.
+   */
+  boolean hasPredictedAnnotation();
+  /**
+   * <pre>
+   * For region based models, region and associated concepts are stored together.
+   * </pre>
+   *
+   * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+   * @return The predictedAnnotation.
+   */
+  com.clarifai.grpc.api.Annotation getPredictedAnnotation();
+  /**
+   * <pre>
+   * For region based models, region and associated concepts are stored together.
+   * </pre>
+   *
+   * <code>.clarifai.api.Annotation predicted_annotation = 7;</code>
+   */
+  com.clarifai.grpc.api.AnnotationOrBuilder getPredictedAnnotationOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+   * @return Whether the groundTruthAnnotation field is set.
+   */
+  boolean hasGroundTruthAnnotation();
+  /**
+   * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+   * @return The groundTruthAnnotation.
+   */
+  com.clarifai.grpc.api.Annotation getGroundTruthAnnotation();
+  /**
+   * <code>.clarifai.api.Annotation ground_truth_annotation = 8;</code>
+   */
+  com.clarifai.grpc.api.AnnotationOrBuilder getGroundTruthAnnotationOrBuilder();
 }

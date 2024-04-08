@@ -4572,37 +4572,6 @@ public final class V2Grpc {
     return getGetStatusCodeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetResourcePriceRequest,
-      com.clarifai.grpc.api.GetResourcePriceResponse> getGetResourcePriceMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetResourcePrice",
-      requestType = com.clarifai.grpc.api.GetResourcePriceRequest.class,
-      responseType = com.clarifai.grpc.api.GetResourcePriceResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetResourcePriceRequest,
-      com.clarifai.grpc.api.GetResourcePriceResponse> getGetResourcePriceMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetResourcePriceRequest, com.clarifai.grpc.api.GetResourcePriceResponse> getGetResourcePriceMethod;
-    if ((getGetResourcePriceMethod = V2Grpc.getGetResourcePriceMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getGetResourcePriceMethod = V2Grpc.getGetResourcePriceMethod) == null) {
-          V2Grpc.getGetResourcePriceMethod = getGetResourcePriceMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetResourcePriceRequest, com.clarifai.grpc.api.GetResourcePriceResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetResourcePrice"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetResourcePriceRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.GetResourcePriceResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetResourcePrice"))
-              .build();
-        }
-      }
-    }
-    return getGetResourcePriceMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListCollaboratorsRequest,
       com.clarifai.grpc.api.MultiCollaboratorsResponse> getListCollaboratorsMethod;
 
@@ -8379,13 +8348,6 @@ public final class V2Grpc {
     }
 
     /**
-     */
-    public void getResourcePrice(com.clarifai.grpc.api.GetResourcePriceRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.GetResourcePriceResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetResourcePriceMethod(), responseObserver);
-    }
-
-    /**
      * <pre>
      * owner list users who the app is shared with
      * </pre>
@@ -8918,7 +8880,9 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * PutTaskAssignments performs an action for the task assignments in given task.
+     * All the actions are theoretically idempotent, but practically, in the current implementation,
+     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
      * </pre>
      */
     public void putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request,
@@ -9057,7 +9021,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific runner from an app.
+     * Get a specific runner.
+     * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
      */
     public void getRunner(com.clarifai.grpc.api.GetRunnerRequest request,
@@ -9067,7 +9032,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the runners in community, by user or by app.
+     * List all the runners for the user.
      * </pre>
      */
     public void listRunners(com.clarifai.grpc.api.ListRunnersRequest request,
@@ -9077,7 +9042,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a runners to an app.
+     * Add a runners to a user.
      * </pre>
      */
     public void postRunners(com.clarifai.grpc.api.PostRunnersRequest request,
@@ -9098,6 +9063,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List items for the remote runner to work on.
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public void listRunnerItems(com.clarifai.grpc.api.ListRunnerItemsRequest request,
@@ -9108,6 +9074,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * Post back outputs from remote runners
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public void postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request,
@@ -10153,13 +10120,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.GetStatusCodeRequest,
                 com.clarifai.grpc.api.SingleStatusCodeResponse>(
                   this, METHODID_GET_STATUS_CODE)))
-          .addMethod(
-            getGetResourcePriceMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.GetResourcePriceRequest,
-                com.clarifai.grpc.api.GetResourcePriceResponse>(
-                  this, METHODID_GET_RESOURCE_PRICE)))
           .addMethod(
             getListCollaboratorsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -12325,14 +12285,6 @@ public final class V2Grpc {
     }
 
     /**
-     */
-    public void getResourcePrice(com.clarifai.grpc.api.GetResourcePriceRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.GetResourcePriceResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetResourcePriceMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
      * <pre>
      * owner list users who the app is shared with
      * </pre>
@@ -12916,7 +12868,9 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * PutTaskAssignments performs an action for the task assignments in given task.
+     * All the actions are theoretically idempotent, but practically, in the current implementation,
+     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
      * </pre>
      */
     public void putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request,
@@ -13069,7 +13023,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific runner from an app.
+     * Get a specific runner.
+     * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
      */
     public void getRunner(com.clarifai.grpc.api.GetRunnerRequest request,
@@ -13080,7 +13035,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the runners in community, by user or by app.
+     * List all the runners for the user.
      * </pre>
      */
     public void listRunners(com.clarifai.grpc.api.ListRunnersRequest request,
@@ -13091,7 +13046,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a runners to an app.
+     * Add a runners to a user.
      * </pre>
      */
     public void postRunners(com.clarifai.grpc.api.PostRunnersRequest request,
@@ -13114,6 +13069,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List items for the remote runner to work on.
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public void listRunnerItems(com.clarifai.grpc.api.ListRunnerItemsRequest request,
@@ -13125,6 +13081,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * Post back outputs from remote runners
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public void postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request,
@@ -14638,13 +14595,6 @@ public final class V2Grpc {
     }
 
     /**
-     */
-    public com.clarifai.grpc.api.GetResourcePriceResponse getResourcePrice(com.clarifai.grpc.api.GetResourcePriceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetResourcePriceMethod(), getCallOptions(), request);
-    }
-
-    /**
      * <pre>
      * owner list users who the app is shared with
      * </pre>
@@ -15177,7 +15127,9 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * PutTaskAssignments performs an action for the task assignments in given task.
+     * All the actions are theoretically idempotent, but practically, in the current implementation,
+     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiTaskAssignmentResponse putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request) {
@@ -15316,7 +15268,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific runner from an app.
+     * Get a specific runner.
+     * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
      */
     public com.clarifai.grpc.api.SingleRunnerResponse getRunner(com.clarifai.grpc.api.GetRunnerRequest request) {
@@ -15326,7 +15279,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the runners in community, by user or by app.
+     * List all the runners for the user.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiRunnerResponse listRunners(com.clarifai.grpc.api.ListRunnersRequest request) {
@@ -15336,7 +15289,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a runners to an app.
+     * Add a runners to a user.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiRunnerResponse postRunners(com.clarifai.grpc.api.PostRunnersRequest request) {
@@ -15357,6 +15310,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List items for the remote runner to work on.
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiRunnerItemResponse listRunnerItems(com.clarifai.grpc.api.ListRunnerItemsRequest request) {
@@ -15367,6 +15321,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * Post back outputs from remote runners
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiRunnerItemOutputResponse postRunnerItemOutputs(com.clarifai.grpc.api.PostRunnerItemOutputsRequest request) {
@@ -17024,14 +16979,6 @@ public final class V2Grpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.GetResourcePriceResponse> getResourcePrice(
-        com.clarifai.grpc.api.GetResourcePriceRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetResourcePriceMethod(), getCallOptions()), request);
-    }
-
-    /**
      * <pre>
      * owner list users who the app is shared with
      * </pre>
@@ -17615,7 +17562,9 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments evaluates all the annotations by labeler (authenticated user) for given task (task_id) and input (input_id).
+     * PutTaskAssignments performs an action for the task assignments in given task.
+     * All the actions are theoretically idempotent, but practically, in the current implementation,
+     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTaskAssignmentResponse> putTaskAssignments(
@@ -17768,7 +17717,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Get a specific runner from an app.
+     * Get a specific runner.
+     * TODO(zeiler): runner_id is a UUID so can list globally as well.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleRunnerResponse> getRunner(
@@ -17779,7 +17729,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * List all the runners in community, by user or by app.
+     * List all the runners for the user.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerResponse> listRunners(
@@ -17790,7 +17740,7 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * Add a runners to an app.
+     * Add a runners to a user.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerResponse> postRunners(
@@ -17813,6 +17763,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * List items for the remote runner to work on.
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerItemResponse> listRunnerItems(
@@ -17824,6 +17775,7 @@ public final class V2Grpc {
     /**
      * <pre>
      * Post back outputs from remote runners
+     * since the runner_id is a UUID we can access it directly too.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiRunnerItemOutputResponse> postRunnerItemOutputs(
@@ -17987,80 +17939,79 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_ANNOTATION_FILTERS = 143;
   private static final int METHODID_LIST_STATUS_CODES = 144;
   private static final int METHODID_GET_STATUS_CODE = 145;
-  private static final int METHODID_GET_RESOURCE_PRICE = 146;
-  private static final int METHODID_LIST_COLLABORATORS = 147;
-  private static final int METHODID_POST_COLLABORATORS = 148;
-  private static final int METHODID_PATCH_COLLABORATORS = 149;
-  private static final int METHODID_DELETE_COLLABORATORS = 150;
-  private static final int METHODID_LIST_COLLABORATIONS = 151;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 152;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 153;
-  private static final int METHODID_GET_APP_DUPLICATION = 154;
-  private static final int METHODID_POST_TASKS = 155;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 156;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 157;
-  private static final int METHODID_GET_TASK = 158;
-  private static final int METHODID_LIST_TASKS = 159;
-  private static final int METHODID_PATCH_TASKS = 160;
-  private static final int METHODID_DELETE_TASKS = 161;
-  private static final int METHODID_POST_LABEL_ORDERS = 162;
-  private static final int METHODID_GET_LABEL_ORDER = 163;
-  private static final int METHODID_LIST_LABEL_ORDERS = 164;
-  private static final int METHODID_PATCH_LABEL_ORDERS = 165;
-  private static final int METHODID_DELETE_LABEL_ORDERS = 166;
-  private static final int METHODID_POST_COLLECTORS = 167;
-  private static final int METHODID_GET_COLLECTOR = 168;
-  private static final int METHODID_LIST_COLLECTORS = 169;
-  private static final int METHODID_PATCH_COLLECTORS = 170;
-  private static final int METHODID_DELETE_COLLECTORS = 171;
-  private static final int METHODID_POST_STAT_VALUES = 172;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 173;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 174;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 175;
-  private static final int METHODID_GET_MODULE = 176;
-  private static final int METHODID_LIST_MODULES = 177;
-  private static final int METHODID_POST_MODULES = 178;
-  private static final int METHODID_PATCH_MODULES = 179;
-  private static final int METHODID_DELETE_MODULES = 180;
-  private static final int METHODID_GET_MODULE_VERSION = 181;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 182;
-  private static final int METHODID_POST_MODULE_VERSIONS = 183;
-  private static final int METHODID_PATCH_MODULE_VERSIONS = 184;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 185;
-  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 186;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 187;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 188;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 189;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 190;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 191;
-  private static final int METHODID_POST_BULK_OPERATIONS = 192;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 193;
-  private static final int METHODID_GET_BULK_OPERATION = 194;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 195;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 196;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 197;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 198;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 199;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 200;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 201;
-  private static final int METHODID_POST_UPLOADS = 202;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 203;
-  private static final int METHODID_GET_UPLOAD = 204;
-  private static final int METHODID_LIST_UPLOADS = 205;
-  private static final int METHODID_DELETE_UPLOADS = 206;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 207;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 208;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 209;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 210;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 211;
-  private static final int METHODID_GET_RUNNER = 212;
-  private static final int METHODID_LIST_RUNNERS = 213;
-  private static final int METHODID_POST_RUNNERS = 214;
-  private static final int METHODID_DELETE_RUNNERS = 215;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 216;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 217;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 218;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 219;
+  private static final int METHODID_LIST_COLLABORATORS = 146;
+  private static final int METHODID_POST_COLLABORATORS = 147;
+  private static final int METHODID_PATCH_COLLABORATORS = 148;
+  private static final int METHODID_DELETE_COLLABORATORS = 149;
+  private static final int METHODID_LIST_COLLABORATIONS = 150;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 151;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 152;
+  private static final int METHODID_GET_APP_DUPLICATION = 153;
+  private static final int METHODID_POST_TASKS = 154;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 155;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 156;
+  private static final int METHODID_GET_TASK = 157;
+  private static final int METHODID_LIST_TASKS = 158;
+  private static final int METHODID_PATCH_TASKS = 159;
+  private static final int METHODID_DELETE_TASKS = 160;
+  private static final int METHODID_POST_LABEL_ORDERS = 161;
+  private static final int METHODID_GET_LABEL_ORDER = 162;
+  private static final int METHODID_LIST_LABEL_ORDERS = 163;
+  private static final int METHODID_PATCH_LABEL_ORDERS = 164;
+  private static final int METHODID_DELETE_LABEL_ORDERS = 165;
+  private static final int METHODID_POST_COLLECTORS = 166;
+  private static final int METHODID_GET_COLLECTOR = 167;
+  private static final int METHODID_LIST_COLLECTORS = 168;
+  private static final int METHODID_PATCH_COLLECTORS = 169;
+  private static final int METHODID_DELETE_COLLECTORS = 170;
+  private static final int METHODID_POST_STAT_VALUES = 171;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 172;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 173;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 174;
+  private static final int METHODID_GET_MODULE = 175;
+  private static final int METHODID_LIST_MODULES = 176;
+  private static final int METHODID_POST_MODULES = 177;
+  private static final int METHODID_PATCH_MODULES = 178;
+  private static final int METHODID_DELETE_MODULES = 179;
+  private static final int METHODID_GET_MODULE_VERSION = 180;
+  private static final int METHODID_LIST_MODULE_VERSIONS = 181;
+  private static final int METHODID_POST_MODULE_VERSIONS = 182;
+  private static final int METHODID_PATCH_MODULE_VERSIONS = 183;
+  private static final int METHODID_DELETE_MODULE_VERSIONS = 184;
+  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 185;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 186;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 187;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 188;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 189;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 190;
+  private static final int METHODID_POST_BULK_OPERATIONS = 191;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 192;
+  private static final int METHODID_GET_BULK_OPERATION = 193;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 194;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 195;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 196;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 197;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 198;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 199;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 200;
+  private static final int METHODID_POST_UPLOADS = 201;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 202;
+  private static final int METHODID_GET_UPLOAD = 203;
+  private static final int METHODID_LIST_UPLOADS = 204;
+  private static final int METHODID_DELETE_UPLOADS = 205;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 206;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 207;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 208;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 209;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 210;
+  private static final int METHODID_GET_RUNNER = 211;
+  private static final int METHODID_LIST_RUNNERS = 212;
+  private static final int METHODID_POST_RUNNERS = 213;
+  private static final int METHODID_DELETE_RUNNERS = 214;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 215;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 216;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 217;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 218;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18663,10 +18614,6 @@ public final class V2Grpc {
           serviceImpl.getStatusCode((com.clarifai.grpc.api.GetStatusCodeRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleStatusCodeResponse>) responseObserver);
           break;
-        case METHODID_GET_RESOURCE_PRICE:
-          serviceImpl.getResourcePrice((com.clarifai.grpc.api.GetResourcePriceRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.GetResourcePriceResponse>) responseObserver);
-          break;
         case METHODID_LIST_COLLABORATORS:
           serviceImpl.listCollaborators((com.clarifai.grpc.api.ListCollaboratorsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiCollaboratorsResponse>) responseObserver);
@@ -19166,7 +19113,6 @@ public final class V2Grpc {
               .addMethod(getDeleteAnnotationFiltersMethod())
               .addMethod(getListStatusCodesMethod())
               .addMethod(getGetStatusCodeMethod())
-              .addMethod(getGetResourcePriceMethod())
               .addMethod(getListCollaboratorsMethod())
               .addMethod(getPostCollaboratorsMethod())
               .addMethod(getPatchCollaboratorsMethod())

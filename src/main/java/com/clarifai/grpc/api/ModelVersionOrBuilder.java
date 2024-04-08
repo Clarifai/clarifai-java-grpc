@@ -444,4 +444,58 @@ public interface ModelVersionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTrainLogBytes();
+
+  /**
+   * <pre>
+   * The minimum required compute resource for this model for inference.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+   * @return Whether the inferenceComputeInfo field is set.
+   */
+  boolean hasInferenceComputeInfo();
+  /**
+   * <pre>
+   * The minimum required compute resource for this model for inference.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+   * @return The inferenceComputeInfo.
+   */
+  com.clarifai.grpc.api.ComputeInfo getInferenceComputeInfo();
+  /**
+   * <pre>
+   * The minimum required compute resource for this model for inference.
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo inference_compute_info = 24;</code>
+   */
+  com.clarifai.grpc.api.ComputeInfoOrBuilder getInferenceComputeInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Build information for the model version
+   * </pre>
+   *
+   * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+   * @return Whether the buildInfo field is set.
+   */
+  boolean hasBuildInfo();
+  /**
+   * <pre>
+   * Build information for the model version
+   * </pre>
+   *
+   * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+   * @return The buildInfo.
+   */
+  com.clarifai.grpc.api.BuildInfo getBuildInfo();
+  /**
+   * <pre>
+   * Build information for the model version
+   * </pre>
+   *
+   * <code>.clarifai.api.BuildInfo build_info = 25;</code>
+   */
+  com.clarifai.grpc.api.BuildInfoOrBuilder getBuildInfoOrBuilder();
 }

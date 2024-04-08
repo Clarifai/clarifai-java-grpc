@@ -39,7 +39,7 @@ public interface PutTaskAssignmentsRequestOrBuilder extends
    * Deprecated: use action and action_config instead.
    * Supported for backwards compatibility: setting this field is equivalent with
    * * action = LABEL_SUBMIT
-   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
    * </pre>
    *
    * <code>string input_id = 3;</code>
@@ -51,7 +51,7 @@ public interface PutTaskAssignmentsRequestOrBuilder extends
    * Deprecated: use action and action_config instead.
    * Supported for backwards compatibility: setting this field is equivalent with
    * * action = LABEL_SUBMIT
-   * * label_submit_config = [{"task_assignments": {"input": {"id": &lt;input-id&gt;}}}]
+   * * label_submit_config = [{"task_assignments": {{"id": "&lt;task-assignment-id-for-input-id&gt;"}}]
    * </pre>
    *
    * <code>string input_id = 3;</code>
@@ -93,6 +93,51 @@ public interface PutTaskAssignmentsRequestOrBuilder extends
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    */
   com.clarifai.grpc.api.LabelSubmitConfigOrBuilder getLabelSubmitConfigOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+   * @return Whether the reviewApproveConfig field is set.
+   */
+  boolean hasReviewApproveConfig();
+  /**
+   * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+   * @return The reviewApproveConfig.
+   */
+  com.clarifai.grpc.api.ReviewApproveConfig getReviewApproveConfig();
+  /**
+   * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>
+   */
+  com.clarifai.grpc.api.ReviewApproveConfigOrBuilder getReviewApproveConfigOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+   * @return Whether the reviewRequestChangesConfig field is set.
+   */
+  boolean hasReviewRequestChangesConfig();
+  /**
+   * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+   * @return The reviewRequestChangesConfig.
+   */
+  com.clarifai.grpc.api.ReviewRequestChangesConfig getReviewRequestChangesConfig();
+  /**
+   * <code>.clarifai.api.ReviewRequestChangesConfig review_request_changes_config = 8;</code>
+   */
+  com.clarifai.grpc.api.ReviewRequestChangesConfigOrBuilder getReviewRequestChangesConfigOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+   * @return Whether the reviewRejectConfig field is set.
+   */
+  boolean hasReviewRejectConfig();
+  /**
+   * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+   * @return The reviewRejectConfig.
+   */
+  com.clarifai.grpc.api.ReviewRejectConfig getReviewRejectConfig();
+  /**
+   * <code>.clarifai.api.ReviewRejectConfig review_reject_config = 9;</code>
+   */
+  com.clarifai.grpc.api.ReviewRejectConfigOrBuilder getReviewRejectConfigOrBuilder();
 
   public com.clarifai.grpc.api.PutTaskAssignmentsRequest.ActionConfigCase getActionConfigCase();
 }

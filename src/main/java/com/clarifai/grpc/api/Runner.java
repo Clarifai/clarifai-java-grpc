@@ -5,7 +5,8 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * An app module that a user created in our app module marketplace.
+ * A worker for compute within a nodepool of instances.
+ * This asks the API for work
  * </pre>
  *
  * Protobuf type {@code clarifai.api.Runner}
@@ -123,6 +124,60 @@ private static final long serialVersionUID = 0L;
             labels_.add(s);
             break;
           }
+          case 74: {
+            com.clarifai.grpc.api.Model.Builder subBuilder = null;
+            if (objectCase_ == 9) {
+              subBuilder = ((com.clarifai.grpc.api.Model) object_).toBuilder();
+            }
+            object_ =
+                input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Model) object_);
+              object_ = subBuilder.buildPartial();
+            }
+            objectCase_ = 9;
+            break;
+          }
+          case 82: {
+            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
+            if (objectCase_ == 10) {
+              subBuilder = ((com.clarifai.grpc.api.Workflow) object_).toBuilder();
+            }
+            object_ =
+                input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Workflow) object_);
+              object_ = subBuilder.buildPartial();
+            }
+            objectCase_ = 10;
+            break;
+          }
+          case 98: {
+            com.clarifai.grpc.api.Nodepool.Builder subBuilder = null;
+            if (nodepool_ != null) {
+              subBuilder = nodepool_.toBuilder();
+            }
+            nodepool_ = input.readMessage(com.clarifai.grpc.api.Nodepool.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(nodepool_);
+              nodepool_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            com.clarifai.grpc.api.ComputeInfo.Builder subBuilder = null;
+            if (computeInfo_ != null) {
+              subBuilder = computeInfo_.toBuilder();
+            }
+            computeInfo_ = input.readMessage(com.clarifai.grpc.api.ComputeInfo.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(computeInfo_);
+              computeInfo_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -160,11 +215,53 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.Runner.class, com.clarifai.grpc.api.Runner.Builder.class);
   }
 
+  private int objectCase_ = 0;
+  private java.lang.Object object_;
+  public enum ObjectCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MODEL(9),
+    WORKFLOW(10),
+    OBJECT_NOT_SET(0);
+    private final int value;
+    private ObjectCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ObjectCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ObjectCase forNumber(int value) {
+      switch (value) {
+        case 9: return MODEL;
+        case 10: return WORKFLOW;
+        case 0: return OBJECT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ObjectCase
+  getObjectCase() {
+    return ObjectCase.forNumber(
+        objectCase_);
+  }
+
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
    * <pre>
    * A unique ID for this app module.
+   * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -186,6 +283,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A unique ID for this app module.
+   * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -376,7 +474,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object userId_;
   /**
    * <pre>
-   * The creator of the app module.
+   * The owner of the runner. Runners belong to a user/org account.
    * </pre>
    *
    * <code>string user_id = 6;</code>
@@ -397,7 +495,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The creator of the app module.
+   * The owner of the runner. Runners belong to a user/org account.
    * </pre>
    *
    * <code>string user_id = 6;</code>
@@ -422,51 +520,248 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList labels_;
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @return A list containing the labels.
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getLabelsList() {
     return labels_;
   }
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @return The count of labels.
    */
-  public int getLabelsCount() {
+  @java.lang.Deprecated public int getLabelsCount() {
     return labels_.size();
   }
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
-  public java.lang.String getLabels(int index) {
+  @java.lang.Deprecated public java.lang.String getLabels(int index) {
     return labels_.get(index);
   }
   /**
    * <pre>
-   * Labels to match.
+   * Labels to match in order to find work.
    * </pre>
    *
-   * <code>repeated string labels = 7;</code>
+   * <code>repeated string labels = 7 [deprecated = true];</code>
+   * @deprecated clarifai.api.Runner.labels is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=4263
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getLabelsBytes(int index) {
     return labels_.getByteString(index);
+  }
+
+  public static final int MODEL_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * Model: match work to only a specific model.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return Whether the model field is set.
+   */
+  @java.lang.Override
+  public boolean hasModel() {
+    return objectCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Model: match work to only a specific model.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 9;</code>
+   * @return The model.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getModel() {
+    if (objectCase_ == 9) {
+       return (com.clarifai.grpc.api.Model) object_;
+    }
+    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Model: match work to only a specific model.
+   * </pre>
+   *
+   * <code>.clarifai.api.Model model = 9;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+    if (objectCase_ == 9) {
+       return (com.clarifai.grpc.api.Model) object_;
+    }
+    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  }
+
+  public static final int WORKFLOW_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Workflow: match work to only a specific workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.Workflow workflow = 10;</code>
+   * @return Whether the workflow field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflow() {
+    return objectCase_ == 10;
+  }
+  /**
+   * <pre>
+   * Workflow: match work to only a specific workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.Workflow workflow = 10;</code>
+   * @return The workflow.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Workflow getWorkflow() {
+    if (objectCase_ == 10) {
+       return (com.clarifai.grpc.api.Workflow) object_;
+    }
+    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Workflow: match work to only a specific workflow.
+   * </pre>
+   *
+   * <code>.clarifai.api.Workflow workflow = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+    if (objectCase_ == 10) {
+       return (com.clarifai.grpc.api.Workflow) object_;
+    }
+    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  }
+
+  public static final int NODEPOOL_FIELD_NUMBER = 12;
+  private com.clarifai.grpc.api.Nodepool nodepool_;
+  /**
+   * <pre>
+   * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+   * to be provided when creating a Runner.
+   * This nodepool must be accessible to you or an org you are part of.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return Whether the nodepool field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodepool() {
+    return nodepool_ != null;
+  }
+  /**
+   * <pre>
+   * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+   * to be provided when creating a Runner.
+   * This nodepool must be accessible to you or an org you are part of.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * @return The nodepool.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Nodepool getNodepool() {
+    return nodepool_ == null ? com.clarifai.grpc.api.Nodepool.getDefaultInstance() : nodepool_;
+  }
+  /**
+   * <pre>
+   * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+   * to be provided when creating a Runner.
+   * This nodepool must be accessible to you or an org you are part of.
+   * </pre>
+   *
+   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder() {
+    return getNodepool();
+  }
+
+  public static final int COMPUTE_INFO_FIELD_NUMBER = 13;
+  private com.clarifai.grpc.api.ComputeInfo computeInfo_;
+  /**
+   * <pre>
+   *&#47;/////////////////////////
+   * Need resources on the runner so we can schedule this Runner into the Nodepool.
+   * If this runner is being orchestrated for a model then the orchestrator will set this to the
+   * model resource requirements. If a workflow then it'll compute those requirements and set
+   * populate this resource field.
+   * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+   * requirements on those object, which may be less than what the Runner allocates (as a safety
+   * margin for the runner to for sure run the resource).
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * @return Whether the computeInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasComputeInfo() {
+    return computeInfo_ != null;
+  }
+  /**
+   * <pre>
+   *&#47;/////////////////////////
+   * Need resources on the runner so we can schedule this Runner into the Nodepool.
+   * If this runner is being orchestrated for a model then the orchestrator will set this to the
+   * model resource requirements. If a workflow then it'll compute those requirements and set
+   * populate this resource field.
+   * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+   * requirements on those object, which may be less than what the Runner allocates (as a safety
+   * margin for the runner to for sure run the resource).
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * @return The computeInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeInfo getComputeInfo() {
+    return computeInfo_ == null ? com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : computeInfo_;
+  }
+  /**
+   * <pre>
+   *&#47;/////////////////////////
+   * Need resources on the runner so we can schedule this Runner into the Nodepool.
+   * If this runner is being orchestrated for a model then the orchestrator will set this to the
+   * model resource requirements. If a workflow then it'll compute those requirements and set
+   * populate this resource field.
+   * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+   * requirements on those object, which may be less than what the Runner allocates (as a safety
+   * margin for the runner to for sure run the resource).
+   * </pre>
+   *
+   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder() {
+    return getComputeInfo();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -503,6 +798,18 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < labels_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, labels_.getRaw(i));
+    }
+    if (objectCase_ == 9) {
+      output.writeMessage(9, (com.clarifai.grpc.api.Model) object_);
+    }
+    if (objectCase_ == 10) {
+      output.writeMessage(10, (com.clarifai.grpc.api.Workflow) object_);
+    }
+    if (nodepool_ != null) {
+      output.writeMessage(12, getNodepool());
+    }
+    if (computeInfo_ != null) {
+      output.writeMessage(13, getComputeInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -542,6 +849,22 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getLabelsList().size();
     }
+    if (objectCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.clarifai.grpc.api.Model) object_);
+    }
+    if (objectCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (com.clarifai.grpc.api.Workflow) object_);
+    }
+    if (nodepool_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getNodepool());
+    }
+    if (computeInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getComputeInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -580,6 +903,29 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getLabelsList()
         .equals(other.getLabelsList())) return false;
+    if (hasNodepool() != other.hasNodepool()) return false;
+    if (hasNodepool()) {
+      if (!getNodepool()
+          .equals(other.getNodepool())) return false;
+    }
+    if (hasComputeInfo() != other.hasComputeInfo()) return false;
+    if (hasComputeInfo()) {
+      if (!getComputeInfo()
+          .equals(other.getComputeInfo())) return false;
+    }
+    if (!getObjectCase().equals(other.getObjectCase())) return false;
+    switch (objectCase_) {
+      case 9:
+        if (!getModel()
+            .equals(other.getModel())) return false;
+        break;
+      case 10:
+        if (!getWorkflow()
+            .equals(other.getWorkflow())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -612,6 +958,26 @@ private static final long serialVersionUID = 0L;
     if (getLabelsCount() > 0) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + getLabelsList().hashCode();
+    }
+    if (hasNodepool()) {
+      hash = (37 * hash) + NODEPOOL_FIELD_NUMBER;
+      hash = (53 * hash) + getNodepool().hashCode();
+    }
+    if (hasComputeInfo()) {
+      hash = (37 * hash) + COMPUTE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getComputeInfo().hashCode();
+    }
+    switch (objectCase_) {
+      case 9:
+        hash = (37 * hash) + MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getModel().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflow().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -710,7 +1076,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An app module that a user created in our app module marketplace.
+   * A worker for compute within a nodepool of instances.
+   * This asks the API for work
    * </pre>
    *
    * Protobuf type {@code clarifai.api.Runner}
@@ -776,6 +1143,20 @@ private static final long serialVersionUID = 0L;
 
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (nodepoolBuilder_ == null) {
+        nodepool_ = null;
+      } else {
+        nodepool_ = null;
+        nodepoolBuilder_ = null;
+      }
+      if (computeInfoBuilder_ == null) {
+        computeInfo_ = null;
+      } else {
+        computeInfo_ = null;
+        computeInfoBuilder_ = null;
+      }
+      objectCase_ = 0;
+      object_ = null;
       return this;
     }
 
@@ -826,6 +1207,31 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.labels_ = labels_;
+      if (objectCase_ == 9) {
+        if (modelBuilder_ == null) {
+          result.object_ = object_;
+        } else {
+          result.object_ = modelBuilder_.build();
+        }
+      }
+      if (objectCase_ == 10) {
+        if (workflowBuilder_ == null) {
+          result.object_ = object_;
+        } else {
+          result.object_ = workflowBuilder_.build();
+        }
+      }
+      if (nodepoolBuilder_ == null) {
+        result.nodepool_ = nodepool_;
+      } else {
+        result.nodepool_ = nodepoolBuilder_.build();
+      }
+      if (computeInfoBuilder_ == null) {
+        result.computeInfo_ = computeInfo_;
+      } else {
+        result.computeInfo_ = computeInfoBuilder_.build();
+      }
+      result.objectCase_ = objectCase_;
       onBuilt();
       return result;
     }
@@ -905,6 +1311,25 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.hasNodepool()) {
+        mergeNodepool(other.getNodepool());
+      }
+      if (other.hasComputeInfo()) {
+        mergeComputeInfo(other.getComputeInfo());
+      }
+      switch (other.getObjectCase()) {
+        case MODEL: {
+          mergeModel(other.getModel());
+          break;
+        }
+        case WORKFLOW: {
+          mergeWorkflow(other.getWorkflow());
+          break;
+        }
+        case OBJECT_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -933,12 +1358,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int objectCase_ = 0;
+    private java.lang.Object object_;
+    public ObjectCase
+        getObjectCase() {
+      return ObjectCase.forNumber(
+          objectCase_);
+    }
+
+    public Builder clearObject() {
+      objectCase_ = 0;
+      object_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
      * <pre>
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -959,6 +1400,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -980,6 +1422,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -999,6 +1442,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1013,6 +1457,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * A unique ID for this app module.
+     * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1613,7 +2058,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object userId_ = "";
     /**
      * <pre>
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      * </pre>
      *
      * <code>string user_id = 6;</code>
@@ -1633,7 +2078,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      * </pre>
      *
      * <code>string user_id = 6;</code>
@@ -1654,7 +2099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      * </pre>
      *
      * <code>string user_id = 6;</code>
@@ -1673,7 +2118,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      * </pre>
      *
      * <code>string user_id = 6;</code>
@@ -1687,7 +2132,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creator of the app module.
+     * The owner of the runner. Runners belong to a user/org account.
      * </pre>
      *
      * <code>string user_id = 6;</code>
@@ -1715,63 +2160,73 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @return A list containing the labels.
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getLabelsList() {
       return labels_.getUnmodifiableView();
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @return The count of labels.
      */
-    public int getLabelsCount() {
+    @java.lang.Deprecated public int getLabelsCount() {
       return labels_.size();
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
-    public java.lang.String getLabels(int index) {
+    @java.lang.Deprecated public java.lang.String getLabels(int index) {
       return labels_.get(index);
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getLabelsBytes(int index) {
       return labels_.getByteString(index);
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
      */
-    public Builder setLabels(
+    @java.lang.Deprecated public Builder setLabels(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1783,14 +2238,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @param value The labels to add.
      * @return This builder for chaining.
      */
-    public Builder addLabels(
+    @java.lang.Deprecated public Builder addLabels(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1802,14 +2259,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @param values The labels to add.
      * @return This builder for chaining.
      */
-    public Builder addAllLabels(
+    @java.lang.Deprecated public Builder addAllLabels(
         java.lang.Iterable<java.lang.String> values) {
       ensureLabelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1819,13 +2278,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @return This builder for chaining.
      */
-    public Builder clearLabels() {
+    @java.lang.Deprecated public Builder clearLabels() {
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
@@ -1833,14 +2294,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Labels to match.
+     * Labels to match in order to find work.
      * </pre>
      *
-     * <code>repeated string labels = 7;</code>
+     * <code>repeated string labels = 7 [deprecated = true];</code>
+     * @deprecated clarifai.api.Runner.labels is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=4263
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */
-    public Builder addLabelsBytes(
+    @java.lang.Deprecated public Builder addLabelsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1850,6 +2313,753 @@ private static final long serialVersionUID = 0L;
       labels_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     * @return Whether the model field is set.
+     */
+    @java.lang.Override
+    public boolean hasModel() {
+      return objectCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     * @return The model.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Model getModel() {
+      if (modelBuilder_ == null) {
+        if (objectCase_ == 9) {
+          return (com.clarifai.grpc.api.Model) object_;
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      } else {
+        if (objectCase_ == 9) {
+          return modelBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder setModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        object_ = value;
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(value);
+      }
+      objectCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder setModel(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelBuilder_ == null) {
+        object_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(builderForValue.build());
+      }
+      objectCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (objectCase_ == 9 &&
+            object_ != com.clarifai.grpc.api.Model.getDefaultInstance()) {
+          object_ = com.clarifai.grpc.api.Model.newBuilder((com.clarifai.grpc.api.Model) object_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          object_ = value;
+        }
+        onChanged();
+      } else {
+        if (objectCase_ == 9) {
+          modelBuilder_.mergeFrom(value);
+        } else {
+          modelBuilder_.setMessage(value);
+        }
+      }
+      objectCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public Builder clearModel() {
+      if (modelBuilder_ == null) {
+        if (objectCase_ == 9) {
+          objectCase_ = 0;
+          object_ = null;
+          onChanged();
+        }
+      } else {
+        if (objectCase_ == 9) {
+          objectCase_ = 0;
+          object_ = null;
+        }
+        modelBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
+      return getModelFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+      if ((objectCase_ == 9) && (modelBuilder_ != null)) {
+        return modelBuilder_.getMessageOrBuilder();
+      } else {
+        if (objectCase_ == 9) {
+          return (com.clarifai.grpc.api.Model) object_;
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Model: match work to only a specific model.
+     * </pre>
+     *
+     * <code>.clarifai.api.Model model = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getModelFieldBuilder() {
+      if (modelBuilder_ == null) {
+        if (!(objectCase_ == 9)) {
+          object_ = com.clarifai.grpc.api.Model.getDefaultInstance();
+        }
+        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                (com.clarifai.grpc.api.Model) object_,
+                getParentForChildren(),
+                isClean());
+        object_ = null;
+      }
+      objectCase_ = 9;
+      onChanged();;
+      return modelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * @return Whether the workflow field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkflow() {
+      return objectCase_ == 10;
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * @return The workflow.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Workflow getWorkflow() {
+      if (workflowBuilder_ == null) {
+        if (objectCase_ == 10) {
+          return (com.clarifai.grpc.api.Workflow) object_;
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      } else {
+        if (objectCase_ == 10) {
+          return workflowBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    public Builder setWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        object_ = value;
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(value);
+      }
+      objectCase_ = 10;
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    public Builder setWorkflow(
+        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowBuilder_ == null) {
+        object_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(builderForValue.build());
+      }
+      objectCase_ = 10;
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    public Builder mergeWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (objectCase_ == 10 &&
+            object_ != com.clarifai.grpc.api.Workflow.getDefaultInstance()) {
+          object_ = com.clarifai.grpc.api.Workflow.newBuilder((com.clarifai.grpc.api.Workflow) object_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          object_ = value;
+        }
+        onChanged();
+      } else {
+        if (objectCase_ == 10) {
+          workflowBuilder_.mergeFrom(value);
+        } else {
+          workflowBuilder_.setMessage(value);
+        }
+      }
+      objectCase_ = 10;
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    public Builder clearWorkflow() {
+      if (workflowBuilder_ == null) {
+        if (objectCase_ == 10) {
+          objectCase_ = 0;
+          object_ = null;
+          onChanged();
+        }
+      } else {
+        if (objectCase_ == 10) {
+          objectCase_ = 0;
+          object_ = null;
+        }
+        workflowBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder getWorkflowBuilder() {
+      return getWorkflowFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+      if ((objectCase_ == 10) && (workflowBuilder_ != null)) {
+        return workflowBuilder_.getMessageOrBuilder();
+      } else {
+        if (objectCase_ == 10) {
+          return (com.clarifai.grpc.api.Workflow) object_;
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Workflow: match work to only a specific workflow.
+     * </pre>
+     *
+     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
+        getWorkflowFieldBuilder() {
+      if (workflowBuilder_ == null) {
+        if (!(objectCase_ == 10)) {
+          object_ = com.clarifai.grpc.api.Workflow.getDefaultInstance();
+        }
+        workflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
+                (com.clarifai.grpc.api.Workflow) object_,
+                getParentForChildren(),
+                isClean());
+        object_ = null;
+      }
+      objectCase_ = 10;
+      onChanged();;
+      return workflowBuilder_;
+    }
+
+    private com.clarifai.grpc.api.Nodepool nodepool_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder> nodepoolBuilder_;
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @return Whether the nodepool field is set.
+     */
+    public boolean hasNodepool() {
+      return nodepoolBuilder_ != null || nodepool_ != null;
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * @return The nodepool.
+     */
+    public com.clarifai.grpc.api.Nodepool getNodepool() {
+      if (nodepoolBuilder_ == null) {
+        return nodepool_ == null ? com.clarifai.grpc.api.Nodepool.getDefaultInstance() : nodepool_;
+      } else {
+        return nodepoolBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder setNodepool(com.clarifai.grpc.api.Nodepool value) {
+      if (nodepoolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodepool_ = value;
+        onChanged();
+      } else {
+        nodepoolBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder setNodepool(
+        com.clarifai.grpc.api.Nodepool.Builder builderForValue) {
+      if (nodepoolBuilder_ == null) {
+        nodepool_ = builderForValue.build();
+        onChanged();
+      } else {
+        nodepoolBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder mergeNodepool(com.clarifai.grpc.api.Nodepool value) {
+      if (nodepoolBuilder_ == null) {
+        if (nodepool_ != null) {
+          nodepool_ =
+            com.clarifai.grpc.api.Nodepool.newBuilder(nodepool_).mergeFrom(value).buildPartial();
+        } else {
+          nodepool_ = value;
+        }
+        onChanged();
+      } else {
+        nodepoolBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public Builder clearNodepool() {
+      if (nodepoolBuilder_ == null) {
+        nodepool_ = null;
+        onChanged();
+      } else {
+        nodepool_ = null;
+        nodepoolBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public com.clarifai.grpc.api.Nodepool.Builder getNodepoolBuilder() {
+      
+      onChanged();
+      return getNodepoolFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder() {
+      if (nodepoolBuilder_ != null) {
+        return nodepoolBuilder_.getMessageOrBuilder();
+      } else {
+        return nodepool_ == null ?
+            com.clarifai.grpc.api.Nodepool.getDefaultInstance() : nodepool_;
+      }
+    }
+    /**
+     * <pre>
+     * Runners are defined within nodepools so this field needs the id and user_id of the nodepool
+     * to be provided when creating a Runner.
+     * This nodepool must be accessible to you or an org you are part of.
+     * </pre>
+     *
+     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder> 
+        getNodepoolFieldBuilder() {
+      if (nodepoolBuilder_ == null) {
+        nodepoolBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder>(
+                getNodepool(),
+                getParentForChildren(),
+                isClean());
+        nodepool_ = null;
+      }
+      return nodepoolBuilder_;
+    }
+
+    private com.clarifai.grpc.api.ComputeInfo computeInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> computeInfoBuilder_;
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * @return Whether the computeInfo field is set.
+     */
+    public boolean hasComputeInfo() {
+      return computeInfoBuilder_ != null || computeInfo_ != null;
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * @return The computeInfo.
+     */
+    public com.clarifai.grpc.api.ComputeInfo getComputeInfo() {
+      if (computeInfoBuilder_ == null) {
+        return computeInfo_ == null ? com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : computeInfo_;
+      } else {
+        return computeInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    public Builder setComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
+      if (computeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        computeInfo_ = value;
+        onChanged();
+      } else {
+        computeInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    public Builder setComputeInfo(
+        com.clarifai.grpc.api.ComputeInfo.Builder builderForValue) {
+      if (computeInfoBuilder_ == null) {
+        computeInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        computeInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    public Builder mergeComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
+      if (computeInfoBuilder_ == null) {
+        if (computeInfo_ != null) {
+          computeInfo_ =
+            com.clarifai.grpc.api.ComputeInfo.newBuilder(computeInfo_).mergeFrom(value).buildPartial();
+        } else {
+          computeInfo_ = value;
+        }
+        onChanged();
+      } else {
+        computeInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    public Builder clearComputeInfo() {
+      if (computeInfoBuilder_ == null) {
+        computeInfo_ = null;
+        onChanged();
+      } else {
+        computeInfo_ = null;
+        computeInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    public com.clarifai.grpc.api.ComputeInfo.Builder getComputeInfoBuilder() {
+      
+      onChanged();
+      return getComputeInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    public com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder() {
+      if (computeInfoBuilder_ != null) {
+        return computeInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return computeInfo_ == null ?
+            com.clarifai.grpc.api.ComputeInfo.getDefaultInstance() : computeInfo_;
+      }
+    }
+    /**
+     * <pre>
+     *&#47;/////////////////////////
+     * Need resources on the runner so we can schedule this Runner into the Nodepool.
+     * If this runner is being orchestrated for a model then the orchestrator will set this to the
+     * model resource requirements. If a workflow then it'll compute those requirements and set
+     * populate this resource field.
+     * Having this on the underlying object like Model and Workflow allows us to represent the minimum
+     * requirements on those object, which may be less than what the Runner allocates (as a safety
+     * margin for the runner to for sure run the resource).
+     * </pre>
+     *
+     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> 
+        getComputeInfoFieldBuilder() {
+      if (computeInfoBuilder_ == null) {
+        computeInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder>(
+                getComputeInfo(),
+                getParentForChildren(),
+                isClean());
+        computeInfo_ = null;
+      }
+      return computeInfoBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
