@@ -38,4 +38,19 @@ public interface AppExtraInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSearchRevisionMarkerBytes();
+
+  /**
+   * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+   * @return Whether the counts field is set.
+   */
+  boolean hasCounts();
+  /**
+   * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+   * @return The counts.
+   */
+  com.clarifai.grpc.api.AppResourceCounts getCounts();
+  /**
+   * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+   */
+  com.clarifai.grpc.api.AppResourceCountsOrBuilder getCountsOrBuilder();
 }

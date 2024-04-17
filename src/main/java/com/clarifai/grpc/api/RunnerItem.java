@@ -4,6 +4,10 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * This is a piece of work for a runner to process.
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.RunnerItem}
  */
 public final class RunnerItem extends
@@ -63,16 +67,30 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            com.clarifai.grpc.api.PostModelOutputsRequest.Builder subBuilder = null;
-            if (postModelOutputsRequest_ != null) {
-              subBuilder = postModelOutputsRequest_.toBuilder();
+            com.clarifai.grpc.api.ProcessingInfo.Builder subBuilder = null;
+            if (processingInfo_ != null) {
+              subBuilder = processingInfo_.toBuilder();
             }
-            postModelOutputsRequest_ = input.readMessage(com.clarifai.grpc.api.PostModelOutputsRequest.parser(), extensionRegistry);
+            processingInfo_ = input.readMessage(com.clarifai.grpc.api.ProcessingInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(postModelOutputsRequest_);
-              postModelOutputsRequest_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(processingInfo_);
+              processingInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            com.clarifai.grpc.api.PostModelOutputsRequest.Builder subBuilder = null;
+            if (requestCase_ == 4) {
+              subBuilder = ((com.clarifai.grpc.api.PostModelOutputsRequest) request_).toBuilder();
+            }
+            request_ =
+                input.readMessage(com.clarifai.grpc.api.PostModelOutputsRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.PostModelOutputsRequest) request_);
+              request_ = subBuilder.buildPartial();
+            }
+            requestCase_ = 4;
             break;
           }
           default: {
@@ -107,6 +125,45 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_RunnerItem_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.RunnerItem.class, com.clarifai.grpc.api.RunnerItem.Builder.class);
+  }
+
+  private int requestCase_ = 0;
+  private java.lang.Object request_;
+  public enum RequestCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    POST_MODEL_OUTPUTS_REQUEST(4),
+    REQUEST_NOT_SET(0);
+    private final int value;
+    private RequestCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RequestCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RequestCase forNumber(int value) {
+      switch (value) {
+        case 4: return POST_MODEL_OUTPUTS_REQUEST;
+        case 0: return REQUEST_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RequestCase
+  getRequestCase() {
+    return RequestCase.forNumber(
+        requestCase_);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -201,45 +258,85 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER = 3;
-  private com.clarifai.grpc.api.PostModelOutputsRequest postModelOutputsRequest_;
+  public static final int PROCESSING_INFO_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.ProcessingInfo processingInfo_;
   /**
    * <pre>
-   * TODO(zeiler): make these options a oneof.
-   * first work to do would be an inference runner.
+   * Information on how to process the given RunnerItem.
    * </pre>
    *
-   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+   * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+   * @return Whether the processingInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessingInfo() {
+    return processingInfo_ != null;
+  }
+  /**
+   * <pre>
+   * Information on how to process the given RunnerItem.
+   * </pre>
+   *
+   * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+   * @return The processingInfo.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ProcessingInfo getProcessingInfo() {
+    return processingInfo_ == null ? com.clarifai.grpc.api.ProcessingInfo.getDefaultInstance() : processingInfo_;
+  }
+  /**
+   * <pre>
+   * Information on how to process the given RunnerItem.
+   * </pre>
+   *
+   * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ProcessingInfoOrBuilder getProcessingInfoOrBuilder() {
+    return getProcessingInfo();
+  }
+
+  public static final int POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Model prediction request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
    * @return Whether the postModelOutputsRequest field is set.
    */
   @java.lang.Override
   public boolean hasPostModelOutputsRequest() {
-    return postModelOutputsRequest_ != null;
+    return requestCase_ == 4;
   }
   /**
    * <pre>
-   * TODO(zeiler): make these options a oneof.
-   * first work to do would be an inference runner.
+   * Model prediction request from a user.
    * </pre>
    *
-   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
    * @return The postModelOutputsRequest.
    */
   @java.lang.Override
   public com.clarifai.grpc.api.PostModelOutputsRequest getPostModelOutputsRequest() {
-    return postModelOutputsRequest_ == null ? com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance() : postModelOutputsRequest_;
+    if (requestCase_ == 4) {
+       return (com.clarifai.grpc.api.PostModelOutputsRequest) request_;
+    }
+    return com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
   }
   /**
    * <pre>
-   * TODO(zeiler): make these options a oneof.
-   * first work to do would be an inference runner.
+   * Model prediction request from a user.
    * </pre>
    *
-   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder getPostModelOutputsRequestOrBuilder() {
-    return getPostModelOutputsRequest();
+    if (requestCase_ == 4) {
+       return (com.clarifai.grpc.api.PostModelOutputsRequest) request_;
+    }
+    return com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -262,8 +359,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
-    if (postModelOutputsRequest_ != null) {
-      output.writeMessage(3, getPostModelOutputsRequest());
+    if (processingInfo_ != null) {
+      output.writeMessage(3, getProcessingInfo());
+    }
+    if (requestCase_ == 4) {
+      output.writeMessage(4, (com.clarifai.grpc.api.PostModelOutputsRequest) request_);
     }
     unknownFields.writeTo(output);
   }
@@ -280,9 +380,13 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
-    if (postModelOutputsRequest_ != null) {
+    if (processingInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getPostModelOutputsRequest());
+        .computeMessageSize(3, getProcessingInfo());
+    }
+    if (requestCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (com.clarifai.grpc.api.PostModelOutputsRequest) request_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,10 +407,19 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
-    if (hasPostModelOutputsRequest() != other.hasPostModelOutputsRequest()) return false;
-    if (hasPostModelOutputsRequest()) {
-      if (!getPostModelOutputsRequest()
-          .equals(other.getPostModelOutputsRequest())) return false;
+    if (hasProcessingInfo() != other.hasProcessingInfo()) return false;
+    if (hasProcessingInfo()) {
+      if (!getProcessingInfo()
+          .equals(other.getProcessingInfo())) return false;
+    }
+    if (!getRequestCase().equals(other.getRequestCase())) return false;
+    switch (requestCase_) {
+      case 4:
+        if (!getPostModelOutputsRequest()
+            .equals(other.getPostModelOutputsRequest())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -323,9 +436,17 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    if (hasPostModelOutputsRequest()) {
-      hash = (37 * hash) + POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER;
-      hash = (53 * hash) + getPostModelOutputsRequest().hashCode();
+    if (hasProcessingInfo()) {
+      hash = (37 * hash) + PROCESSING_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessingInfo().hashCode();
+    }
+    switch (requestCase_) {
+      case 4:
+        hash = (37 * hash) + POST_MODEL_OUTPUTS_REQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getPostModelOutputsRequest().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -423,6 +544,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * This is a piece of work for a runner to process.
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.RunnerItem}
    */
   public static final class Builder extends
@@ -464,12 +589,14 @@ private static final long serialVersionUID = 0L;
 
       description_ = "";
 
-      if (postModelOutputsRequestBuilder_ == null) {
-        postModelOutputsRequest_ = null;
+      if (processingInfoBuilder_ == null) {
+        processingInfo_ = null;
       } else {
-        postModelOutputsRequest_ = null;
-        postModelOutputsRequestBuilder_ = null;
+        processingInfo_ = null;
+        processingInfoBuilder_ = null;
       }
+      requestCase_ = 0;
+      request_ = null;
       return this;
     }
 
@@ -498,11 +625,19 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.RunnerItem result = new com.clarifai.grpc.api.RunnerItem(this);
       result.id_ = id_;
       result.description_ = description_;
-      if (postModelOutputsRequestBuilder_ == null) {
-        result.postModelOutputsRequest_ = postModelOutputsRequest_;
+      if (processingInfoBuilder_ == null) {
+        result.processingInfo_ = processingInfo_;
       } else {
-        result.postModelOutputsRequest_ = postModelOutputsRequestBuilder_.build();
+        result.processingInfo_ = processingInfoBuilder_.build();
       }
+      if (requestCase_ == 4) {
+        if (postModelOutputsRequestBuilder_ == null) {
+          result.request_ = request_;
+        } else {
+          result.request_ = postModelOutputsRequestBuilder_.build();
+        }
+      }
+      result.requestCase_ = requestCase_;
       onBuilt();
       return result;
     }
@@ -559,8 +694,17 @@ private static final long serialVersionUID = 0L;
         description_ = other.description_;
         onChanged();
       }
-      if (other.hasPostModelOutputsRequest()) {
-        mergePostModelOutputsRequest(other.getPostModelOutputsRequest());
+      if (other.hasProcessingInfo()) {
+        mergeProcessingInfo(other.getProcessingInfo());
+      }
+      switch (other.getRequestCase()) {
+        case POST_MODEL_OUTPUTS_REQUEST: {
+          mergePostModelOutputsRequest(other.getPostModelOutputsRequest());
+          break;
+        }
+        case REQUEST_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -590,6 +734,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int requestCase_ = 0;
+    private java.lang.Object request_;
+    public RequestCase
+        getRequestCase() {
+      return RequestCase.forNumber(
+          requestCase_);
+    }
+
+    public Builder clearRequest() {
+      requestCase_ = 0;
+      request_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private java.lang.Object id_ = "";
     /**
@@ -783,167 +942,336 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.PostModelOutputsRequest postModelOutputsRequest_;
+    private com.clarifai.grpc.api.ProcessingInfo processingInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.PostModelOutputsRequest, com.clarifai.grpc.api.PostModelOutputsRequest.Builder, com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder> postModelOutputsRequestBuilder_;
+        com.clarifai.grpc.api.ProcessingInfo, com.clarifai.grpc.api.ProcessingInfo.Builder, com.clarifai.grpc.api.ProcessingInfoOrBuilder> processingInfoBuilder_;
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Information on how to process the given RunnerItem.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
-     * @return Whether the postModelOutputsRequest field is set.
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     * @return Whether the processingInfo field is set.
      */
-    public boolean hasPostModelOutputsRequest() {
-      return postModelOutputsRequestBuilder_ != null || postModelOutputsRequest_ != null;
+    public boolean hasProcessingInfo() {
+      return processingInfoBuilder_ != null || processingInfo_ != null;
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Information on how to process the given RunnerItem.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
-     * @return The postModelOutputsRequest.
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     * @return The processingInfo.
      */
-    public com.clarifai.grpc.api.PostModelOutputsRequest getPostModelOutputsRequest() {
-      if (postModelOutputsRequestBuilder_ == null) {
-        return postModelOutputsRequest_ == null ? com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance() : postModelOutputsRequest_;
+    public com.clarifai.grpc.api.ProcessingInfo getProcessingInfo() {
+      if (processingInfoBuilder_ == null) {
+        return processingInfo_ == null ? com.clarifai.grpc.api.ProcessingInfo.getDefaultInstance() : processingInfo_;
       } else {
-        return postModelOutputsRequestBuilder_.getMessage();
+        return processingInfoBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Information on how to process the given RunnerItem.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    public Builder setProcessingInfo(com.clarifai.grpc.api.ProcessingInfo value) {
+      if (processingInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processingInfo_ = value;
+        onChanged();
+      } else {
+        processingInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information on how to process the given RunnerItem.
+     * </pre>
+     *
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    public Builder setProcessingInfo(
+        com.clarifai.grpc.api.ProcessingInfo.Builder builderForValue) {
+      if (processingInfoBuilder_ == null) {
+        processingInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        processingInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information on how to process the given RunnerItem.
+     * </pre>
+     *
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    public Builder mergeProcessingInfo(com.clarifai.grpc.api.ProcessingInfo value) {
+      if (processingInfoBuilder_ == null) {
+        if (processingInfo_ != null) {
+          processingInfo_ =
+            com.clarifai.grpc.api.ProcessingInfo.newBuilder(processingInfo_).mergeFrom(value).buildPartial();
+        } else {
+          processingInfo_ = value;
+        }
+        onChanged();
+      } else {
+        processingInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information on how to process the given RunnerItem.
+     * </pre>
+     *
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    public Builder clearProcessingInfo() {
+      if (processingInfoBuilder_ == null) {
+        processingInfo_ = null;
+        onChanged();
+      } else {
+        processingInfo_ = null;
+        processingInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Information on how to process the given RunnerItem.
+     * </pre>
+     *
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    public com.clarifai.grpc.api.ProcessingInfo.Builder getProcessingInfoBuilder() {
+      
+      onChanged();
+      return getProcessingInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Information on how to process the given RunnerItem.
+     * </pre>
+     *
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    public com.clarifai.grpc.api.ProcessingInfoOrBuilder getProcessingInfoOrBuilder() {
+      if (processingInfoBuilder_ != null) {
+        return processingInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return processingInfo_ == null ?
+            com.clarifai.grpc.api.ProcessingInfo.getDefaultInstance() : processingInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * Information on how to process the given RunnerItem.
+     * </pre>
+     *
+     * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ProcessingInfo, com.clarifai.grpc.api.ProcessingInfo.Builder, com.clarifai.grpc.api.ProcessingInfoOrBuilder> 
+        getProcessingInfoFieldBuilder() {
+      if (processingInfoBuilder_ == null) {
+        processingInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ProcessingInfo, com.clarifai.grpc.api.ProcessingInfo.Builder, com.clarifai.grpc.api.ProcessingInfoOrBuilder>(
+                getProcessingInfo(),
+                getParentForChildren(),
+                isClean());
+        processingInfo_ = null;
+      }
+      return processingInfoBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.PostModelOutputsRequest, com.clarifai.grpc.api.PostModelOutputsRequest.Builder, com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder> postModelOutputsRequestBuilder_;
+    /**
+     * <pre>
+     * Model prediction request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
+     * @return Whether the postModelOutputsRequest field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostModelOutputsRequest() {
+      return requestCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Model prediction request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
+     * @return The postModelOutputsRequest.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.PostModelOutputsRequest getPostModelOutputsRequest() {
+      if (postModelOutputsRequestBuilder_ == null) {
+        if (requestCase_ == 4) {
+          return (com.clarifai.grpc.api.PostModelOutputsRequest) request_;
+        }
+        return com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
+      } else {
+        if (requestCase_ == 4) {
+          return postModelOutputsRequestBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Model prediction request from a user.
+     * </pre>
+     *
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
     public Builder setPostModelOutputsRequest(com.clarifai.grpc.api.PostModelOutputsRequest value) {
       if (postModelOutputsRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        postModelOutputsRequest_ = value;
+        request_ = value;
         onChanged();
       } else {
         postModelOutputsRequestBuilder_.setMessage(value);
       }
-
+      requestCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
     public Builder setPostModelOutputsRequest(
         com.clarifai.grpc.api.PostModelOutputsRequest.Builder builderForValue) {
       if (postModelOutputsRequestBuilder_ == null) {
-        postModelOutputsRequest_ = builderForValue.build();
+        request_ = builderForValue.build();
         onChanged();
       } else {
         postModelOutputsRequestBuilder_.setMessage(builderForValue.build());
       }
-
+      requestCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
     public Builder mergePostModelOutputsRequest(com.clarifai.grpc.api.PostModelOutputsRequest value) {
       if (postModelOutputsRequestBuilder_ == null) {
-        if (postModelOutputsRequest_ != null) {
-          postModelOutputsRequest_ =
-            com.clarifai.grpc.api.PostModelOutputsRequest.newBuilder(postModelOutputsRequest_).mergeFrom(value).buildPartial();
+        if (requestCase_ == 4 &&
+            request_ != com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance()) {
+          request_ = com.clarifai.grpc.api.PostModelOutputsRequest.newBuilder((com.clarifai.grpc.api.PostModelOutputsRequest) request_)
+              .mergeFrom(value).buildPartial();
         } else {
-          postModelOutputsRequest_ = value;
+          request_ = value;
         }
         onChanged();
       } else {
-        postModelOutputsRequestBuilder_.mergeFrom(value);
+        if (requestCase_ == 4) {
+          postModelOutputsRequestBuilder_.mergeFrom(value);
+        } else {
+          postModelOutputsRequestBuilder_.setMessage(value);
+        }
       }
-
+      requestCase_ = 4;
       return this;
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
     public Builder clearPostModelOutputsRequest() {
       if (postModelOutputsRequestBuilder_ == null) {
-        postModelOutputsRequest_ = null;
-        onChanged();
+        if (requestCase_ == 4) {
+          requestCase_ = 0;
+          request_ = null;
+          onChanged();
+        }
       } else {
-        postModelOutputsRequest_ = null;
-        postModelOutputsRequestBuilder_ = null;
+        if (requestCase_ == 4) {
+          requestCase_ = 0;
+          request_ = null;
+        }
+        postModelOutputsRequestBuilder_.clear();
       }
-
       return this;
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
     public com.clarifai.grpc.api.PostModelOutputsRequest.Builder getPostModelOutputsRequestBuilder() {
-      
-      onChanged();
       return getPostModelOutputsRequestFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder getPostModelOutputsRequestOrBuilder() {
-      if (postModelOutputsRequestBuilder_ != null) {
+      if ((requestCase_ == 4) && (postModelOutputsRequestBuilder_ != null)) {
         return postModelOutputsRequestBuilder_.getMessageOrBuilder();
       } else {
-        return postModelOutputsRequest_ == null ?
-            com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance() : postModelOutputsRequest_;
+        if (requestCase_ == 4) {
+          return (com.clarifai.grpc.api.PostModelOutputsRequest) request_;
+        }
+        return com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * TODO(zeiler): make these options a oneof.
-     * first work to do would be an inference runner.
+     * Model prediction request from a user.
      * </pre>
      *
-     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+     * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.PostModelOutputsRequest, com.clarifai.grpc.api.PostModelOutputsRequest.Builder, com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder> 
         getPostModelOutputsRequestFieldBuilder() {
       if (postModelOutputsRequestBuilder_ == null) {
+        if (!(requestCase_ == 4)) {
+          request_ = com.clarifai.grpc.api.PostModelOutputsRequest.getDefaultInstance();
+        }
         postModelOutputsRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.PostModelOutputsRequest, com.clarifai.grpc.api.PostModelOutputsRequest.Builder, com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder>(
-                getPostModelOutputsRequest(),
+                (com.clarifai.grpc.api.PostModelOutputsRequest) request_,
                 getParentForChildren(),
                 isClean());
-        postModelOutputsRequest_ = null;
+        request_ = null;
       }
+      requestCase_ = 4;
+      onChanged();;
       return postModelOutputsRequestBuilder_;
     }
     @java.lang.Override

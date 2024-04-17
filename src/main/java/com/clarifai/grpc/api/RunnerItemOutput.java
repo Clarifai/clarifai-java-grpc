@@ -50,15 +50,16 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             com.clarifai.grpc.api.MultiOutputResponse.Builder subBuilder = null;
-            if (multiOutputResponse_ != null) {
-              subBuilder = multiOutputResponse_.toBuilder();
+            if (responseCase_ == 1) {
+              subBuilder = ((com.clarifai.grpc.api.MultiOutputResponse) response_).toBuilder();
             }
-            multiOutputResponse_ = input.readMessage(com.clarifai.grpc.api.MultiOutputResponse.parser(), extensionRegistry);
+            response_ =
+                input.readMessage(com.clarifai.grpc.api.MultiOutputResponse.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(multiOutputResponse_);
-              multiOutputResponse_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom((com.clarifai.grpc.api.MultiOutputResponse) response_);
+              response_ = subBuilder.buildPartial();
             }
-
+            responseCase_ = 1;
             break;
           }
           default: {
@@ -95,12 +96,49 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.RunnerItemOutput.class, com.clarifai.grpc.api.RunnerItemOutput.Builder.class);
   }
 
+  private int responseCase_ = 0;
+  private java.lang.Object response_;
+  public enum ResponseCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MULTI_OUTPUT_RESPONSE(1),
+    RESPONSE_NOT_SET(0);
+    private final int value;
+    private ResponseCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResponseCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ResponseCase forNumber(int value) {
+      switch (value) {
+        case 1: return MULTI_OUTPUT_RESPONSE;
+        case 0: return RESPONSE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ResponseCase
+  getResponseCase() {
+    return ResponseCase.forNumber(
+        responseCase_);
+  }
+
   public static final int MULTI_OUTPUT_RESPONSE_FIELD_NUMBER = 1;
-  private com.clarifai.grpc.api.MultiOutputResponse multiOutputResponse_;
   /**
    * <pre>
-   * The output of the first task type.
-   * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+   * The output of a model prediction request.
    * </pre>
    *
    * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -108,12 +146,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMultiOutputResponse() {
-    return multiOutputResponse_ != null;
+    return responseCase_ == 1;
   }
   /**
    * <pre>
-   * The output of the first task type.
-   * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+   * The output of a model prediction request.
    * </pre>
    *
    * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -121,19 +158,24 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.clarifai.grpc.api.MultiOutputResponse getMultiOutputResponse() {
-    return multiOutputResponse_ == null ? com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance() : multiOutputResponse_;
+    if (responseCase_ == 1) {
+       return (com.clarifai.grpc.api.MultiOutputResponse) response_;
+    }
+    return com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance();
   }
   /**
    * <pre>
-   * The output of the first task type.
-   * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+   * The output of a model prediction request.
    * </pre>
    *
    * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.MultiOutputResponseOrBuilder getMultiOutputResponseOrBuilder() {
-    return getMultiOutputResponse();
+    if (responseCase_ == 1) {
+       return (com.clarifai.grpc.api.MultiOutputResponse) response_;
+    }
+    return com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -150,8 +192,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (multiOutputResponse_ != null) {
-      output.writeMessage(1, getMultiOutputResponse());
+    if (responseCase_ == 1) {
+      output.writeMessage(1, (com.clarifai.grpc.api.MultiOutputResponse) response_);
     }
     unknownFields.writeTo(output);
   }
@@ -162,9 +204,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (multiOutputResponse_ != null) {
+    if (responseCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getMultiOutputResponse());
+        .computeMessageSize(1, (com.clarifai.grpc.api.MultiOutputResponse) response_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -181,10 +223,14 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.RunnerItemOutput other = (com.clarifai.grpc.api.RunnerItemOutput) obj;
 
-    if (hasMultiOutputResponse() != other.hasMultiOutputResponse()) return false;
-    if (hasMultiOutputResponse()) {
-      if (!getMultiOutputResponse()
-          .equals(other.getMultiOutputResponse())) return false;
+    if (!getResponseCase().equals(other.getResponseCase())) return false;
+    switch (responseCase_) {
+      case 1:
+        if (!getMultiOutputResponse()
+            .equals(other.getMultiOutputResponse())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -197,9 +243,13 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasMultiOutputResponse()) {
-      hash = (37 * hash) + MULTI_OUTPUT_RESPONSE_FIELD_NUMBER;
-      hash = (53 * hash) + getMultiOutputResponse().hashCode();
+    switch (responseCase_) {
+      case 1:
+        hash = (37 * hash) + MULTI_OUTPUT_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiOutputResponse().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -334,12 +384,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (multiOutputResponseBuilder_ == null) {
-        multiOutputResponse_ = null;
-      } else {
-        multiOutputResponse_ = null;
-        multiOutputResponseBuilder_ = null;
-      }
+      responseCase_ = 0;
+      response_ = null;
       return this;
     }
 
@@ -366,11 +412,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.RunnerItemOutput buildPartial() {
       com.clarifai.grpc.api.RunnerItemOutput result = new com.clarifai.grpc.api.RunnerItemOutput(this);
-      if (multiOutputResponseBuilder_ == null) {
-        result.multiOutputResponse_ = multiOutputResponse_;
-      } else {
-        result.multiOutputResponse_ = multiOutputResponseBuilder_.build();
+      if (responseCase_ == 1) {
+        if (multiOutputResponseBuilder_ == null) {
+          result.response_ = response_;
+        } else {
+          result.response_ = multiOutputResponseBuilder_.build();
+        }
       }
+      result.responseCase_ = responseCase_;
       onBuilt();
       return result;
     }
@@ -419,8 +468,14 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.RunnerItemOutput other) {
       if (other == com.clarifai.grpc.api.RunnerItemOutput.getDefaultInstance()) return this;
-      if (other.hasMultiOutputResponse()) {
-        mergeMultiOutputResponse(other.getMultiOutputResponse());
+      switch (other.getResponseCase()) {
+        case MULTI_OUTPUT_RESPONSE: {
+          mergeMultiOutputResponse(other.getMultiOutputResponse());
+          break;
+        }
+        case RESPONSE_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -450,42 +505,61 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int responseCase_ = 0;
+    private java.lang.Object response_;
+    public ResponseCase
+        getResponseCase() {
+      return ResponseCase.forNumber(
+          responseCase_);
+    }
 
-    private com.clarifai.grpc.api.MultiOutputResponse multiOutputResponse_;
+    public Builder clearResponse() {
+      responseCase_ = 0;
+      response_ = null;
+      onChanged();
+      return this;
+    }
+
+
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.MultiOutputResponse, com.clarifai.grpc.api.MultiOutputResponse.Builder, com.clarifai.grpc.api.MultiOutputResponseOrBuilder> multiOutputResponseBuilder_;
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      * @return Whether the multiOutputResponse field is set.
      */
+    @java.lang.Override
     public boolean hasMultiOutputResponse() {
-      return multiOutputResponseBuilder_ != null || multiOutputResponse_ != null;
+      return responseCase_ == 1;
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      * @return The multiOutputResponse.
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.MultiOutputResponse getMultiOutputResponse() {
       if (multiOutputResponseBuilder_ == null) {
-        return multiOutputResponse_ == null ? com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance() : multiOutputResponse_;
+        if (responseCase_ == 1) {
+          return (com.clarifai.grpc.api.MultiOutputResponse) response_;
+        }
+        return com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance();
       } else {
-        return multiOutputResponseBuilder_.getMessage();
+        if (responseCase_ == 1) {
+          return multiOutputResponseBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -495,18 +569,17 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        multiOutputResponse_ = value;
+        response_ = value;
         onChanged();
       } else {
         multiOutputResponseBuilder_.setMessage(value);
       }
-
+      responseCase_ = 1;
       return this;
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -514,89 +587,95 @@ private static final long serialVersionUID = 0L;
     public Builder setMultiOutputResponse(
         com.clarifai.grpc.api.MultiOutputResponse.Builder builderForValue) {
       if (multiOutputResponseBuilder_ == null) {
-        multiOutputResponse_ = builderForValue.build();
+        response_ = builderForValue.build();
         onChanged();
       } else {
         multiOutputResponseBuilder_.setMessage(builderForValue.build());
       }
-
+      responseCase_ = 1;
       return this;
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      */
     public Builder mergeMultiOutputResponse(com.clarifai.grpc.api.MultiOutputResponse value) {
       if (multiOutputResponseBuilder_ == null) {
-        if (multiOutputResponse_ != null) {
-          multiOutputResponse_ =
-            com.clarifai.grpc.api.MultiOutputResponse.newBuilder(multiOutputResponse_).mergeFrom(value).buildPartial();
+        if (responseCase_ == 1 &&
+            response_ != com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance()) {
+          response_ = com.clarifai.grpc.api.MultiOutputResponse.newBuilder((com.clarifai.grpc.api.MultiOutputResponse) response_)
+              .mergeFrom(value).buildPartial();
         } else {
-          multiOutputResponse_ = value;
+          response_ = value;
         }
         onChanged();
       } else {
-        multiOutputResponseBuilder_.mergeFrom(value);
+        if (responseCase_ == 1) {
+          multiOutputResponseBuilder_.mergeFrom(value);
+        } else {
+          multiOutputResponseBuilder_.setMessage(value);
+        }
       }
-
+      responseCase_ = 1;
       return this;
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      */
     public Builder clearMultiOutputResponse() {
       if (multiOutputResponseBuilder_ == null) {
-        multiOutputResponse_ = null;
-        onChanged();
+        if (responseCase_ == 1) {
+          responseCase_ = 0;
+          response_ = null;
+          onChanged();
+        }
       } else {
-        multiOutputResponse_ = null;
-        multiOutputResponseBuilder_ = null;
+        if (responseCase_ == 1) {
+          responseCase_ = 0;
+          response_ = null;
+        }
+        multiOutputResponseBuilder_.clear();
       }
-
       return this;
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      */
     public com.clarifai.grpc.api.MultiOutputResponse.Builder getMultiOutputResponseBuilder() {
-      
-      onChanged();
       return getMultiOutputResponseFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
      */
+    @java.lang.Override
     public com.clarifai.grpc.api.MultiOutputResponseOrBuilder getMultiOutputResponseOrBuilder() {
-      if (multiOutputResponseBuilder_ != null) {
+      if ((responseCase_ == 1) && (multiOutputResponseBuilder_ != null)) {
         return multiOutputResponseBuilder_.getMessageOrBuilder();
       } else {
-        return multiOutputResponse_ == null ?
-            com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance() : multiOutputResponse_;
+        if (responseCase_ == 1) {
+          return (com.clarifai.grpc.api.MultiOutputResponse) response_;
+        }
+        return com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * The output of the first task type.
-     * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+     * The output of a model prediction request.
      * </pre>
      *
      * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -605,13 +684,18 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.MultiOutputResponse, com.clarifai.grpc.api.MultiOutputResponse.Builder, com.clarifai.grpc.api.MultiOutputResponseOrBuilder> 
         getMultiOutputResponseFieldBuilder() {
       if (multiOutputResponseBuilder_ == null) {
+        if (!(responseCase_ == 1)) {
+          response_ = com.clarifai.grpc.api.MultiOutputResponse.getDefaultInstance();
+        }
         multiOutputResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.MultiOutputResponse, com.clarifai.grpc.api.MultiOutputResponse.Builder, com.clarifai.grpc.api.MultiOutputResponseOrBuilder>(
-                getMultiOutputResponse(),
+                (com.clarifai.grpc.api.MultiOutputResponse) response_,
                 getParentForChildren(),
                 isClean());
-        multiOutputResponse_ = null;
+        response_ = null;
       }
+      responseCase_ = 1;
+      onChanged();;
       return multiOutputResponseBuilder_;
     }
     @java.lang.Override

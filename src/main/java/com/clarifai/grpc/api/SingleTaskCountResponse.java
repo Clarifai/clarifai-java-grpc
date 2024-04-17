@@ -5,7 +5,7 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * SingleTaskCountResponse represent counts of annotations or inputs(anchor annotations) for labelers in given task
+ * SingleTaskCountResponse represents counts of task annotations or inputs (i.e. task assignments) for labelers in given task
  * </pre>
  *
  * Protobuf type {@code clarifai.api.SingleTaskCountResponse}
@@ -464,7 +464,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * SingleTaskCountResponse represent counts of annotations or inputs(anchor annotations) for labelers in given task
+   * SingleTaskCountResponse represents counts of task annotations or inputs (i.e. task assignments) for labelers in given task
    * </pre>
    *
    * Protobuf type {@code clarifai.api.SingleTaskCountResponse}

@@ -830,6 +830,22 @@ public enum StatusCode
    */
   RUNNER_NEEDS_RETRY(25604),
   /**
+   * <code>RUNNER_STREAM_START = 25605;</code>
+   */
+  RUNNER_STREAM_START(25605),
+  /**
+   * <code>RUNNER_STREAM_END = 25606;</code>
+   */
+  RUNNER_STREAM_END(25606),
+  /**
+   * <code>RUNNER_ITEM_CANCELLED = 25607;</code>
+   */
+  RUNNER_ITEM_CANCELLED(25607),
+  /**
+   * <code>RUNNER_PROCESSING_FAILED = 25608;</code>
+   */
+  RUNNER_PROCESSING_FAILED(25608),
+  /**
    * <pre>
    * Input:Image related 30xxx
    * </pre>
@@ -2762,6 +2778,22 @@ public enum StatusCode
    */
   public static final int RUNNER_NEEDS_RETRY_VALUE = 25604;
   /**
+   * <code>RUNNER_STREAM_START = 25605;</code>
+   */
+  public static final int RUNNER_STREAM_START_VALUE = 25605;
+  /**
+   * <code>RUNNER_STREAM_END = 25606;</code>
+   */
+  public static final int RUNNER_STREAM_END_VALUE = 25606;
+  /**
+   * <code>RUNNER_ITEM_CANCELLED = 25607;</code>
+   */
+  public static final int RUNNER_ITEM_CANCELLED_VALUE = 25607;
+  /**
+   * <code>RUNNER_PROCESSING_FAILED = 25608;</code>
+   */
+  public static final int RUNNER_PROCESSING_FAILED_VALUE = 25608;
+  /**
    * <pre>
    * Input:Image related 30xxx
    * </pre>
@@ -4039,6 +4071,10 @@ public enum StatusCode
       case 25602: return RUNNER_INVALID_ARGUMENT;
       case 25603: return RUNNER_INVALID_REQUEST;
       case 25604: return RUNNER_NEEDS_RETRY;
+      case 25605: return RUNNER_STREAM_START;
+      case 25606: return RUNNER_STREAM_END;
+      case 25607: return RUNNER_ITEM_CANCELLED;
+      case 25608: return RUNNER_PROCESSING_FAILED;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;

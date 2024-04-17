@@ -5,8 +5,9 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * TaskStatusCountPerUser can represents count of human created annotations for a user for each valid status,
- * count of inputs (anchor annotation) for a user for each valid status
+ * TaskStatusCountPerUser can represent one of the following:
+ * * count of task annotations created by a worker for each valid status,
+ * * count of task inputs assigned to a worker  (i.e. task assignments) for each valid status
  * </pre>
  *
  * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
@@ -85,6 +86,19 @@ private static final long serialVersionUID = 0L;
             awaitingConsensusReview_ = input.readUInt32();
             break;
           }
+          case 58: {
+            com.clarifai.grpc.api.Worker.Builder subBuilder = null;
+            if (worker_ != null) {
+              subBuilder = worker_.toBuilder();
+            }
+            worker_ = input.readMessage(com.clarifai.grpc.api.Worker.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(worker_);
+              worker_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -122,11 +136,17 @@ private static final long serialVersionUID = 0L;
   public static final int USER_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object userId_;
   /**
-   * <code>string user_id = 1;</code>
+   * <pre>
+   * Deprecated: Use worker instead.
+   * </pre>
+   *
+   * <code>string user_id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3316
    * @return The userId.
    */
   @java.lang.Override
-  public java.lang.String getUserId() {
+  @java.lang.Deprecated public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -139,11 +159,17 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string user_id = 1;</code>
+   * <pre>
+   * Deprecated: Use worker instead.
+   * </pre>
+   *
+   * <code>string user_id = 1 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3316
    * @return The bytes for userId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -212,6 +238,32 @@ private static final long serialVersionUID = 0L;
     return awaitingConsensusReview_;
   }
 
+  public static final int WORKER_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.Worker worker_;
+  /**
+   * <code>.clarifai.api.Worker worker = 7;</code>
+   * @return Whether the worker field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorker() {
+    return worker_ != null;
+  }
+  /**
+   * <code>.clarifai.api.Worker worker = 7;</code>
+   * @return The worker.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Worker getWorker() {
+    return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+  }
+  /**
+   * <code>.clarifai.api.Worker worker = 7;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+    return getWorker();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -243,6 +295,9 @@ private static final long serialVersionUID = 0L;
     }
     if (awaitingConsensusReview_ != 0) {
       output.writeUInt32(6, awaitingConsensusReview_);
+    }
+    if (worker_ != null) {
+      output.writeMessage(7, getWorker());
     }
     unknownFields.writeTo(output);
   }
@@ -276,6 +331,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(6, awaitingConsensusReview_);
     }
+    if (worker_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getWorker());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -303,6 +362,11 @@ private static final long serialVersionUID = 0L;
         != other.getReviewDenied()) return false;
     if (getAwaitingConsensusReview()
         != other.getAwaitingConsensusReview()) return false;
+    if (hasWorker() != other.hasWorker()) return false;
+    if (hasWorker()) {
+      if (!getWorker()
+          .equals(other.getWorker())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -326,6 +390,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getReviewDenied();
     hash = (37 * hash) + AWAITING_CONSENSUS_REVIEW_FIELD_NUMBER;
     hash = (53 * hash) + getAwaitingConsensusReview();
+    if (hasWorker()) {
+      hash = (37 * hash) + WORKER_FIELD_NUMBER;
+      hash = (53 * hash) + getWorker().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,8 +491,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * TaskStatusCountPerUser can represents count of human created annotations for a user for each valid status,
-   * count of inputs (anchor annotation) for a user for each valid status
+   * TaskStatusCountPerUser can represent one of the following:
+   * * count of task annotations created by a worker for each valid status,
+   * * count of task inputs assigned to a worker  (i.e. task assignments) for each valid status
    * </pre>
    *
    * Protobuf type {@code clarifai.api.TaskStatusCountPerUser}
@@ -476,6 +545,12 @@ private static final long serialVersionUID = 0L;
 
       awaitingConsensusReview_ = 0;
 
+      if (workerBuilder_ == null) {
+        worker_ = null;
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
       return this;
     }
 
@@ -508,6 +583,11 @@ private static final long serialVersionUID = 0L;
       result.success_ = success_;
       result.reviewDenied_ = reviewDenied_;
       result.awaitingConsensusReview_ = awaitingConsensusReview_;
+      if (workerBuilder_ == null) {
+        result.worker_ = worker_;
+      } else {
+        result.worker_ = workerBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -575,6 +655,9 @@ private static final long serialVersionUID = 0L;
       if (other.getAwaitingConsensusReview() != 0) {
         setAwaitingConsensusReview(other.getAwaitingConsensusReview());
       }
+      if (other.hasWorker()) {
+        mergeWorker(other.getWorker());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -606,10 +689,16 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object userId_ = "";
     /**
-     * <code>string user_id = 1;</code>
+     * <pre>
+     * Deprecated: Use worker instead.
+     * </pre>
+     *
+     * <code>string user_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3316
      * @return The userId.
      */
-    public java.lang.String getUserId() {
+    @java.lang.Deprecated public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -622,10 +711,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 1;</code>
+     * <pre>
+     * Deprecated: Use worker instead.
+     * </pre>
+     *
+     * <code>string user_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3316
      * @return The bytes for userId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getUserIdBytes() {
       java.lang.Object ref = userId_;
       if (ref instanceof String) {
@@ -639,11 +734,17 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string user_id = 1;</code>
+     * <pre>
+     * Deprecated: Use worker instead.
+     * </pre>
+     *
+     * <code>string user_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3316
      * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserId(
+    @java.lang.Deprecated public Builder setUserId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -654,21 +755,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string user_id = 1;</code>
+     * <pre>
+     * Deprecated: Use worker instead.
+     * </pre>
+     *
+     * <code>string user_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3316
      * @return This builder for chaining.
      */
-    public Builder clearUserId() {
+    @java.lang.Deprecated public Builder clearUserId() {
       
       userId_ = getDefaultInstance().getUserId();
       onChanged();
       return this;
     }
     /**
-     * <code>string user_id = 1;</code>
+     * <pre>
+     * Deprecated: Use worker instead.
+     * </pre>
+     *
+     * <code>string user_id = 1 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskStatusCountPerUser.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3316
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserIdBytes(
+    @java.lang.Deprecated public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -833,6 +946,125 @@ private static final long serialVersionUID = 0L;
       awaitingConsensusReview_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Worker worker_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> workerBuilder_;
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     * @return Whether the worker field is set.
+     */
+    public boolean hasWorker() {
+      return workerBuilder_ != null || worker_ != null;
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     * @return The worker.
+     */
+    public com.clarifai.grpc.api.Worker getWorker() {
+      if (workerBuilder_ == null) {
+        return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+      } else {
+        return workerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    public Builder setWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        worker_ = value;
+        onChanged();
+      } else {
+        workerBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    public Builder setWorker(
+        com.clarifai.grpc.api.Worker.Builder builderForValue) {
+      if (workerBuilder_ == null) {
+        worker_ = builderForValue.build();
+        onChanged();
+      } else {
+        workerBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    public Builder mergeWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (worker_ != null) {
+          worker_ =
+            com.clarifai.grpc.api.Worker.newBuilder(worker_).mergeFrom(value).buildPartial();
+        } else {
+          worker_ = value;
+        }
+        onChanged();
+      } else {
+        workerBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    public Builder clearWorker() {
+      if (workerBuilder_ == null) {
+        worker_ = null;
+        onChanged();
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    public com.clarifai.grpc.api.Worker.Builder getWorkerBuilder() {
+      
+      onChanged();
+      return getWorkerFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+      if (workerBuilder_ != null) {
+        return workerBuilder_.getMessageOrBuilder();
+      } else {
+        return worker_ == null ?
+            com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.Worker worker = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> 
+        getWorkerFieldBuilder() {
+      if (workerBuilder_ == null) {
+        workerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder>(
+                getWorker(),
+                getParentForChildren(),
+                isClean());
+        worker_ = null;
+      }
+      return workerBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

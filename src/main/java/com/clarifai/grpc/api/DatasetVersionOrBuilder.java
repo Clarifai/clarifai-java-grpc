@@ -474,5 +474,26 @@ com.clarifai.grpc.api.DatasetVersionMetrics defaultValue);
   com.google.protobuf.ByteString
       getEmbedModelVersionIdsBytes(int index);
 
+  /**
+   * <pre>
+   * Read Only. Cannot be Set
+   * Origin of request for new dataset version
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+   * @return The enum numeric value on the wire for requestOrigin.
+   */
+  int getRequestOriginValue();
+  /**
+   * <pre>
+   * Read Only. Cannot be Set
+   * Origin of request for new dataset version
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+   * @return The requestOrigin.
+   */
+  com.clarifai.grpc.api.DatasetVersionRequestOrigin getRequestOrigin();
+
   public com.clarifai.grpc.api.DatasetVersion.DataConfigCase getDataConfigCase();
 }

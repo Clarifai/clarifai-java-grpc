@@ -46,7 +46,7 @@ public interface ListAppsRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -56,7 +56,7 @@ public interface ListAppsRequestOrBuilder extends
       getAdditionalFieldsList();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -65,7 +65,7 @@ public interface ListAppsRequestOrBuilder extends
   int getAdditionalFieldsCount();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -75,7 +75,7 @@ public interface ListAppsRequestOrBuilder extends
   java.lang.String getAdditionalFields(int index);
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -255,7 +255,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4001
+   *     See proto/clarifai/api/service.proto;l=4048
    * @return The query.
    */
   @java.lang.Deprecated java.lang.String getQuery();
@@ -267,7 +267,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4001
+   *     See proto/clarifai/api/service.proto;l=4048
    * @return The bytes for query.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -281,7 +281,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4004
+   *     See proto/clarifai/api/service.proto;l=4051
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -293,7 +293,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4004
+   *     See proto/clarifai/api/service.proto;l=4051
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -307,7 +307,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4007
+   *     See proto/clarifai/api/service.proto;l=4054
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -319,7 +319,7 @@ public interface ListAppsRequestOrBuilder extends
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4007
+   *     See proto/clarifai/api/service.proto;l=4054
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

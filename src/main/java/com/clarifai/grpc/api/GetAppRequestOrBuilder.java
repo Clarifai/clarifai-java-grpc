@@ -24,7 +24,7 @@ public interface GetAppRequestOrBuilder extends
 
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -34,7 +34,7 @@ public interface GetAppRequestOrBuilder extends
       getAdditionalFieldsList();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -43,7 +43,7 @@ public interface GetAppRequestOrBuilder extends
   int getAdditionalFieldsCount();
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -53,7 +53,7 @@ public interface GetAppRequestOrBuilder extends
   java.lang.String getAdditionalFields(int index);
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>

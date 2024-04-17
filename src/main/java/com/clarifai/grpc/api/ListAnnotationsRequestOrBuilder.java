@@ -124,10 +124,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -139,10 +138,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -153,10 +151,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -168,10 +165,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -185,10 +181,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -200,10 +195,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -214,10 +208,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -229,10 +222,9 @@ public interface ListAnnotationsRequestOrBuilder extends
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -241,6 +233,63 @@ public interface ListAnnotationsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelVersionIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @return A list containing the workflowVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getWorkflowVersionIdsList();
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @return The count of workflowVersionIds.
+   */
+  int getWorkflowVersionIdsCount();
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @param index The index of the element to return.
+   * @return The workflowVersionIds at the given index.
+   */
+  java.lang.String getWorkflowVersionIds(int index);
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workflowVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getWorkflowVersionIdsBytes(int index);
 
   /**
    * <pre>

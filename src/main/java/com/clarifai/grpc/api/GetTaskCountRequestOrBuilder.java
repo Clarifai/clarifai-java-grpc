@@ -44,7 +44,10 @@ public interface GetTaskCountRequestOrBuilder extends
 
   /**
    * <pre>
-   * for given task_id, user_ids to filter on (optional)
+   * Only return counts for these user IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -54,7 +57,10 @@ public interface GetTaskCountRequestOrBuilder extends
       getUserIdsList();
   /**
    * <pre>
-   * for given task_id, user_ids to filter on (optional)
+   * Only return counts for these user IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -63,7 +69,10 @@ public interface GetTaskCountRequestOrBuilder extends
   int getUserIdsCount();
   /**
    * <pre>
-   * for given task_id, user_ids to filter on (optional)
+   * Only return counts for these user IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -73,7 +82,10 @@ public interface GetTaskCountRequestOrBuilder extends
   java.lang.String getUserIds(int index);
   /**
    * <pre>
-   * for given task_id, user_ids to filter on (optional)
+   * Only return counts for these user IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
    * </pre>
    *
    * <code>repeated string user_ids = 3;</code>
@@ -82,4 +94,110 @@ public interface GetTaskCountRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUserIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Only return counts for these model version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 4;</code>
+   * @return A list containing the modelVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getModelVersionIdsList();
+  /**
+   * <pre>
+   * Only return counts for these model version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 4;</code>
+   * @return The count of modelVersionIds.
+   */
+  int getModelVersionIdsCount();
+  /**
+   * <pre>
+   * Only return counts for these model version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 4;</code>
+   * @param index The index of the element to return.
+   * @return The modelVersionIds at the given index.
+   */
+  java.lang.String getModelVersionIds(int index);
+  /**
+   * <pre>
+   * Only return counts for these model version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the modelVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getModelVersionIdsBytes(int index);
+
+  /**
+   * <pre>
+   * Only return counts for these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 5;</code>
+   * @return A list containing the workflowVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getWorkflowVersionIdsList();
+  /**
+   * <pre>
+   * Only return counts for these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 5;</code>
+   * @return The count of workflowVersionIds.
+   */
+  int getWorkflowVersionIdsCount();
+  /**
+   * <pre>
+   * Only return counts for these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The workflowVersionIds at the given index.
+   */
+  java.lang.String getWorkflowVersionIds(int index);
+  /**
+   * <pre>
+   * Only return counts for these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) counts in the results.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workflowVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getWorkflowVersionIdsBytes(int index);
 }

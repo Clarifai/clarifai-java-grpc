@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -310,7 +310,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -321,7 +321,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 10;</code>
@@ -603,7 +603,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4001
+   *     See proto/clarifai/api/service.proto;l=4048
    * @return The query.
    */
   @java.lang.Override
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string query = 8 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4001
+   *     See proto/clarifai/api/service.proto;l=4048
    * @return The bytes for query.
    */
   @java.lang.Override
@@ -655,7 +655,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4004
+   *     See proto/clarifai/api/service.proto;l=4051
    * @return The name.
    */
   @java.lang.Override
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4004
+   *     See proto/clarifai/api/service.proto;l=4051
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -707,7 +707,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4007
+   *     See proto/clarifai/api/service.proto;l=4054
    * @return The id.
    */
   @java.lang.Override
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4007
+   *     See proto/clarifai/api/service.proto;l=4054
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -1630,7 +1630,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1642,7 +1642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1653,7 +1653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1665,7 +1665,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1678,7 +1678,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1698,7 +1698,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1717,7 +1717,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1734,7 +1734,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -1748,7 +1748,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 10;</code>
@@ -2337,7 +2337,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4001
+     *     See proto/clarifai/api/service.proto;l=4048
      * @return The query.
      */
     @java.lang.Deprecated public java.lang.String getQuery() {
@@ -2360,7 +2360,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4001
+     *     See proto/clarifai/api/service.proto;l=4048
      * @return The bytes for query.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2384,7 +2384,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4001
+     *     See proto/clarifai/api/service.proto;l=4048
      * @param value The query to set.
      * @return This builder for chaining.
      */
@@ -2406,7 +2406,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4001
+     *     See proto/clarifai/api/service.proto;l=4048
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearQuery() {
@@ -2423,7 +2423,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string query = 8 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.query is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4001
+     *     See proto/clarifai/api/service.proto;l=4048
      * @param value The bytes for query to set.
      * @return This builder for chaining.
      */
@@ -2448,7 +2448,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4004
+     *     See proto/clarifai/api/service.proto;l=4051
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2471,7 +2471,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4004
+     *     See proto/clarifai/api/service.proto;l=4051
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2495,7 +2495,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4004
+     *     See proto/clarifai/api/service.proto;l=4051
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2517,7 +2517,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4004
+     *     See proto/clarifai/api/service.proto;l=4051
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2534,7 +2534,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.name is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4004
+     *     See proto/clarifai/api/service.proto;l=4051
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -2559,7 +2559,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4007
+     *     See proto/clarifai/api/service.proto;l=4054
      * @return The id.
      */
     @java.lang.Deprecated public java.lang.String getId() {
@@ -2582,7 +2582,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4007
+     *     See proto/clarifai/api/service.proto;l=4054
      * @return The bytes for id.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2606,7 +2606,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4007
+     *     See proto/clarifai/api/service.proto;l=4054
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -2628,7 +2628,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4007
+     *     See proto/clarifai/api/service.proto;l=4054
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearId() {
@@ -2645,7 +2645,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.ListAppsRequest.id is deprecated.
-     *     See proto/clarifai/api/service.proto;l=4007
+     *     See proto/clarifai/api/service.proto;l=4054
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

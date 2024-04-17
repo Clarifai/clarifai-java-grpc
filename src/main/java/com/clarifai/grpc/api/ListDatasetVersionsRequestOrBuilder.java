@@ -63,4 +63,53 @@ public interface ListDatasetVersionsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @return A list containing the requestOrigins.
+   */
+  java.util.List<com.clarifai.grpc.api.DatasetVersionRequestOrigin> getRequestOriginsList();
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @return The count of requestOrigins.
+   */
+  int getRequestOriginsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @param index The index of the element to return.
+   * @return The requestOrigins at the given index.
+   */
+  com.clarifai.grpc.api.DatasetVersionRequestOrigin getRequestOrigins(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @return A list containing the enum numeric values on the wire for requestOrigins.
+   */
+  java.util.List<java.lang.Integer>
+  getRequestOriginsValueList();
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of requestOrigins at the given index.
+   */
+  int getRequestOriginsValue(int index);
 }

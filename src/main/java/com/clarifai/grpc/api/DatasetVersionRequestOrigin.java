@@ -4,77 +4,53 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.EvaluationType}
+ * Protobuf enum {@code clarifai.api.DatasetVersionRequestOrigin}
  */
-public enum EvaluationType
+public enum DatasetVersionRequestOrigin
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Undefined = 0;</code>
+   * <code>DATASET_VERSION_REQUEST_ORIGIN_NOT_SET = 0;</code>
    */
-  Undefined(0),
+  DATASET_VERSION_REQUEST_ORIGIN_NOT_SET(0),
   /**
-   * <pre>
-   * default
-   * </pre>
-   *
-   * <code>Classification = 1;</code>
+   * <code>MANUAL = 1;</code>
    */
-  Classification(1),
+  MANUAL(1),
   /**
-   * <code>Detection = 2;</code>
+   * <code>TRAINING = 2;</code>
    */
-  Detection(2),
+  TRAINING(2),
   /**
-   * <code>Segmentation = 3;</code>
+   * <code>EVAL_GROUND_TRUTH = 3;</code>
    */
-  Segmentation(3),
+  EVAL_GROUND_TRUTH(3),
   /**
-   * <code>Clustering = 4;</code>
+   * <code>EVAL_PREDICTIONS = 4;</code>
    */
-  Clustering(4),
-  /**
-   * <code>Tracker = 5;</code>
-   */
-  Tracker(5),
-  /**
-   * <code>Generation = 6;</code>
-   */
-  Generation(6),
+  EVAL_PREDICTIONS(4),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Undefined = 0;</code>
+   * <code>DATASET_VERSION_REQUEST_ORIGIN_NOT_SET = 0;</code>
    */
-  public static final int Undefined_VALUE = 0;
+  public static final int DATASET_VERSION_REQUEST_ORIGIN_NOT_SET_VALUE = 0;
   /**
-   * <pre>
-   * default
-   * </pre>
-   *
-   * <code>Classification = 1;</code>
+   * <code>MANUAL = 1;</code>
    */
-  public static final int Classification_VALUE = 1;
+  public static final int MANUAL_VALUE = 1;
   /**
-   * <code>Detection = 2;</code>
+   * <code>TRAINING = 2;</code>
    */
-  public static final int Detection_VALUE = 2;
+  public static final int TRAINING_VALUE = 2;
   /**
-   * <code>Segmentation = 3;</code>
+   * <code>EVAL_GROUND_TRUTH = 3;</code>
    */
-  public static final int Segmentation_VALUE = 3;
+  public static final int EVAL_GROUND_TRUTH_VALUE = 3;
   /**
-   * <code>Clustering = 4;</code>
+   * <code>EVAL_PREDICTIONS = 4;</code>
    */
-  public static final int Clustering_VALUE = 4;
-  /**
-   * <code>Tracker = 5;</code>
-   */
-  public static final int Tracker_VALUE = 5;
-  /**
-   * <code>Generation = 6;</code>
-   */
-  public static final int Generation_VALUE = 6;
+  public static final int EVAL_PREDICTIONS_VALUE = 4;
 
 
   public final int getNumber() {
@@ -91,7 +67,7 @@ public enum EvaluationType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static EvaluationType valueOf(int value) {
+  public static DatasetVersionRequestOrigin valueOf(int value) {
     return forNumber(value);
   }
 
@@ -99,28 +75,26 @@ public enum EvaluationType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static EvaluationType forNumber(int value) {
+  public static DatasetVersionRequestOrigin forNumber(int value) {
     switch (value) {
-      case 0: return Undefined;
-      case 1: return Classification;
-      case 2: return Detection;
-      case 3: return Segmentation;
-      case 4: return Clustering;
-      case 5: return Tracker;
-      case 6: return Generation;
+      case 0: return DATASET_VERSION_REQUEST_ORIGIN_NOT_SET;
+      case 1: return MANUAL;
+      case 2: return TRAINING;
+      case 3: return EVAL_GROUND_TRUTH;
+      case 4: return EVAL_PREDICTIONS;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<EvaluationType>
+  public static com.google.protobuf.Internal.EnumLiteMap<DatasetVersionRequestOrigin>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      EvaluationType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<EvaluationType>() {
-          public EvaluationType findValueByNumber(int number) {
-            return EvaluationType.forNumber(number);
+      DatasetVersionRequestOrigin> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DatasetVersionRequestOrigin>() {
+          public DatasetVersionRequestOrigin findValueByNumber(int number) {
+            return DatasetVersionRequestOrigin.forNumber(number);
           }
         };
 
@@ -138,12 +112,12 @@ public enum EvaluationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(8);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final EvaluationType[] VALUES = values();
+  private static final DatasetVersionRequestOrigin[] VALUES = values();
 
-  public static EvaluationType valueOf(
+  public static DatasetVersionRequestOrigin valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -157,10 +131,10 @@ public enum EvaluationType
 
   private final int value;
 
-  private EvaluationType(int value) {
+  private DatasetVersionRequestOrigin(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.EvaluationType)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.DatasetVersionRequestOrigin)
 }
 
