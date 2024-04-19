@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListDatasetVersionsRequest() {
     datasetId_ = "";
+    requestOrigins_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -43,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -82,6 +84,29 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 40: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              requestOrigins_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            requestOrigins_.add(rawValue);
+            break;
+          }
+          case 42: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                requestOrigins_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              requestOrigins_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -99,6 +124,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        requestOrigins_ = java.util.Collections.unmodifiableList(requestOrigins_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -220,6 +248,84 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int REQUEST_ORIGINS_FIELD_NUMBER = 5;
+  private java.util.List<java.lang.Integer> requestOrigins_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, com.clarifai.grpc.api.DatasetVersionRequestOrigin> requestOrigins_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.clarifai.grpc.api.DatasetVersionRequestOrigin>() {
+            public com.clarifai.grpc.api.DatasetVersionRequestOrigin convert(java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.clarifai.grpc.api.DatasetVersionRequestOrigin result = com.clarifai.grpc.api.DatasetVersionRequestOrigin.valueOf(from);
+              return result == null ? com.clarifai.grpc.api.DatasetVersionRequestOrigin.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @return A list containing the requestOrigins.
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.DatasetVersionRequestOrigin> getRequestOriginsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.clarifai.grpc.api.DatasetVersionRequestOrigin>(requestOrigins_, requestOrigins_converter_);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @return The count of requestOrigins.
+   */
+  @java.lang.Override
+  public int getRequestOriginsCount() {
+    return requestOrigins_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @param index The index of the element to return.
+   * @return The requestOrigins at the given index.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DatasetVersionRequestOrigin getRequestOrigins(int index) {
+    return requestOrigins_converter_.convert(requestOrigins_.get(index));
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @return A list containing the enum numeric values on the wire for requestOrigins.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getRequestOriginsValueList() {
+    return requestOrigins_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) Filter by origin of dataset version
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of requestOrigins at the given index.
+   */
+  @java.lang.Override
+  public int getRequestOriginsValue(int index) {
+    return requestOrigins_.get(index);
+  }
+  private int requestOriginsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -234,6 +340,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
@@ -245,6 +352,13 @@ private static final long serialVersionUID = 0L;
     }
     if (perPage_ != 0) {
       output.writeUInt32(4, perPage_);
+    }
+    if (getRequestOriginsList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(requestOriginsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < requestOrigins_.size(); i++) {
+      output.writeEnumNoTag(requestOrigins_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -269,6 +383,18 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(4, perPage_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < requestOrigins_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(requestOrigins_.get(i));
+      }
+      size += dataSize;
+      if (!getRequestOriginsList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }requestOriginsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -296,6 +422,7 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (!requestOrigins_.equals(other.requestOrigins_)) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -317,6 +444,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    if (getRequestOriginsCount() > 0) {
+      hash = (37 * hash) + REQUEST_ORIGINS_FIELD_NUMBER;
+      hash = (53 * hash) + requestOrigins_.hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -466,6 +597,8 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      requestOrigins_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -492,6 +625,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.ListDatasetVersionsRequest buildPartial() {
       com.clarifai.grpc.api.ListDatasetVersionsRequest result = new com.clarifai.grpc.api.ListDatasetVersionsRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
@@ -500,6 +634,11 @@ private static final long serialVersionUID = 0L;
       result.datasetId_ = datasetId_;
       result.page_ = page_;
       result.perPage_ = perPage_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        requestOrigins_ = java.util.Collections.unmodifiableList(requestOrigins_);
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.requestOrigins_ = requestOrigins_;
       onBuilt();
       return result;
     }
@@ -561,6 +700,16 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (!other.requestOrigins_.isEmpty()) {
+        if (requestOrigins_.isEmpty()) {
+          requestOrigins_ = other.requestOrigins_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureRequestOriginsIsMutable();
+          requestOrigins_.addAll(other.requestOrigins_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -589,6 +738,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -893,6 +1043,194 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> requestOrigins_ =
+      java.util.Collections.emptyList();
+    private void ensureRequestOriginsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        requestOrigins_ = new java.util.ArrayList<java.lang.Integer>(requestOrigins_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @return A list containing the requestOrigins.
+     */
+    public java.util.List<com.clarifai.grpc.api.DatasetVersionRequestOrigin> getRequestOriginsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.clarifai.grpc.api.DatasetVersionRequestOrigin>(requestOrigins_, requestOrigins_converter_);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @return The count of requestOrigins.
+     */
+    public int getRequestOriginsCount() {
+      return requestOrigins_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param index The index of the element to return.
+     * @return The requestOrigins at the given index.
+     */
+    public com.clarifai.grpc.api.DatasetVersionRequestOrigin getRequestOrigins(int index) {
+      return requestOrigins_converter_.convert(requestOrigins_.get(index));
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The requestOrigins to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestOrigins(
+        int index, com.clarifai.grpc.api.DatasetVersionRequestOrigin value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequestOriginsIsMutable();
+      requestOrigins_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param value The requestOrigins to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequestOrigins(com.clarifai.grpc.api.DatasetVersionRequestOrigin value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRequestOriginsIsMutable();
+      requestOrigins_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param values The requestOrigins to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequestOrigins(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.DatasetVersionRequestOrigin> values) {
+      ensureRequestOriginsIsMutable();
+      for (com.clarifai.grpc.api.DatasetVersionRequestOrigin value : values) {
+        requestOrigins_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestOrigins() {
+      requestOrigins_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @return A list containing the enum numeric values on the wire for requestOrigins.
+     */
+    public java.util.List<java.lang.Integer>
+    getRequestOriginsValueList() {
+      return java.util.Collections.unmodifiableList(requestOrigins_);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of requestOrigins at the given index.
+     */
+    public int getRequestOriginsValue(int index) {
+      return requestOrigins_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for requestOrigins to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestOriginsValue(
+        int index, int value) {
+      ensureRequestOriginsIsMutable();
+      requestOrigins_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param value The enum numeric value on the wire for requestOrigins to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequestOriginsValue(int value) {
+      ensureRequestOriginsIsMutable();
+      requestOrigins_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) Filter by origin of dataset version
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.DatasetVersionRequestOrigin request_origins = 5;</code>
+     * @param values The enum numeric values on the wire for requestOrigins to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequestOriginsValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureRequestOriginsIsMutable();
+      for (int value : values) {
+        requestOrigins_.add(value);
+      }
       onChanged();
       return this;
     }

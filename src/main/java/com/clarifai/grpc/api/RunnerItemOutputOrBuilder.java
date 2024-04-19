@@ -9,8 +9,7 @@ public interface RunnerItemOutputOrBuilder extends
 
   /**
    * <pre>
-   * The output of the first task type.
-   * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+   * The output of a model prediction request.
    * </pre>
    *
    * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -19,8 +18,7 @@ public interface RunnerItemOutputOrBuilder extends
   boolean hasMultiOutputResponse();
   /**
    * <pre>
-   * The output of the first task type.
-   * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+   * The output of a model prediction request.
    * </pre>
    *
    * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
@@ -29,11 +27,12 @@ public interface RunnerItemOutputOrBuilder extends
   com.clarifai.grpc.api.MultiOutputResponse getMultiOutputResponse();
   /**
    * <pre>
-   * The output of the first task type.
-   * TODO(zeiler): should the interface be more like pairs of things wiht request/response in one "item"?
+   * The output of a model prediction request.
    * </pre>
    *
    * <code>.clarifai.api.MultiOutputResponse multi_output_response = 1;</code>
    */
   com.clarifai.grpc.api.MultiOutputResponseOrBuilder getMultiOutputResponseOrBuilder();
+
+  public com.clarifai.grpc.api.RunnerItemOutput.ResponseCase getResponseCase();
 }

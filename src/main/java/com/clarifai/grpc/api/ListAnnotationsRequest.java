@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     inputIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     statuses_ = java.util.Collections.emptyList();
     taskId_ = "";
   }
@@ -91,9 +92,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               statuses_ = new java.util.ArrayList<com.clarifai.grpc.api.status.Status>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000020;
             }
             statuses_.add(
                 input.readMessage(com.clarifai.grpc.api.status.Status.parser(), extensionRegistry));
@@ -143,6 +144,15 @@ private static final long serialVersionUID = 0L;
             returnModelOutput_ = input.readBool();
             break;
           }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              workflowVersionIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            workflowVersionIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -166,7 +176,7 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         inputIds_ = inputIds_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         statuses_ = java.util.Collections.unmodifiableList(statuses_);
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -174,6 +184,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
         modelVersionIds_ = modelVersionIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        workflowVersionIds_ = workflowVersionIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -342,10 +355,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -359,10 +371,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -375,10 +386,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -392,10 +402,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these user IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If model_version_ids are also provided these user_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no user_ids are provided then annotations from all users are returned.
+   * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting user_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string user_ids = 9;</code>
@@ -413,10 +422,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -430,10 +438,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -446,10 +453,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -463,10 +469,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Only return the annotations that has one of these model version IDs, effectively operating as an
    * OR among them to filter down the results.
-   * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-   * annotations are either provided by users or model versions and we want the union of any
-   * provided user or model version annotations in the results of ListAnnotations request.
-   * If no model_version_ids are provided then annotations from all model versions are returned.
+   * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting model_version_ids does also set list_all_annotations=True.
    * </pre>
    *
    * <code>repeated string model_version_ids = 10;</code>
@@ -476,6 +481,73 @@ private static final long serialVersionUID = 0L;
   public com.google.protobuf.ByteString
       getModelVersionIdsBytes(int index) {
     return modelVersionIds_.getByteString(index);
+  }
+
+  public static final int WORKFLOW_VERSION_IDS_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList workflowVersionIds_;
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @return A list containing the workflowVersionIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getWorkflowVersionIdsList() {
+    return workflowVersionIds_;
+  }
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @return The count of workflowVersionIds.
+   */
+  public int getWorkflowVersionIdsCount() {
+    return workflowVersionIds_.size();
+  }
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @param index The index of the element to return.
+   * @return The workflowVersionIds at the given index.
+   */
+  public java.lang.String getWorkflowVersionIds(int index) {
+    return workflowVersionIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+   * OR among them to filter down the results.
+   * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+   * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+   * Setting workflow_version_ids does also set list_all_annotations=True.
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workflowVersionIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getWorkflowVersionIdsBytes(int index) {
+    return workflowVersionIds_.getByteString(index);
   }
 
   public static final int STATUSES_FIELD_NUMBER = 5;
@@ -699,6 +771,9 @@ private static final long serialVersionUID = 0L;
     if (returnModelOutput_ != false) {
       output.writeBool(12, returnModelOutput_);
     }
+    for (int i = 0; i < workflowVersionIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, workflowVersionIds_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -767,6 +842,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(12, returnModelOutput_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < workflowVersionIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(workflowVersionIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getWorkflowVersionIdsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -795,6 +878,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserIdsList())) return false;
     if (!getModelVersionIdsList()
         .equals(other.getModelVersionIdsList())) return false;
+    if (!getWorkflowVersionIdsList()
+        .equals(other.getWorkflowVersionIdsList())) return false;
     if (!getStatusesList()
         .equals(other.getStatusesList())) return false;
     if (getListAllAnnotations()
@@ -837,6 +922,10 @@ private static final long serialVersionUID = 0L;
     if (getModelVersionIdsCount() > 0) {
       hash = (37 * hash) + MODEL_VERSION_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getModelVersionIdsList().hashCode();
+    }
+    if (getWorkflowVersionIdsCount() > 0) {
+      hash = (37 * hash) + WORKFLOW_VERSION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowVersionIdsList().hashCode();
     }
     if (getStatusesCount() > 0) {
       hash = (37 * hash) + STATUSES_FIELD_NUMBER;
@@ -1006,9 +1095,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (statusesBuilder_ == null) {
         statuses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         statusesBuilder_.clear();
       }
@@ -1074,10 +1165,15 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.modelVersionIds_ = modelVersionIds_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        workflowVersionIds_ = workflowVersionIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.workflowVersionIds_ = workflowVersionIds_;
       if (statusesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           statuses_ = java.util.Collections.unmodifiableList(statuses_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.statuses_ = statuses_;
       } else {
@@ -1179,11 +1275,21 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.workflowVersionIds_.isEmpty()) {
+        if (workflowVersionIds_.isEmpty()) {
+          workflowVersionIds_ = other.workflowVersionIds_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureWorkflowVersionIdsIsMutable();
+          workflowVersionIds_.addAll(other.workflowVersionIds_);
+        }
+        onChanged();
+      }
       if (statusesBuilder_ == null) {
         if (!other.statuses_.isEmpty()) {
           if (statuses_.isEmpty()) {
             statuses_ = other.statuses_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureStatusesIsMutable();
             statuses_.addAll(other.statuses_);
@@ -1196,7 +1302,7 @@ private static final long serialVersionUID = 0L;
             statusesBuilder_.dispose();
             statusesBuilder_ = null;
             statuses_ = other.statuses_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             statusesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getStatusesFieldBuilder() : null;
@@ -1709,10 +1815,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1726,10 +1831,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1742,10 +1846,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1759,10 +1862,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1777,10 +1879,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1802,10 +1903,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1826,10 +1926,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1848,10 +1947,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1867,10 +1965,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these user IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If model_version_ids are also provided these user_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no user_ids are provided then annotations from all users are returned.
+     * If model_version_ids or workflow_version_ids are also provided, these user_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting user_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string user_ids = 9;</code>
@@ -1900,10 +1997,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -1917,10 +2013,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -1933,10 +2028,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -1950,10 +2044,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -1968,10 +2061,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -1993,10 +2085,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -2017,10 +2108,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -2039,10 +2129,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -2058,10 +2147,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Only return the annotations that has one of these model version IDs, effectively operating as an
      * OR among them to filter down the results.
-     * If user_ids are also provided these model_versions_ids are OR'd with them as well since
-     * annotations are either provided by users or model versions and we want the union of any
-     * provided user or model version annotations in the results of ListAnnotations request.
-     * If no model_version_ids are provided then annotations from all model versions are returned.
+     * If user_ids or workflow_version_ids are also provided, these model_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting model_version_ids does also set list_all_annotations=True.
      * </pre>
      *
      * <code>repeated string model_version_ids = 10;</code>
@@ -2080,12 +2168,194 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.LazyStringList workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureWorkflowVersionIdsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        workflowVersionIds_ = new com.google.protobuf.LazyStringArrayList(workflowVersionIds_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @return A list containing the workflowVersionIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getWorkflowVersionIdsList() {
+      return workflowVersionIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @return The count of workflowVersionIds.
+     */
+    public int getWorkflowVersionIdsCount() {
+      return workflowVersionIds_.size();
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @param index The index of the element to return.
+     * @return The workflowVersionIds at the given index.
+     */
+    public java.lang.String getWorkflowVersionIds(int index) {
+      return workflowVersionIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the workflowVersionIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getWorkflowVersionIdsBytes(int index) {
+      return workflowVersionIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @param index The index to set the value at.
+     * @param value The workflowVersionIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowVersionIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureWorkflowVersionIdsIsMutable();
+      workflowVersionIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @param value The workflowVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWorkflowVersionIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureWorkflowVersionIdsIsMutable();
+      workflowVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @param values The workflowVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWorkflowVersionIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureWorkflowVersionIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, workflowVersionIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflowVersionIds() {
+      workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Only return the annotations that has one of these workflow version IDs, effectively operating as an
+     * OR among them to filter down the results.
+     * If user_ids or model_version_ids are also provided, these workflow_version_ids are OR'd with them as well because
+     * we want the union of all worker (user, model or workflow) annotations in the results of ListAnnotations request.
+     * Setting workflow_version_ids does also set list_all_annotations=True.
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 13;</code>
+     * @param value The bytes of the workflowVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWorkflowVersionIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureWorkflowVersionIdsIsMutable();
+      workflowVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.clarifai.grpc.api.status.Status> statuses_ =
       java.util.Collections.emptyList();
     private void ensureStatusesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         statuses_ = new java.util.ArrayList<com.clarifai.grpc.api.status.Status>(statuses_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
        }
     }
 
@@ -2290,7 +2560,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatuses() {
       if (statusesBuilder_ == null) {
         statuses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         statusesBuilder_.clear();
@@ -2402,7 +2672,7 @@ private static final long serialVersionUID = 0L;
         statusesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder>(
                 statuses_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         statuses_ = null;

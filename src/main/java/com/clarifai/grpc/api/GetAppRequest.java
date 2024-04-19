@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList additionalFields_;
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+   * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
    * </pre>
    *
    * <code>repeated string additional_fields = 2;</code>
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -721,7 +721,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -741,7 +741,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -760,7 +760,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -777,7 +777,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars
+     * (optional URL parameter) List of additional fields to be included in the response. Currently supported: all, stars, counts
      * </pre>
      *
      * <code>repeated string additional_fields = 2;</code>

@@ -23,11 +23,19 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
+   * <pre>
+   * The particular runner that processed the work.
+   * </pre>
+   *
    * <code>string runner_id = 2;</code>
    * @return The runnerId.
    */
   java.lang.String getRunnerId();
   /**
+   * <pre>
+   * The particular runner that processed the work.
+   * </pre>
+   *
    * <code>string runner_id = 2;</code>
    * @return The bytes for runnerId.
    */
@@ -35,16 +43,24 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
       getRunnerIdBytes();
 
   /**
-   * <code>string item_id = 3;</code>
-   * @return The itemId.
+   * <pre>
+   * The particular item of work processed.
+   * </pre>
+   *
+   * <code>string runner_item_id = 3;</code>
+   * @return The runnerItemId.
    */
-  java.lang.String getItemId();
+  java.lang.String getRunnerItemId();
   /**
-   * <code>string item_id = 3;</code>
-   * @return The bytes for itemId.
+   * <pre>
+   * The particular item of work processed.
+   * </pre>
+   *
+   * <code>string runner_item_id = 3;</code>
+   * @return The bytes for runnerItemId.
    */
   com.google.protobuf.ByteString
-      getItemIdBytes();
+      getRunnerItemIdBytes();
 
   /**
    * <pre>
@@ -89,4 +105,37 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    */
   com.clarifai.grpc.api.RunnerItemOutputOrBuilder getRunnerItemOutputsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * This request has a status so that it can communicate to the API from runners and
+   * communicate status, errors, etc. This is on the request since runners operate
+   * in a reverse protocol.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 5;</code>
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+  /**
+   * <pre>
+   * This request has a status so that it can communicate to the API from runners and
+   * communicate status, errors, etc. This is on the request since runners operate
+   * in a reverse protocol.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 5;</code>
+   * @return The status.
+   */
+  com.clarifai.grpc.api.status.Status getStatus();
+  /**
+   * <pre>
+   * This request has a status so that it can communicate to the API from runners and
+   * communicate status, errors, etc. This is on the request since runners operate
+   * in a reverse protocol.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 5;</code>
+   */
+  com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 }

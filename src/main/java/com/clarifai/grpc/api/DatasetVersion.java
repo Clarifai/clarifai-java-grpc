@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     datasetId_ = "";
     description_ = "";
     embedModelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    requestOrigin_ = 0;
   }
 
   @java.lang.Override
@@ -228,6 +229,12 @@ private static final long serialVersionUID = 0L;
               processingInfo_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 160: {
+            int rawValue = input.readEnum();
+
+            requestOrigin_ = rawValue;
             break;
           }
           default: {
@@ -1077,6 +1084,35 @@ private static final long serialVersionUID = 0L;
     return embedModelVersionIds_.getByteString(index);
   }
 
+  public static final int REQUEST_ORIGIN_FIELD_NUMBER = 20;
+  private int requestOrigin_;
+  /**
+   * <pre>
+   * Read Only. Cannot be Set
+   * Origin of request for new dataset version
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+   * @return The enum numeric value on the wire for requestOrigin.
+   */
+  @java.lang.Override public int getRequestOriginValue() {
+    return requestOrigin_;
+  }
+  /**
+   * <pre>
+   * Read Only. Cannot be Set
+   * Origin of request for new dataset version
+   * </pre>
+   *
+   * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+   * @return The requestOrigin.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.DatasetVersionRequestOrigin getRequestOrigin() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.DatasetVersionRequestOrigin result = com.clarifai.grpc.api.DatasetVersionRequestOrigin.valueOf(requestOrigin_);
+    return result == null ? com.clarifai.grpc.api.DatasetVersionRequestOrigin.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1141,6 +1177,9 @@ private static final long serialVersionUID = 0L;
     }
     if (processingInfo_ != null) {
       output.writeMessage(19, getProcessingInfo());
+    }
+    if (requestOrigin_ != com.clarifai.grpc.api.DatasetVersionRequestOrigin.DATASET_VERSION_REQUEST_ORIGIN_NOT_SET.getNumber()) {
+      output.writeEnum(20, requestOrigin_);
     }
     unknownFields.writeTo(output);
   }
@@ -1220,6 +1259,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getProcessingInfo());
     }
+    if (requestOrigin_ != com.clarifai.grpc.api.DatasetVersionRequestOrigin.DATASET_VERSION_REQUEST_ORIGIN_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(20, requestOrigin_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1284,6 +1327,7 @@ private static final long serialVersionUID = 0L;
     }
     if (!getEmbedModelVersionIdsList()
         .equals(other.getEmbedModelVersionIdsList())) return false;
+    if (requestOrigin_ != other.requestOrigin_) return false;
     if (!getDataConfigCase().equals(other.getDataConfigCase())) return false;
     switch (dataConfigCase_) {
       case 15:
@@ -1354,6 +1398,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EMBED_MODEL_VERSION_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getEmbedModelVersionIdsList().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ORIGIN_FIELD_NUMBER;
+    hash = (53 * hash) + requestOrigin_;
     switch (dataConfigCase_) {
       case 15:
         hash = (37 * hash) + ANNOTATION_FILTER_CONFIG_FIELD_NUMBER;
@@ -1580,6 +1626,8 @@ private static final long serialVersionUID = 0L;
       }
       embedModelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      requestOrigin_ = 0;
+
       dataConfigCase_ = 0;
       dataConfig_ = null;
       return this;
@@ -1670,6 +1718,7 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.embedModelVersionIds_ = embedModelVersionIds_;
+      result.requestOrigin_ = requestOrigin_;
       result.dataConfigCase_ = dataConfigCase_;
       onBuilt();
       return result;
@@ -1771,6 +1820,9 @@ private static final long serialVersionUID = 0L;
           embedModelVersionIds_.addAll(other.embedModelVersionIds_);
         }
         onChanged();
+      }
+      if (other.requestOrigin_ != 0) {
+        setRequestOriginValue(other.getRequestOriginValue());
       }
       switch (other.getDataConfigCase()) {
         case ANNOTATION_FILTER_CONFIG: {
@@ -4133,6 +4185,85 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureEmbedModelVersionIdsIsMutable();
       embedModelVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int requestOrigin_ = 0;
+    /**
+     * <pre>
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @return The enum numeric value on the wire for requestOrigin.
+     */
+    @java.lang.Override public int getRequestOriginValue() {
+      return requestOrigin_;
+    }
+    /**
+     * <pre>
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @param value The enum numeric value on the wire for requestOrigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestOriginValue(int value) {
+      
+      requestOrigin_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @return The requestOrigin.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.DatasetVersionRequestOrigin getRequestOrigin() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.DatasetVersionRequestOrigin result = com.clarifai.grpc.api.DatasetVersionRequestOrigin.valueOf(requestOrigin_);
+      return result == null ? com.clarifai.grpc.api.DatasetVersionRequestOrigin.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @param value The requestOrigin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestOrigin(com.clarifai.grpc.api.DatasetVersionRequestOrigin value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      requestOrigin_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Read Only. Cannot be Set
+     * Origin of request for new dataset version
+     * </pre>
+     *
+     * <code>.clarifai.api.DatasetVersionRequestOrigin request_origin = 20;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestOrigin() {
+      
+      requestOrigin_ = 0;
       onChanged();
       return this;
     }

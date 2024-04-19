@@ -55,6 +55,19 @@ private static final long serialVersionUID = 0L;
             searchRevisionMarker_ = s;
             break;
           }
+          case 18: {
+            com.clarifai.grpc.api.AppResourceCounts.Builder subBuilder = null;
+            if (counts_ != null) {
+              subBuilder = counts_.toBuilder();
+            }
+            counts_ = input.readMessage(com.clarifai.grpc.api.AppResourceCounts.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(counts_);
+              counts_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -147,6 +160,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int COUNTS_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.AppResourceCounts counts_;
+  /**
+   * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+   * @return Whether the counts field is set.
+   */
+  @java.lang.Override
+  public boolean hasCounts() {
+    return counts_ != null;
+  }
+  /**
+   * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+   * @return The counts.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppResourceCounts getCounts() {
+    return counts_ == null ? com.clarifai.grpc.api.AppResourceCounts.getDefaultInstance() : counts_;
+  }
+  /**
+   * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppResourceCountsOrBuilder getCountsOrBuilder() {
+    return getCounts();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -164,6 +203,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchRevisionMarker_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, searchRevisionMarker_);
     }
+    if (counts_ != null) {
+      output.writeMessage(2, getCounts());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -175,6 +217,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(searchRevisionMarker_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, searchRevisionMarker_);
+    }
+    if (counts_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getCounts());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -193,6 +239,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getSearchRevisionMarker()
         .equals(other.getSearchRevisionMarker())) return false;
+    if (hasCounts() != other.hasCounts()) return false;
+    if (hasCounts()) {
+      if (!getCounts()
+          .equals(other.getCounts())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -206,6 +257,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SEARCH_REVISION_MARKER_FIELD_NUMBER;
     hash = (53 * hash) + getSearchRevisionMarker().hashCode();
+    if (hasCounts()) {
+      hash = (37 * hash) + COUNTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCounts().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -341,6 +396,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       searchRevisionMarker_ = "";
 
+      if (countsBuilder_ == null) {
+        counts_ = null;
+      } else {
+        counts_ = null;
+        countsBuilder_ = null;
+      }
       return this;
     }
 
@@ -368,6 +429,11 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.AppExtraInfo buildPartial() {
       com.clarifai.grpc.api.AppExtraInfo result = new com.clarifai.grpc.api.AppExtraInfo(this);
       result.searchRevisionMarker_ = searchRevisionMarker_;
+      if (countsBuilder_ == null) {
+        result.counts_ = counts_;
+      } else {
+        result.counts_ = countsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -419,6 +485,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getSearchRevisionMarker().isEmpty()) {
         searchRevisionMarker_ = other.searchRevisionMarker_;
         onChanged();
+      }
+      if (other.hasCounts()) {
+        mergeCounts(other.getCounts());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -573,6 +642,125 @@ private static final long serialVersionUID = 0L;
       searchRevisionMarker_ = value;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.AppResourceCounts counts_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AppResourceCounts, com.clarifai.grpc.api.AppResourceCounts.Builder, com.clarifai.grpc.api.AppResourceCountsOrBuilder> countsBuilder_;
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     * @return Whether the counts field is set.
+     */
+    public boolean hasCounts() {
+      return countsBuilder_ != null || counts_ != null;
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     * @return The counts.
+     */
+    public com.clarifai.grpc.api.AppResourceCounts getCounts() {
+      if (countsBuilder_ == null) {
+        return counts_ == null ? com.clarifai.grpc.api.AppResourceCounts.getDefaultInstance() : counts_;
+      } else {
+        return countsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    public Builder setCounts(com.clarifai.grpc.api.AppResourceCounts value) {
+      if (countsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        counts_ = value;
+        onChanged();
+      } else {
+        countsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    public Builder setCounts(
+        com.clarifai.grpc.api.AppResourceCounts.Builder builderForValue) {
+      if (countsBuilder_ == null) {
+        counts_ = builderForValue.build();
+        onChanged();
+      } else {
+        countsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    public Builder mergeCounts(com.clarifai.grpc.api.AppResourceCounts value) {
+      if (countsBuilder_ == null) {
+        if (counts_ != null) {
+          counts_ =
+            com.clarifai.grpc.api.AppResourceCounts.newBuilder(counts_).mergeFrom(value).buildPartial();
+        } else {
+          counts_ = value;
+        }
+        onChanged();
+      } else {
+        countsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    public Builder clearCounts() {
+      if (countsBuilder_ == null) {
+        counts_ = null;
+        onChanged();
+      } else {
+        counts_ = null;
+        countsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    public com.clarifai.grpc.api.AppResourceCounts.Builder getCountsBuilder() {
+      
+      onChanged();
+      return getCountsFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    public com.clarifai.grpc.api.AppResourceCountsOrBuilder getCountsOrBuilder() {
+      if (countsBuilder_ != null) {
+        return countsBuilder_.getMessageOrBuilder();
+      } else {
+        return counts_ == null ?
+            com.clarifai.grpc.api.AppResourceCounts.getDefaultInstance() : counts_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.AppResourceCounts counts = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.AppResourceCounts, com.clarifai.grpc.api.AppResourceCounts.Builder, com.clarifai.grpc.api.AppResourceCountsOrBuilder> 
+        getCountsFieldBuilder() {
+      if (countsBuilder_ == null) {
+        countsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.AppResourceCounts, com.clarifai.grpc.api.AppResourceCounts.Builder, com.clarifai.grpc.api.AppResourceCountsOrBuilder>(
+                getCounts(),
+                getParentForChildren(),
+                isClean());
+        counts_ = null;
+      }
+      return countsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

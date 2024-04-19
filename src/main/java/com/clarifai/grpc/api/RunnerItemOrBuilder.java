@@ -49,31 +49,57 @@ public interface RunnerItemOrBuilder extends
 
   /**
    * <pre>
-   * TODO(zeiler): make these options a oneof.
-   * first work to do would be an inference runner.
+   * Information on how to process the given RunnerItem.
    * </pre>
    *
-   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+   * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+   * @return Whether the processingInfo field is set.
+   */
+  boolean hasProcessingInfo();
+  /**
+   * <pre>
+   * Information on how to process the given RunnerItem.
+   * </pre>
+   *
+   * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+   * @return The processingInfo.
+   */
+  com.clarifai.grpc.api.ProcessingInfo getProcessingInfo();
+  /**
+   * <pre>
+   * Information on how to process the given RunnerItem.
+   * </pre>
+   *
+   * <code>.clarifai.api.ProcessingInfo processing_info = 3;</code>
+   */
+  com.clarifai.grpc.api.ProcessingInfoOrBuilder getProcessingInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Model prediction request from a user.
+   * </pre>
+   *
+   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
    * @return Whether the postModelOutputsRequest field is set.
    */
   boolean hasPostModelOutputsRequest();
   /**
    * <pre>
-   * TODO(zeiler): make these options a oneof.
-   * first work to do would be an inference runner.
+   * Model prediction request from a user.
    * </pre>
    *
-   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
    * @return The postModelOutputsRequest.
    */
   com.clarifai.grpc.api.PostModelOutputsRequest getPostModelOutputsRequest();
   /**
    * <pre>
-   * TODO(zeiler): make these options a oneof.
-   * first work to do would be an inference runner.
+   * Model prediction request from a user.
    * </pre>
    *
-   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 3;</code>
+   * <code>.clarifai.api.PostModelOutputsRequest post_model_outputs_request = 4;</code>
    */
   com.clarifai.grpc.api.PostModelOutputsRequestOrBuilder getPostModelOutputsRequestOrBuilder();
+
+  public com.clarifai.grpc.api.RunnerItem.RequestCase getRequestCase();
 }

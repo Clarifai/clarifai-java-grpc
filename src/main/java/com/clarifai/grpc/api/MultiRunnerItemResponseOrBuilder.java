@@ -23,26 +23,26 @@ public interface MultiRunnerItemResponseOrBuilder extends
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 
   /**
-   * <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   java.util.List<com.clarifai.grpc.api.RunnerItem> 
-      getItemsList();
+      getRunnerItemsList();
   /**
-   * <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
-  com.clarifai.grpc.api.RunnerItem getItems(int index);
+  com.clarifai.grpc.api.RunnerItem getRunnerItems(int index);
   /**
-   * <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
-  int getItemsCount();
+  int getRunnerItemsCount();
   /**
-   * <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.RunnerItemOrBuilder> 
-      getItemsOrBuilderList();
+      getRunnerItemsOrBuilderList();
   /**
-   * <code>repeated .clarifai.api.RunnerItem items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
+   * <code>repeated .clarifai.api.RunnerItem runner_items = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
-  com.clarifai.grpc.api.RunnerItemOrBuilder getItemsOrBuilder(
+  com.clarifai.grpc.api.RunnerItemOrBuilder getRunnerItemsOrBuilder(
       int index);
 }

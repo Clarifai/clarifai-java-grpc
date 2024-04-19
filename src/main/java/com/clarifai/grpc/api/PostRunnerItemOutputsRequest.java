@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private PostRunnerItemOutputsRequest() {
     runnerId_ = "";
-    itemId_ = "";
+    runnerItemId_ = "";
     runnerItemOutputs_ = java.util.Collections.emptyList();
   }
 
@@ -78,7 +78,7 @@ private static final long serialVersionUID = 0L;
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            itemId_ = s;
+            runnerItemId_ = s;
             break;
           }
           case 34: {
@@ -88,6 +88,19 @@ private static final long serialVersionUID = 0L;
             }
             runnerItemOutputs_.add(
                 input.readMessage(com.clarifai.grpc.api.RunnerItemOutput.parser(), extensionRegistry));
+            break;
+          }
+          case 42: {
+            com.clarifai.grpc.api.status.Status.Builder subBuilder = null;
+            if (status_ != null) {
+              subBuilder = status_.toBuilder();
+            }
+            status_ = input.readMessage(com.clarifai.grpc.api.status.Status.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(status_);
+              status_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -156,6 +169,10 @@ private static final long serialVersionUID = 0L;
   public static final int RUNNER_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object runnerId_;
   /**
+   * <pre>
+   * The particular runner that processed the work.
+   * </pre>
+   *
    * <code>string runner_id = 2;</code>
    * @return The runnerId.
    */
@@ -173,6 +190,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * The particular runner that processed the work.
+   * </pre>
+   *
    * <code>string runner_id = 2;</code>
    * @return The bytes for runnerId.
    */
@@ -191,38 +212,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ITEM_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object itemId_;
+  public static final int RUNNER_ITEM_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object runnerItemId_;
   /**
-   * <code>string item_id = 3;</code>
-   * @return The itemId.
+   * <pre>
+   * The particular item of work processed.
+   * </pre>
+   *
+   * <code>string runner_item_id = 3;</code>
+   * @return The runnerItemId.
    */
   @java.lang.Override
-  public java.lang.String getItemId() {
-    java.lang.Object ref = itemId_;
+  public java.lang.String getRunnerItemId() {
+    java.lang.Object ref = runnerItemId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      itemId_ = s;
+      runnerItemId_ = s;
       return s;
     }
   }
   /**
-   * <code>string item_id = 3;</code>
-   * @return The bytes for itemId.
+   * <pre>
+   * The particular item of work processed.
+   * </pre>
+   *
+   * <code>string runner_item_id = 3;</code>
+   * @return The bytes for runnerItemId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getItemIdBytes() {
-    java.lang.Object ref = itemId_;
+      getRunnerItemIdBytes() {
+    java.lang.Object ref = runnerItemId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      itemId_ = b;
+      runnerItemId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -289,6 +318,50 @@ private static final long serialVersionUID = 0L;
     return runnerItemOutputs_.get(index);
   }
 
+  public static final int STATUS_FIELD_NUMBER = 5;
+  private com.clarifai.grpc.api.status.Status status_;
+  /**
+   * <pre>
+   * This request has a status so that it can communicate to the API from runners and
+   * communicate status, errors, etc. This is on the request since runners operate
+   * in a reverse protocol.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 5;</code>
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return status_ != null;
+  }
+  /**
+   * <pre>
+   * This request has a status so that it can communicate to the API from runners and
+   * communicate status, errors, etc. This is on the request since runners operate
+   * in a reverse protocol.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 5;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.Status getStatus() {
+    return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
+  }
+  /**
+   * <pre>
+   * This request has a status so that it can communicate to the API from runners and
+   * communicate status, errors, etc. This is on the request since runners operate
+   * in a reverse protocol.
+   * </pre>
+   *
+   * <code>.clarifai.api.status.Status status = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
+    return getStatus();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -309,11 +382,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runnerId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, itemId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerItemId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, runnerItemId_);
     }
     for (int i = 0; i < runnerItemOutputs_.size(); i++) {
       output.writeMessage(4, runnerItemOutputs_.get(i));
+    }
+    if (status_ != null) {
+      output.writeMessage(5, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -331,12 +407,16 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runnerId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(itemId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, itemId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerItemId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, runnerItemId_);
     }
     for (int i = 0; i < runnerItemOutputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, runnerItemOutputs_.get(i));
+    }
+    if (status_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -360,10 +440,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRunnerId()
         .equals(other.getRunnerId())) return false;
-    if (!getItemId()
-        .equals(other.getItemId())) return false;
+    if (!getRunnerItemId()
+        .equals(other.getRunnerItemId())) return false;
     if (!getRunnerItemOutputsList()
         .equals(other.getRunnerItemOutputsList())) return false;
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -381,11 +466,15 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + RUNNER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRunnerId().hashCode();
-    hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getItemId().hashCode();
+    hash = (37 * hash) + RUNNER_ITEM_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRunnerItemId().hashCode();
     if (getRunnerItemOutputsCount() > 0) {
       hash = (37 * hash) + RUNNER_ITEM_OUTPUTS_FIELD_NUMBER;
       hash = (53 * hash) + getRunnerItemOutputsList().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -533,13 +622,19 @@ private static final long serialVersionUID = 0L;
       }
       runnerId_ = "";
 
-      itemId_ = "";
+      runnerItemId_ = "";
 
       if (runnerItemOutputsBuilder_ == null) {
         runnerItemOutputs_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         runnerItemOutputsBuilder_.clear();
+      }
+      if (statusBuilder_ == null) {
+        status_ = null;
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
       }
       return this;
     }
@@ -574,7 +669,7 @@ private static final long serialVersionUID = 0L;
         result.userAppId_ = userAppIdBuilder_.build();
       }
       result.runnerId_ = runnerId_;
-      result.itemId_ = itemId_;
+      result.runnerItemId_ = runnerItemId_;
       if (runnerItemOutputsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           runnerItemOutputs_ = java.util.Collections.unmodifiableList(runnerItemOutputs_);
@@ -583,6 +678,11 @@ private static final long serialVersionUID = 0L;
         result.runnerItemOutputs_ = runnerItemOutputs_;
       } else {
         result.runnerItemOutputs_ = runnerItemOutputsBuilder_.build();
+      }
+      if (statusBuilder_ == null) {
+        result.status_ = status_;
+      } else {
+        result.status_ = statusBuilder_.build();
       }
       onBuilt();
       return result;
@@ -639,8 +739,8 @@ private static final long serialVersionUID = 0L;
         runnerId_ = other.runnerId_;
         onChanged();
       }
-      if (!other.getItemId().isEmpty()) {
-        itemId_ = other.itemId_;
+      if (!other.getRunnerItemId().isEmpty()) {
+        runnerItemId_ = other.runnerItemId_;
         onChanged();
       }
       if (runnerItemOutputsBuilder_ == null) {
@@ -668,6 +768,9 @@ private static final long serialVersionUID = 0L;
             runnerItemOutputsBuilder_.addAllMessages(other.runnerItemOutputs_);
           }
         }
+      }
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -820,6 +923,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object runnerId_ = "";
     /**
+     * <pre>
+     * The particular runner that processed the work.
+     * </pre>
+     *
      * <code>string runner_id = 2;</code>
      * @return The runnerId.
      */
@@ -836,6 +943,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The particular runner that processed the work.
+     * </pre>
+     *
      * <code>string runner_id = 2;</code>
      * @return The bytes for runnerId.
      */
@@ -853,6 +964,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The particular runner that processed the work.
+     * </pre>
+     *
      * <code>string runner_id = 2;</code>
      * @param value The runnerId to set.
      * @return This builder for chaining.
@@ -868,6 +983,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The particular runner that processed the work.
+     * </pre>
+     *
      * <code>string runner_id = 2;</code>
      * @return This builder for chaining.
      */
@@ -878,6 +997,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The particular runner that processed the work.
+     * </pre>
+     *
      * <code>string runner_id = 2;</code>
      * @param value The bytes for runnerId to set.
      * @return This builder for chaining.
@@ -894,78 +1017,98 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object itemId_ = "";
+    private java.lang.Object runnerItemId_ = "";
     /**
-     * <code>string item_id = 3;</code>
-     * @return The itemId.
+     * <pre>
+     * The particular item of work processed.
+     * </pre>
+     *
+     * <code>string runner_item_id = 3;</code>
+     * @return The runnerItemId.
      */
-    public java.lang.String getItemId() {
-      java.lang.Object ref = itemId_;
+    public java.lang.String getRunnerItemId() {
+      java.lang.Object ref = runnerItemId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        itemId_ = s;
+        runnerItemId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string item_id = 3;</code>
-     * @return The bytes for itemId.
+     * <pre>
+     * The particular item of work processed.
+     * </pre>
+     *
+     * <code>string runner_item_id = 3;</code>
+     * @return The bytes for runnerItemId.
      */
     public com.google.protobuf.ByteString
-        getItemIdBytes() {
-      java.lang.Object ref = itemId_;
+        getRunnerItemIdBytes() {
+      java.lang.Object ref = runnerItemId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        itemId_ = b;
+        runnerItemId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string item_id = 3;</code>
-     * @param value The itemId to set.
+     * <pre>
+     * The particular item of work processed.
+     * </pre>
+     *
+     * <code>string runner_item_id = 3;</code>
+     * @param value The runnerItemId to set.
      * @return This builder for chaining.
      */
-    public Builder setItemId(
+    public Builder setRunnerItemId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      itemId_ = value;
+      runnerItemId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string item_id = 3;</code>
+     * <pre>
+     * The particular item of work processed.
+     * </pre>
+     *
+     * <code>string runner_item_id = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearItemId() {
+    public Builder clearRunnerItemId() {
       
-      itemId_ = getDefaultInstance().getItemId();
+      runnerItemId_ = getDefaultInstance().getRunnerItemId();
       onChanged();
       return this;
     }
     /**
-     * <code>string item_id = 3;</code>
-     * @param value The bytes for itemId to set.
+     * <pre>
+     * The particular item of work processed.
+     * </pre>
+     *
+     * <code>string runner_item_id = 3;</code>
+     * @param value The bytes for runnerItemId to set.
      * @return This builder for chaining.
      */
-    public Builder setItemIdBytes(
+    public Builder setRunnerItemIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      itemId_ = value;
+      runnerItemId_ = value;
       onChanged();
       return this;
     }
@@ -1280,6 +1423,179 @@ private static final long serialVersionUID = 0L;
         runnerItemOutputs_ = null;
       }
       return runnerItemOutputsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.status.Status status_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> statusBuilder_;
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return statusBuilder_ != null || status_ != null;
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     * @return The status.
+     */
+    public com.clarifai.grpc.api.status.Status getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    public Builder setStatus(com.clarifai.grpc.api.status.Status value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    public Builder setStatus(
+        com.clarifai.grpc.api.status.Status.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    public Builder mergeStatus(com.clarifai.grpc.api.status.Status value) {
+      if (statusBuilder_ == null) {
+        if (status_ != null) {
+          status_ =
+            com.clarifai.grpc.api.status.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    public Builder clearStatus() {
+      if (statusBuilder_ == null) {
+        status_ = null;
+        onChanged();
+      } else {
+        status_ = null;
+        statusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    public com.clarifai.grpc.api.status.Status.Builder getStatusBuilder() {
+      
+      onChanged();
+      return getStatusFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ?
+            com.clarifai.grpc.api.status.Status.getDefaultInstance() : status_;
+      }
+    }
+    /**
+     * <pre>
+     * This request has a status so that it can communicate to the API from runners and
+     * communicate status, errors, etc. This is on the request since runners operate
+     * in a reverse protocol.
+     * </pre>
+     *
+     * <code>.clarifai.api.status.Status status = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> 
+        getStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder>(
+                getStatus(),
+                getParentForChildren(),
+                isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

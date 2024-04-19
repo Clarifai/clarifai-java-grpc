@@ -4,101 +4,85 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.ValueComparator}
+ * Protobuf enum {@code clarifai.api.RunnerMethodType}
  */
-public enum ValueComparator
+public enum RunnerMethodType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>CONCEPT_THRESHOLD_NOT_SET = 0;</code>
+   * <code>UNKNOWN = 0;</code>
    */
-  CONCEPT_THRESHOLD_NOT_SET(0),
+  UNKNOWN(0),
   /**
    * <pre>
-   * input &gt; value
+   * single request, single response. predict() in code
    * </pre>
    *
-   * <code>GREATER_THAN = 1;</code>
+   * <code>UNARY_UNARY = 1;</code>
    */
-  GREATER_THAN(1),
+  UNARY_UNARY(1),
   /**
    * <pre>
-   * input &gt;= value
+   * single request, streamed response. generate() in code
    * </pre>
    *
-   * <code>GREATER_THAN_OR_EQUAL = 2;</code>
+   * <code>UNARY_STREAMING = 2;</code>
    */
-  GREATER_THAN_OR_EQUAL(2),
+  UNARY_STREAMING(2),
   /**
    * <pre>
-   * input &lt; value
+   * stream of requests, single response.
    * </pre>
    *
-   * <code>LESS_THAN = 3;</code>
+   * <code>STREAMING_UNARY = 3;</code>
    */
-  LESS_THAN(3),
+  STREAMING_UNARY(3),
   /**
    * <pre>
-   * input &lt;= value
+   * stream of requests, stream of responses. stream() in code
    * </pre>
    *
-   * <code>LESS_THAN_OR_EQUAL = 4;</code>
+   * <code>STREAMING_STREAMING = 4;</code>
    */
-  LESS_THAN_OR_EQUAL(4),
-  /**
-   * <pre>
-   * input == value
-   * </pre>
-   *
-   * <code>EQUAL = 5;</code>
-   */
-  EQUAL(5),
+  STREAMING_STREAMING(4),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>CONCEPT_THRESHOLD_NOT_SET = 0;</code>
+   * <code>UNKNOWN = 0;</code>
    */
-  public static final int CONCEPT_THRESHOLD_NOT_SET_VALUE = 0;
+  public static final int UNKNOWN_VALUE = 0;
   /**
    * <pre>
-   * input &gt; value
+   * single request, single response. predict() in code
    * </pre>
    *
-   * <code>GREATER_THAN = 1;</code>
+   * <code>UNARY_UNARY = 1;</code>
    */
-  public static final int GREATER_THAN_VALUE = 1;
+  public static final int UNARY_UNARY_VALUE = 1;
   /**
    * <pre>
-   * input &gt;= value
+   * single request, streamed response. generate() in code
    * </pre>
    *
-   * <code>GREATER_THAN_OR_EQUAL = 2;</code>
+   * <code>UNARY_STREAMING = 2;</code>
    */
-  public static final int GREATER_THAN_OR_EQUAL_VALUE = 2;
+  public static final int UNARY_STREAMING_VALUE = 2;
   /**
    * <pre>
-   * input &lt; value
+   * stream of requests, single response.
    * </pre>
    *
-   * <code>LESS_THAN = 3;</code>
+   * <code>STREAMING_UNARY = 3;</code>
    */
-  public static final int LESS_THAN_VALUE = 3;
+  public static final int STREAMING_UNARY_VALUE = 3;
   /**
    * <pre>
-   * input &lt;= value
+   * stream of requests, stream of responses. stream() in code
    * </pre>
    *
-   * <code>LESS_THAN_OR_EQUAL = 4;</code>
+   * <code>STREAMING_STREAMING = 4;</code>
    */
-  public static final int LESS_THAN_OR_EQUAL_VALUE = 4;
-  /**
-   * <pre>
-   * input == value
-   * </pre>
-   *
-   * <code>EQUAL = 5;</code>
-   */
-  public static final int EQUAL_VALUE = 5;
+  public static final int STREAMING_STREAMING_VALUE = 4;
 
 
   public final int getNumber() {
@@ -115,7 +99,7 @@ public enum ValueComparator
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static ValueComparator valueOf(int value) {
+  public static RunnerMethodType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -123,27 +107,26 @@ public enum ValueComparator
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static ValueComparator forNumber(int value) {
+  public static RunnerMethodType forNumber(int value) {
     switch (value) {
-      case 0: return CONCEPT_THRESHOLD_NOT_SET;
-      case 1: return GREATER_THAN;
-      case 2: return GREATER_THAN_OR_EQUAL;
-      case 3: return LESS_THAN;
-      case 4: return LESS_THAN_OR_EQUAL;
-      case 5: return EQUAL;
+      case 0: return UNKNOWN;
+      case 1: return UNARY_UNARY;
+      case 2: return UNARY_STREAMING;
+      case 3: return STREAMING_UNARY;
+      case 4: return STREAMING_STREAMING;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ValueComparator>
+  public static com.google.protobuf.Internal.EnumLiteMap<RunnerMethodType>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      ValueComparator> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ValueComparator>() {
-          public ValueComparator findValueByNumber(int number) {
-            return ValueComparator.forNumber(number);
+      RunnerMethodType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RunnerMethodType>() {
+          public RunnerMethodType findValueByNumber(int number) {
+            return RunnerMethodType.forNumber(number);
           }
         };
 
@@ -161,12 +144,12 @@ public enum ValueComparator
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(7);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(17);
   }
 
-  private static final ValueComparator[] VALUES = values();
+  private static final RunnerMethodType[] VALUES = values();
 
-  public static ValueComparator valueOf(
+  public static RunnerMethodType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -180,10 +163,10 @@ public enum ValueComparator
 
   private final int value;
 
-  private ValueComparator(int value) {
+  private RunnerMethodType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.ValueComparator)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.RunnerMethodType)
 }
 
