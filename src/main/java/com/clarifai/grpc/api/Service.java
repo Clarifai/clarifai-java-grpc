@@ -2863,7 +2863,7 @@ public final class Service {
       "GNMENTS_REQUEST_ACTION_NOT_SET\020\000\022\017\n\013LABE" +
       "L_START\020\001\022\020\n\014LABEL_SUBMIT\020\002\022\020\n\014REVIEW_ST" +
       "ART\020\n\022\022\n\016REVIEW_APPROVE\020\013\022\032\n\026REVIEW_REQU" +
-      "EST_CHANGES\020\014\022\021\n\rREVIEW_REJECT\020\r2\301\235\003\n\002V2" +
+      "EST_CHANGES\020\014\022\021\n\rREVIEW_REJECT\020\r2\345\235\003\n\002V2" +
       "\022\256\002\n\024ListConceptRelations\022).clarifai.api" +
       ".ListConceptRelationsRequest\032*.clarifai." +
       "api.MultiConceptRelationResponse\"\276\001\202\323\344\223\002" +
@@ -4175,21 +4175,22 @@ public final class Service {
       "iRunnerItemOutputResponse\"t\202\323\344\223\002W\"R/v2/u" +
       "sers/{user_app_id.user_id}/runners/{runn" +
       "er_id}/items/{runner_item_id}/outputs:\001*" +
-      "\230\234\'\005\220\234\'-\220\234\'\203\001\220\234\'\206\001\220\234\'\207\001\022\204\001\n\022ProcessRunne" +
+      "\230\234\'\005\220\234\'-\220\234\'\203\001\220\234\'\206\001\220\234\'\207\001\022\250\001\n\022ProcessRunne" +
       "rItems\022*.clarifai.api.PostRunnerItemOutp" +
       "utsRequest\032%.clarifai.api.MultiRunnerIte" +
-      "mResponse\"\027\230\234\'\005\220\234\'-\220\234\'\203\001\220\234\'\206\001\220\234\'\207\001(\0010\001\022\304" +
-      "\002\n%PostModelVersionsTrainingTimeEstimate" +
-      "\022:.clarifai.api.PostModelVersionsTrainin" +
-      "gTimeEstimateRequest\032/.clarifai.api.Mult" +
-      "iTrainingTimeEstimateResponse\"\255\001\202\323\344\223\002\232\001\"" +
-      "b/v2/users/{user_app_id.user_id}/apps/{u" +
-      "ser_app_id.app_id}/models/{model_id}/ver" +
-      "sions/time_estimate:\001*Z1\",/v2/models/{mo" +
-      "del_id}/versions/time_estimate:\001*\230\234\'\002\220\234\'" +
-      "-\220\234\'\017BY\n\025com.clarifai.grpc.apiP\001Z7github" +
-      ".com/Clarifai/clarifai-go-grpc/proto/cla" +
-      "rifai/api\242\002\004CAIPb\006proto3"
+      "mResponse\";\202\323\344\223\002\036\"\031/v2/runners/items/pro" +
+      "cess:\001*\230\234\'\005\220\234\'-\220\234\'\203\001\220\234\'\206\001\220\234\'\207\001(\0010\001\022\304\002\n%P" +
+      "ostModelVersionsTrainingTimeEstimate\022:.c" +
+      "larifai.api.PostModelVersionsTrainingTim" +
+      "eEstimateRequest\032/.clarifai.api.MultiTra" +
+      "iningTimeEstimateResponse\"\255\001\202\323\344\223\002\232\001\"b/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/models/{model_id}/version" +
+      "s/time_estimate:\001*Z1\",/v2/models/{model_" +
+      "id}/versions/time_estimate:\001*\230\234\'\002\220\234\'-\220\234\'" +
+      "\017BY\n\025com.clarifai.grpc.apiP\001Z7github.com" +
+      "/Clarifai/clarifai-go-grpc/proto/clarifa" +
+      "i/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

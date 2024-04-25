@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2884
+   *     See proto/clarifai/api/resources.proto;l=2874
    * @return Whether the model field is set.
    */
   @java.lang.Override
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2884
+   *     See proto/clarifai/api/resources.proto;l=2874
    * @return The model.
    */
   @java.lang.Override
@@ -1340,7 +1340,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2884
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @return Whether the model field is set.
      */
     @java.lang.Deprecated public boolean hasModel() {
@@ -1355,7 +1355,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
      * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2884
+     *     See proto/clarifai/api/resources.proto;l=2874
      * @return The model.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {

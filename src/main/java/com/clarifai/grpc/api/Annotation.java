@@ -26,7 +26,6 @@ private static final long serialVersionUID = 0L;
     modelVersionId_ = "";
     embedModelVersionId_ = "";
     taskId_ = "";
-    workflowVersionId_ = "";
   }
 
   @java.lang.Override
@@ -183,10 +182,17 @@ private static final long serialVersionUID = 0L;
             taskId_ = s;
             break;
           }
-          case 162: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 170: {
+            com.clarifai.grpc.api.Worker.Builder subBuilder = null;
+            if (worker_ != null) {
+              subBuilder = worker_.toBuilder();
+            }
+            worker_ = input.readMessage(com.clarifai.grpc.api.Worker.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(worker_);
+              worker_ = subBuilder.buildPartial();
+            }
 
-            workflowVersionId_ = s;
             break;
           }
           default: {
@@ -395,14 +401,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object userId_;
   /**
    * <pre>
-   * ID of the user this annotation is created by
+   * DEPRECATED: Use worker.user.id instead.
    * </pre>
    *
-   * <code>string user_id = 15;</code>
+   * <code>string user_id = 15 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.user_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=37
    * @return The userId.
    */
   @java.lang.Override
-  public java.lang.String getUserId() {
+  @java.lang.Deprecated public java.lang.String getUserId() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -416,14 +424,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ID of the user this annotation is created by
+   * DEPRECATED: Use worker.user.id instead.
    * </pre>
    *
-   * <code>string user_id = 15;</code>
+   * <code>string user_id = 15 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.user_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=37
    * @return The bytes for userId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getUserIdBytes() {
     java.lang.Object ref = userId_;
     if (ref instanceof java.lang.String) {
@@ -441,14 +451,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelVersionId_;
   /**
    * <pre>
-   * ID of the model version this annotation is created by
+   * DEPRECATED: Use worker.model.model_version.id instead
    * </pre>
    *
-   * <code>string model_version_id = 16;</code>
+   * <code>string model_version_id = 16 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=40
    * @return The modelVersionId.
    */
   @java.lang.Override
-  public java.lang.String getModelVersionId() {
+  @java.lang.Deprecated public java.lang.String getModelVersionId() {
     java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -462,14 +474,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ID of the model version this annotation is created by
+   * DEPRECATED: Use worker.model.model_version.id instead
    * </pre>
    *
-   * <code>string model_version_id = 16;</code>
+   * <code>string model_version_id = 16 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=40
    * @return The bytes for modelVersionId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getModelVersionIdBytes() {
     java.lang.Object ref = modelVersionId_;
     if (ref instanceof java.lang.String) {
@@ -492,7 +506,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=42
+   *     See proto/clarifai/api/resources.proto;l=43
    * @return The embedModelVersionId.
    */
   @java.lang.Override
@@ -515,7 +529,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=42
+   *     See proto/clarifai/api/resources.proto;l=43
    * @return The bytes for embedModelVersionId.
    */
   @java.lang.Override
@@ -669,7 +683,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>bool trusted = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.trusted is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=59
+   *     See proto/clarifai/api/resources.proto;l=60
    * @return The trusted.
    */
   @java.lang.Override
@@ -782,50 +796,42 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int WORKFLOW_VERSION_ID_FIELD_NUMBER = 20;
-  private volatile java.lang.Object workflowVersionId_;
+  public static final int WORKER_FIELD_NUMBER = 21;
+  private com.clarifai.grpc.api.Worker worker_;
   /**
    * <pre>
-   * ID of the workflow version this annotation is created by
+   * Worker is the worker that created the annotation.
    * </pre>
    *
-   * <code>string workflow_version_id = 20;</code>
-   * @return The workflowVersionId.
+   * <code>.clarifai.api.Worker worker = 21;</code>
+   * @return Whether the worker field is set.
    */
   @java.lang.Override
-  public java.lang.String getWorkflowVersionId() {
-    java.lang.Object ref = workflowVersionId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      workflowVersionId_ = s;
-      return s;
-    }
+  public boolean hasWorker() {
+    return worker_ != null;
   }
   /**
    * <pre>
-   * ID of the workflow version this annotation is created by
+   * Worker is the worker that created the annotation.
    * </pre>
    *
-   * <code>string workflow_version_id = 20;</code>
-   * @return The bytes for workflowVersionId.
+   * <code>.clarifai.api.Worker worker = 21;</code>
+   * @return The worker.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getWorkflowVersionIdBytes() {
-    java.lang.Object ref = workflowVersionId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      workflowVersionId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.clarifai.grpc.api.Worker getWorker() {
+    return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+  }
+  /**
+   * <pre>
+   * Worker is the worker that created the annotation.
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 21;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+    return getWorker();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -884,8 +890,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, taskId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowVersionId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, workflowVersionId_);
+    if (worker_ != null) {
+      output.writeMessage(21, getWorker());
     }
     unknownFields.writeTo(output);
   }
@@ -946,8 +952,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, taskId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workflowVersionId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, workflowVersionId_);
+    if (worker_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(21, getWorker());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1010,8 +1017,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTaskId()
         .equals(other.getTaskId())) return false;
-    if (!getWorkflowVersionId()
-        .equals(other.getWorkflowVersionId())) return false;
+    if (hasWorker() != other.hasWorker()) return false;
+    if (hasWorker()) {
+      if (!getWorker()
+          .equals(other.getWorker())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1065,8 +1075,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTaskId().hashCode();
-    hash = (37 * hash) + WORKFLOW_VERSION_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getWorkflowVersionId().hashCode();
+    if (hasWorker()) {
+      hash = (37 * hash) + WORKER_FIELD_NUMBER;
+      hash = (53 * hash) + getWorker().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1256,8 +1268,12 @@ private static final long serialVersionUID = 0L;
       }
       taskId_ = "";
 
-      workflowVersionId_ = "";
-
+      if (workerBuilder_ == null) {
+        worker_ = null;
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
       return this;
     }
 
@@ -1322,7 +1338,11 @@ private static final long serialVersionUID = 0L;
         result.consensusInfo_ = consensusInfoBuilder_.build();
       }
       result.taskId_ = taskId_;
-      result.workflowVersionId_ = workflowVersionId_;
+      if (workerBuilder_ == null) {
+        result.worker_ = worker_;
+      } else {
+        result.worker_ = workerBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1419,9 +1439,8 @@ private static final long serialVersionUID = 0L;
         taskId_ = other.taskId_;
         onChanged();
       }
-      if (!other.getWorkflowVersionId().isEmpty()) {
-        workflowVersionId_ = other.workflowVersionId_;
-        onChanged();
+      if (other.hasWorker()) {
+        mergeWorker(other.getWorker());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1957,13 +1976,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object userId_ = "";
     /**
      * <pre>
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      * </pre>
      *
-     * <code>string user_id = 15;</code>
+     * <code>string user_id = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=37
      * @return The userId.
      */
-    public java.lang.String getUserId() {
+    @java.lang.Deprecated public java.lang.String getUserId() {
       java.lang.Object ref = userId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1977,13 +1998,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      * </pre>
      *
-     * <code>string user_id = 15;</code>
+     * <code>string user_id = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=37
      * @return The bytes for userId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getUserIdBytes() {
       java.lang.Object ref = userId_;
       if (ref instanceof String) {
@@ -1998,14 +2021,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      * </pre>
      *
-     * <code>string user_id = 15;</code>
+     * <code>string user_id = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=37
      * @param value The userId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserId(
+    @java.lang.Deprecated public Builder setUserId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2017,13 +2042,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      * </pre>
      *
-     * <code>string user_id = 15;</code>
+     * <code>string user_id = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=37
      * @return This builder for chaining.
      */
-    public Builder clearUserId() {
+    @java.lang.Deprecated public Builder clearUserId() {
       
       userId_ = getDefaultInstance().getUserId();
       onChanged();
@@ -2031,14 +2058,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the user this annotation is created by
+     * DEPRECATED: Use worker.user.id instead.
      * </pre>
      *
-     * <code>string user_id = 15;</code>
+     * <code>string user_id = 15 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.user_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=37
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
-    public Builder setUserIdBytes(
+    @java.lang.Deprecated public Builder setUserIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2053,13 +2082,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelVersionId_ = "";
     /**
      * <pre>
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      * </pre>
      *
-     * <code>string model_version_id = 16;</code>
+     * <code>string model_version_id = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=40
      * @return The modelVersionId.
      */
-    public java.lang.String getModelVersionId() {
+    @java.lang.Deprecated public java.lang.String getModelVersionId() {
       java.lang.Object ref = modelVersionId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -2073,13 +2104,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      * </pre>
      *
-     * <code>string model_version_id = 16;</code>
+     * <code>string model_version_id = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=40
      * @return The bytes for modelVersionId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getModelVersionIdBytes() {
       java.lang.Object ref = modelVersionId_;
       if (ref instanceof String) {
@@ -2094,14 +2127,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      * </pre>
      *
-     * <code>string model_version_id = 16;</code>
+     * <code>string model_version_id = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=40
      * @param value The modelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setModelVersionId(
+    @java.lang.Deprecated public Builder setModelVersionId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2113,13 +2148,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      * </pre>
      *
-     * <code>string model_version_id = 16;</code>
+     * <code>string model_version_id = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=40
      * @return This builder for chaining.
      */
-    public Builder clearModelVersionId() {
+    @java.lang.Deprecated public Builder clearModelVersionId() {
       
       modelVersionId_ = getDefaultInstance().getModelVersionId();
       onChanged();
@@ -2127,14 +2164,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the model version this annotation is created by
+     * DEPRECATED: Use worker.model.model_version.id instead
      * </pre>
      *
-     * <code>string model_version_id = 16;</code>
+     * <code>string model_version_id = 16 [deprecated = true];</code>
+     * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=40
      * @param value The bytes for modelVersionId to set.
      * @return This builder for chaining.
      */
-    public Builder setModelVersionIdBytes(
+    @java.lang.Deprecated public Builder setModelVersionIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2154,7 +2193,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=42
+     *     See proto/clarifai/api/resources.proto;l=43
      * @return The embedModelVersionId.
      */
     @java.lang.Deprecated public java.lang.String getEmbedModelVersionId() {
@@ -2176,7 +2215,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=42
+     *     See proto/clarifai/api/resources.proto;l=43
      * @return The bytes for embedModelVersionId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2199,7 +2238,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=42
+     *     See proto/clarifai/api/resources.proto;l=43
      * @param value The embedModelVersionId to set.
      * @return This builder for chaining.
      */
@@ -2220,7 +2259,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=42
+     *     See proto/clarifai/api/resources.proto;l=43
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearEmbedModelVersionId() {
@@ -2236,7 +2275,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string embed_model_version_id = 14 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=42
+     *     See proto/clarifai/api/resources.proto;l=43
      * @param value The bytes for embedModelVersionId to set.
      * @return This builder for chaining.
      */
@@ -2762,7 +2801,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.trusted is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=59
+     *     See proto/clarifai/api/resources.proto;l=60
      * @return The trusted.
      */
     @java.lang.Override
@@ -2777,7 +2816,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.trusted is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=59
+     *     See proto/clarifai/api/resources.proto;l=60
      * @param value The trusted to set.
      * @return This builder for chaining.
      */
@@ -2795,7 +2834,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>bool trusted = 10 [deprecated = true];</code>
      * @deprecated clarifai.api.Annotation.trusted is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=59
+     *     See proto/clarifai/api/resources.proto;l=60
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearTrusted() {
@@ -3117,100 +3156,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object workflowVersionId_ = "";
+    private com.clarifai.grpc.api.Worker worker_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> workerBuilder_;
     /**
      * <pre>
-     * ID of the workflow version this annotation is created by
+     * Worker is the worker that created the annotation.
      * </pre>
      *
-     * <code>string workflow_version_id = 20;</code>
-     * @return The workflowVersionId.
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     * @return Whether the worker field is set.
      */
-    public java.lang.String getWorkflowVersionId() {
-      java.lang.Object ref = workflowVersionId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        workflowVersionId_ = s;
-        return s;
+    public boolean hasWorker() {
+      return workerBuilder_ != null || worker_ != null;
+    }
+    /**
+     * <pre>
+     * Worker is the worker that created the annotation.
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     * @return The worker.
+     */
+    public com.clarifai.grpc.api.Worker getWorker() {
+      if (workerBuilder_ == null) {
+        return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
       } else {
-        return (java.lang.String) ref;
+        return workerBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * ID of the workflow version this annotation is created by
+     * Worker is the worker that created the annotation.
      * </pre>
      *
-     * <code>string workflow_version_id = 20;</code>
-     * @return The bytes for workflowVersionId.
+     * <code>.clarifai.api.Worker worker = 21;</code>
      */
-    public com.google.protobuf.ByteString
-        getWorkflowVersionIdBytes() {
-      java.lang.Object ref = workflowVersionId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        workflowVersionId_ = b;
-        return b;
+    public Builder setWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        worker_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        workerBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Worker is the worker that created the annotation.
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     */
+    public Builder setWorker(
+        com.clarifai.grpc.api.Worker.Builder builderForValue) {
+      if (workerBuilder_ == null) {
+        worker_ = builderForValue.build();
+        onChanged();
+      } else {
+        workerBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Worker is the worker that created the annotation.
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     */
+    public Builder mergeWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (worker_ != null) {
+          worker_ =
+            com.clarifai.grpc.api.Worker.newBuilder(worker_).mergeFrom(value).buildPartial();
+        } else {
+          worker_ = value;
+        }
+        onChanged();
+      } else {
+        workerBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Worker is the worker that created the annotation.
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     */
+    public Builder clearWorker() {
+      if (workerBuilder_ == null) {
+        worker_ = null;
+        onChanged();
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Worker is the worker that created the annotation.
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     */
+    public com.clarifai.grpc.api.Worker.Builder getWorkerBuilder() {
+      
+      onChanged();
+      return getWorkerFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Worker is the worker that created the annotation.
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 21;</code>
+     */
+    public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+      if (workerBuilder_ != null) {
+        return workerBuilder_.getMessageOrBuilder();
+      } else {
+        return worker_ == null ?
+            com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
       }
     }
     /**
      * <pre>
-     * ID of the workflow version this annotation is created by
+     * Worker is the worker that created the annotation.
      * </pre>
      *
-     * <code>string workflow_version_id = 20;</code>
-     * @param value The workflowVersionId to set.
-     * @return This builder for chaining.
+     * <code>.clarifai.api.Worker worker = 21;</code>
      */
-    public Builder setWorkflowVersionId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      workflowVersionId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of the workflow version this annotation is created by
-     * </pre>
-     *
-     * <code>string workflow_version_id = 20;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearWorkflowVersionId() {
-      
-      workflowVersionId_ = getDefaultInstance().getWorkflowVersionId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * ID of the workflow version this annotation is created by
-     * </pre>
-     *
-     * <code>string workflow_version_id = 20;</code>
-     * @param value The bytes for workflowVersionId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkflowVersionIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      workflowVersionId_ = value;
-      onChanged();
-      return this;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> 
+        getWorkerFieldBuilder() {
+      if (workerBuilder_ == null) {
+        workerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder>(
+                getWorker(),
+                getParentForChildren(),
+                isClean());
+        worker_ = null;
+      }
+      return workerBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

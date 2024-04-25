@@ -103,42 +103,50 @@ public interface AnnotationOrBuilder extends
 
   /**
    * <pre>
-   * ID of the user this annotation is created by
+   * DEPRECATED: Use worker.user.id instead.
    * </pre>
    *
-   * <code>string user_id = 15;</code>
+   * <code>string user_id = 15 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.user_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=37
    * @return The userId.
    */
-  java.lang.String getUserId();
+  @java.lang.Deprecated java.lang.String getUserId();
   /**
    * <pre>
-   * ID of the user this annotation is created by
+   * DEPRECATED: Use worker.user.id instead.
    * </pre>
    *
-   * <code>string user_id = 15;</code>
+   * <code>string user_id = 15 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.user_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=37
    * @return The bytes for userId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getUserIdBytes();
 
   /**
    * <pre>
-   * ID of the model version this annotation is created by
+   * DEPRECATED: Use worker.model.model_version.id instead
    * </pre>
    *
-   * <code>string model_version_id = 16;</code>
+   * <code>string model_version_id = 16 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=40
    * @return The modelVersionId.
    */
-  java.lang.String getModelVersionId();
+  @java.lang.Deprecated java.lang.String getModelVersionId();
   /**
    * <pre>
-   * ID of the model version this annotation is created by
+   * DEPRECATED: Use worker.model.model_version.id instead
    * </pre>
    *
-   * <code>string model_version_id = 16;</code>
+   * <code>string model_version_id = 16 [deprecated = true];</code>
+   * @deprecated clarifai.api.Annotation.model_version_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=40
    * @return The bytes for modelVersionId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getModelVersionIdBytes();
 
   /**
@@ -148,7 +156,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=42
+   *     See proto/clarifai/api/resources.proto;l=43
    * @return The embedModelVersionId.
    */
   @java.lang.Deprecated java.lang.String getEmbedModelVersionId();
@@ -159,7 +167,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>string embed_model_version_id = 14 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.embed_model_version_id is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=42
+   *     See proto/clarifai/api/resources.proto;l=43
    * @return The bytes for embedModelVersionId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -266,7 +274,7 @@ public interface AnnotationOrBuilder extends
    *
    * <code>bool trusted = 10 [deprecated = true];</code>
    * @deprecated clarifai.api.Annotation.trusted is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=59
+   *     See proto/clarifai/api/resources.proto;l=60
    * @return The trusted.
    */
   @java.lang.Deprecated boolean getTrusted();
@@ -336,21 +344,28 @@ public interface AnnotationOrBuilder extends
 
   /**
    * <pre>
-   * ID of the workflow version this annotation is created by
+   * Worker is the worker that created the annotation.
    * </pre>
    *
-   * <code>string workflow_version_id = 20;</code>
-   * @return The workflowVersionId.
+   * <code>.clarifai.api.Worker worker = 21;</code>
+   * @return Whether the worker field is set.
    */
-  java.lang.String getWorkflowVersionId();
+  boolean hasWorker();
   /**
    * <pre>
-   * ID of the workflow version this annotation is created by
+   * Worker is the worker that created the annotation.
    * </pre>
    *
-   * <code>string workflow_version_id = 20;</code>
-   * @return The bytes for workflowVersionId.
+   * <code>.clarifai.api.Worker worker = 21;</code>
+   * @return The worker.
    */
-  com.google.protobuf.ByteString
-      getWorkflowVersionIdBytes();
+  com.clarifai.grpc.api.Worker getWorker();
+  /**
+   * <pre>
+   * Worker is the worker that created the annotation.
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 21;</code>
+   */
+  com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder();
 }

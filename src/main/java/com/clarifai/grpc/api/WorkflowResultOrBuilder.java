@@ -82,7 +82,7 @@ public interface WorkflowResultOrBuilder extends
    *
    * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2884
+   *     See proto/clarifai/api/resources.proto;l=2874
    * @return Whether the model field is set.
    */
   @java.lang.Deprecated boolean hasModel();
@@ -95,7 +95,7 @@ public interface WorkflowResultOrBuilder extends
    *
    * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
    * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2884
+   *     See proto/clarifai/api/resources.proto;l=2874
    * @return The model.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.Model getModel();

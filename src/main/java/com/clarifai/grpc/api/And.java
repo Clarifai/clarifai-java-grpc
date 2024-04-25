@@ -153,9 +153,6 @@ private static final long serialVersionUID = 0L;
    *  - data.geo.geo_point.latitude
    *  - data.geo.geo_point.longitude
    *  - data.image.url
-   *  - data.metadata - allow search with empty metadata
-   *    note that searching by empty metadata will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
    *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
    *  - dataset_ids[] - filter by dataset IDs
    *  - id - filter by input ID
@@ -186,9 +183,6 @@ private static final long serialVersionUID = 0L;
    *  - data.geo.geo_point.latitude
    *  - data.geo.geo_point.longitude
    *  - data.image.url
-   *  - data.metadata - allow search with empty metadata
-   *    note that searching by empty metadata will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
    *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
    *  - dataset_ids[] - filter by dataset IDs
    *  - id - filter by input ID
@@ -219,9 +213,6 @@ private static final long serialVersionUID = 0L;
    *  - data.geo.geo_point.latitude
    *  - data.geo.geo_point.longitude
    *  - data.image.url
-   *  - data.metadata - allow search with empty metadata
-   *    note that searching by empty metadata will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
    *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
    *  - dataset_ids[] - filter by dataset IDs
    *  - id - filter by input ID
@@ -255,7 +246,6 @@ private static final long serialVersionUID = 0L;
    *  - data.concepts[].id
    *  - data.concepts[].name
    *  - data.concepts[].value
-   *  - input.data.image - empty image is required when searching by input ID
    *  - input.data.image.base64[]
    *  - input.data.image.url
    *  - input.id
@@ -286,7 +276,6 @@ private static final long serialVersionUID = 0L;
    *  - data.concepts[].id
    *  - data.concepts[].name
    *  - data.concepts[].value
-   *  - input.data.image - empty image is required when searching by input ID
    *  - input.data.image.base64[]
    *  - input.data.image.url
    *  - input.id
@@ -317,7 +306,6 @@ private static final long serialVersionUID = 0L;
    *  - data.concepts[].id
    *  - data.concepts[].name
    *  - data.concepts[].value
-   *  - input.data.image - empty image is required when searching by input ID
    *  - input.data.image.base64[]
    *  - input.data.image.url
    *  - input.id
@@ -360,9 +348,6 @@ private static final long serialVersionUID = 0L;
    * using worker_id's of other models like cluster models or concept models should be
    * combinable with queries like visual search (a query with Output filled in).
    * ########## Supported fields ##########
-   *  - annotation_info - allows searching by empty annotation info
-   *    note that searching by empty annotation info will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
    *  - annotation_info.fields - filter by annotation info
    *  - data.concepts[].id
    *  - data.concepts[].name
@@ -374,9 +359,6 @@ private static final long serialVersionUID = 0L;
    *  - data.geo.geo_point.latitude
    *  - data.geo.geo_point.longitude
    *  - data.image.url
-   *  - data.metadata - allow search with empty metadata
-   *    note that searching by empty metadata will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
    *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
    *  - input_id
    *  - input_level
@@ -406,9 +388,6 @@ private static final long serialVersionUID = 0L;
    * using worker_id's of other models like cluster models or concept models should be
    * combinable with queries like visual search (a query with Output filled in).
    * ########## Supported fields ##########
-   *  - annotation_info - allows searching by empty annotation info
-   *    note that searching by empty annotation info will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
    *  - annotation_info.fields - filter by annotation info
    *  - data.concepts[].id
    *  - data.concepts[].name
@@ -420,9 +399,6 @@ private static final long serialVersionUID = 0L;
    *  - data.geo.geo_point.latitude
    *  - data.geo.geo_point.longitude
    *  - data.image.url
-   *  - data.metadata - allow search with empty metadata
-   *    note that searching by empty metadata will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
    *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
    *  - input_id
    *  - input_level
@@ -452,9 +428,6 @@ private static final long serialVersionUID = 0L;
    * using worker_id's of other models like cluster models or concept models should be
    * combinable with queries like visual search (a query with Output filled in).
    * ########## Supported fields ##########
-   *  - annotation_info - allows searching by empty annotation info
-   *    note that searching by empty annotation info will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
    *  - annotation_info.fields - filter by annotation info
    *  - data.concepts[].id
    *  - data.concepts[].name
@@ -466,9 +439,6 @@ private static final long serialVersionUID = 0L;
    *  - data.geo.geo_point.latitude
    *  - data.geo.geo_point.longitude
    *  - data.image.url
-   *  - data.metadata - allow search with empty metadata
-   *    note that searching by empty metadata will actually not influence the search results.
-   *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
    *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
    *  - input_id
    *  - input_level
@@ -907,9 +877,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -939,9 +906,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -975,9 +939,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1016,9 +977,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1055,9 +1013,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1098,9 +1053,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1137,9 +1089,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1170,9 +1119,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1206,9 +1152,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - dataset_ids[] - filter by dataset IDs
      *  - id - filter by input ID
@@ -1252,7 +1195,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1282,7 +1224,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1316,7 +1257,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1355,7 +1295,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1392,7 +1331,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1433,7 +1371,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1470,7 +1407,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1501,7 +1437,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1535,7 +1470,6 @@ private static final long serialVersionUID = 0L;
      *  - data.concepts[].id
      *  - data.concepts[].name
      *  - data.concepts[].value
-     *  - input.data.image - empty image is required when searching by input ID
      *  - input.data.image.base64[]
      *  - input.data.image.url
      *  - input.id
@@ -1618,9 +1552,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1632,9 +1563,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1663,9 +1591,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1677,9 +1602,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1712,9 +1634,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1726,9 +1645,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1766,9 +1682,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1780,9 +1693,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1818,9 +1728,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1832,9 +1739,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1874,9 +1778,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1888,9 +1789,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1926,9 +1824,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1940,9 +1835,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -1972,9 +1864,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -1986,9 +1875,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
@@ -2021,9 +1907,6 @@ private static final long serialVersionUID = 0L;
      * using worker_id's of other models like cluster models or concept models should be
      * combinable with queries like visual search (a query with Output filled in).
      * ########## Supported fields ##########
-     *  - annotation_info - allows searching by empty annotation info
-     *    note that searching by empty annotation info will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty annotation info.
      *  - annotation_info.fields - filter by annotation info
      *  - data.concepts[].id
      *  - data.concepts[].name
@@ -2035,9 +1918,6 @@ private static final long serialVersionUID = 0L;
      *  - data.geo.geo_point.latitude
      *  - data.geo.geo_point.longitude
      *  - data.image.url
-     *  - data.metadata - allow search with empty metadata
-     *    note that searching by empty metadata will actually not influence the search results.
-     *    however, in order to be user-friendly, we are still supporting searching by empty metadata.
      *  - data.metadata.fields - filter by metadata. metadata key&amp;value fields are OR-ed.
      *  - input_id
      *  - input_level
