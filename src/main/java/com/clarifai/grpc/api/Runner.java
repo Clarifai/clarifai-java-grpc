@@ -260,7 +260,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -329,7 +329,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -366,7 +366,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp modifiedAt_;
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -525,7 +525,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -539,7 +539,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -1378,7 +1378,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1399,7 +1399,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1421,7 +1421,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1441,7 +1441,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1456,7 +1456,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1479,7 +1479,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1499,7 +1499,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1520,7 +1520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1539,7 +1539,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1553,7 +1553,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1577,7 +1577,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1588,7 +1588,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1603,7 +1603,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1623,7 +1623,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1641,7 +1641,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1663,7 +1663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1681,7 +1681,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1693,7 +1693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1708,7 +1708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1732,7 +1732,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1743,7 +1743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1758,7 +1758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1778,7 +1778,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1796,7 +1796,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1818,7 +1818,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1836,7 +1836,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1848,7 +1848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1863,7 +1863,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -2165,7 +2165,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2179,7 +2179,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2192,7 +2192,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2206,7 +2206,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2221,7 +2221,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2243,7 +2243,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2264,7 +2264,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2283,7 +2283,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2299,7 +2299,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */

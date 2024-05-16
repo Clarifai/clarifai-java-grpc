@@ -702,6 +702,22 @@ public enum S
    * <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
    */
   RunnerItems_Add(135),
+  /**
+   * <pre>
+   * Pools of compute resources.
+   * </pre>
+   *
+   * <code>Nodepools_Get = 136 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Nodepools_Get(136),
+  /**
+   * <code>Nodepools_Add = 137 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get];</code>
+   */
+  Nodepools_Add(137),
+  /**
+   * <code>Nodepools_Delete = 138 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Add];</code>
+   */
+  Nodepools_Delete(138),
   UNRECOGNIZED(-1),
   ;
 
@@ -1366,6 +1382,22 @@ public enum S
    * <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
    */
   public static final int RunnerItems_Add_VALUE = 135;
+  /**
+   * <pre>
+   * Pools of compute resources.
+   * </pre>
+   *
+   * <code>Nodepools_Get = 136 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Nodepools_Get_VALUE = 136;
+  /**
+   * <code>Nodepools_Add = 137 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get];</code>
+   */
+  public static final int Nodepools_Add_VALUE = 137;
+  /**
+   * <code>Nodepools_Delete = 138 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Add];</code>
+   */
+  public static final int Nodepools_Delete_VALUE = 138;
 
 
   public final int getNumber() {
@@ -1482,6 +1514,9 @@ public enum S
       case 133: return Runners_Delete;
       case 134: return RunnerItems_Get;
       case 135: return RunnerItems_Add;
+      case 136: return Nodepools_Get;
+      case 137: return Nodepools_Add;
+      case 138: return Nodepools_Delete;
       default: return null;
     }
   }

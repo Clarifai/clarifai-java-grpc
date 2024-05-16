@@ -23,9 +23,9 @@ private static final long serialVersionUID = 0L;
   }
   private Nodepool() {
     id_ = "";
+    description_ = "";
     userId_ = "";
-    capacityTypes_ = java.util.Collections.emptyList();
-    instanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceTypes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -68,52 +68,74 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userId_ = s;
+            description_ = s;
             break;
           }
           case 26: {
-            com.clarifai.grpc.api.CloudRegion.Builder subBuilder = null;
-            if (cloudRegion_ != null) {
-              subBuilder = cloudRegion_.toBuilder();
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (createdAt_ != null) {
+              subBuilder = createdAt_.toBuilder();
             }
-            cloudRegion_ = input.readMessage(com.clarifai.grpc.api.CloudRegion.parser(), extensionRegistry);
+            createdAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(cloudRegion_);
-              cloudRegion_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(createdAt_);
+              createdAt_ = subBuilder.buildPartial();
             }
 
             break;
           }
-          case 32: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              capacityTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000001;
+          case 34: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (modifiedAt_ != null) {
+              subBuilder = modifiedAt_.toBuilder();
             }
-            capacityTypes_.add(rawValue);
+            modifiedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modifiedAt_);
+              modifiedAt_ = subBuilder.buildPartial();
+            }
+
             break;
           }
-          case 34: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                capacityTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              capacityTypes_.add(rawValue);
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            userId_ = s;
+            break;
+          }
+          case 50: {
+            com.clarifai.grpc.api.ComputeCluster.Builder subBuilder = null;
+            if (computeCluster_ != null) {
+              subBuilder = computeCluster_.toBuilder();
             }
-            input.popLimit(oldLimit);
+            computeCluster_ = input.readMessage(com.clarifai.grpc.api.ComputeCluster.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(computeCluster_);
+              computeCluster_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 58: {
+            com.clarifai.grpc.api.NodeCapacityType.Builder subBuilder = null;
+            if (nodeCapacityType_ != null) {
+              subBuilder = nodeCapacityType_.toBuilder();
+            }
+            nodeCapacityType_ = input.readMessage(com.clarifai.grpc.api.NodeCapacityType.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(nodeCapacityType_);
+              nodeCapacityType_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              instanceTypes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              instanceTypes_ = new java.util.ArrayList<com.clarifai.grpc.api.InstanceType>();
+              mutable_bitField0_ |= 0x00000001;
             }
-            instanceTypes_.add(s);
+            instanceTypes_.add(
+                input.readMessage(com.clarifai.grpc.api.InstanceType.parser(), extensionRegistry));
             break;
           }
           case 72: {
@@ -124,6 +146,32 @@ private static final long serialVersionUID = 0L;
           case 80: {
 
             maxInstances_ = input.readUInt32();
+            break;
+          }
+          case 90: {
+            com.clarifai.grpc.api.Visibility.Builder subBuilder = null;
+            if (visibility_ != null) {
+              subBuilder = visibility_.toBuilder();
+            }
+            visibility_ = input.readMessage(com.clarifai.grpc.api.Visibility.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(visibility_);
+              visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (metadata_ != null) {
+              subBuilder = metadata_.toBuilder();
+            }
+            metadata_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(metadata_);
+              metadata_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -144,10 +192,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        capacityTypes_ = java.util.Collections.unmodifiableList(capacityTypes_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        instanceTypes_ = instanceTypes_.getUnmodifiableView();
+        instanceTypes_ = java.util.Collections.unmodifiableList(instanceTypes_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -164,129 +209,6 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Nodepool_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Nodepool.class, com.clarifai.grpc.api.Nodepool.Builder.class);
-  }
-
-  /**
-   * <pre>
-   * Type of nodes that are ok for instances in this pool.
-   * If both spot and on-demand are provided then the runner will be able to run on either
-   * with a preference for spot until they are not available.
-   * </pre>
-   *
-   * Protobuf enum {@code clarifai.api.Nodepool.CapacityType}
-   */
-  public enum CapacityType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UKNOWN_CAPACITY_TYPE = 0;</code>
-     */
-    UKNOWN_CAPACITY_TYPE(0),
-    /**
-     * <code>ONDEMAND_TYPE = 1;</code>
-     */
-    ONDEMAND_TYPE(1),
-    /**
-     * <code>SPOT_TYPE = 2;</code>
-     */
-    SPOT_TYPE(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UKNOWN_CAPACITY_TYPE = 0;</code>
-     */
-    public static final int UKNOWN_CAPACITY_TYPE_VALUE = 0;
-    /**
-     * <code>ONDEMAND_TYPE = 1;</code>
-     */
-    public static final int ONDEMAND_TYPE_VALUE = 1;
-    /**
-     * <code>SPOT_TYPE = 2;</code>
-     */
-    public static final int SPOT_TYPE_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static CapacityType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static CapacityType forNumber(int value) {
-      switch (value) {
-        case 0: return UKNOWN_CAPACITY_TYPE;
-        case 1: return ONDEMAND_TYPE;
-        case 2: return SPOT_TYPE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<CapacityType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        CapacityType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<CapacityType>() {
-            public CapacityType findValueByNumber(int number) {
-              return CapacityType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.clarifai.grpc.api.Nodepool.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final CapacityType[] VALUES = values();
-
-    public static CapacityType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private CapacityType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:clarifai.api.Nodepool.CapacityType)
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -335,14 +257,136 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 2;
+  public static final int DESCRIPTION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * Short description about the nodepool.
+   * </pre>
+   *
+   * <code>string description = 2;</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Short description about the nodepool.
+   * </pre>
+   *
+   * <code>string description = 2;</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp createdAt_;
+  /**
+   * <pre>
+   * When the nodepool was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreatedAt() {
+    return createdAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the nodepool was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreatedAt() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+  }
+  /**
+   * <pre>
+   * When the nodepool was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+    return getCreatedAt();
+  }
+
+  public static final int MODIFIED_AT_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp modifiedAt_;
+  /**
+   * <pre>
+   * When the nodepool was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasModifiedAt() {
+    return modifiedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the nodepool was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+   * @return The modifiedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getModifiedAt() {
+    return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+  }
+  /**
+   * <pre>
+   * When the nodepool was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+    return getModifiedAt();
+  }
+
+  public static final int USER_ID_FIELD_NUMBER = 5;
   private volatile java.lang.Object userId_;
   /**
    * <pre>
    * The user/org that this nodepool belongs to.
    * </pre>
    *
-   * <code>string user_id = 2;</code>
+   * <code>string user_id = 5;</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -363,7 +407,7 @@ private static final long serialVersionUID = 0L;
    * The user/org that this nodepool belongs to.
    * </pre>
    *
-   * <code>string user_id = 2;</code>
+   * <code>string user_id = 5;</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -381,166 +425,115 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CLOUD_REGION_FIELD_NUMBER = 3;
-  private com.clarifai.grpc.api.CloudRegion cloudRegion_;
+  public static final int COMPUTE_CLUSTER_FIELD_NUMBER = 6;
+  private com.clarifai.grpc.api.ComputeCluster computeCluster_;
   /**
    * <pre>
-   * Which cloud region this nodepool is within.
+   * Which cluster this nodepool is within.
    * </pre>
    *
-   * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-   * @return Whether the cloudRegion field is set.
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+   * @return Whether the computeCluster field is set.
    */
   @java.lang.Override
-  public boolean hasCloudRegion() {
-    return cloudRegion_ != null;
+  public boolean hasComputeCluster() {
+    return computeCluster_ != null;
   }
   /**
    * <pre>
-   * Which cloud region this nodepool is within.
+   * Which cluster this nodepool is within.
    * </pre>
    *
-   * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-   * @return The cloudRegion.
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+   * @return The computeCluster.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.CloudRegion getCloudRegion() {
-    return cloudRegion_ == null ? com.clarifai.grpc.api.CloudRegion.getDefaultInstance() : cloudRegion_;
+  public com.clarifai.grpc.api.ComputeCluster getComputeCluster() {
+    return computeCluster_ == null ? com.clarifai.grpc.api.ComputeCluster.getDefaultInstance() : computeCluster_;
   }
   /**
    * <pre>
-   * Which cloud region this nodepool is within.
+   * Which cluster this nodepool is within.
    * </pre>
    *
-   * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.CloudRegionOrBuilder getCloudRegionOrBuilder() {
-    return getCloudRegion();
+  public com.clarifai.grpc.api.ComputeClusterOrBuilder getComputeClusterOrBuilder() {
+    return getComputeCluster();
   }
 
-  public static final int CAPACITY_TYPES_FIELD_NUMBER = 4;
-  private java.util.List<java.lang.Integer> capacityTypes_;
-  private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.clarifai.grpc.api.Nodepool.CapacityType> capacityTypes_converter_ =
-          new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.clarifai.grpc.api.Nodepool.CapacityType>() {
-            public com.clarifai.grpc.api.Nodepool.CapacityType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
-              com.clarifai.grpc.api.Nodepool.CapacityType result = com.clarifai.grpc.api.Nodepool.CapacityType.valueOf(from);
-              return result == null ? com.clarifai.grpc.api.Nodepool.CapacityType.UNRECOGNIZED : result;
-            }
-          };
+  public static final int NODE_CAPACITY_TYPE_FIELD_NUMBER = 7;
+  private com.clarifai.grpc.api.NodeCapacityType nodeCapacityType_;
   /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @return A list containing the capacityTypes.
+   * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+   * @return Whether the nodeCapacityType field is set.
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.Nodepool.CapacityType> getCapacityTypesList() {
-    return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.clarifai.grpc.api.Nodepool.CapacityType>(capacityTypes_, capacityTypes_converter_);
+  public boolean hasNodeCapacityType() {
+    return nodeCapacityType_ != null;
   }
   /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @return The count of capacityTypes.
+   * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+   * @return The nodeCapacityType.
    */
   @java.lang.Override
-  public int getCapacityTypesCount() {
-    return capacityTypes_.size();
+  public com.clarifai.grpc.api.NodeCapacityType getNodeCapacityType() {
+    return nodeCapacityType_ == null ? com.clarifai.grpc.api.NodeCapacityType.getDefaultInstance() : nodeCapacityType_;
   }
   /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @param index The index of the element to return.
-   * @return The capacityTypes at the given index.
+   * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Nodepool.CapacityType getCapacityTypes(int index) {
-    return capacityTypes_converter_.convert(capacityTypes_.get(index));
+  public com.clarifai.grpc.api.NodeCapacityTypeOrBuilder getNodeCapacityTypeOrBuilder() {
+    return getNodeCapacityType();
   }
-  /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @return A list containing the enum numeric values on the wire for capacityTypes.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer>
-  getCapacityTypesValueList() {
-    return capacityTypes_;
-  }
-  /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of capacityTypes at the given index.
-   */
-  @java.lang.Override
-  public int getCapacityTypesValue(int index) {
-    return capacityTypes_.get(index);
-  }
-  private int capacityTypesMemoizedSerializedSize;
 
   public static final int INSTANCE_TYPES_FIELD_NUMBER = 8;
-  private com.google.protobuf.LazyStringList instanceTypes_;
+  private java.util.List<com.clarifai.grpc.api.InstanceType> instanceTypes_;
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @return A list containing the instanceTypes.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getInstanceTypesList() {
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.InstanceType> getInstanceTypesList() {
     return instanceTypes_;
   }
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @return The count of instanceTypes.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.InstanceTypeOrBuilder> 
+      getInstanceTypesOrBuilderList() {
+    return instanceTypes_;
+  }
+  /**
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+   */
+  @java.lang.Override
   public int getInstanceTypesCount() {
     return instanceTypes_.size();
   }
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @param index The index of the element to return.
-   * @return The instanceTypes at the given index.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
-  public java.lang.String getInstanceTypes(int index) {
+  @java.lang.Override
+  public com.clarifai.grpc.api.InstanceType getInstanceTypes(int index) {
     return instanceTypes_.get(index);
   }
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the instanceTypes at the given index.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getInstanceTypesBytes(int index) {
-    return instanceTypes_.getByteString(index);
+  @java.lang.Override
+  public com.clarifai.grpc.api.InstanceTypeOrBuilder getInstanceTypesOrBuilder(
+      int index) {
+    return instanceTypes_.get(index);
   }
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 9;
   private int minInstances_;
   /**
    * <pre>
-   * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+   * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
    * amount. A nodepool needs a minimum of 1 instance.
    * </pre>
    *
@@ -568,6 +561,91 @@ private static final long serialVersionUID = 0L;
     return maxInstances_;
   }
 
+  public static final int VISIBILITY_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.Visibility visibility_;
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 11;</code>
+   * @return Whether the visibility field is set.
+   */
+  @java.lang.Override
+  public boolean hasVisibility() {
+    return visibility_ != null;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 11;</code>
+   * @return The visibility.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Visibility getVisibility() {
+    return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+  }
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+    return getVisibility();
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 12;
+  private com.google.protobuf.Struct metadata_;
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 12;</code>
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 12;</code>
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+  }
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -582,31 +660,41 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+    }
+    if (createdAt_ != null) {
+      output.writeMessage(3, getCreatedAt());
+    }
+    if (modifiedAt_ != null) {
+      output.writeMessage(4, getModifiedAt());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userId_);
     }
-    if (cloudRegion_ != null) {
-      output.writeMessage(3, getCloudRegion());
+    if (computeCluster_ != null) {
+      output.writeMessage(6, getComputeCluster());
     }
-    if (getCapacityTypesList().size() > 0) {
-      output.writeUInt32NoTag(34);
-      output.writeUInt32NoTag(capacityTypesMemoizedSerializedSize);
-    }
-    for (int i = 0; i < capacityTypes_.size(); i++) {
-      output.writeEnumNoTag(capacityTypes_.get(i));
+    if (nodeCapacityType_ != null) {
+      output.writeMessage(7, getNodeCapacityType());
     }
     for (int i = 0; i < instanceTypes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, instanceTypes_.getRaw(i));
+      output.writeMessage(8, instanceTypes_.get(i));
     }
     if (minInstances_ != 0) {
       output.writeUInt32(9, minInstances_);
     }
     if (maxInstances_ != 0) {
       output.writeUInt32(10, maxInstances_);
+    }
+    if (visibility_ != null) {
+      output.writeMessage(11, getVisibility());
+    }
+    if (metadata_ != null) {
+      output.writeMessage(12, getMetadata());
     }
     unknownFields.writeTo(output);
   }
@@ -620,32 +708,31 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
-    if (cloudRegion_ != null) {
+    if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCloudRegion());
+        .computeMessageSize(3, getCreatedAt());
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < capacityTypes_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(capacityTypes_.get(i));
-      }
-      size += dataSize;
-      if (!getCapacityTypesList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }capacityTypesMemoizedSerializedSize = dataSize;
+    if (modifiedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getModifiedAt());
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < instanceTypes_.size(); i++) {
-        dataSize += computeStringSizeNoTag(instanceTypes_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getInstanceTypesList().size();
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userId_);
+    }
+    if (computeCluster_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getComputeCluster());
+    }
+    if (nodeCapacityType_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getNodeCapacityType());
+    }
+    for (int i = 0; i < instanceTypes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, instanceTypes_.get(i));
     }
     if (minInstances_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -654,6 +741,14 @@ private static final long serialVersionUID = 0L;
     if (maxInstances_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(10, maxInstances_);
+    }
+    if (visibility_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getVisibility());
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getMetadata());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -672,20 +767,46 @@ private static final long serialVersionUID = 0L;
 
     if (!getId()
         .equals(other.getId())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (hasCreatedAt() != other.hasCreatedAt()) return false;
+    if (hasCreatedAt()) {
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+    }
+    if (hasModifiedAt() != other.hasModifiedAt()) return false;
+    if (hasModifiedAt()) {
+      if (!getModifiedAt()
+          .equals(other.getModifiedAt())) return false;
+    }
     if (!getUserId()
         .equals(other.getUserId())) return false;
-    if (hasCloudRegion() != other.hasCloudRegion()) return false;
-    if (hasCloudRegion()) {
-      if (!getCloudRegion()
-          .equals(other.getCloudRegion())) return false;
+    if (hasComputeCluster() != other.hasComputeCluster()) return false;
+    if (hasComputeCluster()) {
+      if (!getComputeCluster()
+          .equals(other.getComputeCluster())) return false;
     }
-    if (!capacityTypes_.equals(other.capacityTypes_)) return false;
+    if (hasNodeCapacityType() != other.hasNodeCapacityType()) return false;
+    if (hasNodeCapacityType()) {
+      if (!getNodeCapacityType()
+          .equals(other.getNodeCapacityType())) return false;
+    }
     if (!getInstanceTypesList()
         .equals(other.getInstanceTypesList())) return false;
     if (getMinInstances()
         != other.getMinInstances()) return false;
     if (getMaxInstances()
         != other.getMaxInstances()) return false;
+    if (hasVisibility() != other.hasVisibility()) return false;
+    if (hasVisibility()) {
+      if (!getVisibility()
+          .equals(other.getVisibility())) return false;
+    }
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -699,15 +820,25 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    if (hasCreatedAt()) {
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+    }
+    if (hasModifiedAt()) {
+      hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getModifiedAt().hashCode();
+    }
     hash = (37 * hash) + USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserId().hashCode();
-    if (hasCloudRegion()) {
-      hash = (37 * hash) + CLOUD_REGION_FIELD_NUMBER;
-      hash = (53 * hash) + getCloudRegion().hashCode();
+    if (hasComputeCluster()) {
+      hash = (37 * hash) + COMPUTE_CLUSTER_FIELD_NUMBER;
+      hash = (53 * hash) + getComputeCluster().hashCode();
     }
-    if (getCapacityTypesCount() > 0) {
-      hash = (37 * hash) + CAPACITY_TYPES_FIELD_NUMBER;
-      hash = (53 * hash) + capacityTypes_.hashCode();
+    if (hasNodeCapacityType()) {
+      hash = (37 * hash) + NODE_CAPACITY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeCapacityType().hashCode();
     }
     if (getInstanceTypesCount() > 0) {
       hash = (37 * hash) + INSTANCE_TYPES_FIELD_NUMBER;
@@ -717,6 +848,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMinInstances();
     hash = (37 * hash) + MAX_INSTANCES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxInstances();
+    if (hasVisibility()) {
+      hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + getVisibility().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -851,6 +990,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getInstanceTypesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -858,22 +998,56 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
+      description_ = "";
+
+      if (createdAtBuilder_ == null) {
+        createdAt_ = null;
+      } else {
+        createdAt_ = null;
+        createdAtBuilder_ = null;
+      }
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
       userId_ = "";
 
-      if (cloudRegionBuilder_ == null) {
-        cloudRegion_ = null;
+      if (computeClusterBuilder_ == null) {
+        computeCluster_ = null;
       } else {
-        cloudRegion_ = null;
-        cloudRegionBuilder_ = null;
+        computeCluster_ = null;
+        computeClusterBuilder_ = null;
       }
-      capacityTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      instanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      if (nodeCapacityTypeBuilder_ == null) {
+        nodeCapacityType_ = null;
+      } else {
+        nodeCapacityType_ = null;
+        nodeCapacityTypeBuilder_ = null;
+      }
+      if (instanceTypesBuilder_ == null) {
+        instanceTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        instanceTypesBuilder_.clear();
+      }
       minInstances_ = 0;
 
       maxInstances_ = 0;
 
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -902,24 +1076,49 @@ private static final long serialVersionUID = 0L;
       com.clarifai.grpc.api.Nodepool result = new com.clarifai.grpc.api.Nodepool(this);
       int from_bitField0_ = bitField0_;
       result.id_ = id_;
-      result.userId_ = userId_;
-      if (cloudRegionBuilder_ == null) {
-        result.cloudRegion_ = cloudRegion_;
+      result.description_ = description_;
+      if (createdAtBuilder_ == null) {
+        result.createdAt_ = createdAt_;
       } else {
-        result.cloudRegion_ = cloudRegionBuilder_.build();
+        result.createdAt_ = createdAtBuilder_.build();
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        capacityTypes_ = java.util.Collections.unmodifiableList(capacityTypes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      if (modifiedAtBuilder_ == null) {
+        result.modifiedAt_ = modifiedAt_;
+      } else {
+        result.modifiedAt_ = modifiedAtBuilder_.build();
       }
-      result.capacityTypes_ = capacityTypes_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        instanceTypes_ = instanceTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+      result.userId_ = userId_;
+      if (computeClusterBuilder_ == null) {
+        result.computeCluster_ = computeCluster_;
+      } else {
+        result.computeCluster_ = computeClusterBuilder_.build();
       }
-      result.instanceTypes_ = instanceTypes_;
+      if (nodeCapacityTypeBuilder_ == null) {
+        result.nodeCapacityType_ = nodeCapacityType_;
+      } else {
+        result.nodeCapacityType_ = nodeCapacityTypeBuilder_.build();
+      }
+      if (instanceTypesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          instanceTypes_ = java.util.Collections.unmodifiableList(instanceTypes_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.instanceTypes_ = instanceTypes_;
+      } else {
+        result.instanceTypes_ = instanceTypesBuilder_.build();
+      }
       result.minInstances_ = minInstances_;
       result.maxInstances_ = maxInstances_;
+      if (visibilityBuilder_ == null) {
+        result.visibility_ = visibility_;
+      } else {
+        result.visibility_ = visibilityBuilder_.build();
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -972,38 +1171,63 @@ private static final long serialVersionUID = 0L;
         id_ = other.id_;
         onChanged();
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (other.hasCreatedAt()) {
+        mergeCreatedAt(other.getCreatedAt());
+      }
+      if (other.hasModifiedAt()) {
+        mergeModifiedAt(other.getModifiedAt());
+      }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
       }
-      if (other.hasCloudRegion()) {
-        mergeCloudRegion(other.getCloudRegion());
+      if (other.hasComputeCluster()) {
+        mergeComputeCluster(other.getComputeCluster());
       }
-      if (!other.capacityTypes_.isEmpty()) {
-        if (capacityTypes_.isEmpty()) {
-          capacityTypes_ = other.capacityTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          ensureCapacityTypesIsMutable();
-          capacityTypes_.addAll(other.capacityTypes_);
-        }
-        onChanged();
+      if (other.hasNodeCapacityType()) {
+        mergeNodeCapacityType(other.getNodeCapacityType());
       }
-      if (!other.instanceTypes_.isEmpty()) {
-        if (instanceTypes_.isEmpty()) {
-          instanceTypes_ = other.instanceTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          ensureInstanceTypesIsMutable();
-          instanceTypes_.addAll(other.instanceTypes_);
+      if (instanceTypesBuilder_ == null) {
+        if (!other.instanceTypes_.isEmpty()) {
+          if (instanceTypes_.isEmpty()) {
+            instanceTypes_ = other.instanceTypes_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureInstanceTypesIsMutable();
+            instanceTypes_.addAll(other.instanceTypes_);
+          }
+          onChanged();
         }
-        onChanged();
+      } else {
+        if (!other.instanceTypes_.isEmpty()) {
+          if (instanceTypesBuilder_.isEmpty()) {
+            instanceTypesBuilder_.dispose();
+            instanceTypesBuilder_ = null;
+            instanceTypes_ = other.instanceTypes_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            instanceTypesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getInstanceTypesFieldBuilder() : null;
+          } else {
+            instanceTypesBuilder_.addAllMessages(other.instanceTypes_);
+          }
+        }
       }
       if (other.getMinInstances() != 0) {
         setMinInstances(other.getMinInstances());
       }
       if (other.getMaxInstances() != 0) {
         setMaxInstances(other.getMaxInstances());
+      }
+      if (other.hasVisibility()) {
+        mergeVisibility(other.getVisibility());
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1131,13 +1355,419 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * Short description about the nodepool.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description about the nodepool.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description about the nodepool.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description about the nodepool.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description about the nodepool.
+     * </pre>
+     *
+     * <code>string description = 2;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp createdAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
+     */
+    public boolean hasCreatedAt() {
+      return createdAtBuilder_ != null || createdAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return The createdAt.
+     */
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      } else {
+        return createdAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createdAt_ = value;
+        onChanged();
+      } else {
+        createdAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public Builder setCreatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        createdAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (createdAt_ != null) {
+          createdAt_ =
+            com.google.protobuf.Timestamp.newBuilder(createdAt_).mergeFrom(value).buildPartial();
+        } else {
+          createdAt_ = value;
+        }
+        onChanged();
+      } else {
+        createdAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public Builder clearCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = null;
+        onChanged();
+      } else {
+        createdAt_ = null;
+        createdAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+      
+      onChanged();
+      return getCreatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      if (createdAtBuilder_ != null) {
+        return createdAtBuilder_.getMessageOrBuilder();
+      } else {
+        return createdAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the nodepool was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreatedAtFieldBuilder() {
+      if (createdAtBuilder_ == null) {
+        createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreatedAt(),
+                getParentForChildren(),
+                isClean());
+        createdAt_ = null;
+      }
+      return createdAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp modifiedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    public boolean hasModifiedAt() {
+      return modifiedAtBuilder_ != null || modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     * @return The modifiedAt.
+     */
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      } else {
+        return modifiedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifiedAt_ = value;
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    public Builder setModifiedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (modifiedAt_ != null) {
+          modifiedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(modifiedAt_).mergeFrom(value).buildPartial();
+        } else {
+          modifiedAt_ = value;
+        }
+        onChanged();
+      } else {
+        modifiedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    public Builder clearModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+        onChanged();
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+      
+      onChanged();
+      return getModifiedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      if (modifiedAtBuilder_ != null) {
+        return modifiedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return modifiedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the nodepool was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getModifiedAtFieldBuilder() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getModifiedAt(),
+                getParentForChildren(),
+                isClean());
+        modifiedAt_ = null;
+      }
+      return modifiedAtBuilder_;
+    }
+
     private java.lang.Object userId_ = "";
     /**
      * <pre>
      * The user/org that this nodepool belongs to.
      * </pre>
      *
-     * <code>string user_id = 2;</code>
+     * <code>string user_id = 5;</code>
      * @return The userId.
      */
     public java.lang.String getUserId() {
@@ -1157,7 +1787,7 @@ private static final long serialVersionUID = 0L;
      * The user/org that this nodepool belongs to.
      * </pre>
      *
-     * <code>string user_id = 2;</code>
+     * <code>string user_id = 5;</code>
      * @return The bytes for userId.
      */
     public com.google.protobuf.ByteString
@@ -1178,7 +1808,7 @@ private static final long serialVersionUID = 0L;
      * The user/org that this nodepool belongs to.
      * </pre>
      *
-     * <code>string user_id = 2;</code>
+     * <code>string user_id = 5;</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -1197,7 +1827,7 @@ private static final long serialVersionUID = 0L;
      * The user/org that this nodepool belongs to.
      * </pre>
      *
-     * <code>string user_id = 2;</code>
+     * <code>string user_id = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -1211,7 +1841,7 @@ private static final long serialVersionUID = 0L;
      * The user/org that this nodepool belongs to.
      * </pre>
      *
-     * <code>string user_id = 2;</code>
+     * <code>string user_id = 5;</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
@@ -1227,469 +1857,524 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.clarifai.grpc.api.CloudRegion cloudRegion_;
+    private com.clarifai.grpc.api.ComputeCluster computeCluster_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.CloudRegion, com.clarifai.grpc.api.CloudRegion.Builder, com.clarifai.grpc.api.CloudRegionOrBuilder> cloudRegionBuilder_;
+        com.clarifai.grpc.api.ComputeCluster, com.clarifai.grpc.api.ComputeCluster.Builder, com.clarifai.grpc.api.ComputeClusterOrBuilder> computeClusterBuilder_;
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-     * @return Whether the cloudRegion field is set.
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+     * @return Whether the computeCluster field is set.
      */
-    public boolean hasCloudRegion() {
-      return cloudRegionBuilder_ != null || cloudRegion_ != null;
+    public boolean hasComputeCluster() {
+      return computeClusterBuilder_ != null || computeCluster_ != null;
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-     * @return The cloudRegion.
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+     * @return The computeCluster.
      */
-    public com.clarifai.grpc.api.CloudRegion getCloudRegion() {
-      if (cloudRegionBuilder_ == null) {
-        return cloudRegion_ == null ? com.clarifai.grpc.api.CloudRegion.getDefaultInstance() : cloudRegion_;
+    public com.clarifai.grpc.api.ComputeCluster getComputeCluster() {
+      if (computeClusterBuilder_ == null) {
+        return computeCluster_ == null ? com.clarifai.grpc.api.ComputeCluster.getDefaultInstance() : computeCluster_;
       } else {
-        return cloudRegionBuilder_.getMessage();
+        return computeClusterBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    public Builder setCloudRegion(com.clarifai.grpc.api.CloudRegion value) {
-      if (cloudRegionBuilder_ == null) {
+    public Builder setComputeCluster(com.clarifai.grpc.api.ComputeCluster value) {
+      if (computeClusterBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        cloudRegion_ = value;
+        computeCluster_ = value;
         onChanged();
       } else {
-        cloudRegionBuilder_.setMessage(value);
+        computeClusterBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    public Builder setCloudRegion(
-        com.clarifai.grpc.api.CloudRegion.Builder builderForValue) {
-      if (cloudRegionBuilder_ == null) {
-        cloudRegion_ = builderForValue.build();
+    public Builder setComputeCluster(
+        com.clarifai.grpc.api.ComputeCluster.Builder builderForValue) {
+      if (computeClusterBuilder_ == null) {
+        computeCluster_ = builderForValue.build();
         onChanged();
       } else {
-        cloudRegionBuilder_.setMessage(builderForValue.build());
+        computeClusterBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    public Builder mergeCloudRegion(com.clarifai.grpc.api.CloudRegion value) {
-      if (cloudRegionBuilder_ == null) {
-        if (cloudRegion_ != null) {
-          cloudRegion_ =
-            com.clarifai.grpc.api.CloudRegion.newBuilder(cloudRegion_).mergeFrom(value).buildPartial();
+    public Builder mergeComputeCluster(com.clarifai.grpc.api.ComputeCluster value) {
+      if (computeClusterBuilder_ == null) {
+        if (computeCluster_ != null) {
+          computeCluster_ =
+            com.clarifai.grpc.api.ComputeCluster.newBuilder(computeCluster_).mergeFrom(value).buildPartial();
         } else {
-          cloudRegion_ = value;
+          computeCluster_ = value;
         }
         onChanged();
       } else {
-        cloudRegionBuilder_.mergeFrom(value);
+        computeClusterBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    public Builder clearCloudRegion() {
-      if (cloudRegionBuilder_ == null) {
-        cloudRegion_ = null;
+    public Builder clearComputeCluster() {
+      if (computeClusterBuilder_ == null) {
+        computeCluster_ = null;
         onChanged();
       } else {
-        cloudRegion_ = null;
-        cloudRegionBuilder_ = null;
+        computeCluster_ = null;
+        computeClusterBuilder_ = null;
       }
 
       return this;
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    public com.clarifai.grpc.api.CloudRegion.Builder getCloudRegionBuilder() {
+    public com.clarifai.grpc.api.ComputeCluster.Builder getComputeClusterBuilder() {
       
       onChanged();
-      return getCloudRegionFieldBuilder().getBuilder();
+      return getComputeClusterFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
-    public com.clarifai.grpc.api.CloudRegionOrBuilder getCloudRegionOrBuilder() {
-      if (cloudRegionBuilder_ != null) {
-        return cloudRegionBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.ComputeClusterOrBuilder getComputeClusterOrBuilder() {
+      if (computeClusterBuilder_ != null) {
+        return computeClusterBuilder_.getMessageOrBuilder();
       } else {
-        return cloudRegion_ == null ?
-            com.clarifai.grpc.api.CloudRegion.getDefaultInstance() : cloudRegion_;
+        return computeCluster_ == null ?
+            com.clarifai.grpc.api.ComputeCluster.getDefaultInstance() : computeCluster_;
       }
     }
     /**
      * <pre>
-     * Which cloud region this nodepool is within.
+     * Which cluster this nodepool is within.
      * </pre>
      *
-     * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+     * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.CloudRegion, com.clarifai.grpc.api.CloudRegion.Builder, com.clarifai.grpc.api.CloudRegionOrBuilder> 
-        getCloudRegionFieldBuilder() {
-      if (cloudRegionBuilder_ == null) {
-        cloudRegionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.CloudRegion, com.clarifai.grpc.api.CloudRegion.Builder, com.clarifai.grpc.api.CloudRegionOrBuilder>(
-                getCloudRegion(),
+        com.clarifai.grpc.api.ComputeCluster, com.clarifai.grpc.api.ComputeCluster.Builder, com.clarifai.grpc.api.ComputeClusterOrBuilder> 
+        getComputeClusterFieldBuilder() {
+      if (computeClusterBuilder_ == null) {
+        computeClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ComputeCluster, com.clarifai.grpc.api.ComputeCluster.Builder, com.clarifai.grpc.api.ComputeClusterOrBuilder>(
+                getComputeCluster(),
                 getParentForChildren(),
                 isClean());
-        cloudRegion_ = null;
+        computeCluster_ = null;
       }
-      return cloudRegionBuilder_;
+      return computeClusterBuilder_;
     }
 
-    private java.util.List<java.lang.Integer> capacityTypes_ =
+    private com.clarifai.grpc.api.NodeCapacityType nodeCapacityType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.NodeCapacityType, com.clarifai.grpc.api.NodeCapacityType.Builder, com.clarifai.grpc.api.NodeCapacityTypeOrBuilder> nodeCapacityTypeBuilder_;
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     * @return Whether the nodeCapacityType field is set.
+     */
+    public boolean hasNodeCapacityType() {
+      return nodeCapacityTypeBuilder_ != null || nodeCapacityType_ != null;
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     * @return The nodeCapacityType.
+     */
+    public com.clarifai.grpc.api.NodeCapacityType getNodeCapacityType() {
+      if (nodeCapacityTypeBuilder_ == null) {
+        return nodeCapacityType_ == null ? com.clarifai.grpc.api.NodeCapacityType.getDefaultInstance() : nodeCapacityType_;
+      } else {
+        return nodeCapacityTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    public Builder setNodeCapacityType(com.clarifai.grpc.api.NodeCapacityType value) {
+      if (nodeCapacityTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeCapacityType_ = value;
+        onChanged();
+      } else {
+        nodeCapacityTypeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    public Builder setNodeCapacityType(
+        com.clarifai.grpc.api.NodeCapacityType.Builder builderForValue) {
+      if (nodeCapacityTypeBuilder_ == null) {
+        nodeCapacityType_ = builderForValue.build();
+        onChanged();
+      } else {
+        nodeCapacityTypeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    public Builder mergeNodeCapacityType(com.clarifai.grpc.api.NodeCapacityType value) {
+      if (nodeCapacityTypeBuilder_ == null) {
+        if (nodeCapacityType_ != null) {
+          nodeCapacityType_ =
+            com.clarifai.grpc.api.NodeCapacityType.newBuilder(nodeCapacityType_).mergeFrom(value).buildPartial();
+        } else {
+          nodeCapacityType_ = value;
+        }
+        onChanged();
+      } else {
+        nodeCapacityTypeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    public Builder clearNodeCapacityType() {
+      if (nodeCapacityTypeBuilder_ == null) {
+        nodeCapacityType_ = null;
+        onChanged();
+      } else {
+        nodeCapacityType_ = null;
+        nodeCapacityTypeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    public com.clarifai.grpc.api.NodeCapacityType.Builder getNodeCapacityTypeBuilder() {
+      
+      onChanged();
+      return getNodeCapacityTypeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    public com.clarifai.grpc.api.NodeCapacityTypeOrBuilder getNodeCapacityTypeOrBuilder() {
+      if (nodeCapacityTypeBuilder_ != null) {
+        return nodeCapacityTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeCapacityType_ == null ?
+            com.clarifai.grpc.api.NodeCapacityType.getDefaultInstance() : nodeCapacityType_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.NodeCapacityType, com.clarifai.grpc.api.NodeCapacityType.Builder, com.clarifai.grpc.api.NodeCapacityTypeOrBuilder> 
+        getNodeCapacityTypeFieldBuilder() {
+      if (nodeCapacityTypeBuilder_ == null) {
+        nodeCapacityTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.NodeCapacityType, com.clarifai.grpc.api.NodeCapacityType.Builder, com.clarifai.grpc.api.NodeCapacityTypeOrBuilder>(
+                getNodeCapacityType(),
+                getParentForChildren(),
+                isClean());
+        nodeCapacityType_ = null;
+      }
+      return nodeCapacityTypeBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.InstanceType> instanceTypes_ =
       java.util.Collections.emptyList();
-    private void ensureCapacityTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        capacityTypes_ = new java.util.ArrayList<java.lang.Integer>(capacityTypes_);
-        bitField0_ |= 0x00000001;
-      }
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @return A list containing the capacityTypes.
-     */
-    public java.util.List<com.clarifai.grpc.api.Nodepool.CapacityType> getCapacityTypesList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.clarifai.grpc.api.Nodepool.CapacityType>(capacityTypes_, capacityTypes_converter_);
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @return The count of capacityTypes.
-     */
-    public int getCapacityTypesCount() {
-      return capacityTypes_.size();
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param index The index of the element to return.
-     * @return The capacityTypes at the given index.
-     */
-    public com.clarifai.grpc.api.Nodepool.CapacityType getCapacityTypes(int index) {
-      return capacityTypes_converter_.convert(capacityTypes_.get(index));
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param index The index to set the value at.
-     * @param value The capacityTypes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCapacityTypes(
-        int index, com.clarifai.grpc.api.Nodepool.CapacityType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureCapacityTypesIsMutable();
-      capacityTypes_.set(index, value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param value The capacityTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addCapacityTypes(com.clarifai.grpc.api.Nodepool.CapacityType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureCapacityTypesIsMutable();
-      capacityTypes_.add(value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param values The capacityTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllCapacityTypes(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.Nodepool.CapacityType> values) {
-      ensureCapacityTypesIsMutable();
-      for (com.clarifai.grpc.api.Nodepool.CapacityType value : values) {
-        capacityTypes_.add(value.getNumber());
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCapacityTypes() {
-      capacityTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @return A list containing the enum numeric values on the wire for capacityTypes.
-     */
-    public java.util.List<java.lang.Integer>
-    getCapacityTypesValueList() {
-      return java.util.Collections.unmodifiableList(capacityTypes_);
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of capacityTypes at the given index.
-     */
-    public int getCapacityTypesValue(int index) {
-      return capacityTypes_.get(index);
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param index The index to set the value at.
-     * @param value The enum numeric value on the wire for capacityTypes to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCapacityTypesValue(
-        int index, int value) {
-      ensureCapacityTypesIsMutable();
-      capacityTypes_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param value The enum numeric value on the wire for capacityTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addCapacityTypesValue(int value) {
-      ensureCapacityTypesIsMutable();
-      capacityTypes_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-     * @param values The enum numeric values on the wire for capacityTypes to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllCapacityTypesValue(
-        java.lang.Iterable<java.lang.Integer> values) {
-      ensureCapacityTypesIsMutable();
-      for (int value : values) {
-        capacityTypes_.add(value);
-      }
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList instanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInstanceTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        instanceTypes_ = new com.google.protobuf.LazyStringArrayList(instanceTypes_);
-        bitField0_ |= 0x00000002;
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        instanceTypes_ = new java.util.ArrayList<com.clarifai.grpc.api.InstanceType>(instanceTypes_);
+        bitField0_ |= 0x00000001;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.InstanceType, com.clarifai.grpc.api.InstanceType.Builder, com.clarifai.grpc.api.InstanceTypeOrBuilder> instanceTypesBuilder_;
+
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @return A list containing the instanceTypes.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getInstanceTypesList() {
-      return instanceTypes_.getUnmodifiableView();
+    public java.util.List<com.clarifai.grpc.api.InstanceType> getInstanceTypesList() {
+      if (instanceTypesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(instanceTypes_);
+      } else {
+        return instanceTypesBuilder_.getMessageList();
+      }
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @return The count of instanceTypes.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
     public int getInstanceTypesCount() {
-      return instanceTypes_.size();
+      if (instanceTypesBuilder_ == null) {
+        return instanceTypes_.size();
+      } else {
+        return instanceTypesBuilder_.getCount();
+      }
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @param index The index of the element to return.
-     * @return The instanceTypes at the given index.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
-    public java.lang.String getInstanceTypes(int index) {
-      return instanceTypes_.get(index);
+    public com.clarifai.grpc.api.InstanceType getInstanceTypes(int index) {
+      if (instanceTypesBuilder_ == null) {
+        return instanceTypes_.get(index);
+      } else {
+        return instanceTypesBuilder_.getMessage(index);
+      }
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the instanceTypes at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getInstanceTypesBytes(int index) {
-      return instanceTypes_.getByteString(index);
-    }
-    /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @param index The index to set the value at.
-     * @param value The instanceTypes to set.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
     public Builder setInstanceTypes(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceTypesIsMutable();
-      instanceTypes_.set(index, value);
-      onChanged();
+        int index, com.clarifai.grpc.api.InstanceType value) {
+      if (instanceTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.set(index, value);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @param value The instanceTypes to add.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public Builder setInstanceTypes(
+        int index, com.clarifai.grpc.api.InstanceType.Builder builderForValue) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        instanceTypesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public Builder addInstanceTypes(com.clarifai.grpc.api.InstanceType value) {
+      if (instanceTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(value);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
     public Builder addInstanceTypes(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceTypesIsMutable();
-      instanceTypes_.add(value);
-      onChanged();
+        int index, com.clarifai.grpc.api.InstanceType value) {
+      if (instanceTypesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(index, value);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(index, value);
+      }
       return this;
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @param values The instanceTypes to add.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public Builder addInstanceTypes(
+        com.clarifai.grpc.api.InstanceType.Builder builderForValue) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public Builder addInstanceTypes(
+        int index, com.clarifai.grpc.api.InstanceType.Builder builderForValue) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
     public Builder addAllInstanceTypes(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureInstanceTypesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, instanceTypes_);
-      onChanged();
+        java.lang.Iterable<? extends com.clarifai.grpc.api.InstanceType> values) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, instanceTypes_);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.addAllMessages(values);
+      }
       return this;
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
     public Builder clearInstanceTypes() {
-      instanceTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
+      if (instanceTypesBuilder_ == null) {
+        instanceTypes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.clear();
+      }
       return this;
     }
     /**
-     * <pre>
-     *&#47;///////////////////////////////////
-     * The instance types that will be available in this pool of nodes.
-     * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-     * </pre>
-     *
-     * <code>repeated string instance_types = 8;</code>
-     * @param value The bytes of the instanceTypes to add.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
      */
-    public Builder addInstanceTypesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureInstanceTypesIsMutable();
-      instanceTypes_.add(value);
-      onChanged();
+    public Builder removeInstanceTypes(int index) {
+      if (instanceTypesBuilder_ == null) {
+        ensureInstanceTypesIsMutable();
+        instanceTypes_.remove(index);
+        onChanged();
+      } else {
+        instanceTypesBuilder_.remove(index);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public com.clarifai.grpc.api.InstanceType.Builder getInstanceTypesBuilder(
+        int index) {
+      return getInstanceTypesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public com.clarifai.grpc.api.InstanceTypeOrBuilder getInstanceTypesOrBuilder(
+        int index) {
+      if (instanceTypesBuilder_ == null) {
+        return instanceTypes_.get(index);  } else {
+        return instanceTypesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.InstanceTypeOrBuilder> 
+         getInstanceTypesOrBuilderList() {
+      if (instanceTypesBuilder_ != null) {
+        return instanceTypesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(instanceTypes_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public com.clarifai.grpc.api.InstanceType.Builder addInstanceTypesBuilder() {
+      return getInstanceTypesFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.InstanceType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public com.clarifai.grpc.api.InstanceType.Builder addInstanceTypesBuilder(
+        int index) {
+      return getInstanceTypesFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.InstanceType.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.InstanceType.Builder> 
+         getInstanceTypesBuilderList() {
+      return getInstanceTypesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.InstanceType, com.clarifai.grpc.api.InstanceType.Builder, com.clarifai.grpc.api.InstanceTypeOrBuilder> 
+        getInstanceTypesFieldBuilder() {
+      if (instanceTypesBuilder_ == null) {
+        instanceTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.InstanceType, com.clarifai.grpc.api.InstanceType.Builder, com.clarifai.grpc.api.InstanceTypeOrBuilder>(
+                instanceTypes_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        instanceTypes_ = null;
+      }
+      return instanceTypesBuilder_;
     }
 
     private int minInstances_ ;
     /**
      * <pre>
-     * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      * amount. A nodepool needs a minimum of 1 instance.
      * </pre>
      *
@@ -1702,7 +2387,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      * amount. A nodepool needs a minimum of 1 instance.
      * </pre>
      *
@@ -1718,7 +2403,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+     * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
      * amount. A nodepool needs a minimum of 1 instance.
      * </pre>
      *
@@ -1776,6 +2461,343 @@ private static final long serialVersionUID = 0L;
       maxInstances_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.clarifai.grpc.api.Visibility visibility_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> visibilityBuilder_;
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     * @return Whether the visibility field is set.
+     */
+    public boolean hasVisibility() {
+      return visibilityBuilder_ != null || visibility_ != null;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     * @return The visibility.
+     */
+    public com.clarifai.grpc.api.Visibility getVisibility() {
+      if (visibilityBuilder_ == null) {
+        return visibility_ == null ? com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      } else {
+        return visibilityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    public Builder setVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visibility_ = value;
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    public Builder setVisibility(
+        com.clarifai.grpc.api.Visibility.Builder builderForValue) {
+      if (visibilityBuilder_ == null) {
+        visibility_ = builderForValue.build();
+        onChanged();
+      } else {
+        visibilityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    public Builder mergeVisibility(com.clarifai.grpc.api.Visibility value) {
+      if (visibilityBuilder_ == null) {
+        if (visibility_ != null) {
+          visibility_ =
+            com.clarifai.grpc.api.Visibility.newBuilder(visibility_).mergeFrom(value).buildPartial();
+        } else {
+          visibility_ = value;
+        }
+        onChanged();
+      } else {
+        visibilityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    public Builder clearVisibility() {
+      if (visibilityBuilder_ == null) {
+        visibility_ = null;
+        onChanged();
+      } else {
+        visibility_ = null;
+        visibilityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    public com.clarifai.grpc.api.Visibility.Builder getVisibilityBuilder() {
+      
+      onChanged();
+      return getVisibilityFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    public com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder() {
+      if (visibilityBuilder_ != null) {
+        return visibilityBuilder_.getMessageOrBuilder();
+      } else {
+        return visibility_ == null ?
+            com.clarifai.grpc.api.Visibility.getDefaultInstance() : visibility_;
+      }
+    }
+    /**
+     * <pre>
+     * The visibility field represents whether this message is privately/publicly visible.
+     * To be visible to the public the App that contains it AND the User that contains the App must
+     * also be publicly visible.
+     * </pre>
+     *
+     * <code>.clarifai.api.Visibility visibility = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder> 
+        getVisibilityFieldBuilder() {
+      if (visibilityBuilder_ == null) {
+        visibilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Visibility, com.clarifai.grpc.api.Visibility.Builder, com.clarifai.grpc.api.VisibilityOrBuilder>(
+                getVisibility(),
+                getParentForChildren(),
+                isClean());
+        visibility_ = null;
+      }
+      return visibilityBuilder_;
+    }
+
+    private com.google.protobuf.Struct metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataBuilder_;
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     * @return The metadata.
+     */
+    public com.google.protobuf.Struct getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    public Builder setMetadata(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Struct value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+            com.google.protobuf.Struct.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    public com.google.protobuf.Struct.Builder getMetadataBuilder() {
+      
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     * <pre>
+     * To handle arbitrary json metadata:
+     * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct metadata = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getMetadata(),
+                getParentForChildren(),
+                isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

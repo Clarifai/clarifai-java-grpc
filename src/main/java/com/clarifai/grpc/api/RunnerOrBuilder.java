@@ -9,7 +9,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface RunnerOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -31,7 +31,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -40,7 +40,7 @@ public interface RunnerOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -51,7 +51,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -60,7 +60,7 @@ public interface RunnerOrBuilder extends
   boolean hasCreatedAt();
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -69,7 +69,7 @@ public interface RunnerOrBuilder extends
   com.google.protobuf.Timestamp getCreatedAt();
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -78,7 +78,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -87,7 +87,7 @@ public interface RunnerOrBuilder extends
   boolean hasModifiedAt();
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -96,7 +96,7 @@ public interface RunnerOrBuilder extends
   com.google.protobuf.Timestamp getModifiedAt();
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -163,7 +163,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -175,7 +175,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -186,7 +186,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -198,7 +198,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */

@@ -236,6 +236,30 @@ public enum StatusCode
   MODEL_TRAINING_FAILED(21106),
   /**
    * <pre>
+   * For new V3 DockerInternalType models which are built images
+   * </pre>
+   *
+   * <code>MODEL_BUILDING = 21107;</code>
+   */
+  MODEL_BUILDING(21107),
+  /**
+   * <pre>
+   * Failed to build image for model.
+   * </pre>
+   *
+   * <code>MODEL_BUILDING_FAILED = 21108;</code>
+   */
+  MODEL_BUILDING_FAILED(21108),
+  /**
+   * <pre>
+   * Failed to build image for model.
+   * </pre>
+   *
+   * <code>MODEL_BUILD_UNEXPECTED_ERROR = 21109;</code>
+   */
+  MODEL_BUILD_UNEXPECTED_ERROR(21109),
+  /**
+   * <pre>
    * Custom model training had no data.  FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
@@ -845,6 +869,22 @@ public enum StatusCode
    * <code>RUNNER_PROCESSING_FAILED = 25608;</code>
    */
   RUNNER_PROCESSING_FAILED(25608),
+  /**
+   * <pre>
+   * Nodepool related codes 257xx
+   * </pre>
+   *
+   * <code>NODEPOOL_DOES_NOT_EXIST = 25700;</code>
+   */
+  NODEPOOL_DOES_NOT_EXIST(25700),
+  /**
+   * <code>NODEPOOL_INVALID_ARGUMENT = 25701;</code>
+   */
+  NODEPOOL_INVALID_ARGUMENT(25701),
+  /**
+   * <code>NODEPOOL_INVALID_REQUEST = 25702;</code>
+   */
+  NODEPOOL_INVALID_REQUEST(25702),
   /**
    * <pre>
    * Input:Image related 30xxx
@@ -2187,6 +2227,30 @@ public enum StatusCode
   public static final int MODEL_TRAINING_FAILED_VALUE = 21106;
   /**
    * <pre>
+   * For new V3 DockerInternalType models which are built images
+   * </pre>
+   *
+   * <code>MODEL_BUILDING = 21107;</code>
+   */
+  public static final int MODEL_BUILDING_VALUE = 21107;
+  /**
+   * <pre>
+   * Failed to build image for model.
+   * </pre>
+   *
+   * <code>MODEL_BUILDING_FAILED = 21108;</code>
+   */
+  public static final int MODEL_BUILDING_FAILED_VALUE = 21108;
+  /**
+   * <pre>
+   * Failed to build image for model.
+   * </pre>
+   *
+   * <code>MODEL_BUILD_UNEXPECTED_ERROR = 21109;</code>
+   */
+  public static final int MODEL_BUILD_UNEXPECTED_ERROR_VALUE = 21109;
+  /**
+   * <pre>
    * Custom model training had no data.  FIXME(yang): deprecate this. Use the 21106 + errStatusMsg
    * </pre>
    *
@@ -2793,6 +2857,22 @@ public enum StatusCode
    * <code>RUNNER_PROCESSING_FAILED = 25608;</code>
    */
   public static final int RUNNER_PROCESSING_FAILED_VALUE = 25608;
+  /**
+   * <pre>
+   * Nodepool related codes 257xx
+   * </pre>
+   *
+   * <code>NODEPOOL_DOES_NOT_EXIST = 25700;</code>
+   */
+  public static final int NODEPOOL_DOES_NOT_EXIST_VALUE = 25700;
+  /**
+   * <code>NODEPOOL_INVALID_ARGUMENT = 25701;</code>
+   */
+  public static final int NODEPOOL_INVALID_ARGUMENT_VALUE = 25701;
+  /**
+   * <code>NODEPOOL_INVALID_REQUEST = 25702;</code>
+   */
+  public static final int NODEPOOL_INVALID_REQUEST_VALUE = 25702;
   /**
    * <pre>
    * Input:Image related 30xxx
@@ -3961,6 +4041,9 @@ public enum StatusCode
       case 21104: return MODEL_UPLOADING;
       case 21105: return MODEL_UPLOADING_FAILED;
       case 21106: return MODEL_TRAINING_FAILED;
+      case 21107: return MODEL_BUILDING;
+      case 21108: return MODEL_BUILDING_FAILED;
+      case 21109: return MODEL_BUILD_UNEXPECTED_ERROR;
       case 21110: return MODEL_TRAINING_NO_DATA;
       case 21111: return MODEL_TRAINING_NO_POSITIVES;
       case 21112: return MODEL_TRAINING_ONE_VS_N_SINGLE_CLASS;
@@ -4075,6 +4158,9 @@ public enum StatusCode
       case 25606: return RUNNER_STREAM_END;
       case 25607: return RUNNER_ITEM_CANCELLED;
       case 25608: return RUNNER_PROCESSING_FAILED;
+      case 25700: return NODEPOOL_DOES_NOT_EXIST;
+      case 25701: return NODEPOOL_INVALID_ARGUMENT;
+      case 25702: return NODEPOOL_INVALID_REQUEST;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;

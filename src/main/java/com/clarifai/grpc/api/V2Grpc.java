@@ -6897,6 +6897,161 @@ public final class V2Grpc {
     return getPostModelVersionsTrainingTimeEstimateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetNodepoolRequest,
+      com.clarifai.grpc.api.SingleNodepoolResponse> getGetNodepoolMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNodepool",
+      requestType = com.clarifai.grpc.api.GetNodepoolRequest.class,
+      responseType = com.clarifai.grpc.api.SingleNodepoolResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetNodepoolRequest,
+      com.clarifai.grpc.api.SingleNodepoolResponse> getGetNodepoolMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetNodepoolRequest, com.clarifai.grpc.api.SingleNodepoolResponse> getGetNodepoolMethod;
+    if ((getGetNodepoolMethod = V2Grpc.getGetNodepoolMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetNodepoolMethod = V2Grpc.getGetNodepoolMethod) == null) {
+          V2Grpc.getGetNodepoolMethod = getGetNodepoolMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetNodepoolRequest, com.clarifai.grpc.api.SingleNodepoolResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNodepool"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetNodepoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleNodepoolResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetNodepool"))
+              .build();
+        }
+      }
+    }
+    return getGetNodepoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNodepoolsRequest,
+      com.clarifai.grpc.api.MultiNodepoolResponse> getListNodepoolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNodepools",
+      requestType = com.clarifai.grpc.api.ListNodepoolsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiNodepoolResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNodepoolsRequest,
+      com.clarifai.grpc.api.MultiNodepoolResponse> getListNodepoolsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListNodepoolsRequest, com.clarifai.grpc.api.MultiNodepoolResponse> getListNodepoolsMethod;
+    if ((getListNodepoolsMethod = V2Grpc.getListNodepoolsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListNodepoolsMethod = V2Grpc.getListNodepoolsMethod) == null) {
+          V2Grpc.getListNodepoolsMethod = getListNodepoolsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListNodepoolsRequest, com.clarifai.grpc.api.MultiNodepoolResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNodepools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListNodepoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiNodepoolResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListNodepools"))
+              .build();
+        }
+      }
+    }
+    return getListNodepoolsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostNodepoolsRequest,
+      com.clarifai.grpc.api.MultiNodepoolResponse> getPostNodepoolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostNodepools",
+      requestType = com.clarifai.grpc.api.PostNodepoolsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiNodepoolResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostNodepoolsRequest,
+      com.clarifai.grpc.api.MultiNodepoolResponse> getPostNodepoolsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostNodepoolsRequest, com.clarifai.grpc.api.MultiNodepoolResponse> getPostNodepoolsMethod;
+    if ((getPostNodepoolsMethod = V2Grpc.getPostNodepoolsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostNodepoolsMethod = V2Grpc.getPostNodepoolsMethod) == null) {
+          V2Grpc.getPostNodepoolsMethod = getPostNodepoolsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostNodepoolsRequest, com.clarifai.grpc.api.MultiNodepoolResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostNodepools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostNodepoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiNodepoolResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostNodepools"))
+              .build();
+        }
+      }
+    }
+    return getPostNodepoolsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchNodepoolsRequest,
+      com.clarifai.grpc.api.MultiNodepoolResponse> getPatchNodepoolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchNodepools",
+      requestType = com.clarifai.grpc.api.PatchNodepoolsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiNodepoolResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchNodepoolsRequest,
+      com.clarifai.grpc.api.MultiNodepoolResponse> getPatchNodepoolsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchNodepoolsRequest, com.clarifai.grpc.api.MultiNodepoolResponse> getPatchNodepoolsMethod;
+    if ((getPatchNodepoolsMethod = V2Grpc.getPatchNodepoolsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchNodepoolsMethod = V2Grpc.getPatchNodepoolsMethod) == null) {
+          V2Grpc.getPatchNodepoolsMethod = getPatchNodepoolsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchNodepoolsRequest, com.clarifai.grpc.api.MultiNodepoolResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchNodepools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchNodepoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiNodepoolResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchNodepools"))
+              .build();
+        }
+      }
+    }
+    return getPatchNodepoolsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteNodepoolsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteNodepoolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteNodepools",
+      requestType = com.clarifai.grpc.api.DeleteNodepoolsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteNodepoolsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteNodepoolsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteNodepoolsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteNodepoolsMethod;
+    if ((getDeleteNodepoolsMethod = V2Grpc.getDeleteNodepoolsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteNodepoolsMethod = V2Grpc.getDeleteNodepoolsMethod) == null) {
+          V2Grpc.getDeleteNodepoolsMethod = getDeleteNodepoolsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteNodepoolsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteNodepools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteNodepoolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteNodepools"))
+              .build();
+        }
+      }
+    }
+    return getDeleteNodepoolsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -9231,6 +9386,47 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostModelVersionsTrainingTimeEstimateMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Nodepools CRUD
+     * </pre>
+     */
+    public void getNodepool(com.clarifai.grpc.api.GetNodepoolRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleNodepoolResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNodepoolMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listNodepools(com.clarifai.grpc.api.ListNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNodepoolsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postNodepools(com.clarifai.grpc.api.PostNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostNodepoolsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void patchNodepools(com.clarifai.grpc.api.PatchNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchNodepoolsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple nodepools in one request.
+     * </pre>
+     */
+    public void deleteNodepools(com.clarifai.grpc.api.DeleteNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNodepoolsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -10787,6 +10983,41 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest,
                 com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>(
                   this, METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE)))
+          .addMethod(
+            getGetNodepoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetNodepoolRequest,
+                com.clarifai.grpc.api.SingleNodepoolResponse>(
+                  this, METHODID_GET_NODEPOOL)))
+          .addMethod(
+            getListNodepoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListNodepoolsRequest,
+                com.clarifai.grpc.api.MultiNodepoolResponse>(
+                  this, METHODID_LIST_NODEPOOLS)))
+          .addMethod(
+            getPostNodepoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostNodepoolsRequest,
+                com.clarifai.grpc.api.MultiNodepoolResponse>(
+                  this, METHODID_POST_NODEPOOLS)))
+          .addMethod(
+            getPatchNodepoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchNodepoolsRequest,
+                com.clarifai.grpc.api.MultiNodepoolResponse>(
+                  this, METHODID_PATCH_NODEPOOLS)))
+          .addMethod(
+            getDeleteNodepoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteNodepoolsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_NODEPOOLS)))
           .build();
     }
   }
@@ -13312,6 +13543,52 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Nodepools CRUD
+     * </pre>
+     */
+    public void getNodepool(com.clarifai.grpc.api.GetNodepoolRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleNodepoolResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNodepoolMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listNodepools(com.clarifai.grpc.api.ListNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNodepoolsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postNodepools(com.clarifai.grpc.api.PostNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostNodepoolsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void patchNodepools(com.clarifai.grpc.api.PatchNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchNodepoolsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple nodepools in one request.
+     * </pre>
+     */
+    public void deleteNodepools(com.clarifai.grpc.api.DeleteNodepoolsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteNodepoolsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -15574,6 +15851,47 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse postModelVersionsTrainingTimeEstimate(com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Nodepools CRUD
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleNodepoolResponse getNodepool(com.clarifai.grpc.api.GetNodepoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodepoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiNodepoolResponse listNodepools(com.clarifai.grpc.api.ListNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodepoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiNodepoolResponse postNodepools(com.clarifai.grpc.api.PostNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostNodepoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiNodepoolResponse patchNodepools(com.clarifai.grpc.api.PatchNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchNodepoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple nodepools in one request.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteNodepools(com.clarifai.grpc.api.DeleteNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodepoolsMethod(), getCallOptions(), request);
     }
   }
 
@@ -18044,6 +18362,52 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Nodepools CRUD
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleNodepoolResponse> getNodepool(
+        com.clarifai.grpc.api.GetNodepoolRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNodepoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiNodepoolResponse> listNodepools(
+        com.clarifai.grpc.api.ListNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNodepoolsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiNodepoolResponse> postNodepools(
+        com.clarifai.grpc.api.PostNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostNodepoolsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiNodepoolResponse> patchNodepools(
+        com.clarifai.grpc.api.PatchNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchNodepoolsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple nodepools in one request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteNodepools(
+        com.clarifai.grpc.api.DeleteNodepoolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteNodepoolsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -18265,9 +18629,14 @@ public final class V2Grpc {
   private static final int METHODID_LIST_RUNNER_ITEMS = 216;
   private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 217;
   private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 218;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 219;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 220;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 221;
+  private static final int METHODID_GET_NODEPOOL = 219;
+  private static final int METHODID_LIST_NODEPOOLS = 220;
+  private static final int METHODID_POST_NODEPOOLS = 221;
+  private static final int METHODID_PATCH_NODEPOOLS = 222;
+  private static final int METHODID_DELETE_NODEPOOLS = 223;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 224;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 225;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 226;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -19162,6 +19531,26 @@ public final class V2Grpc {
           serviceImpl.postModelVersionsTrainingTimeEstimate((com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>) responseObserver);
           break;
+        case METHODID_GET_NODEPOOL:
+          serviceImpl.getNodepool((com.clarifai.grpc.api.GetNodepoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleNodepoolResponse>) responseObserver);
+          break;
+        case METHODID_LIST_NODEPOOLS:
+          serviceImpl.listNodepools((com.clarifai.grpc.api.ListNodepoolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse>) responseObserver);
+          break;
+        case METHODID_POST_NODEPOOLS:
+          serviceImpl.postNodepools((com.clarifai.grpc.api.PostNodepoolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_NODEPOOLS:
+          serviceImpl.patchNodepools((com.clarifai.grpc.api.PatchNodepoolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiNodepoolResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_NODEPOOLS:
+          serviceImpl.deleteNodepools((com.clarifai.grpc.api.DeleteNodepoolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -19454,6 +19843,11 @@ public final class V2Grpc {
               .addMethod(getPostRunnerItemOutputsMethod())
               .addMethod(getProcessRunnerItemsMethod())
               .addMethod(getPostModelVersionsTrainingTimeEstimateMethod())
+              .addMethod(getGetNodepoolMethod())
+              .addMethod(getListNodepoolsMethod())
+              .addMethod(getPostNodepoolsMethod())
+              .addMethod(getPatchNodepoolsMethod())
+              .addMethod(getDeleteNodepoolsMethod())
               .build();
         }
       }
