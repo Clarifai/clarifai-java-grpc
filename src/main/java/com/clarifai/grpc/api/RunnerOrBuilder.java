@@ -9,7 +9,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface RunnerOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -31,7 +31,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -40,7 +40,7 @@ public interface RunnerOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -51,7 +51,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -60,7 +60,7 @@ public interface RunnerOrBuilder extends
   boolean hasCreatedAt();
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -69,7 +69,7 @@ public interface RunnerOrBuilder extends
   com.google.protobuf.Timestamp getCreatedAt();
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -78,7 +78,7 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -87,7 +87,7 @@ public interface RunnerOrBuilder extends
   boolean hasModifiedAt();
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -96,7 +96,7 @@ public interface RunnerOrBuilder extends
   com.google.protobuf.Timestamp getModifiedAt();
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -163,7 +163,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -175,7 +175,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -186,7 +186,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -198,7 +198,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -207,57 +207,36 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * Model: match work to only a specific model.
+   * Instead of just matching on labels we might want to have more explicit matching of what
+   * work this runner is looking for.
+   * The thing that the autoscaling config applies to for this nodepool.
    * </pre>
    *
-   * <code>.clarifai.api.Model model = 9;</code>
-   * @return Whether the model field is set.
+   * <code>.clarifai.api.Worker worker = 8;</code>
+   * @return Whether the worker field is set.
    */
-  boolean hasModel();
+  boolean hasWorker();
   /**
    * <pre>
-   * Model: match work to only a specific model.
+   * Instead of just matching on labels we might want to have more explicit matching of what
+   * work this runner is looking for.
+   * The thing that the autoscaling config applies to for this nodepool.
    * </pre>
    *
-   * <code>.clarifai.api.Model model = 9;</code>
-   * @return The model.
+   * <code>.clarifai.api.Worker worker = 8;</code>
+   * @return The worker.
    */
-  com.clarifai.grpc.api.Model getModel();
+  com.clarifai.grpc.api.Worker getWorker();
   /**
    * <pre>
-   * Model: match work to only a specific model.
+   * Instead of just matching on labels we might want to have more explicit matching of what
+   * work this runner is looking for.
+   * The thing that the autoscaling config applies to for this nodepool.
    * </pre>
    *
-   * <code>.clarifai.api.Model model = 9;</code>
+   * <code>.clarifai.api.Worker worker = 8;</code>
    */
-  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
-
-  /**
-   * <pre>
-   * Workflow: match work to only a specific workflow.
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 10;</code>
-   * @return Whether the workflow field is set.
-   */
-  boolean hasWorkflow();
-  /**
-   * <pre>
-   * Workflow: match work to only a specific workflow.
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 10;</code>
-   * @return The workflow.
-   */
-  com.clarifai.grpc.api.Workflow getWorkflow();
-  /**
-   * <pre>
-   * Workflow: match work to only a specific workflow.
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 10;</code>
-   */
-  com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
+  com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder();
 
   /**
    * <pre>
@@ -266,7 +245,7 @@ public interface RunnerOrBuilder extends
    * This nodepool must be accessible to you or an org you are part of.
    * </pre>
    *
-   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * <code>.clarifai.api.Nodepool nodepool = 9;</code>
    * @return Whether the nodepool field is set.
    */
   boolean hasNodepool();
@@ -277,7 +256,7 @@ public interface RunnerOrBuilder extends
    * This nodepool must be accessible to you or an org you are part of.
    * </pre>
    *
-   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * <code>.clarifai.api.Nodepool nodepool = 9;</code>
    * @return The nodepool.
    */
   com.clarifai.grpc.api.Nodepool getNodepool();
@@ -288,7 +267,7 @@ public interface RunnerOrBuilder extends
    * This nodepool must be accessible to you or an org you are part of.
    * </pre>
    *
-   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * <code>.clarifai.api.Nodepool nodepool = 9;</code>
    */
   com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder();
 
@@ -304,7 +283,7 @@ public interface RunnerOrBuilder extends
    * margin for the runner to for sure run the resource).
    * </pre>
    *
-   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    * @return Whether the computeInfo field is set.
    */
   boolean hasComputeInfo();
@@ -320,7 +299,7 @@ public interface RunnerOrBuilder extends
    * margin for the runner to for sure run the resource).
    * </pre>
    *
-   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    * @return The computeInfo.
    */
   com.clarifai.grpc.api.ComputeInfo getComputeInfo();
@@ -336,9 +315,7 @@ public interface RunnerOrBuilder extends
    * margin for the runner to for sure run the resource).
    * </pre>
    *
-   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    */
   com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder();
-
-  public com.clarifai.grpc.api.Runner.ObjectCase getObjectCase();
 }

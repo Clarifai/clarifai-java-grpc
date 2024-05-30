@@ -23,6 +23,18 @@ public interface PostRunnersRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  java.lang.String getNodepoolId();
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  com.google.protobuf.ByteString
+      getNodepoolIdBytes();
+
+  /**
    * <pre>
    * This allows you to create one or more runner by posting it to the API.
    * </pre>

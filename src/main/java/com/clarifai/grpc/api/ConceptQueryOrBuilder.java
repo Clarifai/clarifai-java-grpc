@@ -49,27 +49,31 @@ public interface ConceptQueryOrBuilder extends
 
   /**
    * <pre>
-   * The id of workflow. If no id is provided, then application base workflow is used.
+   * Deprecated: Use workflow.id instead.
    * </pre>
    *
-   * <code>string workflow_id = 3;</code>
+   * <code>string workflow_id = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=495
    * @return The workflowId.
    */
-  java.lang.String getWorkflowId();
+  @java.lang.Deprecated java.lang.String getWorkflowId();
   /**
    * <pre>
-   * The id of workflow. If no id is provided, then application base workflow is used.
+   * Deprecated: Use workflow.id instead.
    * </pre>
    *
-   * <code>string workflow_id = 3;</code>
+   * <code>string workflow_id = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=495
    * @return The bytes for workflowId.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getWorkflowIdBytes();
 
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -79,7 +83,7 @@ public interface ConceptQueryOrBuilder extends
   java.util.List<com.clarifai.grpc.api.WorkflowModelUseCase> getUseCasesList();
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -89,7 +93,7 @@ public interface ConceptQueryOrBuilder extends
   int getUseCasesCount();
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -100,7 +104,7 @@ public interface ConceptQueryOrBuilder extends
   com.clarifai.grpc.api.WorkflowModelUseCase getUseCases(int index);
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -111,7 +115,7 @@ public interface ConceptQueryOrBuilder extends
   getUseCasesValueList();
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -120,4 +124,36 @@ public interface ConceptQueryOrBuilder extends
    * @return The enum numeric value on the wire of useCases at the given index.
    */
   int getUseCasesValue(int index);
+
+  /**
+   * <code>.clarifai.api.Model model = 5;</code>
+   * @return Whether the model field is set.
+   */
+  boolean hasModel();
+  /**
+   * <code>.clarifai.api.Model model = 5;</code>
+   * @return The model.
+   */
+  com.clarifai.grpc.api.Model getModel();
+  /**
+   * <code>.clarifai.api.Model model = 5;</code>
+   */
+  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   * <code>.clarifai.api.Workflow workflow = 6;</code>
+   * @return Whether the workflow field is set.
+   */
+  boolean hasWorkflow();
+  /**
+   * <code>.clarifai.api.Workflow workflow = 6;</code>
+   * @return The workflow.
+   */
+  com.clarifai.grpc.api.Workflow getWorkflow();
+  /**
+   * <code>.clarifai.api.Workflow workflow = 6;</code>
+   */
+  com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
+
+  public com.clarifai.grpc.api.ConceptQuery.SourceCase getSourceCase();
 }

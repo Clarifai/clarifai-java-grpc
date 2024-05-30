@@ -24,10 +24,30 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
 
   /**
    * <pre>
+   * The particular nodepool that runner belongs to
+   * </pre>
+   *
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  java.lang.String getNodepoolId();
+  /**
+   * <pre>
+   * The particular nodepool that runner belongs to
+   * </pre>
+   *
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  com.google.protobuf.ByteString
+      getNodepoolIdBytes();
+
+  /**
+   * <pre>
    * The particular runner that processed the work.
    * </pre>
    *
-   * <code>string runner_id = 2;</code>
+   * <code>string runner_id = 3;</code>
    * @return The runnerId.
    */
   java.lang.String getRunnerId();
@@ -36,7 +56,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * The particular runner that processed the work.
    * </pre>
    *
-   * <code>string runner_id = 2;</code>
+   * <code>string runner_id = 3;</code>
    * @return The bytes for runnerId.
    */
   com.google.protobuf.ByteString
@@ -47,7 +67,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * The particular item of work processed.
    * </pre>
    *
-   * <code>string runner_item_id = 3;</code>
+   * <code>string runner_item_id = 4;</code>
    * @return The runnerItemId.
    */
   java.lang.String getRunnerItemId();
@@ -56,7 +76,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * The particular item of work processed.
    * </pre>
    *
-   * <code>string runner_item_id = 3;</code>
+   * <code>string runner_item_id = 4;</code>
    * @return The bytes for runnerItemId.
    */
   com.google.protobuf.ByteString
@@ -67,7 +87,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   java.util.List<com.clarifai.grpc.api.RunnerItemOutput> 
       getRunnerItemOutputsList();
@@ -76,7 +96,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   com.clarifai.grpc.api.RunnerItemOutput getRunnerItemOutputs(int index);
   /**
@@ -84,7 +104,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   int getRunnerItemOutputsCount();
   /**
@@ -92,7 +112,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   java.util.List<? extends com.clarifai.grpc.api.RunnerItemOutputOrBuilder> 
       getRunnerItemOutputsOrBuilderList();
@@ -101,7 +121,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   com.clarifai.grpc.api.RunnerItemOutputOrBuilder getRunnerItemOutputsOrBuilder(
       int index);
@@ -113,7 +133,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * in a reverse protocol.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 5;</code>
+   * <code>.clarifai.api.status.Status status = 6;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -124,7 +144,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * in a reverse protocol.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 5;</code>
+   * <code>.clarifai.api.status.Status status = 6;</code>
    * @return The status.
    */
   com.clarifai.grpc.api.status.Status getStatus();
@@ -135,7 +155,7 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * in a reverse protocol.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 5;</code>
+   * <code>.clarifai.api.status.Status status = 6;</code>
    */
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
 }

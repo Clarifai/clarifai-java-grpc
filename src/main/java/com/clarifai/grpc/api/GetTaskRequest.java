@@ -195,6 +195,8 @@ private static final long serialVersionUID = 0L;
    * - review.users
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
+   * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -213,6 +215,8 @@ private static final long serialVersionUID = 0L;
    * - review.users
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
+   * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -230,6 +234,8 @@ private static final long serialVersionUID = 0L;
    * - review.users
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
+   * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -248,6 +254,8 @@ private static final long serialVersionUID = 0L;
    * - review.users
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
+   * - metrics.review.inputs_count_estimated
+   * - metrics.review.inputs_percent_estimated
    * </pre>
    *
    * <code>repeated string additional_fields = 3;</code>
@@ -842,6 +850,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -860,6 +870,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -877,6 +889,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -895,6 +909,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -914,6 +930,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -940,6 +958,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -965,6 +985,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -988,6 +1010,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>
@@ -1008,6 +1032,8 @@ private static final long serialVersionUID = 0L;
      * - review.users
      * - metrics.work.inputs_count_estimated
      * - metrics.work.inputs_percent_estimated
+     * - metrics.review.inputs_count_estimated
+     * - metrics.review.inputs_percent_estimated
      * </pre>
      *
      * <code>repeated string additional_fields = 3;</code>

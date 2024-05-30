@@ -21,4 +21,19 @@ public interface TaskMetricsOrBuilder extends
    * <code>.clarifai.api.TaskWorkMetrics work = 2;</code>
    */
   com.clarifai.grpc.api.TaskWorkMetricsOrBuilder getWorkOrBuilder();
+
+  /**
+   * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+   * @return Whether the review field is set.
+   */
+  boolean hasReview();
+  /**
+   * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+   * @return The review.
+   */
+  com.clarifai.grpc.api.TaskReviewMetrics getReview();
+  /**
+   * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+   */
+  com.clarifai.grpc.api.TaskReviewMetricsOrBuilder getReviewOrBuilder();
 }

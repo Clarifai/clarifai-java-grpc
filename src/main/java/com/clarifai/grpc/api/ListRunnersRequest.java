@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListRunnersRequest() {
+    nodepoolId_ = "";
   }
 
   @java.lang.Override
@@ -65,12 +66,18 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nodepoolId_ = s;
+            break;
+          }
+          case 24: {
 
             page_ = input.readUInt32();
             break;
           }
-          case 24: {
+          case 32: {
 
             perPage_ = input.readUInt32();
             break;
@@ -135,7 +142,45 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int PAGE_FIELD_NUMBER = 2;
+  public static final int NODEPOOL_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nodepoolId_;
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  @java.lang.Override
+  public java.lang.String getNodepoolId() {
+    java.lang.Object ref = nodepoolId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodepoolId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNodepoolIdBytes() {
+    java.lang.Object ref = nodepoolId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nodepoolId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAGE_FIELD_NUMBER = 3;
   private int page_;
   /**
    * <pre>
@@ -143,7 +188,7 @@ private static final long serialVersionUID = 0L;
    * Defaults to 1.
    * </pre>
    *
-   * <code>uint32 page = 2;</code>
+   * <code>uint32 page = 3;</code>
    * @return The page.
    */
   @java.lang.Override
@@ -151,7 +196,7 @@ private static final long serialVersionUID = 0L;
     return page_;
   }
 
-  public static final int PER_PAGE_FIELD_NUMBER = 3;
+  public static final int PER_PAGE_FIELD_NUMBER = 4;
   private int perPage_;
   /**
    * <pre>
@@ -159,7 +204,7 @@ private static final long serialVersionUID = 0L;
    * to 128.
    * </pre>
    *
-   * <code>uint32 per_page = 3;</code>
+   * <code>uint32 per_page = 4;</code>
    * @return The perPage.
    */
   @java.lang.Override
@@ -184,11 +229,14 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodepoolId_);
+    }
     if (page_ != 0) {
-      output.writeUInt32(2, page_);
+      output.writeUInt32(3, page_);
     }
     if (perPage_ != 0) {
-      output.writeUInt32(3, perPage_);
+      output.writeUInt32(4, perPage_);
     }
     unknownFields.writeTo(output);
   }
@@ -203,13 +251,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodepoolId_);
+    }
     if (page_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, page_);
+        .computeUInt32Size(3, page_);
     }
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(3, perPage_);
+        .computeUInt32Size(4, perPage_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -231,6 +282,8 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
+    if (!getNodepoolId()
+        .equals(other.getNodepoolId())) return false;
     if (getPage()
         != other.getPage()) return false;
     if (getPerPage()
@@ -250,6 +303,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
+    hash = (37 * hash) + NODEPOOL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNodepoolId().hashCode();
     hash = (37 * hash) + PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
@@ -397,6 +452,8 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
+      nodepoolId_ = "";
+
       page_ = 0;
 
       perPage_ = 0;
@@ -432,6 +489,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
+      result.nodepoolId_ = nodepoolId_;
       result.page_ = page_;
       result.perPage_ = perPage_;
       onBuilt();
@@ -484,6 +542,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.ListRunnersRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
+      }
+      if (!other.getNodepoolId().isEmpty()) {
+        nodepoolId_ = other.nodepoolId_;
+        onChanged();
       }
       if (other.getPage() != 0) {
         setPage(other.getPage());
@@ -639,6 +701,82 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
+    private java.lang.Object nodepoolId_ = "";
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @return The nodepoolId.
+     */
+    public java.lang.String getNodepoolId() {
+      java.lang.Object ref = nodepoolId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodepoolId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @return The bytes for nodepoolId.
+     */
+    public com.google.protobuf.ByteString
+        getNodepoolIdBytes() {
+      java.lang.Object ref = nodepoolId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodepoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @param value The nodepoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodepoolId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNodepoolId() {
+      
+      nodepoolId_ = getDefaultInstance().getNodepoolId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @param value The bytes for nodepoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodepoolIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+
     private int page_ ;
     /**
      * <pre>
@@ -646,7 +784,7 @@ private static final long serialVersionUID = 0L;
      * Defaults to 1.
      * </pre>
      *
-     * <code>uint32 page = 2;</code>
+     * <code>uint32 page = 3;</code>
      * @return The page.
      */
     @java.lang.Override
@@ -659,7 +797,7 @@ private static final long serialVersionUID = 0L;
      * Defaults to 1.
      * </pre>
      *
-     * <code>uint32 page = 2;</code>
+     * <code>uint32 page = 3;</code>
      * @param value The page to set.
      * @return This builder for chaining.
      */
@@ -675,7 +813,7 @@ private static final long serialVersionUID = 0L;
      * Defaults to 1.
      * </pre>
      *
-     * <code>uint32 page = 2;</code>
+     * <code>uint32 page = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearPage() {
@@ -692,7 +830,7 @@ private static final long serialVersionUID = 0L;
      * to 128.
      * </pre>
      *
-     * <code>uint32 per_page = 3;</code>
+     * <code>uint32 per_page = 4;</code>
      * @return The perPage.
      */
     @java.lang.Override
@@ -705,7 +843,7 @@ private static final long serialVersionUID = 0L;
      * to 128.
      * </pre>
      *
-     * <code>uint32 per_page = 3;</code>
+     * <code>uint32 per_page = 4;</code>
      * @param value The perPage to set.
      * @return This builder for chaining.
      */
@@ -721,7 +859,7 @@ private static final long serialVersionUID = 0L;
      * to 128.
      * </pre>
      *
-     * <code>uint32 per_page = 3;</code>
+     * <code>uint32 per_page = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearPerPage() {

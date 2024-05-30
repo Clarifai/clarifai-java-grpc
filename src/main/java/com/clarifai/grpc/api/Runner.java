@@ -124,35 +124,20 @@ private static final long serialVersionUID = 0L;
             labels_.add(s);
             break;
           }
+          case 66: {
+            com.clarifai.grpc.api.Worker.Builder subBuilder = null;
+            if (worker_ != null) {
+              subBuilder = worker_.toBuilder();
+            }
+            worker_ = input.readMessage(com.clarifai.grpc.api.Worker.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(worker_);
+              worker_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 74: {
-            com.clarifai.grpc.api.Model.Builder subBuilder = null;
-            if (objectCase_ == 9) {
-              subBuilder = ((com.clarifai.grpc.api.Model) object_).toBuilder();
-            }
-            object_ =
-                input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.Model) object_);
-              object_ = subBuilder.buildPartial();
-            }
-            objectCase_ = 9;
-            break;
-          }
-          case 82: {
-            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
-            if (objectCase_ == 10) {
-              subBuilder = ((com.clarifai.grpc.api.Workflow) object_).toBuilder();
-            }
-            object_ =
-                input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.Workflow) object_);
-              object_ = subBuilder.buildPartial();
-            }
-            objectCase_ = 10;
-            break;
-          }
-          case 98: {
             com.clarifai.grpc.api.Nodepool.Builder subBuilder = null;
             if (nodepool_ != null) {
               subBuilder = nodepool_.toBuilder();
@@ -165,7 +150,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 106: {
+          case 82: {
             com.clarifai.grpc.api.ComputeInfo.Builder subBuilder = null;
             if (computeInfo_ != null) {
               subBuilder = computeInfo_.toBuilder();
@@ -215,52 +200,11 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.Runner.class, com.clarifai.grpc.api.Runner.Builder.class);
   }
 
-  private int objectCase_ = 0;
-  private java.lang.Object object_;
-  public enum ObjectCase
-      implements com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    MODEL(9),
-    WORKFLOW(10),
-    OBJECT_NOT_SET(0);
-    private final int value;
-    private ObjectCase(int value) {
-      this.value = value;
-    }
-    /**
-     * @param value The number of the enum to look for.
-     * @return The enum associated with the given number.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ObjectCase valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ObjectCase forNumber(int value) {
-      switch (value) {
-        case 9: return MODEL;
-        case 10: return WORKFLOW;
-        case 0: return OBJECT_NOT_SET;
-        default: return null;
-      }
-    }
-    public int getNumber() {
-      return this.value;
-    }
-  };
-
-  public ObjectCase
-  getObjectCase() {
-    return ObjectCase.forNumber(
-        objectCase_);
-  }
-
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -282,7 +226,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A unique ID for this app module.
+   * A unique ID for this runner.
    * This is a UUID since runners can be automatically orchestrated.
    * </pre>
    *
@@ -308,7 +252,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -329,7 +273,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A short description for this app module to be used in grids of modules.
+   * short description about the runner.
    * </pre>
    *
    * <code>string description = 2;</code>
@@ -354,7 +298,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createdAt_;
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -366,7 +310,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -378,7 +322,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was created.
+   * When the runner was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -392,7 +336,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp modifiedAt_;
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -404,7 +348,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -416,7 +360,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * When the app module was last modified.
+   * When the runner was last modified.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -525,7 +469,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -539,7 +483,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -552,7 +496,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -566,7 +510,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4279
+   *     See proto/clarifai/api/resources.proto;l=4298
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -575,93 +519,51 @@ private static final long serialVersionUID = 0L;
     return labels_.getByteString(index);
   }
 
-  public static final int MODEL_FIELD_NUMBER = 9;
+  public static final int WORKER_FIELD_NUMBER = 8;
+  private com.clarifai.grpc.api.Worker worker_;
   /**
    * <pre>
-   * Model: match work to only a specific model.
+   * Instead of just matching on labels we might want to have more explicit matching of what
+   * work this runner is looking for.
+   * The thing that the autoscaling config applies to for this nodepool.
    * </pre>
    *
-   * <code>.clarifai.api.Model model = 9;</code>
-   * @return Whether the model field is set.
+   * <code>.clarifai.api.Worker worker = 8;</code>
+   * @return Whether the worker field is set.
    */
   @java.lang.Override
-  public boolean hasModel() {
-    return objectCase_ == 9;
+  public boolean hasWorker() {
+    return worker_ != null;
   }
   /**
    * <pre>
-   * Model: match work to only a specific model.
+   * Instead of just matching on labels we might want to have more explicit matching of what
+   * work this runner is looking for.
+   * The thing that the autoscaling config applies to for this nodepool.
    * </pre>
    *
-   * <code>.clarifai.api.Model model = 9;</code>
-   * @return The model.
+   * <code>.clarifai.api.Worker worker = 8;</code>
+   * @return The worker.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.Model getModel() {
-    if (objectCase_ == 9) {
-       return (com.clarifai.grpc.api.Model) object_;
-    }
-    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  public com.clarifai.grpc.api.Worker getWorker() {
+    return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
   }
   /**
    * <pre>
-   * Model: match work to only a specific model.
+   * Instead of just matching on labels we might want to have more explicit matching of what
+   * work this runner is looking for.
+   * The thing that the autoscaling config applies to for this nodepool.
    * </pre>
    *
-   * <code>.clarifai.api.Model model = 9;</code>
+   * <code>.clarifai.api.Worker worker = 8;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
-    if (objectCase_ == 9) {
-       return (com.clarifai.grpc.api.Model) object_;
-    }
-    return com.clarifai.grpc.api.Model.getDefaultInstance();
-  }
-
-  public static final int WORKFLOW_FIELD_NUMBER = 10;
-  /**
-   * <pre>
-   * Workflow: match work to only a specific workflow.
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 10;</code>
-   * @return Whether the workflow field is set.
-   */
-  @java.lang.Override
-  public boolean hasWorkflow() {
-    return objectCase_ == 10;
-  }
-  /**
-   * <pre>
-   * Workflow: match work to only a specific workflow.
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 10;</code>
-   * @return The workflow.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.Workflow getWorkflow() {
-    if (objectCase_ == 10) {
-       return (com.clarifai.grpc.api.Workflow) object_;
-    }
-    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * Workflow: match work to only a specific workflow.
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 10;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
-    if (objectCase_ == 10) {
-       return (com.clarifai.grpc.api.Workflow) object_;
-    }
-    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+    return getWorker();
   }
 
-  public static final int NODEPOOL_FIELD_NUMBER = 12;
+  public static final int NODEPOOL_FIELD_NUMBER = 9;
   private com.clarifai.grpc.api.Nodepool nodepool_;
   /**
    * <pre>
@@ -670,7 +572,7 @@ private static final long serialVersionUID = 0L;
    * This nodepool must be accessible to you or an org you are part of.
    * </pre>
    *
-   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * <code>.clarifai.api.Nodepool nodepool = 9;</code>
    * @return Whether the nodepool field is set.
    */
   @java.lang.Override
@@ -684,7 +586,7 @@ private static final long serialVersionUID = 0L;
    * This nodepool must be accessible to you or an org you are part of.
    * </pre>
    *
-   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * <code>.clarifai.api.Nodepool nodepool = 9;</code>
    * @return The nodepool.
    */
   @java.lang.Override
@@ -698,14 +600,14 @@ private static final long serialVersionUID = 0L;
    * This nodepool must be accessible to you or an org you are part of.
    * </pre>
    *
-   * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+   * <code>.clarifai.api.Nodepool nodepool = 9;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder() {
     return getNodepool();
   }
 
-  public static final int COMPUTE_INFO_FIELD_NUMBER = 13;
+  public static final int COMPUTE_INFO_FIELD_NUMBER = 10;
   private com.clarifai.grpc.api.ComputeInfo computeInfo_;
   /**
    * <pre>
@@ -719,7 +621,7 @@ private static final long serialVersionUID = 0L;
    * margin for the runner to for sure run the resource).
    * </pre>
    *
-   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    * @return Whether the computeInfo field is set.
    */
   @java.lang.Override
@@ -738,7 +640,7 @@ private static final long serialVersionUID = 0L;
    * margin for the runner to for sure run the resource).
    * </pre>
    *
-   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    * @return The computeInfo.
    */
   @java.lang.Override
@@ -757,7 +659,7 @@ private static final long serialVersionUID = 0L;
    * margin for the runner to for sure run the resource).
    * </pre>
    *
-   * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+   * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder() {
@@ -799,17 +701,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < labels_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, labels_.getRaw(i));
     }
-    if (objectCase_ == 9) {
-      output.writeMessage(9, (com.clarifai.grpc.api.Model) object_);
-    }
-    if (objectCase_ == 10) {
-      output.writeMessage(10, (com.clarifai.grpc.api.Workflow) object_);
+    if (worker_ != null) {
+      output.writeMessage(8, getWorker());
     }
     if (nodepool_ != null) {
-      output.writeMessage(12, getNodepool());
+      output.writeMessage(9, getNodepool());
     }
     if (computeInfo_ != null) {
-      output.writeMessage(13, getComputeInfo());
+      output.writeMessage(10, getComputeInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -849,21 +748,17 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getLabelsList().size();
     }
-    if (objectCase_ == 9) {
+    if (worker_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (com.clarifai.grpc.api.Model) object_);
-    }
-    if (objectCase_ == 10) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (com.clarifai.grpc.api.Workflow) object_);
+        .computeMessageSize(8, getWorker());
     }
     if (nodepool_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getNodepool());
+        .computeMessageSize(9, getNodepool());
     }
     if (computeInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getComputeInfo());
+        .computeMessageSize(10, getComputeInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -903,6 +798,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getLabelsList()
         .equals(other.getLabelsList())) return false;
+    if (hasWorker() != other.hasWorker()) return false;
+    if (hasWorker()) {
+      if (!getWorker()
+          .equals(other.getWorker())) return false;
+    }
     if (hasNodepool() != other.hasNodepool()) return false;
     if (hasNodepool()) {
       if (!getNodepool()
@@ -912,19 +812,6 @@ private static final long serialVersionUID = 0L;
     if (hasComputeInfo()) {
       if (!getComputeInfo()
           .equals(other.getComputeInfo())) return false;
-    }
-    if (!getObjectCase().equals(other.getObjectCase())) return false;
-    switch (objectCase_) {
-      case 9:
-        if (!getModel()
-            .equals(other.getModel())) return false;
-        break;
-      case 10:
-        if (!getWorkflow()
-            .equals(other.getWorkflow())) return false;
-        break;
-      case 0:
-      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -959,6 +846,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + getLabelsList().hashCode();
     }
+    if (hasWorker()) {
+      hash = (37 * hash) + WORKER_FIELD_NUMBER;
+      hash = (53 * hash) + getWorker().hashCode();
+    }
     if (hasNodepool()) {
       hash = (37 * hash) + NODEPOOL_FIELD_NUMBER;
       hash = (53 * hash) + getNodepool().hashCode();
@@ -966,18 +857,6 @@ private static final long serialVersionUID = 0L;
     if (hasComputeInfo()) {
       hash = (37 * hash) + COMPUTE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getComputeInfo().hashCode();
-    }
-    switch (objectCase_) {
-      case 9:
-        hash = (37 * hash) + MODEL_FIELD_NUMBER;
-        hash = (53 * hash) + getModel().hashCode();
-        break;
-      case 10:
-        hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkflow().hashCode();
-        break;
-      case 0:
-      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1143,6 +1022,12 @@ private static final long serialVersionUID = 0L;
 
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (workerBuilder_ == null) {
+        worker_ = null;
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
       if (nodepoolBuilder_ == null) {
         nodepool_ = null;
       } else {
@@ -1155,8 +1040,6 @@ private static final long serialVersionUID = 0L;
         computeInfo_ = null;
         computeInfoBuilder_ = null;
       }
-      objectCase_ = 0;
-      object_ = null;
       return this;
     }
 
@@ -1207,19 +1090,10 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.labels_ = labels_;
-      if (objectCase_ == 9) {
-        if (modelBuilder_ == null) {
-          result.object_ = object_;
-        } else {
-          result.object_ = modelBuilder_.build();
-        }
-      }
-      if (objectCase_ == 10) {
-        if (workflowBuilder_ == null) {
-          result.object_ = object_;
-        } else {
-          result.object_ = workflowBuilder_.build();
-        }
+      if (workerBuilder_ == null) {
+        result.worker_ = worker_;
+      } else {
+        result.worker_ = workerBuilder_.build();
       }
       if (nodepoolBuilder_ == null) {
         result.nodepool_ = nodepool_;
@@ -1231,7 +1105,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.computeInfo_ = computeInfoBuilder_.build();
       }
-      result.objectCase_ = objectCase_;
       onBuilt();
       return result;
     }
@@ -1311,24 +1184,14 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.hasWorker()) {
+        mergeWorker(other.getWorker());
+      }
       if (other.hasNodepool()) {
         mergeNodepool(other.getNodepool());
       }
       if (other.hasComputeInfo()) {
         mergeComputeInfo(other.getComputeInfo());
-      }
-      switch (other.getObjectCase()) {
-        case MODEL: {
-          mergeModel(other.getModel());
-          break;
-        }
-        case WORKFLOW: {
-          mergeWorkflow(other.getWorkflow());
-          break;
-        }
-        case OBJECT_NOT_SET: {
-          break;
-        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1358,27 +1221,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int objectCase_ = 0;
-    private java.lang.Object object_;
-    public ObjectCase
-        getObjectCase() {
-      return ObjectCase.forNumber(
-          objectCase_);
-    }
-
-    public Builder clearObject() {
-      objectCase_ = 0;
-      object_ = null;
-      onChanged();
-      return this;
-    }
-
     private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1399,7 +1247,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1421,7 +1269,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1441,7 +1289,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1456,7 +1304,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A unique ID for this app module.
+     * A unique ID for this runner.
      * This is a UUID since runners can be automatically orchestrated.
      * </pre>
      *
@@ -1479,7 +1327,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1499,7 +1347,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1520,7 +1368,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1539,7 +1387,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1553,7 +1401,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A short description for this app module to be used in grids of modules.
+     * short description about the runner.
      * </pre>
      *
      * <code>string description = 2;</code>
@@ -1577,7 +1425,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1588,7 +1436,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1603,7 +1451,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1623,7 +1471,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1641,7 +1489,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1663,7 +1511,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1681,7 +1529,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1693,7 +1541,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1708,7 +1556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was created.
+     * When the runner was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp created_at = 3;</code>
@@ -1732,7 +1580,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1743,7 +1591,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1758,7 +1606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1778,7 +1626,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1796,7 +1644,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1818,7 +1666,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1836,7 +1684,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1848,7 +1696,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -1863,7 +1711,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When the app module was last modified.
+     * When the runner was last modified.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp modified_at = 4;</code>
@@ -2165,7 +2013,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2179,7 +2027,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2192,7 +2040,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2206,7 +2054,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2221,7 +2069,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2243,7 +2091,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2264,7 +2112,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2283,7 +2131,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2299,7 +2147,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4279
+     *     See proto/clarifai/api/resources.proto;l=4298
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */
@@ -2315,360 +2163,177 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.clarifai.grpc.api.Worker worker_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> workerBuilder_;
     /**
      * <pre>
-     * Model: match work to only a specific model.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Model model = 9;</code>
-     * @return Whether the model field is set.
+     * <code>.clarifai.api.Worker worker = 8;</code>
+     * @return Whether the worker field is set.
      */
-    @java.lang.Override
-    public boolean hasModel() {
-      return objectCase_ == 9;
+    public boolean hasWorker() {
+      return workerBuilder_ != null || worker_ != null;
     }
     /**
      * <pre>
-     * Model: match work to only a specific model.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Model model = 9;</code>
-     * @return The model.
+     * <code>.clarifai.api.Worker worker = 8;</code>
+     * @return The worker.
      */
-    @java.lang.Override
-    public com.clarifai.grpc.api.Model getModel() {
-      if (modelBuilder_ == null) {
-        if (objectCase_ == 9) {
-          return (com.clarifai.grpc.api.Model) object_;
-        }
-        return com.clarifai.grpc.api.Model.getDefaultInstance();
+    public com.clarifai.grpc.api.Worker getWorker() {
+      if (workerBuilder_ == null) {
+        return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
       } else {
-        if (objectCase_ == 9) {
-          return modelBuilder_.getMessage();
-        }
-        return com.clarifai.grpc.api.Model.getDefaultInstance();
+        return workerBuilder_.getMessage();
       }
     }
     /**
      * <pre>
-     * Model: match work to only a specific model.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Model model = 9;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
-    public Builder setModel(com.clarifai.grpc.api.Model value) {
-      if (modelBuilder_ == null) {
+    public Builder setWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        object_ = value;
+        worker_ = value;
         onChanged();
       } else {
-        modelBuilder_.setMessage(value);
+        workerBuilder_.setMessage(value);
       }
-      objectCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * Model: match work to only a specific model.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 9;</code>
-     */
-    public Builder setModel(
-        com.clarifai.grpc.api.Model.Builder builderForValue) {
-      if (modelBuilder_ == null) {
-        object_ = builderForValue.build();
-        onChanged();
-      } else {
-        modelBuilder_.setMessage(builderForValue.build());
-      }
-      objectCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * Model: match work to only a specific model.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 9;</code>
-     */
-    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
-      if (modelBuilder_ == null) {
-        if (objectCase_ == 9 &&
-            object_ != com.clarifai.grpc.api.Model.getDefaultInstance()) {
-          object_ = com.clarifai.grpc.api.Model.newBuilder((com.clarifai.grpc.api.Model) object_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          object_ = value;
-        }
-        onChanged();
-      } else {
-        if (objectCase_ == 9) {
-          modelBuilder_.mergeFrom(value);
-        } else {
-          modelBuilder_.setMessage(value);
-        }
-      }
-      objectCase_ = 9;
-      return this;
-    }
-    /**
-     * <pre>
-     * Model: match work to only a specific model.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 9;</code>
-     */
-    public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        if (objectCase_ == 9) {
-          objectCase_ = 0;
-          object_ = null;
-          onChanged();
-        }
-      } else {
-        if (objectCase_ == 9) {
-          objectCase_ = 0;
-          object_ = null;
-        }
-        modelBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Model: match work to only a specific model.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 9;</code>
-     */
-    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
-      return getModelFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Model: match work to only a specific model.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 9;</code>
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
-      if ((objectCase_ == 9) && (modelBuilder_ != null)) {
-        return modelBuilder_.getMessageOrBuilder();
-      } else {
-        if (objectCase_ == 9) {
-          return (com.clarifai.grpc.api.Model) object_;
-        }
-        return com.clarifai.grpc.api.Model.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Model: match work to only a specific model.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 9;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
-        getModelFieldBuilder() {
-      if (modelBuilder_ == null) {
-        if (!(objectCase_ == 9)) {
-          object_ = com.clarifai.grpc.api.Model.getDefaultInstance();
-        }
-        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
-                (com.clarifai.grpc.api.Model) object_,
-                getParentForChildren(),
-                isClean());
-        object_ = null;
-      }
-      objectCase_ = 9;
-      onChanged();;
-      return modelBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
-    /**
-     * <pre>
-     * Workflow: match work to only a specific workflow.
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
-     * @return Whether the workflow field is set.
-     */
-    @java.lang.Override
-    public boolean hasWorkflow() {
-      return objectCase_ == 10;
-    }
-    /**
-     * <pre>
-     * Workflow: match work to only a specific workflow.
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
-     * @return The workflow.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.Workflow getWorkflow() {
-      if (workflowBuilder_ == null) {
-        if (objectCase_ == 10) {
-          return (com.clarifai.grpc.api.Workflow) object_;
-        }
-        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-      } else {
-        if (objectCase_ == 10) {
-          return workflowBuilder_.getMessage();
-        }
-        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Workflow: match work to only a specific workflow.
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
-     */
-    public Builder setWorkflow(com.clarifai.grpc.api.Workflow value) {
-      if (workflowBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        object_ = value;
-        onChanged();
-      } else {
-        workflowBuilder_.setMessage(value);
-      }
-      objectCase_ = 10;
       return this;
     }
     /**
      * <pre>
-     * Workflow: match work to only a specific workflow.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
-    public Builder setWorkflow(
-        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
-      if (workflowBuilder_ == null) {
-        object_ = builderForValue.build();
+    public Builder setWorker(
+        com.clarifai.grpc.api.Worker.Builder builderForValue) {
+      if (workerBuilder_ == null) {
+        worker_ = builderForValue.build();
         onChanged();
       } else {
-        workflowBuilder_.setMessage(builderForValue.build());
+        workerBuilder_.setMessage(builderForValue.build());
       }
-      objectCase_ = 10;
+
       return this;
     }
     /**
      * <pre>
-     * Workflow: match work to only a specific workflow.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
-    public Builder mergeWorkflow(com.clarifai.grpc.api.Workflow value) {
-      if (workflowBuilder_ == null) {
-        if (objectCase_ == 10 &&
-            object_ != com.clarifai.grpc.api.Workflow.getDefaultInstance()) {
-          object_ = com.clarifai.grpc.api.Workflow.newBuilder((com.clarifai.grpc.api.Workflow) object_)
-              .mergeFrom(value).buildPartial();
+    public Builder mergeWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (worker_ != null) {
+          worker_ =
+            com.clarifai.grpc.api.Worker.newBuilder(worker_).mergeFrom(value).buildPartial();
         } else {
-          object_ = value;
+          worker_ = value;
         }
         onChanged();
       } else {
-        if (objectCase_ == 10) {
-          workflowBuilder_.mergeFrom(value);
-        } else {
-          workflowBuilder_.setMessage(value);
-        }
+        workerBuilder_.mergeFrom(value);
       }
-      objectCase_ = 10;
+
       return this;
     }
     /**
      * <pre>
-     * Workflow: match work to only a specific workflow.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
-    public Builder clearWorkflow() {
-      if (workflowBuilder_ == null) {
-        if (objectCase_ == 10) {
-          objectCase_ = 0;
-          object_ = null;
-          onChanged();
-        }
+    public Builder clearWorker() {
+      if (workerBuilder_ == null) {
+        worker_ = null;
+        onChanged();
       } else {
-        if (objectCase_ == 10) {
-          objectCase_ = 0;
-          object_ = null;
-        }
-        workflowBuilder_.clear();
+        worker_ = null;
+        workerBuilder_ = null;
       }
+
       return this;
     }
     /**
      * <pre>
-     * Workflow: match work to only a specific workflow.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
-    public com.clarifai.grpc.api.Workflow.Builder getWorkflowBuilder() {
-      return getWorkflowFieldBuilder().getBuilder();
+    public com.clarifai.grpc.api.Worker.Builder getWorkerBuilder() {
+      
+      onChanged();
+      return getWorkerFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Workflow: match work to only a specific workflow.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
-    @java.lang.Override
-    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
-      if ((objectCase_ == 10) && (workflowBuilder_ != null)) {
-        return workflowBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+      if (workerBuilder_ != null) {
+        return workerBuilder_.getMessageOrBuilder();
       } else {
-        if (objectCase_ == 10) {
-          return (com.clarifai.grpc.api.Workflow) object_;
-        }
-        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+        return worker_ == null ?
+            com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
       }
     }
     /**
      * <pre>
-     * Workflow: match work to only a specific workflow.
+     * Instead of just matching on labels we might want to have more explicit matching of what
+     * work this runner is looking for.
+     * The thing that the autoscaling config applies to for this nodepool.
      * </pre>
      *
-     * <code>.clarifai.api.Workflow workflow = 10;</code>
+     * <code>.clarifai.api.Worker worker = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
-        getWorkflowFieldBuilder() {
-      if (workflowBuilder_ == null) {
-        if (!(objectCase_ == 10)) {
-          object_ = com.clarifai.grpc.api.Workflow.getDefaultInstance();
-        }
-        workflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
-                (com.clarifai.grpc.api.Workflow) object_,
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> 
+        getWorkerFieldBuilder() {
+      if (workerBuilder_ == null) {
+        workerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder>(
+                getWorker(),
                 getParentForChildren(),
                 isClean());
-        object_ = null;
+        worker_ = null;
       }
-      objectCase_ = 10;
-      onChanged();;
-      return workflowBuilder_;
+      return workerBuilder_;
     }
 
     private com.clarifai.grpc.api.Nodepool nodepool_;
@@ -2681,7 +2346,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      * @return Whether the nodepool field is set.
      */
     public boolean hasNodepool() {
@@ -2694,7 +2359,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      * @return The nodepool.
      */
     public com.clarifai.grpc.api.Nodepool getNodepool() {
@@ -2711,7 +2376,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     public Builder setNodepool(com.clarifai.grpc.api.Nodepool value) {
       if (nodepoolBuilder_ == null) {
@@ -2733,7 +2398,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     public Builder setNodepool(
         com.clarifai.grpc.api.Nodepool.Builder builderForValue) {
@@ -2753,7 +2418,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     public Builder mergeNodepool(com.clarifai.grpc.api.Nodepool value) {
       if (nodepoolBuilder_ == null) {
@@ -2777,7 +2442,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     public Builder clearNodepool() {
       if (nodepoolBuilder_ == null) {
@@ -2797,7 +2462,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     public com.clarifai.grpc.api.Nodepool.Builder getNodepoolBuilder() {
       
@@ -2811,7 +2476,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     public com.clarifai.grpc.api.NodepoolOrBuilder getNodepoolOrBuilder() {
       if (nodepoolBuilder_ != null) {
@@ -2828,7 +2493,7 @@ private static final long serialVersionUID = 0L;
      * This nodepool must be accessible to you or an org you are part of.
      * </pre>
      *
-     * <code>.clarifai.api.Nodepool nodepool = 12;</code>
+     * <code>.clarifai.api.Nodepool nodepool = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.Nodepool, com.clarifai.grpc.api.Nodepool.Builder, com.clarifai.grpc.api.NodepoolOrBuilder> 
@@ -2859,7 +2524,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      * @return Whether the computeInfo field is set.
      */
     public boolean hasComputeInfo() {
@@ -2877,7 +2542,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      * @return The computeInfo.
      */
     public com.clarifai.grpc.api.ComputeInfo getComputeInfo() {
@@ -2899,7 +2564,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     public Builder setComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
       if (computeInfoBuilder_ == null) {
@@ -2926,7 +2591,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     public Builder setComputeInfo(
         com.clarifai.grpc.api.ComputeInfo.Builder builderForValue) {
@@ -2951,7 +2616,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     public Builder mergeComputeInfo(com.clarifai.grpc.api.ComputeInfo value) {
       if (computeInfoBuilder_ == null) {
@@ -2980,7 +2645,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     public Builder clearComputeInfo() {
       if (computeInfoBuilder_ == null) {
@@ -3005,7 +2670,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     public com.clarifai.grpc.api.ComputeInfo.Builder getComputeInfoBuilder() {
       
@@ -3024,7 +2689,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     public com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder() {
       if (computeInfoBuilder_ != null) {
@@ -3046,7 +2711,7 @@ private static final long serialVersionUID = 0L;
      * margin for the runner to for sure run the resource).
      * </pre>
      *
-     * <code>.clarifai.api.ComputeInfo compute_info = 13;</code>
+     * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.ComputeInfo, com.clarifai.grpc.api.ComputeInfo.Builder, com.clarifai.grpc.api.ComputeInfoOrBuilder> 

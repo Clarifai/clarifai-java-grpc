@@ -86,6 +86,11 @@ private static final long serialVersionUID = 0L;
             totalSize_ = input.readUInt64();
             break;
           }
+          case 40: {
+
+            isV3_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -150,7 +155,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object modelId_;
   /**
    * <pre>
-   * model to create version of
+   * Model to create version for
    * </pre>
    *
    * <code>string model_id = 2;</code>
@@ -171,7 +176,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * model to create version of
+   * Model to create version for
    * </pre>
    *
    * <code>string model_id = 2;</code>
@@ -196,7 +201,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.ModelVersion modelVersion_;
   /**
    * <pre>
-   * specification for the model version to be uploaded
+   * Specification for the model version to be uploaded
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -208,7 +213,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * specification for the model version to be uploaded
+   * Specification for the model version to be uploaded
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -220,7 +225,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * specification for the model version to be uploaded
+   * Specification for the model version to be uploaded
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -234,7 +239,7 @@ private static final long serialVersionUID = 0L;
   private long totalSize_;
   /**
    * <pre>
-   * number of bytes in the model files to be uploaded
+   * Number of bytes in the model files to be uploaded
    * </pre>
    *
    * <code>uint64 total_size = 4;</code>
@@ -243,6 +248,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public long getTotalSize() {
     return totalSize_;
+  }
+
+  public static final int IS_V3_FIELD_NUMBER = 5;
+  private boolean isV3_;
+  /**
+   * <pre>
+   * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+   * </pre>
+   *
+   * <code>bool is_v3 = 5;</code>
+   * @return The isV3.
+   */
+  @java.lang.Override
+  public boolean getIsV3() {
+    return isV3_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -271,6 +291,9 @@ private static final long serialVersionUID = 0L;
     if (totalSize_ != 0L) {
       output.writeUInt64(4, totalSize_);
     }
+    if (isV3_ != false) {
+      output.writeBool(5, isV3_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -294,6 +317,10 @@ private static final long serialVersionUID = 0L;
     if (totalSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(4, totalSize_);
+    }
+    if (isV3_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, isV3_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -324,6 +351,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getTotalSize()
         != other.getTotalSize()) return false;
+    if (getIsV3()
+        != other.getIsV3()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -348,6 +377,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TOTAL_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTotalSize());
+    hash = (37 * hash) + IS_V3_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsV3());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -497,6 +529,8 @@ private static final long serialVersionUID = 0L;
       }
       totalSize_ = 0L;
 
+      isV3_ = false;
+
       return this;
     }
 
@@ -535,6 +569,7 @@ private static final long serialVersionUID = 0L;
         result.modelVersion_ = modelVersionBuilder_.build();
       }
       result.totalSize_ = totalSize_;
+      result.isV3_ = isV3_;
       onBuilt();
       return result;
     }
@@ -595,6 +630,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getTotalSize() != 0L) {
         setTotalSize(other.getTotalSize());
+      }
+      if (other.getIsV3() != false) {
+        setIsV3(other.getIsV3());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -747,7 +785,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object modelId_ = "";
     /**
      * <pre>
-     * model to create version of
+     * Model to create version for
      * </pre>
      *
      * <code>string model_id = 2;</code>
@@ -767,7 +805,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * model to create version of
+     * Model to create version for
      * </pre>
      *
      * <code>string model_id = 2;</code>
@@ -788,7 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * model to create version of
+     * Model to create version for
      * </pre>
      *
      * <code>string model_id = 2;</code>
@@ -807,7 +845,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * model to create version of
+     * Model to create version for
      * </pre>
      *
      * <code>string model_id = 2;</code>
@@ -821,7 +859,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * model to create version of
+     * Model to create version for
      * </pre>
      *
      * <code>string model_id = 2;</code>
@@ -845,7 +883,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ModelVersion, com.clarifai.grpc.api.ModelVersion.Builder, com.clarifai.grpc.api.ModelVersionOrBuilder> modelVersionBuilder_;
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -856,7 +894,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -871,7 +909,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -891,7 +929,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -909,7 +947,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -931,7 +969,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -949,7 +987,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -961,7 +999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -976,7 +1014,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * specification for the model version to be uploaded
+     * Specification for the model version to be uploaded
      * </pre>
      *
      * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -998,7 +1036,7 @@ private static final long serialVersionUID = 0L;
     private long totalSize_ ;
     /**
      * <pre>
-     * number of bytes in the model files to be uploaded
+     * Number of bytes in the model files to be uploaded
      * </pre>
      *
      * <code>uint64 total_size = 4;</code>
@@ -1010,7 +1048,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * number of bytes in the model files to be uploaded
+     * Number of bytes in the model files to be uploaded
      * </pre>
      *
      * <code>uint64 total_size = 4;</code>
@@ -1025,7 +1063,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * number of bytes in the model files to be uploaded
+     * Number of bytes in the model files to be uploaded
      * </pre>
      *
      * <code>uint64 total_size = 4;</code>
@@ -1034,6 +1072,49 @@ private static final long serialVersionUID = 0L;
     public Builder clearTotalSize() {
       
       totalSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean isV3_ ;
+    /**
+     * <pre>
+     * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     * </pre>
+     *
+     * <code>bool is_v3 = 5;</code>
+     * @return The isV3.
+     */
+    @java.lang.Override
+    public boolean getIsV3() {
+      return isV3_;
+    }
+    /**
+     * <pre>
+     * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     * </pre>
+     *
+     * <code>bool is_v3 = 5;</code>
+     * @param value The isV3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsV3(boolean value) {
+      
+      isV3_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+     * </pre>
+     *
+     * <code>bool is_v3 = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsV3() {
+      
+      isV3_ = false;
       onChanged();
       return this;
     }

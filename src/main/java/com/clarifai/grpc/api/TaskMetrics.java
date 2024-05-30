@@ -61,6 +61,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            com.clarifai.grpc.api.TaskReviewMetrics.Builder subBuilder = null;
+            if (review_ != null) {
+              subBuilder = review_.toBuilder();
+            }
+            review_ = input.readMessage(com.clarifai.grpc.api.TaskReviewMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(review_);
+              review_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -121,6 +134,32 @@ private static final long serialVersionUID = 0L;
     return getWork();
   }
 
+  public static final int REVIEW_FIELD_NUMBER = 3;
+  private com.clarifai.grpc.api.TaskReviewMetrics review_;
+  /**
+   * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+   * @return Whether the review field is set.
+   */
+  @java.lang.Override
+  public boolean hasReview() {
+    return review_ != null;
+  }
+  /**
+   * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+   * @return The review.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskReviewMetrics getReview() {
+    return review_ == null ? com.clarifai.grpc.api.TaskReviewMetrics.getDefaultInstance() : review_;
+  }
+  /**
+   * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskReviewMetricsOrBuilder getReviewOrBuilder() {
+    return getReview();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -138,6 +177,9 @@ private static final long serialVersionUID = 0L;
     if (work_ != null) {
       output.writeMessage(2, getWork());
     }
+    if (review_ != null) {
+      output.writeMessage(3, getReview());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -150,6 +192,10 @@ private static final long serialVersionUID = 0L;
     if (work_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getWork());
+    }
+    if (review_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getReview());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,6 +217,11 @@ private static final long serialVersionUID = 0L;
       if (!getWork()
           .equals(other.getWork())) return false;
     }
+    if (hasReview() != other.hasReview()) return false;
+    if (hasReview()) {
+      if (!getReview()
+          .equals(other.getReview())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -185,6 +236,10 @@ private static final long serialVersionUID = 0L;
     if (hasWork()) {
       hash = (37 * hash) + WORK_FIELD_NUMBER;
       hash = (53 * hash) + getWork().hashCode();
+    }
+    if (hasReview()) {
+      hash = (37 * hash) + REVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getReview().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -325,6 +380,12 @@ private static final long serialVersionUID = 0L;
         work_ = null;
         workBuilder_ = null;
       }
+      if (reviewBuilder_ == null) {
+        review_ = null;
+      } else {
+        review_ = null;
+        reviewBuilder_ = null;
+      }
       return this;
     }
 
@@ -355,6 +416,11 @@ private static final long serialVersionUID = 0L;
         result.work_ = work_;
       } else {
         result.work_ = workBuilder_.build();
+      }
+      if (reviewBuilder_ == null) {
+        result.review_ = review_;
+      } else {
+        result.review_ = reviewBuilder_.build();
       }
       onBuilt();
       return result;
@@ -406,6 +472,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.TaskMetrics.getDefaultInstance()) return this;
       if (other.hasWork()) {
         mergeWork(other.getWork());
+      }
+      if (other.hasReview()) {
+        mergeReview(other.getReview());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -553,6 +622,125 @@ private static final long serialVersionUID = 0L;
         work_ = null;
       }
       return workBuilder_;
+    }
+
+    private com.clarifai.grpc.api.TaskReviewMetrics review_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskReviewMetrics, com.clarifai.grpc.api.TaskReviewMetrics.Builder, com.clarifai.grpc.api.TaskReviewMetricsOrBuilder> reviewBuilder_;
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     * @return Whether the review field is set.
+     */
+    public boolean hasReview() {
+      return reviewBuilder_ != null || review_ != null;
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     * @return The review.
+     */
+    public com.clarifai.grpc.api.TaskReviewMetrics getReview() {
+      if (reviewBuilder_ == null) {
+        return review_ == null ? com.clarifai.grpc.api.TaskReviewMetrics.getDefaultInstance() : review_;
+      } else {
+        return reviewBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    public Builder setReview(com.clarifai.grpc.api.TaskReviewMetrics value) {
+      if (reviewBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        review_ = value;
+        onChanged();
+      } else {
+        reviewBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    public Builder setReview(
+        com.clarifai.grpc.api.TaskReviewMetrics.Builder builderForValue) {
+      if (reviewBuilder_ == null) {
+        review_ = builderForValue.build();
+        onChanged();
+      } else {
+        reviewBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    public Builder mergeReview(com.clarifai.grpc.api.TaskReviewMetrics value) {
+      if (reviewBuilder_ == null) {
+        if (review_ != null) {
+          review_ =
+            com.clarifai.grpc.api.TaskReviewMetrics.newBuilder(review_).mergeFrom(value).buildPartial();
+        } else {
+          review_ = value;
+        }
+        onChanged();
+      } else {
+        reviewBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    public Builder clearReview() {
+      if (reviewBuilder_ == null) {
+        review_ = null;
+        onChanged();
+      } else {
+        review_ = null;
+        reviewBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    public com.clarifai.grpc.api.TaskReviewMetrics.Builder getReviewBuilder() {
+      
+      onChanged();
+      return getReviewFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    public com.clarifai.grpc.api.TaskReviewMetricsOrBuilder getReviewOrBuilder() {
+      if (reviewBuilder_ != null) {
+        return reviewBuilder_.getMessageOrBuilder();
+      } else {
+        return review_ == null ?
+            com.clarifai.grpc.api.TaskReviewMetrics.getDefaultInstance() : review_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskReviewMetrics, com.clarifai.grpc.api.TaskReviewMetrics.Builder, com.clarifai.grpc.api.TaskReviewMetricsOrBuilder> 
+        getReviewFieldBuilder() {
+      if (reviewBuilder_ == null) {
+        reviewBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TaskReviewMetrics, com.clarifai.grpc.api.TaskReviewMetrics.Builder, com.clarifai.grpc.api.TaskReviewMetricsOrBuilder>(
+                getReview(),
+                getParentForChildren(),
+                isClean());
+        review_ = null;
+      }
+      return reviewBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

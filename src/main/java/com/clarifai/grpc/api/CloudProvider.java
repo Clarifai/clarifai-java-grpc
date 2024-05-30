@@ -5,35 +5,31 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * We define a cloud region here to be used in Nodepools and by the cloud agent.
- * There will be one cloud agent per CloudRegion.
- * This allows us to define CloudRegions that are VPCs within one physical cloud and have that
- * managed by one cloud agent which can list all nodepools for that VPC to deploy them and
- * orchestrate work within them.
+ * CloudProvider represents the entity that provides the infrastructure where the Nodepools are deployed.
+ * This could be a public cloud provider like AWS, GCP, Azure, etc., or a self-hosted infrastructure.
  * </pre>
  *
- * Protobuf type {@code clarifai.api.CloudRegion}
+ * Protobuf type {@code clarifai.api.CloudProvider}
  */
-public final class CloudRegion extends
+public final class CloudProvider extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.CloudRegion)
-    CloudRegionOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.CloudProvider)
+    CloudProviderOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CloudRegion.newBuilder() to construct.
-  private CloudRegion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CloudProvider.newBuilder() to construct.
+  private CloudProvider(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CloudRegion() {
+  private CloudProvider() {
     id_ = "";
-    cloud_ = 0;
-    region_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new CloudRegion();
+    return new CloudProvider();
   }
 
   @java.lang.Override
@@ -41,7 +37,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CloudRegion(
+  private CloudProvider(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -65,16 +61,10 @@ private static final long serialVersionUID = 0L;
             id_ = s;
             break;
           }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            cloud_ = rawValue;
-            break;
-          }
-          case 34: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            region_ = s;
+            name_ = s;
             break;
           }
           default: {
@@ -100,176 +90,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.CloudRegion.class, com.clarifai.grpc.api.CloudRegion.Builder.class);
-  }
-
-  /**
-   * Protobuf enum {@code clarifai.api.CloudRegion.Cloud}
-   */
-  public enum Cloud
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>UNKOWN_CLOUD = 0;</code>
-     */
-    UNKOWN_CLOUD(0),
-    /**
-     * <pre>
-     * Run on a user's own infrastructure. This has restrictions on who can access resources
-     * that are being run by SELF_HOSTED runners. Only those who are part of the user/org where they
-     * exist can leverage them.
-     * </pre>
-     *
-     * <code>SELF_HOSTED = 1;</code>
-     */
-    SELF_HOSTED(1),
-    /**
-     * <code>AWS = 2;</code>
-     */
-    AWS(2),
-    /**
-     * <code>GCP = 3;</code>
-     */
-    GCP(3),
-    /**
-     * <code>AZURE = 4;</code>
-     */
-    AZURE(4),
-    /**
-     * <code>LAMBDA = 5;</code>
-     */
-    LAMBDA(5),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>UNKOWN_CLOUD = 0;</code>
-     */
-    public static final int UNKOWN_CLOUD_VALUE = 0;
-    /**
-     * <pre>
-     * Run on a user's own infrastructure. This has restrictions on who can access resources
-     * that are being run by SELF_HOSTED runners. Only those who are part of the user/org where they
-     * exist can leverage them.
-     * </pre>
-     *
-     * <code>SELF_HOSTED = 1;</code>
-     */
-    public static final int SELF_HOSTED_VALUE = 1;
-    /**
-     * <code>AWS = 2;</code>
-     */
-    public static final int AWS_VALUE = 2;
-    /**
-     * <code>GCP = 3;</code>
-     */
-    public static final int GCP_VALUE = 3;
-    /**
-     * <code>AZURE = 4;</code>
-     */
-    public static final int AZURE_VALUE = 4;
-    /**
-     * <code>LAMBDA = 5;</code>
-     */
-    public static final int LAMBDA_VALUE = 5;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Cloud valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static Cloud forNumber(int value) {
-      switch (value) {
-        case 0: return UNKOWN_CLOUD;
-        case 1: return SELF_HOSTED;
-        case 2: return AWS;
-        case 3: return GCP;
-        case 4: return AZURE;
-        case 5: return LAMBDA;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Cloud>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Cloud> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Cloud>() {
-            public Cloud findValueByNumber(int number) {
-              return Cloud.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.clarifai.grpc.api.CloudRegion.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Cloud[] VALUES = values();
-
-    public static Cloud valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Cloud(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:clarifai.api.CloudRegion.Cloud)
+            com.clarifai.grpc.api.CloudProvider.class, com.clarifai.grpc.api.CloudProvider.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
+   * <pre>
+   * Unique identifier of the cloud provider.
+   * </pre>
+   *
    * <code>string id = 1;</code>
    * @return The id.
    */
@@ -287,6 +125,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Unique identifier of the cloud provider.
+   * </pre>
+   *
    * <code>string id = 1;</code>
    * @return The bytes for id.
    */
@@ -305,67 +147,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CLOUD_FIELD_NUMBER = 3;
-  private int cloud_;
-  /**
-   * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-   * @return The enum numeric value on the wire for cloud.
-   */
-  @java.lang.Override public int getCloudValue() {
-    return cloud_;
-  }
-  /**
-   * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-   * @return The cloud.
-   */
-  @java.lang.Override public com.clarifai.grpc.api.CloudRegion.Cloud getCloud() {
-    @SuppressWarnings("deprecation")
-    com.clarifai.grpc.api.CloudRegion.Cloud result = com.clarifai.grpc.api.CloudRegion.Cloud.valueOf(cloud_);
-    return result == null ? com.clarifai.grpc.api.CloudRegion.Cloud.UNRECOGNIZED : result;
-  }
-
-  public static final int REGION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object region_;
+  public static final int NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The region. The naming here depends on the cloud choice above and will be validated
-   * against which clouds+regions that Clarifai currently supports.
+   * Name of the cloud provider.
    * </pre>
    *
-   * <code>string region = 4;</code>
-   * @return The region.
+   * <code>string name = 2;</code>
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getRegion() {
-    java.lang.Object ref = region_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      region_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The region. The naming here depends on the cloud choice above and will be validated
-   * against which clouds+regions that Clarifai currently supports.
+   * Name of the cloud provider.
    * </pre>
    *
-   * <code>string region = 4;</code>
-   * @return The bytes for region.
+   * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getRegionBytes() {
-    java.lang.Object ref = region_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      region_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -389,11 +210,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (cloud_ != com.clarifai.grpc.api.CloudRegion.Cloud.UNKOWN_CLOUD.getNumber()) {
-      output.writeEnum(3, cloud_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, region_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     unknownFields.writeTo(output);
   }
@@ -407,12 +225,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (cloud_ != com.clarifai.grpc.api.CloudRegion.Cloud.UNKOWN_CLOUD.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, cloud_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, region_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -424,16 +238,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.CloudRegion)) {
+    if (!(obj instanceof com.clarifai.grpc.api.CloudProvider)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.CloudRegion other = (com.clarifai.grpc.api.CloudRegion) obj;
+    com.clarifai.grpc.api.CloudProvider other = (com.clarifai.grpc.api.CloudProvider) obj;
 
     if (!getId()
         .equals(other.getId())) return false;
-    if (cloud_ != other.cloud_) return false;
-    if (!getRegion()
-        .equals(other.getRegion())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -447,78 +260,76 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
-    hash = (37 * hash) + CLOUD_FIELD_NUMBER;
-    hash = (53 * hash) + cloud_;
-    hash = (37 * hash) + REGION_FIELD_NUMBER;
-    hash = (53 * hash) + getRegion().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.CloudProvider parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseDelimitedFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.CloudRegion parseFrom(
+  public static com.clarifai.grpc.api.CloudProvider parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -531,7 +342,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.CloudRegion prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.CloudProvider prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -548,33 +359,30 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * We define a cloud region here to be used in Nodepools and by the cloud agent.
-   * There will be one cloud agent per CloudRegion.
-   * This allows us to define CloudRegions that are VPCs within one physical cloud and have that
-   * managed by one cloud agent which can list all nodepools for that VPC to deploy them and
-   * orchestrate work within them.
+   * CloudProvider represents the entity that provides the infrastructure where the Nodepools are deployed.
+   * This could be a public cloud provider like AWS, GCP, Azure, etc., or a self-hosted infrastructure.
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.CloudRegion}
+   * Protobuf type {@code clarifai.api.CloudProvider}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.CloudRegion)
-      com.clarifai.grpc.api.CloudRegionOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.CloudProvider)
+      com.clarifai.grpc.api.CloudProviderOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.CloudRegion.class, com.clarifai.grpc.api.CloudRegion.Builder.class);
+              com.clarifai.grpc.api.CloudProvider.class, com.clarifai.grpc.api.CloudProvider.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.CloudRegion.newBuilder()
+    // Construct using com.clarifai.grpc.api.CloudProvider.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -594,9 +402,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       id_ = "";
 
-      cloud_ = 0;
-
-      region_ = "";
+      name_ = "";
 
       return this;
     }
@@ -604,17 +410,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudRegion_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_CloudProvider_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.CloudRegion getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.CloudRegion.getDefaultInstance();
+    public com.clarifai.grpc.api.CloudProvider getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.CloudProvider.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.CloudRegion build() {
-      com.clarifai.grpc.api.CloudRegion result = buildPartial();
+    public com.clarifai.grpc.api.CloudProvider build() {
+      com.clarifai.grpc.api.CloudProvider result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -622,11 +428,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.CloudRegion buildPartial() {
-      com.clarifai.grpc.api.CloudRegion result = new com.clarifai.grpc.api.CloudRegion(this);
+    public com.clarifai.grpc.api.CloudProvider buildPartial() {
+      com.clarifai.grpc.api.CloudProvider result = new com.clarifai.grpc.api.CloudProvider(this);
       result.id_ = id_;
-      result.cloud_ = cloud_;
-      result.region_ = region_;
+      result.name_ = name_;
       onBuilt();
       return result;
     }
@@ -665,25 +470,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.CloudRegion) {
-        return mergeFrom((com.clarifai.grpc.api.CloudRegion)other);
+      if (other instanceof com.clarifai.grpc.api.CloudProvider) {
+        return mergeFrom((com.clarifai.grpc.api.CloudProvider)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.CloudRegion other) {
-      if (other == com.clarifai.grpc.api.CloudRegion.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.CloudProvider other) {
+      if (other == com.clarifai.grpc.api.CloudProvider.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
       }
-      if (other.cloud_ != 0) {
-        setCloudValue(other.getCloudValue());
-      }
-      if (!other.getRegion().isEmpty()) {
-        region_ = other.region_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -701,11 +503,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.CloudRegion parsedMessage = null;
+      com.clarifai.grpc.api.CloudProvider parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.CloudRegion) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.CloudProvider) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -717,6 +519,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
+     * <pre>
+     * Unique identifier of the cloud provider.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The id.
      */
@@ -733,6 +539,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Unique identifier of the cloud provider.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return The bytes for id.
      */
@@ -750,6 +560,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Unique identifier of the cloud provider.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @param value The id to set.
      * @return This builder for chaining.
@@ -765,6 +579,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Unique identifier of the cloud provider.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @return This builder for chaining.
      */
@@ -775,6 +593,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Unique identifier of the cloud provider.
+     * </pre>
+     *
      * <code>string id = 1;</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -791,77 +613,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int cloud_ = 0;
-    /**
-     * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-     * @return The enum numeric value on the wire for cloud.
-     */
-    @java.lang.Override public int getCloudValue() {
-      return cloud_;
-    }
-    /**
-     * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-     * @param value The enum numeric value on the wire for cloud to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCloudValue(int value) {
-      
-      cloud_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-     * @return The cloud.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.CloudRegion.Cloud getCloud() {
-      @SuppressWarnings("deprecation")
-      com.clarifai.grpc.api.CloudRegion.Cloud result = com.clarifai.grpc.api.CloudRegion.Cloud.valueOf(cloud_);
-      return result == null ? com.clarifai.grpc.api.CloudRegion.Cloud.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-     * @param value The cloud to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCloud(com.clarifai.grpc.api.CloudRegion.Cloud value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      cloud_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.clarifai.api.CloudRegion.Cloud cloud = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearCloud() {
-      
-      cloud_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object region_ = "";
+    private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The region. The naming here depends on the cloud choice above and will be validated
-     * against which clouds+regions that Clarifai currently supports.
+     * Name of the cloud provider.
      * </pre>
      *
-     * <code>string region = 4;</code>
-     * @return The region.
+     * <code>string name = 2;</code>
+     * @return The name.
      */
-    public java.lang.String getRegion() {
-      java.lang.Object ref = region_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        region_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -869,21 +636,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The region. The naming here depends on the cloud choice above and will be validated
-     * against which clouds+regions that Clarifai currently supports.
+     * Name of the cloud provider.
      * </pre>
      *
-     * <code>string region = 4;</code>
-     * @return The bytes for region.
+     * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
-        getRegionBytes() {
-      java.lang.Object ref = region_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        region_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -891,57 +657,54 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The region. The naming here depends on the cloud choice above and will be validated
-     * against which clouds+regions that Clarifai currently supports.
+     * Name of the cloud provider.
      * </pre>
      *
-     * <code>string region = 4;</code>
-     * @param value The region to set.
+     * <code>string name = 2;</code>
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setRegion(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      region_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The region. The naming here depends on the cloud choice above and will be validated
-     * against which clouds+regions that Clarifai currently supports.
+     * Name of the cloud provider.
      * </pre>
      *
-     * <code>string region = 4;</code>
+     * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRegion() {
+    public Builder clearName() {
       
-      region_ = getDefaultInstance().getRegion();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The region. The naming here depends on the cloud choice above and will be validated
-     * against which clouds+regions that Clarifai currently supports.
+     * Name of the cloud provider.
      * </pre>
      *
-     * <code>string region = 4;</code>
-     * @param value The bytes for region to set.
+     * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setRegionBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      region_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
@@ -958,41 +721,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.CloudRegion)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.CloudProvider)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.CloudRegion)
-  private static final com.clarifai.grpc.api.CloudRegion DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.CloudProvider)
+  private static final com.clarifai.grpc.api.CloudProvider DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.CloudRegion();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.CloudProvider();
   }
 
-  public static com.clarifai.grpc.api.CloudRegion getDefaultInstance() {
+  public static com.clarifai.grpc.api.CloudProvider getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CloudRegion>
-      PARSER = new com.google.protobuf.AbstractParser<CloudRegion>() {
+  private static final com.google.protobuf.Parser<CloudProvider>
+      PARSER = new com.google.protobuf.AbstractParser<CloudProvider>() {
     @java.lang.Override
-    public CloudRegion parsePartialFrom(
+    public CloudProvider parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CloudRegion(input, extensionRegistry);
+      return new CloudProvider(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CloudRegion> parser() {
+  public static com.google.protobuf.Parser<CloudProvider> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CloudRegion> getParserForType() {
+  public com.google.protobuf.Parser<CloudProvider> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.CloudRegion getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.CloudProvider getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
