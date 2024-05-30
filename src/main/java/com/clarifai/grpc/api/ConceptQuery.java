@@ -98,6 +98,34 @@ private static final long serialVersionUID = 0L;
             input.popLimit(oldLimit);
             break;
           }
+          case 42: {
+            com.clarifai.grpc.api.Model.Builder subBuilder = null;
+            if (sourceCase_ == 5) {
+              subBuilder = ((com.clarifai.grpc.api.Model) source_).toBuilder();
+            }
+            source_ =
+                input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Model) source_);
+              source_ = subBuilder.buildPartial();
+            }
+            sourceCase_ = 5;
+            break;
+          }
+          case 50: {
+            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
+            if (sourceCase_ == 6) {
+              subBuilder = ((com.clarifai.grpc.api.Workflow) source_).toBuilder();
+            }
+            source_ =
+                input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.Workflow) source_);
+              source_ = subBuilder.buildPartial();
+            }
+            sourceCase_ = 6;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -133,6 +161,47 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_ConceptQuery_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.ConceptQuery.class, com.clarifai.grpc.api.ConceptQuery.Builder.class);
+  }
+
+  private int sourceCase_ = 0;
+  private java.lang.Object source_;
+  public enum SourceCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MODEL(5),
+    WORKFLOW(6),
+    SOURCE_NOT_SET(0);
+    private final int value;
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 5: return MODEL;
+        case 6: return WORKFLOW;
+        case 0: return SOURCE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase
+  getSourceCase() {
+    return SourceCase.forNumber(
+        sourceCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -231,14 +300,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object workflowId_;
   /**
    * <pre>
-   * The id of workflow. If no id is provided, then application base workflow is used.
+   * Deprecated: Use workflow.id instead.
    * </pre>
    *
-   * <code>string workflow_id = 3;</code>
+   * <code>string workflow_id = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=495
    * @return The workflowId.
    */
   @java.lang.Override
-  public java.lang.String getWorkflowId() {
+  @java.lang.Deprecated public java.lang.String getWorkflowId() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -252,14 +323,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The id of workflow. If no id is provided, then application base workflow is used.
+   * Deprecated: Use workflow.id instead.
    * </pre>
    *
-   * <code>string workflow_id = 3;</code>
+   * <code>string workflow_id = 3 [deprecated = true];</code>
+   * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=495
    * @return The bytes for workflowId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getWorkflowIdBytes() {
     java.lang.Object ref = workflowId_;
     if (ref instanceof java.lang.String) {
@@ -287,7 +360,7 @@ private static final long serialVersionUID = 0L;
           };
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -301,7 +374,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -314,7 +387,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -328,7 +401,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -342,7 +415,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The concepts must belong to workflow models with specified use cases.
+   * The concepts must belong to models with specified use cases.
    * Multiple values are joined using an OR condition.
    * </pre>
    *
@@ -355,6 +428,68 @@ private static final long serialVersionUID = 0L;
     return useCases_.get(index);
   }
   private int useCasesMemoizedSerializedSize;
+
+  public static final int MODEL_FIELD_NUMBER = 5;
+  /**
+   * <code>.clarifai.api.Model model = 5;</code>
+   * @return Whether the model field is set.
+   */
+  @java.lang.Override
+  public boolean hasModel() {
+    return sourceCase_ == 5;
+  }
+  /**
+   * <code>.clarifai.api.Model model = 5;</code>
+   * @return The model.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Model getModel() {
+    if (sourceCase_ == 5) {
+       return (com.clarifai.grpc.api.Model) source_;
+    }
+    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Model model = 5;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+    if (sourceCase_ == 5) {
+       return (com.clarifai.grpc.api.Model) source_;
+    }
+    return com.clarifai.grpc.api.Model.getDefaultInstance();
+  }
+
+  public static final int WORKFLOW_FIELD_NUMBER = 6;
+  /**
+   * <code>.clarifai.api.Workflow workflow = 6;</code>
+   * @return Whether the workflow field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkflow() {
+    return sourceCase_ == 6;
+  }
+  /**
+   * <code>.clarifai.api.Workflow workflow = 6;</code>
+   * @return The workflow.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Workflow getWorkflow() {
+    if (sourceCase_ == 6) {
+       return (com.clarifai.grpc.api.Workflow) source_;
+    }
+    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.Workflow workflow = 6;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+    if (sourceCase_ == 6) {
+       return (com.clarifai.grpc.api.Workflow) source_;
+    }
+    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+  }
 
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
@@ -387,6 +522,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < useCases_.size(); i++) {
       output.writeEnumNoTag(useCases_.get(i));
     }
+    if (sourceCase_ == 5) {
+      output.writeMessage(5, (com.clarifai.grpc.api.Model) source_);
+    }
+    if (sourceCase_ == 6) {
+      output.writeMessage(6, (com.clarifai.grpc.api.Workflow) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -417,6 +558,14 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }useCasesMemoizedSerializedSize = dataSize;
     }
+    if (sourceCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.clarifai.grpc.api.Model) source_);
+    }
+    if (sourceCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.clarifai.grpc.api.Workflow) source_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -439,6 +588,19 @@ private static final long serialVersionUID = 0L;
     if (!getWorkflowId()
         .equals(other.getWorkflowId())) return false;
     if (!useCases_.equals(other.useCases_)) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 5:
+        if (!getModel()
+            .equals(other.getModel())) return false;
+        break;
+      case 6:
+        if (!getWorkflow()
+            .equals(other.getWorkflow())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -459,6 +621,18 @@ private static final long serialVersionUID = 0L;
     if (getUseCasesCount() > 0) {
       hash = (37 * hash) + USE_CASES_FIELD_NUMBER;
       hash = (53 * hash) + useCases_.hashCode();
+    }
+    switch (sourceCase_) {
+      case 5:
+        hash = (37 * hash) + MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getModel().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflow().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -605,6 +779,8 @@ private static final long serialVersionUID = 0L;
 
       useCases_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      sourceCase_ = 0;
+      source_ = null;
       return this;
     }
 
@@ -640,6 +816,21 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.useCases_ = useCases_;
+      if (sourceCase_ == 5) {
+        if (modelBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = modelBuilder_.build();
+        }
+      }
+      if (sourceCase_ == 6) {
+        if (workflowBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = workflowBuilder_.build();
+        }
+      }
+      result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
     }
@@ -710,6 +901,19 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      switch (other.getSourceCase()) {
+        case MODEL: {
+          mergeModel(other.getModel());
+          break;
+        }
+        case WORKFLOW: {
+          mergeWorkflow(other.getWorkflow());
+          break;
+        }
+        case SOURCE_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -738,6 +942,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+    public SourceCase
+        getSourceCase() {
+      return SourceCase.forNumber(
+          sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -935,13 +1154,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object workflowId_ = "";
     /**
      * <pre>
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      * </pre>
      *
-     * <code>string workflow_id = 3;</code>
+     * <code>string workflow_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=495
      * @return The workflowId.
      */
-    public java.lang.String getWorkflowId() {
+    @java.lang.Deprecated public java.lang.String getWorkflowId() {
       java.lang.Object ref = workflowId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -955,13 +1176,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      * </pre>
      *
-     * <code>string workflow_id = 3;</code>
+     * <code>string workflow_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=495
      * @return The bytes for workflowId.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getWorkflowIdBytes() {
       java.lang.Object ref = workflowId_;
       if (ref instanceof String) {
@@ -976,14 +1199,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      * </pre>
      *
-     * <code>string workflow_id = 3;</code>
+     * <code>string workflow_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=495
      * @param value The workflowId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowId(
+    @java.lang.Deprecated public Builder setWorkflowId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -995,13 +1220,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      * </pre>
      *
-     * <code>string workflow_id = 3;</code>
+     * <code>string workflow_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=495
      * @return This builder for chaining.
      */
-    public Builder clearWorkflowId() {
+    @java.lang.Deprecated public Builder clearWorkflowId() {
       
       workflowId_ = getDefaultInstance().getWorkflowId();
       onChanged();
@@ -1009,14 +1236,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The id of workflow. If no id is provided, then application base workflow is used.
+     * Deprecated: Use workflow.id instead.
      * </pre>
      *
-     * <code>string workflow_id = 3;</code>
+     * <code>string workflow_id = 3 [deprecated = true];</code>
+     * @deprecated clarifai.api.ConceptQuery.workflow_id is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=495
      * @param value The bytes for workflowId to set.
      * @return This builder for chaining.
      */
-    public Builder setWorkflowIdBytes(
+    @java.lang.Deprecated public Builder setWorkflowIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1038,7 +1267,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1051,7 +1280,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1063,7 +1292,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1076,7 +1305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1097,7 +1326,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1116,7 +1345,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1135,7 +1364,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1150,7 +1379,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1163,7 +1392,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1176,7 +1405,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1194,7 +1423,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1210,7 +1439,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The concepts must belong to workflow models with specified use cases.
+     * The concepts must belong to models with specified use cases.
      * Multiple values are joined using an OR condition.
      * </pre>
      *
@@ -1226,6 +1455,290 @@ private static final long serialVersionUID = 0L;
       }
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     * @return Whether the model field is set.
+     */
+    @java.lang.Override
+    public boolean hasModel() {
+      return sourceCase_ == 5;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     * @return The model.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Model getModel() {
+      if (modelBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.clarifai.grpc.api.Model) source_;
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return modelBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    public Builder setModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    public Builder setModel(
+        com.clarifai.grpc.api.Model.Builder builderForValue) {
+      if (modelBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
+      if (modelBuilder_ == null) {
+        if (sourceCase_ == 5 &&
+            source_ != com.clarifai.grpc.api.Model.getDefaultInstance()) {
+          source_ = com.clarifai.grpc.api.Model.newBuilder((com.clarifai.grpc.api.Model) source_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          modelBuilder_.mergeFrom(value);
+        } else {
+          modelBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    public Builder clearModel() {
+      if (modelBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        modelBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
+      return getModelFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
+      if ((sourceCase_ == 5) && (modelBuilder_ != null)) {
+        return modelBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.clarifai.grpc.api.Model) source_;
+        }
+        return com.clarifai.grpc.api.Model.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Model model = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
+        getModelFieldBuilder() {
+      if (modelBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ = com.clarifai.grpc.api.Model.getDefaultInstance();
+        }
+        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
+                (com.clarifai.grpc.api.Model) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();;
+      return modelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     * @return Whether the workflow field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkflow() {
+      return sourceCase_ == 6;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     * @return The workflow.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Workflow getWorkflow() {
+      if (workflowBuilder_ == null) {
+        if (sourceCase_ == 6) {
+          return (com.clarifai.grpc.api.Workflow) source_;
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 6) {
+          return workflowBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    public Builder setWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(value);
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    public Builder setWorkflow(
+        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
+      if (workflowBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        workflowBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    public Builder mergeWorkflow(com.clarifai.grpc.api.Workflow value) {
+      if (workflowBuilder_ == null) {
+        if (sourceCase_ == 6 &&
+            source_ != com.clarifai.grpc.api.Workflow.getDefaultInstance()) {
+          source_ = com.clarifai.grpc.api.Workflow.newBuilder((com.clarifai.grpc.api.Workflow) source_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 6) {
+          workflowBuilder_.mergeFrom(value);
+        } else {
+          workflowBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    public Builder clearWorkflow() {
+      if (workflowBuilder_ == null) {
+        if (sourceCase_ == 6) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 6) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        workflowBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    public com.clarifai.grpc.api.Workflow.Builder getWorkflowBuilder() {
+      return getWorkflowFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
+      if ((sourceCase_ == 6) && (workflowBuilder_ != null)) {
+        return workflowBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 6) {
+          return (com.clarifai.grpc.api.Workflow) source_;
+        }
+        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.Workflow workflow = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
+        getWorkflowFieldBuilder() {
+      if (workflowBuilder_ == null) {
+        if (!(sourceCase_ == 6)) {
+          source_ = com.clarifai.grpc.api.Workflow.getDefaultInstance();
+        }
+        workflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
+                (com.clarifai.grpc.api.Workflow) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 6;
+      onChanged();;
+      return workflowBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

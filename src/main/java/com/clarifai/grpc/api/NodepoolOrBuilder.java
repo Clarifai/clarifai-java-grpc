@@ -29,10 +29,84 @@ public interface NodepoolOrBuilder extends
 
   /**
    * <pre>
+   * Short description about the nodepool.
+   * </pre>
+   *
+   * <code>string description = 2;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Short description about the nodepool.
+   * </pre>
+   *
+   * <code>string description = 2;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <pre>
+   * When the nodepool was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <pre>
+   * When the nodepool was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return The createdAt.
+   */
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <pre>
+   * When the nodepool was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <pre>
+   * When the nodepool was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When the nodepool was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When the nodepool was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 4;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
+
+  /**
+   * <pre>
    * The user/org that this nodepool belongs to.
    * </pre>
    *
-   * <code>string user_id = 2;</code>
+   * <code>string user_id = 5;</code>
    * @return The userId.
    */
   java.lang.String getUserId();
@@ -41,7 +115,7 @@ public interface NodepoolOrBuilder extends
    * The user/org that this nodepool belongs to.
    * </pre>
    *
-   * <code>string user_id = 2;</code>
+   * <code>string user_id = 5;</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString
@@ -49,112 +123,73 @@ public interface NodepoolOrBuilder extends
 
   /**
    * <pre>
-   * Which cloud region this nodepool is within.
+   * Which cluster this nodepool is within.
    * </pre>
    *
-   * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-   * @return Whether the cloudRegion field is set.
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+   * @return Whether the computeCluster field is set.
    */
-  boolean hasCloudRegion();
+  boolean hasComputeCluster();
   /**
    * <pre>
-   * Which cloud region this nodepool is within.
+   * Which cluster this nodepool is within.
    * </pre>
    *
-   * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
-   * @return The cloudRegion.
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
+   * @return The computeCluster.
    */
-  com.clarifai.grpc.api.CloudRegion getCloudRegion();
+  com.clarifai.grpc.api.ComputeCluster getComputeCluster();
   /**
    * <pre>
-   * Which cloud region this nodepool is within.
+   * Which cluster this nodepool is within.
    * </pre>
    *
-   * <code>.clarifai.api.CloudRegion cloud_region = 3;</code>
+   * <code>.clarifai.api.ComputeCluster compute_cluster = 6;</code>
    */
-  com.clarifai.grpc.api.CloudRegionOrBuilder getCloudRegionOrBuilder();
+  com.clarifai.grpc.api.ComputeClusterOrBuilder getComputeClusterOrBuilder();
 
   /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @return A list containing the capacityTypes.
+   * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+   * @return Whether the nodeCapacityType field is set.
    */
-  java.util.List<com.clarifai.grpc.api.Nodepool.CapacityType> getCapacityTypesList();
+  boolean hasNodeCapacityType();
   /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @return The count of capacityTypes.
+   * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
+   * @return The nodeCapacityType.
    */
-  int getCapacityTypesCount();
+  com.clarifai.grpc.api.NodeCapacityType getNodeCapacityType();
   /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @param index The index of the element to return.
-   * @return The capacityTypes at the given index.
+   * <code>.clarifai.api.NodeCapacityType node_capacity_type = 7;</code>
    */
-  com.clarifai.grpc.api.Nodepool.CapacityType getCapacityTypes(int index);
-  /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @return A list containing the enum numeric values on the wire for capacityTypes.
-   */
-  java.util.List<java.lang.Integer>
-  getCapacityTypesValueList();
-  /**
-   * <code>repeated .clarifai.api.Nodepool.CapacityType capacity_types = 4;</code>
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of capacityTypes at the given index.
-   */
-  int getCapacityTypesValue(int index);
+  com.clarifai.grpc.api.NodeCapacityTypeOrBuilder getNodeCapacityTypeOrBuilder();
 
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @return A list containing the instanceTypes.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<com.clarifai.grpc.api.InstanceType> 
       getInstanceTypesList();
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @return The count of instanceTypes.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
+   */
+  com.clarifai.grpc.api.InstanceType getInstanceTypes(int index);
+  /**
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
   int getInstanceTypesCount();
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @param index The index of the element to return.
-   * @return The instanceTypes at the given index.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
-  java.lang.String getInstanceTypes(int index);
+  java.util.List<? extends com.clarifai.grpc.api.InstanceTypeOrBuilder> 
+      getInstanceTypesOrBuilderList();
   /**
-   * <pre>
-   *&#47;///////////////////////////////////
-   * The instance types that will be available in this pool of nodes.
-   * Clarifai offers multiple different choices that combine cpu cores, memory and accelerator.
-   * </pre>
-   *
-   * <code>repeated string instance_types = 8;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the instanceTypes at the given index.
+   * <code>repeated .clarifai.api.InstanceType instance_types = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceTypesBytes(int index);
+  com.clarifai.grpc.api.InstanceTypeOrBuilder getInstanceTypesOrBuilder(
+      int index);
 
   /**
    * <pre>
-   * Minimum number of instances in this nodepool. This allows the nodeool to scale down to this
+   * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
    * amount. A nodepool needs a minimum of 1 instance.
    * </pre>
    *
@@ -173,4 +208,67 @@ public interface NodepoolOrBuilder extends
    * @return The maxInstances.
    */
   int getMaxInstances();
+
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 11;</code>
+   * @return Whether the visibility field is set.
+   */
+  boolean hasVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 11;</code>
+   * @return The visibility.
+   */
+  com.clarifai.grpc.api.Visibility getVisibility();
+  /**
+   * <pre>
+   * The visibility field represents whether this message is privately/publicly visible.
+   * To be visible to the public the App that contains it AND the User that contains the App must
+   * also be publicly visible.
+   * </pre>
+   *
+   * <code>.clarifai.api.Visibility visibility = 11;</code>
+   */
+  com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 12;</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 12;</code>
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 12;</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 }

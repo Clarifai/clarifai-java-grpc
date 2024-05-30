@@ -23,24 +23,36 @@ public interface DeleteRunnersRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  java.lang.String getNodepoolId();
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  com.google.protobuf.ByteString
+      getNodepoolIdBytes();
+
+  /**
+   * <code>repeated string ids = 3;</code>
    * @return A list containing the ids.
    */
   java.util.List<java.lang.String>
       getIdsList();
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @return The count of ids.
    */
   int getIdsCount();
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @param index The index of the element to return.
    * @return The ids at the given index.
    */
   java.lang.String getIds(int index);
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @param index The index of the value to return.
    * @return The bytes of the ids at the given index.
    */

@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PostRunnerItemOutputsRequest() {
+    nodepoolId_ = "";
     runnerId_ = "";
     runnerItemId_ = "";
     runnerItemOutputs_ = java.util.Collections.emptyList();
@@ -72,16 +73,22 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            runnerId_ = s;
+            nodepoolId_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            runnerItemId_ = s;
+            runnerId_ = s;
             break;
           }
           case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            runnerItemId_ = s;
+            break;
+          }
+          case 42: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               runnerItemOutputs_ = new java.util.ArrayList<com.clarifai.grpc.api.RunnerItemOutput>();
               mutable_bitField0_ |= 0x00000001;
@@ -90,7 +97,7 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.RunnerItemOutput.parser(), extensionRegistry));
             break;
           }
-          case 42: {
+          case 50: {
             com.clarifai.grpc.api.status.Status.Builder subBuilder = null;
             if (status_ != null) {
               subBuilder = status_.toBuilder();
@@ -166,14 +173,60 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int RUNNER_ID_FIELD_NUMBER = 2;
+  public static final int NODEPOOL_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nodepoolId_;
+  /**
+   * <pre>
+   * The particular nodepool that runner belongs to
+   * </pre>
+   *
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  @java.lang.Override
+  public java.lang.String getNodepoolId() {
+    java.lang.Object ref = nodepoolId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodepoolId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The particular nodepool that runner belongs to
+   * </pre>
+   *
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNodepoolIdBytes() {
+    java.lang.Object ref = nodepoolId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nodepoolId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RUNNER_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object runnerId_;
   /**
    * <pre>
    * The particular runner that processed the work.
    * </pre>
    *
-   * <code>string runner_id = 2;</code>
+   * <code>string runner_id = 3;</code>
    * @return The runnerId.
    */
   @java.lang.Override
@@ -194,7 +247,7 @@ private static final long serialVersionUID = 0L;
    * The particular runner that processed the work.
    * </pre>
    *
-   * <code>string runner_id = 2;</code>
+   * <code>string runner_id = 3;</code>
    * @return The bytes for runnerId.
    */
   @java.lang.Override
@@ -212,14 +265,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RUNNER_ITEM_ID_FIELD_NUMBER = 3;
+  public static final int RUNNER_ITEM_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object runnerItemId_;
   /**
    * <pre>
    * The particular item of work processed.
    * </pre>
    *
-   * <code>string runner_item_id = 3;</code>
+   * <code>string runner_item_id = 4;</code>
    * @return The runnerItemId.
    */
   @java.lang.Override
@@ -240,7 +293,7 @@ private static final long serialVersionUID = 0L;
    * The particular item of work processed.
    * </pre>
    *
-   * <code>string runner_item_id = 3;</code>
+   * <code>string runner_item_id = 4;</code>
    * @return The bytes for runnerItemId.
    */
   @java.lang.Override
@@ -258,14 +311,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RUNNER_ITEM_OUTPUTS_FIELD_NUMBER = 4;
+  public static final int RUNNER_ITEM_OUTPUTS_FIELD_NUMBER = 5;
   private java.util.List<com.clarifai.grpc.api.RunnerItemOutput> runnerItemOutputs_;
   /**
    * <pre>
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   @java.lang.Override
   public java.util.List<com.clarifai.grpc.api.RunnerItemOutput> getRunnerItemOutputsList() {
@@ -276,7 +329,7 @@ private static final long serialVersionUID = 0L;
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.clarifai.grpc.api.RunnerItemOutputOrBuilder> 
@@ -288,7 +341,7 @@ private static final long serialVersionUID = 0L;
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   @java.lang.Override
   public int getRunnerItemOutputsCount() {
@@ -299,7 +352,7 @@ private static final long serialVersionUID = 0L;
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.RunnerItemOutput getRunnerItemOutputs(int index) {
@@ -310,7 +363,7 @@ private static final long serialVersionUID = 0L;
    * This allows you to create one or more runner by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+   * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.RunnerItemOutputOrBuilder getRunnerItemOutputsOrBuilder(
@@ -318,7 +371,7 @@ private static final long serialVersionUID = 0L;
     return runnerItemOutputs_.get(index);
   }
 
-  public static final int STATUS_FIELD_NUMBER = 5;
+  public static final int STATUS_FIELD_NUMBER = 6;
   private com.clarifai.grpc.api.status.Status status_;
   /**
    * <pre>
@@ -327,7 +380,7 @@ private static final long serialVersionUID = 0L;
    * in a reverse protocol.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 5;</code>
+   * <code>.clarifai.api.status.Status status = 6;</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -341,7 +394,7 @@ private static final long serialVersionUID = 0L;
    * in a reverse protocol.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 5;</code>
+   * <code>.clarifai.api.status.Status status = 6;</code>
    * @return The status.
    */
   @java.lang.Override
@@ -355,7 +408,7 @@ private static final long serialVersionUID = 0L;
    * in a reverse protocol.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 5;</code>
+   * <code>.clarifai.api.status.Status status = 6;</code>
    */
   @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
@@ -379,17 +432,20 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodepoolId_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runnerId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, runnerId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerItemId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, runnerItemId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, runnerItemId_);
     }
     for (int i = 0; i < runnerItemOutputs_.size(); i++) {
-      output.writeMessage(4, runnerItemOutputs_.get(i));
+      output.writeMessage(5, runnerItemOutputs_.get(i));
     }
     if (status_ != null) {
-      output.writeMessage(5, getStatus());
+      output.writeMessage(6, getStatus());
     }
     unknownFields.writeTo(output);
   }
@@ -404,19 +460,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodepoolId_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runnerId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, runnerId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerItemId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, runnerItemId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, runnerItemId_);
     }
     for (int i = 0; i < runnerItemOutputs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, runnerItemOutputs_.get(i));
+        .computeMessageSize(5, runnerItemOutputs_.get(i));
     }
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getStatus());
+        .computeMessageSize(6, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -438,6 +497,8 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
+    if (!getNodepoolId()
+        .equals(other.getNodepoolId())) return false;
     if (!getRunnerId()
         .equals(other.getRunnerId())) return false;
     if (!getRunnerItemId()
@@ -464,6 +525,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
+    hash = (37 * hash) + NODEPOOL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNodepoolId().hashCode();
     hash = (37 * hash) + RUNNER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRunnerId().hashCode();
     hash = (37 * hash) + RUNNER_ITEM_ID_FIELD_NUMBER;
@@ -620,6 +683,8 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
+      nodepoolId_ = "";
+
       runnerId_ = "";
 
       runnerItemId_ = "";
@@ -668,6 +733,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
+      result.nodepoolId_ = nodepoolId_;
       result.runnerId_ = runnerId_;
       result.runnerItemId_ = runnerItemId_;
       if (runnerItemOutputsBuilder_ == null) {
@@ -734,6 +800,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.PostRunnerItemOutputsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
+      }
+      if (!other.getNodepoolId().isEmpty()) {
+        nodepoolId_ = other.nodepoolId_;
+        onChanged();
       }
       if (!other.getRunnerId().isEmpty()) {
         runnerId_ = other.runnerId_;
@@ -921,13 +991,109 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
+    private java.lang.Object nodepoolId_ = "";
+    /**
+     * <pre>
+     * The particular nodepool that runner belongs to
+     * </pre>
+     *
+     * <code>string nodepool_id = 2;</code>
+     * @return The nodepoolId.
+     */
+    public java.lang.String getNodepoolId() {
+      java.lang.Object ref = nodepoolId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodepoolId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The particular nodepool that runner belongs to
+     * </pre>
+     *
+     * <code>string nodepool_id = 2;</code>
+     * @return The bytes for nodepoolId.
+     */
+    public com.google.protobuf.ByteString
+        getNodepoolIdBytes() {
+      java.lang.Object ref = nodepoolId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodepoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The particular nodepool that runner belongs to
+     * </pre>
+     *
+     * <code>string nodepool_id = 2;</code>
+     * @param value The nodepoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodepoolId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The particular nodepool that runner belongs to
+     * </pre>
+     *
+     * <code>string nodepool_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNodepoolId() {
+      
+      nodepoolId_ = getDefaultInstance().getNodepoolId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The particular nodepool that runner belongs to
+     * </pre>
+     *
+     * <code>string nodepool_id = 2;</code>
+     * @param value The bytes for nodepoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodepoolIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object runnerId_ = "";
     /**
      * <pre>
      * The particular runner that processed the work.
      * </pre>
      *
-     * <code>string runner_id = 2;</code>
+     * <code>string runner_id = 3;</code>
      * @return The runnerId.
      */
     public java.lang.String getRunnerId() {
@@ -947,7 +1113,7 @@ private static final long serialVersionUID = 0L;
      * The particular runner that processed the work.
      * </pre>
      *
-     * <code>string runner_id = 2;</code>
+     * <code>string runner_id = 3;</code>
      * @return The bytes for runnerId.
      */
     public com.google.protobuf.ByteString
@@ -968,7 +1134,7 @@ private static final long serialVersionUID = 0L;
      * The particular runner that processed the work.
      * </pre>
      *
-     * <code>string runner_id = 2;</code>
+     * <code>string runner_id = 3;</code>
      * @param value The runnerId to set.
      * @return This builder for chaining.
      */
@@ -987,7 +1153,7 @@ private static final long serialVersionUID = 0L;
      * The particular runner that processed the work.
      * </pre>
      *
-     * <code>string runner_id = 2;</code>
+     * <code>string runner_id = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearRunnerId() {
@@ -1001,7 +1167,7 @@ private static final long serialVersionUID = 0L;
      * The particular runner that processed the work.
      * </pre>
      *
-     * <code>string runner_id = 2;</code>
+     * <code>string runner_id = 3;</code>
      * @param value The bytes for runnerId to set.
      * @return This builder for chaining.
      */
@@ -1023,7 +1189,7 @@ private static final long serialVersionUID = 0L;
      * The particular item of work processed.
      * </pre>
      *
-     * <code>string runner_item_id = 3;</code>
+     * <code>string runner_item_id = 4;</code>
      * @return The runnerItemId.
      */
     public java.lang.String getRunnerItemId() {
@@ -1043,7 +1209,7 @@ private static final long serialVersionUID = 0L;
      * The particular item of work processed.
      * </pre>
      *
-     * <code>string runner_item_id = 3;</code>
+     * <code>string runner_item_id = 4;</code>
      * @return The bytes for runnerItemId.
      */
     public com.google.protobuf.ByteString
@@ -1064,7 +1230,7 @@ private static final long serialVersionUID = 0L;
      * The particular item of work processed.
      * </pre>
      *
-     * <code>string runner_item_id = 3;</code>
+     * <code>string runner_item_id = 4;</code>
      * @param value The runnerItemId to set.
      * @return This builder for chaining.
      */
@@ -1083,7 +1249,7 @@ private static final long serialVersionUID = 0L;
      * The particular item of work processed.
      * </pre>
      *
-     * <code>string runner_item_id = 3;</code>
+     * <code>string runner_item_id = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearRunnerItemId() {
@@ -1097,7 +1263,7 @@ private static final long serialVersionUID = 0L;
      * The particular item of work processed.
      * </pre>
      *
-     * <code>string runner_item_id = 3;</code>
+     * <code>string runner_item_id = 4;</code>
      * @param value The bytes for runnerItemId to set.
      * @return This builder for chaining.
      */
@@ -1130,7 +1296,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public java.util.List<com.clarifai.grpc.api.RunnerItemOutput> getRunnerItemOutputsList() {
       if (runnerItemOutputsBuilder_ == null) {
@@ -1144,7 +1310,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public int getRunnerItemOutputsCount() {
       if (runnerItemOutputsBuilder_ == null) {
@@ -1158,7 +1324,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public com.clarifai.grpc.api.RunnerItemOutput getRunnerItemOutputs(int index) {
       if (runnerItemOutputsBuilder_ == null) {
@@ -1172,7 +1338,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder setRunnerItemOutputs(
         int index, com.clarifai.grpc.api.RunnerItemOutput value) {
@@ -1193,7 +1359,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder setRunnerItemOutputs(
         int index, com.clarifai.grpc.api.RunnerItemOutput.Builder builderForValue) {
@@ -1211,7 +1377,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder addRunnerItemOutputs(com.clarifai.grpc.api.RunnerItemOutput value) {
       if (runnerItemOutputsBuilder_ == null) {
@@ -1231,7 +1397,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder addRunnerItemOutputs(
         int index, com.clarifai.grpc.api.RunnerItemOutput value) {
@@ -1252,7 +1418,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder addRunnerItemOutputs(
         com.clarifai.grpc.api.RunnerItemOutput.Builder builderForValue) {
@@ -1270,7 +1436,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder addRunnerItemOutputs(
         int index, com.clarifai.grpc.api.RunnerItemOutput.Builder builderForValue) {
@@ -1288,7 +1454,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder addAllRunnerItemOutputs(
         java.lang.Iterable<? extends com.clarifai.grpc.api.RunnerItemOutput> values) {
@@ -1307,7 +1473,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder clearRunnerItemOutputs() {
       if (runnerItemOutputsBuilder_ == null) {
@@ -1324,7 +1490,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public Builder removeRunnerItemOutputs(int index) {
       if (runnerItemOutputsBuilder_ == null) {
@@ -1341,7 +1507,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public com.clarifai.grpc.api.RunnerItemOutput.Builder getRunnerItemOutputsBuilder(
         int index) {
@@ -1352,7 +1518,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public com.clarifai.grpc.api.RunnerItemOutputOrBuilder getRunnerItemOutputsOrBuilder(
         int index) {
@@ -1366,7 +1532,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public java.util.List<? extends com.clarifai.grpc.api.RunnerItemOutputOrBuilder> 
          getRunnerItemOutputsOrBuilderList() {
@@ -1381,7 +1547,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public com.clarifai.grpc.api.RunnerItemOutput.Builder addRunnerItemOutputsBuilder() {
       return getRunnerItemOutputsFieldBuilder().addBuilder(
@@ -1392,7 +1558,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public com.clarifai.grpc.api.RunnerItemOutput.Builder addRunnerItemOutputsBuilder(
         int index) {
@@ -1404,7 +1570,7 @@ private static final long serialVersionUID = 0L;
      * This allows you to create one or more runner by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 4;</code>
+     * <code>repeated .clarifai.api.RunnerItemOutput runner_item_outputs = 5;</code>
      */
     public java.util.List<com.clarifai.grpc.api.RunnerItemOutput.Builder> 
          getRunnerItemOutputsBuilderList() {
@@ -1435,7 +1601,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
@@ -1448,7 +1614,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      * @return The status.
      */
     public com.clarifai.grpc.api.status.Status getStatus() {
@@ -1465,7 +1631,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     public Builder setStatus(com.clarifai.grpc.api.status.Status value) {
       if (statusBuilder_ == null) {
@@ -1487,7 +1653,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     public Builder setStatus(
         com.clarifai.grpc.api.status.Status.Builder builderForValue) {
@@ -1507,7 +1673,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     public Builder mergeStatus(com.clarifai.grpc.api.status.Status value) {
       if (statusBuilder_ == null) {
@@ -1531,7 +1697,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     public Builder clearStatus() {
       if (statusBuilder_ == null) {
@@ -1551,7 +1717,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     public com.clarifai.grpc.api.status.Status.Builder getStatusBuilder() {
       
@@ -1565,7 +1731,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
       if (statusBuilder_ != null) {
@@ -1582,7 +1748,7 @@ private static final long serialVersionUID = 0L;
      * in a reverse protocol.
      * </pre>
      *
-     * <code>.clarifai.api.status.Status status = 5;</code>
+     * <code>.clarifai.api.status.Status status = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.status.Status, com.clarifai.grpc.api.status.Status.Builder, com.clarifai.grpc.api.status.StatusOrBuilder> 

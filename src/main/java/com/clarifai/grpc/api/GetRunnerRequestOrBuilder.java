@@ -23,12 +23,24 @@ public interface GetRunnerRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <code>string runner_id = 2;</code>
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  java.lang.String getNodepoolId();
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  com.google.protobuf.ByteString
+      getNodepoolIdBytes();
+
+  /**
+   * <code>string runner_id = 3;</code>
    * @return The runnerId.
    */
   java.lang.String getRunnerId();
   /**
-   * <code>string runner_id = 2;</code>
+   * <code>string runner_id = 3;</code>
    * @return The bytes for runnerId.
    */
   com.google.protobuf.ByteString

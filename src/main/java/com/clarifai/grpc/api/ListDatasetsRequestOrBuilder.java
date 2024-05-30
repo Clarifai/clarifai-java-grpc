@@ -224,7 +224,7 @@ public interface ListDatasetsRequestOrBuilder extends
    *
    * <code>string id = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListDatasetsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4788
+   *     See proto/clarifai/api/service.proto;l=4888
    * @return The id.
    */
   @java.lang.Deprecated java.lang.String getId();
@@ -236,7 +236,7 @@ public interface ListDatasetsRequestOrBuilder extends
    *
    * <code>string id = 12 [deprecated = true];</code>
    * @deprecated clarifai.api.ListDatasetsRequest.id is deprecated.
-   *     See proto/clarifai/api/service.proto;l=4788
+   *     See proto/clarifai/api/service.proto;l=4888
    * @return The bytes for id.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

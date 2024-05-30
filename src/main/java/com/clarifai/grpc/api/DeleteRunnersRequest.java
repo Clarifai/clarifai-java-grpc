@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeleteRunnersRequest() {
+    nodepoolId_ = "";
     ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -68,6 +69,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nodepoolId_ = s;
+            break;
+          }
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               ids_ = new com.google.protobuf.LazyStringArrayList();
@@ -139,10 +146,48 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int IDS_FIELD_NUMBER = 2;
+  public static final int NODEPOOL_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nodepoolId_;
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The nodepoolId.
+   */
+  @java.lang.Override
+  public java.lang.String getNodepoolId() {
+    java.lang.Object ref = nodepoolId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodepoolId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string nodepool_id = 2;</code>
+   * @return The bytes for nodepoolId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNodepoolIdBytes() {
+    java.lang.Object ref = nodepoolId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nodepoolId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IDS_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList ids_;
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @return A list containing the ids.
    */
   public com.google.protobuf.ProtocolStringList
@@ -150,14 +195,14 @@ private static final long serialVersionUID = 0L;
     return ids_;
   }
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @return The count of ids.
    */
   public int getIdsCount() {
     return ids_.size();
   }
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @param index The index of the element to return.
    * @return The ids at the given index.
    */
@@ -165,7 +210,7 @@ private static final long serialVersionUID = 0L;
     return ids_.get(index);
   }
   /**
-   * <code>repeated string ids = 2;</code>
+   * <code>repeated string ids = 3;</code>
    * @param index The index of the value to return.
    * @return The bytes of the ids at the given index.
    */
@@ -191,8 +236,11 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodepoolId_);
+    }
     for (int i = 0; i < ids_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ids_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ids_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -206,6 +254,9 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodepoolId_);
     }
     {
       int dataSize = 0;
@@ -235,6 +286,8 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
+    if (!getNodepoolId()
+        .equals(other.getNodepoolId())) return false;
     if (!getIdsList()
         .equals(other.getIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -252,6 +305,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
+    hash = (37 * hash) + NODEPOOL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getNodepoolId().hashCode();
     if (getIdsCount() > 0) {
       hash = (37 * hash) + IDS_FIELD_NUMBER;
       hash = (53 * hash) + getIdsList().hashCode();
@@ -399,6 +454,8 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
+      nodepoolId_ = "";
+
       ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -433,6 +490,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
+      result.nodepoolId_ = nodepoolId_;
       if (((bitField0_ & 0x00000001) != 0)) {
         ids_ = ids_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -488,6 +546,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.DeleteRunnersRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
+      }
+      if (!other.getNodepoolId().isEmpty()) {
+        nodepoolId_ = other.nodepoolId_;
+        onChanged();
       }
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
@@ -648,6 +710,82 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
+    private java.lang.Object nodepoolId_ = "";
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @return The nodepoolId.
+     */
+    public java.lang.String getNodepoolId() {
+      java.lang.Object ref = nodepoolId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodepoolId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @return The bytes for nodepoolId.
+     */
+    public com.google.protobuf.ByteString
+        getNodepoolIdBytes() {
+      java.lang.Object ref = nodepoolId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodepoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @param value The nodepoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodepoolId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNodepoolId() {
+      
+      nodepoolId_ = getDefaultInstance().getNodepoolId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string nodepool_id = 2;</code>
+     * @param value The bytes for nodepoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodepoolIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nodepoolId_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureIdsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -656,7 +794,7 @@ private static final long serialVersionUID = 0L;
        }
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList
@@ -664,14 +802,14 @@ private static final long serialVersionUID = 0L;
       return ids_.getUnmodifiableView();
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @return The count of ids.
      */
     public int getIdsCount() {
       return ids_.size();
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @param index The index of the element to return.
      * @return The ids at the given index.
      */
@@ -679,7 +817,7 @@ private static final long serialVersionUID = 0L;
       return ids_.get(index);
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @param index The index of the value to return.
      * @return The bytes of the ids at the given index.
      */
@@ -688,7 +826,7 @@ private static final long serialVersionUID = 0L;
       return ids_.getByteString(index);
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @param index The index to set the value at.
      * @param value The ids to set.
      * @return This builder for chaining.
@@ -704,7 +842,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @param value The ids to add.
      * @return This builder for chaining.
      */
@@ -719,7 +857,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @param values The ids to add.
      * @return This builder for chaining.
      */
@@ -732,7 +870,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearIds() {
@@ -742,7 +880,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated string ids = 2;</code>
+     * <code>repeated string ids = 3;</code>
      * @param value The bytes of the ids to add.
      * @return This builder for chaining.
      */

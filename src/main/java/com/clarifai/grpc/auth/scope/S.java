@@ -702,6 +702,38 @@ public enum S
    * <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
    */
   RunnerItems_Add(135),
+  /**
+   * <pre>
+   * Pools of compute resources.
+   * </pre>
+   *
+   * <code>Nodepools_Get = 136 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Nodepools_Get(136),
+  /**
+   * <code>Nodepools_Add = 137 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get];</code>
+   */
+  Nodepools_Add(137),
+  /**
+   * <code>Nodepools_Delete = 138 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Add];</code>
+   */
+  Nodepools_Delete(138),
+  /**
+   * <pre>
+   * Cluster of machines in a region of cloud
+   * </pre>
+   *
+   * <code>ComputeClusters_Get = 139 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  ComputeClusters_Get(139),
+  /**
+   * <code>ComputeClusters_Add = 140 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get];</code>
+   */
+  ComputeClusters_Add(140),
+  /**
+   * <code>ComputeClusters_Delete = 141 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Add];</code>
+   */
+  ComputeClusters_Delete(141),
   UNRECOGNIZED(-1),
   ;
 
@@ -1366,6 +1398,38 @@ public enum S
    * <code>RunnerItems_Add = 135 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = RunnerItems_Get];</code>
    */
   public static final int RunnerItems_Add_VALUE = 135;
+  /**
+   * <pre>
+   * Pools of compute resources.
+   * </pre>
+   *
+   * <code>Nodepools_Get = 136 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Nodepools_Get_VALUE = 136;
+  /**
+   * <code>Nodepools_Add = 137 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get];</code>
+   */
+  public static final int Nodepools_Add_VALUE = 137;
+  /**
+   * <code>Nodepools_Delete = 138 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Nodepools_Add];</code>
+   */
+  public static final int Nodepools_Delete_VALUE = 138;
+  /**
+   * <pre>
+   * Cluster of machines in a region of cloud
+   * </pre>
+   *
+   * <code>ComputeClusters_Get = 139 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int ComputeClusters_Get_VALUE = 139;
+  /**
+   * <code>ComputeClusters_Add = 140 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get];</code>
+   */
+  public static final int ComputeClusters_Add_VALUE = 140;
+  /**
+   * <code>ComputeClusters_Delete = 141 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Add];</code>
+   */
+  public static final int ComputeClusters_Delete_VALUE = 141;
 
 
   public final int getNumber() {
@@ -1482,6 +1546,12 @@ public enum S
       case 133: return Runners_Delete;
       case 134: return RunnerItems_Get;
       case 135: return RunnerItems_Add;
+      case 136: return Nodepools_Get;
+      case 137: return Nodepools_Add;
+      case 138: return Nodepools_Delete;
+      case 139: return ComputeClusters_Get;
+      case 140: return ComputeClusters_Add;
+      case 141: return ComputeClusters_Delete;
       default: return null;
     }
   }

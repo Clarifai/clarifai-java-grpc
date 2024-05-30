@@ -24,7 +24,7 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
 
   /**
    * <pre>
-   * model to create version of
+   * Model to create version for
    * </pre>
    *
    * <code>string model_id = 2;</code>
@@ -33,7 +33,7 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
   java.lang.String getModelId();
   /**
    * <pre>
-   * model to create version of
+   * Model to create version for
    * </pre>
    *
    * <code>string model_id = 2;</code>
@@ -44,7 +44,7 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
 
   /**
    * <pre>
-   * specification for the model version to be uploaded
+   * Specification for the model version to be uploaded
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -53,7 +53,7 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
   boolean hasModelVersion();
   /**
    * <pre>
-   * specification for the model version to be uploaded
+   * Specification for the model version to be uploaded
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -62,7 +62,7 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
   com.clarifai.grpc.api.ModelVersion getModelVersion();
   /**
    * <pre>
-   * specification for the model version to be uploaded
+   * Specification for the model version to be uploaded
    * </pre>
    *
    * <code>.clarifai.api.ModelVersion model_version = 3;</code>
@@ -71,11 +71,21 @@ public interface PostModelVersionsUploadConfigOrBuilder extends
 
   /**
    * <pre>
-   * number of bytes in the model files to be uploaded
+   * Number of bytes in the model files to be uploaded
    * </pre>
    *
    * <code>uint64 total_size = 4;</code>
    * @return The totalSize.
    */
   long getTotalSize();
+
+  /**
+   * <pre>
+   * Whether the uploaded package will be a .tar.gz which contains a Dockerfile or the standard .zip
+   * </pre>
+   *
+   * <code>bool is_v3 = 5;</code>
+   * @return The isV3.
+   */
+  boolean getIsV3();
 }
