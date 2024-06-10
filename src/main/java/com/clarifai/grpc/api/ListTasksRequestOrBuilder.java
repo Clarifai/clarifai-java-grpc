@@ -185,6 +185,7 @@ public interface ListTasksRequestOrBuilder extends
    * - all
    * - worker.users
    * - review.users
+   * - metrics.input_source.inputs_count_estimated
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
@@ -203,6 +204,7 @@ public interface ListTasksRequestOrBuilder extends
    * - all
    * - worker.users
    * - review.users
+   * - metrics.input_source.inputs_count_estimated
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
@@ -220,6 +222,7 @@ public interface ListTasksRequestOrBuilder extends
    * - all
    * - worker.users
    * - review.users
+   * - metrics.input_source.inputs_count_estimated
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated
@@ -238,6 +241,7 @@ public interface ListTasksRequestOrBuilder extends
    * - all
    * - worker.users
    * - review.users
+   * - metrics.input_source.inputs_count_estimated
    * - metrics.work.inputs_count_estimated
    * - metrics.work.inputs_percent_estimated
    * - metrics.review.inputs_count_estimated

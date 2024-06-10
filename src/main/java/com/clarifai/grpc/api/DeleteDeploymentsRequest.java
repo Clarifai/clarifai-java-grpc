@@ -4,31 +4,26 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * Request to get one task.
- * </pre>
- *
- * Protobuf type {@code clarifai.api.GetTaskRequest}
+ * Protobuf type {@code clarifai.api.DeleteDeploymentsRequest}
  */
-public final class GetTaskRequest extends
+public final class DeleteDeploymentsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetTaskRequest)
-    GetTaskRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.DeleteDeploymentsRequest)
+    DeleteDeploymentsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetTaskRequest.newBuilder() to construct.
-  private GetTaskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DeleteDeploymentsRequest.newBuilder() to construct.
+  private DeleteDeploymentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetTaskRequest() {
-    taskId_ = "";
-    additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  private DeleteDeploymentsRequest() {
+    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetTaskRequest();
+    return new DeleteDeploymentsRequest();
   }
 
   @java.lang.Override
@@ -36,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetTaskRequest(
+  private DeleteDeploymentsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,17 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-
-            taskId_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              additionalFields_ = new com.google.protobuf.LazyStringArrayList();
+              ids_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
             }
-            additionalFields_.add(s);
+            ids_.add(s);
             break;
           }
           default: {
@@ -101,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        additionalFields_ = additionalFields_.getUnmodifiableView();
+        ids_ = ids_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -109,20 +98,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteDeploymentsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteDeploymentsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetTaskRequest.class, com.clarifai.grpc.api.GetTaskRequest.Builder.class);
+            com.clarifai.grpc.api.DeleteDeploymentsRequest.class, com.clarifai.grpc.api.DeleteDeploymentsRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
+   * <pre>
+   * Only the user_id is used from this.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return Whether the userAppId field is set.
    */
@@ -131,6 +124,10 @@ private static final long serialVersionUID = 0L;
     return userAppId_ != null;
   }
   /**
+   * <pre>
+   * Only the user_id is used from this.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    * @return The userAppId.
    */
@@ -139,6 +136,10 @@ private static final long serialVersionUID = 0L;
     return userAppId_ == null ? com.clarifai.grpc.api.UserAppIDSet.getDefaultInstance() : userAppId_;
   }
   /**
+   * <pre>
+   * Only the user_id is used from this.
+   * </pre>
+   *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
   @java.lang.Override
@@ -146,129 +147,55 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int TASK_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object taskId_;
-  /**
-   * <code>string task_id = 2;</code>
-   * @return The taskId.
-   */
-  @java.lang.Override
-  public java.lang.String getTaskId() {
-    java.lang.Object ref = taskId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string task_id = 2;</code>
-   * @return The bytes for taskId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTaskIdBytes() {
-    java.lang.Object ref = taskId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int ADDITIONAL_FIELDS_FIELD_NUMBER = 3;
-  private com.google.protobuf.LazyStringList additionalFields_;
+  public static final int IDS_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList ids_;
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported additional fields:
-   * - all
-   * - worker.users
-   * - review.users
-   * - metrics.input_source.inputs_count_estimated
-   * - metrics.work.inputs_count_estimated
-   * - metrics.work.inputs_percent_estimated
-   * - metrics.review.inputs_count_estimated
-   * - metrics.review.inputs_percent_estimated
+   * List of deployment ids to be deleted
    * </pre>
    *
-   * <code>repeated string additional_fields = 3;</code>
-   * @return A list containing the additionalFields.
+   * <code>repeated string ids = 2;</code>
+   * @return A list containing the ids.
    */
   public com.google.protobuf.ProtocolStringList
-      getAdditionalFieldsList() {
-    return additionalFields_;
+      getIdsList() {
+    return ids_;
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported additional fields:
-   * - all
-   * - worker.users
-   * - review.users
-   * - metrics.input_source.inputs_count_estimated
-   * - metrics.work.inputs_count_estimated
-   * - metrics.work.inputs_percent_estimated
-   * - metrics.review.inputs_count_estimated
-   * - metrics.review.inputs_percent_estimated
+   * List of deployment ids to be deleted
    * </pre>
    *
-   * <code>repeated string additional_fields = 3;</code>
-   * @return The count of additionalFields.
+   * <code>repeated string ids = 2;</code>
+   * @return The count of ids.
    */
-  public int getAdditionalFieldsCount() {
-    return additionalFields_.size();
+  public int getIdsCount() {
+    return ids_.size();
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported additional fields:
-   * - all
-   * - worker.users
-   * - review.users
-   * - metrics.input_source.inputs_count_estimated
-   * - metrics.work.inputs_count_estimated
-   * - metrics.work.inputs_percent_estimated
-   * - metrics.review.inputs_count_estimated
-   * - metrics.review.inputs_percent_estimated
+   * List of deployment ids to be deleted
    * </pre>
    *
-   * <code>repeated string additional_fields = 3;</code>
+   * <code>repeated string ids = 2;</code>
    * @param index The index of the element to return.
-   * @return The additionalFields at the given index.
+   * @return The ids at the given index.
    */
-  public java.lang.String getAdditionalFields(int index) {
-    return additionalFields_.get(index);
+  public java.lang.String getIds(int index) {
+    return ids_.get(index);
   }
   /**
    * <pre>
-   * (optional URL parameter) List of additional fields to be included in the response.
-   * Currently supported additional fields:
-   * - all
-   * - worker.users
-   * - review.users
-   * - metrics.input_source.inputs_count_estimated
-   * - metrics.work.inputs_count_estimated
-   * - metrics.work.inputs_percent_estimated
-   * - metrics.review.inputs_count_estimated
-   * - metrics.review.inputs_percent_estimated
+   * List of deployment ids to be deleted
    * </pre>
    *
-   * <code>repeated string additional_fields = 3;</code>
+   * <code>repeated string ids = 2;</code>
    * @param index The index of the value to return.
-   * @return The bytes of the additionalFields at the given index.
+   * @return The bytes of the ids at the given index.
    */
   public com.google.protobuf.ByteString
-      getAdditionalFieldsBytes(int index) {
-    return additionalFields_.getByteString(index);
+      getIdsBytes(int index) {
+    return ids_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -288,11 +215,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskId_);
-    }
-    for (int i = 0; i < additionalFields_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, additionalFields_.getRaw(i));
+    for (int i = 0; i < ids_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ids_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -307,16 +231,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(taskId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskId_);
-    }
     {
       int dataSize = 0;
-      for (int i = 0; i < additionalFields_.size(); i++) {
-        dataSize += computeStringSizeNoTag(additionalFields_.getRaw(i));
+      for (int i = 0; i < ids_.size(); i++) {
+        dataSize += computeStringSizeNoTag(ids_.getRaw(i));
       }
       size += dataSize;
-      size += 1 * getAdditionalFieldsList().size();
+      size += 1 * getIdsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -328,20 +249,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetTaskRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.DeleteDeploymentsRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetTaskRequest other = (com.clarifai.grpc.api.GetTaskRequest) obj;
+    com.clarifai.grpc.api.DeleteDeploymentsRequest other = (com.clarifai.grpc.api.DeleteDeploymentsRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getTaskId()
-        .equals(other.getTaskId())) return false;
-    if (!getAdditionalFieldsList()
-        .equals(other.getAdditionalFieldsList())) return false;
+    if (!getIdsList()
+        .equals(other.getIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -357,80 +276,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskId().hashCode();
-    if (getAdditionalFieldsCount() > 0) {
-      hash = (37 * hash) + ADDITIONAL_FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getAdditionalFieldsList().hashCode();
+    if (getIdsCount() > 0) {
+      hash = (37 * hash) + IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getIdsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetTaskRequest parseFrom(
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -443,7 +360,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetTaskRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.DeleteDeploymentsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -459,30 +376,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Request to get one task.
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.GetTaskRequest}
+   * Protobuf type {@code clarifai.api.DeleteDeploymentsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetTaskRequest)
-      com.clarifai.grpc.api.GetTaskRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.DeleteDeploymentsRequest)
+      com.clarifai.grpc.api.DeleteDeploymentsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteDeploymentsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteDeploymentsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetTaskRequest.class, com.clarifai.grpc.api.GetTaskRequest.Builder.class);
+              com.clarifai.grpc.api.DeleteDeploymentsRequest.class, com.clarifai.grpc.api.DeleteDeploymentsRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetTaskRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.DeleteDeploymentsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -506,9 +419,7 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      taskId_ = "";
-
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -516,17 +427,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetTaskRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_DeleteDeploymentsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetTaskRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetTaskRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.DeleteDeploymentsRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.DeleteDeploymentsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetTaskRequest build() {
-      com.clarifai.grpc.api.GetTaskRequest result = buildPartial();
+    public com.clarifai.grpc.api.DeleteDeploymentsRequest build() {
+      com.clarifai.grpc.api.DeleteDeploymentsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -534,20 +445,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetTaskRequest buildPartial() {
-      com.clarifai.grpc.api.GetTaskRequest result = new com.clarifai.grpc.api.GetTaskRequest(this);
+    public com.clarifai.grpc.api.DeleteDeploymentsRequest buildPartial() {
+      com.clarifai.grpc.api.DeleteDeploymentsRequest result = new com.clarifai.grpc.api.DeleteDeploymentsRequest(this);
       int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      result.taskId_ = taskId_;
       if (((bitField0_ & 0x00000001) != 0)) {
-        additionalFields_ = additionalFields_.getUnmodifiableView();
+        ids_ = ids_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
-      result.additionalFields_ = additionalFields_;
+      result.ids_ = ids_;
       onBuilt();
       return result;
     }
@@ -586,30 +496,26 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetTaskRequest) {
-        return mergeFrom((com.clarifai.grpc.api.GetTaskRequest)other);
+      if (other instanceof com.clarifai.grpc.api.DeleteDeploymentsRequest) {
+        return mergeFrom((com.clarifai.grpc.api.DeleteDeploymentsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetTaskRequest other) {
-      if (other == com.clarifai.grpc.api.GetTaskRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.DeleteDeploymentsRequest other) {
+      if (other == com.clarifai.grpc.api.DeleteDeploymentsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (!other.getTaskId().isEmpty()) {
-        taskId_ = other.taskId_;
-        onChanged();
-      }
-      if (!other.additionalFields_.isEmpty()) {
-        if (additionalFields_.isEmpty()) {
-          additionalFields_ = other.additionalFields_;
+      if (!other.ids_.isEmpty()) {
+        if (ids_.isEmpty()) {
+          ids_ = other.ids_;
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          ensureAdditionalFieldsIsMutable();
-          additionalFields_.addAll(other.additionalFields_);
+          ensureIdsIsMutable();
+          ids_.addAll(other.ids_);
         }
         onChanged();
       }
@@ -628,11 +534,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetTaskRequest parsedMessage = null;
+      com.clarifai.grpc.api.DeleteDeploymentsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetTaskRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.DeleteDeploymentsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -647,6 +553,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return Whether the userAppId field is set.
      */
@@ -654,6 +564,10 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_ != null || userAppId_ != null;
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      * @return The userAppId.
      */
@@ -665,6 +579,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder setUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
@@ -681,6 +599,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder setUserAppId(
@@ -695,6 +617,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder mergeUserAppId(com.clarifai.grpc.api.UserAppIDSet value) {
@@ -713,6 +639,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public Builder clearUserAppId() {
@@ -727,6 +657,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public com.clarifai.grpc.api.UserAppIDSet.Builder getUserAppIdBuilder() {
@@ -735,6 +669,10 @@ private static final long serialVersionUID = 0L;
       return getUserAppIdFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     public com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder() {
@@ -746,6 +684,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Only the user_id is used from this.
+     * </pre>
+     *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -762,305 +704,148 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.lang.Object taskId_ = "";
-    /**
-     * <code>string task_id = 2;</code>
-     * @return The taskId.
-     */
-    public java.lang.String getTaskId() {
-      java.lang.Object ref = taskId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string task_id = 2;</code>
-     * @return The bytes for taskId.
-     */
-    public com.google.protobuf.ByteString
-        getTaskIdBytes() {
-      java.lang.Object ref = taskId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string task_id = 2;</code>
-     * @param value The taskId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTaskId() {
-      
-      taskId_ = getDefaultInstance().getTaskId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string task_id = 2;</code>
-     * @param value The bytes for taskId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTaskIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureAdditionalFieldsIsMutable() {
+    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureIdsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        additionalFields_ = new com.google.protobuf.LazyStringArrayList(additionalFields_);
+        ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
         bitField0_ |= 0x00000001;
        }
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
-     * @return A list containing the additionalFields.
+     * <code>repeated string ids = 2;</code>
+     * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList
-        getAdditionalFieldsList() {
-      return additionalFields_.getUnmodifiableView();
+        getIdsList() {
+      return ids_.getUnmodifiableView();
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
-     * @return The count of additionalFields.
+     * <code>repeated string ids = 2;</code>
+     * @return The count of ids.
      */
-    public int getAdditionalFieldsCount() {
-      return additionalFields_.size();
+    public int getIdsCount() {
+      return ids_.size();
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
+     * <code>repeated string ids = 2;</code>
      * @param index The index of the element to return.
-     * @return The additionalFields at the given index.
+     * @return The ids at the given index.
      */
-    public java.lang.String getAdditionalFields(int index) {
-      return additionalFields_.get(index);
+    public java.lang.String getIds(int index) {
+      return ids_.get(index);
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
+     * <code>repeated string ids = 2;</code>
      * @param index The index of the value to return.
-     * @return The bytes of the additionalFields at the given index.
+     * @return The bytes of the ids at the given index.
      */
     public com.google.protobuf.ByteString
-        getAdditionalFieldsBytes(int index) {
-      return additionalFields_.getByteString(index);
+        getIdsBytes(int index) {
+      return ids_.getByteString(index);
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
+     * <code>repeated string ids = 2;</code>
      * @param index The index to set the value at.
-     * @param value The additionalFields to set.
+     * @param value The ids to set.
      * @return This builder for chaining.
      */
-    public Builder setAdditionalFields(
+    public Builder setIds(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureAdditionalFieldsIsMutable();
-      additionalFields_.set(index, value);
+  ensureIdsIsMutable();
+      ids_.set(index, value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
-     * @param value The additionalFields to add.
+     * <code>repeated string ids = 2;</code>
+     * @param value The ids to add.
      * @return This builder for chaining.
      */
-    public Builder addAdditionalFields(
+    public Builder addIds(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  ensureAdditionalFieldsIsMutable();
-      additionalFields_.add(value);
+  ensureIdsIsMutable();
+      ids_.add(value);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
-     * @param values The additionalFields to add.
+     * <code>repeated string ids = 2;</code>
+     * @param values The ids to add.
      * @return This builder for chaining.
      */
-    public Builder addAllAdditionalFields(
+    public Builder addAllIds(
         java.lang.Iterable<java.lang.String> values) {
-      ensureAdditionalFieldsIsMutable();
+      ensureIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, additionalFields_);
+          values, ids_);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
+     * <code>repeated string ids = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearAdditionalFields() {
-      additionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearIds() {
+      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * (optional URL parameter) List of additional fields to be included in the response.
-     * Currently supported additional fields:
-     * - all
-     * - worker.users
-     * - review.users
-     * - metrics.input_source.inputs_count_estimated
-     * - metrics.work.inputs_count_estimated
-     * - metrics.work.inputs_percent_estimated
-     * - metrics.review.inputs_count_estimated
-     * - metrics.review.inputs_percent_estimated
+     * List of deployment ids to be deleted
      * </pre>
      *
-     * <code>repeated string additional_fields = 3;</code>
-     * @param value The bytes of the additionalFields to add.
+     * <code>repeated string ids = 2;</code>
+     * @param value The bytes of the ids to add.
      * @return This builder for chaining.
      */
-    public Builder addAdditionalFieldsBytes(
+    public Builder addIdsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      ensureAdditionalFieldsIsMutable();
-      additionalFields_.add(value);
+      ensureIdsIsMutable();
+      ids_.add(value);
       onChanged();
       return this;
     }
@@ -1077,41 +862,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetTaskRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.DeleteDeploymentsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetTaskRequest)
-  private static final com.clarifai.grpc.api.GetTaskRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.DeleteDeploymentsRequest)
+  private static final com.clarifai.grpc.api.DeleteDeploymentsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetTaskRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.DeleteDeploymentsRequest();
   }
 
-  public static com.clarifai.grpc.api.GetTaskRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.DeleteDeploymentsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetTaskRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetTaskRequest>() {
+  private static final com.google.protobuf.Parser<DeleteDeploymentsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<DeleteDeploymentsRequest>() {
     @java.lang.Override
-    public GetTaskRequest parsePartialFrom(
+    public DeleteDeploymentsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetTaskRequest(input, extensionRegistry);
+      return new DeleteDeploymentsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetTaskRequest> parser() {
+  public static com.google.protobuf.Parser<DeleteDeploymentsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetTaskRequest> getParserForType() {
+  public com.google.protobuf.Parser<DeleteDeploymentsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetTaskRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.DeleteDeploymentsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

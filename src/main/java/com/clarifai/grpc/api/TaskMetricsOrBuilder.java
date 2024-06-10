@@ -36,4 +36,19 @@ public interface TaskMetricsOrBuilder extends
    * <code>.clarifai.api.TaskReviewMetrics review = 3;</code>
    */
   com.clarifai.grpc.api.TaskReviewMetricsOrBuilder getReviewOrBuilder();
+
+  /**
+   * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+   * @return Whether the inputSource field is set.
+   */
+  boolean hasInputSource();
+  /**
+   * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+   * @return The inputSource.
+   */
+  com.clarifai.grpc.api.TaskInputSourceMetrics getInputSource();
+  /**
+   * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+   */
+  com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder getInputSourceOrBuilder();
 }

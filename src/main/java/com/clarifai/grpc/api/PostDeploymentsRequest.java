@@ -4,30 +4,26 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * Start concept mapping jobs
- * </pre>
- *
- * Protobuf type {@code clarifai.api.PostConceptMappingJobsRequest}
+ * Protobuf type {@code clarifai.api.PostDeploymentsRequest}
  */
-public final class PostConceptMappingJobsRequest extends
+public final class PostDeploymentsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.PostConceptMappingJobsRequest)
-    PostConceptMappingJobsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PostDeploymentsRequest)
+    PostDeploymentsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PostConceptMappingJobsRequest.newBuilder() to construct.
-  private PostConceptMappingJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PostDeploymentsRequest.newBuilder() to construct.
+  private PostDeploymentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PostConceptMappingJobsRequest() {
-    conceptMappingJobs_ = java.util.Collections.emptyList();
+  private PostDeploymentsRequest() {
+    deployments_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PostConceptMappingJobsRequest();
+    return new PostDeploymentsRequest();
   }
 
   @java.lang.Override
@@ -35,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PostConceptMappingJobsRequest(
+  private PostDeploymentsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -69,11 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              conceptMappingJobs_ = new java.util.ArrayList<com.clarifai.grpc.api.ConceptMappingJob>();
+              deployments_ = new java.util.ArrayList<com.clarifai.grpc.api.Deployment>();
               mutable_bitField0_ |= 0x00000001;
             }
-            conceptMappingJobs_.add(
-                input.readMessage(com.clarifai.grpc.api.ConceptMappingJob.parser(), extensionRegistry));
+            deployments_.add(
+                input.readMessage(com.clarifai.grpc.api.Deployment.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -94,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        conceptMappingJobs_ = java.util.Collections.unmodifiableList(conceptMappingJobs_);
+        deployments_ = java.util.Collections.unmodifiableList(deployments_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -102,22 +98,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostConceptMappingJobsRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostDeploymentsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostConceptMappingJobsRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostDeploymentsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.PostConceptMappingJobsRequest.class, com.clarifai.grpc.api.PostConceptMappingJobsRequest.Builder.class);
+            com.clarifai.grpc.api.PostDeploymentsRequest.class, com.clarifai.grpc.api.PostDeploymentsRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
   private com.clarifai.grpc.api.UserAppIDSet userAppId_;
   /**
    * <pre>
-   * The user_id and app_id information.
+   * Only the user_id is used from this.
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -129,7 +125,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The user_id and app_id information.
+   * Only the user_id is used from this.
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -141,7 +137,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The user_id and app_id information.
+   * Only the user_id is used from this.
    * </pre>
    *
    * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -151,64 +147,64 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int CONCEPT_MAPPING_JOBS_FIELD_NUMBER = 2;
-  private java.util.List<com.clarifai.grpc.api.ConceptMappingJob> conceptMappingJobs_;
+  public static final int DEPLOYMENTS_FIELD_NUMBER = 2;
+  private java.util.List<com.clarifai.grpc.api.Deployment> deployments_;
   /**
    * <pre>
-   * The concept mapping jobs that are being started
+   * This allows you to create one or more deployments by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+   * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.ConceptMappingJob> getConceptMappingJobsList() {
-    return conceptMappingJobs_;
+  public java.util.List<com.clarifai.grpc.api.Deployment> getDeploymentsList() {
+    return deployments_;
   }
   /**
    * <pre>
-   * The concept mapping jobs that are being started
+   * This allows you to create one or more deployments by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+   * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.clarifai.grpc.api.ConceptMappingJobOrBuilder> 
-      getConceptMappingJobsOrBuilderList() {
-    return conceptMappingJobs_;
+  public java.util.List<? extends com.clarifai.grpc.api.DeploymentOrBuilder> 
+      getDeploymentsOrBuilderList() {
+    return deployments_;
   }
   /**
    * <pre>
-   * The concept mapping jobs that are being started
+   * This allows you to create one or more deployments by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+   * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
    */
   @java.lang.Override
-  public int getConceptMappingJobsCount() {
-    return conceptMappingJobs_.size();
+  public int getDeploymentsCount() {
+    return deployments_.size();
   }
   /**
    * <pre>
-   * The concept mapping jobs that are being started
+   * This allows you to create one or more deployments by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+   * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.ConceptMappingJob getConceptMappingJobs(int index) {
-    return conceptMappingJobs_.get(index);
+  public com.clarifai.grpc.api.Deployment getDeployments(int index) {
+    return deployments_.get(index);
   }
   /**
    * <pre>
-   * The concept mapping jobs that are being started
+   * This allows you to create one or more deployments by posting it to the API.
    * </pre>
    *
-   * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+   * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.ConceptMappingJobOrBuilder getConceptMappingJobsOrBuilder(
+  public com.clarifai.grpc.api.DeploymentOrBuilder getDeploymentsOrBuilder(
       int index) {
-    return conceptMappingJobs_.get(index);
+    return deployments_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -228,8 +224,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    for (int i = 0; i < conceptMappingJobs_.size(); i++) {
-      output.writeMessage(2, conceptMappingJobs_.get(i));
+    for (int i = 0; i < deployments_.size(); i++) {
+      output.writeMessage(2, deployments_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -244,9 +240,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    for (int i = 0; i < conceptMappingJobs_.size(); i++) {
+    for (int i = 0; i < deployments_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, conceptMappingJobs_.get(i));
+        .computeMessageSize(2, deployments_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -258,18 +254,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.PostConceptMappingJobsRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PostDeploymentsRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.PostConceptMappingJobsRequest other = (com.clarifai.grpc.api.PostConceptMappingJobsRequest) obj;
+    com.clarifai.grpc.api.PostDeploymentsRequest other = (com.clarifai.grpc.api.PostDeploymentsRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getConceptMappingJobsList()
-        .equals(other.getConceptMappingJobsList())) return false;
+    if (!getDeploymentsList()
+        .equals(other.getDeploymentsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -285,78 +281,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (getConceptMappingJobsCount() > 0) {
-      hash = (37 * hash) + CONCEPT_MAPPING_JOBS_FIELD_NUMBER;
-      hash = (53 * hash) + getConceptMappingJobsList().hashCode();
+    if (getDeploymentsCount() > 0) {
+      hash = (37 * hash) + DEPLOYMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest parseFrom(
+  public static com.clarifai.grpc.api.PostDeploymentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -369,7 +365,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.PostConceptMappingJobsRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PostDeploymentsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -385,30 +381,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Start concept mapping jobs
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.PostConceptMappingJobsRequest}
+   * Protobuf type {@code clarifai.api.PostDeploymentsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.PostConceptMappingJobsRequest)
-      com.clarifai.grpc.api.PostConceptMappingJobsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PostDeploymentsRequest)
+      com.clarifai.grpc.api.PostDeploymentsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostConceptMappingJobsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostDeploymentsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostConceptMappingJobsRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostDeploymentsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.PostConceptMappingJobsRequest.class, com.clarifai.grpc.api.PostConceptMappingJobsRequest.Builder.class);
+              com.clarifai.grpc.api.PostDeploymentsRequest.class, com.clarifai.grpc.api.PostDeploymentsRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.PostConceptMappingJobsRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PostDeploymentsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -421,7 +413,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getConceptMappingJobsFieldBuilder();
+        getDeploymentsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -433,11 +425,11 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      if (conceptMappingJobsBuilder_ == null) {
-        conceptMappingJobs_ = java.util.Collections.emptyList();
+      if (deploymentsBuilder_ == null) {
+        deployments_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        conceptMappingJobsBuilder_.clear();
+        deploymentsBuilder_.clear();
       }
       return this;
     }
@@ -445,17 +437,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostConceptMappingJobsRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostDeploymentsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostConceptMappingJobsRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.PostConceptMappingJobsRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PostDeploymentsRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PostDeploymentsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostConceptMappingJobsRequest build() {
-      com.clarifai.grpc.api.PostConceptMappingJobsRequest result = buildPartial();
+    public com.clarifai.grpc.api.PostDeploymentsRequest build() {
+      com.clarifai.grpc.api.PostDeploymentsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -463,22 +455,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostConceptMappingJobsRequest buildPartial() {
-      com.clarifai.grpc.api.PostConceptMappingJobsRequest result = new com.clarifai.grpc.api.PostConceptMappingJobsRequest(this);
+    public com.clarifai.grpc.api.PostDeploymentsRequest buildPartial() {
+      com.clarifai.grpc.api.PostDeploymentsRequest result = new com.clarifai.grpc.api.PostDeploymentsRequest(this);
       int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      if (conceptMappingJobsBuilder_ == null) {
+      if (deploymentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          conceptMappingJobs_ = java.util.Collections.unmodifiableList(conceptMappingJobs_);
+          deployments_ = java.util.Collections.unmodifiableList(deployments_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.conceptMappingJobs_ = conceptMappingJobs_;
+        result.deployments_ = deployments_;
       } else {
-        result.conceptMappingJobs_ = conceptMappingJobsBuilder_.build();
+        result.deployments_ = deploymentsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -518,42 +510,42 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.PostConceptMappingJobsRequest) {
-        return mergeFrom((com.clarifai.grpc.api.PostConceptMappingJobsRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PostDeploymentsRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PostDeploymentsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.PostConceptMappingJobsRequest other) {
-      if (other == com.clarifai.grpc.api.PostConceptMappingJobsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PostDeploymentsRequest other) {
+      if (other == com.clarifai.grpc.api.PostDeploymentsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (conceptMappingJobsBuilder_ == null) {
-        if (!other.conceptMappingJobs_.isEmpty()) {
-          if (conceptMappingJobs_.isEmpty()) {
-            conceptMappingJobs_ = other.conceptMappingJobs_;
+      if (deploymentsBuilder_ == null) {
+        if (!other.deployments_.isEmpty()) {
+          if (deployments_.isEmpty()) {
+            deployments_ = other.deployments_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureConceptMappingJobsIsMutable();
-            conceptMappingJobs_.addAll(other.conceptMappingJobs_);
+            ensureDeploymentsIsMutable();
+            deployments_.addAll(other.deployments_);
           }
           onChanged();
         }
       } else {
-        if (!other.conceptMappingJobs_.isEmpty()) {
-          if (conceptMappingJobsBuilder_.isEmpty()) {
-            conceptMappingJobsBuilder_.dispose();
-            conceptMappingJobsBuilder_ = null;
-            conceptMappingJobs_ = other.conceptMappingJobs_;
+        if (!other.deployments_.isEmpty()) {
+          if (deploymentsBuilder_.isEmpty()) {
+            deploymentsBuilder_.dispose();
+            deploymentsBuilder_ = null;
+            deployments_ = other.deployments_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            conceptMappingJobsBuilder_ = 
+            deploymentsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getConceptMappingJobsFieldBuilder() : null;
+                 getDeploymentsFieldBuilder() : null;
           } else {
-            conceptMappingJobsBuilder_.addAllMessages(other.conceptMappingJobs_);
+            deploymentsBuilder_.addAllMessages(other.deployments_);
           }
         }
       }
@@ -572,11 +564,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.PostConceptMappingJobsRequest parsedMessage = null;
+      com.clarifai.grpc.api.PostDeploymentsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.PostConceptMappingJobsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PostDeploymentsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -592,7 +584,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.UserAppIDSet, com.clarifai.grpc.api.UserAppIDSet.Builder, com.clarifai.grpc.api.UserAppIDSetOrBuilder> userAppIdBuilder_;
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -603,7 +595,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -618,7 +610,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -638,7 +630,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -656,7 +648,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -678,7 +670,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -696,7 +688,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -708,7 +700,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -723,7 +715,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user_id and app_id information.
+     * Only the user_id is used from this.
      * </pre>
      *
      * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
@@ -742,316 +734,316 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.ConceptMappingJob> conceptMappingJobs_ =
+    private java.util.List<com.clarifai.grpc.api.Deployment> deployments_ =
       java.util.Collections.emptyList();
-    private void ensureConceptMappingJobsIsMutable() {
+    private void ensureDeploymentsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        conceptMappingJobs_ = new java.util.ArrayList<com.clarifai.grpc.api.ConceptMappingJob>(conceptMappingJobs_);
+        deployments_ = new java.util.ArrayList<com.clarifai.grpc.api.Deployment>(deployments_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.ConceptMappingJob, com.clarifai.grpc.api.ConceptMappingJob.Builder, com.clarifai.grpc.api.ConceptMappingJobOrBuilder> conceptMappingJobsBuilder_;
+        com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder> deploymentsBuilder_;
 
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.ConceptMappingJob> getConceptMappingJobsList() {
-      if (conceptMappingJobsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(conceptMappingJobs_);
+    public java.util.List<com.clarifai.grpc.api.Deployment> getDeploymentsList() {
+      if (deploymentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(deployments_);
       } else {
-        return conceptMappingJobsBuilder_.getMessageList();
+        return deploymentsBuilder_.getMessageList();
       }
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public int getConceptMappingJobsCount() {
-      if (conceptMappingJobsBuilder_ == null) {
-        return conceptMappingJobs_.size();
+    public int getDeploymentsCount() {
+      if (deploymentsBuilder_ == null) {
+        return deployments_.size();
       } else {
-        return conceptMappingJobsBuilder_.getCount();
+        return deploymentsBuilder_.getCount();
       }
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public com.clarifai.grpc.api.ConceptMappingJob getConceptMappingJobs(int index) {
-      if (conceptMappingJobsBuilder_ == null) {
-        return conceptMappingJobs_.get(index);
+    public com.clarifai.grpc.api.Deployment getDeployments(int index) {
+      if (deploymentsBuilder_ == null) {
+        return deployments_.get(index);
       } else {
-        return conceptMappingJobsBuilder_.getMessage(index);
+        return deploymentsBuilder_.getMessage(index);
       }
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder setConceptMappingJobs(
-        int index, com.clarifai.grpc.api.ConceptMappingJob value) {
-      if (conceptMappingJobsBuilder_ == null) {
+    public Builder setDeployments(
+        int index, com.clarifai.grpc.api.Deployment value) {
+      if (deploymentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.set(index, value);
+        ensureDeploymentsIsMutable();
+        deployments_.set(index, value);
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.setMessage(index, value);
+        deploymentsBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder setConceptMappingJobs(
-        int index, com.clarifai.grpc.api.ConceptMappingJob.Builder builderForValue) {
-      if (conceptMappingJobsBuilder_ == null) {
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.set(index, builderForValue.build());
+    public Builder setDeployments(
+        int index, com.clarifai.grpc.api.Deployment.Builder builderForValue) {
+      if (deploymentsBuilder_ == null) {
+        ensureDeploymentsIsMutable();
+        deployments_.set(index, builderForValue.build());
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.setMessage(index, builderForValue.build());
+        deploymentsBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder addConceptMappingJobs(com.clarifai.grpc.api.ConceptMappingJob value) {
-      if (conceptMappingJobsBuilder_ == null) {
+    public Builder addDeployments(com.clarifai.grpc.api.Deployment value) {
+      if (deploymentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.add(value);
+        ensureDeploymentsIsMutable();
+        deployments_.add(value);
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.addMessage(value);
+        deploymentsBuilder_.addMessage(value);
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder addConceptMappingJobs(
-        int index, com.clarifai.grpc.api.ConceptMappingJob value) {
-      if (conceptMappingJobsBuilder_ == null) {
+    public Builder addDeployments(
+        int index, com.clarifai.grpc.api.Deployment value) {
+      if (deploymentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.add(index, value);
+        ensureDeploymentsIsMutable();
+        deployments_.add(index, value);
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.addMessage(index, value);
+        deploymentsBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder addConceptMappingJobs(
-        com.clarifai.grpc.api.ConceptMappingJob.Builder builderForValue) {
-      if (conceptMappingJobsBuilder_ == null) {
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.add(builderForValue.build());
+    public Builder addDeployments(
+        com.clarifai.grpc.api.Deployment.Builder builderForValue) {
+      if (deploymentsBuilder_ == null) {
+        ensureDeploymentsIsMutable();
+        deployments_.add(builderForValue.build());
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.addMessage(builderForValue.build());
+        deploymentsBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder addConceptMappingJobs(
-        int index, com.clarifai.grpc.api.ConceptMappingJob.Builder builderForValue) {
-      if (conceptMappingJobsBuilder_ == null) {
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.add(index, builderForValue.build());
+    public Builder addDeployments(
+        int index, com.clarifai.grpc.api.Deployment.Builder builderForValue) {
+      if (deploymentsBuilder_ == null) {
+        ensureDeploymentsIsMutable();
+        deployments_.add(index, builderForValue.build());
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.addMessage(index, builderForValue.build());
+        deploymentsBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder addAllConceptMappingJobs(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.ConceptMappingJob> values) {
-      if (conceptMappingJobsBuilder_ == null) {
-        ensureConceptMappingJobsIsMutable();
+    public Builder addAllDeployments(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Deployment> values) {
+      if (deploymentsBuilder_ == null) {
+        ensureDeploymentsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, conceptMappingJobs_);
+            values, deployments_);
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.addAllMessages(values);
+        deploymentsBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder clearConceptMappingJobs() {
-      if (conceptMappingJobsBuilder_ == null) {
-        conceptMappingJobs_ = java.util.Collections.emptyList();
+    public Builder clearDeployments() {
+      if (deploymentsBuilder_ == null) {
+        deployments_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.clear();
+        deploymentsBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public Builder removeConceptMappingJobs(int index) {
-      if (conceptMappingJobsBuilder_ == null) {
-        ensureConceptMappingJobsIsMutable();
-        conceptMappingJobs_.remove(index);
+    public Builder removeDeployments(int index) {
+      if (deploymentsBuilder_ == null) {
+        ensureDeploymentsIsMutable();
+        deployments_.remove(index);
         onChanged();
       } else {
-        conceptMappingJobsBuilder_.remove(index);
+        deploymentsBuilder_.remove(index);
       }
       return this;
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public com.clarifai.grpc.api.ConceptMappingJob.Builder getConceptMappingJobsBuilder(
+    public com.clarifai.grpc.api.Deployment.Builder getDeploymentsBuilder(
         int index) {
-      return getConceptMappingJobsFieldBuilder().getBuilder(index);
+      return getDeploymentsFieldBuilder().getBuilder(index);
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public com.clarifai.grpc.api.ConceptMappingJobOrBuilder getConceptMappingJobsOrBuilder(
+    public com.clarifai.grpc.api.DeploymentOrBuilder getDeploymentsOrBuilder(
         int index) {
-      if (conceptMappingJobsBuilder_ == null) {
-        return conceptMappingJobs_.get(index);  } else {
-        return conceptMappingJobsBuilder_.getMessageOrBuilder(index);
+      if (deploymentsBuilder_ == null) {
+        return deployments_.get(index);  } else {
+        return deploymentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.ConceptMappingJobOrBuilder> 
-         getConceptMappingJobsOrBuilderList() {
-      if (conceptMappingJobsBuilder_ != null) {
-        return conceptMappingJobsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.clarifai.grpc.api.DeploymentOrBuilder> 
+         getDeploymentsOrBuilderList() {
+      if (deploymentsBuilder_ != null) {
+        return deploymentsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(conceptMappingJobs_);
+        return java.util.Collections.unmodifiableList(deployments_);
       }
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public com.clarifai.grpc.api.ConceptMappingJob.Builder addConceptMappingJobsBuilder() {
-      return getConceptMappingJobsFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.ConceptMappingJob.getDefaultInstance());
+    public com.clarifai.grpc.api.Deployment.Builder addDeploymentsBuilder() {
+      return getDeploymentsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Deployment.getDefaultInstance());
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public com.clarifai.grpc.api.ConceptMappingJob.Builder addConceptMappingJobsBuilder(
+    public com.clarifai.grpc.api.Deployment.Builder addDeploymentsBuilder(
         int index) {
-      return getConceptMappingJobsFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.ConceptMappingJob.getDefaultInstance());
+      return getDeploymentsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Deployment.getDefaultInstance());
     }
     /**
      * <pre>
-     * The concept mapping jobs that are being started
+     * This allows you to create one or more deployments by posting it to the API.
      * </pre>
      *
-     * <code>repeated .clarifai.api.ConceptMappingJob concept_mapping_jobs = 2;</code>
+     * <code>repeated .clarifai.api.Deployment deployments = 2;</code>
      */
-    public java.util.List<com.clarifai.grpc.api.ConceptMappingJob.Builder> 
-         getConceptMappingJobsBuilderList() {
-      return getConceptMappingJobsFieldBuilder().getBuilderList();
+    public java.util.List<com.clarifai.grpc.api.Deployment.Builder> 
+         getDeploymentsBuilderList() {
+      return getDeploymentsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.ConceptMappingJob, com.clarifai.grpc.api.ConceptMappingJob.Builder, com.clarifai.grpc.api.ConceptMappingJobOrBuilder> 
-        getConceptMappingJobsFieldBuilder() {
-      if (conceptMappingJobsBuilder_ == null) {
-        conceptMappingJobsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.clarifai.grpc.api.ConceptMappingJob, com.clarifai.grpc.api.ConceptMappingJob.Builder, com.clarifai.grpc.api.ConceptMappingJobOrBuilder>(
-                conceptMappingJobs_,
+        com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder> 
+        getDeploymentsFieldBuilder() {
+      if (deploymentsBuilder_ == null) {
+        deploymentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Deployment, com.clarifai.grpc.api.Deployment.Builder, com.clarifai.grpc.api.DeploymentOrBuilder>(
+                deployments_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        conceptMappingJobs_ = null;
+        deployments_ = null;
       }
-      return conceptMappingJobsBuilder_;
+      return deploymentsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1066,41 +1058,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.PostConceptMappingJobsRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PostDeploymentsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.PostConceptMappingJobsRequest)
-  private static final com.clarifai.grpc.api.PostConceptMappingJobsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PostDeploymentsRequest)
+  private static final com.clarifai.grpc.api.PostDeploymentsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostConceptMappingJobsRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostDeploymentsRequest();
   }
 
-  public static com.clarifai.grpc.api.PostConceptMappingJobsRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PostDeploymentsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PostConceptMappingJobsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<PostConceptMappingJobsRequest>() {
+  private static final com.google.protobuf.Parser<PostDeploymentsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PostDeploymentsRequest>() {
     @java.lang.Override
-    public PostConceptMappingJobsRequest parsePartialFrom(
+    public PostDeploymentsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PostConceptMappingJobsRequest(input, extensionRegistry);
+      return new PostDeploymentsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<PostConceptMappingJobsRequest> parser() {
+  public static com.google.protobuf.Parser<PostDeploymentsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PostConceptMappingJobsRequest> getParserForType() {
+  public com.google.protobuf.Parser<PostDeploymentsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.PostConceptMappingJobsRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PostDeploymentsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

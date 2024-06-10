@@ -149,60 +149,6 @@ public interface DeploymentOrBuilder extends
       int index);
 
   /**
-   * <pre>
-   * Model
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 5;</code>
-   * @return Whether the model field is set.
-   */
-  boolean hasModel();
-  /**
-   * <pre>
-   * Model
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 5;</code>
-   * @return The model.
-   */
-  com.clarifai.grpc.api.Model getModel();
-  /**
-   * <pre>
-   * Model
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 5;</code>
-   */
-  com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
-
-  /**
-   * <pre>
-   * Workflow
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 6;</code>
-   * @return Whether the workflow field is set.
-   */
-  boolean hasWorkflow();
-  /**
-   * <pre>
-   * Workflow
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 6;</code>
-   * @return The workflow.
-   */
-  com.clarifai.grpc.api.Workflow getWorkflow();
-  /**
-   * <pre>
-   * Workflow
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 6;</code>
-   */
-  com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder();
-
-  /**
    * <code>.clarifai.api.Deployment.SchedulingChoice scheduling_choice = 7;</code>
    * @return The enum numeric value on the wire for schedulingChoice.
    */
@@ -276,5 +222,107 @@ public interface DeploymentOrBuilder extends
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 
-  public com.clarifai.grpc.api.Deployment.ObjectCase getObjectCase();
+  /**
+   * <pre>
+   * Short description of deployment.
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   * <pre>
+   * Short description of deployment.
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
+
+  /**
+   * <pre>
+   * The thing that the autoscaling config applies to for this nodepool.
+   * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 11;</code>
+   * @return Whether the worker field is set.
+   */
+  boolean hasWorker();
+  /**
+   * <pre>
+   * The thing that the autoscaling config applies to for this nodepool.
+   * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 11;</code>
+   * @return The worker.
+   */
+  com.clarifai.grpc.api.Worker getWorker();
+  /**
+   * <pre>
+   * The thing that the autoscaling config applies to for this nodepool.
+   * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 11;</code>
+   */
+  com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder();
+
+  /**
+   * <pre>
+   * When the deployment was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 12;</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <pre>
+   * When the deployment was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 12;</code>
+   * @return The createdAt.
+   */
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <pre>
+   * When the deployment was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 12;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <pre>
+   * When the deployment was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  boolean hasModifiedAt();
+  /**
+   * <pre>
+   * When the deployment was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+   * @return The modifiedAt.
+   */
+  com.google.protobuf.Timestamp getModifiedAt();
+  /**
+   * <pre>
+   * When the deployment was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder();
 }

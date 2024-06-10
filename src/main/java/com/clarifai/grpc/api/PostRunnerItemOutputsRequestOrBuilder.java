@@ -130,7 +130,8 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * <pre>
    * This request has a status so that it can communicate to the API from runners and
    * communicate status, errors, etc. This is on the request since runners operate
-   * in a reverse protocol.
+   * in a reverse protocol. This status is also used to initiate the
+   * ProcessRunnerItems request with RUNNER_STREAM_START code.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
@@ -141,7 +142,8 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * <pre>
    * This request has a status so that it can communicate to the API from runners and
    * communicate status, errors, etc. This is on the request since runners operate
-   * in a reverse protocol.
+   * in a reverse protocol. This status is also used to initiate the
+   * ProcessRunnerItems request with RUNNER_STREAM_START code.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
@@ -152,10 +154,33 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    * <pre>
    * This request has a status so that it can communicate to the API from runners and
    * communicate status, errors, etc. This is on the request since runners operate
-   * in a reverse protocol.
+   * in a reverse protocol. This status is also used to initiate the
+   * ProcessRunnerItems request with RUNNER_STREAM_START code.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
    */
   com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
+
+  /**
+   * <pre>
+   * A unique ID to represent the runner. This may be tied to an underlying compute instance
+   * information or just an UUID.
+   * </pre>
+   *
+   * <code>string runner_replica_id = 7;</code>
+   * @return The runnerReplicaId.
+   */
+  java.lang.String getRunnerReplicaId();
+  /**
+   * <pre>
+   * A unique ID to represent the runner. This may be tied to an underlying compute instance
+   * information or just an UUID.
+   * </pre>
+   *
+   * <code>string runner_replica_id = 7;</code>
+   * @return The bytes for runnerReplicaId.
+   */
+  com.google.protobuf.ByteString
+      getRunnerReplicaIdBytes();
 }

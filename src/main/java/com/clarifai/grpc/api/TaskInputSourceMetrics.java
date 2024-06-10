@@ -4,29 +4,25 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * The information of the location of the Frame.
- * </pre>
- *
- * Protobuf type {@code clarifai.api.FrameInfo}
+ * Protobuf type {@code clarifai.api.TaskInputSourceMetrics}
  */
-public final class FrameInfo extends
+public final class TaskInputSourceMetrics extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.FrameInfo)
-    FrameInfoOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.TaskInputSourceMetrics)
+    TaskInputSourceMetricsOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FrameInfo.newBuilder() to construct.
-  private FrameInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TaskInputSourceMetrics.newBuilder() to construct.
+  private TaskInputSourceMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FrameInfo() {
+  private TaskInputSourceMetrics() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new FrameInfo();
+    return new TaskInputSourceMetrics();
   }
 
   @java.lang.Override
@@ -34,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FrameInfo(
+  private TaskInputSourceMetrics(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,12 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            index_ = input.readUInt32();
-            break;
-          }
-          case 16: {
-
-            time_ = input.readUInt32();
+            inputsCountEstimated_ = input.readUInt64();
             break;
           }
           default: {
@@ -85,51 +76,30 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskInputSourceMetrics_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskInputSourceMetrics_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.FrameInfo.class, com.clarifai.grpc.api.FrameInfo.Builder.class);
+            com.clarifai.grpc.api.TaskInputSourceMetrics.class, com.clarifai.grpc.api.TaskInputSourceMetrics.Builder.class);
   }
 
-  public static final int INDEX_FIELD_NUMBER = 1;
-  private int index_;
+  public static final int INPUTS_COUNT_ESTIMATED_FIELD_NUMBER = 1;
+  private long inputsCountEstimated_;
   /**
    * <pre>
-   * Deprecated. Use Time instead.
-   * The index of the frame, informational and optional.
-   * Depends on the sampling rate used during processing
-   * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+   * Estimated number of inputs that are in the source of data
    * </pre>
    *
-   * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   * @deprecated clarifai.api.FrameInfo.index is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=704
-   * @return The index.
+   * <code>uint64 inputs_count_estimated = 1;</code>
+   * @return The inputsCountEstimated.
    */
   @java.lang.Override
-  @java.lang.Deprecated public int getIndex() {
-    return index_;
-  }
-
-  public static final int TIME_FIELD_NUMBER = 2;
-  private int time_;
-  /**
-   * <pre>
-   * time in the video in milliseconds. This is independent of the sampling rates used during
-   * processing.
-   * </pre>
-   *
-   * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   * @return The time.
-   */
-  @java.lang.Override
-  public int getTime() {
-    return time_;
+  public long getInputsCountEstimated() {
+    return inputsCountEstimated_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -146,11 +116,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (index_ != 0) {
-      output.writeUInt32(1, index_);
-    }
-    if (time_ != 0) {
-      output.writeUInt32(2, time_);
+    if (inputsCountEstimated_ != 0L) {
+      output.writeUInt64(1, inputsCountEstimated_);
     }
     unknownFields.writeTo(output);
   }
@@ -161,13 +128,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (index_ != 0) {
+    if (inputsCountEstimated_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, index_);
-    }
-    if (time_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, time_);
+        .computeUInt64Size(1, inputsCountEstimated_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,15 +142,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.FrameInfo)) {
+    if (!(obj instanceof com.clarifai.grpc.api.TaskInputSourceMetrics)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.FrameInfo other = (com.clarifai.grpc.api.FrameInfo) obj;
+    com.clarifai.grpc.api.TaskInputSourceMetrics other = (com.clarifai.grpc.api.TaskInputSourceMetrics) obj;
 
-    if (getIndex()
-        != other.getIndex()) return false;
-    if (getTime()
-        != other.getTime()) return false;
+    if (getInputsCountEstimated()
+        != other.getInputsCountEstimated()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -199,78 +160,77 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INDEX_FIELD_NUMBER;
-    hash = (53 * hash) + getIndex();
-    hash = (37 * hash) + TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getTime();
+    hash = (37 * hash) + INPUTS_COUNT_ESTIMATED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getInputsCountEstimated());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseDelimitedFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -283,7 +243,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.FrameInfo prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.TaskInputSourceMetrics prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -299,30 +259,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * The information of the location of the Frame.
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.FrameInfo}
+   * Protobuf type {@code clarifai.api.TaskInputSourceMetrics}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.FrameInfo)
-      com.clarifai.grpc.api.FrameInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.TaskInputSourceMetrics)
+      com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskInputSourceMetrics_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskInputSourceMetrics_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.FrameInfo.class, com.clarifai.grpc.api.FrameInfo.Builder.class);
+              com.clarifai.grpc.api.TaskInputSourceMetrics.class, com.clarifai.grpc.api.TaskInputSourceMetrics.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.FrameInfo.newBuilder()
+    // Construct using com.clarifai.grpc.api.TaskInputSourceMetrics.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -340,9 +296,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      index_ = 0;
-
-      time_ = 0;
+      inputsCountEstimated_ = 0L;
 
       return this;
     }
@@ -350,17 +304,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_TaskInputSourceMetrics_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.FrameInfo getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.FrameInfo.getDefaultInstance();
+    public com.clarifai.grpc.api.TaskInputSourceMetrics getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.TaskInputSourceMetrics.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.FrameInfo build() {
-      com.clarifai.grpc.api.FrameInfo result = buildPartial();
+    public com.clarifai.grpc.api.TaskInputSourceMetrics build() {
+      com.clarifai.grpc.api.TaskInputSourceMetrics result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -368,10 +322,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.FrameInfo buildPartial() {
-      com.clarifai.grpc.api.FrameInfo result = new com.clarifai.grpc.api.FrameInfo(this);
-      result.index_ = index_;
-      result.time_ = time_;
+    public com.clarifai.grpc.api.TaskInputSourceMetrics buildPartial() {
+      com.clarifai.grpc.api.TaskInputSourceMetrics result = new com.clarifai.grpc.api.TaskInputSourceMetrics(this);
+      result.inputsCountEstimated_ = inputsCountEstimated_;
       onBuilt();
       return result;
     }
@@ -410,21 +363,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.FrameInfo) {
-        return mergeFrom((com.clarifai.grpc.api.FrameInfo)other);
+      if (other instanceof com.clarifai.grpc.api.TaskInputSourceMetrics) {
+        return mergeFrom((com.clarifai.grpc.api.TaskInputSourceMetrics)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.FrameInfo other) {
-      if (other == com.clarifai.grpc.api.FrameInfo.getDefaultInstance()) return this;
-      if (other.getIndex() != 0) {
-        setIndex(other.getIndex());
-      }
-      if (other.getTime() != 0) {
-        setTime(other.getTime());
+    public Builder mergeFrom(com.clarifai.grpc.api.TaskInputSourceMetrics other) {
+      if (other == com.clarifai.grpc.api.TaskInputSourceMetrics.getDefaultInstance()) return this;
+      if (other.getInputsCountEstimated() != 0L) {
+        setInputsCountEstimated(other.getInputsCountEstimated());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -441,11 +391,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.FrameInfo parsedMessage = null;
+      com.clarifai.grpc.api.TaskInputSourceMetrics parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.FrameInfo) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.TaskInputSourceMetrics) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -455,106 +405,45 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int index_ ;
+    private long inputsCountEstimated_ ;
     /**
      * <pre>
-     * Deprecated. Use Time instead.
-     * The index of the frame, informational and optional.
-     * Depends on the sampling rate used during processing
-     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+     * Estimated number of inputs that are in the source of data
      * </pre>
      *
-     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=704
-     * @return The index.
+     * <code>uint64 inputs_count_estimated = 1;</code>
+     * @return The inputsCountEstimated.
      */
     @java.lang.Override
-    @java.lang.Deprecated public int getIndex() {
-      return index_;
+    public long getInputsCountEstimated() {
+      return inputsCountEstimated_;
     }
     /**
      * <pre>
-     * Deprecated. Use Time instead.
-     * The index of the frame, informational and optional.
-     * Depends on the sampling rate used during processing
-     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+     * Estimated number of inputs that are in the source of data
      * </pre>
      *
-     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=704
-     * @param value The index to set.
+     * <code>uint64 inputs_count_estimated = 1;</code>
+     * @param value The inputsCountEstimated to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setIndex(int value) {
+    public Builder setInputsCountEstimated(long value) {
       
-      index_ = value;
+      inputsCountEstimated_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Deprecated. Use Time instead.
-     * The index of the frame, informational and optional.
-     * Depends on the sampling rate used during processing
-     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+     * Estimated number of inputs that are in the source of data
      * </pre>
      *
-     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=704
+     * <code>uint64 inputs_count_estimated = 1;</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearIndex() {
+    public Builder clearInputsCountEstimated() {
       
-      index_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int time_ ;
-    /**
-     * <pre>
-     * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
-     * </pre>
-     *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return The time.
-     */
-    @java.lang.Override
-    public int getTime() {
-      return time_;
-    }
-    /**
-     * <pre>
-     * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
-     * </pre>
-     *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param value The time to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTime(int value) {
-      
-      time_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
-     * </pre>
-     *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTime() {
-      
-      time_ = 0;
+      inputsCountEstimated_ = 0L;
       onChanged();
       return this;
     }
@@ -571,41 +460,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.FrameInfo)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.TaskInputSourceMetrics)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.FrameInfo)
-  private static final com.clarifai.grpc.api.FrameInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.TaskInputSourceMetrics)
+  private static final com.clarifai.grpc.api.TaskInputSourceMetrics DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.FrameInfo();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.TaskInputSourceMetrics();
   }
 
-  public static com.clarifai.grpc.api.FrameInfo getDefaultInstance() {
+  public static com.clarifai.grpc.api.TaskInputSourceMetrics getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FrameInfo>
-      PARSER = new com.google.protobuf.AbstractParser<FrameInfo>() {
+  private static final com.google.protobuf.Parser<TaskInputSourceMetrics>
+      PARSER = new com.google.protobuf.AbstractParser<TaskInputSourceMetrics>() {
     @java.lang.Override
-    public FrameInfo parsePartialFrom(
+    public TaskInputSourceMetrics parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FrameInfo(input, extensionRegistry);
+      return new TaskInputSourceMetrics(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FrameInfo> parser() {
+  public static com.google.protobuf.Parser<TaskInputSourceMetrics> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FrameInfo> getParserForType() {
+  public com.google.protobuf.Parser<TaskInputSourceMetrics> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.FrameInfo getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.TaskInputSourceMetrics getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

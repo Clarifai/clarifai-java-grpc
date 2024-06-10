@@ -74,6 +74,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 34: {
+            com.clarifai.grpc.api.TaskInputSourceMetrics.Builder subBuilder = null;
+            if (inputSource_ != null) {
+              subBuilder = inputSource_.toBuilder();
+            }
+            inputSource_ = input.readMessage(com.clarifai.grpc.api.TaskInputSourceMetrics.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputSource_);
+              inputSource_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -160,6 +173,32 @@ private static final long serialVersionUID = 0L;
     return getReview();
   }
 
+  public static final int INPUT_SOURCE_FIELD_NUMBER = 4;
+  private com.clarifai.grpc.api.TaskInputSourceMetrics inputSource_;
+  /**
+   * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+   * @return Whether the inputSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputSource() {
+    return inputSource_ != null;
+  }
+  /**
+   * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+   * @return The inputSource.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskInputSourceMetrics getInputSource() {
+    return inputSource_ == null ? com.clarifai.grpc.api.TaskInputSourceMetrics.getDefaultInstance() : inputSource_;
+  }
+  /**
+   * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder getInputSourceOrBuilder() {
+    return getInputSource();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -180,6 +219,9 @@ private static final long serialVersionUID = 0L;
     if (review_ != null) {
       output.writeMessage(3, getReview());
     }
+    if (inputSource_ != null) {
+      output.writeMessage(4, getInputSource());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -196,6 +238,10 @@ private static final long serialVersionUID = 0L;
     if (review_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getReview());
+    }
+    if (inputSource_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getInputSource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,6 +268,11 @@ private static final long serialVersionUID = 0L;
       if (!getReview()
           .equals(other.getReview())) return false;
     }
+    if (hasInputSource() != other.hasInputSource()) return false;
+    if (hasInputSource()) {
+      if (!getInputSource()
+          .equals(other.getInputSource())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -240,6 +291,10 @@ private static final long serialVersionUID = 0L;
     if (hasReview()) {
       hash = (37 * hash) + REVIEW_FIELD_NUMBER;
       hash = (53 * hash) + getReview().hashCode();
+    }
+    if (hasInputSource()) {
+      hash = (37 * hash) + INPUT_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInputSource().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -386,6 +441,12 @@ private static final long serialVersionUID = 0L;
         review_ = null;
         reviewBuilder_ = null;
       }
+      if (inputSourceBuilder_ == null) {
+        inputSource_ = null;
+      } else {
+        inputSource_ = null;
+        inputSourceBuilder_ = null;
+      }
       return this;
     }
 
@@ -421,6 +482,11 @@ private static final long serialVersionUID = 0L;
         result.review_ = review_;
       } else {
         result.review_ = reviewBuilder_.build();
+      }
+      if (inputSourceBuilder_ == null) {
+        result.inputSource_ = inputSource_;
+      } else {
+        result.inputSource_ = inputSourceBuilder_.build();
       }
       onBuilt();
       return result;
@@ -475,6 +541,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasReview()) {
         mergeReview(other.getReview());
+      }
+      if (other.hasInputSource()) {
+        mergeInputSource(other.getInputSource());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -741,6 +810,125 @@ private static final long serialVersionUID = 0L;
         review_ = null;
       }
       return reviewBuilder_;
+    }
+
+    private com.clarifai.grpc.api.TaskInputSourceMetrics inputSource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskInputSourceMetrics, com.clarifai.grpc.api.TaskInputSourceMetrics.Builder, com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder> inputSourceBuilder_;
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     * @return Whether the inputSource field is set.
+     */
+    public boolean hasInputSource() {
+      return inputSourceBuilder_ != null || inputSource_ != null;
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     * @return The inputSource.
+     */
+    public com.clarifai.grpc.api.TaskInputSourceMetrics getInputSource() {
+      if (inputSourceBuilder_ == null) {
+        return inputSource_ == null ? com.clarifai.grpc.api.TaskInputSourceMetrics.getDefaultInstance() : inputSource_;
+      } else {
+        return inputSourceBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    public Builder setInputSource(com.clarifai.grpc.api.TaskInputSourceMetrics value) {
+      if (inputSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputSource_ = value;
+        onChanged();
+      } else {
+        inputSourceBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    public Builder setInputSource(
+        com.clarifai.grpc.api.TaskInputSourceMetrics.Builder builderForValue) {
+      if (inputSourceBuilder_ == null) {
+        inputSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputSourceBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    public Builder mergeInputSource(com.clarifai.grpc.api.TaskInputSourceMetrics value) {
+      if (inputSourceBuilder_ == null) {
+        if (inputSource_ != null) {
+          inputSource_ =
+            com.clarifai.grpc.api.TaskInputSourceMetrics.newBuilder(inputSource_).mergeFrom(value).buildPartial();
+        } else {
+          inputSource_ = value;
+        }
+        onChanged();
+      } else {
+        inputSourceBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    public Builder clearInputSource() {
+      if (inputSourceBuilder_ == null) {
+        inputSource_ = null;
+        onChanged();
+      } else {
+        inputSource_ = null;
+        inputSourceBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    public com.clarifai.grpc.api.TaskInputSourceMetrics.Builder getInputSourceBuilder() {
+      
+      onChanged();
+      return getInputSourceFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    public com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder getInputSourceOrBuilder() {
+      if (inputSourceBuilder_ != null) {
+        return inputSourceBuilder_.getMessageOrBuilder();
+      } else {
+        return inputSource_ == null ?
+            com.clarifai.grpc.api.TaskInputSourceMetrics.getDefaultInstance() : inputSource_;
+      }
+    }
+    /**
+     * <code>.clarifai.api.TaskInputSourceMetrics input_source = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.TaskInputSourceMetrics, com.clarifai.grpc.api.TaskInputSourceMetrics.Builder, com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder> 
+        getInputSourceFieldBuilder() {
+      if (inputSourceBuilder_ == null) {
+        inputSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.TaskInputSourceMetrics, com.clarifai.grpc.api.TaskInputSourceMetrics.Builder, com.clarifai.grpc.api.TaskInputSourceMetricsOrBuilder>(
+                getInputSource(),
+                getParentForChildren(),
+                isClean());
+        inputSource_ = null;
+      }
+      return inputSourceBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

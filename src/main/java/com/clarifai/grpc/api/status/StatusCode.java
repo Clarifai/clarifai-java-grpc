@@ -903,6 +903,22 @@ public enum StatusCode
   COMPUTE_CLUSTER_INVALID_REQUEST(25802),
   /**
    * <pre>
+   * Deployment related codes 259xx
+   * </pre>
+   *
+   * <code>DEPLOYMENT_DOES_NOT_EXIST = 25900;</code>
+   */
+  DEPLOYMENT_DOES_NOT_EXIST(25900),
+  /**
+   * <code>DEPLOYMENT_INVALID_ARGUMENT = 25901;</code>
+   */
+  DEPLOYMENT_INVALID_ARGUMENT(25901),
+  /**
+   * <code>DEPLOYMENT_INVALID_REQUEST = 25902;</code>
+   */
+  DEPLOYMENT_INVALID_REQUEST(25902),
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -2907,6 +2923,22 @@ public enum StatusCode
   public static final int COMPUTE_CLUSTER_INVALID_REQUEST_VALUE = 25802;
   /**
    * <pre>
+   * Deployment related codes 259xx
+   * </pre>
+   *
+   * <code>DEPLOYMENT_DOES_NOT_EXIST = 25900;</code>
+   */
+  public static final int DEPLOYMENT_DOES_NOT_EXIST_VALUE = 25900;
+  /**
+   * <code>DEPLOYMENT_INVALID_ARGUMENT = 25901;</code>
+   */
+  public static final int DEPLOYMENT_INVALID_ARGUMENT_VALUE = 25901;
+  /**
+   * <code>DEPLOYMENT_INVALID_REQUEST = 25902;</code>
+   */
+  public static final int DEPLOYMENT_INVALID_REQUEST_VALUE = 25902;
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -4196,6 +4228,9 @@ public enum StatusCode
       case 25800: return COMPUTE_CLUSTER_DOES_NOT_EXIST;
       case 25801: return COMPUTE_CLUSTER_INVALID_ARGUMENT;
       case 25802: return COMPUTE_CLUSTER_INVALID_REQUEST;
+      case 25900: return DEPLOYMENT_DOES_NOT_EXIST;
+      case 25901: return DEPLOYMENT_INVALID_ARGUMENT;
+      case 25902: return DEPLOYMENT_INVALID_REQUEST;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;

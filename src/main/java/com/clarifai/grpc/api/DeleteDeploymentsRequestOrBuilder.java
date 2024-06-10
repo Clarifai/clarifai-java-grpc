@@ -3,40 +3,40 @@
 
 package com.clarifai.grpc.api;
 
-public interface MultiConceptMappingJobResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.MultiConceptMappingJobResponse)
+public interface DeleteDeploymentsRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.DeleteDeploymentsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
-   * The response status.
+   * Only the user_id is used from this.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 1;</code>
-   * @return Whether the status field is set.
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return Whether the userAppId field is set.
    */
-  boolean hasStatus();
+  boolean hasUserAppId();
   /**
    * <pre>
-   * The response status.
+   * Only the user_id is used from this.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 1;</code>
-   * @return The status.
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
+   * @return The userAppId.
    */
-  com.clarifai.grpc.api.status.Status getStatus();
+  com.clarifai.grpc.api.UserAppIDSet getUserAppId();
   /**
    * <pre>
-   * The response status.
+   * Only the user_id is used from this.
    * </pre>
    *
-   * <code>.clarifai.api.status.Status status = 1;</code>
+   * <code>.clarifai.api.UserAppIDSet user_app_id = 1;</code>
    */
-  com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder();
+  com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
    * <pre>
-   * The ids of the concept mapping jobs underway.
+   * List of deployment ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -46,7 +46,7 @@ public interface MultiConceptMappingJobResponseOrBuilder extends
       getIdsList();
   /**
    * <pre>
-   * The ids of the concept mapping jobs underway.
+   * List of deployment ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -55,7 +55,7 @@ public interface MultiConceptMappingJobResponseOrBuilder extends
   int getIdsCount();
   /**
    * <pre>
-   * The ids of the concept mapping jobs underway.
+   * List of deployment ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>
@@ -65,7 +65,7 @@ public interface MultiConceptMappingJobResponseOrBuilder extends
   java.lang.String getIds(int index);
   /**
    * <pre>
-   * The ids of the concept mapping jobs underway.
+   * List of deployment ids to be deleted
    * </pre>
    *
    * <code>repeated string ids = 2;</code>

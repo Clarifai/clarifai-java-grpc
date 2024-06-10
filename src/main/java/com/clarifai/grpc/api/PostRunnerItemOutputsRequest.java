@@ -6,6 +6,11 @@ package com.clarifai.grpc.api;
 /**
  * <pre>
  * PostRunnerItemOutputsRequest
+ * This is the message that runners send to the API to communicate.
+ * At the end of the request it will have the RunnerItemOutput filled in
+ * with results of the workload the runner is processing. Other messages
+ * from the runner use this same proto to communicate over to the API
+ * and do handshakes.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.PostRunnerItemOutputsRequest}
@@ -24,6 +29,7 @@ private static final long serialVersionUID = 0L;
     runnerId_ = "";
     runnerItemId_ = "";
     runnerItemOutputs_ = java.util.Collections.emptyList();
+    runnerReplicaId_ = "";
   }
 
   @java.lang.Override
@@ -108,6 +114,12 @@ private static final long serialVersionUID = 0L;
               status_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            runnerReplicaId_ = s;
             break;
           }
           default: {
@@ -377,7 +389,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * This request has a status so that it can communicate to the API from runners and
    * communicate status, errors, etc. This is on the request since runners operate
-   * in a reverse protocol.
+   * in a reverse protocol. This status is also used to initiate the
+   * ProcessRunnerItems request with RUNNER_STREAM_START code.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
@@ -391,7 +404,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * This request has a status so that it can communicate to the API from runners and
    * communicate status, errors, etc. This is on the request since runners operate
-   * in a reverse protocol.
+   * in a reverse protocol. This status is also used to initiate the
+   * ProcessRunnerItems request with RUNNER_STREAM_START code.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
@@ -405,7 +419,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * This request has a status so that it can communicate to the API from runners and
    * communicate status, errors, etc. This is on the request since runners operate
-   * in a reverse protocol.
+   * in a reverse protocol. This status is also used to initiate the
+   * ProcessRunnerItems request with RUNNER_STREAM_START code.
    * </pre>
    *
    * <code>.clarifai.api.status.Status status = 6;</code>
@@ -413,6 +428,54 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.clarifai.grpc.api.status.StatusOrBuilder getStatusOrBuilder() {
     return getStatus();
+  }
+
+  public static final int RUNNER_REPLICA_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object runnerReplicaId_;
+  /**
+   * <pre>
+   * A unique ID to represent the runner. This may be tied to an underlying compute instance
+   * information or just an UUID.
+   * </pre>
+   *
+   * <code>string runner_replica_id = 7;</code>
+   * @return The runnerReplicaId.
+   */
+  @java.lang.Override
+  public java.lang.String getRunnerReplicaId() {
+    java.lang.Object ref = runnerReplicaId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      runnerReplicaId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A unique ID to represent the runner. This may be tied to an underlying compute instance
+   * information or just an UUID.
+   * </pre>
+   *
+   * <code>string runner_replica_id = 7;</code>
+   * @return The bytes for runnerReplicaId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRunnerReplicaIdBytes() {
+    java.lang.Object ref = runnerReplicaId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      runnerReplicaId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -447,6 +510,9 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(6, getStatus());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerReplicaId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, runnerReplicaId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -476,6 +542,9 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getStatus());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerReplicaId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, runnerReplicaId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -510,6 +579,8 @@ private static final long serialVersionUID = 0L;
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
+    if (!getRunnerReplicaId()
+        .equals(other.getRunnerReplicaId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,6 +610,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
+    hash = (37 * hash) + RUNNER_REPLICA_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRunnerReplicaId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -637,6 +710,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * PostRunnerItemOutputsRequest
+   * This is the message that runners send to the API to communicate.
+   * At the end of the request it will have the RunnerItemOutput filled in
+   * with results of the workload the runner is processing. Other messages
+   * from the runner use this same proto to communicate over to the API
+   * and do handshakes.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.PostRunnerItemOutputsRequest}
@@ -701,6 +779,8 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
+      runnerReplicaId_ = "";
+
       return this;
     }
 
@@ -750,6 +830,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.status_ = statusBuilder_.build();
       }
+      result.runnerReplicaId_ = runnerReplicaId_;
       onBuilt();
       return result;
     }
@@ -841,6 +922,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
+      }
+      if (!other.getRunnerReplicaId().isEmpty()) {
+        runnerReplicaId_ = other.runnerReplicaId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1598,7 +1683,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1611,7 +1697,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1628,7 +1715,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1650,7 +1738,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1670,7 +1759,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1694,7 +1784,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1714,7 +1805,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1728,7 +1820,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1745,7 +1838,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This request has a status so that it can communicate to the API from runners and
      * communicate status, errors, etc. This is on the request since runners operate
-     * in a reverse protocol.
+     * in a reverse protocol. This status is also used to initiate the
+     * ProcessRunnerItems request with RUNNER_STREAM_START code.
      * </pre>
      *
      * <code>.clarifai.api.status.Status status = 6;</code>
@@ -1762,6 +1856,107 @@ private static final long serialVersionUID = 0L;
         status_ = null;
       }
       return statusBuilder_;
+    }
+
+    private java.lang.Object runnerReplicaId_ = "";
+    /**
+     * <pre>
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     * </pre>
+     *
+     * <code>string runner_replica_id = 7;</code>
+     * @return The runnerReplicaId.
+     */
+    public java.lang.String getRunnerReplicaId() {
+      java.lang.Object ref = runnerReplicaId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        runnerReplicaId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     * </pre>
+     *
+     * <code>string runner_replica_id = 7;</code>
+     * @return The bytes for runnerReplicaId.
+     */
+    public com.google.protobuf.ByteString
+        getRunnerReplicaIdBytes() {
+      java.lang.Object ref = runnerReplicaId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        runnerReplicaId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     * </pre>
+     *
+     * <code>string runner_replica_id = 7;</code>
+     * @param value The runnerReplicaId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRunnerReplicaId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      runnerReplicaId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     * </pre>
+     *
+     * <code>string runner_replica_id = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRunnerReplicaId() {
+      
+      runnerReplicaId_ = getDefaultInstance().getRunnerReplicaId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A unique ID to represent the runner. This may be tied to an underlying compute instance
+     * information or just an UUID.
+     * </pre>
+     *
+     * <code>string runner_replica_id = 7;</code>
+     * @param value The bytes for runnerReplicaId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRunnerReplicaIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      runnerReplicaId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

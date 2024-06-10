@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-   * amount. A nodepool needs a minimum of 1 instance.
+   * amount.
    * </pre>
    *
    * <code>uint32 min_instances = 9;</code>
@@ -2375,7 +2375,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount. A nodepool needs a minimum of 1 instance.
+     * amount.
      * </pre>
      *
      * <code>uint32 min_instances = 9;</code>
@@ -2388,7 +2388,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount. A nodepool needs a minimum of 1 instance.
+     * amount.
      * </pre>
      *
      * <code>uint32 min_instances = 9;</code>
@@ -2404,7 +2404,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Minimum number of instances in this nodepool. This allows the nodepool to scale down to this
-     * amount. A nodepool needs a minimum of 1 instance.
+     * amount.
      * </pre>
      *
      * <code>uint32 min_instances = 9;</code>

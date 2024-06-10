@@ -4,6 +4,12 @@
 package com.clarifai.grpc.api;
 
 /**
+ * <pre>
+ * This contains the response of the user's request once processing is done.
+ * The runner should fill in the matching output to the RunnerItem.request
+ * oneof field. This is sent to the API within PostRunnerItemOutputsRequest
+ * </pre>
+ *
  * Protobuf type {@code clarifai.api.RunnerItemOutput}
  */
 public final class RunnerItemOutput extends
@@ -347,6 +353,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * This contains the response of the user's request once processing is done.
+   * The runner should fill in the matching output to the RunnerItem.request
+   * oneof field. This is sent to the API within PostRunnerItemOutputsRequest
+   * </pre>
+   *
    * Protobuf type {@code clarifai.api.RunnerItemOutput}
    */
   public static final class Builder extends

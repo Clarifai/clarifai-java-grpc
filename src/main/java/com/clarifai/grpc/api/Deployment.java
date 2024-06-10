@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     nodepools_ = java.util.Collections.emptyList();
     schedulingChoice_ = 0;
+    description_ = "";
   }
 
   @java.lang.Override
@@ -93,34 +94,6 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Nodepool.parser(), extensionRegistry));
             break;
           }
-          case 42: {
-            com.clarifai.grpc.api.Model.Builder subBuilder = null;
-            if (objectCase_ == 5) {
-              subBuilder = ((com.clarifai.grpc.api.Model) object_).toBuilder();
-            }
-            object_ =
-                input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.Model) object_);
-              object_ = subBuilder.buildPartial();
-            }
-            objectCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.clarifai.grpc.api.Workflow.Builder subBuilder = null;
-            if (objectCase_ == 6) {
-              subBuilder = ((com.clarifai.grpc.api.Workflow) object_).toBuilder();
-            }
-            object_ =
-                input.readMessage(com.clarifai.grpc.api.Workflow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.clarifai.grpc.api.Workflow) object_);
-              object_ = subBuilder.buildPartial();
-            }
-            objectCase_ = 6;
-            break;
-          }
           case 56: {
             int rawValue = input.readEnum();
 
@@ -149,6 +122,51 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(metadata_);
               metadata_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            description_ = s;
+            break;
+          }
+          case 90: {
+            com.clarifai.grpc.api.Worker.Builder subBuilder = null;
+            if (worker_ != null) {
+              subBuilder = worker_.toBuilder();
+            }
+            worker_ = input.readMessage(com.clarifai.grpc.api.Worker.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(worker_);
+              worker_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 98: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (createdAt_ != null) {
+              subBuilder = createdAt_.toBuilder();
+            }
+            createdAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(createdAt_);
+              createdAt_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 106: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (modifiedAt_ != null) {
+              subBuilder = modifiedAt_.toBuilder();
+            }
+            modifiedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(modifiedAt_);
+              modifiedAt_ = subBuilder.buildPartial();
             }
 
             break;
@@ -436,47 +454,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:clarifai.api.Deployment.SchedulingChoice)
   }
 
-  private int objectCase_ = 0;
-  private java.lang.Object object_;
-  public enum ObjectCase
-      implements com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    MODEL(5),
-    WORKFLOW(6),
-    OBJECT_NOT_SET(0);
-    private final int value;
-    private ObjectCase(int value) {
-      this.value = value;
-    }
-    /**
-     * @param value The number of the enum to look for.
-     * @return The enum associated with the given number.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ObjectCase valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ObjectCase forNumber(int value) {
-      switch (value) {
-        case 5: return MODEL;
-        case 6: return WORKFLOW;
-        case 0: return OBJECT_NOT_SET;
-        default: return null;
-      }
-    }
-    public int getNumber() {
-      return this.value;
-    }
-  };
-
-  public ObjectCase
-  getObjectCase() {
-    return ObjectCase.forNumber(
-        objectCase_);
-  }
-
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -697,92 +674,6 @@ private static final long serialVersionUID = 0L;
     return nodepools_.get(index);
   }
 
-  public static final int MODEL_FIELD_NUMBER = 5;
-  /**
-   * <pre>
-   * Model
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 5;</code>
-   * @return Whether the model field is set.
-   */
-  @java.lang.Override
-  public boolean hasModel() {
-    return objectCase_ == 5;
-  }
-  /**
-   * <pre>
-   * Model
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 5;</code>
-   * @return The model.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.Model getModel() {
-    if (objectCase_ == 5) {
-       return (com.clarifai.grpc.api.Model) object_;
-    }
-    return com.clarifai.grpc.api.Model.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * Model
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 5;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
-    if (objectCase_ == 5) {
-       return (com.clarifai.grpc.api.Model) object_;
-    }
-    return com.clarifai.grpc.api.Model.getDefaultInstance();
-  }
-
-  public static final int WORKFLOW_FIELD_NUMBER = 6;
-  /**
-   * <pre>
-   * Workflow
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 6;</code>
-   * @return Whether the workflow field is set.
-   */
-  @java.lang.Override
-  public boolean hasWorkflow() {
-    return objectCase_ == 6;
-  }
-  /**
-   * <pre>
-   * Workflow
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 6;</code>
-   * @return The workflow.
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.Workflow getWorkflow() {
-    if (objectCase_ == 6) {
-       return (com.clarifai.grpc.api.Workflow) object_;
-    }
-    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * Workflow
-   * </pre>
-   *
-   * <code>.clarifai.api.Workflow workflow = 6;</code>
-   */
-  @java.lang.Override
-  public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
-    if (objectCase_ == 6) {
-       return (com.clarifai.grpc.api.Workflow) object_;
-    }
-    return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-  }
-
   public static final int SCHEDULING_CHOICE_FIELD_NUMBER = 7;
   private int schedulingChoice_;
   /**
@@ -887,6 +778,169 @@ private static final long serialVersionUID = 0L;
     return getMetadata();
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 10;
+  private volatile java.lang.Object description_;
+  /**
+   * <pre>
+   * Short description of deployment.
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Short description of deployment.
+   * </pre>
+   *
+   * <code>string description = 10;</code>
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WORKER_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.Worker worker_;
+  /**
+   * <pre>
+   * The thing that the autoscaling config applies to for this nodepool.
+   * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 11;</code>
+   * @return Whether the worker field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorker() {
+    return worker_ != null;
+  }
+  /**
+   * <pre>
+   * The thing that the autoscaling config applies to for this nodepool.
+   * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 11;</code>
+   * @return The worker.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Worker getWorker() {
+    return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+  }
+  /**
+   * <pre>
+   * The thing that the autoscaling config applies to for this nodepool.
+   * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+   * </pre>
+   *
+   * <code>.clarifai.api.Worker worker = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+    return getWorker();
+  }
+
+  public static final int CREATED_AT_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp createdAt_;
+  /**
+   * <pre>
+   * When the deployment was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 12;</code>
+   * @return Whether the createdAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreatedAt() {
+    return createdAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the deployment was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 12;</code>
+   * @return The createdAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreatedAt() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+  }
+  /**
+   * <pre>
+   * When the deployment was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp created_at = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+    return getCreatedAt();
+  }
+
+  public static final int MODIFIED_AT_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp modifiedAt_;
+  /**
+   * <pre>
+   * When the deployment was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+   * @return Whether the modifiedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasModifiedAt() {
+    return modifiedAt_ != null;
+  }
+  /**
+   * <pre>
+   * When the deployment was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+   * @return The modifiedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getModifiedAt() {
+    return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+  }
+  /**
+   * <pre>
+   * When the deployment was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+    return getModifiedAt();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -913,12 +967,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < nodepools_.size(); i++) {
       output.writeMessage(4, nodepools_.get(i));
     }
-    if (objectCase_ == 5) {
-      output.writeMessage(5, (com.clarifai.grpc.api.Model) object_);
-    }
-    if (objectCase_ == 6) {
-      output.writeMessage(6, (com.clarifai.grpc.api.Workflow) object_);
-    }
     if (schedulingChoice_ != com.clarifai.grpc.api.Deployment.SchedulingChoice.UNKNOWN_SCHEDULING_CHOICE.getNumber()) {
       output.writeEnum(7, schedulingChoice_);
     }
@@ -927,6 +975,18 @@ private static final long serialVersionUID = 0L;
     }
     if (metadata_ != null) {
       output.writeMessage(9, getMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, description_);
+    }
+    if (worker_ != null) {
+      output.writeMessage(11, getWorker());
+    }
+    if (createdAt_ != null) {
+      output.writeMessage(12, getCreatedAt());
+    }
+    if (modifiedAt_ != null) {
+      output.writeMessage(13, getModifiedAt());
     }
     unknownFields.writeTo(output);
   }
@@ -951,14 +1011,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, nodepools_.get(i));
     }
-    if (objectCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.clarifai.grpc.api.Model) object_);
-    }
-    if (objectCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.clarifai.grpc.api.Workflow) object_);
-    }
     if (schedulingChoice_ != com.clarifai.grpc.api.Deployment.SchedulingChoice.UNKNOWN_SCHEDULING_CHOICE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, schedulingChoice_);
@@ -970,6 +1022,21 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, description_);
+    }
+    if (worker_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getWorker());
+    }
+    if (createdAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getCreatedAt());
+    }
+    if (modifiedAt_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getModifiedAt());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1008,18 +1075,22 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
-    if (!getObjectCase().equals(other.getObjectCase())) return false;
-    switch (objectCase_) {
-      case 5:
-        if (!getModel()
-            .equals(other.getModel())) return false;
-        break;
-      case 6:
-        if (!getWorkflow()
-            .equals(other.getWorkflow())) return false;
-        break;
-      case 0:
-      default:
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (hasWorker() != other.hasWorker()) return false;
+    if (hasWorker()) {
+      if (!getWorker()
+          .equals(other.getWorker())) return false;
+    }
+    if (hasCreatedAt() != other.hasCreatedAt()) return false;
+    if (hasCreatedAt()) {
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+    }
+    if (hasModifiedAt() != other.hasModifiedAt()) return false;
+    if (hasModifiedAt()) {
+      if (!getModifiedAt()
+          .equals(other.getModifiedAt())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1054,17 +1125,19 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
-    switch (objectCase_) {
-      case 5:
-        hash = (37 * hash) + MODEL_FIELD_NUMBER;
-        hash = (53 * hash) + getModel().hashCode();
-        break;
-      case 6:
-        hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkflow().hashCode();
-        break;
-      case 0:
-      default:
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    if (hasWorker()) {
+      hash = (37 * hash) + WORKER_FIELD_NUMBER;
+      hash = (53 * hash) + getWorker().hashCode();
+    }
+    if (hasCreatedAt()) {
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+    }
+    if (hasModifiedAt()) {
+      hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getModifiedAt().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1236,8 +1309,26 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
-      objectCase_ = 0;
-      object_ = null;
+      description_ = "";
+
+      if (workerBuilder_ == null) {
+        worker_ = null;
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
+      if (createdAtBuilder_ == null) {
+        createdAt_ = null;
+      } else {
+        createdAt_ = null;
+        createdAtBuilder_ = null;
+      }
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -1281,20 +1372,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.nodepools_ = nodepoolsBuilder_.build();
       }
-      if (objectCase_ == 5) {
-        if (modelBuilder_ == null) {
-          result.object_ = object_;
-        } else {
-          result.object_ = modelBuilder_.build();
-        }
-      }
-      if (objectCase_ == 6) {
-        if (workflowBuilder_ == null) {
-          result.object_ = object_;
-        } else {
-          result.object_ = workflowBuilder_.build();
-        }
-      }
       result.schedulingChoice_ = schedulingChoice_;
       if (visibilityBuilder_ == null) {
         result.visibility_ = visibility_;
@@ -1306,7 +1383,22 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.objectCase_ = objectCase_;
+      result.description_ = description_;
+      if (workerBuilder_ == null) {
+        result.worker_ = worker_;
+      } else {
+        result.worker_ = workerBuilder_.build();
+      }
+      if (createdAtBuilder_ == null) {
+        result.createdAt_ = createdAt_;
+      } else {
+        result.createdAt_ = createdAtBuilder_.build();
+      }
+      if (modifiedAtBuilder_ == null) {
+        result.modifiedAt_ = modifiedAt_;
+      } else {
+        result.modifiedAt_ = modifiedAtBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1401,18 +1493,18 @@ private static final long serialVersionUID = 0L;
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
-      switch (other.getObjectCase()) {
-        case MODEL: {
-          mergeModel(other.getModel());
-          break;
-        }
-        case WORKFLOW: {
-          mergeWorkflow(other.getWorkflow());
-          break;
-        }
-        case OBJECT_NOT_SET: {
-          break;
-        }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (other.hasWorker()) {
+        mergeWorker(other.getWorker());
+      }
+      if (other.hasCreatedAt()) {
+        mergeCreatedAt(other.getCreatedAt());
+      }
+      if (other.hasModifiedAt()) {
+        mergeModifiedAt(other.getModifiedAt());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1442,21 +1534,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int objectCase_ = 0;
-    private java.lang.Object object_;
-    public ObjectCase
-        getObjectCase() {
-      return ObjectCase.forNumber(
-          objectCase_);
-    }
-
-    public Builder clearObject() {
-      objectCase_ = 0;
-      object_ = null;
-      onChanged();
-      return this;
-    }
-
     private int bitField0_;
 
     private java.lang.Object id_ = "";
@@ -2226,362 +2303,6 @@ private static final long serialVersionUID = 0L;
       return nodepoolsBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     * @return Whether the model field is set.
-     */
-    @java.lang.Override
-    public boolean hasModel() {
-      return objectCase_ == 5;
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     * @return The model.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.Model getModel() {
-      if (modelBuilder_ == null) {
-        if (objectCase_ == 5) {
-          return (com.clarifai.grpc.api.Model) object_;
-        }
-        return com.clarifai.grpc.api.Model.getDefaultInstance();
-      } else {
-        if (objectCase_ == 5) {
-          return modelBuilder_.getMessage();
-        }
-        return com.clarifai.grpc.api.Model.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    public Builder setModel(com.clarifai.grpc.api.Model value) {
-      if (modelBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        object_ = value;
-        onChanged();
-      } else {
-        modelBuilder_.setMessage(value);
-      }
-      objectCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    public Builder setModel(
-        com.clarifai.grpc.api.Model.Builder builderForValue) {
-      if (modelBuilder_ == null) {
-        object_ = builderForValue.build();
-        onChanged();
-      } else {
-        modelBuilder_.setMessage(builderForValue.build());
-      }
-      objectCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    public Builder mergeModel(com.clarifai.grpc.api.Model value) {
-      if (modelBuilder_ == null) {
-        if (objectCase_ == 5 &&
-            object_ != com.clarifai.grpc.api.Model.getDefaultInstance()) {
-          object_ = com.clarifai.grpc.api.Model.newBuilder((com.clarifai.grpc.api.Model) object_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          object_ = value;
-        }
-        onChanged();
-      } else {
-        if (objectCase_ == 5) {
-          modelBuilder_.mergeFrom(value);
-        } else {
-          modelBuilder_.setMessage(value);
-        }
-      }
-      objectCase_ = 5;
-      return this;
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        if (objectCase_ == 5) {
-          objectCase_ = 0;
-          object_ = null;
-          onChanged();
-        }
-      } else {
-        if (objectCase_ == 5) {
-          objectCase_ = 0;
-          object_ = null;
-        }
-        modelBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
-      return getModelFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
-      if ((objectCase_ == 5) && (modelBuilder_ != null)) {
-        return modelBuilder_.getMessageOrBuilder();
-      } else {
-        if (objectCase_ == 5) {
-          return (com.clarifai.grpc.api.Model) object_;
-        }
-        return com.clarifai.grpc.api.Model.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Model
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
-        getModelFieldBuilder() {
-      if (modelBuilder_ == null) {
-        if (!(objectCase_ == 5)) {
-          object_ = com.clarifai.grpc.api.Model.getDefaultInstance();
-        }
-        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
-                (com.clarifai.grpc.api.Model) object_,
-                getParentForChildren(),
-                isClean());
-        object_ = null;
-      }
-      objectCase_ = 5;
-      onChanged();;
-      return modelBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> workflowBuilder_;
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     * @return Whether the workflow field is set.
-     */
-    @java.lang.Override
-    public boolean hasWorkflow() {
-      return objectCase_ == 6;
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     * @return The workflow.
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.Workflow getWorkflow() {
-      if (workflowBuilder_ == null) {
-        if (objectCase_ == 6) {
-          return (com.clarifai.grpc.api.Workflow) object_;
-        }
-        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-      } else {
-        if (objectCase_ == 6) {
-          return workflowBuilder_.getMessage();
-        }
-        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    public Builder setWorkflow(com.clarifai.grpc.api.Workflow value) {
-      if (workflowBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        object_ = value;
-        onChanged();
-      } else {
-        workflowBuilder_.setMessage(value);
-      }
-      objectCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    public Builder setWorkflow(
-        com.clarifai.grpc.api.Workflow.Builder builderForValue) {
-      if (workflowBuilder_ == null) {
-        object_ = builderForValue.build();
-        onChanged();
-      } else {
-        workflowBuilder_.setMessage(builderForValue.build());
-      }
-      objectCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    public Builder mergeWorkflow(com.clarifai.grpc.api.Workflow value) {
-      if (workflowBuilder_ == null) {
-        if (objectCase_ == 6 &&
-            object_ != com.clarifai.grpc.api.Workflow.getDefaultInstance()) {
-          object_ = com.clarifai.grpc.api.Workflow.newBuilder((com.clarifai.grpc.api.Workflow) object_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          object_ = value;
-        }
-        onChanged();
-      } else {
-        if (objectCase_ == 6) {
-          workflowBuilder_.mergeFrom(value);
-        } else {
-          workflowBuilder_.setMessage(value);
-        }
-      }
-      objectCase_ = 6;
-      return this;
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    public Builder clearWorkflow() {
-      if (workflowBuilder_ == null) {
-        if (objectCase_ == 6) {
-          objectCase_ = 0;
-          object_ = null;
-          onChanged();
-        }
-      } else {
-        if (objectCase_ == 6) {
-          objectCase_ = 0;
-          object_ = null;
-        }
-        workflowBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    public com.clarifai.grpc.api.Workflow.Builder getWorkflowBuilder() {
-      return getWorkflowFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    @java.lang.Override
-    public com.clarifai.grpc.api.WorkflowOrBuilder getWorkflowOrBuilder() {
-      if ((objectCase_ == 6) && (workflowBuilder_ != null)) {
-        return workflowBuilder_.getMessageOrBuilder();
-      } else {
-        if (objectCase_ == 6) {
-          return (com.clarifai.grpc.api.Workflow) object_;
-        }
-        return com.clarifai.grpc.api.Workflow.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Workflow
-     * </pre>
-     *
-     * <code>.clarifai.api.Workflow workflow = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder> 
-        getWorkflowFieldBuilder() {
-      if (workflowBuilder_ == null) {
-        if (!(objectCase_ == 6)) {
-          object_ = com.clarifai.grpc.api.Workflow.getDefaultInstance();
-        }
-        workflowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Workflow, com.clarifai.grpc.api.Workflow.Builder, com.clarifai.grpc.api.WorkflowOrBuilder>(
-                (com.clarifai.grpc.api.Workflow) object_,
-                getParentForChildren(),
-                isClean());
-        object_ = null;
-      }
-      objectCase_ = 6;
-      onChanged();;
-      return workflowBuilder_;
-    }
-
     private int schedulingChoice_ = 0;
     /**
      * <code>.clarifai.api.Deployment.SchedulingChoice scheduling_choice = 7;</code>
@@ -2971,6 +2692,576 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     * <pre>
+     * Short description of deployment.
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description of deployment.
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Short description of deployment.
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description of deployment.
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Short description of deployment.
+     * </pre>
+     *
+     * <code>string description = 10;</code>
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.Worker worker_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> workerBuilder_;
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     * @return Whether the worker field is set.
+     */
+    public boolean hasWorker() {
+      return workerBuilder_ != null || worker_ != null;
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     * @return The worker.
+     */
+    public com.clarifai.grpc.api.Worker getWorker() {
+      if (workerBuilder_ == null) {
+        return worker_ == null ? com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+      } else {
+        return workerBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    public Builder setWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        worker_ = value;
+        onChanged();
+      } else {
+        workerBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    public Builder setWorker(
+        com.clarifai.grpc.api.Worker.Builder builderForValue) {
+      if (workerBuilder_ == null) {
+        worker_ = builderForValue.build();
+        onChanged();
+      } else {
+        workerBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    public Builder mergeWorker(com.clarifai.grpc.api.Worker value) {
+      if (workerBuilder_ == null) {
+        if (worker_ != null) {
+          worker_ =
+            com.clarifai.grpc.api.Worker.newBuilder(worker_).mergeFrom(value).buildPartial();
+        } else {
+          worker_ = value;
+        }
+        onChanged();
+      } else {
+        workerBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    public Builder clearWorker() {
+      if (workerBuilder_ == null) {
+        worker_ = null;
+        onChanged();
+      } else {
+        worker_ = null;
+        workerBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    public com.clarifai.grpc.api.Worker.Builder getWorkerBuilder() {
+      
+      onChanged();
+      return getWorkerFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    public com.clarifai.grpc.api.WorkerOrBuilder getWorkerOrBuilder() {
+      if (workerBuilder_ != null) {
+        return workerBuilder_.getMessageOrBuilder();
+      } else {
+        return worker_ == null ?
+            com.clarifai.grpc.api.Worker.getDefaultInstance() : worker_;
+      }
+    }
+    /**
+     * <pre>
+     * The thing that the autoscaling config applies to for this nodepool.
+     * For a given user_id, nodepool_id, and object ID we can only have one deployment as it defines
+     * </pre>
+     *
+     * <code>.clarifai.api.Worker worker = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder> 
+        getWorkerFieldBuilder() {
+      if (workerBuilder_ == null) {
+        workerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Worker, com.clarifai.grpc.api.Worker.Builder, com.clarifai.grpc.api.WorkerOrBuilder>(
+                getWorker(),
+                getParentForChildren(),
+                isClean());
+        worker_ = null;
+      }
+      return workerBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createdAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     * @return Whether the createdAt field is set.
+     */
+    public boolean hasCreatedAt() {
+      return createdAtBuilder_ != null || createdAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     * @return The createdAt.
+     */
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      } else {
+        return createdAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createdAt_ = value;
+        onChanged();
+      } else {
+        createdAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    public Builder setCreatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        createdAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (createdAt_ != null) {
+          createdAt_ =
+            com.google.protobuf.Timestamp.newBuilder(createdAt_).mergeFrom(value).buildPartial();
+        } else {
+          createdAt_ = value;
+        }
+        onChanged();
+      } else {
+        createdAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    public Builder clearCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = null;
+        onChanged();
+      } else {
+        createdAt_ = null;
+        createdAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+      
+      onChanged();
+      return getCreatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      if (createdAtBuilder_ != null) {
+        return createdAtBuilder_.getMessageOrBuilder();
+      } else {
+        return createdAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the deployment was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp created_at = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreatedAtFieldBuilder() {
+      if (createdAtBuilder_ == null) {
+        createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreatedAt(),
+                getParentForChildren(),
+                isClean());
+        createdAt_ = null;
+      }
+      return createdAtBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp modifiedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> modifiedAtBuilder_;
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     * @return Whether the modifiedAt field is set.
+     */
+    public boolean hasModifiedAt() {
+      return modifiedAtBuilder_ != null || modifiedAt_ != null;
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     * @return The modifiedAt.
+     */
+    public com.google.protobuf.Timestamp getModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        return modifiedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      } else {
+        return modifiedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    public Builder setModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modifiedAt_ = value;
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    public Builder setModifiedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        modifiedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    public Builder mergeModifiedAt(com.google.protobuf.Timestamp value) {
+      if (modifiedAtBuilder_ == null) {
+        if (modifiedAt_ != null) {
+          modifiedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(modifiedAt_).mergeFrom(value).buildPartial();
+        } else {
+          modifiedAt_ = value;
+        }
+        onChanged();
+      } else {
+        modifiedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    public Builder clearModifiedAt() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAt_ = null;
+        onChanged();
+      } else {
+        modifiedAt_ = null;
+        modifiedAtBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getModifiedAtBuilder() {
+      
+      onChanged();
+      return getModifiedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getModifiedAtOrBuilder() {
+      if (modifiedAtBuilder_ != null) {
+        return modifiedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return modifiedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : modifiedAt_;
+      }
+    }
+    /**
+     * <pre>
+     * When the deployment was last modified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp modified_at = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getModifiedAtFieldBuilder() {
+      if (modifiedAtBuilder_ == null) {
+        modifiedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getModifiedAt(),
+                getParentForChildren(),
+                isClean());
+        modifiedAt_ = null;
+      }
+      return modifiedAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

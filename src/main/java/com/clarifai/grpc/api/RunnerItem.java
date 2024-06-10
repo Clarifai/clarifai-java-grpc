@@ -5,7 +5,9 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * This is a piece of work for a runner to process.
+ * This is a unit of work for a runner to process. This comes from the API
+ * in the MultiRunnerItemResponse and contains the user's requests
+ * to process.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.RunnerItem}
@@ -545,7 +547,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This is a piece of work for a runner to process.
+   * This is a unit of work for a runner to process. This comes from the API
+   * in the MultiRunnerItemResponse and contains the user's requests
+   * to process.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.RunnerItem}

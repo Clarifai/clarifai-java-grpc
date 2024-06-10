@@ -734,6 +734,22 @@ public enum S
    * <code>ComputeClusters_Delete = 141 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Add];</code>
    */
   ComputeClusters_Delete(141),
+  /**
+   * <pre>
+   * How to autoscale resources within nodepools.
+   * </pre>
+   *
+   * <code>Deployments_Get = 144 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  Deployments_Get(144),
+  /**
+   * <code>Deployments_Add = 145 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get];</code>
+   */
+  Deployments_Add(145),
+  /**
+   * <code>Deployments_Delete = 146 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Add];</code>
+   */
+  Deployments_Delete(146),
   UNRECOGNIZED(-1),
   ;
 
@@ -1430,6 +1446,22 @@ public enum S
    * <code>ComputeClusters_Delete = 141 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = ComputeClusters_Add];</code>
    */
   public static final int ComputeClusters_Delete_VALUE = 141;
+  /**
+   * <pre>
+   * How to autoscale resources within nodepools.
+   * </pre>
+   *
+   * <code>Deployments_Get = 144 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int Deployments_Get_VALUE = 144;
+  /**
+   * <code>Deployments_Add = 145 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get];</code>
+   */
+  public static final int Deployments_Add_VALUE = 145;
+  /**
+   * <code>Deployments_Delete = 146 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Add];</code>
+   */
+  public static final int Deployments_Delete_VALUE = 146;
 
 
   public final int getNumber() {
@@ -1552,6 +1584,9 @@ public enum S
       case 139: return ComputeClusters_Get;
       case 140: return ComputeClusters_Add;
       case 141: return ComputeClusters_Delete;
+      case 144: return Deployments_Get;
+      case 145: return Deployments_Add;
+      case 146: return Deployments_Delete;
       default: return null;
     }
   }

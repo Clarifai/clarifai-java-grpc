@@ -163,7 +163,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -175,7 +175,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -186,7 +186,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -198,7 +198,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -318,4 +318,15 @@ public interface RunnerOrBuilder extends
    * <code>.clarifai.api.ComputeInfo compute_info = 10;</code>
    */
   com.clarifai.grpc.api.ComputeInfoOrBuilder getComputeInfoOrBuilder();
+
+  /**
+   * <pre>
+   * Number of replicas that this runner should have up.
+   * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+   * </pre>
+   *
+   * <code>uint32 num_replicas = 11;</code>
+   * @return The numReplicas.
+   */
+  int getNumReplicas();
 }

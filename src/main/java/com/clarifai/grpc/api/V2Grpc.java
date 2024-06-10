@@ -511,37 +511,6 @@ public final class V2Grpc {
     return getPostKnowledgeGraphsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptMappingJobsRequest,
-      com.clarifai.grpc.api.MultiConceptMappingJobResponse> getPostConceptMappingJobsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostConceptMappingJobs",
-      requestType = com.clarifai.grpc.api.PostConceptMappingJobsRequest.class,
-      responseType = com.clarifai.grpc.api.MultiConceptMappingJobResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptMappingJobsRequest,
-      com.clarifai.grpc.api.MultiConceptMappingJobResponse> getPostConceptMappingJobsMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostConceptMappingJobsRequest, com.clarifai.grpc.api.MultiConceptMappingJobResponse> getPostConceptMappingJobsMethod;
-    if ((getPostConceptMappingJobsMethod = V2Grpc.getPostConceptMappingJobsMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostConceptMappingJobsMethod = V2Grpc.getPostConceptMappingJobsMethod) == null) {
-          V2Grpc.getPostConceptMappingJobsMethod = getPostConceptMappingJobsMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostConceptMappingJobsRequest, com.clarifai.grpc.api.MultiConceptMappingJobResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostConceptMappingJobs"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostConceptMappingJobsRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiConceptMappingJobResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostConceptMappingJobs"))
-              .build();
-        }
-      }
-    }
-    return getPostConceptMappingJobsMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetAnnotationRequest,
       com.clarifai.grpc.api.SingleAnnotationResponse> getGetAnnotationMethod;
 
@@ -7176,6 +7145,161 @@ public final class V2Grpc {
     return getDeleteNodepoolsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDeploymentRequest,
+      com.clarifai.grpc.api.SingleDeploymentResponse> getGetDeploymentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeployment",
+      requestType = com.clarifai.grpc.api.GetDeploymentRequest.class,
+      responseType = com.clarifai.grpc.api.SingleDeploymentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDeploymentRequest,
+      com.clarifai.grpc.api.SingleDeploymentResponse> getGetDeploymentMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetDeploymentRequest, com.clarifai.grpc.api.SingleDeploymentResponse> getGetDeploymentMethod;
+    if ((getGetDeploymentMethod = V2Grpc.getGetDeploymentMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getGetDeploymentMethod = V2Grpc.getGetDeploymentMethod) == null) {
+          V2Grpc.getGetDeploymentMethod = getGetDeploymentMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.GetDeploymentRequest, com.clarifai.grpc.api.SingleDeploymentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDeployment"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.GetDeploymentRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.SingleDeploymentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("GetDeployment"))
+              .build();
+        }
+      }
+    }
+    return getGetDeploymentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListDeploymentsRequest,
+      com.clarifai.grpc.api.MultiDeploymentResponse> getListDeploymentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeployments",
+      requestType = com.clarifai.grpc.api.ListDeploymentsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiDeploymentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListDeploymentsRequest,
+      com.clarifai.grpc.api.MultiDeploymentResponse> getListDeploymentsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListDeploymentsRequest, com.clarifai.grpc.api.MultiDeploymentResponse> getListDeploymentsMethod;
+    if ((getListDeploymentsMethod = V2Grpc.getListDeploymentsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListDeploymentsMethod = V2Grpc.getListDeploymentsMethod) == null) {
+          V2Grpc.getListDeploymentsMethod = getListDeploymentsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListDeploymentsRequest, com.clarifai.grpc.api.MultiDeploymentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDeployments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListDeploymentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiDeploymentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListDeployments"))
+              .build();
+        }
+      }
+    }
+    return getListDeploymentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostDeploymentsRequest,
+      com.clarifai.grpc.api.MultiDeploymentResponse> getPostDeploymentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostDeployments",
+      requestType = com.clarifai.grpc.api.PostDeploymentsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiDeploymentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostDeploymentsRequest,
+      com.clarifai.grpc.api.MultiDeploymentResponse> getPostDeploymentsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostDeploymentsRequest, com.clarifai.grpc.api.MultiDeploymentResponse> getPostDeploymentsMethod;
+    if ((getPostDeploymentsMethod = V2Grpc.getPostDeploymentsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostDeploymentsMethod = V2Grpc.getPostDeploymentsMethod) == null) {
+          V2Grpc.getPostDeploymentsMethod = getPostDeploymentsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostDeploymentsRequest, com.clarifai.grpc.api.MultiDeploymentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostDeployments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostDeploymentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiDeploymentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostDeployments"))
+              .build();
+        }
+      }
+    }
+    return getPostDeploymentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchDeploymentsRequest,
+      com.clarifai.grpc.api.MultiDeploymentResponse> getPatchDeploymentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PatchDeployments",
+      requestType = com.clarifai.grpc.api.PatchDeploymentsRequest.class,
+      responseType = com.clarifai.grpc.api.MultiDeploymentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchDeploymentsRequest,
+      com.clarifai.grpc.api.MultiDeploymentResponse> getPatchDeploymentsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PatchDeploymentsRequest, com.clarifai.grpc.api.MultiDeploymentResponse> getPatchDeploymentsMethod;
+    if ((getPatchDeploymentsMethod = V2Grpc.getPatchDeploymentsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPatchDeploymentsMethod = V2Grpc.getPatchDeploymentsMethod) == null) {
+          V2Grpc.getPatchDeploymentsMethod = getPatchDeploymentsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PatchDeploymentsRequest, com.clarifai.grpc.api.MultiDeploymentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PatchDeployments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PatchDeploymentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiDeploymentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PatchDeployments"))
+              .build();
+        }
+      }
+    }
+    return getPatchDeploymentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteDeploymentsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteDeploymentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDeployments",
+      requestType = com.clarifai.grpc.api.DeleteDeploymentsRequest.class,
+      responseType = com.clarifai.grpc.api.status.BaseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteDeploymentsRequest,
+      com.clarifai.grpc.api.status.BaseResponse> getDeleteDeploymentsMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.DeleteDeploymentsRequest, com.clarifai.grpc.api.status.BaseResponse> getDeleteDeploymentsMethod;
+    if ((getDeleteDeploymentsMethod = V2Grpc.getDeleteDeploymentsMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getDeleteDeploymentsMethod = V2Grpc.getDeleteDeploymentsMethod) == null) {
+          V2Grpc.getDeleteDeploymentsMethod = getDeleteDeploymentsMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.DeleteDeploymentsRequest, com.clarifai.grpc.api.status.BaseResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDeployments"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.DeleteDeploymentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.status.BaseResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("DeleteDeployments"))
+              .build();
+        }
+      }
+    }
+    return getDeleteDeploymentsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -7387,16 +7511,6 @@ public final class V2Grpc {
     public void postKnowledgeGraphs(com.clarifai.grpc.api.PostKnowledgeGraphsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostKnowledgeGraphsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Start concept mapping jobs.
-     * </pre>
-     */
-    public void postConceptMappingJobs(com.clarifai.grpc.api.PostConceptMappingJobsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptMappingJobResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostConceptMappingJobsMethod(), responseObserver);
     }
 
     /**
@@ -9585,6 +9699,47 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNodepoolsMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Deployments CRUD
+     * </pre>
+     */
+    public void getDeployment(com.clarifai.grpc.api.GetDeploymentRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDeploymentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDeploymentMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listDeployments(com.clarifai.grpc.api.ListDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDeploymentsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void postDeployments(com.clarifai.grpc.api.PostDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostDeploymentsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void patchDeployments(com.clarifai.grpc.api.PatchDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPatchDeploymentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple deployments in one request.
+     * </pre>
+     */
+    public void deleteDeployments(com.clarifai.grpc.api.DeleteDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDeploymentsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -9699,13 +9854,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostKnowledgeGraphsRequest,
                 com.clarifai.grpc.api.MultiKnowledgeGraphResponse>(
                   this, METHODID_POST_KNOWLEDGE_GRAPHS)))
-          .addMethod(
-            getPostConceptMappingJobsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostConceptMappingJobsRequest,
-                com.clarifai.grpc.api.MultiConceptMappingJobResponse>(
-                  this, METHODID_POST_CONCEPT_MAPPING_JOBS)))
           .addMethod(
             getGetAnnotationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11204,6 +11352,41 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteNodepoolsRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_NODEPOOLS)))
+          .addMethod(
+            getGetDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.GetDeploymentRequest,
+                com.clarifai.grpc.api.SingleDeploymentResponse>(
+                  this, METHODID_GET_DEPLOYMENT)))
+          .addMethod(
+            getListDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListDeploymentsRequest,
+                com.clarifai.grpc.api.MultiDeploymentResponse>(
+                  this, METHODID_LIST_DEPLOYMENTS)))
+          .addMethod(
+            getPostDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostDeploymentsRequest,
+                com.clarifai.grpc.api.MultiDeploymentResponse>(
+                  this, METHODID_POST_DEPLOYMENTS)))
+          .addMethod(
+            getPatchDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PatchDeploymentsRequest,
+                com.clarifai.grpc.api.MultiDeploymentResponse>(
+                  this, METHODID_PATCH_DEPLOYMENTS)))
+          .addMethod(
+            getDeleteDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.DeleteDeploymentsRequest,
+                com.clarifai.grpc.api.status.BaseResponse>(
+                  this, METHODID_DELETE_DEPLOYMENTS)))
           .build();
     }
   }
@@ -11401,17 +11584,6 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostKnowledgeGraphsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Start concept mapping jobs.
-     * </pre>
-     */
-    public void postConceptMappingJobs(com.clarifai.grpc.api.PostConceptMappingJobsRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptMappingJobResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostConceptMappingJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -13813,6 +13985,52 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNodepoolsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Deployments CRUD
+     * </pre>
+     */
+    public void getDeployment(com.clarifai.grpc.api.GetDeploymentRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDeploymentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeploymentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listDeployments(com.clarifai.grpc.api.ListDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeploymentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void postDeployments(com.clarifai.grpc.api.PostDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostDeploymentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void patchDeployments(com.clarifai.grpc.api.PatchDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPatchDeploymentsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple deployments in one request.
+     * </pre>
+     */
+    public void deleteDeployments(com.clarifai.grpc.api.DeleteDeploymentsRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDeploymentsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -13992,16 +14210,6 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiKnowledgeGraphResponse postKnowledgeGraphs(com.clarifai.grpc.api.PostKnowledgeGraphsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostKnowledgeGraphsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Start concept mapping jobs.
-     * </pre>
-     */
-    public com.clarifai.grpc.api.MultiConceptMappingJobResponse postConceptMappingJobs(com.clarifai.grpc.api.PostConceptMappingJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostConceptMappingJobsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -16151,6 +16359,47 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNodepoolsMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Deployments CRUD
+     * </pre>
+     */
+    public com.clarifai.grpc.api.SingleDeploymentResponse getDeployment(com.clarifai.grpc.api.GetDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiDeploymentResponse listDeployments(com.clarifai.grpc.api.ListDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiDeploymentResponse postDeployments(com.clarifai.grpc.api.PostDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiDeploymentResponse patchDeployments(com.clarifai.grpc.api.PatchDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple deployments in one request.
+     * </pre>
+     */
+    public com.clarifai.grpc.api.status.BaseResponse deleteDeployments(com.clarifai.grpc.api.DeleteDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeploymentsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -16346,17 +16595,6 @@ public final class V2Grpc {
         com.clarifai.grpc.api.PostKnowledgeGraphsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostKnowledgeGraphsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Start concept mapping jobs.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiConceptMappingJobResponse> postConceptMappingJobs(
-        com.clarifai.grpc.api.PostConceptMappingJobsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostConceptMappingJobsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -18704,6 +18942,52 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNodepoolsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Deployments CRUD
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.SingleDeploymentResponse> getDeployment(
+        com.clarifai.grpc.api.GetDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeploymentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiDeploymentResponse> listDeployments(
+        com.clarifai.grpc.api.ListDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeploymentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiDeploymentResponse> postDeployments(
+        com.clarifai.grpc.api.PostDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostDeploymentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiDeploymentResponse> patchDeployments(
+        com.clarifai.grpc.api.PatchDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPatchDeploymentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete multiple deployments in one request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.status.BaseResponse> deleteDeployments(
+        com.clarifai.grpc.api.DeleteDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDeploymentsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -18722,221 +19006,225 @@ public final class V2Grpc {
   private static final int METHODID_PATCH_CONCEPT_LANGUAGES = 13;
   private static final int METHODID_LIST_KNOWLEDGE_GRAPHS = 14;
   private static final int METHODID_POST_KNOWLEDGE_GRAPHS = 15;
-  private static final int METHODID_POST_CONCEPT_MAPPING_JOBS = 16;
-  private static final int METHODID_GET_ANNOTATION = 17;
-  private static final int METHODID_LIST_ANNOTATIONS = 18;
-  private static final int METHODID_POST_ANNOTATIONS = 19;
-  private static final int METHODID_PATCH_ANNOTATIONS = 20;
-  private static final int METHODID_PATCH_ANNOTATIONS_STATUS = 21;
-  private static final int METHODID_DELETE_ANNOTATION = 22;
-  private static final int METHODID_DELETE_ANNOTATIONS = 23;
-  private static final int METHODID_PATCH_ANNOTATIONS_SEARCHES = 24;
-  private static final int METHODID_POST_ANNOTATIONS_SEARCHES = 25;
-  private static final int METHODID_LIST_ANNOTATION_WORKERS = 26;
-  private static final int METHODID_GET_INPUT_COUNT = 27;
-  private static final int METHODID_STREAM_INPUTS = 28;
-  private static final int METHODID_GET_INPUT_SAMPLES = 29;
-  private static final int METHODID_GET_INPUT = 30;
-  private static final int METHODID_GET_INPUT_VIDEO_MANIFEST = 31;
-  private static final int METHODID_LIST_INPUTS = 32;
-  private static final int METHODID_POST_INPUTS = 33;
-  private static final int METHODID_PATCH_INPUTS = 34;
-  private static final int METHODID_DELETE_INPUT = 35;
-  private static final int METHODID_DELETE_INPUTS = 36;
-  private static final int METHODID_PATCH_INPUTS_SEARCHES = 37;
-  private static final int METHODID_POST_INPUTS_SEARCHES = 38;
-  private static final int METHODID_POST_MODEL_OUTPUTS = 39;
-  private static final int METHODID_GENERATE_MODEL_OUTPUTS = 40;
-  private static final int METHODID_LIST_DATASETS = 41;
-  private static final int METHODID_GET_DATASET = 42;
-  private static final int METHODID_POST_DATASETS = 43;
-  private static final int METHODID_PATCH_DATASETS = 44;
-  private static final int METHODID_DELETE_DATASETS = 45;
-  private static final int METHODID_LIST_DATASET_INPUTS = 46;
-  private static final int METHODID_GET_DATASET_INPUT = 47;
-  private static final int METHODID_POST_DATASET_INPUTS = 48;
-  private static final int METHODID_DELETE_DATASET_INPUTS = 49;
-  private static final int METHODID_LIST_DATASET_VERSIONS = 50;
-  private static final int METHODID_GET_DATASET_VERSION = 51;
-  private static final int METHODID_LIST_DATASET_VERSION_METRICS_GROUPS = 52;
-  private static final int METHODID_POST_DATASET_VERSIONS = 53;
-  private static final int METHODID_PATCH_DATASET_VERSIONS = 54;
-  private static final int METHODID_DELETE_DATASET_VERSIONS = 55;
-  private static final int METHODID_PUT_DATASET_VERSION_EXPORTS = 56;
-  private static final int METHODID_GET_MODEL_TYPE = 57;
-  private static final int METHODID_LIST_OPEN_SOURCE_LICENSES = 58;
-  private static final int METHODID_LIST_MODEL_TYPES = 59;
-  private static final int METHODID_GET_MODEL = 60;
-  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 61;
-  private static final int METHODID_LIST_MODELS = 62;
-  private static final int METHODID_GET_RESOURCE_COUNTS = 63;
-  private static final int METHODID_POST_MODELS_SEARCHES = 64;
-  private static final int METHODID_POST_MODELS = 65;
-  private static final int METHODID_PATCH_MODELS = 66;
-  private static final int METHODID_PATCH_MODEL_IDS = 67;
-  private static final int METHODID_DELETE_MODEL = 68;
-  private static final int METHODID_DELETE_MODELS = 69;
-  private static final int METHODID_PATCH_MODEL_CHECK_CONSENTS = 70;
-  private static final int METHODID_PATCH_MODEL_TOOLKITS = 71;
-  private static final int METHODID_PATCH_MODEL_USE_CASES = 72;
-  private static final int METHODID_PATCH_MODEL_LANGUAGES = 73;
-  private static final int METHODID_LIST_MODEL_INPUTS = 74;
-  private static final int METHODID_GET_MODEL_VERSION = 75;
-  private static final int METHODID_LIST_MODEL_VERSIONS = 76;
-  private static final int METHODID_POST_WORKFLOW_VERSIONS_UN_PUBLISH = 77;
-  private static final int METHODID_POST_WORKFLOW_VERSIONS_PUBLISH = 78;
-  private static final int METHODID_POST_MODEL_VERSIONS_PUBLISH = 79;
-  private static final int METHODID_POST_MODEL_VERSIONS_UN_PUBLISH = 80;
-  private static final int METHODID_POST_MODEL_VERSIONS = 81;
-  private static final int METHODID_PATCH_MODEL_VERSIONS = 82;
-  private static final int METHODID_DELETE_MODEL_VERSION = 83;
-  private static final int METHODID_PUT_MODEL_VERSION_EXPORTS = 84;
-  private static final int METHODID_GET_MODEL_VERSION_EXPORT = 85;
-  private static final int METHODID_GET_MODEL_VERSION_METRICS = 86;
-  private static final int METHODID_POST_MODEL_VERSION_METRICS = 87;
-  private static final int METHODID_POST_MODEL_VERSION_EVALUATIONS = 88;
-  private static final int METHODID_LIST_MODEL_VERSION_EVALUATIONS = 89;
-  private static final int METHODID_GET_MODEL_VERSION_EVALUATION = 90;
-  private static final int METHODID_POST_EVALUATIONS = 91;
-  private static final int METHODID_LIST_EVALUATIONS = 92;
-  private static final int METHODID_GET_EVALUATION = 93;
-  private static final int METHODID_LIST_MODEL_REFERENCES = 94;
-  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 95;
-  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 96;
-  private static final int METHODID_GET_WORKFLOW = 97;
-  private static final int METHODID_LIST_WORKFLOWS = 98;
-  private static final int METHODID_POST_WORKFLOWS = 99;
-  private static final int METHODID_PATCH_WORKFLOWS = 100;
-  private static final int METHODID_PATCH_WORKFLOW_IDS = 101;
-  private static final int METHODID_DELETE_WORKFLOW = 102;
-  private static final int METHODID_DELETE_WORKFLOWS = 103;
-  private static final int METHODID_POST_WORKFLOW_RESULTS = 104;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 105;
-  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 106;
-  private static final int METHODID_GET_WORKFLOW_VERSION = 107;
-  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 108;
-  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 109;
-  private static final int METHODID_GET_KEY = 110;
-  private static final int METHODID_LIST_KEYS = 111;
-  private static final int METHODID_LIST_APP_KEYS = 112;
-  private static final int METHODID_DELETE_KEY = 113;
-  private static final int METHODID_POST_KEYS = 114;
-  private static final int METHODID_PATCH_KEYS = 115;
-  private static final int METHODID_MY_SCOPES = 116;
-  private static final int METHODID_MY_SCOPES_USER = 117;
-  private static final int METHODID_MY_SCOPES_ROOT = 118;
-  private static final int METHODID_LIST_SCOPES = 119;
-  private static final int METHODID_GET_APP = 120;
-  private static final int METHODID_LIST_APPS = 121;
-  private static final int METHODID_DELETE_APP = 122;
-  private static final int METHODID_POST_APPS = 123;
-  private static final int METHODID_PATCH_APPS = 124;
-  private static final int METHODID_PATCH_APPS_IDS = 125;
-  private static final int METHODID_PATCH_APP = 126;
-  private static final int METHODID_POST_APPS_SEARCHES = 127;
-  private static final int METHODID_GET_USER = 128;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 129;
-  private static final int METHODID_GET_SEARCH = 130;
-  private static final int METHODID_LIST_SEARCHES = 131;
-  private static final int METHODID_PATCH_SEARCHES = 132;
-  private static final int METHODID_POST_SEARCHES = 133;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 134;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 135;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 136;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 137;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 138;
-  private static final int METHODID_DELETE_SEARCH = 139;
-  private static final int METHODID_LIST_ANNOTATION_FILTERS = 140;
-  private static final int METHODID_GET_ANNOTATION_FILTER = 141;
-  private static final int METHODID_POST_ANNOTATION_FILTERS = 142;
-  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 143;
-  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 144;
-  private static final int METHODID_LIST_STATUS_CODES = 145;
-  private static final int METHODID_GET_STATUS_CODE = 146;
-  private static final int METHODID_LIST_COLLABORATORS = 147;
-  private static final int METHODID_POST_COLLABORATORS = 148;
-  private static final int METHODID_PATCH_COLLABORATORS = 149;
-  private static final int METHODID_DELETE_COLLABORATORS = 150;
-  private static final int METHODID_LIST_COLLABORATIONS = 151;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 152;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 153;
-  private static final int METHODID_GET_APP_DUPLICATION = 154;
-  private static final int METHODID_POST_TASKS = 155;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 156;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 157;
-  private static final int METHODID_GET_TASK = 158;
-  private static final int METHODID_LIST_TASKS = 159;
-  private static final int METHODID_PATCH_TASKS = 160;
-  private static final int METHODID_DELETE_TASKS = 161;
-  private static final int METHODID_POST_LABEL_ORDERS = 162;
-  private static final int METHODID_GET_LABEL_ORDER = 163;
-  private static final int METHODID_LIST_LABEL_ORDERS = 164;
-  private static final int METHODID_PATCH_LABEL_ORDERS = 165;
-  private static final int METHODID_DELETE_LABEL_ORDERS = 166;
-  private static final int METHODID_POST_COLLECTORS = 167;
-  private static final int METHODID_GET_COLLECTOR = 168;
-  private static final int METHODID_LIST_COLLECTORS = 169;
-  private static final int METHODID_PATCH_COLLECTORS = 170;
-  private static final int METHODID_DELETE_COLLECTORS = 171;
-  private static final int METHODID_POST_STAT_VALUES = 172;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 173;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 174;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 175;
-  private static final int METHODID_GET_MODULE = 176;
-  private static final int METHODID_LIST_MODULES = 177;
-  private static final int METHODID_POST_MODULES = 178;
-  private static final int METHODID_PATCH_MODULES = 179;
-  private static final int METHODID_DELETE_MODULES = 180;
-  private static final int METHODID_GET_MODULE_VERSION = 181;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 182;
-  private static final int METHODID_POST_MODULE_VERSIONS = 183;
-  private static final int METHODID_PATCH_MODULE_VERSIONS = 184;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 185;
-  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 186;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 187;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 188;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 189;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 190;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 191;
-  private static final int METHODID_POST_BULK_OPERATIONS = 192;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 193;
-  private static final int METHODID_GET_BULK_OPERATION = 194;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 195;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 196;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 197;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 198;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 199;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 200;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 201;
-  private static final int METHODID_POST_UPLOADS = 202;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 203;
-  private static final int METHODID_GET_UPLOAD = 204;
-  private static final int METHODID_LIST_UPLOADS = 205;
-  private static final int METHODID_DELETE_UPLOADS = 206;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 207;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 208;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 209;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 210;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 211;
-  private static final int METHODID_GET_RUNNER = 212;
-  private static final int METHODID_LIST_RUNNERS = 213;
-  private static final int METHODID_POST_RUNNERS = 214;
-  private static final int METHODID_DELETE_RUNNERS = 215;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 216;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 217;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 218;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 219;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 220;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 221;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 222;
-  private static final int METHODID_GET_NODEPOOL = 223;
-  private static final int METHODID_LIST_NODEPOOLS = 224;
-  private static final int METHODID_POST_NODEPOOLS = 225;
-  private static final int METHODID_PATCH_NODEPOOLS = 226;
-  private static final int METHODID_DELETE_NODEPOOLS = 227;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 228;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 229;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 230;
+  private static final int METHODID_GET_ANNOTATION = 16;
+  private static final int METHODID_LIST_ANNOTATIONS = 17;
+  private static final int METHODID_POST_ANNOTATIONS = 18;
+  private static final int METHODID_PATCH_ANNOTATIONS = 19;
+  private static final int METHODID_PATCH_ANNOTATIONS_STATUS = 20;
+  private static final int METHODID_DELETE_ANNOTATION = 21;
+  private static final int METHODID_DELETE_ANNOTATIONS = 22;
+  private static final int METHODID_PATCH_ANNOTATIONS_SEARCHES = 23;
+  private static final int METHODID_POST_ANNOTATIONS_SEARCHES = 24;
+  private static final int METHODID_LIST_ANNOTATION_WORKERS = 25;
+  private static final int METHODID_GET_INPUT_COUNT = 26;
+  private static final int METHODID_STREAM_INPUTS = 27;
+  private static final int METHODID_GET_INPUT_SAMPLES = 28;
+  private static final int METHODID_GET_INPUT = 29;
+  private static final int METHODID_GET_INPUT_VIDEO_MANIFEST = 30;
+  private static final int METHODID_LIST_INPUTS = 31;
+  private static final int METHODID_POST_INPUTS = 32;
+  private static final int METHODID_PATCH_INPUTS = 33;
+  private static final int METHODID_DELETE_INPUT = 34;
+  private static final int METHODID_DELETE_INPUTS = 35;
+  private static final int METHODID_PATCH_INPUTS_SEARCHES = 36;
+  private static final int METHODID_POST_INPUTS_SEARCHES = 37;
+  private static final int METHODID_POST_MODEL_OUTPUTS = 38;
+  private static final int METHODID_GENERATE_MODEL_OUTPUTS = 39;
+  private static final int METHODID_LIST_DATASETS = 40;
+  private static final int METHODID_GET_DATASET = 41;
+  private static final int METHODID_POST_DATASETS = 42;
+  private static final int METHODID_PATCH_DATASETS = 43;
+  private static final int METHODID_DELETE_DATASETS = 44;
+  private static final int METHODID_LIST_DATASET_INPUTS = 45;
+  private static final int METHODID_GET_DATASET_INPUT = 46;
+  private static final int METHODID_POST_DATASET_INPUTS = 47;
+  private static final int METHODID_DELETE_DATASET_INPUTS = 48;
+  private static final int METHODID_LIST_DATASET_VERSIONS = 49;
+  private static final int METHODID_GET_DATASET_VERSION = 50;
+  private static final int METHODID_LIST_DATASET_VERSION_METRICS_GROUPS = 51;
+  private static final int METHODID_POST_DATASET_VERSIONS = 52;
+  private static final int METHODID_PATCH_DATASET_VERSIONS = 53;
+  private static final int METHODID_DELETE_DATASET_VERSIONS = 54;
+  private static final int METHODID_PUT_DATASET_VERSION_EXPORTS = 55;
+  private static final int METHODID_GET_MODEL_TYPE = 56;
+  private static final int METHODID_LIST_OPEN_SOURCE_LICENSES = 57;
+  private static final int METHODID_LIST_MODEL_TYPES = 58;
+  private static final int METHODID_GET_MODEL = 59;
+  private static final int METHODID_GET_MODEL_OUTPUT_INFO = 60;
+  private static final int METHODID_LIST_MODELS = 61;
+  private static final int METHODID_GET_RESOURCE_COUNTS = 62;
+  private static final int METHODID_POST_MODELS_SEARCHES = 63;
+  private static final int METHODID_POST_MODELS = 64;
+  private static final int METHODID_PATCH_MODELS = 65;
+  private static final int METHODID_PATCH_MODEL_IDS = 66;
+  private static final int METHODID_DELETE_MODEL = 67;
+  private static final int METHODID_DELETE_MODELS = 68;
+  private static final int METHODID_PATCH_MODEL_CHECK_CONSENTS = 69;
+  private static final int METHODID_PATCH_MODEL_TOOLKITS = 70;
+  private static final int METHODID_PATCH_MODEL_USE_CASES = 71;
+  private static final int METHODID_PATCH_MODEL_LANGUAGES = 72;
+  private static final int METHODID_LIST_MODEL_INPUTS = 73;
+  private static final int METHODID_GET_MODEL_VERSION = 74;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 75;
+  private static final int METHODID_POST_WORKFLOW_VERSIONS_UN_PUBLISH = 76;
+  private static final int METHODID_POST_WORKFLOW_VERSIONS_PUBLISH = 77;
+  private static final int METHODID_POST_MODEL_VERSIONS_PUBLISH = 78;
+  private static final int METHODID_POST_MODEL_VERSIONS_UN_PUBLISH = 79;
+  private static final int METHODID_POST_MODEL_VERSIONS = 80;
+  private static final int METHODID_PATCH_MODEL_VERSIONS = 81;
+  private static final int METHODID_DELETE_MODEL_VERSION = 82;
+  private static final int METHODID_PUT_MODEL_VERSION_EXPORTS = 83;
+  private static final int METHODID_GET_MODEL_VERSION_EXPORT = 84;
+  private static final int METHODID_GET_MODEL_VERSION_METRICS = 85;
+  private static final int METHODID_POST_MODEL_VERSION_METRICS = 86;
+  private static final int METHODID_POST_MODEL_VERSION_EVALUATIONS = 87;
+  private static final int METHODID_LIST_MODEL_VERSION_EVALUATIONS = 88;
+  private static final int METHODID_GET_MODEL_VERSION_EVALUATION = 89;
+  private static final int METHODID_POST_EVALUATIONS = 90;
+  private static final int METHODID_LIST_EVALUATIONS = 91;
+  private static final int METHODID_GET_EVALUATION = 92;
+  private static final int METHODID_LIST_MODEL_REFERENCES = 93;
+  private static final int METHODID_GET_MODEL_VERSION_INPUT_EXAMPLE = 94;
+  private static final int METHODID_LIST_MODEL_VERSION_INPUT_EXAMPLES = 95;
+  private static final int METHODID_GET_WORKFLOW = 96;
+  private static final int METHODID_LIST_WORKFLOWS = 97;
+  private static final int METHODID_POST_WORKFLOWS = 98;
+  private static final int METHODID_PATCH_WORKFLOWS = 99;
+  private static final int METHODID_PATCH_WORKFLOW_IDS = 100;
+  private static final int METHODID_DELETE_WORKFLOW = 101;
+  private static final int METHODID_DELETE_WORKFLOWS = 102;
+  private static final int METHODID_POST_WORKFLOW_RESULTS = 103;
+  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 104;
+  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 105;
+  private static final int METHODID_GET_WORKFLOW_VERSION = 106;
+  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 107;
+  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 108;
+  private static final int METHODID_GET_KEY = 109;
+  private static final int METHODID_LIST_KEYS = 110;
+  private static final int METHODID_LIST_APP_KEYS = 111;
+  private static final int METHODID_DELETE_KEY = 112;
+  private static final int METHODID_POST_KEYS = 113;
+  private static final int METHODID_PATCH_KEYS = 114;
+  private static final int METHODID_MY_SCOPES = 115;
+  private static final int METHODID_MY_SCOPES_USER = 116;
+  private static final int METHODID_MY_SCOPES_ROOT = 117;
+  private static final int METHODID_LIST_SCOPES = 118;
+  private static final int METHODID_GET_APP = 119;
+  private static final int METHODID_LIST_APPS = 120;
+  private static final int METHODID_DELETE_APP = 121;
+  private static final int METHODID_POST_APPS = 122;
+  private static final int METHODID_PATCH_APPS = 123;
+  private static final int METHODID_PATCH_APPS_IDS = 124;
+  private static final int METHODID_PATCH_APP = 125;
+  private static final int METHODID_POST_APPS_SEARCHES = 126;
+  private static final int METHODID_GET_USER = 127;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 128;
+  private static final int METHODID_GET_SEARCH = 129;
+  private static final int METHODID_LIST_SEARCHES = 130;
+  private static final int METHODID_PATCH_SEARCHES = 131;
+  private static final int METHODID_POST_SEARCHES = 132;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 133;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 134;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 135;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 136;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 137;
+  private static final int METHODID_DELETE_SEARCH = 138;
+  private static final int METHODID_LIST_ANNOTATION_FILTERS = 139;
+  private static final int METHODID_GET_ANNOTATION_FILTER = 140;
+  private static final int METHODID_POST_ANNOTATION_FILTERS = 141;
+  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 142;
+  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 143;
+  private static final int METHODID_LIST_STATUS_CODES = 144;
+  private static final int METHODID_GET_STATUS_CODE = 145;
+  private static final int METHODID_LIST_COLLABORATORS = 146;
+  private static final int METHODID_POST_COLLABORATORS = 147;
+  private static final int METHODID_PATCH_COLLABORATORS = 148;
+  private static final int METHODID_DELETE_COLLABORATORS = 149;
+  private static final int METHODID_LIST_COLLABORATIONS = 150;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 151;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 152;
+  private static final int METHODID_GET_APP_DUPLICATION = 153;
+  private static final int METHODID_POST_TASKS = 154;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 155;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 156;
+  private static final int METHODID_GET_TASK = 157;
+  private static final int METHODID_LIST_TASKS = 158;
+  private static final int METHODID_PATCH_TASKS = 159;
+  private static final int METHODID_DELETE_TASKS = 160;
+  private static final int METHODID_POST_LABEL_ORDERS = 161;
+  private static final int METHODID_GET_LABEL_ORDER = 162;
+  private static final int METHODID_LIST_LABEL_ORDERS = 163;
+  private static final int METHODID_PATCH_LABEL_ORDERS = 164;
+  private static final int METHODID_DELETE_LABEL_ORDERS = 165;
+  private static final int METHODID_POST_COLLECTORS = 166;
+  private static final int METHODID_GET_COLLECTOR = 167;
+  private static final int METHODID_LIST_COLLECTORS = 168;
+  private static final int METHODID_PATCH_COLLECTORS = 169;
+  private static final int METHODID_DELETE_COLLECTORS = 170;
+  private static final int METHODID_POST_STAT_VALUES = 171;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 172;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 173;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 174;
+  private static final int METHODID_GET_MODULE = 175;
+  private static final int METHODID_LIST_MODULES = 176;
+  private static final int METHODID_POST_MODULES = 177;
+  private static final int METHODID_PATCH_MODULES = 178;
+  private static final int METHODID_DELETE_MODULES = 179;
+  private static final int METHODID_GET_MODULE_VERSION = 180;
+  private static final int METHODID_LIST_MODULE_VERSIONS = 181;
+  private static final int METHODID_POST_MODULE_VERSIONS = 182;
+  private static final int METHODID_PATCH_MODULE_VERSIONS = 183;
+  private static final int METHODID_DELETE_MODULE_VERSIONS = 184;
+  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 185;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 186;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 187;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 188;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 189;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 190;
+  private static final int METHODID_POST_BULK_OPERATIONS = 191;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 192;
+  private static final int METHODID_GET_BULK_OPERATION = 193;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 194;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 195;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 196;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 197;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 198;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 199;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 200;
+  private static final int METHODID_POST_UPLOADS = 201;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 202;
+  private static final int METHODID_GET_UPLOAD = 203;
+  private static final int METHODID_LIST_UPLOADS = 204;
+  private static final int METHODID_DELETE_UPLOADS = 205;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 206;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 207;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 208;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 209;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 210;
+  private static final int METHODID_GET_RUNNER = 211;
+  private static final int METHODID_LIST_RUNNERS = 212;
+  private static final int METHODID_POST_RUNNERS = 213;
+  private static final int METHODID_DELETE_RUNNERS = 214;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 215;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 216;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 217;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 218;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 219;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 220;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 221;
+  private static final int METHODID_GET_NODEPOOL = 222;
+  private static final int METHODID_LIST_NODEPOOLS = 223;
+  private static final int METHODID_POST_NODEPOOLS = 224;
+  private static final int METHODID_PATCH_NODEPOOLS = 225;
+  private static final int METHODID_DELETE_NODEPOOLS = 226;
+  private static final int METHODID_GET_DEPLOYMENT = 227;
+  private static final int METHODID_LIST_DEPLOYMENTS = 228;
+  private static final int METHODID_POST_DEPLOYMENTS = 229;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 230;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 231;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 232;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 233;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 234;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -19018,10 +19306,6 @@ public final class V2Grpc {
         case METHODID_POST_KNOWLEDGE_GRAPHS:
           serviceImpl.postKnowledgeGraphs((com.clarifai.grpc.api.PostKnowledgeGraphsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiKnowledgeGraphResponse>) responseObserver);
-          break;
-        case METHODID_POST_CONCEPT_MAPPING_JOBS:
-          serviceImpl.postConceptMappingJobs((com.clarifai.grpc.api.PostConceptMappingJobsRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiConceptMappingJobResponse>) responseObserver);
           break;
         case METHODID_GET_ANNOTATION:
           serviceImpl.getAnnotation((com.clarifai.grpc.api.GetAnnotationRequest) request,
@@ -19867,6 +20151,26 @@ public final class V2Grpc {
           serviceImpl.deleteNodepools((com.clarifai.grpc.api.DeleteNodepoolsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
+        case METHODID_GET_DEPLOYMENT:
+          serviceImpl.getDeployment((com.clarifai.grpc.api.GetDeploymentRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleDeploymentResponse>) responseObserver);
+          break;
+        case METHODID_LIST_DEPLOYMENTS:
+          serviceImpl.listDeployments((com.clarifai.grpc.api.ListDeploymentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse>) responseObserver);
+          break;
+        case METHODID_POST_DEPLOYMENTS:
+          serviceImpl.postDeployments((com.clarifai.grpc.api.PostDeploymentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse>) responseObserver);
+          break;
+        case METHODID_PATCH_DEPLOYMENTS:
+          serviceImpl.patchDeployments((com.clarifai.grpc.api.PatchDeploymentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiDeploymentResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_DEPLOYMENTS:
+          serviceImpl.deleteDeployments((com.clarifai.grpc.api.DeleteDeploymentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -19953,7 +20257,6 @@ public final class V2Grpc {
               .addMethod(getPatchConceptLanguagesMethod())
               .addMethod(getListKnowledgeGraphsMethod())
               .addMethod(getPostKnowledgeGraphsMethod())
-              .addMethod(getPostConceptMappingJobsMethod())
               .addMethod(getGetAnnotationMethod())
               .addMethod(getListAnnotationsMethod())
               .addMethod(getPostAnnotationsMethod())
@@ -20168,6 +20471,11 @@ public final class V2Grpc {
               .addMethod(getPostNodepoolsMethod())
               .addMethod(getPatchNodepoolsMethod())
               .addMethod(getDeleteNodepoolsMethod())
+              .addMethod(getGetDeploymentMethod())
+              .addMethod(getListDeploymentsMethod())
+              .addMethod(getPostDeploymentsMethod())
+              .addMethod(getPatchDeploymentsMethod())
+              .addMethod(getDeleteDeploymentsMethod())
               .build();
         }
       }

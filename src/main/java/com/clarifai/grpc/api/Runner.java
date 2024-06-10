@@ -163,6 +163,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 88: {
+
+            numReplicas_ = input.readUInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -469,7 +474,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -483,7 +488,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -496,7 +501,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -510,7 +515,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4298
+   *     See proto/clarifai/api/resources.proto;l=4296
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -666,6 +671,22 @@ private static final long serialVersionUID = 0L;
     return getComputeInfo();
   }
 
+  public static final int NUM_REPLICAS_FIELD_NUMBER = 11;
+  private int numReplicas_;
+  /**
+   * <pre>
+   * Number of replicas that this runner should have up.
+   * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+   * </pre>
+   *
+   * <code>uint32 num_replicas = 11;</code>
+   * @return The numReplicas.
+   */
+  @java.lang.Override
+  public int getNumReplicas() {
+    return numReplicas_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -709,6 +730,9 @@ private static final long serialVersionUID = 0L;
     }
     if (computeInfo_ != null) {
       output.writeMessage(10, getComputeInfo());
+    }
+    if (numReplicas_ != 0) {
+      output.writeUInt32(11, numReplicas_);
     }
     unknownFields.writeTo(output);
   }
@@ -759,6 +783,10 @@ private static final long serialVersionUID = 0L;
     if (computeInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getComputeInfo());
+    }
+    if (numReplicas_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(11, numReplicas_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -813,6 +841,8 @@ private static final long serialVersionUID = 0L;
       if (!getComputeInfo()
           .equals(other.getComputeInfo())) return false;
     }
+    if (getNumReplicas()
+        != other.getNumReplicas()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -858,6 +888,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + COMPUTE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getComputeInfo().hashCode();
     }
+    hash = (37 * hash) + NUM_REPLICAS_FIELD_NUMBER;
+    hash = (53 * hash) + getNumReplicas();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1040,6 +1072,8 @@ private static final long serialVersionUID = 0L;
         computeInfo_ = null;
         computeInfoBuilder_ = null;
       }
+      numReplicas_ = 0;
+
       return this;
     }
 
@@ -1105,6 +1139,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.computeInfo_ = computeInfoBuilder_.build();
       }
+      result.numReplicas_ = numReplicas_;
       onBuilt();
       return result;
     }
@@ -1192,6 +1227,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasComputeInfo()) {
         mergeComputeInfo(other.getComputeInfo());
+      }
+      if (other.getNumReplicas() != 0) {
+        setNumReplicas(other.getNumReplicas());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2013,7 +2051,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2027,7 +2065,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2040,7 +2078,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2054,7 +2092,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2069,7 +2107,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2091,7 +2129,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2112,7 +2150,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2131,7 +2169,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2147,7 +2185,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4298
+     *     See proto/clarifai/api/resources.proto;l=4296
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */
@@ -2725,6 +2763,52 @@ private static final long serialVersionUID = 0L;
         computeInfo_ = null;
       }
       return computeInfoBuilder_;
+    }
+
+    private int numReplicas_ ;
+    /**
+     * <pre>
+     * Number of replicas that this runner should have up.
+     * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     * </pre>
+     *
+     * <code>uint32 num_replicas = 11;</code>
+     * @return The numReplicas.
+     */
+    @java.lang.Override
+    public int getNumReplicas() {
+      return numReplicas_;
+    }
+    /**
+     * <pre>
+     * Number of replicas that this runner should have up.
+     * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     * </pre>
+     *
+     * <code>uint32 num_replicas = 11;</code>
+     * @param value The numReplicas to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumReplicas(int value) {
+      
+      numReplicas_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Number of replicas that this runner should have up.
+     * We keep it separate from ComputeInfo which defines how many resources each replica needs.
+     * </pre>
+     *
+     * <code>uint32 num_replicas = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNumReplicas() {
+      
+      numReplicas_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
