@@ -50,8 +50,15 @@ public enum ClarifaiChannel {
 
   public ManagedChannel getInsecureGrpcChannel() {
     marshallerType = MarshallerType.PROTO;
+    String base = System.getenv("CLARIFAI_GRPC_BASE");
+    if (base == null)
+      base = "api.clarifai.com";
+    String port = System.getenv("CLARIFAI_GRPC_PORT");
+    if (port == null)
+      port = "18080";
+    
     return NettyChannelBuilder
-        .forAddress("api-grpc.clarifai.com", 18080)
+        .forAddress(base, Integer.parseInt(port))
         .usePlaintext()
         .maxInboundMessageSize(MAX_MESSAGE_LENGTH)
         .build();

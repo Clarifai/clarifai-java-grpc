@@ -59,6 +59,7 @@ The third version number (`Z` out of `X.Y.Z`) is used by this library for any in
 
 ## Getting started
 
+### Constructing the Stub
 Construct the *Stub* object using which you'll access all the Clarifai API functionality:
 
 ```java
@@ -77,6 +78,23 @@ V2Grpc.V2BlockingStub stub = V2Grpc.newBlockingStub(ClarifaiChannel.INSTANCE.get
 >
 > We only recommend them in special cases.
 
+### Additional Steps for Enterprise Users
+
+If you're using the SaaS platform at Clarifai.com, you're good - there is nothing more you need to do.  If you're using a custom install of the Clarifai platform as an enterprise user, there are several environmental variables that should be set as necessary to communicate to the client where it should reach out to for the connection with the appropriate platform.
+
+```bash
+# For REST calls, you want to set the private IP address of the platform install
+export CLARIFAI_API_BASE=<PLATFORM IP ADDRESS>
+
+# For gRPC calls, you want to set the private IP address of the platform install
+# You may optionally also want to set the gRPC accessible port if you are planning to
+# use the insecure channel.
+
+export CLARIFAI_GRPC_BASE=<PLATFORM IP ADDRESS>
+export CLARIFAI_GRPC_PORT=<PLATFORM gRPC PORT>
+```
+
+## Example Predict Call
 
 Predict concepts in an image:
 
