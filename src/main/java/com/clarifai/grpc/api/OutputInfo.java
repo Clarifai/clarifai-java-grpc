@@ -12,7 +12,7 @@ package com.clarifai.grpc.api;
  * our JSON REST APIs). This allows each ModelType to define the set of fields, their default values
  * and description of each field so that we can display those in Portal and make the creation of
  * Model's very extensible. The OutputConfig object will eventually go away in favor of
- * infer_params struct.
+ * output_info.params struct.
  * </pre>
  *
  * Protobuf type {@code clarifai.api.OutputInfo}
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.OutputConfig outputConfig_;
   /**
    * <pre>
-   * Model configuration...going away in favor of infer_params and train_params over time.
+   * Model configuration...going away in favor of output_info.params and train_params over time.
    * TO BE DEPRECATED
    * </pre>
    *
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Model configuration...going away in favor of infer_params and train_params over time.
+   * Model configuration...going away in favor of output_info.params and train_params over time.
    * TO BE DEPRECATED
    * </pre>
    *
@@ -234,7 +234,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Model configuration...going away in favor of infer_params and train_params over time.
+   * Model configuration...going away in favor of output_info.params and train_params over time.
    * TO BE DEPRECATED
    * </pre>
    *
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
    * our JSON REST APIs). This allows each ModelType to define the set of fields, their default values
    * and description of each field so that we can display those in Portal and make the creation of
    * Model's very extensible. The OutputConfig object will eventually go away in favor of
-   * infer_params struct.
+   * output_info.params struct.
    * </pre>
    *
    * Protobuf type {@code clarifai.api.OutputInfo}
@@ -1066,7 +1066,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.OutputConfig, com.clarifai.grpc.api.OutputConfig.Builder, com.clarifai.grpc.api.OutputConfigOrBuilder> outputConfigBuilder_;
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1078,7 +1078,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1094,7 +1094,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1134,7 +1134,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1157,7 +1157,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1176,7 +1176,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1189,7 +1189,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *
@@ -1205,7 +1205,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Model configuration...going away in favor of infer_params and train_params over time.
+     * Model configuration...going away in favor of output_info.params and train_params over time.
      * TO BE DEPRECATED
      * </pre>
      *

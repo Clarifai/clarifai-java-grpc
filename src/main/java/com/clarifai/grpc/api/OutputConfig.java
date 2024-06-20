@@ -6,7 +6,7 @@ package com.clarifai.grpc.api;
 /**
  * <pre>
  * OutputConfig is a collection of parameters controlling either inference or training settings for
- * the given Model. This message will be deprecated over time in favor or infer_params and
+ * the given Model. This message will be deprecated over time in favor or output_info.params and
  * train_params in OutputInfo which are cleaner and more extensible for many ModelTypes.
  * </pre>
  *
@@ -942,7 +942,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * OutputConfig is a collection of parameters controlling either inference or training settings for
-   * the given Model. This message will be deprecated over time in favor or infer_params and
+   * the given Model. This message will be deprecated over time in favor or output_info.params and
    * train_params in OutputInfo which are cleaner and more extensible for many ModelTypes.
    * </pre>
    *

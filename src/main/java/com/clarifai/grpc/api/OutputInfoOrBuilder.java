@@ -36,7 +36,7 @@ public interface OutputInfoOrBuilder extends
 
   /**
    * <pre>
-   * Model configuration...going away in favor of infer_params and train_params over time.
+   * Model configuration...going away in favor of output_info.params and train_params over time.
    * TO BE DEPRECATED
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface OutputInfoOrBuilder extends
   boolean hasOutputConfig();
   /**
    * <pre>
-   * Model configuration...going away in favor of infer_params and train_params over time.
+   * Model configuration...going away in favor of output_info.params and train_params over time.
    * TO BE DEPRECATED
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface OutputInfoOrBuilder extends
   com.clarifai.grpc.api.OutputConfig getOutputConfig();
   /**
    * <pre>
-   * Model configuration...going away in favor of infer_params and train_params over time.
+   * Model configuration...going away in favor of output_info.params and train_params over time.
    * TO BE DEPRECATED
    * </pre>
    *
