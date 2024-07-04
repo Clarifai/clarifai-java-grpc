@@ -103,26 +103,6 @@ public interface NodepoolOrBuilder extends
 
   /**
    * <pre>
-   * The user/org that this nodepool belongs to.
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The userId.
-   */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * The user/org that this nodepool belongs to.
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The bytes for userId.
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
-
-  /**
-   * <pre>
    * Which cluster this nodepool is within.
    * </pre>
    *

@@ -80,19 +80,46 @@ public interface PutTaskAssignmentsRequestOrBuilder extends
   com.clarifai.grpc.api.PutTaskAssignmentsRequestAction getAction();
 
   /**
+   * <pre>
+   *    LabelStartConfig label_start_config = 5; // no config for label start action
+   * </pre>
+   *
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    * @return Whether the labelSubmitConfig field is set.
    */
   boolean hasLabelSubmitConfig();
   /**
+   * <pre>
+   *    LabelStartConfig label_start_config = 5; // no config for label start action
+   * </pre>
+   *
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    * @return The labelSubmitConfig.
    */
   com.clarifai.grpc.api.LabelSubmitConfig getLabelSubmitConfig();
   /**
+   * <pre>
+   *    LabelStartConfig label_start_config = 5; // no config for label start action
+   * </pre>
+   *
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    */
   com.clarifai.grpc.api.LabelSubmitConfigOrBuilder getLabelSubmitConfigOrBuilder();
+
+  /**
+   * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+   * @return Whether the reviewStartConfig field is set.
+   */
+  boolean hasReviewStartConfig();
+  /**
+   * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+   * @return The reviewStartConfig.
+   */
+  com.clarifai.grpc.api.ReviewStartConfig getReviewStartConfig();
+  /**
+   * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+   */
+  com.clarifai.grpc.api.ReviewStartConfigOrBuilder getReviewStartConfigOrBuilder();
 
   /**
    * <code>.clarifai.api.ReviewApproveConfig review_approve_config = 7;</code>

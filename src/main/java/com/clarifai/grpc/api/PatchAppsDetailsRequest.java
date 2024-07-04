@@ -4,32 +4,27 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * GetRunnerRequest
- * </pre>
- *
- * Protobuf type {@code clarifai.api.GetRunnerRequest}
+ * Protobuf type {@code clarifai.api.PatchAppsDetailsRequest}
  */
-public final class GetRunnerRequest extends
+public final class PatchAppsDetailsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.GetRunnerRequest)
-    GetRunnerRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.PatchAppsDetailsRequest)
+    PatchAppsDetailsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use GetRunnerRequest.newBuilder() to construct.
-  private GetRunnerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use PatchAppsDetailsRequest.newBuilder() to construct.
+  private PatchAppsDetailsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GetRunnerRequest() {
-    nodepoolId_ = "";
-    runnerId_ = "";
-    computeClusterId_ = "";
+  private PatchAppsDetailsRequest() {
+    apps_ = java.util.Collections.emptyList();
+    action_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new GetRunnerRequest();
+    return new PatchAppsDetailsRequest();
   }
 
   @java.lang.Override
@@ -37,7 +32,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private GetRunnerRequest(
+  private PatchAppsDetailsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -45,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,21 +65,18 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            nodepoolId_ = s;
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              apps_ = new java.util.ArrayList<com.clarifai.grpc.api.App>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            apps_.add(
+                input.readMessage(com.clarifai.grpc.api.App.parser(), extensionRegistry));
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            runnerId_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            computeClusterId_ = s;
+            action_ = s;
             break;
           }
           default: {
@@ -103,21 +96,24 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        apps_ = java.util.Collections.unmodifiableList(apps_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetRunnerRequest_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAppsDetailsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetRunnerRequest_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAppsDetailsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.GetRunnerRequest.class, com.clarifai.grpc.api.GetRunnerRequest.Builder.class);
+            com.clarifai.grpc.api.PatchAppsDetailsRequest.class, com.clarifai.grpc.api.PatchAppsDetailsRequest.Builder.class);
   }
 
   public static final int USER_APP_ID_FIELD_NUMBER = 1;
@@ -146,114 +142,92 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int NODEPOOL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nodepoolId_;
+  public static final int APPS_FIELD_NUMBER = 2;
+  private java.util.List<com.clarifai.grpc.api.App> apps_;
   /**
-   * <code>string nodepool_id = 2;</code>
-   * @return The nodepoolId.
+   * <code>repeated .clarifai.api.App apps = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getNodepoolId() {
-    java.lang.Object ref = nodepoolId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      nodepoolId_ = s;
-      return s;
-    }
+  public java.util.List<com.clarifai.grpc.api.App> getAppsList() {
+    return apps_;
   }
   /**
-   * <code>string nodepool_id = 2;</code>
-   * @return The bytes for nodepoolId.
+   * <code>repeated .clarifai.api.App apps = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNodepoolIdBytes() {
-    java.lang.Object ref = nodepoolId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      nodepoolId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int RUNNER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object runnerId_;
-  /**
-   * <code>string runner_id = 3;</code>
-   * @return The runnerId.
-   */
-  @java.lang.Override
-  public java.lang.String getRunnerId() {
-    java.lang.Object ref = runnerId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      runnerId_ = s;
-      return s;
-    }
+  public java.util.List<? extends com.clarifai.grpc.api.AppOrBuilder> 
+      getAppsOrBuilderList() {
+    return apps_;
   }
   /**
-   * <code>string runner_id = 3;</code>
-   * @return The bytes for runnerId.
+   * <code>repeated .clarifai.api.App apps = 2;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRunnerIdBytes() {
-    java.lang.Object ref = runnerId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      runnerId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getAppsCount() {
+    return apps_.size();
+  }
+  /**
+   * <code>repeated .clarifai.api.App apps = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.App getApps(int index) {
+    return apps_.get(index);
+  }
+  /**
+   * <code>repeated .clarifai.api.App apps = 2;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.AppOrBuilder getAppsOrBuilder(
+      int index) {
+    return apps_.get(index);
   }
 
-  public static final int COMPUTE_CLUSTER_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object computeClusterId_;
+  public static final int ACTION_FIELD_NUMBER = 3;
+  private volatile java.lang.Object action_;
   /**
-   * <code>string compute_cluster_id = 4;</code>
-   * @return The computeClusterId.
+   * <pre>
+   * The action to perform on the patched App objects
+   * Supported values: 'overwrite' and 'remove'.
+   * Note that 'remove' can only be used to remove the app image by setting
+   * 'image.url' in the request to the current value returned for that app.
+   * </pre>
+   *
+   * <code>string action = 3;</code>
+   * @return The action.
    */
   @java.lang.Override
-  public java.lang.String getComputeClusterId() {
-    java.lang.Object ref = computeClusterId_;
+  public java.lang.String getAction() {
+    java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      computeClusterId_ = s;
+      action_ = s;
       return s;
     }
   }
   /**
-   * <code>string compute_cluster_id = 4;</code>
-   * @return The bytes for computeClusterId.
+   * <pre>
+   * The action to perform on the patched App objects
+   * Supported values: 'overwrite' and 'remove'.
+   * Note that 'remove' can only be used to remove the app image by setting
+   * 'image.url' in the request to the current value returned for that app.
+   * </pre>
+   *
+   * <code>string action = 3;</code>
+   * @return The bytes for action.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getComputeClusterIdBytes() {
-    java.lang.Object ref = computeClusterId_;
+      getActionBytes() {
+    java.lang.Object ref = action_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      computeClusterId_ = b;
+      action_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -277,14 +251,11 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodepoolId_);
+    for (int i = 0; i < apps_.size(); i++) {
+      output.writeMessage(2, apps_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, runnerId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, computeClusterId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, action_);
     }
     unknownFields.writeTo(output);
   }
@@ -299,14 +270,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodepoolId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodepoolId_);
+    for (int i = 0; i < apps_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, apps_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runnerId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, runnerId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, computeClusterId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, action_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -318,22 +287,20 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.GetRunnerRequest)) {
+    if (!(obj instanceof com.clarifai.grpc.api.PatchAppsDetailsRequest)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.GetRunnerRequest other = (com.clarifai.grpc.api.GetRunnerRequest) obj;
+    com.clarifai.grpc.api.PatchAppsDetailsRequest other = (com.clarifai.grpc.api.PatchAppsDetailsRequest) obj;
 
     if (hasUserAppId() != other.hasUserAppId()) return false;
     if (hasUserAppId()) {
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (!getNodepoolId()
-        .equals(other.getNodepoolId())) return false;
-    if (!getRunnerId()
-        .equals(other.getRunnerId())) return false;
-    if (!getComputeClusterId()
-        .equals(other.getComputeClusterId())) return false;
+    if (!getAppsList()
+        .equals(other.getAppsList())) return false;
+    if (!getAction()
+        .equals(other.getAction())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -349,80 +316,80 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    hash = (37 * hash) + NODEPOOL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getNodepoolId().hashCode();
-    hash = (37 * hash) + RUNNER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getRunnerId().hashCode();
-    hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getComputeClusterId().hashCode();
+    if (getAppsCount() > 0) {
+      hash = (37 * hash) + APPS_FIELD_NUMBER;
+      hash = (53 * hash) + getAppsList().hashCode();
+    }
+    hash = (37 * hash) + ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + getAction().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseDelimitedFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.GetRunnerRequest parseFrom(
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -435,7 +402,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.GetRunnerRequest prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.PatchAppsDetailsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -451,30 +418,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * GetRunnerRequest
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.GetRunnerRequest}
+   * Protobuf type {@code clarifai.api.PatchAppsDetailsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.GetRunnerRequest)
-      com.clarifai.grpc.api.GetRunnerRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.PatchAppsDetailsRequest)
+      com.clarifai.grpc.api.PatchAppsDetailsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetRunnerRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAppsDetailsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetRunnerRequest_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAppsDetailsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.GetRunnerRequest.class, com.clarifai.grpc.api.GetRunnerRequest.Builder.class);
+              com.clarifai.grpc.api.PatchAppsDetailsRequest.class, com.clarifai.grpc.api.PatchAppsDetailsRequest.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.GetRunnerRequest.newBuilder()
+    // Construct using com.clarifai.grpc.api.PatchAppsDetailsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -487,6 +450,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getAppsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -498,11 +462,13 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      nodepoolId_ = "";
-
-      runnerId_ = "";
-
-      computeClusterId_ = "";
+      if (appsBuilder_ == null) {
+        apps_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        appsBuilder_.clear();
+      }
+      action_ = "";
 
       return this;
     }
@@ -510,17 +476,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_GetRunnerRequest_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PatchAppsDetailsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetRunnerRequest getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.GetRunnerRequest.getDefaultInstance();
+    public com.clarifai.grpc.api.PatchAppsDetailsRequest getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.PatchAppsDetailsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetRunnerRequest build() {
-      com.clarifai.grpc.api.GetRunnerRequest result = buildPartial();
+    public com.clarifai.grpc.api.PatchAppsDetailsRequest build() {
+      com.clarifai.grpc.api.PatchAppsDetailsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -528,16 +494,24 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.GetRunnerRequest buildPartial() {
-      com.clarifai.grpc.api.GetRunnerRequest result = new com.clarifai.grpc.api.GetRunnerRequest(this);
+    public com.clarifai.grpc.api.PatchAppsDetailsRequest buildPartial() {
+      com.clarifai.grpc.api.PatchAppsDetailsRequest result = new com.clarifai.grpc.api.PatchAppsDetailsRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      result.nodepoolId_ = nodepoolId_;
-      result.runnerId_ = runnerId_;
-      result.computeClusterId_ = computeClusterId_;
+      if (appsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          apps_ = java.util.Collections.unmodifiableList(apps_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.apps_ = apps_;
+      } else {
+        result.apps_ = appsBuilder_.build();
+      }
+      result.action_ = action_;
       onBuilt();
       return result;
     }
@@ -576,29 +550,47 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.GetRunnerRequest) {
-        return mergeFrom((com.clarifai.grpc.api.GetRunnerRequest)other);
+      if (other instanceof com.clarifai.grpc.api.PatchAppsDetailsRequest) {
+        return mergeFrom((com.clarifai.grpc.api.PatchAppsDetailsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.GetRunnerRequest other) {
-      if (other == com.clarifai.grpc.api.GetRunnerRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.PatchAppsDetailsRequest other) {
+      if (other == com.clarifai.grpc.api.PatchAppsDetailsRequest.getDefaultInstance()) return this;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (!other.getNodepoolId().isEmpty()) {
-        nodepoolId_ = other.nodepoolId_;
-        onChanged();
+      if (appsBuilder_ == null) {
+        if (!other.apps_.isEmpty()) {
+          if (apps_.isEmpty()) {
+            apps_ = other.apps_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAppsIsMutable();
+            apps_.addAll(other.apps_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.apps_.isEmpty()) {
+          if (appsBuilder_.isEmpty()) {
+            appsBuilder_.dispose();
+            appsBuilder_ = null;
+            apps_ = other.apps_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            appsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getAppsFieldBuilder() : null;
+          } else {
+            appsBuilder_.addAllMessages(other.apps_);
+          }
+        }
       }
-      if (!other.getRunnerId().isEmpty()) {
-        runnerId_ = other.runnerId_;
-        onChanged();
-      }
-      if (!other.getComputeClusterId().isEmpty()) {
-        computeClusterId_ = other.computeClusterId_;
+      if (!other.getAction().isEmpty()) {
+        action_ = other.action_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -616,11 +608,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.GetRunnerRequest parsedMessage = null;
+      com.clarifai.grpc.api.PatchAppsDetailsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.GetRunnerRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.PatchAppsDetailsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -629,6 +621,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -749,230 +742,353 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private java.lang.Object nodepoolId_ = "";
-    /**
-     * <code>string nodepool_id = 2;</code>
-     * @return The nodepoolId.
-     */
-    public java.lang.String getNodepoolId() {
-      java.lang.Object ref = nodepoolId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nodepoolId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string nodepool_id = 2;</code>
-     * @return The bytes for nodepoolId.
-     */
-    public com.google.protobuf.ByteString
-        getNodepoolIdBytes() {
-      java.lang.Object ref = nodepoolId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nodepoolId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string nodepool_id = 2;</code>
-     * @param value The nodepoolId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNodepoolId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      nodepoolId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string nodepool_id = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearNodepoolId() {
-      
-      nodepoolId_ = getDefaultInstance().getNodepoolId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string nodepool_id = 2;</code>
-     * @param value The bytes for nodepoolId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setNodepoolIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      nodepoolId_ = value;
-      onChanged();
-      return this;
+    private java.util.List<com.clarifai.grpc.api.App> apps_ =
+      java.util.Collections.emptyList();
+    private void ensureAppsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        apps_ = new java.util.ArrayList<com.clarifai.grpc.api.App>(apps_);
+        bitField0_ |= 0x00000001;
+       }
     }
 
-    private java.lang.Object runnerId_ = "";
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> appsBuilder_;
+
     /**
-     * <code>string runner_id = 3;</code>
-     * @return The runnerId.
+     * <code>repeated .clarifai.api.App apps = 2;</code>
      */
-    public java.lang.String getRunnerId() {
-      java.lang.Object ref = runnerId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        runnerId_ = s;
-        return s;
+    public java.util.List<com.clarifai.grpc.api.App> getAppsList() {
+      if (appsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(apps_);
       } else {
-        return (java.lang.String) ref;
+        return appsBuilder_.getMessageList();
       }
     }
     /**
-     * <code>string runner_id = 3;</code>
-     * @return The bytes for runnerId.
+     * <code>repeated .clarifai.api.App apps = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getRunnerIdBytes() {
-      java.lang.Object ref = runnerId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        runnerId_ = b;
-        return b;
+    public int getAppsCount() {
+      if (appsBuilder_ == null) {
+        return apps_.size();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        return appsBuilder_.getCount();
       }
     }
     /**
-     * <code>string runner_id = 3;</code>
-     * @param value The runnerId to set.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.App apps = 2;</code>
      */
-    public Builder setRunnerId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      runnerId_ = value;
-      onChanged();
+    public com.clarifai.grpc.api.App getApps(int index) {
+      if (appsBuilder_ == null) {
+        return apps_.get(index);
+      } else {
+        return appsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder setApps(
+        int index, com.clarifai.grpc.api.App value) {
+      if (appsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppsIsMutable();
+        apps_.set(index, value);
+        onChanged();
+      } else {
+        appsBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>string runner_id = 3;</code>
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.App apps = 2;</code>
      */
-    public Builder clearRunnerId() {
-      
-      runnerId_ = getDefaultInstance().getRunnerId();
-      onChanged();
+    public Builder setApps(
+        int index, com.clarifai.grpc.api.App.Builder builderForValue) {
+      if (appsBuilder_ == null) {
+        ensureAppsIsMutable();
+        apps_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        appsBuilder_.setMessage(index, builderForValue.build());
+      }
       return this;
     }
     /**
-     * <code>string runner_id = 3;</code>
-     * @param value The bytes for runnerId to set.
-     * @return This builder for chaining.
+     * <code>repeated .clarifai.api.App apps = 2;</code>
      */
-    public Builder setRunnerIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      runnerId_ = value;
-      onChanged();
+    public Builder addApps(com.clarifai.grpc.api.App value) {
+      if (appsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppsIsMutable();
+        apps_.add(value);
+        onChanged();
+      } else {
+        appsBuilder_.addMessage(value);
+      }
       return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder addApps(
+        int index, com.clarifai.grpc.api.App value) {
+      if (appsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppsIsMutable();
+        apps_.add(index, value);
+        onChanged();
+      } else {
+        appsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder addApps(
+        com.clarifai.grpc.api.App.Builder builderForValue) {
+      if (appsBuilder_ == null) {
+        ensureAppsIsMutable();
+        apps_.add(builderForValue.build());
+        onChanged();
+      } else {
+        appsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder addApps(
+        int index, com.clarifai.grpc.api.App.Builder builderForValue) {
+      if (appsBuilder_ == null) {
+        ensureAppsIsMutable();
+        apps_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        appsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder addAllApps(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.App> values) {
+      if (appsBuilder_ == null) {
+        ensureAppsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, apps_);
+        onChanged();
+      } else {
+        appsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder clearApps() {
+      if (appsBuilder_ == null) {
+        apps_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        appsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public Builder removeApps(int index) {
+      if (appsBuilder_ == null) {
+        ensureAppsIsMutable();
+        apps_.remove(index);
+        onChanged();
+      } else {
+        appsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public com.clarifai.grpc.api.App.Builder getAppsBuilder(
+        int index) {
+      return getAppsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public com.clarifai.grpc.api.AppOrBuilder getAppsOrBuilder(
+        int index) {
+      if (appsBuilder_ == null) {
+        return apps_.get(index);  } else {
+        return appsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.AppOrBuilder> 
+         getAppsOrBuilderList() {
+      if (appsBuilder_ != null) {
+        return appsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(apps_);
+      }
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public com.clarifai.grpc.api.App.Builder addAppsBuilder() {
+      return getAppsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.App.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public com.clarifai.grpc.api.App.Builder addAppsBuilder(
+        int index) {
+      return getAppsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.App.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .clarifai.api.App apps = 2;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.App.Builder> 
+         getAppsBuilderList() {
+      return getAppsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder> 
+        getAppsFieldBuilder() {
+      if (appsBuilder_ == null) {
+        appsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.App, com.clarifai.grpc.api.App.Builder, com.clarifai.grpc.api.AppOrBuilder>(
+                apps_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        apps_ = null;
+      }
+      return appsBuilder_;
     }
 
-    private java.lang.Object computeClusterId_ = "";
+    private java.lang.Object action_ = "";
     /**
-     * <code>string compute_cluster_id = 4;</code>
-     * @return The computeClusterId.
+     * <pre>
+     * The action to perform on the patched App objects
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
+     * </pre>
+     *
+     * <code>string action = 3;</code>
+     * @return The action.
      */
-    public java.lang.String getComputeClusterId() {
-      java.lang.Object ref = computeClusterId_;
+    public java.lang.String getAction() {
+      java.lang.Object ref = action_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        computeClusterId_ = s;
+        action_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string compute_cluster_id = 4;</code>
-     * @return The bytes for computeClusterId.
+     * <pre>
+     * The action to perform on the patched App objects
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
+     * </pre>
+     *
+     * <code>string action = 3;</code>
+     * @return The bytes for action.
      */
     public com.google.protobuf.ByteString
-        getComputeClusterIdBytes() {
-      java.lang.Object ref = computeClusterId_;
+        getActionBytes() {
+      java.lang.Object ref = action_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        computeClusterId_ = b;
+        action_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string compute_cluster_id = 4;</code>
-     * @param value The computeClusterId to set.
+     * <pre>
+     * The action to perform on the patched App objects
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
+     * </pre>
+     *
+     * <code>string action = 3;</code>
+     * @param value The action to set.
      * @return This builder for chaining.
      */
-    public Builder setComputeClusterId(
+    public Builder setAction(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      computeClusterId_ = value;
+      action_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string compute_cluster_id = 4;</code>
+     * <pre>
+     * The action to perform on the patched App objects
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
+     * </pre>
+     *
+     * <code>string action = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearComputeClusterId() {
+    public Builder clearAction() {
       
-      computeClusterId_ = getDefaultInstance().getComputeClusterId();
+      action_ = getDefaultInstance().getAction();
       onChanged();
       return this;
     }
     /**
-     * <code>string compute_cluster_id = 4;</code>
-     * @param value The bytes for computeClusterId to set.
+     * <pre>
+     * The action to perform on the patched App objects
+     * Supported values: 'overwrite' and 'remove'.
+     * Note that 'remove' can only be used to remove the app image by setting
+     * 'image.url' in the request to the current value returned for that app.
+     * </pre>
+     *
+     * <code>string action = 3;</code>
+     * @param value The bytes for action to set.
      * @return This builder for chaining.
      */
-    public Builder setComputeClusterIdBytes(
+    public Builder setActionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      computeClusterId_ = value;
+      action_ = value;
       onChanged();
       return this;
     }
@@ -989,41 +1105,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.GetRunnerRequest)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.PatchAppsDetailsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.GetRunnerRequest)
-  private static final com.clarifai.grpc.api.GetRunnerRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.PatchAppsDetailsRequest)
+  private static final com.clarifai.grpc.api.PatchAppsDetailsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.GetRunnerRequest();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PatchAppsDetailsRequest();
   }
 
-  public static com.clarifai.grpc.api.GetRunnerRequest getDefaultInstance() {
+  public static com.clarifai.grpc.api.PatchAppsDetailsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetRunnerRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GetRunnerRequest>() {
+  private static final com.google.protobuf.Parser<PatchAppsDetailsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<PatchAppsDetailsRequest>() {
     @java.lang.Override
-    public GetRunnerRequest parsePartialFrom(
+    public PatchAppsDetailsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetRunnerRequest(input, extensionRegistry);
+      return new PatchAppsDetailsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<GetRunnerRequest> parser() {
+  public static com.google.protobuf.Parser<PatchAppsDetailsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetRunnerRequest> getParserForType() {
+  public com.google.protobuf.Parser<PatchAppsDetailsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.GetRunnerRequest getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.PatchAppsDetailsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

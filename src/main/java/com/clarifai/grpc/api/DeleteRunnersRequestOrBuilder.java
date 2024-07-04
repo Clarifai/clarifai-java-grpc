@@ -58,4 +58,16 @@ public interface DeleteRunnersRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIdsBytes(int index);
+
+  /**
+   * <code>string compute_cluster_id = 4;</code>
+   * @return The computeClusterId.
+   */
+  java.lang.String getComputeClusterId();
+  /**
+   * <code>string compute_cluster_id = 4;</code>
+   * @return The bytes for computeClusterId.
+   */
+  com.google.protobuf.ByteString
+      getComputeClusterIdBytes();
 }

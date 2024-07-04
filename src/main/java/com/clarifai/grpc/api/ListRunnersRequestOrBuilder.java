@@ -55,4 +55,16 @@ public interface ListRunnersRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <code>string compute_cluster_id = 5;</code>
+   * @return The computeClusterId.
+   */
+  java.lang.String getComputeClusterId();
+  /**
+   * <code>string compute_cluster_id = 5;</code>
+   * @return The bytes for computeClusterId.
+   */
+  com.google.protobuf.ByteString
+      getComputeClusterIdBytes();
 }

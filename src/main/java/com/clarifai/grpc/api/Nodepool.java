@@ -24,7 +24,6 @@ private static final long serialVersionUID = 0L;
   private Nodepool() {
     id_ = "";
     description_ = "";
-    userId_ = "";
     instanceTypes_ = java.util.Collections.emptyList();
   }
 
@@ -95,12 +94,6 @@ private static final long serialVersionUID = 0L;
               modifiedAt_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            userId_ = s;
             break;
           }
           case 50: {
@@ -379,52 +372,6 @@ private static final long serialVersionUID = 0L;
     return getModifiedAt();
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object userId_;
-  /**
-   * <pre>
-   * The user/org that this nodepool belongs to.
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The userId.
-   */
-  @java.lang.Override
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The user/org that this nodepool belongs to.
-   * </pre>
-   *
-   * <code>string user_id = 5;</code>
-   * @return The bytes for userId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int COMPUTE_CLUSTER_FIELD_NUMBER = 6;
   private com.clarifai.grpc.api.ComputeCluster computeCluster_;
   /**
@@ -672,9 +619,6 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       output.writeMessage(4, getModifiedAt());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userId_);
-    }
     if (computeCluster_ != null) {
       output.writeMessage(6, getComputeCluster());
     }
@@ -718,9 +662,6 @@ private static final long serialVersionUID = 0L;
     if (modifiedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getModifiedAt());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, userId_);
     }
     if (computeCluster_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -779,8 +720,6 @@ private static final long serialVersionUID = 0L;
       if (!getModifiedAt()
           .equals(other.getModifiedAt())) return false;
     }
-    if (!getUserId()
-        .equals(other.getUserId())) return false;
     if (hasComputeCluster() != other.hasComputeCluster()) return false;
     if (hasComputeCluster()) {
       if (!getComputeCluster()
@@ -830,8 +769,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MODIFIED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getModifiedAt().hashCode();
     }
-    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
     if (hasComputeCluster()) {
       hash = (37 * hash) + COMPUTE_CLUSTER_FIELD_NUMBER;
       hash = (53 * hash) + getComputeCluster().hashCode();
@@ -1012,8 +949,6 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
         modifiedAtBuilder_ = null;
       }
-      userId_ = "";
-
       if (computeClusterBuilder_ == null) {
         computeCluster_ = null;
       } else {
@@ -1087,7 +1022,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.modifiedAt_ = modifiedAtBuilder_.build();
       }
-      result.userId_ = userId_;
       if (computeClusterBuilder_ == null) {
         result.computeCluster_ = computeCluster_;
       } else {
@@ -1180,10 +1114,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasModifiedAt()) {
         mergeModifiedAt(other.getModifiedAt());
-      }
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
-        onChanged();
       }
       if (other.hasComputeCluster()) {
         mergeComputeCluster(other.getComputeCluster());
@@ -1759,102 +1689,6 @@ private static final long serialVersionUID = 0L;
         modifiedAt_ = null;
       }
       return modifiedAtBuilder_;
-    }
-
-    private java.lang.Object userId_ = "";
-    /**
-     * <pre>
-     * The user/org that this nodepool belongs to.
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @return The userId.
-     */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The user/org that this nodepool belongs to.
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @return The bytes for userId.
-     */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The user/org that this nodepool belongs to.
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @param value The userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      userId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The user/org that this nodepool belongs to.
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUserId() {
-      
-      userId_ = getDefaultInstance().getUserId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The user/org that this nodepool belongs to.
-     * </pre>
-     *
-     * <code>string user_id = 5;</code>
-     * @param value The bytes for userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      userId_ = value;
-      onChanged();
-      return this;
     }
 
     private com.clarifai.grpc.api.ComputeCluster computeCluster_;

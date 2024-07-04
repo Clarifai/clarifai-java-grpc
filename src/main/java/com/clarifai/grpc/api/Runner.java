@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
   private Runner() {
     id_ = "";
     description_ = "";
-    userId_ = "";
     labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -107,12 +106,6 @@ private static final long serialVersionUID = 0L;
               metadata_ = subBuilder.buildPartial();
             }
 
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            userId_ = s;
             break;
           }
           case 58: {
@@ -419,52 +412,6 @@ private static final long serialVersionUID = 0L;
     return getMetadata();
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object userId_;
-  /**
-   * <pre>
-   * The owner of the runner. Runners belong to a user/org account.
-   * </pre>
-   *
-   * <code>string user_id = 6;</code>
-   * @return The userId.
-   */
-  @java.lang.Override
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The owner of the runner. Runners belong to a user/org account.
-   * </pre>
-   *
-   * <code>string user_id = 6;</code>
-   * @return The bytes for userId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int LABELS_FIELD_NUMBER = 7;
   private com.google.protobuf.LazyStringList labels_;
   /**
@@ -474,7 +421,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @return A list containing the labels.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -488,7 +435,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @return The count of labels.
    */
   @java.lang.Deprecated public int getLabelsCount() {
@@ -501,7 +448,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -515,7 +462,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */
@@ -716,9 +663,6 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       output.writeMessage(5, getMetadata());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userId_);
-    }
     for (int i = 0; i < labels_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, labels_.getRaw(i));
     }
@@ -760,9 +704,6 @@ private static final long serialVersionUID = 0L;
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getMetadata());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userId_);
     }
     {
       int dataSize = 0;
@@ -822,8 +763,6 @@ private static final long serialVersionUID = 0L;
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
-    if (!getUserId()
-        .equals(other.getUserId())) return false;
     if (!getLabelsList()
         .equals(other.getLabelsList())) return false;
     if (hasWorker() != other.hasWorker()) return false;
@@ -870,8 +809,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
-    hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
     if (getLabelsCount() > 0) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + getLabelsList().hashCode();
@@ -1050,8 +987,6 @@ private static final long serialVersionUID = 0L;
         metadata_ = null;
         metadataBuilder_ = null;
       }
-      userId_ = "";
-
       labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       if (workerBuilder_ == null) {
@@ -1118,7 +1053,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metadata_ = metadataBuilder_.build();
       }
-      result.userId_ = userId_;
       if (((bitField0_ & 0x00000001) != 0)) {
         labels_ = labels_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1204,10 +1138,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
-      }
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
-        onChanged();
       }
       if (!other.labels_.isEmpty()) {
         if (labels_.isEmpty()) {
@@ -1941,102 +1871,6 @@ private static final long serialVersionUID = 0L;
       return metadataBuilder_;
     }
 
-    private java.lang.Object userId_ = "";
-    /**
-     * <pre>
-     * The owner of the runner. Runners belong to a user/org account.
-     * </pre>
-     *
-     * <code>string user_id = 6;</code>
-     * @return The userId.
-     */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The owner of the runner. Runners belong to a user/org account.
-     * </pre>
-     *
-     * <code>string user_id = 6;</code>
-     * @return The bytes for userId.
-     */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The owner of the runner. Runners belong to a user/org account.
-     * </pre>
-     *
-     * <code>string user_id = 6;</code>
-     * @param value The userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      userId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The owner of the runner. Runners belong to a user/org account.
-     * </pre>
-     *
-     * <code>string user_id = 6;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUserId() {
-      
-      userId_ = getDefaultInstance().getUserId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The owner of the runner. Runners belong to a user/org account.
-     * </pre>
-     *
-     * <code>string user_id = 6;</code>
-     * @param value The bytes for userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      userId_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.LazyStringList labels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureLabelsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
@@ -2051,7 +1885,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @return A list containing the labels.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -2065,7 +1899,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @return The count of labels.
      */
     @java.lang.Deprecated public int getLabelsCount() {
@@ -2078,7 +1912,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @param index The index of the element to return.
      * @return The labels at the given index.
      */
@@ -2092,7 +1926,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @param index The index of the value to return.
      * @return The bytes of the labels at the given index.
      */
@@ -2107,7 +1941,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @param index The index to set the value at.
      * @param value The labels to set.
      * @return This builder for chaining.
@@ -2129,7 +1963,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @param value The labels to add.
      * @return This builder for chaining.
      */
@@ -2150,7 +1984,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @param values The labels to add.
      * @return This builder for chaining.
      */
@@ -2169,7 +2003,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearLabels() {
@@ -2185,7 +2019,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string labels = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Runner.labels is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=4296
+     *     See proto/clarifai/api/resources.proto;l=4294
      * @param value The bytes of the labels to add.
      * @return This builder for chaining.
      */

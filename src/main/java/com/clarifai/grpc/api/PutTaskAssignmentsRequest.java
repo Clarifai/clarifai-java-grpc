@@ -142,6 +142,20 @@ private static final long serialVersionUID = 0L;
             actionConfigCase_ = 9;
             break;
           }
+          case 82: {
+            com.clarifai.grpc.api.ReviewStartConfig.Builder subBuilder = null;
+            if (actionConfigCase_ == 10) {
+              subBuilder = ((com.clarifai.grpc.api.ReviewStartConfig) actionConfig_).toBuilder();
+            }
+            actionConfig_ =
+                input.readMessage(com.clarifai.grpc.api.ReviewStartConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.clarifai.grpc.api.ReviewStartConfig) actionConfig_);
+              actionConfig_ = subBuilder.buildPartial();
+            }
+            actionConfigCase_ = 10;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -182,6 +196,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LABEL_SUBMIT_CONFIG(6),
+    REVIEW_START_CONFIG(10),
     REVIEW_APPROVE_CONFIG(7),
     REVIEW_REQUEST_CHANGES_CONFIG(8),
     REVIEW_REJECT_CONFIG(9),
@@ -203,6 +218,7 @@ private static final long serialVersionUID = 0L;
     public static ActionConfigCase forNumber(int value) {
       switch (value) {
         case 6: return LABEL_SUBMIT_CONFIG;
+        case 10: return REVIEW_START_CONFIG;
         case 7: return REVIEW_APPROVE_CONFIG;
         case 8: return REVIEW_REQUEST_CHANGES_CONFIG;
         case 9: return REVIEW_REJECT_CONFIG;
@@ -366,6 +382,10 @@ private static final long serialVersionUID = 0L;
 
   public static final int LABEL_SUBMIT_CONFIG_FIELD_NUMBER = 6;
   /**
+   * <pre>
+   *    LabelStartConfig label_start_config = 5; // no config for label start action
+   * </pre>
+   *
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    * @return Whether the labelSubmitConfig field is set.
    */
@@ -374,6 +394,10 @@ private static final long serialVersionUID = 0L;
     return actionConfigCase_ == 6;
   }
   /**
+   * <pre>
+   *    LabelStartConfig label_start_config = 5; // no config for label start action
+   * </pre>
+   *
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    * @return The labelSubmitConfig.
    */
@@ -385,6 +409,10 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
   }
   /**
+   * <pre>
+   *    LabelStartConfig label_start_config = 5; // no config for label start action
+   * </pre>
+   *
    * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
    */
   @java.lang.Override
@@ -393,6 +421,37 @@ private static final long serialVersionUID = 0L;
        return (com.clarifai.grpc.api.LabelSubmitConfig) actionConfig_;
     }
     return com.clarifai.grpc.api.LabelSubmitConfig.getDefaultInstance();
+  }
+
+  public static final int REVIEW_START_CONFIG_FIELD_NUMBER = 10;
+  /**
+   * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+   * @return Whether the reviewStartConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasReviewStartConfig() {
+    return actionConfigCase_ == 10;
+  }
+  /**
+   * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+   * @return The reviewStartConfig.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewStartConfig getReviewStartConfig() {
+    if (actionConfigCase_ == 10) {
+       return (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance();
+  }
+  /**
+   * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.ReviewStartConfigOrBuilder getReviewStartConfigOrBuilder() {
+    if (actionConfigCase_ == 10) {
+       return (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_;
+    }
+    return com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance();
   }
 
   public static final int REVIEW_APPROVE_CONFIG_FIELD_NUMBER = 7;
@@ -526,6 +585,9 @@ private static final long serialVersionUID = 0L;
     if (actionConfigCase_ == 9) {
       output.writeMessage(9, (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_);
     }
+    if (actionConfigCase_ == 10) {
+      output.writeMessage(10, (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -565,6 +627,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, (com.clarifai.grpc.api.ReviewRejectConfig) actionConfig_);
     }
+    if (actionConfigCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -595,6 +661,10 @@ private static final long serialVersionUID = 0L;
       case 6:
         if (!getLabelSubmitConfig()
             .equals(other.getLabelSubmitConfig())) return false;
+        break;
+      case 10:
+        if (!getReviewStartConfig()
+            .equals(other.getReviewStartConfig())) return false;
         break;
       case 7:
         if (!getReviewApproveConfig()
@@ -636,6 +706,10 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + LABEL_SUBMIT_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getLabelSubmitConfig().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + REVIEW_START_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReviewStartConfig().hashCode();
         break;
       case 7:
         hash = (37 * hash) + REVIEW_APPROVE_CONFIG_FIELD_NUMBER;
@@ -844,6 +918,13 @@ private static final long serialVersionUID = 0L;
           result.actionConfig_ = labelSubmitConfigBuilder_.build();
         }
       }
+      if (actionConfigCase_ == 10) {
+        if (reviewStartConfigBuilder_ == null) {
+          result.actionConfig_ = actionConfig_;
+        } else {
+          result.actionConfig_ = reviewStartConfigBuilder_.build();
+        }
+      }
       if (actionConfigCase_ == 7) {
         if (reviewApproveConfigBuilder_ == null) {
           result.actionConfig_ = actionConfig_;
@@ -931,6 +1012,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getActionConfigCase()) {
         case LABEL_SUBMIT_CONFIG: {
           mergeLabelSubmitConfig(other.getLabelSubmitConfig());
+          break;
+        }
+        case REVIEW_START_CONFIG: {
+          mergeReviewStartConfig(other.getReviewStartConfig());
           break;
         }
         case REVIEW_APPROVE_CONFIG: {
@@ -1376,6 +1461,10 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.LabelSubmitConfig, com.clarifai.grpc.api.LabelSubmitConfig.Builder, com.clarifai.grpc.api.LabelSubmitConfigOrBuilder> labelSubmitConfigBuilder_;
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      * @return Whether the labelSubmitConfig field is set.
      */
@@ -1384,6 +1473,10 @@ private static final long serialVersionUID = 0L;
       return actionConfigCase_ == 6;
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      * @return The labelSubmitConfig.
      */
@@ -1402,6 +1495,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     public Builder setLabelSubmitConfig(com.clarifai.grpc.api.LabelSubmitConfig value) {
@@ -1418,6 +1515,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     public Builder setLabelSubmitConfig(
@@ -1432,6 +1533,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     public Builder mergeLabelSubmitConfig(com.clarifai.grpc.api.LabelSubmitConfig value) {
@@ -1455,6 +1560,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     public Builder clearLabelSubmitConfig() {
@@ -1474,12 +1583,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     public com.clarifai.grpc.api.LabelSubmitConfig.Builder getLabelSubmitConfigBuilder() {
       return getLabelSubmitConfigFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     @java.lang.Override
@@ -1494,6 +1611,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *    LabelStartConfig label_start_config = 5; // no config for label start action
+     * </pre>
+     *
      * <code>.clarifai.api.LabelSubmitConfig label_submit_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1513,6 +1634,148 @@ private static final long serialVersionUID = 0L;
       actionConfigCase_ = 6;
       onChanged();;
       return labelSubmitConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewStartConfig, com.clarifai.grpc.api.ReviewStartConfig.Builder, com.clarifai.grpc.api.ReviewStartConfigOrBuilder> reviewStartConfigBuilder_;
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     * @return Whether the reviewStartConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasReviewStartConfig() {
+      return actionConfigCase_ == 10;
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     * @return The reviewStartConfig.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewStartConfig getReviewStartConfig() {
+      if (reviewStartConfigBuilder_ == null) {
+        if (actionConfigCase_ == 10) {
+          return (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance();
+      } else {
+        if (actionConfigCase_ == 10) {
+          return reviewStartConfigBuilder_.getMessage();
+        }
+        return com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    public Builder setReviewStartConfig(com.clarifai.grpc.api.ReviewStartConfig value) {
+      if (reviewStartConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actionConfig_ = value;
+        onChanged();
+      } else {
+        reviewStartConfigBuilder_.setMessage(value);
+      }
+      actionConfigCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    public Builder setReviewStartConfig(
+        com.clarifai.grpc.api.ReviewStartConfig.Builder builderForValue) {
+      if (reviewStartConfigBuilder_ == null) {
+        actionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        reviewStartConfigBuilder_.setMessage(builderForValue.build());
+      }
+      actionConfigCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    public Builder mergeReviewStartConfig(com.clarifai.grpc.api.ReviewStartConfig value) {
+      if (reviewStartConfigBuilder_ == null) {
+        if (actionConfigCase_ == 10 &&
+            actionConfig_ != com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance()) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewStartConfig.newBuilder((com.clarifai.grpc.api.ReviewStartConfig) actionConfig_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          actionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionConfigCase_ == 10) {
+          reviewStartConfigBuilder_.mergeFrom(value);
+        } else {
+          reviewStartConfigBuilder_.setMessage(value);
+        }
+      }
+      actionConfigCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    public Builder clearReviewStartConfig() {
+      if (reviewStartConfigBuilder_ == null) {
+        if (actionConfigCase_ == 10) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionConfigCase_ == 10) {
+          actionConfigCase_ = 0;
+          actionConfig_ = null;
+        }
+        reviewStartConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    public com.clarifai.grpc.api.ReviewStartConfig.Builder getReviewStartConfigBuilder() {
+      return getReviewStartConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.ReviewStartConfigOrBuilder getReviewStartConfigOrBuilder() {
+      if ((actionConfigCase_ == 10) && (reviewStartConfigBuilder_ != null)) {
+        return reviewStartConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionConfigCase_ == 10) {
+          return (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_;
+        }
+        return com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.clarifai.api.ReviewStartConfig review_start_config = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.ReviewStartConfig, com.clarifai.grpc.api.ReviewStartConfig.Builder, com.clarifai.grpc.api.ReviewStartConfigOrBuilder> 
+        getReviewStartConfigFieldBuilder() {
+      if (reviewStartConfigBuilder_ == null) {
+        if (!(actionConfigCase_ == 10)) {
+          actionConfig_ = com.clarifai.grpc.api.ReviewStartConfig.getDefaultInstance();
+        }
+        reviewStartConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.ReviewStartConfig, com.clarifai.grpc.api.ReviewStartConfig.Builder, com.clarifai.grpc.api.ReviewStartConfigOrBuilder>(
+                (com.clarifai.grpc.api.ReviewStartConfig) actionConfig_,
+                getParentForChildren(),
+                isClean());
+        actionConfig_ = null;
+      }
+      actionConfigCase_ = 10;
+      onChanged();;
+      return reviewStartConfigBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

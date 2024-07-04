@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private PostRunnersRequest() {
     nodepoolId_ = "";
     runners_ = java.util.Collections.emptyList();
+    computeClusterId_ = "";
   }
 
   @java.lang.Override
@@ -81,6 +82,12 @@ private static final long serialVersionUID = 0L;
             }
             runners_.add(
                 input.readMessage(com.clarifai.grpc.api.Runner.parser(), extensionRegistry));
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            computeClusterId_ = s;
             break;
           }
           default: {
@@ -244,6 +251,44 @@ private static final long serialVersionUID = 0L;
     return runners_.get(index);
   }
 
+  public static final int COMPUTE_CLUSTER_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object computeClusterId_;
+  /**
+   * <code>string compute_cluster_id = 4;</code>
+   * @return The computeClusterId.
+   */
+  @java.lang.Override
+  public java.lang.String getComputeClusterId() {
+    java.lang.Object ref = computeClusterId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      computeClusterId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string compute_cluster_id = 4;</code>
+   * @return The bytes for computeClusterId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getComputeClusterIdBytes() {
+    java.lang.Object ref = computeClusterId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      computeClusterId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -267,6 +312,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < runners_.size(); i++) {
       output.writeMessage(3, runners_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, computeClusterId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -286,6 +334,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < runners_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, runners_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(computeClusterId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, computeClusterId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,6 +362,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNodepoolId())) return false;
     if (!getRunnersList()
         .equals(other.getRunnersList())) return false;
+    if (!getComputeClusterId()
+        .equals(other.getComputeClusterId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -332,6 +385,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RUNNERS_FIELD_NUMBER;
       hash = (53 * hash) + getRunnersList().hashCode();
     }
+    hash = (37 * hash) + COMPUTE_CLUSTER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getComputeClusterId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -484,6 +539,8 @@ private static final long serialVersionUID = 0L;
       } else {
         runnersBuilder_.clear();
       }
+      computeClusterId_ = "";
+
       return this;
     }
 
@@ -526,6 +583,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.runners_ = runnersBuilder_.build();
       }
+      result.computeClusterId_ = computeClusterId_;
       onBuilt();
       return result;
     }
@@ -606,6 +664,10 @@ private static final long serialVersionUID = 0L;
             runnersBuilder_.addAllMessages(other.runners_);
           }
         }
+      }
+      if (!other.getComputeClusterId().isEmpty()) {
+        computeClusterId_ = other.computeClusterId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1142,6 +1204,82 @@ private static final long serialVersionUID = 0L;
         runners_ = null;
       }
       return runnersBuilder_;
+    }
+
+    private java.lang.Object computeClusterId_ = "";
+    /**
+     * <code>string compute_cluster_id = 4;</code>
+     * @return The computeClusterId.
+     */
+    public java.lang.String getComputeClusterId() {
+      java.lang.Object ref = computeClusterId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        computeClusterId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string compute_cluster_id = 4;</code>
+     * @return The bytes for computeClusterId.
+     */
+    public com.google.protobuf.ByteString
+        getComputeClusterIdBytes() {
+      java.lang.Object ref = computeClusterId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        computeClusterId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string compute_cluster_id = 4;</code>
+     * @param value The computeClusterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeClusterId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      computeClusterId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string compute_cluster_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearComputeClusterId() {
+      
+      computeClusterId_ = getDefaultInstance().getComputeClusterId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string compute_cluster_id = 4;</code>
+     * @param value The bytes for computeClusterId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeClusterIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      computeClusterId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

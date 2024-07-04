@@ -138,32 +138,12 @@ public interface RunnerOrBuilder extends
 
   /**
    * <pre>
-   * The owner of the runner. Runners belong to a user/org account.
-   * </pre>
-   *
-   * <code>string user_id = 6;</code>
-   * @return The userId.
-   */
-  java.lang.String getUserId();
-  /**
-   * <pre>
-   * The owner of the runner. Runners belong to a user/org account.
-   * </pre>
-   *
-   * <code>string user_id = 6;</code>
-   * @return The bytes for userId.
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
-
-  /**
-   * <pre>
    * Labels to match in order to find work.
    * </pre>
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @return A list containing the labels.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -175,7 +155,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @return The count of labels.
    */
   @java.lang.Deprecated int getLabelsCount();
@@ -186,7 +166,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @param index The index of the element to return.
    * @return The labels at the given index.
    */
@@ -198,7 +178,7 @@ public interface RunnerOrBuilder extends
    *
    * <code>repeated string labels = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Runner.labels is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=4296
+   *     See proto/clarifai/api/resources.proto;l=4294
    * @param index The index of the value to return.
    * @return The bytes of the labels at the given index.
    */

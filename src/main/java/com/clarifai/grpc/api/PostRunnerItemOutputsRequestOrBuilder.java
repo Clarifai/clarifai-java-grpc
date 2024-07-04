@@ -183,4 +183,16 @@ public interface PostRunnerItemOutputsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRunnerReplicaIdBytes();
+
+  /**
+   * <code>string compute_cluster_id = 8;</code>
+   * @return The computeClusterId.
+   */
+  java.lang.String getComputeClusterId();
+  /**
+   * <code>string compute_cluster_id = 8;</code>
+   * @return The bytes for computeClusterId.
+   */
+  com.google.protobuf.ByteString
+      getComputeClusterIdBytes();
 }
