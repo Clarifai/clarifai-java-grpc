@@ -3033,7 +3033,7 @@ public final class Service {
       "NMENTS_REQUEST_ACTION_NOT_SET\020\000\022\017\n\013LABEL" +
       "_START\020\001\022\020\n\014LABEL_SUBMIT\020\002\022\020\n\014REVIEW_STA" +
       "RT\020\n\022\022\n\016REVIEW_APPROVE\020\013\022\032\n\026REVIEW_REQUE" +
-      "ST_CHANGES\020\014\022\021\n\rREVIEW_REJECT\020\r2\346\265\003\n\002V2\022" +
+      "ST_CHANGES\020\014\022\021\n\rREVIEW_REJECT\020\r2\366\265\003\n\002V2\022" +
       "\256\002\n\024ListConceptRelations\022).clarifai.api." +
       "ListConceptRelationsRequest\032*.clarifai.a" +
       "pi.MultiConceptRelationResponse\"\276\001\202\323\344\223\002\253" +
@@ -4366,78 +4366,78 @@ public final class Service {
       "user_app_id.user_id}/apps/{user_app_id.a" +
       "pp_id}/models/{model_id}/versions/time_e" +
       "stimate:\001*Z1\",/v2/models/{model_id}/vers" +
-      "ions/time_estimate:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\277\001\n\021Ge" +
+      "ions/time_estimate:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\303\001\n\021Ge" +
       "tComputeCluster\022&.clarifai.api.GetComput" +
       "eClusterRequest\032*.clarifai.api.SingleCom" +
-      "puteClusterResponse\"V\202\323\344\223\002G\022E/v2/users/{" +
+      "puteClusterResponse\"Z\202\323\344\223\002G\022E/v2/users/{" +
       "user_app_id.user_id}/compute_clusters/{c" +
-      "ompute_cluster_id}\230\234\'\005\220\234\'\213\001\022\255\001\n\023ListComp" +
-      "uteClusters\022(.clarifai.api.ListComputeCl" +
-      "ustersRequest\032).clarifai.api.MultiComput" +
-      "eClusterResponse\"A\202\323\344\223\0022\0220/v2/users/{use" +
-      "r_app_id.user_id}/compute_clusters\230\234\'\005\220\234" +
-      "\'\213\001\022\265\001\n\023PostComputeClusters\022(.clarifai.a" +
-      "pi.PostComputeClustersRequest\032).clarifai" +
-      ".api.MultiComputeClusterResponse\"I\202\323\344\223\0025" +
-      "\"0/v2/users/{user_app_id.user_id}/comput" +
-      "e_clusters:\001*\230\234\'\005\220\234\'\213\001\220\234\'\214\001\022\305\001\n\025DeleteCo" +
-      "mputeClusters\022*.clarifai.api.DeleteCompu" +
-      "teClustersRequest\032!.clarifai.api.status." +
-      "BaseResponse\"]\202\323\344\223\0025*0/v2/users/{user_ap" +
-      "p_id.user_id}/compute_clusters:\001*\230\234\'\005\220\234\'" +
-      "\213\001\220\234\'\214\001\220\234\'\215\001\220\234\'\210\001\220\234\'\211\001\220\234\'\212\001\022\312\001\n\013GetNodep" +
-      "ool\022 .clarifai.api.GetNodepoolRequest\032$." +
-      "clarifai.api.SingleNodepoolResponse\"s\202\323\344" +
-      "\223\002_\022]/v2/users/{user_app_id.user_id}/com" +
-      "pute_clusters/{compute_cluster_id}/nodep" +
-      "ools/{nodepool_id}\230\234\'\005\220\234\'\210\001\220\234\'\213\001\022\277\001\n\rLis" +
-      "tNodepools\022\".clarifai.api.ListNodepoolsR" +
-      "equest\032#.clarifai.api.MultiNodepoolRespo" +
-      "nse\"e\202\323\344\223\002Q\022O/v2/users/{user_app_id.user" +
-      "_id}/compute_clusters/{compute_cluster_i" +
-      "d}/nodepools\230\234\'\005\220\234\'\210\001\220\234\'\213\001\022\307\001\n\rPostNodep" +
-      "ools\022\".clarifai.api.PostNodepoolsRequest" +
-      "\032#.clarifai.api.MultiNodepoolResponse\"m\202" +
-      "\323\344\223\002T\"O/v2/users/{user_app_id.user_id}/c" +
-      "ompute_clusters/{compute_cluster_id}/nod" +
-      "epools:\001*\230\234\'\005\220\234\'\210\001\220\234\'\211\001\220\234\'\213\001\022\311\001\n\016PatchNo" +
-      "depools\022#.clarifai.api.PatchNodepoolsReq" +
-      "uest\032#.clarifai.api.MultiNodepoolRespons" +
-      "e\"m\202\323\344\223\002T2O/v2/users/{user_app_id.user_i" +
-      "d}/compute_clusters/{compute_cluster_id}" +
-      "/nodepools:\001*\230\234\'\005\220\234\'\211\001\220\234\'\210\001\220\234\'\213\001\022\330\001\n\017Del" +
-      "eteNodepools\022$.clarifai.api.DeleteNodepo" +
-      "olsRequest\032!.clarifai.api.status.BaseRes" +
-      "ponse\"|\202\323\344\223\002T*O/v2/users/{user_app_id.us" +
-      "er_id}/compute_clusters/{compute_cluster" +
-      "_id}/nodepools:\001*\230\234\'\005\220\234\'\210\001\220\234\'\211\001\220\234\'\212\001\220\234\'\203" +
-      "\001\220\234\'\204\001\220\234\'\205\001\022\273\001\n\rGetDeployment\022\".clarifai" +
-      ".api.GetDeploymentRequest\032&.clarifai.api" +
-      ".SingleDeploymentResponse\"^\202\323\344\223\002=\022;/v2/u" +
-      "sers/{user_app_id.user_id}/deployments/{" +
-      "deployment_id}\230\234\'\005\220\234\'\220\001\220\234\'\210\001\220\234\'\213\001\220\234\'\017\220\234\'" +
-      "\023\022\263\001\n\017ListDeployments\022$.clarifai.api.Lis" +
-      "tDeploymentsRequest\032%.clarifai.api.Multi" +
-      "DeploymentResponse\"S\202\323\344\223\002-\022+/v2/users/{u" +
-      "ser_app_id.user_id}/deployments\230\234\'\005\220\234\'\220\001" +
-      "\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\220\234\'\210\001\022\272\001\n\017PostDeployme" +
-      "nts\022$.clarifai.api.PostDeploymentsReques" +
-      "t\032%.clarifai.api.MultiDeploymentResponse" +
-      "\"Z\202\323\344\223\0020\"+/v2/users/{user_app_id.user_id" +
-      "}/deployments:\001*\230\234\'\005\220\234\'\220\001\220\234\'\221\001\220\234\'\017\220\234\'\023\220\234" +
-      "\'-\220\234\'\210\001\220\234\'\213\001\022\274\001\n\020PatchDeployments\022%.clar" +
-      "ifai.api.PatchDeploymentsRequest\032%.clari" +
-      "fai.api.MultiDeploymentResponse\"Z\202\323\344\223\00202" +
-      "+/v2/users/{user_app_id.user_id}/deploym" +
-      "ents:\001*\230\234\'\005\220\234\'\221\001\220\234\'\220\001\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234" +
-      "\'\213\001\022\273\001\n\021DeleteDeployments\022&.clarifai.api" +
-      ".DeleteDeploymentsRequest\032!.clarifai.api" +
-      ".status.BaseResponse\"[\202\323\344\223\0020*+/v2/users/" +
-      "{user_app_id.user_id}/deployments:\001*\230\234\'\005" +
-      "\220\234\'\220\001\220\234\'\221\001\220\234\'\222\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001BY\n\025com" +
-      ".clarifai.grpc.apiP\001Z7github.com/Clarifa" +
-      "i/clarifai-go-grpc/proto/clarifai/api\242\002\004" +
-      "CAIPb\006proto3"
+      "ompute_cluster_id}\230\234\'\005\220\234\'\213\001\220\234\'0\022\261\001\n\023List" +
+      "ComputeClusters\022(.clarifai.api.ListCompu" +
+      "teClustersRequest\032).clarifai.api.MultiCo" +
+      "mputeClusterResponse\"E\202\323\344\223\0022\0220/v2/users/" +
+      "{user_app_id.user_id}/compute_clusters\230\234" +
+      "\'\005\220\234\'\213\001\220\234\'0\022\271\001\n\023PostComputeClusters\022(.cl" +
+      "arifai.api.PostComputeClustersRequest\032)." +
+      "clarifai.api.MultiComputeClusterResponse" +
+      "\"M\202\323\344\223\0025\"0/v2/users/{user_app_id.user_id" +
+      "}/compute_clusters:\001*\230\234\'\005\220\234\'\213\001\220\234\'\214\001\220\234\'0\022" +
+      "\311\001\n\025DeleteComputeClusters\022*.clarifai.api" +
+      ".DeleteComputeClustersRequest\032!.clarifai" +
+      ".api.status.BaseResponse\"a\202\323\344\223\0025*0/v2/us" +
+      "ers/{user_app_id.user_id}/compute_cluste" +
+      "rs:\001*\230\234\'\005\220\234\'\213\001\220\234\'\214\001\220\234\'\215\001\220\234\'\210\001\220\234\'\211\001\220\234\'\212\001\220" +
+      "\234\'0\022\312\001\n\013GetNodepool\022 .clarifai.api.GetNo" +
+      "depoolRequest\032$.clarifai.api.SingleNodep" +
+      "oolResponse\"s\202\323\344\223\002_\022]/v2/users/{user_app" +
+      "_id.user_id}/compute_clusters/{compute_c" +
+      "luster_id}/nodepools/{nodepool_id}\230\234\'\005\220\234" +
+      "\'\210\001\220\234\'\213\001\022\277\001\n\rListNodepools\022\".clarifai.ap" +
+      "i.ListNodepoolsRequest\032#.clarifai.api.Mu" +
+      "ltiNodepoolResponse\"e\202\323\344\223\002Q\022O/v2/users/{" +
+      "user_app_id.user_id}/compute_clusters/{c" +
+      "ompute_cluster_id}/nodepools\230\234\'\005\220\234\'\210\001\220\234\'" +
+      "\213\001\022\307\001\n\rPostNodepools\022\".clarifai.api.Post" +
+      "NodepoolsRequest\032#.clarifai.api.MultiNod" +
+      "epoolResponse\"m\202\323\344\223\002T\"O/v2/users/{user_a" +
+      "pp_id.user_id}/compute_clusters/{compute" +
+      "_cluster_id}/nodepools:\001*\230\234\'\005\220\234\'\210\001\220\234\'\211\001\220" +
+      "\234\'\213\001\022\311\001\n\016PatchNodepools\022#.clarifai.api.P" +
+      "atchNodepoolsRequest\032#.clarifai.api.Mult" +
+      "iNodepoolResponse\"m\202\323\344\223\002T2O/v2/users/{us" +
+      "er_app_id.user_id}/compute_clusters/{com" +
+      "pute_cluster_id}/nodepools:\001*\230\234\'\005\220\234\'\211\001\220\234" +
+      "\'\210\001\220\234\'\213\001\022\330\001\n\017DeleteNodepools\022$.clarifai." +
+      "api.DeleteNodepoolsRequest\032!.clarifai.ap" +
+      "i.status.BaseResponse\"|\202\323\344\223\002T*O/v2/users" +
+      "/{user_app_id.user_id}/compute_clusters/" +
+      "{compute_cluster_id}/nodepools:\001*\230\234\'\005\220\234\'" +
+      "\210\001\220\234\'\211\001\220\234\'\212\001\220\234\'\203\001\220\234\'\204\001\220\234\'\205\001\022\273\001\n\rGetDeplo" +
+      "yment\022\".clarifai.api.GetDeploymentReques" +
+      "t\032&.clarifai.api.SingleDeploymentRespons" +
+      "e\"^\202\323\344\223\002=\022;/v2/users/{user_app_id.user_i" +
+      "d}/deployments/{deployment_id}\230\234\'\005\220\234\'\220\001\220" +
+      "\234\'\210\001\220\234\'\213\001\220\234\'\017\220\234\'\023\022\263\001\n\017ListDeployments\022$." +
+      "clarifai.api.ListDeploymentsRequest\032%.cl" +
+      "arifai.api.MultiDeploymentResponse\"S\202\323\344\223" +
+      "\002-\022+/v2/users/{user_app_id.user_id}/depl" +
+      "oyments\230\234\'\005\220\234\'\220\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\220\234\'\210\001\022" +
+      "\272\001\n\017PostDeployments\022$.clarifai.api.PostD" +
+      "eploymentsRequest\032%.clarifai.api.MultiDe" +
+      "ploymentResponse\"Z\202\323\344\223\0020\"+/v2/users/{use" +
+      "r_app_id.user_id}/deployments:\001*\230\234\'\005\220\234\'\220" +
+      "\001\220\234\'\221\001\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\274\001\n\020PatchDe" +
+      "ployments\022%.clarifai.api.PatchDeployment" +
+      "sRequest\032%.clarifai.api.MultiDeploymentR" +
+      "esponse\"Z\202\323\344\223\00202+/v2/users/{user_app_id." +
+      "user_id}/deployments:\001*\230\234\'\005\220\234\'\221\001\220\234\'\220\001\220\234\'" +
+      "\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\273\001\n\021DeleteDeployment" +
+      "s\022&.clarifai.api.DeleteDeploymentsReques" +
+      "t\032!.clarifai.api.status.BaseResponse\"[\202\323" +
+      "\344\223\0020*+/v2/users/{user_app_id.user_id}/de" +
+      "ployments:\001*\230\234\'\005\220\234\'\220\001\220\234\'\221\001\220\234\'\222\001\220\234\'\017\220\234\'\023\220" +
+      "\234\'\210\001\220\234\'\213\001BY\n\025com.clarifai.grpc.apiP\001Z7gi" +
+      "thub.com/Clarifai/clarifai-go-grpc/proto" +
+      "/clarifai/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

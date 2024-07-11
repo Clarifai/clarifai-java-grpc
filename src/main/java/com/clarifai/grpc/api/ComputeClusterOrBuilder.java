@@ -40,16 +40,31 @@ public interface ComputeClusterOrBuilder extends
       getDescriptionBytes();
 
   /**
+   * <pre>
+   * The cloud provider where this cluster is hosted.
+   * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+   * </pre>
+   *
    * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
    * @return Whether the cloudProvider field is set.
    */
   boolean hasCloudProvider();
   /**
+   * <pre>
+   * The cloud provider where this cluster is hosted.
+   * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+   * </pre>
+   *
    * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
    * @return The cloudProvider.
    */
   com.clarifai.grpc.api.CloudProvider getCloudProvider();
   /**
+   * <pre>
+   * The cloud provider where this cluster is hosted.
+   * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+   * </pre>
+   *
    * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
    */
   com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder();
@@ -182,4 +197,107 @@ public interface ComputeClusterOrBuilder extends
    * <code>.clarifai.api.Visibility visibility = 8;</code>
    */
   com.clarifai.grpc.api.VisibilityOrBuilder getVisibilityOrBuilder();
+
+  /**
+   * <pre>
+   * We offer different types of compute clusters such as:
+   * 'serverless' which only Clarifai can create.
+   * 'dedicated' where you're in control of defining the nodepools within the cluster
+   * 'local-dev' which means you're responsible for starting runners manually which is great for local
+   * development but not recommended for production use cases.
+   * </pre>
+   *
+   * <code>string cluster_type = 9;</code>
+   * @return The clusterType.
+   */
+  java.lang.String getClusterType();
+  /**
+   * <pre>
+   * We offer different types of compute clusters such as:
+   * 'serverless' which only Clarifai can create.
+   * 'dedicated' where you're in control of defining the nodepools within the cluster
+   * 'local-dev' which means you're responsible for starting runners manually which is great for local
+   * development but not recommended for production use cases.
+   * </pre>
+   *
+   * <code>string cluster_type = 9;</code>
+   * @return The bytes for clusterType.
+   */
+  com.google.protobuf.ByteString
+      getClusterTypeBytes();
+
+  /**
+   * <pre>
+   * Managed by represents who is responsible for the cluster.
+   * This is currently either "clarifai" where we fully manage the infrastructure.
+   * Or, "user" where the user is responsible for the underlying infrastructure.
+   * </pre>
+   *
+   * <code>string managed_by = 10;</code>
+   * @return The managedBy.
+   */
+  java.lang.String getManagedBy();
+  /**
+   * <pre>
+   * Managed by represents who is responsible for the cluster.
+   * This is currently either "clarifai" where we fully manage the infrastructure.
+   * Or, "user" where the user is responsible for the underlying infrastructure.
+   * </pre>
+   *
+   * <code>string managed_by = 10;</code>
+   * @return The bytes for managedBy.
+   */
+  com.google.protobuf.ByteString
+      getManagedByBytes();
+
+  /**
+   * <pre>
+   * Key to use within the compute cluster for all requests to the API.
+   * You can post with the key.id filled in to set the key for the compute cluster.
+   * The responses will intentionaly only return the description of the key for security
+   * purposes since you may have other people through orgs/teams having access to this compute
+   * cluster who should not view your key.
+   * This must be a valid key created before creating the ComputeCluster.
+   * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+   * will lose connection to the API, so delete keys at your own risk.
+   * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+   * </pre>
+   *
+   * <code>.clarifai.api.Key key = 11;</code>
+   * @return Whether the key field is set.
+   */
+  boolean hasKey();
+  /**
+   * <pre>
+   * Key to use within the compute cluster for all requests to the API.
+   * You can post with the key.id filled in to set the key for the compute cluster.
+   * The responses will intentionaly only return the description of the key for security
+   * purposes since you may have other people through orgs/teams having access to this compute
+   * cluster who should not view your key.
+   * This must be a valid key created before creating the ComputeCluster.
+   * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+   * will lose connection to the API, so delete keys at your own risk.
+   * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+   * </pre>
+   *
+   * <code>.clarifai.api.Key key = 11;</code>
+   * @return The key.
+   */
+  com.clarifai.grpc.api.Key getKey();
+  /**
+   * <pre>
+   * Key to use within the compute cluster for all requests to the API.
+   * You can post with the key.id filled in to set the key for the compute cluster.
+   * The responses will intentionaly only return the description of the key for security
+   * purposes since you may have other people through orgs/teams having access to this compute
+   * cluster who should not view your key.
+   * This must be a valid key created before creating the ComputeCluster.
+   * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+   * will lose connection to the API, so delete keys at your own risk.
+   * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+   * </pre>
+   *
+   * <code>.clarifai.api.Key key = 11;</code>
+   */
+  com.clarifai.grpc.api.KeyOrBuilder getKeyOrBuilder();
 }

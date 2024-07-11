@@ -28,6 +28,8 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     region_ = "";
     userId_ = "";
+    clusterType_ = "";
+    managedBy_ = "";
   }
 
   @java.lang.Override
@@ -132,6 +134,31 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(visibility_);
               visibility_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            clusterType_ = s;
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            managedBy_ = s;
+            break;
+          }
+          case 90: {
+            com.clarifai.grpc.api.Key.Builder subBuilder = null;
+            if (key_ != null) {
+              subBuilder = key_.toBuilder();
+            }
+            key_ = input.readMessage(com.clarifai.grpc.api.Key.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(key_);
+              key_ = subBuilder.buildPartial();
             }
 
             break;
@@ -257,6 +284,11 @@ private static final long serialVersionUID = 0L;
   public static final int CLOUD_PROVIDER_FIELD_NUMBER = 3;
   private com.clarifai.grpc.api.CloudProvider cloudProvider_;
   /**
+   * <pre>
+   * The cloud provider where this cluster is hosted.
+   * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+   * </pre>
+   *
    * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
    * @return Whether the cloudProvider field is set.
    */
@@ -265,6 +297,11 @@ private static final long serialVersionUID = 0L;
     return cloudProvider_ != null;
   }
   /**
+   * <pre>
+   * The cloud provider where this cluster is hosted.
+   * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+   * </pre>
+   *
    * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
    * @return The cloudProvider.
    */
@@ -273,6 +310,11 @@ private static final long serialVersionUID = 0L;
     return cloudProvider_ == null ? com.clarifai.grpc.api.CloudProvider.getDefaultInstance() : cloudProvider_;
   }
   /**
+   * <pre>
+   * The cloud provider where this cluster is hosted.
+   * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+   * </pre>
+   *
    * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
    */
   @java.lang.Override
@@ -494,6 +536,172 @@ private static final long serialVersionUID = 0L;
     return getVisibility();
   }
 
+  public static final int CLUSTER_TYPE_FIELD_NUMBER = 9;
+  private volatile java.lang.Object clusterType_;
+  /**
+   * <pre>
+   * We offer different types of compute clusters such as:
+   * 'serverless' which only Clarifai can create.
+   * 'dedicated' where you're in control of defining the nodepools within the cluster
+   * 'local-dev' which means you're responsible for starting runners manually which is great for local
+   * development but not recommended for production use cases.
+   * </pre>
+   *
+   * <code>string cluster_type = 9;</code>
+   * @return The clusterType.
+   */
+  @java.lang.Override
+  public java.lang.String getClusterType() {
+    java.lang.Object ref = clusterType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clusterType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * We offer different types of compute clusters such as:
+   * 'serverless' which only Clarifai can create.
+   * 'dedicated' where you're in control of defining the nodepools within the cluster
+   * 'local-dev' which means you're responsible for starting runners manually which is great for local
+   * development but not recommended for production use cases.
+   * </pre>
+   *
+   * <code>string cluster_type = 9;</code>
+   * @return The bytes for clusterType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getClusterTypeBytes() {
+    java.lang.Object ref = clusterType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clusterType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MANAGED_BY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object managedBy_;
+  /**
+   * <pre>
+   * Managed by represents who is responsible for the cluster.
+   * This is currently either "clarifai" where we fully manage the infrastructure.
+   * Or, "user" where the user is responsible for the underlying infrastructure.
+   * </pre>
+   *
+   * <code>string managed_by = 10;</code>
+   * @return The managedBy.
+   */
+  @java.lang.Override
+  public java.lang.String getManagedBy() {
+    java.lang.Object ref = managedBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      managedBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Managed by represents who is responsible for the cluster.
+   * This is currently either "clarifai" where we fully manage the infrastructure.
+   * Or, "user" where the user is responsible for the underlying infrastructure.
+   * </pre>
+   *
+   * <code>string managed_by = 10;</code>
+   * @return The bytes for managedBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getManagedByBytes() {
+    java.lang.Object ref = managedBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      managedBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KEY_FIELD_NUMBER = 11;
+  private com.clarifai.grpc.api.Key key_;
+  /**
+   * <pre>
+   * Key to use within the compute cluster for all requests to the API.
+   * You can post with the key.id filled in to set the key for the compute cluster.
+   * The responses will intentionaly only return the description of the key for security
+   * purposes since you may have other people through orgs/teams having access to this compute
+   * cluster who should not view your key.
+   * This must be a valid key created before creating the ComputeCluster.
+   * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+   * will lose connection to the API, so delete keys at your own risk.
+   * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+   * </pre>
+   *
+   * <code>.clarifai.api.Key key = 11;</code>
+   * @return Whether the key field is set.
+   */
+  @java.lang.Override
+  public boolean hasKey() {
+    return key_ != null;
+  }
+  /**
+   * <pre>
+   * Key to use within the compute cluster for all requests to the API.
+   * You can post with the key.id filled in to set the key for the compute cluster.
+   * The responses will intentionaly only return the description of the key for security
+   * purposes since you may have other people through orgs/teams having access to this compute
+   * cluster who should not view your key.
+   * This must be a valid key created before creating the ComputeCluster.
+   * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+   * will lose connection to the API, so delete keys at your own risk.
+   * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+   * </pre>
+   *
+   * <code>.clarifai.api.Key key = 11;</code>
+   * @return The key.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Key getKey() {
+    return key_ == null ? com.clarifai.grpc.api.Key.getDefaultInstance() : key_;
+  }
+  /**
+   * <pre>
+   * Key to use within the compute cluster for all requests to the API.
+   * You can post with the key.id filled in to set the key for the compute cluster.
+   * The responses will intentionaly only return the description of the key for security
+   * purposes since you may have other people through orgs/teams having access to this compute
+   * cluster who should not view your key.
+   * This must be a valid key created before creating the ComputeCluster.
+   * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+   * will lose connection to the API, so delete keys at your own risk.
+   * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+   * </pre>
+   *
+   * <code>.clarifai.api.Key key = 11;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.KeyOrBuilder getKeyOrBuilder() {
+    return getKey();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -532,6 +740,15 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       output.writeMessage(8, getVisibility());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clusterType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(managedBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, managedBy_);
+    }
+    if (key_ != null) {
+      output.writeMessage(11, getKey());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -568,6 +785,16 @@ private static final long serialVersionUID = 0L;
     if (visibility_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getVisibility());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clusterType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(managedBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, managedBy_);
+    }
+    if (key_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, getKey());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -612,6 +839,15 @@ private static final long serialVersionUID = 0L;
       if (!getVisibility()
           .equals(other.getVisibility())) return false;
     }
+    if (!getClusterType()
+        .equals(other.getClusterType())) return false;
+    if (!getManagedBy()
+        .equals(other.getManagedBy())) return false;
+    if (hasKey() != other.hasKey()) return false;
+    if (hasKey()) {
+      if (!getKey()
+          .equals(other.getKey())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -646,6 +882,14 @@ private static final long serialVersionUID = 0L;
     if (hasVisibility()) {
       hash = (37 * hash) + VISIBILITY_FIELD_NUMBER;
       hash = (53 * hash) + getVisibility().hashCode();
+    }
+    hash = (37 * hash) + CLUSTER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getClusterType().hashCode();
+    hash = (37 * hash) + MANAGED_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getManagedBy().hashCode();
+    if (hasKey()) {
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -820,6 +1064,16 @@ private static final long serialVersionUID = 0L;
         visibility_ = null;
         visibilityBuilder_ = null;
       }
+      clusterType_ = "";
+
+      managedBy_ = "";
+
+      if (keyBuilder_ == null) {
+        key_ = null;
+      } else {
+        key_ = null;
+        keyBuilder_ = null;
+      }
       return this;
     }
 
@@ -869,6 +1123,13 @@ private static final long serialVersionUID = 0L;
         result.visibility_ = visibility_;
       } else {
         result.visibility_ = visibilityBuilder_.build();
+      }
+      result.clusterType_ = clusterType_;
+      result.managedBy_ = managedBy_;
+      if (keyBuilder_ == null) {
+        result.key_ = key_;
+      } else {
+        result.key_ = keyBuilder_.build();
       }
       onBuilt();
       return result;
@@ -945,6 +1206,17 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasVisibility()) {
         mergeVisibility(other.getVisibility());
+      }
+      if (!other.getClusterType().isEmpty()) {
+        clusterType_ = other.clusterType_;
+        onChanged();
+      }
+      if (!other.getManagedBy().isEmpty()) {
+        managedBy_ = other.managedBy_;
+        onChanged();
+      }
+      if (other.hasKey()) {
+        mergeKey(other.getKey());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1151,6 +1423,11 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.CloudProvider, com.clarifai.grpc.api.CloudProvider.Builder, com.clarifai.grpc.api.CloudProviderOrBuilder> cloudProviderBuilder_;
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      * @return Whether the cloudProvider field is set.
      */
@@ -1158,6 +1435,11 @@ private static final long serialVersionUID = 0L;
       return cloudProviderBuilder_ != null || cloudProvider_ != null;
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      * @return The cloudProvider.
      */
@@ -1169,6 +1451,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     public Builder setCloudProvider(com.clarifai.grpc.api.CloudProvider value) {
@@ -1185,6 +1472,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     public Builder setCloudProvider(
@@ -1199,6 +1491,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     public Builder mergeCloudProvider(com.clarifai.grpc.api.CloudProvider value) {
@@ -1217,6 +1514,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     public Builder clearCloudProvider() {
@@ -1231,6 +1533,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     public com.clarifai.grpc.api.CloudProvider.Builder getCloudProviderBuilder() {
@@ -1239,6 +1546,11 @@ private static final long serialVersionUID = 0L;
       return getCloudProviderFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     public com.clarifai.grpc.api.CloudProviderOrBuilder getCloudProviderOrBuilder() {
@@ -1250,6 +1562,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The cloud provider where this cluster is hosted.
+     * Some example cloud provider IDs may be aws, gcp, azure, local, kubernetes, etc.
+     * </pre>
+     *
      * <code>.clarifai.api.CloudProvider cloud_provider = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1944,6 +2261,455 @@ private static final long serialVersionUID = 0L;
         visibility_ = null;
       }
       return visibilityBuilder_;
+    }
+
+    private java.lang.Object clusterType_ = "";
+    /**
+     * <pre>
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     * </pre>
+     *
+     * <code>string cluster_type = 9;</code>
+     * @return The clusterType.
+     */
+    public java.lang.String getClusterType() {
+      java.lang.Object ref = clusterType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     * </pre>
+     *
+     * <code>string cluster_type = 9;</code>
+     * @return The bytes for clusterType.
+     */
+    public com.google.protobuf.ByteString
+        getClusterTypeBytes() {
+      java.lang.Object ref = clusterType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clusterType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     * </pre>
+     *
+     * <code>string cluster_type = 9;</code>
+     * @param value The clusterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      clusterType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     * </pre>
+     *
+     * <code>string cluster_type = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterType() {
+      
+      clusterType_ = getDefaultInstance().getClusterType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * We offer different types of compute clusters such as:
+     * 'serverless' which only Clarifai can create.
+     * 'dedicated' where you're in control of defining the nodepools within the cluster
+     * 'local-dev' which means you're responsible for starting runners manually which is great for local
+     * development but not recommended for production use cases.
+     * </pre>
+     *
+     * <code>string cluster_type = 9;</code>
+     * @param value The bytes for clusterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      clusterType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object managedBy_ = "";
+    /**
+     * <pre>
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     * </pre>
+     *
+     * <code>string managed_by = 10;</code>
+     * @return The managedBy.
+     */
+    public java.lang.String getManagedBy() {
+      java.lang.Object ref = managedBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managedBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     * </pre>
+     *
+     * <code>string managed_by = 10;</code>
+     * @return The bytes for managedBy.
+     */
+    public com.google.protobuf.ByteString
+        getManagedByBytes() {
+      java.lang.Object ref = managedBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managedBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     * </pre>
+     *
+     * <code>string managed_by = 10;</code>
+     * @param value The managedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagedBy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      managedBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     * </pre>
+     *
+     * <code>string managed_by = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearManagedBy() {
+      
+      managedBy_ = getDefaultInstance().getManagedBy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Managed by represents who is responsible for the cluster.
+     * This is currently either "clarifai" where we fully manage the infrastructure.
+     * Or, "user" where the user is responsible for the underlying infrastructure.
+     * </pre>
+     *
+     * <code>string managed_by = 10;</code>
+     * @param value The bytes for managedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagedByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      managedBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.clarifai.grpc.api.Key key_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Key, com.clarifai.grpc.api.Key.Builder, com.clarifai.grpc.api.KeyOrBuilder> keyBuilder_;
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     * @return Whether the key field is set.
+     */
+    public boolean hasKey() {
+      return keyBuilder_ != null || key_ != null;
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     * @return The key.
+     */
+    public com.clarifai.grpc.api.Key getKey() {
+      if (keyBuilder_ == null) {
+        return key_ == null ? com.clarifai.grpc.api.Key.getDefaultInstance() : key_;
+      } else {
+        return keyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    public Builder setKey(com.clarifai.grpc.api.Key value) {
+      if (keyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        key_ = value;
+        onChanged();
+      } else {
+        keyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    public Builder setKey(
+        com.clarifai.grpc.api.Key.Builder builderForValue) {
+      if (keyBuilder_ == null) {
+        key_ = builderForValue.build();
+        onChanged();
+      } else {
+        keyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    public Builder mergeKey(com.clarifai.grpc.api.Key value) {
+      if (keyBuilder_ == null) {
+        if (key_ != null) {
+          key_ =
+            com.clarifai.grpc.api.Key.newBuilder(key_).mergeFrom(value).buildPartial();
+        } else {
+          key_ = value;
+        }
+        onChanged();
+      } else {
+        keyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    public Builder clearKey() {
+      if (keyBuilder_ == null) {
+        key_ = null;
+        onChanged();
+      } else {
+        key_ = null;
+        keyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    public com.clarifai.grpc.api.Key.Builder getKeyBuilder() {
+      
+      onChanged();
+      return getKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    public com.clarifai.grpc.api.KeyOrBuilder getKeyOrBuilder() {
+      if (keyBuilder_ != null) {
+        return keyBuilder_.getMessageOrBuilder();
+      } else {
+        return key_ == null ?
+            com.clarifai.grpc.api.Key.getDefaultInstance() : key_;
+      }
+    }
+    /**
+     * <pre>
+     * Key to use within the compute cluster for all requests to the API.
+     * You can post with the key.id filled in to set the key for the compute cluster.
+     * The responses will intentionaly only return the description of the key for security
+     * purposes since you may have other people through orgs/teams having access to this compute
+     * cluster who should not view your key.
+     * This must be a valid key created before creating the ComputeCluster.
+     * Deleting this key will not be prevented, which means all resources in this ComputeCluster
+     * will lose connection to the API, so delete keys at your own risk.
+     * The user_id who owns the key must match the user_id provided in the ComputeCluster.
+     * </pre>
+     *
+     * <code>.clarifai.api.Key key = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Key, com.clarifai.grpc.api.Key.Builder, com.clarifai.grpc.api.KeyOrBuilder> 
+        getKeyFieldBuilder() {
+      if (keyBuilder_ == null) {
+        keyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Key, com.clarifai.grpc.api.Key.Builder, com.clarifai.grpc.api.KeyOrBuilder>(
+                getKey(),
+                getParentForChildren(),
+                isClean());
+        key_ = null;
+      }
+      return keyBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
