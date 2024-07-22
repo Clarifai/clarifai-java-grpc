@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2012
+   *     See proto/clarifai/api/resources.proto;l=2015
    * @return Whether the annotation field is set.
    */
   @java.lang.Override
@@ -330,7 +330,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2012
+   *     See proto/clarifai/api/resources.proto;l=2015
    * @return The annotation.
    */
   @java.lang.Override
@@ -1655,7 +1655,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2012
+     *     See proto/clarifai/api/resources.proto;l=2015
      * @return Whether the annotation field is set.
      */
     @java.lang.Deprecated public boolean hasAnnotation() {
@@ -1670,7 +1670,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.Annotation annotation = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.EvalTestSetEntry.annotation is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2012
+     *     See proto/clarifai/api/resources.proto;l=2015
      * @return The annotation.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.Annotation getAnnotation() {

@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ComputeInfo() {
+    cpuLimit_ = "";
     cpuMemory_ = "";
     acceleratorMemory_ = "";
     acceleratorType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -59,11 +60,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            numCpus_ = input.readUInt32();
-            break;
-          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -88,6 +84,12 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             acceleratorType_.add(s);
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            cpuLimit_ = s;
             break;
           }
           default: {
@@ -127,26 +129,61 @@ private static final long serialVersionUID = 0L;
             com.clarifai.grpc.api.ComputeInfo.class, com.clarifai.grpc.api.ComputeInfo.Builder.class);
   }
 
-  public static final int NUM_CPUS_FIELD_NUMBER = 1;
-  private int numCpus_;
+  public static final int CPU_LIMIT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object cpuLimit_;
   /**
    * <pre>
-   * Number of CPUs.
+   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
-   * <code>uint32 num_cpus = 1;</code>
-   * @return The numCpus.
+   * <code>string cpu_limit = 6;</code>
+   * @return The cpuLimit.
    */
   @java.lang.Override
-  public int getNumCpus() {
-    return numCpus_;
+  public java.lang.String getCpuLimit() {
+    java.lang.Object ref = cpuLimit_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpuLimit_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * </pre>
+   *
+   * <code>string cpu_limit = 6;</code>
+   * @return The bytes for cpuLimit.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCpuLimitBytes() {
+    java.lang.Object ref = cpuLimit_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      cpuLimit_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CPU_MEMORY_FIELD_NUMBER = 2;
   private volatile java.lang.Object cpuMemory_;
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum.
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -167,7 +204,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum.
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -192,7 +231,7 @@ private static final long serialVersionUID = 0L;
   private int numAccelerators_;
   /**
    * <pre>
-   * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+   * Amount of GPU/TPUs to use.
    * </pre>
    *
    * <code>uint32 num_accelerators = 3;</code>
@@ -210,6 +249,7 @@ private static final long serialVersionUID = 0L;
    * Amount of accelerator/GPU memory to use as a minimum.
    * This is defined per accelerator.
    * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string accelerator_memory = 4;</code>
@@ -233,6 +273,7 @@ private static final long serialVersionUID = 0L;
    * Amount of accelerator/GPU memory to use as a minimum.
    * This is defined per accelerator.
    * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string accelerator_memory = 4;</code>
@@ -322,9 +363,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (numCpus_ != 0) {
-      output.writeUInt32(1, numCpus_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuMemory_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cpuMemory_);
     }
@@ -337,6 +375,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < acceleratorType_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, acceleratorType_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuLimit_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, cpuLimit_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -346,10 +387,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (numCpus_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, numCpus_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuMemory_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cpuMemory_);
     }
@@ -368,6 +405,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAcceleratorTypeList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuLimit_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, cpuLimit_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -383,8 +423,8 @@ private static final long serialVersionUID = 0L;
     }
     com.clarifai.grpc.api.ComputeInfo other = (com.clarifai.grpc.api.ComputeInfo) obj;
 
-    if (getNumCpus()
-        != other.getNumCpus()) return false;
+    if (!getCpuLimit()
+        .equals(other.getCpuLimit())) return false;
     if (!getCpuMemory()
         .equals(other.getCpuMemory())) return false;
     if (getNumAccelerators()
@@ -404,8 +444,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NUM_CPUS_FIELD_NUMBER;
-    hash = (53 * hash) + getNumCpus();
+    hash = (37 * hash) + CPU_LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + getCpuLimit().hashCode();
     hash = (37 * hash) + CPU_MEMORY_FIELD_NUMBER;
     hash = (53 * hash) + getCpuMemory().hashCode();
     hash = (37 * hash) + NUM_ACCELERATORS_FIELD_NUMBER;
@@ -556,7 +596,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      numCpus_ = 0;
+      cpuLimit_ = "";
 
       cpuMemory_ = "";
 
@@ -593,7 +633,7 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.ComputeInfo buildPartial() {
       com.clarifai.grpc.api.ComputeInfo result = new com.clarifai.grpc.api.ComputeInfo(this);
       int from_bitField0_ = bitField0_;
-      result.numCpus_ = numCpus_;
+      result.cpuLimit_ = cpuLimit_;
       result.cpuMemory_ = cpuMemory_;
       result.numAccelerators_ = numAccelerators_;
       result.acceleratorMemory_ = acceleratorMemory_;
@@ -650,8 +690,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.clarifai.grpc.api.ComputeInfo other) {
       if (other == com.clarifai.grpc.api.ComputeInfo.getDefaultInstance()) return this;
-      if (other.getNumCpus() != 0) {
-        setNumCpus(other.getNumCpus());
+      if (!other.getCpuLimit().isEmpty()) {
+        cpuLimit_ = other.cpuLimit_;
+        onChanged();
       }
       if (!other.getCpuMemory().isEmpty()) {
         cpuMemory_ = other.cpuMemory_;
@@ -704,45 +745,103 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int numCpus_ ;
+    private java.lang.Object cpuLimit_ = "";
     /**
      * <pre>
-     * Number of CPUs.
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
-     * <code>uint32 num_cpus = 1;</code>
-     * @return The numCpus.
+     * <code>string cpu_limit = 6;</code>
+     * @return The cpuLimit.
      */
-    @java.lang.Override
-    public int getNumCpus() {
-      return numCpus_;
+    public java.lang.String getCpuLimit() {
+      java.lang.Object ref = cpuLimit_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpuLimit_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * Number of CPUs.
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
-     * <code>uint32 num_cpus = 1;</code>
-     * @param value The numCpus to set.
+     * <code>string cpu_limit = 6;</code>
+     * @return The bytes for cpuLimit.
+     */
+    public com.google.protobuf.ByteString
+        getCpuLimitBytes() {
+      java.lang.Object ref = cpuLimit_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cpuLimit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * </pre>
+     *
+     * <code>string cpu_limit = 6;</code>
+     * @param value The cpuLimit to set.
      * @return This builder for chaining.
      */
-    public Builder setNumCpus(int value) {
-      
-      numCpus_ = value;
+    public Builder setCpuLimit(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      cpuLimit_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Number of CPUs.
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
-     * <code>uint32 num_cpus = 1;</code>
+     * <code>string cpu_limit = 6;</code>
      * @return This builder for chaining.
      */
-    public Builder clearNumCpus() {
+    public Builder clearCpuLimit() {
       
-      numCpus_ = 0;
+      cpuLimit_ = getDefaultInstance().getCpuLimit();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+     * </pre>
+     *
+     * <code>string cpu_limit = 6;</code>
+     * @param value The bytes for cpuLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpuLimitBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      cpuLimit_ = value;
       onChanged();
       return this;
     }
@@ -750,7 +849,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object cpuMemory_ = "";
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -770,7 +871,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -791,7 +894,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -810,7 +915,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -824,7 +931,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Amount of CPU memory to use as a minimum.
+     * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+     * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string cpu_memory = 2;</code>
@@ -846,7 +955,7 @@ private static final long serialVersionUID = 0L;
     private int numAccelerators_ ;
     /**
      * <pre>
-     * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     * Amount of GPU/TPUs to use.
      * </pre>
      *
      * <code>uint32 num_accelerators = 3;</code>
@@ -858,7 +967,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     * Amount of GPU/TPUs to use.
      * </pre>
      *
      * <code>uint32 num_accelerators = 3;</code>
@@ -873,7 +982,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+     * Amount of GPU/TPUs to use.
      * </pre>
      *
      * <code>uint32 num_accelerators = 3;</code>
@@ -892,6 +1001,7 @@ private static final long serialVersionUID = 0L;
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string accelerator_memory = 4;</code>
@@ -914,6 +1024,7 @@ private static final long serialVersionUID = 0L;
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string accelerator_memory = 4;</code>
@@ -937,6 +1048,7 @@ private static final long serialVersionUID = 0L;
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string accelerator_memory = 4;</code>
@@ -958,6 +1070,7 @@ private static final long serialVersionUID = 0L;
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string accelerator_memory = 4;</code>
@@ -974,6 +1087,7 @@ private static final long serialVersionUID = 0L;
      * Amount of accelerator/GPU memory to use as a minimum.
      * This is defined per accelerator.
      * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+     * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
      * </pre>
      *
      * <code>string accelerator_memory = 4;</code>

@@ -9,17 +9,31 @@ public interface ComputeInfoOrBuilder extends
 
   /**
    * <pre>
-   * Number of CPUs.
+   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
-   * <code>uint32 num_cpus = 1;</code>
-   * @return The numCpus.
+   * <code>string cpu_limit = 6;</code>
+   * @return The cpuLimit.
    */
-  int getNumCpus();
+  java.lang.String getCpuLimit();
+  /**
+   * <pre>
+   * Amount of CPUs to use. This follows kubernetes notation like: "1", "100m", "4.5", etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
+   * </pre>
+   *
+   * <code>string cpu_limit = 6;</code>
+   * @return The bytes for cpuLimit.
+   */
+  com.google.protobuf.ByteString
+      getCpuLimitBytes();
 
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum.
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -28,7 +42,9 @@ public interface ComputeInfoOrBuilder extends
   java.lang.String getCpuMemory();
   /**
    * <pre>
-   * Amount of CPU memory to use as a minimum.
+   * Amount of CPU memory to use as a minimum. This follows kubernetes notation like:
+   * 1Ki, 1500Mi, 3Gi, 4Ti, etc.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string cpu_memory = 2;</code>
@@ -39,7 +55,7 @@ public interface ComputeInfoOrBuilder extends
 
   /**
    * <pre>
-   * Number of accelerators (typically GPUs, TPUs, etc. not CPUs) for this resource.
+   * Amount of GPU/TPUs to use.
    * </pre>
    *
    * <code>uint32 num_accelerators = 3;</code>
@@ -52,6 +68,7 @@ public interface ComputeInfoOrBuilder extends
    * Amount of accelerator/GPU memory to use as a minimum.
    * This is defined per accelerator.
    * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string accelerator_memory = 4;</code>
@@ -63,6 +80,7 @@ public interface ComputeInfoOrBuilder extends
    * Amount of accelerator/GPU memory to use as a minimum.
    * This is defined per accelerator.
    * This follows the format used by kubernetes like 1Ki, 2Mi, 3Gi, 4Ti.
+   * See https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/quantity/
    * </pre>
    *
    * <code>string accelerator_memory = 4;</code>

@@ -79,7 +79,7 @@ public interface ImageOrBuilder extends
 
   /**
    * <pre>
-   * image info
+   * image info for original size. for image info for other sizes, use hosted_image_info
    * </pre>
    *
    * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -88,7 +88,7 @@ public interface ImageOrBuilder extends
   boolean hasImageInfo();
   /**
    * <pre>
-   * image info
+   * image info for original size. for image info for other sizes, use hosted_image_info
    * </pre>
    *
    * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -97,10 +97,71 @@ public interface ImageOrBuilder extends
   com.clarifai.grpc.api.ImageInfo getImageInfo();
   /**
    * <pre>
-   * image info
+   * image info for original size. for image info for other sizes, use hosted_image_info
    * </pre>
    *
    * <code>.clarifai.api.ImageInfo image_info = 6;</code>
    */
   com.clarifai.grpc.api.ImageInfoOrBuilder getImageInfoOrBuilder();
+
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+  int getHostedImageInfoCount();
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+  boolean containsHostedImageInfo(
+      java.lang.String key);
+  /**
+   * Use {@link #getHostedImageInfoMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+  getHostedImageInfo();
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+  java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+  getHostedImageInfoMap();
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+
+  /* nullable */
+com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.clarifai.grpc.api.ImageInfo defaultValue);
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+
+  com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrThrow(
+      java.lang.String key);
 }

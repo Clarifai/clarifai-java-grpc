@@ -919,6 +919,22 @@ public enum StatusCode
   DEPLOYMENT_INVALID_REQUEST(25902),
   /**
    * <pre>
+   * InstanceType related codes 260xx
+   * </pre>
+   *
+   * <code>INSTANCE_TYPE_DOES_NOT_EXIST = 26000;</code>
+   */
+  INSTANCE_TYPE_DOES_NOT_EXIST(26000),
+  /**
+   * <code>INSTANCE_TYPE_INVALID_ARGUMENT = 26001;</code>
+   */
+  INSTANCE_TYPE_INVALID_ARGUMENT(26001),
+  /**
+   * <code>INSTANCE_TYPE_INVALID_REQUEST = 26002;</code>
+   */
+  INSTANCE_TYPE_INVALID_REQUEST(26002),
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -2939,6 +2955,22 @@ public enum StatusCode
   public static final int DEPLOYMENT_INVALID_REQUEST_VALUE = 25902;
   /**
    * <pre>
+   * InstanceType related codes 260xx
+   * </pre>
+   *
+   * <code>INSTANCE_TYPE_DOES_NOT_EXIST = 26000;</code>
+   */
+  public static final int INSTANCE_TYPE_DOES_NOT_EXIST_VALUE = 26000;
+  /**
+   * <code>INSTANCE_TYPE_INVALID_ARGUMENT = 26001;</code>
+   */
+  public static final int INSTANCE_TYPE_INVALID_ARGUMENT_VALUE = 26001;
+  /**
+   * <code>INSTANCE_TYPE_INVALID_REQUEST = 26002;</code>
+   */
+  public static final int INSTANCE_TYPE_INVALID_REQUEST_VALUE = 26002;
+  /**
+   * <pre>
    * Input:Image related 30xxx
    * </pre>
    *
@@ -4231,6 +4263,9 @@ public enum StatusCode
       case 25900: return DEPLOYMENT_DOES_NOT_EXIST;
       case 25901: return DEPLOYMENT_INVALID_ARGUMENT;
       case 25902: return DEPLOYMENT_INVALID_REQUEST;
+      case 26000: return INSTANCE_TYPE_DOES_NOT_EXIST;
+      case 26001: return INSTANCE_TYPE_INVALID_ARGUMENT;
+      case 26002: return INSTANCE_TYPE_INVALID_REQUEST;
       case 30000: return INPUT_DOWNLOAD_SUCCESS;
       case 30001: return INPUT_DOWNLOAD_PENDING;
       case 30002: return INPUT_DOWNLOAD_FAILED;

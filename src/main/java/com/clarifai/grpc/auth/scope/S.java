@@ -750,6 +750,10 @@ public enum S
    * <code>Deployments_Delete = 146 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Add];</code>
    */
   Deployments_Delete(146),
+  /**
+   * <code>InstanceTypes_Get = 148 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  InstanceTypes_Get(148),
   UNRECOGNIZED(-1),
   ;
 
@@ -1462,6 +1466,10 @@ public enum S
    * <code>Deployments_Delete = 146 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Get, (.clarifai.auth.scope.clarifai_depending_scopes) = Deployments_Add];</code>
    */
   public static final int Deployments_Delete_VALUE = 146;
+  /**
+   * <code>InstanceTypes_Get = 148 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int InstanceTypes_Get_VALUE = 148;
 
 
   public final int getNumber() {
@@ -1587,6 +1595,7 @@ public enum S
       case 144: return Deployments_Get;
       case 145: return Deployments_Add;
       case 146: return Deployments_Delete;
+      case 148: return InstanceTypes_Get;
       default: return null;
     }
   }

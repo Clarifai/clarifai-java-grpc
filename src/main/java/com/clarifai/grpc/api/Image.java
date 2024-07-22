@@ -44,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -96,6 +97,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              hostedImageInfo_ = com.google.protobuf.MapField.newMapField(
+                  HostedImageInfoDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+            hostedImageInfo__ = input.readMessage(
+                HostedImageInfoDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            hostedImageInfo_.getMutableMap().put(
+                hostedImageInfo__.getKey(), hostedImageInfo__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -122,6 +136,18 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Image_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetHostedImageInfo();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -251,7 +277,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.ImageInfo imageInfo_;
   /**
    * <pre>
-   * image info
+   * image info for original size. for image info for other sizes, use hosted_image_info
    * </pre>
    *
    * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -263,7 +289,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * image info
+   * image info for original size. for image info for other sizes, use hosted_image_info
    * </pre>
    *
    * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -275,7 +301,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * image info
+   * image info for original size. for image info for other sizes, use hosted_image_info
    * </pre>
    *
    * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -283,6 +309,107 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.clarifai.grpc.api.ImageInfoOrBuilder getImageInfoOrBuilder() {
     return getImageInfo();
+  }
+
+  public static final int HOSTED_IMAGE_INFO_FIELD_NUMBER = 7;
+  private static final class HostedImageInfoDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, com.clarifai.grpc.api.ImageInfo> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, com.clarifai.grpc.api.ImageInfo>newDefaultInstance(
+                com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Image_HostedImageInfoEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.clarifai.grpc.api.ImageInfo.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, com.clarifai.grpc.api.ImageInfo> hostedImageInfo_;
+  private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+  internalGetHostedImageInfo() {
+    if (hostedImageInfo_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          HostedImageInfoDefaultEntryHolder.defaultEntry);
+    }
+    return hostedImageInfo_;
+  }
+
+  public int getHostedImageInfoCount() {
+    return internalGetHostedImageInfo().getMap().size();
+  }
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsHostedImageInfo(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetHostedImageInfo().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getHostedImageInfoMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> getHostedImageInfo() {
+    return getHostedImageInfoMap();
+  }
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> getHostedImageInfoMap() {
+    return internalGetHostedImageInfo().getMap();
+  }
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+  @java.lang.Override
+
+  public com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrDefault(
+      java.lang.String key,
+      com.clarifai.grpc.api.ImageInfo defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> map =
+        internalGetHostedImageInfo().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+   * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+   */
+  @java.lang.Override
+
+  public com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> map =
+        internalGetHostedImageInfo().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -314,6 +441,12 @@ private static final long serialVersionUID = 0L;
     if (imageInfo_ != null) {
       output.writeMessage(6, getImageInfo());
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetHostedImageInfo(),
+        HostedImageInfoDefaultEntryHolder.defaultEntry,
+        7);
     unknownFields.writeTo(output);
   }
 
@@ -341,6 +474,16 @@ private static final long serialVersionUID = 0L;
     if (imageInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getImageInfo());
+    }
+    for (java.util.Map.Entry<java.lang.String, com.clarifai.grpc.api.ImageInfo> entry
+         : internalGetHostedImageInfo().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+      hostedImageInfo__ = HostedImageInfoDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, hostedImageInfo__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -373,6 +516,8 @@ private static final long serialVersionUID = 0L;
       if (!getImageInfo()
           .equals(other.getImageInfo())) return false;
     }
+    if (!internalGetHostedImageInfo().equals(
+        other.internalGetHostedImageInfo())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -398,6 +543,10 @@ private static final long serialVersionUID = 0L;
     if (hasImageInfo()) {
       hash = (37 * hash) + IMAGE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getImageInfo().hashCode();
+    }
+    if (!internalGetHostedImageInfo().getMap().isEmpty()) {
+      hash = (37 * hash) + HOSTED_IMAGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetHostedImageInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -510,6 +659,28 @@ private static final long serialVersionUID = 0L;
       return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Image_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetHostedImageInfo();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableHostedImageInfo();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -554,6 +725,7 @@ private static final long serialVersionUID = 0L;
         imageInfo_ = null;
         imageInfoBuilder_ = null;
       }
+      internalGetMutableHostedImageInfo().clear();
       return this;
     }
 
@@ -580,6 +752,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.Image buildPartial() {
       com.clarifai.grpc.api.Image result = new com.clarifai.grpc.api.Image(this);
+      int from_bitField0_ = bitField0_;
       result.url_ = url_;
       result.base64_ = base64_;
       result.allowDuplicateUrl_ = allowDuplicateUrl_;
@@ -593,6 +766,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.imageInfo_ = imageInfoBuilder_.build();
       }
+      result.hostedImageInfo_ = internalGetHostedImageInfo();
+      result.hostedImageInfo_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -657,6 +832,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasImageInfo()) {
         mergeImageInfo(other.getImageInfo());
       }
+      internalGetMutableHostedImageInfo().mergeFrom(
+          other.internalGetHostedImageInfo());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -685,6 +862,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -1039,7 +1217,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.ImageInfo, com.clarifai.grpc.api.ImageInfo.Builder, com.clarifai.grpc.api.ImageInfoOrBuilder> imageInfoBuilder_;
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1050,7 +1228,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1065,7 +1243,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1085,7 +1263,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1103,7 +1281,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1125,7 +1303,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1143,7 +1321,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1155,7 +1333,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1170,7 +1348,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * image info
+     * image info for original size. for image info for other sizes, use hosted_image_info
      * </pre>
      *
      * <code>.clarifai.api.ImageInfo image_info = 6;</code>
@@ -1187,6 +1365,172 @@ private static final long serialVersionUID = 0L;
         imageInfo_ = null;
       }
       return imageInfoBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, com.clarifai.grpc.api.ImageInfo> hostedImageInfo_;
+    private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+    internalGetHostedImageInfo() {
+      if (hostedImageInfo_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            HostedImageInfoDefaultEntryHolder.defaultEntry);
+      }
+      return hostedImageInfo_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+    internalGetMutableHostedImageInfo() {
+      onChanged();;
+      if (hostedImageInfo_ == null) {
+        hostedImageInfo_ = com.google.protobuf.MapField.newMapField(
+            HostedImageInfoDefaultEntryHolder.defaultEntry);
+      }
+      if (!hostedImageInfo_.isMutable()) {
+        hostedImageInfo_ = hostedImageInfo_.copy();
+      }
+      return hostedImageInfo_;
+    }
+
+    public int getHostedImageInfoCount() {
+      return internalGetHostedImageInfo().getMap().size();
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsHostedImageInfo(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetHostedImageInfo().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getHostedImageInfoMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> getHostedImageInfo() {
+      return getHostedImageInfoMap();
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> getHostedImageInfoMap() {
+      return internalGetHostedImageInfo().getMap();
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+    @java.lang.Override
+
+    public com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrDefault(
+        java.lang.String key,
+        com.clarifai.grpc.api.ImageInfo defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> map =
+          internalGetHostedImageInfo().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+    @java.lang.Override
+
+    public com.clarifai.grpc.api.ImageInfo getHostedImageInfoOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> map =
+          internalGetHostedImageInfo().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearHostedImageInfo() {
+      internalGetMutableHostedImageInfo().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+
+    public Builder removeHostedImageInfo(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableHostedImageInfo().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo>
+    getMutableHostedImageInfo() {
+      return internalGetMutableHostedImageInfo().getMutableMap();
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+    public Builder putHostedImageInfo(
+        java.lang.String key,
+        com.clarifai.grpc.api.ImageInfo value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+      internalGetMutableHostedImageInfo().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * The map of hosted image info of different sizes (see hosted.sizes), excluding the original image.
+     * Note: keys(hosted_image_info) = hosted.sizes - "orig"
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.ImageInfo&gt; hosted_image_info = 7;</code>
+     */
+
+    public Builder putAllHostedImageInfo(
+        java.util.Map<java.lang.String, com.clarifai.grpc.api.ImageInfo> values) {
+      internalGetMutableHostedImageInfo().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

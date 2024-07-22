@@ -6897,6 +6897,37 @@ public final class V2Grpc {
     return getPostModelVersionsTrainingTimeEstimateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstanceTypesRequest,
+      com.clarifai.grpc.api.MultiInstanceTypeResponse> getListInstanceTypesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListInstanceTypes",
+      requestType = com.clarifai.grpc.api.ListInstanceTypesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiInstanceTypeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstanceTypesRequest,
+      com.clarifai.grpc.api.MultiInstanceTypeResponse> getListInstanceTypesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListInstanceTypesRequest, com.clarifai.grpc.api.MultiInstanceTypeResponse> getListInstanceTypesMethod;
+    if ((getListInstanceTypesMethod = V2Grpc.getListInstanceTypesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListInstanceTypesMethod = V2Grpc.getListInstanceTypesMethod) == null) {
+          V2Grpc.getListInstanceTypesMethod = getListInstanceTypesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListInstanceTypesRequest, com.clarifai.grpc.api.MultiInstanceTypeResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListInstanceTypes"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListInstanceTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiInstanceTypeResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListInstanceTypes"))
+              .build();
+        }
+      }
+    }
+    return getListInstanceTypesMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.GetComputeClusterRequest,
       com.clarifai.grpc.api.SingleComputeClusterResponse> getGetComputeClusterMethod;
 
@@ -9668,6 +9699,16 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get InstanceTypes given Cloud Provider and Region
+     * </pre>
+     */
+    public void listInstanceTypes(com.clarifai.grpc.api.ListInstanceTypesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstanceTypeResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListInstanceTypesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * ComputeCluster CRUD
      * </pre>
      */
@@ -11338,6 +11379,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest,
                 com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>(
                   this, METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE)))
+          .addMethod(
+            getListInstanceTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListInstanceTypesRequest,
+                com.clarifai.grpc.api.MultiInstanceTypeResponse>(
+                  this, METHODID_LIST_INSTANCE_TYPES)))
           .addMethod(
             getGetComputeClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -13965,6 +14013,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get InstanceTypes given Cloud Provider and Region
+     * </pre>
+     */
+    public void listInstanceTypes(com.clarifai.grpc.api.ListInstanceTypesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstanceTypeResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListInstanceTypesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * ComputeCluster CRUD
      * </pre>
      */
@@ -16355,6 +16414,16 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse postModelVersionsTrainingTimeEstimate(com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostModelVersionsTrainingTimeEstimateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get InstanceTypes given Cloud Provider and Region
+     * </pre>
+     */
+    public com.clarifai.grpc.api.MultiInstanceTypeResponse listInstanceTypes(com.clarifai.grpc.api.ListInstanceTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstanceTypesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -18945,6 +19014,17 @@ public final class V2Grpc {
 
     /**
      * <pre>
+     * Get InstanceTypes given Cloud Provider and Region
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInstanceTypeResponse> listInstanceTypes(
+        com.clarifai.grpc.api.ListInstanceTypesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListInstanceTypesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * ComputeCluster CRUD
      * </pre>
      */
@@ -19293,23 +19373,24 @@ public final class V2Grpc {
   private static final int METHODID_LIST_RUNNER_ITEMS = 216;
   private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 217;
   private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 218;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 219;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 220;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 221;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 222;
-  private static final int METHODID_GET_NODEPOOL = 223;
-  private static final int METHODID_LIST_NODEPOOLS = 224;
-  private static final int METHODID_POST_NODEPOOLS = 225;
-  private static final int METHODID_PATCH_NODEPOOLS = 226;
-  private static final int METHODID_DELETE_NODEPOOLS = 227;
-  private static final int METHODID_GET_DEPLOYMENT = 228;
-  private static final int METHODID_LIST_DEPLOYMENTS = 229;
-  private static final int METHODID_POST_DEPLOYMENTS = 230;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 231;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 232;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 233;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 234;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 235;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 219;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 220;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 221;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 222;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 223;
+  private static final int METHODID_GET_NODEPOOL = 224;
+  private static final int METHODID_LIST_NODEPOOLS = 225;
+  private static final int METHODID_POST_NODEPOOLS = 226;
+  private static final int METHODID_PATCH_NODEPOOLS = 227;
+  private static final int METHODID_DELETE_NODEPOOLS = 228;
+  private static final int METHODID_GET_DEPLOYMENT = 229;
+  private static final int METHODID_LIST_DEPLOYMENTS = 230;
+  private static final int METHODID_POST_DEPLOYMENTS = 231;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 232;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 233;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 234;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 235;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 236;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20204,6 +20285,10 @@ public final class V2Grpc {
           serviceImpl.postModelVersionsTrainingTimeEstimate((com.clarifai.grpc.api.PostModelVersionsTrainingTimeEstimateRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiTrainingTimeEstimateResponse>) responseObserver);
           break;
+        case METHODID_LIST_INSTANCE_TYPES:
+          serviceImpl.listInstanceTypes((com.clarifai.grpc.api.ListInstanceTypesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInstanceTypeResponse>) responseObserver);
+          break;
         case METHODID_GET_COMPUTE_CLUSTER:
           serviceImpl.getComputeCluster((com.clarifai.grpc.api.GetComputeClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.SingleComputeClusterResponse>) responseObserver);
@@ -20552,6 +20637,7 @@ public final class V2Grpc {
               .addMethod(getPostRunnerItemOutputsMethod())
               .addMethod(getProcessRunnerItemsMethod())
               .addMethod(getPostModelVersionsTrainingTimeEstimateMethod())
+              .addMethod(getListInstanceTypesMethod())
               .addMethod(getGetComputeClusterMethod())
               .addMethod(getListComputeClustersMethod())
               .addMethod(getPostComputeClustersMethod())
