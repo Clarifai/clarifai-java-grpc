@@ -610,5 +610,46 @@ public interface ListModelsRequestOrBuilder extends
    */
   @java.lang.Deprecated boolean getFilterByUserId();
 
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @return A list containing the modelVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getModelVersionIdsList();
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @return The count of modelVersionIds.
+   */
+  int getModelVersionIdsCount();
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @param index The index of the element to return.
+   * @return The modelVersionIds at the given index.
+   */
+  java.lang.String getModelVersionIds(int index);
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the modelVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getModelVersionIdsBytes(int index);
+
   public com.clarifai.grpc.api.ListModelsRequest.SortByCase getSortByCase();
 }

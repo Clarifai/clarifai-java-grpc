@@ -160,6 +160,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The inputs will be partitioned in several partitions.
      * Each worker will label one or more input partitions.
+     * All inputs are assigned at task creation.
      * </pre>
      *
      * <code>PARTITIONED = 2;</code>
@@ -168,11 +169,21 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Each worker will label all inputs from input source.
+     * All inputs are assigned at task creation.
      * </pre>
      *
      * <code>FULL = 3;</code>
      */
     FULL(3),
+    /**
+     * <pre>
+     * Each worker will dynamically get 10 inputs assigned at a time.
+     * No inputs are assigned at task creation.
+     * </pre>
+     *
+     * <code>DYNAMIC = 4;</code>
+     */
+    DYNAMIC(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -184,6 +195,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The inputs will be partitioned in several partitions.
      * Each worker will label one or more input partitions.
+     * All inputs are assigned at task creation.
      * </pre>
      *
      * <code>PARTITIONED = 2;</code>
@@ -192,11 +204,21 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Each worker will label all inputs from input source.
+     * All inputs are assigned at task creation.
      * </pre>
      *
      * <code>FULL = 3;</code>
      */
     public static final int FULL_VALUE = 3;
+    /**
+     * <pre>
+     * Each worker will dynamically get 10 inputs assigned at a time.
+     * No inputs are assigned at task creation.
+     * </pre>
+     *
+     * <code>DYNAMIC = 4;</code>
+     */
+    public static final int DYNAMIC_VALUE = 4;
 
 
     public final int getNumber() {
@@ -226,6 +248,7 @@ private static final long serialVersionUID = 0L;
         case 0: return WORKER_STRATEGY_NOT_SET;
         case 2: return PARTITIONED;
         case 3: return FULL;
+        case 4: return DYNAMIC;
         default: return null;
       }
     }

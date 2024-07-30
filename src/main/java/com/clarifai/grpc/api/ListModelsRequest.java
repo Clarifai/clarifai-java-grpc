@@ -31,6 +31,7 @@ private static final long serialVersionUID = 0L;
     search_ = "";
     query_ = "";
     name_ = "";
+    modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -231,6 +232,15 @@ private static final long serialVersionUID = 0L;
             search_ = s;
             break;
           }
+          case 226: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              modelVersionIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            modelVersionIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -265,6 +275,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000020) != 0)) {
         languages_ = languages_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        modelVersionIds_ = modelVersionIds_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1229,6 +1242,57 @@ private static final long serialVersionUID = 0L;
     return filterByUserId_;
   }
 
+  public static final int MODEL_VERSION_IDS_FIELD_NUMBER = 28;
+  private com.google.protobuf.LazyStringList modelVersionIds_;
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @return A list containing the modelVersionIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getModelVersionIdsList() {
+    return modelVersionIds_;
+  }
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @return The count of modelVersionIds.
+   */
+  public int getModelVersionIdsCount() {
+    return modelVersionIds_.size();
+  }
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @param index The index of the element to return.
+   * @return The modelVersionIds at the given index.
+   */
+  public java.lang.String getModelVersionIds(int index) {
+    return modelVersionIds_.get(index);
+  }
+  /**
+   * <pre>
+   * Filter by the model version ids. If set, only return the model of these versions.
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 28;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the modelVersionIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getModelVersionIdsBytes(int index) {
+    return modelVersionIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1325,6 +1389,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, search_);
+    }
+    for (int i = 0; i < modelVersionIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, modelVersionIds_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1463,6 +1530,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, search_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < modelVersionIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(modelVersionIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getModelVersionIdsList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1523,6 +1598,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (getFilterByUserId()
         != other.getFilterByUserId()) return false;
+    if (!getModelVersionIdsList()
+        .equals(other.getModelVersionIdsList())) return false;
     if (!getSortByCase().equals(other.getSortByCase())) return false;
     switch (sortByCase_) {
       case 11:
@@ -1622,6 +1699,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FILTER_BY_USER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getFilterByUserId());
+    if (getModelVersionIdsCount() > 0) {
+      hash = (37 * hash) + MODEL_VERSION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelVersionIdsList().hashCode();
+    }
     switch (sortByCase_) {
       case 11:
         hash = (37 * hash) + SORT_BY_NAME_FIELD_NUMBER;
@@ -1834,6 +1915,8 @@ private static final long serialVersionUID = 0L;
 
       filterByUserId_ = false;
 
+      modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
       sortByCase_ = 0;
       sortBy_ = null;
       return this;
@@ -1927,6 +2010,11 @@ private static final long serialVersionUID = 0L;
       result.query_ = query_;
       result.name_ = name_;
       result.filterByUserId_ = filterByUserId_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        modelVersionIds_ = modelVersionIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.modelVersionIds_ = modelVersionIds_;
       result.sortByCase_ = sortByCase_;
       onBuilt();
       return result;
@@ -2085,6 +2173,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFilterByUserId() != false) {
         setFilterByUserId(other.getFilterByUserId());
+      }
+      if (!other.modelVersionIds_.isEmpty()) {
+        if (modelVersionIds_.isEmpty()) {
+          modelVersionIds_ = other.modelVersionIds_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureModelVersionIdsIsMutable();
+          modelVersionIds_.addAll(other.modelVersionIds_);
+        }
+        onChanged();
       }
       switch (other.getSortByCase()) {
         case SORT_BY_NAME: {
@@ -4443,6 +4541,152 @@ private static final long serialVersionUID = 0L;
     @java.lang.Deprecated public Builder clearFilterByUserId() {
       
       filterByUserId_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureModelVersionIdsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        modelVersionIds_ = new com.google.protobuf.LazyStringArrayList(modelVersionIds_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @return A list containing the modelVersionIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getModelVersionIdsList() {
+      return modelVersionIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @return The count of modelVersionIds.
+     */
+    public int getModelVersionIdsCount() {
+      return modelVersionIds_.size();
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @param index The index of the element to return.
+     * @return The modelVersionIds at the given index.
+     */
+    public java.lang.String getModelVersionIds(int index) {
+      return modelVersionIds_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the modelVersionIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getModelVersionIdsBytes(int index) {
+      return modelVersionIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @param index The index to set the value at.
+     * @param value The modelVersionIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureModelVersionIdsIsMutable();
+      modelVersionIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @param value The modelVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addModelVersionIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureModelVersionIdsIsMutable();
+      modelVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @param values The modelVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllModelVersionIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureModelVersionIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, modelVersionIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersionIds() {
+      modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Filter by the model version ids. If set, only return the model of these versions.
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 28;</code>
+     * @param value The bytes of the modelVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addModelVersionIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureModelVersionIdsIsMutable();
+      modelVersionIds_.add(value);
       onChanged();
       return this;
     }
