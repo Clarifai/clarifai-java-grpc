@@ -44,6 +44,9 @@ private static final long serialVersionUID = 0L;
     languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     languagesFull_ = java.util.Collections.emptyList();
     checkConsents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenseType_ = 0;
+    source_ = 0;
+    creator_ = "";
   }
 
   @java.lang.Override
@@ -329,6 +332,24 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 280: {
+            int rawValue = input.readEnum();
+
+            licenseType_ = rawValue;
+            break;
+          }
+          case 288: {
+            int rawValue = input.readEnum();
+
+            source_ = rawValue;
+            break;
+          }
+          case 298: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            creator_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -376,6 +397,127 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Model_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.clarifai.grpc.api.Model.class, com.clarifai.grpc.api.Model.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Source of Model
+   * </pre>
+   *
+   * Protobuf enum {@code clarifai.api.Model.Source}
+   */
+  public enum Source
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>UNKNOWN_SOURCE = 0;</code>
+     */
+    UNKNOWN_SOURCE(0),
+    /**
+     * <code>HOSTED = 1;</code>
+     */
+    HOSTED(1),
+    /**
+     * <code>WRAPPED = 2;</code>
+     */
+    WRAPPED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNKNOWN_SOURCE = 0;</code>
+     */
+    public static final int UNKNOWN_SOURCE_VALUE = 0;
+    /**
+     * <code>HOSTED = 1;</code>
+     */
+    public static final int HOSTED_VALUE = 1;
+    /**
+     * <code>WRAPPED = 2;</code>
+     */
+    public static final int WRAPPED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Source valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Source forNumber(int value) {
+      switch (value) {
+        case 0: return UNKNOWN_SOURCE;
+        case 1: return HOSTED;
+        case 2: return WRAPPED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Source>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Source> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+            public Source findValueByNumber(int number) {
+              return Source.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Model.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Source[] VALUES = values();
+
+    public static Source valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Source(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Model.Source)
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -433,7 +575,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1331
+   *     See proto/clarifai/api/resources.proto;l=1338
    * @return The name.
    */
   @java.lang.Override
@@ -456,7 +598,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1331
+   *     See proto/clarifai/api/resources.proto;l=1338
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -618,7 +760,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1344
+   *     See proto/clarifai/api/resources.proto;l=1351
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Override
@@ -633,7 +775,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1344
+   *     See proto/clarifai/api/resources.proto;l=1351
    * @return The outputInfo.
    */
   @java.lang.Override
@@ -703,7 +845,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1349
+   *     See proto/clarifai/api/resources.proto;l=1356
    * @return The displayName.
    */
   @java.lang.Override
@@ -726,7 +868,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1349
+   *     See proto/clarifai/api/resources.proto;l=1356
    * @return The bytes for displayName.
    */
   @java.lang.Override
@@ -1524,6 +1666,98 @@ private static final long serialVersionUID = 0L;
     return getImage();
   }
 
+  public static final int LICENSE_TYPE_FIELD_NUMBER = 35;
+  private int licenseType_;
+  /**
+   * <pre>
+   * License Type
+   * </pre>
+   *
+   * <code>.clarifai.api.LicenseType license_type = 35;</code>
+   * @return The enum numeric value on the wire for licenseType.
+   */
+  @java.lang.Override public int getLicenseTypeValue() {
+    return licenseType_;
+  }
+  /**
+   * <pre>
+   * License Type
+   * </pre>
+   *
+   * <code>.clarifai.api.LicenseType license_type = 35;</code>
+   * @return The licenseType.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.LicenseType getLicenseType() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.LicenseType result = com.clarifai.grpc.api.LicenseType.valueOf(licenseType_);
+    return result == null ? com.clarifai.grpc.api.LicenseType.UNRECOGNIZED : result;
+  }
+
+  public static final int SOURCE_FIELD_NUMBER = 36;
+  private int source_;
+  /**
+   * <code>.clarifai.api.Model.Source source = 36;</code>
+   * @return The enum numeric value on the wire for source.
+   */
+  @java.lang.Override public int getSourceValue() {
+    return source_;
+  }
+  /**
+   * <code>.clarifai.api.Model.Source source = 36;</code>
+   * @return The source.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Model.Source getSource() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Model.Source result = com.clarifai.grpc.api.Model.Source.valueOf(source_);
+    return result == null ? com.clarifai.grpc.api.Model.Source.UNRECOGNIZED : result;
+  }
+
+  public static final int CREATOR_FIELD_NUMBER = 37;
+  private volatile java.lang.Object creator_;
+  /**
+   * <pre>
+   * Creator of Model
+   * </pre>
+   *
+   * <code>string creator = 37;</code>
+   * @return The creator.
+   */
+  @java.lang.Override
+  public java.lang.String getCreator() {
+    java.lang.Object ref = creator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creator_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Creator of Model
+   * </pre>
+   *
+   * <code>string creator = 37;</code>
+   * @return The bytes for creator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreatorBytes() {
+    java.lang.Object ref = creator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      creator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1618,6 +1852,15 @@ private static final long serialVersionUID = 0L;
     }
     if (image_ != null) {
       output.writeMessage(34, getImage());
+    }
+    if (licenseType_ != com.clarifai.grpc.api.LicenseType.UNKNOWN_LICENSE_TYPE.getNumber()) {
+      output.writeEnum(35, licenseType_);
+    }
+    if (source_ != com.clarifai.grpc.api.Model.Source.UNKNOWN_SOURCE.getNumber()) {
+      output.writeEnum(36, source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 37, creator_);
     }
     unknownFields.writeTo(output);
   }
@@ -1743,6 +1986,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(34, getImage());
     }
+    if (licenseType_ != com.clarifai.grpc.api.LicenseType.UNKNOWN_LICENSE_TYPE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(35, licenseType_);
+    }
+    if (source_ != com.clarifai.grpc.api.Model.Source.UNKNOWN_SOURCE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(36, source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, creator_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1845,6 +2099,10 @@ private static final long serialVersionUID = 0L;
       if (!getImage()
           .equals(other.getImage())) return false;
     }
+    if (licenseType_ != other.licenseType_) return false;
+    if (source_ != other.source_) return false;
+    if (!getCreator()
+        .equals(other.getCreator())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1943,6 +2201,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
     }
+    hash = (37 * hash) + LICENSE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + licenseType_;
+    hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + source_;
+    hash = (37 * hash) + CREATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getCreator().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2193,6 +2457,12 @@ private static final long serialVersionUID = 0L;
         image_ = null;
         imageBuilder_ = null;
       }
+      licenseType_ = 0;
+
+      source_ = 0;
+
+      creator_ = "";
+
       return this;
     }
 
@@ -2315,6 +2585,9 @@ private static final long serialVersionUID = 0L;
       } else {
         result.image_ = imageBuilder_.build();
       }
+      result.licenseType_ = licenseType_;
+      result.source_ = source_;
+      result.creator_ = creator_;
       onBuilt();
       return result;
     }
@@ -2504,6 +2777,16 @@ private static final long serialVersionUID = 0L;
       if (other.hasImage()) {
         mergeImage(other.getImage());
       }
+      if (other.licenseType_ != 0) {
+        setLicenseTypeValue(other.getLicenseTypeValue());
+      }
+      if (other.source_ != 0) {
+        setSourceValue(other.getSourceValue());
+      }
+      if (!other.getCreator().isEmpty()) {
+        creator_ = other.creator_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2638,7 +2921,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1331
+     *     See proto/clarifai/api/resources.proto;l=1338
      * @return The name.
      */
     @java.lang.Deprecated public java.lang.String getName() {
@@ -2660,7 +2943,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1331
+     *     See proto/clarifai/api/resources.proto;l=1338
      * @return The bytes for name.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2683,7 +2966,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1331
+     *     See proto/clarifai/api/resources.proto;l=1338
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2704,7 +2987,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1331
+     *     See proto/clarifai/api/resources.proto;l=1338
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearName() {
@@ -2720,7 +3003,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1331
+     *     See proto/clarifai/api/resources.proto;l=1338
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -3189,7 +3472,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1344
+     *     See proto/clarifai/api/resources.proto;l=1351
      * @return Whether the outputInfo field is set.
      */
     @java.lang.Deprecated public boolean hasOutputInfo() {
@@ -3203,7 +3486,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.output_info is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1344
+     *     See proto/clarifai/api/resources.proto;l=1351
      * @return The outputInfo.
      */
     @java.lang.Deprecated public com.clarifai.grpc.api.OutputInfo getOutputInfo() {
@@ -3518,7 +3801,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1349
+     *     See proto/clarifai/api/resources.proto;l=1356
      * @return The displayName.
      */
     @java.lang.Deprecated public java.lang.String getDisplayName() {
@@ -3540,7 +3823,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1349
+     *     See proto/clarifai/api/resources.proto;l=1356
      * @return The bytes for displayName.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -3563,7 +3846,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1349
+     *     See proto/clarifai/api/resources.proto;l=1356
      * @param value The displayName to set.
      * @return This builder for chaining.
      */
@@ -3584,7 +3867,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1349
+     *     See proto/clarifai/api/resources.proto;l=1356
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearDisplayName() {
@@ -3600,7 +3883,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Model.display_name is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=1349
+     *     See proto/clarifai/api/resources.proto;l=1356
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
      */
@@ -6141,6 +6424,230 @@ private static final long serialVersionUID = 0L;
         image_ = null;
       }
       return imageBuilder_;
+    }
+
+    private int licenseType_ = 0;
+    /**
+     * <pre>
+     * License Type
+     * </pre>
+     *
+     * <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @return The enum numeric value on the wire for licenseType.
+     */
+    @java.lang.Override public int getLicenseTypeValue() {
+      return licenseType_;
+    }
+    /**
+     * <pre>
+     * License Type
+     * </pre>
+     *
+     * <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @param value The enum numeric value on the wire for licenseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicenseTypeValue(int value) {
+      
+      licenseType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * License Type
+     * </pre>
+     *
+     * <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @return The licenseType.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.LicenseType getLicenseType() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.LicenseType result = com.clarifai.grpc.api.LicenseType.valueOf(licenseType_);
+      return result == null ? com.clarifai.grpc.api.LicenseType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * License Type
+     * </pre>
+     *
+     * <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @param value The licenseType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLicenseType(com.clarifai.grpc.api.LicenseType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      licenseType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * License Type
+     * </pre>
+     *
+     * <code>.clarifai.api.LicenseType license_type = 35;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLicenseType() {
+      
+      licenseType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int source_ = 0;
+    /**
+     * <code>.clarifai.api.Model.Source source = 36;</code>
+     * @return The enum numeric value on the wire for source.
+     */
+    @java.lang.Override public int getSourceValue() {
+      return source_;
+    }
+    /**
+     * <code>.clarifai.api.Model.Source source = 36;</code>
+     * @param value The enum numeric value on the wire for source to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceValue(int value) {
+      
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model.Source source = 36;</code>
+     * @return The source.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Model.Source getSource() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Model.Source result = com.clarifai.grpc.api.Model.Source.valueOf(source_);
+      return result == null ? com.clarifai.grpc.api.Model.Source.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.clarifai.api.Model.Source source = 36;</code>
+     * @param value The source to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSource(com.clarifai.grpc.api.Model.Source value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      source_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.clarifai.api.Model.Source source = 36;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSource() {
+      
+      source_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object creator_ = "";
+    /**
+     * <pre>
+     * Creator of Model
+     * </pre>
+     *
+     * <code>string creator = 37;</code>
+     * @return The creator.
+     */
+    public java.lang.String getCreator() {
+      java.lang.Object ref = creator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Creator of Model
+     * </pre>
+     *
+     * <code>string creator = 37;</code>
+     * @return The bytes for creator.
+     */
+    public com.google.protobuf.ByteString
+        getCreatorBytes() {
+      java.lang.Object ref = creator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        creator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Creator of Model
+     * </pre>
+     *
+     * <code>string creator = 37;</code>
+     * @param value The creator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreator(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      creator_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Creator of Model
+     * </pre>
+     *
+     * <code>string creator = 37;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreator() {
+      
+      creator_ = getDefaultInstance().getCreator();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Creator of Model
+     * </pre>
+     *
+     * <code>string creator = 37;</code>
+     * @param value The bytes for creator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      creator_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

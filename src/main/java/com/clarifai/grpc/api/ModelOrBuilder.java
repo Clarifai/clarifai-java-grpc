@@ -34,7 +34,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1331
+   *     See proto/clarifai/api/resources.proto;l=1338
    * @return The name.
    */
   @java.lang.Deprecated java.lang.String getName();
@@ -45,7 +45,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string name = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1331
+   *     See proto/clarifai/api/resources.proto;l=1338
    * @return The bytes for name.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -145,7 +145,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1344
+   *     See proto/clarifai/api/resources.proto;l=1351
    * @return Whether the outputInfo field is set.
    */
   @java.lang.Deprecated boolean hasOutputInfo();
@@ -157,7 +157,7 @@ public interface ModelOrBuilder extends
    *
    * <code>.clarifai.api.OutputInfo output_info = 5 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.output_info is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1344
+   *     See proto/clarifai/api/resources.proto;l=1351
    * @return The outputInfo.
    */
   @java.lang.Deprecated com.clarifai.grpc.api.OutputInfo getOutputInfo();
@@ -208,7 +208,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1349
+   *     See proto/clarifai/api/resources.proto;l=1356
    * @return The displayName.
    */
   @java.lang.Deprecated java.lang.String getDisplayName();
@@ -219,7 +219,7 @@ public interface ModelOrBuilder extends
    *
    * <code>string display_name = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Model.display_name is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=1349
+   *     See proto/clarifai/api/resources.proto;l=1356
    * @return The bytes for displayName.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -731,4 +731,54 @@ public interface ModelOrBuilder extends
    * <code>.clarifai.api.Image image = 34;</code>
    */
   com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder();
+
+  /**
+   * <pre>
+   * License Type
+   * </pre>
+   *
+   * <code>.clarifai.api.LicenseType license_type = 35;</code>
+   * @return The enum numeric value on the wire for licenseType.
+   */
+  int getLicenseTypeValue();
+  /**
+   * <pre>
+   * License Type
+   * </pre>
+   *
+   * <code>.clarifai.api.LicenseType license_type = 35;</code>
+   * @return The licenseType.
+   */
+  com.clarifai.grpc.api.LicenseType getLicenseType();
+
+  /**
+   * <code>.clarifai.api.Model.Source source = 36;</code>
+   * @return The enum numeric value on the wire for source.
+   */
+  int getSourceValue();
+  /**
+   * <code>.clarifai.api.Model.Source source = 36;</code>
+   * @return The source.
+   */
+  com.clarifai.grpc.api.Model.Source getSource();
+
+  /**
+   * <pre>
+   * Creator of Model
+   * </pre>
+   *
+   * <code>string creator = 37;</code>
+   * @return The creator.
+   */
+  java.lang.String getCreator();
+  /**
+   * <pre>
+   * Creator of Model
+   * </pre>
+   *
+   * <code>string creator = 37;</code>
+   * @return The bytes for creator.
+   */
+  com.google.protobuf.ByteString
+      getCreatorBytes();
 }

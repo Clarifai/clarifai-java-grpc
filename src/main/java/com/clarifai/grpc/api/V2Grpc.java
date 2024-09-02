@@ -7362,6 +7362,37 @@ public final class V2Grpc {
     return getDeleteDeploymentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest,
+      com.clarifai.grpc.api.MultiAuditLogSearchResponse> getPostAuditLogSearchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PostAuditLogSearches",
+      requestType = com.clarifai.grpc.api.PostAuditLogSearchesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiAuditLogSearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest,
+      com.clarifai.grpc.api.MultiAuditLogSearchResponse> getPostAuditLogSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest, com.clarifai.grpc.api.MultiAuditLogSearchResponse> getPostAuditLogSearchesMethod;
+    if ((getPostAuditLogSearchesMethod = V2Grpc.getPostAuditLogSearchesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getPostAuditLogSearchesMethod = V2Grpc.getPostAuditLogSearchesMethod) == null) {
+          V2Grpc.getPostAuditLogSearchesMethod = getPostAuditLogSearchesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAuditLogSearchesRequest, com.clarifai.grpc.api.MultiAuditLogSearchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAuditLogSearches"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.PostAuditLogSearchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiAuditLogSearchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAuditLogSearches"))
+              .build();
+        }
+      }
+    }
+    return getPostAuditLogSearchesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -9841,6 +9872,13 @@ public final class V2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDeploymentsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogSearchResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostAuditLogSearchesMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -11502,6 +11540,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.DeleteDeploymentsRequest,
                 com.clarifai.grpc.api.status.BaseResponse>(
                   this, METHODID_DELETE_DEPLOYMENTS)))
+          .addMethod(
+            getPostAuditLogSearchesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.PostAuditLogSearchesRequest,
+                com.clarifai.grpc.api.MultiAuditLogSearchResponse>(
+                  this, METHODID_POST_AUDIT_LOG_SEARCHES)))
           .build();
     }
   }
@@ -14187,6 +14232,14 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDeploymentsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogSearchResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostAuditLogSearchesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -16594,6 +16647,13 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.status.BaseResponse deleteDeployments(com.clarifai.grpc.api.DeleteDeploymentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiAuditLogSearchResponse postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostAuditLogSearchesMethod(), getCallOptions(), request);
     }
   }
 
@@ -19224,6 +19284,14 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDeploymentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAuditLogSearchResponse> postAuditLogSearches(
+        com.clarifai.grpc.api.PostAuditLogSearchesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostAuditLogSearchesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -19460,9 +19528,10 @@ public final class V2Grpc {
   private static final int METHODID_POST_DEPLOYMENTS = 231;
   private static final int METHODID_PATCH_DEPLOYMENTS = 232;
   private static final int METHODID_DELETE_DEPLOYMENTS = 233;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 234;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 235;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 236;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 234;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 235;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 236;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 237;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20417,6 +20486,10 @@ public final class V2Grpc {
           serviceImpl.deleteDeployments((com.clarifai.grpc.api.DeleteDeploymentsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.status.BaseResponse>) responseObserver);
           break;
+        case METHODID_POST_AUDIT_LOG_SEARCHES:
+          serviceImpl.postAuditLogSearches((com.clarifai.grpc.api.PostAuditLogSearchesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogSearchResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -20724,6 +20797,7 @@ public final class V2Grpc {
               .addMethod(getPostDeploymentsMethod())
               .addMethod(getPatchDeploymentsMethod())
               .addMethod(getDeleteDeploymentsMethod())
+              .addMethod(getPostAuditLogSearchesMethod())
               .build();
         }
       }

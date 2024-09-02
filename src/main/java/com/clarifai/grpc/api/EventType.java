@@ -4,14 +4,14 @@
 package com.clarifai.grpc.api;
 
 /**
- * Protobuf enum {@code clarifai.api.AuditOperationType}
+ * Protobuf enum {@code clarifai.api.EventType}
  */
-public enum AuditOperationType
+public enum EventType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>AUDIT_OPERATION_TYPE_NOT_SET = 0;</code>
+   * <code>EVENT_TYPE_NOT_SET = 0;</code>
    */
-  AUDIT_OPERATION_TYPE_NOT_SET(0),
+  EVENT_TYPE_NOT_SET(0),
   /**
    * <pre>
    * APPLICATION event types : 100 - 199
@@ -24,9 +24,9 @@ public enum AuditOperationType
   ;
 
   /**
-   * <code>AUDIT_OPERATION_TYPE_NOT_SET = 0;</code>
+   * <code>EVENT_TYPE_NOT_SET = 0;</code>
    */
-  public static final int AUDIT_OPERATION_TYPE_NOT_SET_VALUE = 0;
+  public static final int EVENT_TYPE_NOT_SET_VALUE = 0;
   /**
    * <pre>
    * APPLICATION event types : 100 - 199
@@ -51,7 +51,7 @@ public enum AuditOperationType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AuditOperationType valueOf(int value) {
+  public static EventType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -59,23 +59,23 @@ public enum AuditOperationType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AuditOperationType forNumber(int value) {
+  public static EventType forNumber(int value) {
     switch (value) {
-      case 0: return AUDIT_OPERATION_TYPE_NOT_SET;
+      case 0: return EVENT_TYPE_NOT_SET;
       case 100: return APPLICATION_CREATE;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AuditOperationType>
+  public static com.google.protobuf.Internal.EnumLiteMap<EventType>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      AuditOperationType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AuditOperationType>() {
-          public AuditOperationType findValueByNumber(int number) {
-            return AuditOperationType.forNumber(number);
+      EventType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
+          public EventType findValueByNumber(int number) {
+            return EventType.forNumber(number);
           }
         };
 
@@ -93,12 +93,12 @@ public enum AuditOperationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(18);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(19);
   }
 
-  private static final AuditOperationType[] VALUES = values();
+  private static final EventType[] VALUES = values();
 
-  public static AuditOperationType valueOf(
+  public static EventType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -112,10 +112,10 @@ public enum AuditOperationType
 
   private final int value;
 
-  private AuditOperationType(int value) {
+  private EventType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:clarifai.api.AuditOperationType)
+  // @@protoc_insertion_point(enum_scope:clarifai.api.EventType)
 }
 

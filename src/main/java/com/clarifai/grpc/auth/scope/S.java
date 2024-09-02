@@ -204,6 +204,14 @@ public enum S
   ModelExports_Add(143),
   /**
    * <pre>
+   * To pull the model version's image
+   * </pre>
+   *
+   * <code>Models_Pull = 150 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
+   */
+  Models_Pull(150),
+  /**
+   * <pre>
    * Write to the workflows DB table.
    * </pre>
    *
@@ -754,6 +762,10 @@ public enum S
    * <code>InstanceTypes_Get = 148 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   InstanceTypes_Get(148),
+  /**
+   * <code>AuditLogs_Get = 149 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  AuditLogs_Get(149),
   UNRECOGNIZED(-1),
   ;
 
@@ -922,6 +934,14 @@ public enum S
    * <code>ModelExports_Add = 143 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = ModelExports_Get];</code>
    */
   public static final int ModelExports_Add_VALUE = 143;
+  /**
+   * <pre>
+   * To pull the model version's image
+   * </pre>
+   *
+   * <code>Models_Pull = 150 [(.clarifai.auth.scope.clarfai_exposed) = true, (.clarifai.auth.scope.clarifai_depending_scopes) = Models_Get];</code>
+   */
+  public static final int Models_Pull_VALUE = 150;
   /**
    * <pre>
    * Write to the workflows DB table.
@@ -1470,6 +1490,10 @@ public enum S
    * <code>InstanceTypes_Get = 148 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int InstanceTypes_Get_VALUE = 148;
+  /**
+   * <code>AuditLogs_Get = 149 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int AuditLogs_Get_VALUE = 149;
 
 
   public final int getNumber() {
@@ -1516,6 +1540,7 @@ public enum S
       case 27: return Models_Sync;
       case 142: return ModelExports_Get;
       case 143: return ModelExports_Add;
+      case 150: return Models_Pull;
       case 18: return Workflows_Add;
       case 19: return Workflows_Get;
       case 20: return Workflows_Patch;
@@ -1596,6 +1621,7 @@ public enum S
       case 145: return Deployments_Add;
       case 146: return Deployments_Delete;
       case 148: return InstanceTypes_Get;
+      case 149: return AuditLogs_Get;
       default: return null;
     }
   }

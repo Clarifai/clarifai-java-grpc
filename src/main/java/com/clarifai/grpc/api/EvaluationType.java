@@ -138,7 +138,7 @@ public enum EvaluationType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(8);
+    return com.clarifai.grpc.api.Resources.getDescriptor().getEnumTypes().get(9);
   }
 
   private static final EvaluationType[] VALUES = values();
