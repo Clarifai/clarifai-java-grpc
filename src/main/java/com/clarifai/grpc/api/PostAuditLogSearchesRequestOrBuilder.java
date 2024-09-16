@@ -35,19 +35,19 @@ public interface PostAuditLogSearchesRequestOrBuilder extends
   com.clarifai.grpc.api.UserAppIDSetOrBuilder getUserAppIdOrBuilder();
 
   /**
-   * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
-   * @return Whether the auditLogQuery field is set.
+   * <code>.clarifai.api.AuditLogQuery query = 2;</code>
+   * @return Whether the query field is set.
    */
-  boolean hasAuditLogQuery();
+  boolean hasQuery();
   /**
-   * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
-   * @return The auditLogQuery.
+   * <code>.clarifai.api.AuditLogQuery query = 2;</code>
+   * @return The query.
    */
-  com.clarifai.grpc.api.AuditLogQuery getAuditLogQuery();
+  com.clarifai.grpc.api.AuditLogQuery getQuery();
   /**
-   * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+   * <code>.clarifai.api.AuditLogQuery query = 2;</code>
    */
-  com.clarifai.grpc.api.AuditLogQueryOrBuilder getAuditLogQueryOrBuilder();
+  com.clarifai.grpc.api.AuditLogQueryOrBuilder getQueryOrBuilder();
 
   /**
    * <pre>

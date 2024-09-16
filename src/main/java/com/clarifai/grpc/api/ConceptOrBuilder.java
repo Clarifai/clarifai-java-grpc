@@ -286,4 +286,34 @@ public interface ConceptOrBuilder extends
    * <code>.clarifai.api.ConceptExtraInfo extra_info = 12;</code>
    */
   com.clarifai.grpc.api.ConceptExtraInfoOrBuilder getExtraInfoOrBuilder();
+
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 13;</code>
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 13;</code>
+   * @return The metadata.
+   */
+  com.google.protobuf.Struct getMetadata();
+  /**
+   * <pre>
+   * To handle arbitrary json metadata:
+   * https://github.com/google/protobuf/blob/master/src/google/protobuf/struct.proto
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct metadata = 13;</code>
+   */
+  com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
 }

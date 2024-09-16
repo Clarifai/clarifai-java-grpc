@@ -188,7 +188,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @return A list containing the conceptIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -201,7 +201,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @return The count of conceptIds.
    */
   @java.lang.Deprecated int getConceptIdsCount();
@@ -213,7 +213,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
@@ -226,7 +226,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
@@ -560,4 +560,23 @@ public interface TaskOrBuilder extends
    * <code>.clarifai.api.TaskMetrics metrics = 21;</code>
    */
   com.clarifai.grpc.api.TaskMetricsOrBuilder getMetricsOrBuilder();
+
+  /**
+   * <pre>
+   * Priority of the task
+   * </pre>
+   *
+   * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+   * @return The enum numeric value on the wire for priority.
+   */
+  int getPriorityValue();
+  /**
+   * <pre>
+   * Priority of the task
+   * </pre>
+   *
+   * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+   * @return The priority.
+   */
+  com.clarifai.grpc.api.Task.TaskPriority getPriority();
 }

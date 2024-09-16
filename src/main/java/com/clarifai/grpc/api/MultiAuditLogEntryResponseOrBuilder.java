@@ -3,8 +3,8 @@
 
 package com.clarifai.grpc.api;
 
-public interface MultiAuditLogSearchResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:clarifai.api.MultiAuditLogSearchResponse)
+public interface MultiAuditLogEntryResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:clarifai.api.MultiAuditLogEntryResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

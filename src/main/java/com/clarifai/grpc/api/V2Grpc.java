@@ -3301,37 +3301,6 @@ public final class V2Grpc {
     return getPostWorkflowResultsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
-      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> getPostWorkflowResultsSimilarityMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "PostWorkflowResultsSimilarity",
-      requestType = com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest.class,
-      responseType = com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
-      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> getPostWorkflowResultsSimilarityMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest, com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> getPostWorkflowResultsSimilarityMethod;
-    if ((getPostWorkflowResultsSimilarityMethod = V2Grpc.getPostWorkflowResultsSimilarityMethod) == null) {
-      synchronized (V2Grpc.class) {
-        if ((getPostWorkflowResultsSimilarityMethod = V2Grpc.getPostWorkflowResultsSimilarityMethod) == null) {
-          V2Grpc.getPostWorkflowResultsSimilarityMethod = getPostWorkflowResultsSimilarityMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest, com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostWorkflowResultsSimilarity"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest.getDefaultInstance()))
-              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostWorkflowResultsSimilarity"))
-              .build();
-        }
-      }
-    }
-    return getPostWorkflowResultsSimilarityMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowVersionsRequest,
       com.clarifai.grpc.api.MultiWorkflowVersionResponse> getListWorkflowVersionsMethod;
 
@@ -7363,28 +7332,28 @@ public final class V2Grpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest,
-      com.clarifai.grpc.api.MultiAuditLogSearchResponse> getPostAuditLogSearchesMethod;
+      com.clarifai.grpc.api.MultiAuditLogEntryResponse> getPostAuditLogSearchesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "PostAuditLogSearches",
       requestType = com.clarifai.grpc.api.PostAuditLogSearchesRequest.class,
-      responseType = com.clarifai.grpc.api.MultiAuditLogSearchResponse.class,
+      responseType = com.clarifai.grpc.api.MultiAuditLogEntryResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest,
-      com.clarifai.grpc.api.MultiAuditLogSearchResponse> getPostAuditLogSearchesMethod() {
-    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest, com.clarifai.grpc.api.MultiAuditLogSearchResponse> getPostAuditLogSearchesMethod;
+      com.clarifai.grpc.api.MultiAuditLogEntryResponse> getPostAuditLogSearchesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.PostAuditLogSearchesRequest, com.clarifai.grpc.api.MultiAuditLogEntryResponse> getPostAuditLogSearchesMethod;
     if ((getPostAuditLogSearchesMethod = V2Grpc.getPostAuditLogSearchesMethod) == null) {
       synchronized (V2Grpc.class) {
         if ((getPostAuditLogSearchesMethod = V2Grpc.getPostAuditLogSearchesMethod) == null) {
           V2Grpc.getPostAuditLogSearchesMethod = getPostAuditLogSearchesMethod =
-              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAuditLogSearchesRequest, com.clarifai.grpc.api.MultiAuditLogSearchResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.PostAuditLogSearchesRequest, com.clarifai.grpc.api.MultiAuditLogEntryResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PostAuditLogSearches"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
                   com.clarifai.grpc.api.PostAuditLogSearchesRequest.getDefaultInstance()))
               .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
-                  com.clarifai.grpc.api.MultiAuditLogSearchResponse.getDefaultInstance()))
+                  com.clarifai.grpc.api.MultiAuditLogEntryResponse.getDefaultInstance()))
               .setSchemaDescriptor(new V2MethodDescriptorSupplier("PostAuditLogSearches"))
               .build();
         }
@@ -8535,16 +8504,6 @@ public final class V2Grpc {
     public void postWorkflowResults(com.clarifai.grpc.api.PostWorkflowResultsRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostWorkflowResultsMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Compare embeddings distances using a workflow
-     * </pre>
-     */
-    public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostWorkflowResultsSimilarityMethod(), responseObserver);
     }
 
     /**
@@ -9875,7 +9834,7 @@ public final class V2Grpc {
     /**
      */
     public void postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogSearchResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogEntryResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostAuditLogSearchesMethod(), responseObserver);
     }
 
@@ -10623,13 +10582,6 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostWorkflowResultsRequest,
                 com.clarifai.grpc.api.PostWorkflowResultsResponse>(
                   this, METHODID_POST_WORKFLOW_RESULTS)))
-          .addMethod(
-            getPostWorkflowResultsSimilarityMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest,
-                com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>(
-                  this, METHODID_POST_WORKFLOW_RESULTS_SIMILARITY)))
           .addMethod(
             getListWorkflowVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -11545,7 +11497,7 @@ public final class V2Grpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.clarifai.grpc.api.PostAuditLogSearchesRequest,
-                com.clarifai.grpc.api.MultiAuditLogSearchResponse>(
+                com.clarifai.grpc.api.MultiAuditLogEntryResponse>(
                   this, METHODID_POST_AUDIT_LOG_SEARCHES)))
           .build();
     }
@@ -12765,17 +12717,6 @@ public final class V2Grpc {
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostWorkflowResultsMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
-     * Compare embeddings distances using a workflow
-     * </pre>
-     */
-    public void postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getPostWorkflowResultsSimilarityMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -14236,7 +14177,7 @@ public final class V2Grpc {
     /**
      */
     public void postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request,
-        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogSearchResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogEntryResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostAuditLogSearchesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -15327,16 +15268,6 @@ public final class V2Grpc {
     public com.clarifai.grpc.api.PostWorkflowResultsResponse postWorkflowResults(com.clarifai.grpc.api.PostWorkflowResultsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostWorkflowResultsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Compare embeddings distances using a workflow
-     * </pre>
-     */
-    public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse postWorkflowResultsSimilarity(com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getPostWorkflowResultsSimilarityMethod(), getCallOptions(), request);
     }
 
     /**
@@ -16651,7 +16582,7 @@ public final class V2Grpc {
 
     /**
      */
-    public com.clarifai.grpc.api.MultiAuditLogSearchResponse postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request) {
+    public com.clarifai.grpc.api.MultiAuditLogEntryResponse postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostAuditLogSearchesMethod(), getCallOptions(), request);
     }
@@ -17833,17 +17764,6 @@ public final class V2Grpc {
         com.clarifai.grpc.api.PostWorkflowResultsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostWorkflowResultsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
-     * Compare embeddings distances using a workflow
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse> postWorkflowResultsSimilarity(
-        com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getPostWorkflowResultsSimilarityMethod(), getCallOptions()), request);
     }
 
     /**
@@ -19287,7 +19207,7 @@ public final class V2Grpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAuditLogSearchResponse> postAuditLogSearches(
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiAuditLogEntryResponse> postAuditLogSearches(
         com.clarifai.grpc.api.PostAuditLogSearchesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostAuditLogSearchesMethod(), getCallOptions()), request);
@@ -19398,140 +19318,139 @@ public final class V2Grpc {
   private static final int METHODID_DELETE_WORKFLOW = 101;
   private static final int METHODID_DELETE_WORKFLOWS = 102;
   private static final int METHODID_POST_WORKFLOW_RESULTS = 103;
-  private static final int METHODID_POST_WORKFLOW_RESULTS_SIMILARITY = 104;
-  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 105;
-  private static final int METHODID_GET_WORKFLOW_VERSION = 106;
-  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 107;
-  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 108;
-  private static final int METHODID_GET_KEY = 109;
-  private static final int METHODID_LIST_KEYS = 110;
-  private static final int METHODID_LIST_APP_KEYS = 111;
-  private static final int METHODID_DELETE_KEY = 112;
-  private static final int METHODID_POST_KEYS = 113;
-  private static final int METHODID_PATCH_KEYS = 114;
-  private static final int METHODID_MY_SCOPES = 115;
-  private static final int METHODID_MY_SCOPES_USER = 116;
-  private static final int METHODID_MY_SCOPES_ROOT = 117;
-  private static final int METHODID_LIST_SCOPES = 118;
-  private static final int METHODID_GET_APP = 119;
-  private static final int METHODID_LIST_APPS = 120;
-  private static final int METHODID_DELETE_APP = 121;
-  private static final int METHODID_POST_APPS = 122;
-  private static final int METHODID_PATCH_APPS = 123;
-  private static final int METHODID_PATCH_APPS_DETAILS = 124;
-  private static final int METHODID_PATCH_APPS_IDS = 125;
-  private static final int METHODID_PATCH_APP = 126;
-  private static final int METHODID_POST_APPS_SEARCHES = 127;
-  private static final int METHODID_GET_USER = 128;
-  private static final int METHODID_POST_VALIDATE_PASSWORD = 129;
-  private static final int METHODID_GET_SEARCH = 130;
-  private static final int METHODID_LIST_SEARCHES = 131;
-  private static final int METHODID_PATCH_SEARCHES = 132;
-  private static final int METHODID_POST_SEARCHES = 133;
-  private static final int METHODID_POST_SEARCHES_BY_ID = 134;
-  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 135;
-  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 136;
-  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 137;
-  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 138;
-  private static final int METHODID_DELETE_SEARCH = 139;
-  private static final int METHODID_LIST_ANNOTATION_FILTERS = 140;
-  private static final int METHODID_GET_ANNOTATION_FILTER = 141;
-  private static final int METHODID_POST_ANNOTATION_FILTERS = 142;
-  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 143;
-  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 144;
-  private static final int METHODID_LIST_STATUS_CODES = 145;
-  private static final int METHODID_GET_STATUS_CODE = 146;
-  private static final int METHODID_LIST_COLLABORATORS = 147;
-  private static final int METHODID_POST_COLLABORATORS = 148;
-  private static final int METHODID_PATCH_COLLABORATORS = 149;
-  private static final int METHODID_DELETE_COLLABORATORS = 150;
-  private static final int METHODID_LIST_COLLABORATIONS = 151;
-  private static final int METHODID_POST_APP_DUPLICATIONS = 152;
-  private static final int METHODID_LIST_APP_DUPLICATIONS = 153;
-  private static final int METHODID_GET_APP_DUPLICATION = 154;
-  private static final int METHODID_POST_TASKS = 155;
-  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 156;
-  private static final int METHODID_GET_TASK_INPUT_COUNT = 157;
-  private static final int METHODID_GET_TASK = 158;
-  private static final int METHODID_LIST_TASKS = 159;
-  private static final int METHODID_PATCH_TASKS = 160;
-  private static final int METHODID_DELETE_TASKS = 161;
-  private static final int METHODID_POST_LABEL_ORDERS = 162;
-  private static final int METHODID_GET_LABEL_ORDER = 163;
-  private static final int METHODID_LIST_LABEL_ORDERS = 164;
-  private static final int METHODID_PATCH_LABEL_ORDERS = 165;
-  private static final int METHODID_DELETE_LABEL_ORDERS = 166;
-  private static final int METHODID_POST_COLLECTORS = 167;
-  private static final int METHODID_GET_COLLECTOR = 168;
-  private static final int METHODID_LIST_COLLECTORS = 169;
-  private static final int METHODID_PATCH_COLLECTORS = 170;
-  private static final int METHODID_DELETE_COLLECTORS = 171;
-  private static final int METHODID_POST_STAT_VALUES = 172;
-  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 173;
-  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 174;
-  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 175;
-  private static final int METHODID_GET_MODULE = 176;
-  private static final int METHODID_LIST_MODULES = 177;
-  private static final int METHODID_POST_MODULES = 178;
-  private static final int METHODID_PATCH_MODULES = 179;
-  private static final int METHODID_DELETE_MODULES = 180;
-  private static final int METHODID_GET_MODULE_VERSION = 181;
-  private static final int METHODID_LIST_MODULE_VERSIONS = 182;
-  private static final int METHODID_POST_MODULE_VERSIONS = 183;
-  private static final int METHODID_PATCH_MODULE_VERSIONS = 184;
-  private static final int METHODID_DELETE_MODULE_VERSIONS = 185;
-  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 186;
-  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 187;
-  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 188;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 189;
-  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 190;
-  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 191;
-  private static final int METHODID_POST_BULK_OPERATIONS = 192;
-  private static final int METHODID_LIST_BULK_OPERATIONS = 193;
-  private static final int METHODID_GET_BULK_OPERATION = 194;
-  private static final int METHODID_CANCEL_BULK_OPERATIONS = 195;
-  private static final int METHODID_DELETE_BULK_OPERATIONS = 196;
-  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 197;
-  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 198;
-  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 199;
-  private static final int METHODID_GET_INPUTS_ADD_JOB = 200;
-  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 201;
-  private static final int METHODID_POST_UPLOADS = 202;
-  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 203;
-  private static final int METHODID_GET_UPLOAD = 204;
-  private static final int METHODID_LIST_UPLOADS = 205;
-  private static final int METHODID_DELETE_UPLOADS = 206;
-  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 207;
-  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 208;
-  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 209;
-  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 210;
-  private static final int METHODID_POST_INPUTS_UPLOADS = 211;
-  private static final int METHODID_GET_RUNNER = 212;
-  private static final int METHODID_LIST_RUNNERS = 213;
-  private static final int METHODID_POST_RUNNERS = 214;
-  private static final int METHODID_DELETE_RUNNERS = 215;
-  private static final int METHODID_LIST_RUNNER_ITEMS = 216;
-  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 217;
-  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 218;
-  private static final int METHODID_LIST_INSTANCE_TYPES = 219;
-  private static final int METHODID_GET_COMPUTE_CLUSTER = 220;
-  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 221;
-  private static final int METHODID_POST_COMPUTE_CLUSTERS = 222;
-  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 223;
-  private static final int METHODID_GET_NODEPOOL = 224;
-  private static final int METHODID_LIST_NODEPOOLS = 225;
-  private static final int METHODID_POST_NODEPOOLS = 226;
-  private static final int METHODID_PATCH_NODEPOOLS = 227;
-  private static final int METHODID_DELETE_NODEPOOLS = 228;
-  private static final int METHODID_GET_DEPLOYMENT = 229;
-  private static final int METHODID_LIST_DEPLOYMENTS = 230;
-  private static final int METHODID_POST_DEPLOYMENTS = 231;
-  private static final int METHODID_PATCH_DEPLOYMENTS = 232;
-  private static final int METHODID_DELETE_DEPLOYMENTS = 233;
-  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 234;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 235;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 236;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 237;
+  private static final int METHODID_LIST_WORKFLOW_VERSIONS = 104;
+  private static final int METHODID_GET_WORKFLOW_VERSION = 105;
+  private static final int METHODID_DELETE_WORKFLOW_VERSIONS = 106;
+  private static final int METHODID_PATCH_WORKFLOW_VERSIONS = 107;
+  private static final int METHODID_GET_KEY = 108;
+  private static final int METHODID_LIST_KEYS = 109;
+  private static final int METHODID_LIST_APP_KEYS = 110;
+  private static final int METHODID_DELETE_KEY = 111;
+  private static final int METHODID_POST_KEYS = 112;
+  private static final int METHODID_PATCH_KEYS = 113;
+  private static final int METHODID_MY_SCOPES = 114;
+  private static final int METHODID_MY_SCOPES_USER = 115;
+  private static final int METHODID_MY_SCOPES_ROOT = 116;
+  private static final int METHODID_LIST_SCOPES = 117;
+  private static final int METHODID_GET_APP = 118;
+  private static final int METHODID_LIST_APPS = 119;
+  private static final int METHODID_DELETE_APP = 120;
+  private static final int METHODID_POST_APPS = 121;
+  private static final int METHODID_PATCH_APPS = 122;
+  private static final int METHODID_PATCH_APPS_DETAILS = 123;
+  private static final int METHODID_PATCH_APPS_IDS = 124;
+  private static final int METHODID_PATCH_APP = 125;
+  private static final int METHODID_POST_APPS_SEARCHES = 126;
+  private static final int METHODID_GET_USER = 127;
+  private static final int METHODID_POST_VALIDATE_PASSWORD = 128;
+  private static final int METHODID_GET_SEARCH = 129;
+  private static final int METHODID_LIST_SEARCHES = 130;
+  private static final int METHODID_PATCH_SEARCHES = 131;
+  private static final int METHODID_POST_SEARCHES = 132;
+  private static final int METHODID_POST_SEARCHES_BY_ID = 133;
+  private static final int METHODID_POST_ANNOTATION_SEARCH_METRICS = 134;
+  private static final int METHODID_GET_ANNOTATION_SEARCH_METRICS = 135;
+  private static final int METHODID_LIST_ANNOTATION_SEARCH_METRICS = 136;
+  private static final int METHODID_DELETE_ANNOTATION_SEARCH_METRICS = 137;
+  private static final int METHODID_DELETE_SEARCH = 138;
+  private static final int METHODID_LIST_ANNOTATION_FILTERS = 139;
+  private static final int METHODID_GET_ANNOTATION_FILTER = 140;
+  private static final int METHODID_POST_ANNOTATION_FILTERS = 141;
+  private static final int METHODID_PATCH_ANNOTATION_FILTERS = 142;
+  private static final int METHODID_DELETE_ANNOTATION_FILTERS = 143;
+  private static final int METHODID_LIST_STATUS_CODES = 144;
+  private static final int METHODID_GET_STATUS_CODE = 145;
+  private static final int METHODID_LIST_COLLABORATORS = 146;
+  private static final int METHODID_POST_COLLABORATORS = 147;
+  private static final int METHODID_PATCH_COLLABORATORS = 148;
+  private static final int METHODID_DELETE_COLLABORATORS = 149;
+  private static final int METHODID_LIST_COLLABORATIONS = 150;
+  private static final int METHODID_POST_APP_DUPLICATIONS = 151;
+  private static final int METHODID_LIST_APP_DUPLICATIONS = 152;
+  private static final int METHODID_GET_APP_DUPLICATION = 153;
+  private static final int METHODID_POST_TASKS = 154;
+  private static final int METHODID_GET_TASK_ANNOTATION_COUNT = 155;
+  private static final int METHODID_GET_TASK_INPUT_COUNT = 156;
+  private static final int METHODID_GET_TASK = 157;
+  private static final int METHODID_LIST_TASKS = 158;
+  private static final int METHODID_PATCH_TASKS = 159;
+  private static final int METHODID_DELETE_TASKS = 160;
+  private static final int METHODID_POST_LABEL_ORDERS = 161;
+  private static final int METHODID_GET_LABEL_ORDER = 162;
+  private static final int METHODID_LIST_LABEL_ORDERS = 163;
+  private static final int METHODID_PATCH_LABEL_ORDERS = 164;
+  private static final int METHODID_DELETE_LABEL_ORDERS = 165;
+  private static final int METHODID_POST_COLLECTORS = 166;
+  private static final int METHODID_GET_COLLECTOR = 167;
+  private static final int METHODID_LIST_COLLECTORS = 168;
+  private static final int METHODID_PATCH_COLLECTORS = 169;
+  private static final int METHODID_DELETE_COLLECTORS = 170;
+  private static final int METHODID_POST_STAT_VALUES = 171;
+  private static final int METHODID_POST_STAT_VALUES_AGGREGATE = 172;
+  private static final int METHODID_POST_TRENDING_METRICS_VIEW = 173;
+  private static final int METHODID_LIST_TRENDING_METRICS_VIEWS = 174;
+  private static final int METHODID_GET_MODULE = 175;
+  private static final int METHODID_LIST_MODULES = 176;
+  private static final int METHODID_POST_MODULES = 177;
+  private static final int METHODID_PATCH_MODULES = 178;
+  private static final int METHODID_DELETE_MODULES = 179;
+  private static final int METHODID_GET_MODULE_VERSION = 180;
+  private static final int METHODID_LIST_MODULE_VERSIONS = 181;
+  private static final int METHODID_POST_MODULE_VERSIONS = 182;
+  private static final int METHODID_PATCH_MODULE_VERSIONS = 183;
+  private static final int METHODID_DELETE_MODULE_VERSIONS = 184;
+  private static final int METHODID_GET_MODULE_VERSION_USAGE_COUNT = 185;
+  private static final int METHODID_GET_INSTALLED_MODULE_VERSION = 186;
+  private static final int METHODID_LIST_INSTALLED_MODULE_VERSIONS = 187;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS = 188;
+  private static final int METHODID_DELETE_INSTALLED_MODULE_VERSIONS = 189;
+  private static final int METHODID_POST_INSTALLED_MODULE_VERSIONS_KEY = 190;
+  private static final int METHODID_POST_BULK_OPERATIONS = 191;
+  private static final int METHODID_LIST_BULK_OPERATIONS = 192;
+  private static final int METHODID_GET_BULK_OPERATION = 193;
+  private static final int METHODID_CANCEL_BULK_OPERATIONS = 194;
+  private static final int METHODID_DELETE_BULK_OPERATIONS = 195;
+  private static final int METHODID_LIST_NEXT_TASK_ASSIGNMENTS = 196;
+  private static final int METHODID_PUT_TASK_ASSIGNMENTS = 197;
+  private static final int METHODID_LIST_INPUTS_ADD_JOBS = 198;
+  private static final int METHODID_GET_INPUTS_ADD_JOB = 199;
+  private static final int METHODID_CANCEL_INPUTS_ADD_JOB = 200;
+  private static final int METHODID_POST_UPLOADS = 201;
+  private static final int METHODID_PUT_UPLOAD_CONTENT_PARTS = 202;
+  private static final int METHODID_GET_UPLOAD = 203;
+  private static final int METHODID_LIST_UPLOADS = 204;
+  private static final int METHODID_DELETE_UPLOADS = 205;
+  private static final int METHODID_POST_INPUTS_DATA_SOURCES = 206;
+  private static final int METHODID_GET_INPUTS_EXTRACTION_JOB = 207;
+  private static final int METHODID_LIST_INPUTS_EXTRACTION_JOBS = 208;
+  private static final int METHODID_CANCEL_INPUTS_EXTRACTION_JOBS = 209;
+  private static final int METHODID_POST_INPUTS_UPLOADS = 210;
+  private static final int METHODID_GET_RUNNER = 211;
+  private static final int METHODID_LIST_RUNNERS = 212;
+  private static final int METHODID_POST_RUNNERS = 213;
+  private static final int METHODID_DELETE_RUNNERS = 214;
+  private static final int METHODID_LIST_RUNNER_ITEMS = 215;
+  private static final int METHODID_POST_RUNNER_ITEM_OUTPUTS = 216;
+  private static final int METHODID_POST_MODEL_VERSIONS_TRAINING_TIME_ESTIMATE = 217;
+  private static final int METHODID_LIST_INSTANCE_TYPES = 218;
+  private static final int METHODID_GET_COMPUTE_CLUSTER = 219;
+  private static final int METHODID_LIST_COMPUTE_CLUSTERS = 220;
+  private static final int METHODID_POST_COMPUTE_CLUSTERS = 221;
+  private static final int METHODID_DELETE_COMPUTE_CLUSTERS = 222;
+  private static final int METHODID_GET_NODEPOOL = 223;
+  private static final int METHODID_LIST_NODEPOOLS = 224;
+  private static final int METHODID_POST_NODEPOOLS = 225;
+  private static final int METHODID_PATCH_NODEPOOLS = 226;
+  private static final int METHODID_DELETE_NODEPOOLS = 227;
+  private static final int METHODID_GET_DEPLOYMENT = 228;
+  private static final int METHODID_LIST_DEPLOYMENTS = 229;
+  private static final int METHODID_POST_DEPLOYMENTS = 230;
+  private static final int METHODID_PATCH_DEPLOYMENTS = 231;
+  private static final int METHODID_DELETE_DEPLOYMENTS = 232;
+  private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 233;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 234;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 235;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 236;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -19965,10 +19884,6 @@ public final class V2Grpc {
         case METHODID_POST_WORKFLOW_RESULTS:
           serviceImpl.postWorkflowResults((com.clarifai.grpc.api.PostWorkflowResultsRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsResponse>) responseObserver);
-          break;
-        case METHODID_POST_WORKFLOW_RESULTS_SIMILARITY:
-          serviceImpl.postWorkflowResultsSimilarity((com.clarifai.grpc.api.PostWorkflowResultsSimilarityRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse>) responseObserver);
           break;
         case METHODID_LIST_WORKFLOW_VERSIONS:
           serviceImpl.listWorkflowVersions((com.clarifai.grpc.api.ListWorkflowVersionsRequest) request,
@@ -20488,7 +20403,7 @@ public final class V2Grpc {
           break;
         case METHODID_POST_AUDIT_LOG_SEARCHES:
           serviceImpl.postAuditLogSearches((com.clarifai.grpc.api.PostAuditLogSearchesRequest) request,
-              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogSearchResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogEntryResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -20666,7 +20581,6 @@ public final class V2Grpc {
               .addMethod(getDeleteWorkflowMethod())
               .addMethod(getDeleteWorkflowsMethod())
               .addMethod(getPostWorkflowResultsMethod())
-              .addMethod(getPostWorkflowResultsSimilarityMethod())
               .addMethod(getListWorkflowVersionsMethod())
               .addMethod(getGetWorkflowVersionMethod())
               .addMethod(getDeleteWorkflowVersionsMethod())

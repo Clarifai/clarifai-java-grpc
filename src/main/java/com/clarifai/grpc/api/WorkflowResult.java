@@ -88,19 +88,6 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
-            com.clarifai.grpc.api.Model.Builder subBuilder = null;
-            if (model_ != null) {
-              subBuilder = model_.toBuilder();
-            }
-            model_ = input.readMessage(com.clarifai.grpc.api.Model.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(model_);
-              model_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 42: {
             com.clarifai.grpc.api.Input.Builder subBuilder = null;
             if (input_ != null) {
@@ -279,54 +266,6 @@ private static final long serialVersionUID = 0L;
     return getCreatedAt();
   }
 
-  public static final int MODEL_FIELD_NUMBER = 4;
-  private com.clarifai.grpc.api.Model model_;
-  /**
-   * <pre>
-   * The model that this WorkflowResult is for.
-   * DEPRECATED: not sure why there ever was a model here because each output shows the model
-   * that process this given input.
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2905
-   * @return Whether the model field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasModel() {
-    return model_ != null;
-  }
-  /**
-   * <pre>
-   * The model that this WorkflowResult is for.
-   * DEPRECATED: not sure why there ever was a model here because each output shows the model
-   * that process this given input.
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2905
-   * @return The model.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
-    return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
-  }
-  /**
-   * <pre>
-   * The model that this WorkflowResult is for.
-   * DEPRECATED: not sure why there ever was a model here because each output shows the model
-   * that process this given input.
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
-    return getModel();
-  }
-
   public static final int INPUT_FIELD_NUMBER = 5;
   private com.clarifai.grpc.api.Input input_;
   /**
@@ -463,9 +402,6 @@ private static final long serialVersionUID = 0L;
     if (createdAt_ != null) {
       output.writeMessage(3, getCreatedAt());
     }
-    if (model_ != null) {
-      output.writeMessage(4, getModel());
-    }
     if (input_ != null) {
       output.writeMessage(5, getInput());
     }
@@ -494,10 +430,6 @@ private static final long serialVersionUID = 0L;
     if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCreatedAt());
-    }
-    if (model_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getModel());
     }
     if (input_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -538,11 +470,6 @@ private static final long serialVersionUID = 0L;
       if (!getCreatedAt()
           .equals(other.getCreatedAt())) return false;
     }
-    if (hasModel() != other.hasModel()) return false;
-    if (hasModel()) {
-      if (!getModel()
-          .equals(other.getModel())) return false;
-    }
     if (hasInput() != other.hasInput()) return false;
     if (hasInput()) {
       if (!getInput()
@@ -572,10 +499,6 @@ private static final long serialVersionUID = 0L;
     if (hasCreatedAt()) {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
-    }
-    if (hasModel()) {
-      hash = (37 * hash) + MODEL_FIELD_NUMBER;
-      hash = (53 * hash) + getModel().hashCode();
     }
     if (hasInput()) {
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
@@ -741,12 +664,6 @@ private static final long serialVersionUID = 0L;
         createdAt_ = null;
         createdAtBuilder_ = null;
       }
-      if (modelBuilder_ == null) {
-        model_ = null;
-      } else {
-        model_ = null;
-        modelBuilder_ = null;
-      }
       if (inputBuilder_ == null) {
         input_ = null;
       } else {
@@ -798,11 +715,6 @@ private static final long serialVersionUID = 0L;
         result.createdAt_ = createdAt_;
       } else {
         result.createdAt_ = createdAtBuilder_.build();
-      }
-      if (modelBuilder_ == null) {
-        result.model_ = model_;
-      } else {
-        result.model_ = modelBuilder_.build();
       }
       if (inputBuilder_ == null) {
         result.input_ = input_;
@@ -876,9 +788,6 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
-      }
-      if (other.hasModel()) {
-        mergeModel(other.getModel());
       }
       if (other.hasInput()) {
         mergeInput(other.getInput());
@@ -1326,183 +1235,6 @@ private static final long serialVersionUID = 0L;
         createdAt_ = null;
       }
       return createdAtBuilder_;
-    }
-
-    private com.clarifai.grpc.api.Model model_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> modelBuilder_;
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2905
-     * @return Whether the model field is set.
-     */
-    @java.lang.Deprecated public boolean hasModel() {
-      return modelBuilder_ != null || model_ != null;
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=2905
-     * @return The model.
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.Model getModel() {
-      if (modelBuilder_ == null) {
-        return model_ == null ? com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
-      } else {
-        return modelBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setModel(com.clarifai.grpc.api.Model value) {
-      if (modelBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        model_ = value;
-        onChanged();
-      } else {
-        modelBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setModel(
-        com.clarifai.grpc.api.Model.Builder builderForValue) {
-      if (modelBuilder_ == null) {
-        model_ = builderForValue.build();
-        onChanged();
-      } else {
-        modelBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeModel(com.clarifai.grpc.api.Model value) {
-      if (modelBuilder_ == null) {
-        if (model_ != null) {
-          model_ =
-            com.clarifai.grpc.api.Model.newBuilder(model_).mergeFrom(value).buildPartial();
-        } else {
-          model_ = value;
-        }
-        onChanged();
-      } else {
-        modelBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        model_ = null;
-        onChanged();
-      } else {
-        model_ = null;
-        modelBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.Model.Builder getModelBuilder() {
-      
-      onChanged();
-      return getModelFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder() {
-      if (modelBuilder_ != null) {
-        return modelBuilder_.getMessageOrBuilder();
-      } else {
-        return model_ == null ?
-            com.clarifai.grpc.api.Model.getDefaultInstance() : model_;
-      }
-    }
-    /**
-     * <pre>
-     * The model that this WorkflowResult is for.
-     * DEPRECATED: not sure why there ever was a model here because each output shows the model
-     * that process this given input.
-     * </pre>
-     *
-     * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder> 
-        getModelFieldBuilder() {
-      if (modelBuilder_ == null) {
-        modelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.clarifai.grpc.api.Model, com.clarifai.grpc.api.Model.Builder, com.clarifai.grpc.api.ModelOrBuilder>(
-                getModel(),
-                getParentForChildren(),
-                isClean());
-        model_ = null;
-      }
-      return modelBuilder_;
     }
 
     private com.clarifai.grpc.api.Input input_;

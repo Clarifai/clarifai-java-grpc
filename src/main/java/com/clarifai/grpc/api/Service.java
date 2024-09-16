@@ -1115,16 +1115,6 @@ public final class Service {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_clarifai_api_PostWorkflowResultsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_clarifai_api_PostWorkflowResultsSimilarityRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_clarifai_api_PostWorkflowResultsSimilarityRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_clarifai_api_ListWorkflowVersionsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -1785,10 +1775,10 @@ public final class Service {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_clarifai_api_PostAuditLogSearchesRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_clarifai_api_MultiAuditLogSearchResponse_descriptor;
+    internal_static_clarifai_api_MultiAuditLogEntryResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_clarifai_api_MultiAuditLogSearchResponse_fieldAccessorTable;
+      internal_static_clarifai_api_MultiAuditLogEntryResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_clarifai_api_PatchDeploymentsRequest_descriptor;
   static final 
@@ -2605,1886 +2595,1864 @@ public final class Service {
       "w\030\002 \001(\0132\026.clarifai.api.Workflow\022-\n\007resul" +
       "ts\030\003 \003(\0132\034.clarifai.api.WorkflowResult\0223" +
       "\n\016workflow_state\030\004 \001(\0132\033.clarifai.api.Wo" +
-      "rkflowState\"\221\002\n$PostWorkflowResultsSimil" +
-      "arityRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
-      "ifai.api.UserAppIDSet\022\023\n\013workflow_id\030\002 \001" +
-      "(\t\022\022\n\nversion_id\030\007 \001(\t\022\030\n\020model_version_" +
-      "id\030\003 \001(\t\022)\n\014probe_inputs\030\004 \003(\0132\023.clarifa" +
-      "i.api.Input\022(\n\013pool_inputs\030\005 \003(\0132\023.clari" +
-      "fai.api.Input\022 \n\030favor_clarifai_workflow" +
-      "s\030\006 \001(\010\"\216\001\n%PostWorkflowResultsSimilarit",
-      "yResponse\022+\n\006status\030\001 \001(\0132\033.clarifai.api" +
-      ".status.Status\0228\n\007results\030\002 \003(\0132\'.clarif" +
-      "ai.api.WorkflowResultsSimilarity\"\203\001\n\033Lis" +
-      "tWorkflowVersionsRequest\022/\n\013user_app_id\030" +
-      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\023\n\013wor" +
-      "kflow_id\030\002 \001(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010per_page" +
-      "\030\004 \001(\r\"~\n\031GetWorkflowVersionRequest\022/\n\013u" +
-      "ser_app_id\030\001 \001(\0132\032.clarifai.api.UserAppI" +
-      "DSet\022\023\n\013workflow_id\030\002 \001(\t\022\033\n\023workflow_ve" +
-      "rsion_id\030\003 \001(\t\"\203\001\n\035DeleteWorkflowVersion" +
-      "sRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai" +
-      ".api.UserAppIDSet\022\023\n\013workflow_id\030\002 \001(\t\022\034" +
-      "\n\024workflow_version_ids\030\003 \003(\t\"\256\001\n\034PatchWo" +
-      "rkflowVersionsRequest\022/\n\013user_app_id\030\001 \001" +
-      "(\0132\032.clarifai.api.UserAppIDSet\022\023\n\013workfl" +
-      "ow_id\030\002 \001(\t\0228\n\021workflow_versions\030\003 \003(\0132\035" +
-      ".clarifai.api.WorkflowVersion\022\016\n\006action\030" +
-      "\004 \001(\t\"\213\001\n\034MultiWorkflowVersionResponse\022+" +
-      "\n\006status\030\001 \001(\0132\033.clarifai.api.status.Sta" +
-      "tus\022>\n\021workflow_versions\030\002 \003(\0132\035.clarifa" +
-      "i.api.WorkflowVersionB\004\200\265\030\001\"\205\001\n\035SingleWo" +
-      "rkflowVersionResponse\022+\n\006status\030\001 \001(\0132\033." +
-      "clarifai.api.status.Status\0227\n\020workflow_v" +
-      "ersion\030\002 \001(\0132\035.clarifai.api.WorkflowVers" +
-      "ion\"\205\001\n\032PostAppDuplicationsRequest\022/\n\013us" +
-      "er_app_id\030\001 \001(\0132\032.clarifai.api.UserAppID" +
-      "Set\0226\n\020app_duplications\030\002 \003(\0132\034.clarifai" +
-      ".api.AppDuplication\"g\n\030GetAppDuplication" +
-      "Request\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai." +
-      "api.UserAppIDSet\022\032\n\022app_duplication_id\030\002" +
-      " \001(\t\"m\n\032ListAppDuplicationsRequest\022/\n\013us" +
-      "er_app_id\030\001 \001(\0132\032.clarifai.api.UserAppID" +
-      "Set\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"\203\001\n\034" +
-      "MultiAppDuplicationsResponse\022+\n\006status\030\001" +
-      " \001(\0132\033.clarifai.api.status.Status\0226\n\020app" +
-      "_duplications\030\002 \003(\0132\034.clarifai.api.AppDu" +
-      "plication\"\202\001\n\034SingleAppDuplicationRespon" +
-      "se\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status" +
-      ".Status\0225\n\017app_duplication\030\002 \001(\0132\034.clari" +
-      "fai.api.AppDuplication\"f\n\020PostTasksReque" +
-      "st\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.U" +
-      "serAppIDSet\022!\n\005tasks\030\002 \003(\0132\022.clarifai.ap" +
-      "i.Task\"m\n\016GetTaskRequest\022/\n\013user_app_id\030" +
-      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\017\n\007tas" +
-      "k_id\030\002 \001(\t\022\031\n\021additional_fields\030\003 \003(\t\"\373\001" +
-      "\n\020ListTasksRequest\022/\n\013user_app_id\030\001 \001(\0132" +
-      "\032.clarifai.api.UserAppIDSet\022\014\n\004page\030\002 \001(" +
-      "\r\022\020\n\010per_page\030\003 \001(\r\022\027\n\017worker_user_ids\030\004" +
-      " \003(\t\022\027\n\017review_user_ids\030\005 \003(\t\022\027\n\017label_o" +
-      "rder_ids\030\010 \003(\t\022#\n\033including_label_order_" +
-      "tasks\030\006 \001(\010\022\031\n\021additional_fields\030\007 \003(\t\022\013" +
-      "\n\003ids\030\t \003(\t\"w\n\021PatchTasksRequest\022/\n\013user" +
-      "_app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSe" +
-      "t\022!\n\005tasks\030\002 \003(\0132\022.clarifai.api.Task\022\016\n\006" +
-      "action\030\003 \001(\t\"R\n\022DeleteTasksRequest\022/\n\013us" +
-      "er_app_id\030\001 \001(\0132\032.clarifai.api.UserAppID" +
-      "Set\022\013\n\003ids\030\002 \003(\t\"i\n\021MultiTaskResponse\022+\n" +
-      "\006status\030\001 \001(\0132\033.clarifai.api.status.Stat" +
-      "us\022\'\n\005tasks\030\002 \003(\0132\022.clarifai.api.TaskB\004\200" +
-      "\265\030\001\"c\n\022SingleTaskResponse\022+\n\006status\030\001 \001(" +
-      "\0132\033.clarifai.api.status.Status\022 \n\004task\030\002" +
-      " \001(\0132\022.clarifai.api.Task\"\242\001\n\023GetTaskCoun" +
-      "tRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai" +
-      ".api.UserAppIDSet\022\017\n\007task_id\030\002 \001(\t\022\020\n\010us" +
-      "er_ids\030\003 \003(\t\022\031\n\021model_version_ids\030\004 \003(\t\022" +
-      "\034\n\024workflow_version_ids\030\005 \003(\t\"\235\001\n\027Single" +
-      "TaskCountResponse\022+\n\006status\030\001 \001(\0132\033.clar" +
-      "ifai.api.status.Status\022\016\n\006app_id\030\002 \001(\t\022\017" +
-      "\n\007task_id\030\003 \001(\t\0224\n\006counts\030\004 \003(\0132$.clarif" +
-      "ai.api.TaskStatusCountPerUser\"y\n\026PostLab" +
-      "elOrdersRequest\022/\n\013user_app_id\030\001 \001(\0132\032.c" +
-      "larifai.api.UserAppIDSet\022.\n\014label_orders" +
-      "\030\002 \003(\0132\030.clarifai.api.LabelOrder\"_\n\024GetL" +
-      "abelOrderRequest\022/\n\013user_app_id\030\001 \001(\0132\032." +
-      "clarifai.api.UserAppIDSet\022\026\n\016label_order" +
-      "_id\030\002 \001(\t\"i\n\026ListLabelOrdersRequest\022/\n\013u" +
-      "ser_app_id\030\001 \001(\0132\032.clarifai.api.UserAppI" +
-      "DSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"\212\001\n" +
-      "\027PatchLabelOrdersRequest\022/\n\013user_app_id\030" +
-      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022.\n\014lab" +
-      "el_orders\030\002 \003(\0132\030.clarifai.api.LabelOrde" +
-      "r\022\016\n\006action\030\003 \001(\t\"X\n\030DeleteLabelOrdersRe" +
-      "quest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.ap" +
-      "i.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\"|\n\027MultiLabe" +
-      "lOrderResponse\022+\n\006status\030\001 \001(\0132\033.clarifa" +
-      "i.api.status.Status\0224\n\014label_orders\030\002 \003(" +
-      "\0132\030.clarifai.api.LabelOrderB\004\200\265\030\001\"v\n\030Sin" +
-      "gleLabelOrderResponse\022+\n\006status\030\001 \001(\0132\033." +
-      "clarifai.api.status.Status\022-\n\013label_orde" +
-      "r\030\002 \001(\0132\030.clarifai.api.LabelOrder\"u\n\025Pos" +
-      "tCollectorsRequest\022/\n\013user_app_id\030\001 \001(\0132" +
-      "\032.clarifai.api.UserAppIDSet\022+\n\ncollector" +
-      "s\030\002 \003(\0132\027.clarifai.api.Collector\"\206\001\n\026Pat" +
-      "chCollectorsRequest\022/\n\013user_app_id\030\001 \001(\013" +
-      "2\032.clarifai.api.UserAppIDSet\022+\n\ncollecto" +
-      "rs\030\002 \003(\0132\027.clarifai.api.Collector\022\016\n\006act" +
-      "ion\030\003 \001(\t\"k\n\027DeleteCollectorsRequest\022/\n\013" +
-      "user_app_id\030\001 \001(\0132\032.clarifai.api.UserApp" +
-      "IDSet\022\013\n\003ids\030\002 \003(\t\022\022\n\ndelete_all\030\003 \001(\010\"\\" +
-      "\n\023GetCollectorRequest\022/\n\013user_app_id\030\001 \001" +
-      "(\0132\032.clarifai.api.UserAppIDSet\022\024\n\014collec" +
-      "tor_id\030\002 \001(\t\"h\n\025ListCollectorsRequest\022/\n" +
-      "\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserAp" +
-      "pIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"r" +
-      "\n\026MultiCollectorResponse\022+\n\006status\030\001 \001(\013" +
-      "2\033.clarifai.api.status.Status\022+\n\ncollect" +
-      "ors\030\002 \003(\0132\027.clarifai.api.Collector\"r\n\027Si" +
-      "ngleCollectorResponse\022+\n\006status\030\001 \001(\0132\033." +
-      "clarifai.api.status.Status\022*\n\tcollector\030" +
-      "\002 \001(\0132\027.clarifai.api.Collector\"v\n\025PostSt" +
-      "atValuesRequest\022/\n\013user_app_id\030\001 \001(\0132\032.c" +
-      "larifai.api.UserAppIDSet\022,\n\013stat_values\030" +
-      "\002 \003(\0132\027.clarifai.api.StatValue\"y\n\026MultiS" +
-      "tatValueResponse\022+\n\006status\030\001 \001(\0132\033.clari" +
-      "fai.api.status.Status\0222\n\013stat_values\030\002 \003" +
-      "(\0132\027.clarifai.api.StatValueB\004\200\265\030\001\"\236\001\n\036Po" +
-      "stStatValuesAggregateRequest\022/\n\013user_app" +
-      "_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022K\n" +
-      "\034stat_value_aggregate_queries\030\002 \003(\0132%.cl" +
-      "arifai.api.StatValueAggregateQuery\"\234\001\n\037M" +
-      "ultiStatValueAggregateResponse\022+\n\006status" +
-      "\030\001 \001(\0132\033.clarifai.api.status.Status\022L\n\034s" +
-      "tat_value_aggregate_results\030\002 \003(\0132&.clar" +
-      "ifai.api.StatValueAggregateResult\"w\n\036Pos" +
-      "tTrendingMetricsViewRequest\022/\n\013user_app_" +
-      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\021\n\t" +
-      "view_type\030\002 \001(\t\022\021\n\tobject_id\030\003 \001(\t\"\205\001\n\037L" +
-      "istTrendingMetricsViewsRequest\022/\n\013user_a" +
-      "pp_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022" +
-      "\021\n\tview_type\030\002 \001(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010per_" +
-      "page\030\004 \001(\r\"~\n MultiTrendingMetricsViewRe" +
-      "sponse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.st" +
-      "atus.Status\022-\n\007metrics\030\002 \003(\0132\034.clarifai." +
-      "api.TrendingMetric\"q\n\020GetModuleRequest\022/" +
-      "\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserA" +
-      "ppIDSet\022\021\n\tmodule_id\030\002 \001(\t\022\031\n\021additional" +
-      "_fields\030\003 \003(\t\"\375\002\n\022ListModulesRequest\022/\n\013" +
-      "user_app_id\030\001 \001(\0132\032.clarifai.api.UserApp" +
-      "IDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\022\031\n" +
-      "\021additional_fields\030\005 \003(\t\022\026\n\016sort_ascendi" +
-      "ng\030\006 \001(\010\022\034\n\022sort_by_created_at\030\007 \001(\010H\000\022\034" +
-      "\n\022sort_by_star_count\030\010 \001(\010H\000\022\035\n\023sort_by_" +
-      "modified_at\030\t \001(\010H\000\022\024\n\nsort_by_id\030\013 \001(\010H" +
-      "\000\022\024\n\014starred_only\030\004 \001(\010\022\020\n\010bookmark\030\n \001(" +
-      "\010\022\016\n\006search\030\016 \001(\t\022\020\n\004name\030\014 \001(\tB\002\030\001\022\035\n\021f" +
-      "ilter_by_user_id\030\r \001(\010B\002\030\001B\t\n\007sort_by\"l\n" +
-      "\022PostModulesRequest\022/\n\013user_app_id\030\001 \001(\013" +
-      "2\032.clarifai.api.UserAppIDSet\022%\n\007modules\030" +
-      "\003 \003(\0132\024.clarifai.api.Module\"}\n\023PatchModu" +
-      "lesRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarif" +
-      "ai.api.UserAppIDSet\022%\n\007modules\030\002 \003(\0132\024.c" +
-      "larifai.api.Module\022\016\n\006action\030\003 \001(\t\"T\n\024De" +
-      "leteModulesRequest\022/\n\013user_app_id\030\001 \001(\0132" +
-      "\032.clarifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t" +
-      "\"i\n\024SingleModuleResponse\022+\n\006status\030\001 \001(\013" +
-      "2\033.clarifai.api.status.Status\022$\n\006module\030" +
-      "\002 \001(\0132\024.clarifai.api.Module\"o\n\023MultiModu" +
-      "leResponse\022+\n\006status\030\001 \001(\0132\033.clarifai.ap" +
-      "i.status.Status\022+\n\007modules\030\002 \003(\0132\024.clari" +
-      "fai.api.ModuleB\004\200\265\030\001\"x\n\027GetModuleVersion" +
-      "Request\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai." +
-      "api.UserAppIDSet\022\021\n\tmodule_id\030\002 \001(\t\022\031\n\021m" +
-      "odule_version_id\030\003 \001(\t\"\177\n\031ListModuleVers" +
-      "ionsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clari" +
-      "fai.api.UserAppIDSet\022\021\n\tmodule_id\030\002 \001(\t\022" +
-      "\014\n\004page\030\003 \001(\r\022\020\n\010per_page\030\004 \001(\r\"\225\001\n\031Post" +
-      "ModuleVersionsRequest\022/\n\013user_app_id\030\001 \001" +
-      "(\0132\032.clarifai.api.UserAppIDSet\022\021\n\tmodule" +
-      "_id\030\002 \001(\t\0224\n\017module_versions\030\003 \003(\0132\033.cla" +
-      "rifai.api.ModuleVersion\"\246\001\n\032PatchModuleV" +
-      "ersionsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cl" +
-      "arifai.api.UserAppIDSet\022\021\n\tmodule_id\030\002 \001" +
-      "(\t\0224\n\017module_versions\030\003 \003(\0132\033.clarifai.a" +
-      "pi.ModuleVersion\022\016\n\006action\030\004 \001(\t\"n\n\033Dele" +
-      "teModuleVersionsRequest\022/\n\013user_app_id\030\001" +
-      " \001(\0132\032.clarifai.api.UserAppIDSet\022\021\n\tmodu" +
-      "le_id\030\002 \001(\t\022\013\n\003ids\030\003 \003(\t\"\202\001\n!GetModuleVe" +
-      "rsionUsageCountRequest\022/\n\013user_app_id\030\001 " +
-      "\001(\0132\032.clarifai.api.UserAppIDSet\022\021\n\tmodul" +
-      "e_id\030\002 \001(\t\022\031\n\021module_version_id\030\003 \001(\t\"\177\n" +
-      "\033SingleModuleVersionResponse\022+\n\006status\030\001" +
-      " \001(\0132\033.clarifai.api.status.Status\0223\n\016mod" +
-      "ule_version\030\002 \001(\0132\033.clarifai.api.ModuleV" +
-      "ersion\"\205\001\n\032MultiModuleVersionResponse\022+\n" +
-      "\006status\030\001 \001(\0132\033.clarifai.api.status.Stat" +
-      "us\022:\n\017module_versions\030\002 \003(\0132\033.clarifai.a" +
-      "pi.ModuleVersionB\004\200\265\030\001\"i\n%SingleModuleVe" +
-      "rsionUsageCountResponse\022+\n\006status\030\001 \001(\0132" +
-      "\033.clarifai.api.status.Status\022\023\n\013usage_co" +
-      "unt\030\002 \001(\r\"x\n GetInstalledModuleVersionRe" +
-      "quest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.ap" +
-      "i.UserAppIDSet\022#\n\033installed_module_versi" +
-      "on_id\030\002 \001(\t\"u\n\"ListInstalledModuleVersio" +
-      "nsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifa" +
-      "i.api.UserAppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_" +
-      "page\030\003 \001(\r\"\236\001\n\"PostInstalledModuleVersio" +
-      "nsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifa" +
-      "i.api.UserAppIDSet\022G\n\031installed_module_v" +
-      "ersions\030\002 \003(\0132$.clarifai.api.InstalledMo" +
-      "duleVersion\"}\n%PostInstalledModuleVersio" +
-      "nsKeyRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
-      "ifai.api.UserAppIDSet\022#\n\033installed_modul" +
-      "e_version_id\030\002 \001(\t\"d\n$DeleteInstalledMod" +
-      "uleVersionsRequest\022/\n\013user_app_id\030\001 \001(\0132" +
-      "\032.clarifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t" +
-      "\"\233\001\n$SingleInstalledModuleVersionRespons" +
-      "e\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status." +
-      "Status\022F\n\030installed_module_version\030\002 \001(\013" +
-      "2$.clarifai.api.InstalledModuleVersion\"\241" +
-      "\001\n#MultiInstalledModuleVersionResponse\022+" +
-      "\n\006status\030\001 \001(\0132\033.clarifai.api.status.Sta" +
-      "tus\022M\n\031installed_module_versions\030\002 \003(\0132$" +
-      ".clarifai.api.InstalledModuleVersionB\004\200\265" +
-      "\030\001\"b\n\036ListNextTaskAssignmentsRequest\022/\n\013" +
-      "user_app_id\030\001 \001(\0132\032.clarifai.api.UserApp" +
-      "IDSet\022\017\n\007task_id\030\002 \001(\t\"\202\001\n\031PostBulkOpera" +
-      "tionsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
-      "ifai.api.UserAppIDSet\0224\n\017bulk_operations" +
-      "\030\002 \003(\0132\033.clarifai.api.BulkOperation\"l\n\031L" +
-      "istBulkOperationsRequest\022/\n\013user_app_id\030" +
-      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\014\n\004pag" +
-      "e\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"V\n\027GetBulkOper" +
-      "ationRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
-      "ifai.api.UserAppIDSet\022\n\n\002id\030\002 \001(\t\"Z\n\032Can" +
-      "celBulkOperationRequest\022/\n\013user_app_id\030\001" +
-      " \001(\0132\032.clarifai.api.UserAppIDSet\022\013\n\003ids\030" +
-      "\002 \003(\t\"Z\n\032DeleteBulkOperationRequest\022/\n\013u" +
-      "ser_app_id\030\001 \001(\0132\032.clarifai.api.UserAppI" +
-      "DSet\022\013\n\003ids\030\002 \003(\t\"\200\001\n\034SingleBulkOperatio" +
-      "nsResponse\022+\n\006status\030\001 \001(\0132\033.clarifai.ap" +
-      "i.status.Status\0223\n\016bulk_operation\030\002 \001(\0132" +
-      "\033.clarifai.api.BulkOperation\"\177\n\033MultiBul" +
-      "kOperationsResponse\022+\n\006status\030\001 \001(\0132\033.cl" +
-      "arifai.api.status.Status\0223\n\016bulk_operati" +
-      "on\030\002 \003(\0132\033.clarifai.api.BulkOperation\"\230\004" +
-      "\n\031PutTaskAssignmentsRequest\022/\n\013user_app_" +
-      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\017\n\007" +
-      "task_id\030\002 \001(\t\022\020\n\010input_id\030\003 \001(\t\022=\n\006actio" +
-      "n\030\004 \001(\0162-.clarifai.api.PutTaskAssignment" +
-      "sRequestAction\022>\n\023label_submit_config\030\006 " +
-      "\001(\0132\037.clarifai.api.LabelSubmitConfigH\000\022>" +
-      "\n\023review_start_config\030\n \001(\0132\037.clarifai.a" +
-      "pi.ReviewStartConfigH\000\022B\n\025review_approve" +
-      "_config\030\007 \001(\0132!.clarifai.api.ReviewAppro" +
-      "veConfigH\000\022Q\n\035review_request_changes_con" +
-      "fig\030\010 \001(\0132(.clarifai.api.ReviewRequestCh" +
-      "angesConfigH\000\022@\n\024review_reject_config\030\t " +
-      "\001(\0132 .clarifai.api.ReviewRejectConfigH\000B" +
-      "\017\n\raction_config\"K\n\021LabelSubmitConfig\0226\n" +
-      "\020task_assignments\030\001 \003(\0132\034.clarifai.api.T" +
-      "askAssignment\":\n\021ReviewStartConfig\022%\n\007wo" +
-      "rkers\030\001 \003(\0132\024.clarifai.api.Worker\"t\n\023Rev" +
-      "iewApproveConfig\0226\n\020task_assignments\030\001 \003" +
-      "(\0132\034.clarifai.api.TaskAssignment\022%\n\007work" +
-      "ers\030\002 \003(\0132\024.clarifai.api.Worker\"{\n\032Revie" +
-      "wRequestChangesConfig\0226\n\020task_assignment" +
-      "s\030\001 \003(\0132\034.clarifai.api.TaskAssignment\022%\n" +
-      "\007workers\030\002 \003(\0132\024.clarifai.api.Worker\"s\n\022" +
-      "ReviewRejectConfig\0226\n\020task_assignments\030\001" +
-      " \003(\0132\034.clarifai.api.TaskAssignment\022%\n\007wo" +
-      "rkers\030\002 \003(\0132\024.clarifai.api.Worker\"\210\001\n\033Mu" +
-      "ltiTaskAssignmentResponse\022+\n\006status\030\001 \001(" +
-      "\0132\033.clarifai.api.status.Status\022<\n\020task_a" +
-      "ssignments\030\002 \003(\0132\034.clarifai.api.TaskAssi" +
-      "gnmentB\004\200\265\030\001\"k\n\030ListInputsAddJobsRequest" +
+      "rkflowState\"\203\001\n\033ListWorkflowVersionsRequ" +
+      "est\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api." +
+      "UserAppIDSet\022\023\n\013workflow_id\030\002 \001(\t\022\014\n\004pag" +
+      "e\030\003 \001(\r\022\020\n\010per_page\030\004 \001(\r\"~\n\031GetWorkflow" +
+      "VersionRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cl" +
+      "arifai.api.UserAppIDSet\022\023\n\013workflow_id\030\002" +
+      " \001(\t\022\033\n\023workflow_version_id\030\003 \001(\t\"\203\001\n\035De" +
+      "leteWorkflowVersionsRequest\022/\n\013user_app_",
+      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\023\n\013" +
+      "workflow_id\030\002 \001(\t\022\034\n\024workflow_version_id" +
+      "s\030\003 \003(\t\"\256\001\n\034PatchWorkflowVersionsRequest" +
       "\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Use" +
-      "rAppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(" +
-      "\r\"U\n\026GetInputsAddJobRequest\022/\n\013user_app_" +
-      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\n\n\002" +
-      "id\030\002 \001(\t\"X\n\031CancelInputsAddJobRequest\022/\n" +
-      "\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserAp" +
-      "pIDSet\022\n\n\002id\030\002 \001(\t\"\203\001\n\031MultiInputsAddJob" +
-      "Response\022+\n\006status\030\001 \001(\0132\033.clarifai.api." +
-      "status.Status\0229\n\017inputs_add_jobs\030\002 \003(\0132\032" +
-      ".clarifai.api.InputsAddJobB\004\200\265\030\001\"}\n\032Sing" +
-      "leInputsAddJobResponse\022+\n\006status\030\001 \001(\0132\033" +
-      ".clarifai.api.status.Status\0222\n\016inputs_ad" +
-      "d_job\030\002 \001(\0132\032.clarifai.api.InputsAddJob\"" +
-      "l\n\022PostUploadsRequest\022/\n\013user_app_id\030\001 \001" +
-      "(\0132\032.clarifai.api.UserAppIDSet\022%\n\007upload" +
-      "s\030\002 \003(\0132\024.clarifai.api.Upload\"T\n\024DeleteU" +
-      "ploadsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cla" +
-      "rifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\"e\n\022L" +
-      "istUploadsRequest\022/\n\013user_app_id\030\001 \001(\0132\032" +
-      ".clarifai.api.UserAppIDSet\022\014\n\004page\030\002 \001(\r" +
-      "\022\020\n\010per_page\030\003 \001(\r\"V\n\020GetUploadRequest\022/" +
-      "\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserA" +
-      "ppIDSet\022\021\n\tupload_id\030\002 \001(\t\"i\n\024SingleUplo" +
-      "adResponse\022+\n\006status\030\001 \001(\0132\033.clarifai.ap" +
-      "i.status.Status\022$\n\006upload\030\002 \001(\0132\024.clarif" +
-      "ai.api.Upload\"i\n\023MultiUploadResponse\022+\n\006" +
-      "status\030\001 \001(\0132\033.clarifai.api.status.Statu" +
-      "s\022%\n\007uploads\030\002 \003(\0132\024.clarifai.api.Upload" +
-      "\"\232\001\n\034PutUploadContentPartsRequest\022/\n\013use" +
-      "r_app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDS" +
-      "et\022\021\n\tupload_id\030\002 \001(\t\0226\n\rcontent_parts\030\003" +
-      " \003(\0132\037.clarifai.api.UploadContentPart\"\255\001" +
-      "\n\034PostInputsDataSourcesRequest\022/\n\013user_a" +
-      "pp_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022" +
-      "4\n\014data_sources\030\002 \003(\0132\036.clarifai.api.Inp" +
-      "utsDataSource\022\025\n\rcall_back_url\030\003 \001(\t\022\017\n\007" +
-      "app_pat\030\004 \001(\t\"r\n\035GetInputsExtractionJobR" +
-      "equest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.a" +
-      "pi.UserAppIDSet\022 \n\030inputs_extraction_job" +
-      "_id\030\002 \001(\t\"r\n\037ListInputsExtractionJobsReq" +
-      "uest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api" +
-      ".UserAppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030" +
-      "\003 \001(\r\"\222\001\n!SingleInputsExtractionJobRespo" +
-      "nse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.statu" +
-      "s.Status\022@\n\025inputs_extraction_job\030\002 \001(\0132" +
-      "!.clarifai.api.InputsExtractionJob\"\222\001\n M" +
-      "ultiInputsExtractionJobResponse\022+\n\006statu" +
-      "s\030\001 \001(\0132\033.clarifai.api.status.Status\022A\n\026" +
-      "inputs_extraction_jobs\030\002 \003(\0132!.clarifai." +
-      "api.InputsExtractionJob\"a\n!CancelInputsE" +
-      "xtractionJobsRequest\022/\n\013user_app_id\030\001 \001(" +
-      "\0132\032.clarifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003" +
-      "(\t\"\177\n\030PostInputsUploadsRequest\022/\n\013user_a" +
-      "pp_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022" +
-      "2\n\016inputs_uploads\030\002 \003(\0132\032.clarifai.api.I" +
-      "nputsUpload\"\207\001\n\020GetRunnerRequest\022/\n\013user" +
-      "_app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSe" +
-      "t\022\023\n\013nodepool_id\030\002 \001(\t\022\021\n\trunner_id\030\003 \001(" +
-      "\t\022\032\n\022compute_cluster_id\030\004 \001(\t\"\226\001\n\022ListRu" +
-      "nnersRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
-      "ifai.api.UserAppIDSet\022\023\n\013nodepool_id\030\002 \001" +
-      "(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010per_page\030\004 \001(\r\022\032\n\022co" +
-      "mpute_cluster_id\030\005 \001(\t\"\235\001\n\022PostRunnersRe" +
-      "quest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.ap" +
-      "i.UserAppIDSet\022\023\n\013nodepool_id\030\002 \001(\t\022%\n\007r" +
-      "unners\030\003 \003(\0132\024.clarifai.api.Runner\022\032\n\022co" +
-      "mpute_cluster_id\030\004 \001(\t\"\205\001\n\024DeleteRunners" +
-      "Request\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai." +
-      "api.UserAppIDSet\022\023\n\013nodepool_id\030\002 \001(\t\022\013\n" +
-      "\003ids\030\003 \003(\t\022\032\n\022compute_cluster_id\030\004 \001(\t\"i" +
-      "\n\024SingleRunnerResponse\022+\n\006status\030\001 \001(\0132\033" +
-      ".clarifai.api.status.Status\022$\n\006runner\030\002 " +
-      "\001(\0132\024.clarifai.api.Runner\"o\n\023MultiRunner" +
-      "Response\022+\n\006status\030\001 \001(\0132\033.clarifai.api." +
-      "status.Status\022+\n\007runners\030\002 \003(\0132\024.clarifa" +
-      "i.api.RunnerB\004\200\265\030\001\"\215\001\n\026ListRunnerItemsRe" +
-      "quest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.ap" +
-      "i.UserAppIDSet\022\023\n\013nodepool_id\030\002 \001(\t\022\021\n\tr" +
-      "unner_id\030\003 \001(\t\022\032\n\022compute_cluster_id\030\004 \001" +
-      "(\t\"\260\002\n\034PostRunnerItemOutputsRequest\022/\n\013u" +
-      "ser_app_id\030\001 \001(\0132\032.clarifai.api.UserAppI" +
-      "DSet\022\023\n\013nodepool_id\030\002 \001(\t\022\021\n\trunner_id\030\003" +
-      " \001(\t\022\026\n\016runner_item_id\030\004 \001(\t\022;\n\023runner_i" +
-      "tem_outputs\030\005 \003(\0132\036.clarifai.api.RunnerI" +
-      "temOutput\022+\n\006status\030\006 \001(\0132\033.clarifai.api" +
-      ".status.Status\022\031\n\021runner_replica_id\030\007 \001(" +
-      "\t\022\032\n\022compute_cluster_id\030\010 \001(\t\"|\n\027MultiRu" +
-      "nnerItemResponse\022+\n\006status\030\001 \001(\0132\033.clari" +
-      "fai.api.status.Status\0224\n\014runner_items\030\002 " +
-      "\003(\0132\030.clarifai.api.RunnerItemB\004\200\265\030\001\"\274\001\n\n" +
-      "RunnerItem\022\n\n\002id\030\001 \001(\t\022\023\n\013description\030\002 " +
-      "\001(\t\0225\n\017processing_info\030\003 \001(\0132\034.clarifai." +
-      "api.ProcessingInfo\022K\n\032post_model_outputs" +
-      "_request\030\004 \001(\0132%.clarifai.api.PostModelO" +
-      "utputsRequestH\000B\t\n\007request\"b\n\020RunnerItem" +
-      "Output\022B\n\025multi_output_response\030\001 \001(\0132!." +
-      "clarifai.api.MultiOutputResponseH\000B\n\n\010re" +
-      "sponse\"\217\001\n\035MultiRunnerItemOutputResponse" +
+      "rAppIDSet\022\023\n\013workflow_id\030\002 \001(\t\0228\n\021workfl" +
+      "ow_versions\030\003 \003(\0132\035.clarifai.api.Workflo" +
+      "wVersion\022\016\n\006action\030\004 \001(\t\"\213\001\n\034MultiWorkfl" +
+      "owVersionResponse\022+\n\006status\030\001 \001(\0132\033.clar" +
+      "ifai.api.status.Status\022>\n\021workflow_versi" +
+      "ons\030\002 \003(\0132\035.clarifai.api.WorkflowVersion" +
+      "B\004\200\265\030\001\"\205\001\n\035SingleWorkflowVersionResponse" +
       "\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status.S" +
-      "tatus\022A\n\023runner_item_outputs\030\002 \003(\0132\036.cla" +
-      "rifai.api.RunnerItemOutputB\004\200\265\030\001\"\304\001\n,Pos" +
-      "tModelVersionsTrainingTimeEstimateReques" +
-      "t\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Us" +
-      "erAppIDSet\022\020\n\010model_id\030\002 \001(\t\0222\n\016model_ve" +
-      "rsions\030\003 \003(\0132\032.clarifai.api.ModelVersion" +
-      "\022\035\n\025estimated_input_count\030\004 \001(\004\"\214\001\n!Mult" +
-      "iTrainingTimeEstimateResponse\022+\n\006status\030" +
-      "\001 \001(\0132\033.clarifai.api.status.Status\022:\n\027tr" +
-      "aining_time_estimates\030\002 \003(\0132\031.google.pro" +
-      "tobuf.Duration\"_\n\030ListInstanceTypesReque" +
-      "st\0223\n\016cloud_provider\030\001 \001(\0132\033.clarifai.ap" +
-      "i.CloudProvider\022\016\n\006region\030\002 \001(\t\"\202\001\n\031Mult" +
-      "iInstanceTypeResponse\022+\n\006status\030\001 \001(\0132\033." +
-      "clarifai.api.status.Status\0228\n\016instance_t" +
-      "ypes\030\002 \003(\0132\032.clarifai.api.InstanceTypeB\004" +
-      "\200\265\030\001\"g\n\030GetComputeClusterRequest\022/\n\013user" +
-      "_app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSe" +
-      "t\022\032\n\022compute_cluster_id\030\002 \001(\t\"m\n\032ListCom" +
-      "puteClustersRequest\022/\n\013user_app_id\030\001 \001(\013" +
-      "2\032.clarifai.api.UserAppIDSet\022\014\n\004page\030\002 \001" +
-      "(\r\022\020\n\010per_page\030\003 \001(\r\"\205\001\n\032PostComputeClus" +
-      "tersRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clari" +
-      "fai.api.UserAppIDSet\0226\n\020compute_clusters" +
-      "\030\002 \003(\0132\034.clarifai.api.ComputeCluster\"\\\n\034" +
-      "DeleteComputeClustersRequest\022/\n\013user_app" +
-      "_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\013\n" +
-      "\003ids\030\002 \003(\t\"\202\001\n\034SingleComputeClusterRespo" +
+      "tatus\0227\n\020workflow_version\030\002 \001(\0132\035.clarif" +
+      "ai.api.WorkflowVersion\"\205\001\n\032PostAppDuplic" +
+      "ationsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cla" +
+      "rifai.api.UserAppIDSet\0226\n\020app_duplicatio" +
+      "ns\030\002 \003(\0132\034.clarifai.api.AppDuplication\"g" +
+      "\n\030GetAppDuplicationRequest\022/\n\013user_app_i" +
+      "d\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\032\n\022a" +
+      "pp_duplication_id\030\002 \001(\t\"m\n\032ListAppDuplic" +
+      "ationsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cla" +
+      "rifai.api.UserAppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010" +
+      "per_page\030\003 \001(\r\"\203\001\n\034MultiAppDuplicationsR" +
+      "esponse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.s" +
+      "tatus.Status\0226\n\020app_duplications\030\002 \003(\0132\034" +
+      ".clarifai.api.AppDuplication\"\202\001\n\034SingleA" +
+      "ppDuplicationResponse\022+\n\006status\030\001 \001(\0132\033." +
+      "clarifai.api.status.Status\0225\n\017app_duplic" +
+      "ation\030\002 \001(\0132\034.clarifai.api.AppDuplicatio" +
+      "n\"f\n\020PostTasksRequest\022/\n\013user_app_id\030\001 \001" +
+      "(\0132\032.clarifai.api.UserAppIDSet\022!\n\005tasks\030" +
+      "\002 \003(\0132\022.clarifai.api.Task\"m\n\016GetTaskRequ" +
+      "est\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api." +
+      "UserAppIDSet\022\017\n\007task_id\030\002 \001(\t\022\031\n\021additio" +
+      "nal_fields\030\003 \003(\t\"\373\001\n\020ListTasksRequest\022/\n" +
+      "\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserAp" +
+      "pIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\022\027" +
+      "\n\017worker_user_ids\030\004 \003(\t\022\027\n\017review_user_i" +
+      "ds\030\005 \003(\t\022\027\n\017label_order_ids\030\010 \003(\t\022#\n\033inc" +
+      "luding_label_order_tasks\030\006 \001(\010\022\031\n\021additi" +
+      "onal_fields\030\007 \003(\t\022\013\n\003ids\030\t \003(\t\"w\n\021PatchT" +
+      "asksRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clari" +
+      "fai.api.UserAppIDSet\022!\n\005tasks\030\002 \003(\0132\022.cl" +
+      "arifai.api.Task\022\016\n\006action\030\003 \001(\t\"R\n\022Delet" +
+      "eTasksRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cla" +
+      "rifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\"i\n\021M" +
+      "ultiTaskResponse\022+\n\006status\030\001 \001(\0132\033.clari" +
+      "fai.api.status.Status\022\'\n\005tasks\030\002 \003(\0132\022.c" +
+      "larifai.api.TaskB\004\200\265\030\001\"c\n\022SingleTaskResp" +
+      "onse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.stat" +
+      "us.Status\022 \n\004task\030\002 \001(\0132\022.clarifai.api.T" +
+      "ask\"\242\001\n\023GetTaskCountRequest\022/\n\013user_app_" +
+      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\017\n\007" +
+      "task_id\030\002 \001(\t\022\020\n\010user_ids\030\003 \003(\t\022\031\n\021model" +
+      "_version_ids\030\004 \003(\t\022\034\n\024workflow_version_i" +
+      "ds\030\005 \003(\t\"\235\001\n\027SingleTaskCountResponse\022+\n\006" +
+      "status\030\001 \001(\0132\033.clarifai.api.status.Statu" +
+      "s\022\016\n\006app_id\030\002 \001(\t\022\017\n\007task_id\030\003 \001(\t\0224\n\006co" +
+      "unts\030\004 \003(\0132$.clarifai.api.TaskStatusCoun" +
+      "tPerUser\"y\n\026PostLabelOrdersRequest\022/\n\013us" +
+      "er_app_id\030\001 \001(\0132\032.clarifai.api.UserAppID" +
+      "Set\022.\n\014label_orders\030\002 \003(\0132\030.clarifai.api" +
+      ".LabelOrder\"_\n\024GetLabelOrderRequest\022/\n\013u" +
+      "ser_app_id\030\001 \001(\0132\032.clarifai.api.UserAppI" +
+      "DSet\022\026\n\016label_order_id\030\002 \001(\t\"i\n\026ListLabe" +
+      "lOrdersRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cl" +
+      "arifai.api.UserAppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n" +
+      "\010per_page\030\003 \001(\r\"\212\001\n\027PatchLabelOrdersRequ" +
+      "est\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api." +
+      "UserAppIDSet\022.\n\014label_orders\030\002 \003(\0132\030.cla" +
+      "rifai.api.LabelOrder\022\016\n\006action\030\003 \001(\t\"X\n\030" +
+      "DeleteLabelOrdersRequest\022/\n\013user_app_id\030" +
+      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\013\n\003ids" +
+      "\030\002 \003(\t\"|\n\027MultiLabelOrderResponse\022+\n\006sta" +
+      "tus\030\001 \001(\0132\033.clarifai.api.status.Status\0224" +
+      "\n\014label_orders\030\002 \003(\0132\030.clarifai.api.Labe" +
+      "lOrderB\004\200\265\030\001\"v\n\030SingleLabelOrderResponse" +
+      "\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status.S" +
+      "tatus\022-\n\013label_order\030\002 \001(\0132\030.clarifai.ap" +
+      "i.LabelOrder\"u\n\025PostCollectorsRequest\022/\n" +
+      "\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserAp" +
+      "pIDSet\022+\n\ncollectors\030\002 \003(\0132\027.clarifai.ap" +
+      "i.Collector\"\206\001\n\026PatchCollectorsRequest\022/" +
+      "\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserA" +
+      "ppIDSet\022+\n\ncollectors\030\002 \003(\0132\027.clarifai.a" +
+      "pi.Collector\022\016\n\006action\030\003 \001(\t\"k\n\027DeleteCo" +
+      "llectorsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.c" +
+      "larifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\022\022\n" +
+      "\ndelete_all\030\003 \001(\010\"\\\n\023GetCollectorRequest" +
+      "\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Use" +
+      "rAppIDSet\022\024\n\014collector_id\030\002 \001(\t\"h\n\025ListC" +
+      "ollectorsRequest\022/\n\013user_app_id\030\001 \001(\0132\032." +
+      "clarifai.api.UserAppIDSet\022\014\n\004page\030\002 \001(\r\022" +
+      "\020\n\010per_page\030\003 \001(\r\"r\n\026MultiCollectorRespo" +
       "nse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.statu" +
-      "s.Status\0225\n\017compute_cluster\030\002 \001(\0132\034.clar" +
-      "ifai.api.ComputeCluster\"\210\001\n\033MultiCompute" +
-      "ClusterResponse\022+\n\006status\030\001 \001(\0132\033.clarif" +
-      "ai.api.status.Status\022<\n\020compute_clusters" +
-      "\030\002 \003(\0132\034.clarifai.api.ComputeClusterB\004\200\265" +
-      "\030\001\"v\n\022GetNodepoolRequest\022/\n\013user_app_id\030" +
-      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\032\n\022com",
-      "pute_cluster_id\030\002 \001(\t\022\023\n\013nodepool_id\030\003 \001" +
-      "(\t\"\203\001\n\024ListNodepoolsRequest\022/\n\013user_app_" +
-      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\032\n\022" +
-      "compute_cluster_id\030\002 \001(\t\022\014\n\004page\030\003 \001(\r\022\020" +
-      "\n\010per_page\030\004 \001(\r\"\216\001\n\024PostNodepoolsReques" +
-      "t\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Us" +
-      "erAppIDSet\022\032\n\022compute_cluster_id\030\002 \001(\t\022)" +
-      "\n\tnodepools\030\003 \003(\0132\026.clarifai.api.Nodepoo" +
-      "l\"\237\001\n\025PatchNodepoolsRequest\022/\n\013user_app_" +
-      "id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\032\n\022" +
-      "compute_cluster_id\030\002 \001(\t\022)\n\tnodepools\030\003 " +
-      "\003(\0132\026.clarifai.api.Nodepool\022\016\n\006action\030\004 " +
-      "\001(\t\"r\n\026DeleteNodepoolsRequest\022/\n\013user_ap" +
-      "p_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\032" +
-      "\n\022compute_cluster_id\030\002 \001(\t\022\013\n\003ids\030\003 \003(\t\"" +
-      "o\n\026SingleNodepoolResponse\022+\n\006status\030\001 \001(" +
-      "\0132\033.clarifai.api.status.Status\022(\n\010nodepo" +
-      "ol\030\002 \001(\0132\026.clarifai.api.Nodepool\"u\n\025Mult" +
-      "iNodepoolResponse\022+\n\006status\030\001 \001(\0132\033.clar" +
-      "ifai.api.status.Status\022/\n\tnodepools\030\002 \003(" +
-      "\0132\026.clarifai.api.NodepoolB\004\200\265\030\001\"^\n\024GetDe" +
-      "ploymentRequest\022/\n\013user_app_id\030\001 \001(\0132\032.c" +
-      "larifai.api.UserAppIDSet\022\025\n\rdeployment_i" +
-      "d\030\002 \001(\t\"~\n\026ListDeploymentsRequest\022/\n\013use" +
+      "s.Status\022+\n\ncollectors\030\002 \003(\0132\027.clarifai." +
+      "api.Collector\"r\n\027SingleCollectorResponse" +
+      "\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status.S" +
+      "tatus\022*\n\tcollector\030\002 \001(\0132\027.clarifai.api." +
+      "Collector\"v\n\025PostStatValuesRequest\022/\n\013us" +
+      "er_app_id\030\001 \001(\0132\032.clarifai.api.UserAppID" +
+      "Set\022,\n\013stat_values\030\002 \003(\0132\027.clarifai.api." +
+      "StatValue\"y\n\026MultiStatValueResponse\022+\n\006s" +
+      "tatus\030\001 \001(\0132\033.clarifai.api.status.Status" +
+      "\0222\n\013stat_values\030\002 \003(\0132\027.clarifai.api.Sta" +
+      "tValueB\004\200\265\030\001\"\236\001\n\036PostStatValuesAggregate" +
+      "Request\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai." +
+      "api.UserAppIDSet\022K\n\034stat_value_aggregate" +
+      "_queries\030\002 \003(\0132%.clarifai.api.StatValueA" +
+      "ggregateQuery\"\234\001\n\037MultiStatValueAggregat" +
+      "eResponse\022+\n\006status\030\001 \001(\0132\033.clarifai.api" +
+      ".status.Status\022L\n\034stat_value_aggregate_r" +
+      "esults\030\002 \003(\0132&.clarifai.api.StatValueAgg" +
+      "regateResult\"w\n\036PostTrendingMetricsViewR" +
+      "equest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.a" +
+      "pi.UserAppIDSet\022\021\n\tview_type\030\002 \001(\t\022\021\n\tob" +
+      "ject_id\030\003 \001(\t\"\205\001\n\037ListTrendingMetricsVie" +
+      "wsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifa" +
+      "i.api.UserAppIDSet\022\021\n\tview_type\030\002 \001(\t\022\014\n" +
+      "\004page\030\003 \001(\r\022\020\n\010per_page\030\004 \001(\r\"~\n MultiTr" +
+      "endingMetricsViewResponse\022+\n\006status\030\001 \001(" +
+      "\0132\033.clarifai.api.status.Status\022-\n\007metric" +
+      "s\030\002 \003(\0132\034.clarifai.api.TrendingMetric\"q\n" +
+      "\020GetModuleRequest\022/\n\013user_app_id\030\001 \001(\0132\032" +
+      ".clarifai.api.UserAppIDSet\022\021\n\tmodule_id\030" +
+      "\002 \001(\t\022\031\n\021additional_fields\030\003 \003(\t\"\375\002\n\022Lis" +
+      "tModulesRequest\022/\n\013user_app_id\030\001 \001(\0132\032.c" +
+      "larifai.api.UserAppIDSet\022\014\n\004page\030\002 \001(\r\022\020" +
+      "\n\010per_page\030\003 \001(\r\022\031\n\021additional_fields\030\005 " +
+      "\003(\t\022\026\n\016sort_ascending\030\006 \001(\010\022\034\n\022sort_by_c" +
+      "reated_at\030\007 \001(\010H\000\022\034\n\022sort_by_star_count\030" +
+      "\010 \001(\010H\000\022\035\n\023sort_by_modified_at\030\t \001(\010H\000\022\024" +
+      "\n\nsort_by_id\030\013 \001(\010H\000\022\024\n\014starred_only\030\004 \001" +
+      "(\010\022\020\n\010bookmark\030\n \001(\010\022\016\n\006search\030\016 \001(\t\022\020\n\004" +
+      "name\030\014 \001(\tB\002\030\001\022\035\n\021filter_by_user_id\030\r \001(" +
+      "\010B\002\030\001B\t\n\007sort_by\"l\n\022PostModulesRequest\022/" +
+      "\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserA" +
+      "ppIDSet\022%\n\007modules\030\003 \003(\0132\024.clarifai.api." +
+      "Module\"}\n\023PatchModulesRequest\022/\n\013user_ap" +
+      "p_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022%" +
+      "\n\007modules\030\002 \003(\0132\024.clarifai.api.Module\022\016\n" +
+      "\006action\030\003 \001(\t\"T\n\024DeleteModulesRequest\022/\n" +
+      "\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserAp" +
+      "pIDSet\022\013\n\003ids\030\002 \003(\t\"i\n\024SingleModuleRespo" +
+      "nse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.statu" +
+      "s.Status\022$\n\006module\030\002 \001(\0132\024.clarifai.api." +
+      "Module\"o\n\023MultiModuleResponse\022+\n\006status\030" +
+      "\001 \001(\0132\033.clarifai.api.status.Status\022+\n\007mo" +
+      "dules\030\002 \003(\0132\024.clarifai.api.ModuleB\004\200\265\030\001\"" +
+      "x\n\027GetModuleVersionRequest\022/\n\013user_app_i" +
+      "d\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\021\n\tm" +
+      "odule_id\030\002 \001(\t\022\031\n\021module_version_id\030\003 \001(" +
+      "\t\"\177\n\031ListModuleVersionsRequest\022/\n\013user_a" +
+      "pp_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022" +
+      "\021\n\tmodule_id\030\002 \001(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010per_" +
+      "page\030\004 \001(\r\"\225\001\n\031PostModuleVersionsRequest" +
+      "\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Use" +
+      "rAppIDSet\022\021\n\tmodule_id\030\002 \001(\t\0224\n\017module_v" +
+      "ersions\030\003 \003(\0132\033.clarifai.api.ModuleVersi" +
+      "on\"\246\001\n\032PatchModuleVersionsRequest\022/\n\013use" +
       "r_app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDS" +
-      "et\022\023\n\013nodepool_id\030\002 \001(\t\022\014\n\004page\030\003 \001(\r\022\020\n" +
-      "\010per_page\030\004 \001(\r\"x\n\026PostDeploymentsReques" +
+      "et\022\021\n\tmodule_id\030\002 \001(\t\0224\n\017module_versions" +
+      "\030\003 \003(\0132\033.clarifai.api.ModuleVersion\022\016\n\006a" +
+      "ction\030\004 \001(\t\"n\n\033DeleteModuleVersionsReque" +
+      "st\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.U" +
+      "serAppIDSet\022\021\n\tmodule_id\030\002 \001(\t\022\013\n\003ids\030\003 " +
+      "\003(\t\"\202\001\n!GetModuleVersionUsageCountReques" +
       "t\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Us" +
-      "erAppIDSet\022-\n\013deployments\030\002 \003(\0132\030.clarif" +
-      "ai.api.Deployment\"X\n\030DeleteDeploymentsRe" +
-      "quest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.ap" +
-      "i.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\"\312\001\n\033PostAudi" +
-      "tLogSearchesRequest\022/\n\013user_app_id\030\001 \001(\013" +
-      "2\032.clarifai.api.UserAppIDSet\0224\n\017audit_lo" +
-      "g_query\030\002 \001(\0132\033.clarifai.api.AuditLogQue" +
-      "ry\022\026\n\016sort_ascending\030\003 \001(\010\022,\n\npagination" +
-      "\030\005 \001(\0132\030.clarifai.api.Pagination\"~\n\033Mult" +
-      "iAuditLogSearchResponse\022+\n\006status\030\001 \001(\0132" +
-      "\033.clarifai.api.status.Status\0222\n\007entries\030" +
-      "\002 \003(\0132\033.clarifai.api.AuditLogEntryB\004\200\265\030\001" +
-      "\"\211\001\n\027PatchDeploymentsRequest\022/\n\013user_app" +
-      "_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022-\n" +
-      "\013deployments\030\003 \003(\0132\030.clarifai.api.Deploy" +
-      "ment\022\016\n\006action\030\004 \001(\t\"u\n\030SingleDeployment" +
+      "erAppIDSet\022\021\n\tmodule_id\030\002 \001(\t\022\031\n\021module_" +
+      "version_id\030\003 \001(\t\"\177\n\033SingleModuleVersionR" +
+      "esponse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.s" +
+      "tatus.Status\0223\n\016module_version\030\002 \001(\0132\033.c" +
+      "larifai.api.ModuleVersion\"\205\001\n\032MultiModul" +
+      "eVersionResponse\022+\n\006status\030\001 \001(\0132\033.clari" +
+      "fai.api.status.Status\022:\n\017module_versions" +
+      "\030\002 \003(\0132\033.clarifai.api.ModuleVersionB\004\200\265\030" +
+      "\001\"i\n%SingleModuleVersionUsageCountRespon" +
+      "se\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status" +
+      ".Status\022\023\n\013usage_count\030\002 \001(\r\"x\n GetInsta" +
+      "lledModuleVersionRequest\022/\n\013user_app_id\030" +
+      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022#\n\033ins" +
+      "talled_module_version_id\030\002 \001(\t\"u\n\"ListIn" +
+      "stalledModuleVersionsRequest\022/\n\013user_app" +
+      "_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\014\n" +
+      "\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"\236\001\n\"PostIn" +
+      "stalledModuleVersionsRequest\022/\n\013user_app" +
+      "_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022G\n" +
+      "\031installed_module_versions\030\002 \003(\0132$.clari" +
+      "fai.api.InstalledModuleVersion\"}\n%PostIn" +
+      "stalledModuleVersionsKeyRequest\022/\n\013user_" +
+      "app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet" +
+      "\022#\n\033installed_module_version_id\030\002 \001(\t\"d\n" +
+      "$DeleteInstalledModuleVersionsRequest\022/\n" +
+      "\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserAp" +
+      "pIDSet\022\013\n\003ids\030\002 \003(\t\"\233\001\n$SingleInstalledM" +
+      "oduleVersionResponse\022+\n\006status\030\001 \001(\0132\033.c" +
+      "larifai.api.status.Status\022F\n\030installed_m" +
+      "odule_version\030\002 \001(\0132$.clarifai.api.Insta" +
+      "lledModuleVersion\"\241\001\n#MultiInstalledModu" +
+      "leVersionResponse\022+\n\006status\030\001 \001(\0132\033.clar" +
+      "ifai.api.status.Status\022M\n\031installed_modu" +
+      "le_versions\030\002 \003(\0132$.clarifai.api.Install" +
+      "edModuleVersionB\004\200\265\030\001\"b\n\036ListNextTaskAss" +
+      "ignmentsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.c" +
+      "larifai.api.UserAppIDSet\022\017\n\007task_id\030\002 \001(" +
+      "\t\"\202\001\n\031PostBulkOperationsRequest\022/\n\013user_" +
+      "app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet" +
+      "\0224\n\017bulk_operations\030\002 \003(\0132\033.clarifai.api" +
+      ".BulkOperation\"l\n\031ListBulkOperationsRequ" +
+      "est\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api." +
+      "UserAppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003" +
+      " \001(\r\"V\n\027GetBulkOperationRequest\022/\n\013user_" +
+      "app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet" +
+      "\022\n\n\002id\030\002 \001(\t\"Z\n\032CancelBulkOperationReque" +
+      "st\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.U" +
+      "serAppIDSet\022\013\n\003ids\030\002 \003(\t\"Z\n\032DeleteBulkOp" +
+      "erationRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cl" +
+      "arifai.api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\"\200\001\n" +
+      "\034SingleBulkOperationsResponse\022+\n\006status\030" +
+      "\001 \001(\0132\033.clarifai.api.status.Status\0223\n\016bu" +
+      "lk_operation\030\002 \001(\0132\033.clarifai.api.BulkOp" +
+      "eration\"\177\n\033MultiBulkOperationsResponse\022+" +
+      "\n\006status\030\001 \001(\0132\033.clarifai.api.status.Sta" +
+      "tus\0223\n\016bulk_operation\030\002 \003(\0132\033.clarifai.a" +
+      "pi.BulkOperation\"\230\004\n\031PutTaskAssignmentsR" +
+      "equest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.a" +
+      "pi.UserAppIDSet\022\017\n\007task_id\030\002 \001(\t\022\020\n\010inpu" +
+      "t_id\030\003 \001(\t\022=\n\006action\030\004 \001(\0162-.clarifai.ap" +
+      "i.PutTaskAssignmentsRequestAction\022>\n\023lab" +
+      "el_submit_config\030\006 \001(\0132\037.clarifai.api.La" +
+      "belSubmitConfigH\000\022>\n\023review_start_config" +
+      "\030\n \001(\0132\037.clarifai.api.ReviewStartConfigH" +
+      "\000\022B\n\025review_approve_config\030\007 \001(\0132!.clari" +
+      "fai.api.ReviewApproveConfigH\000\022Q\n\035review_" +
+      "request_changes_config\030\010 \001(\0132(.clarifai." +
+      "api.ReviewRequestChangesConfigH\000\022@\n\024revi" +
+      "ew_reject_config\030\t \001(\0132 .clarifai.api.Re" +
+      "viewRejectConfigH\000B\017\n\raction_config\"K\n\021L" +
+      "abelSubmitConfig\0226\n\020task_assignments\030\001 \003" +
+      "(\0132\034.clarifai.api.TaskAssignment\":\n\021Revi" +
+      "ewStartConfig\022%\n\007workers\030\001 \003(\0132\024.clarifa" +
+      "i.api.Worker\"t\n\023ReviewApproveConfig\0226\n\020t" +
+      "ask_assignments\030\001 \003(\0132\034.clarifai.api.Tas" +
+      "kAssignment\022%\n\007workers\030\002 \003(\0132\024.clarifai." +
+      "api.Worker\"{\n\032ReviewRequestChangesConfig" +
+      "\0226\n\020task_assignments\030\001 \003(\0132\034.clarifai.ap" +
+      "i.TaskAssignment\022%\n\007workers\030\002 \003(\0132\024.clar" +
+      "ifai.api.Worker\"s\n\022ReviewRejectConfig\0226\n" +
+      "\020task_assignments\030\001 \003(\0132\034.clarifai.api.T" +
+      "askAssignment\022%\n\007workers\030\002 \003(\0132\024.clarifa" +
+      "i.api.Worker\"\210\001\n\033MultiTaskAssignmentResp" +
+      "onse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.stat" +
+      "us.Status\022<\n\020task_assignments\030\002 \003(\0132\034.cl" +
+      "arifai.api.TaskAssignmentB\004\200\265\030\001\"k\n\030ListI" +
+      "nputsAddJobsRequest\022/\n\013user_app_id\030\001 \001(\013" +
+      "2\032.clarifai.api.UserAppIDSet\022\014\n\004page\030\002 \001" +
+      "(\r\022\020\n\010per_page\030\003 \001(\r\"U\n\026GetInputsAddJobR" +
+      "equest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.a" +
+      "pi.UserAppIDSet\022\n\n\002id\030\002 \001(\t\"X\n\031CancelInp" +
+      "utsAddJobRequest\022/\n\013user_app_id\030\001 \001(\0132\032." +
+      "clarifai.api.UserAppIDSet\022\n\n\002id\030\002 \001(\t\"\203\001" +
+      "\n\031MultiInputsAddJobResponse\022+\n\006status\030\001 " +
+      "\001(\0132\033.clarifai.api.status.Status\0229\n\017inpu" +
+      "ts_add_jobs\030\002 \003(\0132\032.clarifai.api.InputsA" +
+      "ddJobB\004\200\265\030\001\"}\n\032SingleInputsAddJobRespons" +
+      "e\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status." +
+      "Status\0222\n\016inputs_add_job\030\002 \001(\0132\032.clarifa" +
+      "i.api.InputsAddJob\"l\n\022PostUploadsRequest" +
+      "\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.Use" +
+      "rAppIDSet\022%\n\007uploads\030\002 \003(\0132\024.clarifai.ap" +
+      "i.Upload\"T\n\024DeleteUploadsRequest\022/\n\013user" +
+      "_app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSe" +
+      "t\022\013\n\003ids\030\002 \003(\t\"e\n\022ListUploadsRequest\022/\n\013" +
+      "user_app_id\030\001 \001(\0132\032.clarifai.api.UserApp" +
+      "IDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"V\n" +
+      "\020GetUploadRequest\022/\n\013user_app_id\030\001 \001(\0132\032" +
+      ".clarifai.api.UserAppIDSet\022\021\n\tupload_id\030" +
+      "\002 \001(\t\"i\n\024SingleUploadResponse\022+\n\006status\030" +
+      "\001 \001(\0132\033.clarifai.api.status.Status\022$\n\006up" +
+      "load\030\002 \001(\0132\024.clarifai.api.Upload\"i\n\023Mult" +
+      "iUploadResponse\022+\n\006status\030\001 \001(\0132\033.clarif" +
+      "ai.api.status.Status\022%\n\007uploads\030\002 \003(\0132\024." +
+      "clarifai.api.Upload\"\232\001\n\034PutUploadContent" +
+      "PartsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
+      "ifai.api.UserAppIDSet\022\021\n\tupload_id\030\002 \001(\t" +
+      "\0226\n\rcontent_parts\030\003 \003(\0132\037.clarifai.api.U" +
+      "ploadContentPart\"\255\001\n\034PostInputsDataSourc" +
+      "esRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifa" +
+      "i.api.UserAppIDSet\0224\n\014data_sources\030\002 \003(\013" +
+      "2\036.clarifai.api.InputsDataSource\022\025\n\rcall" +
+      "_back_url\030\003 \001(\t\022\017\n\007app_pat\030\004 \001(\t\"r\n\035GetI" +
+      "nputsExtractionJobRequest\022/\n\013user_app_id" +
+      "\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022 \n\030in" +
+      "puts_extraction_job_id\030\002 \001(\t\"r\n\037ListInpu" +
+      "tsExtractionJobsRequest\022/\n\013user_app_id\030\001" +
+      " \001(\0132\032.clarifai.api.UserAppIDSet\022\014\n\004page" +
+      "\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"\222\001\n!SingleInput" +
+      "sExtractionJobResponse\022+\n\006status\030\001 \001(\0132\033" +
+      ".clarifai.api.status.Status\022@\n\025inputs_ex" +
+      "traction_job\030\002 \001(\0132!.clarifai.api.Inputs" +
+      "ExtractionJob\"\222\001\n MultiInputsExtractionJ" +
+      "obResponse\022+\n\006status\030\001 \001(\0132\033.clarifai.ap" +
+      "i.status.Status\022A\n\026inputs_extraction_job" +
+      "s\030\002 \003(\0132!.clarifai.api.InputsExtractionJ" +
+      "ob\"a\n!CancelInputsExtractionJobsRequest\022" +
+      "/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.User" +
+      "AppIDSet\022\013\n\003ids\030\002 \003(\t\"\177\n\030PostInputsUploa" +
+      "dsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifa" +
+      "i.api.UserAppIDSet\0222\n\016inputs_uploads\030\002 \003" +
+      "(\0132\032.clarifai.api.InputsUpload\"\207\001\n\020GetRu" +
+      "nnerRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clari" +
+      "fai.api.UserAppIDSet\022\023\n\013nodepool_id\030\002 \001(" +
+      "\t\022\021\n\trunner_id\030\003 \001(\t\022\032\n\022compute_cluster_" +
+      "id\030\004 \001(\t\"\226\001\n\022ListRunnersRequest\022/\n\013user_" +
+      "app_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet" +
+      "\022\023\n\013nodepool_id\030\002 \001(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010p" +
+      "er_page\030\004 \001(\r\022\032\n\022compute_cluster_id\030\005 \001(" +
+      "\t\"\235\001\n\022PostRunnersRequest\022/\n\013user_app_id\030" +
+      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\023\n\013nod" +
+      "epool_id\030\002 \001(\t\022%\n\007runners\030\003 \003(\0132\024.clarif" +
+      "ai.api.Runner\022\032\n\022compute_cluster_id\030\004 \001(" +
+      "\t\"\205\001\n\024DeleteRunnersRequest\022/\n\013user_app_i" +
+      "d\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\023\n\013n" +
+      "odepool_id\030\002 \001(\t\022\013\n\003ids\030\003 \003(\t\022\032\n\022compute" +
+      "_cluster_id\030\004 \001(\t\"i\n\024SingleRunnerRespons" +
+      "e\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status." +
+      "Status\022$\n\006runner\030\002 \001(\0132\024.clarifai.api.Ru" +
+      "nner\"o\n\023MultiRunnerResponse\022+\n\006status\030\001 " +
+      "\001(\0132\033.clarifai.api.status.Status\022+\n\007runn" +
+      "ers\030\002 \003(\0132\024.clarifai.api.RunnerB\004\200\265\030\001\"\215\001" +
+      "\n\026ListRunnerItemsRequest\022/\n\013user_app_id\030" +
+      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\023\n\013nod" +
+      "epool_id\030\002 \001(\t\022\021\n\trunner_id\030\003 \001(\t\022\032\n\022com" +
+      "pute_cluster_id\030\004 \001(\t\"\260\002\n\034PostRunnerItem" +
+      "OutputsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.cl" +
+      "arifai.api.UserAppIDSet\022\023\n\013nodepool_id\030\002" +
+      " \001(\t\022\021\n\trunner_id\030\003 \001(\t\022\026\n\016runner_item_i" +
+      "d\030\004 \001(\t\022;\n\023runner_item_outputs\030\005 \003(\0132\036.c" +
+      "larifai.api.RunnerItemOutput\022+\n\006status\030\006" +
+      " \001(\0132\033.clarifai.api.status.Status\022\031\n\021run" +
+      "ner_replica_id\030\007 \001(\t\022\032\n\022compute_cluster_" +
+      "id\030\010 \001(\t\"|\n\027MultiRunnerItemResponse\022+\n\006s" +
+      "tatus\030\001 \001(\0132\033.clarifai.api.status.Status" +
+      "\0224\n\014runner_items\030\002 \003(\0132\030.clarifai.api.Ru" +
+      "nnerItemB\004\200\265\030\001\"\274\001\n\nRunnerItem\022\n\n\002id\030\001 \001(" +
+      "\t\022\023\n\013description\030\002 \001(\t\0225\n\017processing_inf" +
+      "o\030\003 \001(\0132\034.clarifai.api.ProcessingInfo\022K\n" +
+      "\032post_model_outputs_request\030\004 \001(\0132%.clar" +
+      "ifai.api.PostModelOutputsRequestH\000B\t\n\007re" +
+      "quest\"b\n\020RunnerItemOutput\022B\n\025multi_outpu" +
+      "t_response\030\001 \001(\0132!.clarifai.api.MultiOut" +
+      "putResponseH\000B\n\n\010response\"\217\001\n\035MultiRunne" +
+      "rItemOutputResponse\022+\n\006status\030\001 \001(\0132\033.cl" +
+      "arifai.api.status.Status\022A\n\023runner_item_" +
+      "outputs\030\002 \003(\0132\036.clarifai.api.RunnerItemO" +
+      "utputB\004\200\265\030\001\"\304\001\n,PostModelVersionsTrainin" +
+      "gTimeEstimateRequest\022/\n\013user_app_id\030\001 \001(" +
+      "\0132\032.clarifai.api.UserAppIDSet\022\020\n\010model_i" +
+      "d\030\002 \001(\t\0222\n\016model_versions\030\003 \003(\0132\032.clarif" +
+      "ai.api.ModelVersion\022\035\n\025estimated_input_c" +
+      "ount\030\004 \001(\004\"\214\001\n!MultiTrainingTimeEstimate" +
       "Response\022+\n\006status\030\001 \001(\0132\033.clarifai.api." +
-      "status.Status\022,\n\ndeployment\030\002 \001(\0132\030.clar" +
-      "ifai.api.Deployment\"{\n\027MultiDeploymentRe" +
-      "sponse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.st" +
-      "atus.Status\0223\n\013deployments\030\002 \003(\0132\030.clari" +
-      "fai.api.DeploymentB\004\200\265\030\001*p\n\034Organization" +
-      "InvitationStatus\022\013\n\007NOT_SET\020\000\022\013\n\007PENDING" +
-      "\020\001\022\014\n\010ACCEPTED\020\002\022\r\n\tCANCELLED\020\003\022\014\n\010DECLI" +
-      "NED\020\004\022\013\n\007EXPIRED\020\005*\312\001\n\037PutTaskAssignment" +
-      "sRequestAction\022/\n+PUT_TASK_ASSIGNMENTS_R" +
-      "EQUEST_ACTION_NOT_SET\020\000\022\017\n\013LABEL_START\020\001" +
-      "\022\020\n\014LABEL_SUBMIT\020\002\022\020\n\014REVIEW_START\020\n\022\022\n\016" +
-      "REVIEW_APPROVE\020\013\022\032\n\026REVIEW_REQUEST_CHANG" +
-      "ES\020\014\022\021\n\rREVIEW_REJECT\020\r2\374\270\003\n\002V2\022\256\002\n\024List" +
-      "ConceptRelations\022).clarifai.api.ListConc" +
-      "eptRelationsRequest\032*.clarifai.api.Multi" +
-      "ConceptRelationResponse\"\276\001\202\323\344\223\002\253\001\022Y/v2/u" +
-      "sers/{user_app_id.user_id}/apps/{user_ap" +
-      "p_id.app_id}/concepts/{concept_id}/relat" +
-      "ionsZN\022L/v2/users/{user_app_id.user_id}/" +
-      "apps/{user_app_id.app_id}/concepts/relat" +
-      "ions\230\234\'\005\220\234\'-\220\234\'\013\022\343\001\n\024PostConceptRelation" +
-      "s\022).clarifai.api.PostConceptRelationsReq" +
-      "uest\032*.clarifai.api.MultiConceptRelation" +
-      "Response\"t\202\323\344\223\002^\"Y/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/conc" +
-      "epts/{concept_id}/relations:\001*\230\234\'\005\220\234\'-\220\234" +
-      "\'\n\220\234\'\013\022\342\001\n\026DeleteConceptRelations\022+.clar" +
-      "ifai.api.DeleteConceptRelationsRequest\032!" +
-      ".clarifai.api.status.BaseResponse\"x\202\323\344\223\002" +
-      "^*Y/v2/users/{user_app_id.user_id}/apps/" +
+      "status.Status\022:\n\027training_time_estimates" +
+      "\030\002 \003(\0132\031.google.protobuf.Duration\"_\n\030Lis" +
+      "tInstanceTypesRequest\0223\n\016cloud_provider\030" +
+      "\001 \001(\0132\033.clarifai.api.CloudProvider\022\016\n\006re" +
+      "gion\030\002 \001(\t\"\202\001\n\031MultiInstanceTypeResponse" +
+      "\022+\n\006status\030\001 \001(\0132\033.clarifai.api.status.S" +
+      "tatus\0228\n\016instance_types\030\002 \003(\0132\032.clarifai" +
+      ".api.InstanceTypeB\004\200\265\030\001\"g\n\030GetComputeClu" +
+      "sterRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clari" +
+      "fai.api.UserAppIDSet\022\032\n\022compute_cluster_" +
+      "id\030\002 \001(\t\"m\n\032ListComputeClustersRequest\022/" +
+      "\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserA" +
+      "ppIDSet\022\014\n\004page\030\002 \001(\r\022\020\n\010per_page\030\003 \001(\r\"" +
+      "\205\001\n\032PostComputeClustersRequest\022/\n\013user_a" +
+      "pp_id\030\001 \001(\0132\032.clarifai.api.UserAppIDSet\022" +
+      "6\n\020compute_clusters\030\002 \003(\0132\034.clarifai.api" +
+      ".ComputeCluster\"\\\n\034DeleteComputeClusters" +
+      "Request\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai." +
+      "api.UserAppIDSet\022\013\n\003ids\030\002 \003(\t\"\202\001\n\034Single" +
+      "ComputeClusterResponse\022+\n\006status\030\001 \001(\0132\033" +
+      ".clarifai.api.status.Status\0225\n\017compute_c" +
+      "luster\030\002 \001(\0132\034.clarifai.api.ComputeClust" +
+      "er\"\210\001\n\033MultiComputeClusterResponse\022+\n\006st" +
+      "atus\030\001 \001(\0132\033.clarifai.api.status.Status\022" +
+      "<\n\020compute_clusters\030\002 \003(\0132\034.clarifai.api" +
+      ".ComputeClusterB\004\200\265\030\001\"v\n\022GetNodepoolRequ" +
+      "est\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.api." +
+      "UserAppIDSet\022\032\n\022compute_cluster_id\030\002 \001(\t" +
+      "\022\023\n\013nodepool_id\030\003 \001(\t\"\203\001\n\024ListNodepoolsR" +
+      "equest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.a" +
+      "pi.UserAppIDSet\022\032\n\022compute_cluster_id\030\002 " +
+      "\001(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010per_page\030\004 \001(\r\"\216\001\n\024" +
+      "PostNodepoolsRequest\022/\n\013user_app_id\030\001 \001(" +
+      "\0132\032.clarifai.api.UserAppIDSet\022\032\n\022compute" +
+      "_cluster_id\030\002 \001(\t\022)\n\tnodepools\030\003 \003(\0132\026.c" +
+      "larifai.api.Nodepool\"\237\001\n\025PatchNodepoolsR" +
+      "equest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai.a" +
+      "pi.UserAppIDSet\022\032\n\022compute_cluster_id\030\002 ",
+      "\001(\t\022)\n\tnodepools\030\003 \003(\0132\026.clarifai.api.No" +
+      "depool\022\016\n\006action\030\004 \001(\t\"r\n\026DeleteNodepool" +
+      "sRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clarifai" +
+      ".api.UserAppIDSet\022\032\n\022compute_cluster_id\030" +
+      "\002 \001(\t\022\013\n\003ids\030\003 \003(\t\"o\n\026SingleNodepoolResp" +
+      "onse\022+\n\006status\030\001 \001(\0132\033.clarifai.api.stat" +
+      "us.Status\022(\n\010nodepool\030\002 \001(\0132\026.clarifai.a" +
+      "pi.Nodepool\"u\n\025MultiNodepoolResponse\022+\n\006" +
+      "status\030\001 \001(\0132\033.clarifai.api.status.Statu" +
+      "s\022/\n\tnodepools\030\002 \003(\0132\026.clarifai.api.Node" +
+      "poolB\004\200\265\030\001\"^\n\024GetDeploymentRequest\022/\n\013us" +
+      "er_app_id\030\001 \001(\0132\032.clarifai.api.UserAppID" +
+      "Set\022\025\n\rdeployment_id\030\002 \001(\t\"~\n\026ListDeploy" +
+      "mentsRequest\022/\n\013user_app_id\030\001 \001(\0132\032.clar" +
+      "ifai.api.UserAppIDSet\022\023\n\013nodepool_id\030\002 \001" +
+      "(\t\022\014\n\004page\030\003 \001(\r\022\020\n\010per_page\030\004 \001(\r\"x\n\026Po" +
+      "stDeploymentsRequest\022/\n\013user_app_id\030\001 \001(" +
+      "\0132\032.clarifai.api.UserAppIDSet\022-\n\013deploym" +
+      "ents\030\002 \003(\0132\030.clarifai.api.Deployment\"X\n\030" +
+      "DeleteDeploymentsRequest\022/\n\013user_app_id\030" +
+      "\001 \001(\0132\032.clarifai.api.UserAppIDSet\022\013\n\003ids" +
+      "\030\002 \003(\t\"\300\001\n\033PostAuditLogSearchesRequest\022/" +
+      "\n\013user_app_id\030\001 \001(\0132\032.clarifai.api.UserA" +
+      "ppIDSet\022*\n\005query\030\002 \001(\0132\033.clarifai.api.Au" +
+      "ditLogQuery\022\026\n\016sort_ascending\030\003 \001(\010\022,\n\np" +
+      "agination\030\005 \001(\0132\030.clarifai.api.Paginatio" +
+      "n\"}\n\032MultiAuditLogEntryResponse\022+\n\006statu" +
+      "s\030\001 \001(\0132\033.clarifai.api.status.Status\0222\n\007" +
+      "entries\030\002 \003(\0132\033.clarifai.api.AuditLogEnt" +
+      "ryB\004\200\265\030\001\"\211\001\n\027PatchDeploymentsRequest\022/\n\013" +
+      "user_app_id\030\001 \001(\0132\032.clarifai.api.UserApp" +
+      "IDSet\022-\n\013deployments\030\003 \003(\0132\030.clarifai.ap" +
+      "i.Deployment\022\016\n\006action\030\004 \001(\t\"u\n\030SingleDe" +
+      "ploymentResponse\022+\n\006status\030\001 \001(\0132\033.clari" +
+      "fai.api.status.Status\022,\n\ndeployment\030\002 \001(" +
+      "\0132\030.clarifai.api.Deployment\"{\n\027MultiDepl" +
+      "oymentResponse\022+\n\006status\030\001 \001(\0132\033.clarifa" +
+      "i.api.status.Status\0223\n\013deployments\030\002 \003(\013" +
+      "2\030.clarifai.api.DeploymentB\004\200\265\030\001*p\n\034Orga" +
+      "nizationInvitationStatus\022\013\n\007NOT_SET\020\000\022\013\n" +
+      "\007PENDING\020\001\022\014\n\010ACCEPTED\020\002\022\r\n\tCANCELLED\020\003\022" +
+      "\014\n\010DECLINED\020\004\022\013\n\007EXPIRED\020\005*\312\001\n\037PutTaskAs" +
+      "signmentsRequestAction\022/\n+PUT_TASK_ASSIG" +
+      "NMENTS_REQUEST_ACTION_NOT_SET\020\000\022\017\n\013LABEL" +
+      "_START\020\001\022\020\n\014LABEL_SUBMIT\020\002\022\020\n\014REVIEW_STA" +
+      "RT\020\n\022\022\n\016REVIEW_APPROVE\020\013\022\032\n\026REVIEW_REQUE" +
+      "ST_CHANGES\020\014\022\021\n\rREVIEW_REJECT\020\r2\277\265\003\n\002V2\022" +
+      "\256\002\n\024ListConceptRelations\022).clarifai.api." +
+      "ListConceptRelationsRequest\032*.clarifai.a" +
+      "pi.MultiConceptRelationResponse\"\276\001\202\323\344\223\002\253" +
+      "\001\022Y/v2/users/{user_app_id.user_id}/apps/" +
       "{user_app_id.app_id}/concepts/{concept_i" +
-      "d}/relations:\001*\230\234\'\005\220\234\'-\220\234\'\r\220\234\'\n\220\234\'\013\022\340\001\n\020" +
-      "GetConceptCounts\022%.clarifai.api.GetConce" +
-      "ptCountsRequest\032\'.clarifai.api.MultiConc" +
-      "eptCountResponse\"|\202\323\344\223\002b\022I/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/concepts/statusZ\025\022\023/v2/concepts/stat" +
-      "us\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\325\001\n\nGetConcept\022\037." +
-      "clarifai.api.GetConceptRequest\032#.clarifa" +
-      "i.api.SingleConceptResponse\"\200\001\202\323\344\223\002n\022O/v" +
-      "2/users/{user_app_id.user_id}/apps/{user" +
-      "_app_id.app_id}/concepts/{concept_id}Z\033\022" +
-      "\031/v2/concepts/{concept_id}\230\234\'\002\220\234\'-\220\234\'\013\022\275" +
-      "\001\n\014ListConcepts\022!.clarifai.api.ListConce" +
-      "ptsRequest\032\".clarifai.api.MultiConceptRe" +
-      "sponse\"f\202\323\344\223\002T\022B/v2/users/{user_app_id.u" +
+      "d}/relationsZN\022L/v2/users/{user_app_id.u" +
       "ser_id}/apps/{user_app_id.app_id}/concep" +
-      "tsZ\016\022\014/v2/concepts\230\234\'\002\220\234\'-\220\234\'\013\022\275\002\n\021ListM" +
-      "odelConcepts\022&.clarifai.api.ListModelCon" +
-      "ceptsRequest\032\".clarifai.api.MultiConcept" +
-      "Response\"\333\001\202\323\344\223\002\304\001\022T/v2/users/{user_app_" +
-      "id.user_id}/apps/{user_app_id.app_id}/mo" +
-      "dels/{model_id}/conceptsZl\022j/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/models/{model_id}/versions/{versio" +
-      "n_id}/concepts\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\356\001\n\024PostC" +
-      "onceptsSearches\022).clarifai.api.PostConce" +
-      "ptsSearchesRequest\032\".clarifai.api.MultiC" +
-      "onceptResponse\"\206\001\202\323\344\223\002l\"K/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/concepts/searches:\001*Z\032\"\025/v2/concepts/" +
-      "searches:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\023\022\307\001\n\014Post" +
-      "Concepts\022!.clarifai.api.PostConceptsRequ" +
-      "est\032\".clarifai.api.MultiConceptResponse\"" +
-      "p\202\323\344\223\002Z\"B/v2/users/{user_app_id.user_id}" +
-      "/apps/{user_app_id.app_id}/concepts:\001*Z\021" +
-      "\"\014/v2/concepts:\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'\013\022\311\001\n\rPa" +
-      "tchConcepts\022\".clarifai.api.PatchConcepts" +
-      "Request\032\".clarifai.api.MultiConceptRespo" +
-      "nse\"p\202\323\344\223\002Z2B/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/concepts:" +
-      "\001*Z\0212\014/v2/concepts:\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'\013\022\230\002" +
-      "\n\022GetConceptLanguage\022\'.clarifai.api.GetC" +
-      "onceptLanguageRequest\032+.clarifai.api.Sin" +
-      "gleConceptLanguageResponse\"\253\001\202\323\344\223\002\230\001\022d/v" +
-      "2/users/{user_app_id.user_id}/apps/{user" +
-      "_app_id.app_id}/concepts/{concept_id}/la" +
-      "nguages/{language}Z0\022./v2/concepts/{conc" +
-      "ept_id}/languages/{language}\230\234\'\002\220\234\'-\220\234\'\013" +
-      "\022\205\002\n\024ListConceptLanguages\022).clarifai.api" +
-      ".ListConceptLanguagesRequest\032*.clarifai." +
-      "api.MultiConceptLanguageResponse\"\225\001\202\323\344\223\002" +
-      "\202\001\022Y/v2/users/{user_app_id.user_id}/apps" +
-      "/{user_app_id.app_id}/concepts/{concept_" +
-      "id}/languagesZ%\022#/v2/concepts/{concept_i" +
-      "d}/languages\230\234\'\002\220\234\'-\220\234\'\013\022\217\002\n\024PostConcept" +
-      "Languages\022).clarifai.api.PostConceptLang" +
-      "uagesRequest\032*.clarifai.api.MultiConcept" +
-      "LanguageResponse\"\237\001\202\323\344\223\002\210\001\"Y/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/concepts/{concept_id}/languages:\001*" +
-      "Z(\"#/v2/concepts/{concept_id}/languages:" +
-      "\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'\013\022\221\002\n\025PatchConceptLangu" +
-      "ages\022*.clarifai.api.PatchConceptLanguage" +
-      "sRequest\032*.clarifai.api.MultiConceptLang" +
-      "uageResponse\"\237\001\202\323\344\223\002\210\0012Y/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/concepts/{concept_id}/languages:\001*Z(2#" +
-      "/v2/concepts/{concept_id}/languages:\001*\230\234" +
-      "\'\002\220\234\'-\220\234\'\n\220\234\'\013\022\365\001\n\023ListKnowledgeGraphs\022(" +
-      ".clarifai.api.ListKnowledgeGraphsRequest" +
-      "\032).clarifai.api.MultiKnowledgeGraphRespo" +
-      "nse\"\210\001\202\323\344\223\002v\022S/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/concepts" +
-      "/knowledge_graphsZ\037\022\035/v2/concepts/knowle" +
-      "dge_graphs\230\234\'\002\220\234\'-\220\234\'\013\022\377\001\n\023PostKnowledge" +
-      "Graphs\022(.clarifai.api.PostKnowledgeGraph" +
-      "sRequest\032).clarifai.api.MultiKnowledgeGr" +
-      "aphResponse\"\222\001\202\323\344\223\002|\"S/v2/users/{user_ap" +
-      "p_id.user_id}/apps/{user_app_id.app_id}/" +
-      "concepts/knowledge_graphs:\001*Z\"\"\035/v2/conc" +
-      "epts/knowledge_graphs:\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'\013" +
-      "\022\227\002\n\rGetAnnotation\022\".clarifai.api.GetAnn" +
-      "otationRequest\032&.clarifai.api.SingleAnno" +
-      "tationResponse\"\271\001\202\323\344\223\002\236\001\022g/v2/users/{use" +
+      "ts/relations\230\234\'\005\220\234\'-\220\234\'\013\022\343\001\n\024PostConcept" +
+      "Relations\022).clarifai.api.PostConceptRela" +
+      "tionsRequest\032*.clarifai.api.MultiConcept" +
+      "RelationResponse\"t\202\323\344\223\002^\"Y/v2/users/{use" +
       "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/inputs/{input_id}/annotations/{annot" +
-      "ation_id}Z3\0221/v2/inputs/{input_id}/annot" +
-      "ations/{annotation_id}\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234" +
-      "\'\017\022\324\001\n\017ListAnnotations\022$.clarifai.api.Li" +
-      "stAnnotationsRequest\032%.clarifai.api.Mult" +
-      "iAnnotationResponse\"t\202\323\344\223\002Z\022E/v2/users/{" +
-      "user_app_id.user_id}/apps/{user_app_id.a" +
-      "pp_id}/annotationsZ\021\022\017/v2/annotations\230\234\'" +
-      "\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\022\347\001\n\017PostAnnotations\022$." +
-      "clarifai.api.PostAnnotationsRequest\032%.cl" +
-      "arifai.api.MultiAnnotationResponse\"\206\001\202\323\344" +
-      "\223\002`\"E/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/annotations:\001*Z\024\"" +
-      "\017/v2/annotations:\001*\230\234\'\002\220\234\'-\220\234\'\005\220\234\'%\220\234\'&\220" +
-      "\234\'\013\220\234\'\017\220\234\'\023\022\351\001\n\020PatchAnnotations\022%.clari" +
-      "fai.api.PatchAnnotationsRequest\032%.clarif" +
-      "ai.api.MultiAnnotationResponse\"\206\001\202\323\344\223\002`2" +
-      "E/v2/users/{user_app_id.user_id}/apps/{u" +
-      "ser_app_id.app_id}/annotations:\001*Z\0242\017/v2" +
-      "/annotations:\001*\230\234\'\002\220\234\'-\220\234\'\005\220\234\'%\220\234\'&\220\234\'\013\220" +
-      "\234\'\023\220\234\'\017\022\370\001\n\026PatchAnnotationsStatus\022+.cla" +
-      "rifai.api.PatchAnnotationsStatusRequest\032" +
-      ",.clarifai.api.PatchAnnotationsStatusRes" +
-      "ponse\"\202\001\202\323\344\223\002`2[/v2/users/{user_app_id.u" +
-      "ser_id}/apps/{user_app_id.app_id}/task/{" +
-      "task_id}/annotations/status:\001*\230\234\'\002\220\234\'-\220\234" +
-      "\'%\220\234\'&\220\234\'\013\220\234\'\023\220\234\'\017\022\240\002\n\020DeleteAnnotation\022" +
-      "%.clarifai.api.DeleteAnnotationRequest\032!" +
-      ".clarifai.api.status.BaseResponse\"\301\001\202\323\344\223" +
-      "\002\236\001*g/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/inputs/{input_id}" +
-      "/annotations/{annotation_id}Z3*1/v2/inpu" +
-      "ts/{input_id}/annotations/{annotation_id" +
-      "}\230\234\'\002\220\234\'-\220\234\'%\220\234\'(\220\234\'&\220\234\'\023\220\234\'\017\022\324\002\n\021Delete" +
-      "Annotations\022&.clarifai.api.DeleteAnnotat" +
-      "ionsRequest\032!.clarifai.api.status.BaseRe" +
-      "sponse\"\363\001\202\323\344\223\002\320\001*L/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/inpu" +
-      "ts/annotations:\001*Z\033*\026/v2/inputs/annotati" +
-      "ons:\001*ZJ*E/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}/annotations:" +
-      "\001*Z\024*\017/v2/annotations:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'(" +
-      "\220\234\'&\220\234\'\023\220\234\'\017\022\367\001\n\030PatchAnnotationsSearche" +
-      "s\022-.clarifai.api.PatchAnnotationsSearche" +
-      "sRequest\032!.clarifai.api.MultiSearchRespo" +
-      "nse\"\210\001\202\323\344\223\002r2N/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/annotati" +
-      "ons/searches:\001*Z\0352\030/v2/annotations/searc" +
-      "hes:\001*\230\234\'\002\220\234\'-\220\234\'s\220\234\'r\022\205\002\n\027PostAnnotatio" +
-      "nsSearches\022,.clarifai.api.PostAnnotation" +
-      "sSearchesRequest\032!.clarifai.api.MultiSea" +
-      "rchResponse\"\230\001\202\323\344\223\002r\"N/v2/users/{user_ap" +
-      "p_id.user_id}/apps/{user_app_id.app_id}/" +
-      "annotations/searches:\001*Z\035\"\030/v2/annotatio" +
-      "ns/searches:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\017\220\234" +
-      "\'\003\220\234\'\023\022\361\001\n\025ListAnnotationWorkers\022*.clari" +
-      "fai.api.ListAnnotationWorkersRequest\032!.c" +
-      "larifai.api.MultiWorkerResponse\"\210\001\202\323\344\223\002j" +
-      "\022M/v2/users/{user_app_id.user_id}/apps/{" +
-      "user_app_id.app_id}/annotations/workersZ" +
-      "\031\022\027/v2/annotations/workers\230\234\'\002\220\234\'-\220\234\'&\220\234" +
-      "\'2\220\234\'\017\220\234\'\023\022\325\001\n\rGetInputCount\022\".clarifai." +
-      "api.GetInputCountRequest\032&.clarifai.api." +
-      "SingleInputCountResponse\"x\202\323\344\223\002^\022G/v2/us" +
-      "ers/{user_app_id.user_id}/apps/{user_app" +
-      "_id.app_id}/inputs/statusZ\023\022\021/v2/inputs/" +
-      "status\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\315\001\n\014StreamInp" +
-      "uts\022!.clarifai.api.StreamInputsRequest\032 " +
-      ".clarifai.api.MultiInputResponse\"x\202\323\344\223\002^" +
-      "\022G/v2/users/{user_app_id.user_id}/apps/{" +
-      "user_app_id.app_id}/inputs/streamZ\023\022\021/v2" +
-      "/inputs/stream\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\201\002\n\017G" +
-      "etInputSamples\022$.clarifai.api.GetInputSa" +
-      "mplesRequest\032*.clarifai.api.MultiInputAn" +
-      "notationResponse\"\233\001\202\323\344\223\002\200\001\022X/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/tasks/{task_id}/inputs/samplesZ$\022\"" +
-      "/v2/tasks/{task_id}/inputs/samples\230\234\'\002\220\234" +
-      "\'-\220\234\'&\220\234\'\013\220\234\'\005\022\317\001\n\010GetInput\022\035.clarifai.a" +
-      "pi.GetInputRequest\032!.clarifai.api.Single" +
-      "InputResponse\"\200\001\202\323\344\223\002f\022K/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/inputs/{input_id}Z\027\022\025/v2/inputs/{input" +
-      "_id}\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\200\002\n\025GetInputVid" +
-      "eoManifest\022%.clarifai.api.GetVideoManife" +
-      "stRequest\032&.clarifai.api.GetVideoManifes" +
-      "tResponse\"\227\001\202\323\344\223\002\204\001\022Z/v2/users/{user_app" +
-      "_id.user_id}/apps/{user_app_id.app_id}/i" +
-      "nputs/{input_id}/video_manifestZ&\022$/v2/i" +
-      "nputs/{input_id}/video_manifest\230\234\'\002\220\234\'-\220" +
-      "\234\'\005\022\273\001\n\nListInputs\022\037.clarifai.api.ListIn" +
-      "putsRequest\032 .clarifai.api.MultiInputRes" +
-      "ponse\"j\202\323\344\223\002P\022@/v2/users/{user_app_id.us" +
-      "er_id}/apps/{user_app_id.app_id}/inputsZ" +
-      "\014\022\n/v2/inputs\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\326\001\n\nPo" +
-      "stInputs\022\037.clarifai.api.PostInputsReques" +
-      "t\032 .clarifai.api.MultiInputResponse\"\204\001\202\323" +
-      "\344\223\002V\"@/v2/users/{user_app_id.user_id}/ap" +
-      "ps/{user_app_id.app_id}/inputs:\001*Z\017\"\n/v2" +
-      "/inputs:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\004\220\234\'\005\220\234" +
-      "\'\017\220\234\'\002\220\234\'\023\022\317\001\n\013PatchInputs\022 .clarifai.ap" +
-      "i.PatchInputsRequest\032 .clarifai.api.Mult" +
-      "iInputResponse\"|\202\323\344\223\002V2@/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/inputs:\001*Z\0172\n/v2/inputs:\001*\230\234\'\002\220\234\'-\220\234\'%" +
-      "\220\234\'&\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017\022\351\001\n\013DeleteInput\022 .c" +
-      "larifai.api.DeleteInputRequest\032!.clarifa" +
-      "i.api.status.BaseResponse\"\224\001\202\323\344\223\002f*K/v2/" +
-      "users/{user_app_id.user_id}/apps/{user_a" +
-      "pp_id.app_id}/inputs/{input_id}Z\027*\025/v2/i" +
-      "nputs/{input_id}\230\234\'\002\220\234\'-\220\234\'%\220\234\'(\220\234\'&\220\234\'\004" +
-      "\220\234\'\010\220\234\'\005\220\234\'\017\220\234\'\023\022\333\001\n\014DeleteInputs\022!.clar" +
-      "ifai.api.DeleteInputsRequest\032!.clarifai." +
-      "api.status.BaseResponse\"\204\001\202\323\344\223\002V*@/v2/us" +
-      "ers/{user_app_id.user_id}/apps/{user_app" +
-      "_id.app_id}/inputs:\001*Z\017*\n/v2/inputs:\001*\230\234" +
-      "\'\002\220\234\'-\220\234\'%\220\234\'(\220\234\'&\220\234\'\004\220\234\'\010\220\234\'\005\220\234\'\017\220\234\'\023\022\342" +
-      "\001\n\023PatchInputsSearches\022(.clarifai.api.Pa" +
-      "tchInputsSearchesRequest\032!.clarifai.api." +
-      "MultiSearchResponse\"~\202\323\344\223\002h2I/v2/users/{" +
-      "user_app_id.user_id}/apps/{user_app_id.a" +
-      "pp_id}/inputs/searches:\001*Z\0302\023/v2/inputs/" +
-      "searches:\001*\230\234\'\002\220\234\'-\220\234\'s\220\234\'r\022\361\001\n\022PostInpu" +
-      "tsSearches\022\'.clarifai.api.PostInputsSear" +
-      "chesRequest\032!.clarifai.api.MultiSearchRe" +
-      "sponse\"\216\001\202\323\344\223\002h\"I/v2/users/{user_app_id." +
-      "user_id}/apps/{user_app_id.app_id}/input" +
-      "s/searches:\001*Z\030\"\023/v2/inputs/searches:\001*\230" +
-      "\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\017\220\234\'\003\220\234\'\023\022\211\004\n\020Post" +
-      "ModelOutputs\022%.clarifai.api.PostModelOut" +
-      "putsRequest\032!.clarifai.api.MultiOutputRe" +
-      "sponse\"\252\003\202\323\344\223\002\217\003\"i/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/mode" +
-      "ls/{model_id}/versions/{version_id}/outp" +
-      "uts:\001*Z8\"3/v2/models/{model_id}/versions" +
-      "/{version_id}/outputs:\001*ZX\"S/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/models/{model_id}/outputs:\001*Z\"\"\035/v" +
-      "2/models/{model_id}/outputs:\001*Zg\"b/v2/us" +
-      "ers/{runner_selector.deployment.user_id}" +
-      "/deployments/{runner_selector.deployment" +
-      ".id}/outputs:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\002\022\332\002\n\024" +
-      "GenerateModelOutputs\022%.clarifai.api.Post" +
-      "ModelOutputsRequest\032!.clarifai.api.Multi" +
-      "OutputResponse\"\365\001\202\323\344\223\002\332\001\"r/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/models/{model_id}/versions/{version_" +
-      "id}/outputs/generate:\001*Za\"\\/v2/users/{us" +
-      "er_app_id.user_id}/apps/{user_app_id.app" +
-      "_id}/models/{model_id}/outputs/generate:" +
-      "\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\0020\001\022\234\001\n\022StreamModel" +
-      "Outputs\022%.clarifai.api.PostModelOutputsR" +
-      "equest\032!.clarifai.api.MultiOutputRespons" +
-      "e\"8\202\323\344\223\002\036\"\031/v2/models/outputs/stream:\001*\230" +
-      "\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\002(\0010\001\022\357\001\n\014ListDatasets" +
-      "\022!.clarifai.api.ListDatasetsRequest\032\".cl" +
-      "arifai.api.MultiDatasetResponse\"\227\001\202\323\344\223\002\200" +
-      "\001\022B/v2/users/{user_app_id.user_id}/apps/" +
-      "{user_app_id.app_id}/datasetsZ*\022(/v2/use" +
-      "rs/{user_app_id.user_id}/datasetsZ\016\022\014/v2" +
-      "/datasets\230\234\'\002\220\234\'-\220\234\'i\220\234\'r\022\331\001\n\nGetDataset" +
-      "\022\037.clarifai.api.GetDatasetRequest\032#.clar" +
-      "ifai.api.SingleDatasetResponse\"\204\001\202\323\344\223\002n\022" +
-      "O/v2/users/{user_app_id.user_id}/apps/{u" +
-      "ser_app_id.app_id}/datasets/{dataset_id}" +
-      "Z\033\022\031/v2/datasets/{dataset_id}\230\234\'\002\220\234\'-\220\234\'" +
-      "i\220\234\'r\022\313\001\n\014PostDatasets\022!.clarifai.api.Po" +
-      "stDatasetsRequest\032\".clarifai.api.MultiDa" +
-      "tasetResponse\"t\202\323\344\223\002Z\"B/v2/users/{user_a" +
-      "pp_id.user_id}/apps/{user_app_id.app_id}" +
-      "/datasets:\001*Z\021\"\014/v2/datasets:\001*\230\234\'\002\220\234\'-\220" +
-      "\234\'i\220\234\'j\220\234\'r\022\315\001\n\rPatchDatasets\022\".clarifai" +
-      ".api.PatchDatasetsRequest\032\".clarifai.api" +
-      ".MultiDatasetResponse\"t\202\323\344\223\002Z2B/v2/users" +
-      "/{user_app_id.user_id}/apps/{user_app_id" +
-      ".app_id}/datasets:\001*Z\0212\014/v2/datasets:\001*\230" +
-      "\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'r\022\316\001\n\016DeleteDatasets\022#" +
-      ".clarifai.api.DeleteDatasetsRequest\032!.cl" +
-      "arifai.api.status.BaseResponse\"t\202\323\344\223\002Z*B" +
-      "/v2/users/{user_app_id.user_id}/apps/{us" +
-      "er_app_id.app_id}/datasets:\001*Z\021*\014/v2/dat" +
-      "asets:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'k\022\201\002\n\021ListDat" +
-      "asetInputs\022&.clarifai.api.ListDatasetInp" +
-      "utsRequest\032\'.clarifai.api.MultiDatasetIn" +
-      "putResponse\"\232\001\202\323\344\223\002|\022V/v2/users/{user_ap" +
-      "p_id.user_id}/apps/{user_app_id.app_id}/" +
-      "datasets/{dataset_id}/inputsZ\"\022 /v2/data" +
-      "sets/{dataset_id}/inputs\230\234\'\002\220\234\'-\220\234\'i\220\234\'\005" +
-      "\220\234\'&\220\234\'\013\022\225\002\n\017GetDatasetInput\022$.clarifai." +
-      "api.GetDatasetInputRequest\032(.clarifai.ap" +
-      "i.SingleDatasetInputResponse\"\261\001\202\323\344\223\002\222\001\022a" +
-      "/v2/users/{user_app_id.user_id}/apps/{us" +
-      "er_app_id.app_id}/datasets/{dataset_id}/" +
-      "inputs/{input_id}Z-\022+/v2/datasets/{datas" +
-      "et_id}/inputs/{input_id}\230\234\'\002\220\234\'-\220\234\'i\220\234\'\005" +
-      "\220\234\'&\220\234\'\013\022\214\002\n\021PostDatasetInputs\022&.clarifa" +
-      "i.api.PostDatasetInputsRequest\032\'.clarifa" +
-      "i.api.MultiDatasetInputResponse\"\245\001\202\323\344\223\002\202" +
-      "\001\"V/v2/users/{user_app_id.user_id}/apps/" +
-      "{user_app_id.app_id}/datasets/{dataset_i" +
-      "d}/inputs:\001*Z%\" /v2/datasets/{dataset_id" +
-      "}/inputs:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'\005\220\234\'&\220\234\'\013\022" +
-      "\206\002\n\023DeleteDatasetInputs\022(.clarifai.api.D" +
-      "eleteDatasetInputsRequest\032!.clarifai.api" +
-      ".status.BaseResponse\"\241\001\202\323\344\223\002\202\001*V/v2/user" +
-      "s/{user_app_id.user_id}/apps/{user_app_i" +
-      "d.app_id}/datasets/{dataset_id}/inputs:\001" +
-      "*Z%* /v2/datasets/{dataset_id}/inputs:\001*" +
-      "\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'k\220\234\'\005\022\204\002\n\023ListDataset" +
-      "Versions\022(.clarifai.api.ListDatasetVersi" +
-      "onsRequest\032).clarifai.api.MultiDatasetVe" +
-      "rsionResponse\"\227\001\202\323\344\223\002\200\001\022X/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/datasets/{dataset_id}/versionsZ$\022\"/v2" +
-      "/datasets/{dataset_id}/versions\230\234\'\002\220\234\'-\220" +
-      "\234\'i\220\234\'r\022\253\002\n\021GetDatasetVersion\022&.clarifai" +
-      ".api.GetDatasetVersionRequest\032*.clarifai" +
-      ".api.SingleDatasetVersionResponse\"\301\001\202\323\344\223" +
-      "\002\252\001\022m/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/datasets/{dataset" +
-      "_id}/versions/{dataset_version_id}Z9\0227/v" +
-      "2/datasets/{dataset_id}/versions/{datase" +
-      "t_version_id}\230\234\'\002\220\234\'-\220\234\'i\220\234\'r\022\342\002\n\037ListDa" +
-      "tasetVersionMetricsGroups\0224.clarifai.api" +
-      ".ListDatasetVersionMetricsGroupsRequest\032" +
-      "5.clarifai.api.MultiDatasetVersionMetric" +
-      "sGroupResponse\"\321\001\202\323\344\223\002\272\001\022u/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/datasets/{dataset_id}/versions/{data" +
-      "set_version_id}/metricsZA\022?/v2/datasets/" +
-      "{dataset_id}/versions/{dataset_version_i" +
-      "d}/metrics\230\234\'\002\220\234\'-\220\234\'i\220\234\'\013\022\222\002\n\023PostDatas" +
-      "etVersions\022(.clarifai.api.PostDatasetVer" +
-      "sionsRequest\032).clarifai.api.MultiDataset" +
-      "VersionResponse\"\245\001\202\323\344\223\002\206\001\"X/v2/users/{us" +
-      "er_app_id.user_id}/apps/{user_app_id.app" +
-      "_id}/datasets/{dataset_id}/versions:\001*Z\'" +
-      "\"\"/v2/datasets/{dataset_id}/versions:\001*\230" +
-      "\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'\017\220\234\'\023\022\214\002\n\024PatchDataset",
-      "Versions\022).clarifai.api.PatchDatasetVers" +
-      "ionsRequest\032).clarifai.api.MultiDatasetV" +
-      "ersionResponse\"\235\001\202\323\344\223\002\206\0012X/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/datasets/{dataset_id}/versions:\001*Z\'2" +
-      "\"/v2/datasets/{dataset_id}/versions:\001*\230\234" +
-      "\'\002\220\234\'-\220\234\'i\220\234\'j\022\212\002\n\025DeleteDatasetVersions" +
-      "\022*.clarifai.api.DeleteDatasetVersionsReq" +
-      "uest\032!.clarifai.api.status.BaseResponse\"" +
-      "\241\001\202\323\344\223\002\206\001*X/v2/users/{user_app_id.user_i" +
-      "d}/apps/{user_app_id.app_id}/datasets/{d" +
-      "ataset_id}/versions:\001*Z\'*\"/v2/datasets/{" +
-      "dataset_id}/versions:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220" +
-      "\234\'k\022\324\002\n\030PutDatasetVersionExports\022-.clari" +
-      "fai.api.PutDatasetVersionExportsRequest\032" +
-      "/.clarifai.api.MultiDatasetVersionExport" +
-      "Response\"\327\001\202\323\344\223\002\300\001\032u/v2/users/{user_app_" +
-      "id.user_id}/apps/{user_app_id.app_id}/da" +
-      "tasets/{dataset_id}/versions/{dataset_ve" +
-      "rsion_id}/exports:\001*ZD\032?/v2/datasets/{da" +
-      "taset_id}/versions/{dataset_version_id}/" +
-      "exports:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\022\351\001\n\014GetModelT" +
-      "ype\022!.clarifai.api.GetModelTypeRequest\032%" +
-      ".clarifai.api.SingleModelTypeResponse\"\216\001" +
-      "\202\323\344\223\002|\022V/v2/users/{user_app_id.user_id}/" +
-      "apps/{user_app_id.app_id}/models/types/{" +
-      "model_type_id}Z\"\022 /v2/models/types/{mode" +
-      "l_type_id}\230\234\'\002\220\234\'-\220\234\'\017\022\231\001\n\026ListOpenSourc" +
-      "eLicenses\022+.clarifai.api.ListOpenSourceL" +
-      "icensesRequest\032,.clarifai.api.ListOpenSo" +
-      "urceLicensesResponse\"$\202\323\344\223\002\032\022\030/v2/open_s" +
-      "ource_licenses\230\234\'\001\022\313\001\n\016ListModelTypes\022#." +
-      "clarifai.api.ListModelTypesRequest\032$.cla" +
-      "rifai.api.MultiModelTypeResponse\"n\202\323\344\223\002\\" +
-      "\022F/v2/users/{user_app_id.user_id}/apps/{" +
-      "user_app_id.app_id}/models/typesZ\022\022\020/v2/" +
-      "models/types\230\234\'\002\220\234\'-\220\234\'\017\022\312\001\n\010GetModel\022\035." +
-      "clarifai.api.GetModelRequest\032!.clarifai." +
-      "api.SingleModelResponse\"|\202\323\344\223\002f\022K/v2/use" +
-      "rs/{user_app_id.user_id}/apps/{user_app_" +
-      "id.app_id}/models/{model_id}Z\027\022\025/v2/mode" +
-      "ls/{model_id}\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\232\003\n\022GetMod" +
-      "elOutputInfo\022\035.clarifai.api.GetModelRequ" +
-      "est\032!.clarifai.api.SingleModelResponse\"\301" +
-      "\002\202\323\344\223\002\252\002\022W/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}/models/{mode" +
-      "l_id}/output_infoZ#\022!/v2/models/{model_i" +
-      "d}/output_infoZo\022m/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/mode" +
-      "ls/{model_id}/versions/{version_id}/outp" +
-      "ut_infoZ9\0227/v2/models/{model_id}/version" +
-      "s/{version_id}/output_info\230\234\'\002\220\234\'-\220\234\'\013\220\234" +
-      "\'\017\022\342\001\n\nListModels\022\037.clarifai.api.ListMod" +
-      "elsRequest\032 .clarifai.api.MultiModelResp" +
-      "onse\"\220\001\202\323\344\223\002z\022@/v2/users/{user_app_id.us" +
-      "er_id}/apps/{user_app_id.app_id}/modelsZ" +
-      "(\022&/v2/users/{user_app_id.user_id}/model" +
-      "sZ\014\022\n/v2/models\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\347\001\n\021GetR" +
-      "esourceCounts\022&.clarifai.api.GetResource" +
-      "CountsRequest\032\'.clarifai.api.GetResource" +
-      "CountsResponse\"\200\001\202\323\344\223\002b\022I/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/resource_countsZ\025\022\023/v2/resource_count" +
-      "s\230\234\'\002\220\234\'i\220\234\'\017\220\234\'\023\220\234\'m\220\234\'-\022\337\001\n\022PostModels" +
-      "Searches\022\'.clarifai.api.PostModelsSearch" +
-      "esRequest\032 .clarifai.api.MultiModelRespo" +
-      "nse\"~\202\323\344\223\002h\"I/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/models/se" +
-      "arches:\001*Z\030\"\023/v2/models/searches:\001*\230\234\'\002\220" +
-      "\234\'-\220\234\'\013\220\234\'\017\022\312\001\n\nPostModels\022\037.clarifai.ap" +
-      "i.PostModelsRequest\032!.clarifai.api.Singl" +
-      "eModelResponse\"x\202\323\344\223\002V\"@/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/models:\001*Z\017\"\n/v2/models:\001*\230\234\'\002\220\234\'-\220\234\'\013" +
-      "\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\022\307\001\n\013PatchModels\022 .clari" +
-      "fai.api.PatchModelsRequest\032 .clarifai.ap" +
-      "i.MultiModelResponse\"t\202\323\344\223\002V2@/v2/users/" +
-      "{user_app_id.user_id}/apps/{user_app_id." +
-      "app_id}/models:\001*Z\0172\n/v2/models:\001*\230\234\'\002\220\234" +
-      "\'-\220\234\'\013\220\234\'\016\220\234\'\017\220\234\'\032\022\266\001\n\rPatchModelIds\022\".c" +
-      "larifai.api.PatchModelIdsRequest\032 .clari" +
-      "fai.api.MultiModelResponse\"_\202\323\344\223\002I2D/v2/" +
-      "users/{user_app_id.user_id}/apps/{user_a" +
-      "pp_id.app_id}/models/ids:\001*\230\234\'\002\220\234\'-\220\234\'\016\220" +
-      "\234\'\017\022\335\001\n\013DeleteModel\022 .clarifai.api.Delet" +
-      "eModelRequest\032!.clarifai.api.status.Base" +
-      "Response\"\210\001\202\323\344\223\002f*K/v2/users/{user_app_i" +
-      "d.user_id}/apps/{user_app_id.app_id}/mod" +
-      "els/{model_id}Z\027*\025/v2/models/{model_id}\230" +
-      "\234\'\002\220\234\'-\220\234\'\013\220\234\'\016\220\234\'\021\220\234\'\017\220\234\'\023\022\316\001\n\014DeleteMo" +
-      "dels\022!.clarifai.api.DeleteModelsRequest\032" +
-      "!.clarifai.api.status.BaseResponse\"x\202\323\344\223" +
-      "\002V*@/v2/users/{user_app_id.user_id}/apps" +
-      "/{user_app_id.app_id}/models:\001*Z\017*\n/v2/m" +
-      "odels:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\016\220\234\'\021\220\234\'\017\220\234\'\023\022\225\002\n" +
-      "\027PatchModelCheckConsents\022,.clarifai.api." +
-      "PatchModelCheckConsentsRequest\032,.clarifa" +
-      "i.api.MultiModelCheckConsentResponse\"\235\001\202" +
-      "\323\344\223\002\212\0012Z/v2/users/{user_app_id.user_id}/" +
-      "apps/{user_app_id.app_id}/models/{model_" +
-      "id}/check_consents:\001*Z)2$/v2/models/{mod" +
-      "el_id}/check_consents:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\371\001\n" +
-      "\022PatchModelToolkits\022\'.clarifai.api.Patch" +
-      "ModelToolkitsRequest\032\'.clarifai.api.Mult" +
-      "iModelToolkitResponse\"\220\001\202\323\344\223\002~2T/v2/user" +
-      "s/{user_app_id.user_id}/apps/{user_app_i" +
-      "d.app_id}/models/{model_id}/toolkits:\001*Z" +
-      "#2\036/v2/models/{model_id}/toolkits:\001*\230\234\'\002" +
-      "\220\234\'-\220\234\'\017\022\371\001\n\022PatchModelUseCases\022\'.clarif" +
-      "ai.api.PatchModelUseCasesRequest\032\'.clari" +
-      "fai.api.MultiModelUseCaseResponse\"\220\001\202\323\344\223" +
-      "\002~2T/v2/users/{user_app_id.user_id}/apps" +
-      "/{user_app_id.app_id}/models/{model_id}/" +
-      "usecases:\001*Z#2\036/v2/models/{model_id}/use" +
-      "cases:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\377\001\n\023PatchModelLangu" +
-      "ages\022(.clarifai.api.PatchModelLanguagesR" +
-      "equest\032(.clarifai.api.MultiModelLanguage" +
-      "Response\"\223\001\202\323\344\223\002\200\0012U/v2/users/{user_app_" +
-      "id.user_id}/apps/{user_app_id.app_id}/mo" +
-      "dels/{model_id}/languages:\001*Z$2\037/v2/mode" +
-      "ls/{model_id}/languages:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\224" +
-      "\003\n\017ListModelInputs\022$.clarifai.api.ListMo" +
-      "delInputsRequest\032 .clarifai.api.MultiInp" +
-      "utResponse\"\270\002\210\002\001\202\323\344\223\002\226\002\022R/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/models/{model_id}/inputsZ\036\022\034/v2/model" +
-      "s/{model_id}/inputsZj\022h/v2/users/{user_a" +
-      "pp_id.user_id}/apps/{user_app_id.app_id}" +
-      "/models/{model_id}/versions/{version_id}" +
-      "/inputsZ4\0222/v2/models/{model_id}/version" +
-      "s/{version_id}/inputs\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'" +
-      "\005\220\234\'\017\022\215\002\n\017GetModelVersion\022$.clarifai.api" +
-      ".GetModelVersionRequest\032(.clarifai.api.S" +
-      "ingleModelVersionResponse\"\251\001\202\323\344\223\002\222\001\022a/v2" +
-      "/users/{user_app_id.user_id}/apps/{user_" +
-      "app_id.app_id}/models/{model_id}/version" +
-      "s/{version_id}Z-\022+/v2/models/{model_id}/" +
-      "versions/{version_id}\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\365\001" +
-      "\n\021ListModelVersions\022&.clarifai.api.ListM" +
-      "odelVersionsRequest\032\'.clarifai.api.Multi" +
-      "ModelVersionResponse\"\216\001\202\323\344\223\002x\022T/v2/users" +
-      "/{user_app_id.user_id}/apps/{user_app_id" +
-      ".app_id}/models/{model_id}/versionsZ \022\036/" +
-      "v2/models/{model_id}/versions\230\234\'\002\220\234\'-\220\234\'" +
-      "\013\220\234\'\017\022\274\002\n\035PostWorkflowVersionsUnPublish\022" +
-      "2.clarifai.api.PostWorkflowVersionsUnPub" +
-      "lishRequest\032!.clarifai.api.status.BaseRe" +
-      "sponse\"\303\001\202\323\344\223\002\214\001\"[/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/work" +
-      "flows/{workflow_id}/unpublish:\001*Z*\"%/v2/" +
-      "workflows/{workflow_id}/unpublish:\001*\230\234\'\002" +
-      "\220\234\'-\220\234\'x\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5" +
-      "\220\234\'6\022\264\002\n\033PostWorkflowVersionsPublish\0220.c" +
-      "larifai.api.PostWorkflowVersionsPublishR" +
+      "id}/concepts/{concept_id}/relations:\001*\230\234" +
+      "\'\005\220\234\'-\220\234\'\n\220\234\'\013\022\342\001\n\026DeleteConceptRelation" +
+      "s\022+.clarifai.api.DeleteConceptRelationsR" +
       "equest\032!.clarifai.api.status.BaseRespons" +
-      "e\"\277\001\202\323\344\223\002\210\001\"Y/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/workflows" +
-      "/{workflow_id}/publish:\001*Z(\"#/v2/workflo" +
-      "ws/{workflow_id}/publish:\001*\230\234\'\002\220\234\'-\220\234\'w\220" +
-      "\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5\220\234\'6\022\241\002\n\030" +
-      "PostModelVersionsPublish\022-.clarifai.api." +
-      "PostModelVersionsPublishRequest\032!.clarif" +
-      "ai.api.status.BaseResponse\"\262\001\202\323\344\223\002|\"S/v2" +
-      "/users/{user_app_id.user_id}/apps/{user_" +
-      "app_id.app_id}/models/{model_id}/publish" +
-      ":\001*Z\"\"\035/v2/models/{model_id}/publish:\001*\230" +
-      "\234\'\002\220\234\'-\220\234\'u\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220" +
-      "\234\'5\220\234\'6\022\252\002\n\032PostModelVersionsUnPublish\022/" +
-      ".clarifai.api.PostModelVersionsUnPublish" +
-      "Request\032!.clarifai.api.status.BaseRespon" +
-      "se\"\267\001\202\323\344\223\002\200\001\"U/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/models/{" +
-      "model_id}/unpublish:\001*Z$\"\037/v2/models/{mo" +
-      "del_id}/unpublish:\001*\230\234\'\002\220\234\'-\220\234\'v\220\234\'&\220\234\'\013" +
-      "\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5\220\234\'6\022\221\002\n\021PostMod" +
-      "elVersions\022&.clarifai.api.PostModelVersi" +
-      "onsRequest\032!.clarifai.api.SingleModelRes" +
-      "ponse\"\260\001\202\323\344\223\002~\"T/v2/users/{user_app_id.u" +
-      "ser_id}/apps/{user_app_id.app_id}/models" +
-      "/{model_id}/versions:\001*Z#\"\036/v2/models/{m" +
-      "odel_id}/versions:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005" +
-      "\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5\220\234\'6\022\337\001\n\022PatchModelV" +
-      "ersions\022\'.clarifai.api.PatchModelVersion" +
-      "sRequest\032\'.clarifai.api.MultiModelVersio" +
-      "nResponse\"w\202\323\344\223\002Y2T/v2/users/{user_app_i" +
-      "d.user_id}/apps/{user_app_id.app_id}/mod" +
-      "els/{model_id}/versions:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234" +
-      "\'\017\220\234\'\016\220\234\'\032\022\230\002\n\022DeleteModelVersion\022\'.clar" +
-      "ifai.api.DeleteModelVersionRequest\032!.cla" +
-      "rifai.api.status.BaseResponse\"\265\001\202\323\344\223\002\222\001*" +
-      "a/v2/users/{user_app_id.user_id}/apps/{u" +
-      "ser_app_id.app_id}/models/{model_id}/ver" +
-      "sions/{version_id}Z-*+/v2/models/{model_" +
-      "id}/versions/{version_id}\230\234\'\002\220\234\'-\220\234\'\013\220\234\'" +
-      "\016\220\234\'\021\220\234\'\017\220\234\'\023\022\271\001\n\027PostModelVersionsUploa" +
-      "d\022,.clarifai.api.PostModelVersionsUpload" +
-      "Request\032-.clarifai.api.PostModelVersions" +
-      "UploadResponse\"=\202\323\344\223\002\037\"\032/v2/models/versi" +
-      "ons/upload:\001*\230\234\'\002\220\234\'-\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023(\0010" +
-      "\001\022\267\002\n\026PutModelVersionExports\022+.clarifai." +
-      "api.PutModelVersionExportsRequest\032..clar" +
-      "ifai.api.SingleModelVersionExportRespons" +
-      "e\"\277\001\202\323\344\223\002\242\001\032i/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/models/{m" +
-      "odel_id}/versions/{version_id}/exportsZ5" +
-      "\0323/v2/models/{model_id}/versions/{versio" +
-      "n_id}/exports\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\216\001\220\234\'\217\001\022\260\002\n\025" +
-      "GetModelVersionExport\022*.clarifai.api.Get" +
-      "ModelVersionExportRequest\032..clarifai.api" +
-      ".SingleModelVersionExportResponse\"\272\001\202\323\344\223" +
-      "\002\242\001\022i/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/models/{model_id}" +
-      "/versions/{version_id}/exportsZ5\0223/v2/mo" +
-      "dels/{model_id}/versions/{version_id}/ex" +
-      "ports\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\216\001\022\267\002\n\026GetModelVersi" +
-      "onMetrics\022+.clarifai.api.GetModelVersion" +
-      "MetricsRequest\032(.clarifai.api.SingleMode" +
-      "lVersionResponse\"\305\001\202\323\344\223\002\242\001\022i/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/models/{model_id}/versions/{versio" +
-      "n_id}/metricsZ5\0223/v2/models/{model_id}/v" +
-      "ersions/{version_id}/metrics\230\234\'\002\220\234\'-\220\234\'&" +
-      "\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5\022\323\002\n\027PostModelVersionMet" +
-      "rics\022,.clarifai.api.PostModelVersionMetr" +
-      "icsRequest\032(.clarifai.api.SingleModelVer" +
-      "sionResponse\"\337\001\202\323\344\223\002\250\001\"i/v2/users/{user_" +
+      "e\"x\202\323\344\223\002^*Y/v2/users/{user_app_id.user_i" +
+      "d}/apps/{user_app_id.app_id}/concepts/{c" +
+      "oncept_id}/relations:\001*\230\234\'\005\220\234\'-\220\234\'\r\220\234\'\n\220" +
+      "\234\'\013\022\340\001\n\020GetConceptCounts\022%.clarifai.api." +
+      "GetConceptCountsRequest\032\'.clarifai.api.M" +
+      "ultiConceptCountResponse\"|\202\323\344\223\002b\022I/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/concepts/statusZ\025\022\023/v2/conce" +
+      "pts/status\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\325\001\n\nGetCo" +
+      "ncept\022\037.clarifai.api.GetConceptRequest\032#" +
+      ".clarifai.api.SingleConceptResponse\"\200\001\202\323" +
+      "\344\223\002n\022O/v2/users/{user_app_id.user_id}/ap" +
+      "ps/{user_app_id.app_id}/concepts/{concep" +
+      "t_id}Z\033\022\031/v2/concepts/{concept_id}\230\234\'\002\220\234" +
+      "\'-\220\234\'\013\022\275\001\n\014ListConcepts\022!.clarifai.api.L" +
+      "istConceptsRequest\032\".clarifai.api.MultiC" +
+      "onceptResponse\"f\202\323\344\223\002T\022B/v2/users/{user_" +
       "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/models/{model_id}/versions/{version_id" +
-      "}/metrics:\001*Z8\"3/v2/models/{model_id}/ve" +
-      "rsions/{version_id}/metrics:\001*\230\234\'\002\220\234\'-\220\234" +
-      "\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\002\220\234\'\023\220\234\'5\220\234\'6\022\355" +
-      "\002\n\033PostModelVersionEvaluations\0220.clarifa" +
-      "i.api.PostModelVersionEvaluationsRequest" +
-      "\032&.clarifai.api.MultiEvalMetricsResponse" +
-      "\"\363\001\202\323\344\223\002\274\001\"s/v2/users/{user_app_id.user_" +
-      "id}/apps/{user_app_id.app_id}/models/{mo" +
-      "del_id}/versions/{model_version_id}/eval" +
-      "uations:\001*ZB\"=/v2/models/{model_id}/vers" +
-      "ions/{model_version_id}/evaluations:\001*\230\234" +
-      "\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\002\220\234\'\023\220\234" +
-      "\'5\220\234\'6\022\323\002\n\033ListModelVersionEvaluations\0220" +
-      ".clarifai.api.ListModelVersionEvaluation" +
-      "sRequest\032&.clarifai.api.MultiEvalMetrics" +
-      "Response\"\331\001\202\323\344\223\002\266\001\022s/v2/users/{user_app_" +
-      "id.user_id}/apps/{user_app_id.app_id}/mo" +
-      "dels/{model_id}/versions/{model_version_" +
-      "id}/evaluationsZ?\022=/v2/models/{model_id}" +
-      "/versions/{model_version_id}/evaluations" +
-      "\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5\022\361\002\n\031GetMode" +
-      "lVersionEvaluation\022..clarifai.api.GetMod" +
-      "elVersionEvaluationRequest\032\'.clarifai.ap" +
-      "i.SingleEvalMetricsResponse\"\372\001\202\323\344\223\002\327\001\022\203\001" +
-      "/v2/users/{user_app_id.user_id}/apps/{us" +
-      "er_app_id.app_id}/models/{model_id}/vers" +
-      "ions/{model_version_id}/evaluations/{eva" +
-      "luation_id}ZO\022M/v2/models/{model_id}/ver" +
-      "sions/{model_version_id}/evaluations/{ev" +
-      "aluation_id}\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5" +
-      "\022\370\001\n\017PostEvaluations\022$.clarifai.api.Post" +
-      "EvaluationsRequest\032&.clarifai.api.MultiE" +
-      "valMetricsResponse\"\226\001\202\323\344\223\002`\"E/v2/users/{" +
-      "user_app_id.user_id}/apps/{user_app_id.a" +
-      "pp_id}/evaluations:\001*Z\024\"\017/v2/evaluations" +
-      ":\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\002\220" +
-      "\234\'\023\220\234\'5\220\234\'6\022\216\002\n\017ListEvaluations\022$.clarif" +
-      "ai.api.ListEvaluationsRequest\032&.clarifai" +
-      ".api.MultiEvalMetricsResponse\"\254\001\202\323\344\223\002\211\001\022" +
-      "E/v2/users/{user_app_id.user_id}/apps/{u" +
-      "ser_app_id.app_id}/evaluationsZ-\022+/v2/us" +
-      "ers/{user_app_id.user_id}/evaluationsZ\021\022" +
-      "\017/v2/evaluations\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\005" +
-      "\220\234\'5\022\373\001\n\rGetEvaluation\022\".clarifai.api.Ge" +
-      "tEvaluationRequest\032\'.clarifai.api.Single" +
-      "EvalMetricsResponse\"\234\001\202\323\344\223\002z\022U/v2/users/" +
-      "{user_app_id.user_id}/apps/{user_app_id." +
-      "app_id}/evaluations/{evaluation_id}Z!\022\037/" +
-      "v2/evaluations/{evaluation_id}\230\234\'\002\220\234\'-\220\234" +
-      "\'&\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5\022\373\001\n\023ListModelReferenc" +
-      "es\022(.clarifai.api.ListModelReferencesReq" +
-      "uest\032).clarifai.api.MultiModelReferenceR" +
-      "esponse\"\216\001\202\323\344\223\002|\022V/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/mode" +
-      "ls/{model_id}/referencesZ\"\022 /v2/models/{" +
-      "model_id}/references\230\234\'\002\220\234\'-\220\234\'\017\022\362\002\n\033Get" +
-      "ModelVersionInputExample\0220.clarifai.api." +
-      "GetModelVersionInputExampleRequest\0324.cla" +
-      "rifai.api.SingleModelVersionInputExample" +
-      "Response\"\352\001\202\323\344\223\002\327\001\022\203\001/v2/users/{user_app" +
-      "_id.user_id}/apps/{user_app_id.app_id}/m" +
-      "odels/{model_id}/versions/{model_version" +
-      "_id}/input_examples/{example_id}ZO\022M/v2/" +
-      "models/{model_id}/versions/{model_versio" +
-      "n_id}/input_examples/{example_id}\230\234\'\002\220\234\'" +
-      "-\220\234\'\017\022\332\002\n\035ListModelVersionInputExamples\022" +
-      "2.clarifai.api.ListModelVersionInputExam" +
-      "plesRequest\0323.clarifai.api.MultiModelVer" +
-      "sionInputExampleResponse\"\317\001\202\323\344\223\002\274\001\022v/v2/" +
+      "}/conceptsZ\016\022\014/v2/concepts\230\234\'\002\220\234\'-\220\234\'\013\022\275" +
+      "\002\n\021ListModelConcepts\022&.clarifai.api.List" +
+      "ModelConceptsRequest\032\".clarifai.api.Mult" +
+      "iConceptResponse\"\333\001\202\323\344\223\002\304\001\022T/v2/users/{u" +
+      "ser_app_id.user_id}/apps/{user_app_id.ap" +
+      "p_id}/models/{model_id}/conceptsZl\022j/v2/" +
       "users/{user_app_id.user_id}/apps/{user_a" +
       "pp_id.app_id}/models/{model_id}/versions" +
-      "/{model_version_id}/input_examplesZB\022@/v" +
-      "2/models/{model_id}/versions/{model_vers" +
-      "ion_id}/input_examples\230\234\'\002\220\234\'-\220\234\'\017\022\340\001\n\013G" +
-      "etWorkflow\022 .clarifai.api.GetWorkflowReq" +
-      "uest\032$.clarifai.api.SingleWorkflowRespon" +
-      "se\"\210\001\202\323\344\223\002r\022Q/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/workflows" +
-      "/{workflow_id}Z\035\022\033/v2/workflows/{workflo" +
-      "w_id}\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\022\365\001\n\rListWorkflows\022" +
-      "\".clarifai.api.ListWorkflowsRequest\032#.cl" +
-      "arifai.api.MultiWorkflowResponse\"\232\001\202\323\344\223\002" +
-      "\203\001\022C/v2/users/{user_app_id.user_id}/apps" +
-      "/{user_app_id.app_id}/workflowsZ+\022)/v2/u" +
-      "sers/{user_app_id.user_id}/workflowsZ\017\022\r" +
-      "/v2/workflows\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\022\320\001\n\rPostWo" +
-      "rkflows\022\".clarifai.api.PostWorkflowsRequ" +
-      "est\032#.clarifai.api.MultiWorkflowResponse" +
-      "\"v\202\323\344\223\002\\\"C/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}/workflows:\001*" +
-      "Z\022\"\r/v2/workflows:\001*\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\022\220\234\'\023" +
-      "\022\322\001\n\016PatchWorkflows\022#.clarifai.api.Patch" +
-      "WorkflowsRequest\032#.clarifai.api.MultiWor" +
-      "kflowResponse\"v\202\323\344\223\002\\2C/v2/users/{user_a" +
-      "pp_id.user_id}/apps/{user_app_id.app_id}" +
-      "/workflows:\001*Z\0222\r/v2/workflows:\001*\230\234\'\002\220\234\'" +
-      "-\220\234\'\017\220\234\'\022\220\234\'\023\022\302\001\n\020PatchWorkflowIds\022%.cla" +
-      "rifai.api.PatchWorkflowIdsRequest\032#.clar" +
-      "ifai.api.MultiWorkflowResponse\"b\202\323\344\223\002L2G" +
-      "/v2/users/{user_app_id.user_id}/apps/{us" +
-      "er_app_id.app_id}/workflows/ids:\001*\230\234\'\002\220\234" +
-      "\'-\220\234\'\022\220\234\'\023\022\347\001\n\016DeleteWorkflow\022#.clarifai" +
-      ".api.DeleteWorkflowRequest\032!.clarifai.ap" +
-      "i.status.BaseResponse\"\214\001\202\323\344\223\002r*Q/v2/user" +
-      "s/{user_app_id.user_id}/apps/{user_app_i" +
-      "d.app_id}/workflows/{workflow_id}Z\035*\033/v2" +
-      "/workflows/{workflow_id}\230\234\'\002\220\234\'-\220\234\'\022\220\234\'\025" +
-      "\220\234\'\023\022\322\001\n\017DeleteWorkflows\022$.clarifai.api." +
-      "DeleteWorkflowsRequest\032!.clarifai.api.st" +
-      "atus.BaseResponse\"v\202\323\344\223\002\\*C/v2/users/{us" +
-      "er_app_id.user_id}/apps/{user_app_id.app" +
-      "_id}/workflows:\001*Z\022*\r/v2/workflows:\001*\230\234\'" +
-      "\002\220\234\'-\220\234\'\022\220\234\'\025\220\234\'\023\022\212\003\n\023PostWorkflowResult" +
-      "s\022(.clarifai.api.PostWorkflowResultsRequ" +
-      "est\032).clarifai.api.PostWorkflowResultsRe" +
-      "sponse\"\235\002\202\323\344\223\002\376\001\"o/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/work" +
-      "flows/{workflow_id}/versions/{version_id" +
-      "}/results:\001*Z^\"Y/v2/users/{user_app_id.u" +
-      "ser_id}/apps/{user_app_id.app_id}/workfl" +
-      "ows/{workflow_id}/results:\001*Z(\"#/v2/work" +
-      "flows/{workflow_id}/results:\001*\230\234\'\002\220\234\'-\220\234" +
-      "\'\017\220\234\'\013\220\234\'\002\220\234\'\023\022\311\003\n\035PostWorkflowResultsSi" +
-      "milarity\0222.clarifai.api.PostWorkflowResu" +
-      "ltsSimilarityRequest\0323.clarifai.api.Post" +
-      "WorkflowResultsSimilarityResponse\"\276\002\202\323\344\223" +
-      "\002\237\002\"z/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/workflows/{workfl" +
-      "ow_id}/versions/{version_id}/results/sim" +
-      "ilarity:\001*Zi\"d/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/workflow" +
-      "s/{workflow_id}/results/similarity:\001*Z3\"" +
-      "./v2/workflows/{workflow_id}/results/sim" +
-      "ilarity:\001*\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\013\220\234\'\002\220\234\'\023\022\213\002\n\024L" +
-      "istWorkflowVersions\022).clarifai.api.ListW" +
-      "orkflowVersionsRequest\032*.clarifai.api.Mu" +
-      "ltiWorkflowVersionResponse\"\233\001\202\323\344\223\002\204\001\022Z/v" +
-      "2/users/{user_app_id.user_id}/apps/{user" +
-      "_app_id.app_id}/workflows/{workflow_id}/" +
-      "versionsZ&\022$/v2/workflows/{workflow_id}/" +
-      "versions\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\022\264\002\n\022GetWorkflow" +
-      "Version\022\'.clarifai.api.GetWorkflowVersio" +
-      "nRequest\032+.clarifai.api.SingleWorkflowVe" +
-      "rsionResponse\"\307\001\202\323\344\223\002\260\001\022p/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/workflows/{workflow_id}/versions/{wor" +
-      "kflow_version_id}Z<\022:/v2/workflows/{work" +
-      "flow_id}/versions/{workflow_version_id}\230" +
-      "\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\022\220\002\n\026DeleteWorkflowVersio" +
-      "ns\022+.clarifai.api.DeleteWorkflowVersions" +
-      "Request\032!.clarifai.api.status.BaseRespon" +
-      "se\"\245\001\202\323\344\223\002\212\001*Z/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/workflow" +
-      "s/{workflow_id}/versions:\001*Z)*$/v2/workf" +
-      "lows/{workflow_id}/versions:\001*\230\234\'\002\220\234\'-\220\234" +
-      "\'\023\220\234\'\022\220\234\'\025\022\227\002\n\025PatchWorkflowVersions\022*.c" +
-      "larifai.api.PatchWorkflowVersionsRequest" +
-      "\032*.clarifai.api.MultiWorkflowVersionResp" +
-      "onse\"\245\001\202\323\344\223\002\212\0012Z/v2/users/{user_app_id.u" +
-      "ser_id}/apps/{user_app_id.app_id}/workfl" +
-      "ows/{workflow_id}/versions:\001*Z)2$/v2/wor" +
-      "kflows/{workflow_id}/versions:\001*\230\234\'\002\220\234\'-" +
-      "\220\234\'\017\220\234\'\023\220\234\'\022\022\205\001\n\006GetKey\022\033.clarifai.api.G" +
-      "etKeyRequest\032\037.clarifai.api.SingleKeyRes" +
-      "ponse\"=\202\323\344\223\002/\022-/v2/users/{user_app_id.us" +
-      "er_id}/keys/{key_id}\230\234\'\005\220\234\'0\022\177\n\010ListKeys" +
-      "\022\035.clarifai.api.ListKeysRequest\032\036.clarif" +
-      "ai.api.MultiKeyResponse\"4\202\323\344\223\002&\022$/v2/use" +
-      "rs/{user_app_id.user_id}/keys\230\234\'\005\220\234\'0\022\243\001" +
-      "\n\013ListAppKeys\022 .clarifai.api.ListAppKeys" +
-      "Request\032\036.clarifai.api.MultiKeyResponse\"" +
-      "R\202\323\344\223\002@\022>/v2/users/{user_app_id.user_id}",
-      "/apps/{user_app_id.app_id}/keys\230\234\'\005\220\234\'-\220" +
-      "\234\'0\022\225\001\n\tDeleteKey\022\036.clarifai.api.DeleteK" +
-      "eyRequest\032!.clarifai.api.status.BaseResp" +
-      "onse\"E\202\323\344\223\002/*-/v2/users/{user_app_id.use" +
-      "r_id}/keys/{key_id}\230\234\'\005\220\234\'/\220\234\'1\220\234\'0\022\212\001\n\010" +
-      "PostKeys\022\035.clarifai.api.PostKeysRequest\032" +
-      "\036.clarifai.api.MultiKeyResponse\"?\202\323\344\223\002)\"" +
-      "$/v2/users/{user_app_id.user_id}/keys:\001*" +
-      "\230\234\'\005\220\234\'-\220\234\'/\220\234\'0\022\210\001\n\tPatchKeys\022\036.clarifa" +
-      "i.api.PatchKeysRequest\032\036.clarifai.api.Mu" +
-      "ltiKeyResponse\";\202\323\344\223\002)2$/v2/users/{user_" +
-      "app_id.user_id}/keys:\001*\230\234\'\005\220\234\'/\220\234\'0\022\274\001\n\010" +
-      "MyScopes\022\035.clarifai.api.MyScopesRequest\032" +
-      " .clarifai.api.MultiScopeResponse\"o\202\323\344\223\002" +
-      "e\022B/v2/users/{user_app_id.user_id}/apps/" +
-      "{user_app_id.app_id}/myscopesZ\016\022\014/v2/mys" +
-      "copesZ\017\022\r/v2/my_scopes\230\234\'\002\022\215\001\n\014MyScopesU" +
-      "ser\022!.clarifai.api.MyScopesUserRequest\032$" +
-      ".clarifai.api.MultiScopeUserResponse\"4\202\323" +
-      "\344\223\002*\022(/v2/users/{user_app_id.user_id}/my" +
-      "scopes\230\234\'\005\022u\n\014MyScopesRoot\022!.clarifai.ap" +
-      "i.MyScopesRootRequest\032$.clarifai.api.Mul" +
-      "tiScopeRootResponse\"\034\202\323\344\223\002\022\022\020/v2/myscope" +
-      "sroot\230\234\'\005\022\207\001\n\nListScopes\022\037.clarifai.api." +
-      "ListScopesRequest\032$.clarifai.api.MultiSc" +
-      "opeDepsResponse\"2\202\323\344\223\002(\022&/v2/users/{user" +
-      "_app_id.user_id}/scopes\230\234\'\003\022\240\001\n\006GetApp\022\033" +
-      ".clarifai.api.GetAppRequest\032\037.clarifai.a" +
-      "pi.SingleAppResponse\"X\202\323\344\223\002F\0229/v2/users/" +
-      "{user_app_id.user_id}/apps/{user_app_id." +
-      "app_id}Z\t\022\007/v2/app\230\234\'\002\220\234\'-\220\234\'\023\022\217\001\n\010ListA" +
-      "pps\022\035.clarifai.api.ListAppsRequest\032\036.cla" +
-      "rifai.api.MultiAppResponse\"D\202\323\344\223\0022\022$/v2/" +
-      "users/{user_app_id.user_id}/appsZ\n\022\010/v2/" +
-      "apps\230\234\'\005\220\234\'-\220\234\'\023\022\245\001\n\tDeleteApp\022\036.clarifa" +
-      "i.api.DeleteAppRequest\032!.clarifai.api.st" +
-      "atus.BaseResponse\"U\202\323\344\223\002;*9/v2/users/{us" +
-      "er_app_id.user_id}/apps/{user_app_id.app" +
-      "_id}\230\234\'\005\220\234\',\220\234\'.\220\234\'-\220\234\'\023\022\222\001\n\010PostApps\022\035." +
-      "clarifai.api.PostAppsRequest\032\036.clarifai." +
-      "api.MultiAppResponse\"G\202\323\344\223\002)\"$/v2/users/" +
-      "{user_app_id.user_id}/apps:\001*\230\234\'\005\220\234\',\220\234\'" +
-      "-\220\234\'\017\220\234\'\023\220\234\'\022\022\210\001\n\tPatchApps\022\036.clarifai.a" +
-      "pi.PatchAppsRequest\032\036.clarifai.api.Multi" +
-      "AppResponse\";\202\323\344\223\002)2$/v2/users/{user_app" +
-      "_id.user_id}/apps:\001*\230\234\'\005\220\234\',\220\234\'-\022\263\001\n\020Pat" +
-      "chAppsDetails\022%.clarifai.api.PatchAppsDe" +
-      "tailsRequest\032\036.clarifai.api.MultiAppResp" +
-      "onse\"X\202\323\344\223\002F2A/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/partial:" +
-      "\001*\230\234\'\005\220\234\',\220\234\'-\022\222\001\n\014PatchAppsIds\022!.clarif" +
-      "ai.api.PatchAppsIdsRequest\032\036.clarifai.ap" +
-      "i.MultiAppResponse\"?\202\323\344\223\002-2(/v2/users/{u" +
-      "ser_app_id.user_id}/apps/ids:\001*\230\234\'\005\220\234\',\220" +
-      "\234\'-\022\234\001\n\010PatchApp\022\035.clarifai.api.PatchApp" +
-      "Request\032\037.clarifai.api.SingleAppResponse" +
-      "\"P\202\323\344\223\002>29/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}:\001*\230\234\'\005\220\234\',\220\234" +
-      "\'-\022\237\001\n\020PostAppsSearches\022%.clarifai.api.P" +
-      "ostAppsSearchesRequest\032\036.clarifai.api.Mu" +
-      "ltiAppResponse\"D\202\323\344\223\0022\"-/v2/users/{user_" +
-      "app_id.user_id}/apps/searches:\001*\230\234\'\005\220\234\'-" +
-      "\220\234\'\023\022v\n\007GetUser\022\034.clarifai.api.GetUserRe" +
-      "quest\032 .clarifai.api.SingleUserResponse\"" +
-      "+\202\323\344\223\002!\022\037/v2/users/{user_app_id.user_id}" +
-      "\230\234\'\005\022\317\001\n\024PostValidatePassword\022).clarifai" +
-      ".api.PostValidatePasswordRequest\032..clari" +
-      "fai.api.SinglePasswordValidationResponse" +
-      "\"\\\202\323\344\223\002R\"1/v2/users/{user_app_id.user_id" +
-      "}/validate_password:\001*Z\032\"\025/v2/validate_p" +
-      "assword:\001*\230\234\'\003\022\301\001\n\tGetSearch\022\036.clarifai." +
-      "api.GetSearchRequest\032\".clarifai.api.Sing" +
-      "leSearchResponse\"p\202\323\344\223\002^\022G/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/searches/{id}Z\023\022\021/v2/searches/{id}\230\234" +
-      "\'\002\220\234\'-\220\234\'r\022\274\001\n\014ListSearches\022!.clarifai.a" +
-      "pi.ListSearchesRequest\032!.clarifai.api.Mu" +
-      "ltiSearchResponse\"f\202\323\344\223\002T\022B/v2/users/{us" +
-      "er_app_id.user_id}/apps/{user_app_id.app" +
-      "_id}/searchesZ\016\022\014/v2/searches\230\234\'\002\220\234\'-\220\234\'" +
-      "r\022\310\001\n\rPatchSearches\022\".clarifai.api.Patch" +
-      "SearchesRequest\032!.clarifai.api.MultiSear" +
-      "chResponse\"p\202\323\344\223\002Z2B/v2/users/{user_app_" +
-      "id.user_id}/apps/{user_app_id.app_id}/se" +
-      "arches:\001*Z\0212\014/v2/searches:\001*\230\234\'\002\220\234\'-\220\234\'s" +
-      "\220\234\'r\022\332\001\n\014PostSearches\022!.clarifai.api.Pos" +
-      "tSearchesRequest\032!.clarifai.api.MultiSea" +
-      "rchResponse\"\203\001\210\002\001\202\323\344\223\002Z\"B/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/searches:\001*Z\021\"\014/v2/searches:\001*\230\234\'\002\220\234\'" +
-      "-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\017\220\234\'\003\220\234\'\023\022\330\001\n\020PostSearch" +
-      "esByID\022%.clarifai.api.PostSearchesByIDRe" +
-      "quest\032!.clarifai.api.MultiSearchResponse" +
-      "\"z\202\323\344\223\002d\"G/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}/searches/{id" +
-      "}:\001*Z\026\"\021/v2/searches/{id}:\001*\230\234\'\002\220\234\'-\220\234\'r" +
-      "\220\234\'\003\022\263\002\n\033PostAnnotationSearchMetrics\0220.c" +
-      "larifai.api.PostAnnotationSearchMetricsR" +
-      "equest\0322.clarifai.api.MultiAnnotationSea" +
-      "rchMetricsResponse\"\255\001\202\323\344\223\002\202\001\"V/v2/users/" +
-      "{user_app_id.user_id}/apps/{user_app_id." +
-      "app_id}/annotations/searches/metrics:\001*Z" +
-      "%\" /v2/annotations/searches/metrics:\001*\230\234" +
-      "\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'5\220\234\'6\220\234\'\017\220\234\'\023\022\251\002\n\032G" +
-      "etAnnotationSearchMetrics\022/.clarifai.api" +
-      ".GetAnnotationSearchMetricsRequest\0322.cla" +
-      "rifai.api.MultiAnnotationSearchMetricsRe" +
-      "sponse\"\245\001\202\323\344\223\002\206\001\022[/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/anno" +
-      "tations/searches/metrics/{id}Z\'\022%/v2/ann" +
-      "otations/searches/metrics/{id}\230\234\'\002\220\234\'-\220\234" +
-      "\'&\220\234\'\013\220\234\'\005\220\234\'5\022\240\002\n\033ListAnnotationSearchM" +
-      "etrics\0220.clarifai.api.ListAnnotationSear" +
-      "chMetricsRequest\0322.clarifai.api.MultiAnn" +
-      "otationSearchMetricsResponse\"\232\001\202\323\344\223\002|\022V/" +
-      "v2/users/{user_app_id.user_id}/apps/{use" +
-      "r_app_id.app_id}/annotations/searches/me" +
-      "tricsZ\"\022 /v2/annotations/searches/metric" +
-      "s\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'5\022\232\002\n\035DeleteAnno" +
-      "tationSearchMetrics\0222.clarifai.api.Delet" +
-      "eAnnotationSearchMetricsRequest\032!.clarif" +
-      "ai.api.status.BaseResponse\"\241\001\202\323\344\223\002\206\001*[/v" +
-      "2/users/{user_app_id.user_id}/apps/{user" +
-      "_app_id.app_id}/annotations/searches/met" +
-      "rics/{id}Z\'*%/v2/annotations/searches/me" +
-      "trics/{id}\230\234\'\002\220\234\'-\220\234\'5\220\234\'6\220\234\'?\022\316\001\n\014Delet" +
-      "eSearch\022!.clarifai.api.DeleteSearchReque" +
-      "st\032!.clarifai.api.status.BaseResponse\"x\202" +
-      "\323\344\223\002^*G/v2/users/{user_app_id.user_id}/a" +
-      "pps/{user_app_id.app_id}/searches/{id}Z\023" +
-      "*\021/v2/searches/{id}\230\234\'\002\220\234\'-\220\234\'r\220\234\'s\220\234\'t\022" +
-      "\354\001\n\025ListAnnotationFilters\022*.clarifai.api" +
-      ".ListAnnotationFiltersRequest\032+.clarifai" +
-      ".api.MultiAnnotationFilterResponse\"z\202\323\344\223" +
-      "\002h\022L/v2/users/{user_app_id.user_id}/apps" +
-      "/{user_app_id.app_id}/annotation_filters" +
-      "Z\030\022\026/v2/annotation_filters\230\234\'\002\220\234\'-\220\234\'r\022\231" +
-      "\002\n\023GetAnnotationFilter\022(.clarifai.api.Ge" +
-      "tAnnotationFilterRequest\032,.clarifai.api." +
-      "SingleAnnotationFilterResponse\"\251\001\202\323\344\223\002\226\001" +
-      "\022c/v2/users/{user_app_id.user_id}/apps/{" +
-      "user_app_id.app_id}/annotation_filters/{" +
-      "annotation_filter_id}Z/\022-/v2/annotation_" +
-      "filters/{annotation_filter_id}\230\234\'\002\220\234\'-\220\234" +
-      "\'r\022\367\001\n\025PostAnnotationFilters\022*.clarifai." +
-      "api.PostAnnotationFiltersRequest\032+.clari" +
-      "fai.api.MultiAnnotationFilterResponse\"\204\001" +
-      "\202\323\344\223\002n\"L/v2/users/{user_app_id.user_id}/" +
-      "apps/{user_app_id.app_id}/annotation_fil" +
-      "ters:\001*Z\033\"\026/v2/annotation_filters:\001*\230\234\'\002" +
-      "\220\234\'-\220\234\'r\220\234\'s\022\371\001\n\026PatchAnnotationFilters\022" +
-      "+.clarifai.api.PatchAnnotationFiltersReq" +
-      "uest\032+.clarifai.api.MultiAnnotationFilte" +
-      "rResponse\"\204\001\202\323\344\223\002n2L/v2/users/{user_app_" +
-      "id.user_id}/apps/{user_app_id.app_id}/an" +
-      "notation_filters:\001*Z\0332\026/v2/annotation_fi" +
-      "lters:\001*\230\234\'\002\220\234\'-\220\234\'r\220\234\'s\022\361\001\n\027DeleteAnnot" +
-      "ationFilters\022,.clarifai.api.DeleteAnnota" +
-      "tionFiltersRequest\032!.clarifai.api.status" +
-      ".BaseResponse\"\204\001\202\323\344\223\002n*L/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/annotation_filters:\001*Z\033*\026/v2/annotatio" +
-      "n_filters:\001*\230\234\'\002\220\234\'-\220\234\'r\220\234\'s\022|\n\017ListStat" +
-      "usCodes\022$.clarifai.api.ListStatusCodesRe" +
-      "quest\032%.clarifai.api.MultiStatusCodeResp" +
-      "onse\"\034\202\323\344\223\002\022\022\020/v2/status_codes\230\234\'\001\022\212\001\n\rG" +
-      "etStatusCode\022\".clarifai.api.GetStatusCod" +
-      "eRequest\032&.clarifai.api.SingleStatusCode" +
-      "Response\"-\202\323\344\223\002#\022!/v2/status_codes/{stat" +
-      "us_code_id}\230\234\'\001\022\302\001\n\021ListCollaborators\022&." +
-      "clarifai.api.ListCollaboratorsRequest\032(." +
-      "clarifai.api.MultiCollaboratorsResponse\"" +
-      "[\202\323\344\223\002I\022G/v2/users/{user_app_id.user_id}" +
-      "/apps/{user_app_id.app_id}/collaborators" +
-      "\230\234\'\002\220\234\'-\220\234\'2\022\311\001\n\021PostCollaborators\022&.cla" +
-      "rifai.api.PostCollaboratorsRequest\032(.cla" +
-      "rifai.api.MultiCollaboratorsResponse\"b\202\323" +
-      "\344\223\002L\"G/v2/users/{user_app_id.user_id}/ap" +
-      "ps/{user_app_id.app_id}/collaborators:\001*" +
-      "\230\234\'\002\220\234\'-\220\234\'3\220\234\'2\022\317\001\n\022PatchCollaborators\022" +
-      "\'.clarifai.api.PatchCollaboratorsRequest" +
-      "\032(.clarifai.api.MultiCollaboratorsRespon" +
-      "se\"f\202\323\344\223\002L2G/v2/users/{user_app_id.user_" +
-      "id}/apps/{user_app_id.app_id}/collaborat" +
-      "ors:\001*\230\234\'\002\220\234\'-\220\234\'3\220\234\'2\220\234\'4\022\322\001\n\023DeleteCol" +
-      "laborators\022(.clarifai.api.DeleteCollabor" +
-      "atorsRequest\032!.clarifai.api.status.BaseR" +
-      "esponse\"n\202\323\344\223\002L*G/v2/users/{user_app_id." +
-      "user_id}/apps/{user_app_id.app_id}/colla" +
-      "borators:\001*\230\234\'\002\220\234\'-\220\234\'3\220\234\'2\220\234\'4\220\234\'7\220\234\'8\022" +
-      "\254\001\n\022ListCollaborations\022\'.clarifai.api.Li" +
-      "stCollaborationsRequest\032).clarifai.api.M" +
-      "ultiCollaborationsResponse\"B\202\323\344\223\0020\022./v2/" +
-      "users/{user_app_id.user_id}/collaboratio" +
-      "ns\230\234\'\005\220\234\'-\220\234\'2\022\306\001\n\023PostAppDuplications\022(" +
-      ".clarifai.api.PostAppDuplicationsRequest" +
-      "\032*.clarifai.api.MultiAppDuplicationsResp" +
-      "onse\"Y\202\323\344\223\002K\"F/v2/users/{user_app_id.use" +
-      "r_id}/apps/{user_app_id.app_id}/duplicat" +
-      "ions:\001*\230\234\'\005\220\234\'-\022\245\001\n\023ListAppDuplications\022" +
-      "(.clarifai.api.ListAppDuplicationsReques" +
-      "t\032*.clarifai.api.MultiAppDuplicationsRes" +
-      "ponse\"8\202\323\344\223\002.\022,/v2/users/{user_app_id.us" +
-      "er_id}/duplications\230\234\'\005\022\266\001\n\021GetAppDuplic" +
-      "ation\022&.clarifai.api.GetAppDuplicationRe" +
-      "quest\032*.clarifai.api.SingleAppDuplicatio" +
-      "nResponse\"M\202\323\344\223\002C\022A/v2/users/{user_app_i" +
-      "d.user_id}/duplications/{app_duplication" +
-      "_id}\230\234\'\005\022\331\001\n\tPostTasks\022\036.clarifai.api.Po" +
-      "stTasksRequest\032\037.clarifai.api.MultiTaskR" +
-      "esponse\"\212\001\202\323\344\223\002T\"?/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/task" +
-      "s:\001*Z\016\"\t/v2/tasks:\001*\230\234\'\002\220\234\'-\220\234\'7\220\234\'8\220\234\'\005" +
-      "\220\234\'\003\220\234\'r\220\234\'\013\220\234\'\023\220\234\'\017\220\234\'%\220\234\'&\022\376\001\n\026GetTask" +
-      "AnnotationCount\022!.clarifai.api.GetTaskCo" +
-      "untRequest\032%.clarifai.api.SingleTaskCoun" +
-      "tResponse\"\231\001\202\323\344\223\002\206\001\022[/v2/users/{user_app" +
-      "_id.user_id}/apps/{user_app_id.app_id}/t" +
-      "asks/{task_id}/annotations/countZ\'\022%/v2/" +
-      "tasks/{task_id}/annotations/count\230\234\'\002\220\234\'" +
-      "-\220\234\'8\022\356\001\n\021GetTaskInputCount\022!.clarifai.a" +
-      "pi.GetTaskCountRequest\032%.clarifai.api.Si" +
-      "ngleTaskCountResponse\"\216\001\202\323\344\223\002|\022V/v2/user" +
-      "s/{user_app_id.user_id}/apps/{user_app_i" +
-      "d.app_id}/tasks/{task_id}/inputs/countZ\"" +
-      "\022 /v2/tasks/{task_id}/inputs/count\230\234\'\002\220\234" +
-      "\'-\220\234\'8\022\320\001\n\007GetTask\022\034.clarifai.api.GetTas" +
-      "kRequest\032 .clarifai.api.SingleTaskRespon" +
-      "se\"\204\001\202\323\344\223\002b\022I/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/tasks/{ta" +
-      "sk_id}Z\025\022\023/v2/tasks/{task_id}\230\234\'\002\220\234\'-\220\234\'" +
-      "8\220\234\'r\220\234\'\013\220\234\'\023\220\234\'\017\022\276\001\n\tListTasks\022\036.clarif" +
-      "ai.api.ListTasksRequest\032\037.clarifai.api.M" +
-      "ultiTaskResponse\"p\202\323\344\223\002N\022?/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/tasksZ\013\022\t/v2/tasks\230\234\'\002\220\234\'-\220\234\'8\220\234\'r\220\234" +
-      "\'\013\220\234\'\023\220\234\'\017\022\327\001\n\nPatchTasks\022\037.clarifai.api" +
-      ".PatchTasksRequest\032\037.clarifai.api.MultiT" +
-      "askResponse\"\206\001\202\323\344\223\002T2?/v2/users/{user_ap" +
-      "p_id.user_id}/apps/{user_app_id.app_id}/" +
-      "tasks:\001*Z\0162\t/v2/tasks:\001*\230\234\'\002\220\234\'-\220\234\'7\220\234\'8" +
-      "\220\234\'\005\220\234\'r\220\234\'\013\220\234\'\023\220\234\'\017\220\234\'%\220\234\'&\022\302\001\n\013DeleteT" +
-      "asks\022 .clarifai.api.DeleteTasksRequest\032!" +
-      ".clarifai.api.status.BaseResponse\"n\202\323\344\223\002" +
-      "T*?/v2/users/{user_app_id.user_id}/apps/" +
-      "{user_app_id.app_id}/tasks:\001*Z\016*\t/v2/tas" +
-      "ks:\001*\230\234\'\002\220\234\'-\220\234\'7\220\234\'8\220\234\'F\022\365\001\n\017PostLabelO" +
-      "rders\022$.clarifai.api.PostLabelOrdersRequ" +
-      "est\032%.clarifai.api.MultiLabelOrderRespon" +
-      "se\"\224\001\202\323\344\223\002b\"F/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/label_ord" +
-      "ers:\001*Z\025\"\020/v2/label_orders:\001*\230\234\'\002\220\234\'-\220\234\'" +
-      "C\220\234\'D\220\234\'7\220\234\'8\220\234\'\005\220\234\'r\220\234\'\013\220\234\'\023\220\234\'\017\022\366\001\n\rGe" +
-      "tLabelOrder\022\".clarifai.api.GetLabelOrder" +
-      "Request\032&.clarifai.api.SingleLabelOrderR" +
-      "esponse\"\230\001\202\323\344\223\002~\022W/v2/users/{user_app_id" +
-      ".user_id}/apps/{user_app_id.app_id}/labe" +
-      "l_orders/{label_order_id}Z#\022!/v2/label_o" +
-      "rders/{label_order_id}\230\234\'\002\220\234\'-\220\234\'C\220\234\'\013\220\234" +
-      "\'8\022\326\001\n\017ListLabelOrders\022$.clarifai.api.Li" +
-      "stLabelOrdersRequest\032%.clarifai.api.Mult" +
-      "iLabelOrderResponse\"v\202\323\344\223\002\\\022F/v2/users/{" +
-      "user_app_id.user_id}/apps/{user_app_id.a" +
-      "pp_id}/label_ordersZ\022\022\020/v2/label_orders\230" +
-      "\234\'\002\220\234\'-\220\234\'C\220\234\'\013\220\234\'8\022\353\001\n\020PatchLabelOrders" +
-      "\022%.clarifai.api.PatchLabelOrdersRequest\032" +
-      "%.clarifai.api.MultiLabelOrderResponse\"\210" +
-      "\001\202\323\344\223\002b2F/v2/users/{user_app_id.user_id}" +
-      "/apps/{user_app_id.app_id}/label_orders:" +
-      "\001*Z\0252\020/v2/label_orders:\001*\230\234\'\002\220\234\'-\220\234\'C\220\234\'" +
-      "D\220\234\'\013\220\234\'7\220\234\'8\220\234\'F\022\345\001\n\021DeleteLabelOrders\022" +
-      "&.clarifai.api.DeleteLabelOrdersRequest\032" +
-      "!.clarifai.api.status.BaseResponse\"\204\001\202\323\344" +
-      "\223\002b*F/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/label_orders:\001*Z\025" +
-      "*\020/v2/label_orders:\001*\230\234\'\002\220\234\'-\220\234\'E\220\234\'C\220\234\'" +
-      "D\220\234\'7\220\234\'8\022\362\001\n\016PostCollectors\022#.clarifai." +
-      "api.PostCollectorsRequest\032$.clarifai.api" +
-      ".MultiCollectorResponse\"\224\001\202\323\344\223\002^\"D/v2/us" +
-      "ers/{user_app_id.user_id}/apps/{user_app" +
-      "_id.app_id}/collectors:\001*Z\023\"\016/v2/collect" +
-      "ors:\001*\230\234\'\002\220\234\'-\220\234\'\004\220\234\'%\220\234\'&\220\234\')\220\234\'\013\220\234\'\004\220\234" +
-      "\'\005\220\234\'\017\220\234\'\002\220\234\'\023\022\343\001\n\014GetCollector\022!.clarif" +
-      "ai.api.GetCollectorRequest\032%.clarifai.ap" +
-      "i.SingleCollectorResponse\"\210\001\202\323\344\223\002v\022S/v2/" +
-      "users/{user_app_id.user_id}/apps/{user_a" +
-      "pp_id.app_id}/collectors/{collector_id}Z" +
-      "\037\022\035/v2/collectors/{collector_id}\230\234\'\002\220\234\'-" +
-      "\220\234\'*\022\307\001\n\016ListCollectors\022#.clarifai.api.L" +
-      "istCollectorsRequest\032$.clarifai.api.Mult" +
-      "iCollectorResponse\"j\202\323\344\223\002X\022D/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/collectorsZ\020\022\016/v2/collectors\230\234\'\002\220\234" +
-      "\'-\220\234\'*\022\323\001\n\017PatchCollectors\022$.clarifai.ap" +
-      "i.PatchCollectorsRequest\032$.clarifai.api." +
-      "MultiCollectorResponse\"t\202\323\344\223\002^2D/v2/user" +
-      "s/{user_app_id.user_id}/apps/{user_app_i" +
-      "d.app_id}/collectors:\001*Z\0232\016/v2/collector" +
-      "s:\001*\230\234\'\002\220\234\'-\220\234\')\220\234\'*\022\326\001\n\020DeleteCollector" +
-      "s\022%.clarifai.api.DeleteCollectorsRequest" +
-      "\032!.clarifai.api.status.BaseResponse\"x\202\323\344" +
-      "\223\002^*D/v2/users/{user_app_id.user_id}/app" +
-      "s/{user_app_id.app_id}/collectors:\001*Z\023*\016" +
-      "/v2/collectors:\001*\230\234\'\002\220\234\'-\220\234\')\220\234\'+\220\234\'*\022\311\001" +
-      "\n\016PostStatValues\022#.clarifai.api.PostStat" +
-      "ValuesRequest\032$.clarifai.api.MultiStatVa" +
-      "lueResponse\"l\202\323\344\223\002b\"F/v2/users/{user_app" +
-      "_id.user_id}/apps/{user_app_id.app_id}/s" +
-      "tats/values:\001*Z\025\"\020/v2/stats/values:\001*\230\234\'" +
-      "\002\022\375\001\n\027PostStatValuesAggregate\022,.clarifai" +
-      ".api.PostStatValuesAggregateRequest\032-.cl" +
-      "arifai.api.MultiStatValueAggregateRespon" +
-      "se\"\204\001\202\323\344\223\002v\"P/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/stats/val" +
-      "ues/aggregate:\001*Z\037\"\032/v2/stats/values/agg" +
-      "regate:\001*\230\234\'\002\220\234\'-\022\343\001\n\027PostTrendingMetric" +
-      "sView\022,.clarifai.api.PostTrendingMetrics" +
-      "ViewRequest\032!.clarifai.api.status.BaseRe" +
-      "sponse\"w\202\323\344\223\002m\"h/v2/users/{user_app_id.u" +
-      "ser_id}/apps/{user_app_id.app_id}/trendi" +
-      "ng_metrics/views/{view_type}/{object_id}" +
-      ":\001*\230\234\'\002\022\217\002\n\030ListTrendingMetricsViews\022-.c" +
-      "larifai.api.ListTrendingMetricsViewsRequ" +
-      "est\032..clarifai.api.MultiTrendingMetricsV" +
-      "iewResponse\"\223\001\202\323\344\223\002\210\001\022\\/v2/users/{user_a" +
-      "pp_id.user_id}/apps/{user_app_id.app_id}" +
-      "/trending_metrics/views/{view_type}Z(\022&/" +
-      "v2/trending_metrics/views/{view_type}\230\234\'" +
-      "\002\022\262\001\n\tGetModule\022\036.clarifai.api.GetModule" +
-      "Request\032\".clarifai.api.SingleModuleRespo" +
-      "nse\"a\202\323\344\223\002O\022M/v2/users/{user_app_id.user" +
-      "_id}/apps/{user_app_id.app_id}/modules/{" +
-      "module_id}\230\234\'\005\220\234\'-\220\234\'m\022\344\001\n\013ListModules\022 " +
-      ".clarifai.api.ListModulesRequest\032!.clari" +
-      "fai.api.MultiModuleResponse\"\217\001\202\323\344\223\002}\022A/v" +
-      "2/users/{user_app_id.user_id}/apps/{user" +
-      "_app_id.app_id}/modulesZ)\022\'/v2/users/{us" +
-      "er_app_id.user_id}/modulesZ\r\022\013/v2/module" +
-      "s\230\234\'\005\220\234\'-\220\234\'m\022\260\001\n\013PostModules\022 .clarifai" +
-      ".api.PostModulesRequest\032!.clarifai.api.M" +
-      "ultiModuleResponse\"\\\202\323\344\223\002F\"A/v2/users/{u" +
-      "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/modules:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'m\022\262\001\n\014Pat" +
-      "chModules\022!.clarifai.api.PatchModulesReq" +
-      "uest\032!.clarifai.api.MultiModuleResponse\"" +
-      "\\\202\323\344\223\002F2A/v2/users/{user_app_id.user_id}" +
-      "/apps/{user_app_id.app_id}/modules:\001*\230\234\'" +
-      "\005\220\234\'-\220\234\'l\220\234\'m\022\320\001\n\rDeleteModules\022\".clarif" +
-      "ai.api.DeleteModulesRequest\032!.clarifai.a" +
-      "pi.status.BaseResponse\"x\202\323\344\223\002F*A/v2/user" +
-      "s/{user_app_id.user_id}/apps/{user_app_i" +
-      "d.app_id}/modules:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'n\220\234\'m" +
-      "\220\234\'p\220\234\'o\220\234\'q\220\234\'1\220\234\'0\220\234\'/\022\344\001\n\020GetModuleVe" +
-      "rsion\022%.clarifai.api.GetModuleVersionReq" +
-      "uest\032).clarifai.api.SingleModuleVersionR" +
-      "esponse\"~\202\323\344\223\002l\022j/v2/users/{user_app_id." +
-      "user_id}/apps/{user_app_id.app_id}/modul" +
-      "es/{module_id}/versions/{module_version_" +
-      "id}\230\234\'\005\220\234\'-\220\234\'m\022\323\001\n\022ListModuleVersions\022\'" +
-      ".clarifai.api.ListModuleVersionsRequest\032" +
-      "(.clarifai.api.MultiModuleVersionRespons" +
-      "e\"j\202\323\344\223\002X\022V/v2/users/{user_app_id.user_i" +
-      "d}/apps/{user_app_id.app_id}/modules/{mo" +
-      "dule_id}/versions\230\234\'\005\220\234\'-\220\234\'m\022\332\001\n\022PostMo" +
-      "duleVersions\022\'.clarifai.api.PostModuleVe" +
-      "rsionsRequest\032(.clarifai.api.MultiModule" +
-      "VersionResponse\"q\202\323\344\223\002[\"V/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/modules/{module_id}/versions:\001*\230\234\'\005\220\234" +
-      "\'-\220\234\'l\220\234\'m\022\334\001\n\023PatchModuleVersions\022(.cla" +
-      "rifai.api.PatchModuleVersionsRequest\032(.c" +
-      "larifai.api.MultiModuleVersionResponse\"q" +
-      "\202\323\344\223\002[2V/v2/users/{user_app_id.user_id}/" +
-      "apps/{user_app_id.app_id}/modules/{modul" +
-      "e_id}/versions:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'m\022\364\001\n\024De" +
-      "leteModuleVersions\022).clarifai.api.Delete" +
-      "ModuleVersionsRequest\032!.clarifai.api.sta" +
-      "tus.BaseResponse\"\215\001\202\323\344\223\002[*V/v2/users/{us" +
-      "er_app_id.user_id}/apps/{user_app_id.app" +
-      "_id}/modules/{module_id}/versions:\001*\230\234\'\005" +
-      "\220\234\'-\220\234\'l\220\234\'n\220\234\'m\220\234\'p\220\234\'o\220\234\'q\220\234\'1\220\234\'0\220\234\'/" +
-      "\022\223\002\n\032GetModuleVersionUsageCount\022/.clarif" +
-      "ai.api.GetModuleVersionUsageCountRequest" +
-      "\0323.clarifai.api.SingleModuleVersionUsage" +
-      "CountResponse\"\216\001\202\323\344\223\002x\022v/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/modules/{module_id}/versions/{module_v" +
-      "ersion_id}/usage_count\230\234\'\005\220\234\'-\220\234\'m\220\234\'p\022\217" +
-      "\002\n\031GetInstalledModuleVersion\022..clarifai." +
-      "api.GetInstalledModuleVersionRequest\0322.c" +
-      "larifai.api.SingleInstalledModuleVersion" +
-      "Response\"\215\001\202\323\344\223\002s\022q/v2/users/{user_app_i" +
-      "d.user_id}/apps/{user_app_id.app_id}/ins" +
-      "talled_module_versions/{installed_module" +
-      "_version_id}\230\234\'\005\220\234\'-\220\234\'p\220\234\'m\220\234\'0\022\363\001\n\033Lis" +
-      "tInstalledModuleVersions\0220.clarifai.api." +
-      "ListInstalledModuleVersionsRequest\0321.cla" +
-      "rifai.api.MultiInstalledModuleVersionRes" +
-      "ponse\"o\202\323\344\223\002U\022S/v2/users/{user_app_id.us" +
-      "er_id}/apps/{user_app_id.app_id}/install",
-      "ed_module_versions\230\234\'\005\220\234\'-\220\234\'p\220\234\'m\220\234\'0\022\366" +
-      "\001\n\033PostInstalledModuleVersions\0220.clarifa" +
-      "i.api.PostInstalledModuleVersionsRequest" +
-      "\0321.clarifai.api.MultiInstalledModuleVers" +
-      "ionResponse\"r\202\323\344\223\002X\"S/v2/users/{user_app" +
-      "_id.user_id}/apps/{user_app_id.app_id}/i" +
-      "nstalled_module_versions:\001*\230\234\'\005\220\234\'o\220\234\'p\220" +
-      "\234\'m\220\234\'-\022\373\001\n\035DeleteInstalledModuleVersion" +
-      "s\0222.clarifai.api.DeleteInstalledModuleVe" +
-      "rsionsRequest\032!.clarifai.api.status.Base" +
-      "Response\"\202\001\202\323\344\223\002X*S/v2/users/{user_app_i" +
-      "d.user_id}/apps/{user_app_id.app_id}/ins" +
-      "talled_module_versions:\001*\230\234\'\005\220\234\'-\220\234\'m\220\234\'" +
-      "o\220\234\'p\220\234\'q\220\234\'1\220\234\'/\220\234\'0\022\225\002\n\036PostInstalledM" +
-      "oduleVersionsKey\0223.clarifai.api.PostInst" +
-      "alledModuleVersionsKeyRequest\032\037.clarifai" +
-      ".api.SingleKeyResponse\"\234\001\202\323\344\223\002z\"u/v2/use" +
+      "/{version_id}/concepts\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\356" +
+      "\001\n\024PostConceptsSearches\022).clarifai.api.P" +
+      "ostConceptsSearchesRequest\032\".clarifai.ap" +
+      "i.MultiConceptResponse\"\206\001\202\323\344\223\002l\"K/v2/use" +
       "rs/{user_app_id.user_id}/apps/{user_app_" +
-      "id.app_id}/installed_module_versions/{in" +
-      "stalled_module_version_id}/key:\001*\230\234\'\005\220\234\'" +
-      "o\220\234\'p\220\234\'m\220\234\'-\220\234\'/\220\234\'0\022\365\001\n\022PostBulkOperat" +
-      "ions\022\'.clarifai.api.PostBulkOperationsRe" +
-      "quest\032).clarifai.api.MultiBulkOperations" +
-      "Response\"\212\001\202\323\344\223\002h\"I/v2/users/{user_app_i" +
-      "d.user_id}/apps/{user_app_id.app_id}/bul" +
-      "k_operations:\001*Z\030\"\023/v2/bulk_operations:\001" +
-      "*\230\234\'\002\220\234\'-\220\234\'z\220\234\'y\220\234\'%\220\234\'&\220\234\'(\022\336\001\n\022ListBu" +
-      "lkOperations\022\'.clarifai.api.ListBulkOper" +
-      "ationsRequest\032).clarifai.api.MultiBulkOp" +
-      "erationsResponse\"t\202\323\344\223\002b\022I/v2/users/{use" +
-      "r_app_id.user_id}/apps/{user_app_id.app_" +
-      "id}/bulk_operationsZ\025\022\023/v2/bulk_operatio" +
-      "ns\230\234\'\002\220\234\'-\220\234\'z\022\345\001\n\020GetBulkOperation\022%.cl" +
-      "arifai.api.GetBulkOperationRequest\032*.cla" +
-      "rifai.api.SingleBulkOperationsResponse\"~" +
-      "\202\323\344\223\002l\022N/v2/users/{user_app_id.user_id}/" +
-      "apps/{user_app_id.app_id}/bulk_operation" +
-      "s/{id}Z\032\022\030/v2/bulk_operations/{id}\230\234\'\002\220\234" +
-      "\'-\220\234\'z\022\353\001\n\024CancelBulkOperations\022(.clarif" +
-      "ai.api.CancelBulkOperationRequest\032).clar" +
-      "ifai.api.MultiBulkOperationsResponse\"~\202\323" +
-      "\344\223\002h2I/v2/users/{user_app_id.user_id}/ap" +
-      "ps/{user_app_id.app_id}/bulk_operations:" +
-      "\001*Z\0302\023/v2/bulk_operations:\001*\230\234\'\002\220\234\'-\220\234\'y" +
-      "\220\234\'z\022\364\001\n\024DeleteBulkOperations\022(.clarifai" +
-      ".api.DeleteBulkOperationRequest\032!.clarif" +
-      "ai.api.status.BaseResponse\"\216\001\202\323\344\223\002h*I/v2" +
-      "/users/{user_app_id.user_id}/apps/{user_" +
-      "app_id.app_id}/bulk_operations:\001*Z\030*\023/v2" +
-      "/bulk_operations:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'%\220\234\'(\220" +
-      "\234\'y\220\234\'z\220\234\'{\022\210\002\n\027ListNextTaskAssignments\022" +
-      ",.clarifai.api.ListNextTaskAssignmentsRe" +
-      "quest\032 .clarifai.api.MultiInputResponse\"" +
-      "\234\001\202\323\344\223\002z\022U/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}/tasks/{task_" +
-      "id}/assignmentsZ!\022\037/v2/tasks/{task_id}/a" +
-      "ssignments\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'8\220\234\'i\022\353" +
-      "\001\n\022PutTaskAssignments\022\'.clarifai.api.Put" +
-      "TaskAssignmentsRequest\032).clarifai.api.Mu" +
-      "ltiTaskAssignmentResponse\"\200\001\202\323\344\223\002Z\032U/v2/" +
+      "id.app_id}/concepts/searches:\001*Z\032\"\025/v2/c" +
+      "oncepts/searches:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\023\022" +
+      "\307\001\n\014PostConcepts\022!.clarifai.api.PostConc" +
+      "eptsRequest\032\".clarifai.api.MultiConceptR" +
+      "esponse\"p\202\323\344\223\002Z\"B/v2/users/{user_app_id." +
+      "user_id}/apps/{user_app_id.app_id}/conce" +
+      "pts:\001*Z\021\"\014/v2/concepts:\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'" +
+      "\013\022\311\001\n\rPatchConcepts\022\".clarifai.api.Patch" +
+      "ConceptsRequest\032\".clarifai.api.MultiConc" +
+      "eptResponse\"p\202\323\344\223\002Z2B/v2/users/{user_app" +
+      "_id.user_id}/apps/{user_app_id.app_id}/c" +
+      "oncepts:\001*Z\0212\014/v2/concepts:\001*\230\234\'\002\220\234\'-\220\234\'" +
+      "\n\220\234\'\013\022\230\002\n\022GetConceptLanguage\022\'.clarifai." +
+      "api.GetConceptLanguageRequest\032+.clarifai" +
+      ".api.SingleConceptLanguageResponse\"\253\001\202\323\344" +
+      "\223\002\230\001\022d/v2/users/{user_app_id.user_id}/ap" +
+      "ps/{user_app_id.app_id}/concepts/{concep" +
+      "t_id}/languages/{language}Z0\022./v2/concep" +
+      "ts/{concept_id}/languages/{language}\230\234\'\002" +
+      "\220\234\'-\220\234\'\013\022\205\002\n\024ListConceptLanguages\022).clar" +
+      "ifai.api.ListConceptLanguagesRequest\032*.c" +
+      "larifai.api.MultiConceptLanguageResponse" +
+      "\"\225\001\202\323\344\223\002\202\001\022Y/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/concepts/{" +
+      "concept_id}/languagesZ%\022#/v2/concepts/{c" +
+      "oncept_id}/languages\230\234\'\002\220\234\'-\220\234\'\013\022\217\002\n\024Pos" +
+      "tConceptLanguages\022).clarifai.api.PostCon" +
+      "ceptLanguagesRequest\032*.clarifai.api.Mult" +
+      "iConceptLanguageResponse\"\237\001\202\323\344\223\002\210\001\"Y/v2/" +
       "users/{user_app_id.user_id}/apps/{user_a" +
-      "pp_id.app_id}/tasks/{task_id}/assignment" +
-      "s:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\005\220\234\'8\220\234\'i\022\332\001\n" +
-      "\021ListInputsAddJobs\022&.clarifai.api.ListIn" +
-      "putsAddJobsRequest\032\'.clarifai.api.MultiI" +
-      "nputsAddJobResponse\"t\202\323\344\223\002b\022I/v2/users/{" +
-      "user_app_id.user_id}/apps/{user_app_id.a" +
-      "pp_id}/inputs/jobs/addZ\025\022\023/v2/inputs/job" +
-      "s/add\230\234\'\002\220\234\'-\220\234\'\005\022\341\001\n\017GetInputsAddJob\022$." +
-      "clarifai.api.GetInputsAddJobRequest\032(.cl" +
-      "arifai.api.SingleInputsAddJobResponse\"~\202" +
-      "\323\344\223\002l\022N/v2/users/{user_app_id.user_id}/a" +
-      "pps/{user_app_id.app_id}/inputs/jobs/add" +
-      "/{id}Z\032\022\030/v2/inputs/jobs/add/{id}\230\234\'\002\220\234\'" +
-      "-\220\234\'\005\022\362\001\n\022CancelInputsAddJob\022\'.clarifai." +
-      "api.CancelInputsAddJobRequest\032(.clarifai" +
-      ".api.SingleInputsAddJobResponse\"\210\001\202\323\344\223\002r" +
-      "2N/v2/users/{user_app_id.user_id}/apps/{" +
-      "user_app_id.app_id}/inputs/jobs/add/{id}" +
-      ":\001*Z\0352\030/v2/inputs/jobs/add/{id}:\001*\230\234\'\002\220\234" +
-      "\'-\220\234\'\004\220\234\'\005\022\304\001\n\013PostUploads\022 .clarifai.ap" +
-      "i.PostUploadsRequest\032!.clarifai.api.Mult" +
-      "iUploadResponse\"p\202\323\344\223\002X\"A/v2/users/{user" +
-      "_app_id.user_id}/apps/{user_app_id.app_i" +
-      "d}/uploads:\001*Z\020\"\013/v2/uploads:\001*\230\234\'\002\220\234\'-\220" +
-      "\234\'\201\001\220\234\'\200\001\022\214\002\n\025PutUploadContentParts\022*.cl" +
-      "arifai.api.PutUploadContentPartsRequest\032" +
-      "\".clarifai.api.SingleUploadResponse\"\242\001\202\323" +
-      "\344\223\002\211\001\032[/v2/users/{user_app_id.user_id}/a" +
-      "pps/{user_app_id.app_id}/uploads/{upload" +
-      "_id}/content_parts:\001*Z\'\032%/v2/uploads/{up" +
-      "load_id}/content_parts\230\234\'\002\220\234\'-\220\234\'\201\001\220\234\'\200\001" +
-      "\022\316\001\n\tGetUpload\022\036.clarifai.api.GetUploadR" +
-      "equest\032\".clarifai.api.SingleUploadRespon" +
-      "se\"}\202\323\344\223\002j\022M/v2/users/{user_app_id.user_" +
-      "id}/apps/{user_app_id.app_id}/uploads/{u" +
-      "pload_id}Z\031\022\027/v2/uploads/{upload_id}\230\234\'\002" +
-      "\220\234\'-\220\234\'\200\001\022\271\001\n\013ListUploads\022 .clarifai.api" +
-      ".ListUploadsRequest\032!.clarifai.api.Multi" +
-      "UploadResponse\"e\202\323\344\223\002R\022A/v2/users/{user_" +
-      "app_id.user_id}/apps/{user_app_id.app_id" +
-      "}/uploadsZ\r\022\013/v2/uploads\230\234\'\002\220\234\'-\220\234\'\200\001\022\315\001" +
-      "\n\rDeleteUploads\022\".clarifai.api.DeleteUpl" +
-      "oadsRequest\032!.clarifai.api.status.BaseRe" +
-      "sponse\"u\202\323\344\223\002X*A/v2/users/{user_app_id.u" +
-      "ser_id}/apps/{user_app_id.app_id}/upload" +
-      "s:\001*Z\020*\013/v2/uploads:\001*\230\234\'\002\220\234\'-\220\234\'\200\001\220\234\'\201\001" +
-      "\220\234\'\202\001\022\215\002\n\025PostInputsDataSources\022*.clarif" +
-      "ai.api.PostInputsDataSourcesRequest\032\'.cl" +
-      "arifai.api.MultiInputsAddJobResponse\"\236\001\202" +
-      "\323\344\223\002p\"M/v2/users/{user_app_id.user_id}/a" +
-      "pps/{user_app_id.app_id}/inputs/data_sou" +
-      "rces:\001*Z\034\"\027/v2/inputs/data_sources:\001*\230\234\'" +
-      "\002\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017\220\234\'\002\220\234\'\023\022\262\002" +
-      "\n\026GetInputsExtractionJob\022+.clarifai.api." +
-      "GetInputsExtractionJobRequest\032/.clarifai" +
-      ".api.SingleInputsExtractionJobResponse\"\271" +
-      "\001\202\323\344\223\002\246\001\022k/v2/users/{user_app_id.user_id" +
-      "}/apps/{user_app_id.app_id}/inputs/jobs/" +
-      "extraction/{inputs_extraction_job_id}Z7\022" +
-      "5/v2/inputs/jobs/extraction/{inputs_extr" +
-      "action_job_id}\230\234\'\002\220\234\'-\220\234\'\005\022\376\001\n\030ListInput" +
-      "sExtractionJobs\022-.clarifai.api.ListInput" +
-      "sExtractionJobsRequest\032..clarifai.api.Mu" +
-      "ltiInputsExtractionJobResponse\"\202\001\202\323\344\223\002p\022" +
-      "P/v2/users/{user_app_id.user_id}/apps/{u" +
-      "ser_app_id.app_id}/inputs/jobs/extractio" +
-      "nZ\034\022\032/v2/inputs/jobs/extraction\230\234\'\002\220\234\'-\220" +
-      "\234\'\005\022\214\002\n\032CancelInputsExtractionJobs\022/.cla" +
-      "rifai.api.CancelInputsExtractionJobsRequ" +
-      "est\032..clarifai.api.MultiInputsExtraction" +
-      "JobResponse\"\214\001\202\323\344\223\002v2P/v2/users/{user_ap" +
+      "pp_id.app_id}/concepts/{concept_id}/lang" +
+      "uages:\001*Z(\"#/v2/concepts/{concept_id}/la" +
+      "nguages:\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'\013\022\221\002\n\025PatchConc" +
+      "eptLanguages\022*.clarifai.api.PatchConcept" +
+      "LanguagesRequest\032*.clarifai.api.MultiCon" +
+      "ceptLanguageResponse\"\237\001\202\323\344\223\002\210\0012Y/v2/user" +
+      "s/{user_app_id.user_id}/apps/{user_app_i" +
+      "d.app_id}/concepts/{concept_id}/language" +
+      "s:\001*Z(2#/v2/concepts/{concept_id}/langua" +
+      "ges:\001*\230\234\'\002\220\234\'-\220\234\'\n\220\234\'\013\022\365\001\n\023ListKnowledge" +
+      "Graphs\022(.clarifai.api.ListKnowledgeGraph" +
+      "sRequest\032).clarifai.api.MultiKnowledgeGr" +
+      "aphResponse\"\210\001\202\323\344\223\002v\022S/v2/users/{user_ap" +
       "p_id.user_id}/apps/{user_app_id.app_id}/" +
-      "inputs/jobs/extraction:\001*Z\0372\032/v2/inputs/" +
-      "jobs/extraction:\001*\230\234\'\002\220\234\'-\220\234\'\004\220\234\'\005\022\205\002\n\021P" +
-      "ostInputsUploads\022&.clarifai.api.PostInpu" +
-      "tsUploadsRequest\032\'.clarifai.api.MultiInp" +
-      "utsAddJobResponse\"\236\001\202\323\344\223\002f\"H/v2/users/{u" +
+      "concepts/knowledge_graphsZ\037\022\035/v2/concept" +
+      "s/knowledge_graphs\230\234\'\002\220\234\'-\220\234\'\013\022\377\001\n\023PostK" +
+      "nowledgeGraphs\022(.clarifai.api.PostKnowle" +
+      "dgeGraphsRequest\032).clarifai.api.MultiKno" +
+      "wledgeGraphResponse\"\222\001\202\323\344\223\002|\"S/v2/users/" +
+      "{user_app_id.user_id}/apps/{user_app_id." +
+      "app_id}/concepts/knowledge_graphs:\001*Z\"\"\035" +
+      "/v2/concepts/knowledge_graphs:\001*\230\234\'\002\220\234\'-" +
+      "\220\234\'\n\220\234\'\013\022\227\002\n\rGetAnnotation\022\".clarifai.ap" +
+      "i.GetAnnotationRequest\032&.clarifai.api.Si" +
+      "ngleAnnotationResponse\"\271\001\202\323\344\223\002\236\001\022g/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/inputs/{input_id}/annotation" +
+      "s/{annotation_id}Z3\0221/v2/inputs/{input_i" +
+      "d}/annotations/{annotation_id}\230\234\'\002\220\234\'-\220\234" +
+      "\'&\220\234\'\013\220\234\'\017\022\324\001\n\017ListAnnotations\022$.clarifa" +
+      "i.api.ListAnnotationsRequest\032%.clarifai." +
+      "api.MultiAnnotationResponse\"t\202\323\344\223\002Z\022E/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/annotationsZ\021\022\017/v2/annota" +
+      "tions\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\022\347\001\n\017PostAnnota" +
+      "tions\022$.clarifai.api.PostAnnotationsRequ" +
+      "est\032%.clarifai.api.MultiAnnotationRespon" +
+      "se\"\206\001\202\323\344\223\002`\"E/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/annotatio" +
+      "ns:\001*Z\024\"\017/v2/annotations:\001*\230\234\'\002\220\234\'-\220\234\'\005\220" +
+      "\234\'%\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\023\022\351\001\n\020PatchAnnotations" +
+      "\022%.clarifai.api.PatchAnnotationsRequest\032" +
+      "%.clarifai.api.MultiAnnotationResponse\"\206" +
+      "\001\202\323\344\223\002`2E/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/annotations:\001" +
+      "*Z\0242\017/v2/annotations:\001*\230\234\'\002\220\234\'-\220\234\'\005\220\234\'%\220" +
+      "\234\'&\220\234\'\013\220\234\'\023\220\234\'\017\022\370\001\n\026PatchAnnotationsStat" +
+      "us\022+.clarifai.api.PatchAnnotationsStatus" +
+      "Request\032,.clarifai.api.PatchAnnotationsS" +
+      "tatusResponse\"\202\001\202\323\344\223\002`2[/v2/users/{user_" +
+      "app_id.user_id}/apps/{user_app_id.app_id" +
+      "}/task/{task_id}/annotations/status:\001*\230\234" +
+      "\'\002\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\023\220\234\'\017\022\240\002\n\020DeleteAnn" +
+      "otation\022%.clarifai.api.DeleteAnnotationR" +
+      "equest\032!.clarifai.api.status.BaseRespons" +
+      "e\"\301\001\202\323\344\223\002\236\001*g/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/inputs/{i" +
+      "nput_id}/annotations/{annotation_id}Z3*1" +
+      "/v2/inputs/{input_id}/annotations/{annot" +
+      "ation_id}\230\234\'\002\220\234\'-\220\234\'%\220\234\'(\220\234\'&\220\234\'\023\220\234\'\017\022\324\002" +
+      "\n\021DeleteAnnotations\022&.clarifai.api.Delet" +
+      "eAnnotationsRequest\032!.clarifai.api.statu" +
+      "s.BaseResponse\"\363\001\202\323\344\223\002\320\001*L/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/inputs/annotations:\001*Z\033*\026/v2/inputs/" +
+      "annotations:\001*ZJ*E/v2/users/{user_app_id" +
+      ".user_id}/apps/{user_app_id.app_id}/anno" +
+      "tations:\001*Z\024*\017/v2/annotations:\001*\230\234\'\002\220\234\'-" +
+      "\220\234\'%\220\234\'(\220\234\'&\220\234\'\023\220\234\'\017\022\367\001\n\030PatchAnnotation" +
+      "sSearches\022-.clarifai.api.PatchAnnotation" +
+      "sSearchesRequest\032!.clarifai.api.MultiSea" +
+      "rchResponse\"\210\001\202\323\344\223\002r2N/v2/users/{user_ap" +
+      "p_id.user_id}/apps/{user_app_id.app_id}/" +
+      "annotations/searches:\001*Z\0352\030/v2/annotatio" +
+      "ns/searches:\001*\230\234\'\002\220\234\'-\220\234\'s\220\234\'r\022\205\002\n\027PostA" +
+      "nnotationsSearches\022,.clarifai.api.PostAn" +
+      "notationsSearchesRequest\032!.clarifai.api." +
+      "MultiSearchResponse\"\230\001\202\323\344\223\002r\"N/v2/users/" +
+      "{user_app_id.user_id}/apps/{user_app_id." +
+      "app_id}/annotations/searches:\001*Z\035\"\030/v2/a" +
+      "nnotations/searches:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234" +
+      "\'\005\220\234\'\017\220\234\'\003\220\234\'\023\022\361\001\n\025ListAnnotationWorkers" +
+      "\022*.clarifai.api.ListAnnotationWorkersReq" +
+      "uest\032!.clarifai.api.MultiWorkerResponse\"" +
+      "\210\001\202\323\344\223\002j\022M/v2/users/{user_app_id.user_id" +
+      "}/apps/{user_app_id.app_id}/annotations/" +
+      "workersZ\031\022\027/v2/annotations/workers\230\234\'\002\220\234" +
+      "\'-\220\234\'&\220\234\'2\220\234\'\017\220\234\'\023\022\325\001\n\rGetInputCount\022\".c" +
+      "larifai.api.GetInputCountRequest\032&.clari" +
+      "fai.api.SingleInputCountResponse\"x\202\323\344\223\002^" +
+      "\022G/v2/users/{user_app_id.user_id}/apps/{" +
+      "user_app_id.app_id}/inputs/statusZ\023\022\021/v2" +
+      "/inputs/status\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\315\001\n\014S" +
+      "treamInputs\022!.clarifai.api.StreamInputsR" +
+      "equest\032 .clarifai.api.MultiInputResponse" +
+      "\"x\202\323\344\223\002^\022G/v2/users/{user_app_id.user_id" +
+      "}/apps/{user_app_id.app_id}/inputs/strea" +
+      "mZ\023\022\021/v2/inputs/stream\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234" +
+      "\'\005\022\201\002\n\017GetInputSamples\022$.clarifai.api.Ge" +
+      "tInputSamplesRequest\032*.clarifai.api.Mult" +
+      "iInputAnnotationResponse\"\233\001\202\323\344\223\002\200\001\022X/v2/" +
+      "users/{user_app_id.user_id}/apps/{user_a" +
+      "pp_id.app_id}/tasks/{task_id}/inputs/sam" +
+      "plesZ$\022\"/v2/tasks/{task_id}/inputs/sampl" +
+      "es\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\317\001\n\010GetInput\022\035.cl" +
+      "arifai.api.GetInputRequest\032!.clarifai.ap" +
+      "i.SingleInputResponse\"\200\001\202\323\344\223\002f\022K/v2/user" +
+      "s/{user_app_id.user_id}/apps/{user_app_i" +
+      "d.app_id}/inputs/{input_id}Z\027\022\025/v2/input" +
+      "s/{input_id}\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\022\200\002\n\025Get" +
+      "InputVideoManifest\022%.clarifai.api.GetVid" +
+      "eoManifestRequest\032&.clarifai.api.GetVide" +
+      "oManifestResponse\"\227\001\202\323\344\223\002\204\001\022Z/v2/users/{" +
+      "user_app_id.user_id}/apps/{user_app_id.a" +
+      "pp_id}/inputs/{input_id}/video_manifestZ" +
+      "&\022$/v2/inputs/{input_id}/video_manifest\230" +
+      "\234\'\002\220\234\'-\220\234\'\005\022\273\001\n\nListInputs\022\037.clarifai.ap" +
+      "i.ListInputsRequest\032 .clarifai.api.Multi" +
+      "InputResponse\"j\202\323\344\223\002P\022@/v2/users/{user_a" +
+      "pp_id.user_id}/apps/{user_app_id.app_id}" +
+      "/inputsZ\014\022\n/v2/inputs\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'" +
+      "\005\022\326\001\n\nPostInputs\022\037.clarifai.api.PostInpu" +
+      "tsRequest\032 .clarifai.api.MultiInputRespo" +
+      "nse\"\204\001\202\323\344\223\002V\"@/v2/users/{user_app_id.use" +
+      "r_id}/apps/{user_app_id.app_id}/inputs:\001" +
+      "*Z\017\"\n/v2/inputs:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234" +
+      "\'\004\220\234\'\005\220\234\'\017\220\234\'\002\220\234\'\023\022\317\001\n\013PatchInputs\022 .cla" +
+      "rifai.api.PatchInputsRequest\032 .clarifai." +
+      "api.MultiInputResponse\"|\202\323\344\223\002V2@/v2/user" +
+      "s/{user_app_id.user_id}/apps/{user_app_i" +
+      "d.app_id}/inputs:\001*Z\0172\n/v2/inputs:\001*\230\234\'\002" +
+      "\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017\022\351\001\n\013DeleteI" +
+      "nput\022 .clarifai.api.DeleteInputRequest\032!" +
+      ".clarifai.api.status.BaseResponse\"\224\001\202\323\344\223" +
+      "\002f*K/v2/users/{user_app_id.user_id}/apps" +
+      "/{user_app_id.app_id}/inputs/{input_id}Z" +
+      "\027*\025/v2/inputs/{input_id}\230\234\'\002\220\234\'-\220\234\'%\220\234\'(" +
+      "\220\234\'&\220\234\'\004\220\234\'\010\220\234\'\005\220\234\'\017\220\234\'\023\022\333\001\n\014DeleteInput" +
+      "s\022!.clarifai.api.DeleteInputsRequest\032!.c" +
+      "larifai.api.status.BaseResponse\"\204\001\202\323\344\223\002V" +
+      "*@/v2/users/{user_app_id.user_id}/apps/{" +
+      "user_app_id.app_id}/inputs:\001*Z\017*\n/v2/inp" +
+      "uts:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'(\220\234\'&\220\234\'\004\220\234\'\010\220\234\'\005\220\234" +
+      "\'\017\220\234\'\023\022\342\001\n\023PatchInputsSearches\022(.clarifa" +
+      "i.api.PatchInputsSearchesRequest\032!.clari" +
+      "fai.api.MultiSearchResponse\"~\202\323\344\223\002h2I/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/inputs/searches:\001*Z\0302\023/v2" +
+      "/inputs/searches:\001*\230\234\'\002\220\234\'-\220\234\'s\220\234\'r\022\361\001\n\022" +
+      "PostInputsSearches\022\'.clarifai.api.PostIn" +
+      "putsSearchesRequest\032!.clarifai.api.Multi" +
+      "SearchResponse\"\216\001\202\323\344\223\002h\"I/v2/users/{user" +
+      "_app_id.user_id}/apps/{user_app_id.app_i" +
+      "d}/inputs/searches:\001*Z\030\"\023/v2/inputs/sear" +
+      "ches:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\017\220\234\'\003\220\234\'\023\022" +
+      "\211\004\n\020PostModelOutputs\022%.clarifai.api.Post" +
+      "ModelOutputsRequest\032!.clarifai.api.Multi" +
+      "OutputResponse\"\252\003\202\323\344\223\002\217\003\"i/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/models/{model_id}/versions/{version_" +
+      "id}/outputs:\001*Z8\"3/v2/models/{model_id}/" +
+      "versions/{version_id}/outputs:\001*ZX\"S/v2/" +
+      "users/{user_app_id.user_id}/apps/{user_a" +
+      "pp_id.app_id}/models/{model_id}/outputs:" +
+      "\001*Z\"\"\035/v2/models/{model_id}/outputs:\001*Zg" +
+      "\"b/v2/users/{runner_selector.deployment." +
+      "user_id}/deployments/{runner_selector.de" +
+      "ployment.id}/outputs:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220" +
+      "\234\'\002\022\332\002\n\024GenerateModelOutputs\022%.clarifai." +
+      "api.PostModelOutputsRequest\032!.clarifai.a" +
+      "pi.MultiOutputResponse\"\365\001\202\323\344\223\002\332\001\"r/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/models/{model_id}/versions/{" +
+      "version_id}/outputs/generate:\001*Za\"\\/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/models/{model_id}/outputs/g" +
+      "enerate:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\0020\001\022\234\001\n\022Str" +
+      "eamModelOutputs\022%.clarifai.api.PostModel" +
+      "OutputsRequest\032!.clarifai.api.MultiOutpu" +
+      "tResponse\"8\202\323\344\223\002\036\"\031/v2/models/outputs/st" +
+      "ream:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\220\234\'\002(\0010\001\022\357\001\n\014List" +
+      "Datasets\022!.clarifai.api.ListDatasetsRequ" +
+      "est\032\".clarifai.api.MultiDatasetResponse\"" +
+      "\227\001\202\323\344\223\002\200\001\022B/v2/users/{user_app_id.user_i" +
+      "d}/apps/{user_app_id.app_id}/datasetsZ*\022" +
+      "(/v2/users/{user_app_id.user_id}/dataset" +
+      "sZ\016\022\014/v2/datasets\230\234\'\002\220\234\'-\220\234\'i\220\234\'r\022\331\001\n\nGe" +
+      "tDataset\022\037.clarifai.api.GetDatasetReques" +
+      "t\032#.clarifai.api.SingleDatasetResponse\"\204" +
+      "\001\202\323\344\223\002n\022O/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/datasets/{dat" +
+      "aset_id}Z\033\022\031/v2/datasets/{dataset_id}\230\234\'" +
+      "\002\220\234\'-\220\234\'i\220\234\'r\022\313\001\n\014PostDatasets\022!.clarifa" +
+      "i.api.PostDatasetsRequest\032\".clarifai.api" +
+      ".MultiDatasetResponse\"t\202\323\344\223\002Z\"B/v2/users" +
+      "/{user_app_id.user_id}/apps/{user_app_id" +
+      ".app_id}/datasets:\001*Z\021\"\014/v2/datasets:\001*\230" +
+      "\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'r\022\315\001\n\rPatchDatasets\022\"." +
+      "clarifai.api.PatchDatasetsRequest\032\".clar" +
+      "ifai.api.MultiDatasetResponse\"t\202\323\344\223\002Z2B/" +
+      "v2/users/{user_app_id.user_id}/apps/{use" +
+      "r_app_id.app_id}/datasets:\001*Z\0212\014/v2/data" +
+      "sets:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'r\022\316\001\n\016DeleteDa" +
+      "tasets\022#.clarifai.api.DeleteDatasetsRequ" +
+      "est\032!.clarifai.api.status.BaseResponse\"t" +
+      "\202\323\344\223\002Z*B/v2/users/{user_app_id.user_id}/" +
+      "apps/{user_app_id.app_id}/datasets:\001*Z\021*" +
+      "\014/v2/datasets:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'k\022\201\002\n" +
+      "\021ListDatasetInputs\022&.clarifai.api.ListDa" +
+      "tasetInputsRequest\032\'.clarifai.api.MultiD" +
+      "atasetInputResponse\"\232\001\202\323\344\223\002|\022V/v2/users/" +
+      "{user_app_id.user_id}/apps/{user_app_id." +
+      "app_id}/datasets/{dataset_id}/inputsZ\"\022 " +
+      "/v2/datasets/{dataset_id}/inputs\230\234\'\002\220\234\'-" +
+      "\220\234\'i\220\234\'\005\220\234\'&\220\234\'\013\022\225\002\n\017GetDatasetInput\022$.c" +
+      "larifai.api.GetDatasetInputRequest\032(.cla" +
+      "rifai.api.SingleDatasetInputResponse\"\261\001\202" +
+      "\323\344\223\002\222\001\022a/v2/users/{user_app_id.user_id}/" +
+      "apps/{user_app_id.app_id}/datasets/{data" +
+      "set_id}/inputs/{input_id}Z-\022+/v2/dataset" +
+      "s/{dataset_id}/inputs/{input_id}\230\234\'\002\220\234\'-" +
+      "\220\234\'i\220\234\'\005\220\234\'&\220\234\'\013\022\214\002\n\021PostDatasetInputs\022&" +
+      ".clarifai.api.PostDatasetInputsRequest\032\'" +
+      ".clarifai.api.MultiDatasetInputResponse\"" +
+      "\245\001\202\323\344\223\002\202\001\"V/v2/users/{user_app_id.user_i" +
+      "d}/apps/{user_app_id.app_id}/datasets/{d" +
+      "ataset_id}/inputs:\001*Z%\" /v2/datasets/{da" +
+      "taset_id}/inputs:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'\005\220" +
+      "\234\'&\220\234\'\013\022\206\002\n\023DeleteDatasetInputs\022(.clarif" +
+      "ai.api.DeleteDatasetInputsRequest\032!.clar" +
+      "ifai.api.status.BaseResponse\"\241\001\202\323\344\223\002\202\001*V" +
+      "/v2/users/{user_app_id.user_id}/apps/{us" +
+      "er_app_id.app_id}/datasets/{dataset_id}/" +
+      "inputs:\001*Z%* /v2/datasets/{dataset_id}/i" +
+      "nputs:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'k\220\234\'\005\022\204\002\n\023Lis" +
+      "tDatasetVersions\022(.clarifai.api.ListData" +
+      "setVersionsRequest\032).clarifai.api.MultiD" +
+      "atasetVersionResponse\"\227\001\202\323\344\223\002\200\001\022X/v2/use" +
+      "rs/{user_app_id.user_id}/apps/{user_app_" +
+      "id.app_id}/datasets/{dataset_id}/version" +
+      "sZ$\022\"/v2/datasets/{dataset_id}/versions\230" +
+      "\234\'\002\220\234\'-\220\234\'i\220\234\'r\022\253\002\n\021GetDatasetVersion\022&." +
+      "clarifai.api.GetDatasetVersionRequest\032*." +
+      "clarifai.api.SingleDatasetVersionRespons" +
+      "e\"\301\001\202\323\344\223\002\252\001\022m/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/datasets/" +
+      "{dataset_id}/versions/{dataset_version_i" +
+      "d}Z9\0227/v2/datasets/{dataset_id}/versions" +
+      "/{dataset_version_id}\230\234\'\002\220\234\'-\220\234\'i\220\234\'r\022\342\002" +
+      "\n\037ListDatasetVersionMetricsGroups\0224.clar" +
+      "ifai.api.ListDatasetVersionMetricsGroups" +
+      "Request\0325.clarifai.api.MultiDatasetVersi" +
+      "onMetricsGroupResponse\"\321\001\202\323\344\223\002\272\001\022u/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/datasets/{dataset_id}/versio" +
+      "ns/{dataset_version_id}/metricsZA\022?/v2/d" +
+      "atasets/{dataset_id}/versions/{dataset_v" +
+      "ersion_id}/metrics\230\234\'\002\220\234\'-\220\234\'i\220\234\'\013\022\222\002\n\023P" +
+      "ostDatasetVersions\022(.clarifai.api.PostDa" +
+      "tasetVersionsRequest\032).clarifai.api.Mult" +
+      "iDatasetVersionResponse\"\245\001\202\323\344\223\002\206\001\"X/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/datasets/{dataset_id}/versi" +
+      "ons:\001*Z\'\"\"/v2/datasets/{dataset_id}/vers" +
+      "ions:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\220\234\'\017\220\234\'\023\022\214\002\n\024Patc" +
+      "hDatasetVersions\022).clarifai.api.PatchDat" +
+      "asetVersionsRequest\032).clarifai.api.Multi" +
+      "DatasetVersionResponse\"\235\001\202\323\344\223\002\206\0012X/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/datasets/{dataset_id}/versio" +
+      "ns:\001*Z\'2\"/v2/datasets/{dataset_id}/versi" +
+      "ons:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\022\212\002\n\025DeleteDataset" +
+      "Versions\022*.clarifai.api.DeleteDatasetVer" +
+      "sionsRequest\032!.clarifai.api.status.BaseR" +
+      "esponse\"\241\001\202\323\344\223\002\206\001*X/v2/users/{user_app_i" +
+      "d.user_id}/apps/{user_app_id.app_id}/dat",
+      "asets/{dataset_id}/versions:\001*Z\'*\"/v2/da" +
+      "tasets/{dataset_id}/versions:\001*\230\234\'\002\220\234\'-\220" +
+      "\234\'i\220\234\'j\220\234\'k\022\324\002\n\030PutDatasetVersionExports" +
+      "\022-.clarifai.api.PutDatasetVersionExports" +
+      "Request\032/.clarifai.api.MultiDatasetVersi" +
+      "onExportResponse\"\327\001\202\323\344\223\002\300\001\032u/v2/users/{u" +
       "ser_app_id.user_id}/apps/{user_app_id.ap" +
-      "p_id}/inputs/uploads:\001*Z\027\"\022/v2/inputs/up" +
-      "loads:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017" +
-      "\220\234\'\002\220\234\'\023\220\234\'\201\001\220\234\'\200\001\022\346\001\n\tGetRunner\022\036.clari" +
-      "fai.api.GetRunnerRequest\032\".clarifai.api." +
-      "SingleRunnerResponse\"\224\001\202\323\344\223\002s\022q/v2/users" +
-      "/{user_app_id.user_id}/compute_clusters/" +
-      "{compute_cluster_id}/nodepools/{nodepool" +
-      "_id}/runners/{runner_id}\230\234\'\005\220\234\'\203\001\220\234\'\017\220\234\'" +
-      "\023\220\234\'\210\001\220\234\'\213\001\022\335\001\n\013ListRunners\022 .clarifai.a" +
-      "pi.ListRunnersRequest\032!.clarifai.api.Mul" +
-      "tiRunnerResponse\"\210\001\202\323\344\223\002g\022e/v2/users/{us" +
-      "er_app_id.user_id}/compute_clusters/{com" +
-      "pute_cluster_id}/nodepools/{nodepool_id}" +
-      "/runners\230\234\'\005\220\234\'\203\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\022\351\001\n\013" +
-      "PostRunners\022 .clarifai.api.PostRunnersRe" +
-      "quest\032!.clarifai.api.MultiRunnerResponse" +
-      "\"\224\001\202\323\344\223\002j\"e/v2/users/{user_app_id.user_i" +
-      "d}/compute_clusters/{compute_cluster_id}" +
-      "/nodepools/{nodepool_id}/runners:\001*\230\234\'\005\220" +
-      "\234\'\203\001\220\234\'\204\001\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\356\001\n\rDele" +
-      "teRunners\022\".clarifai.api.DeleteRunnersRe" +
-      "quest\032!.clarifai.api.status.BaseResponse" +
-      "\"\225\001\202\323\344\223\002j*e/v2/users/{user_app_id.user_i" +
-      "d}/compute_clusters/{compute_cluster_id}" +
-      "/nodepools/{nodepool_id}/runners:\001*\230\234\'\005\220" +
-      "\234\'\203\001\220\234\'\204\001\220\234\'\205\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\022\356\001\n\017Lis" +
-      "tRunnerItems\022$.clarifai.api.ListRunnerIt" +
-      "emsRequest\032%.clarifai.api.MultiRunnerIte" +
-      "mResponse\"\215\001\202\323\344\223\002y\022w/v2/users/{user_app_" +
-      "id.user_id}/compute_clusters/{compute_cl" +
-      "uster_id}/nodepools/{nodepool_id}/runner" +
-      "s/{runner_id}/items\230\234\'\005\220\234\'\203\001\220\234\'\206\001\022\243\002\n\025Po" +
-      "stRunnerItemOutputs\022*.clarifai.api.PostR" +
-      "unnerItemOutputsRequest\032+.clarifai.api.M" +
-      "ultiRunnerItemOutputResponse\"\260\001\202\323\344\223\002\226\001\"\220" +
-      "\001/v2/users/{user_app_id.user_id}/compute" +
-      "_clusters/{compute_cluster_id}/nodepools" +
-      "/{nodepool_id}/runners/{runner_id}/items" +
-      "/{runner_item_id}/outputs:\001*\230\234\'\005\220\234\'\203\001\220\234\'" +
-      "\206\001\220\234\'\207\001\022\250\001\n\022ProcessRunnerItems\022*.clarifa" +
-      "i.api.PostRunnerItemOutputsRequest\032%.cla" +
-      "rifai.api.MultiRunnerItemResponse\";\202\323\344\223\002" +
-      "\036\"\031/v2/runners/items/process:\001*\230\234\'\005\220\234\'-\220" +
-      "\234\'\203\001\220\234\'\206\001\220\234\'\207\001(\0010\001\022\304\002\n%PostModelVersions" +
-      "TrainingTimeEstimate\022:.clarifai.api.Post" +
-      "ModelVersionsTrainingTimeEstimateRequest" +
-      "\032/.clarifai.api.MultiTrainingTimeEstimat" +
-      "eResponse\"\255\001\202\323\344\223\002\232\001\"b/v2/users/{user_app" +
+      "p_id}/datasets/{dataset_id}/versions/{da" +
+      "taset_version_id}/exports:\001*ZD\032?/v2/data" +
+      "sets/{dataset_id}/versions/{dataset_vers" +
+      "ion_id}/exports:\001*\230\234\'\002\220\234\'-\220\234\'i\220\234\'j\022\351\001\n\014G" +
+      "etModelType\022!.clarifai.api.GetModelTypeR" +
+      "equest\032%.clarifai.api.SingleModelTypeRes" +
+      "ponse\"\216\001\202\323\344\223\002|\022V/v2/users/{user_app_id.u" +
+      "ser_id}/apps/{user_app_id.app_id}/models" +
+      "/types/{model_type_id}Z\"\022 /v2/models/typ" +
+      "es/{model_type_id}\230\234\'\002\220\234\'-\220\234\'\017\022\231\001\n\026ListO" +
+      "penSourceLicenses\022+.clarifai.api.ListOpe" +
+      "nSourceLicensesRequest\032,.clarifai.api.Li" +
+      "stOpenSourceLicensesResponse\"$\202\323\344\223\002\032\022\030/v" +
+      "2/open_source_licenses\230\234\'\001\022\313\001\n\016ListModel" +
+      "Types\022#.clarifai.api.ListModelTypesReque" +
+      "st\032$.clarifai.api.MultiModelTypeResponse" +
+      "\"n\202\323\344\223\002\\\022F/v2/users/{user_app_id.user_id" +
+      "}/apps/{user_app_id.app_id}/models/types" +
+      "Z\022\022\020/v2/models/types\230\234\'\002\220\234\'-\220\234\'\017\022\312\001\n\010Get" +
+      "Model\022\035.clarifai.api.GetModelRequest\032!.c" +
+      "larifai.api.SingleModelResponse\"|\202\323\344\223\002f\022" +
+      "K/v2/users/{user_app_id.user_id}/apps/{u" +
+      "ser_app_id.app_id}/models/{model_id}Z\027\022\025" +
+      "/v2/models/{model_id}\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\232\003" +
+      "\n\022GetModelOutputInfo\022\035.clarifai.api.GetM" +
+      "odelRequest\032!.clarifai.api.SingleModelRe" +
+      "sponse\"\301\002\202\323\344\223\002\252\002\022W/v2/users/{user_app_id" +
+      ".user_id}/apps/{user_app_id.app_id}/mode" +
+      "ls/{model_id}/output_infoZ#\022!/v2/models/" +
+      "{model_id}/output_infoZo\022m/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/models/{model_id}/versions/{version_" +
+      "id}/output_infoZ9\0227/v2/models/{model_id}" +
+      "/versions/{version_id}/output_info\230\234\'\002\220\234" +
+      "\'-\220\234\'\013\220\234\'\017\022\342\001\n\nListModels\022\037.clarifai.api" +
+      ".ListModelsRequest\032 .clarifai.api.MultiM" +
+      "odelResponse\"\220\001\202\323\344\223\002z\022@/v2/users/{user_a" +
+      "pp_id.user_id}/apps/{user_app_id.app_id}" +
+      "/modelsZ(\022&/v2/users/{user_app_id.user_i" +
+      "d}/modelsZ\014\022\n/v2/models\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022" +
+      "\347\001\n\021GetResourceCounts\022&.clarifai.api.Get" +
+      "ResourceCountsRequest\032\'.clarifai.api.Get" +
+      "ResourceCountsResponse\"\200\001\202\323\344\223\002b\022I/v2/use" +
+      "rs/{user_app_id.user_id}/apps/{user_app_" +
+      "id.app_id}/resource_countsZ\025\022\023/v2/resour" +
+      "ce_counts\230\234\'\002\220\234\'i\220\234\'\017\220\234\'\023\220\234\'m\220\234\'-\022\337\001\n\022Po" +
+      "stModelsSearches\022\'.clarifai.api.PostMode" +
+      "lsSearchesRequest\032 .clarifai.api.MultiMo" +
+      "delResponse\"~\202\323\344\223\002h\"I/v2/users/{user_app" +
       "_id.user_id}/apps/{user_app_id.app_id}/m" +
-      "odels/{model_id}/versions/time_estimate:" +
-      "\001*Z1\",/v2/models/{model_id}/versions/tim" +
-      "e_estimate:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\276\001\n\021ListInstan" +
-      "ceTypes\022&.clarifai.api.ListInstanceTypes" +
-      "Request\032\'.clarifai.api.MultiInstanceType" +
-      "Response\"X\202\323\344\223\002I\022G/v2/cloud_providers/{c" +
-      "loud_provider.id}/regions/{region}/insta" +
-      "nce_types\230\234\'\005\220\234\'\224\001\022\303\001\n\021GetComputeCluster" +
-      "\022&.clarifai.api.GetComputeClusterRequest" +
-      "\032*.clarifai.api.SingleComputeClusterResp" +
-      "onse\"Z\202\323\344\223\002G\022E/v2/users/{user_app_id.use" +
-      "r_id}/compute_clusters/{compute_cluster_" +
-      "id}\230\234\'\005\220\234\'\213\001\220\234\'0\022\261\001\n\023ListComputeClusters" +
-      "\022(.clarifai.api.ListComputeClustersReque" +
-      "st\032).clarifai.api.MultiComputeClusterRes" +
-      "ponse\"E\202\323\344\223\0022\0220/v2/users/{user_app_id.us" +
-      "er_id}/compute_clusters\230\234\'\005\220\234\'\213\001\220\234\'0\022\271\001\n" +
-      "\023PostComputeClusters\022(.clarifai.api.Post" +
-      "ComputeClustersRequest\032).clarifai.api.Mu" +
-      "ltiComputeClusterResponse\"M\202\323\344\223\0025\"0/v2/u" +
-      "sers/{user_app_id.user_id}/compute_clust" +
-      "ers:\001*\230\234\'\005\220\234\'\213\001\220\234\'\214\001\220\234\'0\022\311\001\n\025DeleteCompu" +
-      "teClusters\022*.clarifai.api.DeleteComputeC" +
-      "lustersRequest\032!.clarifai.api.status.Bas" +
-      "eResponse\"a\202\323\344\223\0025*0/v2/users/{user_app_i" +
-      "d.user_id}/compute_clusters:\001*\230\234\'\005\220\234\'\213\001\220" +
-      "\234\'\214\001\220\234\'\215\001\220\234\'\210\001\220\234\'\211\001\220\234\'\212\001\220\234\'0\022\312\001\n\013GetNode" +
-      "pool\022 .clarifai.api.GetNodepoolRequest\032$" +
-      ".clarifai.api.SingleNodepoolResponse\"s\202\323" +
-      "\344\223\002_\022]/v2/users/{user_app_id.user_id}/co" +
-      "mpute_clusters/{compute_cluster_id}/node" +
-      "pools/{nodepool_id}\230\234\'\005\220\234\'\210\001\220\234\'\213\001\022\277\001\n\rLi" +
-      "stNodepools\022\".clarifai.api.ListNodepools" +
-      "Request\032#.clarifai.api.MultiNodepoolResp" +
-      "onse\"e\202\323\344\223\002Q\022O/v2/users/{user_app_id.use" +
-      "r_id}/compute_clusters/{compute_cluster_" +
-      "id}/nodepools\230\234\'\005\220\234\'\210\001\220\234\'\213\001\022\307\001\n\rPostNode" +
-      "pools\022\".clarifai.api.PostNodepoolsReques" +
+      "odels/searches:\001*Z\030\"\023/v2/models/searches" +
+      ":\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\017\022\312\001\n\nPostModels\022\037.cla" +
+      "rifai.api.PostModelsRequest\032!.clarifai.a" +
+      "pi.SingleModelResponse\"x\202\323\344\223\002V\"@/v2/user" +
+      "s/{user_app_id.user_id}/apps/{user_app_i" +
+      "d.app_id}/models:\001*Z\017\"\n/v2/models:\001*\230\234\'\002" +
+      "\220\234\'-\220\234\'\013\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\022\307\001\n\013PatchModels" +
+      "\022 .clarifai.api.PatchModelsRequest\032 .cla" +
+      "rifai.api.MultiModelResponse\"t\202\323\344\223\002V2@/v" +
+      "2/users/{user_app_id.user_id}/apps/{user" +
+      "_app_id.app_id}/models:\001*Z\0172\n/v2/models:" +
+      "\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\016\220\234\'\017\220\234\'\032\022\266\001\n\rPatchMode" +
+      "lIds\022\".clarifai.api.PatchModelIdsRequest" +
+      "\032 .clarifai.api.MultiModelResponse\"_\202\323\344\223" +
+      "\002I2D/v2/users/{user_app_id.user_id}/apps" +
+      "/{user_app_id.app_id}/models/ids:\001*\230\234\'\002\220" +
+      "\234\'-\220\234\'\016\220\234\'\017\022\335\001\n\013DeleteModel\022 .clarifai.a" +
+      "pi.DeleteModelRequest\032!.clarifai.api.sta" +
+      "tus.BaseResponse\"\210\001\202\323\344\223\002f*K/v2/users/{us" +
+      "er_app_id.user_id}/apps/{user_app_id.app" +
+      "_id}/models/{model_id}Z\027*\025/v2/models/{mo" +
+      "del_id}\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\016\220\234\'\021\220\234\'\017\220\234\'\023\022\316\001\n\014" +
+      "DeleteModels\022!.clarifai.api.DeleteModels" +
+      "Request\032!.clarifai.api.status.BaseRespon" +
+      "se\"x\202\323\344\223\002V*@/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/models:\001*Z" +
+      "\017*\n/v2/models:\001*\230\234\'\002\220\234\'-\220\234\'\013\220\234\'\016\220\234\'\021\220\234\'\017" +
+      "\220\234\'\023\022\225\002\n\027PatchModelCheckConsents\022,.clari" +
+      "fai.api.PatchModelCheckConsentsRequest\032," +
+      ".clarifai.api.MultiModelCheckConsentResp" +
+      "onse\"\235\001\202\323\344\223\002\212\0012Z/v2/users/{user_app_id.u" +
+      "ser_id}/apps/{user_app_id.app_id}/models" +
+      "/{model_id}/check_consents:\001*Z)2$/v2/mod" +
+      "els/{model_id}/check_consents:\001*\230\234\'\002\220\234\'-" +
+      "\220\234\'\017\022\371\001\n\022PatchModelToolkits\022\'.clarifai.a" +
+      "pi.PatchModelToolkitsRequest\032\'.clarifai." +
+      "api.MultiModelToolkitResponse\"\220\001\202\323\344\223\002~2T" +
+      "/v2/users/{user_app_id.user_id}/apps/{us" +
+      "er_app_id.app_id}/models/{model_id}/tool" +
+      "kits:\001*Z#2\036/v2/models/{model_id}/toolkit" +
+      "s:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\371\001\n\022PatchModelUseCases\022" +
+      "\'.clarifai.api.PatchModelUseCasesRequest" +
+      "\032\'.clarifai.api.MultiModelUseCaseRespons" +
+      "e\"\220\001\202\323\344\223\002~2T/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/models/{mo" +
+      "del_id}/usecases:\001*Z#2\036/v2/models/{model" +
+      "_id}/usecases:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\377\001\n\023PatchMo" +
+      "delLanguages\022(.clarifai.api.PatchModelLa" +
+      "nguagesRequest\032(.clarifai.api.MultiModel" +
+      "LanguageResponse\"\223\001\202\323\344\223\002\200\0012U/v2/users/{u" +
+      "ser_app_id.user_id}/apps/{user_app_id.ap" +
+      "p_id}/models/{model_id}/languages:\001*Z$2\037" +
+      "/v2/models/{model_id}/languages:\001*\230\234\'\002\220\234" +
+      "\'-\220\234\'\017\022\224\003\n\017ListModelInputs\022$.clarifai.ap" +
+      "i.ListModelInputsRequest\032 .clarifai.api." +
+      "MultiInputResponse\"\270\002\210\002\001\202\323\344\223\002\226\002\022R/v2/use" +
+      "rs/{user_app_id.user_id}/apps/{user_app_" +
+      "id.app_id}/models/{model_id}/inputsZ\036\022\034/" +
+      "v2/models/{model_id}/inputsZj\022h/v2/users" +
+      "/{user_app_id.user_id}/apps/{user_app_id" +
+      ".app_id}/models/{model_id}/versions/{ver" +
+      "sion_id}/inputsZ4\0222/v2/models/{model_id}" +
+      "/versions/{version_id}/inputs\230\234\'\002\220\234\'-\220\234\'" +
+      "&\220\234\'\013\220\234\'\005\220\234\'\017\022\215\002\n\017GetModelVersion\022$.clar" +
+      "ifai.api.GetModelVersionRequest\032(.clarif" +
+      "ai.api.SingleModelVersionResponse\"\251\001\202\323\344\223" +
+      "\002\222\001\022a/v2/users/{user_app_id.user_id}/app" +
+      "s/{user_app_id.app_id}/models/{model_id}" +
+      "/versions/{version_id}Z-\022+/v2/models/{mo" +
+      "del_id}/versions/{version_id}\230\234\'\002\220\234\'-\220\234\'" +
+      "\013\220\234\'\017\022\365\001\n\021ListModelVersions\022&.clarifai.a" +
+      "pi.ListModelVersionsRequest\032\'.clarifai.a" +
+      "pi.MultiModelVersionResponse\"\216\001\202\323\344\223\002x\022T/" +
+      "v2/users/{user_app_id.user_id}/apps/{use" +
+      "r_app_id.app_id}/models/{model_id}/versi" +
+      "onsZ \022\036/v2/models/{model_id}/versions\230\234\'" +
+      "\002\220\234\'-\220\234\'\013\220\234\'\017\022\274\002\n\035PostWorkflowVersionsUn" +
+      "Publish\0222.clarifai.api.PostWorkflowVersi" +
+      "onsUnPublishRequest\032!.clarifai.api.statu" +
+      "s.BaseResponse\"\303\001\202\323\344\223\002\214\001\"[/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/workflows/{workflow_id}/unpublish:\001*" +
+      "Z*\"%/v2/workflows/{workflow_id}/unpublis" +
+      "h:\001*\230\234\'\002\220\234\'-\220\234\'x\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032" +
+      "\220\234\'\023\220\234\'5\220\234\'6\022\264\002\n\033PostWorkflowVersionsPub" +
+      "lish\0220.clarifai.api.PostWorkflowVersions" +
+      "PublishRequest\032!.clarifai.api.status.Bas" +
+      "eResponse\"\277\001\202\323\344\223\002\210\001\"Y/v2/users/{user_app" +
+      "_id.user_id}/apps/{user_app_id.app_id}/w" +
+      "orkflows/{workflow_id}/publish:\001*Z(\"#/v2" +
+      "/workflows/{workflow_id}/publish:\001*\230\234\'\002\220" +
+      "\234\'-\220\234\'w\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5\220" +
+      "\234\'6\022\241\002\n\030PostModelVersionsPublish\022-.clari" +
+      "fai.api.PostModelVersionsPublishRequest\032" +
+      "!.clarifai.api.status.BaseResponse\"\262\001\202\323\344" +
+      "\223\002|\"S/v2/users/{user_app_id.user_id}/app" +
+      "s/{user_app_id.app_id}/models/{model_id}" +
+      "/publish:\001*Z\"\"\035/v2/models/{model_id}/pub" +
+      "lish:\001*\230\234\'\002\220\234\'-\220\234\'u\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220" +
+      "\234\'\032\220\234\'\023\220\234\'5\220\234\'6\022\252\002\n\032PostModelVersionsUnP" +
+      "ublish\022/.clarifai.api.PostModelVersionsU" +
+      "nPublishRequest\032!.clarifai.api.status.Ba" +
+      "seResponse\"\267\001\202\323\344\223\002\200\001\"U/v2/users/{user_ap" +
+      "p_id.user_id}/apps/{user_app_id.app_id}/" +
+      "models/{model_id}/unpublish:\001*Z$\"\037/v2/mo" +
+      "dels/{model_id}/unpublish:\001*\230\234\'\002\220\234\'-\220\234\'v" +
+      "\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5\220\234\'6\022\221\002\n" +
+      "\021PostModelVersions\022&.clarifai.api.PostMo" +
+      "delVersionsRequest\032!.clarifai.api.Single" +
+      "ModelResponse\"\260\001\202\323\344\223\002~\"T/v2/users/{user_" +
+      "app_id.user_id}/apps/{user_app_id.app_id" +
+      "}/models/{model_id}/versions:\001*Z#\"\036/v2/m" +
+      "odels/{model_id}/versions:\001*\230\234\'\002\220\234\'-\220\234\'&" +
+      "\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\023\220\234\'5\220\234\'6\022\337\001\n\022Pat" +
+      "chModelVersions\022\'.clarifai.api.PatchMode" +
+      "lVersionsRequest\032\'.clarifai.api.MultiMod" +
+      "elVersionResponse\"w\202\323\344\223\002Y2T/v2/users/{us" +
+      "er_app_id.user_id}/apps/{user_app_id.app" +
+      "_id}/models/{model_id}/versions:\001*\230\234\'\002\220\234" +
+      "\'-\220\234\'\013\220\234\'\017\220\234\'\016\220\234\'\032\022\230\002\n\022DeleteModelVersio" +
+      "n\022\'.clarifai.api.DeleteModelVersionReque" +
+      "st\032!.clarifai.api.status.BaseResponse\"\265\001" +
+      "\202\323\344\223\002\222\001*a/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/models/{model" +
+      "_id}/versions/{version_id}Z-*+/v2/models" +
+      "/{model_id}/versions/{version_id}\230\234\'\002\220\234\'" +
+      "-\220\234\'\013\220\234\'\016\220\234\'\021\220\234\'\017\220\234\'\023\022\271\001\n\027PostModelVersi" +
+      "onsUpload\022,.clarifai.api.PostModelVersio" +
+      "nsUploadRequest\032-.clarifai.api.PostModel" +
+      "VersionsUploadResponse\"=\202\323\344\223\002\037\"\032/v2/mode" +
+      "ls/versions/upload:\001*\230\234\'\002\220\234\'-\220\234\'\016\220\234\'\017\220\234\'" +
+      "\032\220\234\'\023(\0010\001\022\267\002\n\026PutModelVersionExports\022+.c" +
+      "larifai.api.PutModelVersionExportsReques" +
+      "t\032..clarifai.api.SingleModelVersionExpor" +
+      "tResponse\"\277\001\202\323\344\223\002\242\001\032i/v2/users/{user_app" +
+      "_id.user_id}/apps/{user_app_id.app_id}/m" +
+      "odels/{model_id}/versions/{version_id}/e" +
+      "xportsZ5\0323/v2/models/{model_id}/versions" +
+      "/{version_id}/exports\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\216\001\220\234" +
+      "\'\217\001\022\260\002\n\025GetModelVersionExport\022*.clarifai" +
+      ".api.GetModelVersionExportRequest\032..clar" +
+      "ifai.api.SingleModelVersionExportRespons" +
+      "e\"\272\001\202\323\344\223\002\242\001\022i/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/models/{m" +
+      "odel_id}/versions/{version_id}/exportsZ5" +
+      "\0223/v2/models/{model_id}/versions/{versio" +
+      "n_id}/exports\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\216\001\022\267\002\n\026GetMo" +
+      "delVersionMetrics\022+.clarifai.api.GetMode" +
+      "lVersionMetricsRequest\032(.clarifai.api.Si" +
+      "ngleModelVersionResponse\"\305\001\202\323\344\223\002\242\001\022i/v2/" +
+      "users/{user_app_id.user_id}/apps/{user_a" +
+      "pp_id.app_id}/models/{model_id}/versions" +
+      "/{version_id}/metricsZ5\0223/v2/models/{mod" +
+      "el_id}/versions/{version_id}/metrics\230\234\'\002" +
+      "\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5\022\323\002\n\027PostModelVe" +
+      "rsionMetrics\022,.clarifai.api.PostModelVer" +
+      "sionMetricsRequest\032(.clarifai.api.Single" +
+      "ModelVersionResponse\"\337\001\202\323\344\223\002\250\001\"i/v2/user" +
+      "s/{user_app_id.user_id}/apps/{user_app_i" +
+      "d.app_id}/models/{model_id}/versions/{ve" +
+      "rsion_id}/metrics:\001*Z8\"3/v2/models/{mode" +
+      "l_id}/versions/{version_id}/metrics:\001*\230\234" +
+      "\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234\'\002\220\234\'\023\220\234" +
+      "\'5\220\234\'6\022\355\002\n\033PostModelVersionEvaluations\0220" +
+      ".clarifai.api.PostModelVersionEvaluation" +
+      "sRequest\032&.clarifai.api.MultiEvalMetrics" +
+      "Response\"\363\001\202\323\344\223\002\274\001\"s/v2/users/{user_app_" +
+      "id.user_id}/apps/{user_app_id.app_id}/mo" +
+      "dels/{model_id}/versions/{model_version_" +
+      "id}/evaluations:\001*ZB\"=/v2/models/{model_" +
+      "id}/versions/{model_version_id}/evaluati" +
+      "ons:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220\234\'\032\220\234" +
+      "\'\002\220\234\'\023\220\234\'5\220\234\'6\022\323\002\n\033ListModelVersionEvalu" +
+      "ations\0220.clarifai.api.ListModelVersionEv" +
+      "aluationsRequest\032&.clarifai.api.MultiEva" +
+      "lMetricsResponse\"\331\001\202\323\344\223\002\266\001\022s/v2/users/{u" +
+      "ser_app_id.user_id}/apps/{user_app_id.ap" +
+      "p_id}/models/{model_id}/versions/{model_" +
+      "version_id}/evaluationsZ?\022=/v2/models/{m" +
+      "odel_id}/versions/{model_version_id}/eva" +
+      "luations\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5\022\361\002\n" +
+      "\031GetModelVersionEvaluation\022..clarifai.ap" +
+      "i.GetModelVersionEvaluationRequest\032\'.cla" +
+      "rifai.api.SingleEvalMetricsResponse\"\372\001\202\323" +
+      "\344\223\002\327\001\022\203\001/v2/users/{user_app_id.user_id}/" +
+      "apps/{user_app_id.app_id}/models/{model_" +
+      "id}/versions/{model_version_id}/evaluati" +
+      "ons/{evaluation_id}ZO\022M/v2/models/{model" +
+      "_id}/versions/{model_version_id}/evaluat" +
+      "ions/{evaluation_id}\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017" +
+      "\220\234\'\005\220\234\'5\022\370\001\n\017PostEvaluations\022$.clarifai." +
+      "api.PostEvaluationsRequest\032&.clarifai.ap" +
+      "i.MultiEvalMetricsResponse\"\226\001\202\323\344\223\002`\"E/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/evaluations:\001*Z\024\"\017/v2/eva" +
+      "luations:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'\016\220\234\'\017\220" +
+      "\234\'\032\220\234\'\002\220\234\'\023\220\234\'5\220\234\'6\022\216\002\n\017ListEvaluations\022" +
+      "$.clarifai.api.ListEvaluationsRequest\032&." +
+      "clarifai.api.MultiEvalMetricsResponse\"\254\001" +
+      "\202\323\344\223\002\211\001\022E/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/evaluationsZ-" +
+      "\022+/v2/users/{user_app_id.user_id}/evalua" +
+      "tionsZ\021\022\017/v2/evaluations\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013" +
+      "\220\234\'\017\220\234\'\005\220\234\'5\022\373\001\n\rGetEvaluation\022\".clarifa" +
+      "i.api.GetEvaluationRequest\032\'.clarifai.ap" +
+      "i.SingleEvalMetricsResponse\"\234\001\202\323\344\223\002z\022U/v" +
+      "2/users/{user_app_id.user_id}/apps/{user" +
+      "_app_id.app_id}/evaluations/{evaluation_" +
+      "id}Z!\022\037/v2/evaluations/{evaluation_id}\230\234" +
+      "\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\017\220\234\'\005\220\234\'5\022\373\001\n\023ListModel" +
+      "References\022(.clarifai.api.ListModelRefer" +
+      "encesRequest\032).clarifai.api.MultiModelRe" +
+      "ferenceResponse\"\216\001\202\323\344\223\002|\022V/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/models/{model_id}/referencesZ\"\022 /v2/" +
+      "models/{model_id}/references\230\234\'\002\220\234\'-\220\234\'\017" +
+      "\022\362\002\n\033GetModelVersionInputExample\0220.clari" +
+      "fai.api.GetModelVersionInputExampleReque" +
+      "st\0324.clarifai.api.SingleModelVersionInpu" +
+      "tExampleResponse\"\352\001\202\323\344\223\002\327\001\022\203\001/v2/users/{" +
+      "user_app_id.user_id}/apps/{user_app_id.a" +
+      "pp_id}/models/{model_id}/versions/{model" +
+      "_version_id}/input_examples/{example_id}" +
+      "ZO\022M/v2/models/{model_id}/versions/{mode" +
+      "l_version_id}/input_examples/{example_id" +
+      "}\230\234\'\002\220\234\'-\220\234\'\017\022\332\002\n\035ListModelVersionInputE" +
+      "xamples\0222.clarifai.api.ListModelVersionI" +
+      "nputExamplesRequest\0323.clarifai.api.Multi" +
+      "ModelVersionInputExampleResponse\"\317\001\202\323\344\223\002" +
+      "\274\001\022v/v2/users/{user_app_id.user_id}/apps" +
+      "/{user_app_id.app_id}/models/{model_id}/" +
+      "versions/{model_version_id}/input_exampl" +
+      "esZB\022@/v2/models/{model_id}/versions/{mo" +
+      "del_version_id}/input_examples\230\234\'\002\220\234\'-\220\234" +
+      "\'\017\022\340\001\n\013GetWorkflow\022 .clarifai.api.GetWor" +
+      "kflowRequest\032$.clarifai.api.SingleWorkfl" +
+      "owResponse\"\210\001\202\323\344\223\002r\022Q/v2/users/{user_app" +
+      "_id.user_id}/apps/{user_app_id.app_id}/w" +
+      "orkflows/{workflow_id}Z\035\022\033/v2/workflows/" +
+      "{workflow_id}\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\022\365\001\n\rListWo" +
+      "rkflows\022\".clarifai.api.ListWorkflowsRequ" +
+      "est\032#.clarifai.api.MultiWorkflowResponse" +
+      "\"\232\001\202\323\344\223\002\203\001\022C/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/workflowsZ" +
+      "+\022)/v2/users/{user_app_id.user_id}/workf" +
+      "lowsZ\017\022\r/v2/workflows\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\022\320\001" +
+      "\n\rPostWorkflows\022\".clarifai.api.PostWorkf" +
+      "lowsRequest\032#.clarifai.api.MultiWorkflow" +
+      "Response\"v\202\323\344\223\002\\\"C/v2/users/{user_app_id" +
+      ".user_id}/apps/{user_app_id.app_id}/work" +
+      "flows:\001*Z\022\"\r/v2/workflows:\001*\230\234\'\002\220\234\'-\220\234\'\017" +
+      "\220\234\'\022\220\234\'\023\022\322\001\n\016PatchWorkflows\022#.clarifai.a" +
+      "pi.PatchWorkflowsRequest\032#.clarifai.api." +
+      "MultiWorkflowResponse\"v\202\323\344\223\002\\2C/v2/users" +
+      "/{user_app_id.user_id}/apps/{user_app_id" +
+      ".app_id}/workflows:\001*Z\0222\r/v2/workflows:\001" +
+      "*\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\022\220\234\'\023\022\302\001\n\020PatchWorkflowI" +
+      "ds\022%.clarifai.api.PatchWorkflowIdsReques" +
+      "t\032#.clarifai.api.MultiWorkflowResponse\"b" +
+      "\202\323\344\223\002L2G/v2/users/{user_app_id.user_id}/" +
+      "apps/{user_app_id.app_id}/workflows/ids:" +
+      "\001*\230\234\'\002\220\234\'-\220\234\'\022\220\234\'\023\022\347\001\n\016DeleteWorkflow\022#." +
+      "clarifai.api.DeleteWorkflowRequest\032!.cla" +
+      "rifai.api.status.BaseResponse\"\214\001\202\323\344\223\002r*Q" +
+      "/v2/users/{user_app_id.user_id}/apps/{us" +
+      "er_app_id.app_id}/workflows/{workflow_id" +
+      "}Z\035*\033/v2/workflows/{workflow_id}\230\234\'\002\220\234\'-" +
+      "\220\234\'\022\220\234\'\025\220\234\'\023\022\322\001\n\017DeleteWorkflows\022$.clari" +
+      "fai.api.DeleteWorkflowsRequest\032!.clarifa" +
+      "i.api.status.BaseResponse\"v\202\323\344\223\002\\*C/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/workflows:\001*Z\022*\r/v2/workflo" +
+      "ws:\001*\230\234\'\002\220\234\'-\220\234\'\022\220\234\'\025\220\234\'\023\022\212\003\n\023PostWorkfl" +
+      "owResults\022(.clarifai.api.PostWorkflowRes" +
+      "ultsRequest\032).clarifai.api.PostWorkflowR" +
+      "esultsResponse\"\235\002\202\323\344\223\002\376\001\"o/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/workflows/{workflow_id}/versions/{ve" +
+      "rsion_id}/results:\001*Z^\"Y/v2/users/{user_" +
+      "app_id.user_id}/apps/{user_app_id.app_id" +
+      "}/workflows/{workflow_id}/results:\001*Z(\"#" +
+      "/v2/workflows/{workflow_id}/results:\001*\230\234" +
+      "\'\002\220\234\'-\220\234\'\017\220\234\'\013\220\234\'\002\220\234\'\023\022\213\002\n\024ListWorkflowV" +
+      "ersions\022).clarifai.api.ListWorkflowVersi" +
+      "onsRequest\032*.clarifai.api.MultiWorkflowV" +
+      "ersionResponse\"\233\001\202\323\344\223\002\204\001\022Z/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/workflows/{workflow_id}/versionsZ&\022$" +
+      "/v2/workflows/{workflow_id}/versions\230\234\'\002" +
+      "\220\234\'-\220\234\'\017\220\234\'\023\022\264\002\n\022GetWorkflowVersion\022\'.cl" +
+      "arifai.api.GetWorkflowVersionRequest\032+.c" +
+      "larifai.api.SingleWorkflowVersionRespons" +
+      "e\"\307\001\202\323\344\223\002\260\001\022p/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/workflows" +
+      "/{workflow_id}/versions/{workflow_versio" +
+      "n_id}Z<\022:/v2/workflows/{workflow_id}/ver" +
+      "sions/{workflow_version_id}\230\234\'\002\220\234\'-\220\234\'\017\220" +
+      "\234\'\023\022\220\002\n\026DeleteWorkflowVersions\022+.clarifa" +
+      "i.api.DeleteWorkflowVersionsRequest\032!.cl" +
+      "arifai.api.status.BaseResponse\"\245\001\202\323\344\223\002\212\001" +
+      "*Z/v2/users/{user_app_id.user_id}/apps/{" +
+      "user_app_id.app_id}/workflows/{workflow_" +
+      "id}/versions:\001*Z)*$/v2/workflows/{workfl" +
+      "ow_id}/versions:\001*\230\234\'\002\220\234\'-\220\234\'\023\220\234\'\022\220\234\'\025\022\227" +
+      "\002\n\025PatchWorkflowVersions\022*.clarifai.api." +
+      "PatchWorkflowVersionsRequest\032*.clarifai." +
+      "api.MultiWorkflowVersionResponse\"\245\001\202\323\344\223\002" +
+      "\212\0012Z/v2/users/{user_app_id.user_id}/apps" +
+      "/{user_app_id.app_id}/workflows/{workflo" +
+      "w_id}/versions:\001*Z)2$/v2/workflows/{work" +
+      "flow_id}/versions:\001*\230\234\'\002\220\234\'-\220\234\'\017\220\234\'\023\220\234\'\022" +
+      "\022\205\001\n\006GetKey\022\033.clarifai.api.GetKeyRequest" +
+      "\032\037.clarifai.api.SingleKeyResponse\"=\202\323\344\223\002" +
+      "/\022-/v2/users/{user_app_id.user_id}/keys/" +
+      "{key_id}\230\234\'\005\220\234\'0\022\177\n\010ListKeys\022\035.clarifai." +
+      "api.ListKeysRequest\032\036.clarifai.api.Multi" +
+      "KeyResponse\"4\202\323\344\223\002&\022$/v2/users/{user_app" +
+      "_id.user_id}/keys\230\234\'\005\220\234\'0\022\243\001\n\013ListAppKey" +
+      "s\022 .clarifai.api.ListAppKeysRequest\032\036.cl" +
+      "arifai.api.MultiKeyResponse\"R\202\323\344\223\002@\022>/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/keys\230\234\'\005\220\234\'-\220\234\'0\022\225\001\n\tDele" +
+      "teKey\022\036.clarifai.api.DeleteKeyRequest\032!." +
+      "clarifai.api.status.BaseResponse\"E\202\323\344\223\002/" +
+      "*-/v2/users/{user_app_id.user_id}/keys/{" +
+      "key_id}\230\234\'\005\220\234\'/\220\234\'1\220\234\'0\022\212\001\n\010PostKeys\022\035.c" +
+      "larifai.api.PostKeysRequest\032\036.clarifai.a" +
+      "pi.MultiKeyResponse\"?\202\323\344\223\002)\"$/v2/users/{" +
+      "user_app_id.user_id}/keys:\001*\230\234\'\005\220\234\'-\220\234\'/" +
+      "\220\234\'0\022\210\001\n\tPatchKeys\022\036.clarifai.api.PatchK" +
+      "eysRequest\032\036.clarifai.api.MultiKeyRespon" +
+      "se\";\202\323\344\223\002)2$/v2/users/{user_app_id.user_" +
+      "id}/keys:\001*\230\234\'\005\220\234\'/\220\234\'0\022\274\001\n\010MyScopes\022\035.c" +
+      "larifai.api.MyScopesRequest\032 .clarifai.a" +
+      "pi.MultiScopeResponse\"o\202\323\344\223\002e\022B/v2/users" +
+      "/{user_app_id.user_id}/apps/{user_app_id" +
+      ".app_id}/myscopesZ\016\022\014/v2/myscopesZ\017\022\r/v2" +
+      "/my_scopes\230\234\'\002\022\215\001\n\014MyScopesUser\022!.clarif" +
+      "ai.api.MyScopesUserRequest\032$.clarifai.ap" +
+      "i.MultiScopeUserResponse\"4\202\323\344\223\002*\022(/v2/us" +
+      "ers/{user_app_id.user_id}/myscopes\230\234\'\005\022u" +
+      "\n\014MyScopesRoot\022!.clarifai.api.MyScopesRo" +
+      "otRequest\032$.clarifai.api.MultiScopeRootR",
+      "esponse\"\034\202\323\344\223\002\022\022\020/v2/myscopesroot\230\234\'\005\022\207\001" +
+      "\n\nListScopes\022\037.clarifai.api.ListScopesRe" +
+      "quest\032$.clarifai.api.MultiScopeDepsRespo" +
+      "nse\"2\202\323\344\223\002(\022&/v2/users/{user_app_id.user" +
+      "_id}/scopes\230\234\'\003\022\240\001\n\006GetApp\022\033.clarifai.ap" +
+      "i.GetAppRequest\032\037.clarifai.api.SingleApp" +
+      "Response\"X\202\323\344\223\002F\0229/v2/users/{user_app_id" +
+      ".user_id}/apps/{user_app_id.app_id}Z\t\022\007/" +
+      "v2/app\230\234\'\002\220\234\'-\220\234\'\023\022\217\001\n\010ListApps\022\035.clarif" +
+      "ai.api.ListAppsRequest\032\036.clarifai.api.Mu" +
+      "ltiAppResponse\"D\202\323\344\223\0022\022$/v2/users/{user_" +
+      "app_id.user_id}/appsZ\n\022\010/v2/apps\230\234\'\005\220\234\'-" +
+      "\220\234\'\023\022\245\001\n\tDeleteApp\022\036.clarifai.api.Delete" +
+      "AppRequest\032!.clarifai.api.status.BaseRes" +
+      "ponse\"U\202\323\344\223\002;*9/v2/users/{user_app_id.us" +
+      "er_id}/apps/{user_app_id.app_id}\230\234\'\005\220\234\'," +
+      "\220\234\'.\220\234\'-\220\234\'\023\022\222\001\n\010PostApps\022\035.clarifai.api" +
+      ".PostAppsRequest\032\036.clarifai.api.MultiApp" +
+      "Response\"G\202\323\344\223\002)\"$/v2/users/{user_app_id" +
+      ".user_id}/apps:\001*\230\234\'\005\220\234\',\220\234\'-\220\234\'\017\220\234\'\023\220\234\'" +
+      "\022\022\210\001\n\tPatchApps\022\036.clarifai.api.PatchApps" +
+      "Request\032\036.clarifai.api.MultiAppResponse\"" +
+      ";\202\323\344\223\002)2$/v2/users/{user_app_id.user_id}" +
+      "/apps:\001*\230\234\'\005\220\234\',\220\234\'-\022\263\001\n\020PatchAppsDetail" +
+      "s\022%.clarifai.api.PatchAppsDetailsRequest" +
+      "\032\036.clarifai.api.MultiAppResponse\"X\202\323\344\223\002F" +
+      "2A/v2/users/{user_app_id.user_id}/apps/{" +
+      "user_app_id.app_id}/partial:\001*\230\234\'\005\220\234\',\220\234" +
+      "\'-\022\222\001\n\014PatchAppsIds\022!.clarifai.api.Patch" +
+      "AppsIdsRequest\032\036.clarifai.api.MultiAppRe" +
+      "sponse\"?\202\323\344\223\002-2(/v2/users/{user_app_id.u" +
+      "ser_id}/apps/ids:\001*\230\234\'\005\220\234\',\220\234\'-\022\234\001\n\010Patc" +
+      "hApp\022\035.clarifai.api.PatchAppRequest\032\037.cl" +
+      "arifai.api.SingleAppResponse\"P\202\323\344\223\002>29/v" +
+      "2/users/{user_app_id.user_id}/apps/{user" +
+      "_app_id.app_id}:\001*\230\234\'\005\220\234\',\220\234\'-\022\237\001\n\020PostA" +
+      "ppsSearches\022%.clarifai.api.PostAppsSearc" +
+      "hesRequest\032\036.clarifai.api.MultiAppRespon" +
+      "se\"D\202\323\344\223\0022\"-/v2/users/{user_app_id.user_" +
+      "id}/apps/searches:\001*\230\234\'\005\220\234\'-\220\234\'\023\022v\n\007GetU" +
+      "ser\022\034.clarifai.api.GetUserRequest\032 .clar" +
+      "ifai.api.SingleUserResponse\"+\202\323\344\223\002!\022\037/v2" +
+      "/users/{user_app_id.user_id}\230\234\'\005\022\317\001\n\024Pos" +
+      "tValidatePassword\022).clarifai.api.PostVal" +
+      "idatePasswordRequest\032..clarifai.api.Sing" +
+      "lePasswordValidationResponse\"\\\202\323\344\223\002R\"1/v" +
+      "2/users/{user_app_id.user_id}/validate_p" +
+      "assword:\001*Z\032\"\025/v2/validate_password:\001*\230\234" +
+      "\'\003\022\301\001\n\tGetSearch\022\036.clarifai.api.GetSearc" +
+      "hRequest\032\".clarifai.api.SingleSearchResp" +
+      "onse\"p\202\323\344\223\002^\022G/v2/users/{user_app_id.use" +
+      "r_id}/apps/{user_app_id.app_id}/searches" +
+      "/{id}Z\023\022\021/v2/searches/{id}\230\234\'\002\220\234\'-\220\234\'r\022\274" +
+      "\001\n\014ListSearches\022!.clarifai.api.ListSearc" +
+      "hesRequest\032!.clarifai.api.MultiSearchRes" +
+      "ponse\"f\202\323\344\223\002T\022B/v2/users/{user_app_id.us" +
+      "er_id}/apps/{user_app_id.app_id}/searche" +
+      "sZ\016\022\014/v2/searches\230\234\'\002\220\234\'-\220\234\'r\022\310\001\n\rPatchS" +
+      "earches\022\".clarifai.api.PatchSearchesRequ" +
+      "est\032!.clarifai.api.MultiSearchResponse\"p" +
+      "\202\323\344\223\002Z2B/v2/users/{user_app_id.user_id}/" +
+      "apps/{user_app_id.app_id}/searches:\001*Z\0212" +
+      "\014/v2/searches:\001*\230\234\'\002\220\234\'-\220\234\'s\220\234\'r\022\332\001\n\014Pos" +
+      "tSearches\022!.clarifai.api.PostSearchesReq" +
+      "uest\032!.clarifai.api.MultiSearchResponse\"" +
+      "\203\001\210\002\001\202\323\344\223\002Z\"B/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/searches:" +
+      "\001*Z\021\"\014/v2/searches:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'" +
+      "\005\220\234\'\017\220\234\'\003\220\234\'\023\022\330\001\n\020PostSearchesByID\022%.cla" +
+      "rifai.api.PostSearchesByIDRequest\032!.clar" +
+      "ifai.api.MultiSearchResponse\"z\202\323\344\223\002d\"G/v" +
+      "2/users/{user_app_id.user_id}/apps/{user" +
+      "_app_id.app_id}/searches/{id}:\001*Z\026\"\021/v2/" +
+      "searches/{id}:\001*\230\234\'\002\220\234\'-\220\234\'r\220\234\'\003\022\263\002\n\033Pos" +
+      "tAnnotationSearchMetrics\0220.clarifai.api." +
+      "PostAnnotationSearchMetricsRequest\0322.cla" +
+      "rifai.api.MultiAnnotationSearchMetricsRe" +
+      "sponse\"\255\001\202\323\344\223\002\202\001\"V/v2/users/{user_app_id" +
+      ".user_id}/apps/{user_app_id.app_id}/anno" +
+      "tations/searches/metrics:\001*Z%\" /v2/annot" +
+      "ations/searches/metrics:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234" +
+      "\'\013\220\234\'\005\220\234\'5\220\234\'6\220\234\'\017\220\234\'\023\022\251\002\n\032GetAnnotation" +
+      "SearchMetrics\022/.clarifai.api.GetAnnotati" +
+      "onSearchMetricsRequest\0322.clarifai.api.Mu" +
+      "ltiAnnotationSearchMetricsResponse\"\245\001\202\323\344" +
+      "\223\002\206\001\022[/v2/users/{user_app_id.user_id}/ap" +
+      "ps/{user_app_id.app_id}/annotations/sear" +
+      "ches/metrics/{id}Z\'\022%/v2/annotations/sea" +
+      "rches/metrics/{id}\230\234\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234" +
+      "\'5\022\240\002\n\033ListAnnotationSearchMetrics\0220.cla" +
+      "rifai.api.ListAnnotationSearchMetricsReq" +
+      "uest\0322.clarifai.api.MultiAnnotationSearc" +
+      "hMetricsResponse\"\232\001\202\323\344\223\002|\022V/v2/users/{us" +
+      "er_app_id.user_id}/apps/{user_app_id.app" +
+      "_id}/annotations/searches/metricsZ\"\022 /v2" +
+      "/annotations/searches/metrics\230\234\'\002\220\234\'-\220\234\'" +
+      "&\220\234\'\013\220\234\'\005\220\234\'5\022\232\002\n\035DeleteAnnotationSearch" +
+      "Metrics\0222.clarifai.api.DeleteAnnotationS" +
+      "earchMetricsRequest\032!.clarifai.api.statu" +
+      "s.BaseResponse\"\241\001\202\323\344\223\002\206\001*[/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/annotations/searches/metrics/{id}Z\'*" +
+      "%/v2/annotations/searches/metrics/{id}\230\234" +
+      "\'\002\220\234\'-\220\234\'5\220\234\'6\220\234\'?\022\316\001\n\014DeleteSearch\022!.cl" +
+      "arifai.api.DeleteSearchRequest\032!.clarifa" +
+      "i.api.status.BaseResponse\"x\202\323\344\223\002^*G/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/searches/{id}Z\023*\021/v2/search" +
+      "es/{id}\230\234\'\002\220\234\'-\220\234\'r\220\234\'s\220\234\'t\022\354\001\n\025ListAnno" +
+      "tationFilters\022*.clarifai.api.ListAnnotat" +
+      "ionFiltersRequest\032+.clarifai.api.MultiAn" +
+      "notationFilterResponse\"z\202\323\344\223\002h\022L/v2/user" +
+      "s/{user_app_id.user_id}/apps/{user_app_i" +
+      "d.app_id}/annotation_filtersZ\030\022\026/v2/anno" +
+      "tation_filters\230\234\'\002\220\234\'-\220\234\'r\022\231\002\n\023GetAnnota" +
+      "tionFilter\022(.clarifai.api.GetAnnotationF" +
+      "ilterRequest\032,.clarifai.api.SingleAnnota" +
+      "tionFilterResponse\"\251\001\202\323\344\223\002\226\001\022c/v2/users/" +
+      "{user_app_id.user_id}/apps/{user_app_id." +
+      "app_id}/annotation_filters/{annotation_f" +
+      "ilter_id}Z/\022-/v2/annotation_filters/{ann" +
+      "otation_filter_id}\230\234\'\002\220\234\'-\220\234\'r\022\367\001\n\025PostA" +
+      "nnotationFilters\022*.clarifai.api.PostAnno" +
+      "tationFiltersRequest\032+.clarifai.api.Mult" +
+      "iAnnotationFilterResponse\"\204\001\202\323\344\223\002n\"L/v2/" +
+      "users/{user_app_id.user_id}/apps/{user_a" +
+      "pp_id.app_id}/annotation_filters:\001*Z\033\"\026/" +
+      "v2/annotation_filters:\001*\230\234\'\002\220\234\'-\220\234\'r\220\234\'s" +
+      "\022\371\001\n\026PatchAnnotationFilters\022+.clarifai.a" +
+      "pi.PatchAnnotationFiltersRequest\032+.clari" +
+      "fai.api.MultiAnnotationFilterResponse\"\204\001" +
+      "\202\323\344\223\002n2L/v2/users/{user_app_id.user_id}/" +
+      "apps/{user_app_id.app_id}/annotation_fil" +
+      "ters:\001*Z\0332\026/v2/annotation_filters:\001*\230\234\'\002" +
+      "\220\234\'-\220\234\'r\220\234\'s\022\361\001\n\027DeleteAnnotationFilters" +
+      "\022,.clarifai.api.DeleteAnnotationFiltersR" +
+      "equest\032!.clarifai.api.status.BaseRespons" +
+      "e\"\204\001\202\323\344\223\002n*L/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/annotation" +
+      "_filters:\001*Z\033*\026/v2/annotation_filters:\001*" +
+      "\230\234\'\002\220\234\'-\220\234\'r\220\234\'s\022|\n\017ListStatusCodes\022$.cl" +
+      "arifai.api.ListStatusCodesRequest\032%.clar" +
+      "ifai.api.MultiStatusCodeResponse\"\034\202\323\344\223\002\022" +
+      "\022\020/v2/status_codes\230\234\'\001\022\212\001\n\rGetStatusCode" +
+      "\022\".clarifai.api.GetStatusCodeRequest\032&.c" +
+      "larifai.api.SingleStatusCodeResponse\"-\202\323" +
+      "\344\223\002#\022!/v2/status_codes/{status_code_id}\230" +
+      "\234\'\001\022\302\001\n\021ListCollaborators\022&.clarifai.api" +
+      ".ListCollaboratorsRequest\032(.clarifai.api" +
+      ".MultiCollaboratorsResponse\"[\202\323\344\223\002I\022G/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/collaborators\230\234\'\002\220\234\'-\220\234\'2" +
+      "\022\311\001\n\021PostCollaborators\022&.clarifai.api.Po" +
+      "stCollaboratorsRequest\032(.clarifai.api.Mu" +
+      "ltiCollaboratorsResponse\"b\202\323\344\223\002L\"G/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/collaborators:\001*\230\234\'\002\220\234\'-\220\234\'3" +
+      "\220\234\'2\022\317\001\n\022PatchCollaborators\022\'.clarifai.a" +
+      "pi.PatchCollaboratorsRequest\032(.clarifai." +
+      "api.MultiCollaboratorsResponse\"f\202\323\344\223\002L2G" +
+      "/v2/users/{user_app_id.user_id}/apps/{us" +
+      "er_app_id.app_id}/collaborators:\001*\230\234\'\002\220\234" +
+      "\'-\220\234\'3\220\234\'2\220\234\'4\022\322\001\n\023DeleteCollaborators\022(" +
+      ".clarifai.api.DeleteCollaboratorsRequest" +
+      "\032!.clarifai.api.status.BaseResponse\"n\202\323\344" +
+      "\223\002L*G/v2/users/{user_app_id.user_id}/app" +
+      "s/{user_app_id.app_id}/collaborators:\001*\230" +
+      "\234\'\002\220\234\'-\220\234\'3\220\234\'2\220\234\'4\220\234\'7\220\234\'8\022\254\001\n\022ListColl" +
+      "aborations\022\'.clarifai.api.ListCollaborat" +
+      "ionsRequest\032).clarifai.api.MultiCollabor" +
+      "ationsResponse\"B\202\323\344\223\0020\022./v2/users/{user_" +
+      "app_id.user_id}/collaborations\230\234\'\005\220\234\'-\220\234" +
+      "\'2\022\306\001\n\023PostAppDuplications\022(.clarifai.ap" +
+      "i.PostAppDuplicationsRequest\032*.clarifai." +
+      "api.MultiAppDuplicationsResponse\"Y\202\323\344\223\002K" +
+      "\"F/v2/users/{user_app_id.user_id}/apps/{" +
+      "user_app_id.app_id}/duplications:\001*\230\234\'\005\220" +
+      "\234\'-\022\245\001\n\023ListAppDuplications\022(.clarifai.a" +
+      "pi.ListAppDuplicationsRequest\032*.clarifai" +
+      ".api.MultiAppDuplicationsResponse\"8\202\323\344\223\002" +
+      ".\022,/v2/users/{user_app_id.user_id}/dupli" +
+      "cations\230\234\'\005\022\266\001\n\021GetAppDuplication\022&.clar" +
+      "ifai.api.GetAppDuplicationRequest\032*.clar" +
+      "ifai.api.SingleAppDuplicationResponse\"M\202" +
+      "\323\344\223\002C\022A/v2/users/{user_app_id.user_id}/d" +
+      "uplications/{app_duplication_id}\230\234\'\005\022\331\001\n" +
+      "\tPostTasks\022\036.clarifai.api.PostTasksReque" +
+      "st\032\037.clarifai.api.MultiTaskResponse\"\212\001\202\323" +
+      "\344\223\002T\"?/v2/users/{user_app_id.user_id}/ap" +
+      "ps/{user_app_id.app_id}/tasks:\001*Z\016\"\t/v2/" +
+      "tasks:\001*\230\234\'\002\220\234\'-\220\234\'7\220\234\'8\220\234\'\005\220\234\'\003\220\234\'r\220\234\'\013" +
+      "\220\234\'\023\220\234\'\017\220\234\'%\220\234\'&\022\376\001\n\026GetTaskAnnotationCo" +
+      "unt\022!.clarifai.api.GetTaskCountRequest\032%" +
+      ".clarifai.api.SingleTaskCountResponse\"\231\001" +
+      "\202\323\344\223\002\206\001\022[/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/tasks/{task_i" +
+      "d}/annotations/countZ\'\022%/v2/tasks/{task_" +
+      "id}/annotations/count\230\234\'\002\220\234\'-\220\234\'8\022\356\001\n\021Ge" +
+      "tTaskInputCount\022!.clarifai.api.GetTaskCo" +
+      "untRequest\032%.clarifai.api.SingleTaskCoun" +
+      "tResponse\"\216\001\202\323\344\223\002|\022V/v2/users/{user_app_" +
+      "id.user_id}/apps/{user_app_id.app_id}/ta" +
+      "sks/{task_id}/inputs/countZ\"\022 /v2/tasks/" +
+      "{task_id}/inputs/count\230\234\'\002\220\234\'-\220\234\'8\022\320\001\n\007G" +
+      "etTask\022\034.clarifai.api.GetTaskRequest\032 .c" +
+      "larifai.api.SingleTaskResponse\"\204\001\202\323\344\223\002b\022" +
+      "I/v2/users/{user_app_id.user_id}/apps/{u" +
+      "ser_app_id.app_id}/tasks/{task_id}Z\025\022\023/v" +
+      "2/tasks/{task_id}\230\234\'\002\220\234\'-\220\234\'8\220\234\'r\220\234\'\013\220\234\'" +
+      "\023\220\234\'\017\022\276\001\n\tListTasks\022\036.clarifai.api.ListT" +
+      "asksRequest\032\037.clarifai.api.MultiTaskResp" +
+      "onse\"p\202\323\344\223\002N\022?/v2/users/{user_app_id.use" +
+      "r_id}/apps/{user_app_id.app_id}/tasksZ\013\022" +
+      "\t/v2/tasks\230\234\'\002\220\234\'-\220\234\'8\220\234\'r\220\234\'\013\220\234\'\023\220\234\'\017\022\327" +
+      "\001\n\nPatchTasks\022\037.clarifai.api.PatchTasksR" +
+      "equest\032\037.clarifai.api.MultiTaskResponse\"" +
+      "\206\001\202\323\344\223\002T2?/v2/users/{user_app_id.user_id" +
+      "}/apps/{user_app_id.app_id}/tasks:\001*Z\0162\t" +
+      "/v2/tasks:\001*\230\234\'\002\220\234\'-\220\234\'7\220\234\'8\220\234\'\005\220\234\'r\220\234\'\013" +
+      "\220\234\'\023\220\234\'\017\220\234\'%\220\234\'&\022\302\001\n\013DeleteTasks\022 .clari" +
+      "fai.api.DeleteTasksRequest\032!.clarifai.ap" +
+      "i.status.BaseResponse\"n\202\323\344\223\002T*?/v2/users" +
+      "/{user_app_id.user_id}/apps/{user_app_id" +
+      ".app_id}/tasks:\001*Z\016*\t/v2/tasks:\001*\230\234\'\002\220\234\'" +
+      "-\220\234\'7\220\234\'8\220\234\'F\022\365\001\n\017PostLabelOrders\022$.clar" +
+      "ifai.api.PostLabelOrdersRequest\032%.clarif" +
+      "ai.api.MultiLabelOrderResponse\"\224\001\202\323\344\223\002b\"" +
+      "F/v2/users/{user_app_id.user_id}/apps/{u" +
+      "ser_app_id.app_id}/label_orders:\001*Z\025\"\020/v" +
+      "2/label_orders:\001*\230\234\'\002\220\234\'-\220\234\'C\220\234\'D\220\234\'7\220\234\'" +
+      "8\220\234\'\005\220\234\'r\220\234\'\013\220\234\'\023\220\234\'\017\022\366\001\n\rGetLabelOrder\022" +
+      "\".clarifai.api.GetLabelOrderRequest\032&.cl" +
+      "arifai.api.SingleLabelOrderResponse\"\230\001\202\323" +
+      "\344\223\002~\022W/v2/users/{user_app_id.user_id}/ap" +
+      "ps/{user_app_id.app_id}/label_orders/{la" +
+      "bel_order_id}Z#\022!/v2/label_orders/{label" +
+      "_order_id}\230\234\'\002\220\234\'-\220\234\'C\220\234\'\013\220\234\'8\022\326\001\n\017ListL" +
+      "abelOrders\022$.clarifai.api.ListLabelOrder" +
+      "sRequest\032%.clarifai.api.MultiLabelOrderR" +
+      "esponse\"v\202\323\344\223\002\\\022F/v2/users/{user_app_id." +
+      "user_id}/apps/{user_app_id.app_id}/label" +
+      "_ordersZ\022\022\020/v2/label_orders\230\234\'\002\220\234\'-\220\234\'C\220" +
+      "\234\'\013\220\234\'8\022\353\001\n\020PatchLabelOrders\022%.clarifai." +
+      "api.PatchLabelOrdersRequest\032%.clarifai.a" +
+      "pi.MultiLabelOrderResponse\"\210\001\202\323\344\223\002b2F/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/label_orders:\001*Z\0252\020/v2/la" +
+      "bel_orders:\001*\230\234\'\002\220\234\'-\220\234\'C\220\234\'D\220\234\'\013\220\234\'7\220\234\'" +
+      "8\220\234\'F\022\345\001\n\021DeleteLabelOrders\022&.clarifai.a" +
+      "pi.DeleteLabelOrdersRequest\032!.clarifai.a" +
+      "pi.status.BaseResponse\"\204\001\202\323\344\223\002b*F/v2/use" +
+      "rs/{user_app_id.user_id}/apps/{user_app_" +
+      "id.app_id}/label_orders:\001*Z\025*\020/v2/label_" +
+      "orders:\001*\230\234\'\002\220\234\'-\220\234\'E\220\234\'C\220\234\'D\220\234\'7\220\234\'8\022\362\001" +
+      "\n\016PostCollectors\022#.clarifai.api.PostColl" +
+      "ectorsRequest\032$.clarifai.api.MultiCollec" +
+      "torResponse\"\224\001\202\323\344\223\002^\"D/v2/users/{user_ap" +
+      "p_id.user_id}/apps/{user_app_id.app_id}/" +
+      "collectors:\001*Z\023\"\016/v2/collectors:\001*\230\234\'\002\220\234" +
+      "\'-\220\234\'\004\220\234\'%\220\234\'&\220\234\')\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017\220\234\'\002\220\234" +
+      "\'\023\022\343\001\n\014GetCollector\022!.clarifai.api.GetCo" +
+      "llectorRequest\032%.clarifai.api.SingleColl" +
+      "ectorResponse\"\210\001\202\323\344\223\002v\022S/v2/users/{user_" +
+      "app_id.user_id}/apps/{user_app_id.app_id" +
+      "}/collectors/{collector_id}Z\037\022\035/v2/colle" +
+      "ctors/{collector_id}\230\234\'\002\220\234\'-\220\234\'*\022\307\001\n\016Lis" +
+      "tCollectors\022#.clarifai.api.ListCollector" +
+      "sRequest\032$.clarifai.api.MultiCollectorRe" +
+      "sponse\"j\202\323\344\223\002X\022D/v2/users/{user_app_id.u" +
+      "ser_id}/apps/{user_app_id.app_id}/collec" +
+      "torsZ\020\022\016/v2/collectors\230\234\'\002\220\234\'-\220\234\'*\022\323\001\n\017P" +
+      "atchCollectors\022$.clarifai.api.PatchColle" +
+      "ctorsRequest\032$.clarifai.api.MultiCollect" +
+      "orResponse\"t\202\323\344\223\002^2D/v2/users/{user_app_" +
+      "id.user_id}/apps/{user_app_id.app_id}/co" +
+      "llectors:\001*Z\0232\016/v2/collectors:\001*\230\234\'\002\220\234\'-" +
+      "\220\234\')\220\234\'*\022\326\001\n\020DeleteCollectors\022%.clarifai" +
+      ".api.DeleteCollectorsRequest\032!.clarifai." +
+      "api.status.BaseResponse\"x\202\323\344\223\002^*D/v2/use" +
+      "rs/{user_app_id.user_id}/apps/{user_app_" +
+      "id.app_id}/collectors:\001*Z\023*\016/v2/collecto" +
+      "rs:\001*\230\234\'\002\220\234\'-\220\234\')\220\234\'+\220\234\'*\022\311\001\n\016PostStatVa" +
+      "lues\022#.clarifai.api.PostStatValuesReques" +
+      "t\032$.clarifai.api.MultiStatValueResponse\"" +
+      "l\202\323\344\223\002b\"F/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/stats/values:" +
+      "\001*Z\025\"\020/v2/stats/values:\001*\230\234\'\002\022\375\001\n\027PostSt" +
+      "atValuesAggregate\022,.clarifai.api.PostSta" +
+      "tValuesAggregateRequest\032-.clarifai.api.M" +
+      "ultiStatValueAggregateResponse\"\204\001\202\323\344\223\002v\"" +
+      "P/v2/users/{user_app_id.user_id}/apps/{u" +
+      "ser_app_id.app_id}/stats/values/aggregat" +
+      "e:\001*Z\037\"\032/v2/stats/values/aggregate:\001*\230\234\'" +
+      "\002\220\234\'-\022\343\001\n\027PostTrendingMetricsView\022,.clar" +
+      "ifai.api.PostTrendingMetricsViewRequest\032" +
+      "!.clarifai.api.status.BaseResponse\"w\202\323\344\223" +
+      "\002m\"h/v2/users/{user_app_id.user_id}/apps" +
+      "/{user_app_id.app_id}/trending_metrics/v" +
+      "iews/{view_type}/{object_id}:\001*\230\234\'\002\022\217\002\n\030" +
+      "ListTrendingMetricsViews\022-.clarifai.api." +
+      "ListTrendingMetricsViewsRequest\032..clarif" +
+      "ai.api.MultiTrendingMetricsViewResponse\"" +
+      "\223\001\202\323\344\223\002\210\001\022\\/v2/users/{user_app_id.user_i" +
+      "d}/apps/{user_app_id.app_id}/trending_me" +
+      "trics/views/{view_type}Z(\022&/v2/trending_" +
+      "metrics/views/{view_type}\230\234\'\002\022\262\001\n\tGetMod" +
+      "ule\022\036.clarifai.api.GetModuleRequest\032\".cl" +
+      "arifai.api.SingleModuleResponse\"a\202\323\344\223\002O\022" +
+      "M/v2/users/{user_app_id.user_id}/apps/{u" +
+      "ser_app_id.app_id}/modules/{module_id}\230\234" +
+      "\'\005\220\234\'-\220\234\'m\022\344\001\n\013ListModules\022 .clarifai.ap" +
+      "i.ListModulesRequest\032!.clarifai.api.Mult" +
+      "iModuleResponse\"\217\001\202\323\344\223\002}\022A/v2/users/{use" +
+      "r_app_id.user_id}/apps/{user_app_id.app_" +
+      "id}/modulesZ)\022\'/v2/users/{user_app_id.us" +
+      "er_id}/modulesZ\r\022\013/v2/modules\230\234\'\005\220\234\'-\220\234\'" +
+      "m\022\260\001\n\013PostModules\022 .clarifai.api.PostMod" +
+      "ulesRequest\032!.clarifai.api.MultiModuleRe" +
+      "sponse\"\\\202\323\344\223\002F\"A/v2/users/{user_app_id.u" +
+      "ser_id}/apps/{user_app_id.app_id}/module" +
+      "s:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'m\022\262\001\n\014PatchModules\022!." +
+      "clarifai.api.PatchModulesRequest\032!.clari" +
+      "fai.api.MultiModuleResponse\"\\\202\323\344\223\002F2A/v2" +
+      "/users/{user_app_id.user_id}/apps/{user_" +
+      "app_id.app_id}/modules:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'" +
+      "m\022\320\001\n\rDeleteModules\022\".clarifai.api.Delet" +
+      "eModulesRequest\032!.clarifai.api.status.Ba" +
+      "seResponse\"x\202\323\344\223\002F*A/v2/users/{user_app_" +
+      "id.user_id}/apps/{user_app_id.app_id}/mo" +
+      "dules:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'n\220\234\'m\220\234\'p\220\234\'o\220\234\'q" +
+      "\220\234\'1\220\234\'0\220\234\'/\022\344\001\n\020GetModuleVersion\022%.clar" +
+      "ifai.api.GetModuleVersionRequest\032).clari" +
+      "fai.api.SingleModuleVersionResponse\"~\202\323\344" +
+      "\223\002l\022j/v2/users/{user_app_id.user_id}/app" +
+      "s/{user_app_id.app_id}/modules/{module_i" +
+      "d}/versions/{module_version_id}\230\234\'\005\220\234\'-\220" +
+      "\234\'m\022\323\001\n\022ListModuleVersions\022\'.clarifai.ap" +
+      "i.ListModuleVersionsRequest\032(.clarifai.a" +
+      "pi.MultiModuleVersionResponse\"j\202\323\344\223\002X\022V/" +
+      "v2/users/{user_app_id.user_id}/apps/{use" +
+      "r_app_id.app_id}/modules/{module_id}/ver" +
+      "sions\230\234\'\005\220\234\'-\220\234\'m\022\332\001\n\022PostModuleVersions" +
+      "\022\'.clarifai.api.PostModuleVersionsReques" +
+      "t\032(.clarifai.api.MultiModuleVersionRespo" +
+      "nse\"q\202\323\344\223\002[\"V/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/modules/{" +
+      "module_id}/versions:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'m\022\334" +
+      "\001\n\023PatchModuleVersions\022(.clarifai.api.Pa" +
+      "tchModuleVersionsRequest\032(.clarifai.api." +
+      "MultiModuleVersionResponse\"q\202\323\344\223\002[2V/v2/" +
+      "users/{user_app_id.user_id}/apps/{user_a" +
+      "pp_id.app_id}/modules/{module_id}/versio" +
+      "ns:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'m\022\364\001\n\024DeleteModuleVe" +
+      "rsions\022).clarifai.api.DeleteModuleVersio" +
+      "nsRequest\032!.clarifai.api.status.BaseResp" +
+      "onse\"\215\001\202\323\344\223\002[*V/v2/users/{user_app_id.us" +
+      "er_id}/apps/{user_app_id.app_id}/modules" +
+      "/{module_id}/versions:\001*\230\234\'\005\220\234\'-\220\234\'l\220\234\'n" +
+      "\220\234\'m\220\234\'p\220\234\'o\220\234\'q\220\234\'1\220\234\'0\220\234\'/\022\223\002\n\032GetModu" +
+      "leVersionUsageCount\022/.clarifai.api.GetMo" +
+      "duleVersionUsageCountRequest\0323.clarifai." +
+      "api.SingleModuleVersionUsageCountRespons" +
+      "e\"\216\001\202\323\344\223\002x\022v/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/modules/{m" +
+      "odule_id}/versions/{module_version_id}/u" +
+      "sage_count\230\234\'\005\220\234\'-\220\234\'m\220\234\'p\022\217\002\n\031GetInstal" +
+      "ledModuleVersion\022..clarifai.api.GetInsta" +
+      "lledModuleVersionRequest\0322.clarifai.api." +
+      "SingleInstalledModuleVersionResponse\"\215\001\202" +
+      "\323\344\223\002s\022q/v2/users/{user_app_id.user_id}/a" +
+      "pps/{user_app_id.app_id}/installed_modul" +
+      "e_versions/{installed_module_version_id}" +
+      "\230\234\'\005\220\234\'-\220\234\'p\220\234\'m\220\234\'0\022\363\001\n\033ListInstalledMo" +
+      "duleVersions\0220.clarifai.api.ListInstalle" +
+      "dModuleVersionsRequest\0321.clarifai.api.Mu" +
+      "ltiInstalledModuleVersionResponse\"o\202\323\344\223\002" +
+      "U\022S/v2/users/{user_app_id.user_id}/apps/" +
+      "{user_app_id.app_id}/installed_module_ve" +
+      "rsions\230\234\'\005\220\234\'-\220\234\'p\220\234\'m\220\234\'0\022\366\001\n\033PostInsta" +
+      "lledModuleVersions\0220.clarifai.api.PostIn" +
+      "stalledModuleVersionsRequest\0321.clarifai." +
+      "api.MultiInstalledModuleVersionResponse\"" +
+      "r\202\323\344\223\002X\"S/v2/users/{user_app_id.user_id}" +
+      "/apps/{user_app_id.app_id}/installed_mod" +
+      "ule_versions:\001*\230\234\'\005\220\234\'o\220\234\'p\220\234\'m\220\234\'-\022\373\001\n\035" +
+      "DeleteInstalledModuleVersions\0222.clarifai" +
+      ".api.DeleteInstalledModuleVersionsReques" +
+      "t\032!.clarifai.api.status.BaseResponse\"\202\001\202" +
+      "\323\344\223\002X*S/v2/users/{user_app_id.user_id}/a" +
+      "pps/{user_app_id.app_id}/installed_modul" +
+      "e_versions:\001*\230\234\'\005\220\234\'-\220\234\'m\220\234\'o\220\234\'p\220\234\'q\220\234\'" +
+      "1\220\234\'/\220\234\'0\022\225\002\n\036PostInstalledModuleVersion" +
+      "sKey\0223.clarifai.api.PostInstalledModuleV" +
+      "ersionsKeyRequest\032\037.clarifai.api.SingleK" +
+      "eyResponse\"\234\001\202\323\344\223\002z\"u/v2/users/{user_app" +
+      "_id.user_id}/apps/{user_app_id.app_id}/i" +
+      "nstalled_module_versions/{installed_modu" +
+      "le_version_id}/key:\001*\230\234\'\005\220\234\'o\220\234\'p\220\234\'m\220\234\'" +
+      "-\220\234\'/\220\234\'0\022\365\001\n\022PostBulkOperations\022\'.clari" +
+      "fai.api.PostBulkOperationsRequest\032).clar",
+      "ifai.api.MultiBulkOperationsResponse\"\212\001\202" +
+      "\323\344\223\002h\"I/v2/users/{user_app_id.user_id}/a" +
+      "pps/{user_app_id.app_id}/bulk_operations" +
+      ":\001*Z\030\"\023/v2/bulk_operations:\001*\230\234\'\002\220\234\'-\220\234\'" +
+      "z\220\234\'y\220\234\'%\220\234\'&\220\234\'(\022\336\001\n\022ListBulkOperations" +
+      "\022\'.clarifai.api.ListBulkOperationsReques" +
+      "t\032).clarifai.api.MultiBulkOperationsResp" +
+      "onse\"t\202\323\344\223\002b\022I/v2/users/{user_app_id.use" +
+      "r_id}/apps/{user_app_id.app_id}/bulk_ope" +
+      "rationsZ\025\022\023/v2/bulk_operations\230\234\'\002\220\234\'-\220\234" +
+      "\'z\022\345\001\n\020GetBulkOperation\022%.clarifai.api.G" +
+      "etBulkOperationRequest\032*.clarifai.api.Si" +
+      "ngleBulkOperationsResponse\"~\202\323\344\223\002l\022N/v2/" +
+      "users/{user_app_id.user_id}/apps/{user_a" +
+      "pp_id.app_id}/bulk_operations/{id}Z\032\022\030/v" +
+      "2/bulk_operations/{id}\230\234\'\002\220\234\'-\220\234\'z\022\353\001\n\024C" +
+      "ancelBulkOperations\022(.clarifai.api.Cance" +
+      "lBulkOperationRequest\032).clarifai.api.Mul" +
+      "tiBulkOperationsResponse\"~\202\323\344\223\002h2I/v2/us" +
+      "ers/{user_app_id.user_id}/apps/{user_app" +
+      "_id.app_id}/bulk_operations:\001*Z\0302\023/v2/bu" +
+      "lk_operations:\001*\230\234\'\002\220\234\'-\220\234\'y\220\234\'z\022\364\001\n\024Del" +
+      "eteBulkOperations\022(.clarifai.api.DeleteB" +
+      "ulkOperationRequest\032!.clarifai.api.statu" +
+      "s.BaseResponse\"\216\001\202\323\344\223\002h*I/v2/users/{user" +
+      "_app_id.user_id}/apps/{user_app_id.app_i" +
+      "d}/bulk_operations:\001*Z\030*\023/v2/bulk_operat" +
+      "ions:\001*\230\234\'\002\220\234\'-\220\234\'&\220\234\'%\220\234\'(\220\234\'y\220\234\'z\220\234\'{\022" +
+      "\210\002\n\027ListNextTaskAssignments\022,.clarifai.a" +
+      "pi.ListNextTaskAssignmentsRequest\032 .clar" +
+      "ifai.api.MultiInputResponse\"\234\001\202\323\344\223\002z\022U/v" +
+      "2/users/{user_app_id.user_id}/apps/{user" +
+      "_app_id.app_id}/tasks/{task_id}/assignme" +
+      "ntsZ!\022\037/v2/tasks/{task_id}/assignments\230\234" +
+      "\'\002\220\234\'-\220\234\'&\220\234\'\013\220\234\'\005\220\234\'8\220\234\'i\022\353\001\n\022PutTaskAs" +
+      "signments\022\'.clarifai.api.PutTaskAssignme" +
+      "ntsRequest\032).clarifai.api.MultiTaskAssig" +
+      "nmentResponse\"\200\001\202\323\344\223\002Z\032U/v2/users/{user_" +
+      "app_id.user_id}/apps/{user_app_id.app_id" +
+      "}/tasks/{task_id}/assignments:\001*\230\234\'\002\220\234\'-" +
+      "\220\234\'%\220\234\'&\220\234\'\013\220\234\'\005\220\234\'8\220\234\'i\022\332\001\n\021ListInputsA" +
+      "ddJobs\022&.clarifai.api.ListInputsAddJobsR" +
+      "equest\032\'.clarifai.api.MultiInputsAddJobR" +
+      "esponse\"t\202\323\344\223\002b\022I/v2/users/{user_app_id." +
+      "user_id}/apps/{user_app_id.app_id}/input" +
+      "s/jobs/addZ\025\022\023/v2/inputs/jobs/add\230\234\'\002\220\234\'" +
+      "-\220\234\'\005\022\341\001\n\017GetInputsAddJob\022$.clarifai.api" +
+      ".GetInputsAddJobRequest\032(.clarifai.api.S" +
+      "ingleInputsAddJobResponse\"~\202\323\344\223\002l\022N/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/inputs/jobs/add/{id}Z\032\022\030/v2" +
+      "/inputs/jobs/add/{id}\230\234\'\002\220\234\'-\220\234\'\005\022\362\001\n\022Ca" +
+      "ncelInputsAddJob\022\'.clarifai.api.CancelIn" +
+      "putsAddJobRequest\032(.clarifai.api.SingleI" +
+      "nputsAddJobResponse\"\210\001\202\323\344\223\002r2N/v2/users/" +
+      "{user_app_id.user_id}/apps/{user_app_id." +
+      "app_id}/inputs/jobs/add/{id}:\001*Z\0352\030/v2/i" +
+      "nputs/jobs/add/{id}:\001*\230\234\'\002\220\234\'-\220\234\'\004\220\234\'\005\022\304" +
+      "\001\n\013PostUploads\022 .clarifai.api.PostUpload" +
+      "sRequest\032!.clarifai.api.MultiUploadRespo" +
+      "nse\"p\202\323\344\223\002X\"A/v2/users/{user_app_id.user" +
+      "_id}/apps/{user_app_id.app_id}/uploads:\001" +
+      "*Z\020\"\013/v2/uploads:\001*\230\234\'\002\220\234\'-\220\234\'\201\001\220\234\'\200\001\022\214\002" +
+      "\n\025PutUploadContentParts\022*.clarifai.api.P" +
+      "utUploadContentPartsRequest\032\".clarifai.a" +
+      "pi.SingleUploadResponse\"\242\001\202\323\344\223\002\211\001\032[/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/uploads/{upload_id}/content" +
+      "_parts:\001*Z\'\032%/v2/uploads/{upload_id}/con" +
+      "tent_parts\230\234\'\002\220\234\'-\220\234\'\201\001\220\234\'\200\001\022\316\001\n\tGetUplo" +
+      "ad\022\036.clarifai.api.GetUploadRequest\032\".cla" +
+      "rifai.api.SingleUploadResponse\"}\202\323\344\223\002j\022M" +
+      "/v2/users/{user_app_id.user_id}/apps/{us" +
+      "er_app_id.app_id}/uploads/{upload_id}Z\031\022" +
+      "\027/v2/uploads/{upload_id}\230\234\'\002\220\234\'-\220\234\'\200\001\022\271\001" +
+      "\n\013ListUploads\022 .clarifai.api.ListUploads" +
+      "Request\032!.clarifai.api.MultiUploadRespon" +
+      "se\"e\202\323\344\223\002R\022A/v2/users/{user_app_id.user_" +
+      "id}/apps/{user_app_id.app_id}/uploadsZ\r\022" +
+      "\013/v2/uploads\230\234\'\002\220\234\'-\220\234\'\200\001\022\315\001\n\rDeleteUplo" +
+      "ads\022\".clarifai.api.DeleteUploadsRequest\032" +
+      "!.clarifai.api.status.BaseResponse\"u\202\323\344\223" +
+      "\002X*A/v2/users/{user_app_id.user_id}/apps" +
+      "/{user_app_id.app_id}/uploads:\001*Z\020*\013/v2/" +
+      "uploads:\001*\230\234\'\002\220\234\'-\220\234\'\200\001\220\234\'\201\001\220\234\'\202\001\022\215\002\n\025Po" +
+      "stInputsDataSources\022*.clarifai.api.PostI" +
+      "nputsDataSourcesRequest\032\'.clarifai.api.M" +
+      "ultiInputsAddJobResponse\"\236\001\202\323\344\223\002p\"M/v2/u" +
+      "sers/{user_app_id.user_id}/apps/{user_ap" +
+      "p_id.app_id}/inputs/data_sources:\001*Z\034\"\027/" +
+      "v2/inputs/data_sources:\001*\230\234\'\002\220\234\'-\220\234\'%\220\234\'" +
+      "&\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017\220\234\'\002\220\234\'\023\022\262\002\n\026GetInputsE" +
+      "xtractionJob\022+.clarifai.api.GetInputsExt" +
+      "ractionJobRequest\032/.clarifai.api.SingleI" +
+      "nputsExtractionJobResponse\"\271\001\202\323\344\223\002\246\001\022k/v" +
+      "2/users/{user_app_id.user_id}/apps/{user" +
+      "_app_id.app_id}/inputs/jobs/extraction/{" +
+      "inputs_extraction_job_id}Z7\0225/v2/inputs/" +
+      "jobs/extraction/{inputs_extraction_job_i" +
+      "d}\230\234\'\002\220\234\'-\220\234\'\005\022\376\001\n\030ListInputsExtractionJ" +
+      "obs\022-.clarifai.api.ListInputsExtractionJ" +
+      "obsRequest\032..clarifai.api.MultiInputsExt" +
+      "ractionJobResponse\"\202\001\202\323\344\223\002p\022P/v2/users/{" +
+      "user_app_id.user_id}/apps/{user_app_id.a" +
+      "pp_id}/inputs/jobs/extractionZ\034\022\032/v2/inp" +
+      "uts/jobs/extraction\230\234\'\002\220\234\'-\220\234\'\005\022\214\002\n\032Canc" +
+      "elInputsExtractionJobs\022/.clarifai.api.Ca" +
+      "ncelInputsExtractionJobsRequest\032..clarif" +
+      "ai.api.MultiInputsExtractionJobResponse\"" +
+      "\214\001\202\323\344\223\002v2P/v2/users/{user_app_id.user_id" +
+      "}/apps/{user_app_id.app_id}/inputs/jobs/" +
+      "extraction:\001*Z\0372\032/v2/inputs/jobs/extract" +
+      "ion:\001*\230\234\'\002\220\234\'-\220\234\'\004\220\234\'\005\022\205\002\n\021PostInputsUpl" +
+      "oads\022&.clarifai.api.PostInputsUploadsReq" +
+      "uest\032\'.clarifai.api.MultiInputsAddJobRes" +
+      "ponse\"\236\001\202\323\344\223\002f\"H/v2/users/{user_app_id.u" +
+      "ser_id}/apps/{user_app_id.app_id}/inputs" +
+      "/uploads:\001*Z\027\"\022/v2/inputs/uploads:\001*\230\234\'\002" +
+      "\220\234\'-\220\234\'%\220\234\'&\220\234\'\013\220\234\'\004\220\234\'\005\220\234\'\017\220\234\'\002\220\234\'\023\220\234\'\201" +
+      "\001\220\234\'\200\001\022\352\001\n\tGetRunner\022\036.clarifai.api.GetR" +
+      "unnerRequest\032\".clarifai.api.SingleRunner" +
+      "Response\"\230\001\202\323\344\223\002s\022q/v2/users/{user_app_i" +
+      "d.user_id}/compute_clusters/{compute_clu" +
+      "ster_id}/nodepools/{nodepool_id}/runners" +
+      "/{runner_id}\230\234\'\005\220\234\'\203\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\220" +
+      "\234\'-\022\341\001\n\013ListRunners\022 .clarifai.api.ListR" +
+      "unnersRequest\032!.clarifai.api.MultiRunner" +
+      "Response\"\214\001\202\323\344\223\002g\022e/v2/users/{user_app_i" +
+      "d.user_id}/compute_clusters/{compute_clu" +
+      "ster_id}/nodepools/{nodepool_id}/runners" +
+      "\230\234\'\005\220\234\'\203\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\220\234\'-\022\351\001\n\013Post" +
+      "Runners\022 .clarifai.api.PostRunnersReques" +
+      "t\032!.clarifai.api.MultiRunnerResponse\"\224\001\202" +
+      "\323\344\223\002j\"e/v2/users/{user_app_id.user_id}/c" +
+      "ompute_clusters/{compute_cluster_id}/nod" +
+      "epools/{nodepool_id}/runners:\001*\230\234\'\005\220\234\'\203\001" +
+      "\220\234\'\204\001\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\356\001\n\rDeleteRu" +
+      "nners\022\".clarifai.api.DeleteRunnersReques" +
+      "t\032!.clarifai.api.status.BaseResponse\"\225\001\202" +
+      "\323\344\223\002j*e/v2/users/{user_app_id.user_id}/c" +
+      "ompute_clusters/{compute_cluster_id}/nod" +
+      "epools/{nodepool_id}/runners:\001*\230\234\'\005\220\234\'\203\001" +
+      "\220\234\'\204\001\220\234\'\205\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\022\356\001\n\017ListRun" +
+      "nerItems\022$.clarifai.api.ListRunnerItemsR" +
+      "equest\032%.clarifai.api.MultiRunnerItemRes" +
+      "ponse\"\215\001\202\323\344\223\002y\022w/v2/users/{user_app_id.u" +
+      "ser_id}/compute_clusters/{compute_cluste" +
+      "r_id}/nodepools/{nodepool_id}/runners/{r" +
+      "unner_id}/items\230\234\'\005\220\234\'\203\001\220\234\'\206\001\022\243\002\n\025PostRu" +
+      "nnerItemOutputs\022*.clarifai.api.PostRunne" +
+      "rItemOutputsRequest\032+.clarifai.api.Multi" +
+      "RunnerItemOutputResponse\"\260\001\202\323\344\223\002\226\001\"\220\001/v2" +
+      "/users/{user_app_id.user_id}/compute_clu" +
+      "sters/{compute_cluster_id}/nodepools/{no" +
+      "depool_id}/runners/{runner_id}/items/{ru" +
+      "nner_item_id}/outputs:\001*\230\234\'\005\220\234\'\203\001\220\234\'\206\001\220\234" +
+      "\'\207\001\022\250\001\n\022ProcessRunnerItems\022*.clarifai.ap" +
+      "i.PostRunnerItemOutputsRequest\032%.clarifa" +
+      "i.api.MultiRunnerItemResponse\";\202\323\344\223\002\036\"\031/" +
+      "v2/runners/items/process:\001*\230\234\'\005\220\234\'-\220\234\'\203\001" +
+      "\220\234\'\206\001\220\234\'\207\001(\0010\001\022\304\002\n%PostModelVersionsTrai" +
+      "ningTimeEstimate\022:.clarifai.api.PostMode" +
+      "lVersionsTrainingTimeEstimateRequest\032/.c" +
+      "larifai.api.MultiTrainingTimeEstimateRes" +
+      "ponse\"\255\001\202\323\344\223\002\232\001\"b/v2/users/{user_app_id." +
+      "user_id}/apps/{user_app_id.app_id}/model" +
+      "s/{model_id}/versions/time_estimate:\001*Z1" +
+      "\",/v2/models/{model_id}/versions/time_es" +
+      "timate:\001*\230\234\'\002\220\234\'-\220\234\'\017\022\276\001\n\021ListInstanceTy" +
+      "pes\022&.clarifai.api.ListInstanceTypesRequ" +
+      "est\032\'.clarifai.api.MultiInstanceTypeResp" +
+      "onse\"X\202\323\344\223\002I\022G/v2/cloud_providers/{cloud" +
+      "_provider.id}/regions/{region}/instance_" +
+      "types\230\234\'\005\220\234\'\224\001\022\303\001\n\021GetComputeCluster\022&.c" +
+      "larifai.api.GetComputeClusterRequest\032*.c" +
+      "larifai.api.SingleComputeClusterResponse" +
+      "\"Z\202\323\344\223\002G\022E/v2/users/{user_app_id.user_id" +
+      "}/compute_clusters/{compute_cluster_id}\230" +
+      "\234\'\005\220\234\'\213\001\220\234\'0\022\261\001\n\023ListComputeClusters\022(.c" +
+      "larifai.api.ListComputeClustersRequest\032)" +
+      ".clarifai.api.MultiComputeClusterRespons" +
+      "e\"E\202\323\344\223\0022\0220/v2/users/{user_app_id.user_i" +
+      "d}/compute_clusters\230\234\'\005\220\234\'\213\001\220\234\'0\022\271\001\n\023Pos" +
+      "tComputeClusters\022(.clarifai.api.PostComp" +
+      "uteClustersRequest\032).clarifai.api.MultiC" +
+      "omputeClusterResponse\"M\202\323\344\223\0025\"0/v2/users" +
+      "/{user_app_id.user_id}/compute_clusters:" +
+      "\001*\230\234\'\005\220\234\'\213\001\220\234\'\214\001\220\234\'0\022\311\001\n\025DeleteComputeCl" +
+      "usters\022*.clarifai.api.DeleteComputeClust" +
+      "ersRequest\032!.clarifai.api.status.BaseRes" +
+      "ponse\"a\202\323\344\223\0025*0/v2/users/{user_app_id.us" +
+      "er_id}/compute_clusters:\001*\230\234\'\005\220\234\'\213\001\220\234\'\214\001" +
+      "\220\234\'\215\001\220\234\'\210\001\220\234\'\211\001\220\234\'\212\001\220\234\'0\022\312\001\n\013GetNodepool" +
+      "\022 .clarifai.api.GetNodepoolRequest\032$.cla" +
+      "rifai.api.SingleNodepoolResponse\"s\202\323\344\223\002_" +
+      "\022]/v2/users/{user_app_id.user_id}/comput" +
+      "e_clusters/{compute_cluster_id}/nodepool" +
+      "s/{nodepool_id}\230\234\'\005\220\234\'\210\001\220\234\'\213\001\022\277\001\n\rListNo" +
+      "depools\022\".clarifai.api.ListNodepoolsRequ" +
+      "est\032#.clarifai.api.MultiNodepoolResponse" +
+      "\"e\202\323\344\223\002Q\022O/v2/users/{user_app_id.user_id" +
+      "}/compute_clusters/{compute_cluster_id}/" +
+      "nodepools\230\234\'\005\220\234\'\210\001\220\234\'\213\001\022\307\001\n\rPostNodepool" +
+      "s\022\".clarifai.api.PostNodepoolsRequest\032#." +
+      "clarifai.api.MultiNodepoolResponse\"m\202\323\344\223" +
+      "\002T\"O/v2/users/{user_app_id.user_id}/comp" +
+      "ute_clusters/{compute_cluster_id}/nodepo" +
+      "ols:\001*\230\234\'\005\220\234\'\210\001\220\234\'\211\001\220\234\'\213\001\022\311\001\n\016PatchNodep" +
+      "ools\022#.clarifai.api.PatchNodepoolsReques" +
       "t\032#.clarifai.api.MultiNodepoolResponse\"m" +
-      "\202\323\344\223\002T\"O/v2/users/{user_app_id.user_id}/" +
+      "\202\323\344\223\002T2O/v2/users/{user_app_id.user_id}/" +
       "compute_clusters/{compute_cluster_id}/no" +
-      "depools:\001*\230\234\'\005\220\234\'\210\001\220\234\'\211\001\220\234\'\213\001\022\311\001\n\016PatchN" +
-      "odepools\022#.clarifai.api.PatchNodepoolsRe" +
-      "quest\032#.clarifai.api.MultiNodepoolRespon" +
-      "se\"m\202\323\344\223\002T2O/v2/users/{user_app_id.user_" +
-      "id}/compute_clusters/{compute_cluster_id" +
-      "}/nodepools:\001*\230\234\'\005\220\234\'\211\001\220\234\'\210\001\220\234\'\213\001\022\346\001\n\017De" +
-      "leteNodepools\022$.clarifai.api.DeleteNodep" +
-      "oolsRequest\032!.clarifai.api.status.BaseRe" +
-      "sponse\"\211\001\202\323\344\223\002T*O/v2/users/{user_app_id." +
-      "user_id}/compute_clusters/{compute_clust" +
-      "er_id}/nodepools:\001*\230\234\'\005\220\234\'\213\001\220\234\'\210\001\220\234\'\211\001\220\234" +
-      "\'\212\001\220\234\'\203\001\220\234\'\204\001\220\234\'\205\001\220\234\'\017\220\234\'\023\022\273\001\n\rGetDeploy" +
-      "ment\022\".clarifai.api.GetDeploymentRequest" +
-      "\032&.clarifai.api.SingleDeploymentResponse" +
-      "\"^\202\323\344\223\002=\022;/v2/users/{user_app_id.user_id" +
-      "}/deployments/{deployment_id}\230\234\'\005\220\234\'\220\001\220\234" +
-      "\'\210\001\220\234\'\213\001\220\234\'\017\220\234\'\023\022\263\001\n\017ListDeployments\022$.c" +
+      "depools:\001*\230\234\'\005\220\234\'\211\001\220\234\'\210\001\220\234\'\213\001\022\346\001\n\017Delete" +
+      "Nodepools\022$.clarifai.api.DeleteNodepools" +
+      "Request\032!.clarifai.api.status.BaseRespon" +
+      "se\"\211\001\202\323\344\223\002T*O/v2/users/{user_app_id.user" +
+      "_id}/compute_clusters/{compute_cluster_i" +
+      "d}/nodepools:\001*\230\234\'\005\220\234\'\213\001\220\234\'\210\001\220\234\'\211\001\220\234\'\212\001\220" +
+      "\234\'\203\001\220\234\'\204\001\220\234\'\205\001\220\234\'\017\220\234\'\023\022\277\001\n\rGetDeployment" +
+      "\022\".clarifai.api.GetDeploymentRequest\032&.c" +
+      "larifai.api.SingleDeploymentResponse\"b\202\323" +
+      "\344\223\002=\022;/v2/users/{user_app_id.user_id}/de" +
+      "ployments/{deployment_id}\230\234\'\005\220\234\'\220\001\220\234\'\210\001\220" +
+      "\234\'\213\001\220\234\'\017\220\234\'\023\220\234\'-\022\267\001\n\017ListDeployments\022$.c" +
       "larifai.api.ListDeploymentsRequest\032%.cla" +
-      "rifai.api.MultiDeploymentResponse\"S\202\323\344\223\002" +
+      "rifai.api.MultiDeploymentResponse\"W\202\323\344\223\002" +
       "-\022+/v2/users/{user_app_id.user_id}/deplo" +
-      "yments\230\234\'\005\220\234\'\220\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\220\234\'\210\001\022\272" +
-      "\001\n\017PostDeployments\022$.clarifai.api.PostDe" +
-      "ploymentsRequest\032%.clarifai.api.MultiDep" +
-      "loymentResponse\"Z\202\323\344\223\0020\"+/v2/users/{user" +
-      "_app_id.user_id}/deployments:\001*\230\234\'\005\220\234\'\220\001" +
-      "\220\234\'\221\001\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\274\001\n\020PatchDep" +
-      "loyments\022%.clarifai.api.PatchDeployments" +
-      "Request\032%.clarifai.api.MultiDeploymentRe" +
-      "sponse\"Z\202\323\344\223\00202+/v2/users/{user_app_id.u" +
-      "ser_id}/deployments:\001*\230\234\'\005\220\234\'\221\001\220\234\'\220\001\220\234\'\017" +
-      "\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\273\001\n\021DeleteDeployments" +
-      "\022&.clarifai.api.DeleteDeploymentsRequest" +
-      "\032!.clarifai.api.status.BaseResponse\"[\202\323\344" +
-      "\223\0020*+/v2/users/{user_app_id.user_id}/dep" +
-      "loyments:\001*\230\234\'\005\220\234\'\220\001\220\234\'\221\001\220\234\'\222\001\220\234\'\017\220\234\'\023\220\234" +
-      "\'\210\001\220\234\'\213\001\022\264\001\n\024PostAuditLogSearches\022).clar" +
-      "ifai.api.PostAuditLogSearchesRequest\032).c" +
-      "larifai.api.MultiAuditLogSearchResponse\"" +
-      "F\202\323\344\223\0027\"2/v2/users/{user_app_id.user_id}" +
-      "/audit_log/searches:\001*\230\234\'\005\220\234\'\225\001BY\n\025com.c" +
-      "larifai.grpc.apiP\001Z7github.com/Clarifai/" +
-      "clarifai-go-grpc/proto/clarifai/api\242\002\004CA" +
-      "IPb\006proto3"
+      "yments\230\234\'\005\220\234\'\220\001\220\234\'\017\220\234\'\023\220\234\'\210\001\220\234\'\213\001\220\234\'\210\001\220\234" +
+      "\'-\022\272\001\n\017PostDeployments\022$.clarifai.api.Po" +
+      "stDeploymentsRequest\032%.clarifai.api.Mult" +
+      "iDeploymentResponse\"Z\202\323\344\223\0020\"+/v2/users/{" +
+      "user_app_id.user_id}/deployments:\001*\230\234\'\005\220" +
+      "\234\'\220\001\220\234\'\221\001\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\274\001\n\020Patc" +
+      "hDeployments\022%.clarifai.api.PatchDeploym" +
+      "entsRequest\032%.clarifai.api.MultiDeployme" +
+      "ntResponse\"Z\202\323\344\223\00202+/v2/users/{user_app_" +
+      "id.user_id}/deployments:\001*\230\234\'\005\220\234\'\221\001\220\234\'\220\001" +
+      "\220\234\'\017\220\234\'\023\220\234\'-\220\234\'\210\001\220\234\'\213\001\022\273\001\n\021DeleteDeploym" +
+      "ents\022&.clarifai.api.DeleteDeploymentsReq" +
+      "uest\032!.clarifai.api.status.BaseResponse\"" +
+      "[\202\323\344\223\0020*+/v2/users/{user_app_id.user_id}" +
+      "/deployments:\001*\230\234\'\005\220\234\'\220\001\220\234\'\221\001\220\234\'\222\001\220\234\'\017\220\234" +
+      "\'\023\220\234\'\210\001\220\234\'\213\001\022\263\001\n\024PostAuditLogSearches\022)." +
+      "clarifai.api.PostAuditLogSearchesRequest" +
+      "\032(.clarifai.api.MultiAuditLogEntryRespon" +
+      "se\"F\202\323\344\223\0027\"2/v2/users/{user_app_id.user_" +
+      "id}/audit_log/searches:\001*\230\234\'\005\220\234\'\225\001BY\n\025co" +
+      "m.clarifai.grpc.apiP\001Z7github.com/Clarif" +
+      "ai/clarifai-go-grpc/proto/clarifai/api\242\002" +
+      "\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5820,830 +5788,818 @@ public final class Service {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostWorkflowResultsResponse_descriptor,
         new java.lang.String[] { "Status", "Workflow", "Results", "WorkflowState", });
-    internal_static_clarifai_api_PostWorkflowResultsSimilarityRequest_descriptor =
-      getDescriptor().getMessageTypes().get(220);
-    internal_static_clarifai_api_PostWorkflowResultsSimilarityRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_clarifai_api_PostWorkflowResultsSimilarityRequest_descriptor,
-        new java.lang.String[] { "UserAppId", "WorkflowId", "VersionId", "ModelVersionId", "ProbeInputs", "PoolInputs", "FavorClarifaiWorkflows", });
-    internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_descriptor =
-      getDescriptor().getMessageTypes().get(221);
-    internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_descriptor,
-        new java.lang.String[] { "Status", "Results", });
     internal_static_clarifai_api_ListWorkflowVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(222);
+      getDescriptor().getMessageTypes().get(220);
     internal_static_clarifai_api_ListWorkflowVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListWorkflowVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "WorkflowId", "Page", "PerPage", });
     internal_static_clarifai_api_GetWorkflowVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(223);
+      getDescriptor().getMessageTypes().get(221);
     internal_static_clarifai_api_GetWorkflowVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetWorkflowVersionRequest_descriptor,
         new java.lang.String[] { "UserAppId", "WorkflowId", "WorkflowVersionId", });
     internal_static_clarifai_api_DeleteWorkflowVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(224);
+      getDescriptor().getMessageTypes().get(222);
     internal_static_clarifai_api_DeleteWorkflowVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteWorkflowVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "WorkflowId", "WorkflowVersionIds", });
     internal_static_clarifai_api_PatchWorkflowVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(225);
+      getDescriptor().getMessageTypes().get(223);
     internal_static_clarifai_api_PatchWorkflowVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchWorkflowVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "WorkflowId", "WorkflowVersions", "Action", });
     internal_static_clarifai_api_MultiWorkflowVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(226);
+      getDescriptor().getMessageTypes().get(224);
     internal_static_clarifai_api_MultiWorkflowVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiWorkflowVersionResponse_descriptor,
         new java.lang.String[] { "Status", "WorkflowVersions", });
     internal_static_clarifai_api_SingleWorkflowVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(227);
+      getDescriptor().getMessageTypes().get(225);
     internal_static_clarifai_api_SingleWorkflowVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleWorkflowVersionResponse_descriptor,
         new java.lang.String[] { "Status", "WorkflowVersion", });
     internal_static_clarifai_api_PostAppDuplicationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(228);
+      getDescriptor().getMessageTypes().get(226);
     internal_static_clarifai_api_PostAppDuplicationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostAppDuplicationsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "AppDuplications", });
     internal_static_clarifai_api_GetAppDuplicationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(229);
+      getDescriptor().getMessageTypes().get(227);
     internal_static_clarifai_api_GetAppDuplicationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetAppDuplicationRequest_descriptor,
         new java.lang.String[] { "UserAppId", "AppDuplicationId", });
     internal_static_clarifai_api_ListAppDuplicationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(230);
+      getDescriptor().getMessageTypes().get(228);
     internal_static_clarifai_api_ListAppDuplicationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListAppDuplicationsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_MultiAppDuplicationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(231);
+      getDescriptor().getMessageTypes().get(229);
     internal_static_clarifai_api_MultiAppDuplicationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiAppDuplicationsResponse_descriptor,
         new java.lang.String[] { "Status", "AppDuplications", });
     internal_static_clarifai_api_SingleAppDuplicationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(232);
+      getDescriptor().getMessageTypes().get(230);
     internal_static_clarifai_api_SingleAppDuplicationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleAppDuplicationResponse_descriptor,
         new java.lang.String[] { "Status", "AppDuplication", });
     internal_static_clarifai_api_PostTasksRequest_descriptor =
-      getDescriptor().getMessageTypes().get(233);
+      getDescriptor().getMessageTypes().get(231);
     internal_static_clarifai_api_PostTasksRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostTasksRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Tasks", });
     internal_static_clarifai_api_GetTaskRequest_descriptor =
-      getDescriptor().getMessageTypes().get(234);
+      getDescriptor().getMessageTypes().get(232);
     internal_static_clarifai_api_GetTaskRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetTaskRequest_descriptor,
         new java.lang.String[] { "UserAppId", "TaskId", "AdditionalFields", });
     internal_static_clarifai_api_ListTasksRequest_descriptor =
-      getDescriptor().getMessageTypes().get(235);
+      getDescriptor().getMessageTypes().get(233);
     internal_static_clarifai_api_ListTasksRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListTasksRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", "WorkerUserIds", "ReviewUserIds", "LabelOrderIds", "IncludingLabelOrderTasks", "AdditionalFields", "Ids", });
     internal_static_clarifai_api_PatchTasksRequest_descriptor =
-      getDescriptor().getMessageTypes().get(236);
+      getDescriptor().getMessageTypes().get(234);
     internal_static_clarifai_api_PatchTasksRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchTasksRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Tasks", "Action", });
     internal_static_clarifai_api_DeleteTasksRequest_descriptor =
-      getDescriptor().getMessageTypes().get(237);
+      getDescriptor().getMessageTypes().get(235);
     internal_static_clarifai_api_DeleteTasksRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteTasksRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_MultiTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(238);
+      getDescriptor().getMessageTypes().get(236);
     internal_static_clarifai_api_MultiTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiTaskResponse_descriptor,
         new java.lang.String[] { "Status", "Tasks", });
     internal_static_clarifai_api_SingleTaskResponse_descriptor =
-      getDescriptor().getMessageTypes().get(239);
+      getDescriptor().getMessageTypes().get(237);
     internal_static_clarifai_api_SingleTaskResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleTaskResponse_descriptor,
         new java.lang.String[] { "Status", "Task", });
     internal_static_clarifai_api_GetTaskCountRequest_descriptor =
-      getDescriptor().getMessageTypes().get(240);
+      getDescriptor().getMessageTypes().get(238);
     internal_static_clarifai_api_GetTaskCountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetTaskCountRequest_descriptor,
         new java.lang.String[] { "UserAppId", "TaskId", "UserIds", "ModelVersionIds", "WorkflowVersionIds", });
     internal_static_clarifai_api_SingleTaskCountResponse_descriptor =
-      getDescriptor().getMessageTypes().get(241);
+      getDescriptor().getMessageTypes().get(239);
     internal_static_clarifai_api_SingleTaskCountResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleTaskCountResponse_descriptor,
         new java.lang.String[] { "Status", "AppId", "TaskId", "Counts", });
     internal_static_clarifai_api_PostLabelOrdersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(242);
+      getDescriptor().getMessageTypes().get(240);
     internal_static_clarifai_api_PostLabelOrdersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostLabelOrdersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "LabelOrders", });
     internal_static_clarifai_api_GetLabelOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(243);
+      getDescriptor().getMessageTypes().get(241);
     internal_static_clarifai_api_GetLabelOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetLabelOrderRequest_descriptor,
         new java.lang.String[] { "UserAppId", "LabelOrderId", });
     internal_static_clarifai_api_ListLabelOrdersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(244);
+      getDescriptor().getMessageTypes().get(242);
     internal_static_clarifai_api_ListLabelOrdersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListLabelOrdersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_PatchLabelOrdersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(245);
+      getDescriptor().getMessageTypes().get(243);
     internal_static_clarifai_api_PatchLabelOrdersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchLabelOrdersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "LabelOrders", "Action", });
     internal_static_clarifai_api_DeleteLabelOrdersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(246);
+      getDescriptor().getMessageTypes().get(244);
     internal_static_clarifai_api_DeleteLabelOrdersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteLabelOrdersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_MultiLabelOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(247);
+      getDescriptor().getMessageTypes().get(245);
     internal_static_clarifai_api_MultiLabelOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiLabelOrderResponse_descriptor,
         new java.lang.String[] { "Status", "LabelOrders", });
     internal_static_clarifai_api_SingleLabelOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(248);
+      getDescriptor().getMessageTypes().get(246);
     internal_static_clarifai_api_SingleLabelOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleLabelOrderResponse_descriptor,
         new java.lang.String[] { "Status", "LabelOrder", });
     internal_static_clarifai_api_PostCollectorsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(249);
+      getDescriptor().getMessageTypes().get(247);
     internal_static_clarifai_api_PostCollectorsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostCollectorsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Collectors", });
     internal_static_clarifai_api_PatchCollectorsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(250);
+      getDescriptor().getMessageTypes().get(248);
     internal_static_clarifai_api_PatchCollectorsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchCollectorsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Collectors", "Action", });
     internal_static_clarifai_api_DeleteCollectorsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(251);
+      getDescriptor().getMessageTypes().get(249);
     internal_static_clarifai_api_DeleteCollectorsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteCollectorsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", "DeleteAll", });
     internal_static_clarifai_api_GetCollectorRequest_descriptor =
-      getDescriptor().getMessageTypes().get(252);
+      getDescriptor().getMessageTypes().get(250);
     internal_static_clarifai_api_GetCollectorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetCollectorRequest_descriptor,
         new java.lang.String[] { "UserAppId", "CollectorId", });
     internal_static_clarifai_api_ListCollectorsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(253);
+      getDescriptor().getMessageTypes().get(251);
     internal_static_clarifai_api_ListCollectorsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListCollectorsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_MultiCollectorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(254);
+      getDescriptor().getMessageTypes().get(252);
     internal_static_clarifai_api_MultiCollectorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiCollectorResponse_descriptor,
         new java.lang.String[] { "Status", "Collectors", });
     internal_static_clarifai_api_SingleCollectorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(255);
+      getDescriptor().getMessageTypes().get(253);
     internal_static_clarifai_api_SingleCollectorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleCollectorResponse_descriptor,
         new java.lang.String[] { "Status", "Collector", });
     internal_static_clarifai_api_PostStatValuesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(256);
+      getDescriptor().getMessageTypes().get(254);
     internal_static_clarifai_api_PostStatValuesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostStatValuesRequest_descriptor,
         new java.lang.String[] { "UserAppId", "StatValues", });
     internal_static_clarifai_api_MultiStatValueResponse_descriptor =
-      getDescriptor().getMessageTypes().get(257);
+      getDescriptor().getMessageTypes().get(255);
     internal_static_clarifai_api_MultiStatValueResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiStatValueResponse_descriptor,
         new java.lang.String[] { "Status", "StatValues", });
     internal_static_clarifai_api_PostStatValuesAggregateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(258);
+      getDescriptor().getMessageTypes().get(256);
     internal_static_clarifai_api_PostStatValuesAggregateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostStatValuesAggregateRequest_descriptor,
         new java.lang.String[] { "UserAppId", "StatValueAggregateQueries", });
     internal_static_clarifai_api_MultiStatValueAggregateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(259);
+      getDescriptor().getMessageTypes().get(257);
     internal_static_clarifai_api_MultiStatValueAggregateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiStatValueAggregateResponse_descriptor,
         new java.lang.String[] { "Status", "StatValueAggregateResults", });
     internal_static_clarifai_api_PostTrendingMetricsViewRequest_descriptor =
-      getDescriptor().getMessageTypes().get(260);
+      getDescriptor().getMessageTypes().get(258);
     internal_static_clarifai_api_PostTrendingMetricsViewRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostTrendingMetricsViewRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ViewType", "ObjectId", });
     internal_static_clarifai_api_ListTrendingMetricsViewsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(261);
+      getDescriptor().getMessageTypes().get(259);
     internal_static_clarifai_api_ListTrendingMetricsViewsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListTrendingMetricsViewsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ViewType", "Page", "PerPage", });
     internal_static_clarifai_api_MultiTrendingMetricsViewResponse_descriptor =
-      getDescriptor().getMessageTypes().get(262);
+      getDescriptor().getMessageTypes().get(260);
     internal_static_clarifai_api_MultiTrendingMetricsViewResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiTrendingMetricsViewResponse_descriptor,
         new java.lang.String[] { "Status", "Metrics", });
     internal_static_clarifai_api_GetModuleRequest_descriptor =
-      getDescriptor().getMessageTypes().get(263);
+      getDescriptor().getMessageTypes().get(261);
     internal_static_clarifai_api_GetModuleRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetModuleRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "AdditionalFields", });
     internal_static_clarifai_api_ListModulesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(264);
+      getDescriptor().getMessageTypes().get(262);
     internal_static_clarifai_api_ListModulesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListModulesRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", "AdditionalFields", "SortAscending", "SortByCreatedAt", "SortByStarCount", "SortByModifiedAt", "SortById", "StarredOnly", "Bookmark", "Search", "Name", "FilterByUserId", "SortBy", });
     internal_static_clarifai_api_PostModulesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(265);
+      getDescriptor().getMessageTypes().get(263);
     internal_static_clarifai_api_PostModulesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostModulesRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Modules", });
     internal_static_clarifai_api_PatchModulesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(266);
+      getDescriptor().getMessageTypes().get(264);
     internal_static_clarifai_api_PatchModulesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchModulesRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Modules", "Action", });
     internal_static_clarifai_api_DeleteModulesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(267);
+      getDescriptor().getMessageTypes().get(265);
     internal_static_clarifai_api_DeleteModulesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteModulesRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_SingleModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(268);
+      getDescriptor().getMessageTypes().get(266);
     internal_static_clarifai_api_SingleModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleModuleResponse_descriptor,
         new java.lang.String[] { "Status", "Module", });
     internal_static_clarifai_api_MultiModuleResponse_descriptor =
-      getDescriptor().getMessageTypes().get(269);
+      getDescriptor().getMessageTypes().get(267);
     internal_static_clarifai_api_MultiModuleResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiModuleResponse_descriptor,
         new java.lang.String[] { "Status", "Modules", });
     internal_static_clarifai_api_GetModuleVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(270);
+      getDescriptor().getMessageTypes().get(268);
     internal_static_clarifai_api_GetModuleVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetModuleVersionRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "ModuleVersionId", });
     internal_static_clarifai_api_ListModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(271);
+      getDescriptor().getMessageTypes().get(269);
     internal_static_clarifai_api_ListModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "Page", "PerPage", });
     internal_static_clarifai_api_PostModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(272);
+      getDescriptor().getMessageTypes().get(270);
     internal_static_clarifai_api_PostModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "ModuleVersions", });
     internal_static_clarifai_api_PatchModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(273);
+      getDescriptor().getMessageTypes().get(271);
     internal_static_clarifai_api_PatchModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "ModuleVersions", "Action", });
     internal_static_clarifai_api_DeleteModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(274);
+      getDescriptor().getMessageTypes().get(272);
     internal_static_clarifai_api_DeleteModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "Ids", });
     internal_static_clarifai_api_GetModuleVersionUsageCountRequest_descriptor =
-      getDescriptor().getMessageTypes().get(275);
+      getDescriptor().getMessageTypes().get(273);
     internal_static_clarifai_api_GetModuleVersionUsageCountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetModuleVersionUsageCountRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModuleId", "ModuleVersionId", });
     internal_static_clarifai_api_SingleModuleVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(276);
+      getDescriptor().getMessageTypes().get(274);
     internal_static_clarifai_api_SingleModuleVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleModuleVersionResponse_descriptor,
         new java.lang.String[] { "Status", "ModuleVersion", });
     internal_static_clarifai_api_MultiModuleVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(277);
+      getDescriptor().getMessageTypes().get(275);
     internal_static_clarifai_api_MultiModuleVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiModuleVersionResponse_descriptor,
         new java.lang.String[] { "Status", "ModuleVersions", });
     internal_static_clarifai_api_SingleModuleVersionUsageCountResponse_descriptor =
-      getDescriptor().getMessageTypes().get(278);
+      getDescriptor().getMessageTypes().get(276);
     internal_static_clarifai_api_SingleModuleVersionUsageCountResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleModuleVersionUsageCountResponse_descriptor,
         new java.lang.String[] { "Status", "UsageCount", });
     internal_static_clarifai_api_GetInstalledModuleVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(279);
+      getDescriptor().getMessageTypes().get(277);
     internal_static_clarifai_api_GetInstalledModuleVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetInstalledModuleVersionRequest_descriptor,
         new java.lang.String[] { "UserAppId", "InstalledModuleVersionId", });
     internal_static_clarifai_api_ListInstalledModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(280);
+      getDescriptor().getMessageTypes().get(278);
     internal_static_clarifai_api_ListInstalledModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListInstalledModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_PostInstalledModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(281);
+      getDescriptor().getMessageTypes().get(279);
     internal_static_clarifai_api_PostInstalledModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostInstalledModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "InstalledModuleVersions", });
     internal_static_clarifai_api_PostInstalledModuleVersionsKeyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(282);
+      getDescriptor().getMessageTypes().get(280);
     internal_static_clarifai_api_PostInstalledModuleVersionsKeyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostInstalledModuleVersionsKeyRequest_descriptor,
         new java.lang.String[] { "UserAppId", "InstalledModuleVersionId", });
     internal_static_clarifai_api_DeleteInstalledModuleVersionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(283);
+      getDescriptor().getMessageTypes().get(281);
     internal_static_clarifai_api_DeleteInstalledModuleVersionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteInstalledModuleVersionsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_SingleInstalledModuleVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(284);
+      getDescriptor().getMessageTypes().get(282);
     internal_static_clarifai_api_SingleInstalledModuleVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleInstalledModuleVersionResponse_descriptor,
         new java.lang.String[] { "Status", "InstalledModuleVersion", });
     internal_static_clarifai_api_MultiInstalledModuleVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(285);
+      getDescriptor().getMessageTypes().get(283);
     internal_static_clarifai_api_MultiInstalledModuleVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiInstalledModuleVersionResponse_descriptor,
         new java.lang.String[] { "Status", "InstalledModuleVersions", });
     internal_static_clarifai_api_ListNextTaskAssignmentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(286);
+      getDescriptor().getMessageTypes().get(284);
     internal_static_clarifai_api_ListNextTaskAssignmentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListNextTaskAssignmentsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "TaskId", });
     internal_static_clarifai_api_PostBulkOperationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(287);
+      getDescriptor().getMessageTypes().get(285);
     internal_static_clarifai_api_PostBulkOperationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostBulkOperationsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "BulkOperations", });
     internal_static_clarifai_api_ListBulkOperationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(288);
+      getDescriptor().getMessageTypes().get(286);
     internal_static_clarifai_api_ListBulkOperationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListBulkOperationsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_GetBulkOperationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(289);
+      getDescriptor().getMessageTypes().get(287);
     internal_static_clarifai_api_GetBulkOperationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetBulkOperationRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Id", });
     internal_static_clarifai_api_CancelBulkOperationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(290);
+      getDescriptor().getMessageTypes().get(288);
     internal_static_clarifai_api_CancelBulkOperationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_CancelBulkOperationRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_DeleteBulkOperationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(291);
+      getDescriptor().getMessageTypes().get(289);
     internal_static_clarifai_api_DeleteBulkOperationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteBulkOperationRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_SingleBulkOperationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(292);
+      getDescriptor().getMessageTypes().get(290);
     internal_static_clarifai_api_SingleBulkOperationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleBulkOperationsResponse_descriptor,
         new java.lang.String[] { "Status", "BulkOperation", });
     internal_static_clarifai_api_MultiBulkOperationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(293);
+      getDescriptor().getMessageTypes().get(291);
     internal_static_clarifai_api_MultiBulkOperationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiBulkOperationsResponse_descriptor,
         new java.lang.String[] { "Status", "BulkOperation", });
     internal_static_clarifai_api_PutTaskAssignmentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(294);
+      getDescriptor().getMessageTypes().get(292);
     internal_static_clarifai_api_PutTaskAssignmentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PutTaskAssignmentsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "TaskId", "InputId", "Action", "LabelSubmitConfig", "ReviewStartConfig", "ReviewApproveConfig", "ReviewRequestChangesConfig", "ReviewRejectConfig", "ActionConfig", });
     internal_static_clarifai_api_LabelSubmitConfig_descriptor =
-      getDescriptor().getMessageTypes().get(295);
+      getDescriptor().getMessageTypes().get(293);
     internal_static_clarifai_api_LabelSubmitConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_LabelSubmitConfig_descriptor,
         new java.lang.String[] { "TaskAssignments", });
     internal_static_clarifai_api_ReviewStartConfig_descriptor =
-      getDescriptor().getMessageTypes().get(296);
+      getDescriptor().getMessageTypes().get(294);
     internal_static_clarifai_api_ReviewStartConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ReviewStartConfig_descriptor,
         new java.lang.String[] { "Workers", });
     internal_static_clarifai_api_ReviewApproveConfig_descriptor =
-      getDescriptor().getMessageTypes().get(297);
+      getDescriptor().getMessageTypes().get(295);
     internal_static_clarifai_api_ReviewApproveConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ReviewApproveConfig_descriptor,
         new java.lang.String[] { "TaskAssignments", "Workers", });
     internal_static_clarifai_api_ReviewRequestChangesConfig_descriptor =
-      getDescriptor().getMessageTypes().get(298);
+      getDescriptor().getMessageTypes().get(296);
     internal_static_clarifai_api_ReviewRequestChangesConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ReviewRequestChangesConfig_descriptor,
         new java.lang.String[] { "TaskAssignments", "Workers", });
     internal_static_clarifai_api_ReviewRejectConfig_descriptor =
-      getDescriptor().getMessageTypes().get(299);
+      getDescriptor().getMessageTypes().get(297);
     internal_static_clarifai_api_ReviewRejectConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ReviewRejectConfig_descriptor,
         new java.lang.String[] { "TaskAssignments", "Workers", });
     internal_static_clarifai_api_MultiTaskAssignmentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(300);
+      getDescriptor().getMessageTypes().get(298);
     internal_static_clarifai_api_MultiTaskAssignmentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiTaskAssignmentResponse_descriptor,
         new java.lang.String[] { "Status", "TaskAssignments", });
     internal_static_clarifai_api_ListInputsAddJobsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(301);
+      getDescriptor().getMessageTypes().get(299);
     internal_static_clarifai_api_ListInputsAddJobsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListInputsAddJobsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_GetInputsAddJobRequest_descriptor =
-      getDescriptor().getMessageTypes().get(302);
+      getDescriptor().getMessageTypes().get(300);
     internal_static_clarifai_api_GetInputsAddJobRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetInputsAddJobRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Id", });
     internal_static_clarifai_api_CancelInputsAddJobRequest_descriptor =
-      getDescriptor().getMessageTypes().get(303);
+      getDescriptor().getMessageTypes().get(301);
     internal_static_clarifai_api_CancelInputsAddJobRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_CancelInputsAddJobRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Id", });
     internal_static_clarifai_api_MultiInputsAddJobResponse_descriptor =
-      getDescriptor().getMessageTypes().get(304);
+      getDescriptor().getMessageTypes().get(302);
     internal_static_clarifai_api_MultiInputsAddJobResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiInputsAddJobResponse_descriptor,
         new java.lang.String[] { "Status", "InputsAddJobs", });
     internal_static_clarifai_api_SingleInputsAddJobResponse_descriptor =
-      getDescriptor().getMessageTypes().get(305);
+      getDescriptor().getMessageTypes().get(303);
     internal_static_clarifai_api_SingleInputsAddJobResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleInputsAddJobResponse_descriptor,
         new java.lang.String[] { "Status", "InputsAddJob", });
     internal_static_clarifai_api_PostUploadsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(306);
+      getDescriptor().getMessageTypes().get(304);
     internal_static_clarifai_api_PostUploadsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostUploadsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Uploads", });
     internal_static_clarifai_api_DeleteUploadsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(307);
+      getDescriptor().getMessageTypes().get(305);
     internal_static_clarifai_api_DeleteUploadsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteUploadsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_ListUploadsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(308);
+      getDescriptor().getMessageTypes().get(306);
     internal_static_clarifai_api_ListUploadsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListUploadsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_GetUploadRequest_descriptor =
-      getDescriptor().getMessageTypes().get(309);
+      getDescriptor().getMessageTypes().get(307);
     internal_static_clarifai_api_GetUploadRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetUploadRequest_descriptor,
         new java.lang.String[] { "UserAppId", "UploadId", });
     internal_static_clarifai_api_SingleUploadResponse_descriptor =
-      getDescriptor().getMessageTypes().get(310);
+      getDescriptor().getMessageTypes().get(308);
     internal_static_clarifai_api_SingleUploadResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleUploadResponse_descriptor,
         new java.lang.String[] { "Status", "Upload", });
     internal_static_clarifai_api_MultiUploadResponse_descriptor =
-      getDescriptor().getMessageTypes().get(311);
+      getDescriptor().getMessageTypes().get(309);
     internal_static_clarifai_api_MultiUploadResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiUploadResponse_descriptor,
         new java.lang.String[] { "Status", "Uploads", });
     internal_static_clarifai_api_PutUploadContentPartsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(312);
+      getDescriptor().getMessageTypes().get(310);
     internal_static_clarifai_api_PutUploadContentPartsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PutUploadContentPartsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "UploadId", "ContentParts", });
     internal_static_clarifai_api_PostInputsDataSourcesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(313);
+      getDescriptor().getMessageTypes().get(311);
     internal_static_clarifai_api_PostInputsDataSourcesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostInputsDataSourcesRequest_descriptor,
         new java.lang.String[] { "UserAppId", "DataSources", "CallBackUrl", "AppPat", });
     internal_static_clarifai_api_GetInputsExtractionJobRequest_descriptor =
-      getDescriptor().getMessageTypes().get(314);
+      getDescriptor().getMessageTypes().get(312);
     internal_static_clarifai_api_GetInputsExtractionJobRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetInputsExtractionJobRequest_descriptor,
         new java.lang.String[] { "UserAppId", "InputsExtractionJobId", });
     internal_static_clarifai_api_ListInputsExtractionJobsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(315);
+      getDescriptor().getMessageTypes().get(313);
     internal_static_clarifai_api_ListInputsExtractionJobsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListInputsExtractionJobsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_SingleInputsExtractionJobResponse_descriptor =
-      getDescriptor().getMessageTypes().get(316);
+      getDescriptor().getMessageTypes().get(314);
     internal_static_clarifai_api_SingleInputsExtractionJobResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleInputsExtractionJobResponse_descriptor,
         new java.lang.String[] { "Status", "InputsExtractionJob", });
     internal_static_clarifai_api_MultiInputsExtractionJobResponse_descriptor =
-      getDescriptor().getMessageTypes().get(317);
+      getDescriptor().getMessageTypes().get(315);
     internal_static_clarifai_api_MultiInputsExtractionJobResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiInputsExtractionJobResponse_descriptor,
         new java.lang.String[] { "Status", "InputsExtractionJobs", });
     internal_static_clarifai_api_CancelInputsExtractionJobsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(318);
+      getDescriptor().getMessageTypes().get(316);
     internal_static_clarifai_api_CancelInputsExtractionJobsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_CancelInputsExtractionJobsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_PostInputsUploadsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(319);
+      getDescriptor().getMessageTypes().get(317);
     internal_static_clarifai_api_PostInputsUploadsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostInputsUploadsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "InputsUploads", });
     internal_static_clarifai_api_GetRunnerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(320);
+      getDescriptor().getMessageTypes().get(318);
     internal_static_clarifai_api_GetRunnerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetRunnerRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "RunnerId", "ComputeClusterId", });
     internal_static_clarifai_api_ListRunnersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(321);
+      getDescriptor().getMessageTypes().get(319);
     internal_static_clarifai_api_ListRunnersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListRunnersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "Page", "PerPage", "ComputeClusterId", });
     internal_static_clarifai_api_PostRunnersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(322);
+      getDescriptor().getMessageTypes().get(320);
     internal_static_clarifai_api_PostRunnersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostRunnersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "Runners", "ComputeClusterId", });
     internal_static_clarifai_api_DeleteRunnersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(323);
+      getDescriptor().getMessageTypes().get(321);
     internal_static_clarifai_api_DeleteRunnersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteRunnersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "Ids", "ComputeClusterId", });
     internal_static_clarifai_api_SingleRunnerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(324);
+      getDescriptor().getMessageTypes().get(322);
     internal_static_clarifai_api_SingleRunnerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleRunnerResponse_descriptor,
         new java.lang.String[] { "Status", "Runner", });
     internal_static_clarifai_api_MultiRunnerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(325);
+      getDescriptor().getMessageTypes().get(323);
     internal_static_clarifai_api_MultiRunnerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiRunnerResponse_descriptor,
         new java.lang.String[] { "Status", "Runners", });
     internal_static_clarifai_api_ListRunnerItemsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(326);
+      getDescriptor().getMessageTypes().get(324);
     internal_static_clarifai_api_ListRunnerItemsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListRunnerItemsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "RunnerId", "ComputeClusterId", });
     internal_static_clarifai_api_PostRunnerItemOutputsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(327);
+      getDescriptor().getMessageTypes().get(325);
     internal_static_clarifai_api_PostRunnerItemOutputsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostRunnerItemOutputsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "RunnerId", "RunnerItemId", "RunnerItemOutputs", "Status", "RunnerReplicaId", "ComputeClusterId", });
     internal_static_clarifai_api_MultiRunnerItemResponse_descriptor =
-      getDescriptor().getMessageTypes().get(328);
+      getDescriptor().getMessageTypes().get(326);
     internal_static_clarifai_api_MultiRunnerItemResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiRunnerItemResponse_descriptor,
         new java.lang.String[] { "Status", "RunnerItems", });
     internal_static_clarifai_api_RunnerItem_descriptor =
-      getDescriptor().getMessageTypes().get(329);
+      getDescriptor().getMessageTypes().get(327);
     internal_static_clarifai_api_RunnerItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_RunnerItem_descriptor,
         new java.lang.String[] { "Id", "Description", "ProcessingInfo", "PostModelOutputsRequest", "Request", });
     internal_static_clarifai_api_RunnerItemOutput_descriptor =
-      getDescriptor().getMessageTypes().get(330);
+      getDescriptor().getMessageTypes().get(328);
     internal_static_clarifai_api_RunnerItemOutput_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_RunnerItemOutput_descriptor,
         new java.lang.String[] { "MultiOutputResponse", "Response", });
     internal_static_clarifai_api_MultiRunnerItemOutputResponse_descriptor =
-      getDescriptor().getMessageTypes().get(331);
+      getDescriptor().getMessageTypes().get(329);
     internal_static_clarifai_api_MultiRunnerItemOutputResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiRunnerItemOutputResponse_descriptor,
         new java.lang.String[] { "Status", "RunnerItemOutputs", });
     internal_static_clarifai_api_PostModelVersionsTrainingTimeEstimateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(332);
+      getDescriptor().getMessageTypes().get(330);
     internal_static_clarifai_api_PostModelVersionsTrainingTimeEstimateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostModelVersionsTrainingTimeEstimateRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ModelId", "ModelVersions", "EstimatedInputCount", });
     internal_static_clarifai_api_MultiTrainingTimeEstimateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(333);
+      getDescriptor().getMessageTypes().get(331);
     internal_static_clarifai_api_MultiTrainingTimeEstimateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiTrainingTimeEstimateResponse_descriptor,
         new java.lang.String[] { "Status", "TrainingTimeEstimates", });
     internal_static_clarifai_api_ListInstanceTypesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(334);
+      getDescriptor().getMessageTypes().get(332);
     internal_static_clarifai_api_ListInstanceTypesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListInstanceTypesRequest_descriptor,
         new java.lang.String[] { "CloudProvider", "Region", });
     internal_static_clarifai_api_MultiInstanceTypeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(335);
+      getDescriptor().getMessageTypes().get(333);
     internal_static_clarifai_api_MultiInstanceTypeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiInstanceTypeResponse_descriptor,
         new java.lang.String[] { "Status", "InstanceTypes", });
     internal_static_clarifai_api_GetComputeClusterRequest_descriptor =
-      getDescriptor().getMessageTypes().get(336);
+      getDescriptor().getMessageTypes().get(334);
     internal_static_clarifai_api_GetComputeClusterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetComputeClusterRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusterId", });
     internal_static_clarifai_api_ListComputeClustersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(337);
+      getDescriptor().getMessageTypes().get(335);
     internal_static_clarifai_api_ListComputeClustersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListComputeClustersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Page", "PerPage", });
     internal_static_clarifai_api_PostComputeClustersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(338);
+      getDescriptor().getMessageTypes().get(336);
     internal_static_clarifai_api_PostComputeClustersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostComputeClustersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusters", });
     internal_static_clarifai_api_DeleteComputeClustersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(339);
+      getDescriptor().getMessageTypes().get(337);
     internal_static_clarifai_api_DeleteComputeClustersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteComputeClustersRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_SingleComputeClusterResponse_descriptor =
-      getDescriptor().getMessageTypes().get(340);
+      getDescriptor().getMessageTypes().get(338);
     internal_static_clarifai_api_SingleComputeClusterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleComputeClusterResponse_descriptor,
         new java.lang.String[] { "Status", "ComputeCluster", });
     internal_static_clarifai_api_MultiComputeClusterResponse_descriptor =
-      getDescriptor().getMessageTypes().get(341);
+      getDescriptor().getMessageTypes().get(339);
     internal_static_clarifai_api_MultiComputeClusterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiComputeClusterResponse_descriptor,
         new java.lang.String[] { "Status", "ComputeClusters", });
     internal_static_clarifai_api_GetNodepoolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(342);
+      getDescriptor().getMessageTypes().get(340);
     internal_static_clarifai_api_GetNodepoolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetNodepoolRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusterId", "NodepoolId", });
     internal_static_clarifai_api_ListNodepoolsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(343);
+      getDescriptor().getMessageTypes().get(341);
     internal_static_clarifai_api_ListNodepoolsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListNodepoolsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusterId", "Page", "PerPage", });
     internal_static_clarifai_api_PostNodepoolsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(344);
+      getDescriptor().getMessageTypes().get(342);
     internal_static_clarifai_api_PostNodepoolsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostNodepoolsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusterId", "Nodepools", });
     internal_static_clarifai_api_PatchNodepoolsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(345);
+      getDescriptor().getMessageTypes().get(343);
     internal_static_clarifai_api_PatchNodepoolsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchNodepoolsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusterId", "Nodepools", "Action", });
     internal_static_clarifai_api_DeleteNodepoolsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(346);
+      getDescriptor().getMessageTypes().get(344);
     internal_static_clarifai_api_DeleteNodepoolsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteNodepoolsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "ComputeClusterId", "Ids", });
     internal_static_clarifai_api_SingleNodepoolResponse_descriptor =
-      getDescriptor().getMessageTypes().get(347);
+      getDescriptor().getMessageTypes().get(345);
     internal_static_clarifai_api_SingleNodepoolResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleNodepoolResponse_descriptor,
         new java.lang.String[] { "Status", "Nodepool", });
     internal_static_clarifai_api_MultiNodepoolResponse_descriptor =
-      getDescriptor().getMessageTypes().get(348);
+      getDescriptor().getMessageTypes().get(346);
     internal_static_clarifai_api_MultiNodepoolResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiNodepoolResponse_descriptor,
         new java.lang.String[] { "Status", "Nodepools", });
     internal_static_clarifai_api_GetDeploymentRequest_descriptor =
-      getDescriptor().getMessageTypes().get(349);
+      getDescriptor().getMessageTypes().get(347);
     internal_static_clarifai_api_GetDeploymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_GetDeploymentRequest_descriptor,
         new java.lang.String[] { "UserAppId", "DeploymentId", });
     internal_static_clarifai_api_ListDeploymentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(350);
+      getDescriptor().getMessageTypes().get(348);
     internal_static_clarifai_api_ListDeploymentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_ListDeploymentsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "NodepoolId", "Page", "PerPage", });
     internal_static_clarifai_api_PostDeploymentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(351);
+      getDescriptor().getMessageTypes().get(349);
     internal_static_clarifai_api_PostDeploymentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostDeploymentsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Deployments", });
     internal_static_clarifai_api_DeleteDeploymentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(352);
+      getDescriptor().getMessageTypes().get(350);
     internal_static_clarifai_api_DeleteDeploymentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_DeleteDeploymentsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Ids", });
     internal_static_clarifai_api_PostAuditLogSearchesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(353);
+      getDescriptor().getMessageTypes().get(351);
     internal_static_clarifai_api_PostAuditLogSearchesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PostAuditLogSearchesRequest_descriptor,
-        new java.lang.String[] { "UserAppId", "AuditLogQuery", "SortAscending", "Pagination", });
-    internal_static_clarifai_api_MultiAuditLogSearchResponse_descriptor =
-      getDescriptor().getMessageTypes().get(354);
-    internal_static_clarifai_api_MultiAuditLogSearchResponse_fieldAccessorTable = new
+        new java.lang.String[] { "UserAppId", "Query", "SortAscending", "Pagination", });
+    internal_static_clarifai_api_MultiAuditLogEntryResponse_descriptor =
+      getDescriptor().getMessageTypes().get(352);
+    internal_static_clarifai_api_MultiAuditLogEntryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_clarifai_api_MultiAuditLogSearchResponse_descriptor,
+        internal_static_clarifai_api_MultiAuditLogEntryResponse_descriptor,
         new java.lang.String[] { "Status", "Entries", });
     internal_static_clarifai_api_PatchDeploymentsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(355);
+      getDescriptor().getMessageTypes().get(353);
     internal_static_clarifai_api_PatchDeploymentsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_PatchDeploymentsRequest_descriptor,
         new java.lang.String[] { "UserAppId", "Deployments", "Action", });
     internal_static_clarifai_api_SingleDeploymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(356);
+      getDescriptor().getMessageTypes().get(354);
     internal_static_clarifai_api_SingleDeploymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_SingleDeploymentResponse_descriptor,
         new java.lang.String[] { "Status", "Deployment", });
     internal_static_clarifai_api_MultiDeploymentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(357);
+      getDescriptor().getMessageTypes().get(355);
     internal_static_clarifai_api_MultiDeploymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_MultiDeploymentResponse_descriptor,

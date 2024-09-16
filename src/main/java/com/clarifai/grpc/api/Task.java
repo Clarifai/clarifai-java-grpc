@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     labelOrderId_ = "";
     concepts_ = java.util.Collections.emptyList();
+    priority_ = 0;
   }
 
   @java.lang.Override
@@ -267,6 +268,12 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             workerType_ = rawValue;
+            break;
+          }
+          case 184: {
+            int rawValue = input.readEnum();
+
+            priority_ = rawValue;
             break;
           }
           default: {
@@ -600,6 +607,132 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:clarifai.api.Task.TaskType)
   }
 
+  /**
+   * Protobuf enum {@code clarifai.api.Task.TaskPriority}
+   */
+  public enum TaskPriority
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>TASK_PRIORITY_NOT_SET = 0;</code>
+     */
+    TASK_PRIORITY_NOT_SET(0),
+    /**
+     * <code>LOW = 1;</code>
+     */
+    LOW(1),
+    /**
+     * <code>MEDIUM = 2;</code>
+     */
+    MEDIUM(2),
+    /**
+     * <code>HIGH = 3;</code>
+     */
+    HIGH(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>TASK_PRIORITY_NOT_SET = 0;</code>
+     */
+    public static final int TASK_PRIORITY_NOT_SET_VALUE = 0;
+    /**
+     * <code>LOW = 1;</code>
+     */
+    public static final int LOW_VALUE = 1;
+    /**
+     * <code>MEDIUM = 2;</code>
+     */
+    public static final int MEDIUM_VALUE = 2;
+    /**
+     * <code>HIGH = 3;</code>
+     */
+    public static final int HIGH_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TaskPriority valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TaskPriority forNumber(int value) {
+      switch (value) {
+        case 0: return TASK_PRIORITY_NOT_SET;
+        case 1: return LOW;
+        case 2: return MEDIUM;
+        case 3: return HIGH;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TaskPriority>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TaskPriority> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TaskPriority>() {
+            public TaskPriority findValueByNumber(int number) {
+              return TaskPriority.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.Task.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TaskPriority[] VALUES = values();
+
+    public static TaskPriority valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TaskPriority(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.Task.TaskPriority)
+  }
+
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
@@ -884,7 +1017,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @return A list containing the conceptIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -899,7 +1032,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @return The count of conceptIds.
    */
   @java.lang.Deprecated public int getConceptIdsCount() {
@@ -913,7 +1046,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
@@ -928,7 +1061,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3093
+   *     See proto/clarifai/api/resources.proto;l=3091
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */
@@ -1472,6 +1605,33 @@ private static final long serialVersionUID = 0L;
     return getMetrics();
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 23;
+  private int priority_;
+  /**
+   * <pre>
+   * Priority of the task
+   * </pre>
+   *
+   * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+   * @return The enum numeric value on the wire for priority.
+   */
+  @java.lang.Override public int getPriorityValue() {
+    return priority_;
+  }
+  /**
+   * <pre>
+   * Priority of the task
+   * </pre>
+   *
+   * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+   * @return The priority.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.Task.TaskPriority getPriority() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.Task.TaskPriority result = com.clarifai.grpc.api.Task.TaskPriority.valueOf(priority_);
+    return result == null ? com.clarifai.grpc.api.Task.TaskPriority.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1551,6 +1711,9 @@ private static final long serialVersionUID = 0L;
     }
     if (workerType_ != com.clarifai.grpc.api.Task.WorkerType.WORKER_TYPE_NOT_SET.getNumber()) {
       output.writeEnum(22, workerType_);
+    }
+    if (priority_ != com.clarifai.grpc.api.Task.TaskPriority.TASK_PRIORITY_NOT_SET.getNumber()) {
+      output.writeEnum(23, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -1647,6 +1810,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(22, workerType_);
     }
+    if (priority_ != com.clarifai.grpc.api.Task.TaskPriority.TASK_PRIORITY_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(23, priority_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1734,6 +1901,7 @@ private static final long serialVersionUID = 0L;
       if (!getMetrics()
           .equals(other.getMetrics())) return false;
     }
+    if (priority_ != other.priority_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1814,6 +1982,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetrics().hashCode();
     }
+    hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+    hash = (53 * hash) + priority_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2040,6 +2210,8 @@ private static final long serialVersionUID = 0L;
         metrics_ = null;
         metricsBuilder_ = null;
       }
+      priority_ = 0;
+
       return this;
     }
 
@@ -2141,6 +2313,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
+      result.priority_ = priority_;
       onBuilt();
       return result;
     }
@@ -2290,6 +2463,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMetrics()) {
         mergeMetrics(other.getMetrics());
+      }
+      if (other.priority_ != 0) {
+        setPriorityValue(other.getPriorityValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3182,7 +3358,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @return A list containing the conceptIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -3197,7 +3373,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @return The count of conceptIds.
      */
     @java.lang.Deprecated public int getConceptIdsCount() {
@@ -3211,7 +3387,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @param index The index of the element to return.
      * @return The conceptIds at the given index.
      */
@@ -3226,7 +3402,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @param index The index of the value to return.
      * @return The bytes of the conceptIds at the given index.
      */
@@ -3242,7 +3418,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @param index The index to set the value at.
      * @param value The conceptIds to set.
      * @return This builder for chaining.
@@ -3265,7 +3441,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @param value The conceptIds to add.
      * @return This builder for chaining.
      */
@@ -3287,7 +3463,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @param values The conceptIds to add.
      * @return This builder for chaining.
      */
@@ -3307,7 +3483,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearConceptIds() {
@@ -3324,7 +3500,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string concept_ids = 7 [deprecated = true];</code>
      * @deprecated clarifai.api.Task.concept_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3093
+     *     See proto/clarifai/api/resources.proto;l=3091
      * @param value The bytes of the conceptIds to add.
      * @return This builder for chaining.
      */
@@ -5190,6 +5366,80 @@ private static final long serialVersionUID = 0L;
         metrics_ = null;
       }
       return metricsBuilder_;
+    }
+
+    private int priority_ = 0;
+    /**
+     * <pre>
+     * Priority of the task
+     * </pre>
+     *
+     * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override public int getPriorityValue() {
+      return priority_;
+    }
+    /**
+     * <pre>
+     * Priority of the task
+     * </pre>
+     *
+     * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @param value The enum numeric value on the wire for priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriorityValue(int value) {
+      
+      priority_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Priority of the task
+     * </pre>
+     *
+     * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @return The priority.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.Task.TaskPriority getPriority() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.Task.TaskPriority result = com.clarifai.grpc.api.Task.TaskPriority.valueOf(priority_);
+      return result == null ? com.clarifai.grpc.api.Task.TaskPriority.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Priority of the task
+     * </pre>
+     *
+     * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(com.clarifai.grpc.api.Task.TaskPriority value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      priority_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Priority of the task
+     * </pre>
+     *
+     * <code>.clarifai.api.Task.TaskPriority priority = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      
+      priority_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

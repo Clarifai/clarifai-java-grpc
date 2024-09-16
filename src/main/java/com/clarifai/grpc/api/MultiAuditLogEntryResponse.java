@@ -4,30 +4,26 @@
 package com.clarifai.grpc.api;
 
 /**
- * <pre>
- * PostWorkflowResultsSimilarityResponse
- * </pre>
- *
- * Protobuf type {@code clarifai.api.PostWorkflowResultsSimilarityResponse}
+ * Protobuf type {@code clarifai.api.MultiAuditLogEntryResponse}
  */
-public final class PostWorkflowResultsSimilarityResponse extends
+public final class MultiAuditLogEntryResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.PostWorkflowResultsSimilarityResponse)
-    PostWorkflowResultsSimilarityResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.MultiAuditLogEntryResponse)
+    MultiAuditLogEntryResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use PostWorkflowResultsSimilarityResponse.newBuilder() to construct.
-  private PostWorkflowResultsSimilarityResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MultiAuditLogEntryResponse.newBuilder() to construct.
+  private MultiAuditLogEntryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private PostWorkflowResultsSimilarityResponse() {
-    results_ = java.util.Collections.emptyList();
+  private MultiAuditLogEntryResponse() {
+    entries_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new PostWorkflowResultsSimilarityResponse();
+    return new MultiAuditLogEntryResponse();
   }
 
   @java.lang.Override
@@ -35,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private PostWorkflowResultsSimilarityResponse(
+  private MultiAuditLogEntryResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -69,11 +65,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              results_ = new java.util.ArrayList<com.clarifai.grpc.api.WorkflowResultsSimilarity>();
+              entries_ = new java.util.ArrayList<com.clarifai.grpc.api.AuditLogEntry>();
               mutable_bitField0_ |= 0x00000001;
             }
-            results_.add(
-                input.readMessage(com.clarifai.grpc.api.WorkflowResultsSimilarity.parser(), extensionRegistry));
+            entries_.add(
+                input.readMessage(com.clarifai.grpc.api.AuditLogEntry.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -94,7 +90,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        results_ = java.util.Collections.unmodifiableList(results_);
+        entries_ = java.util.Collections.unmodifiableList(entries_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -102,15 +98,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_descriptor;
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiAuditLogEntryResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_fieldAccessorTable
+    return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiAuditLogEntryResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.class, com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.Builder.class);
+            com.clarifai.grpc.api.MultiAuditLogEntryResponse.class, com.clarifai.grpc.api.MultiAuditLogEntryResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -139,44 +135,44 @@ private static final long serialVersionUID = 0L;
     return getStatus();
   }
 
-  public static final int RESULTS_FIELD_NUMBER = 2;
-  private java.util.List<com.clarifai.grpc.api.WorkflowResultsSimilarity> results_;
+  public static final int ENTRIES_FIELD_NUMBER = 2;
+  private java.util.List<com.clarifai.grpc.api.AuditLogEntry> entries_;
   /**
-   * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+   * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
-  public java.util.List<com.clarifai.grpc.api.WorkflowResultsSimilarity> getResultsList() {
-    return results_;
+  public java.util.List<com.clarifai.grpc.api.AuditLogEntry> getEntriesList() {
+    return entries_;
   }
   /**
-   * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+   * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder> 
-      getResultsOrBuilderList() {
-    return results_;
+  public java.util.List<? extends com.clarifai.grpc.api.AuditLogEntryOrBuilder> 
+      getEntriesOrBuilderList() {
+    return entries_;
   }
   /**
-   * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+   * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
-  public int getResultsCount() {
-    return results_.size();
+  public int getEntriesCount() {
+    return entries_.size();
   }
   /**
-   * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+   * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.WorkflowResultsSimilarity getResults(int index) {
-    return results_.get(index);
+  public com.clarifai.grpc.api.AuditLogEntry getEntries(int index) {
+    return entries_.get(index);
   }
   /**
-   * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+   * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder getResultsOrBuilder(
+  public com.clarifai.grpc.api.AuditLogEntryOrBuilder getEntriesOrBuilder(
       int index) {
-    return results_.get(index);
+    return entries_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -196,8 +192,8 @@ private static final long serialVersionUID = 0L;
     if (status_ != null) {
       output.writeMessage(1, getStatus());
     }
-    for (int i = 0; i < results_.size(); i++) {
-      output.writeMessage(2, results_.get(i));
+    for (int i = 0; i < entries_.size(); i++) {
+      output.writeMessage(2, entries_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -212,9 +208,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getStatus());
     }
-    for (int i = 0; i < results_.size(); i++) {
+    for (int i = 0; i < entries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, results_.get(i));
+        .computeMessageSize(2, entries_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,18 +222,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse)) {
+    if (!(obj instanceof com.clarifai.grpc.api.MultiAuditLogEntryResponse)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse other = (com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse) obj;
+    com.clarifai.grpc.api.MultiAuditLogEntryResponse other = (com.clarifai.grpc.api.MultiAuditLogEntryResponse) obj;
 
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus()
           .equals(other.getStatus())) return false;
     }
-    if (!getResultsList()
-        .equals(other.getResultsList())) return false;
+    if (!getEntriesList()
+        .equals(other.getEntriesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -253,78 +249,78 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
-    if (getResultsCount() > 0) {
-      hash = (37 * hash) + RESULTS_FIELD_NUMBER;
-      hash = (53 * hash) + getResultsList().hashCode();
+    if (getEntriesCount() > 0) {
+      hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
+      hash = (53 * hash) + getEntriesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseDelimitedFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parseFrom(
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -337,7 +333,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.MultiAuditLogEntryResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -353,30 +349,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * PostWorkflowResultsSimilarityResponse
-   * </pre>
-   *
-   * Protobuf type {@code clarifai.api.PostWorkflowResultsSimilarityResponse}
+   * Protobuf type {@code clarifai.api.MultiAuditLogEntryResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.PostWorkflowResultsSimilarityResponse)
-      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.MultiAuditLogEntryResponse)
+      com.clarifai.grpc.api.MultiAuditLogEntryResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiAuditLogEntryResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_fieldAccessorTable
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiAuditLogEntryResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.class, com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.Builder.class);
+              com.clarifai.grpc.api.MultiAuditLogEntryResponse.class, com.clarifai.grpc.api.MultiAuditLogEntryResponse.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.newBuilder()
+    // Construct using com.clarifai.grpc.api.MultiAuditLogEntryResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -389,7 +381,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getResultsFieldBuilder();
+        getEntriesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -401,11 +393,11 @@ private static final long serialVersionUID = 0L;
         status_ = null;
         statusBuilder_ = null;
       }
-      if (resultsBuilder_ == null) {
-        results_ = java.util.Collections.emptyList();
+      if (entriesBuilder_ == null) {
+        entries_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        resultsBuilder_.clear();
+        entriesBuilder_.clear();
       }
       return this;
     }
@@ -413,17 +405,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsSimilarityResponse_descriptor;
+      return com.clarifai.grpc.api.Service.internal_static_clarifai_api_MultiAuditLogEntryResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.getDefaultInstance();
+    public com.clarifai.grpc.api.MultiAuditLogEntryResponse getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.MultiAuditLogEntryResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse build() {
-      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse result = buildPartial();
+    public com.clarifai.grpc.api.MultiAuditLogEntryResponse build() {
+      com.clarifai.grpc.api.MultiAuditLogEntryResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -431,22 +423,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse buildPartial() {
-      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse result = new com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse(this);
+    public com.clarifai.grpc.api.MultiAuditLogEntryResponse buildPartial() {
+      com.clarifai.grpc.api.MultiAuditLogEntryResponse result = new com.clarifai.grpc.api.MultiAuditLogEntryResponse(this);
       int from_bitField0_ = bitField0_;
       if (statusBuilder_ == null) {
         result.status_ = status_;
       } else {
         result.status_ = statusBuilder_.build();
       }
-      if (resultsBuilder_ == null) {
+      if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          results_ = java.util.Collections.unmodifiableList(results_);
+          entries_ = java.util.Collections.unmodifiableList(entries_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.results_ = results_;
+        result.entries_ = entries_;
       } else {
-        result.results_ = resultsBuilder_.build();
+        result.entries_ = entriesBuilder_.build();
       }
       onBuilt();
       return result;
@@ -486,42 +478,42 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse) {
-        return mergeFrom((com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse)other);
+      if (other instanceof com.clarifai.grpc.api.MultiAuditLogEntryResponse) {
+        return mergeFrom((com.clarifai.grpc.api.MultiAuditLogEntryResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse other) {
-      if (other == com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.clarifai.grpc.api.MultiAuditLogEntryResponse other) {
+      if (other == com.clarifai.grpc.api.MultiAuditLogEntryResponse.getDefaultInstance()) return this;
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
-      if (resultsBuilder_ == null) {
-        if (!other.results_.isEmpty()) {
-          if (results_.isEmpty()) {
-            results_ = other.results_;
+      if (entriesBuilder_ == null) {
+        if (!other.entries_.isEmpty()) {
+          if (entries_.isEmpty()) {
+            entries_ = other.entries_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureResultsIsMutable();
-            results_.addAll(other.results_);
+            ensureEntriesIsMutable();
+            entries_.addAll(other.entries_);
           }
           onChanged();
         }
       } else {
-        if (!other.results_.isEmpty()) {
-          if (resultsBuilder_.isEmpty()) {
-            resultsBuilder_.dispose();
-            resultsBuilder_ = null;
-            results_ = other.results_;
+        if (!other.entries_.isEmpty()) {
+          if (entriesBuilder_.isEmpty()) {
+            entriesBuilder_.dispose();
+            entriesBuilder_ = null;
+            entries_ = other.entries_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            resultsBuilder_ = 
+            entriesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getResultsFieldBuilder() : null;
+                 getEntriesFieldBuilder() : null;
           } else {
-            resultsBuilder_.addAllMessages(other.results_);
+            entriesBuilder_.addAllMessages(other.entries_);
           }
         }
       }
@@ -540,11 +532,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse parsedMessage = null;
+      com.clarifai.grpc.api.MultiAuditLogEntryResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.MultiAuditLogEntryResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -674,244 +666,244 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_;
     }
 
-    private java.util.List<com.clarifai.grpc.api.WorkflowResultsSimilarity> results_ =
+    private java.util.List<com.clarifai.grpc.api.AuditLogEntry> entries_ =
       java.util.Collections.emptyList();
-    private void ensureResultsIsMutable() {
+    private void ensureEntriesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        results_ = new java.util.ArrayList<com.clarifai.grpc.api.WorkflowResultsSimilarity>(results_);
+        entries_ = new java.util.ArrayList<com.clarifai.grpc.api.AuditLogEntry>(entries_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.WorkflowResultsSimilarity, com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder, com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder> resultsBuilder_;
+        com.clarifai.grpc.api.AuditLogEntry, com.clarifai.grpc.api.AuditLogEntry.Builder, com.clarifai.grpc.api.AuditLogEntryOrBuilder> entriesBuilder_;
 
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.WorkflowResultsSimilarity> getResultsList() {
-      if (resultsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(results_);
+    public java.util.List<com.clarifai.grpc.api.AuditLogEntry> getEntriesList() {
+      if (entriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(entries_);
       } else {
-        return resultsBuilder_.getMessageList();
+        return entriesBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public int getResultsCount() {
-      if (resultsBuilder_ == null) {
-        return results_.size();
+    public int getEntriesCount() {
+      if (entriesBuilder_ == null) {
+        return entries_.size();
       } else {
-        return resultsBuilder_.getCount();
+        return entriesBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public com.clarifai.grpc.api.WorkflowResultsSimilarity getResults(int index) {
-      if (resultsBuilder_ == null) {
-        return results_.get(index);
+    public com.clarifai.grpc.api.AuditLogEntry getEntries(int index) {
+      if (entriesBuilder_ == null) {
+        return entries_.get(index);
       } else {
-        return resultsBuilder_.getMessage(index);
+        return entriesBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder setResults(
-        int index, com.clarifai.grpc.api.WorkflowResultsSimilarity value) {
-      if (resultsBuilder_ == null) {
+    public Builder setEntries(
+        int index, com.clarifai.grpc.api.AuditLogEntry value) {
+      if (entriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureResultsIsMutable();
-        results_.set(index, value);
+        ensureEntriesIsMutable();
+        entries_.set(index, value);
         onChanged();
       } else {
-        resultsBuilder_.setMessage(index, value);
+        entriesBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder setResults(
-        int index, com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder builderForValue) {
-      if (resultsBuilder_ == null) {
-        ensureResultsIsMutable();
-        results_.set(index, builderForValue.build());
+    public Builder setEntries(
+        int index, com.clarifai.grpc.api.AuditLogEntry.Builder builderForValue) {
+      if (entriesBuilder_ == null) {
+        ensureEntriesIsMutable();
+        entries_.set(index, builderForValue.build());
         onChanged();
       } else {
-        resultsBuilder_.setMessage(index, builderForValue.build());
+        entriesBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addResults(com.clarifai.grpc.api.WorkflowResultsSimilarity value) {
-      if (resultsBuilder_ == null) {
+    public Builder addEntries(com.clarifai.grpc.api.AuditLogEntry value) {
+      if (entriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureResultsIsMutable();
-        results_.add(value);
+        ensureEntriesIsMutable();
+        entries_.add(value);
         onChanged();
       } else {
-        resultsBuilder_.addMessage(value);
+        entriesBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addResults(
-        int index, com.clarifai.grpc.api.WorkflowResultsSimilarity value) {
-      if (resultsBuilder_ == null) {
+    public Builder addEntries(
+        int index, com.clarifai.grpc.api.AuditLogEntry value) {
+      if (entriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureResultsIsMutable();
-        results_.add(index, value);
+        ensureEntriesIsMutable();
+        entries_.add(index, value);
         onChanged();
       } else {
-        resultsBuilder_.addMessage(index, value);
+        entriesBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addResults(
-        com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder builderForValue) {
-      if (resultsBuilder_ == null) {
-        ensureResultsIsMutable();
-        results_.add(builderForValue.build());
+    public Builder addEntries(
+        com.clarifai.grpc.api.AuditLogEntry.Builder builderForValue) {
+      if (entriesBuilder_ == null) {
+        ensureEntriesIsMutable();
+        entries_.add(builderForValue.build());
         onChanged();
       } else {
-        resultsBuilder_.addMessage(builderForValue.build());
+        entriesBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addResults(
-        int index, com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder builderForValue) {
-      if (resultsBuilder_ == null) {
-        ensureResultsIsMutable();
-        results_.add(index, builderForValue.build());
+    public Builder addEntries(
+        int index, com.clarifai.grpc.api.AuditLogEntry.Builder builderForValue) {
+      if (entriesBuilder_ == null) {
+        ensureEntriesIsMutable();
+        entries_.add(index, builderForValue.build());
         onChanged();
       } else {
-        resultsBuilder_.addMessage(index, builderForValue.build());
+        entriesBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder addAllResults(
-        java.lang.Iterable<? extends com.clarifai.grpc.api.WorkflowResultsSimilarity> values) {
-      if (resultsBuilder_ == null) {
-        ensureResultsIsMutable();
+    public Builder addAllEntries(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.AuditLogEntry> values) {
+      if (entriesBuilder_ == null) {
+        ensureEntriesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, results_);
+            values, entries_);
         onChanged();
       } else {
-        resultsBuilder_.addAllMessages(values);
+        entriesBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder clearResults() {
-      if (resultsBuilder_ == null) {
-        results_ = java.util.Collections.emptyList();
+    public Builder clearEntries() {
+      if (entriesBuilder_ == null) {
+        entries_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        resultsBuilder_.clear();
+        entriesBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public Builder removeResults(int index) {
-      if (resultsBuilder_ == null) {
-        ensureResultsIsMutable();
-        results_.remove(index);
+    public Builder removeEntries(int index) {
+      if (entriesBuilder_ == null) {
+        ensureEntriesIsMutable();
+        entries_.remove(index);
         onChanged();
       } else {
-        resultsBuilder_.remove(index);
+        entriesBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder getResultsBuilder(
+    public com.clarifai.grpc.api.AuditLogEntry.Builder getEntriesBuilder(
         int index) {
-      return getResultsFieldBuilder().getBuilder(index);
+      return getEntriesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder getResultsOrBuilder(
+    public com.clarifai.grpc.api.AuditLogEntryOrBuilder getEntriesOrBuilder(
         int index) {
-      if (resultsBuilder_ == null) {
-        return results_.get(index);  } else {
-        return resultsBuilder_.getMessageOrBuilder(index);
+      if (entriesBuilder_ == null) {
+        return entries_.get(index);  } else {
+        return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public java.util.List<? extends com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder> 
-         getResultsOrBuilderList() {
-      if (resultsBuilder_ != null) {
-        return resultsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends com.clarifai.grpc.api.AuditLogEntryOrBuilder> 
+         getEntriesOrBuilderList() {
+      if (entriesBuilder_ != null) {
+        return entriesBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(results_);
+        return java.util.Collections.unmodifiableList(entries_);
       }
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder addResultsBuilder() {
-      return getResultsFieldBuilder().addBuilder(
-          com.clarifai.grpc.api.WorkflowResultsSimilarity.getDefaultInstance());
+    public com.clarifai.grpc.api.AuditLogEntry.Builder addEntriesBuilder() {
+      return getEntriesFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.AuditLogEntry.getDefaultInstance());
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder addResultsBuilder(
+    public com.clarifai.grpc.api.AuditLogEntry.Builder addEntriesBuilder(
         int index) {
-      return getResultsFieldBuilder().addBuilder(
-          index, com.clarifai.grpc.api.WorkflowResultsSimilarity.getDefaultInstance());
+      return getEntriesFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.AuditLogEntry.getDefaultInstance());
     }
     /**
-     * <code>repeated .clarifai.api.WorkflowResultsSimilarity results = 2;</code>
+     * <code>repeated .clarifai.api.AuditLogEntry entries = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
      */
-    public java.util.List<com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder> 
-         getResultsBuilderList() {
-      return getResultsFieldBuilder().getBuilderList();
+    public java.util.List<com.clarifai.grpc.api.AuditLogEntry.Builder> 
+         getEntriesBuilderList() {
+      return getEntriesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.clarifai.grpc.api.WorkflowResultsSimilarity, com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder, com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder> 
-        getResultsFieldBuilder() {
-      if (resultsBuilder_ == null) {
-        resultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.clarifai.grpc.api.WorkflowResultsSimilarity, com.clarifai.grpc.api.WorkflowResultsSimilarity.Builder, com.clarifai.grpc.api.WorkflowResultsSimilarityOrBuilder>(
-                results_,
+        com.clarifai.grpc.api.AuditLogEntry, com.clarifai.grpc.api.AuditLogEntry.Builder, com.clarifai.grpc.api.AuditLogEntryOrBuilder> 
+        getEntriesFieldBuilder() {
+      if (entriesBuilder_ == null) {
+        entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.AuditLogEntry, com.clarifai.grpc.api.AuditLogEntry.Builder, com.clarifai.grpc.api.AuditLogEntryOrBuilder>(
+                entries_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
-        results_ = null;
+        entries_ = null;
       }
-      return resultsBuilder_;
+      return entriesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -926,41 +918,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.PostWorkflowResultsSimilarityResponse)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.MultiAuditLogEntryResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.PostWorkflowResultsSimilarityResponse)
-  private static final com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.MultiAuditLogEntryResponse)
+  private static final com.clarifai.grpc.api.MultiAuditLogEntryResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.MultiAuditLogEntryResponse();
   }
 
-  public static com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse getDefaultInstance() {
+  public static com.clarifai.grpc.api.MultiAuditLogEntryResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PostWorkflowResultsSimilarityResponse>
-      PARSER = new com.google.protobuf.AbstractParser<PostWorkflowResultsSimilarityResponse>() {
+  private static final com.google.protobuf.Parser<MultiAuditLogEntryResponse>
+      PARSER = new com.google.protobuf.AbstractParser<MultiAuditLogEntryResponse>() {
     @java.lang.Override
-    public PostWorkflowResultsSimilarityResponse parsePartialFrom(
+    public MultiAuditLogEntryResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PostWorkflowResultsSimilarityResponse(input, extensionRegistry);
+      return new MultiAuditLogEntryResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<PostWorkflowResultsSimilarityResponse> parser() {
+  public static com.google.protobuf.Parser<MultiAuditLogEntryResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<PostWorkflowResultsSimilarityResponse> getParserForType() {
+  public com.google.protobuf.Parser<MultiAuditLogEntryResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.PostWorkflowResultsSimilarityResponse getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.MultiAuditLogEntryResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

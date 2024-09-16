@@ -63,13 +63,13 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             com.clarifai.grpc.api.AuditLogQuery.Builder subBuilder = null;
-            if (auditLogQuery_ != null) {
-              subBuilder = auditLogQuery_.toBuilder();
+            if (query_ != null) {
+              subBuilder = query_.toBuilder();
             }
-            auditLogQuery_ = input.readMessage(com.clarifai.grpc.api.AuditLogQuery.parser(), extensionRegistry);
+            query_ = input.readMessage(com.clarifai.grpc.api.AuditLogQuery.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(auditLogQuery_);
-              auditLogQuery_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(query_);
+              query_ = subBuilder.buildPartial();
             }
 
             break;
@@ -164,30 +164,30 @@ private static final long serialVersionUID = 0L;
     return getUserAppId();
   }
 
-  public static final int AUDIT_LOG_QUERY_FIELD_NUMBER = 2;
-  private com.clarifai.grpc.api.AuditLogQuery auditLogQuery_;
+  public static final int QUERY_FIELD_NUMBER = 2;
+  private com.clarifai.grpc.api.AuditLogQuery query_;
   /**
-   * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
-   * @return Whether the auditLogQuery field is set.
+   * <code>.clarifai.api.AuditLogQuery query = 2;</code>
+   * @return Whether the query field is set.
    */
   @java.lang.Override
-  public boolean hasAuditLogQuery() {
-    return auditLogQuery_ != null;
+  public boolean hasQuery() {
+    return query_ != null;
   }
   /**
-   * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
-   * @return The auditLogQuery.
+   * <code>.clarifai.api.AuditLogQuery query = 2;</code>
+   * @return The query.
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.AuditLogQuery getAuditLogQuery() {
-    return auditLogQuery_ == null ? com.clarifai.grpc.api.AuditLogQuery.getDefaultInstance() : auditLogQuery_;
+  public com.clarifai.grpc.api.AuditLogQuery getQuery() {
+    return query_ == null ? com.clarifai.grpc.api.AuditLogQuery.getDefaultInstance() : query_;
   }
   /**
-   * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+   * <code>.clarifai.api.AuditLogQuery query = 2;</code>
    */
   @java.lang.Override
-  public com.clarifai.grpc.api.AuditLogQueryOrBuilder getAuditLogQueryOrBuilder() {
-    return getAuditLogQuery();
+  public com.clarifai.grpc.api.AuditLogQueryOrBuilder getQueryOrBuilder() {
+    return getQuery();
   }
 
   public static final int SORT_ASCENDING_FIELD_NUMBER = 3;
@@ -249,8 +249,8 @@ private static final long serialVersionUID = 0L;
     if (userAppId_ != null) {
       output.writeMessage(1, getUserAppId());
     }
-    if (auditLogQuery_ != null) {
-      output.writeMessage(2, getAuditLogQuery());
+    if (query_ != null) {
+      output.writeMessage(2, getQuery());
     }
     if (sortAscending_ != false) {
       output.writeBool(3, sortAscending_);
@@ -271,9 +271,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getUserAppId());
     }
-    if (auditLogQuery_ != null) {
+    if (query_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAuditLogQuery());
+        .computeMessageSize(2, getQuery());
     }
     if (sortAscending_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -303,10 +303,10 @@ private static final long serialVersionUID = 0L;
       if (!getUserAppId()
           .equals(other.getUserAppId())) return false;
     }
-    if (hasAuditLogQuery() != other.hasAuditLogQuery()) return false;
-    if (hasAuditLogQuery()) {
-      if (!getAuditLogQuery()
-          .equals(other.getAuditLogQuery())) return false;
+    if (hasQuery() != other.hasQuery()) return false;
+    if (hasQuery()) {
+      if (!getQuery()
+          .equals(other.getQuery())) return false;
     }
     if (getSortAscending()
         != other.getSortAscending()) return false;
@@ -330,9 +330,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_APP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserAppId().hashCode();
     }
-    if (hasAuditLogQuery()) {
-      hash = (37 * hash) + AUDIT_LOG_QUERY_FIELD_NUMBER;
-      hash = (53 * hash) + getAuditLogQuery().hashCode();
+    if (hasQuery()) {
+      hash = (37 * hash) + QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getQuery().hashCode();
     }
     hash = (37 * hash) + SORT_ASCENDING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -480,11 +480,11 @@ private static final long serialVersionUID = 0L;
         userAppId_ = null;
         userAppIdBuilder_ = null;
       }
-      if (auditLogQueryBuilder_ == null) {
-        auditLogQuery_ = null;
+      if (queryBuilder_ == null) {
+        query_ = null;
       } else {
-        auditLogQuery_ = null;
-        auditLogQueryBuilder_ = null;
+        query_ = null;
+        queryBuilder_ = null;
       }
       sortAscending_ = false;
 
@@ -525,10 +525,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.userAppId_ = userAppIdBuilder_.build();
       }
-      if (auditLogQueryBuilder_ == null) {
-        result.auditLogQuery_ = auditLogQuery_;
+      if (queryBuilder_ == null) {
+        result.query_ = query_;
       } else {
-        result.auditLogQuery_ = auditLogQueryBuilder_.build();
+        result.query_ = queryBuilder_.build();
       }
       result.sortAscending_ = sortAscending_;
       if (paginationBuilder_ == null) {
@@ -587,8 +587,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasUserAppId()) {
         mergeUserAppId(other.getUserAppId());
       }
-      if (other.hasAuditLogQuery()) {
-        mergeAuditLogQuery(other.getAuditLogQuery());
+      if (other.hasQuery()) {
+        mergeQuery(other.getQuery());
       }
       if (other.getSortAscending() != false) {
         setSortAscending(other.getSortAscending());
@@ -780,123 +780,123 @@ private static final long serialVersionUID = 0L;
       return userAppIdBuilder_;
     }
 
-    private com.clarifai.grpc.api.AuditLogQuery auditLogQuery_;
+    private com.clarifai.grpc.api.AuditLogQuery query_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.clarifai.grpc.api.AuditLogQuery, com.clarifai.grpc.api.AuditLogQuery.Builder, com.clarifai.grpc.api.AuditLogQueryOrBuilder> auditLogQueryBuilder_;
+        com.clarifai.grpc.api.AuditLogQuery, com.clarifai.grpc.api.AuditLogQuery.Builder, com.clarifai.grpc.api.AuditLogQueryOrBuilder> queryBuilder_;
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
-     * @return Whether the auditLogQuery field is set.
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
+     * @return Whether the query field is set.
      */
-    public boolean hasAuditLogQuery() {
-      return auditLogQueryBuilder_ != null || auditLogQuery_ != null;
+    public boolean hasQuery() {
+      return queryBuilder_ != null || query_ != null;
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
-     * @return The auditLogQuery.
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
+     * @return The query.
      */
-    public com.clarifai.grpc.api.AuditLogQuery getAuditLogQuery() {
-      if (auditLogQueryBuilder_ == null) {
-        return auditLogQuery_ == null ? com.clarifai.grpc.api.AuditLogQuery.getDefaultInstance() : auditLogQuery_;
+    public com.clarifai.grpc.api.AuditLogQuery getQuery() {
+      if (queryBuilder_ == null) {
+        return query_ == null ? com.clarifai.grpc.api.AuditLogQuery.getDefaultInstance() : query_;
       } else {
-        return auditLogQueryBuilder_.getMessage();
+        return queryBuilder_.getMessage();
       }
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    public Builder setAuditLogQuery(com.clarifai.grpc.api.AuditLogQuery value) {
-      if (auditLogQueryBuilder_ == null) {
+    public Builder setQuery(com.clarifai.grpc.api.AuditLogQuery value) {
+      if (queryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        auditLogQuery_ = value;
+        query_ = value;
         onChanged();
       } else {
-        auditLogQueryBuilder_.setMessage(value);
+        queryBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    public Builder setAuditLogQuery(
+    public Builder setQuery(
         com.clarifai.grpc.api.AuditLogQuery.Builder builderForValue) {
-      if (auditLogQueryBuilder_ == null) {
-        auditLogQuery_ = builderForValue.build();
+      if (queryBuilder_ == null) {
+        query_ = builderForValue.build();
         onChanged();
       } else {
-        auditLogQueryBuilder_.setMessage(builderForValue.build());
+        queryBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    public Builder mergeAuditLogQuery(com.clarifai.grpc.api.AuditLogQuery value) {
-      if (auditLogQueryBuilder_ == null) {
-        if (auditLogQuery_ != null) {
-          auditLogQuery_ =
-            com.clarifai.grpc.api.AuditLogQuery.newBuilder(auditLogQuery_).mergeFrom(value).buildPartial();
+    public Builder mergeQuery(com.clarifai.grpc.api.AuditLogQuery value) {
+      if (queryBuilder_ == null) {
+        if (query_ != null) {
+          query_ =
+            com.clarifai.grpc.api.AuditLogQuery.newBuilder(query_).mergeFrom(value).buildPartial();
         } else {
-          auditLogQuery_ = value;
+          query_ = value;
         }
         onChanged();
       } else {
-        auditLogQueryBuilder_.mergeFrom(value);
+        queryBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    public Builder clearAuditLogQuery() {
-      if (auditLogQueryBuilder_ == null) {
-        auditLogQuery_ = null;
+    public Builder clearQuery() {
+      if (queryBuilder_ == null) {
+        query_ = null;
         onChanged();
       } else {
-        auditLogQuery_ = null;
-        auditLogQueryBuilder_ = null;
+        query_ = null;
+        queryBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    public com.clarifai.grpc.api.AuditLogQuery.Builder getAuditLogQueryBuilder() {
+    public com.clarifai.grpc.api.AuditLogQuery.Builder getQueryBuilder() {
       
       onChanged();
-      return getAuditLogQueryFieldBuilder().getBuilder();
+      return getQueryFieldBuilder().getBuilder();
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
-    public com.clarifai.grpc.api.AuditLogQueryOrBuilder getAuditLogQueryOrBuilder() {
-      if (auditLogQueryBuilder_ != null) {
-        return auditLogQueryBuilder_.getMessageOrBuilder();
+    public com.clarifai.grpc.api.AuditLogQueryOrBuilder getQueryOrBuilder() {
+      if (queryBuilder_ != null) {
+        return queryBuilder_.getMessageOrBuilder();
       } else {
-        return auditLogQuery_ == null ?
-            com.clarifai.grpc.api.AuditLogQuery.getDefaultInstance() : auditLogQuery_;
+        return query_ == null ?
+            com.clarifai.grpc.api.AuditLogQuery.getDefaultInstance() : query_;
       }
     }
     /**
-     * <code>.clarifai.api.AuditLogQuery audit_log_query = 2;</code>
+     * <code>.clarifai.api.AuditLogQuery query = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.clarifai.grpc.api.AuditLogQuery, com.clarifai.grpc.api.AuditLogQuery.Builder, com.clarifai.grpc.api.AuditLogQueryOrBuilder> 
-        getAuditLogQueryFieldBuilder() {
-      if (auditLogQueryBuilder_ == null) {
-        auditLogQueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getQueryFieldBuilder() {
+      if (queryBuilder_ == null) {
+        queryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.clarifai.grpc.api.AuditLogQuery, com.clarifai.grpc.api.AuditLogQuery.Builder, com.clarifai.grpc.api.AuditLogQueryOrBuilder>(
-                getAuditLogQuery(),
+                getQuery(),
                 getParentForChildren(),
                 isClean());
-        auditLogQuery_ = null;
+        query_ = null;
       }
-      return auditLogQueryBuilder_;
+      return queryBuilder_;
     }
 
     private boolean sortAscending_ ;

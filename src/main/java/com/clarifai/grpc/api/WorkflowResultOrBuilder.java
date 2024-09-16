@@ -75,43 +75,6 @@ public interface WorkflowResultOrBuilder extends
 
   /**
    * <pre>
-   * The model that this WorkflowResult is for.
-   * DEPRECATED: not sure why there ever was a model here because each output shows the model
-   * that process this given input.
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2905
-   * @return Whether the model field is set.
-   */
-  @java.lang.Deprecated boolean hasModel();
-  /**
-   * <pre>
-   * The model that this WorkflowResult is for.
-   * DEPRECATED: not sure why there ever was a model here because each output shows the model
-   * that process this given input.
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-   * @deprecated clarifai.api.WorkflowResult.model is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=2905
-   * @return The model.
-   */
-  @java.lang.Deprecated com.clarifai.grpc.api.Model getModel();
-  /**
-   * <pre>
-   * The model that this WorkflowResult is for.
-   * DEPRECATED: not sure why there ever was a model here because each output shows the model
-   * that process this given input.
-   * </pre>
-   *
-   * <code>.clarifai.api.Model model = 4 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated com.clarifai.grpc.api.ModelOrBuilder getModelOrBuilder();
-
-  /**
-   * <pre>
    * The input that ran through the workflow to generate the outputs in this WorkflowResult.
    * </pre>
    *
