@@ -10,6 +10,7 @@ public final class Extensions {
     registry.add(com.clarifai.grpc.api.utils.Extensions.clShowIfEmpty);
     registry.add(com.clarifai.grpc.api.utils.Extensions.clMoretags);
     registry.add(com.clarifai.grpc.api.utils.Extensions.clDefaultFloat);
+    registry.add(com.clarifai.grpc.api.utils.Extensions.description);
   }
 
   public static void registerAllExtensions(
@@ -63,6 +64,21 @@ public final class Extensions {
           .newFileScopedGeneratedExtension(
         java.lang.Float.class,
         null);
+  public static final int DESCRIPTION_FIELD_NUMBER = 1000;
+  /**
+   * <pre>
+   * A description of the enum value.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.EnumValueOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.EnumValueOptions,
+      java.lang.String> description = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        java.lang.String.class,
+        null);
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -78,10 +94,11 @@ public final class Extensions {
       "google.protobuf.FieldOptions\030\320\206\003 \001(\010:4\n\013" +
       "cl_moretags\022\035.google.protobuf.FieldOptio" +
       "ns\030\321\206\003 \001(\t:9\n\020cl_default_float\022\035.google." +
-      "protobuf.FieldOptions\030\332\206\003 \001(\002Be\n\033com.cla" +
-      "rifai.grpc.api.utilsP\001Z=github.com/Clari" +
-      "fai/clarifai-go-grpc/proto/clarifai/api/" +
-      "utils\242\002\004CAIPb\006proto3"
+      "protobuf.FieldOptions\030\332\206\003 \001(\002:7\n\013descrip" +
+      "tion\022!.google.protobuf.EnumValueOptions\030" +
+      "\350\007 \001(\tBe\n\033com.clarifai.grpc.api.utilsP\001Z" +
+      "=github.com/Clarifai/clarifai-go-grpc/pr" +
+      "oto/clarifai/api/utils\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -91,6 +108,7 @@ public final class Extensions {
     clShowIfEmpty.internalInit(descriptor.getExtensions().get(0));
     clMoretags.internalInit(descriptor.getExtensions().get(1));
     clDefaultFloat.internalInit(descriptor.getExtensions().get(2));
+    description.internalInit(descriptor.getExtensions().get(3));
     com.google.protobuf.DescriptorProtos.getDescriptor();
   }
 

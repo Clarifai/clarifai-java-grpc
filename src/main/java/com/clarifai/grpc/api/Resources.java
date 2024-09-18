@@ -2218,11 +2218,12 @@ public final class Resources {
       "\000\022\010\n\004SKIP\020\001\022\n\n\006SUFFIX\020\002*s\n\020RunnerMethodT" +
       "ype\022\013\n\007UNKNOWN\020\000\022\017\n\013UNARY_UNARY\020\001\022\023\n\017UNA" +
       "RY_STREAMING\020\002\022\023\n\017STREAMING_UNARY\020\003\022\027\n\023S" +
-      "TREAMING_STREAMING\020\004*;\n\tEventType\022\026\n\022EVE" +
-      "NT_TYPE_NOT_SET\020\000\022\026\n\022APPLICATION_CREATE\020" +
-      "dBY\n\025com.clarifai.grpc.apiP\001Z7github.com" +
-      "/Clarifai/clarifai-go-grpc/proto/clarifa" +
-      "i/api\242\002\004CAIPb\006proto3"
+      "TREAMING_STREAMING\020\004*b\n\tEventType\022\026\n\022EVE" +
+      "NT_TYPE_NOT_SET\020\000\022=\n\022APPLICATION_CREATE\020" +
+      "d\032%\302>\"Operation to create an Application" +
+      "BY\n\025com.clarifai.grpc.apiP\001Z7github.com/" +
+      "Clarifai/clarifai-go-grpc/proto/clarifai" +
+      "/api\242\002\004CAIPb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3530,6 +3531,7 @@ public final class Resources {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.clarifai.grpc.api.utils.Extensions.clDefaultFloat);
     registry.add(com.clarifai.grpc.api.utils.Extensions.clShowIfEmpty);
+    registry.add(com.clarifai.grpc.api.utils.Extensions.description);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.clarifai.grpc.api.status.StatusOuterClass.getDescriptor();

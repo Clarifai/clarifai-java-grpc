@@ -17,7 +17,7 @@ public enum EventType
    * APPLICATION event types : 100 - 199
    * </pre>
    *
-   * <code>APPLICATION_CREATE = 100;</code>
+   * <code>APPLICATION_CREATE = 100 [(.clarifai.api.utils.description) = "Operation to create an Application"];</code>
    */
   APPLICATION_CREATE(100),
   UNRECOGNIZED(-1),
@@ -32,7 +32,7 @@ public enum EventType
    * APPLICATION event types : 100 - 199
    * </pre>
    *
-   * <code>APPLICATION_CREATE = 100;</code>
+   * <code>APPLICATION_CREATE = 100 [(.clarifai.api.utils.description) = "Operation to create an Application"];</code>
    */
   public static final int APPLICATION_CREATE_VALUE = 100;
 
