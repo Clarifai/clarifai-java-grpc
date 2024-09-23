@@ -1116,7 +1116,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.Image image_;
   /**
    * <pre>
-   * Representative image for this User (a.k.a. Profile or cover photo) 
+   * Representative image for this User (a.k.a. Profile or cover photo)
    * </pre>
    *
    * <code>.clarifai.api.Image image = 26;</code>
@@ -1128,7 +1128,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Representative image for this User (a.k.a. Profile or cover photo) 
+   * Representative image for this User (a.k.a. Profile or cover photo)
    * </pre>
    *
    * <code>.clarifai.api.Image image = 26;</code>
@@ -1140,7 +1140,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Representative image for this User (a.k.a. Profile or cover photo) 
+   * Representative image for this User (a.k.a. Profile or cover photo)
    * </pre>
    *
    * <code>.clarifai.api.Image image = 26;</code>
@@ -4434,7 +4434,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.Image, com.clarifai.grpc.api.Image.Builder, com.clarifai.grpc.api.ImageOrBuilder> imageBuilder_;
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4445,7 +4445,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4460,7 +4460,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4480,7 +4480,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4498,7 +4498,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4520,7 +4520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4538,7 +4538,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4550,7 +4550,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>
@@ -4565,7 +4565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Representative image for this User (a.k.a. Profile or cover photo) 
+     * Representative image for this User (a.k.a. Profile or cover photo)
      * </pre>
      *
      * <code>.clarifai.api.Image image = 26;</code>

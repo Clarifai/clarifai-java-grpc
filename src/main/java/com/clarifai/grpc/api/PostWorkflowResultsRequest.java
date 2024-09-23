@@ -121,6 +121,19 @@ private static final long serialVersionUID = 0L;
             versionId_ = s;
             break;
           }
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              nodeRunnerSelectors_ = com.google.protobuf.MapField.newMapField(
+                  NodeRunnerSelectorsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000002;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+            nodeRunnerSelectors__ = input.readMessage(
+                NodeRunnerSelectorsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            nodeRunnerSelectors_.getMutableMap().put(
+                nodeRunnerSelectors__.getKey(), nodeRunnerSelectors__.getValue());
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -150,6 +163,18 @@ private static final long serialVersionUID = 0L;
     return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 8:
+        return internalGetNodeRunnerSelectors();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -434,6 +459,143 @@ private static final long serialVersionUID = 0L;
     return getWorkflowState();
   }
 
+  public static final int NODE_RUNNER_SELECTORS_FIELD_NUMBER = 8;
+  private static final class NodeRunnerSelectorsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, com.clarifai.grpc.api.RunnerSelector> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, com.clarifai.grpc.api.RunnerSelector>newDefaultInstance(
+                com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsRequest_NodeRunnerSelectorsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.clarifai.grpc.api.RunnerSelector.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, com.clarifai.grpc.api.RunnerSelector> nodeRunnerSelectors_;
+  private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+  internalGetNodeRunnerSelectors() {
+    if (nodeRunnerSelectors_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          NodeRunnerSelectorsDefaultEntryHolder.defaultEntry);
+    }
+    return nodeRunnerSelectors_;
+  }
+
+  public int getNodeRunnerSelectorsCount() {
+    return internalGetNodeRunnerSelectors().getMap().size();
+  }
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsNodeRunnerSelectors(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetNodeRunnerSelectors().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getNodeRunnerSelectorsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> getNodeRunnerSelectors() {
+    return getNodeRunnerSelectorsMap();
+  }
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> getNodeRunnerSelectorsMap() {
+    return internalGetNodeRunnerSelectors().getMap();
+  }
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+  @java.lang.Override
+
+  public com.clarifai.grpc.api.RunnerSelector getNodeRunnerSelectorsOrDefault(
+      java.lang.String key,
+      com.clarifai.grpc.api.RunnerSelector defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> map =
+        internalGetNodeRunnerSelectors().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+  @java.lang.Override
+
+  public com.clarifai.grpc.api.RunnerSelector getNodeRunnerSelectorsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> map =
+        internalGetNodeRunnerSelectors().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -469,6 +631,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, versionId_);
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetNodeRunnerSelectors(),
+        NodeRunnerSelectorsDefaultEntryHolder.defaultEntry,
+        8);
     unknownFields.writeTo(output);
   }
 
@@ -503,6 +671,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, versionId_);
+    }
+    for (java.util.Map.Entry<java.lang.String, com.clarifai.grpc.api.RunnerSelector> entry
+         : internalGetNodeRunnerSelectors().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+      nodeRunnerSelectors__ = NodeRunnerSelectorsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, nodeRunnerSelectors__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -542,6 +720,8 @@ private static final long serialVersionUID = 0L;
       if (!getWorkflowState()
           .equals(other.getWorkflowState())) return false;
     }
+    if (!internalGetNodeRunnerSelectors().equals(
+        other.internalGetNodeRunnerSelectors())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -575,6 +755,10 @@ private static final long serialVersionUID = 0L;
     if (hasWorkflowState()) {
       hash = (37 * hash) + WORKFLOW_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getWorkflowState().hashCode();
+    }
+    if (!internalGetNodeRunnerSelectors().getMap().isEmpty()) {
+      hash = (37 * hash) + NODE_RUNNER_SELECTORS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetNodeRunnerSelectors().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -687,6 +871,28 @@ private static final long serialVersionUID = 0L;
       return com.clarifai.grpc.api.Service.internal_static_clarifai_api_PostWorkflowResultsRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetNodeRunnerSelectors();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetMutableNodeRunnerSelectors();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -744,6 +950,7 @@ private static final long serialVersionUID = 0L;
         workflowState_ = null;
         workflowStateBuilder_ = null;
       }
+      internalGetMutableNodeRunnerSelectors().clear();
       return this;
     }
 
@@ -798,6 +1005,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.workflowState_ = workflowStateBuilder_.build();
       }
+      result.nodeRunnerSelectors_ = internalGetNodeRunnerSelectors();
+      result.nodeRunnerSelectors_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -892,6 +1101,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasWorkflowState()) {
         mergeWorkflowState(other.getWorkflowState());
       }
+      internalGetMutableNodeRunnerSelectors().mergeFrom(
+          other.internalGetNodeRunnerSelectors());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1902,6 +2113,235 @@ private static final long serialVersionUID = 0L;
         workflowState_ = null;
       }
       return workflowStateBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, com.clarifai.grpc.api.RunnerSelector> nodeRunnerSelectors_;
+    private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+    internalGetNodeRunnerSelectors() {
+      if (nodeRunnerSelectors_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            NodeRunnerSelectorsDefaultEntryHolder.defaultEntry);
+      }
+      return nodeRunnerSelectors_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+    internalGetMutableNodeRunnerSelectors() {
+      onChanged();;
+      if (nodeRunnerSelectors_ == null) {
+        nodeRunnerSelectors_ = com.google.protobuf.MapField.newMapField(
+            NodeRunnerSelectorsDefaultEntryHolder.defaultEntry);
+      }
+      if (!nodeRunnerSelectors_.isMutable()) {
+        nodeRunnerSelectors_ = nodeRunnerSelectors_.copy();
+      }
+      return nodeRunnerSelectors_;
+    }
+
+    public int getNodeRunnerSelectorsCount() {
+      return internalGetNodeRunnerSelectors().getMap().size();
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsNodeRunnerSelectors(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetNodeRunnerSelectors().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getNodeRunnerSelectorsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> getNodeRunnerSelectors() {
+      return getNodeRunnerSelectorsMap();
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> getNodeRunnerSelectorsMap() {
+      return internalGetNodeRunnerSelectors().getMap();
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+    @java.lang.Override
+
+    public com.clarifai.grpc.api.RunnerSelector getNodeRunnerSelectorsOrDefault(
+        java.lang.String key,
+        com.clarifai.grpc.api.RunnerSelector defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> map =
+          internalGetNodeRunnerSelectors().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+    @java.lang.Override
+
+    public com.clarifai.grpc.api.RunnerSelector getNodeRunnerSelectorsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> map =
+          internalGetNodeRunnerSelectors().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearNodeRunnerSelectors() {
+      internalGetMutableNodeRunnerSelectors().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+
+    public Builder removeNodeRunnerSelectors(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableNodeRunnerSelectors().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+    getMutableNodeRunnerSelectors() {
+      return internalGetMutableNodeRunnerSelectors().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+    public Builder putNodeRunnerSelectors(
+        java.lang.String key,
+        com.clarifai.grpc.api.RunnerSelector value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+      internalGetMutableNodeRunnerSelectors().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * Specify which compute to use for processing each node of the workflow:
+     * The key is the node.id from the loaded workflow.
+     * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+     * that you'd like that node to run on.
+     * This allows for use cases like some light models could run on a CPU-only nodepool
+     * while other models in the workflow require large GPUs.
+     * If node.id is not in the provided map, it will fall back to searching for
+     * an adequate deployment the model owner owns or fall back to
+     * the serverless nodepools provided by Clarifai.
+     * We recommend you specify these RunnerSelectors so that you have better understanding of where
+     * processing occurs.
+     * </pre>
+     *
+     * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+     */
+
+    public Builder putAllNodeRunnerSelectors(
+        java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector> values) {
+      internalGetMutableNodeRunnerSelectors().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

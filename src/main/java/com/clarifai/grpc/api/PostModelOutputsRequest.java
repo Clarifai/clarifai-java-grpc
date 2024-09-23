@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
   private com.clarifai.grpc.api.RunnerSelector runnerSelector_;
   /**
    * <pre>
-   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
    * </pre>
    *
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
    * </pre>
    *
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -367,7 +367,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
    * </pre>
    *
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1530,7 +1530,7 @@ private static final long serialVersionUID = 0L;
         com.clarifai.grpc.api.RunnerSelector, com.clarifai.grpc.api.RunnerSelector.Builder, com.clarifai.grpc.api.RunnerSelectorOrBuilder> runnerSelectorBuilder_;
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1541,7 +1541,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1556,7 +1556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1576,7 +1576,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1594,7 +1594,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1616,7 +1616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1634,7 +1634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1646,7 +1646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -1661,7 +1661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+     * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
      * </pre>
      *
      * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>

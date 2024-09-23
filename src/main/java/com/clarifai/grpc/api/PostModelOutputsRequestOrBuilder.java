@@ -102,7 +102,7 @@ public interface PostModelOutputsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
    * </pre>
    *
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -111,7 +111,7 @@ public interface PostModelOutputsRequestOrBuilder extends
   boolean hasRunnerSelector();
   /**
    * <pre>
-   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
    * </pre>
    *
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>
@@ -120,7 +120,7 @@ public interface PostModelOutputsRequestOrBuilder extends
   com.clarifai.grpc.api.RunnerSelector getRunnerSelector();
   /**
    * <pre>
-   * Allow filtering of prediction requests down to specific Nodepools, Deploymetns or Runners
+   * Allow filtering of prediction requests down to specific Nodepools, Deployments or Runners
    * </pre>
    *
    * <code>.clarifai.api.RunnerSelector runner_selector = 6;</code>

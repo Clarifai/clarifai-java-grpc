@@ -176,4 +176,110 @@ public interface PostWorkflowResultsRequestOrBuilder extends
    * <code>.clarifai.api.WorkflowState workflow_state = 6;</code>
    */
   com.clarifai.grpc.api.WorkflowStateOrBuilder getWorkflowStateOrBuilder();
+
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+  int getNodeRunnerSelectorsCount();
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+  boolean containsNodeRunnerSelectors(
+      java.lang.String key);
+  /**
+   * Use {@link #getNodeRunnerSelectorsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+  getNodeRunnerSelectors();
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+  java.util.Map<java.lang.String, com.clarifai.grpc.api.RunnerSelector>
+  getNodeRunnerSelectorsMap();
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+
+  /* nullable */
+com.clarifai.grpc.api.RunnerSelector getNodeRunnerSelectorsOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.clarifai.grpc.api.RunnerSelector defaultValue);
+  /**
+   * <pre>
+   * Specify which compute to use for processing each node of the workflow:
+   * The key is the node.id from the loaded workflow.
+   * The value is a RunnerSelector in which you can specify the deployment or specific nodepool
+   * that you'd like that node to run on.
+   * This allows for use cases like some light models could run on a CPU-only nodepool
+   * while other models in the workflow require large GPUs.
+   * If node.id is not in the provided map, it will fall back to searching for
+   * an adequate deployment the model owner owns or fall back to
+   * the serverless nodepools provided by Clarifai.
+   * We recommend you specify these RunnerSelectors so that you have better understanding of where
+   * processing occurs.
+   * </pre>
+   *
+   * <code>map&lt;string, .clarifai.api.RunnerSelector&gt; node_runner_selectors = 8;</code>
+   */
+
+  com.clarifai.grpc.api.RunnerSelector getNodeRunnerSelectorsOrThrow(
+      java.lang.String key);
 }
