@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     users_ = java.util.Collections.emptyList();
     workers_ = java.util.Collections.emptyList();
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -102,6 +103,12 @@ private static final long serialVersionUID = 0L;
             }
             workers_.add(
                 input.readMessage(com.clarifai.grpc.api.Worker.parser(), extensionRegistry));
+            break;
+          }
+          case 64: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
             break;
           }
           default: {
@@ -305,6 +312,147 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:clarifai.api.TaskWorker.TaskWorkerStrategy)
   }
 
+  /**
+   * Protobuf enum {@code clarifai.api.TaskWorker.WorkerType}
+   */
+  public enum WorkerType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * for backward compatibility when task is not setting any type and only sets workers
+     * </pre>
+     *
+     * <code>WORKER_TYPE_NOT_SET = 0;</code>
+     */
+    WORKER_TYPE_NOT_SET(0),
+    /**
+     * <pre>
+     * only human workers
+     * </pre>
+     *
+     * <code>WORKER_HUMAN = 1;</code>
+     */
+    WORKER_HUMAN(1),
+    /**
+     * <pre>
+     * auto-annotation tasks. Task must set worker as model or workflow
+     * </pre>
+     *
+     * <code>WORKER_AUTO = 2;</code>
+     */
+    WORKER_AUTO(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * for backward compatibility when task is not setting any type and only sets workers
+     * </pre>
+     *
+     * <code>WORKER_TYPE_NOT_SET = 0;</code>
+     */
+    public static final int WORKER_TYPE_NOT_SET_VALUE = 0;
+    /**
+     * <pre>
+     * only human workers
+     * </pre>
+     *
+     * <code>WORKER_HUMAN = 1;</code>
+     */
+    public static final int WORKER_HUMAN_VALUE = 1;
+    /**
+     * <pre>
+     * auto-annotation tasks. Task must set worker as model or workflow
+     * </pre>
+     *
+     * <code>WORKER_AUTO = 2;</code>
+     */
+    public static final int WORKER_AUTO_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkerType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkerType forNumber(int value) {
+      switch (value) {
+        case 0: return WORKER_TYPE_NOT_SET;
+        case 1: return WORKER_HUMAN;
+        case 2: return WORKER_AUTO;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkerType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WorkerType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WorkerType>() {
+            public WorkerType findValueByNumber(int number) {
+              return WorkerType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.clarifai.grpc.api.TaskWorker.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final WorkerType[] VALUES = values();
+
+    public static WorkerType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkerType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:clarifai.api.TaskWorker.WorkerType)
+  }
+
   private int strategyInfoCase_ = 0;
   private java.lang.Object strategyInfo_;
   public enum StrategyInfoCase
@@ -381,7 +529,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -396,7 +544,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @return The count of userIds.
    */
   @java.lang.Deprecated public int getUserIdsCount() {
@@ -410,7 +558,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -425,7 +573,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -630,6 +778,35 @@ private static final long serialVersionUID = 0L;
     return workers_.get(index);
   }
 
+  public static final int TYPE_FIELD_NUMBER = 8;
+  private int type_;
+  /**
+   * <pre>
+   * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+   * If set, worker must have be set accordingly to either human worker or model/workflow worker
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <pre>
+   * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+   * If set, worker must have be set accordingly to either human worker or model/workflow worker
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+   * @return The type.
+   */
+  @java.lang.Override public com.clarifai.grpc.api.TaskWorker.WorkerType getType() {
+    @SuppressWarnings("deprecation")
+    com.clarifai.grpc.api.TaskWorker.WorkerType result = com.clarifai.grpc.api.TaskWorker.WorkerType.valueOf(type_);
+    return result == null ? com.clarifai.grpc.api.TaskWorker.WorkerType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -658,6 +835,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < workers_.size(); i++) {
       output.writeMessage(7, workers_.get(i));
+    }
+    if (type_ != com.clarifai.grpc.api.TaskWorker.WorkerType.WORKER_TYPE_NOT_SET.getNumber()) {
+      output.writeEnum(8, type_);
     }
     unknownFields.writeTo(output);
   }
@@ -692,6 +872,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, workers_.get(i));
     }
+    if (type_ != com.clarifai.grpc.api.TaskWorker.WorkerType.WORKER_TYPE_NOT_SET.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -714,6 +898,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUsersList())) return false;
     if (!getWorkersList()
         .equals(other.getWorkersList())) return false;
+    if (type_ != other.type_) return false;
     if (!getStrategyInfoCase().equals(other.getStrategyInfoCase())) return false;
     switch (strategyInfoCase_) {
       case 3:
@@ -748,6 +933,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WORKERS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkersList().hashCode();
     }
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     switch (strategyInfoCase_) {
       case 3:
         hash = (37 * hash) + PARTITIONED_STRATEGY_INFO_FIELD_NUMBER;
@@ -911,6 +1098,8 @@ private static final long serialVersionUID = 0L;
       } else {
         workersBuilder_.clear();
       }
+      type_ = 0;
+
       strategyInfoCase_ = 0;
       strategyInfo_ = null;
       return this;
@@ -971,6 +1160,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.workers_ = workersBuilder_.build();
       }
+      result.type_ = type_;
       result.strategyInfoCase_ = strategyInfoCase_;
       onBuilt();
       return result;
@@ -1084,6 +1274,9 @@ private static final long serialVersionUID = 0L;
             workersBuilder_.addAllMessages(other.workers_);
           }
         }
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       switch (other.getStrategyInfoCase()) {
         case PARTITIONED_STRATEGY_INFO: {
@@ -1228,7 +1421,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @return A list containing the userIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -1243,7 +1436,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @return The count of userIds.
      */
     @java.lang.Deprecated public int getUserIdsCount() {
@@ -1257,7 +1450,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -1272,7 +1465,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -1288,7 +1481,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @param index The index to set the value at.
      * @param value The userIds to set.
      * @return This builder for chaining.
@@ -1311,7 +1504,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @param value The userIds to add.
      * @return This builder for chaining.
      */
@@ -1333,7 +1526,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @param values The userIds to add.
      * @return This builder for chaining.
      */
@@ -1353,7 +1546,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUserIds() {
@@ -1370,7 +1563,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3181
+     *     See proto/clarifai/api/resources.proto;l=3171
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
      */
@@ -2312,6 +2505,85 @@ private static final long serialVersionUID = 0L;
         workers_ = null;
       }
       return workersBuilder_;
+    }
+
+    private int type_ = 0;
+    /**
+     * <pre>
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.clarifai.grpc.api.TaskWorker.WorkerType getType() {
+      @SuppressWarnings("deprecation")
+      com.clarifai.grpc.api.TaskWorker.WorkerType result = com.clarifai.grpc.api.TaskWorker.WorkerType.valueOf(type_);
+      return result == null ? com.clarifai.grpc.api.TaskWorker.WorkerType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.clarifai.grpc.api.TaskWorker.WorkerType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+     * If set, worker must have be set accordingly to either human worker or model/workflow worker
+     * </pre>
+     *
+     * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

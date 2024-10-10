@@ -57,6 +57,11 @@ private static final long serialVersionUID = 0L;
             samplePercentage_ = input.readFloat();
             break;
           }
+          case 16: {
+
+            approvalThreshold_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -106,6 +111,25 @@ private static final long serialVersionUID = 0L;
     return samplePercentage_;
   }
 
+  public static final int APPROVAL_THRESHOLD_FIELD_NUMBER = 2;
+  private int approvalThreshold_;
+  /**
+   * <pre>
+   * The number of reviewers that need to agree in order to approve an input.
+   * Currently, the only allowed values are:
+   * 0  - when not set, it defaults to 1
+   * 1  - only a single reviewer needs to approve each labeled input
+   * -1 - an input will be approved when all reviewers approve it
+   * </pre>
+   *
+   * <code>int32 approval_threshold = 2;</code>
+   * @return The approvalThreshold.
+   */
+  @java.lang.Override
+  public int getApprovalThreshold() {
+    return approvalThreshold_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -123,6 +147,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(samplePercentage_) != 0) {
       output.writeFloat(1, samplePercentage_);
     }
+    if (approvalThreshold_ != 0) {
+      output.writeInt32(2, approvalThreshold_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -135,6 +162,10 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToRawIntBits(samplePercentage_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(1, samplePercentage_);
+    }
+    if (approvalThreshold_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, approvalThreshold_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,6 +185,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Float.floatToIntBits(getSamplePercentage())
         != java.lang.Float.floatToIntBits(
             other.getSamplePercentage())) return false;
+    if (getApprovalThreshold()
+        != other.getApprovalThreshold()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -168,6 +201,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SAMPLE_PERCENTAGE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getSamplePercentage());
+    hash = (37 * hash) + APPROVAL_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovalThreshold();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -307,6 +342,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       samplePercentage_ = 0F;
 
+      approvalThreshold_ = 0;
+
       return this;
     }
 
@@ -334,6 +371,7 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.TaskReviewManualStrategyInfo buildPartial() {
       com.clarifai.grpc.api.TaskReviewManualStrategyInfo result = new com.clarifai.grpc.api.TaskReviewManualStrategyInfo(this);
       result.samplePercentage_ = samplePercentage_;
+      result.approvalThreshold_ = approvalThreshold_;
       onBuilt();
       return result;
     }
@@ -384,6 +422,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.clarifai.grpc.api.TaskReviewManualStrategyInfo.getDefaultInstance()) return this;
       if (other.getSamplePercentage() != 0F) {
         setSamplePercentage(other.getSamplePercentage());
+      }
+      if (other.getApprovalThreshold() != 0) {
+        setApprovalThreshold(other.getApprovalThreshold());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -453,6 +494,61 @@ private static final long serialVersionUID = 0L;
     public Builder clearSamplePercentage() {
       
       samplePercentage_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int approvalThreshold_ ;
+    /**
+     * <pre>
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     * </pre>
+     *
+     * <code>int32 approval_threshold = 2;</code>
+     * @return The approvalThreshold.
+     */
+    @java.lang.Override
+    public int getApprovalThreshold() {
+      return approvalThreshold_;
+    }
+    /**
+     * <pre>
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     * </pre>
+     *
+     * <code>int32 approval_threshold = 2;</code>
+     * @param value The approvalThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalThreshold(int value) {
+      
+      approvalThreshold_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     * </pre>
+     *
+     * <code>int32 approval_threshold = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovalThreshold() {
+      
+      approvalThreshold_ = 0;
       onChanged();
       return this;
     }

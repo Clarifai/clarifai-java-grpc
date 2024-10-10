@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private ListDeploymentsRequest() {
     nodepoolId_ = "";
+    modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -39,6 +41,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -78,6 +81,24 @@ private static final long serialVersionUID = 0L;
             perPage_ = input.readUInt32();
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              modelVersionIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            modelVersionIds_.add(s);
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              workflowVersionIds_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            workflowVersionIds_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,6 +116,12 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        modelVersionIds_ = modelVersionIds_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        workflowVersionIds_ = workflowVersionIds_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -216,6 +243,108 @@ private static final long serialVersionUID = 0L;
     return perPage_;
   }
 
+  public static final int MODEL_VERSION_IDS_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList modelVersionIds_;
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @return A list containing the modelVersionIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getModelVersionIdsList() {
+    return modelVersionIds_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @return The count of modelVersionIds.
+   */
+  public int getModelVersionIdsCount() {
+    return modelVersionIds_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The modelVersionIds at the given index.
+   */
+  public java.lang.String getModelVersionIds(int index) {
+    return modelVersionIds_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the modelVersionIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getModelVersionIdsBytes(int index) {
+    return modelVersionIds_.getByteString(index);
+  }
+
+  public static final int WORKFLOW_VERSION_IDS_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList workflowVersionIds_;
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @return A list containing the workflowVersionIds.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getWorkflowVersionIdsList() {
+    return workflowVersionIds_;
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @return The count of workflowVersionIds.
+   */
+  public int getWorkflowVersionIdsCount() {
+    return workflowVersionIds_.size();
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @param index The index of the element to return.
+   * @return The workflowVersionIds at the given index.
+   */
+  public java.lang.String getWorkflowVersionIds(int index) {
+    return workflowVersionIds_.get(index);
+  }
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workflowVersionIds at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getWorkflowVersionIdsBytes(int index) {
+    return workflowVersionIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -242,6 +371,12 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       output.writeUInt32(4, perPage_);
     }
+    for (int i = 0; i < modelVersionIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modelVersionIds_.getRaw(i));
+    }
+    for (int i = 0; i < workflowVersionIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, workflowVersionIds_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -265,6 +400,22 @@ private static final long serialVersionUID = 0L;
     if (perPage_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(4, perPage_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < modelVersionIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(modelVersionIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getModelVersionIdsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < workflowVersionIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(workflowVersionIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getWorkflowVersionIdsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -292,6 +443,10 @@ private static final long serialVersionUID = 0L;
         != other.getPage()) return false;
     if (getPerPage()
         != other.getPerPage()) return false;
+    if (!getModelVersionIdsList()
+        .equals(other.getModelVersionIdsList())) return false;
+    if (!getWorkflowVersionIdsList()
+        .equals(other.getWorkflowVersionIdsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -313,6 +468,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPage();
     hash = (37 * hash) + PER_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getPerPage();
+    if (getModelVersionIdsCount() > 0) {
+      hash = (37 * hash) + MODEL_VERSION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelVersionIdsList().hashCode();
+    }
+    if (getWorkflowVersionIdsCount() > 0) {
+      hash = (37 * hash) + WORKFLOW_VERSION_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkflowVersionIdsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -458,6 +621,10 @@ private static final long serialVersionUID = 0L;
 
       perPage_ = 0;
 
+      modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -484,6 +651,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.clarifai.grpc.api.ListDeploymentsRequest buildPartial() {
       com.clarifai.grpc.api.ListDeploymentsRequest result = new com.clarifai.grpc.api.ListDeploymentsRequest(this);
+      int from_bitField0_ = bitField0_;
       if (userAppIdBuilder_ == null) {
         result.userAppId_ = userAppId_;
       } else {
@@ -492,6 +660,16 @@ private static final long serialVersionUID = 0L;
       result.nodepoolId_ = nodepoolId_;
       result.page_ = page_;
       result.perPage_ = perPage_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        modelVersionIds_ = modelVersionIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.modelVersionIds_ = modelVersionIds_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        workflowVersionIds_ = workflowVersionIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.workflowVersionIds_ = workflowVersionIds_;
       onBuilt();
       return result;
     }
@@ -553,6 +731,26 @@ private static final long serialVersionUID = 0L;
       if (other.getPerPage() != 0) {
         setPerPage(other.getPerPage());
       }
+      if (!other.modelVersionIds_.isEmpty()) {
+        if (modelVersionIds_.isEmpty()) {
+          modelVersionIds_ = other.modelVersionIds_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureModelVersionIdsIsMutable();
+          modelVersionIds_.addAll(other.modelVersionIds_);
+        }
+        onChanged();
+      }
+      if (!other.workflowVersionIds_.isEmpty()) {
+        if (workflowVersionIds_.isEmpty()) {
+          workflowVersionIds_ = other.workflowVersionIds_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureWorkflowVersionIdsIsMutable();
+          workflowVersionIds_.addAll(other.workflowVersionIds_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -581,6 +779,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private com.clarifai.grpc.api.UserAppIDSet userAppId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -885,6 +1084,298 @@ private static final long serialVersionUID = 0L;
     public Builder clearPerPage() {
       
       perPage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureModelVersionIdsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        modelVersionIds_ = new com.google.protobuf.LazyStringArrayList(modelVersionIds_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @return A list containing the modelVersionIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getModelVersionIdsList() {
+      return modelVersionIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @return The count of modelVersionIds.
+     */
+    public int getModelVersionIdsCount() {
+      return modelVersionIds_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @param index The index of the element to return.
+     * @return The modelVersionIds at the given index.
+     */
+    public java.lang.String getModelVersionIds(int index) {
+      return modelVersionIds_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the modelVersionIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getModelVersionIdsBytes(int index) {
+      return modelVersionIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The modelVersionIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureModelVersionIdsIsMutable();
+      modelVersionIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @param value The modelVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addModelVersionIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureModelVersionIdsIsMutable();
+      modelVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @param values The modelVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllModelVersionIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureModelVersionIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, modelVersionIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersionIds() {
+      modelVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+     * </pre>
+     *
+     * <code>repeated string model_version_ids = 5;</code>
+     * @param value The bytes of the modelVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addModelVersionIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureModelVersionIdsIsMutable();
+      modelVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureWorkflowVersionIdsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        workflowVersionIds_ = new com.google.protobuf.LazyStringArrayList(workflowVersionIds_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @return A list containing the workflowVersionIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getWorkflowVersionIdsList() {
+      return workflowVersionIds_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @return The count of workflowVersionIds.
+     */
+    public int getWorkflowVersionIdsCount() {
+      return workflowVersionIds_.size();
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @param index The index of the element to return.
+     * @return The workflowVersionIds at the given index.
+     */
+    public java.lang.String getWorkflowVersionIds(int index) {
+      return workflowVersionIds_.get(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the workflowVersionIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getWorkflowVersionIdsBytes(int index) {
+      return workflowVersionIds_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The workflowVersionIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowVersionIds(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureWorkflowVersionIdsIsMutable();
+      workflowVersionIds_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @param value The workflowVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWorkflowVersionIds(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureWorkflowVersionIdsIsMutable();
+      workflowVersionIds_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @param values The workflowVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWorkflowVersionIds(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureWorkflowVersionIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, workflowVersionIds_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflowVersionIds() {
+      workflowVersionIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+     * </pre>
+     *
+     * <code>repeated string workflow_version_ids = 6;</code>
+     * @param value The bytes of the workflowVersionIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWorkflowVersionIdsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureWorkflowVersionIdsIsMutable();
+      workflowVersionIds_.add(value);
       onChanged();
       return this;
     }

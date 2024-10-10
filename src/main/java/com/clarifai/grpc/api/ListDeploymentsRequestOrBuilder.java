@@ -63,4 +63,86 @@ public interface ListDeploymentsRequestOrBuilder extends
    * @return The perPage.
    */
   int getPerPage();
+
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @return A list containing the modelVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getModelVersionIdsList();
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @return The count of modelVersionIds.
+   */
+  int getModelVersionIdsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @param index The index of the element to return.
+   * @return The modelVersionIds at the given index.
+   */
+  java.lang.String getModelVersionIds(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) ModelVersion IDs. To list all deployments for the model version
+   * </pre>
+   *
+   * <code>repeated string model_version_ids = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the modelVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getModelVersionIdsBytes(int index);
+
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @return A list containing the workflowVersionIds.
+   */
+  java.util.List<java.lang.String>
+      getWorkflowVersionIdsList();
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @return The count of workflowVersionIds.
+   */
+  int getWorkflowVersionIdsCount();
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @param index The index of the element to return.
+   * @return The workflowVersionIds at the given index.
+   */
+  java.lang.String getWorkflowVersionIds(int index);
+  /**
+   * <pre>
+   * (optional URL parameter) WorkflowVersion IDs. To list all deployments for the workflow version
+   * </pre>
+   *
+   * <code>repeated string workflow_version_ids = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the workflowVersionIds at the given index.
+   */
+  com.google.protobuf.ByteString
+      getWorkflowVersionIdsBytes(int index);
 }

@@ -7362,6 +7362,37 @@ public final class V2Grpc {
     return getPostAuditLogSearchesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest,
+      com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> getListWorkflowEvaluationTemplatesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListWorkflowEvaluationTemplates",
+      requestType = com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest.class,
+      responseType = com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest,
+      com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> getListWorkflowEvaluationTemplatesMethod() {
+    io.grpc.MethodDescriptor<com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest, com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> getListWorkflowEvaluationTemplatesMethod;
+    if ((getListWorkflowEvaluationTemplatesMethod = V2Grpc.getListWorkflowEvaluationTemplatesMethod) == null) {
+      synchronized (V2Grpc.class) {
+        if ((getListWorkflowEvaluationTemplatesMethod = V2Grpc.getListWorkflowEvaluationTemplatesMethod) == null) {
+          V2Grpc.getListWorkflowEvaluationTemplatesMethod = getListWorkflowEvaluationTemplatesMethod =
+              io.grpc.MethodDescriptor.<com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest, com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListWorkflowEvaluationTemplates"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest.getDefaultInstance()))
+              .setResponseMarshaller(com.clarifai.channel.ClarifaiChannel.INSTANCE.marshaller(
+                  com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new V2MethodDescriptorSupplier("ListWorkflowEvaluationTemplates"))
+              .build();
+        }
+      }
+    }
+    return getListWorkflowEvaluationTemplatesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -7700,9 +7731,6 @@ public final class V2Grpc {
     }
 
     /**
-     * <pre>
-     * Get a specific input from an app.
-     * </pre>
      */
     public void getInputSamples(com.clarifai.grpc.api.GetInputSamplesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputAnnotationResponse> responseObserver) {
@@ -9469,9 +9497,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments performs an action for the task assignments in given task.
-     * All the actions are theoretically idempotent, but practically, in the current implementation,
-     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
+     * PutTaskAssignments performs an idempotent action for the task assignments in given task.
+     * See PutTaskAssignmentsRequestAction for more details about possible actions.
      * </pre>
      */
     public void putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request,
@@ -9836,6 +9863,13 @@ public final class V2Grpc {
     public void postAuditLogSearches(com.clarifai.grpc.api.PostAuditLogSearchesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogEntryResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostAuditLogSearchesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listWorkflowEvaluationTemplates(com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListWorkflowEvaluationTemplatesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -11499,6 +11533,13 @@ public final class V2Grpc {
                 com.clarifai.grpc.api.PostAuditLogSearchesRequest,
                 com.clarifai.grpc.api.MultiAuditLogEntryResponse>(
                   this, METHODID_POST_AUDIT_LOG_SEARCHES)))
+          .addMethod(
+            getListWorkflowEvaluationTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest,
+                com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>(
+                  this, METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES)))
           .build();
     }
   }
@@ -11835,9 +11876,6 @@ public final class V2Grpc {
     }
 
     /**
-     * <pre>
-     * Get a specific input from an app.
-     * </pre>
      */
     public void getInputSamples(com.clarifai.grpc.api.GetInputSamplesRequest request,
         io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiInputAnnotationResponse> responseObserver) {
@@ -13775,9 +13813,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments performs an action for the task assignments in given task.
-     * All the actions are theoretically idempotent, but practically, in the current implementation,
-     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
+     * PutTaskAssignments performs an idempotent action for the task assignments in given task.
+     * See PutTaskAssignmentsRequestAction for more details about possible actions.
      * </pre>
      */
     public void putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request,
@@ -14181,6 +14218,14 @@ public final class V2Grpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPostAuditLogSearchesMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listWorkflowEvaluationTemplates(com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListWorkflowEvaluationTemplatesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -14487,9 +14532,6 @@ public final class V2Grpc {
     }
 
     /**
-     * <pre>
-     * Get a specific input from an app.
-     * </pre>
      */
     public com.clarifai.grpc.api.MultiInputAnnotationResponse getInputSamples(com.clarifai.grpc.api.GetInputSamplesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -16233,9 +16275,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments performs an action for the task assignments in given task.
-     * All the actions are theoretically idempotent, but practically, in the current implementation,
-     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
+     * PutTaskAssignments performs an idempotent action for the task assignments in given task.
+     * See PutTaskAssignmentsRequestAction for more details about possible actions.
      * </pre>
      */
     public com.clarifai.grpc.api.MultiTaskAssignmentResponse putTaskAssignments(com.clarifai.grpc.api.PutTaskAssignmentsRequest request) {
@@ -16586,6 +16627,13 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPostAuditLogSearchesMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse listWorkflowEvaluationTemplates(com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkflowEvaluationTemplatesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -16920,9 +16968,6 @@ public final class V2Grpc {
     }
 
     /**
-     * <pre>
-     * Get a specific input from an app.
-     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiInputAnnotationResponse> getInputSamples(
         com.clarifai.grpc.api.GetInputSamplesRequest request) {
@@ -18822,9 +18867,8 @@ public final class V2Grpc {
 
     /**
      * <pre>
-     * PutTaskAssignments performs an action for the task assignments in given task.
-     * All the actions are theoretically idempotent, but practically, in the current implementation,
-     * the REVIEW_START action is not idempotent. See PutTaskAssignmentsRequestAction for more details.
+     * PutTaskAssignments performs an idempotent action for the task assignments in given task.
+     * See PutTaskAssignmentsRequestAction for more details about possible actions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiTaskAssignmentResponse> putTaskAssignments(
@@ -19212,6 +19256,14 @@ public final class V2Grpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPostAuditLogSearchesMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse> listWorkflowEvaluationTemplates(
+        com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListWorkflowEvaluationTemplatesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CONCEPT_RELATIONS = 0;
@@ -19448,9 +19500,10 @@ public final class V2Grpc {
   private static final int METHODID_PATCH_DEPLOYMENTS = 231;
   private static final int METHODID_DELETE_DEPLOYMENTS = 232;
   private static final int METHODID_POST_AUDIT_LOG_SEARCHES = 233;
-  private static final int METHODID_STREAM_MODEL_OUTPUTS = 234;
-  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 235;
-  private static final int METHODID_PROCESS_RUNNER_ITEMS = 236;
+  private static final int METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES = 234;
+  private static final int METHODID_STREAM_MODEL_OUTPUTS = 235;
+  private static final int METHODID_POST_MODEL_VERSIONS_UPLOAD = 236;
+  private static final int METHODID_PROCESS_RUNNER_ITEMS = 237;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20405,6 +20458,10 @@ public final class V2Grpc {
           serviceImpl.postAuditLogSearches((com.clarifai.grpc.api.PostAuditLogSearchesRequest) request,
               (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiAuditLogEntryResponse>) responseObserver);
           break;
+        case METHODID_LIST_WORKFLOW_EVALUATION_TEMPLATES:
+          serviceImpl.listWorkflowEvaluationTemplates((com.clarifai.grpc.api.ListWorkflowEvaluationTemplatesRequest) request,
+              (io.grpc.stub.StreamObserver<com.clarifai.grpc.api.MultiWorkflowEvaluationTemplateResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -20712,6 +20769,7 @@ public final class V2Grpc {
               .addMethod(getPatchDeploymentsMethod())
               .addMethod(getDeleteDeploymentsMethod())
               .addMethod(getPostAuditLogSearchesMethod())
+              .addMethod(getListWorkflowEvaluationTemplatesMethod())
               .build();
         }
       }

@@ -161,34 +161,13 @@ public interface TaskOrBuilder extends
 
   /**
    * <pre>
-   * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
-   * If set, worker must have be set accordingly to either human worker or model/workflow worker
-   * </pre>
-   *
-   * <code>.clarifai.api.Task.WorkerType worker_type = 22;</code>
-   * @return The enum numeric value on the wire for workerType.
-   */
-  int getWorkerTypeValue();
-  /**
-   * <pre>
-   * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
-   * If set, worker must have be set accordingly to either human worker or model/workflow worker
-   * </pre>
-   *
-   * <code>.clarifai.api.Task.WorkerType worker_type = 22;</code>
-   * @return The workerType.
-   */
-  com.clarifai.grpc.api.Task.WorkerType getWorkerType();
-
-  /**
-   * <pre>
    * List of concept ids used in the work of this task.
    * DEPRECATED: Use task.concepts instead.
    * </pre>
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3091
+   *     See proto/clarifai/api/resources.proto;l=3081
    * @return A list containing the conceptIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -201,7 +180,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3091
+   *     See proto/clarifai/api/resources.proto;l=3081
    * @return The count of conceptIds.
    */
   @java.lang.Deprecated int getConceptIdsCount();
@@ -213,7 +192,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3091
+   *     See proto/clarifai/api/resources.proto;l=3081
    * @param index The index of the element to return.
    * @return The conceptIds at the given index.
    */
@@ -226,7 +205,7 @@ public interface TaskOrBuilder extends
    *
    * <code>repeated string concept_ids = 7 [deprecated = true];</code>
    * @deprecated clarifai.api.Task.concept_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3091
+   *     See proto/clarifai/api/resources.proto;l=3081
    * @param index The index of the value to return.
    * @return The bytes of the conceptIds at the given index.
    */

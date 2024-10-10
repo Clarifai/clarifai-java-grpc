@@ -16,4 +16,18 @@ public interface TaskReviewManualStrategyInfoOrBuilder extends
    * @return The samplePercentage.
    */
   float getSamplePercentage();
+
+  /**
+   * <pre>
+   * The number of reviewers that need to agree in order to approve an input.
+   * Currently, the only allowed values are:
+   * 0  - when not set, it defaults to 1
+   * 1  - only a single reviewer needs to approve each labeled input
+   * -1 - an input will be approved when all reviewers approve it
+   * </pre>
+   *
+   * <code>int32 approval_threshold = 2;</code>
+   * @return The approvalThreshold.
+   */
+  int getApprovalThreshold();
 }

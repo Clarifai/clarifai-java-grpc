@@ -34,7 +34,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated java.util.List<java.lang.String>
@@ -47,7 +47,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @return The count of userIds.
    */
   @java.lang.Deprecated int getUserIdsCount();
@@ -59,7 +59,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -72,7 +72,7 @@ public interface TaskWorkerOrBuilder extends
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskWorker.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3181
+   *     See proto/clarifai/api/resources.proto;l=3171
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -226,6 +226,27 @@ public interface TaskWorkerOrBuilder extends
    */
   com.clarifai.grpc.api.WorkerOrBuilder getWorkersOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+   * If set, worker must have be set accordingly to either human worker or model/workflow worker
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <pre>
+   * Who is doing annotations - human Worker or auto-annotation via Model/Workflow.
+   * If set, worker must have be set accordingly to either human worker or model/workflow worker
+   * </pre>
+   *
+   * <code>.clarifai.api.TaskWorker.WorkerType type = 8;</code>
+   * @return The type.
+   */
+  com.clarifai.grpc.api.TaskWorker.WorkerType getType();
 
   public com.clarifai.grpc.api.TaskWorker.StrategyInfoCase getStrategyInfoCase();
 }

@@ -316,4 +316,31 @@ public interface ConceptOrBuilder extends
    * <code>.google.protobuf.Struct metadata = 13;</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+  /**
+   * <pre>
+   * Representative image for the concept
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 22;</code>
+   * @return Whether the image field is set.
+   */
+  boolean hasImage();
+  /**
+   * <pre>
+   * Representative image for the concept
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 22;</code>
+   * @return The image.
+   */
+  com.clarifai.grpc.api.Image getImage();
+  /**
+   * <pre>
+   * Representative image for the concept
+   * </pre>
+   *
+   * <code>.clarifai.api.Image image = 22;</code>
+   */
+  com.clarifai.grpc.api.ImageOrBuilder getImageOrBuilder();
 }

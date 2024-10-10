@@ -42,15 +42,9 @@ public enum PutTaskAssignmentsRequestAction
   LABEL_SUBMIT(2),
   /**
    * <pre>
-   * Return a list of task assignments for reviewer to review =&gt; 10 inputs are assigned to the reviewer.
+   * Assign task assignments for reviewer to review =&gt; 10 task assignments are assigned to the reviewer.
    * This is a fully sync action.
-   * NOT idempotent:
-   *  In the current implementation, we don't actually store the reviewer in the task assignment,
-   *  as the task assignment still stays assigned to the labeler.
-   *  Therefore, multiple calls to this endpoint may result in different set of task assignments to review.
-   *  For now, this action is practically not idempotent.
-   *  In the future, we could however store the reviewer in the task assignment and
-   *  return existing task assignments already assigned to the reviewer =&gt; this will make this action idempotent.
+   * If task assignments are already assigned for review, then return existing task assignments.
    * </pre>
    *
    * <code>REVIEW_START = 10;</code>
@@ -135,15 +129,9 @@ public enum PutTaskAssignmentsRequestAction
   public static final int LABEL_SUBMIT_VALUE = 2;
   /**
    * <pre>
-   * Return a list of task assignments for reviewer to review =&gt; 10 inputs are assigned to the reviewer.
+   * Assign task assignments for reviewer to review =&gt; 10 task assignments are assigned to the reviewer.
    * This is a fully sync action.
-   * NOT idempotent:
-   *  In the current implementation, we don't actually store the reviewer in the task assignment,
-   *  as the task assignment still stays assigned to the labeler.
-   *  Therefore, multiple calls to this endpoint may result in different set of task assignments to review.
-   *  For now, this action is practically not idempotent.
-   *  In the future, we could however store the reviewer in the task assignment and
-   *  return existing task assignments already assigned to the reviewer =&gt; this will make this action idempotent.
+   * If task assignments are already assigned for review, then return existing task assignments.
    * </pre>
    *
    * <code>REVIEW_START = 10;</code>

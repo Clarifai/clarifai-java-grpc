@@ -1632,6 +1632,10 @@ public enum StatusCode
    */
   TASK_PERMISSION_DENIED(54103),
   /**
+   * <pre>
+   * Task Assignments 542xx
+   * </pre>
+   *
    * <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
    */
   TASK_ASSIGNMENT_SUCCESS(54200),
@@ -1648,9 +1652,25 @@ public enum StatusCode
    */
   TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW(54203),
   /**
-   * <code>TASK_ASSIGNMENT_REVIEW_DENIED = 54204;</code>
+   * <code>TASK_ASSIGNMENT_REJECTED = 54204;</code>
    */
-  TASK_ASSIGNMENT_REVIEW_DENIED(54204),
+  TASK_ASSIGNMENT_REJECTED(54204),
+  /**
+   * <pre>
+   * Task Assignment Reviews 543xx
+   * </pre>
+   *
+   * <code>TASK_ASSIGNMENT_REVIEW_SUCCESS = 54300;</code>
+   */
+  TASK_ASSIGNMENT_REVIEW_SUCCESS(54300),
+  /**
+   * <code>TASK_ASSIGNMENT_REVIEW_PENDING = 54301;</code>
+   */
+  TASK_ASSIGNMENT_REVIEW_PENDING(54301),
+  /**
+   * <code>TASK_ASSIGNMENT_REVIEW_DISMISSED = 54302;</code>
+   */
+  TASK_ASSIGNMENT_REVIEW_DISMISSED(54302),
   /**
    * <pre>
    * Label Order Related Status Code 55xxx
@@ -3667,6 +3687,10 @@ public enum StatusCode
    */
   public static final int TASK_PERMISSION_DENIED_VALUE = 54103;
   /**
+   * <pre>
+   * Task Assignments 542xx
+   * </pre>
+   *
    * <code>TASK_ASSIGNMENT_SUCCESS = 54200;</code>
    */
   public static final int TASK_ASSIGNMENT_SUCCESS_VALUE = 54200;
@@ -3683,9 +3707,25 @@ public enum StatusCode
    */
   public static final int TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW_VALUE = 54203;
   /**
-   * <code>TASK_ASSIGNMENT_REVIEW_DENIED = 54204;</code>
+   * <code>TASK_ASSIGNMENT_REJECTED = 54204;</code>
    */
-  public static final int TASK_ASSIGNMENT_REVIEW_DENIED_VALUE = 54204;
+  public static final int TASK_ASSIGNMENT_REJECTED_VALUE = 54204;
+  /**
+   * <pre>
+   * Task Assignment Reviews 543xx
+   * </pre>
+   *
+   * <code>TASK_ASSIGNMENT_REVIEW_SUCCESS = 54300;</code>
+   */
+  public static final int TASK_ASSIGNMENT_REVIEW_SUCCESS_VALUE = 54300;
+  /**
+   * <code>TASK_ASSIGNMENT_REVIEW_PENDING = 54301;</code>
+   */
+  public static final int TASK_ASSIGNMENT_REVIEW_PENDING_VALUE = 54301;
+  /**
+   * <code>TASK_ASSIGNMENT_REVIEW_DISMISSED = 54302;</code>
+   */
+  public static final int TASK_ASSIGNMENT_REVIEW_DISMISSED_VALUE = 54302;
   /**
    * <pre>
    * Label Order Related Status Code 55xxx
@@ -4413,7 +4453,10 @@ public enum StatusCode
       case 54201: return TASK_ASSIGNMENT_PENDING;
       case 54202: return TASK_ASSIGNMENT_AWAITING_REVIEW;
       case 54203: return TASK_ASSIGNMENT_AWAITING_CONSENSUS_REVIEW;
-      case 54204: return TASK_ASSIGNMENT_REVIEW_DENIED;
+      case 54204: return TASK_ASSIGNMENT_REJECTED;
+      case 54300: return TASK_ASSIGNMENT_REVIEW_SUCCESS;
+      case 54301: return TASK_ASSIGNMENT_REVIEW_PENDING;
+      case 54302: return TASK_ASSIGNMENT_REVIEW_DISMISSED;
       case 55001: return LABEL_ORDER_PENDING;
       case 55002: return LABEL_ORDER_IN_PROGRESS;
       case 55003: return LABEL_ORDER_SUCCESS;

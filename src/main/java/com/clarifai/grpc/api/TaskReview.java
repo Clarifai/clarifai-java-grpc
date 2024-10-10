@@ -160,6 +160,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * No review is needed.
+     * When a labeler labels an input, the annotations are immediately approved.
      * </pre>
      *
      * <code>NONE = 1;</code>
@@ -167,7 +168,7 @@ private static final long serialVersionUID = 0L;
     NONE(1),
     /**
      * <pre>
-     * Manual review strategy.
+     * Human reviewers will review the work done by labelers.
      * </pre>
      *
      * <code>MANUAL = 2;</code>
@@ -175,7 +176,8 @@ private static final long serialVersionUID = 0L;
     MANUAL(2),
     /**
      * <pre>
-     * Consensus review strategy.
+     * Automatically approve inputs when labelers reach consensus.
+     * If consensus is not reached, then it will fallback to human reviewers.
      * </pre>
      *
      * <code>CONSENSUS = 3;</code>
@@ -191,6 +193,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * No review is needed.
+     * When a labeler labels an input, the annotations are immediately approved.
      * </pre>
      *
      * <code>NONE = 1;</code>
@@ -198,7 +201,7 @@ private static final long serialVersionUID = 0L;
     public static final int NONE_VALUE = 1;
     /**
      * <pre>
-     * Manual review strategy.
+     * Human reviewers will review the work done by labelers.
      * </pre>
      *
      * <code>MANUAL = 2;</code>
@@ -206,7 +209,8 @@ private static final long serialVersionUID = 0L;
     public static final int MANUAL_VALUE = 2;
     /**
      * <pre>
-     * Consensus review strategy.
+     * Automatically approve inputs when labelers reach consensus.
+     * If consensus is not reached, then it will fallback to human reviewers.
      * </pre>
      *
      * <code>CONSENSUS = 3;</code>
@@ -376,7 +380,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3293
+   *     See proto/clarifai/api/resources.proto;l=3298
    * @return A list containing the userIds.
    */
   @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -391,7 +395,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3293
+   *     See proto/clarifai/api/resources.proto;l=3298
    * @return The count of userIds.
    */
   @java.lang.Deprecated public int getUserIdsCount() {
@@ -405,7 +409,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3293
+   *     See proto/clarifai/api/resources.proto;l=3298
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -420,7 +424,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string user_ids = 2 [deprecated = true];</code>
    * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=3293
+   *     See proto/clarifai/api/resources.proto;l=3298
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -1130,7 +1134,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @return A list containing the userIds.
      */
     @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
@@ -1145,7 +1149,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @return The count of userIds.
      */
     @java.lang.Deprecated public int getUserIdsCount() {
@@ -1159,7 +1163,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -1174,7 +1178,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -1190,7 +1194,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @param index The index to set the value at.
      * @param value The userIds to set.
      * @return This builder for chaining.
@@ -1213,7 +1217,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @param value The userIds to add.
      * @return This builder for chaining.
      */
@@ -1235,7 +1239,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @param values The userIds to add.
      * @return This builder for chaining.
      */
@@ -1255,7 +1259,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUserIds() {
@@ -1272,7 +1276,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string user_ids = 2 [deprecated = true];</code>
      * @deprecated clarifai.api.TaskReview.user_ids is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=3293
+     *     See proto/clarifai/api/resources.proto;l=3298
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
      */
