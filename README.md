@@ -1,4 +1,5 @@
-![Clarifai logo](docs/logo.png)
+![image](https://github.com/user-attachments/assets/ed10c659-2007-4a58-bdf3-c00b3ef1d9f5)
+
 
 # Clarifai Java gRPC Client
 
