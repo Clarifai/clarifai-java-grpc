@@ -5,28 +5,28 @@ package com.clarifai.grpc.api;
 
 /**
  * <pre>
- * The information of the location of the Frame.
+ * A part of data used for multi-modal processing.
  * </pre>
  *
- * Protobuf type {@code clarifai.api.FrameInfo}
+ * Protobuf type {@code clarifai.api.Part}
  */
-public final class FrameInfo extends
+public final class Part extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:clarifai.api.FrameInfo)
-    FrameInfoOrBuilder {
+    // @@protoc_insertion_point(message_implements:clarifai.api.Part)
+    PartOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FrameInfo.newBuilder() to construct.
-  private FrameInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Part.newBuilder() to construct.
+  private Part(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FrameInfo() {
+  private Part() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new FrameInfo();
+    return new Part();
   }
 
   @java.lang.Override
@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FrameInfo(
+  private Part(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,14 +52,17 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            com.clarifai.grpc.api.Data.Builder subBuilder = null;
+            if (data_ != null) {
+              subBuilder = data_.toBuilder();
+            }
+            data_ = input.readMessage(com.clarifai.grpc.api.Data.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(data_);
+              data_ = subBuilder.buildPartial();
+            }
 
-            index_ = input.readUInt32();
-            break;
-          }
-          case 16: {
-
-            time_ = input.readUInt32();
             break;
           }
           default: {
@@ -85,51 +88,53 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_descriptor;
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Part_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_fieldAccessorTable
+    return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Part_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.clarifai.grpc.api.FrameInfo.class, com.clarifai.grpc.api.FrameInfo.Builder.class);
+            com.clarifai.grpc.api.Part.class, com.clarifai.grpc.api.Part.Builder.class);
   }
 
-  public static final int INDEX_FIELD_NUMBER = 1;
-  private int index_;
+  public static final int DATA_FIELD_NUMBER = 1;
+  private com.clarifai.grpc.api.Data data_;
   /**
    * <pre>
-   * Deprecated. Use Time instead.
-   * The index of the frame, informational and optional.
-   * Depends on the sampling rate used during processing
-   * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+   * The data for this part.
    * </pre>
    *
-   * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   * @deprecated clarifai.api.FrameInfo.index is deprecated.
-   *     See proto/clarifai/api/resources.proto;l=723
-   * @return The index.
+   * <code>.clarifai.api.Data data = 1;</code>
+   * @return Whether the data field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated public int getIndex() {
-    return index_;
+  public boolean hasData() {
+    return data_ != null;
   }
-
-  public static final int TIME_FIELD_NUMBER = 2;
-  private int time_;
   /**
    * <pre>
-   * time in the video in milliseconds. This is independent of the sampling rates used during
-   * processing.
+   * The data for this part.
    * </pre>
    *
-   * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-   * @return The time.
+   * <code>.clarifai.api.Data data = 1;</code>
+   * @return The data.
    */
   @java.lang.Override
-  public int getTime() {
-    return time_;
+  public com.clarifai.grpc.api.Data getData() {
+    return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
+  }
+  /**
+   * <pre>
+   * The data for this part.
+   * </pre>
+   *
+   * <code>.clarifai.api.Data data = 1;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
+    return getData();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -146,11 +151,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (index_ != 0) {
-      output.writeUInt32(1, index_);
-    }
-    if (time_ != 0) {
-      output.writeUInt32(2, time_);
+    if (data_ != null) {
+      output.writeMessage(1, getData());
     }
     unknownFields.writeTo(output);
   }
@@ -161,13 +163,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (index_ != 0) {
+    if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, index_);
-    }
-    if (time_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(2, time_);
+        .computeMessageSize(1, getData());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -179,15 +177,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.clarifai.grpc.api.FrameInfo)) {
+    if (!(obj instanceof com.clarifai.grpc.api.Part)) {
       return super.equals(obj);
     }
-    com.clarifai.grpc.api.FrameInfo other = (com.clarifai.grpc.api.FrameInfo) obj;
+    com.clarifai.grpc.api.Part other = (com.clarifai.grpc.api.Part) obj;
 
-    if (getIndex()
-        != other.getIndex()) return false;
-    if (getTime()
-        != other.getTime()) return false;
+    if (hasData() != other.hasData()) return false;
+    if (hasData()) {
+      if (!getData()
+          .equals(other.getData())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -199,78 +198,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + INDEX_FIELD_NUMBER;
-    hash = (53 * hash) + getIndex();
-    hash = (37 * hash) + TIME_FIELD_NUMBER;
-    hash = (53 * hash) + getTime();
+    if (hasData()) {
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(byte[] data)
+  public static com.clarifai.grpc.api.Part parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.Part parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseDelimitedFrom(java.io.InputStream input)
+  public static com.clarifai.grpc.api.Part parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseDelimitedFrom(
+  public static com.clarifai.grpc.api.Part parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.clarifai.grpc.api.FrameInfo parseFrom(
+  public static com.clarifai.grpc.api.Part parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -283,7 +282,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.clarifai.grpc.api.FrameInfo prototype) {
+  public static Builder newBuilder(com.clarifai.grpc.api.Part prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -300,29 +299,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The information of the location of the Frame.
+   * A part of data used for multi-modal processing.
    * </pre>
    *
-   * Protobuf type {@code clarifai.api.FrameInfo}
+   * Protobuf type {@code clarifai.api.Part}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:clarifai.api.FrameInfo)
-      com.clarifai.grpc.api.FrameInfoOrBuilder {
+      // @@protoc_insertion_point(builder_implements:clarifai.api.Part)
+      com.clarifai.grpc.api.PartOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Part_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_fieldAccessorTable
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Part_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.clarifai.grpc.api.FrameInfo.class, com.clarifai.grpc.api.FrameInfo.Builder.class);
+              com.clarifai.grpc.api.Part.class, com.clarifai.grpc.api.Part.Builder.class);
     }
 
-    // Construct using com.clarifai.grpc.api.FrameInfo.newBuilder()
+    // Construct using com.clarifai.grpc.api.Part.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -340,27 +339,29 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      index_ = 0;
-
-      time_ = 0;
-
+      if (dataBuilder_ == null) {
+        data_ = null;
+      } else {
+        data_ = null;
+        dataBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_FrameInfo_descriptor;
+      return com.clarifai.grpc.api.Resources.internal_static_clarifai_api_Part_descriptor;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.FrameInfo getDefaultInstanceForType() {
-      return com.clarifai.grpc.api.FrameInfo.getDefaultInstance();
+    public com.clarifai.grpc.api.Part getDefaultInstanceForType() {
+      return com.clarifai.grpc.api.Part.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.FrameInfo build() {
-      com.clarifai.grpc.api.FrameInfo result = buildPartial();
+    public com.clarifai.grpc.api.Part build() {
+      com.clarifai.grpc.api.Part result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -368,10 +369,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.clarifai.grpc.api.FrameInfo buildPartial() {
-      com.clarifai.grpc.api.FrameInfo result = new com.clarifai.grpc.api.FrameInfo(this);
-      result.index_ = index_;
-      result.time_ = time_;
+    public com.clarifai.grpc.api.Part buildPartial() {
+      com.clarifai.grpc.api.Part result = new com.clarifai.grpc.api.Part(this);
+      if (dataBuilder_ == null) {
+        result.data_ = data_;
+      } else {
+        result.data_ = dataBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -410,21 +414,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.clarifai.grpc.api.FrameInfo) {
-        return mergeFrom((com.clarifai.grpc.api.FrameInfo)other);
+      if (other instanceof com.clarifai.grpc.api.Part) {
+        return mergeFrom((com.clarifai.grpc.api.Part)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.clarifai.grpc.api.FrameInfo other) {
-      if (other == com.clarifai.grpc.api.FrameInfo.getDefaultInstance()) return this;
-      if (other.getIndex() != 0) {
-        setIndex(other.getIndex());
-      }
-      if (other.getTime() != 0) {
-        setTime(other.getTime());
+    public Builder mergeFrom(com.clarifai.grpc.api.Part other) {
+      if (other == com.clarifai.grpc.api.Part.getDefaultInstance()) return this;
+      if (other.hasData()) {
+        mergeData(other.getData());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -441,11 +442,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.clarifai.grpc.api.FrameInfo parsedMessage = null;
+      com.clarifai.grpc.api.Part parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.clarifai.grpc.api.FrameInfo) e.getUnfinishedMessage();
+        parsedMessage = (com.clarifai.grpc.api.Part) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -455,108 +456,159 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int index_ ;
+    private com.clarifai.grpc.api.Data data_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> dataBuilder_;
     /**
      * <pre>
-     * Deprecated. Use Time instead.
-     * The index of the frame, informational and optional.
-     * Depends on the sampling rate used during processing
-     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+     * The data for this part.
      * </pre>
      *
-     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=723
-     * @return The index.
+     * <code>.clarifai.api.Data data = 1;</code>
+     * @return Whether the data field is set.
      */
-    @java.lang.Override
-    @java.lang.Deprecated public int getIndex() {
-      return index_;
+    public boolean hasData() {
+      return dataBuilder_ != null || data_ != null;
     }
     /**
      * <pre>
-     * Deprecated. Use Time instead.
-     * The index of the frame, informational and optional.
-     * Depends on the sampling rate used during processing
-     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+     * The data for this part.
      * </pre>
      *
-     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=723
-     * @param value The index to set.
-     * @return This builder for chaining.
+     * <code>.clarifai.api.Data data = 1;</code>
+     * @return The data.
      */
-    @java.lang.Deprecated public Builder setIndex(int value) {
-      
-      index_ = value;
-      onChanged();
-      return this;
+    public com.clarifai.grpc.api.Data getData() {
+      if (dataBuilder_ == null) {
+        return data_ == null ? com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
+      } else {
+        return dataBuilder_.getMessage();
+      }
     }
     /**
      * <pre>
-     * Deprecated. Use Time instead.
-     * The index of the frame, informational and optional.
-     * Depends on the sampling rate used during processing
-     * May be 0 for interpolated frames that are generated for brief time (training) or if new frame is manually added
+     * The data for this part.
      * </pre>
      *
-     * <code>uint32 index = 1 [deprecated = true, (.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @deprecated clarifai.api.FrameInfo.index is deprecated.
-     *     See proto/clarifai/api/resources.proto;l=723
-     * @return This builder for chaining.
+     * <code>.clarifai.api.Data data = 1;</code>
      */
-    @java.lang.Deprecated public Builder clearIndex() {
-      
-      index_ = 0;
-      onChanged();
-      return this;
-    }
+    public Builder setData(com.clarifai.grpc.api.Data value) {
+      if (dataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        dataBuilder_.setMessage(value);
+      }
 
-    private int time_ ;
-    /**
-     * <pre>
-     * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
-     * </pre>
-     *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return The time.
-     */
-    @java.lang.Override
-    public int getTime() {
-      return time_;
-    }
-    /**
-     * <pre>
-     * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
-     * </pre>
-     *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @param value The time to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTime(int value) {
-      
-      time_ = value;
-      onChanged();
       return this;
     }
     /**
      * <pre>
-     * time in the video in milliseconds. This is independent of the sampling rates used during
-     * processing.
+     * The data for this part.
      * </pre>
      *
-     * <code>uint32 time = 2 [(.clarifai.api.utils.cl_show_if_empty) = true];</code>
-     * @return This builder for chaining.
+     * <code>.clarifai.api.Data data = 1;</code>
      */
-    public Builder clearTime() {
-      
-      time_ = 0;
-      onChanged();
+    public Builder setData(
+        com.clarifai.grpc.api.Data.Builder builderForValue) {
+      if (dataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <pre>
+     * The data for this part.
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 1;</code>
+     */
+    public Builder mergeData(com.clarifai.grpc.api.Data value) {
+      if (dataBuilder_ == null) {
+        if (data_ != null) {
+          data_ =
+            com.clarifai.grpc.api.Data.newBuilder(data_).mergeFrom(value).buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        dataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The data for this part.
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 1;</code>
+     */
+    public Builder clearData() {
+      if (dataBuilder_ == null) {
+        data_ = null;
+        onChanged();
+      } else {
+        data_ = null;
+        dataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The data for this part.
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 1;</code>
+     */
+    public com.clarifai.grpc.api.Data.Builder getDataBuilder() {
+      
+      onChanged();
+      return getDataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The data for this part.
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 1;</code>
+     */
+    public com.clarifai.grpc.api.DataOrBuilder getDataOrBuilder() {
+      if (dataBuilder_ != null) {
+        return dataBuilder_.getMessageOrBuilder();
+      } else {
+        return data_ == null ?
+            com.clarifai.grpc.api.Data.getDefaultInstance() : data_;
+      }
+    }
+    /**
+     * <pre>
+     * The data for this part.
+     * </pre>
+     *
+     * <code>.clarifai.api.Data data = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder> 
+        getDataFieldBuilder() {
+      if (dataBuilder_ == null) {
+        dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.Data, com.clarifai.grpc.api.Data.Builder, com.clarifai.grpc.api.DataOrBuilder>(
+                getData(),
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      return dataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -571,41 +623,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:clarifai.api.FrameInfo)
+    // @@protoc_insertion_point(builder_scope:clarifai.api.Part)
   }
 
-  // @@protoc_insertion_point(class_scope:clarifai.api.FrameInfo)
-  private static final com.clarifai.grpc.api.FrameInfo DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:clarifai.api.Part)
+  private static final com.clarifai.grpc.api.Part DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.clarifai.grpc.api.FrameInfo();
+    DEFAULT_INSTANCE = new com.clarifai.grpc.api.Part();
   }
 
-  public static com.clarifai.grpc.api.FrameInfo getDefaultInstance() {
+  public static com.clarifai.grpc.api.Part getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FrameInfo>
-      PARSER = new com.google.protobuf.AbstractParser<FrameInfo>() {
+  private static final com.google.protobuf.Parser<Part>
+      PARSER = new com.google.protobuf.AbstractParser<Part>() {
     @java.lang.Override
-    public FrameInfo parsePartialFrom(
+    public Part parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FrameInfo(input, extensionRegistry);
+      return new Part(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FrameInfo> parser() {
+  public static com.google.protobuf.Parser<Part> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FrameInfo> getParserForType() {
+  public com.google.protobuf.Parser<Part> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.clarifai.grpc.api.FrameInfo getDefaultInstanceForType() {
+  public com.clarifai.grpc.api.Part getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     timeSegments_ = java.util.Collections.emptyList();
     hits_ = java.util.Collections.emptyList();
     heatmaps_ = java.util.Collections.emptyList();
+    parts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -231,6 +232,28 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.clarifai.grpc.api.Image.parser(), extensionRegistry));
             break;
           }
+          case 154: {
+            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              parts_ = new java.util.ArrayList<com.clarifai.grpc.api.Part>();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            parts_.add(
+                input.readMessage(com.clarifai.grpc.api.Part.parser(), extensionRegistry));
+            break;
+          }
+          case 162: {
+            com.clarifai.grpc.api.NDArray.Builder subBuilder = null;
+            if (ndarray_ != null) {
+              subBuilder = ndarray_.toBuilder();
+            }
+            ndarray_ = input.readMessage(com.clarifai.grpc.api.NDArray.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(ndarray_);
+              ndarray_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -277,6 +300,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000200) != 0)) {
         heatmaps_ = java.util.Collections.unmodifiableList(heatmaps_);
+      }
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+        parts_ = java.util.Collections.unmodifiableList(parts_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1126,6 +1152,112 @@ private static final long serialVersionUID = 0L;
     return heatmaps_.get(index);
   }
 
+  public static final int PARTS_FIELD_NUMBER = 19;
+  private java.util.List<com.clarifai.grpc.api.Part> parts_;
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.clarifai.grpc.api.Part> getPartsList() {
+    return parts_;
+  }
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.clarifai.grpc.api.PartOrBuilder> 
+      getPartsOrBuilderList() {
+    return parts_;
+  }
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  @java.lang.Override
+  public int getPartsCount() {
+    return parts_.size();
+  }
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.Part getParts(int index) {
+    return parts_.get(index);
+  }
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.PartOrBuilder getPartsOrBuilder(
+      int index) {
+    return parts_.get(index);
+  }
+
+  public static final int NDARRAY_FIELD_NUMBER = 20;
+  private com.clarifai.grpc.api.NDArray ndarray_;
+  /**
+   * <pre>
+   * A proto representation for numpy arrays, useful to pass information from python SDK to a
+   * python based model implementation.
+   * </pre>
+   *
+   * <code>.clarifai.api.NDArray ndarray = 20;</code>
+   * @return Whether the ndarray field is set.
+   */
+  @java.lang.Override
+  public boolean hasNdarray() {
+    return ndarray_ != null;
+  }
+  /**
+   * <pre>
+   * A proto representation for numpy arrays, useful to pass information from python SDK to a
+   * python based model implementation.
+   * </pre>
+   *
+   * <code>.clarifai.api.NDArray ndarray = 20;</code>
+   * @return The ndarray.
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NDArray getNdarray() {
+    return ndarray_ == null ? com.clarifai.grpc.api.NDArray.getDefaultInstance() : ndarray_;
+  }
+  /**
+   * <pre>
+   * A proto representation for numpy arrays, useful to pass information from python SDK to a
+   * python based model implementation.
+   * </pre>
+   *
+   * <code>.clarifai.api.NDArray ndarray = 20;</code>
+   */
+  @java.lang.Override
+  public com.clarifai.grpc.api.NDArrayOrBuilder getNdarrayOrBuilder() {
+    return getNdarray();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1187,6 +1319,12 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < heatmaps_.size(); i++) {
       output.writeMessage(18, heatmaps_.get(i));
+    }
+    for (int i = 0; i < parts_.size(); i++) {
+      output.writeMessage(19, parts_.get(i));
+    }
+    if (ndarray_ != null) {
+      output.writeMessage(20, getNdarray());
     }
     unknownFields.writeTo(output);
   }
@@ -1261,6 +1399,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, heatmaps_.get(i));
     }
+    for (int i = 0; i < parts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, parts_.get(i));
+    }
+    if (ndarray_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getNdarray());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1326,6 +1472,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getHitsList())) return false;
     if (!getHeatmapsList()
         .equals(other.getHeatmapsList())) return false;
+    if (!getPartsList()
+        .equals(other.getPartsList())) return false;
+    if (hasNdarray() != other.hasNdarray()) return false;
+    if (hasNdarray()) {
+      if (!getNdarray()
+          .equals(other.getNdarray())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1400,6 +1553,14 @@ private static final long serialVersionUID = 0L;
     if (getHeatmapsCount() > 0) {
       hash = (37 * hash) + HEATMAPS_FIELD_NUMBER;
       hash = (53 * hash) + getHeatmapsList().hashCode();
+    }
+    if (getPartsCount() > 0) {
+      hash = (37 * hash) + PARTS_FIELD_NUMBER;
+      hash = (53 * hash) + getPartsList().hashCode();
+    }
+    if (hasNdarray()) {
+      hash = (37 * hash) + NDARRAY_FIELD_NUMBER;
+      hash = (53 * hash) + getNdarray().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1543,6 +1704,7 @@ private static final long serialVersionUID = 0L;
         getTimeSegmentsFieldBuilder();
         getHitsFieldBuilder();
         getHeatmapsFieldBuilder();
+        getPartsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1643,6 +1805,18 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000200);
       } else {
         heatmapsBuilder_.clear();
+      }
+      if (partsBuilder_ == null) {
+        parts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      } else {
+        partsBuilder_.clear();
+      }
+      if (ndarrayBuilder_ == null) {
+        ndarray_ = null;
+      } else {
+        ndarray_ = null;
+        ndarrayBuilder_ = null;
       }
       return this;
     }
@@ -1790,6 +1964,20 @@ private static final long serialVersionUID = 0L;
         result.heatmaps_ = heatmaps_;
       } else {
         result.heatmaps_ = heatmapsBuilder_.build();
+      }
+      if (partsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          parts_ = java.util.Collections.unmodifiableList(parts_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.parts_ = parts_;
+      } else {
+        result.parts_ = partsBuilder_.build();
+      }
+      if (ndarrayBuilder_ == null) {
+        result.ndarray_ = ndarray_;
+      } else {
+        result.ndarray_ = ndarrayBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2116,6 +2304,35 @@ private static final long serialVersionUID = 0L;
             heatmapsBuilder_.addAllMessages(other.heatmaps_);
           }
         }
+      }
+      if (partsBuilder_ == null) {
+        if (!other.parts_.isEmpty()) {
+          if (parts_.isEmpty()) {
+            parts_ = other.parts_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensurePartsIsMutable();
+            parts_.addAll(other.parts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.parts_.isEmpty()) {
+          if (partsBuilder_.isEmpty()) {
+            partsBuilder_.dispose();
+            partsBuilder_ = null;
+            parts_ = other.parts_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            partsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPartsFieldBuilder() : null;
+          } else {
+            partsBuilder_.addAllMessages(other.parts_);
+          }
+        }
+      }
+      if (other.hasNdarray()) {
+        mergeNdarray(other.getNdarray());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6204,6 +6421,500 @@ private static final long serialVersionUID = 0L;
         heatmaps_ = null;
       }
       return heatmapsBuilder_;
+    }
+
+    private java.util.List<com.clarifai.grpc.api.Part> parts_ =
+      java.util.Collections.emptyList();
+    private void ensurePartsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        parts_ = new java.util.ArrayList<com.clarifai.grpc.api.Part>(parts_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Part, com.clarifai.grpc.api.Part.Builder, com.clarifai.grpc.api.PartOrBuilder> partsBuilder_;
+
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Part> getPartsList() {
+      if (partsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(parts_);
+      } else {
+        return partsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public int getPartsCount() {
+      if (partsBuilder_ == null) {
+        return parts_.size();
+      } else {
+        return partsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public com.clarifai.grpc.api.Part getParts(int index) {
+      if (partsBuilder_ == null) {
+        return parts_.get(index);
+      } else {
+        return partsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder setParts(
+        int index, com.clarifai.grpc.api.Part value) {
+      if (partsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartsIsMutable();
+        parts_.set(index, value);
+        onChanged();
+      } else {
+        partsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder setParts(
+        int index, com.clarifai.grpc.api.Part.Builder builderForValue) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        partsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder addParts(com.clarifai.grpc.api.Part value) {
+      if (partsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartsIsMutable();
+        parts_.add(value);
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder addParts(
+        int index, com.clarifai.grpc.api.Part value) {
+      if (partsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartsIsMutable();
+        parts_.add(index, value);
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder addParts(
+        com.clarifai.grpc.api.Part.Builder builderForValue) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder addParts(
+        int index, com.clarifai.grpc.api.Part.Builder builderForValue) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        partsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder addAllParts(
+        java.lang.Iterable<? extends com.clarifai.grpc.api.Part> values) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, parts_);
+        onChanged();
+      } else {
+        partsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder clearParts() {
+      if (partsBuilder_ == null) {
+        parts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        partsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public Builder removeParts(int index) {
+      if (partsBuilder_ == null) {
+        ensurePartsIsMutable();
+        parts_.remove(index);
+        onChanged();
+      } else {
+        partsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public com.clarifai.grpc.api.Part.Builder getPartsBuilder(
+        int index) {
+      return getPartsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public com.clarifai.grpc.api.PartOrBuilder getPartsOrBuilder(
+        int index) {
+      if (partsBuilder_ == null) {
+        return parts_.get(index);  } else {
+        return partsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public java.util.List<? extends com.clarifai.grpc.api.PartOrBuilder> 
+         getPartsOrBuilderList() {
+      if (partsBuilder_ != null) {
+        return partsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(parts_);
+      }
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public com.clarifai.grpc.api.Part.Builder addPartsBuilder() {
+      return getPartsFieldBuilder().addBuilder(
+          com.clarifai.grpc.api.Part.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public com.clarifai.grpc.api.Part.Builder addPartsBuilder(
+        int index) {
+      return getPartsFieldBuilder().addBuilder(
+          index, com.clarifai.grpc.api.Part.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * For data messages that have multiple parts such as multi-modal
+     * requests, we allow you to specify those as a list of Data objects.
+     * </pre>
+     *
+     * <code>repeated .clarifai.api.Part parts = 19;</code>
+     */
+    public java.util.List<com.clarifai.grpc.api.Part.Builder> 
+         getPartsBuilderList() {
+      return getPartsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.clarifai.grpc.api.Part, com.clarifai.grpc.api.Part.Builder, com.clarifai.grpc.api.PartOrBuilder> 
+        getPartsFieldBuilder() {
+      if (partsBuilder_ == null) {
+        partsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.clarifai.grpc.api.Part, com.clarifai.grpc.api.Part.Builder, com.clarifai.grpc.api.PartOrBuilder>(
+                parts_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        parts_ = null;
+      }
+      return partsBuilder_;
+    }
+
+    private com.clarifai.grpc.api.NDArray ndarray_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.NDArray, com.clarifai.grpc.api.NDArray.Builder, com.clarifai.grpc.api.NDArrayOrBuilder> ndarrayBuilder_;
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     * @return Whether the ndarray field is set.
+     */
+    public boolean hasNdarray() {
+      return ndarrayBuilder_ != null || ndarray_ != null;
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     * @return The ndarray.
+     */
+    public com.clarifai.grpc.api.NDArray getNdarray() {
+      if (ndarrayBuilder_ == null) {
+        return ndarray_ == null ? com.clarifai.grpc.api.NDArray.getDefaultInstance() : ndarray_;
+      } else {
+        return ndarrayBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    public Builder setNdarray(com.clarifai.grpc.api.NDArray value) {
+      if (ndarrayBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ndarray_ = value;
+        onChanged();
+      } else {
+        ndarrayBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    public Builder setNdarray(
+        com.clarifai.grpc.api.NDArray.Builder builderForValue) {
+      if (ndarrayBuilder_ == null) {
+        ndarray_ = builderForValue.build();
+        onChanged();
+      } else {
+        ndarrayBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    public Builder mergeNdarray(com.clarifai.grpc.api.NDArray value) {
+      if (ndarrayBuilder_ == null) {
+        if (ndarray_ != null) {
+          ndarray_ =
+            com.clarifai.grpc.api.NDArray.newBuilder(ndarray_).mergeFrom(value).buildPartial();
+        } else {
+          ndarray_ = value;
+        }
+        onChanged();
+      } else {
+        ndarrayBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    public Builder clearNdarray() {
+      if (ndarrayBuilder_ == null) {
+        ndarray_ = null;
+        onChanged();
+      } else {
+        ndarray_ = null;
+        ndarrayBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    public com.clarifai.grpc.api.NDArray.Builder getNdarrayBuilder() {
+      
+      onChanged();
+      return getNdarrayFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    public com.clarifai.grpc.api.NDArrayOrBuilder getNdarrayOrBuilder() {
+      if (ndarrayBuilder_ != null) {
+        return ndarrayBuilder_.getMessageOrBuilder();
+      } else {
+        return ndarray_ == null ?
+            com.clarifai.grpc.api.NDArray.getDefaultInstance() : ndarray_;
+      }
+    }
+    /**
+     * <pre>
+     * A proto representation for numpy arrays, useful to pass information from python SDK to a
+     * python based model implementation.
+     * </pre>
+     *
+     * <code>.clarifai.api.NDArray ndarray = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.clarifai.grpc.api.NDArray, com.clarifai.grpc.api.NDArray.Builder, com.clarifai.grpc.api.NDArrayOrBuilder> 
+        getNdarrayFieldBuilder() {
+      if (ndarrayBuilder_ == null) {
+        ndarrayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.clarifai.grpc.api.NDArray, com.clarifai.grpc.api.NDArray.Builder, com.clarifai.grpc.api.NDArrayOrBuilder>(
+                getNdarray(),
+                getParentForChildren(),
+                isClean());
+        ndarray_ = null;
+      }
+      return ndarrayBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -766,6 +766,10 @@ public enum S
    * <code>AuditLogs_Get = 149 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   AuditLogs_Get(149),
+  /**
+   * <code>LogEntries_Get = 151 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  LogEntries_Get(151),
   UNRECOGNIZED(-1),
   ;
 
@@ -1494,6 +1498,10 @@ public enum S
    * <code>AuditLogs_Get = 149 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
    */
   public static final int AuditLogs_Get_VALUE = 149;
+  /**
+   * <code>LogEntries_Get = 151 [(.clarifai.auth.scope.clarfai_exposed) = true];</code>
+   */
+  public static final int LogEntries_Get_VALUE = 151;
 
 
   public final int getNumber() {
@@ -1622,6 +1630,7 @@ public enum S
       case 146: return Deployments_Delete;
       case 148: return InstanceTypes_Get;
       case 149: return AuditLogs_Get;
+      case 151: return LogEntries_Get;
       default: return null;
     }
   }

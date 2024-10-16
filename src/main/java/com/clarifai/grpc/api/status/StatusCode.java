@@ -1967,6 +1967,14 @@ public enum StatusCode
   BILLING_INVALID_INFO(69000),
   /**
    * <pre>
+   * Logs related issues: 70000;
+   * </pre>
+   *
+   * <code>LOG_ENTRIES_INVALID_REQUEST = 70000;</code>
+   */
+  LOG_ENTRIES_INVALID_REQUEST(70000),
+  /**
+   * <pre>
    * Internal issues: 98xxx
    * </pre>
    *
@@ -4022,6 +4030,14 @@ public enum StatusCode
   public static final int BILLING_INVALID_INFO_VALUE = 69000;
   /**
    * <pre>
+   * Logs related issues: 70000;
+   * </pre>
+   *
+   * <code>LOG_ENTRIES_INVALID_REQUEST = 70000;</code>
+   */
+  public static final int LOG_ENTRIES_INVALID_REQUEST_VALUE = 70000;
+  /**
+   * <pre>
    * Internal issues: 98xxx
    * </pre>
    *
@@ -4507,6 +4523,7 @@ public enum StatusCode
       case 68005: return UPLOAD_CANCELED;
       case 68006: return UPLOAD_CONFLICT;
       case 69000: return BILLING_INVALID_INFO;
+      case 70000: return LOG_ENTRIES_INVALID_REQUEST;
       case 98004: return INTERNAL_SERVER_ISSUE;
       case 98005: return INTERNAL_FETCHING_ISSUE;
       case 98006: return INTERNAL_DATABASE_ISSUE;

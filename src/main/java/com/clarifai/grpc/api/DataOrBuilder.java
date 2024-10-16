@@ -611,4 +611,83 @@ public interface DataOrBuilder extends
    */
   com.clarifai.grpc.api.ImageOrBuilder getHeatmapsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  java.util.List<com.clarifai.grpc.api.Part> 
+      getPartsList();
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  com.clarifai.grpc.api.Part getParts(int index);
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  int getPartsCount();
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  java.util.List<? extends com.clarifai.grpc.api.PartOrBuilder> 
+      getPartsOrBuilderList();
+  /**
+   * <pre>
+   * For data messages that have multiple parts such as multi-modal
+   * requests, we allow you to specify those as a list of Data objects.
+   * </pre>
+   *
+   * <code>repeated .clarifai.api.Part parts = 19;</code>
+   */
+  com.clarifai.grpc.api.PartOrBuilder getPartsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * A proto representation for numpy arrays, useful to pass information from python SDK to a
+   * python based model implementation.
+   * </pre>
+   *
+   * <code>.clarifai.api.NDArray ndarray = 20;</code>
+   * @return Whether the ndarray field is set.
+   */
+  boolean hasNdarray();
+  /**
+   * <pre>
+   * A proto representation for numpy arrays, useful to pass information from python SDK to a
+   * python based model implementation.
+   * </pre>
+   *
+   * <code>.clarifai.api.NDArray ndarray = 20;</code>
+   * @return The ndarray.
+   */
+  com.clarifai.grpc.api.NDArray getNdarray();
+  /**
+   * <pre>
+   * A proto representation for numpy arrays, useful to pass information from python SDK to a
+   * python based model implementation.
+   * </pre>
+   *
+   * <code>.clarifai.api.NDArray ndarray = 20;</code>
+   */
+  com.clarifai.grpc.api.NDArrayOrBuilder getNdarrayOrBuilder();
 }
