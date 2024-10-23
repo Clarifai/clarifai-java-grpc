@@ -57,6 +57,16 @@ private static final long serialVersionUID = 0L;
             approvalThreshold_ = input.readUInt32();
             break;
           }
+          case 24: {
+
+            approvalThresholdLabelers_ = input.readUInt32();
+            break;
+          }
+          case 32: {
+
+            approvalThresholdReviewers_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,15 +105,55 @@ private static final long serialVersionUID = 0L;
   private int approvalThreshold_;
   /**
    * <pre>
-   * The number of labelers that need to agree in order to automatically approve an annotation.
+   * Deprecated: Use approval_threshold_labelers.
    * </pre>
    *
-   * <code>uint32 approval_threshold = 2;</code>
+   * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3374
    * @return The approvalThreshold.
    */
   @java.lang.Override
-  public int getApprovalThreshold() {
+  @java.lang.Deprecated public int getApprovalThreshold() {
     return approvalThreshold_;
+  }
+
+  public static final int APPROVAL_THRESHOLD_LABELERS_FIELD_NUMBER = 3;
+  private int approvalThresholdLabelers_;
+  /**
+   * <pre>
+   * The number of labelers that need to agree in order to automatically approve an annotation.
+   * When 0, labelers consensus is disabled.
+   * When 1, the labels are automatically approved once a single labeler labels the input.
+   * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+   * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+   * </pre>
+   *
+   * <code>uint32 approval_threshold_labelers = 3;</code>
+   * @return The approvalThresholdLabelers.
+   */
+  @java.lang.Override
+  public int getApprovalThresholdLabelers() {
+    return approvalThresholdLabelers_;
+  }
+
+  public static final int APPROVAL_THRESHOLD_REVIEWERS_FIELD_NUMBER = 4;
+  private int approvalThresholdReviewers_;
+  /**
+   * <pre>
+   * The number of reviewers that need to agree in order to approve an input.
+   * Currently, the only allowed values are:
+   * 0  - when not set, it defaults to 1
+   * 1  - only a single reviewer needs to approve each labeled input
+   * -1 - an input will be approved when all reviewers approve it
+   * </pre>
+   *
+   * <code>int32 approval_threshold_reviewers = 4;</code>
+   * @return The approvalThresholdReviewers.
+   */
+  @java.lang.Override
+  public int getApprovalThresholdReviewers() {
+    return approvalThresholdReviewers_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -123,6 +173,12 @@ private static final long serialVersionUID = 0L;
     if (approvalThreshold_ != 0) {
       output.writeUInt32(2, approvalThreshold_);
     }
+    if (approvalThresholdLabelers_ != 0) {
+      output.writeUInt32(3, approvalThresholdLabelers_);
+    }
+    if (approvalThresholdReviewers_ != 0) {
+      output.writeInt32(4, approvalThresholdReviewers_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -135,6 +191,14 @@ private static final long serialVersionUID = 0L;
     if (approvalThreshold_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeUInt32Size(2, approvalThreshold_);
+    }
+    if (approvalThresholdLabelers_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt32Size(3, approvalThresholdLabelers_);
+    }
+    if (approvalThresholdReviewers_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(4, approvalThresholdReviewers_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -153,6 +217,10 @@ private static final long serialVersionUID = 0L;
 
     if (getApprovalThreshold()
         != other.getApprovalThreshold()) return false;
+    if (getApprovalThresholdLabelers()
+        != other.getApprovalThresholdLabelers()) return false;
+    if (getApprovalThresholdReviewers()
+        != other.getApprovalThresholdReviewers()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -166,6 +234,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + APPROVAL_THRESHOLD_FIELD_NUMBER;
     hash = (53 * hash) + getApprovalThreshold();
+    hash = (37 * hash) + APPROVAL_THRESHOLD_LABELERS_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovalThresholdLabelers();
+    hash = (37 * hash) + APPROVAL_THRESHOLD_REVIEWERS_FIELD_NUMBER;
+    hash = (53 * hash) + getApprovalThresholdReviewers();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -305,6 +377,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       approvalThreshold_ = 0;
 
+      approvalThresholdLabelers_ = 0;
+
+      approvalThresholdReviewers_ = 0;
+
       return this;
     }
 
@@ -332,6 +408,8 @@ private static final long serialVersionUID = 0L;
     public com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo buildPartial() {
       com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo result = new com.clarifai.grpc.api.TaskReviewConsensusStrategyInfo(this);
       result.approvalThreshold_ = approvalThreshold_;
+      result.approvalThresholdLabelers_ = approvalThresholdLabelers_;
+      result.approvalThresholdReviewers_ = approvalThresholdReviewers_;
       onBuilt();
       return result;
     }
@@ -383,6 +461,12 @@ private static final long serialVersionUID = 0L;
       if (other.getApprovalThreshold() != 0) {
         setApprovalThreshold(other.getApprovalThreshold());
       }
+      if (other.getApprovalThresholdLabelers() != 0) {
+        setApprovalThresholdLabelers(other.getApprovalThresholdLabelers());
+      }
+      if (other.getApprovalThresholdReviewers() != 0) {
+        setApprovalThresholdReviewers(other.getApprovalThresholdReviewers());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -415,26 +499,30 @@ private static final long serialVersionUID = 0L;
     private int approvalThreshold_ ;
     /**
      * <pre>
-     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * Deprecated: Use approval_threshold_labelers.
      * </pre>
      *
-     * <code>uint32 approval_threshold = 2;</code>
+     * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3374
      * @return The approvalThreshold.
      */
     @java.lang.Override
-    public int getApprovalThreshold() {
+    @java.lang.Deprecated public int getApprovalThreshold() {
       return approvalThreshold_;
     }
     /**
      * <pre>
-     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * Deprecated: Use approval_threshold_labelers.
      * </pre>
      *
-     * <code>uint32 approval_threshold = 2;</code>
+     * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3374
      * @param value The approvalThreshold to set.
      * @return This builder for chaining.
      */
-    public Builder setApprovalThreshold(int value) {
+    @java.lang.Deprecated public Builder setApprovalThreshold(int value) {
       
       approvalThreshold_ = value;
       onChanged();
@@ -442,15 +530,127 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * Deprecated: Use approval_threshold_labelers.
      * </pre>
      *
-     * <code>uint32 approval_threshold = 2;</code>
+     * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
+     * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
+     *     See proto/clarifai/api/resources.proto;l=3374
      * @return This builder for chaining.
      */
-    public Builder clearApprovalThreshold() {
+    @java.lang.Deprecated public Builder clearApprovalThreshold() {
       
       approvalThreshold_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int approvalThresholdLabelers_ ;
+    /**
+     * <pre>
+     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * When 0, labelers consensus is disabled.
+     * When 1, the labels are automatically approved once a single labeler labels the input.
+     * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     * </pre>
+     *
+     * <code>uint32 approval_threshold_labelers = 3;</code>
+     * @return The approvalThresholdLabelers.
+     */
+    @java.lang.Override
+    public int getApprovalThresholdLabelers() {
+      return approvalThresholdLabelers_;
+    }
+    /**
+     * <pre>
+     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * When 0, labelers consensus is disabled.
+     * When 1, the labels are automatically approved once a single labeler labels the input.
+     * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     * </pre>
+     *
+     * <code>uint32 approval_threshold_labelers = 3;</code>
+     * @param value The approvalThresholdLabelers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalThresholdLabelers(int value) {
+      
+      approvalThresholdLabelers_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of labelers that need to agree in order to automatically approve an annotation.
+     * When 0, labelers consensus is disabled.
+     * When 1, the labels are automatically approved once a single labeler labels the input.
+     * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+     * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+     * </pre>
+     *
+     * <code>uint32 approval_threshold_labelers = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovalThresholdLabelers() {
+      
+      approvalThresholdLabelers_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int approvalThresholdReviewers_ ;
+    /**
+     * <pre>
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     * </pre>
+     *
+     * <code>int32 approval_threshold_reviewers = 4;</code>
+     * @return The approvalThresholdReviewers.
+     */
+    @java.lang.Override
+    public int getApprovalThresholdReviewers() {
+      return approvalThresholdReviewers_;
+    }
+    /**
+     * <pre>
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     * </pre>
+     *
+     * <code>int32 approval_threshold_reviewers = 4;</code>
+     * @param value The approvalThresholdReviewers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalThresholdReviewers(int value) {
+      
+      approvalThresholdReviewers_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of reviewers that need to agree in order to approve an input.
+     * Currently, the only allowed values are:
+     * 0  - when not set, it defaults to 1
+     * 1  - only a single reviewer needs to approve each labeled input
+     * -1 - an input will be approved when all reviewers approve it
+     * </pre>
+     *
+     * <code>int32 approval_threshold_reviewers = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovalThresholdReviewers() {
+      
+      approvalThresholdReviewers_ = 0;
       onChanged();
       return this;
     }

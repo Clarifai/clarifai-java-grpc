@@ -637,10 +637,18 @@ public enum StatusCode
    */
   ANNOTATION_PERMISSION_DENIED(24156),
   /**
+   * <pre>
+   * Annotation is awaiting review from task REVIEWERS.
+   * </pre>
+   *
    * <code>ANNOTATION_AWAITING_REVIEW = 24157;</code>
    */
   ANNOTATION_AWAITING_REVIEW(24157),
   /**
+   * <pre>
+   * Annotation is awaiting consensus review from task LABELERS.
+   * </pre>
+   *
    * <code>ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;</code>
    */
   ANNOTATION_AWAITING_CONSENSUS_REVIEW(24159),
@@ -2702,10 +2710,18 @@ public enum StatusCode
    */
   public static final int ANNOTATION_PERMISSION_DENIED_VALUE = 24156;
   /**
+   * <pre>
+   * Annotation is awaiting review from task REVIEWERS.
+   * </pre>
+   *
    * <code>ANNOTATION_AWAITING_REVIEW = 24157;</code>
    */
   public static final int ANNOTATION_AWAITING_REVIEW_VALUE = 24157;
   /**
+   * <pre>
+   * Annotation is awaiting consensus review from task LABELERS.
+   * </pre>
+   *
    * <code>ANNOTATION_AWAITING_CONSENSUS_REVIEW = 24159;</code>
    */
   public static final int ANNOTATION_AWAITING_CONSENSUS_REVIEW_VALUE = 24159;

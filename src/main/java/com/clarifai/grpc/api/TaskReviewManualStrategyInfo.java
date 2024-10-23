@@ -115,11 +115,7 @@ private static final long serialVersionUID = 0L;
   private int approvalThreshold_;
   /**
    * <pre>
-   * The number of reviewers that need to agree in order to approve an input.
-   * Currently, the only allowed values are:
-   * 0  - when not set, it defaults to 1
-   * 1  - only a single reviewer needs to approve each labeled input
-   * -1 - an input will be approved when all reviewers approve it
+   * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
    * </pre>
    *
    * <code>int32 approval_threshold = 2;</code>
@@ -501,11 +497,7 @@ private static final long serialVersionUID = 0L;
     private int approvalThreshold_ ;
     /**
      * <pre>
-     * The number of reviewers that need to agree in order to approve an input.
-     * Currently, the only allowed values are:
-     * 0  - when not set, it defaults to 1
-     * 1  - only a single reviewer needs to approve each labeled input
-     * -1 - an input will be approved when all reviewers approve it
+     * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
      * <code>int32 approval_threshold = 2;</code>
@@ -517,11 +509,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The number of reviewers that need to agree in order to approve an input.
-     * Currently, the only allowed values are:
-     * 0  - when not set, it defaults to 1
-     * 1  - only a single reviewer needs to approve each labeled input
-     * -1 - an input will be approved when all reviewers approve it
+     * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
      * <code>int32 approval_threshold = 2;</code>
@@ -536,11 +524,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The number of reviewers that need to agree in order to approve an input.
-     * Currently, the only allowed values are:
-     * 0  - when not set, it defaults to 1
-     * 1  - only a single reviewer needs to approve each labeled input
-     * -1 - an input will be approved when all reviewers approve it
+     * Deprecated: Use consensus_strategy_info.approval_threshold_reviewers.
      * </pre>
      *
      * <code>int32 approval_threshold = 2;</code>

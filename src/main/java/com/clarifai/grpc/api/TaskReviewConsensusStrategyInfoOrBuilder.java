@@ -9,11 +9,41 @@ public interface TaskReviewConsensusStrategyInfoOrBuilder extends
 
   /**
    * <pre>
-   * The number of labelers that need to agree in order to automatically approve an annotation.
+   * Deprecated: Use approval_threshold_labelers.
    * </pre>
    *
-   * <code>uint32 approval_threshold = 2;</code>
+   * <code>uint32 approval_threshold = 2 [deprecated = true];</code>
+   * @deprecated clarifai.api.TaskReviewConsensusStrategyInfo.approval_threshold is deprecated.
+   *     See proto/clarifai/api/resources.proto;l=3374
    * @return The approvalThreshold.
    */
-  int getApprovalThreshold();
+  @java.lang.Deprecated int getApprovalThreshold();
+
+  /**
+   * <pre>
+   * The number of labelers that need to agree in order to automatically approve an annotation.
+   * When 0, labelers consensus is disabled.
+   * When 1, the labels are automatically approved once a single labeler labels the input.
+   * When greater than 1, the labels are automatically approved when the specified number of labelers agree.
+   * If the number of labelers that agree is less than the specified number, then the input will reviewed by reviewers.
+   * </pre>
+   *
+   * <code>uint32 approval_threshold_labelers = 3;</code>
+   * @return The approvalThresholdLabelers.
+   */
+  int getApprovalThresholdLabelers();
+
+  /**
+   * <pre>
+   * The number of reviewers that need to agree in order to approve an input.
+   * Currently, the only allowed values are:
+   * 0  - when not set, it defaults to 1
+   * 1  - only a single reviewer needs to approve each labeled input
+   * -1 - an input will be approved when all reviewers approve it
+   * </pre>
+   *
+   * <code>int32 approval_threshold_reviewers = 4;</code>
+   * @return The approvalThresholdReviewers.
+   */
+  int getApprovalThresholdReviewers();
 }

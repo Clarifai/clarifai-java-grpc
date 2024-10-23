@@ -1885,9 +1885,11 @@ public final class Resources {
       "OT_SET\020\000\022\010\n\004NONE\020\001\022\n\n\006MANUAL\020\002\022\r\n\tCONSEN" +
       "SUS\020\003B\017\n\rstrategy_info\"U\n\034TaskReviewManu" +
       "alStrategyInfo\022\031\n\021sample_percentage\030\001 \001(" +
-      "\002\022\032\n\022approval_threshold\030\002 \001(\005\"C\n\037TaskRev" +
-      "iewConsensusStrategyInfo\022\032\n\022approval_thr" +
-      "eshold\030\002 \001(\rJ\004\010\001\020\002\"&\n\017TaskAIAssistant\022\023\n" +
+      "\002\022\032\n\022approval_threshold\030\002 \001(\005\"\222\001\n\037TaskRe" +
+      "viewConsensusStrategyInfo\022\036\n\022approval_th" +
+      "reshold\030\002 \001(\rB\002\030\001\022#\n\033approval_threshold_" +
+      "labelers\030\003 \001(\r\022$\n\034approval_threshold_rev" +
+      "iewers\030\004 \001(\005J\004\010\001\020\002\"&\n\017TaskAIAssistant\022\023\n" +
       "\013workflow_id\030\001 \001(\t\"\364\001\n\016TaskAssignment\022\n\n" +
       "\002id\030\001 \001(\t\022.\n\ncreated_at\030\002 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\022/\n\013modified_at\030\003 \001(\0132\032" +
@@ -1915,9 +1917,9 @@ public final class Resources {
       "askWorkMetrics\022/\n\006review\030\003 \001(\0132\037.clarifa" +
       "i.api.TaskReviewMetrics\022:\n\014input_source\030" +
       "\004 \001(\0132$.clarifai.api.TaskInputSourceMetr" +
-      "icsJ\004\010\001\020\002\"S\n\017TaskWorkMetrics\022\036\n\026inputs_c" +
+      "icsJ\004\010\001\020\002\"S\n\017TaskWorkMetrics\022\036\n\026inputs_c",
       "ount_estimated\030\001 \001(\004\022 \n\030inputs_percent_e" +
-      "stimated\030\002 \001(\r\"U\n\021TaskReviewMetrics\022\036\n\026i",
+      "stimated\030\002 \001(\r\"U\n\021TaskReviewMetrics\022\036\n\026i" +
       "nputs_count_estimated\030\001 \001(\004\022 \n\030inputs_pe" +
       "rcent_estimated\030\002 \001(\r\"8\n\026TaskInputSource" +
       "Metrics\022\036\n\026inputs_count_estimated\030\001 \001(\004\"" +
@@ -3150,7 +3152,7 @@ public final class Resources {
     internal_static_clarifai_api_TaskReviewConsensusStrategyInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_clarifai_api_TaskReviewConsensusStrategyInfo_descriptor,
-        new java.lang.String[] { "ApprovalThreshold", });
+        new java.lang.String[] { "ApprovalThreshold", "ApprovalThresholdLabelers", "ApprovalThresholdReviewers", });
     internal_static_clarifai_api_TaskAIAssistant_descriptor =
       getDescriptor().getMessageTypes().get(143);
     internal_static_clarifai_api_TaskAIAssistant_fieldAccessorTable = new
